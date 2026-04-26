@@ -23,6 +23,18 @@
 #include <Jolt/Physics/Collision/Shape/CapsuleShape.h>
 #include <Jolt/Physics/Collision/Shape/CylinderShape.h>
 #include <Jolt/Physics/Collision/Shape/RotatedTranslatedShape.h>
+#include <Jolt/Physics/Collision/Shape/TaperedCapsuleShape.h>
+#include <Jolt/Physics/Collision/Shape/TaperedCylinderShape.h>
+#include <Jolt/Physics/Collision/Shape/TriangleShape.h>
+#include <Jolt/Physics/Collision/Shape/PlaneShape.h>
+#include <Jolt/Physics/Collision/Shape/EmptyShape.h>
+#include <Jolt/Physics/Collision/Shape/ScaledShape.h>
+#include <Jolt/Physics/Collision/Shape/OffsetCenterOfMassShape.h>
+#include <Jolt/Physics/Collision/Shape/StaticCompoundShape.h>
+#include <Jolt/Physics/Collision/Shape/MutableCompoundShape.h>
+#include <Jolt/Physics/Collision/Shape/MeshShape.h>
+#include <Jolt/Physics/Collision/Shape/ConvexHullShape.h>
+#include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
 #include <Jolt/Physics/Body/BodyCreationSettings.h>
 #include <Jolt/Physics/Body/BodyActivationListener.h>
 #include <Jolt/Physics/Constraints/FixedConstraint.h>
@@ -277,6 +289,227 @@ JoltRotatedTranslatedShape::JoltRotatedTranslatedShape(
         innerPtr);
     ss.SetEmbedded();
     ShapeRefC s = ss.Create().Get(); SHAPE_INIT(s);
+}
+
+// ---------------------------------------------------------------------------
+// JoltTaperedCapsuleShape
+// ---------------------------------------------------------------------------
+JoltTaperedCapsuleShape::JoltTaperedCapsuleShape(float halfHeight, float topRadius, float bottomRadius) {
+    TaperedCapsuleShapeSettings ss(halfHeight, topRadius, bottomRadius);
+    ss.SetEmbedded();
+    ShapeRefC s = ss.Create().Get(); SHAPE_INIT(s);
+}
+
+// ---------------------------------------------------------------------------
+// JoltTaperedCylinderShape
+// ---------------------------------------------------------------------------
+JoltTaperedCylinderShape::JoltTaperedCylinderShape(float halfHeight, float topRadius, float bottomRadius, float cr) {
+    TaperedCylinderShapeSettings ss(halfHeight, topRadius, bottomRadius, cr);
+    ss.SetEmbedded();
+    ShapeRefC s = ss.Create().Get(); SHAPE_INIT(s);
+}
+JoltTaperedCylinderShape::JoltTaperedCylinderShape(float halfHeight, float topRadius, float bottomRadius)
+    : JoltTaperedCylinderShape(halfHeight, topRadius, bottomRadius, 0.05f) {}
+
+// ---------------------------------------------------------------------------
+// JoltTriangleShape
+// ---------------------------------------------------------------------------
+JoltTriangleShape::JoltTriangleShape(float v1x, float v1y, float v1z,
+                                      float v2x, float v2y, float v2z,
+                                      float v3x, float v3y, float v3z) {
+    ShapeRefC s = new TriangleShape(Vec3(v1x,v1y,v1z), Vec3(v2x,v2y,v2z), Vec3(v3x,v3y,v3z));
+    SHAPE_INIT(s);
+}
+JoltTriangleShape::JoltTriangleShape(float v1x, float v1y, float v1z,
+                                      float v2x, float v2y, float v2z,
+                                      float v3x, float v3y, float v3z,
+                                      float cr) {
+    ShapeRefC s = new TriangleShape(Vec3(v1x,v1y,v1z), Vec3(v2x,v2y,v2z), Vec3(v3x,v3y,v3z), cr);
+    SHAPE_INIT(s);
+}
+
+// ---------------------------------------------------------------------------
+// JoltPlaneShape
+// ---------------------------------------------------------------------------
+JoltPlaneShape::JoltPlaneShape(float nx, float ny, float nz, float d, float halfExtent) {
+    ShapeRefC s = new PlaneShape(Plane(Vec3(nx, ny, nz), d), nullptr, halfExtent);
+    SHAPE_INIT(s);
+}
+JoltPlaneShape::JoltPlaneShape(float nx, float ny, float nz, float d)
+    : JoltPlaneShape(nx, ny, nz, d, 1000.0f) {}
+
+// ---------------------------------------------------------------------------
+// JoltEmptyShape
+// ---------------------------------------------------------------------------
+JoltEmptyShape::JoltEmptyShape(float comX, float comY, float comZ) {
+    ShapeRefC s = new EmptyShape(Vec3(comX, comY, comZ));
+    SHAPE_INIT(s);
+}
+JoltEmptyShape::JoltEmptyShape() : JoltEmptyShape(0.0f, 0.0f, 0.0f) {}
+
+// ---------------------------------------------------------------------------
+// JoltScaledShape
+// ---------------------------------------------------------------------------
+JoltScaledShape::JoltScaledShape(JoltShape* inner, float sx, float sy, float sz) {
+    const Shape* innerPtr = static_cast<const Shape*>(inner->getHandle());
+    ShapeRefC s = new ScaledShape(innerPtr, Vec3(sx, sy, sz));
+    SHAPE_INIT(s);
+}
+
+// ---------------------------------------------------------------------------
+// JoltOffsetCenterOfMassShape
+// ---------------------------------------------------------------------------
+JoltOffsetCenterOfMassShape::JoltOffsetCenterOfMassShape(JoltShape* inner,
+                                                          float ox, float oy, float oz) {
+    const Shape* innerPtr = static_cast<const Shape*>(inner->getHandle());
+    ShapeRefC s = new OffsetCenterOfMassShape(innerPtr, Vec3(ox, oy, oz));
+    SHAPE_INIT(s);
+}
+
+// ---------------------------------------------------------------------------
+// JoltStaticCompoundShape
+// ---------------------------------------------------------------------------
+struct SCBuild { StaticCompoundShapeSettings settings; };
+
+JoltStaticCompoundShape::JoltStaticCompoundShape() : mSettings(new SCBuild()) {}
+JoltStaticCompoundShape::~JoltStaticCompoundShape() {
+    delete static_cast<SCBuild*>(mSettings);
+    mSettings = nullptr;
+}
+void JoltStaticCompoundShape::AddSubShape(JoltShape* shape,
+                                           double px, double py, double pz,
+                                           float qx, float qy, float qz, float qw) {
+    const Shape* innerPtr = static_cast<const Shape*>(shape->getHandle());
+    static_cast<SCBuild*>(mSettings)->settings.AddShape(
+        Vec3((float)px, (float)py, (float)pz), Quat(qx, qy, qz, qw), innerPtr);
+}
+void JoltStaticCompoundShape::Finalize() {
+    auto* b = static_cast<SCBuild*>(mSettings);
+    b->settings.SetEmbedded();
+    ShapeRefC s = b->settings.Create().Get(); SHAPE_INIT(s);
+    delete b; mSettings = nullptr;
+}
+
+// ---------------------------------------------------------------------------
+// JoltMutableCompoundShape
+// ---------------------------------------------------------------------------
+struct MCBuild { MutableCompoundShapeSettings settings; };
+
+JoltMutableCompoundShape::JoltMutableCompoundShape() : mSettings(new MCBuild()) {}
+JoltMutableCompoundShape::~JoltMutableCompoundShape() {
+    delete static_cast<MCBuild*>(mSettings);
+    mSettings = nullptr;
+}
+void JoltMutableCompoundShape::AddSubShape(JoltShape* shape,
+                                            double px, double py, double pz,
+                                            float qx, float qy, float qz, float qw) {
+    const Shape* innerPtr = static_cast<const Shape*>(shape->getHandle());
+    static_cast<MCBuild*>(mSettings)->settings.AddShape(
+        Vec3((float)px, (float)py, (float)pz), Quat(qx, qy, qz, qw), innerPtr);
+}
+void JoltMutableCompoundShape::Finalize() {
+    auto* b = static_cast<MCBuild*>(mSettings);
+    b->settings.SetEmbedded();
+    ShapeRefC s = b->settings.Create().Get(); SHAPE_INIT(s);
+    delete b; mSettings = nullptr;
+}
+unsigned int JoltMutableCompoundShape::AppendSubShape(JoltShape* shape,
+                                                       double px, double py, double pz,
+                                                       float qx, float qy, float qz, float qw) {
+    auto* ms = static_cast<MutableCompoundShape*>(mHandle);
+    return ms->AddShape(Vec3((float)px,(float)py,(float)pz), Quat(qx,qy,qz,qw),
+                        static_cast<const Shape*>(shape->getHandle()));
+}
+void JoltMutableCompoundShape::RemoveSubShape(unsigned int index) {
+    static_cast<MutableCompoundShape*>(mHandle)->RemoveShape(index);
+}
+void JoltMutableCompoundShape::ModifySubShape(unsigned int index,
+                                               double px, double py, double pz,
+                                               float qx, float qy, float qz, float qw) {
+    static_cast<MutableCompoundShape*>(mHandle)->ModifyShape(
+        index, Vec3((float)px,(float)py,(float)pz), Quat(qx,qy,qz,qw));
+}
+
+// ---------------------------------------------------------------------------
+// JoltMeshShape
+// ---------------------------------------------------------------------------
+struct MeshBuild { MeshShapeSettings settings; };
+
+JoltMeshShape::JoltMeshShape() : mSettings(new MeshBuild()) {}
+JoltMeshShape::~JoltMeshShape() {
+    delete static_cast<MeshBuild*>(mSettings);
+    mSettings = nullptr;
+}
+void JoltMeshShape::AddVertex(float x, float y, float z) {
+    static_cast<MeshBuild*>(mSettings)->settings.mTriangleVertices.push_back(Float3(x, y, z));
+}
+void JoltMeshShape::AddFace(unsigned int v0, unsigned int v1, unsigned int v2) {
+    static_cast<MeshBuild*>(mSettings)->settings.mIndexedTriangles.push_back(
+        IndexedTriangle(v0, v1, v2, 0));
+}
+void JoltMeshShape::Finalize() {
+    auto* b = static_cast<MeshBuild*>(mSettings);
+    b->settings.Sanitize();
+    b->settings.SetEmbedded();
+    ShapeRefC s = b->settings.Create().Get(); SHAPE_INIT(s);
+    delete b; mSettings = nullptr;
+}
+
+// ---------------------------------------------------------------------------
+// JoltConvexHullShape
+// ---------------------------------------------------------------------------
+struct ConvexBuild { ConvexHullShapeSettings settings; };
+
+JoltConvexHullShape::JoltConvexHullShape() : mSettings(new ConvexBuild()) {}
+JoltConvexHullShape::~JoltConvexHullShape() {
+    delete static_cast<ConvexBuild*>(mSettings);
+    mSettings = nullptr;
+}
+void JoltConvexHullShape::AddPoint(float x, float y, float z) {
+    static_cast<ConvexBuild*>(mSettings)->settings.mPoints.push_back(Vec3(x, y, z));
+}
+void JoltConvexHullShape::Finalize(float cr) {
+    auto* b = static_cast<ConvexBuild*>(mSettings);
+    b->settings.mMaxConvexRadius = cr;
+    b->settings.SetEmbedded();
+    ShapeRefC s = b->settings.Create().Get(); SHAPE_INIT(s);
+    delete b; mSettings = nullptr;
+}
+void JoltConvexHullShape::Finalize() { Finalize(0.05f); }
+
+// ---------------------------------------------------------------------------
+// JoltHeightFieldShape
+// ---------------------------------------------------------------------------
+struct HFBuild {
+    HeightFieldShapeSettings settings;
+    unsigned int sampleCount;
+};
+
+JoltHeightFieldShape::JoltHeightFieldShape(unsigned int sampleCount,
+                                            float ox, float oy, float oz,
+                                            float sx, float sy, float sz) {
+    auto* b = new HFBuild();
+    b->sampleCount = sampleCount;
+    b->settings.mSampleCount = sampleCount;
+    b->settings.mOffset = Vec3(ox, oy, oz);
+    b->settings.mScale  = Vec3(sx, sy, sz);
+    b->settings.mHeightSamples.resize(size_t(sampleCount) * sampleCount, 0.0f);
+    mSettings = b;
+}
+JoltHeightFieldShape::~JoltHeightFieldShape() {
+    delete static_cast<HFBuild*>(mSettings);
+    mSettings = nullptr;
+}
+void JoltHeightFieldShape::SetSample(unsigned int x, unsigned int y, float height) {
+    auto* b = static_cast<HFBuild*>(mSettings);
+    if (x < b->sampleCount && y < b->sampleCount)
+        b->settings.mHeightSamples[y * b->sampleCount + x] = height;
+}
+void JoltHeightFieldShape::Finalize() {
+    auto* b = static_cast<HFBuild*>(mSettings);
+    b->settings.SetEmbedded();
+    ShapeRefC s = b->settings.Create().Get(); SHAPE_INIT(s);
+    delete b; mSettings = nullptr;
 }
 
 #undef SHAPE_INIT

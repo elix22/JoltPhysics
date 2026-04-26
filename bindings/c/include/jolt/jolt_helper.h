@@ -88,9 +88,21 @@ typedef struct JoltBodyInterface JoltBodyInterface;
 ///   Direct: (non-virtual)
 ///     `JoltBoxShape`
 ///     `JoltCapsuleShape`
+///     `JoltConvexHullShape`
 ///     `JoltCylinderShape`
+///     `JoltEmptyShape`
+///     `JoltHeightFieldShape`
+///     `JoltMeshShape`
+///     `JoltMutableCompoundShape`
+///     `JoltOffsetCenterOfMassShape`
+///     `JoltPlaneShape`
 ///     `JoltRotatedTranslatedShape`
+///     `JoltScaledShape`
 ///     `JoltSphereShape`
+///     `JoltStaticCompoundShape`
+///     `JoltTaperedCapsuleShape`
+///     `JoltTaperedCylinderShape`
+///     `JoltTriangleShape`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JoltShape JoltShape;
 
@@ -134,6 +146,111 @@ typedef struct JoltCylinderShape JoltCylinderShape;
 ///     `JoltShape`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JoltRotatedTranslatedShape JoltRotatedTranslatedShape;
+
+/// Capsule with different radii at each end.
+/// Generated from class `JoltTaperedCapsuleShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltTaperedCapsuleShape JoltTaperedCapsuleShape;
+
+/// Cylinder with different radii at each end.
+/// Generated from class `JoltTaperedCylinderShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltTaperedCylinderShape JoltTaperedCylinderShape;
+
+/// Single triangle shape. Useful for debugging and simple static colliders.
+/// Generated from class `JoltTriangleShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltTriangleShape JoltTriangleShape;
+
+/// Infinite half-space plane. The plane is defined by a normal (nx, ny, nz) and a signed
+/// distance constant d, giving the equation: dot(n, p) + d = 0.
+/// halfExtent controls the broad-phase AABB size (default 1000).
+/// Generated from class `JoltPlaneShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltPlaneShape JoltPlaneShape;
+
+/// Zero-volume placeholder shape. comX/Y/Z places the center of mass.
+/// Generated from class `JoltEmptyShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltEmptyShape JoltEmptyShape;
+
+/// Scales a child shape non-uniformly along each axis.
+/// Generated from class `JoltScaledShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltScaledShape JoltScaledShape;
+
+/// Shifts the center-of-mass of a child shape.
+/// Generated from class `JoltOffsetCenterOfMassShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltOffsetCenterOfMassShape JoltOffsetCenterOfMassShape;
+
+/// Static (immutable after finalization) compound of multiple child shapes.
+/// Call AddSubShape() to build, then Finalize() before using as a shape.
+/// Generated from class `JoltStaticCompoundShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltStaticCompoundShape JoltStaticCompoundShape;
+
+/// Mutable compound shape — sub-shapes can be modified after finalization.
+/// Call AddSubShape() + Finalize() to build, then use Append/Remove/Modify
+/// for runtime changes.
+/// Generated from class `JoltMutableCompoundShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltMutableCompoundShape JoltMutableCompoundShape;
+
+/// Triangle-mesh shape (static terrain/level geometry).
+/// Call AddVertex() + AddFace() to build, then Finalize().
+/// Generated from class `JoltMeshShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltMeshShape JoltMeshShape;
+
+/// Convex hull shape built from a point cloud.
+/// Call AddPoint() for each input point, then Finalize(convexRadius).
+/// Generated from class `JoltConvexHullShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltConvexHullShape JoltConvexHullShape;
+
+/// Height-field terrain shape (uniform sampleCount × sampleCount grid).
+/// Call SetSample() to fill height values, then Finalize().
+/// Position of sample (x,y) = offset + scale * (x, height, y).
+/// Generated from class `JoltHeightFieldShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JoltShape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltHeightFieldShape JoltHeightFieldShape;
 
 /// Parameters used when adding a body to the physics system.
 /// Generated from class `JoltBodyCreationSettings`.
@@ -2713,6 +2830,1165 @@ JOLT_API bool JoltRotatedTranslatedShape_IsValid(const JoltRotatedTranslatedShap
 /// Generated from method `JoltRotatedTranslatedShape::getHandle`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void *JoltRotatedTranslatedShape_getHandle(const JoltRotatedTranslatedShape *_this);
+
+/// Generated from constructor `JoltTaperedCapsuleShape::JoltTaperedCapsuleShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltTaperedCapsuleShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltTaperedCapsuleShape *_other);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_OffsetPtr(const JoltTaperedCapsuleShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_OffsetMutablePtr(JoltTaperedCapsuleShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltTaperedCapsuleShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltTaperedCapsuleShape_UpcastTo_JoltShape(const JoltTaperedCapsuleShape *object);
+
+/// Upcasts an instance of `JoltTaperedCapsuleShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltTaperedCapsuleShape_MutableUpcastTo_JoltShape(JoltTaperedCapsuleShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCapsuleShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCapsuleShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCapsuleShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCapsuleShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCapsuleShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCapsuleShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltTaperedCapsuleShape::JoltTaperedCapsuleShape`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltTaperedCapsuleShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_Construct(float halfHeight, float topRadius, float bottomRadius);
+
+/// Destroys a heap-allocated instance of `JoltTaperedCapsuleShape`. Does nothing if the pointer is null.
+JOLT_API void JoltTaperedCapsuleShape_Destroy(const JoltTaperedCapsuleShape *_this);
+
+/// Destroys a heap-allocated array of `JoltTaperedCapsuleShape`. Does nothing if the pointer is null.
+JOLT_API void JoltTaperedCapsuleShape_DestroyArray(const JoltTaperedCapsuleShape *_this);
+
+/// Generated from method `JoltTaperedCapsuleShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_AssignFromAnother(JoltTaperedCapsuleShape *_this, Jolt_PassBy _other_pass_by, JoltTaperedCapsuleShape *_other);
+
+/// Generated from method `JoltTaperedCapsuleShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltTaperedCapsuleShape_Release(JoltTaperedCapsuleShape *_this);
+
+/// Generated from method `JoltTaperedCapsuleShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltTaperedCapsuleShape_IsValid(const JoltTaperedCapsuleShape *_this);
+
+/// Generated from method `JoltTaperedCapsuleShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltTaperedCapsuleShape_getHandle(const JoltTaperedCapsuleShape *_this);
+
+/// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltTaperedCylinderShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltTaperedCylinderShape *JoltTaperedCylinderShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltTaperedCylinderShape *_other);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltTaperedCylinderShape *JoltTaperedCylinderShape_OffsetPtr(const JoltTaperedCylinderShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltTaperedCylinderShape *JoltTaperedCylinderShape_OffsetMutablePtr(JoltTaperedCylinderShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltTaperedCylinderShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltTaperedCylinderShape_UpcastTo_JoltShape(const JoltTaperedCylinderShape *object);
+
+/// Upcasts an instance of `JoltTaperedCylinderShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltTaperedCylinderShape_MutableUpcastTo_JoltShape(JoltTaperedCylinderShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCylinderShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltTaperedCylinderShape *JoltTaperedCylinderShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCylinderShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltTaperedCylinderShape *JoltTaperedCylinderShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCylinderShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltTaperedCylinderShape *JoltTaperedCylinderShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCylinderShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltTaperedCylinderShape *JoltTaperedCylinderShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCylinderShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltTaperedCylinderShape *JoltTaperedCylinderShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTaperedCylinderShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltTaperedCylinderShape *JoltTaperedCylinderShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltTaperedCylinderShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltTaperedCylinderShape *JoltTaperedCylinderShape_Construct_4(float halfHeight, float topRadius, float bottomRadius, float convexRadius);
+
+/// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltTaperedCylinderShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltTaperedCylinderShape *JoltTaperedCylinderShape_Construct_3(float halfHeight, float topRadius, float bottomRadius);
+
+/// Destroys a heap-allocated instance of `JoltTaperedCylinderShape`. Does nothing if the pointer is null.
+JOLT_API void JoltTaperedCylinderShape_Destroy(const JoltTaperedCylinderShape *_this);
+
+/// Destroys a heap-allocated array of `JoltTaperedCylinderShape`. Does nothing if the pointer is null.
+JOLT_API void JoltTaperedCylinderShape_DestroyArray(const JoltTaperedCylinderShape *_this);
+
+/// Generated from method `JoltTaperedCylinderShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltTaperedCylinderShape *JoltTaperedCylinderShape_AssignFromAnother(JoltTaperedCylinderShape *_this, Jolt_PassBy _other_pass_by, JoltTaperedCylinderShape *_other);
+
+/// Generated from method `JoltTaperedCylinderShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltTaperedCylinderShape_Release(JoltTaperedCylinderShape *_this);
+
+/// Generated from method `JoltTaperedCylinderShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltTaperedCylinderShape_IsValid(const JoltTaperedCylinderShape *_this);
+
+/// Generated from method `JoltTaperedCylinderShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltTaperedCylinderShape_getHandle(const JoltTaperedCylinderShape *_this);
+
+/// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltTriangleShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltTriangleShape *JoltTriangleShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltTriangleShape *_other);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltTriangleShape *JoltTriangleShape_OffsetPtr(const JoltTriangleShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltTriangleShape *JoltTriangleShape_OffsetMutablePtr(JoltTriangleShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltTriangleShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltTriangleShape_UpcastTo_JoltShape(const JoltTriangleShape *object);
+
+/// Upcasts an instance of `JoltTriangleShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltTriangleShape_MutableUpcastTo_JoltShape(JoltTriangleShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTriangleShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltTriangleShape *JoltTriangleShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTriangleShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltTriangleShape *JoltTriangleShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTriangleShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltTriangleShape *JoltTriangleShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTriangleShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltTriangleShape *JoltTriangleShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTriangleShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltTriangleShape *JoltTriangleShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltTriangleShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltTriangleShape *JoltTriangleShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltTriangleShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltTriangleShape *JoltTriangleShape_Construct_9(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z);
+
+/// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltTriangleShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltTriangleShape *JoltTriangleShape_Construct_10(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z, float convexRadius);
+
+/// Destroys a heap-allocated instance of `JoltTriangleShape`. Does nothing if the pointer is null.
+JOLT_API void JoltTriangleShape_Destroy(const JoltTriangleShape *_this);
+
+/// Destroys a heap-allocated array of `JoltTriangleShape`. Does nothing if the pointer is null.
+JOLT_API void JoltTriangleShape_DestroyArray(const JoltTriangleShape *_this);
+
+/// Generated from method `JoltTriangleShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltTriangleShape *JoltTriangleShape_AssignFromAnother(JoltTriangleShape *_this, Jolt_PassBy _other_pass_by, JoltTriangleShape *_other);
+
+/// Generated from method `JoltTriangleShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltTriangleShape_Release(JoltTriangleShape *_this);
+
+/// Generated from method `JoltTriangleShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltTriangleShape_IsValid(const JoltTriangleShape *_this);
+
+/// Generated from method `JoltTriangleShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltTriangleShape_getHandle(const JoltTriangleShape *_this);
+
+/// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltPlaneShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltPlaneShape *JoltPlaneShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltPlaneShape *_other);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltPlaneShape *JoltPlaneShape_OffsetPtr(const JoltPlaneShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltPlaneShape *JoltPlaneShape_OffsetMutablePtr(JoltPlaneShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltPlaneShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltPlaneShape_UpcastTo_JoltShape(const JoltPlaneShape *object);
+
+/// Upcasts an instance of `JoltPlaneShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltPlaneShape_MutableUpcastTo_JoltShape(JoltPlaneShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltPlaneShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltPlaneShape *JoltPlaneShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltPlaneShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltPlaneShape *JoltPlaneShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltPlaneShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltPlaneShape *JoltPlaneShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltPlaneShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltPlaneShape *JoltPlaneShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltPlaneShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltPlaneShape *JoltPlaneShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltPlaneShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltPlaneShape *JoltPlaneShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltPlaneShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltPlaneShape *JoltPlaneShape_Construct_5(float nx, float ny, float nz, float d, float halfExtent);
+
+/// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltPlaneShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltPlaneShape *JoltPlaneShape_Construct_4(float nx, float ny, float nz, float d);
+
+/// Destroys a heap-allocated instance of `JoltPlaneShape`. Does nothing if the pointer is null.
+JOLT_API void JoltPlaneShape_Destroy(const JoltPlaneShape *_this);
+
+/// Destroys a heap-allocated array of `JoltPlaneShape`. Does nothing if the pointer is null.
+JOLT_API void JoltPlaneShape_DestroyArray(const JoltPlaneShape *_this);
+
+/// Generated from method `JoltPlaneShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltPlaneShape *JoltPlaneShape_AssignFromAnother(JoltPlaneShape *_this, Jolt_PassBy _other_pass_by, JoltPlaneShape *_other);
+
+/// Generated from method `JoltPlaneShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltPlaneShape_Release(JoltPlaneShape *_this);
+
+/// Generated from method `JoltPlaneShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltPlaneShape_IsValid(const JoltPlaneShape *_this);
+
+/// Generated from method `JoltPlaneShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltPlaneShape_getHandle(const JoltPlaneShape *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltEmptyShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltEmptyShape *JoltEmptyShape_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltEmptyShape_DestroyArray()`.
+/// Use `JoltEmptyShape_OffsetMutablePtr()` and `JoltEmptyShape_OffsetPtr()` to access the array elements.
+JOLT_API JoltEmptyShape *JoltEmptyShape_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltEmptyShape *JoltEmptyShape_OffsetPtr(const JoltEmptyShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltEmptyShape *JoltEmptyShape_OffsetMutablePtr(JoltEmptyShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltEmptyShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltEmptyShape_UpcastTo_JoltShape(const JoltEmptyShape *object);
+
+/// Upcasts an instance of `JoltEmptyShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltEmptyShape_MutableUpcastTo_JoltShape(JoltEmptyShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltEmptyShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltEmptyShape *JoltEmptyShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltEmptyShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltEmptyShape *JoltEmptyShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltEmptyShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltEmptyShape *JoltEmptyShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltEmptyShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltEmptyShape *JoltEmptyShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltEmptyShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltEmptyShape *JoltEmptyShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltEmptyShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltEmptyShape *JoltEmptyShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltEmptyShape::JoltEmptyShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltEmptyShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltEmptyShape *JoltEmptyShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltEmptyShape *_other);
+
+/// Generated from constructor `JoltEmptyShape::JoltEmptyShape`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltEmptyShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltEmptyShape *JoltEmptyShape_Construct(float comX, float comY, float comZ);
+
+/// Destroys a heap-allocated instance of `JoltEmptyShape`. Does nothing if the pointer is null.
+JOLT_API void JoltEmptyShape_Destroy(const JoltEmptyShape *_this);
+
+/// Destroys a heap-allocated array of `JoltEmptyShape`. Does nothing if the pointer is null.
+JOLT_API void JoltEmptyShape_DestroyArray(const JoltEmptyShape *_this);
+
+/// Generated from method `JoltEmptyShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltEmptyShape *JoltEmptyShape_AssignFromAnother(JoltEmptyShape *_this, Jolt_PassBy _other_pass_by, JoltEmptyShape *_other);
+
+/// Generated from method `JoltEmptyShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltEmptyShape_Release(JoltEmptyShape *_this);
+
+/// Generated from method `JoltEmptyShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltEmptyShape_IsValid(const JoltEmptyShape *_this);
+
+/// Generated from method `JoltEmptyShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltEmptyShape_getHandle(const JoltEmptyShape *_this);
+
+/// Generated from constructor `JoltScaledShape::JoltScaledShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltScaledShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltScaledShape *JoltScaledShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltScaledShape *_other);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltScaledShape *JoltScaledShape_OffsetPtr(const JoltScaledShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltScaledShape *JoltScaledShape_OffsetMutablePtr(JoltScaledShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltScaledShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltScaledShape_UpcastTo_JoltShape(const JoltScaledShape *object);
+
+/// Upcasts an instance of `JoltScaledShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltScaledShape_MutableUpcastTo_JoltShape(JoltScaledShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltScaledShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltScaledShape *JoltScaledShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltScaledShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltScaledShape *JoltScaledShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltScaledShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltScaledShape *JoltScaledShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltScaledShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltScaledShape *JoltScaledShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltScaledShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltScaledShape *JoltScaledShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltScaledShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltScaledShape *JoltScaledShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltScaledShape::JoltScaledShape`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltScaledShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltScaledShape *JoltScaledShape_Construct(JoltShape *inner, float sx, float sy, float sz);
+
+/// Destroys a heap-allocated instance of `JoltScaledShape`. Does nothing if the pointer is null.
+JOLT_API void JoltScaledShape_Destroy(const JoltScaledShape *_this);
+
+/// Destroys a heap-allocated array of `JoltScaledShape`. Does nothing if the pointer is null.
+JOLT_API void JoltScaledShape_DestroyArray(const JoltScaledShape *_this);
+
+/// Generated from method `JoltScaledShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltScaledShape *JoltScaledShape_AssignFromAnother(JoltScaledShape *_this, Jolt_PassBy _other_pass_by, JoltScaledShape *_other);
+
+/// Generated from method `JoltScaledShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltScaledShape_Release(JoltScaledShape *_this);
+
+/// Generated from method `JoltScaledShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltScaledShape_IsValid(const JoltScaledShape *_this);
+
+/// Generated from method `JoltScaledShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltScaledShape_getHandle(const JoltScaledShape *_this);
+
+/// Generated from constructor `JoltOffsetCenterOfMassShape::JoltOffsetCenterOfMassShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltOffsetCenterOfMassShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltOffsetCenterOfMassShape *_other);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_OffsetPtr(const JoltOffsetCenterOfMassShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_OffsetMutablePtr(JoltOffsetCenterOfMassShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltOffsetCenterOfMassShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltOffsetCenterOfMassShape_UpcastTo_JoltShape(const JoltOffsetCenterOfMassShape *object);
+
+/// Upcasts an instance of `JoltOffsetCenterOfMassShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltOffsetCenterOfMassShape_MutableUpcastTo_JoltShape(JoltOffsetCenterOfMassShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltOffsetCenterOfMassShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltOffsetCenterOfMassShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltOffsetCenterOfMassShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltOffsetCenterOfMassShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltOffsetCenterOfMassShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltOffsetCenterOfMassShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltOffsetCenterOfMassShape::JoltOffsetCenterOfMassShape`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltOffsetCenterOfMassShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_Construct(JoltShape *inner, float offsetX, float offsetY, float offsetZ);
+
+/// Destroys a heap-allocated instance of `JoltOffsetCenterOfMassShape`. Does nothing if the pointer is null.
+JOLT_API void JoltOffsetCenterOfMassShape_Destroy(const JoltOffsetCenterOfMassShape *_this);
+
+/// Destroys a heap-allocated array of `JoltOffsetCenterOfMassShape`. Does nothing if the pointer is null.
+JOLT_API void JoltOffsetCenterOfMassShape_DestroyArray(const JoltOffsetCenterOfMassShape *_this);
+
+/// Generated from method `JoltOffsetCenterOfMassShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_AssignFromAnother(JoltOffsetCenterOfMassShape *_this, Jolt_PassBy _other_pass_by, JoltOffsetCenterOfMassShape *_other);
+
+/// Generated from method `JoltOffsetCenterOfMassShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltOffsetCenterOfMassShape_Release(JoltOffsetCenterOfMassShape *_this);
+
+/// Generated from method `JoltOffsetCenterOfMassShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltOffsetCenterOfMassShape_IsValid(const JoltOffsetCenterOfMassShape *_this);
+
+/// Generated from method `JoltOffsetCenterOfMassShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltOffsetCenterOfMassShape_getHandle(const JoltOffsetCenterOfMassShape *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltStaticCompoundShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltStaticCompoundShape *JoltStaticCompoundShape_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltStaticCompoundShape_DestroyArray()`.
+/// Use `JoltStaticCompoundShape_OffsetMutablePtr()` and `JoltStaticCompoundShape_OffsetPtr()` to access the array elements.
+JOLT_API JoltStaticCompoundShape *JoltStaticCompoundShape_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltStaticCompoundShape *JoltStaticCompoundShape_OffsetPtr(const JoltStaticCompoundShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltStaticCompoundShape *JoltStaticCompoundShape_OffsetMutablePtr(JoltStaticCompoundShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltStaticCompoundShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltStaticCompoundShape_UpcastTo_JoltShape(const JoltStaticCompoundShape *object);
+
+/// Upcasts an instance of `JoltStaticCompoundShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltStaticCompoundShape_MutableUpcastTo_JoltShape(JoltStaticCompoundShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltStaticCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltStaticCompoundShape *JoltStaticCompoundShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltStaticCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltStaticCompoundShape *JoltStaticCompoundShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltStaticCompoundShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltStaticCompoundShape *JoltStaticCompoundShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltStaticCompoundShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltStaticCompoundShape *JoltStaticCompoundShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltStaticCompoundShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltStaticCompoundShape *JoltStaticCompoundShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltStaticCompoundShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltStaticCompoundShape *JoltStaticCompoundShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltStaticCompoundShape::JoltStaticCompoundShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltStaticCompoundShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltStaticCompoundShape *JoltStaticCompoundShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltStaticCompoundShape *_other);
+
+/// Destroys a heap-allocated instance of `JoltStaticCompoundShape`. Does nothing if the pointer is null.
+JOLT_API void JoltStaticCompoundShape_Destroy(const JoltStaticCompoundShape *_this);
+
+/// Destroys a heap-allocated array of `JoltStaticCompoundShape`. Does nothing if the pointer is null.
+JOLT_API void JoltStaticCompoundShape_DestroyArray(const JoltStaticCompoundShape *_this);
+
+/// Generated from method `JoltStaticCompoundShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltStaticCompoundShape *JoltStaticCompoundShape_AssignFromAnother(JoltStaticCompoundShape *_this, Jolt_PassBy _other_pass_by, JoltStaticCompoundShape *_other);
+
+/// Generated from method `JoltStaticCompoundShape::AddSubShape`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltStaticCompoundShape_AddSubShape(JoltStaticCompoundShape *_this, JoltShape *shape, double px, double py, double pz, float qx, float qy, float qz, float qw);
+
+/// Generated from method `JoltStaticCompoundShape::Finalize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltStaticCompoundShape_Finalize(JoltStaticCompoundShape *_this);
+
+/// Generated from method `JoltStaticCompoundShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltStaticCompoundShape_Release(JoltStaticCompoundShape *_this);
+
+/// Generated from method `JoltStaticCompoundShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltStaticCompoundShape_IsValid(const JoltStaticCompoundShape *_this);
+
+/// Generated from method `JoltStaticCompoundShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltStaticCompoundShape_getHandle(const JoltStaticCompoundShape *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltMutableCompoundShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltMutableCompoundShape *JoltMutableCompoundShape_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltMutableCompoundShape_DestroyArray()`.
+/// Use `JoltMutableCompoundShape_OffsetMutablePtr()` and `JoltMutableCompoundShape_OffsetPtr()` to access the array elements.
+JOLT_API JoltMutableCompoundShape *JoltMutableCompoundShape_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltMutableCompoundShape *JoltMutableCompoundShape_OffsetPtr(const JoltMutableCompoundShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltMutableCompoundShape *JoltMutableCompoundShape_OffsetMutablePtr(JoltMutableCompoundShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltMutableCompoundShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltMutableCompoundShape_UpcastTo_JoltShape(const JoltMutableCompoundShape *object);
+
+/// Upcasts an instance of `JoltMutableCompoundShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltMutableCompoundShape_MutableUpcastTo_JoltShape(JoltMutableCompoundShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMutableCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltMutableCompoundShape *JoltMutableCompoundShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMutableCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltMutableCompoundShape *JoltMutableCompoundShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMutableCompoundShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltMutableCompoundShape *JoltMutableCompoundShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMutableCompoundShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltMutableCompoundShape *JoltMutableCompoundShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMutableCompoundShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltMutableCompoundShape *JoltMutableCompoundShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMutableCompoundShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltMutableCompoundShape *JoltMutableCompoundShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltMutableCompoundShape::JoltMutableCompoundShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltMutableCompoundShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltMutableCompoundShape *JoltMutableCompoundShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltMutableCompoundShape *_other);
+
+/// Destroys a heap-allocated instance of `JoltMutableCompoundShape`. Does nothing if the pointer is null.
+JOLT_API void JoltMutableCompoundShape_Destroy(const JoltMutableCompoundShape *_this);
+
+/// Destroys a heap-allocated array of `JoltMutableCompoundShape`. Does nothing if the pointer is null.
+JOLT_API void JoltMutableCompoundShape_DestroyArray(const JoltMutableCompoundShape *_this);
+
+/// Generated from method `JoltMutableCompoundShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltMutableCompoundShape *JoltMutableCompoundShape_AssignFromAnother(JoltMutableCompoundShape *_this, Jolt_PassBy _other_pass_by, JoltMutableCompoundShape *_other);
+
+/// Add a sub-shape during the build phase (before Finalize).
+/// Generated from method `JoltMutableCompoundShape::AddSubShape`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltMutableCompoundShape_AddSubShape(JoltMutableCompoundShape *_this, JoltShape *shape, double px, double py, double pz, float qx, float qy, float qz, float qw);
+
+/// Generated from method `JoltMutableCompoundShape::Finalize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltMutableCompoundShape_Finalize(JoltMutableCompoundShape *_this);
+
+/// Append a sub-shape at runtime (after Finalize). Returns the sub-shape index.
+/// Generated from method `JoltMutableCompoundShape::AppendSubShape`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JoltMutableCompoundShape_AppendSubShape(JoltMutableCompoundShape *_this, JoltShape *shape, double px, double py, double pz, float qx, float qy, float qz, float qw);
+
+/// Generated from method `JoltMutableCompoundShape::RemoveSubShape`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltMutableCompoundShape_RemoveSubShape(JoltMutableCompoundShape *_this, unsigned int index);
+
+/// Generated from method `JoltMutableCompoundShape::ModifySubShape`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltMutableCompoundShape_ModifySubShape(JoltMutableCompoundShape *_this, unsigned int index, double px, double py, double pz, float qx, float qy, float qz, float qw);
+
+/// Generated from method `JoltMutableCompoundShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltMutableCompoundShape_Release(JoltMutableCompoundShape *_this);
+
+/// Generated from method `JoltMutableCompoundShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltMutableCompoundShape_IsValid(const JoltMutableCompoundShape *_this);
+
+/// Generated from method `JoltMutableCompoundShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltMutableCompoundShape_getHandle(const JoltMutableCompoundShape *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltMeshShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltMeshShape *JoltMeshShape_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltMeshShape_DestroyArray()`.
+/// Use `JoltMeshShape_OffsetMutablePtr()` and `JoltMeshShape_OffsetPtr()` to access the array elements.
+JOLT_API JoltMeshShape *JoltMeshShape_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltMeshShape *JoltMeshShape_OffsetPtr(const JoltMeshShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltMeshShape *JoltMeshShape_OffsetMutablePtr(JoltMeshShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltMeshShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltMeshShape_UpcastTo_JoltShape(const JoltMeshShape *object);
+
+/// Upcasts an instance of `JoltMeshShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltMeshShape_MutableUpcastTo_JoltShape(JoltMeshShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMeshShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltMeshShape *JoltMeshShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMeshShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltMeshShape *JoltMeshShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMeshShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltMeshShape *JoltMeshShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMeshShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltMeshShape *JoltMeshShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMeshShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltMeshShape *JoltMeshShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltMeshShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltMeshShape *JoltMeshShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltMeshShape::JoltMeshShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltMeshShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltMeshShape *JoltMeshShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltMeshShape *_other);
+
+/// Destroys a heap-allocated instance of `JoltMeshShape`. Does nothing if the pointer is null.
+JOLT_API void JoltMeshShape_Destroy(const JoltMeshShape *_this);
+
+/// Destroys a heap-allocated array of `JoltMeshShape`. Does nothing if the pointer is null.
+JOLT_API void JoltMeshShape_DestroyArray(const JoltMeshShape *_this);
+
+/// Generated from method `JoltMeshShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltMeshShape *JoltMeshShape_AssignFromAnother(JoltMeshShape *_this, Jolt_PassBy _other_pass_by, JoltMeshShape *_other);
+
+/// Generated from method `JoltMeshShape::AddVertex`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltMeshShape_AddVertex(JoltMeshShape *_this, float x, float y, float z);
+
+/// Generated from method `JoltMeshShape::AddFace`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltMeshShape_AddFace(JoltMeshShape *_this, unsigned int v0, unsigned int v1, unsigned int v2);
+
+/// Generated from method `JoltMeshShape::Finalize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltMeshShape_Finalize(JoltMeshShape *_this);
+
+/// Generated from method `JoltMeshShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltMeshShape_Release(JoltMeshShape *_this);
+
+/// Generated from method `JoltMeshShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltMeshShape_IsValid(const JoltMeshShape *_this);
+
+/// Generated from method `JoltMeshShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltMeshShape_getHandle(const JoltMeshShape *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltConvexHullShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltConvexHullShape *JoltConvexHullShape_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltConvexHullShape_DestroyArray()`.
+/// Use `JoltConvexHullShape_OffsetMutablePtr()` and `JoltConvexHullShape_OffsetPtr()` to access the array elements.
+JOLT_API JoltConvexHullShape *JoltConvexHullShape_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltConvexHullShape *JoltConvexHullShape_OffsetPtr(const JoltConvexHullShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltConvexHullShape *JoltConvexHullShape_OffsetMutablePtr(JoltConvexHullShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltConvexHullShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltConvexHullShape_UpcastTo_JoltShape(const JoltConvexHullShape *object);
+
+/// Upcasts an instance of `JoltConvexHullShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltConvexHullShape_MutableUpcastTo_JoltShape(JoltConvexHullShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltConvexHullShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltConvexHullShape *JoltConvexHullShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltConvexHullShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltConvexHullShape *JoltConvexHullShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltConvexHullShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltConvexHullShape *JoltConvexHullShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltConvexHullShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltConvexHullShape *JoltConvexHullShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltConvexHullShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltConvexHullShape *JoltConvexHullShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltConvexHullShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltConvexHullShape *JoltConvexHullShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltConvexHullShape::JoltConvexHullShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltConvexHullShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltConvexHullShape *JoltConvexHullShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltConvexHullShape *_other);
+
+/// Destroys a heap-allocated instance of `JoltConvexHullShape`. Does nothing if the pointer is null.
+JOLT_API void JoltConvexHullShape_Destroy(const JoltConvexHullShape *_this);
+
+/// Destroys a heap-allocated array of `JoltConvexHullShape`. Does nothing if the pointer is null.
+JOLT_API void JoltConvexHullShape_DestroyArray(const JoltConvexHullShape *_this);
+
+/// Generated from method `JoltConvexHullShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltConvexHullShape *JoltConvexHullShape_AssignFromAnother(JoltConvexHullShape *_this, Jolt_PassBy _other_pass_by, JoltConvexHullShape *_other);
+
+/// Generated from method `JoltConvexHullShape::AddPoint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltConvexHullShape_AddPoint(JoltConvexHullShape *_this, float x, float y, float z);
+
+/// Generated from method `JoltConvexHullShape::Finalize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltConvexHullShape_Finalize_1(JoltConvexHullShape *_this, float convexRadius);
+
+/// Generated from method `JoltConvexHullShape::Finalize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltConvexHullShape_Finalize_0(JoltConvexHullShape *_this);
+
+/// Generated from method `JoltConvexHullShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltConvexHullShape_Release(JoltConvexHullShape *_this);
+
+/// Generated from method `JoltConvexHullShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltConvexHullShape_IsValid(const JoltConvexHullShape *_this);
+
+/// Generated from method `JoltConvexHullShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltConvexHullShape_getHandle(const JoltConvexHullShape *_this);
+
+/// Generated from constructor `JoltHeightFieldShape::JoltHeightFieldShape`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltHeightFieldShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltHeightFieldShape *JoltHeightFieldShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltHeightFieldShape *_other);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltHeightFieldShape *JoltHeightFieldShape_OffsetPtr(const JoltHeightFieldShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltHeightFieldShape *JoltHeightFieldShape_OffsetMutablePtr(JoltHeightFieldShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JoltHeightFieldShape` to its base class `JoltShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltShape *JoltHeightFieldShape_UpcastTo_JoltShape(const JoltHeightFieldShape *object);
+
+/// Upcasts an instance of `JoltHeightFieldShape` to its base class `JoltShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltShape *JoltHeightFieldShape_MutableUpcastTo_JoltShape(JoltHeightFieldShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltHeightFieldShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltHeightFieldShape *JoltHeightFieldShape_StaticDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltHeightFieldShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltHeightFieldShape *JoltHeightFieldShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltHeightFieldShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JoltHeightFieldShape *JoltHeightFieldShape_DynamicDowncastFrom_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltHeightFieldShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will return zero if the target type is wrong.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JoltHeightFieldShape *JoltHeightFieldShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltHeightFieldShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// This version is acting on mutable pointers.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JoltHeightFieldShape *JoltHeightFieldShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object);
+
+/// Downcasts an instance of `JoltShape` to a derived class `JoltHeightFieldShape`.
+/// This is a dynamic downcast, it checks the type before casting. This version will throw if the target type is wrong.
+/// Parameter `object` can not be null. It is a single object.
+/// The reference to the parameter `object` might be preserved in the return value.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JoltHeightFieldShape *JoltHeightFieldShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object);
+
+/// Generated from constructor `JoltHeightFieldShape::JoltHeightFieldShape`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltHeightFieldShape_Destroy()` to free it when you're done using it.
+JOLT_API JoltHeightFieldShape *JoltHeightFieldShape_Construct(unsigned int sampleCount, float offsetX, float offsetY, float offsetZ, float scaleX, float scaleY, float scaleZ);
+
+/// Destroys a heap-allocated instance of `JoltHeightFieldShape`. Does nothing if the pointer is null.
+JOLT_API void JoltHeightFieldShape_Destroy(const JoltHeightFieldShape *_this);
+
+/// Destroys a heap-allocated array of `JoltHeightFieldShape`. Does nothing if the pointer is null.
+JOLT_API void JoltHeightFieldShape_DestroyArray(const JoltHeightFieldShape *_this);
+
+/// Generated from method `JoltHeightFieldShape::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltHeightFieldShape *JoltHeightFieldShape_AssignFromAnother(JoltHeightFieldShape *_this, Jolt_PassBy _other_pass_by, JoltHeightFieldShape *_other);
+
+/// Generated from method `JoltHeightFieldShape::SetSample`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltHeightFieldShape_SetSample(JoltHeightFieldShape *_this, unsigned int x, unsigned int y, float height);
+
+/// Generated from method `JoltHeightFieldShape::Finalize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltHeightFieldShape_Finalize(JoltHeightFieldShape *_this);
+
+/// Generated from method `JoltHeightFieldShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltHeightFieldShape_Release(JoltHeightFieldShape *_this);
+
+/// Generated from method `JoltHeightFieldShape::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltHeightFieldShape_IsValid(const JoltHeightFieldShape *_this);
+
+/// Generated from method `JoltHeightFieldShape::getHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltHeightFieldShape_getHandle(const JoltHeightFieldShape *_this);
 
 /// Returns a pointer to a member variable of class `JoltBodyCreationSettings` named `mHandle`.
 /// Parameter `_this` can not be null. It is a single object.

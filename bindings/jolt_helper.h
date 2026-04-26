@@ -463,6 +463,140 @@ public:
                                 float qx, float qy, float qz, float qw);
 };
 
+/// Capsule with different radii at each end.
+struct JoltTaperedCapsuleShape : public JoltShape {
+public:
+    JoltTaperedCapsuleShape(float halfHeight, float topRadius, float bottomRadius);
+};
+
+/// Cylinder with different radii at each end.
+struct JoltTaperedCylinderShape : public JoltShape {
+public:
+    JoltTaperedCylinderShape(float halfHeight, float topRadius, float bottomRadius,
+                              float convexRadius);
+    JoltTaperedCylinderShape(float halfHeight, float topRadius, float bottomRadius);
+};
+
+/// Single triangle shape. Useful for debugging and simple static colliders.
+struct JoltTriangleShape : public JoltShape {
+public:
+    JoltTriangleShape(float v1x, float v1y, float v1z,
+                      float v2x, float v2y, float v2z,
+                      float v3x, float v3y, float v3z);
+    JoltTriangleShape(float v1x, float v1y, float v1z,
+                      float v2x, float v2y, float v2z,
+                      float v3x, float v3y, float v3z,
+                      float convexRadius);
+};
+
+/// Infinite half-space plane. The plane is defined by a normal (nx, ny, nz) and a signed
+/// distance constant d, giving the equation: dot(n, p) + d = 0.
+/// halfExtent controls the broad-phase AABB size (default 1000).
+struct JoltPlaneShape : public JoltShape {
+public:
+    JoltPlaneShape(float nx, float ny, float nz, float d, float halfExtent);
+    JoltPlaneShape(float nx, float ny, float nz, float d);
+};
+
+/// Zero-volume placeholder shape. comX/Y/Z places the center of mass.
+struct JoltEmptyShape : public JoltShape {
+public:
+    JoltEmptyShape(float comX, float comY, float comZ);
+    JoltEmptyShape();
+};
+
+/// Scales a child shape non-uniformly along each axis.
+struct JoltScaledShape : public JoltShape {
+public:
+    JoltScaledShape(JoltShape* inner, float sx, float sy, float sz);
+};
+
+/// Shifts the center-of-mass of a child shape.
+struct JoltOffsetCenterOfMassShape : public JoltShape {
+public:
+    JoltOffsetCenterOfMassShape(JoltShape* inner,
+                                 float offsetX, float offsetY, float offsetZ);
+};
+
+/// Static (immutable after finalization) compound of multiple child shapes.
+/// Call AddSubShape() to build, then Finalize() before using as a shape.
+struct JoltStaticCompoundShape : public JoltShape {
+public:
+    JoltStaticCompoundShape();
+    ~JoltStaticCompoundShape();
+    void AddSubShape(JoltShape* shape,
+                     double px, double py, double pz,
+                     float qx, float qy, float qz, float qw);
+    void Finalize();
+private:
+    void* mSettings;
+};
+
+/// Mutable compound shape — sub-shapes can be modified after finalization.
+/// Call AddSubShape() + Finalize() to build, then use Append/Remove/Modify
+/// for runtime changes.
+struct JoltMutableCompoundShape : public JoltShape {
+public:
+    JoltMutableCompoundShape();
+    ~JoltMutableCompoundShape();
+    /// Add a sub-shape during the build phase (before Finalize).
+    void AddSubShape(JoltShape* shape,
+                     double px, double py, double pz,
+                     float qx, float qy, float qz, float qw);
+    void Finalize();
+    /// Append a sub-shape at runtime (after Finalize). Returns the sub-shape index.
+    unsigned int AppendSubShape(JoltShape* shape,
+                                double px, double py, double pz,
+                                float qx, float qy, float qz, float qw);
+    void RemoveSubShape(unsigned int index);
+    void ModifySubShape(unsigned int index,
+                        double px, double py, double pz,
+                        float qx, float qy, float qz, float qw);
+private:
+    void* mSettings;
+};
+
+/// Triangle-mesh shape (static terrain/level geometry).
+/// Call AddVertex() + AddFace() to build, then Finalize().
+struct JoltMeshShape : public JoltShape {
+public:
+    JoltMeshShape();
+    ~JoltMeshShape();
+    void AddVertex(float x, float y, float z);
+    void AddFace(unsigned int v0, unsigned int v1, unsigned int v2);
+    void Finalize();
+private:
+    void* mSettings;
+};
+
+/// Convex hull shape built from a point cloud.
+/// Call AddPoint() for each input point, then Finalize(convexRadius).
+struct JoltConvexHullShape : public JoltShape {
+public:
+    JoltConvexHullShape();
+    ~JoltConvexHullShape();
+    void AddPoint(float x, float y, float z);
+    void Finalize(float convexRadius);
+    void Finalize();  ///< uses default convex radius (0.05)
+private:
+    void* mSettings;
+};
+
+/// Height-field terrain shape (uniform sampleCount × sampleCount grid).
+/// Call SetSample() to fill height values, then Finalize().
+/// Position of sample (x,y) = offset + scale * (x, height, y).
+struct JoltHeightFieldShape : public JoltShape {
+public:
+    JoltHeightFieldShape(unsigned int sampleCount,
+                         float offsetX, float offsetY, float offsetZ,
+                         float scaleX, float scaleY, float scaleZ);
+    ~JoltHeightFieldShape();
+    void SetSample(unsigned int x, unsigned int y, float height);
+    void Finalize();
+private:
+    void* mSettings;
+};
+
 // ---------------------------------------------------------------------------
 // Body creation settings
 // ---------------------------------------------------------------------------

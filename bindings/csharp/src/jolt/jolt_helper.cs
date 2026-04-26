@@ -4705,9 +4705,21 @@ public static partial class Jolt
     ///   Direct: (non-virtual)
     ///     `JoltBoxShape`
     ///     `JoltCapsuleShape`
+    ///     `JoltConvexHullShape`
     ///     `JoltCylinderShape`
+    ///     `JoltEmptyShape`
+    ///     `JoltHeightFieldShape`
+    ///     `JoltMeshShape`
+    ///     `JoltMutableCompoundShape`
+    ///     `JoltOffsetCenterOfMassShape`
+    ///     `JoltPlaneShape`
     ///     `JoltRotatedTranslatedShape`
+    ///     `JoltScaledShape`
     ///     `JoltSphereShape`
+    ///     `JoltStaticCompoundShape`
+    ///     `JoltTaperedCapsuleShape`
+    ///     `JoltTaperedCylinderShape`
+    ///     `JoltTriangleShape`
     /// This is the const half of the class.
     public class Const_JoltShape : Jolt.Object<Const_JoltShape>, System.IDisposable
     {
@@ -4785,9 +4797,21 @@ public static partial class Jolt
     ///   Direct: (non-virtual)
     ///     `JoltBoxShape`
     ///     `JoltCapsuleShape`
+    ///     `JoltConvexHullShape`
     ///     `JoltCylinderShape`
+    ///     `JoltEmptyShape`
+    ///     `JoltHeightFieldShape`
+    ///     `JoltMeshShape`
+    ///     `JoltMutableCompoundShape`
+    ///     `JoltOffsetCenterOfMassShape`
+    ///     `JoltPlaneShape`
     ///     `JoltRotatedTranslatedShape`
+    ///     `JoltScaledShape`
     ///     `JoltSphereShape`
+    ///     `JoltStaticCompoundShape`
+    ///     `JoltTaperedCapsuleShape`
+    ///     `JoltTaperedCylinderShape`
+    ///     `JoltTriangleShape`
     /// This is the non-const half of the class.
     public class JoltShape : Const_JoltShape
     {
@@ -6258,6 +6282,3448 @@ public static partial class Jolt
         public _InOptConst_JoltRotatedTranslatedShape() {}
         public _InOptConst_JoltRotatedTranslatedShape(Const_JoltRotatedTranslatedShape value) {Opt = value;}
         public static implicit operator _InOptConst_JoltRotatedTranslatedShape(Const_JoltRotatedTranslatedShape value) {return new(value);}
+    }
+
+    /// Capsule with different radii at each end.
+    /// Generated from class `JoltTaperedCapsuleShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltTaperedCapsuleShape : Jolt.Object<Const_JoltTaperedCapsuleShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltTaperedCapsuleShape_Destroy(_Underlying *_this);
+            __JoltTaperedCapsuleShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltTaperedCapsuleShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltTaperedCapsuleShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltTaperedCapsuleShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltTaperedCapsuleShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltTaperedCapsuleShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltTaperedCapsuleShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltTaperedCapsuleShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltTaperedCapsuleShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltTaperedCapsuleShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Generated from constructor `JoltTaperedCapsuleShape::JoltTaperedCapsuleShape`.
+        public unsafe Const_JoltTaperedCapsuleShape(Jolt._ByValue_JoltTaperedCapsuleShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCapsuleShape._Underlying *__JoltTaperedCapsuleShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltTaperedCapsuleShape._Underlying *_other);
+            _UnderlyingPtr = __JoltTaperedCapsuleShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltTaperedCapsuleShape::JoltTaperedCapsuleShape`.
+        public Const_JoltTaperedCapsuleShape(Const_JoltTaperedCapsuleShape _other) : this(new _ByValue_JoltTaperedCapsuleShape(_other)) {}
+
+        /// Generated from constructor `JoltTaperedCapsuleShape::JoltTaperedCapsuleShape`.
+        public Const_JoltTaperedCapsuleShape(JoltTaperedCapsuleShape _other) : this((Const_JoltTaperedCapsuleShape)_other) {}
+
+        /// Generated from constructor `JoltTaperedCapsuleShape::JoltTaperedCapsuleShape`.
+        public unsafe Const_JoltTaperedCapsuleShape(float halfHeight, float topRadius, float bottomRadius) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCapsuleShape._Underlying *__JoltTaperedCapsuleShape_Construct(float halfHeight, float topRadius, float bottomRadius);
+            _UnderlyingPtr = __JoltTaperedCapsuleShape_Construct(halfHeight, topRadius, bottomRadius);
+        }
+
+        /// Generated from method `JoltTaperedCapsuleShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltTaperedCapsuleShape_IsValid(_Underlying *_this);
+            return __JoltTaperedCapsuleShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltTaperedCapsuleShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltTaperedCapsuleShape_getHandle(_Underlying *_this);
+            return __JoltTaperedCapsuleShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Capsule with different radii at each end.
+    /// Generated from class `JoltTaperedCapsuleShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltTaperedCapsuleShape : Const_JoltTaperedCapsuleShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltTaperedCapsuleShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltTaperedCapsuleShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltTaperedCapsuleShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltTaperedCapsuleShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltTaperedCapsuleShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltTaperedCapsuleShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltTaperedCapsuleShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltTaperedCapsuleShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Generated from constructor `JoltTaperedCapsuleShape::JoltTaperedCapsuleShape`.
+        public unsafe JoltTaperedCapsuleShape(Jolt._ByValue_JoltTaperedCapsuleShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCapsuleShape._Underlying *__JoltTaperedCapsuleShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltTaperedCapsuleShape._Underlying *_other);
+            _UnderlyingPtr = __JoltTaperedCapsuleShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltTaperedCapsuleShape::JoltTaperedCapsuleShape`.
+        public JoltTaperedCapsuleShape(Const_JoltTaperedCapsuleShape _other) : this(new _ByValue_JoltTaperedCapsuleShape(_other)) {}
+
+        /// Generated from constructor `JoltTaperedCapsuleShape::JoltTaperedCapsuleShape`.
+        public JoltTaperedCapsuleShape(JoltTaperedCapsuleShape _other) : this((Const_JoltTaperedCapsuleShape)_other) {}
+
+        /// Generated from constructor `JoltTaperedCapsuleShape::JoltTaperedCapsuleShape`.
+        public unsafe JoltTaperedCapsuleShape(float halfHeight, float topRadius, float bottomRadius) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCapsuleShape._Underlying *__JoltTaperedCapsuleShape_Construct(float halfHeight, float topRadius, float bottomRadius);
+            _UnderlyingPtr = __JoltTaperedCapsuleShape_Construct(halfHeight, topRadius, bottomRadius);
+        }
+
+        /// Generated from method `JoltTaperedCapsuleShape::operator=`.
+        public unsafe Jolt.JoltTaperedCapsuleShape Assign(Jolt._ByValue_JoltTaperedCapsuleShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCapsuleShape._Underlying *__JoltTaperedCapsuleShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltTaperedCapsuleShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltTaperedCapsuleShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JoltTaperedCapsuleShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCapsuleShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCapsuleShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltTaperedCapsuleShape_Release(_Underlying *_this);
+            __JoltTaperedCapsuleShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltTaperedCapsuleShape` by value.
+    /// Usage:
+    /// * Pass an instance of `JoltTaperedCapsuleShape`/`Const_JoltTaperedCapsuleShape` to copy it into the function.
+    /// * Pass `Move(instance)` to move it into the function. This is a more efficient form of copying that might invalidate the input object.
+    ///   Be careful if your input isn't a unique reference to this object.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltTaperedCapsuleShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltTaperedCapsuleShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltTaperedCapsuleShape(Const_JoltTaperedCapsuleShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltTaperedCapsuleShape(Const_JoltTaperedCapsuleShape arg) {return new(arg);}
+        public _ByValue_JoltTaperedCapsuleShape(Jolt._Moved<JoltTaperedCapsuleShape> moved) {Value = moved.Value; PassByMode = Jolt._PassBy.move;}
+        public static implicit operator _ByValue_JoltTaperedCapsuleShape(Jolt._Moved<JoltTaperedCapsuleShape> arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltTaperedCapsuleShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltTaperedCapsuleShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltTaperedCapsuleShape`/`Const_JoltTaperedCapsuleShape` directly.
+    public class _InOptMut_JoltTaperedCapsuleShape
+    {
+        public JoltTaperedCapsuleShape? Opt;
+
+        public _InOptMut_JoltTaperedCapsuleShape() {}
+        public _InOptMut_JoltTaperedCapsuleShape(JoltTaperedCapsuleShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltTaperedCapsuleShape(JoltTaperedCapsuleShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltTaperedCapsuleShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltTaperedCapsuleShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltTaperedCapsuleShape`/`Const_JoltTaperedCapsuleShape` to pass it to the function.
+    public class _InOptConst_JoltTaperedCapsuleShape
+    {
+        public Const_JoltTaperedCapsuleShape? Opt;
+
+        public _InOptConst_JoltTaperedCapsuleShape() {}
+        public _InOptConst_JoltTaperedCapsuleShape(Const_JoltTaperedCapsuleShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltTaperedCapsuleShape(Const_JoltTaperedCapsuleShape value) {return new(value);}
+    }
+
+    /// Cylinder with different radii at each end.
+    /// Generated from class `JoltTaperedCylinderShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltTaperedCylinderShape : Jolt.Object<Const_JoltTaperedCylinderShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltTaperedCylinderShape_Destroy(_Underlying *_this);
+            __JoltTaperedCylinderShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltTaperedCylinderShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltTaperedCylinderShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltTaperedCylinderShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltTaperedCylinderShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltTaperedCylinderShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltTaperedCylinderShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltTaperedCylinderShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltTaperedCylinderShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltTaperedCylinderShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+        public unsafe Const_JoltTaperedCylinderShape(Jolt._ByValue_JoltTaperedCylinderShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCylinderShape._Underlying *__JoltTaperedCylinderShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltTaperedCylinderShape._Underlying *_other);
+            _UnderlyingPtr = __JoltTaperedCylinderShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+        public Const_JoltTaperedCylinderShape(Const_JoltTaperedCylinderShape _other) : this(new _ByValue_JoltTaperedCylinderShape(_other)) {}
+
+        /// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+        public Const_JoltTaperedCylinderShape(JoltTaperedCylinderShape _other) : this((Const_JoltTaperedCylinderShape)_other) {}
+
+        /// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+        public unsafe Const_JoltTaperedCylinderShape(float halfHeight, float topRadius, float bottomRadius, float convexRadius) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCylinderShape._Underlying *__JoltTaperedCylinderShape_Construct_4(float halfHeight, float topRadius, float bottomRadius, float convexRadius);
+            _UnderlyingPtr = __JoltTaperedCylinderShape_Construct_4(halfHeight, topRadius, bottomRadius, convexRadius);
+        }
+
+        /// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+        public unsafe Const_JoltTaperedCylinderShape(float halfHeight, float topRadius, float bottomRadius) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCylinderShape._Underlying *__JoltTaperedCylinderShape_Construct_3(float halfHeight, float topRadius, float bottomRadius);
+            _UnderlyingPtr = __JoltTaperedCylinderShape_Construct_3(halfHeight, topRadius, bottomRadius);
+        }
+
+        /// Generated from method `JoltTaperedCylinderShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltTaperedCylinderShape_IsValid(_Underlying *_this);
+            return __JoltTaperedCylinderShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltTaperedCylinderShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltTaperedCylinderShape_getHandle(_Underlying *_this);
+            return __JoltTaperedCylinderShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Cylinder with different radii at each end.
+    /// Generated from class `JoltTaperedCylinderShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltTaperedCylinderShape : Const_JoltTaperedCylinderShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltTaperedCylinderShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltTaperedCylinderShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltTaperedCylinderShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltTaperedCylinderShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltTaperedCylinderShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltTaperedCylinderShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltTaperedCylinderShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltTaperedCylinderShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+        public unsafe JoltTaperedCylinderShape(Jolt._ByValue_JoltTaperedCylinderShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCylinderShape._Underlying *__JoltTaperedCylinderShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltTaperedCylinderShape._Underlying *_other);
+            _UnderlyingPtr = __JoltTaperedCylinderShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+        public JoltTaperedCylinderShape(Const_JoltTaperedCylinderShape _other) : this(new _ByValue_JoltTaperedCylinderShape(_other)) {}
+
+        /// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+        public JoltTaperedCylinderShape(JoltTaperedCylinderShape _other) : this((Const_JoltTaperedCylinderShape)_other) {}
+
+        /// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+        public unsafe JoltTaperedCylinderShape(float halfHeight, float topRadius, float bottomRadius, float convexRadius) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCylinderShape._Underlying *__JoltTaperedCylinderShape_Construct_4(float halfHeight, float topRadius, float bottomRadius, float convexRadius);
+            _UnderlyingPtr = __JoltTaperedCylinderShape_Construct_4(halfHeight, topRadius, bottomRadius, convexRadius);
+        }
+
+        /// Generated from constructor `JoltTaperedCylinderShape::JoltTaperedCylinderShape`.
+        public unsafe JoltTaperedCylinderShape(float halfHeight, float topRadius, float bottomRadius) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCylinderShape._Underlying *__JoltTaperedCylinderShape_Construct_3(float halfHeight, float topRadius, float bottomRadius);
+            _UnderlyingPtr = __JoltTaperedCylinderShape_Construct_3(halfHeight, topRadius, bottomRadius);
+        }
+
+        /// Generated from method `JoltTaperedCylinderShape::operator=`.
+        public unsafe Jolt.JoltTaperedCylinderShape Assign(Jolt._ByValue_JoltTaperedCylinderShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTaperedCylinderShape._Underlying *__JoltTaperedCylinderShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltTaperedCylinderShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltTaperedCylinderShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JoltTaperedCylinderShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTaperedCylinderShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTaperedCylinderShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltTaperedCylinderShape_Release(_Underlying *_this);
+            __JoltTaperedCylinderShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltTaperedCylinderShape` by value.
+    /// Usage:
+    /// * Pass an instance of `JoltTaperedCylinderShape`/`Const_JoltTaperedCylinderShape` to copy it into the function.
+    /// * Pass `Move(instance)` to move it into the function. This is a more efficient form of copying that might invalidate the input object.
+    ///   Be careful if your input isn't a unique reference to this object.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltTaperedCylinderShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltTaperedCylinderShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltTaperedCylinderShape(Const_JoltTaperedCylinderShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltTaperedCylinderShape(Const_JoltTaperedCylinderShape arg) {return new(arg);}
+        public _ByValue_JoltTaperedCylinderShape(Jolt._Moved<JoltTaperedCylinderShape> moved) {Value = moved.Value; PassByMode = Jolt._PassBy.move;}
+        public static implicit operator _ByValue_JoltTaperedCylinderShape(Jolt._Moved<JoltTaperedCylinderShape> arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltTaperedCylinderShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltTaperedCylinderShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltTaperedCylinderShape`/`Const_JoltTaperedCylinderShape` directly.
+    public class _InOptMut_JoltTaperedCylinderShape
+    {
+        public JoltTaperedCylinderShape? Opt;
+
+        public _InOptMut_JoltTaperedCylinderShape() {}
+        public _InOptMut_JoltTaperedCylinderShape(JoltTaperedCylinderShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltTaperedCylinderShape(JoltTaperedCylinderShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltTaperedCylinderShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltTaperedCylinderShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltTaperedCylinderShape`/`Const_JoltTaperedCylinderShape` to pass it to the function.
+    public class _InOptConst_JoltTaperedCylinderShape
+    {
+        public Const_JoltTaperedCylinderShape? Opt;
+
+        public _InOptConst_JoltTaperedCylinderShape() {}
+        public _InOptConst_JoltTaperedCylinderShape(Const_JoltTaperedCylinderShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltTaperedCylinderShape(Const_JoltTaperedCylinderShape value) {return new(value);}
+    }
+
+    /// Single triangle shape. Useful for debugging and simple static colliders.
+    /// Generated from class `JoltTriangleShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltTriangleShape : Jolt.Object<Const_JoltTriangleShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltTriangleShape_Destroy(_Underlying *_this);
+            __JoltTriangleShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltTriangleShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltTriangleShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltTriangleShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltTriangleShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltTriangleShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltTriangleShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltTriangleShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltTriangleShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltTriangleShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+        public unsafe Const_JoltTriangleShape(Jolt._ByValue_JoltTriangleShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTriangleShape._Underlying *__JoltTriangleShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltTriangleShape._Underlying *_other);
+            _UnderlyingPtr = __JoltTriangleShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+        public Const_JoltTriangleShape(Const_JoltTriangleShape _other) : this(new _ByValue_JoltTriangleShape(_other)) {}
+
+        /// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+        public Const_JoltTriangleShape(JoltTriangleShape _other) : this((Const_JoltTriangleShape)_other) {}
+
+        /// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+        public unsafe Const_JoltTriangleShape(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_Construct_9", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_Construct_9", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTriangleShape._Underlying *__JoltTriangleShape_Construct_9(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z);
+            _UnderlyingPtr = __JoltTriangleShape_Construct_9(v1x, v1y, v1z, v2x, v2y, v2z, v3x, v3y, v3z);
+        }
+
+        /// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+        public unsafe Const_JoltTriangleShape(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z, float convexRadius) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_Construct_10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_Construct_10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTriangleShape._Underlying *__JoltTriangleShape_Construct_10(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z, float convexRadius);
+            _UnderlyingPtr = __JoltTriangleShape_Construct_10(v1x, v1y, v1z, v2x, v2y, v2z, v3x, v3y, v3z, convexRadius);
+        }
+
+        /// Generated from method `JoltTriangleShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltTriangleShape_IsValid(_Underlying *_this);
+            return __JoltTriangleShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltTriangleShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltTriangleShape_getHandle(_Underlying *_this);
+            return __JoltTriangleShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Single triangle shape. Useful for debugging and simple static colliders.
+    /// Generated from class `JoltTriangleShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltTriangleShape : Const_JoltTriangleShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltTriangleShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltTriangleShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltTriangleShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltTriangleShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltTriangleShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltTriangleShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltTriangleShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltTriangleShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+        public unsafe JoltTriangleShape(Jolt._ByValue_JoltTriangleShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTriangleShape._Underlying *__JoltTriangleShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltTriangleShape._Underlying *_other);
+            _UnderlyingPtr = __JoltTriangleShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+        public JoltTriangleShape(Const_JoltTriangleShape _other) : this(new _ByValue_JoltTriangleShape(_other)) {}
+
+        /// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+        public JoltTriangleShape(JoltTriangleShape _other) : this((Const_JoltTriangleShape)_other) {}
+
+        /// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+        public unsafe JoltTriangleShape(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_Construct_9", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_Construct_9", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTriangleShape._Underlying *__JoltTriangleShape_Construct_9(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z);
+            _UnderlyingPtr = __JoltTriangleShape_Construct_9(v1x, v1y, v1z, v2x, v2y, v2z, v3x, v3y, v3z);
+        }
+
+        /// Generated from constructor `JoltTriangleShape::JoltTriangleShape`.
+        public unsafe JoltTriangleShape(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z, float convexRadius) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_Construct_10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_Construct_10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTriangleShape._Underlying *__JoltTriangleShape_Construct_10(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z, float convexRadius);
+            _UnderlyingPtr = __JoltTriangleShape_Construct_10(v1x, v1y, v1z, v2x, v2y, v2z, v3x, v3y, v3z, convexRadius);
+        }
+
+        /// Generated from method `JoltTriangleShape::operator=`.
+        public unsafe Jolt.JoltTriangleShape Assign(Jolt._ByValue_JoltTriangleShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTriangleShape._Underlying *__JoltTriangleShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltTriangleShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltTriangleShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JoltTriangleShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTriangleShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTriangleShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltTriangleShape_Release(_Underlying *_this);
+            __JoltTriangleShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltTriangleShape` by value.
+    /// Usage:
+    /// * Pass an instance of `JoltTriangleShape`/`Const_JoltTriangleShape` to copy it into the function.
+    /// * Pass `Move(instance)` to move it into the function. This is a more efficient form of copying that might invalidate the input object.
+    ///   Be careful if your input isn't a unique reference to this object.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltTriangleShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltTriangleShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltTriangleShape(Const_JoltTriangleShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltTriangleShape(Const_JoltTriangleShape arg) {return new(arg);}
+        public _ByValue_JoltTriangleShape(Jolt._Moved<JoltTriangleShape> moved) {Value = moved.Value; PassByMode = Jolt._PassBy.move;}
+        public static implicit operator _ByValue_JoltTriangleShape(Jolt._Moved<JoltTriangleShape> arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltTriangleShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltTriangleShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltTriangleShape`/`Const_JoltTriangleShape` directly.
+    public class _InOptMut_JoltTriangleShape
+    {
+        public JoltTriangleShape? Opt;
+
+        public _InOptMut_JoltTriangleShape() {}
+        public _InOptMut_JoltTriangleShape(JoltTriangleShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltTriangleShape(JoltTriangleShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltTriangleShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltTriangleShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltTriangleShape`/`Const_JoltTriangleShape` to pass it to the function.
+    public class _InOptConst_JoltTriangleShape
+    {
+        public Const_JoltTriangleShape? Opt;
+
+        public _InOptConst_JoltTriangleShape() {}
+        public _InOptConst_JoltTriangleShape(Const_JoltTriangleShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltTriangleShape(Const_JoltTriangleShape value) {return new(value);}
+    }
+
+    /// Infinite half-space plane. The plane is defined by a normal (nx, ny, nz) and a signed
+    /// distance constant d, giving the equation: dot(n, p) + d = 0.
+    /// halfExtent controls the broad-phase AABB size (default 1000).
+    /// Generated from class `JoltPlaneShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltPlaneShape : Jolt.Object<Const_JoltPlaneShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltPlaneShape_Destroy(_Underlying *_this);
+            __JoltPlaneShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltPlaneShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltPlaneShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltPlaneShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltPlaneShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltPlaneShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltPlaneShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltPlaneShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltPlaneShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltPlaneShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+        public unsafe Const_JoltPlaneShape(Jolt._ByValue_JoltPlaneShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPlaneShape._Underlying *__JoltPlaneShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltPlaneShape._Underlying *_other);
+            _UnderlyingPtr = __JoltPlaneShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+        public Const_JoltPlaneShape(Const_JoltPlaneShape _other) : this(new _ByValue_JoltPlaneShape(_other)) {}
+
+        /// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+        public Const_JoltPlaneShape(JoltPlaneShape _other) : this((Const_JoltPlaneShape)_other) {}
+
+        /// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+        public unsafe Const_JoltPlaneShape(float nx, float ny, float nz, float d, float halfExtent) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPlaneShape._Underlying *__JoltPlaneShape_Construct_5(float nx, float ny, float nz, float d, float halfExtent);
+            _UnderlyingPtr = __JoltPlaneShape_Construct_5(nx, ny, nz, d, halfExtent);
+        }
+
+        /// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+        public unsafe Const_JoltPlaneShape(float nx, float ny, float nz, float d) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPlaneShape._Underlying *__JoltPlaneShape_Construct_4(float nx, float ny, float nz, float d);
+            _UnderlyingPtr = __JoltPlaneShape_Construct_4(nx, ny, nz, d);
+        }
+
+        /// Generated from method `JoltPlaneShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltPlaneShape_IsValid(_Underlying *_this);
+            return __JoltPlaneShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltPlaneShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltPlaneShape_getHandle(_Underlying *_this);
+            return __JoltPlaneShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Infinite half-space plane. The plane is defined by a normal (nx, ny, nz) and a signed
+    /// distance constant d, giving the equation: dot(n, p) + d = 0.
+    /// halfExtent controls the broad-phase AABB size (default 1000).
+    /// Generated from class `JoltPlaneShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltPlaneShape : Const_JoltPlaneShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltPlaneShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltPlaneShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltPlaneShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltPlaneShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltPlaneShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltPlaneShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltPlaneShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltPlaneShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+        public unsafe JoltPlaneShape(Jolt._ByValue_JoltPlaneShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPlaneShape._Underlying *__JoltPlaneShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltPlaneShape._Underlying *_other);
+            _UnderlyingPtr = __JoltPlaneShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+        public JoltPlaneShape(Const_JoltPlaneShape _other) : this(new _ByValue_JoltPlaneShape(_other)) {}
+
+        /// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+        public JoltPlaneShape(JoltPlaneShape _other) : this((Const_JoltPlaneShape)_other) {}
+
+        /// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+        public unsafe JoltPlaneShape(float nx, float ny, float nz, float d, float halfExtent) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPlaneShape._Underlying *__JoltPlaneShape_Construct_5(float nx, float ny, float nz, float d, float halfExtent);
+            _UnderlyingPtr = __JoltPlaneShape_Construct_5(nx, ny, nz, d, halfExtent);
+        }
+
+        /// Generated from constructor `JoltPlaneShape::JoltPlaneShape`.
+        public unsafe JoltPlaneShape(float nx, float ny, float nz, float d) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPlaneShape._Underlying *__JoltPlaneShape_Construct_4(float nx, float ny, float nz, float d);
+            _UnderlyingPtr = __JoltPlaneShape_Construct_4(nx, ny, nz, d);
+        }
+
+        /// Generated from method `JoltPlaneShape::operator=`.
+        public unsafe Jolt.JoltPlaneShape Assign(Jolt._ByValue_JoltPlaneShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPlaneShape._Underlying *__JoltPlaneShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltPlaneShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltPlaneShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JoltPlaneShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPlaneShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPlaneShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltPlaneShape_Release(_Underlying *_this);
+            __JoltPlaneShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltPlaneShape` by value.
+    /// Usage:
+    /// * Pass an instance of `JoltPlaneShape`/`Const_JoltPlaneShape` to copy it into the function.
+    /// * Pass `Move(instance)` to move it into the function. This is a more efficient form of copying that might invalidate the input object.
+    ///   Be careful if your input isn't a unique reference to this object.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltPlaneShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltPlaneShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltPlaneShape(Const_JoltPlaneShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltPlaneShape(Const_JoltPlaneShape arg) {return new(arg);}
+        public _ByValue_JoltPlaneShape(Jolt._Moved<JoltPlaneShape> moved) {Value = moved.Value; PassByMode = Jolt._PassBy.move;}
+        public static implicit operator _ByValue_JoltPlaneShape(Jolt._Moved<JoltPlaneShape> arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltPlaneShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltPlaneShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltPlaneShape`/`Const_JoltPlaneShape` directly.
+    public class _InOptMut_JoltPlaneShape
+    {
+        public JoltPlaneShape? Opt;
+
+        public _InOptMut_JoltPlaneShape() {}
+        public _InOptMut_JoltPlaneShape(JoltPlaneShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltPlaneShape(JoltPlaneShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltPlaneShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltPlaneShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltPlaneShape`/`Const_JoltPlaneShape` to pass it to the function.
+    public class _InOptConst_JoltPlaneShape
+    {
+        public Const_JoltPlaneShape? Opt;
+
+        public _InOptConst_JoltPlaneShape() {}
+        public _InOptConst_JoltPlaneShape(Const_JoltPlaneShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltPlaneShape(Const_JoltPlaneShape value) {return new(value);}
+    }
+
+    /// Zero-volume placeholder shape. comX/Y/Z places the center of mass.
+    /// Generated from class `JoltEmptyShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltEmptyShape : Jolt.Object<Const_JoltEmptyShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltEmptyShape_Destroy(_Underlying *_this);
+            __JoltEmptyShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltEmptyShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltEmptyShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltEmptyShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltEmptyShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltEmptyShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltEmptyShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltEmptyShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltEmptyShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltEmptyShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltEmptyShape() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltEmptyShape._Underlying *__JoltEmptyShape_DefaultConstruct();
+            _UnderlyingPtr = __JoltEmptyShape_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltEmptyShape::JoltEmptyShape`.
+        public unsafe Const_JoltEmptyShape(Jolt._ByValue_JoltEmptyShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltEmptyShape._Underlying *__JoltEmptyShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltEmptyShape._Underlying *_other);
+            _UnderlyingPtr = __JoltEmptyShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltEmptyShape::JoltEmptyShape`.
+        public Const_JoltEmptyShape(Const_JoltEmptyShape _other) : this(new _ByValue_JoltEmptyShape(_other)) {}
+
+        /// Generated from constructor `JoltEmptyShape::JoltEmptyShape`.
+        public Const_JoltEmptyShape(JoltEmptyShape _other) : this((Const_JoltEmptyShape)_other) {}
+
+        /// Generated from constructor `JoltEmptyShape::JoltEmptyShape`.
+        public unsafe Const_JoltEmptyShape(float comX, float comY, float comZ) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltEmptyShape._Underlying *__JoltEmptyShape_Construct(float comX, float comY, float comZ);
+            _UnderlyingPtr = __JoltEmptyShape_Construct(comX, comY, comZ);
+        }
+
+        /// Generated from method `JoltEmptyShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltEmptyShape_IsValid(_Underlying *_this);
+            return __JoltEmptyShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltEmptyShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltEmptyShape_getHandle(_Underlying *_this);
+            return __JoltEmptyShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Zero-volume placeholder shape. comX/Y/Z places the center of mass.
+    /// Generated from class `JoltEmptyShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltEmptyShape : Const_JoltEmptyShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltEmptyShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltEmptyShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltEmptyShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltEmptyShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltEmptyShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltEmptyShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltEmptyShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltEmptyShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltEmptyShape() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltEmptyShape._Underlying *__JoltEmptyShape_DefaultConstruct();
+            _UnderlyingPtr = __JoltEmptyShape_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltEmptyShape::JoltEmptyShape`.
+        public unsafe JoltEmptyShape(Jolt._ByValue_JoltEmptyShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltEmptyShape._Underlying *__JoltEmptyShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltEmptyShape._Underlying *_other);
+            _UnderlyingPtr = __JoltEmptyShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltEmptyShape::JoltEmptyShape`.
+        public JoltEmptyShape(Const_JoltEmptyShape _other) : this(new _ByValue_JoltEmptyShape(_other)) {}
+
+        /// Generated from constructor `JoltEmptyShape::JoltEmptyShape`.
+        public JoltEmptyShape(JoltEmptyShape _other) : this((Const_JoltEmptyShape)_other) {}
+
+        /// Generated from constructor `JoltEmptyShape::JoltEmptyShape`.
+        public unsafe JoltEmptyShape(float comX, float comY, float comZ) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltEmptyShape._Underlying *__JoltEmptyShape_Construct(float comX, float comY, float comZ);
+            _UnderlyingPtr = __JoltEmptyShape_Construct(comX, comY, comZ);
+        }
+
+        /// Generated from method `JoltEmptyShape::operator=`.
+        public unsafe Jolt.JoltEmptyShape Assign(Jolt._ByValue_JoltEmptyShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltEmptyShape._Underlying *__JoltEmptyShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltEmptyShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltEmptyShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JoltEmptyShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltEmptyShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltEmptyShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltEmptyShape_Release(_Underlying *_this);
+            __JoltEmptyShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltEmptyShape` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `JoltEmptyShape`/`Const_JoltEmptyShape` to copy it into the function.
+    /// * Pass `Move(instance)` to move it into the function. This is a more efficient form of copying that might invalidate the input object.
+    ///   Be careful if your input isn't a unique reference to this object.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltEmptyShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltEmptyShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltEmptyShape() {PassByMode = Jolt._PassBy.default_construct;}
+        public _ByValue_JoltEmptyShape(Const_JoltEmptyShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltEmptyShape(Const_JoltEmptyShape arg) {return new(arg);}
+        public _ByValue_JoltEmptyShape(Jolt._Moved<JoltEmptyShape> moved) {Value = moved.Value; PassByMode = Jolt._PassBy.move;}
+        public static implicit operator _ByValue_JoltEmptyShape(Jolt._Moved<JoltEmptyShape> arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltEmptyShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltEmptyShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltEmptyShape`/`Const_JoltEmptyShape` directly.
+    public class _InOptMut_JoltEmptyShape
+    {
+        public JoltEmptyShape? Opt;
+
+        public _InOptMut_JoltEmptyShape() {}
+        public _InOptMut_JoltEmptyShape(JoltEmptyShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltEmptyShape(JoltEmptyShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltEmptyShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltEmptyShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltEmptyShape`/`Const_JoltEmptyShape` to pass it to the function.
+    public class _InOptConst_JoltEmptyShape
+    {
+        public Const_JoltEmptyShape? Opt;
+
+        public _InOptConst_JoltEmptyShape() {}
+        public _InOptConst_JoltEmptyShape(Const_JoltEmptyShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltEmptyShape(Const_JoltEmptyShape value) {return new(value);}
+    }
+
+    /// Scales a child shape non-uniformly along each axis.
+    /// Generated from class `JoltScaledShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltScaledShape : Jolt.Object<Const_JoltScaledShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltScaledShape_Destroy(_Underlying *_this);
+            __JoltScaledShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltScaledShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltScaledShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltScaledShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltScaledShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltScaledShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltScaledShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltScaledShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltScaledShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltScaledShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Generated from constructor `JoltScaledShape::JoltScaledShape`.
+        public unsafe Const_JoltScaledShape(Jolt._ByValue_JoltScaledShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltScaledShape._Underlying *__JoltScaledShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltScaledShape._Underlying *_other);
+            _UnderlyingPtr = __JoltScaledShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltScaledShape::JoltScaledShape`.
+        public Const_JoltScaledShape(Const_JoltScaledShape _other) : this(new _ByValue_JoltScaledShape(_other)) {}
+
+        /// Generated from constructor `JoltScaledShape::JoltScaledShape`.
+        public Const_JoltScaledShape(JoltScaledShape _other) : this((Const_JoltScaledShape)_other) {}
+
+        /// Generated from constructor `JoltScaledShape::JoltScaledShape`.
+        public unsafe Const_JoltScaledShape(Jolt.JoltShape? inner, float sx, float sy, float sz) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltScaledShape._Underlying *__JoltScaledShape_Construct(Jolt.JoltShape._Underlying *inner, float sx, float sy, float sz);
+            _UnderlyingPtr = __JoltScaledShape_Construct(inner is not null ? inner._UnderlyingPtr : null, sx, sy, sz);
+        }
+
+        /// Generated from method `JoltScaledShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltScaledShape_IsValid(_Underlying *_this);
+            return __JoltScaledShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltScaledShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltScaledShape_getHandle(_Underlying *_this);
+            return __JoltScaledShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Scales a child shape non-uniformly along each axis.
+    /// Generated from class `JoltScaledShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltScaledShape : Const_JoltScaledShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltScaledShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltScaledShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltScaledShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltScaledShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltScaledShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltScaledShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltScaledShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltScaledShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Generated from constructor `JoltScaledShape::JoltScaledShape`.
+        public unsafe JoltScaledShape(Jolt._ByValue_JoltScaledShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltScaledShape._Underlying *__JoltScaledShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltScaledShape._Underlying *_other);
+            _UnderlyingPtr = __JoltScaledShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltScaledShape::JoltScaledShape`.
+        public JoltScaledShape(Const_JoltScaledShape _other) : this(new _ByValue_JoltScaledShape(_other)) {}
+
+        /// Generated from constructor `JoltScaledShape::JoltScaledShape`.
+        public JoltScaledShape(JoltScaledShape _other) : this((Const_JoltScaledShape)_other) {}
+
+        /// Generated from constructor `JoltScaledShape::JoltScaledShape`.
+        public unsafe JoltScaledShape(Jolt.JoltShape? inner, float sx, float sy, float sz) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltScaledShape._Underlying *__JoltScaledShape_Construct(Jolt.JoltShape._Underlying *inner, float sx, float sy, float sz);
+            _UnderlyingPtr = __JoltScaledShape_Construct(inner is not null ? inner._UnderlyingPtr : null, sx, sy, sz);
+        }
+
+        /// Generated from method `JoltScaledShape::operator=`.
+        public unsafe Jolt.JoltScaledShape Assign(Jolt._ByValue_JoltScaledShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltScaledShape._Underlying *__JoltScaledShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltScaledShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltScaledShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JoltScaledShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltScaledShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltScaledShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltScaledShape_Release(_Underlying *_this);
+            __JoltScaledShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltScaledShape` by value.
+    /// Usage:
+    /// * Pass an instance of `JoltScaledShape`/`Const_JoltScaledShape` to copy it into the function.
+    /// * Pass `Move(instance)` to move it into the function. This is a more efficient form of copying that might invalidate the input object.
+    ///   Be careful if your input isn't a unique reference to this object.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltScaledShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltScaledShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltScaledShape(Const_JoltScaledShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltScaledShape(Const_JoltScaledShape arg) {return new(arg);}
+        public _ByValue_JoltScaledShape(Jolt._Moved<JoltScaledShape> moved) {Value = moved.Value; PassByMode = Jolt._PassBy.move;}
+        public static implicit operator _ByValue_JoltScaledShape(Jolt._Moved<JoltScaledShape> arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltScaledShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltScaledShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltScaledShape`/`Const_JoltScaledShape` directly.
+    public class _InOptMut_JoltScaledShape
+    {
+        public JoltScaledShape? Opt;
+
+        public _InOptMut_JoltScaledShape() {}
+        public _InOptMut_JoltScaledShape(JoltScaledShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltScaledShape(JoltScaledShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltScaledShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltScaledShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltScaledShape`/`Const_JoltScaledShape` to pass it to the function.
+    public class _InOptConst_JoltScaledShape
+    {
+        public Const_JoltScaledShape? Opt;
+
+        public _InOptConst_JoltScaledShape() {}
+        public _InOptConst_JoltScaledShape(Const_JoltScaledShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltScaledShape(Const_JoltScaledShape value) {return new(value);}
+    }
+
+    /// Shifts the center-of-mass of a child shape.
+    /// Generated from class `JoltOffsetCenterOfMassShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltOffsetCenterOfMassShape : Jolt.Object<Const_JoltOffsetCenterOfMassShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltOffsetCenterOfMassShape_Destroy(_Underlying *_this);
+            __JoltOffsetCenterOfMassShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltOffsetCenterOfMassShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltOffsetCenterOfMassShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltOffsetCenterOfMassShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltOffsetCenterOfMassShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltOffsetCenterOfMassShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltOffsetCenterOfMassShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltOffsetCenterOfMassShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltOffsetCenterOfMassShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltOffsetCenterOfMassShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Generated from constructor `JoltOffsetCenterOfMassShape::JoltOffsetCenterOfMassShape`.
+        public unsafe Const_JoltOffsetCenterOfMassShape(Jolt._ByValue_JoltOffsetCenterOfMassShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltOffsetCenterOfMassShape._Underlying *__JoltOffsetCenterOfMassShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltOffsetCenterOfMassShape._Underlying *_other);
+            _UnderlyingPtr = __JoltOffsetCenterOfMassShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltOffsetCenterOfMassShape::JoltOffsetCenterOfMassShape`.
+        public Const_JoltOffsetCenterOfMassShape(Const_JoltOffsetCenterOfMassShape _other) : this(new _ByValue_JoltOffsetCenterOfMassShape(_other)) {}
+
+        /// Generated from constructor `JoltOffsetCenterOfMassShape::JoltOffsetCenterOfMassShape`.
+        public Const_JoltOffsetCenterOfMassShape(JoltOffsetCenterOfMassShape _other) : this((Const_JoltOffsetCenterOfMassShape)_other) {}
+
+        /// Generated from constructor `JoltOffsetCenterOfMassShape::JoltOffsetCenterOfMassShape`.
+        public unsafe Const_JoltOffsetCenterOfMassShape(Jolt.JoltShape? inner, float offsetX, float offsetY, float offsetZ) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltOffsetCenterOfMassShape._Underlying *__JoltOffsetCenterOfMassShape_Construct(Jolt.JoltShape._Underlying *inner, float offsetX, float offsetY, float offsetZ);
+            _UnderlyingPtr = __JoltOffsetCenterOfMassShape_Construct(inner is not null ? inner._UnderlyingPtr : null, offsetX, offsetY, offsetZ);
+        }
+
+        /// Generated from method `JoltOffsetCenterOfMassShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltOffsetCenterOfMassShape_IsValid(_Underlying *_this);
+            return __JoltOffsetCenterOfMassShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltOffsetCenterOfMassShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltOffsetCenterOfMassShape_getHandle(_Underlying *_this);
+            return __JoltOffsetCenterOfMassShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Shifts the center-of-mass of a child shape.
+    /// Generated from class `JoltOffsetCenterOfMassShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltOffsetCenterOfMassShape : Const_JoltOffsetCenterOfMassShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltOffsetCenterOfMassShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltOffsetCenterOfMassShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltOffsetCenterOfMassShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltOffsetCenterOfMassShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltOffsetCenterOfMassShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltOffsetCenterOfMassShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltOffsetCenterOfMassShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltOffsetCenterOfMassShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Generated from constructor `JoltOffsetCenterOfMassShape::JoltOffsetCenterOfMassShape`.
+        public unsafe JoltOffsetCenterOfMassShape(Jolt._ByValue_JoltOffsetCenterOfMassShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltOffsetCenterOfMassShape._Underlying *__JoltOffsetCenterOfMassShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltOffsetCenterOfMassShape._Underlying *_other);
+            _UnderlyingPtr = __JoltOffsetCenterOfMassShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltOffsetCenterOfMassShape::JoltOffsetCenterOfMassShape`.
+        public JoltOffsetCenterOfMassShape(Const_JoltOffsetCenterOfMassShape _other) : this(new _ByValue_JoltOffsetCenterOfMassShape(_other)) {}
+
+        /// Generated from constructor `JoltOffsetCenterOfMassShape::JoltOffsetCenterOfMassShape`.
+        public JoltOffsetCenterOfMassShape(JoltOffsetCenterOfMassShape _other) : this((Const_JoltOffsetCenterOfMassShape)_other) {}
+
+        /// Generated from constructor `JoltOffsetCenterOfMassShape::JoltOffsetCenterOfMassShape`.
+        public unsafe JoltOffsetCenterOfMassShape(Jolt.JoltShape? inner, float offsetX, float offsetY, float offsetZ) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltOffsetCenterOfMassShape._Underlying *__JoltOffsetCenterOfMassShape_Construct(Jolt.JoltShape._Underlying *inner, float offsetX, float offsetY, float offsetZ);
+            _UnderlyingPtr = __JoltOffsetCenterOfMassShape_Construct(inner is not null ? inner._UnderlyingPtr : null, offsetX, offsetY, offsetZ);
+        }
+
+        /// Generated from method `JoltOffsetCenterOfMassShape::operator=`.
+        public unsafe Jolt.JoltOffsetCenterOfMassShape Assign(Jolt._ByValue_JoltOffsetCenterOfMassShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltOffsetCenterOfMassShape._Underlying *__JoltOffsetCenterOfMassShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltOffsetCenterOfMassShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltOffsetCenterOfMassShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JoltOffsetCenterOfMassShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltOffsetCenterOfMassShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltOffsetCenterOfMassShape_Release(_Underlying *_this);
+            __JoltOffsetCenterOfMassShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltOffsetCenterOfMassShape` by value.
+    /// Usage:
+    /// * Pass an instance of `JoltOffsetCenterOfMassShape`/`Const_JoltOffsetCenterOfMassShape` to copy it into the function.
+    /// * Pass `Move(instance)` to move it into the function. This is a more efficient form of copying that might invalidate the input object.
+    ///   Be careful if your input isn't a unique reference to this object.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltOffsetCenterOfMassShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltOffsetCenterOfMassShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltOffsetCenterOfMassShape(Const_JoltOffsetCenterOfMassShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltOffsetCenterOfMassShape(Const_JoltOffsetCenterOfMassShape arg) {return new(arg);}
+        public _ByValue_JoltOffsetCenterOfMassShape(Jolt._Moved<JoltOffsetCenterOfMassShape> moved) {Value = moved.Value; PassByMode = Jolt._PassBy.move;}
+        public static implicit operator _ByValue_JoltOffsetCenterOfMassShape(Jolt._Moved<JoltOffsetCenterOfMassShape> arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltOffsetCenterOfMassShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltOffsetCenterOfMassShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltOffsetCenterOfMassShape`/`Const_JoltOffsetCenterOfMassShape` directly.
+    public class _InOptMut_JoltOffsetCenterOfMassShape
+    {
+        public JoltOffsetCenterOfMassShape? Opt;
+
+        public _InOptMut_JoltOffsetCenterOfMassShape() {}
+        public _InOptMut_JoltOffsetCenterOfMassShape(JoltOffsetCenterOfMassShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltOffsetCenterOfMassShape(JoltOffsetCenterOfMassShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltOffsetCenterOfMassShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltOffsetCenterOfMassShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltOffsetCenterOfMassShape`/`Const_JoltOffsetCenterOfMassShape` to pass it to the function.
+    public class _InOptConst_JoltOffsetCenterOfMassShape
+    {
+        public Const_JoltOffsetCenterOfMassShape? Opt;
+
+        public _InOptConst_JoltOffsetCenterOfMassShape() {}
+        public _InOptConst_JoltOffsetCenterOfMassShape(Const_JoltOffsetCenterOfMassShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltOffsetCenterOfMassShape(Const_JoltOffsetCenterOfMassShape value) {return new(value);}
+    }
+
+    /// Static (immutable after finalization) compound of multiple child shapes.
+    /// Call AddSubShape() to build, then Finalize() before using as a shape.
+    /// Generated from class `JoltStaticCompoundShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltStaticCompoundShape : Jolt.Object<Const_JoltStaticCompoundShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltStaticCompoundShape_Destroy(_Underlying *_this);
+            __JoltStaticCompoundShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltStaticCompoundShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltStaticCompoundShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltStaticCompoundShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltStaticCompoundShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltStaticCompoundShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltStaticCompoundShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltStaticCompoundShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltStaticCompoundShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltStaticCompoundShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltStaticCompoundShape() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltStaticCompoundShape._Underlying *__JoltStaticCompoundShape_DefaultConstruct();
+            _UnderlyingPtr = __JoltStaticCompoundShape_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltStaticCompoundShape::JoltStaticCompoundShape`.
+        public unsafe Const_JoltStaticCompoundShape(Jolt._ByValue_JoltStaticCompoundShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltStaticCompoundShape._Underlying *__JoltStaticCompoundShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltStaticCompoundShape._Underlying *_other);
+            _UnderlyingPtr = __JoltStaticCompoundShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltStaticCompoundShape::JoltStaticCompoundShape`.
+        public Const_JoltStaticCompoundShape(Const_JoltStaticCompoundShape _other) : this(new _ByValue_JoltStaticCompoundShape(_other)) {}
+
+        /// Generated from constructor `JoltStaticCompoundShape::JoltStaticCompoundShape`.
+        public Const_JoltStaticCompoundShape(JoltStaticCompoundShape _other) : this((Const_JoltStaticCompoundShape)_other) {}
+
+        /// Generated from method `JoltStaticCompoundShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltStaticCompoundShape_IsValid(_Underlying *_this);
+            return __JoltStaticCompoundShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltStaticCompoundShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltStaticCompoundShape_getHandle(_Underlying *_this);
+            return __JoltStaticCompoundShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Static (immutable after finalization) compound of multiple child shapes.
+    /// Call AddSubShape() to build, then Finalize() before using as a shape.
+    /// Generated from class `JoltStaticCompoundShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltStaticCompoundShape : Const_JoltStaticCompoundShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltStaticCompoundShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltStaticCompoundShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltStaticCompoundShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltStaticCompoundShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltStaticCompoundShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltStaticCompoundShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltStaticCompoundShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltStaticCompoundShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltStaticCompoundShape() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltStaticCompoundShape._Underlying *__JoltStaticCompoundShape_DefaultConstruct();
+            _UnderlyingPtr = __JoltStaticCompoundShape_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltStaticCompoundShape::JoltStaticCompoundShape`.
+        public unsafe JoltStaticCompoundShape(Jolt._ByValue_JoltStaticCompoundShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltStaticCompoundShape._Underlying *__JoltStaticCompoundShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltStaticCompoundShape._Underlying *_other);
+            _UnderlyingPtr = __JoltStaticCompoundShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltStaticCompoundShape::JoltStaticCompoundShape`.
+        public JoltStaticCompoundShape(Const_JoltStaticCompoundShape _other) : this(new _ByValue_JoltStaticCompoundShape(_other)) {}
+
+        /// Generated from constructor `JoltStaticCompoundShape::JoltStaticCompoundShape`.
+        public JoltStaticCompoundShape(JoltStaticCompoundShape _other) : this((Const_JoltStaticCompoundShape)_other) {}
+
+        /// Generated from method `JoltStaticCompoundShape::operator=`.
+        public unsafe Jolt.JoltStaticCompoundShape Assign(Jolt._ByValue_JoltStaticCompoundShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltStaticCompoundShape._Underlying *__JoltStaticCompoundShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltStaticCompoundShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltStaticCompoundShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JoltStaticCompoundShape::AddSubShape`.
+        public unsafe void AddSubShape(Jolt.JoltShape? shape, double px, double py, double pz, float qx, float qy, float qz, float qw)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_AddSubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_AddSubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltStaticCompoundShape_AddSubShape(_Underlying *_this, Jolt.JoltShape._Underlying *shape, double px, double py, double pz, float qx, float qy, float qz, float qw);
+            __JoltStaticCompoundShape_AddSubShape(_UnderlyingPtr, shape is not null ? shape._UnderlyingPtr : null, px, py, pz, qx, qy, qz, qw);
+        }
+
+        /// Generated from method `JoltStaticCompoundShape::Finalize`.
+        public unsafe void Finalize()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_Finalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_Finalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltStaticCompoundShape_Finalize(_Underlying *_this);
+            __JoltStaticCompoundShape_Finalize(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltStaticCompoundShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltStaticCompoundShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltStaticCompoundShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltStaticCompoundShape_Release(_Underlying *_this);
+            __JoltStaticCompoundShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltStaticCompoundShape` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `JoltStaticCompoundShape`/`Const_JoltStaticCompoundShape` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltStaticCompoundShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltStaticCompoundShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltStaticCompoundShape() {PassByMode = Jolt._PassBy.default_construct;}
+        public _ByValue_JoltStaticCompoundShape(Const_JoltStaticCompoundShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltStaticCompoundShape(Const_JoltStaticCompoundShape arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltStaticCompoundShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltStaticCompoundShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltStaticCompoundShape`/`Const_JoltStaticCompoundShape` directly.
+    public class _InOptMut_JoltStaticCompoundShape
+    {
+        public JoltStaticCompoundShape? Opt;
+
+        public _InOptMut_JoltStaticCompoundShape() {}
+        public _InOptMut_JoltStaticCompoundShape(JoltStaticCompoundShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltStaticCompoundShape(JoltStaticCompoundShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltStaticCompoundShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltStaticCompoundShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltStaticCompoundShape`/`Const_JoltStaticCompoundShape` to pass it to the function.
+    public class _InOptConst_JoltStaticCompoundShape
+    {
+        public Const_JoltStaticCompoundShape? Opt;
+
+        public _InOptConst_JoltStaticCompoundShape() {}
+        public _InOptConst_JoltStaticCompoundShape(Const_JoltStaticCompoundShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltStaticCompoundShape(Const_JoltStaticCompoundShape value) {return new(value);}
+    }
+
+    /// Mutable compound shape — sub-shapes can be modified after finalization.
+    /// Call AddSubShape() + Finalize() to build, then use Append/Remove/Modify
+    /// for runtime changes.
+    /// Generated from class `JoltMutableCompoundShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltMutableCompoundShape : Jolt.Object<Const_JoltMutableCompoundShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMutableCompoundShape_Destroy(_Underlying *_this);
+            __JoltMutableCompoundShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltMutableCompoundShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltMutableCompoundShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltMutableCompoundShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltMutableCompoundShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltMutableCompoundShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltMutableCompoundShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltMutableCompoundShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltMutableCompoundShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltMutableCompoundShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltMutableCompoundShape() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMutableCompoundShape._Underlying *__JoltMutableCompoundShape_DefaultConstruct();
+            _UnderlyingPtr = __JoltMutableCompoundShape_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltMutableCompoundShape::JoltMutableCompoundShape`.
+        public unsafe Const_JoltMutableCompoundShape(Jolt._ByValue_JoltMutableCompoundShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMutableCompoundShape._Underlying *__JoltMutableCompoundShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltMutableCompoundShape._Underlying *_other);
+            _UnderlyingPtr = __JoltMutableCompoundShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltMutableCompoundShape::JoltMutableCompoundShape`.
+        public Const_JoltMutableCompoundShape(Const_JoltMutableCompoundShape _other) : this(new _ByValue_JoltMutableCompoundShape(_other)) {}
+
+        /// Generated from constructor `JoltMutableCompoundShape::JoltMutableCompoundShape`.
+        public Const_JoltMutableCompoundShape(JoltMutableCompoundShape _other) : this((Const_JoltMutableCompoundShape)_other) {}
+
+        /// Generated from method `JoltMutableCompoundShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltMutableCompoundShape_IsValid(_Underlying *_this);
+            return __JoltMutableCompoundShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltMutableCompoundShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltMutableCompoundShape_getHandle(_Underlying *_this);
+            return __JoltMutableCompoundShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Mutable compound shape — sub-shapes can be modified after finalization.
+    /// Call AddSubShape() + Finalize() to build, then use Append/Remove/Modify
+    /// for runtime changes.
+    /// Generated from class `JoltMutableCompoundShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltMutableCompoundShape : Const_JoltMutableCompoundShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltMutableCompoundShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltMutableCompoundShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltMutableCompoundShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltMutableCompoundShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltMutableCompoundShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltMutableCompoundShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltMutableCompoundShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltMutableCompoundShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltMutableCompoundShape() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMutableCompoundShape._Underlying *__JoltMutableCompoundShape_DefaultConstruct();
+            _UnderlyingPtr = __JoltMutableCompoundShape_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltMutableCompoundShape::JoltMutableCompoundShape`.
+        public unsafe JoltMutableCompoundShape(Jolt._ByValue_JoltMutableCompoundShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMutableCompoundShape._Underlying *__JoltMutableCompoundShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltMutableCompoundShape._Underlying *_other);
+            _UnderlyingPtr = __JoltMutableCompoundShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltMutableCompoundShape::JoltMutableCompoundShape`.
+        public JoltMutableCompoundShape(Const_JoltMutableCompoundShape _other) : this(new _ByValue_JoltMutableCompoundShape(_other)) {}
+
+        /// Generated from constructor `JoltMutableCompoundShape::JoltMutableCompoundShape`.
+        public JoltMutableCompoundShape(JoltMutableCompoundShape _other) : this((Const_JoltMutableCompoundShape)_other) {}
+
+        /// Generated from method `JoltMutableCompoundShape::operator=`.
+        public unsafe Jolt.JoltMutableCompoundShape Assign(Jolt._ByValue_JoltMutableCompoundShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMutableCompoundShape._Underlying *__JoltMutableCompoundShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltMutableCompoundShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltMutableCompoundShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Add a sub-shape during the build phase (before Finalize).
+        /// Generated from method `JoltMutableCompoundShape::AddSubShape`.
+        public unsafe void AddSubShape(Jolt.JoltShape? shape, double px, double py, double pz, float qx, float qy, float qz, float qw)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_AddSubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_AddSubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMutableCompoundShape_AddSubShape(_Underlying *_this, Jolt.JoltShape._Underlying *shape, double px, double py, double pz, float qx, float qy, float qz, float qw);
+            __JoltMutableCompoundShape_AddSubShape(_UnderlyingPtr, shape is not null ? shape._UnderlyingPtr : null, px, py, pz, qx, qy, qz, qw);
+        }
+
+        /// Generated from method `JoltMutableCompoundShape::Finalize`.
+        public unsafe void Finalize()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_Finalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_Finalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMutableCompoundShape_Finalize(_Underlying *_this);
+            __JoltMutableCompoundShape_Finalize(_UnderlyingPtr);
+        }
+
+        /// Append a sub-shape at runtime (after Finalize). Returns the sub-shape index.
+        /// Generated from method `JoltMutableCompoundShape::AppendSubShape`.
+        public unsafe uint AppendSubShape(Jolt.JoltShape? shape, double px, double py, double pz, float qx, float qy, float qz, float qw)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_AppendSubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_AppendSubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JoltMutableCompoundShape_AppendSubShape(_Underlying *_this, Jolt.JoltShape._Underlying *shape, double px, double py, double pz, float qx, float qy, float qz, float qw);
+            return __JoltMutableCompoundShape_AppendSubShape(_UnderlyingPtr, shape is not null ? shape._UnderlyingPtr : null, px, py, pz, qx, qy, qz, qw);
+        }
+
+        /// Generated from method `JoltMutableCompoundShape::RemoveSubShape`.
+        public unsafe void RemoveSubShape(uint index)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_RemoveSubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_RemoveSubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMutableCompoundShape_RemoveSubShape(_Underlying *_this, uint index);
+            __JoltMutableCompoundShape_RemoveSubShape(_UnderlyingPtr, index);
+        }
+
+        /// Generated from method `JoltMutableCompoundShape::ModifySubShape`.
+        public unsafe void ModifySubShape(uint index, double px, double py, double pz, float qx, float qy, float qz, float qw)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_ModifySubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_ModifySubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMutableCompoundShape_ModifySubShape(_Underlying *_this, uint index, double px, double py, double pz, float qx, float qy, float qz, float qw);
+            __JoltMutableCompoundShape_ModifySubShape(_UnderlyingPtr, index, px, py, pz, qx, qy, qz, qw);
+        }
+
+        /// Generated from method `JoltMutableCompoundShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMutableCompoundShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMutableCompoundShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMutableCompoundShape_Release(_Underlying *_this);
+            __JoltMutableCompoundShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltMutableCompoundShape` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `JoltMutableCompoundShape`/`Const_JoltMutableCompoundShape` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltMutableCompoundShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltMutableCompoundShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltMutableCompoundShape() {PassByMode = Jolt._PassBy.default_construct;}
+        public _ByValue_JoltMutableCompoundShape(Const_JoltMutableCompoundShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltMutableCompoundShape(Const_JoltMutableCompoundShape arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltMutableCompoundShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltMutableCompoundShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltMutableCompoundShape`/`Const_JoltMutableCompoundShape` directly.
+    public class _InOptMut_JoltMutableCompoundShape
+    {
+        public JoltMutableCompoundShape? Opt;
+
+        public _InOptMut_JoltMutableCompoundShape() {}
+        public _InOptMut_JoltMutableCompoundShape(JoltMutableCompoundShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltMutableCompoundShape(JoltMutableCompoundShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltMutableCompoundShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltMutableCompoundShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltMutableCompoundShape`/`Const_JoltMutableCompoundShape` to pass it to the function.
+    public class _InOptConst_JoltMutableCompoundShape
+    {
+        public Const_JoltMutableCompoundShape? Opt;
+
+        public _InOptConst_JoltMutableCompoundShape() {}
+        public _InOptConst_JoltMutableCompoundShape(Const_JoltMutableCompoundShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltMutableCompoundShape(Const_JoltMutableCompoundShape value) {return new(value);}
+    }
+
+    /// Triangle-mesh shape (static terrain/level geometry).
+    /// Call AddVertex() + AddFace() to build, then Finalize().
+    /// Generated from class `JoltMeshShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltMeshShape : Jolt.Object<Const_JoltMeshShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMeshShape_Destroy(_Underlying *_this);
+            __JoltMeshShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltMeshShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltMeshShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltMeshShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltMeshShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltMeshShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltMeshShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltMeshShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltMeshShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltMeshShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltMeshShape() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMeshShape._Underlying *__JoltMeshShape_DefaultConstruct();
+            _UnderlyingPtr = __JoltMeshShape_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltMeshShape::JoltMeshShape`.
+        public unsafe Const_JoltMeshShape(Jolt._ByValue_JoltMeshShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMeshShape._Underlying *__JoltMeshShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltMeshShape._Underlying *_other);
+            _UnderlyingPtr = __JoltMeshShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltMeshShape::JoltMeshShape`.
+        public Const_JoltMeshShape(Const_JoltMeshShape _other) : this(new _ByValue_JoltMeshShape(_other)) {}
+
+        /// Generated from constructor `JoltMeshShape::JoltMeshShape`.
+        public Const_JoltMeshShape(JoltMeshShape _other) : this((Const_JoltMeshShape)_other) {}
+
+        /// Generated from method `JoltMeshShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltMeshShape_IsValid(_Underlying *_this);
+            return __JoltMeshShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltMeshShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltMeshShape_getHandle(_Underlying *_this);
+            return __JoltMeshShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Triangle-mesh shape (static terrain/level geometry).
+    /// Call AddVertex() + AddFace() to build, then Finalize().
+    /// Generated from class `JoltMeshShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltMeshShape : Const_JoltMeshShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltMeshShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltMeshShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltMeshShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltMeshShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltMeshShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltMeshShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltMeshShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltMeshShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltMeshShape() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMeshShape._Underlying *__JoltMeshShape_DefaultConstruct();
+            _UnderlyingPtr = __JoltMeshShape_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltMeshShape::JoltMeshShape`.
+        public unsafe JoltMeshShape(Jolt._ByValue_JoltMeshShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMeshShape._Underlying *__JoltMeshShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltMeshShape._Underlying *_other);
+            _UnderlyingPtr = __JoltMeshShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltMeshShape::JoltMeshShape`.
+        public JoltMeshShape(Const_JoltMeshShape _other) : this(new _ByValue_JoltMeshShape(_other)) {}
+
+        /// Generated from constructor `JoltMeshShape::JoltMeshShape`.
+        public JoltMeshShape(JoltMeshShape _other) : this((Const_JoltMeshShape)_other) {}
+
+        /// Generated from method `JoltMeshShape::operator=`.
+        public unsafe Jolt.JoltMeshShape Assign(Jolt._ByValue_JoltMeshShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMeshShape._Underlying *__JoltMeshShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltMeshShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltMeshShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JoltMeshShape::AddVertex`.
+        public unsafe void AddVertex(float x, float y, float z)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_AddVertex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_AddVertex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMeshShape_AddVertex(_Underlying *_this, float x, float y, float z);
+            __JoltMeshShape_AddVertex(_UnderlyingPtr, x, y, z);
+        }
+
+        /// Generated from method `JoltMeshShape::AddFace`.
+        public unsafe void AddFace(uint v0, uint v1, uint v2)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_AddFace", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_AddFace", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMeshShape_AddFace(_Underlying *_this, uint v0, uint v1, uint v2);
+            __JoltMeshShape_AddFace(_UnderlyingPtr, v0, v1, v2);
+        }
+
+        /// Generated from method `JoltMeshShape::Finalize`.
+        public unsafe void Finalize()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_Finalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_Finalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMeshShape_Finalize(_Underlying *_this);
+            __JoltMeshShape_Finalize(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltMeshShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMeshShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMeshShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMeshShape_Release(_Underlying *_this);
+            __JoltMeshShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltMeshShape` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `JoltMeshShape`/`Const_JoltMeshShape` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltMeshShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltMeshShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltMeshShape() {PassByMode = Jolt._PassBy.default_construct;}
+        public _ByValue_JoltMeshShape(Const_JoltMeshShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltMeshShape(Const_JoltMeshShape arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltMeshShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltMeshShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltMeshShape`/`Const_JoltMeshShape` directly.
+    public class _InOptMut_JoltMeshShape
+    {
+        public JoltMeshShape? Opt;
+
+        public _InOptMut_JoltMeshShape() {}
+        public _InOptMut_JoltMeshShape(JoltMeshShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltMeshShape(JoltMeshShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltMeshShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltMeshShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltMeshShape`/`Const_JoltMeshShape` to pass it to the function.
+    public class _InOptConst_JoltMeshShape
+    {
+        public Const_JoltMeshShape? Opt;
+
+        public _InOptConst_JoltMeshShape() {}
+        public _InOptConst_JoltMeshShape(Const_JoltMeshShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltMeshShape(Const_JoltMeshShape value) {return new(value);}
+    }
+
+    /// Convex hull shape built from a point cloud.
+    /// Call AddPoint() for each input point, then Finalize(convexRadius).
+    /// Generated from class `JoltConvexHullShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltConvexHullShape : Jolt.Object<Const_JoltConvexHullShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltConvexHullShape_Destroy(_Underlying *_this);
+            __JoltConvexHullShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltConvexHullShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltConvexHullShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltConvexHullShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltConvexHullShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltConvexHullShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltConvexHullShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltConvexHullShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltConvexHullShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltConvexHullShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltConvexHullShape() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltConvexHullShape._Underlying *__JoltConvexHullShape_DefaultConstruct();
+            _UnderlyingPtr = __JoltConvexHullShape_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltConvexHullShape::JoltConvexHullShape`.
+        public unsafe Const_JoltConvexHullShape(Jolt._ByValue_JoltConvexHullShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltConvexHullShape._Underlying *__JoltConvexHullShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltConvexHullShape._Underlying *_other);
+            _UnderlyingPtr = __JoltConvexHullShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltConvexHullShape::JoltConvexHullShape`.
+        public Const_JoltConvexHullShape(Const_JoltConvexHullShape _other) : this(new _ByValue_JoltConvexHullShape(_other)) {}
+
+        /// Generated from constructor `JoltConvexHullShape::JoltConvexHullShape`.
+        public Const_JoltConvexHullShape(JoltConvexHullShape _other) : this((Const_JoltConvexHullShape)_other) {}
+
+        /// Generated from method `JoltConvexHullShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltConvexHullShape_IsValid(_Underlying *_this);
+            return __JoltConvexHullShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltConvexHullShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltConvexHullShape_getHandle(_Underlying *_this);
+            return __JoltConvexHullShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Convex hull shape built from a point cloud.
+    /// Call AddPoint() for each input point, then Finalize(convexRadius).
+    /// Generated from class `JoltConvexHullShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltConvexHullShape : Const_JoltConvexHullShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltConvexHullShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltConvexHullShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltConvexHullShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltConvexHullShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltConvexHullShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltConvexHullShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltConvexHullShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltConvexHullShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltConvexHullShape() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltConvexHullShape._Underlying *__JoltConvexHullShape_DefaultConstruct();
+            _UnderlyingPtr = __JoltConvexHullShape_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltConvexHullShape::JoltConvexHullShape`.
+        public unsafe JoltConvexHullShape(Jolt._ByValue_JoltConvexHullShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltConvexHullShape._Underlying *__JoltConvexHullShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltConvexHullShape._Underlying *_other);
+            _UnderlyingPtr = __JoltConvexHullShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltConvexHullShape::JoltConvexHullShape`.
+        public JoltConvexHullShape(Const_JoltConvexHullShape _other) : this(new _ByValue_JoltConvexHullShape(_other)) {}
+
+        /// Generated from constructor `JoltConvexHullShape::JoltConvexHullShape`.
+        public JoltConvexHullShape(JoltConvexHullShape _other) : this((Const_JoltConvexHullShape)_other) {}
+
+        /// Generated from method `JoltConvexHullShape::operator=`.
+        public unsafe Jolt.JoltConvexHullShape Assign(Jolt._ByValue_JoltConvexHullShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltConvexHullShape._Underlying *__JoltConvexHullShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltConvexHullShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltConvexHullShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JoltConvexHullShape::AddPoint`.
+        public unsafe void AddPoint(float x, float y, float z)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_AddPoint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_AddPoint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltConvexHullShape_AddPoint(_Underlying *_this, float x, float y, float z);
+            __JoltConvexHullShape_AddPoint(_UnderlyingPtr, x, y, z);
+        }
+
+        /// Generated from method `JoltConvexHullShape::Finalize`.
+        public unsafe void Finalize(float convexRadius)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_Finalize_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_Finalize_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltConvexHullShape_Finalize_1(_Underlying *_this, float convexRadius);
+            __JoltConvexHullShape_Finalize_1(_UnderlyingPtr, convexRadius);
+        }
+
+        /// Generated from method `JoltConvexHullShape::Finalize`.
+        public unsafe void Finalize()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_Finalize_0", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_Finalize_0", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltConvexHullShape_Finalize_0(_Underlying *_this);
+            __JoltConvexHullShape_Finalize_0(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltConvexHullShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltConvexHullShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltConvexHullShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltConvexHullShape_Release(_Underlying *_this);
+            __JoltConvexHullShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltConvexHullShape` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `JoltConvexHullShape`/`Const_JoltConvexHullShape` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltConvexHullShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltConvexHullShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltConvexHullShape() {PassByMode = Jolt._PassBy.default_construct;}
+        public _ByValue_JoltConvexHullShape(Const_JoltConvexHullShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltConvexHullShape(Const_JoltConvexHullShape arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltConvexHullShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltConvexHullShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltConvexHullShape`/`Const_JoltConvexHullShape` directly.
+    public class _InOptMut_JoltConvexHullShape
+    {
+        public JoltConvexHullShape? Opt;
+
+        public _InOptMut_JoltConvexHullShape() {}
+        public _InOptMut_JoltConvexHullShape(JoltConvexHullShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltConvexHullShape(JoltConvexHullShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltConvexHullShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltConvexHullShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltConvexHullShape`/`Const_JoltConvexHullShape` to pass it to the function.
+    public class _InOptConst_JoltConvexHullShape
+    {
+        public Const_JoltConvexHullShape? Opt;
+
+        public _InOptConst_JoltConvexHullShape() {}
+        public _InOptConst_JoltConvexHullShape(Const_JoltConvexHullShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltConvexHullShape(Const_JoltConvexHullShape value) {return new(value);}
+    }
+
+    /// Height-field terrain shape (uniform sampleCount × sampleCount grid).
+    /// Call SetSample() to fill height values, then Finalize().
+    /// Position of sample (x,y) = offset + scale * (x, height, y).
+    /// Generated from class `JoltHeightFieldShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the const half of the class.
+    public class Const_JoltHeightFieldShape : Jolt.Object<Const_JoltHeightFieldShape>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHeightFieldShape_Destroy(_Underlying *_this);
+            __JoltHeightFieldShape_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltHeightFieldShape() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator Jolt.Const_JoltShape(Const_JoltHeightFieldShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.Const_JoltShape._Underlying *__JoltHeightFieldShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.Const_JoltShape ret = new(__JoltHeightFieldShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_JoltHeightFieldShape?(Jolt.Const_JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltHeightFieldShape_DynamicDowncastFrom_JoltShape(Jolt.Const_JoltShape._Underlying *_this);
+            var ptr = __JoltHeightFieldShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            Const_JoltHeightFieldShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_JoltHeightFieldShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Generated from constructor `JoltHeightFieldShape::JoltHeightFieldShape`.
+        public unsafe Const_JoltHeightFieldShape(Jolt._ByValue_JoltHeightFieldShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltHeightFieldShape._Underlying *__JoltHeightFieldShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltHeightFieldShape._Underlying *_other);
+            _UnderlyingPtr = __JoltHeightFieldShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltHeightFieldShape::JoltHeightFieldShape`.
+        public Const_JoltHeightFieldShape(Const_JoltHeightFieldShape _other) : this(new _ByValue_JoltHeightFieldShape(_other)) {}
+
+        /// Generated from constructor `JoltHeightFieldShape::JoltHeightFieldShape`.
+        public Const_JoltHeightFieldShape(JoltHeightFieldShape _other) : this((Const_JoltHeightFieldShape)_other) {}
+
+        /// Generated from constructor `JoltHeightFieldShape::JoltHeightFieldShape`.
+        public unsafe Const_JoltHeightFieldShape(uint sampleCount, float offsetX, float offsetY, float offsetZ, float scaleX, float scaleY, float scaleZ) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltHeightFieldShape._Underlying *__JoltHeightFieldShape_Construct(uint sampleCount, float offsetX, float offsetY, float offsetZ, float scaleX, float scaleY, float scaleZ);
+            _UnderlyingPtr = __JoltHeightFieldShape_Construct(sampleCount, offsetX, offsetY, offsetZ, scaleX, scaleY, scaleZ);
+        }
+
+        /// Generated from method `JoltHeightFieldShape::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltHeightFieldShape_IsValid(_Underlying *_this);
+            return __JoltHeightFieldShape_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltHeightFieldShape::getHandle`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetHandle()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_getHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltHeightFieldShape_getHandle(_Underlying *_this);
+            return __JoltHeightFieldShape_getHandle(_UnderlyingPtr);
+        }
+    }
+
+    /// Height-field terrain shape (uniform sampleCount × sampleCount grid).
+    /// Call SetSample() to fill height values, then Finalize().
+    /// Position of sample (x,y) = offset + scale * (x, height, y).
+    /// Generated from class `JoltHeightFieldShape`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JoltShape`
+    /// This is the non-const half of the class.
+    public class JoltHeightFieldShape : Const_JoltHeightFieldShape
+    {
+        // Upcasts:
+        public static unsafe implicit operator Jolt.JoltShape(JoltHeightFieldShape self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_UpcastTo_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltShape._Underlying *__JoltHeightFieldShape_UpcastTo_JoltShape(_Underlying *_this);
+            Jolt.JoltShape ret = new(__JoltHeightFieldShape_UpcastTo_JoltShape(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JoltHeightFieldShape?(Jolt.JoltShape parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_DynamicDowncastFrom_JoltShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JoltHeightFieldShape_DynamicDowncastFrom_JoltShape(Jolt.JoltShape._Underlying *_this);
+            var ptr = __JoltHeightFieldShape_DynamicDowncastFrom_JoltShape(parent._UnderlyingPtr);
+            if (ptr is null) return null;
+            JoltHeightFieldShape ret = new(ptr, is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe JoltHeightFieldShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Generated from constructor `JoltHeightFieldShape::JoltHeightFieldShape`.
+        public unsafe JoltHeightFieldShape(Jolt._ByValue_JoltHeightFieldShape _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltHeightFieldShape._Underlying *__JoltHeightFieldShape_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JoltHeightFieldShape._Underlying *_other);
+            _UnderlyingPtr = __JoltHeightFieldShape_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JoltHeightFieldShape::JoltHeightFieldShape`.
+        public JoltHeightFieldShape(Const_JoltHeightFieldShape _other) : this(new _ByValue_JoltHeightFieldShape(_other)) {}
+
+        /// Generated from constructor `JoltHeightFieldShape::JoltHeightFieldShape`.
+        public JoltHeightFieldShape(JoltHeightFieldShape _other) : this((Const_JoltHeightFieldShape)_other) {}
+
+        /// Generated from constructor `JoltHeightFieldShape::JoltHeightFieldShape`.
+        public unsafe JoltHeightFieldShape(uint sampleCount, float offsetX, float offsetY, float offsetZ, float scaleX, float scaleY, float scaleZ) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltHeightFieldShape._Underlying *__JoltHeightFieldShape_Construct(uint sampleCount, float offsetX, float offsetY, float offsetZ, float scaleX, float scaleY, float scaleZ);
+            _UnderlyingPtr = __JoltHeightFieldShape_Construct(sampleCount, offsetX, offsetY, offsetZ, scaleX, scaleY, scaleZ);
+        }
+
+        /// Generated from method `JoltHeightFieldShape::operator=`.
+        public unsafe Jolt.JoltHeightFieldShape Assign(Jolt._ByValue_JoltHeightFieldShape _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltHeightFieldShape._Underlying *__JoltHeightFieldShape_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JoltHeightFieldShape._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__JoltHeightFieldShape_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JoltHeightFieldShape::SetSample`.
+        public unsafe void SetSample(uint x, uint y, float height)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_SetSample", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_SetSample", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHeightFieldShape_SetSample(_Underlying *_this, uint x, uint y, float height);
+            __JoltHeightFieldShape_SetSample(_UnderlyingPtr, x, y, height);
+        }
+
+        /// Generated from method `JoltHeightFieldShape::Finalize`.
+        public unsafe void Finalize()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_Finalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_Finalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHeightFieldShape_Finalize(_Underlying *_this);
+            __JoltHeightFieldShape_Finalize(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltHeightFieldShape::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHeightFieldShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHeightFieldShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHeightFieldShape_Release(_Underlying *_this);
+            __JoltHeightFieldShape_Release(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `JoltHeightFieldShape` by value.
+    /// Usage:
+    /// * Pass an instance of `JoltHeightFieldShape`/`Const_JoltHeightFieldShape` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_JoltHeightFieldShape
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_JoltHeightFieldShape? Value;
+        #pragma warning restore CS0649
+        internal readonly Jolt._PassBy PassByMode;
+        public _ByValue_JoltHeightFieldShape(Const_JoltHeightFieldShape new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+        public static implicit operator _ByValue_JoltHeightFieldShape(Const_JoltHeightFieldShape arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `JoltHeightFieldShape` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltHeightFieldShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltHeightFieldShape`/`Const_JoltHeightFieldShape` directly.
+    public class _InOptMut_JoltHeightFieldShape
+    {
+        public JoltHeightFieldShape? Opt;
+
+        public _InOptMut_JoltHeightFieldShape() {}
+        public _InOptMut_JoltHeightFieldShape(JoltHeightFieldShape value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltHeightFieldShape(JoltHeightFieldShape value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltHeightFieldShape` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltHeightFieldShape`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltHeightFieldShape`/`Const_JoltHeightFieldShape` to pass it to the function.
+    public class _InOptConst_JoltHeightFieldShape
+    {
+        public Const_JoltHeightFieldShape? Opt;
+
+        public _InOptConst_JoltHeightFieldShape() {}
+        public _InOptConst_JoltHeightFieldShape(Const_JoltHeightFieldShape value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltHeightFieldShape(Const_JoltHeightFieldShape value) {return new(value);}
     }
 
     /// Parameters used when adding a body to the physics system.

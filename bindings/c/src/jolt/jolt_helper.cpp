@@ -2941,6 +2941,1593 @@ void *JoltRotatedTranslatedShape_getHandle(const JoltRotatedTranslatedShape *_th
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRotatedTranslatedShape *)(_this)).getHandle();
 }
 
+JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltTaperedCapsuleShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltTaperedCapsuleShape);
+    return (JoltTaperedCapsuleShape *)new JoltTaperedCapsuleShape(JoltTaperedCapsuleShape(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltTaperedCapsuleShape), JoltTaperedCapsuleShape) MRBINDC_CLASSARG_MOVE(_other, (JoltTaperedCapsuleShape), JoltTaperedCapsuleShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltTaperedCapsuleShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltTaperedCapsuleShape) MRBINDC_CLASSARG_END(_other, JoltTaperedCapsuleShape))
+    ));
+}
+
+const JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_OffsetPtr(const JoltTaperedCapsuleShape *ptr, ptrdiff_t i)
+{
+    return (const JoltTaperedCapsuleShape *)(((const JoltTaperedCapsuleShape *)ptr) + i);
+}
+
+JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_OffsetMutablePtr(JoltTaperedCapsuleShape *ptr, ptrdiff_t i)
+{
+    return (JoltTaperedCapsuleShape *)(((JoltTaperedCapsuleShape *)ptr) + i);
+}
+
+const JoltShape *JoltTaperedCapsuleShape_UpcastTo_JoltShape(const JoltTaperedCapsuleShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltTaperedCapsuleShape *)object)
+    ));
+}
+
+JoltShape *JoltTaperedCapsuleShape_MutableUpcastTo_JoltShape(JoltTaperedCapsuleShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltTaperedCapsuleShape *)object)
+    ));
+}
+
+const JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltTaperedCapsuleShape *)(static_cast<const JoltTaperedCapsuleShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltTaperedCapsuleShape *)(static_cast<JoltTaperedCapsuleShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltTaperedCapsuleShape *)(dynamic_cast<const JoltTaperedCapsuleShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltTaperedCapsuleShape *)(dynamic_cast<JoltTaperedCapsuleShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltTaperedCapsuleShape *)std::addressof(dynamic_cast<const JoltTaperedCapsuleShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltTaperedCapsuleShape *)std::addressof(dynamic_cast<JoltTaperedCapsuleShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_Construct(float halfHeight, float topRadius, float bottomRadius)
+{
+    return (JoltTaperedCapsuleShape *)new JoltTaperedCapsuleShape(JoltTaperedCapsuleShape(
+        halfHeight,
+        topRadius,
+        bottomRadius
+    ));
+}
+
+void JoltTaperedCapsuleShape_Destroy(const JoltTaperedCapsuleShape *_this)
+{
+    delete ((const JoltTaperedCapsuleShape *)_this);
+}
+
+void JoltTaperedCapsuleShape_DestroyArray(const JoltTaperedCapsuleShape *_this)
+{
+    delete[] ((const JoltTaperedCapsuleShape *)_this);
+}
+
+JoltTaperedCapsuleShape *JoltTaperedCapsuleShape_AssignFromAnother(JoltTaperedCapsuleShape *_this, Jolt_PassBy _other_pass_by, JoltTaperedCapsuleShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltTaperedCapsuleShape);
+    return (JoltTaperedCapsuleShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltTaperedCapsuleShape *)(_this)).operator=(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltTaperedCapsuleShape), JoltTaperedCapsuleShape) MRBINDC_CLASSARG_MOVE(_other, (JoltTaperedCapsuleShape), JoltTaperedCapsuleShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltTaperedCapsuleShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltTaperedCapsuleShape) MRBINDC_CLASSARG_END(_other, JoltTaperedCapsuleShape))
+    ));
+}
+
+void JoltTaperedCapsuleShape_Release(JoltTaperedCapsuleShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltTaperedCapsuleShape *)(_this)).Release();
+}
+
+bool JoltTaperedCapsuleShape_IsValid(const JoltTaperedCapsuleShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltTaperedCapsuleShape *)(_this)).IsValid();
+}
+
+void *JoltTaperedCapsuleShape_getHandle(const JoltTaperedCapsuleShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltTaperedCapsuleShape *)(_this)).getHandle();
+}
+
+JoltTaperedCylinderShape *JoltTaperedCylinderShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltTaperedCylinderShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltTaperedCylinderShape);
+    return (JoltTaperedCylinderShape *)new JoltTaperedCylinderShape(JoltTaperedCylinderShape(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltTaperedCylinderShape), JoltTaperedCylinderShape) MRBINDC_CLASSARG_MOVE(_other, (JoltTaperedCylinderShape), JoltTaperedCylinderShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltTaperedCylinderShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltTaperedCylinderShape) MRBINDC_CLASSARG_END(_other, JoltTaperedCylinderShape))
+    ));
+}
+
+const JoltTaperedCylinderShape *JoltTaperedCylinderShape_OffsetPtr(const JoltTaperedCylinderShape *ptr, ptrdiff_t i)
+{
+    return (const JoltTaperedCylinderShape *)(((const JoltTaperedCylinderShape *)ptr) + i);
+}
+
+JoltTaperedCylinderShape *JoltTaperedCylinderShape_OffsetMutablePtr(JoltTaperedCylinderShape *ptr, ptrdiff_t i)
+{
+    return (JoltTaperedCylinderShape *)(((JoltTaperedCylinderShape *)ptr) + i);
+}
+
+const JoltShape *JoltTaperedCylinderShape_UpcastTo_JoltShape(const JoltTaperedCylinderShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltTaperedCylinderShape *)object)
+    ));
+}
+
+JoltShape *JoltTaperedCylinderShape_MutableUpcastTo_JoltShape(JoltTaperedCylinderShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltTaperedCylinderShape *)object)
+    ));
+}
+
+const JoltTaperedCylinderShape *JoltTaperedCylinderShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltTaperedCylinderShape *)(static_cast<const JoltTaperedCylinderShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltTaperedCylinderShape *JoltTaperedCylinderShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltTaperedCylinderShape *)(static_cast<JoltTaperedCylinderShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltTaperedCylinderShape *JoltTaperedCylinderShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltTaperedCylinderShape *)(dynamic_cast<const JoltTaperedCylinderShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltTaperedCylinderShape *JoltTaperedCylinderShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltTaperedCylinderShape *)(dynamic_cast<JoltTaperedCylinderShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltTaperedCylinderShape *JoltTaperedCylinderShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltTaperedCylinderShape *)std::addressof(dynamic_cast<const JoltTaperedCylinderShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltTaperedCylinderShape *JoltTaperedCylinderShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltTaperedCylinderShape *)std::addressof(dynamic_cast<JoltTaperedCylinderShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltTaperedCylinderShape *JoltTaperedCylinderShape_Construct_4(float halfHeight, float topRadius, float bottomRadius, float convexRadius)
+{
+    return (JoltTaperedCylinderShape *)new JoltTaperedCylinderShape(JoltTaperedCylinderShape(
+        halfHeight,
+        topRadius,
+        bottomRadius,
+        convexRadius
+    ));
+}
+
+JoltTaperedCylinderShape *JoltTaperedCylinderShape_Construct_3(float halfHeight, float topRadius, float bottomRadius)
+{
+    return (JoltTaperedCylinderShape *)new JoltTaperedCylinderShape(JoltTaperedCylinderShape(
+        halfHeight,
+        topRadius,
+        bottomRadius
+    ));
+}
+
+void JoltTaperedCylinderShape_Destroy(const JoltTaperedCylinderShape *_this)
+{
+    delete ((const JoltTaperedCylinderShape *)_this);
+}
+
+void JoltTaperedCylinderShape_DestroyArray(const JoltTaperedCylinderShape *_this)
+{
+    delete[] ((const JoltTaperedCylinderShape *)_this);
+}
+
+JoltTaperedCylinderShape *JoltTaperedCylinderShape_AssignFromAnother(JoltTaperedCylinderShape *_this, Jolt_PassBy _other_pass_by, JoltTaperedCylinderShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltTaperedCylinderShape);
+    return (JoltTaperedCylinderShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltTaperedCylinderShape *)(_this)).operator=(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltTaperedCylinderShape), JoltTaperedCylinderShape) MRBINDC_CLASSARG_MOVE(_other, (JoltTaperedCylinderShape), JoltTaperedCylinderShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltTaperedCylinderShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltTaperedCylinderShape) MRBINDC_CLASSARG_END(_other, JoltTaperedCylinderShape))
+    ));
+}
+
+void JoltTaperedCylinderShape_Release(JoltTaperedCylinderShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltTaperedCylinderShape *)(_this)).Release();
+}
+
+bool JoltTaperedCylinderShape_IsValid(const JoltTaperedCylinderShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltTaperedCylinderShape *)(_this)).IsValid();
+}
+
+void *JoltTaperedCylinderShape_getHandle(const JoltTaperedCylinderShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltTaperedCylinderShape *)(_this)).getHandle();
+}
+
+JoltTriangleShape *JoltTriangleShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltTriangleShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltTriangleShape);
+    return (JoltTriangleShape *)new JoltTriangleShape(JoltTriangleShape(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltTriangleShape), JoltTriangleShape) MRBINDC_CLASSARG_MOVE(_other, (JoltTriangleShape), JoltTriangleShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltTriangleShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltTriangleShape) MRBINDC_CLASSARG_END(_other, JoltTriangleShape))
+    ));
+}
+
+const JoltTriangleShape *JoltTriangleShape_OffsetPtr(const JoltTriangleShape *ptr, ptrdiff_t i)
+{
+    return (const JoltTriangleShape *)(((const JoltTriangleShape *)ptr) + i);
+}
+
+JoltTriangleShape *JoltTriangleShape_OffsetMutablePtr(JoltTriangleShape *ptr, ptrdiff_t i)
+{
+    return (JoltTriangleShape *)(((JoltTriangleShape *)ptr) + i);
+}
+
+const JoltShape *JoltTriangleShape_UpcastTo_JoltShape(const JoltTriangleShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltTriangleShape *)object)
+    ));
+}
+
+JoltShape *JoltTriangleShape_MutableUpcastTo_JoltShape(JoltTriangleShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltTriangleShape *)object)
+    ));
+}
+
+const JoltTriangleShape *JoltTriangleShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltTriangleShape *)(static_cast<const JoltTriangleShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltTriangleShape *JoltTriangleShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltTriangleShape *)(static_cast<JoltTriangleShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltTriangleShape *JoltTriangleShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltTriangleShape *)(dynamic_cast<const JoltTriangleShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltTriangleShape *JoltTriangleShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltTriangleShape *)(dynamic_cast<JoltTriangleShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltTriangleShape *JoltTriangleShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltTriangleShape *)std::addressof(dynamic_cast<const JoltTriangleShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltTriangleShape *JoltTriangleShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltTriangleShape *)std::addressof(dynamic_cast<JoltTriangleShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltTriangleShape *JoltTriangleShape_Construct_9(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z)
+{
+    return (JoltTriangleShape *)new JoltTriangleShape(JoltTriangleShape(
+        v1x,
+        v1y,
+        v1z,
+        v2x,
+        v2y,
+        v2z,
+        v3x,
+        v3y,
+        v3z
+    ));
+}
+
+JoltTriangleShape *JoltTriangleShape_Construct_10(float v1x, float v1y, float v1z, float v2x, float v2y, float v2z, float v3x, float v3y, float v3z, float convexRadius)
+{
+    return (JoltTriangleShape *)new JoltTriangleShape(JoltTriangleShape(
+        v1x,
+        v1y,
+        v1z,
+        v2x,
+        v2y,
+        v2z,
+        v3x,
+        v3y,
+        v3z,
+        convexRadius
+    ));
+}
+
+void JoltTriangleShape_Destroy(const JoltTriangleShape *_this)
+{
+    delete ((const JoltTriangleShape *)_this);
+}
+
+void JoltTriangleShape_DestroyArray(const JoltTriangleShape *_this)
+{
+    delete[] ((const JoltTriangleShape *)_this);
+}
+
+JoltTriangleShape *JoltTriangleShape_AssignFromAnother(JoltTriangleShape *_this, Jolt_PassBy _other_pass_by, JoltTriangleShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltTriangleShape);
+    return (JoltTriangleShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltTriangleShape *)(_this)).operator=(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltTriangleShape), JoltTriangleShape) MRBINDC_CLASSARG_MOVE(_other, (JoltTriangleShape), JoltTriangleShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltTriangleShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltTriangleShape) MRBINDC_CLASSARG_END(_other, JoltTriangleShape))
+    ));
+}
+
+void JoltTriangleShape_Release(JoltTriangleShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltTriangleShape *)(_this)).Release();
+}
+
+bool JoltTriangleShape_IsValid(const JoltTriangleShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltTriangleShape *)(_this)).IsValid();
+}
+
+void *JoltTriangleShape_getHandle(const JoltTriangleShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltTriangleShape *)(_this)).getHandle();
+}
+
+JoltPlaneShape *JoltPlaneShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltPlaneShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltPlaneShape);
+    return (JoltPlaneShape *)new JoltPlaneShape(JoltPlaneShape(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltPlaneShape), JoltPlaneShape) MRBINDC_CLASSARG_MOVE(_other, (JoltPlaneShape), JoltPlaneShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltPlaneShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltPlaneShape) MRBINDC_CLASSARG_END(_other, JoltPlaneShape))
+    ));
+}
+
+const JoltPlaneShape *JoltPlaneShape_OffsetPtr(const JoltPlaneShape *ptr, ptrdiff_t i)
+{
+    return (const JoltPlaneShape *)(((const JoltPlaneShape *)ptr) + i);
+}
+
+JoltPlaneShape *JoltPlaneShape_OffsetMutablePtr(JoltPlaneShape *ptr, ptrdiff_t i)
+{
+    return (JoltPlaneShape *)(((JoltPlaneShape *)ptr) + i);
+}
+
+const JoltShape *JoltPlaneShape_UpcastTo_JoltShape(const JoltPlaneShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltPlaneShape *)object)
+    ));
+}
+
+JoltShape *JoltPlaneShape_MutableUpcastTo_JoltShape(JoltPlaneShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltPlaneShape *)object)
+    ));
+}
+
+const JoltPlaneShape *JoltPlaneShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltPlaneShape *)(static_cast<const JoltPlaneShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltPlaneShape *JoltPlaneShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltPlaneShape *)(static_cast<JoltPlaneShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltPlaneShape *JoltPlaneShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltPlaneShape *)(dynamic_cast<const JoltPlaneShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltPlaneShape *JoltPlaneShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltPlaneShape *)(dynamic_cast<JoltPlaneShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltPlaneShape *JoltPlaneShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltPlaneShape *)std::addressof(dynamic_cast<const JoltPlaneShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltPlaneShape *JoltPlaneShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltPlaneShape *)std::addressof(dynamic_cast<JoltPlaneShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltPlaneShape *JoltPlaneShape_Construct_5(float nx, float ny, float nz, float d, float halfExtent)
+{
+    return (JoltPlaneShape *)new JoltPlaneShape(JoltPlaneShape(
+        nx,
+        ny,
+        nz,
+        d,
+        halfExtent
+    ));
+}
+
+JoltPlaneShape *JoltPlaneShape_Construct_4(float nx, float ny, float nz, float d)
+{
+    return (JoltPlaneShape *)new JoltPlaneShape(JoltPlaneShape(
+        nx,
+        ny,
+        nz,
+        d
+    ));
+}
+
+void JoltPlaneShape_Destroy(const JoltPlaneShape *_this)
+{
+    delete ((const JoltPlaneShape *)_this);
+}
+
+void JoltPlaneShape_DestroyArray(const JoltPlaneShape *_this)
+{
+    delete[] ((const JoltPlaneShape *)_this);
+}
+
+JoltPlaneShape *JoltPlaneShape_AssignFromAnother(JoltPlaneShape *_this, Jolt_PassBy _other_pass_by, JoltPlaneShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltPlaneShape);
+    return (JoltPlaneShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltPlaneShape *)(_this)).operator=(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltPlaneShape), JoltPlaneShape) MRBINDC_CLASSARG_MOVE(_other, (JoltPlaneShape), JoltPlaneShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltPlaneShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltPlaneShape) MRBINDC_CLASSARG_END(_other, JoltPlaneShape))
+    ));
+}
+
+void JoltPlaneShape_Release(JoltPlaneShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltPlaneShape *)(_this)).Release();
+}
+
+bool JoltPlaneShape_IsValid(const JoltPlaneShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltPlaneShape *)(_this)).IsValid();
+}
+
+void *JoltPlaneShape_getHandle(const JoltPlaneShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltPlaneShape *)(_this)).getHandle();
+}
+
+JoltEmptyShape *JoltEmptyShape_DefaultConstruct(void)
+{
+    return (JoltEmptyShape *)new JoltEmptyShape(JoltEmptyShape());
+}
+
+JoltEmptyShape *JoltEmptyShape_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltEmptyShape *)(new JoltEmptyShape[num_elems]{});
+}
+
+const JoltEmptyShape *JoltEmptyShape_OffsetPtr(const JoltEmptyShape *ptr, ptrdiff_t i)
+{
+    return (const JoltEmptyShape *)(((const JoltEmptyShape *)ptr) + i);
+}
+
+JoltEmptyShape *JoltEmptyShape_OffsetMutablePtr(JoltEmptyShape *ptr, ptrdiff_t i)
+{
+    return (JoltEmptyShape *)(((JoltEmptyShape *)ptr) + i);
+}
+
+const JoltShape *JoltEmptyShape_UpcastTo_JoltShape(const JoltEmptyShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltEmptyShape *)object)
+    ));
+}
+
+JoltShape *JoltEmptyShape_MutableUpcastTo_JoltShape(JoltEmptyShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltEmptyShape *)object)
+    ));
+}
+
+const JoltEmptyShape *JoltEmptyShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltEmptyShape *)(static_cast<const JoltEmptyShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltEmptyShape *JoltEmptyShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltEmptyShape *)(static_cast<JoltEmptyShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltEmptyShape *JoltEmptyShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltEmptyShape *)(dynamic_cast<const JoltEmptyShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltEmptyShape *JoltEmptyShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltEmptyShape *)(dynamic_cast<JoltEmptyShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltEmptyShape *JoltEmptyShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltEmptyShape *)std::addressof(dynamic_cast<const JoltEmptyShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltEmptyShape *JoltEmptyShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltEmptyShape *)std::addressof(dynamic_cast<JoltEmptyShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltEmptyShape *JoltEmptyShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltEmptyShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltEmptyShape);
+    return (JoltEmptyShape *)new JoltEmptyShape(JoltEmptyShape(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JoltEmptyShape) MRBINDC_CLASSARG_COPY(_other, (JoltEmptyShape), JoltEmptyShape) MRBINDC_CLASSARG_MOVE(_other, (JoltEmptyShape), JoltEmptyShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltEmptyShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltEmptyShape) MRBINDC_CLASSARG_END(_other, JoltEmptyShape))
+    ));
+}
+
+JoltEmptyShape *JoltEmptyShape_Construct(float comX, float comY, float comZ)
+{
+    return (JoltEmptyShape *)new JoltEmptyShape(JoltEmptyShape(
+        comX,
+        comY,
+        comZ
+    ));
+}
+
+void JoltEmptyShape_Destroy(const JoltEmptyShape *_this)
+{
+    delete ((const JoltEmptyShape *)_this);
+}
+
+void JoltEmptyShape_DestroyArray(const JoltEmptyShape *_this)
+{
+    delete[] ((const JoltEmptyShape *)_this);
+}
+
+JoltEmptyShape *JoltEmptyShape_AssignFromAnother(JoltEmptyShape *_this, Jolt_PassBy _other_pass_by, JoltEmptyShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltEmptyShape);
+    return (JoltEmptyShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltEmptyShape *)(_this)).operator=(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JoltEmptyShape) MRBINDC_CLASSARG_COPY(_other, (JoltEmptyShape), JoltEmptyShape) MRBINDC_CLASSARG_MOVE(_other, (JoltEmptyShape), JoltEmptyShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltEmptyShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltEmptyShape) MRBINDC_CLASSARG_END(_other, JoltEmptyShape))
+    ));
+}
+
+void JoltEmptyShape_Release(JoltEmptyShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltEmptyShape *)(_this)).Release();
+}
+
+bool JoltEmptyShape_IsValid(const JoltEmptyShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltEmptyShape *)(_this)).IsValid();
+}
+
+void *JoltEmptyShape_getHandle(const JoltEmptyShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltEmptyShape *)(_this)).getHandle();
+}
+
+JoltScaledShape *JoltScaledShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltScaledShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltScaledShape);
+    return (JoltScaledShape *)new JoltScaledShape(JoltScaledShape(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltScaledShape), JoltScaledShape) MRBINDC_CLASSARG_MOVE(_other, (JoltScaledShape), JoltScaledShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltScaledShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltScaledShape) MRBINDC_CLASSARG_END(_other, JoltScaledShape))
+    ));
+}
+
+const JoltScaledShape *JoltScaledShape_OffsetPtr(const JoltScaledShape *ptr, ptrdiff_t i)
+{
+    return (const JoltScaledShape *)(((const JoltScaledShape *)ptr) + i);
+}
+
+JoltScaledShape *JoltScaledShape_OffsetMutablePtr(JoltScaledShape *ptr, ptrdiff_t i)
+{
+    return (JoltScaledShape *)(((JoltScaledShape *)ptr) + i);
+}
+
+const JoltShape *JoltScaledShape_UpcastTo_JoltShape(const JoltScaledShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltScaledShape *)object)
+    ));
+}
+
+JoltShape *JoltScaledShape_MutableUpcastTo_JoltShape(JoltScaledShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltScaledShape *)object)
+    ));
+}
+
+const JoltScaledShape *JoltScaledShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltScaledShape *)(static_cast<const JoltScaledShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltScaledShape *JoltScaledShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltScaledShape *)(static_cast<JoltScaledShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltScaledShape *JoltScaledShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltScaledShape *)(dynamic_cast<const JoltScaledShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltScaledShape *JoltScaledShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltScaledShape *)(dynamic_cast<JoltScaledShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltScaledShape *JoltScaledShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltScaledShape *)std::addressof(dynamic_cast<const JoltScaledShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltScaledShape *JoltScaledShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltScaledShape *)std::addressof(dynamic_cast<JoltScaledShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltScaledShape *JoltScaledShape_Construct(JoltShape *inner, float sx, float sy, float sz)
+{
+    return (JoltScaledShape *)new JoltScaledShape(JoltScaledShape(
+        ((JoltShape *)inner),
+        sx,
+        sy,
+        sz
+    ));
+}
+
+void JoltScaledShape_Destroy(const JoltScaledShape *_this)
+{
+    delete ((const JoltScaledShape *)_this);
+}
+
+void JoltScaledShape_DestroyArray(const JoltScaledShape *_this)
+{
+    delete[] ((const JoltScaledShape *)_this);
+}
+
+JoltScaledShape *JoltScaledShape_AssignFromAnother(JoltScaledShape *_this, Jolt_PassBy _other_pass_by, JoltScaledShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltScaledShape);
+    return (JoltScaledShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltScaledShape *)(_this)).operator=(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltScaledShape), JoltScaledShape) MRBINDC_CLASSARG_MOVE(_other, (JoltScaledShape), JoltScaledShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltScaledShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltScaledShape) MRBINDC_CLASSARG_END(_other, JoltScaledShape))
+    ));
+}
+
+void JoltScaledShape_Release(JoltScaledShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltScaledShape *)(_this)).Release();
+}
+
+bool JoltScaledShape_IsValid(const JoltScaledShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltScaledShape *)(_this)).IsValid();
+}
+
+void *JoltScaledShape_getHandle(const JoltScaledShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltScaledShape *)(_this)).getHandle();
+}
+
+JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltOffsetCenterOfMassShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltOffsetCenterOfMassShape);
+    return (JoltOffsetCenterOfMassShape *)new JoltOffsetCenterOfMassShape(JoltOffsetCenterOfMassShape(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltOffsetCenterOfMassShape), JoltOffsetCenterOfMassShape) MRBINDC_CLASSARG_MOVE(_other, (JoltOffsetCenterOfMassShape), JoltOffsetCenterOfMassShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltOffsetCenterOfMassShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltOffsetCenterOfMassShape) MRBINDC_CLASSARG_END(_other, JoltOffsetCenterOfMassShape))
+    ));
+}
+
+const JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_OffsetPtr(const JoltOffsetCenterOfMassShape *ptr, ptrdiff_t i)
+{
+    return (const JoltOffsetCenterOfMassShape *)(((const JoltOffsetCenterOfMassShape *)ptr) + i);
+}
+
+JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_OffsetMutablePtr(JoltOffsetCenterOfMassShape *ptr, ptrdiff_t i)
+{
+    return (JoltOffsetCenterOfMassShape *)(((JoltOffsetCenterOfMassShape *)ptr) + i);
+}
+
+const JoltShape *JoltOffsetCenterOfMassShape_UpcastTo_JoltShape(const JoltOffsetCenterOfMassShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltOffsetCenterOfMassShape *)object)
+    ));
+}
+
+JoltShape *JoltOffsetCenterOfMassShape_MutableUpcastTo_JoltShape(JoltOffsetCenterOfMassShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltOffsetCenterOfMassShape *)object)
+    ));
+}
+
+const JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltOffsetCenterOfMassShape *)(static_cast<const JoltOffsetCenterOfMassShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltOffsetCenterOfMassShape *)(static_cast<JoltOffsetCenterOfMassShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltOffsetCenterOfMassShape *)(dynamic_cast<const JoltOffsetCenterOfMassShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltOffsetCenterOfMassShape *)(dynamic_cast<JoltOffsetCenterOfMassShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltOffsetCenterOfMassShape *)std::addressof(dynamic_cast<const JoltOffsetCenterOfMassShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltOffsetCenterOfMassShape *)std::addressof(dynamic_cast<JoltOffsetCenterOfMassShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_Construct(JoltShape *inner, float offsetX, float offsetY, float offsetZ)
+{
+    return (JoltOffsetCenterOfMassShape *)new JoltOffsetCenterOfMassShape(JoltOffsetCenterOfMassShape(
+        ((JoltShape *)inner),
+        offsetX,
+        offsetY,
+        offsetZ
+    ));
+}
+
+void JoltOffsetCenterOfMassShape_Destroy(const JoltOffsetCenterOfMassShape *_this)
+{
+    delete ((const JoltOffsetCenterOfMassShape *)_this);
+}
+
+void JoltOffsetCenterOfMassShape_DestroyArray(const JoltOffsetCenterOfMassShape *_this)
+{
+    delete[] ((const JoltOffsetCenterOfMassShape *)_this);
+}
+
+JoltOffsetCenterOfMassShape *JoltOffsetCenterOfMassShape_AssignFromAnother(JoltOffsetCenterOfMassShape *_this, Jolt_PassBy _other_pass_by, JoltOffsetCenterOfMassShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltOffsetCenterOfMassShape);
+    return (JoltOffsetCenterOfMassShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltOffsetCenterOfMassShape *)(_this)).operator=(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltOffsetCenterOfMassShape), JoltOffsetCenterOfMassShape) MRBINDC_CLASSARG_MOVE(_other, (JoltOffsetCenterOfMassShape), JoltOffsetCenterOfMassShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltOffsetCenterOfMassShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltOffsetCenterOfMassShape) MRBINDC_CLASSARG_END(_other, JoltOffsetCenterOfMassShape))
+    ));
+}
+
+void JoltOffsetCenterOfMassShape_Release(JoltOffsetCenterOfMassShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltOffsetCenterOfMassShape *)(_this)).Release();
+}
+
+bool JoltOffsetCenterOfMassShape_IsValid(const JoltOffsetCenterOfMassShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltOffsetCenterOfMassShape *)(_this)).IsValid();
+}
+
+void *JoltOffsetCenterOfMassShape_getHandle(const JoltOffsetCenterOfMassShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltOffsetCenterOfMassShape *)(_this)).getHandle();
+}
+
+JoltStaticCompoundShape *JoltStaticCompoundShape_DefaultConstruct(void)
+{
+    return (JoltStaticCompoundShape *)new JoltStaticCompoundShape(JoltStaticCompoundShape());
+}
+
+JoltStaticCompoundShape *JoltStaticCompoundShape_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltStaticCompoundShape *)(new JoltStaticCompoundShape[num_elems]{});
+}
+
+const JoltStaticCompoundShape *JoltStaticCompoundShape_OffsetPtr(const JoltStaticCompoundShape *ptr, ptrdiff_t i)
+{
+    return (const JoltStaticCompoundShape *)(((const JoltStaticCompoundShape *)ptr) + i);
+}
+
+JoltStaticCompoundShape *JoltStaticCompoundShape_OffsetMutablePtr(JoltStaticCompoundShape *ptr, ptrdiff_t i)
+{
+    return (JoltStaticCompoundShape *)(((JoltStaticCompoundShape *)ptr) + i);
+}
+
+const JoltShape *JoltStaticCompoundShape_UpcastTo_JoltShape(const JoltStaticCompoundShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltStaticCompoundShape *)object)
+    ));
+}
+
+JoltShape *JoltStaticCompoundShape_MutableUpcastTo_JoltShape(JoltStaticCompoundShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltStaticCompoundShape *)object)
+    ));
+}
+
+const JoltStaticCompoundShape *JoltStaticCompoundShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltStaticCompoundShape *)(static_cast<const JoltStaticCompoundShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltStaticCompoundShape *JoltStaticCompoundShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltStaticCompoundShape *)(static_cast<JoltStaticCompoundShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltStaticCompoundShape *JoltStaticCompoundShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltStaticCompoundShape *)(dynamic_cast<const JoltStaticCompoundShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltStaticCompoundShape *JoltStaticCompoundShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltStaticCompoundShape *)(dynamic_cast<JoltStaticCompoundShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltStaticCompoundShape *JoltStaticCompoundShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltStaticCompoundShape *)std::addressof(dynamic_cast<const JoltStaticCompoundShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltStaticCompoundShape *JoltStaticCompoundShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltStaticCompoundShape *)std::addressof(dynamic_cast<JoltStaticCompoundShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltStaticCompoundShape *JoltStaticCompoundShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltStaticCompoundShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltStaticCompoundShape);
+    return (JoltStaticCompoundShape *)new JoltStaticCompoundShape(JoltStaticCompoundShape(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JoltStaticCompoundShape) MRBINDC_CLASSARG_COPY(_other, (JoltStaticCompoundShape), JoltStaticCompoundShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltStaticCompoundShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltStaticCompoundShape) MRBINDC_CLASSARG_END(_other, JoltStaticCompoundShape))
+    ));
+}
+
+void JoltStaticCompoundShape_Destroy(const JoltStaticCompoundShape *_this)
+{
+    delete ((const JoltStaticCompoundShape *)_this);
+}
+
+void JoltStaticCompoundShape_DestroyArray(const JoltStaticCompoundShape *_this)
+{
+    delete[] ((const JoltStaticCompoundShape *)_this);
+}
+
+JoltStaticCompoundShape *JoltStaticCompoundShape_AssignFromAnother(JoltStaticCompoundShape *_this, Jolt_PassBy _other_pass_by, JoltStaticCompoundShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltStaticCompoundShape);
+    return (JoltStaticCompoundShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltStaticCompoundShape *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JoltStaticCompoundShape) MRBINDC_CLASSARG_COPY(_other, (JoltStaticCompoundShape), JoltStaticCompoundShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltStaticCompoundShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltStaticCompoundShape) MRBINDC_CLASSARG_END(_other, JoltStaticCompoundShape)))
+    ));
+}
+
+void JoltStaticCompoundShape_AddSubShape(JoltStaticCompoundShape *_this, JoltShape *shape, double px, double py, double pz, float qx, float qy, float qz, float qw)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltStaticCompoundShape *)(_this)).AddSubShape(
+        ((JoltShape *)shape),
+        px,
+        py,
+        pz,
+        qx,
+        qy,
+        qz,
+        qw
+    );
+}
+
+void JoltStaticCompoundShape_Finalize(JoltStaticCompoundShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltStaticCompoundShape *)(_this)).Finalize();
+}
+
+void JoltStaticCompoundShape_Release(JoltStaticCompoundShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltStaticCompoundShape *)(_this)).Release();
+}
+
+bool JoltStaticCompoundShape_IsValid(const JoltStaticCompoundShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltStaticCompoundShape *)(_this)).IsValid();
+}
+
+void *JoltStaticCompoundShape_getHandle(const JoltStaticCompoundShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltStaticCompoundShape *)(_this)).getHandle();
+}
+
+JoltMutableCompoundShape *JoltMutableCompoundShape_DefaultConstruct(void)
+{
+    return (JoltMutableCompoundShape *)new JoltMutableCompoundShape(JoltMutableCompoundShape());
+}
+
+JoltMutableCompoundShape *JoltMutableCompoundShape_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltMutableCompoundShape *)(new JoltMutableCompoundShape[num_elems]{});
+}
+
+const JoltMutableCompoundShape *JoltMutableCompoundShape_OffsetPtr(const JoltMutableCompoundShape *ptr, ptrdiff_t i)
+{
+    return (const JoltMutableCompoundShape *)(((const JoltMutableCompoundShape *)ptr) + i);
+}
+
+JoltMutableCompoundShape *JoltMutableCompoundShape_OffsetMutablePtr(JoltMutableCompoundShape *ptr, ptrdiff_t i)
+{
+    return (JoltMutableCompoundShape *)(((JoltMutableCompoundShape *)ptr) + i);
+}
+
+const JoltShape *JoltMutableCompoundShape_UpcastTo_JoltShape(const JoltMutableCompoundShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltMutableCompoundShape *)object)
+    ));
+}
+
+JoltShape *JoltMutableCompoundShape_MutableUpcastTo_JoltShape(JoltMutableCompoundShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltMutableCompoundShape *)object)
+    ));
+}
+
+const JoltMutableCompoundShape *JoltMutableCompoundShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltMutableCompoundShape *)(static_cast<const JoltMutableCompoundShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltMutableCompoundShape *JoltMutableCompoundShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltMutableCompoundShape *)(static_cast<JoltMutableCompoundShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltMutableCompoundShape *JoltMutableCompoundShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltMutableCompoundShape *)(dynamic_cast<const JoltMutableCompoundShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltMutableCompoundShape *JoltMutableCompoundShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltMutableCompoundShape *)(dynamic_cast<JoltMutableCompoundShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltMutableCompoundShape *JoltMutableCompoundShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltMutableCompoundShape *)std::addressof(dynamic_cast<const JoltMutableCompoundShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltMutableCompoundShape *JoltMutableCompoundShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltMutableCompoundShape *)std::addressof(dynamic_cast<JoltMutableCompoundShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltMutableCompoundShape *JoltMutableCompoundShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltMutableCompoundShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltMutableCompoundShape);
+    return (JoltMutableCompoundShape *)new JoltMutableCompoundShape(JoltMutableCompoundShape(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JoltMutableCompoundShape) MRBINDC_CLASSARG_COPY(_other, (JoltMutableCompoundShape), JoltMutableCompoundShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltMutableCompoundShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltMutableCompoundShape) MRBINDC_CLASSARG_END(_other, JoltMutableCompoundShape))
+    ));
+}
+
+void JoltMutableCompoundShape_Destroy(const JoltMutableCompoundShape *_this)
+{
+    delete ((const JoltMutableCompoundShape *)_this);
+}
+
+void JoltMutableCompoundShape_DestroyArray(const JoltMutableCompoundShape *_this)
+{
+    delete[] ((const JoltMutableCompoundShape *)_this);
+}
+
+JoltMutableCompoundShape *JoltMutableCompoundShape_AssignFromAnother(JoltMutableCompoundShape *_this, Jolt_PassBy _other_pass_by, JoltMutableCompoundShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltMutableCompoundShape);
+    return (JoltMutableCompoundShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMutableCompoundShape *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JoltMutableCompoundShape) MRBINDC_CLASSARG_COPY(_other, (JoltMutableCompoundShape), JoltMutableCompoundShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltMutableCompoundShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltMutableCompoundShape) MRBINDC_CLASSARG_END(_other, JoltMutableCompoundShape)))
+    ));
+}
+
+void JoltMutableCompoundShape_AddSubShape(JoltMutableCompoundShape *_this, JoltShape *shape, double px, double py, double pz, float qx, float qy, float qz, float qw)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMutableCompoundShape *)(_this)).AddSubShape(
+        ((JoltShape *)shape),
+        px,
+        py,
+        pz,
+        qx,
+        qy,
+        qz,
+        qw
+    );
+}
+
+void JoltMutableCompoundShape_Finalize(JoltMutableCompoundShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMutableCompoundShape *)(_this)).Finalize();
+}
+
+unsigned int JoltMutableCompoundShape_AppendSubShape(JoltMutableCompoundShape *_this, JoltShape *shape, double px, double py, double pz, float qx, float qy, float qz, float qw)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMutableCompoundShape *)(_this)).AppendSubShape(
+        ((JoltShape *)shape),
+        px,
+        py,
+        pz,
+        qx,
+        qy,
+        qz,
+        qw
+    );
+}
+
+void JoltMutableCompoundShape_RemoveSubShape(JoltMutableCompoundShape *_this, unsigned int index)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMutableCompoundShape *)(_this)).RemoveSubShape(
+        index
+    );
+}
+
+void JoltMutableCompoundShape_ModifySubShape(JoltMutableCompoundShape *_this, unsigned int index, double px, double py, double pz, float qx, float qy, float qz, float qw)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMutableCompoundShape *)(_this)).ModifySubShape(
+        index,
+        px,
+        py,
+        pz,
+        qx,
+        qy,
+        qz,
+        qw
+    );
+}
+
+void JoltMutableCompoundShape_Release(JoltMutableCompoundShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMutableCompoundShape *)(_this)).Release();
+}
+
+bool JoltMutableCompoundShape_IsValid(const JoltMutableCompoundShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMutableCompoundShape *)(_this)).IsValid();
+}
+
+void *JoltMutableCompoundShape_getHandle(const JoltMutableCompoundShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMutableCompoundShape *)(_this)).getHandle();
+}
+
+JoltMeshShape *JoltMeshShape_DefaultConstruct(void)
+{
+    return (JoltMeshShape *)new JoltMeshShape(JoltMeshShape());
+}
+
+JoltMeshShape *JoltMeshShape_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltMeshShape *)(new JoltMeshShape[num_elems]{});
+}
+
+const JoltMeshShape *JoltMeshShape_OffsetPtr(const JoltMeshShape *ptr, ptrdiff_t i)
+{
+    return (const JoltMeshShape *)(((const JoltMeshShape *)ptr) + i);
+}
+
+JoltMeshShape *JoltMeshShape_OffsetMutablePtr(JoltMeshShape *ptr, ptrdiff_t i)
+{
+    return (JoltMeshShape *)(((JoltMeshShape *)ptr) + i);
+}
+
+const JoltShape *JoltMeshShape_UpcastTo_JoltShape(const JoltMeshShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltMeshShape *)object)
+    ));
+}
+
+JoltShape *JoltMeshShape_MutableUpcastTo_JoltShape(JoltMeshShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltMeshShape *)object)
+    ));
+}
+
+const JoltMeshShape *JoltMeshShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltMeshShape *)(static_cast<const JoltMeshShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltMeshShape *JoltMeshShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltMeshShape *)(static_cast<JoltMeshShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltMeshShape *JoltMeshShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltMeshShape *)(dynamic_cast<const JoltMeshShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltMeshShape *JoltMeshShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltMeshShape *)(dynamic_cast<JoltMeshShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltMeshShape *JoltMeshShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltMeshShape *)std::addressof(dynamic_cast<const JoltMeshShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltMeshShape *JoltMeshShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltMeshShape *)std::addressof(dynamic_cast<JoltMeshShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltMeshShape *JoltMeshShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltMeshShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltMeshShape);
+    return (JoltMeshShape *)new JoltMeshShape(JoltMeshShape(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JoltMeshShape) MRBINDC_CLASSARG_COPY(_other, (JoltMeshShape), JoltMeshShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltMeshShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltMeshShape) MRBINDC_CLASSARG_END(_other, JoltMeshShape))
+    ));
+}
+
+void JoltMeshShape_Destroy(const JoltMeshShape *_this)
+{
+    delete ((const JoltMeshShape *)_this);
+}
+
+void JoltMeshShape_DestroyArray(const JoltMeshShape *_this)
+{
+    delete[] ((const JoltMeshShape *)_this);
+}
+
+JoltMeshShape *JoltMeshShape_AssignFromAnother(JoltMeshShape *_this, Jolt_PassBy _other_pass_by, JoltMeshShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltMeshShape);
+    return (JoltMeshShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMeshShape *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JoltMeshShape) MRBINDC_CLASSARG_COPY(_other, (JoltMeshShape), JoltMeshShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltMeshShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltMeshShape) MRBINDC_CLASSARG_END(_other, JoltMeshShape)))
+    ));
+}
+
+void JoltMeshShape_AddVertex(JoltMeshShape *_this, float x, float y, float z)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMeshShape *)(_this)).AddVertex(
+        x,
+        y,
+        z
+    );
+}
+
+void JoltMeshShape_AddFace(JoltMeshShape *_this, unsigned int v0, unsigned int v1, unsigned int v2)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMeshShape *)(_this)).AddFace(
+        v0,
+        v1,
+        v2
+    );
+}
+
+void JoltMeshShape_Finalize(JoltMeshShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMeshShape *)(_this)).Finalize();
+}
+
+void JoltMeshShape_Release(JoltMeshShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMeshShape *)(_this)).Release();
+}
+
+bool JoltMeshShape_IsValid(const JoltMeshShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMeshShape *)(_this)).IsValid();
+}
+
+void *JoltMeshShape_getHandle(const JoltMeshShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMeshShape *)(_this)).getHandle();
+}
+
+JoltConvexHullShape *JoltConvexHullShape_DefaultConstruct(void)
+{
+    return (JoltConvexHullShape *)new JoltConvexHullShape(JoltConvexHullShape());
+}
+
+JoltConvexHullShape *JoltConvexHullShape_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltConvexHullShape *)(new JoltConvexHullShape[num_elems]{});
+}
+
+const JoltConvexHullShape *JoltConvexHullShape_OffsetPtr(const JoltConvexHullShape *ptr, ptrdiff_t i)
+{
+    return (const JoltConvexHullShape *)(((const JoltConvexHullShape *)ptr) + i);
+}
+
+JoltConvexHullShape *JoltConvexHullShape_OffsetMutablePtr(JoltConvexHullShape *ptr, ptrdiff_t i)
+{
+    return (JoltConvexHullShape *)(((JoltConvexHullShape *)ptr) + i);
+}
+
+const JoltShape *JoltConvexHullShape_UpcastTo_JoltShape(const JoltConvexHullShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltConvexHullShape *)object)
+    ));
+}
+
+JoltShape *JoltConvexHullShape_MutableUpcastTo_JoltShape(JoltConvexHullShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltConvexHullShape *)object)
+    ));
+}
+
+const JoltConvexHullShape *JoltConvexHullShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltConvexHullShape *)(static_cast<const JoltConvexHullShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltConvexHullShape *JoltConvexHullShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltConvexHullShape *)(static_cast<JoltConvexHullShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltConvexHullShape *JoltConvexHullShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltConvexHullShape *)(dynamic_cast<const JoltConvexHullShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltConvexHullShape *JoltConvexHullShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltConvexHullShape *)(dynamic_cast<JoltConvexHullShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltConvexHullShape *JoltConvexHullShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltConvexHullShape *)std::addressof(dynamic_cast<const JoltConvexHullShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltConvexHullShape *JoltConvexHullShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltConvexHullShape *)std::addressof(dynamic_cast<JoltConvexHullShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltConvexHullShape *JoltConvexHullShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltConvexHullShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltConvexHullShape);
+    return (JoltConvexHullShape *)new JoltConvexHullShape(JoltConvexHullShape(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JoltConvexHullShape) MRBINDC_CLASSARG_COPY(_other, (JoltConvexHullShape), JoltConvexHullShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltConvexHullShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltConvexHullShape) MRBINDC_CLASSARG_END(_other, JoltConvexHullShape))
+    ));
+}
+
+void JoltConvexHullShape_Destroy(const JoltConvexHullShape *_this)
+{
+    delete ((const JoltConvexHullShape *)_this);
+}
+
+void JoltConvexHullShape_DestroyArray(const JoltConvexHullShape *_this)
+{
+    delete[] ((const JoltConvexHullShape *)_this);
+}
+
+JoltConvexHullShape *JoltConvexHullShape_AssignFromAnother(JoltConvexHullShape *_this, Jolt_PassBy _other_pass_by, JoltConvexHullShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltConvexHullShape);
+    return (JoltConvexHullShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltConvexHullShape *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JoltConvexHullShape) MRBINDC_CLASSARG_COPY(_other, (JoltConvexHullShape), JoltConvexHullShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltConvexHullShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltConvexHullShape) MRBINDC_CLASSARG_END(_other, JoltConvexHullShape)))
+    ));
+}
+
+void JoltConvexHullShape_AddPoint(JoltConvexHullShape *_this, float x, float y, float z)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltConvexHullShape *)(_this)).AddPoint(
+        x,
+        y,
+        z
+    );
+}
+
+void JoltConvexHullShape_Finalize_1(JoltConvexHullShape *_this, float convexRadius)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltConvexHullShape *)(_this)).Finalize(
+        convexRadius
+    );
+}
+
+void JoltConvexHullShape_Finalize_0(JoltConvexHullShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltConvexHullShape *)(_this)).Finalize();
+}
+
+void JoltConvexHullShape_Release(JoltConvexHullShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltConvexHullShape *)(_this)).Release();
+}
+
+bool JoltConvexHullShape_IsValid(const JoltConvexHullShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltConvexHullShape *)(_this)).IsValid();
+}
+
+void *JoltConvexHullShape_getHandle(const JoltConvexHullShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltConvexHullShape *)(_this)).getHandle();
+}
+
+JoltHeightFieldShape *JoltHeightFieldShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltHeightFieldShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltHeightFieldShape);
+    return (JoltHeightFieldShape *)new JoltHeightFieldShape(JoltHeightFieldShape(
+        (MRBINDC_CLASSARG_COPY(_other, (JoltHeightFieldShape), JoltHeightFieldShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltHeightFieldShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltHeightFieldShape) MRBINDC_CLASSARG_END(_other, JoltHeightFieldShape))
+    ));
+}
+
+const JoltHeightFieldShape *JoltHeightFieldShape_OffsetPtr(const JoltHeightFieldShape *ptr, ptrdiff_t i)
+{
+    return (const JoltHeightFieldShape *)(((const JoltHeightFieldShape *)ptr) + i);
+}
+
+JoltHeightFieldShape *JoltHeightFieldShape_OffsetMutablePtr(JoltHeightFieldShape *ptr, ptrdiff_t i)
+{
+    return (JoltHeightFieldShape *)(((JoltHeightFieldShape *)ptr) + i);
+}
+
+const JoltShape *JoltHeightFieldShape_UpcastTo_JoltShape(const JoltHeightFieldShape *object)
+{
+    return (const JoltShape *)(static_cast<const JoltShape *>(
+        ((const JoltHeightFieldShape *)object)
+    ));
+}
+
+JoltShape *JoltHeightFieldShape_MutableUpcastTo_JoltShape(JoltHeightFieldShape *object)
+{
+    return (JoltShape *)(static_cast<JoltShape *>(
+        ((JoltHeightFieldShape *)object)
+    ));
+}
+
+const JoltHeightFieldShape *JoltHeightFieldShape_StaticDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltHeightFieldShape *)(static_cast<const JoltHeightFieldShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltHeightFieldShape *JoltHeightFieldShape_MutableStaticDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltHeightFieldShape *)(static_cast<JoltHeightFieldShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltHeightFieldShape *JoltHeightFieldShape_DynamicDowncastFrom_JoltShape(const JoltShape *object)
+{
+    return (const JoltHeightFieldShape *)(dynamic_cast<const JoltHeightFieldShape *>(
+        ((const JoltShape *)object)
+    ));
+}
+
+JoltHeightFieldShape *JoltHeightFieldShape_MutableDynamicDowncastFrom_JoltShape(JoltShape *object)
+{
+    return (JoltHeightFieldShape *)(dynamic_cast<JoltHeightFieldShape *>(
+        ((JoltShape *)object)
+    ));
+}
+
+const JoltHeightFieldShape *JoltHeightFieldShape_DynamicDowncastFromOrFail_JoltShape(const JoltShape *object)
+{
+    return (const JoltHeightFieldShape *)std::addressof(dynamic_cast<const JoltHeightFieldShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(const JoltShape *)(object))
+    ));
+}
+
+JoltHeightFieldShape *JoltHeightFieldShape_MutableDynamicDowncastFromOrFail_JoltShape(JoltShape *object)
+{
+    return (JoltHeightFieldShape *)std::addressof(dynamic_cast<JoltHeightFieldShape &>(
+        ((object ? void() : MRBINDC_THROW("Parameter `object` can not be null.", void)), *(JoltShape *)(object))
+    ));
+}
+
+JoltHeightFieldShape *JoltHeightFieldShape_Construct(unsigned int sampleCount, float offsetX, float offsetY, float offsetZ, float scaleX, float scaleY, float scaleZ)
+{
+    return (JoltHeightFieldShape *)new JoltHeightFieldShape(JoltHeightFieldShape(
+        sampleCount,
+        offsetX,
+        offsetY,
+        offsetZ,
+        scaleX,
+        scaleY,
+        scaleZ
+    ));
+}
+
+void JoltHeightFieldShape_Destroy(const JoltHeightFieldShape *_this)
+{
+    delete ((const JoltHeightFieldShape *)_this);
+}
+
+void JoltHeightFieldShape_DestroyArray(const JoltHeightFieldShape *_this)
+{
+    delete[] ((const JoltHeightFieldShape *)_this);
+}
+
+JoltHeightFieldShape *JoltHeightFieldShape_AssignFromAnother(JoltHeightFieldShape *_this, Jolt_PassBy _other_pass_by, JoltHeightFieldShape *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JoltHeightFieldShape);
+    return (JoltHeightFieldShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltHeightFieldShape *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_COPY(_other, (JoltHeightFieldShape), JoltHeightFieldShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JoltHeightFieldShape) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JoltHeightFieldShape) MRBINDC_CLASSARG_END(_other, JoltHeightFieldShape)))
+    ));
+}
+
+void JoltHeightFieldShape_SetSample(JoltHeightFieldShape *_this, unsigned int x, unsigned int y, float height)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltHeightFieldShape *)(_this)).SetSample(
+        x,
+        y,
+        height
+    );
+}
+
+void JoltHeightFieldShape_Finalize(JoltHeightFieldShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltHeightFieldShape *)(_this)).Finalize();
+}
+
+void JoltHeightFieldShape_Release(JoltHeightFieldShape *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltHeightFieldShape *)(_this)).Release();
+}
+
+bool JoltHeightFieldShape_IsValid(const JoltHeightFieldShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltHeightFieldShape *)(_this)).IsValid();
+}
+
+void *JoltHeightFieldShape_getHandle(const JoltHeightFieldShape *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltHeightFieldShape *)(_this)).getHandle();
+}
+
 void *const *JoltBodyCreationSettings_Get_mHandle(const JoltBodyCreationSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyCreationSettings *)(_this)).mHandle);

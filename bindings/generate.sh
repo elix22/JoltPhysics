@@ -104,6 +104,18 @@ echo "#include \"$(pwd)/$HELPER_DIR/jolt_helper.h\"" >>"$BINDINGS/tmp/combined_i
     --allow JoltCapsuleShape \
     --allow JoltCylinderShape \
     --allow JoltRotatedTranslatedShape \
+    --allow JoltTaperedCapsuleShape \
+    --allow JoltTaperedCylinderShape \
+    --allow JoltTriangleShape \
+    --allow JoltPlaneShape \
+    --allow JoltEmptyShape \
+    --allow JoltScaledShape \
+    --allow JoltOffsetCenterOfMassShape \
+    --allow JoltStaticCompoundShape \
+    --allow JoltMutableCompoundShape \
+    --allow JoltMeshShape \
+    --allow JoltConvexHullShape \
+    --allow JoltHeightFieldShape \
     --allow JoltBodyCreationSettings \
     --allow JoltSoftBodySharedSettings \
     --allow JoltSoftBodyCreationSettings \
