@@ -821,6 +821,2187 @@ public static partial class Jolt
         public static implicit operator _InOptConst_JoltQuat(Const_JoltQuat value) {return new(value);}
     }
 
+    /// Float-precision 4x4 column-major transform matrix.
+    /// Columns: 0=right(x), 1=up(y), 2=forward(z), 3=translation.
+    /// Generated from class `JoltMat44`.
+    /// This is the const half of the class.
+    public class Const_JoltMat44 : Jolt.Object<Const_JoltMat44>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltMat44_Destroy(_Underlying *_this);
+            __JoltMat44_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltMat44() {Dispose(false);}
+
+        // column 0
+        public unsafe float e00
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e00", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e00", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e00(_Underlying *_this);
+                return *__JoltMat44_Get_e00(_UnderlyingPtr);
+            }
+        }
+
+        // column 0
+        public unsafe float e10
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e10(_Underlying *_this);
+                return *__JoltMat44_Get_e10(_UnderlyingPtr);
+            }
+        }
+
+        // column 0
+        public unsafe float e20
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e20", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e20", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e20(_Underlying *_this);
+                return *__JoltMat44_Get_e20(_UnderlyingPtr);
+            }
+        }
+
+        // column 0
+        public unsafe float e30
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e30", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e30", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e30(_Underlying *_this);
+                return *__JoltMat44_Get_e30(_UnderlyingPtr);
+            }
+        }
+
+        // column 1
+        public unsafe float e01
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e01", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e01", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e01(_Underlying *_this);
+                return *__JoltMat44_Get_e01(_UnderlyingPtr);
+            }
+        }
+
+        // column 1
+        public unsafe float e11
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e11", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e11", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e11(_Underlying *_this);
+                return *__JoltMat44_Get_e11(_UnderlyingPtr);
+            }
+        }
+
+        // column 1
+        public unsafe float e21
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e21", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e21", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e21(_Underlying *_this);
+                return *__JoltMat44_Get_e21(_UnderlyingPtr);
+            }
+        }
+
+        // column 1
+        public unsafe float e31
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e31", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e31", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e31(_Underlying *_this);
+                return *__JoltMat44_Get_e31(_UnderlyingPtr);
+            }
+        }
+
+        // column 2
+        public unsafe float e02
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e02", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e02", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e02(_Underlying *_this);
+                return *__JoltMat44_Get_e02(_UnderlyingPtr);
+            }
+        }
+
+        // column 2
+        public unsafe float e12
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e12", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e12", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e12(_Underlying *_this);
+                return *__JoltMat44_Get_e12(_UnderlyingPtr);
+            }
+        }
+
+        // column 2
+        public unsafe float e22
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e22", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e22", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e22(_Underlying *_this);
+                return *__JoltMat44_Get_e22(_UnderlyingPtr);
+            }
+        }
+
+        // column 2
+        public unsafe float e32
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e32(_Underlying *_this);
+                return *__JoltMat44_Get_e32(_UnderlyingPtr);
+            }
+        }
+
+        // column 3 (translation)
+        public unsafe float e03
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e03", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e03", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e03(_Underlying *_this);
+                return *__JoltMat44_Get_e03(_UnderlyingPtr);
+            }
+        }
+
+        // column 3 (translation)
+        public unsafe float e13
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e13", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e13", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e13(_Underlying *_this);
+                return *__JoltMat44_Get_e13(_UnderlyingPtr);
+            }
+        }
+
+        // column 3 (translation)
+        public unsafe float e23
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e23", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e23", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e23(_Underlying *_this);
+                return *__JoltMat44_Get_e23(_UnderlyingPtr);
+            }
+        }
+
+        // column 3 (translation)
+        public unsafe float e33
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Get_e33", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Get_e33", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_Get_e33(_Underlying *_this);
+                return *__JoltMat44_Get_e33(_UnderlyingPtr);
+            }
+        }
+
+        internal unsafe Const_JoltMat44(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltMat44() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMat44._Underlying *__JoltMat44_DefaultConstruct();
+            _UnderlyingPtr = __JoltMat44_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltMat44::JoltMat44`.
+        public unsafe Const_JoltMat44(Jolt.Const_JoltMat44 _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMat44._Underlying *__JoltMat44_ConstructFromAnother(Jolt.JoltMat44._Underlying *_other);
+            _UnderlyingPtr = __JoltMat44_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltMat44::JoltMat44`.
+        public Const_JoltMat44(JoltMat44 _other) : this((Const_JoltMat44)_other) {}
+
+        /// Generated from method `JoltMat44::Identity`.
+        public static unsafe Jolt.JoltMat44 Identity()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_Identity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_Identity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMat44._Underlying *__JoltMat44_Identity();
+            return new(__JoltMat44_Identity(), is_owning: true);
+        }
+
+        /// Generated from method `JoltMat44::GetTranslation`.
+        public unsafe Jolt.JoltVec3f GetTranslation()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetTranslation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetTranslation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltVec3f._Underlying *__JoltMat44_GetTranslation(_Underlying *_this);
+            return new(__JoltMat44_GetTranslation(_UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltMat44::GetRotation`.
+        public unsafe Jolt.JoltQuat GetRotation()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltQuat._Underlying *__JoltMat44_GetRotation(_Underlying *_this);
+            return new(__JoltMat44_GetRotation(_UnderlyingPtr), is_owning: true);
+        }
+    }
+
+    /// Float-precision 4x4 column-major transform matrix.
+    /// Columns: 0=right(x), 1=up(y), 2=forward(z), 3=translation.
+    /// Generated from class `JoltMat44`.
+    /// This is the non-const half of the class.
+    public class JoltMat44 : Const_JoltMat44
+    {
+        // column 0
+        public new unsafe ref float e00
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e00", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e00", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e00(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e00(_UnderlyingPtr);
+            }
+        }
+
+        // column 0
+        public new unsafe ref float e10
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e10(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e10(_UnderlyingPtr);
+            }
+        }
+
+        // column 0
+        public new unsafe ref float e20
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e20", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e20", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e20(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e20(_UnderlyingPtr);
+            }
+        }
+
+        // column 0
+        public new unsafe ref float e30
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e30", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e30", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e30(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e30(_UnderlyingPtr);
+            }
+        }
+
+        // column 1
+        public new unsafe ref float e01
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e01", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e01", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e01(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e01(_UnderlyingPtr);
+            }
+        }
+
+        // column 1
+        public new unsafe ref float e11
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e11", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e11", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e11(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e11(_UnderlyingPtr);
+            }
+        }
+
+        // column 1
+        public new unsafe ref float e21
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e21", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e21", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e21(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e21(_UnderlyingPtr);
+            }
+        }
+
+        // column 1
+        public new unsafe ref float e31
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e31", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e31", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e31(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e31(_UnderlyingPtr);
+            }
+        }
+
+        // column 2
+        public new unsafe ref float e02
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e02", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e02", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e02(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e02(_UnderlyingPtr);
+            }
+        }
+
+        // column 2
+        public new unsafe ref float e12
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e12", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e12", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e12(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e12(_UnderlyingPtr);
+            }
+        }
+
+        // column 2
+        public new unsafe ref float e22
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e22", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e22", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e22(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e22(_UnderlyingPtr);
+            }
+        }
+
+        // column 2
+        public new unsafe ref float e32
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e32(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e32(_UnderlyingPtr);
+            }
+        }
+
+        // column 3 (translation)
+        public new unsafe ref float e03
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e03", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e03", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e03(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e03(_UnderlyingPtr);
+            }
+        }
+
+        // column 3 (translation)
+        public new unsafe ref float e13
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e13", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e13", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e13(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e13(_UnderlyingPtr);
+            }
+        }
+
+        // column 3 (translation)
+        public new unsafe ref float e23
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e23", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e23", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e23(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e23(_UnderlyingPtr);
+            }
+        }
+
+        // column 3 (translation)
+        public new unsafe ref float e33
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_GetMutable_e33", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_GetMutable_e33", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltMat44_GetMutable_e33(_Underlying *_this);
+                return ref *__JoltMat44_GetMutable_e33(_UnderlyingPtr);
+            }
+        }
+
+        internal unsafe JoltMat44(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltMat44() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMat44._Underlying *__JoltMat44_DefaultConstruct();
+            _UnderlyingPtr = __JoltMat44_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltMat44::JoltMat44`.
+        public unsafe JoltMat44(Jolt.Const_JoltMat44 _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMat44._Underlying *__JoltMat44_ConstructFromAnother(Jolt.JoltMat44._Underlying *_other);
+            _UnderlyingPtr = __JoltMat44_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltMat44::JoltMat44`.
+        public JoltMat44(JoltMat44 _other) : this((Const_JoltMat44)_other) {}
+
+        /// Generated from method `JoltMat44::operator=`.
+        public unsafe Jolt.JoltMat44 Assign(Jolt.Const_JoltMat44 _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltMat44_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltMat44_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMat44._Underlying *__JoltMat44_AssignFromAnother(_Underlying *_this, Jolt.JoltMat44._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__JoltMat44_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+    }
+
+    /// This is used for optional parameters of class `JoltMat44` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltMat44`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltMat44`/`Const_JoltMat44` directly.
+    public class _InOptMut_JoltMat44
+    {
+        public JoltMat44? Opt;
+
+        public _InOptMut_JoltMat44() {}
+        public _InOptMut_JoltMat44(JoltMat44 value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltMat44(JoltMat44 value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltMat44` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltMat44`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltMat44`/`Const_JoltMat44` to pass it to the function.
+    public class _InOptConst_JoltMat44
+    {
+        public Const_JoltMat44? Opt;
+
+        public _InOptConst_JoltMat44() {}
+        public _InOptConst_JoltMat44(Const_JoltMat44 value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltMat44(Const_JoltMat44 value) {return new(value);}
+    }
+
+    /// Real-precision 4x4 transform: float 3x3 rotation + double translation.
+    /// Columns 0-2 are the rotation axes (float); tx/ty/tz is world-space translation.
+    /// Generated from class `JoltRMat44`.
+    /// This is the const half of the class.
+    public class Const_JoltRMat44 : Jolt.Object<Const_JoltRMat44>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltRMat44_Destroy(_Underlying *_this);
+            __JoltRMat44_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltRMat44() {Dispose(false);}
+
+        // column 0 (right)
+        public unsafe float e00
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_e00", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_e00", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_Get_e00(_Underlying *_this);
+                return *__JoltRMat44_Get_e00(_UnderlyingPtr);
+            }
+        }
+
+        // column 0 (right)
+        public unsafe float e10
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_e10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_e10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_Get_e10(_Underlying *_this);
+                return *__JoltRMat44_Get_e10(_UnderlyingPtr);
+            }
+        }
+
+        // column 0 (right)
+        public unsafe float e20
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_e20", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_e20", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_Get_e20(_Underlying *_this);
+                return *__JoltRMat44_Get_e20(_UnderlyingPtr);
+            }
+        }
+
+        // column 1 (up)
+        public unsafe float e01
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_e01", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_e01", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_Get_e01(_Underlying *_this);
+                return *__JoltRMat44_Get_e01(_UnderlyingPtr);
+            }
+        }
+
+        // column 1 (up)
+        public unsafe float e11
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_e11", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_e11", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_Get_e11(_Underlying *_this);
+                return *__JoltRMat44_Get_e11(_UnderlyingPtr);
+            }
+        }
+
+        // column 1 (up)
+        public unsafe float e21
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_e21", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_e21", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_Get_e21(_Underlying *_this);
+                return *__JoltRMat44_Get_e21(_UnderlyingPtr);
+            }
+        }
+
+        // column 2 (forward)
+        public unsafe float e02
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_e02", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_e02", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_Get_e02(_Underlying *_this);
+                return *__JoltRMat44_Get_e02(_UnderlyingPtr);
+            }
+        }
+
+        // column 2 (forward)
+        public unsafe float e12
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_e12", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_e12", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_Get_e12(_Underlying *_this);
+                return *__JoltRMat44_Get_e12(_UnderlyingPtr);
+            }
+        }
+
+        // column 2 (forward)
+        public unsafe float e22
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_e22", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_e22", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_Get_e22(_Underlying *_this);
+                return *__JoltRMat44_Get_e22(_UnderlyingPtr);
+            }
+        }
+
+        // world-space translation
+        public unsafe double tx
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_tx", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_tx", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltRMat44_Get_tx(_Underlying *_this);
+                return *__JoltRMat44_Get_tx(_UnderlyingPtr);
+            }
+        }
+
+        // world-space translation
+        public unsafe double ty
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_ty", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_ty", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltRMat44_Get_ty(_Underlying *_this);
+                return *__JoltRMat44_Get_ty(_UnderlyingPtr);
+            }
+        }
+
+        // world-space translation
+        public unsafe double tz
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Get_tz", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Get_tz", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltRMat44_Get_tz(_Underlying *_this);
+                return *__JoltRMat44_Get_tz(_UnderlyingPtr);
+            }
+        }
+
+        internal unsafe Const_JoltRMat44(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltRMat44() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltRMat44._Underlying *__JoltRMat44_DefaultConstruct();
+            _UnderlyingPtr = __JoltRMat44_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltRMat44::JoltRMat44`.
+        public unsafe Const_JoltRMat44(Jolt.Const_JoltRMat44 _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltRMat44._Underlying *__JoltRMat44_ConstructFromAnother(Jolt.JoltRMat44._Underlying *_other);
+            _UnderlyingPtr = __JoltRMat44_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltRMat44::JoltRMat44`.
+        public Const_JoltRMat44(JoltRMat44 _other) : this((Const_JoltRMat44)_other) {}
+
+        /// Generated from method `JoltRMat44::Identity`.
+        public static unsafe Jolt.JoltRMat44 Identity()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_Identity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_Identity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltRMat44._Underlying *__JoltRMat44_Identity();
+            return new(__JoltRMat44_Identity(), is_owning: true);
+        }
+
+        /// Generated from method `JoltRMat44::GetTranslation`.
+        public unsafe Jolt.JoltVec3 GetTranslation()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetTranslation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetTranslation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltVec3._Underlying *__JoltRMat44_GetTranslation(_Underlying *_this);
+            return new(__JoltRMat44_GetTranslation(_UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltRMat44::GetTranslationF`.
+        public unsafe Jolt.JoltVec3f GetTranslationF()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetTranslationF", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetTranslationF", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltVec3f._Underlying *__JoltRMat44_GetTranslationF(_Underlying *_this);
+            return new(__JoltRMat44_GetTranslationF(_UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltRMat44::GetRotation`.
+        public unsafe Jolt.JoltQuat GetRotation()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltQuat._Underlying *__JoltRMat44_GetRotation(_Underlying *_this);
+            return new(__JoltRMat44_GetRotation(_UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltRMat44::ToMat44`.
+        public unsafe Jolt.JoltMat44 ToMat44()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_ToMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_ToMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMat44._Underlying *__JoltRMat44_ToMat44(_Underlying *_this);
+            return new(__JoltRMat44_ToMat44(_UnderlyingPtr), is_owning: true);
+        }
+    }
+
+    /// Real-precision 4x4 transform: float 3x3 rotation + double translation.
+    /// Columns 0-2 are the rotation axes (float); tx/ty/tz is world-space translation.
+    /// Generated from class `JoltRMat44`.
+    /// This is the non-const half of the class.
+    public class JoltRMat44 : Const_JoltRMat44
+    {
+        // column 0 (right)
+        public new unsafe ref float e00
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_e00", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_e00", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_GetMutable_e00(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_e00(_UnderlyingPtr);
+            }
+        }
+
+        // column 0 (right)
+        public new unsafe ref float e10
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_e10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_e10", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_GetMutable_e10(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_e10(_UnderlyingPtr);
+            }
+        }
+
+        // column 0 (right)
+        public new unsafe ref float e20
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_e20", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_e20", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_GetMutable_e20(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_e20(_UnderlyingPtr);
+            }
+        }
+
+        // column 1 (up)
+        public new unsafe ref float e01
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_e01", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_e01", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_GetMutable_e01(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_e01(_UnderlyingPtr);
+            }
+        }
+
+        // column 1 (up)
+        public new unsafe ref float e11
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_e11", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_e11", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_GetMutable_e11(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_e11(_UnderlyingPtr);
+            }
+        }
+
+        // column 1 (up)
+        public new unsafe ref float e21
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_e21", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_e21", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_GetMutable_e21(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_e21(_UnderlyingPtr);
+            }
+        }
+
+        // column 2 (forward)
+        public new unsafe ref float e02
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_e02", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_e02", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_GetMutable_e02(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_e02(_UnderlyingPtr);
+            }
+        }
+
+        // column 2 (forward)
+        public new unsafe ref float e12
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_e12", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_e12", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_GetMutable_e12(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_e12(_UnderlyingPtr);
+            }
+        }
+
+        // column 2 (forward)
+        public new unsafe ref float e22
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_e22", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_e22", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JoltRMat44_GetMutable_e22(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_e22(_UnderlyingPtr);
+            }
+        }
+
+        // world-space translation
+        public new unsafe ref double tx
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_tx", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_tx", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltRMat44_GetMutable_tx(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_tx(_UnderlyingPtr);
+            }
+        }
+
+        // world-space translation
+        public new unsafe ref double ty
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_ty", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_ty", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltRMat44_GetMutable_ty(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_ty(_UnderlyingPtr);
+            }
+        }
+
+        // world-space translation
+        public new unsafe ref double tz
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_GetMutable_tz", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_GetMutable_tz", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltRMat44_GetMutable_tz(_Underlying *_this);
+                return ref *__JoltRMat44_GetMutable_tz(_UnderlyingPtr);
+            }
+        }
+
+        internal unsafe JoltRMat44(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltRMat44() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltRMat44._Underlying *__JoltRMat44_DefaultConstruct();
+            _UnderlyingPtr = __JoltRMat44_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltRMat44::JoltRMat44`.
+        public unsafe JoltRMat44(Jolt.Const_JoltRMat44 _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltRMat44._Underlying *__JoltRMat44_ConstructFromAnother(Jolt.JoltRMat44._Underlying *_other);
+            _UnderlyingPtr = __JoltRMat44_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltRMat44::JoltRMat44`.
+        public JoltRMat44(JoltRMat44 _other) : this((Const_JoltRMat44)_other) {}
+
+        /// Generated from method `JoltRMat44::operator=`.
+        public unsafe Jolt.JoltRMat44 Assign(Jolt.Const_JoltRMat44 _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltRMat44_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltRMat44_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltRMat44._Underlying *__JoltRMat44_AssignFromAnother(_Underlying *_this, Jolt.JoltRMat44._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__JoltRMat44_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+    }
+
+    /// This is used for optional parameters of class `JoltRMat44` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltRMat44`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltRMat44`/`Const_JoltRMat44` directly.
+    public class _InOptMut_JoltRMat44
+    {
+        public JoltRMat44? Opt;
+
+        public _InOptMut_JoltRMat44() {}
+        public _InOptMut_JoltRMat44(JoltRMat44 value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltRMat44(JoltRMat44 value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltRMat44` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltRMat44`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltRMat44`/`Const_JoltRMat44` to pass it to the function.
+    public class _InOptConst_JoltRMat44
+    {
+        public Const_JoltRMat44? Opt;
+
+        public _InOptConst_JoltRMat44() {}
+        public _InOptConst_JoltRMat44(Const_JoltRMat44 value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltRMat44(Const_JoltRMat44 value) {return new(value);}
+    }
+
+    /// World-space AABB (double-precision min/max).
+    /// Generated from class `JoltAABox`.
+    /// This is the const half of the class.
+    public class Const_JoltAABox : Jolt.Object<Const_JoltAABox>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltAABox_Destroy(_Underlying *_this);
+            __JoltAABox_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltAABox() {Dispose(false);}
+
+        public unsafe double minX
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Get_minX", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Get_minX", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_Get_minX(_Underlying *_this);
+                return *__JoltAABox_Get_minX(_UnderlyingPtr);
+            }
+        }
+
+        public unsafe double minY
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Get_minY", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Get_minY", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_Get_minY(_Underlying *_this);
+                return *__JoltAABox_Get_minY(_UnderlyingPtr);
+            }
+        }
+
+        public unsafe double minZ
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Get_minZ", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Get_minZ", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_Get_minZ(_Underlying *_this);
+                return *__JoltAABox_Get_minZ(_UnderlyingPtr);
+            }
+        }
+
+        public unsafe double maxX
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Get_maxX", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Get_maxX", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_Get_maxX(_Underlying *_this);
+                return *__JoltAABox_Get_maxX(_UnderlyingPtr);
+            }
+        }
+
+        public unsafe double maxY
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Get_maxY", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Get_maxY", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_Get_maxY(_Underlying *_this);
+                return *__JoltAABox_Get_maxY(_UnderlyingPtr);
+            }
+        }
+
+        public unsafe double maxZ
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Get_maxZ", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Get_maxZ", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_Get_maxZ(_Underlying *_this);
+                return *__JoltAABox_Get_maxZ(_UnderlyingPtr);
+            }
+        }
+
+        internal unsafe Const_JoltAABox(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltAABox() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltAABox._Underlying *__JoltAABox_DefaultConstruct();
+            _UnderlyingPtr = __JoltAABox_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltAABox::JoltAABox`.
+        public unsafe Const_JoltAABox(Jolt.Const_JoltAABox _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltAABox._Underlying *__JoltAABox_ConstructFromAnother(Jolt.JoltAABox._Underlying *_other);
+            _UnderlyingPtr = __JoltAABox_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltAABox::JoltAABox`.
+        public Const_JoltAABox(JoltAABox _other) : this((Const_JoltAABox)_other) {}
+
+        /// Generated from constructor `JoltAABox::JoltAABox`.
+        public unsafe Const_JoltAABox(double minX, double minY, double minZ, double maxX, double maxY, double maxZ) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltAABox._Underlying *__JoltAABox_Construct(double minX, double minY, double minZ, double maxX, double maxY, double maxZ);
+            _UnderlyingPtr = __JoltAABox_Construct(minX, minY, minZ, maxX, maxY, maxZ);
+        }
+
+        /// Generated from method `JoltAABox::GetCenter`.
+        public unsafe Jolt.JoltVec3 GetCenter()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_GetCenter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_GetCenter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltVec3._Underlying *__JoltAABox_GetCenter(_Underlying *_this);
+            return new(__JoltAABox_GetCenter(_UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltAABox::GetExtent`.
+        public unsafe Jolt.JoltVec3 GetExtent()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_GetExtent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_GetExtent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltVec3._Underlying *__JoltAABox_GetExtent(_Underlying *_this);
+            return new(__JoltAABox_GetExtent(_UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltAABox::Contains`.
+        public unsafe bool Contains(double x, double y, double z)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Contains", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Contains", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltAABox_Contains(_Underlying *_this, double x, double y, double z);
+            return __JoltAABox_Contains(_UnderlyingPtr, x, y, z) != 0;
+        }
+
+        /// Generated from method `JoltAABox::Overlaps`.
+        public unsafe bool Overlaps(Jolt.Const_JoltAABox other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Overlaps", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Overlaps", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltAABox_Overlaps(_Underlying *_this, Jolt.Const_JoltAABox._Underlying *other);
+            return __JoltAABox_Overlaps(_UnderlyingPtr, other._UnderlyingPtr) != 0;
+        }
+    }
+
+    /// World-space AABB (double-precision min/max).
+    /// Generated from class `JoltAABox`.
+    /// This is the non-const half of the class.
+    public class JoltAABox : Const_JoltAABox
+    {
+        public new unsafe ref double minX
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_GetMutable_minX", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_GetMutable_minX", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_GetMutable_minX(_Underlying *_this);
+                return ref *__JoltAABox_GetMutable_minX(_UnderlyingPtr);
+            }
+        }
+
+        public new unsafe ref double minY
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_GetMutable_minY", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_GetMutable_minY", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_GetMutable_minY(_Underlying *_this);
+                return ref *__JoltAABox_GetMutable_minY(_UnderlyingPtr);
+            }
+        }
+
+        public new unsafe ref double minZ
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_GetMutable_minZ", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_GetMutable_minZ", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_GetMutable_minZ(_Underlying *_this);
+                return ref *__JoltAABox_GetMutable_minZ(_UnderlyingPtr);
+            }
+        }
+
+        public new unsafe ref double maxX
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_GetMutable_maxX", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_GetMutable_maxX", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_GetMutable_maxX(_Underlying *_this);
+                return ref *__JoltAABox_GetMutable_maxX(_UnderlyingPtr);
+            }
+        }
+
+        public new unsafe ref double maxY
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_GetMutable_maxY", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_GetMutable_maxY", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_GetMutable_maxY(_Underlying *_this);
+                return ref *__JoltAABox_GetMutable_maxY(_UnderlyingPtr);
+            }
+        }
+
+        public new unsafe ref double maxZ
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_GetMutable_maxZ", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_GetMutable_maxZ", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static double *__JoltAABox_GetMutable_maxZ(_Underlying *_this);
+                return ref *__JoltAABox_GetMutable_maxZ(_UnderlyingPtr);
+            }
+        }
+
+        internal unsafe JoltAABox(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltAABox() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltAABox._Underlying *__JoltAABox_DefaultConstruct();
+            _UnderlyingPtr = __JoltAABox_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltAABox::JoltAABox`.
+        public unsafe JoltAABox(Jolt.Const_JoltAABox _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltAABox._Underlying *__JoltAABox_ConstructFromAnother(Jolt.JoltAABox._Underlying *_other);
+            _UnderlyingPtr = __JoltAABox_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltAABox::JoltAABox`.
+        public JoltAABox(JoltAABox _other) : this((Const_JoltAABox)_other) {}
+
+        /// Generated from constructor `JoltAABox::JoltAABox`.
+        public unsafe JoltAABox(double minX, double minY, double minZ, double maxX, double maxY, double maxZ) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltAABox._Underlying *__JoltAABox_Construct(double minX, double minY, double minZ, double maxX, double maxY, double maxZ);
+            _UnderlyingPtr = __JoltAABox_Construct(minX, minY, minZ, maxX, maxY, maxZ);
+        }
+
+        /// Generated from method `JoltAABox::operator=`.
+        public unsafe Jolt.JoltAABox Assign(Jolt.Const_JoltAABox _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltAABox._Underlying *__JoltAABox_AssignFromAnother(_Underlying *_this, Jolt.JoltAABox._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__JoltAABox_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JoltAABox::Encapsulate`.
+        public unsafe void Encapsulate(double x, double y, double z)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltAABox_Encapsulate", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltAABox_Encapsulate", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltAABox_Encapsulate(_Underlying *_this, double x, double y, double z);
+            __JoltAABox_Encapsulate(_UnderlyingPtr, x, y, z);
+        }
+    }
+
+    /// This is used for optional parameters of class `JoltAABox` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltAABox`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltAABox`/`Const_JoltAABox` directly.
+    public class _InOptMut_JoltAABox
+    {
+        public JoltAABox? Opt;
+
+        public _InOptMut_JoltAABox() {}
+        public _InOptMut_JoltAABox(JoltAABox value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltAABox(JoltAABox value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltAABox` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltAABox`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltAABox`/`Const_JoltAABox` to pass it to the function.
+    public class _InOptConst_JoltAABox
+    {
+        public Const_JoltAABox? Opt;
+
+        public _InOptConst_JoltAABox() {}
+        public _InOptConst_JoltAABox(Const_JoltAABox value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltAABox(Const_JoltAABox value) {return new(value);}
+    }
+
+    /// Body collision group and sub-group IDs (no group filter = all collide).
+    /// Generated from class `JoltCollisionGroup`.
+    /// This is the const half of the class.
+    public class Const_JoltCollisionGroup : Jolt.Object<Const_JoltCollisionGroup>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltCollisionGroup_Destroy(_Underlying *_this);
+            __JoltCollisionGroup_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltCollisionGroup() {Dispose(false);}
+
+        public static unsafe uint InvalidGroup
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_Get_InvalidGroup", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_Get_InvalidGroup", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint *__JoltCollisionGroup_Get_InvalidGroup();
+                return *__JoltCollisionGroup_Get_InvalidGroup();
+            }
+        }
+
+        public static unsafe uint InvalidSubGroup
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_Get_InvalidSubGroup", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_Get_InvalidSubGroup", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint *__JoltCollisionGroup_Get_InvalidSubGroup();
+                return *__JoltCollisionGroup_Get_InvalidSubGroup();
+            }
+        }
+
+        public unsafe uint groupID
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_Get_groupID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_Get_groupID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint *__JoltCollisionGroup_Get_groupID(_Underlying *_this);
+                return *__JoltCollisionGroup_Get_groupID(_UnderlyingPtr);
+            }
+        }
+
+        public unsafe uint subGroupID
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_Get_subGroupID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_Get_subGroupID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint *__JoltCollisionGroup_Get_subGroupID(_Underlying *_this);
+                return *__JoltCollisionGroup_Get_subGroupID(_UnderlyingPtr);
+            }
+        }
+
+        internal unsafe Const_JoltCollisionGroup(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltCollisionGroup() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltCollisionGroup._Underlying *__JoltCollisionGroup_DefaultConstruct();
+            _UnderlyingPtr = __JoltCollisionGroup_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltCollisionGroup::JoltCollisionGroup`.
+        public unsafe Const_JoltCollisionGroup(Jolt.Const_JoltCollisionGroup _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltCollisionGroup._Underlying *__JoltCollisionGroup_ConstructFromAnother(Jolt.JoltCollisionGroup._Underlying *_other);
+            _UnderlyingPtr = __JoltCollisionGroup_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltCollisionGroup::JoltCollisionGroup`.
+        public Const_JoltCollisionGroup(JoltCollisionGroup _other) : this((Const_JoltCollisionGroup)_other) {}
+
+        /// Generated from constructor `JoltCollisionGroup::JoltCollisionGroup`.
+        public unsafe Const_JoltCollisionGroup(uint groupID, uint subGroupID) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltCollisionGroup._Underlying *__JoltCollisionGroup_Construct(uint groupID, uint subGroupID);
+            _UnderlyingPtr = __JoltCollisionGroup_Construct(groupID, subGroupID);
+        }
+    }
+
+    /// Body collision group and sub-group IDs (no group filter = all collide).
+    /// Generated from class `JoltCollisionGroup`.
+    /// This is the non-const half of the class.
+    public class JoltCollisionGroup : Const_JoltCollisionGroup
+    {
+        public new unsafe ref uint groupID
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_GetMutable_groupID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_GetMutable_groupID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint *__JoltCollisionGroup_GetMutable_groupID(_Underlying *_this);
+                return ref *__JoltCollisionGroup_GetMutable_groupID(_UnderlyingPtr);
+            }
+        }
+
+        public new unsafe ref uint subGroupID
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_GetMutable_subGroupID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_GetMutable_subGroupID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint *__JoltCollisionGroup_GetMutable_subGroupID(_Underlying *_this);
+                return ref *__JoltCollisionGroup_GetMutable_subGroupID(_UnderlyingPtr);
+            }
+        }
+
+        internal unsafe JoltCollisionGroup(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltCollisionGroup() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltCollisionGroup._Underlying *__JoltCollisionGroup_DefaultConstruct();
+            _UnderlyingPtr = __JoltCollisionGroup_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltCollisionGroup::JoltCollisionGroup`.
+        public unsafe JoltCollisionGroup(Jolt.Const_JoltCollisionGroup _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltCollisionGroup._Underlying *__JoltCollisionGroup_ConstructFromAnother(Jolt.JoltCollisionGroup._Underlying *_other);
+            _UnderlyingPtr = __JoltCollisionGroup_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltCollisionGroup::JoltCollisionGroup`.
+        public JoltCollisionGroup(JoltCollisionGroup _other) : this((Const_JoltCollisionGroup)_other) {}
+
+        /// Generated from constructor `JoltCollisionGroup::JoltCollisionGroup`.
+        public unsafe JoltCollisionGroup(uint groupID, uint subGroupID) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltCollisionGroup._Underlying *__JoltCollisionGroup_Construct(uint groupID, uint subGroupID);
+            _UnderlyingPtr = __JoltCollisionGroup_Construct(groupID, subGroupID);
+        }
+
+        /// Generated from method `JoltCollisionGroup::operator=`.
+        public unsafe Jolt.JoltCollisionGroup Assign(Jolt.Const_JoltCollisionGroup _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltCollisionGroup_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltCollisionGroup_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltCollisionGroup._Underlying *__JoltCollisionGroup_AssignFromAnother(_Underlying *_this, Jolt.JoltCollisionGroup._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__JoltCollisionGroup_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+    }
+
+    /// This is used for optional parameters of class `JoltCollisionGroup` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltCollisionGroup`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltCollisionGroup`/`Const_JoltCollisionGroup` directly.
+    public class _InOptMut_JoltCollisionGroup
+    {
+        public JoltCollisionGroup? Opt;
+
+        public _InOptMut_JoltCollisionGroup() {}
+        public _InOptMut_JoltCollisionGroup(JoltCollisionGroup value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltCollisionGroup(JoltCollisionGroup value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltCollisionGroup` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltCollisionGroup`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltCollisionGroup`/`Const_JoltCollisionGroup` to pass it to the function.
+    public class _InOptConst_JoltCollisionGroup
+    {
+        public Const_JoltCollisionGroup? Opt;
+
+        public _InOptConst_JoltCollisionGroup() {}
+        public _InOptConst_JoltCollisionGroup(Const_JoltCollisionGroup value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltCollisionGroup(Const_JoltCollisionGroup value) {return new(value);}
+    }
+
+    /// Non-owning handle to a JPH::PhysicsMaterial.
+    /// Obtain via JoltBodyInterface::GetMaterial(). Do not outlive the physics system.
+    /// Generated from class `JoltPhysicsMaterial`.
+    /// This is the const half of the class.
+    public class Const_JoltPhysicsMaterial : Jolt.Object<Const_JoltPhysicsMaterial>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPhysicsMaterial_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPhysicsMaterial_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltPhysicsMaterial_Destroy(_Underlying *_this);
+            __JoltPhysicsMaterial_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltPhysicsMaterial() {Dispose(false);}
+
+        internal unsafe Const_JoltPhysicsMaterial(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltPhysicsMaterial() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPhysicsMaterial_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPhysicsMaterial_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPhysicsMaterial._Underlying *__JoltPhysicsMaterial_DefaultConstruct();
+            _UnderlyingPtr = __JoltPhysicsMaterial_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltPhysicsMaterial::JoltPhysicsMaterial`.
+        public unsafe Const_JoltPhysicsMaterial(Jolt.Const_JoltPhysicsMaterial _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPhysicsMaterial_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPhysicsMaterial_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPhysicsMaterial._Underlying *__JoltPhysicsMaterial_ConstructFromAnother(Jolt.JoltPhysicsMaterial._Underlying *_other);
+            _UnderlyingPtr = __JoltPhysicsMaterial_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltPhysicsMaterial::JoltPhysicsMaterial`.
+        public Const_JoltPhysicsMaterial(JoltPhysicsMaterial _other) : this((Const_JoltPhysicsMaterial)_other) {}
+
+        /// Generated from method `JoltPhysicsMaterial::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPhysicsMaterial_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPhysicsMaterial_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltPhysicsMaterial_IsValid(_Underlying *_this);
+            return __JoltPhysicsMaterial_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltPhysicsMaterial::GetDebugName`.
+        public unsafe byte? GetDebugName()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPhysicsMaterial_GetDebugName", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPhysicsMaterial_GetDebugName", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte *__JoltPhysicsMaterial_GetDebugName(_Underlying *_this);
+            var __c_ret = __JoltPhysicsMaterial_GetDebugName(_UnderlyingPtr);
+            return __c_ret is not null ? *__c_ret : null;
+        }
+    }
+
+    /// Non-owning handle to a JPH::PhysicsMaterial.
+    /// Obtain via JoltBodyInterface::GetMaterial(). Do not outlive the physics system.
+    /// Generated from class `JoltPhysicsMaterial`.
+    /// This is the non-const half of the class.
+    public class JoltPhysicsMaterial : Const_JoltPhysicsMaterial
+    {
+        internal unsafe JoltPhysicsMaterial(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltPhysicsMaterial() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPhysicsMaterial_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPhysicsMaterial_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPhysicsMaterial._Underlying *__JoltPhysicsMaterial_DefaultConstruct();
+            _UnderlyingPtr = __JoltPhysicsMaterial_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltPhysicsMaterial::JoltPhysicsMaterial`.
+        public unsafe JoltPhysicsMaterial(Jolt.Const_JoltPhysicsMaterial _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPhysicsMaterial_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPhysicsMaterial_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPhysicsMaterial._Underlying *__JoltPhysicsMaterial_ConstructFromAnother(Jolt.JoltPhysicsMaterial._Underlying *_other);
+            _UnderlyingPtr = __JoltPhysicsMaterial_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltPhysicsMaterial::JoltPhysicsMaterial`.
+        public JoltPhysicsMaterial(JoltPhysicsMaterial _other) : this((Const_JoltPhysicsMaterial)_other) {}
+
+        /// Generated from method `JoltPhysicsMaterial::operator=`.
+        public unsafe Jolt.JoltPhysicsMaterial Assign(Jolt.Const_JoltPhysicsMaterial _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPhysicsMaterial_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPhysicsMaterial_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPhysicsMaterial._Underlying *__JoltPhysicsMaterial_AssignFromAnother(_Underlying *_this, Jolt.JoltPhysicsMaterial._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__JoltPhysicsMaterial_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+    }
+
+    /// This is used for optional parameters of class `JoltPhysicsMaterial` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltPhysicsMaterial`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltPhysicsMaterial`/`Const_JoltPhysicsMaterial` directly.
+    public class _InOptMut_JoltPhysicsMaterial
+    {
+        public JoltPhysicsMaterial? Opt;
+
+        public _InOptMut_JoltPhysicsMaterial() {}
+        public _InOptMut_JoltPhysicsMaterial(JoltPhysicsMaterial value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltPhysicsMaterial(JoltPhysicsMaterial value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltPhysicsMaterial` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltPhysicsMaterial`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltPhysicsMaterial`/`Const_JoltPhysicsMaterial` to pass it to the function.
+    public class _InOptConst_JoltPhysicsMaterial
+    {
+        public Const_JoltPhysicsMaterial? Opt;
+
+        public _InOptConst_JoltPhysicsMaterial() {}
+        public _InOptConst_JoltPhysicsMaterial(Const_JoltPhysicsMaterial value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltPhysicsMaterial(Const_JoltPhysicsMaterial value) {return new(value);}
+    }
+
+    /// Non-owning handle to a JPH::TwoBodyConstraint.
+    /// Obtain via JoltPhysicsSystem::GetConstraintHandle() or JoltBodyInterface::ActivateConstraint().
+    /// Generated from class `JoltTwoBodyConstraint`.
+    /// This is the const half of the class.
+    public class Const_JoltTwoBodyConstraint : Jolt.Object<Const_JoltTwoBodyConstraint>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTwoBodyConstraint_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTwoBodyConstraint_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltTwoBodyConstraint_Destroy(_Underlying *_this);
+            __JoltTwoBodyConstraint_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltTwoBodyConstraint() {Dispose(false);}
+
+        internal unsafe Const_JoltTwoBodyConstraint(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltTwoBodyConstraint() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTwoBodyConstraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTwoBodyConstraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTwoBodyConstraint._Underlying *__JoltTwoBodyConstraint_DefaultConstruct();
+            _UnderlyingPtr = __JoltTwoBodyConstraint_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltTwoBodyConstraint::JoltTwoBodyConstraint`.
+        public unsafe Const_JoltTwoBodyConstraint(Jolt.Const_JoltTwoBodyConstraint _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTwoBodyConstraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTwoBodyConstraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTwoBodyConstraint._Underlying *__JoltTwoBodyConstraint_ConstructFromAnother(Jolt.JoltTwoBodyConstraint._Underlying *_other);
+            _UnderlyingPtr = __JoltTwoBodyConstraint_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltTwoBodyConstraint::JoltTwoBodyConstraint`.
+        public Const_JoltTwoBodyConstraint(JoltTwoBodyConstraint _other) : this((Const_JoltTwoBodyConstraint)_other) {}
+
+        /// Generated from method `JoltTwoBodyConstraint::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTwoBodyConstraint_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTwoBodyConstraint_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltTwoBodyConstraint_IsValid(_Underlying *_this);
+            return __JoltTwoBodyConstraint_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltTwoBodyConstraint::GetEnabled`.
+        public unsafe bool GetEnabled()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTwoBodyConstraint_GetEnabled", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTwoBodyConstraint_GetEnabled", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltTwoBodyConstraint_GetEnabled(_Underlying *_this);
+            return __JoltTwoBodyConstraint_GetEnabled(_UnderlyingPtr) != 0;
+        }
+    }
+
+    /// Non-owning handle to a JPH::TwoBodyConstraint.
+    /// Obtain via JoltPhysicsSystem::GetConstraintHandle() or JoltBodyInterface::ActivateConstraint().
+    /// Generated from class `JoltTwoBodyConstraint`.
+    /// This is the non-const half of the class.
+    public class JoltTwoBodyConstraint : Const_JoltTwoBodyConstraint
+    {
+        internal unsafe JoltTwoBodyConstraint(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltTwoBodyConstraint() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTwoBodyConstraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTwoBodyConstraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTwoBodyConstraint._Underlying *__JoltTwoBodyConstraint_DefaultConstruct();
+            _UnderlyingPtr = __JoltTwoBodyConstraint_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltTwoBodyConstraint::JoltTwoBodyConstraint`.
+        public unsafe JoltTwoBodyConstraint(Jolt.Const_JoltTwoBodyConstraint _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTwoBodyConstraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTwoBodyConstraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTwoBodyConstraint._Underlying *__JoltTwoBodyConstraint_ConstructFromAnother(Jolt.JoltTwoBodyConstraint._Underlying *_other);
+            _UnderlyingPtr = __JoltTwoBodyConstraint_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltTwoBodyConstraint::JoltTwoBodyConstraint`.
+        public JoltTwoBodyConstraint(JoltTwoBodyConstraint _other) : this((Const_JoltTwoBodyConstraint)_other) {}
+
+        /// Generated from method `JoltTwoBodyConstraint::operator=`.
+        public unsafe Jolt.JoltTwoBodyConstraint Assign(Jolt.Const_JoltTwoBodyConstraint _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTwoBodyConstraint_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTwoBodyConstraint_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTwoBodyConstraint._Underlying *__JoltTwoBodyConstraint_AssignFromAnother(_Underlying *_this, Jolt.JoltTwoBodyConstraint._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__JoltTwoBodyConstraint_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JoltTwoBodyConstraint::SetEnabled`.
+        public unsafe void SetEnabled(bool enabled)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltTwoBodyConstraint_SetEnabled", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltTwoBodyConstraint_SetEnabled", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltTwoBodyConstraint_SetEnabled(_Underlying *_this, byte enabled);
+            __JoltTwoBodyConstraint_SetEnabled(_UnderlyingPtr, enabled ? (byte)1 : (byte)0);
+        }
+    }
+
+    /// This is used for optional parameters of class `JoltTwoBodyConstraint` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltTwoBodyConstraint`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltTwoBodyConstraint`/`Const_JoltTwoBodyConstraint` directly.
+    public class _InOptMut_JoltTwoBodyConstraint
+    {
+        public JoltTwoBodyConstraint? Opt;
+
+        public _InOptMut_JoltTwoBodyConstraint() {}
+        public _InOptMut_JoltTwoBodyConstraint(JoltTwoBodyConstraint value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltTwoBodyConstraint(JoltTwoBodyConstraint value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltTwoBodyConstraint` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltTwoBodyConstraint`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltTwoBodyConstraint`/`Const_JoltTwoBodyConstraint` to pass it to the function.
+    public class _InOptConst_JoltTwoBodyConstraint
+    {
+        public Const_JoltTwoBodyConstraint? Opt;
+
+        public _InOptConst_JoltTwoBodyConstraint() {}
+        public _InOptConst_JoltTwoBodyConstraint(Const_JoltTwoBodyConstraint value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltTwoBodyConstraint(Const_JoltTwoBodyConstraint value) {return new(value);}
+    }
+
     /// Opaque handle to a physics body.
     /// Generated from class `JoltBodyID`.
     /// This is the const half of the class.
@@ -1009,6 +3190,190 @@ public static partial class Jolt
         public static implicit operator _InOptConst_JoltBodyID(Const_JoltBodyID value) {return new(value);}
     }
 
+    /// Growable list of JoltBodyIDs. Used with batch add/remove on JoltBodyInterface.
+    /// Generated from class `JoltBodyIDList`.
+    /// This is the const half of the class.
+    public class Const_JoltBodyIDList : Jolt.Object<Const_JoltBodyIDList>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyIDList_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyIDList_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyIDList_Destroy(_Underlying *_this);
+            __JoltBodyIDList_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltBodyIDList() {Dispose(false);}
+
+        internal unsafe Const_JoltBodyIDList(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltBodyIDList() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyIDList_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyIDList_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyIDList._Underlying *__JoltBodyIDList_DefaultConstruct();
+            _UnderlyingPtr = __JoltBodyIDList_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltBodyIDList::JoltBodyIDList`.
+        public unsafe Const_JoltBodyIDList(Jolt.Const_JoltBodyIDList _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyIDList_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyIDList_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyIDList._Underlying *__JoltBodyIDList_ConstructFromAnother(Jolt.JoltBodyIDList._Underlying *_other);
+            _UnderlyingPtr = __JoltBodyIDList_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltBodyIDList::JoltBodyIDList`.
+        public Const_JoltBodyIDList(JoltBodyIDList _other) : this((Const_JoltBodyIDList)_other) {}
+
+        /// Generated from method `JoltBodyIDList::Count`.
+        public unsafe int Count()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyIDList_Count", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyIDList_Count", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JoltBodyIDList_Count(_Underlying *_this);
+            return __JoltBodyIDList_Count(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyIDList::Get`.
+        public unsafe Jolt.JoltBodyID Get(int index)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyIDList_Get", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyIDList_Get", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyID._Underlying *__JoltBodyIDList_Get(_Underlying *_this, int index);
+            return new(__JoltBodyIDList_Get(_UnderlyingPtr, index), is_owning: true);
+        }
+    }
+
+    /// Growable list of JoltBodyIDs. Used with batch add/remove on JoltBodyInterface.
+    /// Generated from class `JoltBodyIDList`.
+    /// This is the non-const half of the class.
+    public class JoltBodyIDList : Const_JoltBodyIDList
+    {
+        internal unsafe JoltBodyIDList(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltBodyIDList() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyIDList_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyIDList_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyIDList._Underlying *__JoltBodyIDList_DefaultConstruct();
+            _UnderlyingPtr = __JoltBodyIDList_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltBodyIDList::JoltBodyIDList`.
+        public unsafe JoltBodyIDList(Jolt.Const_JoltBodyIDList _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyIDList_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyIDList_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyIDList._Underlying *__JoltBodyIDList_ConstructFromAnother(Jolt.JoltBodyIDList._Underlying *_other);
+            _UnderlyingPtr = __JoltBodyIDList_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltBodyIDList::JoltBodyIDList`.
+        public JoltBodyIDList(JoltBodyIDList _other) : this((Const_JoltBodyIDList)_other) {}
+
+        /// Generated from method `JoltBodyIDList::operator=`.
+        public unsafe Jolt.JoltBodyIDList Assign(Jolt.Const_JoltBodyIDList _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyIDList_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyIDList_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyIDList._Underlying *__JoltBodyIDList_AssignFromAnother(_Underlying *_this, Jolt.JoltBodyIDList._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__JoltBodyIDList_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JoltBodyIDList::Add`.
+        public unsafe void Add(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyIDList_Add", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyIDList_Add", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyIDList_Add(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            __JoltBodyIDList_Add(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyIDList::Clear`.
+        public unsafe void Clear()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyIDList_Clear", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyIDList_Clear", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyIDList_Clear(_Underlying *_this);
+            __JoltBodyIDList_Clear(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used for optional parameters of class `JoltBodyIDList` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltBodyIDList`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltBodyIDList`/`Const_JoltBodyIDList` directly.
+    public class _InOptMut_JoltBodyIDList
+    {
+        public JoltBodyIDList? Opt;
+
+        public _InOptMut_JoltBodyIDList() {}
+        public _InOptMut_JoltBodyIDList(JoltBodyIDList value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltBodyIDList(JoltBodyIDList value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltBodyIDList` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltBodyIDList`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltBodyIDList`/`Const_JoltBodyIDList` to pass it to the function.
+    public class _InOptConst_JoltBodyIDList
+    {
+        public Const_JoltBodyIDList? Opt;
+
+        public _InOptConst_JoltBodyIDList() {}
+        public _InOptConst_JoltBodyIDList(Const_JoltBodyIDList value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltBodyIDList(Const_JoltBodyIDList value) {return new(value);}
+    }
+
     /// Opaque handle to a constraint.
     /// Generated from class `JoltConstraintID`.
     /// This is the const half of the class.
@@ -1183,6 +3548,1154 @@ public static partial class Jolt
         public _InOptConst_JoltConstraintID() {}
         public _InOptConst_JoltConstraintID(Const_JoltConstraintID value) {Opt = value;}
         public static implicit operator _InOptConst_JoltConstraintID(Const_JoltConstraintID value) {return new(value);}
+    }
+
+    /// Wraps JPH::BodyInterface. Obtain via JoltPhysicsSystem::GetBodyInterface().
+    /// Generated from class `JoltBodyInterface`.
+    /// This is the const half of the class.
+    public class Const_JoltBodyInterface : Jolt.Object<Const_JoltBodyInterface>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_Destroy(_Underlying *_this);
+            __JoltBodyInterface_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltBodyInterface() {Dispose(false);}
+
+        internal unsafe Const_JoltBodyInterface(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Generated from constructor `JoltBodyInterface::JoltBodyInterface`.
+        public unsafe Const_JoltBodyInterface(Jolt.Const_JoltBodyInterface _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyInterface._Underlying *__JoltBodyInterface_ConstructFromAnother(Jolt.JoltBodyInterface._Underlying *_other);
+            _UnderlyingPtr = __JoltBodyInterface_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltBodyInterface::JoltBodyInterface`.
+        public Const_JoltBodyInterface(JoltBodyInterface _other) : this((Const_JoltBodyInterface)_other) {}
+
+        /// Generated from method `JoltBodyInterface::IsValid`.
+        public unsafe bool IsValid()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_IsValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltBodyInterface_IsValid(_Underlying *_this);
+            return __JoltBodyInterface_IsValid(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltBodyInterface::IsAdded`.
+        public unsafe bool IsAdded(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_IsAdded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_IsAdded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltBodyInterface_IsAdded(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_IsAdded(_UnderlyingPtr, id._UnderlyingPtr) != 0;
+        }
+
+        /// Replace the shape on a body.
+        /// updateMassProperties: recompute mass/inertia from new shape.
+        /// Generated from method `JoltBodyInterface::SetShape`.
+        public unsafe void SetShape(Jolt.Const_JoltBodyID id, Jolt.JoltShape? shape, bool updateMassProperties, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetShape(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, Jolt.JoltShape._Underlying *shape, byte updateMassProperties, int activation);
+            __JoltBodyInterface_SetShape(_UnderlyingPtr, id._UnderlyingPtr, shape is not null ? shape._UnderlyingPtr : null, updateMassProperties ? (byte)1 : (byte)0, activation);
+        }
+
+        /// Notify systems that a MutableCompoundShape was changed in-place.
+        /// prevComX/Y/Z: center of mass before the change.
+        /// Generated from method `JoltBodyInterface::NotifyShapeChanged`.
+        public unsafe void NotifyShapeChanged(Jolt.Const_JoltBodyID id, double prevComX, double prevComY, double prevComZ, bool updateMassProperties, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_NotifyShapeChanged(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, double prevComX, double prevComY, double prevComZ, byte updateMassProperties, int activation);
+            __JoltBodyInterface_NotifyShapeChanged(_UnderlyingPtr, id._UnderlyingPtr, prevComX, prevComY, prevComZ, updateMassProperties ? (byte)1 : (byte)0, activation);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetPosition`.
+        public unsafe Jolt.JoltVec3 GetPosition(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltVec3._Underlying *__JoltBodyInterface_GetPosition(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return new(__JoltBodyInterface_GetPosition(_UnderlyingPtr, id._UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetCenterOfMassPosition`.
+        public unsafe Jolt.JoltVec3 GetCenterOfMassPosition(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetCenterOfMassPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetCenterOfMassPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltVec3._Underlying *__JoltBodyInterface_GetCenterOfMassPosition(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return new(__JoltBodyInterface_GetCenterOfMassPosition(_UnderlyingPtr, id._UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetRotation`.
+        public unsafe Jolt.JoltQuat GetRotation(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltQuat._Underlying *__JoltBodyInterface_GetRotation(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return new(__JoltBodyInterface_GetRotation(_UnderlyingPtr, id._UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetPositionAndRotation`.
+        public unsafe void GetPositionAndRotation(Jolt.Const_JoltBodyID id, Jolt.JoltVec3 outPosition, Jolt.JoltQuat outRotation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetPositionAndRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetPositionAndRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_GetPositionAndRotation(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, Jolt.JoltVec3._Underlying *outPosition, Jolt.JoltQuat._Underlying *outRotation);
+            __JoltBodyInterface_GetPositionAndRotation(_UnderlyingPtr, id._UnderlyingPtr, outPosition._UnderlyingPtr, outRotation._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetLinearVelocity`.
+        public unsafe Jolt.JoltVec3f GetLinearVelocity(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltVec3f._Underlying *__JoltBodyInterface_GetLinearVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return new(__JoltBodyInterface_GetLinearVelocity(_UnderlyingPtr, id._UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetAngularVelocity`.
+        public unsafe Jolt.JoltVec3f GetAngularVelocity(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltVec3f._Underlying *__JoltBodyInterface_GetAngularVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return new(__JoltBodyInterface_GetAngularVelocity(_UnderlyingPtr, id._UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetLinearAndAngularVelocity`.
+        public unsafe void GetLinearAndAngularVelocity(Jolt.Const_JoltBodyID id, Jolt.JoltVec3f outLinear, Jolt.JoltVec3f outAngular)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_GetLinearAndAngularVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, Jolt.JoltVec3f._Underlying *outLinear, Jolt.JoltVec3f._Underlying *outAngular);
+            __JoltBodyInterface_GetLinearAndAngularVelocity(_UnderlyingPtr, id._UnderlyingPtr, outLinear._UnderlyingPtr, outAngular._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetPointVelocity`.
+        public unsafe Jolt.JoltVec3f GetPointVelocity(Jolt.Const_JoltBodyID id, double px, double py, double pz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetPointVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetPointVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltVec3f._Underlying *__JoltBodyInterface_GetPointVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, double px, double py, double pz);
+            return new(__JoltBodyInterface_GetPointVelocity(_UnderlyingPtr, id._UnderlyingPtr, px, py, pz), is_owning: true);
+        }
+
+        /// Returns JoltBodyType_RigidBody or JoltBodyType_SoftBody.
+        /// Generated from method `JoltBodyInterface::GetBodyType`.
+        public unsafe int GetBodyType(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetBodyType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetBodyType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JoltBodyInterface_GetBodyType(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_GetBodyType(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Returns JoltMotionType_*.
+        /// Generated from method `JoltBodyInterface::GetMotionType`.
+        public unsafe int GetMotionType(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JoltBodyInterface_GetMotionType(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_GetMotionType(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Returns JoltMotionQuality_*.
+        /// Generated from method `JoltBodyInterface::GetMotionQuality`.
+        public unsafe int GetMotionQuality(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JoltBodyInterface_GetMotionQuality(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_GetMotionQuality(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetObjectLayer`.
+        public unsafe uint GetObjectLayer(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetObjectLayer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetObjectLayer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JoltBodyInterface_GetObjectLayer(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_GetObjectLayer(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetFriction`.
+        public unsafe float GetFriction(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetFriction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetFriction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JoltBodyInterface_GetFriction(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_GetFriction(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetRestitution`.
+        public unsafe float GetRestitution(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetRestitution", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetRestitution", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JoltBodyInterface_GetRestitution(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_GetRestitution(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetGravityFactor`.
+        public unsafe float GetGravityFactor(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetGravityFactor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetGravityFactor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JoltBodyInterface_GetGravityFactor(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_GetGravityFactor(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetMaxLinearVelocity`.
+        public unsafe float GetMaxLinearVelocity(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetMaxLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetMaxLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JoltBodyInterface_GetMaxLinearVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_GetMaxLinearVelocity(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetMaxAngularVelocity`.
+        public unsafe float GetMaxAngularVelocity(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetMaxAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetMaxAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JoltBodyInterface_GetMaxAngularVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_GetMaxAngularVelocity(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::IsSensor`.
+        public unsafe bool IsSensor(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_IsSensor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_IsSensor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltBodyInterface_IsSensor(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_IsSensor(_UnderlyingPtr, id._UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltBodyInterface::GetUseManifoldReduction`.
+        public unsafe bool GetUseManifoldReduction(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetUseManifoldReduction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetUseManifoldReduction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltBodyInterface_GetUseManifoldReduction(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_GetUseManifoldReduction(_UnderlyingPtr, id._UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JoltBodyInterface::GetUserData`.
+        public unsafe ulong GetUserData(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static ulong __JoltBodyInterface_GetUserData(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_GetUserData(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::IsActive`.
+        public unsafe bool IsActive(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_IsActive", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_IsActive", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltBodyInterface_IsActive(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return __JoltBodyInterface_IsActive(_UnderlyingPtr, id._UnderlyingPtr) != 0;
+        }
+
+        // ---- Transforms ----------------------------------------------------------
+        /// Generated from method `JoltBodyInterface::GetWorldTransform`.
+        public unsafe Jolt.JoltRMat44 GetWorldTransform(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetWorldTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetWorldTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltRMat44._Underlying *__JoltBodyInterface_GetWorldTransform(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return new(__JoltBodyInterface_GetWorldTransform(_UnderlyingPtr, id._UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetCenterOfMassTransform`.
+        public unsafe Jolt.JoltRMat44 GetCenterOfMassTransform(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetCenterOfMassTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetCenterOfMassTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltRMat44._Underlying *__JoltBodyInterface_GetCenterOfMassTransform(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return new(__JoltBodyInterface_GetCenterOfMassTransform(_UnderlyingPtr, id._UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetInverseInertia`.
+        public unsafe Jolt.JoltMat44 GetInverseInertia(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetInverseInertia", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetInverseInertia", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltMat44._Underlying *__JoltBodyInterface_GetInverseInertia(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return new(__JoltBodyInterface_GetInverseInertia(_UnderlyingPtr, id._UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JoltBodyInterface::GetCollisionGroup`.
+        public unsafe Jolt.JoltCollisionGroup GetCollisionGroup(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetCollisionGroup", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetCollisionGroup", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltCollisionGroup._Underlying *__JoltBodyInterface_GetCollisionGroup(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return new(__JoltBodyInterface_GetCollisionGroup(_UnderlyingPtr, id._UnderlyingPtr), is_owning: true);
+        }
+
+        /// Get the material for the body's root sub-shape (works for simple, non-compound shapes).
+        /// Generated from method `JoltBodyInterface::GetMaterial`.
+        public unsafe Jolt.JoltPhysicsMaterial GetMaterial(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_GetMaterial", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_GetMaterial", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltPhysicsMaterial._Underlying *__JoltBodyInterface_GetMaterial(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            return new(__JoltBodyInterface_GetMaterial(_UnderlyingPtr, id._UnderlyingPtr), is_owning: true);
+        }
+    }
+
+    /// Wraps JPH::BodyInterface. Obtain via JoltPhysicsSystem::GetBodyInterface().
+    /// Generated from class `JoltBodyInterface`.
+    /// This is the non-const half of the class.
+    public class JoltBodyInterface : Const_JoltBodyInterface
+    {
+        internal unsafe JoltBodyInterface(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Generated from constructor `JoltBodyInterface::JoltBodyInterface`.
+        public unsafe JoltBodyInterface(Jolt.Const_JoltBodyInterface _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyInterface._Underlying *__JoltBodyInterface_ConstructFromAnother(Jolt.JoltBodyInterface._Underlying *_other);
+            _UnderlyingPtr = __JoltBodyInterface_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltBodyInterface::JoltBodyInterface`.
+        public JoltBodyInterface(JoltBodyInterface _other) : this((Const_JoltBodyInterface)_other) {}
+
+        /// Generated from method `JoltBodyInterface::operator=`.
+        public unsafe Jolt.JoltBodyInterface Assign(Jolt.Const_JoltBodyInterface _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyInterface._Underlying *__JoltBodyInterface_AssignFromAnother(_Underlying *_this, Jolt.JoltBodyInterface._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__JoltBodyInterface_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+
+        /// Create a body but do not add it to the simulation yet.
+        /// Returns an invalid ID when out of bodies.
+        /// Generated from method `JoltBodyInterface::CreateBody`.
+        public unsafe Jolt.JoltBodyID CreateBody(Jolt.JoltBodyCreationSettings? settings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_CreateBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_CreateBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyID._Underlying *__JoltBodyInterface_CreateBody(_Underlying *_this, Jolt.JoltBodyCreationSettings._Underlying *settings);
+            return new(__JoltBodyInterface_CreateBody(_UnderlyingPtr, settings is not null ? settings._UnderlyingPtr : null), is_owning: true);
+        }
+
+        /// Create a body with a specific ID (for deterministic/replicated simulations).
+        /// Returns an invalid ID when the body ID is invalid or already in use.
+        /// Generated from method `JoltBodyInterface::CreateBodyWithID`.
+        public unsafe Jolt.JoltBodyID CreateBodyWithID(Jolt.Const_JoltBodyID targetID, Jolt.JoltBodyCreationSettings? settings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_CreateBodyWithID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_CreateBodyWithID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyID._Underlying *__JoltBodyInterface_CreateBodyWithID(_Underlying *_this, Jolt.JoltBodyID._Underlying *targetID, Jolt.JoltBodyCreationSettings._Underlying *settings);
+            return new(__JoltBodyInterface_CreateBodyWithID(_UnderlyingPtr, targetID._UnderlyingPtr, settings is not null ? settings._UnderlyingPtr : null), is_owning: true);
+        }
+
+        /// Create a body and immediately add it to the simulation.
+        /// Generated from method `JoltBodyInterface::CreateAndAddBody`.
+        public unsafe Jolt.JoltBodyID CreateAndAddBody(Jolt.JoltBodyCreationSettings? settings, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_CreateAndAddBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_CreateAndAddBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyID._Underlying *__JoltBodyInterface_CreateAndAddBody(_Underlying *_this, Jolt.JoltBodyCreationSettings._Underlying *settings, int activation);
+            return new(__JoltBodyInterface_CreateAndAddBody(_UnderlyingPtr, settings is not null ? settings._UnderlyingPtr : null, activation), is_owning: true);
+        }
+
+        /// Generated from method `JoltBodyInterface::AddBody`.
+        public unsafe void AddBody(Jolt.Const_JoltBodyID id, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddBody(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, int activation);
+            __JoltBodyInterface_AddBody(_UnderlyingPtr, id._UnderlyingPtr, activation);
+        }
+
+        /// Generated from method `JoltBodyInterface::RemoveBody`.
+        public unsafe void RemoveBody(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_RemoveBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_RemoveBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_RemoveBody(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            __JoltBodyInterface_RemoveBody(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Destroy a body that has already been removed from the simulation.
+        /// Generated from method `JoltBodyInterface::DestroyBody`.
+        public unsafe void DestroyBody(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_DestroyBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_DestroyBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_DestroyBody(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            __JoltBodyInterface_DestroyBody(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Remove and destroy in one call.
+        /// Generated from method `JoltBodyInterface::RemoveAndDestroyBody`.
+        public unsafe void RemoveAndDestroyBody(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_RemoveAndDestroyBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_RemoveAndDestroyBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_RemoveAndDestroyBody(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            __JoltBodyInterface_RemoveAndDestroyBody(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Prepare adding bodies in batch; safe to call from a background thread.
+        /// Returns an opaque state handle — pass to AddBodiesFinalize or AddBodiesAbort.
+        /// The JoltBodyIDList must remain unmodified until Finalize/Abort is called.
+        /// Generated from method `JoltBodyInterface::AddBodiesPrepare`.
+        /// Returns a mutable pointer.
+        public unsafe void *AddBodiesPrepare(Jolt.JoltBodyIDList? bodies)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddBodiesPrepare", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddBodiesPrepare", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JoltBodyInterface_AddBodiesPrepare(_Underlying *_this, Jolt.JoltBodyIDList._Underlying *bodies);
+            return __JoltBodyInterface_AddBodiesPrepare(_UnderlyingPtr, bodies is not null ? bodies._UnderlyingPtr : null);
+        }
+
+        /// Finalize a batch add; atomically inserts all bodies into the simulation.
+        /// Generated from method `JoltBodyInterface::AddBodiesFinalize`.
+        /// Parameter `addState` is a mutable pointer.
+        public unsafe void AddBodiesFinalize(Jolt.JoltBodyIDList? bodies, void *addState, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddBodiesFinalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddBodiesFinalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddBodiesFinalize(_Underlying *_this, Jolt.JoltBodyIDList._Underlying *bodies, void *addState, int activation);
+            __JoltBodyInterface_AddBodiesFinalize(_UnderlyingPtr, bodies is not null ? bodies._UnderlyingPtr : null, addState, activation);
+        }
+
+        /// Abort a prepared batch add without inserting bodies.
+        /// Generated from method `JoltBodyInterface::AddBodiesAbort`.
+        /// Parameter `addState` is a mutable pointer.
+        public unsafe void AddBodiesAbort(Jolt.JoltBodyIDList? bodies, void *addState)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddBodiesAbort", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddBodiesAbort", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddBodiesAbort(_Underlying *_this, Jolt.JoltBodyIDList._Underlying *bodies, void *addState);
+            __JoltBodyInterface_AddBodiesAbort(_UnderlyingPtr, bodies is not null ? bodies._UnderlyingPtr : null, addState);
+        }
+
+        /// Remove multiple bodies from the simulation in one call.
+        /// Generated from method `JoltBodyInterface::RemoveBodies`.
+        public unsafe void RemoveBodies(Jolt.JoltBodyIDList? bodies)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_RemoveBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_RemoveBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_RemoveBodies(_Underlying *_this, Jolt.JoltBodyIDList._Underlying *bodies);
+            __JoltBodyInterface_RemoveBodies(_UnderlyingPtr, bodies is not null ? bodies._UnderlyingPtr : null);
+        }
+
+        /// Destroy multiple bodies (must all be removed from the simulation first).
+        /// Generated from method `JoltBodyInterface::DestroyBodies`.
+        public unsafe void DestroyBodies(Jolt.JoltBodyIDList? bodies)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_DestroyBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_DestroyBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_DestroyBodies(_Underlying *_this, Jolt.JoltBodyIDList._Underlying *bodies);
+            __JoltBodyInterface_DestroyBodies(_UnderlyingPtr, bodies is not null ? bodies._UnderlyingPtr : null);
+        }
+
+        // ---- Position / rotation -------------------------------------------------
+        /// Generated from method `JoltBodyInterface::SetPosition`.
+        public unsafe void SetPosition(Jolt.Const_JoltBodyID id, double x, double y, double z, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetPosition(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, double x, double y, double z, int activation);
+            __JoltBodyInterface_SetPosition(_UnderlyingPtr, id._UnderlyingPtr, x, y, z, activation);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetRotation`.
+        public unsafe void SetRotation(Jolt.Const_JoltBodyID id, float qx, float qy, float qz, float qw, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetRotation(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float qx, float qy, float qz, float qw, int activation);
+            __JoltBodyInterface_SetRotation(_UnderlyingPtr, id._UnderlyingPtr, qx, qy, qz, qw, activation);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetPositionAndRotation`.
+        public unsafe void SetPositionAndRotation(Jolt.Const_JoltBodyID id, double x, double y, double z, float qx, float qy, float qz, float qw, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetPositionAndRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetPositionAndRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetPositionAndRotation(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, double x, double y, double z, float qx, float qy, float qz, float qw, int activation);
+            __JoltBodyInterface_SetPositionAndRotation(_UnderlyingPtr, id._UnderlyingPtr, x, y, z, qx, qy, qz, qw, activation);
+        }
+
+        /// Like SetPositionAndRotation but only updates when the change is above a small threshold.
+        /// Generated from method `JoltBodyInterface::SetPositionAndRotationWhenChanged`.
+        public unsafe void SetPositionAndRotationWhenChanged(Jolt.Const_JoltBodyID id, double x, double y, double z, float qx, float qy, float qz, float qw, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetPositionAndRotationWhenChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetPositionAndRotationWhenChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetPositionAndRotationWhenChanged(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, double x, double y, double z, float qx, float qy, float qz, float qw, int activation);
+            __JoltBodyInterface_SetPositionAndRotationWhenChanged(_UnderlyingPtr, id._UnderlyingPtr, x, y, z, qx, qy, qz, qw, activation);
+        }
+
+        /// Generated from method `JoltBodyInterface::MoveKinematic`.
+        public unsafe void MoveKinematic(Jolt.Const_JoltBodyID id, double x, double y, double z, float qx, float qy, float qz, float qw, float deltaTime)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_MoveKinematic", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_MoveKinematic", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_MoveKinematic(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, double x, double y, double z, float qx, float qy, float qz, float qw, float deltaTime);
+            __JoltBodyInterface_MoveKinematic(_UnderlyingPtr, id._UnderlyingPtr, x, y, z, qx, qy, qz, qw, deltaTime);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetPositionRotationAndVelocity`.
+        public unsafe void SetPositionRotationAndVelocity(Jolt.Const_JoltBodyID id, double x, double y, double z, float qx, float qy, float qz, float qw, float lvx, float lvy, float lvz, float avx, float avy, float avz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetPositionRotationAndVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetPositionRotationAndVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetPositionRotationAndVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, double x, double y, double z, float qx, float qy, float qz, float qw, float lvx, float lvy, float lvz, float avx, float avy, float avz);
+            __JoltBodyInterface_SetPositionRotationAndVelocity(_UnderlyingPtr, id._UnderlyingPtr, x, y, z, qx, qy, qz, qw, lvx, lvy, lvz, avx, avy, avz);
+        }
+
+        // ---- Velocity ------------------------------------------------------------
+        /// Generated from method `JoltBodyInterface::SetLinearVelocity`.
+        public unsafe void SetLinearVelocity(Jolt.Const_JoltBodyID id, float vx, float vy, float vz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetLinearVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float vx, float vy, float vz);
+            __JoltBodyInterface_SetLinearVelocity(_UnderlyingPtr, id._UnderlyingPtr, vx, vy, vz);
+        }
+
+        /// Generated from method `JoltBodyInterface::AddLinearVelocity`.
+        public unsafe void AddLinearVelocity(Jolt.Const_JoltBodyID id, float vx, float vy, float vz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddLinearVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float vx, float vy, float vz);
+            __JoltBodyInterface_AddLinearVelocity(_UnderlyingPtr, id._UnderlyingPtr, vx, vy, vz);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetAngularVelocity`.
+        public unsafe void SetAngularVelocity(Jolt.Const_JoltBodyID id, float vx, float vy, float vz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetAngularVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float vx, float vy, float vz);
+            __JoltBodyInterface_SetAngularVelocity(_UnderlyingPtr, id._UnderlyingPtr, vx, vy, vz);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetLinearAndAngularVelocity`.
+        public unsafe void SetLinearAndAngularVelocity(Jolt.Const_JoltBodyID id, float lvx, float lvy, float lvz, float avx, float avy, float avz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetLinearAndAngularVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float lvx, float lvy, float lvz, float avx, float avy, float avz);
+            __JoltBodyInterface_SetLinearAndAngularVelocity(_UnderlyingPtr, id._UnderlyingPtr, lvx, lvy, lvz, avx, avy, avz);
+        }
+
+        /// Generated from method `JoltBodyInterface::AddLinearAndAngularVelocity`.
+        public unsafe void AddLinearAndAngularVelocity(Jolt.Const_JoltBodyID id, float lvx, float lvy, float lvz, float avx, float avy, float avz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddLinearAndAngularVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float lvx, float lvy, float lvz, float avx, float avy, float avz);
+            __JoltBodyInterface_AddLinearAndAngularVelocity(_UnderlyingPtr, id._UnderlyingPtr, lvx, lvy, lvz, avx, avy, avz);
+        }
+
+        // ---- Forces / impulses ---------------------------------------------------
+        /// Generated from method `JoltBodyInterface::AddForce`.
+        public unsafe void AddForce(Jolt.Const_JoltBodyID id, float fx, float fy, float fz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddForce", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddForce", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddForce(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float fx, float fy, float fz);
+            __JoltBodyInterface_AddForce(_UnderlyingPtr, id._UnderlyingPtr, fx, fy, fz);
+        }
+
+        /// Generated from method `JoltBodyInterface::AddForceAtPosition`.
+        public unsafe void AddForceAtPosition(Jolt.Const_JoltBodyID id, float fx, float fy, float fz, double px, double py, double pz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddForceAtPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddForceAtPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddForceAtPosition(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float fx, float fy, float fz, double px, double py, double pz);
+            __JoltBodyInterface_AddForceAtPosition(_UnderlyingPtr, id._UnderlyingPtr, fx, fy, fz, px, py, pz);
+        }
+
+        /// Generated from method `JoltBodyInterface::AddTorque`.
+        public unsafe void AddTorque(Jolt.Const_JoltBodyID id, float tx, float ty, float tz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddTorque(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float tx, float ty, float tz);
+            __JoltBodyInterface_AddTorque(_UnderlyingPtr, id._UnderlyingPtr, tx, ty, tz);
+        }
+
+        /// Generated from method `JoltBodyInterface::AddForceAndTorque`.
+        public unsafe void AddForceAndTorque(Jolt.Const_JoltBodyID id, float fx, float fy, float fz, float tx, float ty, float tz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddForceAndTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddForceAndTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddForceAndTorque(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float fx, float fy, float fz, float tx, float ty, float tz);
+            __JoltBodyInterface_AddForceAndTorque(_UnderlyingPtr, id._UnderlyingPtr, fx, fy, fz, tx, ty, tz);
+        }
+
+        /// Generated from method `JoltBodyInterface::AddImpulse`.
+        public unsafe void AddImpulse(Jolt.Const_JoltBodyID id, float ix, float iy, float iz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddImpulse(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float ix, float iy, float iz);
+            __JoltBodyInterface_AddImpulse(_UnderlyingPtr, id._UnderlyingPtr, ix, iy, iz);
+        }
+
+        /// Generated from method `JoltBodyInterface::AddImpulseAtPosition`.
+        public unsafe void AddImpulseAtPosition(Jolt.Const_JoltBodyID id, float ix, float iy, float iz, double px, double py, double pz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddImpulseAtPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddImpulseAtPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddImpulseAtPosition(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float ix, float iy, float iz, double px, double py, double pz);
+            __JoltBodyInterface_AddImpulseAtPosition(_UnderlyingPtr, id._UnderlyingPtr, ix, iy, iz, px, py, pz);
+        }
+
+        /// Generated from method `JoltBodyInterface::AddAngularImpulse`.
+        public unsafe void AddAngularImpulse(Jolt.Const_JoltBodyID id, float ix, float iy, float iz)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_AddAngularImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_AddAngularImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_AddAngularImpulse(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float ix, float iy, float iz);
+            __JoltBodyInterface_AddAngularImpulse(_UnderlyingPtr, id._UnderlyingPtr, ix, iy, iz);
+        }
+
+        /// Apply a buoyancy impulse. Returns true when the body is in the fluid.
+        /// surfaceNX/Y/Z: world-space surface normal pointing away from fluid.
+        /// fluidVX/Y/Z: velocity of the fluid (usually zero for still water).
+        /// gravX/Y/Z: gravity vector (e.g. 0,-9.81,0).
+        /// Generated from method `JoltBodyInterface::ApplyBuoyancyImpulse`.
+        public unsafe bool ApplyBuoyancyImpulse(Jolt.Const_JoltBodyID id, double surfacePosX, double surfacePosY, double surfacePosZ, float surfaceNX, float surfaceNY, float surfaceNZ, float buoyancy, float linearDrag, float angularDrag, float fluidVX, float fluidVY, float fluidVZ, float gravX, float gravY, float gravZ, float deltaTime)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_ApplyBuoyancyImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_ApplyBuoyancyImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltBodyInterface_ApplyBuoyancyImpulse(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, double surfacePosX, double surfacePosY, double surfacePosZ, float surfaceNX, float surfaceNY, float surfaceNZ, float buoyancy, float linearDrag, float angularDrag, float fluidVX, float fluidVY, float fluidVZ, float gravX, float gravY, float gravZ, float deltaTime);
+            return __JoltBodyInterface_ApplyBuoyancyImpulse(_UnderlyingPtr, id._UnderlyingPtr, surfacePosX, surfacePosY, surfacePosZ, surfaceNX, surfaceNY, surfaceNZ, buoyancy, linearDrag, angularDrag, fluidVX, fluidVY, fluidVZ, gravX, gravY, gravZ, deltaTime) != 0;
+        }
+
+        /// Generated from method `JoltBodyInterface::SetMotionType`.
+        public unsafe void SetMotionType(Jolt.Const_JoltBodyID id, int motionType, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetMotionType(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, int motionType, int activation);
+            __JoltBodyInterface_SetMotionType(_UnderlyingPtr, id._UnderlyingPtr, motionType, activation);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetMotionQuality`.
+        public unsafe void SetMotionQuality(Jolt.Const_JoltBodyID id, int motionQuality)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetMotionQuality(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, int motionQuality);
+            __JoltBodyInterface_SetMotionQuality(_UnderlyingPtr, id._UnderlyingPtr, motionQuality);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetObjectLayer`.
+        public unsafe void SetObjectLayer(Jolt.Const_JoltBodyID id, uint layer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetObjectLayer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetObjectLayer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetObjectLayer(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, uint layer);
+            __JoltBodyInterface_SetObjectLayer(_UnderlyingPtr, id._UnderlyingPtr, layer);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetFriction`.
+        public unsafe void SetFriction(Jolt.Const_JoltBodyID id, float friction)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetFriction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetFriction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetFriction(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float friction);
+            __JoltBodyInterface_SetFriction(_UnderlyingPtr, id._UnderlyingPtr, friction);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetRestitution`.
+        public unsafe void SetRestitution(Jolt.Const_JoltBodyID id, float restitution)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetRestitution", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetRestitution", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetRestitution(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float restitution);
+            __JoltBodyInterface_SetRestitution(_UnderlyingPtr, id._UnderlyingPtr, restitution);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetGravityFactor`.
+        public unsafe void SetGravityFactor(Jolt.Const_JoltBodyID id, float factor)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetGravityFactor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetGravityFactor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetGravityFactor(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float factor);
+            __JoltBodyInterface_SetGravityFactor(_UnderlyingPtr, id._UnderlyingPtr, factor);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetMaxLinearVelocity`.
+        public unsafe void SetMaxLinearVelocity(Jolt.Const_JoltBodyID id, float v)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetMaxLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetMaxLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetMaxLinearVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float v);
+            __JoltBodyInterface_SetMaxLinearVelocity(_UnderlyingPtr, id._UnderlyingPtr, v);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetMaxAngularVelocity`.
+        public unsafe void SetMaxAngularVelocity(Jolt.Const_JoltBodyID id, float v)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetMaxAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetMaxAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetMaxAngularVelocity(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, float v);
+            __JoltBodyInterface_SetMaxAngularVelocity(_UnderlyingPtr, id._UnderlyingPtr, v);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetIsSensor`.
+        public unsafe void SetIsSensor(Jolt.Const_JoltBodyID id, bool isSensor)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetIsSensor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetIsSensor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetIsSensor(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, byte isSensor);
+            __JoltBodyInterface_SetIsSensor(_UnderlyingPtr, id._UnderlyingPtr, isSensor ? (byte)1 : (byte)0);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetUseManifoldReduction`.
+        public unsafe void SetUseManifoldReduction(Jolt.Const_JoltBodyID id, bool useReduction)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetUseManifoldReduction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetUseManifoldReduction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetUseManifoldReduction(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, byte useReduction);
+            __JoltBodyInterface_SetUseManifoldReduction(_UnderlyingPtr, id._UnderlyingPtr, useReduction ? (byte)1 : (byte)0);
+        }
+
+        /// Generated from method `JoltBodyInterface::SetUserData`.
+        public unsafe void SetUserData(Jolt.Const_JoltBodyID id, ulong userData)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetUserData(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, ulong userData);
+            __JoltBodyInterface_SetUserData(_UnderlyingPtr, id._UnderlyingPtr, userData);
+        }
+
+        // ---- Activation ----------------------------------------------------------
+        /// Generated from method `JoltBodyInterface::ActivateBody`.
+        public unsafe void ActivateBody(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_ActivateBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_ActivateBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_ActivateBody(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            __JoltBodyInterface_ActivateBody(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::ActivateBodies`.
+        public unsafe void ActivateBodies(Jolt.JoltBodyIDList? bodies)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_ActivateBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_ActivateBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_ActivateBodies(_Underlying *_this, Jolt.JoltBodyIDList._Underlying *bodies);
+            __JoltBodyInterface_ActivateBodies(_UnderlyingPtr, bodies is not null ? bodies._UnderlyingPtr : null);
+        }
+
+        /// Generated from method `JoltBodyInterface::DeactivateBody`.
+        public unsafe void DeactivateBody(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_DeactivateBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_DeactivateBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_DeactivateBody(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            __JoltBodyInterface_DeactivateBody(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltBodyInterface::DeactivateBodies`.
+        public unsafe void DeactivateBodies(Jolt.JoltBodyIDList? bodies)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_DeactivateBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_DeactivateBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_DeactivateBodies(_Underlying *_this, Jolt.JoltBodyIDList._Underlying *bodies);
+            __JoltBodyInterface_DeactivateBodies(_UnderlyingPtr, bodies is not null ? bodies._UnderlyingPtr : null);
+        }
+
+        /// Generated from method `JoltBodyInterface::ResetSleepTimer`.
+        public unsafe void ResetSleepTimer(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_ResetSleepTimer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_ResetSleepTimer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_ResetSleepTimer(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            __JoltBodyInterface_ResetSleepTimer(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        // ---- Misc ----------------------------------------------------------------
+        /// Generated from method `JoltBodyInterface::InvalidateContactCache`.
+        public unsafe void InvalidateContactCache(Jolt.Const_JoltBodyID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_InvalidateContactCache", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_InvalidateContactCache", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_InvalidateContactCache(_Underlying *_this, Jolt.JoltBodyID._Underlying *id);
+            __JoltBodyInterface_InvalidateContactCache(_UnderlyingPtr, id._UnderlyingPtr);
+        }
+
+        // ---- Collision group -----------------------------------------------------
+        /// Generated from method `JoltBodyInterface::SetCollisionGroup`.
+        public unsafe void SetCollisionGroup(Jolt.Const_JoltBodyID id, Jolt.Const_JoltCollisionGroup group)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_SetCollisionGroup", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_SetCollisionGroup", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_SetCollisionGroup(_Underlying *_this, Jolt.JoltBodyID._Underlying *id, Jolt.Const_JoltCollisionGroup._Underlying *group);
+            __JoltBodyInterface_SetCollisionGroup(_UnderlyingPtr, id._UnderlyingPtr, group._UnderlyingPtr);
+        }
+
+        /// Activate all bodies whose bounding box overlaps box, across all object layers.
+        /// Generated from method `JoltBodyInterface::ActivateBodiesInAABox`.
+        public unsafe void ActivateBodiesInAABox(Jolt.Const_JoltAABox box)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_ActivateBodiesInAABox", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_ActivateBodiesInAABox", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_ActivateBodiesInAABox(_Underlying *_this, Jolt.Const_JoltAABox._Underlying *box);
+            __JoltBodyInterface_ActivateBodiesInAABox(_UnderlyingPtr, box._UnderlyingPtr);
+        }
+
+        /// Activate non-static bodies attached to a constraint.
+        /// Generated from method `JoltBodyInterface::ActivateConstraint`.
+        public unsafe void ActivateConstraint(Jolt.Const_JoltTwoBodyConstraint constraint)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_ActivateConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_ActivateConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltBodyInterface_ActivateConstraint(_Underlying *_this, Jolt.Const_JoltTwoBodyConstraint._Underlying *constraint);
+            __JoltBodyInterface_ActivateConstraint(_UnderlyingPtr, constraint._UnderlyingPtr);
+        }
+
+        // ---- Soft body -----------------------------------------------------------
+        /// Generated from method `JoltBodyInterface::CreateSoftBody`.
+        public unsafe Jolt.JoltBodyID CreateSoftBody(Jolt.JoltSoftBodyCreationSettings? settings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_CreateSoftBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_CreateSoftBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyID._Underlying *__JoltBodyInterface_CreateSoftBody(_Underlying *_this, Jolt.JoltSoftBodyCreationSettings._Underlying *settings);
+            return new(__JoltBodyInterface_CreateSoftBody(_UnderlyingPtr, settings is not null ? settings._UnderlyingPtr : null), is_owning: true);
+        }
+
+        /// Generated from method `JoltBodyInterface::CreateAndAddSoftBody`.
+        public unsafe Jolt.JoltBodyID CreateAndAddSoftBody(Jolt.JoltSoftBodyCreationSettings? settings, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltBodyInterface_CreateAndAddSoftBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltBodyInterface_CreateAndAddSoftBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyID._Underlying *__JoltBodyInterface_CreateAndAddSoftBody(_Underlying *_this, Jolt.JoltSoftBodyCreationSettings._Underlying *settings, int activation);
+            return new(__JoltBodyInterface_CreateAndAddSoftBody(_UnderlyingPtr, settings is not null ? settings._UnderlyingPtr : null, activation), is_owning: true);
+        }
+    }
+
+    /// This is used for optional parameters of class `JoltBodyInterface` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltBodyInterface`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltBodyInterface`/`Const_JoltBodyInterface` directly.
+    public class _InOptMut_JoltBodyInterface
+    {
+        public JoltBodyInterface? Opt;
+
+        public _InOptMut_JoltBodyInterface() {}
+        public _InOptMut_JoltBodyInterface(JoltBodyInterface value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltBodyInterface(JoltBodyInterface value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltBodyInterface` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltBodyInterface`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltBodyInterface`/`Const_JoltBodyInterface` to pass it to the function.
+    public class _InOptConst_JoltBodyInterface
+    {
+        public Const_JoltBodyInterface? Opt;
+
+        public _InOptConst_JoltBodyInterface() {}
+        public _InOptConst_JoltBodyInterface(Const_JoltBodyInterface value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltBodyInterface(Const_JoltBodyInterface value) {return new(value);}
     }
 
     /// Base class for all collision shapes.
@@ -3021,6 +6534,484 @@ public static partial class Jolt
         public static implicit operator _InOptConst_JoltBodyCreationSettings(Const_JoltBodyCreationSettings value) {return new(value);}
     }
 
+    /// Defines the mesh topology of a soft body: vertices, faces, edge constraints.
+    /// Shared (ref-counted) between multiple soft body instances.
+    /// Build order: AddVertex → AddFace → AddEdgeConstraint (or CalculateEdgeLengths) → Optimize.
+    /// Generated from class `JoltSoftBodySharedSettings`.
+    /// This is the const half of the class.
+    public class Const_JoltSoftBodySharedSettings : Jolt.Object<Const_JoltSoftBodySharedSettings>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodySharedSettings_Destroy(_Underlying *_this);
+            __JoltSoftBodySharedSettings_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltSoftBodySharedSettings() {Dispose(false);}
+
+        internal unsafe Const_JoltSoftBodySharedSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_JoltSoftBodySharedSettings() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodySharedSettings._Underlying *__JoltSoftBodySharedSettings_DefaultConstruct();
+            _UnderlyingPtr = __JoltSoftBodySharedSettings_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltSoftBodySharedSettings::JoltSoftBodySharedSettings`.
+        public unsafe Const_JoltSoftBodySharedSettings(Jolt.Const_JoltSoftBodySharedSettings _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodySharedSettings._Underlying *__JoltSoftBodySharedSettings_ConstructFromAnother(Jolt.JoltSoftBodySharedSettings._Underlying *_other);
+            _UnderlyingPtr = __JoltSoftBodySharedSettings_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltSoftBodySharedSettings::JoltSoftBodySharedSettings`.
+        public Const_JoltSoftBodySharedSettings(JoltSoftBodySharedSettings _other) : this((Const_JoltSoftBodySharedSettings)_other) {}
+
+        /// Generated from method `JoltSoftBodySharedSettings::GetVertexCount`.
+        public unsafe int GetVertexCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_GetVertexCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_GetVertexCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JoltSoftBodySharedSettings_GetVertexCount(_Underlying *_this);
+            return __JoltSoftBodySharedSettings_GetVertexCount(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltSoftBodySharedSettings::GetFaceCount`.
+        public unsafe int GetFaceCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_GetFaceCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_GetFaceCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JoltSoftBodySharedSettings_GetFaceCount(_Underlying *_this);
+            return __JoltSoftBodySharedSettings_GetFaceCount(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JoltSoftBodySharedSettings::GetEdgeCount`.
+        public unsafe int GetEdgeCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_GetEdgeCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_GetEdgeCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JoltSoftBodySharedSettings_GetEdgeCount(_Underlying *_this);
+            return __JoltSoftBodySharedSettings_GetEdgeCount(_UnderlyingPtr);
+        }
+    }
+
+    /// Defines the mesh topology of a soft body: vertices, faces, edge constraints.
+    /// Shared (ref-counted) between multiple soft body instances.
+    /// Build order: AddVertex → AddFace → AddEdgeConstraint (or CalculateEdgeLengths) → Optimize.
+    /// Generated from class `JoltSoftBodySharedSettings`.
+    /// This is the non-const half of the class.
+    public class JoltSoftBodySharedSettings : Const_JoltSoftBodySharedSettings
+    {
+        internal unsafe JoltSoftBodySharedSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe JoltSoftBodySharedSettings() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodySharedSettings._Underlying *__JoltSoftBodySharedSettings_DefaultConstruct();
+            _UnderlyingPtr = __JoltSoftBodySharedSettings_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JoltSoftBodySharedSettings::JoltSoftBodySharedSettings`.
+        public unsafe JoltSoftBodySharedSettings(Jolt.Const_JoltSoftBodySharedSettings _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodySharedSettings._Underlying *__JoltSoftBodySharedSettings_ConstructFromAnother(Jolt.JoltSoftBodySharedSettings._Underlying *_other);
+            _UnderlyingPtr = __JoltSoftBodySharedSettings_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltSoftBodySharedSettings::JoltSoftBodySharedSettings`.
+        public JoltSoftBodySharedSettings(JoltSoftBodySharedSettings _other) : this((Const_JoltSoftBodySharedSettings)_other) {}
+
+        /// Generated from method `JoltSoftBodySharedSettings::operator=`.
+        public unsafe Jolt.JoltSoftBodySharedSettings Assign(Jolt.Const_JoltSoftBodySharedSettings _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodySharedSettings._Underlying *__JoltSoftBodySharedSettings_AssignFromAnother(_Underlying *_this, Jolt.JoltSoftBodySharedSettings._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__JoltSoftBodySharedSettings_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+
+        /// Add a particle at (x,y,z). invMass=0 pins it (kinematic vertex).
+        /// Generated from method `JoltSoftBodySharedSettings::AddVertex`.
+        public unsafe void AddVertex(float x, float y, float z, float invMass)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_AddVertex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_AddVertex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodySharedSettings_AddVertex(_Underlying *_this, float x, float y, float z, float invMass);
+            __JoltSoftBodySharedSettings_AddVertex(_UnderlyingPtr, x, y, z, invMass);
+        }
+
+        /// Add a triangular face by vertex indices.
+        /// Generated from method `JoltSoftBodySharedSettings::AddFace`.
+        public unsafe void AddFace(uint v0, uint v1, uint v2)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_AddFace", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_AddFace", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodySharedSettings_AddFace(_Underlying *_this, uint v0, uint v1, uint v2);
+            __JoltSoftBodySharedSettings_AddFace(_UnderlyingPtr, v0, v1, v2);
+        }
+
+        /// Add an explicit edge-length spring between two vertices.
+        /// compliance: 0 = perfectly rigid, larger = softer.
+        /// restLength: target length; pass <=0 to auto-compute from current vertex positions.
+        /// Generated from method `JoltSoftBodySharedSettings::AddEdgeConstraint`.
+        public unsafe void AddEdgeConstraint(uint v0, uint v1, float compliance, float restLength)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_AddEdgeConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_AddEdgeConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodySharedSettings_AddEdgeConstraint(_Underlying *_this, uint v0, uint v1, float compliance, float restLength);
+            __JoltSoftBodySharedSettings_AddEdgeConstraint(_UnderlyingPtr, v0, v1, compliance, restLength);
+        }
+
+        /// Convenience: add edge with auto-computed rest length.
+        /// Generated from method `JoltSoftBodySharedSettings::AddEdgeConstraintAuto`.
+        public unsafe void AddEdgeConstraintAuto(uint v0, uint v1, float compliance)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_AddEdgeConstraintAuto", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_AddEdgeConstraintAuto", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodySharedSettings_AddEdgeConstraintAuto(_Underlying *_this, uint v0, uint v1, float compliance);
+            __JoltSoftBodySharedSettings_AddEdgeConstraintAuto(_UnderlyingPtr, v0, v1, compliance);
+        }
+
+        /// Compute rest lengths for all edges whose mRestLength == 1.0 (the default).
+        /// Generated from method `JoltSoftBodySharedSettings::CalculateEdgeLengths`.
+        public unsafe void CalculateEdgeLengths()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_CalculateEdgeLengths", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_CalculateEdgeLengths", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodySharedSettings_CalculateEdgeLengths(_Underlying *_this);
+            __JoltSoftBodySharedSettings_CalculateEdgeLengths(_UnderlyingPtr);
+        }
+
+        /// Must be called once after building. Reorders constraints for parallel solving.
+        /// Generated from method `JoltSoftBodySharedSettings::Optimize`.
+        public unsafe void Optimize()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodySharedSettings_Optimize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodySharedSettings_Optimize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodySharedSettings_Optimize(_Underlying *_this);
+            __JoltSoftBodySharedSettings_Optimize(_UnderlyingPtr);
+        }
+    }
+
+    /// This is used for optional parameters of class `JoltSoftBodySharedSettings` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltSoftBodySharedSettings`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltSoftBodySharedSettings`/`Const_JoltSoftBodySharedSettings` directly.
+    public class _InOptMut_JoltSoftBodySharedSettings
+    {
+        public JoltSoftBodySharedSettings? Opt;
+
+        public _InOptMut_JoltSoftBodySharedSettings() {}
+        public _InOptMut_JoltSoftBodySharedSettings(JoltSoftBodySharedSettings value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltSoftBodySharedSettings(JoltSoftBodySharedSettings value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltSoftBodySharedSettings` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltSoftBodySharedSettings`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltSoftBodySharedSettings`/`Const_JoltSoftBodySharedSettings` to pass it to the function.
+    public class _InOptConst_JoltSoftBodySharedSettings
+    {
+        public Const_JoltSoftBodySharedSettings? Opt;
+
+        public _InOptConst_JoltSoftBodySharedSettings() {}
+        public _InOptConst_JoltSoftBodySharedSettings(Const_JoltSoftBodySharedSettings value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltSoftBodySharedSettings(Const_JoltSoftBodySharedSettings value) {return new(value);}
+    }
+
+    /// Parameters for creating a soft body.
+    /// Generated from class `JoltSoftBodyCreationSettings`.
+    /// This is the const half of the class.
+    public class Const_JoltSoftBodyCreationSettings : Jolt.Object<Const_JoltSoftBodyCreationSettings>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodyCreationSettings_Destroy(_Underlying *_this);
+            __JoltSoftBodyCreationSettings_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_JoltSoftBodyCreationSettings() {Dispose(false);}
+
+        internal unsafe Const_JoltSoftBodyCreationSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Generated from constructor `JoltSoftBodyCreationSettings::JoltSoftBodyCreationSettings`.
+        public unsafe Const_JoltSoftBodyCreationSettings(Jolt.Const_JoltSoftBodyCreationSettings _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodyCreationSettings._Underlying *__JoltSoftBodyCreationSettings_ConstructFromAnother(Jolt.JoltSoftBodyCreationSettings._Underlying *_other);
+            _UnderlyingPtr = __JoltSoftBodyCreationSettings_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltSoftBodyCreationSettings::JoltSoftBodyCreationSettings`.
+        public Const_JoltSoftBodyCreationSettings(JoltSoftBodyCreationSettings _other) : this((Const_JoltSoftBodyCreationSettings)_other) {}
+
+        /// Generated from constructor `JoltSoftBodyCreationSettings::JoltSoftBodyCreationSettings`.
+        public unsafe Const_JoltSoftBodyCreationSettings(Jolt.JoltSoftBodySharedSettings? settings, double posX, double posY, double posZ, float qx, float qy, float qz, float qw, uint objectLayer) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_Construct_9", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_Construct_9", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodyCreationSettings._Underlying *__JoltSoftBodyCreationSettings_Construct_9(Jolt.JoltSoftBodySharedSettings._Underlying *settings, double posX, double posY, double posZ, float qx, float qy, float qz, float qw, uint objectLayer);
+            _UnderlyingPtr = __JoltSoftBodyCreationSettings_Construct_9(settings is not null ? settings._UnderlyingPtr : null, posX, posY, posZ, qx, qy, qz, qw, objectLayer);
+        }
+
+        /// Convenience: identity rotation.
+        /// Generated from constructor `JoltSoftBodyCreationSettings::JoltSoftBodyCreationSettings`.
+        public unsafe Const_JoltSoftBodyCreationSettings(Jolt.JoltSoftBodySharedSettings? settings, double posX, double posY, double posZ, uint objectLayer) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodyCreationSettings._Underlying *__JoltSoftBodyCreationSettings_Construct_5(Jolt.JoltSoftBodySharedSettings._Underlying *settings, double posX, double posY, double posZ, uint objectLayer);
+            _UnderlyingPtr = __JoltSoftBodyCreationSettings_Construct_5(settings is not null ? settings._UnderlyingPtr : null, posX, posY, posZ, objectLayer);
+        }
+    }
+
+    /// Parameters for creating a soft body.
+    /// Generated from class `JoltSoftBodyCreationSettings`.
+    /// This is the non-const half of the class.
+    public class JoltSoftBodyCreationSettings : Const_JoltSoftBodyCreationSettings
+    {
+        internal unsafe JoltSoftBodyCreationSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Generated from constructor `JoltSoftBodyCreationSettings::JoltSoftBodyCreationSettings`.
+        public unsafe JoltSoftBodyCreationSettings(Jolt.Const_JoltSoftBodyCreationSettings _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodyCreationSettings._Underlying *__JoltSoftBodyCreationSettings_ConstructFromAnother(Jolt.JoltSoftBodyCreationSettings._Underlying *_other);
+            _UnderlyingPtr = __JoltSoftBodyCreationSettings_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JoltSoftBodyCreationSettings::JoltSoftBodyCreationSettings`.
+        public JoltSoftBodyCreationSettings(JoltSoftBodyCreationSettings _other) : this((Const_JoltSoftBodyCreationSettings)_other) {}
+
+        /// Generated from constructor `JoltSoftBodyCreationSettings::JoltSoftBodyCreationSettings`.
+        public unsafe JoltSoftBodyCreationSettings(Jolt.JoltSoftBodySharedSettings? settings, double posX, double posY, double posZ, float qx, float qy, float qz, float qw, uint objectLayer) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_Construct_9", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_Construct_9", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodyCreationSettings._Underlying *__JoltSoftBodyCreationSettings_Construct_9(Jolt.JoltSoftBodySharedSettings._Underlying *settings, double posX, double posY, double posZ, float qx, float qy, float qz, float qw, uint objectLayer);
+            _UnderlyingPtr = __JoltSoftBodyCreationSettings_Construct_9(settings is not null ? settings._UnderlyingPtr : null, posX, posY, posZ, qx, qy, qz, qw, objectLayer);
+        }
+
+        /// Convenience: identity rotation.
+        /// Generated from constructor `JoltSoftBodyCreationSettings::JoltSoftBodyCreationSettings`.
+        public unsafe JoltSoftBodyCreationSettings(Jolt.JoltSoftBodySharedSettings? settings, double posX, double posY, double posZ, uint objectLayer) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodyCreationSettings._Underlying *__JoltSoftBodyCreationSettings_Construct_5(Jolt.JoltSoftBodySharedSettings._Underlying *settings, double posX, double posY, double posZ, uint objectLayer);
+            _UnderlyingPtr = __JoltSoftBodyCreationSettings_Construct_5(settings is not null ? settings._UnderlyingPtr : null, posX, posY, posZ, objectLayer);
+        }
+
+        /// Generated from method `JoltSoftBodyCreationSettings::operator=`.
+        public unsafe Jolt.JoltSoftBodyCreationSettings Assign(Jolt.Const_JoltSoftBodyCreationSettings _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltSoftBodyCreationSettings._Underlying *__JoltSoftBodyCreationSettings_AssignFromAnother(_Underlying *_this, Jolt.JoltSoftBodyCreationSettings._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__JoltSoftBodyCreationSettings_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JoltSoftBodyCreationSettings::SetPosition`.
+        public unsafe void SetPosition(double x, double y, double z)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_SetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_SetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodyCreationSettings_SetPosition(_Underlying *_this, double x, double y, double z);
+            __JoltSoftBodyCreationSettings_SetPosition(_UnderlyingPtr, x, y, z);
+        }
+
+        /// Generated from method `JoltSoftBodyCreationSettings::SetRotation`.
+        public unsafe void SetRotation(float qx, float qy, float qz, float qw)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_SetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_SetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodyCreationSettings_SetRotation(_Underlying *_this, float qx, float qy, float qz, float qw);
+            __JoltSoftBodyCreationSettings_SetRotation(_UnderlyingPtr, qx, qy, qz, qw);
+        }
+
+        /// Generated from method `JoltSoftBodyCreationSettings::SetObjectLayer`.
+        public unsafe void SetObjectLayer(uint layer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_SetObjectLayer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_SetObjectLayer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodyCreationSettings_SetObjectLayer(_Underlying *_this, uint layer);
+            __JoltSoftBodyCreationSettings_SetObjectLayer(_UnderlyingPtr, layer);
+        }
+
+        /// Generated from method `JoltSoftBodyCreationSettings::SetMakeRotationIdentity`.
+        public unsafe void SetMakeRotationIdentity(bool v)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_SetMakeRotationIdentity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_SetMakeRotationIdentity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodyCreationSettings_SetMakeRotationIdentity(_Underlying *_this, byte v);
+            __JoltSoftBodyCreationSettings_SetMakeRotationIdentity(_UnderlyingPtr, v ? (byte)1 : (byte)0);
+        }
+
+        /// Generated from method `JoltSoftBodyCreationSettings::SetNumIterations`.
+        public unsafe void SetNumIterations(uint n)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltSoftBodyCreationSettings_SetNumIterations", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltSoftBodyCreationSettings_SetNumIterations", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltSoftBodyCreationSettings_SetNumIterations(_Underlying *_this, uint n);
+            __JoltSoftBodyCreationSettings_SetNumIterations(_UnderlyingPtr, n);
+        }
+    }
+
+    /// This is used for optional parameters of class `JoltSoftBodyCreationSettings` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_JoltSoftBodyCreationSettings`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltSoftBodyCreationSettings`/`Const_JoltSoftBodyCreationSettings` directly.
+    public class _InOptMut_JoltSoftBodyCreationSettings
+    {
+        public JoltSoftBodyCreationSettings? Opt;
+
+        public _InOptMut_JoltSoftBodyCreationSettings() {}
+        public _InOptMut_JoltSoftBodyCreationSettings(JoltSoftBodyCreationSettings value) {Opt = value;}
+        public static implicit operator _InOptMut_JoltSoftBodyCreationSettings(JoltSoftBodyCreationSettings value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `JoltSoftBodyCreationSettings` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_JoltSoftBodyCreationSettings`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `JoltSoftBodyCreationSettings`/`Const_JoltSoftBodyCreationSettings` to pass it to the function.
+    public class _InOptConst_JoltSoftBodyCreationSettings
+    {
+        public Const_JoltSoftBodyCreationSettings? Opt;
+
+        public _InOptConst_JoltSoftBodyCreationSettings() {}
+        public _InOptConst_JoltSoftBodyCreationSettings(Const_JoltSoftBodyCreationSettings value) {Opt = value;}
+        public static implicit operator _InOptConst_JoltSoftBodyCreationSettings(Const_JoltSoftBodyCreationSettings value) {return new(value);}
+    }
+
     /// The main Jolt physics simulation. Manages a job system, temp allocator,
     /// and the full PhysicsSystem internally. The Jolt library itself is
     /// initialised automatically on first construction and cleaned up on last
@@ -3655,6 +7646,46 @@ public static partial class Jolt
             #endif
             extern static void __JoltPhysicsSystem_SetConstraintEnabled(_Underlying *_this, Jolt.JoltConstraintID._Underlying *id, byte enabled);
             __JoltPhysicsSystem_SetConstraintEnabled(_UnderlyingPtr, id._UnderlyingPtr, enabled ? (byte)1 : (byte)0);
+        }
+
+        // ---- Soft body -----------------------------------------------------------
+        /// Generated from method `JoltPhysicsSystem::CreateAndAddSoftBody`.
+        public unsafe Jolt.JoltBodyID CreateAndAddSoftBody(Jolt.JoltSoftBodyCreationSettings? settings, int activation)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPhysicsSystem_CreateAndAddSoftBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPhysicsSystem_CreateAndAddSoftBody", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyID._Underlying *__JoltPhysicsSystem_CreateAndAddSoftBody(_Underlying *_this, Jolt.JoltSoftBodyCreationSettings._Underlying *settings, int activation);
+            return new(__JoltPhysicsSystem_CreateAndAddSoftBody(_UnderlyingPtr, settings is not null ? settings._UnderlyingPtr : null, activation), is_owning: true);
+        }
+
+        /// Get a non-owning handle to a constraint created via AddFixedConstraint etc.
+        /// Generated from method `JoltPhysicsSystem::GetConstraintHandle`.
+        public unsafe Jolt.JoltTwoBodyConstraint GetConstraintHandle(Jolt.Const_JoltConstraintID id)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPhysicsSystem_GetConstraintHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPhysicsSystem_GetConstraintHandle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltTwoBodyConstraint._Underlying *__JoltPhysicsSystem_GetConstraintHandle(_Underlying *_this, Jolt.JoltConstraintID._Underlying *id);
+            return new(__JoltPhysicsSystem_GetConstraintHandle(_UnderlyingPtr, id._UnderlyingPtr), is_owning: true);
+        }
+
+        /// Returns a non-owning handle to the body interface.
+        /// The JoltPhysicsSystem must outlive the returned JoltBodyInterface.
+        /// Generated from method `JoltPhysicsSystem::GetBodyInterface`.
+        public unsafe Jolt.JoltBodyInterface GetBodyInterface()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltPhysicsSystem_GetBodyInterface", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltPhysicsSystem_GetBodyInterface", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static Jolt.JoltBodyInterface._Underlying *__JoltPhysicsSystem_GetBodyInterface(_Underlying *_this);
+            return new(__JoltPhysicsSystem_GetBodyInterface(_UnderlyingPtr), is_owning: true);
         }
     }
 

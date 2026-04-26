@@ -27,15 +27,59 @@ typedef struct JoltVec3 JoltVec3;
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JoltQuat JoltQuat;
 
+/// Float-precision 4x4 column-major transform matrix.
+/// Columns: 0=right(x), 1=up(y), 2=forward(z), 3=translation.
+/// Generated from class `JoltMat44`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltMat44 JoltMat44;
+
+/// Real-precision 4x4 transform: float 3x3 rotation + double translation.
+/// Columns 0-2 are the rotation axes (float); tx/ty/tz is world-space translation.
+/// Generated from class `JoltRMat44`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltRMat44 JoltRMat44;
+
+/// World-space AABB (double-precision min/max).
+/// Generated from class `JoltAABox`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltAABox JoltAABox;
+
+/// Body collision group and sub-group IDs (no group filter = all collide).
+/// Generated from class `JoltCollisionGroup`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltCollisionGroup JoltCollisionGroup;
+
+/// Non-owning handle to a JPH::PhysicsMaterial.
+/// Obtain via JoltBodyInterface::GetMaterial(). Do not outlive the physics system.
+/// Generated from class `JoltPhysicsMaterial`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltPhysicsMaterial JoltPhysicsMaterial;
+
+/// Non-owning handle to a JPH::TwoBodyConstraint.
+/// Obtain via JoltPhysicsSystem::GetConstraintHandle() or JoltBodyInterface::ActivateConstraint().
+/// Generated from class `JoltTwoBodyConstraint`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltTwoBodyConstraint JoltTwoBodyConstraint;
+
 /// Opaque handle to a physics body.
 /// Generated from class `JoltBodyID`.
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JoltBodyID JoltBodyID;
 
+/// Growable list of JoltBodyIDs. Used with batch add/remove on JoltBodyInterface.
+/// Generated from class `JoltBodyIDList`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltBodyIDList JoltBodyIDList;
+
 /// Opaque handle to a constraint.
 /// Generated from class `JoltConstraintID`.
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JoltConstraintID JoltConstraintID;
+
+/// Wraps JPH::BodyInterface. Obtain via JoltPhysicsSystem::GetBodyInterface().
+/// Generated from class `JoltBodyInterface`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltBodyInterface JoltBodyInterface;
 
 /// Base class for all collision shapes.
 /// Shapes are ref-counted; call Release() when you no longer need the handle.
@@ -95,6 +139,18 @@ typedef struct JoltRotatedTranslatedShape JoltRotatedTranslatedShape;
 /// Generated from class `JoltBodyCreationSettings`.
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JoltBodyCreationSettings JoltBodyCreationSettings;
+
+/// Defines the mesh topology of a soft body: vertices, faces, edge constraints.
+/// Shared (ref-counted) between multiple soft body instances.
+/// Build order: AddVertex → AddFace → AddEdgeConstraint (or CalculateEdgeLengths) → Optimize.
+/// Generated from class `JoltSoftBodySharedSettings`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltSoftBodySharedSettings JoltSoftBodySharedSettings;
+
+/// Parameters for creating a soft body.
+/// Generated from class `JoltSoftBodyCreationSettings`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JoltSoftBodyCreationSettings JoltSoftBodyCreationSettings;
 
 /// The main Jolt physics simulation. Manages a job system, temp allocator,
 /// and the full PhysicsSystem internally. The Jolt library itself is
@@ -426,6 +482,1065 @@ JOLT_API JoltVec3f *JoltQuat_RotateAxisY(const JoltQuat *_this);
 /// Never returns null. Returns an instance allocated on the heap! Must call `JoltVec3f_Destroy()` to free it when you're done using it.
 JOLT_API JoltVec3f *JoltQuat_RotateAxisZ(const JoltQuat *_this);
 
+// column 0
+/// Returns a pointer to a member variable of class `JoltMat44` named `e00`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e00(const JoltMat44 *_this);
+
+// column 0
+/// Modifies a member variable of class `JoltMat44` named `e00`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e00`.
+JOLT_API void JoltMat44_Set_e00(JoltMat44 *_this, float value);
+
+// column 0
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e00`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e00(JoltMat44 *_this);
+
+// column 0
+/// Returns a pointer to a member variable of class `JoltMat44` named `e10`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e10(const JoltMat44 *_this);
+
+// column 0
+/// Modifies a member variable of class `JoltMat44` named `e10`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e10`.
+JOLT_API void JoltMat44_Set_e10(JoltMat44 *_this, float value);
+
+// column 0
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e10`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e10(JoltMat44 *_this);
+
+// column 0
+/// Returns a pointer to a member variable of class `JoltMat44` named `e20`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e20(const JoltMat44 *_this);
+
+// column 0
+/// Modifies a member variable of class `JoltMat44` named `e20`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e20`.
+JOLT_API void JoltMat44_Set_e20(JoltMat44 *_this, float value);
+
+// column 0
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e20`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e20(JoltMat44 *_this);
+
+// column 0
+/// Returns a pointer to a member variable of class `JoltMat44` named `e30`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e30(const JoltMat44 *_this);
+
+// column 0
+/// Modifies a member variable of class `JoltMat44` named `e30`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e30`.
+JOLT_API void JoltMat44_Set_e30(JoltMat44 *_this, float value);
+
+// column 0
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e30`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e30(JoltMat44 *_this);
+
+// column 1
+/// Returns a pointer to a member variable of class `JoltMat44` named `e01`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e01(const JoltMat44 *_this);
+
+// column 1
+/// Modifies a member variable of class `JoltMat44` named `e01`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e01`.
+JOLT_API void JoltMat44_Set_e01(JoltMat44 *_this, float value);
+
+// column 1
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e01`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e01(JoltMat44 *_this);
+
+// column 1
+/// Returns a pointer to a member variable of class `JoltMat44` named `e11`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e11(const JoltMat44 *_this);
+
+// column 1
+/// Modifies a member variable of class `JoltMat44` named `e11`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e11`.
+JOLT_API void JoltMat44_Set_e11(JoltMat44 *_this, float value);
+
+// column 1
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e11`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e11(JoltMat44 *_this);
+
+// column 1
+/// Returns a pointer to a member variable of class `JoltMat44` named `e21`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e21(const JoltMat44 *_this);
+
+// column 1
+/// Modifies a member variable of class `JoltMat44` named `e21`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e21`.
+JOLT_API void JoltMat44_Set_e21(JoltMat44 *_this, float value);
+
+// column 1
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e21`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e21(JoltMat44 *_this);
+
+// column 1
+/// Returns a pointer to a member variable of class `JoltMat44` named `e31`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e31(const JoltMat44 *_this);
+
+// column 1
+/// Modifies a member variable of class `JoltMat44` named `e31`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e31`.
+JOLT_API void JoltMat44_Set_e31(JoltMat44 *_this, float value);
+
+// column 1
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e31`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e31(JoltMat44 *_this);
+
+// column 2
+/// Returns a pointer to a member variable of class `JoltMat44` named `e02`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e02(const JoltMat44 *_this);
+
+// column 2
+/// Modifies a member variable of class `JoltMat44` named `e02`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e02`.
+JOLT_API void JoltMat44_Set_e02(JoltMat44 *_this, float value);
+
+// column 2
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e02`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e02(JoltMat44 *_this);
+
+// column 2
+/// Returns a pointer to a member variable of class `JoltMat44` named `e12`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e12(const JoltMat44 *_this);
+
+// column 2
+/// Modifies a member variable of class `JoltMat44` named `e12`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e12`.
+JOLT_API void JoltMat44_Set_e12(JoltMat44 *_this, float value);
+
+// column 2
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e12`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e12(JoltMat44 *_this);
+
+// column 2
+/// Returns a pointer to a member variable of class `JoltMat44` named `e22`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e22(const JoltMat44 *_this);
+
+// column 2
+/// Modifies a member variable of class `JoltMat44` named `e22`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e22`.
+JOLT_API void JoltMat44_Set_e22(JoltMat44 *_this, float value);
+
+// column 2
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e22`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e22(JoltMat44 *_this);
+
+// column 2
+/// Returns a pointer to a member variable of class `JoltMat44` named `e32`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e32(const JoltMat44 *_this);
+
+// column 2
+/// Modifies a member variable of class `JoltMat44` named `e32`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e32`.
+JOLT_API void JoltMat44_Set_e32(JoltMat44 *_this, float value);
+
+// column 2
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e32`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e32(JoltMat44 *_this);
+
+// column 3 (translation)
+/// Returns a pointer to a member variable of class `JoltMat44` named `e03`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e03(const JoltMat44 *_this);
+
+// column 3 (translation)
+/// Modifies a member variable of class `JoltMat44` named `e03`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e03`.
+JOLT_API void JoltMat44_Set_e03(JoltMat44 *_this, float value);
+
+// column 3 (translation)
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e03`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e03(JoltMat44 *_this);
+
+// column 3 (translation)
+/// Returns a pointer to a member variable of class `JoltMat44` named `e13`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e13(const JoltMat44 *_this);
+
+// column 3 (translation)
+/// Modifies a member variable of class `JoltMat44` named `e13`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e13`.
+JOLT_API void JoltMat44_Set_e13(JoltMat44 *_this, float value);
+
+// column 3 (translation)
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e13`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e13(JoltMat44 *_this);
+
+// column 3 (translation)
+/// Returns a pointer to a member variable of class `JoltMat44` named `e23`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e23(const JoltMat44 *_this);
+
+// column 3 (translation)
+/// Modifies a member variable of class `JoltMat44` named `e23`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e23`.
+JOLT_API void JoltMat44_Set_e23(JoltMat44 *_this, float value);
+
+// column 3 (translation)
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e23`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e23(JoltMat44 *_this);
+
+// column 3 (translation)
+/// Returns a pointer to a member variable of class `JoltMat44` named `e33`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltMat44_Get_e33(const JoltMat44 *_this);
+
+// column 3 (translation)
+/// Modifies a member variable of class `JoltMat44` named `e33`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e33`.
+JOLT_API void JoltMat44_Set_e33(JoltMat44 *_this, float value);
+
+// column 3 (translation)
+/// Returns a mutable pointer to a member variable of class `JoltMat44` named `e33`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltMat44_GetMutable_e33(JoltMat44 *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltMat44_Destroy()` to free it when you're done using it.
+JOLT_API JoltMat44 *JoltMat44_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltMat44_DestroyArray()`.
+/// Use `JoltMat44_OffsetMutablePtr()` and `JoltMat44_OffsetPtr()` to access the array elements.
+JOLT_API JoltMat44 *JoltMat44_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltMat44 *JoltMat44_OffsetPtr(const JoltMat44 *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltMat44 *JoltMat44_OffsetMutablePtr(JoltMat44 *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JoltMat44::JoltMat44`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltMat44_Destroy()` to free it when you're done using it.
+JOLT_API JoltMat44 *JoltMat44_ConstructFromAnother(const JoltMat44 *_other);
+
+/// Destroys a heap-allocated instance of `JoltMat44`. Does nothing if the pointer is null.
+JOLT_API void JoltMat44_Destroy(const JoltMat44 *_this);
+
+/// Destroys a heap-allocated array of `JoltMat44`. Does nothing if the pointer is null.
+JOLT_API void JoltMat44_DestroyArray(const JoltMat44 *_this);
+
+/// Generated from method `JoltMat44::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltMat44 *JoltMat44_AssignFromAnother(JoltMat44 *_this, const JoltMat44 *_other);
+
+/// Generated from method `JoltMat44::Identity`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltMat44_Destroy()` to free it when you're done using it.
+JOLT_API JoltMat44 *JoltMat44_Identity(void);
+
+/// Generated from method `JoltMat44::GetTranslation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltVec3f_Destroy()` to free it when you're done using it.
+JOLT_API JoltVec3f *JoltMat44_GetTranslation(const JoltMat44 *_this);
+
+/// Generated from method `JoltMat44::GetRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltQuat_Destroy()` to free it when you're done using it.
+JOLT_API JoltQuat *JoltMat44_GetRotation(const JoltMat44 *_this);
+
+// column 0 (right)
+/// Returns a pointer to a member variable of class `JoltRMat44` named `e00`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltRMat44_Get_e00(const JoltRMat44 *_this);
+
+// column 0 (right)
+/// Modifies a member variable of class `JoltRMat44` named `e00`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e00`.
+JOLT_API void JoltRMat44_Set_e00(JoltRMat44 *_this, float value);
+
+// column 0 (right)
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `e00`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltRMat44_GetMutable_e00(JoltRMat44 *_this);
+
+// column 0 (right)
+/// Returns a pointer to a member variable of class `JoltRMat44` named `e10`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltRMat44_Get_e10(const JoltRMat44 *_this);
+
+// column 0 (right)
+/// Modifies a member variable of class `JoltRMat44` named `e10`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e10`.
+JOLT_API void JoltRMat44_Set_e10(JoltRMat44 *_this, float value);
+
+// column 0 (right)
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `e10`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltRMat44_GetMutable_e10(JoltRMat44 *_this);
+
+// column 0 (right)
+/// Returns a pointer to a member variable of class `JoltRMat44` named `e20`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltRMat44_Get_e20(const JoltRMat44 *_this);
+
+// column 0 (right)
+/// Modifies a member variable of class `JoltRMat44` named `e20`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e20`.
+JOLT_API void JoltRMat44_Set_e20(JoltRMat44 *_this, float value);
+
+// column 0 (right)
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `e20`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltRMat44_GetMutable_e20(JoltRMat44 *_this);
+
+// column 1 (up)
+/// Returns a pointer to a member variable of class `JoltRMat44` named `e01`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltRMat44_Get_e01(const JoltRMat44 *_this);
+
+// column 1 (up)
+/// Modifies a member variable of class `JoltRMat44` named `e01`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e01`.
+JOLT_API void JoltRMat44_Set_e01(JoltRMat44 *_this, float value);
+
+// column 1 (up)
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `e01`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltRMat44_GetMutable_e01(JoltRMat44 *_this);
+
+// column 1 (up)
+/// Returns a pointer to a member variable of class `JoltRMat44` named `e11`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltRMat44_Get_e11(const JoltRMat44 *_this);
+
+// column 1 (up)
+/// Modifies a member variable of class `JoltRMat44` named `e11`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e11`.
+JOLT_API void JoltRMat44_Set_e11(JoltRMat44 *_this, float value);
+
+// column 1 (up)
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `e11`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltRMat44_GetMutable_e11(JoltRMat44 *_this);
+
+// column 1 (up)
+/// Returns a pointer to a member variable of class `JoltRMat44` named `e21`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltRMat44_Get_e21(const JoltRMat44 *_this);
+
+// column 1 (up)
+/// Modifies a member variable of class `JoltRMat44` named `e21`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e21`.
+JOLT_API void JoltRMat44_Set_e21(JoltRMat44 *_this, float value);
+
+// column 1 (up)
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `e21`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltRMat44_GetMutable_e21(JoltRMat44 *_this);
+
+// column 2 (forward)
+/// Returns a pointer to a member variable of class `JoltRMat44` named `e02`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltRMat44_Get_e02(const JoltRMat44 *_this);
+
+// column 2 (forward)
+/// Modifies a member variable of class `JoltRMat44` named `e02`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e02`.
+JOLT_API void JoltRMat44_Set_e02(JoltRMat44 *_this, float value);
+
+// column 2 (forward)
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `e02`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltRMat44_GetMutable_e02(JoltRMat44 *_this);
+
+// column 2 (forward)
+/// Returns a pointer to a member variable of class `JoltRMat44` named `e12`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltRMat44_Get_e12(const JoltRMat44 *_this);
+
+// column 2 (forward)
+/// Modifies a member variable of class `JoltRMat44` named `e12`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e12`.
+JOLT_API void JoltRMat44_Set_e12(JoltRMat44 *_this, float value);
+
+// column 2 (forward)
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `e12`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltRMat44_GetMutable_e12(JoltRMat44 *_this);
+
+// column 2 (forward)
+/// Returns a pointer to a member variable of class `JoltRMat44` named `e22`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JoltRMat44_Get_e22(const JoltRMat44 *_this);
+
+// column 2 (forward)
+/// Modifies a member variable of class `JoltRMat44` named `e22`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `e22`.
+JOLT_API void JoltRMat44_Set_e22(JoltRMat44 *_this, float value);
+
+// column 2 (forward)
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `e22`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JoltRMat44_GetMutable_e22(JoltRMat44 *_this);
+
+// world-space translation
+/// Returns a pointer to a member variable of class `JoltRMat44` named `tx`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const double *JoltRMat44_Get_tx(const JoltRMat44 *_this);
+
+// world-space translation
+/// Modifies a member variable of class `JoltRMat44` named `tx`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `tx`.
+JOLT_API void JoltRMat44_Set_tx(JoltRMat44 *_this, double value);
+
+// world-space translation
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `tx`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API double *JoltRMat44_GetMutable_tx(JoltRMat44 *_this);
+
+// world-space translation
+/// Returns a pointer to a member variable of class `JoltRMat44` named `ty`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const double *JoltRMat44_Get_ty(const JoltRMat44 *_this);
+
+// world-space translation
+/// Modifies a member variable of class `JoltRMat44` named `ty`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `ty`.
+JOLT_API void JoltRMat44_Set_ty(JoltRMat44 *_this, double value);
+
+// world-space translation
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `ty`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API double *JoltRMat44_GetMutable_ty(JoltRMat44 *_this);
+
+// world-space translation
+/// Returns a pointer to a member variable of class `JoltRMat44` named `tz`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const double *JoltRMat44_Get_tz(const JoltRMat44 *_this);
+
+// world-space translation
+/// Modifies a member variable of class `JoltRMat44` named `tz`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `tz`.
+JOLT_API void JoltRMat44_Set_tz(JoltRMat44 *_this, double value);
+
+// world-space translation
+/// Returns a mutable pointer to a member variable of class `JoltRMat44` named `tz`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API double *JoltRMat44_GetMutable_tz(JoltRMat44 *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltRMat44_Destroy()` to free it when you're done using it.
+JOLT_API JoltRMat44 *JoltRMat44_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltRMat44_DestroyArray()`.
+/// Use `JoltRMat44_OffsetMutablePtr()` and `JoltRMat44_OffsetPtr()` to access the array elements.
+JOLT_API JoltRMat44 *JoltRMat44_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltRMat44 *JoltRMat44_OffsetPtr(const JoltRMat44 *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltRMat44 *JoltRMat44_OffsetMutablePtr(JoltRMat44 *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JoltRMat44::JoltRMat44`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltRMat44_Destroy()` to free it when you're done using it.
+JOLT_API JoltRMat44 *JoltRMat44_ConstructFromAnother(const JoltRMat44 *_other);
+
+/// Destroys a heap-allocated instance of `JoltRMat44`. Does nothing if the pointer is null.
+JOLT_API void JoltRMat44_Destroy(const JoltRMat44 *_this);
+
+/// Destroys a heap-allocated array of `JoltRMat44`. Does nothing if the pointer is null.
+JOLT_API void JoltRMat44_DestroyArray(const JoltRMat44 *_this);
+
+/// Generated from method `JoltRMat44::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltRMat44 *JoltRMat44_AssignFromAnother(JoltRMat44 *_this, const JoltRMat44 *_other);
+
+/// Generated from method `JoltRMat44::Identity`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltRMat44_Destroy()` to free it when you're done using it.
+JOLT_API JoltRMat44 *JoltRMat44_Identity(void);
+
+/// Generated from method `JoltRMat44::GetTranslation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltVec3_Destroy()` to free it when you're done using it.
+JOLT_API JoltVec3 *JoltRMat44_GetTranslation(const JoltRMat44 *_this);
+
+/// Generated from method `JoltRMat44::GetTranslationF`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltVec3f_Destroy()` to free it when you're done using it.
+JOLT_API JoltVec3f *JoltRMat44_GetTranslationF(const JoltRMat44 *_this);
+
+/// Generated from method `JoltRMat44::GetRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltQuat_Destroy()` to free it when you're done using it.
+JOLT_API JoltQuat *JoltRMat44_GetRotation(const JoltRMat44 *_this);
+
+/// Generated from method `JoltRMat44::ToMat44`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltMat44_Destroy()` to free it when you're done using it.
+JOLT_API JoltMat44 *JoltRMat44_ToMat44(const JoltRMat44 *_this);
+
+/// Returns a pointer to a member variable of class `JoltAABox` named `minX`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const double *JoltAABox_Get_minX(const JoltAABox *_this);
+
+/// Modifies a member variable of class `JoltAABox` named `minX`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `minX`.
+JOLT_API void JoltAABox_Set_minX(JoltAABox *_this, double value);
+
+/// Returns a mutable pointer to a member variable of class `JoltAABox` named `minX`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API double *JoltAABox_GetMutable_minX(JoltAABox *_this);
+
+/// Returns a pointer to a member variable of class `JoltAABox` named `minY`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const double *JoltAABox_Get_minY(const JoltAABox *_this);
+
+/// Modifies a member variable of class `JoltAABox` named `minY`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `minY`.
+JOLT_API void JoltAABox_Set_minY(JoltAABox *_this, double value);
+
+/// Returns a mutable pointer to a member variable of class `JoltAABox` named `minY`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API double *JoltAABox_GetMutable_minY(JoltAABox *_this);
+
+/// Returns a pointer to a member variable of class `JoltAABox` named `minZ`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const double *JoltAABox_Get_minZ(const JoltAABox *_this);
+
+/// Modifies a member variable of class `JoltAABox` named `minZ`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `minZ`.
+JOLT_API void JoltAABox_Set_minZ(JoltAABox *_this, double value);
+
+/// Returns a mutable pointer to a member variable of class `JoltAABox` named `minZ`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API double *JoltAABox_GetMutable_minZ(JoltAABox *_this);
+
+/// Returns a pointer to a member variable of class `JoltAABox` named `maxX`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const double *JoltAABox_Get_maxX(const JoltAABox *_this);
+
+/// Modifies a member variable of class `JoltAABox` named `maxX`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `maxX`.
+JOLT_API void JoltAABox_Set_maxX(JoltAABox *_this, double value);
+
+/// Returns a mutable pointer to a member variable of class `JoltAABox` named `maxX`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API double *JoltAABox_GetMutable_maxX(JoltAABox *_this);
+
+/// Returns a pointer to a member variable of class `JoltAABox` named `maxY`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const double *JoltAABox_Get_maxY(const JoltAABox *_this);
+
+/// Modifies a member variable of class `JoltAABox` named `maxY`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `maxY`.
+JOLT_API void JoltAABox_Set_maxY(JoltAABox *_this, double value);
+
+/// Returns a mutable pointer to a member variable of class `JoltAABox` named `maxY`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API double *JoltAABox_GetMutable_maxY(JoltAABox *_this);
+
+/// Returns a pointer to a member variable of class `JoltAABox` named `maxZ`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const double *JoltAABox_Get_maxZ(const JoltAABox *_this);
+
+/// Modifies a member variable of class `JoltAABox` named `maxZ`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `maxZ`.
+JOLT_API void JoltAABox_Set_maxZ(JoltAABox *_this, double value);
+
+/// Returns a mutable pointer to a member variable of class `JoltAABox` named `maxZ`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API double *JoltAABox_GetMutable_maxZ(JoltAABox *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltAABox_Destroy()` to free it when you're done using it.
+JOLT_API JoltAABox *JoltAABox_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltAABox_DestroyArray()`.
+/// Use `JoltAABox_OffsetMutablePtr()` and `JoltAABox_OffsetPtr()` to access the array elements.
+JOLT_API JoltAABox *JoltAABox_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltAABox *JoltAABox_OffsetPtr(const JoltAABox *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltAABox *JoltAABox_OffsetMutablePtr(JoltAABox *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JoltAABox::JoltAABox`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltAABox_Destroy()` to free it when you're done using it.
+JOLT_API JoltAABox *JoltAABox_ConstructFromAnother(const JoltAABox *_other);
+
+/// Generated from constructor `JoltAABox::JoltAABox`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltAABox_Destroy()` to free it when you're done using it.
+JOLT_API JoltAABox *JoltAABox_Construct(double minX, double minY, double minZ, double maxX, double maxY, double maxZ);
+
+/// Destroys a heap-allocated instance of `JoltAABox`. Does nothing if the pointer is null.
+JOLT_API void JoltAABox_Destroy(const JoltAABox *_this);
+
+/// Destroys a heap-allocated array of `JoltAABox`. Does nothing if the pointer is null.
+JOLT_API void JoltAABox_DestroyArray(const JoltAABox *_this);
+
+/// Generated from method `JoltAABox::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltAABox *JoltAABox_AssignFromAnother(JoltAABox *_this, const JoltAABox *_other);
+
+/// Generated from method `JoltAABox::GetCenter`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltVec3_Destroy()` to free it when you're done using it.
+JOLT_API JoltVec3 *JoltAABox_GetCenter(const JoltAABox *_this);
+
+/// Generated from method `JoltAABox::GetExtent`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltVec3_Destroy()` to free it when you're done using it.
+JOLT_API JoltVec3 *JoltAABox_GetExtent(const JoltAABox *_this);
+
+/// Generated from method `JoltAABox::Contains`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltAABox_Contains(const JoltAABox *_this, double x, double y, double z);
+
+/// Generated from method `JoltAABox::Overlaps`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `other` can not be null. It is a single object.
+JOLT_API bool JoltAABox_Overlaps(const JoltAABox *_this, const JoltAABox *other);
+
+/// Generated from method `JoltAABox::Encapsulate`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltAABox_Encapsulate(JoltAABox *_this, double x, double y, double z);
+
+/// Returns a pointer to a member variable of class `JoltCollisionGroup` named `InvalidGroup`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const unsigned int *JoltCollisionGroup_Get_InvalidGroup(void);
+
+/// Returns a pointer to a member variable of class `JoltCollisionGroup` named `InvalidSubGroup`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const unsigned int *JoltCollisionGroup_Get_InvalidSubGroup(void);
+
+/// Returns a pointer to a member variable of class `JoltCollisionGroup` named `groupID`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const unsigned int *JoltCollisionGroup_Get_groupID(const JoltCollisionGroup *_this);
+
+/// Modifies a member variable of class `JoltCollisionGroup` named `groupID`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `groupID`.
+/// When this function is called, this object will drop object references it held previously in `groupID`.
+JOLT_API void JoltCollisionGroup_Set_groupID(JoltCollisionGroup *_this, unsigned int value);
+
+/// Returns a mutable pointer to a member variable of class `JoltCollisionGroup` named `groupID`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API unsigned int *JoltCollisionGroup_GetMutable_groupID(JoltCollisionGroup *_this);
+
+/// Returns a pointer to a member variable of class `JoltCollisionGroup` named `subGroupID`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const unsigned int *JoltCollisionGroup_Get_subGroupID(const JoltCollisionGroup *_this);
+
+/// Modifies a member variable of class `JoltCollisionGroup` named `subGroupID`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `subGroupID`.
+/// When this function is called, this object will drop object references it held previously in `subGroupID`.
+JOLT_API void JoltCollisionGroup_Set_subGroupID(JoltCollisionGroup *_this, unsigned int value);
+
+/// Returns a mutable pointer to a member variable of class `JoltCollisionGroup` named `subGroupID`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API unsigned int *JoltCollisionGroup_GetMutable_subGroupID(JoltCollisionGroup *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltCollisionGroup_Destroy()` to free it when you're done using it.
+JOLT_API JoltCollisionGroup *JoltCollisionGroup_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltCollisionGroup_DestroyArray()`.
+/// Use `JoltCollisionGroup_OffsetMutablePtr()` and `JoltCollisionGroup_OffsetPtr()` to access the array elements.
+JOLT_API JoltCollisionGroup *JoltCollisionGroup_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltCollisionGroup *JoltCollisionGroup_OffsetPtr(const JoltCollisionGroup *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltCollisionGroup *JoltCollisionGroup_OffsetMutablePtr(JoltCollisionGroup *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JoltCollisionGroup::JoltCollisionGroup`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltCollisionGroup_Destroy()` to free it when you're done using it.
+JOLT_API JoltCollisionGroup *JoltCollisionGroup_ConstructFromAnother(const JoltCollisionGroup *_other);
+
+/// Generated from constructor `JoltCollisionGroup::JoltCollisionGroup`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltCollisionGroup_Destroy()` to free it when you're done using it.
+JOLT_API JoltCollisionGroup *JoltCollisionGroup_Construct(unsigned int groupID, unsigned int subGroupID);
+
+/// Destroys a heap-allocated instance of `JoltCollisionGroup`. Does nothing if the pointer is null.
+JOLT_API void JoltCollisionGroup_Destroy(const JoltCollisionGroup *_this);
+
+/// Destroys a heap-allocated array of `JoltCollisionGroup`. Does nothing if the pointer is null.
+JOLT_API void JoltCollisionGroup_DestroyArray(const JoltCollisionGroup *_this);
+
+/// Generated from method `JoltCollisionGroup::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltCollisionGroup *JoltCollisionGroup_AssignFromAnother(JoltCollisionGroup *_this, const JoltCollisionGroup *_other);
+
+///< JPH::PhysicsMaterial*; nullptr = default material
+/// Returns a pointer to a member variable of class `JoltPhysicsMaterial` named `mPtr`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *JoltPhysicsMaterial_Get_mPtr(const JoltPhysicsMaterial *_this);
+
+///< JPH::PhysicsMaterial*; nullptr = default material
+/// Modifies a member variable of class `JoltPhysicsMaterial` named `mPtr`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mPtr`.
+/// When this function is called, this object will drop object references it held previously in `mPtr`.
+JOLT_API void JoltPhysicsMaterial_Set_mPtr(JoltPhysicsMaterial *_this, void *value);
+
+///< JPH::PhysicsMaterial*; nullptr = default material
+/// Returns a mutable pointer to a member variable of class `JoltPhysicsMaterial` named `mPtr`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **JoltPhysicsMaterial_GetMutable_mPtr(JoltPhysicsMaterial *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltPhysicsMaterial_Destroy()` to free it when you're done using it.
+JOLT_API JoltPhysicsMaterial *JoltPhysicsMaterial_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltPhysicsMaterial_DestroyArray()`.
+/// Use `JoltPhysicsMaterial_OffsetMutablePtr()` and `JoltPhysicsMaterial_OffsetPtr()` to access the array elements.
+JOLT_API JoltPhysicsMaterial *JoltPhysicsMaterial_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltPhysicsMaterial *JoltPhysicsMaterial_OffsetPtr(const JoltPhysicsMaterial *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltPhysicsMaterial *JoltPhysicsMaterial_OffsetMutablePtr(JoltPhysicsMaterial *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JoltPhysicsMaterial::JoltPhysicsMaterial`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltPhysicsMaterial_Destroy()` to free it when you're done using it.
+JOLT_API JoltPhysicsMaterial *JoltPhysicsMaterial_ConstructFromAnother(const JoltPhysicsMaterial *_other);
+
+/// Destroys a heap-allocated instance of `JoltPhysicsMaterial`. Does nothing if the pointer is null.
+JOLT_API void JoltPhysicsMaterial_Destroy(const JoltPhysicsMaterial *_this);
+
+/// Destroys a heap-allocated array of `JoltPhysicsMaterial`. Does nothing if the pointer is null.
+JOLT_API void JoltPhysicsMaterial_DestroyArray(const JoltPhysicsMaterial *_this);
+
+/// Generated from method `JoltPhysicsMaterial::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltPhysicsMaterial *JoltPhysicsMaterial_AssignFromAnother(JoltPhysicsMaterial *_this, const JoltPhysicsMaterial *_other);
+
+/// Generated from method `JoltPhysicsMaterial::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltPhysicsMaterial_IsValid(const JoltPhysicsMaterial *_this);
+
+/// Generated from method `JoltPhysicsMaterial::GetDebugName`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API const char *JoltPhysicsMaterial_GetDebugName(const JoltPhysicsMaterial *_this);
+
+///< JPH::TwoBodyConstraint*; nullptr = invalid
+/// Returns a pointer to a member variable of class `JoltTwoBodyConstraint` named `mPtr`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *JoltTwoBodyConstraint_Get_mPtr(const JoltTwoBodyConstraint *_this);
+
+///< JPH::TwoBodyConstraint*; nullptr = invalid
+/// Modifies a member variable of class `JoltTwoBodyConstraint` named `mPtr`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mPtr`.
+/// When this function is called, this object will drop object references it held previously in `mPtr`.
+JOLT_API void JoltTwoBodyConstraint_Set_mPtr(JoltTwoBodyConstraint *_this, void *value);
+
+///< JPH::TwoBodyConstraint*; nullptr = invalid
+/// Returns a mutable pointer to a member variable of class `JoltTwoBodyConstraint` named `mPtr`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **JoltTwoBodyConstraint_GetMutable_mPtr(JoltTwoBodyConstraint *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltTwoBodyConstraint_Destroy()` to free it when you're done using it.
+JOLT_API JoltTwoBodyConstraint *JoltTwoBodyConstraint_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltTwoBodyConstraint_DestroyArray()`.
+/// Use `JoltTwoBodyConstraint_OffsetMutablePtr()` and `JoltTwoBodyConstraint_OffsetPtr()` to access the array elements.
+JOLT_API JoltTwoBodyConstraint *JoltTwoBodyConstraint_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltTwoBodyConstraint *JoltTwoBodyConstraint_OffsetPtr(const JoltTwoBodyConstraint *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltTwoBodyConstraint *JoltTwoBodyConstraint_OffsetMutablePtr(JoltTwoBodyConstraint *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JoltTwoBodyConstraint::JoltTwoBodyConstraint`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltTwoBodyConstraint_Destroy()` to free it when you're done using it.
+JOLT_API JoltTwoBodyConstraint *JoltTwoBodyConstraint_ConstructFromAnother(const JoltTwoBodyConstraint *_other);
+
+/// Destroys a heap-allocated instance of `JoltTwoBodyConstraint`. Does nothing if the pointer is null.
+JOLT_API void JoltTwoBodyConstraint_Destroy(const JoltTwoBodyConstraint *_this);
+
+/// Destroys a heap-allocated array of `JoltTwoBodyConstraint`. Does nothing if the pointer is null.
+JOLT_API void JoltTwoBodyConstraint_DestroyArray(const JoltTwoBodyConstraint *_this);
+
+/// Generated from method `JoltTwoBodyConstraint::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltTwoBodyConstraint *JoltTwoBodyConstraint_AssignFromAnother(JoltTwoBodyConstraint *_this, const JoltTwoBodyConstraint *_other);
+
+/// Generated from method `JoltTwoBodyConstraint::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltTwoBodyConstraint_IsValid(const JoltTwoBodyConstraint *_this);
+
+/// Generated from method `JoltTwoBodyConstraint::GetEnabled`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltTwoBodyConstraint_GetEnabled(const JoltTwoBodyConstraint *_this);
+
+/// Generated from method `JoltTwoBodyConstraint::SetEnabled`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltTwoBodyConstraint_SetEnabled(JoltTwoBodyConstraint *_this, bool enabled);
+
 /// Returns a pointer to a member variable of class `JoltBodyID` named `value`.
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
@@ -489,6 +1604,82 @@ JOLT_API bool JoltBodyID_IsValid(const JoltBodyID *_this);
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JoltBodyID_IsInvalid(const JoltBodyID *_this);
 
+// points to internal std::vector; do not use directly
+/// Returns a pointer to a member variable of class `JoltBodyIDList` named `mData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *JoltBodyIDList_Get_mData(const JoltBodyIDList *_this);
+
+// points to internal std::vector; do not use directly
+/// Modifies a member variable of class `JoltBodyIDList` named `mData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mData`.
+/// When this function is called, this object will drop object references it held previously in `mData`.
+JOLT_API void JoltBodyIDList_Set_mData(JoltBodyIDList *_this, void *value);
+
+// points to internal std::vector; do not use directly
+/// Returns a mutable pointer to a member variable of class `JoltBodyIDList` named `mData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **JoltBodyIDList_GetMutable_mData(JoltBodyIDList *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltBodyIDList_Destroy()` to free it when you're done using it.
+JOLT_API JoltBodyIDList *JoltBodyIDList_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltBodyIDList_DestroyArray()`.
+/// Use `JoltBodyIDList_OffsetMutablePtr()` and `JoltBodyIDList_OffsetPtr()` to access the array elements.
+JOLT_API JoltBodyIDList *JoltBodyIDList_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltBodyIDList *JoltBodyIDList_OffsetPtr(const JoltBodyIDList *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltBodyIDList *JoltBodyIDList_OffsetMutablePtr(JoltBodyIDList *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JoltBodyIDList::JoltBodyIDList`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltBodyIDList_Destroy()` to free it when you're done using it.
+JOLT_API JoltBodyIDList *JoltBodyIDList_ConstructFromAnother(const JoltBodyIDList *_other);
+
+/// Destroys a heap-allocated instance of `JoltBodyIDList`. Does nothing if the pointer is null.
+JOLT_API void JoltBodyIDList_Destroy(const JoltBodyIDList *_this);
+
+/// Destroys a heap-allocated array of `JoltBodyIDList`. Does nothing if the pointer is null.
+JOLT_API void JoltBodyIDList_DestroyArray(const JoltBodyIDList *_this);
+
+/// Generated from method `JoltBodyIDList::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltBodyIDList *JoltBodyIDList_AssignFromAnother(JoltBodyIDList *_this, const JoltBodyIDList *_other);
+
+/// Generated from method `JoltBodyIDList::Add`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyIDList_Add(JoltBodyIDList *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyIDList::Clear`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltBodyIDList_Clear(JoltBodyIDList *_this);
+
+/// Generated from method `JoltBodyIDList::Count`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API int JoltBodyIDList_Count(const JoltBodyIDList *_this);
+
+/// Generated from method `JoltBodyIDList::Get`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltBodyID_Destroy()` to free it when you're done using it.
+JOLT_API JoltBodyID *JoltBodyIDList_Get(const JoltBodyIDList *_this, int index);
+
 /// Returns a pointer to a member variable of class `JoltConstraintID` named `value`.
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
@@ -547,6 +1738,495 @@ JOLT_API JoltConstraintID *JoltConstraintID_AssignFromAnother(JoltConstraintID *
 /// Generated from method `JoltConstraintID::IsValid`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JoltConstraintID_IsValid(const JoltConstraintID *_this);
+
+/// Generated from constructor `JoltBodyInterface::JoltBodyInterface`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltBodyInterface_Destroy()` to free it when you're done using it.
+JOLT_API JoltBodyInterface *JoltBodyInterface_ConstructFromAnother(const JoltBodyInterface *_other);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltBodyInterface *JoltBodyInterface_OffsetPtr(const JoltBodyInterface *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltBodyInterface *JoltBodyInterface_OffsetMutablePtr(JoltBodyInterface *ptr, ptrdiff_t i);
+
+/// Destroys a heap-allocated instance of `JoltBodyInterface`. Does nothing if the pointer is null.
+JOLT_API void JoltBodyInterface_Destroy(const JoltBodyInterface *_this);
+
+/// Destroys a heap-allocated array of `JoltBodyInterface`. Does nothing if the pointer is null.
+JOLT_API void JoltBodyInterface_DestroyArray(const JoltBodyInterface *_this);
+
+/// Generated from method `JoltBodyInterface::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltBodyInterface *JoltBodyInterface_AssignFromAnother(JoltBodyInterface *_this, const JoltBodyInterface *_other);
+
+/// Generated from method `JoltBodyInterface::IsValid`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JoltBodyInterface_IsValid(const JoltBodyInterface *_this);
+
+/// Create a body but do not add it to the simulation yet.
+/// Returns an invalid ID when out of bodies.
+/// Generated from method `JoltBodyInterface::CreateBody`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltBodyID_Destroy()` to free it when you're done using it.
+JOLT_API JoltBodyID *JoltBodyInterface_CreateBody(JoltBodyInterface *_this, JoltBodyCreationSettings *settings);
+
+/// Create a body with a specific ID (for deterministic/replicated simulations).
+/// Returns an invalid ID when the body ID is invalid or already in use.
+/// Generated from method `JoltBodyInterface::CreateBodyWithID`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `targetID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltBodyID_Destroy()` to free it when you're done using it.
+JOLT_API JoltBodyID *JoltBodyInterface_CreateBodyWithID(JoltBodyInterface *_this, const JoltBodyID *targetID, JoltBodyCreationSettings *settings);
+
+/// Create a body and immediately add it to the simulation.
+/// Generated from method `JoltBodyInterface::CreateAndAddBody`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltBodyID_Destroy()` to free it when you're done using it.
+JOLT_API JoltBodyID *JoltBodyInterface_CreateAndAddBody(JoltBodyInterface *_this, JoltBodyCreationSettings *settings, int activation);
+
+/// Generated from method `JoltBodyInterface::AddBody`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddBody(JoltBodyInterface *_this, const JoltBodyID *id, int activation);
+
+/// Generated from method `JoltBodyInterface::RemoveBody`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_RemoveBody(JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Destroy a body that has already been removed from the simulation.
+/// Generated from method `JoltBodyInterface::DestroyBody`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_DestroyBody(JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Remove and destroy in one call.
+/// Generated from method `JoltBodyInterface::RemoveAndDestroyBody`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_RemoveAndDestroyBody(JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::IsAdded`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API bool JoltBodyInterface_IsAdded(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Prepare adding bodies in batch; safe to call from a background thread.
+/// Returns an opaque state handle — pass to AddBodiesFinalize or AddBodiesAbort.
+/// The JoltBodyIDList must remain unmodified until Finalize/Abort is called.
+/// Generated from method `JoltBodyInterface::AddBodiesPrepare`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *JoltBodyInterface_AddBodiesPrepare(JoltBodyInterface *_this, JoltBodyIDList *bodies);
+
+/// Finalize a batch add; atomically inserts all bodies into the simulation.
+/// Generated from method `JoltBodyInterface::AddBodiesFinalize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddBodiesFinalize(JoltBodyInterface *_this, JoltBodyIDList *bodies, void *addState, int activation);
+
+/// Abort a prepared batch add without inserting bodies.
+/// Generated from method `JoltBodyInterface::AddBodiesAbort`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddBodiesAbort(JoltBodyInterface *_this, JoltBodyIDList *bodies, void *addState);
+
+/// Remove multiple bodies from the simulation in one call.
+/// Generated from method `JoltBodyInterface::RemoveBodies`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_RemoveBodies(JoltBodyInterface *_this, JoltBodyIDList *bodies);
+
+/// Destroy multiple bodies (must all be removed from the simulation first).
+/// Generated from method `JoltBodyInterface::DestroyBodies`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_DestroyBodies(JoltBodyInterface *_this, JoltBodyIDList *bodies);
+
+/// Replace the shape on a body.
+/// updateMassProperties: recompute mass/inertia from new shape.
+/// Generated from method `JoltBodyInterface::SetShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetShape(const JoltBodyInterface *_this, const JoltBodyID *id, JoltShape *shape, bool updateMassProperties, int activation);
+
+/// Notify systems that a MutableCompoundShape was changed in-place.
+/// prevComX/Y/Z: center of mass before the change.
+/// Generated from method `JoltBodyInterface::NotifyShapeChanged`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_NotifyShapeChanged(const JoltBodyInterface *_this, const JoltBodyID *id, double prevComX, double prevComY, double prevComZ, bool updateMassProperties, int activation);
+
+// ---- Position / rotation -------------------------------------------------
+/// Generated from method `JoltBodyInterface::SetPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetPosition(JoltBodyInterface *_this, const JoltBodyID *id, double x, double y, double z, int activation);
+
+/// Generated from method `JoltBodyInterface::GetPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltVec3_Destroy()` to free it when you're done using it.
+JOLT_API JoltVec3 *JoltBodyInterface_GetPosition(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::GetCenterOfMassPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltVec3_Destroy()` to free it when you're done using it.
+JOLT_API JoltVec3 *JoltBodyInterface_GetCenterOfMassPosition(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetRotation(JoltBodyInterface *_this, const JoltBodyID *id, float qx, float qy, float qz, float qw, int activation);
+
+/// Generated from method `JoltBodyInterface::GetRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltQuat_Destroy()` to free it when you're done using it.
+JOLT_API JoltQuat *JoltBodyInterface_GetRotation(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::GetPositionAndRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Parameter `outPosition` can not be null. It is a single object.
+/// Parameter `outRotation` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_GetPositionAndRotation(const JoltBodyInterface *_this, const JoltBodyID *id, JoltVec3 *outPosition, JoltQuat *outRotation);
+
+/// Generated from method `JoltBodyInterface::SetPositionAndRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetPositionAndRotation(JoltBodyInterface *_this, const JoltBodyID *id, double x, double y, double z, float qx, float qy, float qz, float qw, int activation);
+
+/// Like SetPositionAndRotation but only updates when the change is above a small threshold.
+/// Generated from method `JoltBodyInterface::SetPositionAndRotationWhenChanged`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetPositionAndRotationWhenChanged(JoltBodyInterface *_this, const JoltBodyID *id, double x, double y, double z, float qx, float qy, float qz, float qw, int activation);
+
+/// Generated from method `JoltBodyInterface::MoveKinematic`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_MoveKinematic(JoltBodyInterface *_this, const JoltBodyID *id, double x, double y, double z, float qx, float qy, float qz, float qw, float deltaTime);
+
+/// Generated from method `JoltBodyInterface::SetPositionRotationAndVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetPositionRotationAndVelocity(JoltBodyInterface *_this, const JoltBodyID *id, double x, double y, double z, float qx, float qy, float qz, float qw, float lvx, float lvy, float lvz, float avx, float avy, float avz);
+
+// ---- Velocity ------------------------------------------------------------
+/// Generated from method `JoltBodyInterface::SetLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetLinearVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float vx, float vy, float vz);
+
+/// Generated from method `JoltBodyInterface::GetLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltVec3f_Destroy()` to free it when you're done using it.
+JOLT_API JoltVec3f *JoltBodyInterface_GetLinearVelocity(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::AddLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddLinearVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float vx, float vy, float vz);
+
+/// Generated from method `JoltBodyInterface::SetAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetAngularVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float vx, float vy, float vz);
+
+/// Generated from method `JoltBodyInterface::GetAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltVec3f_Destroy()` to free it when you're done using it.
+JOLT_API JoltVec3f *JoltBodyInterface_GetAngularVelocity(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetLinearAndAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetLinearAndAngularVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float lvx, float lvy, float lvz, float avx, float avy, float avz);
+
+/// Generated from method `JoltBodyInterface::GetLinearAndAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Parameter `outLinear` can not be null. It is a single object.
+/// Parameter `outAngular` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_GetLinearAndAngularVelocity(const JoltBodyInterface *_this, const JoltBodyID *id, JoltVec3f *outLinear, JoltVec3f *outAngular);
+
+/// Generated from method `JoltBodyInterface::AddLinearAndAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddLinearAndAngularVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float lvx, float lvy, float lvz, float avx, float avy, float avz);
+
+/// Generated from method `JoltBodyInterface::GetPointVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltVec3f_Destroy()` to free it when you're done using it.
+JOLT_API JoltVec3f *JoltBodyInterface_GetPointVelocity(const JoltBodyInterface *_this, const JoltBodyID *id, double px, double py, double pz);
+
+// ---- Forces / impulses ---------------------------------------------------
+/// Generated from method `JoltBodyInterface::AddForce`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddForce(JoltBodyInterface *_this, const JoltBodyID *id, float fx, float fy, float fz);
+
+/// Generated from method `JoltBodyInterface::AddForceAtPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddForceAtPosition(JoltBodyInterface *_this, const JoltBodyID *id, float fx, float fy, float fz, double px, double py, double pz);
+
+/// Generated from method `JoltBodyInterface::AddTorque`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddTorque(JoltBodyInterface *_this, const JoltBodyID *id, float tx, float ty, float tz);
+
+/// Generated from method `JoltBodyInterface::AddForceAndTorque`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddForceAndTorque(JoltBodyInterface *_this, const JoltBodyID *id, float fx, float fy, float fz, float tx, float ty, float tz);
+
+/// Generated from method `JoltBodyInterface::AddImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddImpulse(JoltBodyInterface *_this, const JoltBodyID *id, float ix, float iy, float iz);
+
+/// Generated from method `JoltBodyInterface::AddImpulseAtPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddImpulseAtPosition(JoltBodyInterface *_this, const JoltBodyID *id, float ix, float iy, float iz, double px, double py, double pz);
+
+/// Generated from method `JoltBodyInterface::AddAngularImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_AddAngularImpulse(JoltBodyInterface *_this, const JoltBodyID *id, float ix, float iy, float iz);
+
+/// Apply a buoyancy impulse. Returns true when the body is in the fluid.
+/// surfaceNX/Y/Z: world-space surface normal pointing away from fluid.
+/// fluidVX/Y/Z: velocity of the fluid (usually zero for still water).
+/// gravX/Y/Z: gravity vector (e.g. 0,-9.81,0).
+/// Generated from method `JoltBodyInterface::ApplyBuoyancyImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API bool JoltBodyInterface_ApplyBuoyancyImpulse(JoltBodyInterface *_this, const JoltBodyID *id, double surfacePosX, double surfacePosY, double surfacePosZ, float surfaceNX, float surfaceNY, float surfaceNZ, float buoyancy, float linearDrag, float angularDrag, float fluidVX, float fluidVY, float fluidVZ, float gravX, float gravY, float gravZ, float deltaTime);
+
+/// Returns JoltBodyType_RigidBody or JoltBodyType_SoftBody.
+/// Generated from method `JoltBodyInterface::GetBodyType`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API int JoltBodyInterface_GetBodyType(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetMotionType`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetMotionType(JoltBodyInterface *_this, const JoltBodyID *id, int motionType, int activation);
+
+/// Returns JoltMotionType_*.
+/// Generated from method `JoltBodyInterface::GetMotionType`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API int JoltBodyInterface_GetMotionType(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetMotionQuality`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetMotionQuality(JoltBodyInterface *_this, const JoltBodyID *id, int motionQuality);
+
+/// Returns JoltMotionQuality_*.
+/// Generated from method `JoltBodyInterface::GetMotionQuality`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API int JoltBodyInterface_GetMotionQuality(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetObjectLayer`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetObjectLayer(JoltBodyInterface *_this, const JoltBodyID *id, unsigned int layer);
+
+/// Generated from method `JoltBodyInterface::GetObjectLayer`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API unsigned int JoltBodyInterface_GetObjectLayer(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetFriction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetFriction(JoltBodyInterface *_this, const JoltBodyID *id, float friction);
+
+/// Generated from method `JoltBodyInterface::GetFriction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API float JoltBodyInterface_GetFriction(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetRestitution`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetRestitution(JoltBodyInterface *_this, const JoltBodyID *id, float restitution);
+
+/// Generated from method `JoltBodyInterface::GetRestitution`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API float JoltBodyInterface_GetRestitution(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetGravityFactor`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetGravityFactor(JoltBodyInterface *_this, const JoltBodyID *id, float factor);
+
+/// Generated from method `JoltBodyInterface::GetGravityFactor`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API float JoltBodyInterface_GetGravityFactor(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetMaxLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetMaxLinearVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float v);
+
+/// Generated from method `JoltBodyInterface::GetMaxLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API float JoltBodyInterface_GetMaxLinearVelocity(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetMaxAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetMaxAngularVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float v);
+
+/// Generated from method `JoltBodyInterface::GetMaxAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API float JoltBodyInterface_GetMaxAngularVelocity(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetIsSensor`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetIsSensor(JoltBodyInterface *_this, const JoltBodyID *id, bool isSensor);
+
+/// Generated from method `JoltBodyInterface::IsSensor`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API bool JoltBodyInterface_IsSensor(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetUseManifoldReduction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetUseManifoldReduction(JoltBodyInterface *_this, const JoltBodyID *id, bool useReduction);
+
+/// Generated from method `JoltBodyInterface::GetUseManifoldReduction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API bool JoltBodyInterface_GetUseManifoldReduction(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::GetUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API unsigned long long JoltBodyInterface_GetUserData(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::SetUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetUserData(JoltBodyInterface *_this, const JoltBodyID *id, unsigned long long userData);
+
+// ---- Activation ----------------------------------------------------------
+/// Generated from method `JoltBodyInterface::ActivateBody`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_ActivateBody(JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::ActivateBodies`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_ActivateBodies(JoltBodyInterface *_this, JoltBodyIDList *bodies);
+
+/// Generated from method `JoltBodyInterface::DeactivateBody`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_DeactivateBody(JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::DeactivateBodies`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_DeactivateBodies(JoltBodyInterface *_this, JoltBodyIDList *bodies);
+
+/// Generated from method `JoltBodyInterface::IsActive`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API bool JoltBodyInterface_IsActive(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::ResetSleepTimer`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_ResetSleepTimer(JoltBodyInterface *_this, const JoltBodyID *id);
+
+// ---- Misc ----------------------------------------------------------------
+/// Generated from method `JoltBodyInterface::InvalidateContactCache`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_InvalidateContactCache(JoltBodyInterface *_this, const JoltBodyID *id);
+
+// ---- Transforms ----------------------------------------------------------
+/// Generated from method `JoltBodyInterface::GetWorldTransform`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltRMat44_Destroy()` to free it when you're done using it.
+JOLT_API JoltRMat44 *JoltBodyInterface_GetWorldTransform(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::GetCenterOfMassTransform`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltRMat44_Destroy()` to free it when you're done using it.
+JOLT_API JoltRMat44 *JoltBodyInterface_GetCenterOfMassTransform(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Generated from method `JoltBodyInterface::GetInverseInertia`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltMat44_Destroy()` to free it when you're done using it.
+JOLT_API JoltMat44 *JoltBodyInterface_GetInverseInertia(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+// ---- Collision group -----------------------------------------------------
+/// Generated from method `JoltBodyInterface::SetCollisionGroup`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Parameter `group` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_SetCollisionGroup(JoltBodyInterface *_this, const JoltBodyID *id, const JoltCollisionGroup *group);
+
+/// Generated from method `JoltBodyInterface::GetCollisionGroup`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltCollisionGroup_Destroy()` to free it when you're done using it.
+JOLT_API JoltCollisionGroup *JoltBodyInterface_GetCollisionGroup(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Activate all bodies whose bounding box overlaps box, across all object layers.
+/// Generated from method `JoltBodyInterface::ActivateBodiesInAABox`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `box` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_ActivateBodiesInAABox(JoltBodyInterface *_this, const JoltAABox *box);
+
+/// Get the material for the body's root sub-shape (works for simple, non-compound shapes).
+/// Generated from method `JoltBodyInterface::GetMaterial`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltPhysicsMaterial_Destroy()` to free it when you're done using it.
+JOLT_API JoltPhysicsMaterial *JoltBodyInterface_GetMaterial(const JoltBodyInterface *_this, const JoltBodyID *id);
+
+/// Activate non-static bodies attached to a constraint.
+/// Generated from method `JoltBodyInterface::ActivateConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `constraint` can not be null. It is a single object.
+JOLT_API void JoltBodyInterface_ActivateConstraint(JoltBodyInterface *_this, const JoltTwoBodyConstraint *constraint);
+
+// ---- Soft body -----------------------------------------------------------
+/// Generated from method `JoltBodyInterface::CreateSoftBody`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltBodyID_Destroy()` to free it when you're done using it.
+JOLT_API JoltBodyID *JoltBodyInterface_CreateSoftBody(JoltBodyInterface *_this, JoltSoftBodyCreationSettings *settings);
+
+/// Generated from method `JoltBodyInterface::CreateAndAddSoftBody`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltBodyID_Destroy()` to free it when you're done using it.
+JOLT_API JoltBodyID *JoltBodyInterface_CreateAndAddSoftBody(JoltBodyInterface *_this, JoltSoftBodyCreationSettings *settings, int activation);
 
 /// Generated from constructor `JoltShape::JoltShape`.
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
@@ -1127,6 +2807,186 @@ JOLT_API void JoltBodyCreationSettings_SetIsSensor(JoltBodyCreationSettings *_th
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JoltBodyCreationSettings_SetObjectLayer(JoltBodyCreationSettings *_this, unsigned int layer);
 
+///< internal SBSSHandle*; do not use directly
+/// Returns a pointer to a member variable of class `JoltSoftBodySharedSettings` named `mHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *JoltSoftBodySharedSettings_Get_mHandle(const JoltSoftBodySharedSettings *_this);
+
+///< internal SBSSHandle*; do not use directly
+/// Modifies a member variable of class `JoltSoftBodySharedSettings` named `mHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mHandle`.
+/// When this function is called, this object will drop object references it held previously in `mHandle`.
+JOLT_API void JoltSoftBodySharedSettings_Set_mHandle(JoltSoftBodySharedSettings *_this, void *value);
+
+///< internal SBSSHandle*; do not use directly
+/// Returns a mutable pointer to a member variable of class `JoltSoftBodySharedSettings` named `mHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **JoltSoftBodySharedSettings_GetMutable_mHandle(JoltSoftBodySharedSettings *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltSoftBodySharedSettings_Destroy()` to free it when you're done using it.
+JOLT_API JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JoltSoftBodySharedSettings_DestroyArray()`.
+/// Use `JoltSoftBodySharedSettings_OffsetMutablePtr()` and `JoltSoftBodySharedSettings_OffsetPtr()` to access the array elements.
+JOLT_API JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_OffsetPtr(const JoltSoftBodySharedSettings *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_OffsetMutablePtr(JoltSoftBodySharedSettings *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JoltSoftBodySharedSettings::JoltSoftBodySharedSettings`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltSoftBodySharedSettings_Destroy()` to free it when you're done using it.
+JOLT_API JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_ConstructFromAnother(const JoltSoftBodySharedSettings *_other);
+
+/// Destroys a heap-allocated instance of `JoltSoftBodySharedSettings`. Does nothing if the pointer is null.
+JOLT_API void JoltSoftBodySharedSettings_Destroy(const JoltSoftBodySharedSettings *_this);
+
+/// Destroys a heap-allocated array of `JoltSoftBodySharedSettings`. Does nothing if the pointer is null.
+JOLT_API void JoltSoftBodySharedSettings_DestroyArray(const JoltSoftBodySharedSettings *_this);
+
+/// Generated from method `JoltSoftBodySharedSettings::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_AssignFromAnother(JoltSoftBodySharedSettings *_this, const JoltSoftBodySharedSettings *_other);
+
+/// Add a particle at (x,y,z). invMass=0 pins it (kinematic vertex).
+/// Generated from method `JoltSoftBodySharedSettings::AddVertex`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltSoftBodySharedSettings_AddVertex(JoltSoftBodySharedSettings *_this, float x, float y, float z, float invMass);
+
+/// Add a triangular face by vertex indices.
+/// Generated from method `JoltSoftBodySharedSettings::AddFace`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltSoftBodySharedSettings_AddFace(JoltSoftBodySharedSettings *_this, unsigned int v0, unsigned int v1, unsigned int v2);
+
+/// Add an explicit edge-length spring between two vertices.
+/// compliance: 0 = perfectly rigid, larger = softer.
+/// restLength: target length; pass <=0 to auto-compute from current vertex positions.
+/// Generated from method `JoltSoftBodySharedSettings::AddEdgeConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltSoftBodySharedSettings_AddEdgeConstraint(JoltSoftBodySharedSettings *_this, unsigned int v0, unsigned int v1, float compliance, float restLength);
+
+/// Convenience: add edge with auto-computed rest length.
+/// Generated from method `JoltSoftBodySharedSettings::AddEdgeConstraintAuto`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltSoftBodySharedSettings_AddEdgeConstraintAuto(JoltSoftBodySharedSettings *_this, unsigned int v0, unsigned int v1, float compliance);
+
+/// Compute rest lengths for all edges whose mRestLength == 1.0 (the default).
+/// Generated from method `JoltSoftBodySharedSettings::CalculateEdgeLengths`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltSoftBodySharedSettings_CalculateEdgeLengths(JoltSoftBodySharedSettings *_this);
+
+/// Must be called once after building. Reorders constraints for parallel solving.
+/// Generated from method `JoltSoftBodySharedSettings::Optimize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltSoftBodySharedSettings_Optimize(JoltSoftBodySharedSettings *_this);
+
+/// Generated from method `JoltSoftBodySharedSettings::GetVertexCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API int JoltSoftBodySharedSettings_GetVertexCount(const JoltSoftBodySharedSettings *_this);
+
+/// Generated from method `JoltSoftBodySharedSettings::GetFaceCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API int JoltSoftBodySharedSettings_GetFaceCount(const JoltSoftBodySharedSettings *_this);
+
+/// Generated from method `JoltSoftBodySharedSettings::GetEdgeCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API int JoltSoftBodySharedSettings_GetEdgeCount(const JoltSoftBodySharedSettings *_this);
+
+///< internal SBCSHandle*; do not use directly
+/// Returns a pointer to a member variable of class `JoltSoftBodyCreationSettings` named `mHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *JoltSoftBodyCreationSettings_Get_mHandle(const JoltSoftBodyCreationSettings *_this);
+
+///< internal SBCSHandle*; do not use directly
+/// Modifies a member variable of class `JoltSoftBodyCreationSettings` named `mHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mHandle`.
+/// When this function is called, this object will drop object references it held previously in `mHandle`.
+JOLT_API void JoltSoftBodyCreationSettings_Set_mHandle(JoltSoftBodyCreationSettings *_this, void *value);
+
+///< internal SBCSHandle*; do not use directly
+/// Returns a mutable pointer to a member variable of class `JoltSoftBodyCreationSettings` named `mHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **JoltSoftBodyCreationSettings_GetMutable_mHandle(JoltSoftBodyCreationSettings *_this);
+
+/// Generated from constructor `JoltSoftBodyCreationSettings::JoltSoftBodyCreationSettings`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltSoftBodyCreationSettings_Destroy()` to free it when you're done using it.
+JOLT_API JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_ConstructFromAnother(const JoltSoftBodyCreationSettings *_other);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_OffsetPtr(const JoltSoftBodyCreationSettings *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_OffsetMutablePtr(JoltSoftBodyCreationSettings *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JoltSoftBodyCreationSettings::JoltSoftBodyCreationSettings`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltSoftBodyCreationSettings_Destroy()` to free it when you're done using it.
+JOLT_API JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_Construct_9(JoltSoftBodySharedSettings *settings, double posX, double posY, double posZ, float qx, float qy, float qz, float qw, unsigned int objectLayer);
+
+/// Convenience: identity rotation.
+/// Generated from constructor `JoltSoftBodyCreationSettings::JoltSoftBodyCreationSettings`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltSoftBodyCreationSettings_Destroy()` to free it when you're done using it.
+JOLT_API JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_Construct_5(JoltSoftBodySharedSettings *settings, double posX, double posY, double posZ, unsigned int objectLayer);
+
+/// Destroys a heap-allocated instance of `JoltSoftBodyCreationSettings`. Does nothing if the pointer is null.
+JOLT_API void JoltSoftBodyCreationSettings_Destroy(const JoltSoftBodyCreationSettings *_this);
+
+/// Destroys a heap-allocated array of `JoltSoftBodyCreationSettings`. Does nothing if the pointer is null.
+JOLT_API void JoltSoftBodyCreationSettings_DestroyArray(const JoltSoftBodyCreationSettings *_this);
+
+/// Generated from method `JoltSoftBodyCreationSettings::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_AssignFromAnother(JoltSoftBodyCreationSettings *_this, const JoltSoftBodyCreationSettings *_other);
+
+/// Generated from method `JoltSoftBodyCreationSettings::SetPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltSoftBodyCreationSettings_SetPosition(JoltSoftBodyCreationSettings *_this, double x, double y, double z);
+
+/// Generated from method `JoltSoftBodyCreationSettings::SetRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltSoftBodyCreationSettings_SetRotation(JoltSoftBodyCreationSettings *_this, float qx, float qy, float qz, float qw);
+
+/// Generated from method `JoltSoftBodyCreationSettings::SetObjectLayer`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltSoftBodyCreationSettings_SetObjectLayer(JoltSoftBodyCreationSettings *_this, unsigned int layer);
+
+/// Generated from method `JoltSoftBodyCreationSettings::SetMakeRotationIdentity`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltSoftBodyCreationSettings_SetMakeRotationIdentity(JoltSoftBodyCreationSettings *_this, bool v);
+
+/// Generated from method `JoltSoftBodyCreationSettings::SetNumIterations`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JoltSoftBodyCreationSettings_SetNumIterations(JoltSoftBodyCreationSettings *_this, unsigned int n);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JoltPhysicsSystem_Destroy()` to free it when you're done using it.
 JOLT_API JoltPhysicsSystem *JoltPhysicsSystem_DefaultConstruct(void);
@@ -1385,6 +3245,26 @@ JOLT_API void JoltPhysicsSystem_DestroyConstraint(JoltPhysicsSystem *_this, cons
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `id` can not be null. It is a single object.
 JOLT_API void JoltPhysicsSystem_SetConstraintEnabled(JoltPhysicsSystem *_this, const JoltConstraintID *id, bool enabled);
+
+// ---- Soft body -----------------------------------------------------------
+/// Generated from method `JoltPhysicsSystem::CreateAndAddSoftBody`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltBodyID_Destroy()` to free it when you're done using it.
+JOLT_API JoltBodyID *JoltPhysicsSystem_CreateAndAddSoftBody(JoltPhysicsSystem *_this, JoltSoftBodyCreationSettings *settings, int activation);
+
+/// Get a non-owning handle to a constraint created via AddFixedConstraint etc.
+/// Generated from method `JoltPhysicsSystem::GetConstraintHandle`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `id` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltTwoBodyConstraint_Destroy()` to free it when you're done using it.
+JOLT_API JoltTwoBodyConstraint *JoltPhysicsSystem_GetConstraintHandle(JoltPhysicsSystem *_this, const JoltConstraintID *id);
+
+/// Returns a non-owning handle to the body interface.
+/// The JoltPhysicsSystem must outlive the returned JoltBodyInterface.
+/// Generated from method `JoltPhysicsSystem::GetBodyInterface`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JoltBodyInterface_Destroy()` to free it when you're done using it.
+JOLT_API JoltBodyInterface *JoltPhysicsSystem_GetBodyInterface(JoltPhysicsSystem *_this);
 
 // ---- Statistics ----------------------------------------------------------
 /// Generated from method `JoltPhysicsSystem::GetNumBodies`.

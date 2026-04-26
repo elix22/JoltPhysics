@@ -347,6 +347,972 @@ JoltVec3f *JoltQuat_RotateAxisZ(const JoltQuat *_this)
     return (JoltVec3f *)new JoltVec3f(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltQuat *)(_this)).RotateAxisZ());
 }
 
+const float *JoltMat44_Get_e00(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e00);
+}
+
+void JoltMat44_Set_e00(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e00 = value;
+}
+
+float *JoltMat44_GetMutable_e00(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e00);
+}
+
+const float *JoltMat44_Get_e10(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e10);
+}
+
+void JoltMat44_Set_e10(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e10 = value;
+}
+
+float *JoltMat44_GetMutable_e10(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e10);
+}
+
+const float *JoltMat44_Get_e20(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e20);
+}
+
+void JoltMat44_Set_e20(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e20 = value;
+}
+
+float *JoltMat44_GetMutable_e20(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e20);
+}
+
+const float *JoltMat44_Get_e30(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e30);
+}
+
+void JoltMat44_Set_e30(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e30 = value;
+}
+
+float *JoltMat44_GetMutable_e30(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e30);
+}
+
+const float *JoltMat44_Get_e01(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e01);
+}
+
+void JoltMat44_Set_e01(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e01 = value;
+}
+
+float *JoltMat44_GetMutable_e01(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e01);
+}
+
+const float *JoltMat44_Get_e11(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e11);
+}
+
+void JoltMat44_Set_e11(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e11 = value;
+}
+
+float *JoltMat44_GetMutable_e11(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e11);
+}
+
+const float *JoltMat44_Get_e21(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e21);
+}
+
+void JoltMat44_Set_e21(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e21 = value;
+}
+
+float *JoltMat44_GetMutable_e21(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e21);
+}
+
+const float *JoltMat44_Get_e31(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e31);
+}
+
+void JoltMat44_Set_e31(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e31 = value;
+}
+
+float *JoltMat44_GetMutable_e31(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e31);
+}
+
+const float *JoltMat44_Get_e02(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e02);
+}
+
+void JoltMat44_Set_e02(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e02 = value;
+}
+
+float *JoltMat44_GetMutable_e02(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e02);
+}
+
+const float *JoltMat44_Get_e12(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e12);
+}
+
+void JoltMat44_Set_e12(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e12 = value;
+}
+
+float *JoltMat44_GetMutable_e12(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e12);
+}
+
+const float *JoltMat44_Get_e22(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e22);
+}
+
+void JoltMat44_Set_e22(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e22 = value;
+}
+
+float *JoltMat44_GetMutable_e22(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e22);
+}
+
+const float *JoltMat44_Get_e32(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e32);
+}
+
+void JoltMat44_Set_e32(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e32 = value;
+}
+
+float *JoltMat44_GetMutable_e32(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e32);
+}
+
+const float *JoltMat44_Get_e03(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e03);
+}
+
+void JoltMat44_Set_e03(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e03 = value;
+}
+
+float *JoltMat44_GetMutable_e03(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e03);
+}
+
+const float *JoltMat44_Get_e13(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e13);
+}
+
+void JoltMat44_Set_e13(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e13 = value;
+}
+
+float *JoltMat44_GetMutable_e13(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e13);
+}
+
+const float *JoltMat44_Get_e23(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e23);
+}
+
+void JoltMat44_Set_e23(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e23 = value;
+}
+
+float *JoltMat44_GetMutable_e23(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e23);
+}
+
+const float *JoltMat44_Get_e33(const JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).e33);
+}
+
+void JoltMat44_Set_e33(JoltMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e33 = value;
+}
+
+float *JoltMat44_GetMutable_e33(JoltMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).e33);
+}
+
+JoltMat44 *JoltMat44_DefaultConstruct(void)
+{
+    return (JoltMat44 *)new JoltMat44(JoltMat44());
+}
+
+JoltMat44 *JoltMat44_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltMat44 *)(new JoltMat44[num_elems]{});
+}
+
+const JoltMat44 *JoltMat44_OffsetPtr(const JoltMat44 *ptr, ptrdiff_t i)
+{
+    return (const JoltMat44 *)(((const JoltMat44 *)ptr) + i);
+}
+
+JoltMat44 *JoltMat44_OffsetMutablePtr(JoltMat44 *ptr, ptrdiff_t i)
+{
+    return (JoltMat44 *)(((JoltMat44 *)ptr) + i);
+}
+
+JoltMat44 *JoltMat44_ConstructFromAnother(const JoltMat44 *_other)
+{
+    return (JoltMat44 *)new JoltMat44(JoltMat44(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltMat44(*(JoltMat44 *)_other))
+    ));
+}
+
+void JoltMat44_Destroy(const JoltMat44 *_this)
+{
+    delete ((const JoltMat44 *)_this);
+}
+
+void JoltMat44_DestroyArray(const JoltMat44 *_this)
+{
+    delete[] ((const JoltMat44 *)_this);
+}
+
+JoltMat44 *JoltMat44_AssignFromAnother(JoltMat44 *_this, const JoltMat44 *_other)
+{
+    return (JoltMat44 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltMat44 *)(_this)).operator=(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltMat44(*(JoltMat44 *)_other))
+    ));
+}
+
+JoltMat44 *JoltMat44_Identity(void)
+{
+    return (JoltMat44 *)new JoltMat44(JoltMat44::Identity());
+}
+
+JoltVec3f *JoltMat44_GetTranslation(const JoltMat44 *_this)
+{
+    return (JoltVec3f *)new JoltVec3f(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).GetTranslation());
+}
+
+JoltQuat *JoltMat44_GetRotation(const JoltMat44 *_this)
+{
+    return (JoltQuat *)new JoltQuat(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltMat44 *)(_this)).GetRotation());
+}
+
+const float *JoltRMat44_Get_e00(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).e00);
+}
+
+void JoltRMat44_Set_e00(JoltRMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e00 = value;
+}
+
+float *JoltRMat44_GetMutable_e00(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e00);
+}
+
+const float *JoltRMat44_Get_e10(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).e10);
+}
+
+void JoltRMat44_Set_e10(JoltRMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e10 = value;
+}
+
+float *JoltRMat44_GetMutable_e10(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e10);
+}
+
+const float *JoltRMat44_Get_e20(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).e20);
+}
+
+void JoltRMat44_Set_e20(JoltRMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e20 = value;
+}
+
+float *JoltRMat44_GetMutable_e20(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e20);
+}
+
+const float *JoltRMat44_Get_e01(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).e01);
+}
+
+void JoltRMat44_Set_e01(JoltRMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e01 = value;
+}
+
+float *JoltRMat44_GetMutable_e01(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e01);
+}
+
+const float *JoltRMat44_Get_e11(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).e11);
+}
+
+void JoltRMat44_Set_e11(JoltRMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e11 = value;
+}
+
+float *JoltRMat44_GetMutable_e11(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e11);
+}
+
+const float *JoltRMat44_Get_e21(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).e21);
+}
+
+void JoltRMat44_Set_e21(JoltRMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e21 = value;
+}
+
+float *JoltRMat44_GetMutable_e21(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e21);
+}
+
+const float *JoltRMat44_Get_e02(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).e02);
+}
+
+void JoltRMat44_Set_e02(JoltRMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e02 = value;
+}
+
+float *JoltRMat44_GetMutable_e02(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e02);
+}
+
+const float *JoltRMat44_Get_e12(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).e12);
+}
+
+void JoltRMat44_Set_e12(JoltRMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e12 = value;
+}
+
+float *JoltRMat44_GetMutable_e12(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e12);
+}
+
+const float *JoltRMat44_Get_e22(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).e22);
+}
+
+void JoltRMat44_Set_e22(JoltRMat44 *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e22 = value;
+}
+
+float *JoltRMat44_GetMutable_e22(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).e22);
+}
+
+const double *JoltRMat44_Get_tx(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).tx);
+}
+
+void JoltRMat44_Set_tx(JoltRMat44 *_this, double value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).tx = value;
+}
+
+double *JoltRMat44_GetMutable_tx(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).tx);
+}
+
+const double *JoltRMat44_Get_ty(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).ty);
+}
+
+void JoltRMat44_Set_ty(JoltRMat44 *_this, double value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).ty = value;
+}
+
+double *JoltRMat44_GetMutable_ty(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).ty);
+}
+
+const double *JoltRMat44_Get_tz(const JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).tz);
+}
+
+void JoltRMat44_Set_tz(JoltRMat44 *_this, double value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).tz = value;
+}
+
+double *JoltRMat44_GetMutable_tz(JoltRMat44 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).tz);
+}
+
+JoltRMat44 *JoltRMat44_DefaultConstruct(void)
+{
+    return (JoltRMat44 *)new JoltRMat44(JoltRMat44());
+}
+
+JoltRMat44 *JoltRMat44_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltRMat44 *)(new JoltRMat44[num_elems]{});
+}
+
+const JoltRMat44 *JoltRMat44_OffsetPtr(const JoltRMat44 *ptr, ptrdiff_t i)
+{
+    return (const JoltRMat44 *)(((const JoltRMat44 *)ptr) + i);
+}
+
+JoltRMat44 *JoltRMat44_OffsetMutablePtr(JoltRMat44 *ptr, ptrdiff_t i)
+{
+    return (JoltRMat44 *)(((JoltRMat44 *)ptr) + i);
+}
+
+JoltRMat44 *JoltRMat44_ConstructFromAnother(const JoltRMat44 *_other)
+{
+    return (JoltRMat44 *)new JoltRMat44(JoltRMat44(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltRMat44(*(JoltRMat44 *)_other))
+    ));
+}
+
+void JoltRMat44_Destroy(const JoltRMat44 *_this)
+{
+    delete ((const JoltRMat44 *)_this);
+}
+
+void JoltRMat44_DestroyArray(const JoltRMat44 *_this)
+{
+    delete[] ((const JoltRMat44 *)_this);
+}
+
+JoltRMat44 *JoltRMat44_AssignFromAnother(JoltRMat44 *_this, const JoltRMat44 *_other)
+{
+    return (JoltRMat44 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltRMat44 *)(_this)).operator=(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltRMat44(*(JoltRMat44 *)_other))
+    ));
+}
+
+JoltRMat44 *JoltRMat44_Identity(void)
+{
+    return (JoltRMat44 *)new JoltRMat44(JoltRMat44::Identity());
+}
+
+JoltVec3 *JoltRMat44_GetTranslation(const JoltRMat44 *_this)
+{
+    return (JoltVec3 *)new JoltVec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).GetTranslation());
+}
+
+JoltVec3f *JoltRMat44_GetTranslationF(const JoltRMat44 *_this)
+{
+    return (JoltVec3f *)new JoltVec3f(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).GetTranslationF());
+}
+
+JoltQuat *JoltRMat44_GetRotation(const JoltRMat44 *_this)
+{
+    return (JoltQuat *)new JoltQuat(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).GetRotation());
+}
+
+JoltMat44 *JoltRMat44_ToMat44(const JoltRMat44 *_this)
+{
+    return (JoltMat44 *)new JoltMat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltRMat44 *)(_this)).ToMat44());
+}
+
+const double *JoltAABox_Get_minX(const JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltAABox *)(_this)).minX);
+}
+
+void JoltAABox_Set_minX(JoltAABox *_this, double value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).minX = value;
+}
+
+double *JoltAABox_GetMutable_minX(JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).minX);
+}
+
+const double *JoltAABox_Get_minY(const JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltAABox *)(_this)).minY);
+}
+
+void JoltAABox_Set_minY(JoltAABox *_this, double value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).minY = value;
+}
+
+double *JoltAABox_GetMutable_minY(JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).minY);
+}
+
+const double *JoltAABox_Get_minZ(const JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltAABox *)(_this)).minZ);
+}
+
+void JoltAABox_Set_minZ(JoltAABox *_this, double value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).minZ = value;
+}
+
+double *JoltAABox_GetMutable_minZ(JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).minZ);
+}
+
+const double *JoltAABox_Get_maxX(const JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltAABox *)(_this)).maxX);
+}
+
+void JoltAABox_Set_maxX(JoltAABox *_this, double value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).maxX = value;
+}
+
+double *JoltAABox_GetMutable_maxX(JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).maxX);
+}
+
+const double *JoltAABox_Get_maxY(const JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltAABox *)(_this)).maxY);
+}
+
+void JoltAABox_Set_maxY(JoltAABox *_this, double value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).maxY = value;
+}
+
+double *JoltAABox_GetMutable_maxY(JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).maxY);
+}
+
+const double *JoltAABox_Get_maxZ(const JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltAABox *)(_this)).maxZ);
+}
+
+void JoltAABox_Set_maxZ(JoltAABox *_this, double value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).maxZ = value;
+}
+
+double *JoltAABox_GetMutable_maxZ(JoltAABox *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).maxZ);
+}
+
+JoltAABox *JoltAABox_DefaultConstruct(void)
+{
+    return (JoltAABox *)new JoltAABox(JoltAABox());
+}
+
+JoltAABox *JoltAABox_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltAABox *)(new JoltAABox[num_elems]{});
+}
+
+const JoltAABox *JoltAABox_OffsetPtr(const JoltAABox *ptr, ptrdiff_t i)
+{
+    return (const JoltAABox *)(((const JoltAABox *)ptr) + i);
+}
+
+JoltAABox *JoltAABox_OffsetMutablePtr(JoltAABox *ptr, ptrdiff_t i)
+{
+    return (JoltAABox *)(((JoltAABox *)ptr) + i);
+}
+
+JoltAABox *JoltAABox_ConstructFromAnother(const JoltAABox *_other)
+{
+    return (JoltAABox *)new JoltAABox(JoltAABox(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltAABox(*(JoltAABox *)_other))
+    ));
+}
+
+JoltAABox *JoltAABox_Construct(double minX, double minY, double minZ, double maxX, double maxY, double maxZ)
+{
+    return (JoltAABox *)new JoltAABox(JoltAABox(
+        minX,
+        minY,
+        minZ,
+        maxX,
+        maxY,
+        maxZ
+    ));
+}
+
+void JoltAABox_Destroy(const JoltAABox *_this)
+{
+    delete ((const JoltAABox *)_this);
+}
+
+void JoltAABox_DestroyArray(const JoltAABox *_this)
+{
+    delete[] ((const JoltAABox *)_this);
+}
+
+JoltAABox *JoltAABox_AssignFromAnother(JoltAABox *_this, const JoltAABox *_other)
+{
+    return (JoltAABox *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).operator=(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltAABox(*(JoltAABox *)_other))
+    ));
+}
+
+JoltVec3 *JoltAABox_GetCenter(const JoltAABox *_this)
+{
+    return (JoltVec3 *)new JoltVec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltAABox *)(_this)).GetCenter());
+}
+
+JoltVec3 *JoltAABox_GetExtent(const JoltAABox *_this)
+{
+    return (JoltVec3 *)new JoltVec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltAABox *)(_this)).GetExtent());
+}
+
+bool JoltAABox_Contains(const JoltAABox *_this, double x, double y, double z)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltAABox *)(_this)).Contains(
+        x,
+        y,
+        z
+    );
+}
+
+bool JoltAABox_Overlaps(const JoltAABox *_this, const JoltAABox *other)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltAABox *)(_this)).Overlaps(
+        ((other ? void() : MRBINDC_THROW("Parameter `other` can not be null.", void)), *(const JoltAABox *)(other))
+    );
+}
+
+void JoltAABox_Encapsulate(JoltAABox *_this, double x, double y, double z)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltAABox *)(_this)).Encapsulate(
+        x,
+        y,
+        z
+    );
+}
+
+const unsigned int *JoltCollisionGroup_Get_InvalidGroup(void)
+{
+    return std::addressof(JoltCollisionGroup::InvalidGroup);
+}
+
+const unsigned int *JoltCollisionGroup_Get_InvalidSubGroup(void)
+{
+    return std::addressof(JoltCollisionGroup::InvalidSubGroup);
+}
+
+const unsigned int *JoltCollisionGroup_Get_groupID(const JoltCollisionGroup *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltCollisionGroup *)(_this)).groupID);
+}
+
+void JoltCollisionGroup_Set_groupID(JoltCollisionGroup *_this, unsigned int value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltCollisionGroup *)(_this)).groupID = value;
+}
+
+unsigned int *JoltCollisionGroup_GetMutable_groupID(JoltCollisionGroup *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltCollisionGroup *)(_this)).groupID);
+}
+
+const unsigned int *JoltCollisionGroup_Get_subGroupID(const JoltCollisionGroup *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltCollisionGroup *)(_this)).subGroupID);
+}
+
+void JoltCollisionGroup_Set_subGroupID(JoltCollisionGroup *_this, unsigned int value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltCollisionGroup *)(_this)).subGroupID = value;
+}
+
+unsigned int *JoltCollisionGroup_GetMutable_subGroupID(JoltCollisionGroup *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltCollisionGroup *)(_this)).subGroupID);
+}
+
+JoltCollisionGroup *JoltCollisionGroup_DefaultConstruct(void)
+{
+    return (JoltCollisionGroup *)new JoltCollisionGroup(JoltCollisionGroup());
+}
+
+JoltCollisionGroup *JoltCollisionGroup_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltCollisionGroup *)(new JoltCollisionGroup[num_elems]{});
+}
+
+const JoltCollisionGroup *JoltCollisionGroup_OffsetPtr(const JoltCollisionGroup *ptr, ptrdiff_t i)
+{
+    return (const JoltCollisionGroup *)(((const JoltCollisionGroup *)ptr) + i);
+}
+
+JoltCollisionGroup *JoltCollisionGroup_OffsetMutablePtr(JoltCollisionGroup *ptr, ptrdiff_t i)
+{
+    return (JoltCollisionGroup *)(((JoltCollisionGroup *)ptr) + i);
+}
+
+JoltCollisionGroup *JoltCollisionGroup_ConstructFromAnother(const JoltCollisionGroup *_other)
+{
+    return (JoltCollisionGroup *)new JoltCollisionGroup(JoltCollisionGroup(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltCollisionGroup(*(JoltCollisionGroup *)_other))
+    ));
+}
+
+JoltCollisionGroup *JoltCollisionGroup_Construct(unsigned int groupID, unsigned int subGroupID)
+{
+    return (JoltCollisionGroup *)new JoltCollisionGroup(JoltCollisionGroup(
+        groupID,
+        subGroupID
+    ));
+}
+
+void JoltCollisionGroup_Destroy(const JoltCollisionGroup *_this)
+{
+    delete ((const JoltCollisionGroup *)_this);
+}
+
+void JoltCollisionGroup_DestroyArray(const JoltCollisionGroup *_this)
+{
+    delete[] ((const JoltCollisionGroup *)_this);
+}
+
+JoltCollisionGroup *JoltCollisionGroup_AssignFromAnother(JoltCollisionGroup *_this, const JoltCollisionGroup *_other)
+{
+    return (JoltCollisionGroup *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltCollisionGroup *)(_this)).operator=(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltCollisionGroup(*(JoltCollisionGroup *)_other))
+    ));
+}
+
+void *const *JoltPhysicsMaterial_Get_mPtr(const JoltPhysicsMaterial *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltPhysicsMaterial *)(_this)).mPtr);
+}
+
+void JoltPhysicsMaterial_Set_mPtr(JoltPhysicsMaterial *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltPhysicsMaterial *)(_this)).mPtr = value;
+}
+
+void **JoltPhysicsMaterial_GetMutable_mPtr(JoltPhysicsMaterial *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltPhysicsMaterial *)(_this)).mPtr);
+}
+
+JoltPhysicsMaterial *JoltPhysicsMaterial_DefaultConstruct(void)
+{
+    return (JoltPhysicsMaterial *)new JoltPhysicsMaterial(JoltPhysicsMaterial());
+}
+
+JoltPhysicsMaterial *JoltPhysicsMaterial_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltPhysicsMaterial *)(new JoltPhysicsMaterial[num_elems]{});
+}
+
+const JoltPhysicsMaterial *JoltPhysicsMaterial_OffsetPtr(const JoltPhysicsMaterial *ptr, ptrdiff_t i)
+{
+    return (const JoltPhysicsMaterial *)(((const JoltPhysicsMaterial *)ptr) + i);
+}
+
+JoltPhysicsMaterial *JoltPhysicsMaterial_OffsetMutablePtr(JoltPhysicsMaterial *ptr, ptrdiff_t i)
+{
+    return (JoltPhysicsMaterial *)(((JoltPhysicsMaterial *)ptr) + i);
+}
+
+JoltPhysicsMaterial *JoltPhysicsMaterial_ConstructFromAnother(const JoltPhysicsMaterial *_other)
+{
+    return (JoltPhysicsMaterial *)new JoltPhysicsMaterial(JoltPhysicsMaterial(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltPhysicsMaterial(*(JoltPhysicsMaterial *)_other))
+    ));
+}
+
+void JoltPhysicsMaterial_Destroy(const JoltPhysicsMaterial *_this)
+{
+    delete ((const JoltPhysicsMaterial *)_this);
+}
+
+void JoltPhysicsMaterial_DestroyArray(const JoltPhysicsMaterial *_this)
+{
+    delete[] ((const JoltPhysicsMaterial *)_this);
+}
+
+JoltPhysicsMaterial *JoltPhysicsMaterial_AssignFromAnother(JoltPhysicsMaterial *_this, const JoltPhysicsMaterial *_other)
+{
+    return (JoltPhysicsMaterial *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltPhysicsMaterial *)(_this)).operator=(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltPhysicsMaterial(*(JoltPhysicsMaterial *)_other))
+    ));
+}
+
+bool JoltPhysicsMaterial_IsValid(const JoltPhysicsMaterial *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltPhysicsMaterial *)(_this)).IsValid();
+}
+
+const char *JoltPhysicsMaterial_GetDebugName(const JoltPhysicsMaterial *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltPhysicsMaterial *)(_this)).GetDebugName();
+}
+
+void *const *JoltTwoBodyConstraint_Get_mPtr(const JoltTwoBodyConstraint *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltTwoBodyConstraint *)(_this)).mPtr);
+}
+
+void JoltTwoBodyConstraint_Set_mPtr(JoltTwoBodyConstraint *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltTwoBodyConstraint *)(_this)).mPtr = value;
+}
+
+void **JoltTwoBodyConstraint_GetMutable_mPtr(JoltTwoBodyConstraint *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltTwoBodyConstraint *)(_this)).mPtr);
+}
+
+JoltTwoBodyConstraint *JoltTwoBodyConstraint_DefaultConstruct(void)
+{
+    return (JoltTwoBodyConstraint *)new JoltTwoBodyConstraint(JoltTwoBodyConstraint());
+}
+
+JoltTwoBodyConstraint *JoltTwoBodyConstraint_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltTwoBodyConstraint *)(new JoltTwoBodyConstraint[num_elems]{});
+}
+
+const JoltTwoBodyConstraint *JoltTwoBodyConstraint_OffsetPtr(const JoltTwoBodyConstraint *ptr, ptrdiff_t i)
+{
+    return (const JoltTwoBodyConstraint *)(((const JoltTwoBodyConstraint *)ptr) + i);
+}
+
+JoltTwoBodyConstraint *JoltTwoBodyConstraint_OffsetMutablePtr(JoltTwoBodyConstraint *ptr, ptrdiff_t i)
+{
+    return (JoltTwoBodyConstraint *)(((JoltTwoBodyConstraint *)ptr) + i);
+}
+
+JoltTwoBodyConstraint *JoltTwoBodyConstraint_ConstructFromAnother(const JoltTwoBodyConstraint *_other)
+{
+    return (JoltTwoBodyConstraint *)new JoltTwoBodyConstraint(JoltTwoBodyConstraint(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltTwoBodyConstraint(*(JoltTwoBodyConstraint *)_other))
+    ));
+}
+
+void JoltTwoBodyConstraint_Destroy(const JoltTwoBodyConstraint *_this)
+{
+    delete ((const JoltTwoBodyConstraint *)_this);
+}
+
+void JoltTwoBodyConstraint_DestroyArray(const JoltTwoBodyConstraint *_this)
+{
+    delete[] ((const JoltTwoBodyConstraint *)_this);
+}
+
+JoltTwoBodyConstraint *JoltTwoBodyConstraint_AssignFromAnother(JoltTwoBodyConstraint *_this, const JoltTwoBodyConstraint *_other)
+{
+    return (JoltTwoBodyConstraint *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltTwoBodyConstraint *)(_this)).operator=(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltTwoBodyConstraint(*(JoltTwoBodyConstraint *)_other))
+    ));
+}
+
+bool JoltTwoBodyConstraint_IsValid(const JoltTwoBodyConstraint *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltTwoBodyConstraint *)(_this)).IsValid();
+}
+
+bool JoltTwoBodyConstraint_GetEnabled(const JoltTwoBodyConstraint *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltTwoBodyConstraint *)(_this)).GetEnabled();
+}
+
+void JoltTwoBodyConstraint_SetEnabled(JoltTwoBodyConstraint *_this, bool enabled)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltTwoBodyConstraint *)(_this)).SetEnabled(
+        enabled
+    );
+}
+
 const unsigned int *JoltBodyID_Get_value(const JoltBodyID *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyID *)(_this)).value);
@@ -416,6 +1382,89 @@ bool JoltBodyID_IsInvalid(const JoltBodyID *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyID *)(_this)).IsInvalid();
 }
 
+void *const *JoltBodyIDList_Get_mData(const JoltBodyIDList *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyIDList *)(_this)).mData);
+}
+
+void JoltBodyIDList_Set_mData(JoltBodyIDList *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyIDList *)(_this)).mData = value;
+}
+
+void **JoltBodyIDList_GetMutable_mData(JoltBodyIDList *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyIDList *)(_this)).mData);
+}
+
+JoltBodyIDList *JoltBodyIDList_DefaultConstruct(void)
+{
+    return (JoltBodyIDList *)new JoltBodyIDList(JoltBodyIDList());
+}
+
+JoltBodyIDList *JoltBodyIDList_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltBodyIDList *)(new JoltBodyIDList[num_elems]{});
+}
+
+const JoltBodyIDList *JoltBodyIDList_OffsetPtr(const JoltBodyIDList *ptr, ptrdiff_t i)
+{
+    return (const JoltBodyIDList *)(((const JoltBodyIDList *)ptr) + i);
+}
+
+JoltBodyIDList *JoltBodyIDList_OffsetMutablePtr(JoltBodyIDList *ptr, ptrdiff_t i)
+{
+    return (JoltBodyIDList *)(((JoltBodyIDList *)ptr) + i);
+}
+
+JoltBodyIDList *JoltBodyIDList_ConstructFromAnother(const JoltBodyIDList *_other)
+{
+    return (JoltBodyIDList *)new JoltBodyIDList(JoltBodyIDList(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltBodyIDList(*(JoltBodyIDList *)_other))
+    ));
+}
+
+void JoltBodyIDList_Destroy(const JoltBodyIDList *_this)
+{
+    delete ((const JoltBodyIDList *)_this);
+}
+
+void JoltBodyIDList_DestroyArray(const JoltBodyIDList *_this)
+{
+    delete[] ((const JoltBodyIDList *)_this);
+}
+
+JoltBodyIDList *JoltBodyIDList_AssignFromAnother(JoltBodyIDList *_this, const JoltBodyIDList *_other)
+{
+    return (JoltBodyIDList *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyIDList *)(_this)).operator=(
+        mrbindc_details::unmove(((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltBodyIDList(*(JoltBodyIDList *)_other)))
+    ));
+}
+
+void JoltBodyIDList_Add(JoltBodyIDList *_this, const JoltBodyID *id)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyIDList *)(_this)).Add(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyIDList_Clear(JoltBodyIDList *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyIDList *)(_this)).Clear();
+}
+
+int JoltBodyIDList_Count(const JoltBodyIDList *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyIDList *)(_this)).Count();
+}
+
+JoltBodyID *JoltBodyIDList_Get(const JoltBodyIDList *_this, int index)
+{
+    return (JoltBodyID *)new JoltBodyID(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyIDList *)(_this)).Get(
+        index
+    ));
+}
+
 const unsigned int *JoltConstraintID_Get_value(const JoltConstraintID *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltConstraintID *)(_this)).value);
@@ -478,6 +1527,767 @@ JoltConstraintID *JoltConstraintID_AssignFromAnother(JoltConstraintID *_this, co
 bool JoltConstraintID_IsValid(const JoltConstraintID *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltConstraintID *)(_this)).IsValid();
+}
+
+JoltBodyInterface *JoltBodyInterface_ConstructFromAnother(const JoltBodyInterface *_other)
+{
+    return (JoltBodyInterface *)new JoltBodyInterface(JoltBodyInterface(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltBodyInterface(*(JoltBodyInterface *)_other))
+    ));
+}
+
+const JoltBodyInterface *JoltBodyInterface_OffsetPtr(const JoltBodyInterface *ptr, ptrdiff_t i)
+{
+    return (const JoltBodyInterface *)(((const JoltBodyInterface *)ptr) + i);
+}
+
+JoltBodyInterface *JoltBodyInterface_OffsetMutablePtr(JoltBodyInterface *ptr, ptrdiff_t i)
+{
+    return (JoltBodyInterface *)(((JoltBodyInterface *)ptr) + i);
+}
+
+void JoltBodyInterface_Destroy(const JoltBodyInterface *_this)
+{
+    delete ((const JoltBodyInterface *)_this);
+}
+
+void JoltBodyInterface_DestroyArray(const JoltBodyInterface *_this)
+{
+    delete[] ((const JoltBodyInterface *)_this);
+}
+
+JoltBodyInterface *JoltBodyInterface_AssignFromAnother(JoltBodyInterface *_this, const JoltBodyInterface *_other)
+{
+    return (JoltBodyInterface *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).operator=(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltBodyInterface(*(JoltBodyInterface *)_other))
+    ));
+}
+
+bool JoltBodyInterface_IsValid(const JoltBodyInterface *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).IsValid();
+}
+
+JoltBodyID *JoltBodyInterface_CreateBody(JoltBodyInterface *_this, JoltBodyCreationSettings *settings)
+{
+    return (JoltBodyID *)new JoltBodyID(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).CreateBody(
+        ((JoltBodyCreationSettings *)settings)
+    ));
+}
+
+JoltBodyID *JoltBodyInterface_CreateBodyWithID(JoltBodyInterface *_this, const JoltBodyID *targetID, JoltBodyCreationSettings *settings)
+{
+    return (JoltBodyID *)new JoltBodyID(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).CreateBodyWithID(
+        ((targetID ? void() : MRBINDC_THROW("Parameter `targetID` can not be null.", void)), JoltBodyID(*(JoltBodyID *)targetID)),
+        ((JoltBodyCreationSettings *)settings)
+    ));
+}
+
+JoltBodyID *JoltBodyInterface_CreateAndAddBody(JoltBodyInterface *_this, JoltBodyCreationSettings *settings, int activation)
+{
+    return (JoltBodyID *)new JoltBodyID(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).CreateAndAddBody(
+        ((JoltBodyCreationSettings *)settings),
+        activation
+    ));
+}
+
+void JoltBodyInterface_AddBody(JoltBodyInterface *_this, const JoltBodyID *id, int activation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddBody(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        activation
+    );
+}
+
+void JoltBodyInterface_RemoveBody(JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).RemoveBody(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_DestroyBody(JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).DestroyBody(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_RemoveAndDestroyBody(JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).RemoveAndDestroyBody(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+bool JoltBodyInterface_IsAdded(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).IsAdded(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void *JoltBodyInterface_AddBodiesPrepare(JoltBodyInterface *_this, JoltBodyIDList *bodies)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddBodiesPrepare(
+        ((JoltBodyIDList *)bodies)
+    );
+}
+
+void JoltBodyInterface_AddBodiesFinalize(JoltBodyInterface *_this, JoltBodyIDList *bodies, void *addState, int activation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddBodiesFinalize(
+        ((JoltBodyIDList *)bodies),
+        addState,
+        activation
+    );
+}
+
+void JoltBodyInterface_AddBodiesAbort(JoltBodyInterface *_this, JoltBodyIDList *bodies, void *addState)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddBodiesAbort(
+        ((JoltBodyIDList *)bodies),
+        addState
+    );
+}
+
+void JoltBodyInterface_RemoveBodies(JoltBodyInterface *_this, JoltBodyIDList *bodies)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).RemoveBodies(
+        ((JoltBodyIDList *)bodies)
+    );
+}
+
+void JoltBodyInterface_DestroyBodies(JoltBodyInterface *_this, JoltBodyIDList *bodies)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).DestroyBodies(
+        ((JoltBodyIDList *)bodies)
+    );
+}
+
+void JoltBodyInterface_SetShape(const JoltBodyInterface *_this, const JoltBodyID *id, JoltShape *shape, bool updateMassProperties, int activation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).SetShape(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        ((JoltShape *)shape),
+        updateMassProperties,
+        activation
+    );
+}
+
+void JoltBodyInterface_NotifyShapeChanged(const JoltBodyInterface *_this, const JoltBodyID *id, double prevComX, double prevComY, double prevComZ, bool updateMassProperties, int activation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).NotifyShapeChanged(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        prevComX,
+        prevComY,
+        prevComZ,
+        updateMassProperties,
+        activation
+    );
+}
+
+void JoltBodyInterface_SetPosition(JoltBodyInterface *_this, const JoltBodyID *id, double x, double y, double z, int activation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetPosition(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        x,
+        y,
+        z,
+        activation
+    );
+}
+
+JoltVec3 *JoltBodyInterface_GetPosition(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return (JoltVec3 *)new JoltVec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetPosition(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    ));
+}
+
+JoltVec3 *JoltBodyInterface_GetCenterOfMassPosition(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return (JoltVec3 *)new JoltVec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetCenterOfMassPosition(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    ));
+}
+
+void JoltBodyInterface_SetRotation(JoltBodyInterface *_this, const JoltBodyID *id, float qx, float qy, float qz, float qw, int activation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetRotation(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        qx,
+        qy,
+        qz,
+        qw,
+        activation
+    );
+}
+
+JoltQuat *JoltBodyInterface_GetRotation(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return (JoltQuat *)new JoltQuat(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetRotation(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    ));
+}
+
+void JoltBodyInterface_GetPositionAndRotation(const JoltBodyInterface *_this, const JoltBodyID *id, JoltVec3 *outPosition, JoltQuat *outRotation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetPositionAndRotation(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        ((outPosition ? void() : MRBINDC_THROW("Parameter `outPosition` can not be null.", void)), *(JoltVec3 *)(outPosition)),
+        ((outRotation ? void() : MRBINDC_THROW("Parameter `outRotation` can not be null.", void)), *(JoltQuat *)(outRotation))
+    );
+}
+
+void JoltBodyInterface_SetPositionAndRotation(JoltBodyInterface *_this, const JoltBodyID *id, double x, double y, double z, float qx, float qy, float qz, float qw, int activation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetPositionAndRotation(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        x,
+        y,
+        z,
+        qx,
+        qy,
+        qz,
+        qw,
+        activation
+    );
+}
+
+void JoltBodyInterface_SetPositionAndRotationWhenChanged(JoltBodyInterface *_this, const JoltBodyID *id, double x, double y, double z, float qx, float qy, float qz, float qw, int activation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetPositionAndRotationWhenChanged(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        x,
+        y,
+        z,
+        qx,
+        qy,
+        qz,
+        qw,
+        activation
+    );
+}
+
+void JoltBodyInterface_MoveKinematic(JoltBodyInterface *_this, const JoltBodyID *id, double x, double y, double z, float qx, float qy, float qz, float qw, float deltaTime)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).MoveKinematic(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        x,
+        y,
+        z,
+        qx,
+        qy,
+        qz,
+        qw,
+        deltaTime
+    );
+}
+
+void JoltBodyInterface_SetPositionRotationAndVelocity(JoltBodyInterface *_this, const JoltBodyID *id, double x, double y, double z, float qx, float qy, float qz, float qw, float lvx, float lvy, float lvz, float avx, float avy, float avz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetPositionRotationAndVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        x,
+        y,
+        z,
+        qx,
+        qy,
+        qz,
+        qw,
+        lvx,
+        lvy,
+        lvz,
+        avx,
+        avy,
+        avz
+    );
+}
+
+void JoltBodyInterface_SetLinearVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float vx, float vy, float vz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetLinearVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        vx,
+        vy,
+        vz
+    );
+}
+
+JoltVec3f *JoltBodyInterface_GetLinearVelocity(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return (JoltVec3f *)new JoltVec3f(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetLinearVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    ));
+}
+
+void JoltBodyInterface_AddLinearVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float vx, float vy, float vz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddLinearVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        vx,
+        vy,
+        vz
+    );
+}
+
+void JoltBodyInterface_SetAngularVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float vx, float vy, float vz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetAngularVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        vx,
+        vy,
+        vz
+    );
+}
+
+JoltVec3f *JoltBodyInterface_GetAngularVelocity(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return (JoltVec3f *)new JoltVec3f(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetAngularVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    ));
+}
+
+void JoltBodyInterface_SetLinearAndAngularVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float lvx, float lvy, float lvz, float avx, float avy, float avz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetLinearAndAngularVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        lvx,
+        lvy,
+        lvz,
+        avx,
+        avy,
+        avz
+    );
+}
+
+void JoltBodyInterface_GetLinearAndAngularVelocity(const JoltBodyInterface *_this, const JoltBodyID *id, JoltVec3f *outLinear, JoltVec3f *outAngular)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetLinearAndAngularVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        ((outLinear ? void() : MRBINDC_THROW("Parameter `outLinear` can not be null.", void)), *(JoltVec3f *)(outLinear)),
+        ((outAngular ? void() : MRBINDC_THROW("Parameter `outAngular` can not be null.", void)), *(JoltVec3f *)(outAngular))
+    );
+}
+
+void JoltBodyInterface_AddLinearAndAngularVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float lvx, float lvy, float lvz, float avx, float avy, float avz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddLinearAndAngularVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        lvx,
+        lvy,
+        lvz,
+        avx,
+        avy,
+        avz
+    );
+}
+
+JoltVec3f *JoltBodyInterface_GetPointVelocity(const JoltBodyInterface *_this, const JoltBodyID *id, double px, double py, double pz)
+{
+    return (JoltVec3f *)new JoltVec3f(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetPointVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        px,
+        py,
+        pz
+    ));
+}
+
+void JoltBodyInterface_AddForce(JoltBodyInterface *_this, const JoltBodyID *id, float fx, float fy, float fz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddForce(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        fx,
+        fy,
+        fz
+    );
+}
+
+void JoltBodyInterface_AddForceAtPosition(JoltBodyInterface *_this, const JoltBodyID *id, float fx, float fy, float fz, double px, double py, double pz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddForceAtPosition(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        fx,
+        fy,
+        fz,
+        px,
+        py,
+        pz
+    );
+}
+
+void JoltBodyInterface_AddTorque(JoltBodyInterface *_this, const JoltBodyID *id, float tx, float ty, float tz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddTorque(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        tx,
+        ty,
+        tz
+    );
+}
+
+void JoltBodyInterface_AddForceAndTorque(JoltBodyInterface *_this, const JoltBodyID *id, float fx, float fy, float fz, float tx, float ty, float tz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddForceAndTorque(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        fx,
+        fy,
+        fz,
+        tx,
+        ty,
+        tz
+    );
+}
+
+void JoltBodyInterface_AddImpulse(JoltBodyInterface *_this, const JoltBodyID *id, float ix, float iy, float iz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddImpulse(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        ix,
+        iy,
+        iz
+    );
+}
+
+void JoltBodyInterface_AddImpulseAtPosition(JoltBodyInterface *_this, const JoltBodyID *id, float ix, float iy, float iz, double px, double py, double pz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddImpulseAtPosition(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        ix,
+        iy,
+        iz,
+        px,
+        py,
+        pz
+    );
+}
+
+void JoltBodyInterface_AddAngularImpulse(JoltBodyInterface *_this, const JoltBodyID *id, float ix, float iy, float iz)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).AddAngularImpulse(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        ix,
+        iy,
+        iz
+    );
+}
+
+bool JoltBodyInterface_ApplyBuoyancyImpulse(JoltBodyInterface *_this, const JoltBodyID *id, double surfacePosX, double surfacePosY, double surfacePosZ, float surfaceNX, float surfaceNY, float surfaceNZ, float buoyancy, float linearDrag, float angularDrag, float fluidVX, float fluidVY, float fluidVZ, float gravX, float gravY, float gravZ, float deltaTime)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).ApplyBuoyancyImpulse(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        surfacePosX,
+        surfacePosY,
+        surfacePosZ,
+        surfaceNX,
+        surfaceNY,
+        surfaceNZ,
+        buoyancy,
+        linearDrag,
+        angularDrag,
+        fluidVX,
+        fluidVY,
+        fluidVZ,
+        gravX,
+        gravY,
+        gravZ,
+        deltaTime
+    );
+}
+
+int JoltBodyInterface_GetBodyType(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetBodyType(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_SetMotionType(JoltBodyInterface *_this, const JoltBodyID *id, int motionType, int activation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetMotionType(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        motionType,
+        activation
+    );
+}
+
+int JoltBodyInterface_GetMotionType(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetMotionType(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_SetMotionQuality(JoltBodyInterface *_this, const JoltBodyID *id, int motionQuality)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetMotionQuality(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        motionQuality
+    );
+}
+
+int JoltBodyInterface_GetMotionQuality(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetMotionQuality(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_SetObjectLayer(JoltBodyInterface *_this, const JoltBodyID *id, unsigned int layer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetObjectLayer(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        layer
+    );
+}
+
+unsigned int JoltBodyInterface_GetObjectLayer(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetObjectLayer(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_SetFriction(JoltBodyInterface *_this, const JoltBodyID *id, float friction)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetFriction(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        friction
+    );
+}
+
+float JoltBodyInterface_GetFriction(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetFriction(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_SetRestitution(JoltBodyInterface *_this, const JoltBodyID *id, float restitution)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetRestitution(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        restitution
+    );
+}
+
+float JoltBodyInterface_GetRestitution(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetRestitution(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_SetGravityFactor(JoltBodyInterface *_this, const JoltBodyID *id, float factor)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetGravityFactor(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        factor
+    );
+}
+
+float JoltBodyInterface_GetGravityFactor(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetGravityFactor(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_SetMaxLinearVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float v)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetMaxLinearVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        v
+    );
+}
+
+float JoltBodyInterface_GetMaxLinearVelocity(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetMaxLinearVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_SetMaxAngularVelocity(JoltBodyInterface *_this, const JoltBodyID *id, float v)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetMaxAngularVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        v
+    );
+}
+
+float JoltBodyInterface_GetMaxAngularVelocity(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetMaxAngularVelocity(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_SetIsSensor(JoltBodyInterface *_this, const JoltBodyID *id, bool isSensor)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetIsSensor(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        isSensor
+    );
+}
+
+bool JoltBodyInterface_IsSensor(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).IsSensor(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_SetUseManifoldReduction(JoltBodyInterface *_this, const JoltBodyID *id, bool useReduction)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetUseManifoldReduction(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        useReduction
+    );
+}
+
+bool JoltBodyInterface_GetUseManifoldReduction(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetUseManifoldReduction(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+unsigned long long JoltBodyInterface_GetUserData(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetUserData(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_SetUserData(JoltBodyInterface *_this, const JoltBodyID *id, unsigned long long userData)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetUserData(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        userData
+    );
+}
+
+void JoltBodyInterface_ActivateBody(JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).ActivateBody(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_ActivateBodies(JoltBodyInterface *_this, JoltBodyIDList *bodies)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).ActivateBodies(
+        ((JoltBodyIDList *)bodies)
+    );
+}
+
+void JoltBodyInterface_DeactivateBody(JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).DeactivateBody(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_DeactivateBodies(JoltBodyInterface *_this, JoltBodyIDList *bodies)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).DeactivateBodies(
+        ((JoltBodyIDList *)bodies)
+    );
+}
+
+bool JoltBodyInterface_IsActive(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).IsActive(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_ResetSleepTimer(JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).ResetSleepTimer(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+void JoltBodyInterface_InvalidateContactCache(JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).InvalidateContactCache(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    );
+}
+
+JoltRMat44 *JoltBodyInterface_GetWorldTransform(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return (JoltRMat44 *)new JoltRMat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetWorldTransform(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    ));
+}
+
+JoltRMat44 *JoltBodyInterface_GetCenterOfMassTransform(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return (JoltRMat44 *)new JoltRMat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetCenterOfMassTransform(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    ));
+}
+
+JoltMat44 *JoltBodyInterface_GetInverseInertia(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return (JoltMat44 *)new JoltMat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetInverseInertia(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    ));
+}
+
+void JoltBodyInterface_SetCollisionGroup(JoltBodyInterface *_this, const JoltBodyID *id, const JoltCollisionGroup *group)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).SetCollisionGroup(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id)),
+        ((group ? void() : MRBINDC_THROW("Parameter `group` can not be null.", void)), *(const JoltCollisionGroup *)(group))
+    );
+}
+
+JoltCollisionGroup *JoltBodyInterface_GetCollisionGroup(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return (JoltCollisionGroup *)new JoltCollisionGroup(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetCollisionGroup(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    ));
+}
+
+void JoltBodyInterface_ActivateBodiesInAABox(JoltBodyInterface *_this, const JoltAABox *box)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).ActivateBodiesInAABox(
+        ((box ? void() : MRBINDC_THROW("Parameter `box` can not be null.", void)), *(const JoltAABox *)(box))
+    );
+}
+
+JoltPhysicsMaterial *JoltBodyInterface_GetMaterial(const JoltBodyInterface *_this, const JoltBodyID *id)
+{
+    return (JoltPhysicsMaterial *)new JoltPhysicsMaterial(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltBodyInterface *)(_this)).GetMaterial(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltBodyID(*(JoltBodyID *)id))
+    ));
+}
+
+void JoltBodyInterface_ActivateConstraint(JoltBodyInterface *_this, const JoltTwoBodyConstraint *constraint)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).ActivateConstraint(
+        ((constraint ? void() : MRBINDC_THROW("Parameter `constraint` can not be null.", void)), *(const JoltTwoBodyConstraint *)(constraint))
+    );
+}
+
+JoltBodyID *JoltBodyInterface_CreateSoftBody(JoltBodyInterface *_this, JoltSoftBodyCreationSettings *settings)
+{
+    return (JoltBodyID *)new JoltBodyID(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).CreateSoftBody(
+        ((JoltSoftBodyCreationSettings *)settings)
+    ));
+}
+
+JoltBodyID *JoltBodyInterface_CreateAndAddSoftBody(JoltBodyInterface *_this, JoltSoftBodyCreationSettings *settings, int activation)
+{
+    return (JoltBodyID *)new JoltBodyID(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltBodyInterface *)(_this)).CreateAndAddSoftBody(
+        ((JoltSoftBodyCreationSettings *)settings),
+        activation
+    ));
 }
 
 JoltShape *JoltShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JoltShape *_other)
@@ -1280,6 +3090,243 @@ void JoltBodyCreationSettings_SetObjectLayer(JoltBodyCreationSettings *_this, un
     );
 }
 
+void *const *JoltSoftBodySharedSettings_Get_mHandle(const JoltSoftBodySharedSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltSoftBodySharedSettings *)(_this)).mHandle);
+}
+
+void JoltSoftBodySharedSettings_Set_mHandle(JoltSoftBodySharedSettings *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodySharedSettings *)(_this)).mHandle = value;
+}
+
+void **JoltSoftBodySharedSettings_GetMutable_mHandle(JoltSoftBodySharedSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodySharedSettings *)(_this)).mHandle);
+}
+
+JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_DefaultConstruct(void)
+{
+    return (JoltSoftBodySharedSettings *)new JoltSoftBodySharedSettings(JoltSoftBodySharedSettings());
+}
+
+JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_DefaultConstructArray(size_t num_elems)
+{
+    return (JoltSoftBodySharedSettings *)(new JoltSoftBodySharedSettings[num_elems]{});
+}
+
+const JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_OffsetPtr(const JoltSoftBodySharedSettings *ptr, ptrdiff_t i)
+{
+    return (const JoltSoftBodySharedSettings *)(((const JoltSoftBodySharedSettings *)ptr) + i);
+}
+
+JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_OffsetMutablePtr(JoltSoftBodySharedSettings *ptr, ptrdiff_t i)
+{
+    return (JoltSoftBodySharedSettings *)(((JoltSoftBodySharedSettings *)ptr) + i);
+}
+
+JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_ConstructFromAnother(const JoltSoftBodySharedSettings *_other)
+{
+    return (JoltSoftBodySharedSettings *)new JoltSoftBodySharedSettings(JoltSoftBodySharedSettings(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltSoftBodySharedSettings(*(JoltSoftBodySharedSettings *)_other))
+    ));
+}
+
+void JoltSoftBodySharedSettings_Destroy(const JoltSoftBodySharedSettings *_this)
+{
+    delete ((const JoltSoftBodySharedSettings *)_this);
+}
+
+void JoltSoftBodySharedSettings_DestroyArray(const JoltSoftBodySharedSettings *_this)
+{
+    delete[] ((const JoltSoftBodySharedSettings *)_this);
+}
+
+JoltSoftBodySharedSettings *JoltSoftBodySharedSettings_AssignFromAnother(JoltSoftBodySharedSettings *_this, const JoltSoftBodySharedSettings *_other)
+{
+    return (JoltSoftBodySharedSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodySharedSettings *)(_this)).operator=(
+        mrbindc_details::unmove(((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltSoftBodySharedSettings(*(JoltSoftBodySharedSettings *)_other)))
+    ));
+}
+
+void JoltSoftBodySharedSettings_AddVertex(JoltSoftBodySharedSettings *_this, float x, float y, float z, float invMass)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodySharedSettings *)(_this)).AddVertex(
+        x,
+        y,
+        z,
+        invMass
+    );
+}
+
+void JoltSoftBodySharedSettings_AddFace(JoltSoftBodySharedSettings *_this, unsigned int v0, unsigned int v1, unsigned int v2)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodySharedSettings *)(_this)).AddFace(
+        v0,
+        v1,
+        v2
+    );
+}
+
+void JoltSoftBodySharedSettings_AddEdgeConstraint(JoltSoftBodySharedSettings *_this, unsigned int v0, unsigned int v1, float compliance, float restLength)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodySharedSettings *)(_this)).AddEdgeConstraint(
+        v0,
+        v1,
+        compliance,
+        restLength
+    );
+}
+
+void JoltSoftBodySharedSettings_AddEdgeConstraintAuto(JoltSoftBodySharedSettings *_this, unsigned int v0, unsigned int v1, float compliance)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodySharedSettings *)(_this)).AddEdgeConstraintAuto(
+        v0,
+        v1,
+        compliance
+    );
+}
+
+void JoltSoftBodySharedSettings_CalculateEdgeLengths(JoltSoftBodySharedSettings *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodySharedSettings *)(_this)).CalculateEdgeLengths();
+}
+
+void JoltSoftBodySharedSettings_Optimize(JoltSoftBodySharedSettings *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodySharedSettings *)(_this)).Optimize();
+}
+
+int JoltSoftBodySharedSettings_GetVertexCount(const JoltSoftBodySharedSettings *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltSoftBodySharedSettings *)(_this)).GetVertexCount();
+}
+
+int JoltSoftBodySharedSettings_GetFaceCount(const JoltSoftBodySharedSettings *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltSoftBodySharedSettings *)(_this)).GetFaceCount();
+}
+
+int JoltSoftBodySharedSettings_GetEdgeCount(const JoltSoftBodySharedSettings *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltSoftBodySharedSettings *)(_this)).GetEdgeCount();
+}
+
+void *const *JoltSoftBodyCreationSettings_Get_mHandle(const JoltSoftBodyCreationSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JoltSoftBodyCreationSettings *)(_this)).mHandle);
+}
+
+void JoltSoftBodyCreationSettings_Set_mHandle(JoltSoftBodyCreationSettings *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodyCreationSettings *)(_this)).mHandle = value;
+}
+
+void **JoltSoftBodyCreationSettings_GetMutable_mHandle(JoltSoftBodyCreationSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodyCreationSettings *)(_this)).mHandle);
+}
+
+JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_ConstructFromAnother(const JoltSoftBodyCreationSettings *_other)
+{
+    return (JoltSoftBodyCreationSettings *)new JoltSoftBodyCreationSettings(JoltSoftBodyCreationSettings(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltSoftBodyCreationSettings(*(JoltSoftBodyCreationSettings *)_other))
+    ));
+}
+
+const JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_OffsetPtr(const JoltSoftBodyCreationSettings *ptr, ptrdiff_t i)
+{
+    return (const JoltSoftBodyCreationSettings *)(((const JoltSoftBodyCreationSettings *)ptr) + i);
+}
+
+JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_OffsetMutablePtr(JoltSoftBodyCreationSettings *ptr, ptrdiff_t i)
+{
+    return (JoltSoftBodyCreationSettings *)(((JoltSoftBodyCreationSettings *)ptr) + i);
+}
+
+JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_Construct_9(JoltSoftBodySharedSettings *settings, double posX, double posY, double posZ, float qx, float qy, float qz, float qw, unsigned int objectLayer)
+{
+    return (JoltSoftBodyCreationSettings *)new JoltSoftBodyCreationSettings(JoltSoftBodyCreationSettings(
+        ((JoltSoftBodySharedSettings *)settings),
+        posX,
+        posY,
+        posZ,
+        qx,
+        qy,
+        qz,
+        qw,
+        objectLayer
+    ));
+}
+
+JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_Construct_5(JoltSoftBodySharedSettings *settings, double posX, double posY, double posZ, unsigned int objectLayer)
+{
+    return (JoltSoftBodyCreationSettings *)new JoltSoftBodyCreationSettings(JoltSoftBodyCreationSettings(
+        ((JoltSoftBodySharedSettings *)settings),
+        posX,
+        posY,
+        posZ,
+        objectLayer
+    ));
+}
+
+void JoltSoftBodyCreationSettings_Destroy(const JoltSoftBodyCreationSettings *_this)
+{
+    delete ((const JoltSoftBodyCreationSettings *)_this);
+}
+
+void JoltSoftBodyCreationSettings_DestroyArray(const JoltSoftBodyCreationSettings *_this)
+{
+    delete[] ((const JoltSoftBodyCreationSettings *)_this);
+}
+
+JoltSoftBodyCreationSettings *JoltSoftBodyCreationSettings_AssignFromAnother(JoltSoftBodyCreationSettings *_this, const JoltSoftBodyCreationSettings *_other)
+{
+    return (JoltSoftBodyCreationSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodyCreationSettings *)(_this)).operator=(
+        mrbindc_details::unmove(((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JoltSoftBodyCreationSettings(*(JoltSoftBodyCreationSettings *)_other)))
+    ));
+}
+
+void JoltSoftBodyCreationSettings_SetPosition(JoltSoftBodyCreationSettings *_this, double x, double y, double z)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodyCreationSettings *)(_this)).SetPosition(
+        x,
+        y,
+        z
+    );
+}
+
+void JoltSoftBodyCreationSettings_SetRotation(JoltSoftBodyCreationSettings *_this, float qx, float qy, float qz, float qw)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodyCreationSettings *)(_this)).SetRotation(
+        qx,
+        qy,
+        qz,
+        qw
+    );
+}
+
+void JoltSoftBodyCreationSettings_SetObjectLayer(JoltSoftBodyCreationSettings *_this, unsigned int layer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodyCreationSettings *)(_this)).SetObjectLayer(
+        layer
+    );
+}
+
+void JoltSoftBodyCreationSettings_SetMakeRotationIdentity(JoltSoftBodyCreationSettings *_this, bool v)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodyCreationSettings *)(_this)).SetMakeRotationIdentity(
+        v
+    );
+}
+
+void JoltSoftBodyCreationSettings_SetNumIterations(JoltSoftBodyCreationSettings *_this, unsigned int n)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltSoftBodyCreationSettings *)(_this)).SetNumIterations(
+        n
+    );
+}
+
 JoltPhysicsSystem *JoltPhysicsSystem_DefaultConstruct(void)
 {
     return (JoltPhysicsSystem *)new JoltPhysicsSystem(JoltPhysicsSystem());
@@ -1663,6 +3710,26 @@ void JoltPhysicsSystem_SetConstraintEnabled(JoltPhysicsSystem *_this, const Jolt
         ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltConstraintID(*(JoltConstraintID *)id)),
         enabled
     );
+}
+
+JoltBodyID *JoltPhysicsSystem_CreateAndAddSoftBody(JoltPhysicsSystem *_this, JoltSoftBodyCreationSettings *settings, int activation)
+{
+    return (JoltBodyID *)new JoltBodyID(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltPhysicsSystem *)(_this)).CreateAndAddSoftBody(
+        ((JoltSoftBodyCreationSettings *)settings),
+        activation
+    ));
+}
+
+JoltTwoBodyConstraint *JoltPhysicsSystem_GetConstraintHandle(JoltPhysicsSystem *_this, const JoltConstraintID *id)
+{
+    return (JoltTwoBodyConstraint *)new JoltTwoBodyConstraint(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltPhysicsSystem *)(_this)).GetConstraintHandle(
+        ((id ? void() : MRBINDC_THROW("Parameter `id` can not be null.", void)), JoltConstraintID(*(JoltConstraintID *)id))
+    ));
+}
+
+JoltBodyInterface *JoltPhysicsSystem_GetBodyInterface(JoltPhysicsSystem *_this)
+{
+    return (JoltBodyInterface *)new JoltBodyInterface(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JoltPhysicsSystem *)(_this)).GetBodyInterface());
 }
 
 unsigned int JoltPhysicsSystem_GetNumBodies(const JoltPhysicsSystem *_this)
