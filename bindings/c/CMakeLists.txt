@@ -41,13 +41,18 @@ file(GLOB_RECURSE BINDING_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 
 # ---- cjolt target ----
 if(EMSCRIPTEN)
-    # Emscripten: static archive; just link Jolt normally
+    # For Emscripten static archives, target_link_libraries does NOT embed
+    # Jolt objects into cjolt.a — only a thin dependency record is stored.
+    # Compile Jolt sources directly into the target so the archive is self-contained.
+    file(GLOB_RECURSE JOLT_SOURCES "${JOLT_ROOT}/Jolt/*.cpp")
     add_library(cjolt STATIC
         ${BINDING_SOURCES}
         "${HELPER_DIR}/jolt_helper.cpp"
+        ${JOLT_SOURCES}
     )
     set_target_properties(cjolt PROPERTIES PREFIX "")
-    target_link_libraries(cjolt PRIVATE Jolt)
+    # add_dependencies for ordering only — ensures Jolt's interface properties are ready
+    add_dependencies(cjolt Jolt)
 else()
     add_library(cjolt SHARED
         ${BINDING_SOURCES}
