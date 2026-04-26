@@ -78,6 +78,12 @@ target_include_directories(cjolt PRIVATE
 target_compile_definitions(cjolt PRIVATE
     $<TARGET_PROPERTY:Jolt,INTERFACE_COMPILE_DEFINITIONS>
 )
+# Inherit Jolt's PUBLIC compile options (SIMD flags: -msse4.1, -msse4.2,
+# -mavx, -mavx2, -mfma, etc.) so jolt_helper.cpp compiles with the same
+# architecture features as the Jolt library itself.
+target_compile_options(cjolt PRIVATE
+    $<TARGET_PROPERTY:Jolt,INTERFACE_COMPILE_OPTIONS>
+)
 
 set_target_properties(cjolt PROPERTIES
     OUTPUT_NAME "cjolt"
