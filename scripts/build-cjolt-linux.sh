@@ -51,6 +51,12 @@ if [ -f "$BUILD_DIR/libcjolt.so" ]; then
     mkdir -p "$OUTPUT_DIR"
     cp "$BUILD_DIR/libcjolt.so" "$OUTPUT_DIR/"
 
+    # Strip debug symbols from release builds to reduce size (~35 MB → ~2.5 MB)
+    if [ "$BUILD_TYPE" = "Release" ]; then
+        strip --strip-unneeded "$OUTPUT_DIR/libcjolt.so"
+        echo "✓ Stripped debug symbols"
+    fi
+
     echo "=========================================="
     echo "✓ Copied to: $OUTPUT_DIR/libcjolt.so"
     echo "=========================================="

@@ -73,6 +73,15 @@ if [ -f "$BUILD_DIR/libcjolt.so" ]; then
     mkdir -p "$OUTPUT_DIR"
     cp "$BUILD_DIR/libcjolt.so" "$OUTPUT_DIR/"
 
+    # Strip debug symbols from release builds using the NDK's llvm-strip
+    if [ "$BUILD_TYPE" = "Release" ]; then
+        NDK_STRIP=$(find "$ANDROID_NDK/toolchains/llvm/prebuilt" -name "llvm-strip" 2>/dev/null | head -1)
+        if [ -n "$NDK_STRIP" ]; then
+            "$NDK_STRIP" --strip-unneeded "$OUTPUT_DIR/libcjolt.so"
+            echo "✓ Stripped debug symbols"
+        fi
+    fi
+
     echo "=========================================="
     echo "✓ Copied to: $OUTPUT_DIR/libcjolt.so"
     echo "=========================================="
