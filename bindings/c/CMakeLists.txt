@@ -24,6 +24,13 @@ set(BUILD_SHARED_LIBS                   OFF CACHE BOOL "" FORCE)
 # be linked into a shared library on Linux / Android.
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+# Match Jolt's default MSVC runtime: static (/MT in Release, /MTd in Debug).
+# Without this, cjolt objects default to /MD while Jolt.lib uses /MT,
+# causing lld-link 'RuntimeLibrary mismatch' at link time.
+if(MSVC)
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif()
+
 # Pull in Jolt's proper build system — this creates the `Jolt` static-lib
 # target with all the right compile flags (SIMD, LTO, -fno-rtti,
 # -fno-exceptions, -ffp-model=precise, etc.)
