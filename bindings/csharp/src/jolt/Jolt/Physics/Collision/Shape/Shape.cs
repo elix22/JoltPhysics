@@ -1,0 +1,1358 @@
+// machine generated, do not edit
+public static partial class Jolt
+{
+    public static partial class JPH
+    {
+        /// Class that can construct shapes and that is serializable using the ObjectStream system.
+        /// Can be used to store shape data in 'uncooked' form (i.e. in a form that is still human readable and authorable).
+        /// Once the shape has been created using the Create() function, the data will be moved into the Shape class
+        /// in a form that is optimized for collision detection. After this, the ShapeSettings object is no longer needed
+        /// and can be destroyed. Each shape class has a derived class of the ShapeSettings object to store shape specific
+        /// data.
+        /// Generated from class `JPH::ShapeSettings`.
+        /// Base classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::SerializableObject`
+        ///     `JPH::RefTarget<JPH::ShapeSettings>`
+        /// Derived classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::CompoundShapeSettings`
+        ///     `JPH::ConvexShapeSettings`
+        ///     `JPH::DecoratedShapeSettings`
+        ///     `JPH::EmptyShapeSettings`
+        ///     `JPH::HeightFieldShapeSettings`
+        ///     `JPH::MeshShapeSettings`
+        ///     `JPH::PlaneShapeSettings`
+        ///   Indirect: (non-virtual)
+        ///     `JPH::BoxShapeSettings`
+        ///     `JPH::CapsuleShapeSettings`
+        ///     `JPH::ConvexHullShapeSettings`
+        ///     `JPH::CylinderShapeSettings`
+        ///     `JPH::MutableCompoundShapeSettings`
+        ///     `JPH::OffsetCenterOfMassShapeSettings`
+        ///     `JPH::RotatedTranslatedShapeSettings`
+        ///     `JPH::ScaledShapeSettings`
+        ///     `JPH::SphereShapeSettings`
+        ///     `JPH::StaticCompoundShapeSettings`
+        ///     `JPH::TaperedCapsuleShapeSettings`
+        ///     `JPH::TaperedCylinderShapeSettings`
+        ///     `JPH::TriangleShapeSettings`
+        /// This is the const half of the class.
+        public class Const_ShapeSettings : Jolt.Object<Const_ShapeSettings>, System.IDisposable
+        {
+            internal struct _Underlying {} // Represents the underlying C++ type.
+
+            internal unsafe _Underlying *_UnderlyingPtr;
+
+            protected virtual unsafe void Dispose(bool disposing)
+            {
+                if (_UnderlyingPtr is null || !_IsOwningVal)
+                    return;
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_ShapeSettings_Destroy(_Underlying *_this);
+                __JPH_ShapeSettings_Destroy(_UnderlyingPtr);
+                _UnderlyingPtr = null;
+            }
+            public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+            ~Const_ShapeSettings() {Dispose(false);}
+
+            // Upcasts:
+            public static unsafe implicit operator Jolt.JPH.Const_SerializableObject(Const_ShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_UpcastTo_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_UpcastTo_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_SerializableObject._Underlying *__JPH_ShapeSettings_UpcastTo_JPH_SerializableObject(_Underlying *_this);
+                Jolt.JPH.Const_SerializableObject ret = new(__JPH_ShapeSettings_UpcastTo_JPH_SerializableObject(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.Const_RefTarget_JPHShapeSettings(Const_ShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_RefTarget_JPHShapeSettings._Underlying *__JPH_ShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+                Jolt.JPH.Const_RefTarget_JPHShapeSettings ret = new(__JPH_ShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+
+            // Downcasts:
+            public static unsafe explicit operator Const_ShapeSettings?(Jolt.JPH.Const_SerializableObject parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(Jolt.JPH.Const_SerializableObject._Underlying *_this);
+                var ptr = __JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                Const_ShapeSettings ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+
+            /// User data (to be used freely by the application)
+            public unsafe ulong mUserData
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_Get_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_Get_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static ulong *__JPH_ShapeSettings_Get_mUserData(_Underlying *_this);
+                    return *__JPH_ShapeSettings_Get_mUserData(_UnderlyingPtr);
+                }
+            }
+
+            internal unsafe Const_ShapeSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+            /// Generated from method `JPH::ShapeSettings::operator new`.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(ulong inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_ShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_ShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_ShapeSettings_unsigned_long(ulong inCount);
+                return __Jolt_new_JPH_ShapeSettings_unsigned_long(inCount);
+            }
+
+            /// Generated from method `JPH::ShapeSettings::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_ShapeSettings_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_ShapeSettings_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_ShapeSettings_void_ptr(void *inPointer);
+                __Jolt_delete_JPH_ShapeSettings_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::ShapeSettings::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, ulong inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_ShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_ShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_ShapeSettings_void_ptr_unsigned_long(void *inPointer, ulong inSize);
+                __Jolt_delete_JPH_ShapeSettings_void_ptr_unsigned_long(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::ShapeSettings::operator new[]`.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(ulong inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_ShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_ShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_ShapeSettings_unsigned_long(ulong inCount);
+                return __Jolt_new_array_JPH_ShapeSettings_unsigned_long(inCount);
+            }
+
+            /// Generated from method `JPH::ShapeSettings::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_ShapeSettings_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_ShapeSettings_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_ShapeSettings_void_ptr(void *inPointer);
+                __Jolt_delete_array_JPH_ShapeSettings_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::ShapeSettings::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_ShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_ShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_ShapeSettings_void_ptr_unsigned_long(void *inPointer, ulong inSize);
+                __Jolt_delete_array_JPH_ShapeSettings_void_ptr_unsigned_long(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::ShapeSettings::operator new`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(ulong inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_ShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_ShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_ShapeSettings_unsigned_long_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_JPH_ShapeSettings_unsigned_long_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::ShapeSettings::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_ShapeSettings_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_ShapeSettings_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_ShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_JPH_ShapeSettings_void_ptr_void_ptr(inPointer, inPlace);
+            }
+
+            /// Generated from method `JPH::ShapeSettings::operator new[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(ulong inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_ShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_ShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_ShapeSettings_unsigned_long_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_array_JPH_ShapeSettings_unsigned_long_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::ShapeSettings::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_ShapeSettings_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_ShapeSettings_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_ShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_array_JPH_ShapeSettings_void_ptr_void_ptr(inPointer, inPlace);
+            }
+
+            /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+            /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+            /// the object and at that point in time it is checked that no references are left to the structure.
+            /// Generated from method `JPH::ShapeSettings::SetEmbedded`.
+            public unsafe void SetEmbedded()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_ShapeSettings_SetEmbedded(_Underlying *_this);
+                __JPH_ShapeSettings_SetEmbedded(_UnderlyingPtr);
+            }
+
+            /// Get current refcount of this object
+            /// Generated from method `JPH::ShapeSettings::GetRefCount`.
+            public unsafe uint GetRefCount()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint __JPH_ShapeSettings_GetRefCount(_Underlying *_this);
+                return __JPH_ShapeSettings_GetRefCount(_UnderlyingPtr);
+            }
+
+            /// Add or release a reference to this object
+            /// Generated from method `JPH::ShapeSettings::AddRef`.
+            public unsafe void AddRef()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_ShapeSettings_AddRef(_Underlying *_this);
+                __JPH_ShapeSettings_AddRef(_UnderlyingPtr);
+            }
+
+            /// Generated from method `JPH::ShapeSettings::Release`.
+            public unsafe void Release()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_ShapeSettings_Release(_Underlying *_this);
+                __JPH_ShapeSettings_Release(_UnderlyingPtr);
+            }
+
+            /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+            /// Generated from method `JPH::ShapeSettings::sInternalGetRefCountOffset`.
+            public static int SInternalGetRefCountOffset()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_ShapeSettings_sInternalGetRefCountOffset();
+                return __JPH_ShapeSettings_sInternalGetRefCountOffset();
+            }
+        }
+
+        /// Class that can construct shapes and that is serializable using the ObjectStream system.
+        /// Can be used to store shape data in 'uncooked' form (i.e. in a form that is still human readable and authorable).
+        /// Once the shape has been created using the Create() function, the data will be moved into the Shape class
+        /// in a form that is optimized for collision detection. After this, the ShapeSettings object is no longer needed
+        /// and can be destroyed. Each shape class has a derived class of the ShapeSettings object to store shape specific
+        /// data.
+        /// Generated from class `JPH::ShapeSettings`.
+        /// Base classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::SerializableObject`
+        ///     `JPH::RefTarget<JPH::ShapeSettings>`
+        /// Derived classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::CompoundShapeSettings`
+        ///     `JPH::ConvexShapeSettings`
+        ///     `JPH::DecoratedShapeSettings`
+        ///     `JPH::EmptyShapeSettings`
+        ///     `JPH::HeightFieldShapeSettings`
+        ///     `JPH::MeshShapeSettings`
+        ///     `JPH::PlaneShapeSettings`
+        ///   Indirect: (non-virtual)
+        ///     `JPH::BoxShapeSettings`
+        ///     `JPH::CapsuleShapeSettings`
+        ///     `JPH::ConvexHullShapeSettings`
+        ///     `JPH::CylinderShapeSettings`
+        ///     `JPH::MutableCompoundShapeSettings`
+        ///     `JPH::OffsetCenterOfMassShapeSettings`
+        ///     `JPH::RotatedTranslatedShapeSettings`
+        ///     `JPH::ScaledShapeSettings`
+        ///     `JPH::SphereShapeSettings`
+        ///     `JPH::StaticCompoundShapeSettings`
+        ///     `JPH::TaperedCapsuleShapeSettings`
+        ///     `JPH::TaperedCylinderShapeSettings`
+        ///     `JPH::TriangleShapeSettings`
+        /// This is the non-const half of the class.
+        public class ShapeSettings : Const_ShapeSettings
+        {
+            // Upcasts:
+            public static unsafe implicit operator Jolt.JPH.SerializableObject(ShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_UpcastTo_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_UpcastTo_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.SerializableObject._Underlying *__JPH_ShapeSettings_UpcastTo_JPH_SerializableObject(_Underlying *_this);
+                Jolt.JPH.SerializableObject ret = new(__JPH_ShapeSettings_UpcastTo_JPH_SerializableObject(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.RefTarget_JPHShapeSettings(ShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.RefTarget_JPHShapeSettings._Underlying *__JPH_ShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+                Jolt.JPH.RefTarget_JPHShapeSettings ret = new(__JPH_ShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+
+            // Downcasts:
+            public static unsafe explicit operator ShapeSettings?(Jolt.JPH.SerializableObject parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(Jolt.JPH.SerializableObject._Underlying *_this);
+                var ptr = __JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                ShapeSettings ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+
+            /// User data (to be used freely by the application)
+            public new unsafe ref ulong mUserData
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_GetMutable_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_GetMutable_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static ulong *__JPH_ShapeSettings_GetMutable_mUserData(_Underlying *_this);
+                    return ref *__JPH_ShapeSettings_GetMutable_mUserData(_UnderlyingPtr);
+                }
+            }
+
+            internal unsafe ShapeSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+            /// When creating a shape, the result is cached so that calling Create() again will return the same shape.
+            /// If you make changes to the ShapeSettings you need to call this function to clear the cached result to allow Create() to build a new shape.
+            /// Generated from method `JPH::ShapeSettings::ClearCachedResult`.
+            public unsafe void ClearCachedResult()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_ClearCachedResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_ClearCachedResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_ShapeSettings_ClearCachedResult(_Underlying *_this);
+                __JPH_ShapeSettings_ClearCachedResult(_UnderlyingPtr);
+            }
+        }
+
+        /// This is used for optional parameters of class `ShapeSettings` with default arguments.
+        /// This is only used mutable parameters. For const ones we have `_InOptConst_ShapeSettings`.
+        /// Usage:
+        /// * Pass `null` to use the default argument.
+        /// * Pass `new()` to pass no object.
+        /// * Pass an instance of `ShapeSettings`/`Const_ShapeSettings` directly.
+        public class _InOptMut_ShapeSettings
+        {
+            public ShapeSettings? Opt;
+
+            public _InOptMut_ShapeSettings() {}
+            public _InOptMut_ShapeSettings(ShapeSettings value) {Opt = value;}
+            public static implicit operator _InOptMut_ShapeSettings(ShapeSettings value) {return new(value);}
+        }
+
+        /// This is used for optional parameters of class `ShapeSettings` with default arguments.
+        /// This is only used const parameters. For non-const ones we have `_InOptMut_ShapeSettings`.
+        /// Usage:
+        /// * Pass `null` to use the default argument.
+        /// * Pass `new()` to pass no object.
+        /// * Pass an instance of `ShapeSettings`/`Const_ShapeSettings` to pass it to the function.
+        public class _InOptConst_ShapeSettings
+        {
+            public Const_ShapeSettings? Opt;
+
+            public _InOptConst_ShapeSettings() {}
+            public _InOptConst_ShapeSettings(Const_ShapeSettings value) {Opt = value;}
+            public static implicit operator _InOptConst_ShapeSettings(Const_ShapeSettings value) {return new(value);}
+        }
+
+        /// Base class for all shapes (collision volume of a body). Defines a virtual interface for collision detection.
+        /// Generated from class `JPH::Shape`.
+        /// Base classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::RefTarget<JPH::Shape>`
+        ///     `JPH::NonCopyable`
+        /// Derived classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::CompoundShape`
+        ///     `JPH::ConvexShape`
+        ///     `JPH::DecoratedShape`
+        ///     `JPH::EmptyShape`
+        ///     `JPH::HeightFieldShape`
+        ///     `JPH::MeshShape`
+        ///     `JPH::PlaneShape`
+        ///   Indirect: (non-virtual)
+        ///     `JPH::BoxShape`
+        ///     `JPH::CapsuleShape`
+        ///     `JPH::ConvexHullShape`
+        ///     `JPH::CylinderShape`
+        ///     `JPH::MutableCompoundShape`
+        ///     `JPH::OffsetCenterOfMassShape`
+        ///     `JPH::RotatedTranslatedShape`
+        ///     `JPH::ScaledShape`
+        ///     `JPH::SphereShape`
+        ///     `JPH::StaticCompoundShape`
+        ///     `JPH::TaperedCapsuleShape`
+        ///     `JPH::TaperedCylinderShape`
+        ///     `JPH::TriangleShape`
+        /// This is the const half of the class.
+        public class Const_Shape : Jolt.Object<Const_Shape>, System.IDisposable
+        {
+            internal struct _Underlying {} // Represents the underlying C++ type.
+
+            internal unsafe _Underlying *_UnderlyingPtr;
+
+            protected virtual unsafe void Dispose(bool disposing)
+            {
+                if (_UnderlyingPtr is null || !_IsOwningVal)
+                    return;
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Shape_Destroy(_Underlying *_this);
+                __JPH_Shape_Destroy(_UnderlyingPtr);
+                _UnderlyingPtr = null;
+            }
+            public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+            ~Const_Shape() {Dispose(false);}
+
+            // Upcasts:
+            public static unsafe implicit operator Jolt.JPH.Const_RefTarget_JPHShape(Const_Shape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_RefTarget_JPHShape._Underlying *__JPH_Shape_UpcastTo_JPH_RefTarget_JPH_Shape(_Underlying *_this);
+                Jolt.JPH.Const_RefTarget_JPHShape ret = new(__JPH_Shape_UpcastTo_JPH_RefTarget_JPH_Shape(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.Const_NonCopyable(Const_Shape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_NonCopyable._Underlying *__JPH_Shape_UpcastTo_JPH_NonCopyable(_Underlying *_this);
+                Jolt.JPH.Const_NonCopyable ret = new(__JPH_Shape_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+
+            /// This is the minimum amount of triangles that should be requested through GetTrianglesNext.
+            public static unsafe int CGetTrianglesMinTrianglesRequested
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Get_cGetTrianglesMinTrianglesRequested", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Get_cGetTrianglesMinTrianglesRequested", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static int *__JPH_Shape_Get_cGetTrianglesMinTrianglesRequested();
+                    return *__JPH_Shape_Get_cGetTrianglesMinTrianglesRequested();
+                }
+            }
+
+            internal unsafe Const_Shape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+            /// Generated from method `JPH::Shape::operator new`.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(ulong inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_Shape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_Shape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_Shape_unsigned_long(ulong inCount);
+                return __Jolt_new_JPH_Shape_unsigned_long(inCount);
+            }
+
+            /// Generated from method `JPH::Shape::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_Shape_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_Shape_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_Shape_void_ptr(void *inPointer);
+                __Jolt_delete_JPH_Shape_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::Shape::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, ulong inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_Shape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_Shape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_Shape_void_ptr_unsigned_long(void *inPointer, ulong inSize);
+                __Jolt_delete_JPH_Shape_void_ptr_unsigned_long(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::Shape::operator new[]`.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(ulong inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_Shape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_Shape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_Shape_unsigned_long(ulong inCount);
+                return __Jolt_new_array_JPH_Shape_unsigned_long(inCount);
+            }
+
+            /// Generated from method `JPH::Shape::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_Shape_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_Shape_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_Shape_void_ptr(void *inPointer);
+                __Jolt_delete_array_JPH_Shape_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::Shape::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_Shape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_Shape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_Shape_void_ptr_unsigned_long(void *inPointer, ulong inSize);
+                __Jolt_delete_array_JPH_Shape_void_ptr_unsigned_long(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::Shape::operator new`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(ulong inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_Shape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_Shape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_Shape_unsigned_long_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_JPH_Shape_unsigned_long_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::Shape::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_Shape_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_Shape_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_Shape_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_JPH_Shape_void_ptr_void_ptr(inPointer, inPlace);
+            }
+
+            /// Generated from method `JPH::Shape::operator new[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(ulong inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_Shape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_Shape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_Shape_unsigned_long_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_array_JPH_Shape_unsigned_long_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::Shape::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_Shape_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_Shape_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_Shape_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_array_JPH_Shape_void_ptr_void_ptr(inPointer, inPlace);
+            }
+
+            /// User data (to be used freely by the application)
+            /// Generated from method `JPH::Shape::GetUserData`.
+            public unsafe ulong GetUserData()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static ulong __JPH_Shape_GetUserData(_Underlying *_this);
+                return __JPH_Shape_GetUserData(_UnderlyingPtr);
+            }
+
+            /// Check if this shape can only be used to create a static body or if it can also be dynamic/kinematic
+            /// Generated from method `JPH::Shape::MustBeStatic`.
+            public unsafe bool MustBeStatic()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_MustBeStatic", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_MustBeStatic", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_Shape_MustBeStatic(_Underlying *_this);
+                return __JPH_Shape_MustBeStatic(_UnderlyingPtr) != 0;
+            }
+
+            /// Get local bounding box including convex radius, this box is centered around the center of mass rather than the world transform
+            /// Generated from method `JPH::Shape::GetLocalBounds`.
+            public unsafe Jolt.JPH.AABox GetLocalBounds()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetLocalBounds", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetLocalBounds", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_Shape_GetLocalBounds(_Underlying *_this);
+                return new(__JPH_Shape_GetLocalBounds(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get the max number of sub shape ID bits that are needed to be able to address any leaf shape in this shape. Used mainly for checking that it is smaller or equal than SubShapeID::MaxBits.
+            /// Generated from method `JPH::Shape::GetSubShapeIDBitsRecursive`.
+            public unsafe uint GetSubShapeIDBitsRecursive()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetSubShapeIDBitsRecursive", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetSubShapeIDBitsRecursive", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint __JPH_Shape_GetSubShapeIDBitsRecursive(_Underlying *_this);
+                return __JPH_Shape_GetSubShapeIDBitsRecursive(_UnderlyingPtr);
+            }
+
+            /// Returns the radius of the biggest sphere that fits entirely in the shape. In case this shape consists of multiple sub shapes, it returns the smallest sphere of the parts.
+            /// This can be used as a measure of how far the shape can be moved without risking going through geometry.
+            /// Generated from method `JPH::Shape::GetInnerRadius`.
+            public unsafe float GetInnerRadius()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetInnerRadius", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetInnerRadius", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float __JPH_Shape_GetInnerRadius(_Underlying *_this);
+                return __JPH_Shape_GetInnerRadius(_UnderlyingPtr);
+            }
+
+            /// Get the leaf shape for a particular sub shape ID.
+            /// @param inSubShapeID The full sub shape ID that indicates the path to the leaf shape
+            /// @param outRemainder What remains of the sub shape ID after removing the path to the leaf shape (could e.g. refer to a triangle within a MeshShape)
+            /// @return The shape or null if the sub shape ID is invalid
+            /// Generated from method `JPH::Shape::GetLeafShape`.
+            public unsafe Jolt.JPH.Const_Shape? GetLeafShape(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.SubShapeID outRemainder)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetLeafShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetLeafShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_Shape._Underlying *__JPH_Shape_GetLeafShape(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.SubShapeID._Underlying *outRemainder);
+                var __c_ret = __JPH_Shape_GetLeafShape(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, outRemainder._UnderlyingPtr);
+                return __c_ret is not null ? new Jolt.JPH.Const_Shape(__c_ret, is_owning: false) : null;
+            }
+
+            /// Get the material assigned to a particular sub shape ID
+            /// Generated from method `JPH::Shape::GetMaterial`.
+            public unsafe Jolt.JPH.Const_PhysicsMaterial? GetMaterial(Jolt.JPH.Const_SubShapeID inSubShapeID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetMaterial", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetMaterial", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_PhysicsMaterial._Underlying *__JPH_Shape_GetMaterial(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID);
+                var __c_ret = __JPH_Shape_GetMaterial(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
+                return __c_ret is not null ? new Jolt.JPH.Const_PhysicsMaterial(__c_ret, is_owning: false) : null;
+            }
+
+            /// Get the user data of a particular sub shape ID. Corresponds with the value stored in Shape::GetUserData of the leaf shape pointed to by inSubShapeID.
+            /// Generated from method `JPH::Shape::GetSubShapeUserData`.
+            public unsafe ulong GetSubShapeUserData(Jolt.JPH.Const_SubShapeID inSubShapeID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetSubShapeUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetSubShapeUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static ulong __JPH_Shape_GetSubShapeUserData(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID);
+                return __JPH_Shape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
+            }
+
+            /// Get stats of this shape. Use for logging / data collection purposes only. Does not add values from child shapes, use GetStatsRecursive for this.
+            /// Generated from method `JPH::Shape::GetStats`.
+            public unsafe Jolt.JPH.Shape.Stats GetStats()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetStats", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetStats", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Shape.Stats._Underlying *__JPH_Shape_GetStats(_Underlying *_this);
+                return new(__JPH_Shape_GetStats(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Generated from method `JPH::Shape::GetVolume`.
+            public unsafe float GetVolume()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float __JPH_Shape_GetVolume(_Underlying *_this);
+                return __JPH_Shape_GetVolume(_UnderlyingPtr);
+            }
+
+            /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+            /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+            /// the object and at that point in time it is checked that no references are left to the structure.
+            /// Generated from method `JPH::Shape::SetEmbedded`.
+            public unsafe void SetEmbedded()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Shape_SetEmbedded(_Underlying *_this);
+                __JPH_Shape_SetEmbedded(_UnderlyingPtr);
+            }
+
+            /// Get current refcount of this object
+            /// Generated from method `JPH::Shape::GetRefCount`.
+            public unsafe uint GetRefCount()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint __JPH_Shape_GetRefCount(_Underlying *_this);
+                return __JPH_Shape_GetRefCount(_UnderlyingPtr);
+            }
+
+            /// Add or release a reference to this object
+            /// Generated from method `JPH::Shape::AddRef`.
+            public unsafe void AddRef()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Shape_AddRef(_Underlying *_this);
+                __JPH_Shape_AddRef(_UnderlyingPtr);
+            }
+
+            /// Generated from method `JPH::Shape::Release`.
+            public unsafe void Release()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Shape_Release(_Underlying *_this);
+                __JPH_Shape_Release(_UnderlyingPtr);
+            }
+
+            /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+            /// Generated from method `JPH::Shape::sInternalGetRefCountOffset`.
+            public static int SInternalGetRefCountOffset()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_Shape_sInternalGetRefCountOffset();
+                return __JPH_Shape_sInternalGetRefCountOffset();
+            }
+
+            /// An opaque buffer that holds shape specific information during GetTrianglesStart/Next.
+            /// Generated from class `JPH::Shape::GetTrianglesContext`.
+            /// This is the const half of the class.
+            public class Const_GetTrianglesContext : Jolt.Object<Const_GetTrianglesContext>, System.IDisposable
+            {
+                internal struct _Underlying {} // Represents the underlying C++ type.
+
+                internal unsafe _Underlying *_UnderlyingPtr;
+
+                protected virtual unsafe void Dispose(bool disposing)
+                {
+                    if (_UnderlyingPtr is null || !_IsOwningVal)
+                        return;
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static void __JPH_Shape_GetTrianglesContext_Destroy(_Underlying *_this);
+                    __JPH_Shape_GetTrianglesContext_Destroy(_UnderlyingPtr);
+                    _UnderlyingPtr = null;
+                }
+                public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+                ~Const_GetTrianglesContext() {Dispose(false);}
+
+                public unsafe ref Jolt.ArrayUnsignedChar4288 mData
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_Get_mData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_Get_mData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.ArrayUnsignedChar4288 *__JPH_Shape_GetTrianglesContext_Get_mData(_Underlying *_this);
+                        return ref *(__JPH_Shape_GetTrianglesContext_Get_mData(_UnderlyingPtr));
+                    }
+                }
+
+                internal unsafe Const_GetTrianglesContext(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+                /// Constructs an empty (default-constructed) instance.
+                public unsafe Const_GetTrianglesContext() : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Shape.GetTrianglesContext._Underlying *__JPH_Shape_GetTrianglesContext_DefaultConstruct();
+                    _UnderlyingPtr = __JPH_Shape_GetTrianglesContext_DefaultConstruct();
+                }
+
+                /// Generated from constructor `JPH::Shape::GetTrianglesContext::GetTrianglesContext`.
+                public unsafe Const_GetTrianglesContext(Jolt.JPH.Shape.Const_GetTrianglesContext _other) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Shape.GetTrianglesContext._Underlying *__JPH_Shape_GetTrianglesContext_ConstructFromAnother(Jolt.JPH.Shape.GetTrianglesContext._Underlying *_other);
+                    _UnderlyingPtr = __JPH_Shape_GetTrianglesContext_ConstructFromAnother(_other._UnderlyingPtr);
+                    _KeepAlive(_other);
+                }
+
+                /// Generated from constructor `JPH::Shape::GetTrianglesContext::GetTrianglesContext`.
+                public Const_GetTrianglesContext(GetTrianglesContext _other) : this((Const_GetTrianglesContext)_other) {}
+            }
+
+            /// An opaque buffer that holds shape specific information during GetTrianglesStart/Next.
+            /// Generated from class `JPH::Shape::GetTrianglesContext`.
+            /// This is the non-const half of the class.
+            public class GetTrianglesContext : Const_GetTrianglesContext
+            {
+                new public unsafe ref Jolt.ArrayUnsignedChar4288 mData
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_GetMutable_mData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_GetMutable_mData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.ArrayUnsignedChar4288 *__JPH_Shape_GetTrianglesContext_GetMutable_mData(_Underlying *_this);
+                        return ref *(__JPH_Shape_GetTrianglesContext_GetMutable_mData(_UnderlyingPtr));
+                    }
+                }
+
+                internal unsafe GetTrianglesContext(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+                /// Constructs an empty (default-constructed) instance.
+                public unsafe GetTrianglesContext() : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Shape.GetTrianglesContext._Underlying *__JPH_Shape_GetTrianglesContext_DefaultConstruct();
+                    _UnderlyingPtr = __JPH_Shape_GetTrianglesContext_DefaultConstruct();
+                }
+
+                /// Generated from constructor `JPH::Shape::GetTrianglesContext::GetTrianglesContext`.
+                public unsafe GetTrianglesContext(Jolt.JPH.Shape.Const_GetTrianglesContext _other) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Shape.GetTrianglesContext._Underlying *__JPH_Shape_GetTrianglesContext_ConstructFromAnother(Jolt.JPH.Shape.GetTrianglesContext._Underlying *_other);
+                    _UnderlyingPtr = __JPH_Shape_GetTrianglesContext_ConstructFromAnother(_other._UnderlyingPtr);
+                    _KeepAlive(_other);
+                }
+
+                /// Generated from constructor `JPH::Shape::GetTrianglesContext::GetTrianglesContext`.
+                public GetTrianglesContext(GetTrianglesContext _other) : this((Const_GetTrianglesContext)_other) {}
+
+                /// Generated from method `JPH::Shape::GetTrianglesContext::operator=`.
+                public unsafe Jolt.JPH.Shape.GetTrianglesContext Assign(Jolt.JPH.Shape.Const_GetTrianglesContext _other)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetTrianglesContext_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Shape.GetTrianglesContext._Underlying *__JPH_Shape_GetTrianglesContext_AssignFromAnother(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *_other);
+                    _DiscardKeepAlive();
+                    _KeepAlive(_other);
+                    return new(__JPH_Shape_GetTrianglesContext_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+                }
+            }
+
+            /// This is used for optional parameters of class `GetTrianglesContext` with default arguments.
+            /// This is only used mutable parameters. For const ones we have `_InOptConst_GetTrianglesContext`.
+            /// Usage:
+            /// * Pass `null` to use the default argument.
+            /// * Pass `new()` to pass no object.
+            /// * Pass an instance of `GetTrianglesContext`/`Const_GetTrianglesContext` directly.
+            public class _InOptMut_GetTrianglesContext
+            {
+                public GetTrianglesContext? Opt;
+
+                public _InOptMut_GetTrianglesContext() {}
+                public _InOptMut_GetTrianglesContext(GetTrianglesContext value) {Opt = value;}
+                public static implicit operator _InOptMut_GetTrianglesContext(GetTrianglesContext value) {return new(value);}
+            }
+
+            /// This is used for optional parameters of class `GetTrianglesContext` with default arguments.
+            /// This is only used const parameters. For non-const ones we have `_InOptMut_GetTrianglesContext`.
+            /// Usage:
+            /// * Pass `null` to use the default argument.
+            /// * Pass `new()` to pass no object.
+            /// * Pass an instance of `GetTrianglesContext`/`Const_GetTrianglesContext` to pass it to the function.
+            public class _InOptConst_GetTrianglesContext
+            {
+                public Const_GetTrianglesContext? Opt;
+
+                public _InOptConst_GetTrianglesContext() {}
+                public _InOptConst_GetTrianglesContext(Const_GetTrianglesContext value) {Opt = value;}
+                public static implicit operator _InOptConst_GetTrianglesContext(Const_GetTrianglesContext value) {return new(value);}
+            }
+
+            /// Class that holds information about the shape that can be used for logging / data collection purposes
+            /// Generated from class `JPH::Shape::Stats`.
+            /// This is the const half of the class.
+            public class Const_Stats : Jolt.Object<Const_Stats>, System.IDisposable
+            {
+                internal struct _Underlying {} // Represents the underlying C++ type.
+
+                internal unsafe _Underlying *_UnderlyingPtr;
+
+                protected virtual unsafe void Dispose(bool disposing)
+                {
+                    if (_UnderlyingPtr is null || !_IsOwningVal)
+                        return;
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Stats_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Stats_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static void __JPH_Shape_Stats_Destroy(_Underlying *_this);
+                    __JPH_Shape_Stats_Destroy(_UnderlyingPtr);
+                    _UnderlyingPtr = null;
+                }
+                public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+                ~Const_Stats() {Dispose(false);}
+
+                ///< Amount of memory used by this shape (size in bytes)
+                public unsafe ulong mSizeBytes
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Stats_Get_mSizeBytes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Stats_Get_mSizeBytes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static ulong *__JPH_Shape_Stats_Get_mSizeBytes(_Underlying *_this);
+                        return *__JPH_Shape_Stats_Get_mSizeBytes(_UnderlyingPtr);
+                    }
+                }
+
+                ///< Number of triangles in this shape (when applicable)
+                public unsafe uint mNumTriangles
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Stats_Get_mNumTriangles", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Stats_Get_mNumTriangles", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static uint *__JPH_Shape_Stats_Get_mNumTriangles(_Underlying *_this);
+                        return *__JPH_Shape_Stats_Get_mNumTriangles(_UnderlyingPtr);
+                    }
+                }
+
+                internal unsafe Const_Stats(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+                /// Generated from constructor `JPH::Shape::Stats::Stats`.
+                public unsafe Const_Stats(Jolt.JPH.Shape.Const_Stats _other) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Stats_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Stats_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Shape.Stats._Underlying *__JPH_Shape_Stats_ConstructFromAnother(Jolt.JPH.Shape.Stats._Underlying *_other);
+                    _UnderlyingPtr = __JPH_Shape_Stats_ConstructFromAnother(_other._UnderlyingPtr);
+                    _KeepAlive(_other);
+                }
+
+                /// Generated from constructor `JPH::Shape::Stats::Stats`.
+                public Const_Stats(Stats _other) : this((Const_Stats)_other) {}
+
+                /// Generated from constructor `JPH::Shape::Stats::Stats`.
+                public unsafe Const_Stats(ulong inSizeBytes, uint inNumTriangles) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Stats_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Stats_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Shape.Stats._Underlying *__JPH_Shape_Stats_Construct(ulong inSizeBytes, uint inNumTriangles);
+                    _UnderlyingPtr = __JPH_Shape_Stats_Construct(inSizeBytes, inNumTriangles);
+                }
+            }
+
+            /// Class that holds information about the shape that can be used for logging / data collection purposes
+            /// Generated from class `JPH::Shape::Stats`.
+            /// This is the non-const half of the class.
+            public class Stats : Const_Stats
+            {
+                ///< Amount of memory used by this shape (size in bytes)
+                public new unsafe ref ulong mSizeBytes
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Stats_GetMutable_mSizeBytes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Stats_GetMutable_mSizeBytes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static ulong *__JPH_Shape_Stats_GetMutable_mSizeBytes(_Underlying *_this);
+                        return ref *__JPH_Shape_Stats_GetMutable_mSizeBytes(_UnderlyingPtr);
+                    }
+                }
+
+                ///< Number of triangles in this shape (when applicable)
+                public new unsafe ref uint mNumTriangles
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Stats_GetMutable_mNumTriangles", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Stats_GetMutable_mNumTriangles", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static uint *__JPH_Shape_Stats_GetMutable_mNumTriangles(_Underlying *_this);
+                        return ref *__JPH_Shape_Stats_GetMutable_mNumTriangles(_UnderlyingPtr);
+                    }
+                }
+
+                internal unsafe Stats(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+                /// Generated from constructor `JPH::Shape::Stats::Stats`.
+                public unsafe Stats(Jolt.JPH.Shape.Const_Stats _other) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Stats_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Stats_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Shape.Stats._Underlying *__JPH_Shape_Stats_ConstructFromAnother(Jolt.JPH.Shape.Stats._Underlying *_other);
+                    _UnderlyingPtr = __JPH_Shape_Stats_ConstructFromAnother(_other._UnderlyingPtr);
+                    _KeepAlive(_other);
+                }
+
+                /// Generated from constructor `JPH::Shape::Stats::Stats`.
+                public Stats(Stats _other) : this((Const_Stats)_other) {}
+
+                /// Generated from constructor `JPH::Shape::Stats::Stats`.
+                public unsafe Stats(ulong inSizeBytes, uint inNumTriangles) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Stats_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Stats_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Shape.Stats._Underlying *__JPH_Shape_Stats_Construct(ulong inSizeBytes, uint inNumTriangles);
+                    _UnderlyingPtr = __JPH_Shape_Stats_Construct(inSizeBytes, inNumTriangles);
+                }
+
+                /// Generated from method `JPH::Shape::Stats::operator=`.
+                public unsafe Jolt.JPH.Shape.Stats Assign(Jolt.JPH.Shape.Const_Stats _other)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_Stats_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_Stats_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Shape.Stats._Underlying *__JPH_Shape_Stats_AssignFromAnother(_Underlying *_this, Jolt.JPH.Shape.Stats._Underlying *_other);
+                    _DiscardKeepAlive();
+                    _KeepAlive(_other);
+                    return new(__JPH_Shape_Stats_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+                }
+            }
+
+            /// This is used for optional parameters of class `Stats` with default arguments.
+            /// This is only used mutable parameters. For const ones we have `_InOptConst_Stats`.
+            /// Usage:
+            /// * Pass `null` to use the default argument.
+            /// * Pass `new()` to pass no object.
+            /// * Pass an instance of `Stats`/`Const_Stats` directly.
+            public class _InOptMut_Stats
+            {
+                public Stats? Opt;
+
+                public _InOptMut_Stats() {}
+                public _InOptMut_Stats(Stats value) {Opt = value;}
+                public static implicit operator _InOptMut_Stats(Stats value) {return new(value);}
+            }
+
+            /// This is used for optional parameters of class `Stats` with default arguments.
+            /// This is only used const parameters. For non-const ones we have `_InOptMut_Stats`.
+            /// Usage:
+            /// * Pass `null` to use the default argument.
+            /// * Pass `new()` to pass no object.
+            /// * Pass an instance of `Stats`/`Const_Stats` to pass it to the function.
+            public class _InOptConst_Stats
+            {
+                public Const_Stats? Opt;
+
+                public _InOptConst_Stats() {}
+                public _InOptConst_Stats(Const_Stats value) {Opt = value;}
+                public static implicit operator _InOptConst_Stats(Const_Stats value) {return new(value);}
+            }
+        }
+
+        /// Base class for all shapes (collision volume of a body). Defines a virtual interface for collision detection.
+        /// Generated from class `JPH::Shape`.
+        /// Base classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::RefTarget<JPH::Shape>`
+        ///     `JPH::NonCopyable`
+        /// Derived classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::CompoundShape`
+        ///     `JPH::ConvexShape`
+        ///     `JPH::DecoratedShape`
+        ///     `JPH::EmptyShape`
+        ///     `JPH::HeightFieldShape`
+        ///     `JPH::MeshShape`
+        ///     `JPH::PlaneShape`
+        ///   Indirect: (non-virtual)
+        ///     `JPH::BoxShape`
+        ///     `JPH::CapsuleShape`
+        ///     `JPH::ConvexHullShape`
+        ///     `JPH::CylinderShape`
+        ///     `JPH::MutableCompoundShape`
+        ///     `JPH::OffsetCenterOfMassShape`
+        ///     `JPH::RotatedTranslatedShape`
+        ///     `JPH::ScaledShape`
+        ///     `JPH::SphereShape`
+        ///     `JPH::StaticCompoundShape`
+        ///     `JPH::TaperedCapsuleShape`
+        ///     `JPH::TaperedCylinderShape`
+        ///     `JPH::TriangleShape`
+        /// This is the non-const half of the class.
+        public class Shape : Const_Shape
+        {
+            // Upcasts:
+            public static unsafe implicit operator Jolt.JPH.RefTarget_JPHShape(Shape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.RefTarget_JPHShape._Underlying *__JPH_Shape_UpcastTo_JPH_RefTarget_JPH_Shape(_Underlying *_this);
+                Jolt.JPH.RefTarget_JPHShape ret = new(__JPH_Shape_UpcastTo_JPH_RefTarget_JPH_Shape(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.NonCopyable(Shape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.NonCopyable._Underlying *__JPH_Shape_UpcastTo_JPH_NonCopyable(_Underlying *_this);
+                Jolt.JPH.NonCopyable ret = new(__JPH_Shape_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+
+            internal unsafe Shape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+            /// Generated from method `JPH::Shape::SetUserData`.
+            public unsafe void SetUserData(ulong inUserData)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Shape_SetUserData(_Underlying *_this, ulong inUserData);
+                __JPH_Shape_SetUserData(_UnderlyingPtr, inUserData);
+            }
+        }
+
+        /// This is used for optional parameters of class `Shape` with default arguments.
+        /// This is only used mutable parameters. For const ones we have `_InOptConst_Shape`.
+        /// Usage:
+        /// * Pass `null` to use the default argument.
+        /// * Pass `new()` to pass no object.
+        /// * Pass an instance of `Shape`/`Const_Shape` directly.
+        public class _InOptMut_Shape
+        {
+            public Shape? Opt;
+
+            public _InOptMut_Shape() {}
+            public _InOptMut_Shape(Shape value) {Opt = value;}
+            public static implicit operator _InOptMut_Shape(Shape value) {return new(value);}
+        }
+
+        /// This is used for optional parameters of class `Shape` with default arguments.
+        /// This is only used const parameters. For non-const ones we have `_InOptMut_Shape`.
+        /// Usage:
+        /// * Pass `null` to use the default argument.
+        /// * Pass `new()` to pass no object.
+        /// * Pass an instance of `Shape`/`Const_Shape` to pass it to the function.
+        public class _InOptConst_Shape
+        {
+            public Const_Shape? Opt;
+
+            public _InOptConst_Shape() {}
+            public _InOptConst_Shape(Const_Shape value) {Opt = value;}
+            public static implicit operator _InOptConst_Shape(Const_Shape value) {return new(value);}
+        }
+    }
+}

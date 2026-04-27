@@ -1,0 +1,1408 @@
+// machine generated, do not edit
+public static partial class Jolt
+{
+    public static partial class JPH
+    {
+        /// Class that constructs a MutableCompoundShape.
+        /// Generated from class `JPH::MutableCompoundShapeSettings`.
+        /// Base classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::CompoundShapeSettings`
+        ///   Indirect: (non-virtual)
+        ///     `JPH::SerializableObject`
+        ///     `JPH::RefTarget<JPH::ShapeSettings>`
+        ///     `JPH::ShapeSettings`
+        /// This is the const half of the class.
+        public class Const_MutableCompoundShapeSettings : Jolt.Object<Const_MutableCompoundShapeSettings>, System.IDisposable
+        {
+            internal struct _Underlying {} // Represents the underlying C++ type.
+
+            internal unsafe _Underlying *_UnderlyingPtr;
+
+            protected virtual unsafe void Dispose(bool disposing)
+            {
+                if (_UnderlyingPtr is null || !_IsOwningVal)
+                    return;
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShapeSettings_Destroy(_Underlying *_this);
+                __JPH_MutableCompoundShapeSettings_Destroy(_UnderlyingPtr);
+                _UnderlyingPtr = null;
+            }
+            public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+            ~Const_MutableCompoundShapeSettings() {Dispose(false);}
+
+            // Upcasts:
+            public static unsafe implicit operator Jolt.JPH.Const_SerializableObject(Const_MutableCompoundShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_SerializableObject._Underlying *__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_SerializableObject(_Underlying *_this);
+                Jolt.JPH.Const_SerializableObject ret = new(__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_SerializableObject(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.Const_RefTarget_JPHShapeSettings(Const_MutableCompoundShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_RefTarget_JPHShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+                Jolt.JPH.Const_RefTarget_JPHShapeSettings ret = new(__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.Const_ShapeSettings(Const_MutableCompoundShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_ShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_ShapeSettings(_Underlying *_this);
+                Jolt.JPH.Const_ShapeSettings ret = new(__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_ShapeSettings(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.Const_CompoundShapeSettings(Const_MutableCompoundShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_CompoundShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_CompoundShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_CompoundShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_CompoundShapeSettings(_Underlying *_this);
+                Jolt.JPH.Const_CompoundShapeSettings ret = new(__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_CompoundShapeSettings(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+
+            // Downcasts:
+            public static unsafe explicit operator Const_MutableCompoundShapeSettings?(Jolt.JPH.Const_SerializableObject parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(Jolt.JPH.Const_SerializableObject._Underlying *_this);
+                var ptr = __JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                Const_MutableCompoundShapeSettings ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+            public static unsafe explicit operator Const_MutableCompoundShapeSettings?(Jolt.JPH.Const_ShapeSettings parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings(Jolt.JPH.Const_ShapeSettings._Underlying *_this);
+                var ptr = __JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                Const_MutableCompoundShapeSettings ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+            public static unsafe explicit operator Const_MutableCompoundShapeSettings?(Jolt.JPH.Const_CompoundShapeSettings parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_CompoundShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_CompoundShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_CompoundShapeSettings(Jolt.JPH.Const_CompoundShapeSettings._Underlying *_this);
+                var ptr = __JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_CompoundShapeSettings(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                Const_MutableCompoundShapeSettings ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+
+            /// User data (to be used freely by the application)
+            public unsafe ulong mUserData
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_Get_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_Get_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static ulong *__JPH_MutableCompoundShapeSettings_Get_mUserData(_Underlying *_this);
+                    return *__JPH_MutableCompoundShapeSettings_Get_mUserData(_UnderlyingPtr);
+                }
+            }
+
+            internal unsafe Const_MutableCompoundShapeSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+            /// Constructs an empty (default-constructed) instance.
+            public unsafe Const_MutableCompoundShapeSettings() : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.MutableCompoundShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_DefaultConstruct();
+                _UnderlyingPtr = __JPH_MutableCompoundShapeSettings_DefaultConstruct();
+            }
+
+            /// Generated from constructor `JPH::MutableCompoundShapeSettings::MutableCompoundShapeSettings`.
+            public unsafe Const_MutableCompoundShapeSettings(Jolt.JPH._ByValue_MutableCompoundShapeSettings _other) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.MutableCompoundShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JPH.MutableCompoundShapeSettings._Underlying *_other);
+                _UnderlyingPtr = __JPH_MutableCompoundShapeSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+                if (_other.Value is not null) _KeepAlive(_other.Value);
+            }
+
+            /// Generated from constructor `JPH::MutableCompoundShapeSettings::MutableCompoundShapeSettings`.
+            public Const_MutableCompoundShapeSettings(Const_MutableCompoundShapeSettings _other) : this(new _ByValue_MutableCompoundShapeSettings(_other)) {}
+
+            /// Generated from constructor `JPH::MutableCompoundShapeSettings::MutableCompoundShapeSettings`.
+            public Const_MutableCompoundShapeSettings(MutableCompoundShapeSettings _other) : this((Const_MutableCompoundShapeSettings)_other) {}
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::operator new`.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(ulong inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_MutableCompoundShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_MutableCompoundShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_MutableCompoundShapeSettings_unsigned_long(ulong inCount);
+                return __Jolt_new_JPH_MutableCompoundShapeSettings_unsigned_long(inCount);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr(void *inPointer);
+                __Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, ulong inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long(void *inPointer, ulong inSize);
+                __Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::operator new[]`.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(ulong inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_MutableCompoundShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_MutableCompoundShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_MutableCompoundShapeSettings_unsigned_long(ulong inCount);
+                return __Jolt_new_array_JPH_MutableCompoundShapeSettings_unsigned_long(inCount);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr(void *inPointer);
+                __Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long(void *inPointer, ulong inSize);
+                __Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::operator new`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(ulong inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_MutableCompoundShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_MutableCompoundShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_MutableCompoundShapeSettings_unsigned_long_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_JPH_MutableCompoundShapeSettings_unsigned_long_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_void_ptr(inPointer, inPlace);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::operator new[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(ulong inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_MutableCompoundShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_MutableCompoundShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_MutableCompoundShapeSettings_unsigned_long_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_array_JPH_MutableCompoundShapeSettings_unsigned_long_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_void_ptr(inPointer, inPlace);
+            }
+
+            /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+            /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+            /// the object and at that point in time it is checked that no references are left to the structure.
+            /// Generated from method `JPH::MutableCompoundShapeSettings::SetEmbedded`.
+            public unsafe void SetEmbedded()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShapeSettings_SetEmbedded(_Underlying *_this);
+                __JPH_MutableCompoundShapeSettings_SetEmbedded(_UnderlyingPtr);
+            }
+
+            /// Get current refcount of this object
+            /// Generated from method `JPH::MutableCompoundShapeSettings::GetRefCount`.
+            public unsafe uint GetRefCount()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint __JPH_MutableCompoundShapeSettings_GetRefCount(_Underlying *_this);
+                return __JPH_MutableCompoundShapeSettings_GetRefCount(_UnderlyingPtr);
+            }
+
+            /// Add or release a reference to this object
+            /// Generated from method `JPH::MutableCompoundShapeSettings::AddRef`.
+            public unsafe void AddRef()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShapeSettings_AddRef(_Underlying *_this);
+                __JPH_MutableCompoundShapeSettings_AddRef(_UnderlyingPtr);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::Release`.
+            public unsafe void Release()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShapeSettings_Release(_Underlying *_this);
+                __JPH_MutableCompoundShapeSettings_Release(_UnderlyingPtr);
+            }
+
+            /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+            /// Generated from method `JPH::MutableCompoundShapeSettings::sInternalGetRefCountOffset`.
+            public static int SInternalGetRefCountOffset()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_MutableCompoundShapeSettings_sInternalGetRefCountOffset();
+                return __JPH_MutableCompoundShapeSettings_sInternalGetRefCountOffset();
+            }
+        }
+
+        /// Class that constructs a MutableCompoundShape.
+        /// Generated from class `JPH::MutableCompoundShapeSettings`.
+        /// Base classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::CompoundShapeSettings`
+        ///   Indirect: (non-virtual)
+        ///     `JPH::SerializableObject`
+        ///     `JPH::RefTarget<JPH::ShapeSettings>`
+        ///     `JPH::ShapeSettings`
+        /// This is the non-const half of the class.
+        public class MutableCompoundShapeSettings : Const_MutableCompoundShapeSettings
+        {
+            // Upcasts:
+            public static unsafe implicit operator Jolt.JPH.SerializableObject(MutableCompoundShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.SerializableObject._Underlying *__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_SerializableObject(_Underlying *_this);
+                Jolt.JPH.SerializableObject ret = new(__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_SerializableObject(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.RefTarget_JPHShapeSettings(MutableCompoundShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.RefTarget_JPHShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+                Jolt.JPH.RefTarget_JPHShapeSettings ret = new(__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.ShapeSettings(MutableCompoundShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_ShapeSettings(_Underlying *_this);
+                Jolt.JPH.ShapeSettings ret = new(__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_ShapeSettings(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.CompoundShapeSettings(MutableCompoundShapeSettings self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_CompoundShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_UpcastTo_JPH_CompoundShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.CompoundShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_CompoundShapeSettings(_Underlying *_this);
+                Jolt.JPH.CompoundShapeSettings ret = new(__JPH_MutableCompoundShapeSettings_UpcastTo_JPH_CompoundShapeSettings(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+
+            // Downcasts:
+            public static unsafe explicit operator MutableCompoundShapeSettings?(Jolt.JPH.SerializableObject parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(Jolt.JPH.SerializableObject._Underlying *_this);
+                var ptr = __JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                MutableCompoundShapeSettings ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+            public static unsafe explicit operator MutableCompoundShapeSettings?(Jolt.JPH.ShapeSettings parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings(Jolt.JPH.ShapeSettings._Underlying *_this);
+                var ptr = __JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                MutableCompoundShapeSettings ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+            public static unsafe explicit operator MutableCompoundShapeSettings?(Jolt.JPH.CompoundShapeSettings parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_CompoundShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_CompoundShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_CompoundShapeSettings(Jolt.JPH.CompoundShapeSettings._Underlying *_this);
+                var ptr = __JPH_MutableCompoundShapeSettings_DynamicDowncastFrom_JPH_CompoundShapeSettings(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                MutableCompoundShapeSettings ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+
+            /// User data (to be used freely by the application)
+            public new unsafe ref ulong mUserData
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_GetMutable_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_GetMutable_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static ulong *__JPH_MutableCompoundShapeSettings_GetMutable_mUserData(_Underlying *_this);
+                    return ref *__JPH_MutableCompoundShapeSettings_GetMutable_mUserData(_UnderlyingPtr);
+                }
+            }
+
+            internal unsafe MutableCompoundShapeSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+            /// Constructs an empty (default-constructed) instance.
+            public unsafe MutableCompoundShapeSettings() : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.MutableCompoundShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_DefaultConstruct();
+                _UnderlyingPtr = __JPH_MutableCompoundShapeSettings_DefaultConstruct();
+            }
+
+            /// Generated from constructor `JPH::MutableCompoundShapeSettings::MutableCompoundShapeSettings`.
+            public unsafe MutableCompoundShapeSettings(Jolt.JPH._ByValue_MutableCompoundShapeSettings _other) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.MutableCompoundShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_ConstructFromAnother(Jolt._PassBy _other_pass_by, Jolt.JPH.MutableCompoundShapeSettings._Underlying *_other);
+                _UnderlyingPtr = __JPH_MutableCompoundShapeSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+                if (_other.Value is not null) _KeepAlive(_other.Value);
+            }
+
+            /// Generated from constructor `JPH::MutableCompoundShapeSettings::MutableCompoundShapeSettings`.
+            public MutableCompoundShapeSettings(Const_MutableCompoundShapeSettings _other) : this(new _ByValue_MutableCompoundShapeSettings(_other)) {}
+
+            /// Generated from constructor `JPH::MutableCompoundShapeSettings::MutableCompoundShapeSettings`.
+            public MutableCompoundShapeSettings(MutableCompoundShapeSettings _other) : this((Const_MutableCompoundShapeSettings)_other) {}
+
+            /// Generated from method `JPH::MutableCompoundShapeSettings::operator=`.
+            public unsafe Jolt.JPH.MutableCompoundShapeSettings Assign(Jolt.JPH._ByValue_MutableCompoundShapeSettings _other)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.MutableCompoundShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_AssignFromAnother(_Underlying *_this, Jolt._PassBy _other_pass_by, Jolt.JPH.MutableCompoundShapeSettings._Underlying *_other);
+                _DiscardKeepAlive();
+                if (_other.Value is not null) _KeepAlive(_other.Value);
+                return new(__JPH_MutableCompoundShapeSettings_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+            }
+
+            /// When creating a shape, the result is cached so that calling Create() again will return the same shape.
+            /// If you make changes to the ShapeSettings you need to call this function to clear the cached result to allow Create() to build a new shape.
+            /// Generated from method `JPH::MutableCompoundShapeSettings::ClearCachedResult`.
+            public unsafe void ClearCachedResult()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_ClearCachedResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_ClearCachedResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShapeSettings_ClearCachedResult(_Underlying *_this);
+                __JPH_MutableCompoundShapeSettings_ClearCachedResult(_UnderlyingPtr);
+            }
+        }
+
+        /// This is used as a function parameter when the underlying function receives `MutableCompoundShapeSettings` by value.
+        /// Usage:
+        /// * Pass `new()` to default-construct the instance.
+        /// * Pass an instance of `MutableCompoundShapeSettings`/`Const_MutableCompoundShapeSettings` to copy it into the function.
+        /// * Pass `Move(instance)` to move it into the function. This is a more efficient form of copying that might invalidate the input object.
+        ///   Be careful if your input isn't a unique reference to this object.
+        /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+        public class _ByValue_MutableCompoundShapeSettings
+        {
+            #pragma warning disable CS0649
+            internal readonly Const_MutableCompoundShapeSettings? Value;
+            #pragma warning restore CS0649
+            internal readonly Jolt._PassBy PassByMode;
+            public _ByValue_MutableCompoundShapeSettings() {PassByMode = Jolt._PassBy.default_construct;}
+            public _ByValue_MutableCompoundShapeSettings(Const_MutableCompoundShapeSettings new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+            public static implicit operator _ByValue_MutableCompoundShapeSettings(Const_MutableCompoundShapeSettings arg) {return new(arg);}
+            public _ByValue_MutableCompoundShapeSettings(Jolt._Moved<MutableCompoundShapeSettings> moved) {Value = moved.Value; PassByMode = Jolt._PassBy.move;}
+            public static implicit operator _ByValue_MutableCompoundShapeSettings(Jolt._Moved<MutableCompoundShapeSettings> arg) {return new(arg);}
+        }
+
+        /// This is used for optional parameters of class `MutableCompoundShapeSettings` with default arguments.
+        /// This is only used mutable parameters. For const ones we have `_InOptConst_MutableCompoundShapeSettings`.
+        /// Usage:
+        /// * Pass `null` to use the default argument.
+        /// * Pass `new()` to pass no object.
+        /// * Pass an instance of `MutableCompoundShapeSettings`/`Const_MutableCompoundShapeSettings` directly.
+        public class _InOptMut_MutableCompoundShapeSettings
+        {
+            public MutableCompoundShapeSettings? Opt;
+
+            public _InOptMut_MutableCompoundShapeSettings() {}
+            public _InOptMut_MutableCompoundShapeSettings(MutableCompoundShapeSettings value) {Opt = value;}
+            public static implicit operator _InOptMut_MutableCompoundShapeSettings(MutableCompoundShapeSettings value) {return new(value);}
+        }
+
+        /// This is used for optional parameters of class `MutableCompoundShapeSettings` with default arguments.
+        /// This is only used const parameters. For non-const ones we have `_InOptMut_MutableCompoundShapeSettings`.
+        /// Usage:
+        /// * Pass `null` to use the default argument.
+        /// * Pass `new()` to pass no object.
+        /// * Pass an instance of `MutableCompoundShapeSettings`/`Const_MutableCompoundShapeSettings` to pass it to the function.
+        public class _InOptConst_MutableCompoundShapeSettings
+        {
+            public Const_MutableCompoundShapeSettings? Opt;
+
+            public _InOptConst_MutableCompoundShapeSettings() {}
+            public _InOptConst_MutableCompoundShapeSettings(Const_MutableCompoundShapeSettings value) {Opt = value;}
+            public static implicit operator _InOptConst_MutableCompoundShapeSettings(Const_MutableCompoundShapeSettings value) {return new(value);}
+        }
+
+        /// A compound shape, sub shapes can be rotated and translated.
+        /// This shape is optimized for adding / removing and changing the rotation / translation of sub shapes but is less efficient in querying.
+        /// Shifts all child objects so that they're centered around the center of mass (which needs to be kept up to date by calling AdjustCenterOfMass).
+        ///
+        /// Note: If you're using MutableCompoundShape and are querying data while modifying the shape you'll have a race condition.
+        /// In this case it is best to create a new MutableCompoundShape using the Clone function. You replace the shape on a body using BodyInterface::SetShape.
+        /// If a query is still working on the old shape, it will have taken a reference and keep the old shape alive until the query finishes.
+        ///
+        /// When you modify a MutableCompoundShape, beware that the SubShapeIDs of all other shapes can change. So be careful when storing SubShapeIDs.
+        /// Generated from class `JPH::MutableCompoundShape`.
+        /// Base classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::CompoundShape`
+        ///   Indirect: (non-virtual)
+        ///     `JPH::RefTarget<JPH::Shape>`
+        ///     `JPH::NonCopyable`
+        ///     `JPH::Shape`
+        /// This is the const half of the class.
+        public class Const_MutableCompoundShape : Jolt.Object<Const_MutableCompoundShape>, System.IDisposable
+        {
+            internal struct _Underlying {} // Represents the underlying C++ type.
+
+            internal unsafe _Underlying *_UnderlyingPtr;
+
+            protected virtual unsafe void Dispose(bool disposing)
+            {
+                if (_UnderlyingPtr is null || !_IsOwningVal)
+                    return;
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_Destroy(_Underlying *_this);
+                __JPH_MutableCompoundShape_Destroy(_UnderlyingPtr);
+                _UnderlyingPtr = null;
+            }
+            public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+            ~Const_MutableCompoundShape() {Dispose(false);}
+
+            // Upcasts:
+            public static unsafe implicit operator Jolt.JPH.Const_RefTarget_JPHShape(Const_MutableCompoundShape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_RefTarget_JPHShape._Underlying *__JPH_MutableCompoundShape_UpcastTo_JPH_RefTarget_JPH_Shape(_Underlying *_this);
+                Jolt.JPH.Const_RefTarget_JPHShape ret = new(__JPH_MutableCompoundShape_UpcastTo_JPH_RefTarget_JPH_Shape(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.Const_NonCopyable(Const_MutableCompoundShape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_NonCopyable._Underlying *__JPH_MutableCompoundShape_UpcastTo_JPH_NonCopyable(_Underlying *_this);
+                Jolt.JPH.Const_NonCopyable ret = new(__JPH_MutableCompoundShape_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.Const_Shape(Const_MutableCompoundShape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_Shape._Underlying *__JPH_MutableCompoundShape_UpcastTo_JPH_Shape(_Underlying *_this);
+                Jolt.JPH.Const_Shape ret = new(__JPH_MutableCompoundShape_UpcastTo_JPH_Shape(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.Const_CompoundShape(Const_MutableCompoundShape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_CompoundShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_CompoundShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_CompoundShape._Underlying *__JPH_MutableCompoundShape_UpcastTo_JPH_CompoundShape(_Underlying *_this);
+                Jolt.JPH.Const_CompoundShape ret = new(__JPH_MutableCompoundShape_UpcastTo_JPH_CompoundShape(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+
+            // Downcasts:
+            public static unsafe explicit operator Const_MutableCompoundShape?(Jolt.JPH.Const_Shape parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_Shape(Jolt.JPH.Const_Shape._Underlying *_this);
+                var ptr = __JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_Shape(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                Const_MutableCompoundShape ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+            public static unsafe explicit operator Const_MutableCompoundShape?(Jolt.JPH.Const_CompoundShape parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_CompoundShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_CompoundShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_CompoundShape(Jolt.JPH.Const_CompoundShape._Underlying *_this);
+                var ptr = __JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_CompoundShape(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                Const_MutableCompoundShape ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+
+            /// This is the minimum amount of triangles that should be requested through GetTrianglesNext.
+            public static unsafe int CGetTrianglesMinTrianglesRequested
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_Get_cGetTrianglesMinTrianglesRequested", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_Get_cGetTrianglesMinTrianglesRequested", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static int *__JPH_MutableCompoundShape_Get_cGetTrianglesMinTrianglesRequested();
+                    return *__JPH_MutableCompoundShape_Get_cGetTrianglesMinTrianglesRequested();
+                }
+            }
+
+            internal unsafe Const_MutableCompoundShape(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+            /// Constructs an empty (default-constructed) instance.
+            public unsafe Const_MutableCompoundShape() : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.MutableCompoundShape._Underlying *__JPH_MutableCompoundShape_DefaultConstruct();
+                _UnderlyingPtr = __JPH_MutableCompoundShape_DefaultConstruct();
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::operator new`.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(ulong inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_MutableCompoundShape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_MutableCompoundShape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_MutableCompoundShape_unsigned_long(ulong inCount);
+                return __Jolt_new_JPH_MutableCompoundShape_unsigned_long(inCount);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShape_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShape_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_MutableCompoundShape_void_ptr(void *inPointer);
+                __Jolt_delete_JPH_MutableCompoundShape_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, ulong inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_MutableCompoundShape_void_ptr_unsigned_long(void *inPointer, ulong inSize);
+                __Jolt_delete_JPH_MutableCompoundShape_void_ptr_unsigned_long(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::operator new[]`.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(ulong inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_MutableCompoundShape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_MutableCompoundShape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_MutableCompoundShape_unsigned_long(ulong inCount);
+                return __Jolt_new_array_JPH_MutableCompoundShape_unsigned_long(inCount);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShape_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShape_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_MutableCompoundShape_void_ptr(void *inPointer);
+                __Jolt_delete_array_JPH_MutableCompoundShape_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_unsigned_long(void *inPointer, ulong inSize);
+                __Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_unsigned_long(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::operator new`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(ulong inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_MutableCompoundShape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_MutableCompoundShape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_MutableCompoundShape_unsigned_long_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_JPH_MutableCompoundShape_unsigned_long_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShape_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_MutableCompoundShape_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_MutableCompoundShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_JPH_MutableCompoundShape_void_ptr_void_ptr(inPointer, inPlace);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::operator new[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(ulong inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_MutableCompoundShape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_MutableCompoundShape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_MutableCompoundShape_unsigned_long_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_array_JPH_MutableCompoundShape_unsigned_long_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_void_ptr(inPointer, inPlace);
+            }
+
+            // See: CompoundShape::GetIntersectingSubShapes
+            /// Generated from method `JPH::MutableCompoundShape::GetIntersectingSubShapes`.
+            public unsafe int GetIntersectingSubShapes(Jolt.JPH.Const_AABox inBox, Jolt.InOut<uint>? outSubShapeIndices, int inMaxSubShapeIndices)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetIntersectingSubShapes_JPH_AABox", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetIntersectingSubShapes_JPH_AABox", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_MutableCompoundShape_GetIntersectingSubShapes_JPH_AABox(_Underlying *_this, Jolt.JPH.Const_AABox._Underlying *inBox, uint *outSubShapeIndices, int inMaxSubShapeIndices);
+                uint __value_outSubShapeIndices = outSubShapeIndices is not null ? outSubShapeIndices.Value : default(uint);
+                var __c_ret = __JPH_MutableCompoundShape_GetIntersectingSubShapes_JPH_AABox(_UnderlyingPtr, inBox._UnderlyingPtr, outSubShapeIndices is not null ? &__value_outSubShapeIndices : null, inMaxSubShapeIndices);
+                if (outSubShapeIndices is not null) outSubShapeIndices.Value = __value_outSubShapeIndices;
+                return __c_ret;
+            }
+
+            // See Shape::GetStats
+            /// Generated from method `JPH::MutableCompoundShape::GetStats`.
+            public unsafe Jolt.JPH.Shape.Stats GetStats()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetStats", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetStats", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Shape.Stats._Underlying *__JPH_MutableCompoundShape_GetStats(_Underlying *_this);
+                return new(__JPH_MutableCompoundShape_GetStats(_UnderlyingPtr), is_owning: true);
+            }
+
+            // Register shape functions with the registry
+            /// Generated from method `JPH::MutableCompoundShape::sRegister`.
+            public static void SRegister()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_sRegister", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_sRegister", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_sRegister();
+                __JPH_MutableCompoundShape_sRegister();
+            }
+
+            // See Shape::MustBeStatic
+            /// Generated from method `JPH::MutableCompoundShape::MustBeStatic`.
+            public unsafe bool MustBeStatic()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_MustBeStatic", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_MustBeStatic", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_MutableCompoundShape_MustBeStatic(_Underlying *_this);
+                return __JPH_MutableCompoundShape_MustBeStatic(_UnderlyingPtr) != 0;
+            }
+
+            // See Shape::GetLocalBounds
+            /// Generated from method `JPH::MutableCompoundShape::GetLocalBounds`.
+            public unsafe Jolt.JPH.AABox GetLocalBounds()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetLocalBounds", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetLocalBounds", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_MutableCompoundShape_GetLocalBounds(_Underlying *_this);
+                return new(__JPH_MutableCompoundShape_GetLocalBounds(_UnderlyingPtr), is_owning: true);
+            }
+
+            // See Shape::GetSubShapeIDBitsRecursive
+            /// Generated from method `JPH::MutableCompoundShape::GetSubShapeIDBitsRecursive`.
+            public unsafe uint GetSubShapeIDBitsRecursive()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSubShapeIDBitsRecursive", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSubShapeIDBitsRecursive", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint __JPH_MutableCompoundShape_GetSubShapeIDBitsRecursive(_Underlying *_this);
+                return __JPH_MutableCompoundShape_GetSubShapeIDBitsRecursive(_UnderlyingPtr);
+            }
+
+            // See Shape::GetInnerRadius
+            /// Generated from method `JPH::MutableCompoundShape::GetInnerRadius`.
+            public unsafe float GetInnerRadius()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetInnerRadius", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetInnerRadius", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float __JPH_MutableCompoundShape_GetInnerRadius(_Underlying *_this);
+                return __JPH_MutableCompoundShape_GetInnerRadius(_UnderlyingPtr);
+            }
+
+            // See Shape::GetMaterial
+            /// Generated from method `JPH::MutableCompoundShape::GetMaterial`.
+            public unsafe Jolt.JPH.Const_PhysicsMaterial? GetMaterial(Jolt.JPH.Const_SubShapeID inSubShapeID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetMaterial", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetMaterial", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_PhysicsMaterial._Underlying *__JPH_MutableCompoundShape_GetMaterial(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID);
+                var __c_ret = __JPH_MutableCompoundShape_GetMaterial(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
+                return __c_ret is not null ? new Jolt.JPH.Const_PhysicsMaterial(__c_ret, is_owning: false) : null;
+            }
+
+            // See Shape::GetLeafShape
+            /// Generated from method `JPH::MutableCompoundShape::GetLeafShape`.
+            public unsafe Jolt.JPH.Const_Shape? GetLeafShape(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.SubShapeID outRemainder)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetLeafShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetLeafShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Const_Shape._Underlying *__JPH_MutableCompoundShape_GetLeafShape(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.SubShapeID._Underlying *outRemainder);
+                var __c_ret = __JPH_MutableCompoundShape_GetLeafShape(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, outRemainder._UnderlyingPtr);
+                return __c_ret is not null ? new Jolt.JPH.Const_Shape(__c_ret, is_owning: false) : null;
+            }
+
+            // See Shape::GetSubShapeUserData
+            /// Generated from method `JPH::MutableCompoundShape::GetSubShapeUserData`.
+            public unsafe ulong GetSubShapeUserData(Jolt.JPH.Const_SubShapeID inSubShapeID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSubShapeUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSubShapeUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static ulong __JPH_MutableCompoundShape_GetSubShapeUserData(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID);
+                return __JPH_MutableCompoundShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
+            }
+
+            /// Get the total number of sub shapes
+            /// Generated from method `JPH::MutableCompoundShape::GetNumSubShapes`.
+            public unsafe uint GetNumSubShapes()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetNumSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetNumSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint __JPH_MutableCompoundShape_GetNumSubShapes(_Underlying *_this);
+                return __JPH_MutableCompoundShape_GetNumSubShapes(_UnderlyingPtr);
+            }
+
+            /// Access to a particular sub shape
+            /// Generated from method `JPH::MutableCompoundShape::GetSubShape`.
+            public unsafe Jolt.JPH.CompoundShape.Const_SubShape GetSubShape(uint inIdx)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSubShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.CompoundShape.Const_SubShape._Underlying *__JPH_MutableCompoundShape_GetSubShape(_Underlying *_this, uint inIdx);
+                return new(__JPH_MutableCompoundShape_GetSubShape(_UnderlyingPtr, inIdx), is_owning: false);
+            }
+
+            /// Get the user data associated with a shape in this compound
+            /// Generated from method `JPH::MutableCompoundShape::GetCompoundUserData`.
+            public unsafe uint GetCompoundUserData(uint inIdx)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetCompoundUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetCompoundUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint __JPH_MutableCompoundShape_GetCompoundUserData(_Underlying *_this, uint inIdx);
+                return __JPH_MutableCompoundShape_GetCompoundUserData(_UnderlyingPtr, inIdx);
+            }
+
+            /// Check if a sub shape ID is still valid for this shape
+            /// @param inSubShapeID Sub shape id that indicates the leaf shape relative to this shape
+            /// @return True if the ID is valid, false if not
+            /// Generated from method `JPH::MutableCompoundShape::IsSubShapeIDValid`.
+            public unsafe bool IsSubShapeIDValid(Jolt.JPH.Const_SubShapeID inSubShapeID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_IsSubShapeIDValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_IsSubShapeIDValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_MutableCompoundShape_IsSubShapeIDValid(_Underlying *_this, Jolt.JPH.SubShapeID._Underlying *inSubShapeID);
+                return __JPH_MutableCompoundShape_IsSubShapeIDValid(_UnderlyingPtr, inSubShapeID._UnderlyingPtr) != 0;
+            }
+
+            /// Convert SubShapeID to sub shape index
+            /// @param inSubShapeID Sub shape id that indicates the leaf shape relative to this shape
+            /// @param outRemainder This is the sub shape ID for the sub shape of the compound after popping off the index
+            /// @return The index of the sub shape of this compound
+            /// Generated from method `JPH::MutableCompoundShape::GetSubShapeIndexFromID`.
+            public unsafe uint GetSubShapeIndexFromID(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.SubShapeID outRemainder)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSubShapeIndexFromID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSubShapeIndexFromID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint __JPH_MutableCompoundShape_GetSubShapeIndexFromID(_Underlying *_this, Jolt.JPH.SubShapeID._Underlying *inSubShapeID, Jolt.JPH.SubShapeID._Underlying *outRemainder);
+                return __JPH_MutableCompoundShape_GetSubShapeIndexFromID(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, outRemainder._UnderlyingPtr);
+            }
+
+            // See Shape::GetVolume
+            /// Generated from method `JPH::MutableCompoundShape::GetVolume`.
+            public unsafe float GetVolume()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float __JPH_MutableCompoundShape_GetVolume(_Underlying *_this);
+                return __JPH_MutableCompoundShape_GetVolume(_UnderlyingPtr);
+            }
+
+            /// User data (to be used freely by the application)
+            /// Generated from method `JPH::MutableCompoundShape::GetUserData`.
+            public unsafe ulong GetUserData()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static ulong __JPH_MutableCompoundShape_GetUserData(_Underlying *_this);
+                return __JPH_MutableCompoundShape_GetUserData(_UnderlyingPtr);
+            }
+
+            /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+            /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+            /// the object and at that point in time it is checked that no references are left to the structure.
+            /// Generated from method `JPH::MutableCompoundShape::SetEmbedded`.
+            public unsafe void SetEmbedded()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_SetEmbedded(_Underlying *_this);
+                __JPH_MutableCompoundShape_SetEmbedded(_UnderlyingPtr);
+            }
+
+            /// Get current refcount of this object
+            /// Generated from method `JPH::MutableCompoundShape::GetRefCount`.
+            public unsafe uint GetRefCount()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint __JPH_MutableCompoundShape_GetRefCount(_Underlying *_this);
+                return __JPH_MutableCompoundShape_GetRefCount(_UnderlyingPtr);
+            }
+
+            /// Add or release a reference to this object
+            /// Generated from method `JPH::MutableCompoundShape::AddRef`.
+            public unsafe void AddRef()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_AddRef(_Underlying *_this);
+                __JPH_MutableCompoundShape_AddRef(_UnderlyingPtr);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::Release`.
+            public unsafe void Release()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_Release(_Underlying *_this);
+                __JPH_MutableCompoundShape_Release(_UnderlyingPtr);
+            }
+
+            /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+            /// Generated from method `JPH::MutableCompoundShape::sInternalGetRefCountOffset`.
+            public static int SInternalGetRefCountOffset()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_MutableCompoundShape_sInternalGetRefCountOffset();
+                return __JPH_MutableCompoundShape_sInternalGetRefCountOffset();
+            }
+        }
+
+        /// A compound shape, sub shapes can be rotated and translated.
+        /// This shape is optimized for adding / removing and changing the rotation / translation of sub shapes but is less efficient in querying.
+        /// Shifts all child objects so that they're centered around the center of mass (which needs to be kept up to date by calling AdjustCenterOfMass).
+        ///
+        /// Note: If you're using MutableCompoundShape and are querying data while modifying the shape you'll have a race condition.
+        /// In this case it is best to create a new MutableCompoundShape using the Clone function. You replace the shape on a body using BodyInterface::SetShape.
+        /// If a query is still working on the old shape, it will have taken a reference and keep the old shape alive until the query finishes.
+        ///
+        /// When you modify a MutableCompoundShape, beware that the SubShapeIDs of all other shapes can change. So be careful when storing SubShapeIDs.
+        /// Generated from class `JPH::MutableCompoundShape`.
+        /// Base classes:
+        ///   Direct: (non-virtual)
+        ///     `JPH::CompoundShape`
+        ///   Indirect: (non-virtual)
+        ///     `JPH::RefTarget<JPH::Shape>`
+        ///     `JPH::NonCopyable`
+        ///     `JPH::Shape`
+        /// This is the non-const half of the class.
+        public class MutableCompoundShape : Const_MutableCompoundShape
+        {
+            // Upcasts:
+            public static unsafe implicit operator Jolt.JPH.RefTarget_JPHShape(MutableCompoundShape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.RefTarget_JPHShape._Underlying *__JPH_MutableCompoundShape_UpcastTo_JPH_RefTarget_JPH_Shape(_Underlying *_this);
+                Jolt.JPH.RefTarget_JPHShape ret = new(__JPH_MutableCompoundShape_UpcastTo_JPH_RefTarget_JPH_Shape(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.NonCopyable(MutableCompoundShape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.NonCopyable._Underlying *__JPH_MutableCompoundShape_UpcastTo_JPH_NonCopyable(_Underlying *_this);
+                Jolt.JPH.NonCopyable ret = new(__JPH_MutableCompoundShape_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.Shape(MutableCompoundShape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Shape._Underlying *__JPH_MutableCompoundShape_UpcastTo_JPH_Shape(_Underlying *_this);
+                Jolt.JPH.Shape ret = new(__JPH_MutableCompoundShape_UpcastTo_JPH_Shape(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+            public static unsafe implicit operator Jolt.JPH.CompoundShape(MutableCompoundShape self)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_CompoundShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_UpcastTo_JPH_CompoundShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.CompoundShape._Underlying *__JPH_MutableCompoundShape_UpcastTo_JPH_CompoundShape(_Underlying *_this);
+                Jolt.JPH.CompoundShape ret = new(__JPH_MutableCompoundShape_UpcastTo_JPH_CompoundShape(self._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+
+            // Downcasts:
+            public static unsafe explicit operator MutableCompoundShape?(Jolt.JPH.Shape parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_Shape(Jolt.JPH.Shape._Underlying *_this);
+                var ptr = __JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_Shape(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                MutableCompoundShape ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+            public static unsafe explicit operator MutableCompoundShape?(Jolt.JPH.CompoundShape parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_CompoundShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_CompoundShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_CompoundShape(Jolt.JPH.CompoundShape._Underlying *_this);
+                var ptr = __JPH_MutableCompoundShape_DynamicDowncastFrom_JPH_CompoundShape(parent._UnderlyingPtr);
+                if (ptr is null) return null;
+                MutableCompoundShape ret = new(ptr, is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+
+            internal unsafe MutableCompoundShape(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+            /// Constructs an empty (default-constructed) instance.
+            public unsafe MutableCompoundShape() : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.MutableCompoundShape._Underlying *__JPH_MutableCompoundShape_DefaultConstruct();
+                _UnderlyingPtr = __JPH_MutableCompoundShape_DefaultConstruct();
+            }
+
+            /// Remove a shape by index.
+            /// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+            /// Generated from method `JPH::MutableCompoundShape::RemoveShape`.
+            public unsafe void RemoveShape(uint inIndex)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_RemoveShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_RemoveShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_RemoveShape(_Underlying *_this, uint inIndex);
+                __JPH_MutableCompoundShape_RemoveShape(_UnderlyingPtr, inIndex);
+            }
+
+            /// Recalculate the center of mass and shift all objects so they're centered around it
+            /// (this needs to be done of dynamic bodies and if the center of mass changes significantly due to adding / removing / repositioning sub shapes or else the simulation will look unnatural)
+            /// Note that after adjusting the center of mass of an object you need to call BodyInterface::NotifyShapeChanged and Constraint::NotifyShapeChanged on the relevant bodies / constraints.
+            /// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+            /// Generated from method `JPH::MutableCompoundShape::AdjustCenterOfMass`.
+            public unsafe void AdjustCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_AdjustCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_AdjustCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_AdjustCenterOfMass(_Underlying *_this);
+                __JPH_MutableCompoundShape_AdjustCenterOfMass(_UnderlyingPtr);
+            }
+
+            /// Set the user data associated with a shape in this compound
+            /// Generated from method `JPH::MutableCompoundShape::SetCompoundUserData`.
+            public unsafe void SetCompoundUserData(uint inIdx, uint inUserData)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_SetCompoundUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_SetCompoundUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_SetCompoundUserData(_Underlying *_this, uint inIdx, uint inUserData);
+                __JPH_MutableCompoundShape_SetCompoundUserData(_UnderlyingPtr, inIdx, inUserData);
+            }
+
+            /// Generated from method `JPH::MutableCompoundShape::SetUserData`.
+            public unsafe void SetUserData(ulong inUserData)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_SetUserData(_Underlying *_this, ulong inUserData);
+                __JPH_MutableCompoundShape_SetUserData(_UnderlyingPtr, inUserData);
+            }
+        }
+
+        /// This is used as a function parameter when the underlying function receives `MutableCompoundShape` by value.
+        /// Usage:
+        /// * Pass `new()` to default-construct the instance.
+        /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+        public class _ByValue_MutableCompoundShape
+        {
+            #pragma warning disable CS0649
+            internal readonly Const_MutableCompoundShape? Value;
+            #pragma warning restore CS0649
+            internal readonly Jolt._PassBy PassByMode;
+            public _ByValue_MutableCompoundShape() {PassByMode = Jolt._PassBy.default_construct;}
+        }
+
+        /// This is used for optional parameters of class `MutableCompoundShape` with default arguments.
+        /// This is only used mutable parameters. For const ones we have `_InOptConst_MutableCompoundShape`.
+        /// Usage:
+        /// * Pass `null` to use the default argument.
+        /// * Pass `new()` to pass no object.
+        /// * Pass an instance of `MutableCompoundShape`/`Const_MutableCompoundShape` directly.
+        public class _InOptMut_MutableCompoundShape
+        {
+            public MutableCompoundShape? Opt;
+
+            public _InOptMut_MutableCompoundShape() {}
+            public _InOptMut_MutableCompoundShape(MutableCompoundShape value) {Opt = value;}
+            public static implicit operator _InOptMut_MutableCompoundShape(MutableCompoundShape value) {return new(value);}
+        }
+
+        /// This is used for optional parameters of class `MutableCompoundShape` with default arguments.
+        /// This is only used const parameters. For non-const ones we have `_InOptMut_MutableCompoundShape`.
+        /// Usage:
+        /// * Pass `null` to use the default argument.
+        /// * Pass `new()` to pass no object.
+        /// * Pass an instance of `MutableCompoundShape`/`Const_MutableCompoundShape` to pass it to the function.
+        public class _InOptConst_MutableCompoundShape
+        {
+            public Const_MutableCompoundShape? Opt;
+
+            public _InOptConst_MutableCompoundShape() {}
+            public _InOptConst_MutableCompoundShape(Const_MutableCompoundShape value) {Opt = value;}
+            public static implicit operator _InOptConst_MutableCompoundShape(Const_MutableCompoundShape value) {return new(value);}
+        }
+    }
+}

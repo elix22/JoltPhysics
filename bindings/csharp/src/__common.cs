@@ -12,6 +12,42 @@ public static partial class Jolt
         internal Object(bool is_owning) {_IsOwningVal = is_owning;}
     }
 
+    /// This is used for optional in/out parameters, since `ref` can't be nullable.
+    public class InOut<T> where T: unmanaged
+    {
+        public T Value;
+
+        public InOut() {}
+        public InOut(T NewValue) {Value = NewValue;}
+    }
+
+    /// A reference to a C object. This is sometimes used to return optional references, since `ref` can't be nullable. Or to return references from operators, since those can't return `ref`s.
+    /// This object itself isn't nullable, we return `Ref<T>?` when nullability is needed.
+    public unsafe class Ref<T> where T: unmanaged
+    {
+        // Should never be null.
+        private T *Ptr;
+        // Should never be given a null pointer.
+        internal Ref(T *new_ptr)
+        {
+            System.Diagnostics.Trace.Assert(new_ptr is not null);
+            Ptr = new_ptr;
+        }
+        // 
+        internal unsafe Ref(ref T new_ref)
+        {
+            fixed (T *new_ptr = &new_ref)
+            {
+                // Smuggling fixed pointers like this seems sketchy at first, but we deal with `ref`s created from pointers all the time, and assume they don't break.
+                Ptr = new_ptr;
+            }
+        }
+
+        public ref T Value => ref *Ptr;
+
+        public static implicit operator T(Ref<T> wrapper) {return wrapper.Value;}
+    }
+
     /// Wraps the object in a wrapper that indicates that it should be treated as a temporary object.
     /// This can be used with `_ByValue_...` function parameters, to indicate that the argument should be moved.
     /// See those structs for a longer explanation.
@@ -95,6 +131,120 @@ public static partial class Jolt
             HashSet<object>? set;
             if (_StaticKeepAliveData.TryGetValue(key, out set))
                 set.Clear(); // Or we could `.Remove(key)`, but keeping a slot in the map looks better to me.
+        }
+    }
+
+    internal unsafe delegate void StdFunctionPostCallCallbackDelegate(void *userdata, void *value);
+
+    /// This is used by the `std::function<...>` wrappers to clean up the object returned from a call.
+    internal static unsafe void StdFunctionPostCallCallback(void *userdata, void *value)
+    {
+        if (value is not null)
+            System.Runtime.InteropServices.GCHandle.FromIntPtr((nint)value).Free();
+    }
+
+    internal unsafe delegate void StdFunctionUserdataCallbackDelegate(void **this_userdata, void *other_userdata);
+
+    /// This is used by the `std::function<...>` wrappers to manage the userdata pointer, which in our case always represents a `GCHandle` to the underlying C# callable.
+    internal static unsafe void StdFunctionUserdataCallback(void **this_userdata, void *other_userdata)
+    {
+        if (*this_userdata is not null)
+        {
+            // We're either getting copy-assigned or destroyed.
+            // Either way, we must destroy the existing handle.
+            System.Runtime.InteropServices.GCHandle.FromIntPtr((nint)(*this_userdata)).Free();
+
+            if (other_userdata is null)
+                return; // We're getting destroyed, nothing else to do.
+        }
+
+        // Now we're either getting either copy-constructed or copy-assigned. Duplicate the provided handle.
+        *this_userdata = (void *)System.Runtime.InteropServices.GCHandle.ToIntPtr(System.Runtime.InteropServices.GCHandle.Alloc(System.Runtime.InteropServices.GCHandle.FromIntPtr((nint)other_userdata).Target));
+    }
+
+    /// An internal function for allocating memory through C++.
+    internal static unsafe void *_Alloc(nuint size)
+    {
+        #if __IOS__
+        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_Alloc", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+        #else
+        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_Alloc", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+        #endif
+        extern static void *__Jolt_Alloc(nuint size);
+        return __Jolt_Alloc(size);
+    }
+
+    /// An internal function for deallocating memory through C++.
+    internal static unsafe void _Free(void *ptr)
+    {
+        #if __IOS__
+        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_Free", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+        #else
+        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_Free", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+        #endif
+        extern static void __Jolt_Free(void *ptr);
+        __Jolt_Free(ptr);
+    }
+
+
+    public struct ArrayUnsignedChar4
+    {
+        public unsafe fixed byte _elem[4];
+        public unsafe ref byte this[nint i] => ref _elem[i];
+    }
+
+    public struct ArrayUnsignedChar4160
+    {
+        public unsafe fixed byte _elem[4160];
+        public unsafe ref byte this[nint i] => ref _elem[i];
+    }
+
+    public struct ArrayUnsignedChar4288
+    {
+        public unsafe fixed byte _elem[4288];
+        public unsafe ref byte this[nint i] => ref _elem[i];
+    }
+
+    public struct ArrayUnsignedInt2
+    {
+        public unsafe fixed uint _elem[2];
+        public unsafe ref uint this[nint i] => ref _elem[i];
+    }
+
+    public struct ArrayUnsignedInt3
+    {
+        public unsafe fixed uint _elem[3];
+        public unsafe ref uint this[nint i] => ref _elem[i];
+    }
+
+    public struct ArrayUnsignedInt4
+    {
+        public unsafe fixed uint _elem[4];
+        public unsafe ref uint this[nint i] => ref _elem[i];
+    }
+
+    public static partial class JPH
+    {
+        public unsafe struct ArraySoftBodySharedSettingsSkinWeight4
+        {
+            internal Jolt.JPH.SoftBodySharedSettings.SkinWeight._Underlying *Ptr;
+
+            internal ArraySoftBodySharedSettingsSkinWeight4(Jolt.JPH.SoftBodySharedSettings.SkinWeight._Underlying *new_ptr) {Ptr = new_ptr;}
+
+            public Jolt.JPH.SoftBodySharedSettings.SkinWeight this[nint i]
+            {
+                get
+                {
+                    System.Diagnostics.Trace.Assert(i >= 0 && i < 4);
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.SoftBodySharedSettings.SkinWeight._Underlying *__JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr(Jolt.JPH.SoftBodySharedSettings.SkinWeight._Underlying *ptr, nint i);
+                    return new(__JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr(Ptr, i), is_owning: false);
+                }
+            }
         }
     }
 }

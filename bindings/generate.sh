@@ -24,6 +24,7 @@ export CLANG_CXX="$(xargs <"$CXX_FILE")"
 
 ./deps/JoltPhysics/bindings/clean.sh
 
+ROOT="$(pwd)/deps/JoltPhysics"
 BINDINGS="deps/JoltPhysics/bindings"
 HELPER_DIR="$BINDINGS"
 mkdir -p "$BINDINGS/c/include" "$BINDINGS/c/src" "$BINDINGS/csharp/src" "$BINDINGS/tmp"
@@ -33,9 +34,12 @@ mkdir -p "$BINDINGS/c/include" "$BINDINGS/c/src" "$BINDINGS/csharp/src" "$BINDIN
 cp "$BINDINGS/CMakeLists.txt" "$BINDINGS/c/CMakeLists.txt"
 
 # Clang-style flags for the parser.
+# -DNDEBUG matches the Release build: suppresses JPH_DEBUG / JPH_ENABLE_ASSERTS
+# so debug-only methods (e.g. Body::ValidateCachedBounds) are not generated.
 EXTRA_PARSER_CXX_FLAGS=(
     -std=c++17 -Wall -Wextra
     -fparse-all-comments
+    -DNDEBUG
     -I"$HELPER_DIR"
 )
 
@@ -48,6 +52,8 @@ EXTRA_PARSER_FLAGS=(
 EXTRA_GEN_C_FLAGS=(
     --max-header-name-length 100
     --no-handle-exceptions
+    --expose-as-struct JPH::BodyID
+    --no-dynamic-cast
 )
 
 # Optional tunable flags for the C# generator.
@@ -56,77 +62,213 @@ EXTRA_GEN_FLAGS=(
     --dotnet-version=std2.0
 )
 
-DOTNET=dotnet
 SHARED_LIBRARY_EXT=.so
 SHARED_LIBRARY_PREFIX=lib
 
 # Need extra flags on MSYS2.
 if [[ $(uname -o 2>/dev/null) == Msys ]]; then
     EXTRA_PARSER_CXX_FLAGS+=(--sysroot="$MSYSTEM_PREFIX")
-    DOTNET="C:/Program Files/dotnet/dotnet"
     SHARED_LIBRARY_EXT=.dll
     SHARED_LIBRARY_PREFIX=
 fi
 
 # Need the SDK sysroot on macOS.
+PARSER_RESOURCE_DIR=""
 if [[ $(uname) == Darwin ]]; then
-    EXTRA_PARSER_CXX_FLAGS+=(-isysroot "$(xcrun --show-sdk-path)")
+    EXTRA_PARSER_CXX_FLAGS+=(-isysroot "$(xcrun --show-sdk-path)" -fno-blocks)
     SHARED_LIBRARY_EXT=.dylib
     SHARED_LIBRARY_PREFIX=lib
+    # mrbind is built with Homebrew LLVM; use its resource dir so that
+    # LLVM's arm_neon.h is found instead of Xcode's, which has Apple-specific
+    # __builtin_neon___a64_* intrinsics that LLVM's parser does not support.
+    if [[ -x /opt/homebrew/opt/llvm/bin/clang ]]; then
+        PARSER_RESOURCE_DIR="$(/opt/homebrew/opt/llvm/bin/clang -print-resource-dir)"
+    fi
 fi
 
 set -x
 
 # Assemble the combined input header.
 echo "#pragma once" >"$BINDINGS/tmp/combined_input.h"
-echo "#include \"$(pwd)/$HELPER_DIR/jolt_helper.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Jolt.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/RegisterTypes.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Core/Factory.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Core/JobSystemThreadPool.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/PhysicsSettings.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/PhysicsSystem.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/BoxShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/SphereShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/CapsuleShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/CylinderShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/RotatedTranslatedShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/TaperedCapsuleShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/TaperedCylinderShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/TriangleShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/PlaneShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/EmptyShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/ScaledShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/OffsetCenterOfMassShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/StaticCompoundShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/MutableCompoundShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/MeshShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/ConvexHullShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/HeightFieldShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Body/BodyCreationSettings.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Body/Body.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/PhysicsMaterial.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/CollisionGroup.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/TwoBodyConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/FixedConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/DistanceConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/PointConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/HingeConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodySharedSettings.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodyCreationSettings.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Geometry/AABox.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Core/TempAllocator.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Body/BodyInterface.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Body/BodyActivationListener.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/SubShapeID.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/CastResult.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/SubShapeIDPair.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Body/BodyFilter.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/ShapeFilter.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/ContactListener.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/NarrowPhaseQuery.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Character/CharacterBase.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Character/CharacterVirtual.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayerInterfaceTable.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/ObjectLayerPairFilterTable.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/ObjectVsBroadPhaseLayerFilterTable.h\"" >>"$BINDINGS/tmp/combined_input.h"
 
 # Parse the input header.
 ./build/mrbind \
     "$BINDINGS/tmp/combined_input.h" \
     -o "$BINDINGS/tmp/parse_result.json" \
     --ignore :: \
-    --allow JoltVec3f \
-    --allow JoltVec3 \
-    --allow JoltQuat \
-    --allow JoltMat44 \
-    --allow JoltRMat44 \
-    --allow JoltAABox \
-    --allow JoltCollisionGroup \
-    --allow JoltPhysicsMaterial \
-    --allow JoltTwoBodyConstraint \
-    --allow JoltBodyID \
-    --allow JoltBodyIDList \
-    --allow JoltConstraintID \
-    --allow JoltShape \
-    --allow JoltBoxShape \
-    --allow JoltSphereShape \
-    --allow JoltCapsuleShape \
-    --allow JoltCylinderShape \
-    --allow JoltRotatedTranslatedShape \
-    --allow JoltTaperedCapsuleShape \
-    --allow JoltTaperedCylinderShape \
-    --allow JoltTriangleShape \
-    --allow JoltPlaneShape \
-    --allow JoltEmptyShape \
-    --allow JoltScaledShape \
-    --allow JoltOffsetCenterOfMassShape \
-    --allow JoltStaticCompoundShape \
-    --allow JoltMutableCompoundShape \
-    --allow JoltMeshShape \
-    --allow JoltConvexHullShape \
-    --allow JoltHeightFieldShape \
-    --allow JoltBodyCreationSettings \
-    --allow JoltSoftBodySharedSettings \
-    --allow JoltSoftBodyCreationSettings \
-    --allow JoltPhysicsSystem \
-    --allow JoltBodyInterface \
-    --allow JoltWorld \
+    --skip-mentions-of std::align_val_t \
+    --allow JPH::RefTarget \
+    --allow JPH::NonCopyable \
+    --allow JPH::SerializableObject \
+    --allow JPH::ShapeSettings \
+    --allow JPH::ConvexShapeSettings \
+    --allow JPH::DecoratedShapeSettings \
+    --allow JPH::CompoundShapeSettings \
+    --allow JPH::BoxShapeSettings \
+    --allow JPH::SphereShapeSettings \
+    --allow JPH::CapsuleShapeSettings \
+    --allow JPH::CylinderShapeSettings \
+    --allow JPH::TriangleShapeSettings \
+    --allow JPH::TaperedCapsuleShapeSettings \
+    --allow JPH::TaperedCylinderShapeSettings \
+    --allow JPH::ConvexHullShapeSettings \
+    --allow JPH::RotatedTranslatedShapeSettings \
+    --allow JPH::ScaledShapeSettings \
+    --allow JPH::OffsetCenterOfMassShapeSettings \
+    --allow JPH::StaticCompoundShapeSettings \
+    --allow JPH::MutableCompoundShapeSettings \
+    --allow JPH::MeshShapeSettings \
+    --allow JPH::EmptyShapeSettings \
+    --allow JPH::PlaneShapeSettings \
+    --allow JPH::HeightFieldShapeSettings \
+    --allow JPH::Shape \
+    --allow JPH::ConvexShape \
+    --allow JPH::DecoratedShape \
+    --allow JPH::CompoundShape \
+    --allow JPH::BoxShape \
+    --allow JPH::SphereShape \
+    --allow JPH::CapsuleShape \
+    --allow JPH::CylinderShape \
+    --allow JPH::TriangleShape \
+    --allow JPH::TaperedCapsuleShape \
+    --allow JPH::TaperedCylinderShape \
+    --allow JPH::ConvexHullShape \
+    --allow JPH::RotatedTranslatedShape \
+    --allow JPH::ScaledShape \
+    --allow JPH::OffsetCenterOfMassShape \
+    --allow JPH::StaticCompoundShape \
+    --allow JPH::MutableCompoundShape \
+    --allow JPH::MeshShape \
+    --allow JPH::EmptyShape \
+    --allow JPH::PlaneShape \
+    --allow JPH::HeightFieldShape \
+    --allow JPH::BodyCreationSettings \
+    --allow JPH::Body \
+    --allow JPH::PhysicsMaterial \
+    --allow JPH::CollisionGroup \
+    --allow JPH::ConstraintSettings \
+    --allow JPH::TwoBodyConstraintSettings \
+    --allow JPH::FixedConstraintSettings \
+    --allow JPH::DistanceConstraintSettings \
+    --allow JPH::PointConstraintSettings \
+    --allow JPH::HingeConstraintSettings \
+    --allow JPH::Constraint \
+    --allow JPH::TwoBodyConstraint \
+    --allow JPH::FixedConstraint \
+    --allow JPH::DistanceConstraint \
+    --allow JPH::PointConstraint \
+    --allow JPH::HingeConstraint \
+    --allow JPH::SoftBodySharedSettings \
+    --allow JPH::SoftBodyCreationSettings \
+    --allow JPH::SubShapeID \
+    --allow JPH::AABox \
+    --allow JPH::BodyID \
+    --allow JPH::EActivation \
+    --allow JPH::BroadPhaseLayer \
+    --allow JPH::BroadPhaseLayerInterface \
+    --allow JPH::ObjectVsBroadPhaseLayerFilter \
+    --allow JPH::BroadPhaseLayerFilter \
+    --allow JPH::DefaultBroadPhaseLayerFilter \
+    --allow JPH::SpecifiedBroadPhaseLayerFilter \
+    --allow JPH::ObjectLayerPairFilter \
+    --allow JPH::ObjectLayerFilter \
+    --allow JPH::DefaultObjectLayerFilter \
+    --allow JPH::SpecifiedObjectLayerFilter \
+    --allow JPH::BodyActivationListener \
+    --allow JPH::BodyInterface \
+    --allow JPH::TempAllocator \
+    --allow JPH::TempAllocatorImpl \
+    --allow JPH::TempAllocatorMalloc \
+    --allow JPH::TempAllocatorImplWithMallocFallback \
+    --allow JPH::JobSystem \
+    --allow JPH::JobSystemWithBarrier \
+    --allow JPH::JobSystemThreadPool \
+    --allow JPH::PhysicsSettings \
+    --allow JPH::PhysicsSystem \
+    --allow JPH::Factory \
+    --allow JPH::BroadPhaseCastResult \
+    --allow JPH::RayCastResult \
+    --allow JPH::SubShapeIDPair \
+    --allow JPH::BodyFilter \
+    --allow JPH::IgnoreSingleBodyFilter \
+    --allow JPH::IgnoreMultipleBodiesFilter \
+    --allow JPH::ShapeFilter \
+    --allow JPH::ReversedShapeFilter \
+    --allow JPH::ContactManifold \
+    --allow JPH::ContactSettings \
+    --allow JPH::ContactListener \
+    --allow JPH::BroadPhaseQuery \
+    --allow JPH::NarrowPhaseQuery \
+    --allow JPH::CharacterBaseSettings \
+    --allow JPH::CharacterBase \
+    --allow JPH::CharacterVirtualSettings \
+    --allow JPH::CharacterContactSettings \
+    --allow JPH::CharacterContactListener \
+    --allow JPH::CharacterVsCharacterCollision \
+    --allow JPH::CharacterVsCharacterCollisionSimple \
+    --allow JPH::CharacterID \
+    --allow JPH::CharacterVirtual \
+    --allow JPH::BroadPhaseLayerInterfaceTable \
+    --allow JPH::ObjectLayerPairFilterTable \
+    --allow JPH::ObjectVsBroadPhaseLayerFilterTable \
+    --canonicalize-64-to-fixed-size-typedefs \
     "${EXTRA_PARSER_FLAGS[@]+"${EXTRA_PARSER_FLAGS[@]}"}" \
     -- \
     -xc++-header \
-    -resource-dir="$("$CLANG_CXX" -print-resource-dir)" \
+    -resource-dir="${PARSER_RESOURCE_DIR:-$("$CLANG_CXX" -print-resource-dir)}" \
     -I"$(pwd)/$HELPER_DIR" \
+    -I"$ROOT" \
     "${EXTRA_PARSER_CXX_FLAGS[@]}"
 
 # Generate the C bindings.
@@ -138,9 +280,23 @@ echo "#include \"$(pwd)/$HELPER_DIR/jolt_helper.h\"" >>"$BINDINGS/tmp/combined_i
     --helper-name-prefix Jolt_ \
     --helper-macro-name-prefix JOLT_ \
     --map-path "$(pwd)/$HELPER_DIR" jolt \
+    --map-path "$(pwd)/deps/JoltPhysics" jolt \
     --assume-include-dir "$(pwd)/$HELPER_DIR" \
+    --assume-include-dir "$(pwd)/deps/JoltPhysics" \
     --force-emit-common-helpers \
     "${EXTRA_GEN_C_FLAGS[@]}"
+
+# Write ODR definitions for static const class members that the generated
+# field-getter functions ODR-use (they take the member's address). Jolt doesn't
+# provide these definitions because it never takes their address internally.
+cat >"$BINDINGS/c/src/jolt_odr_defs.cpp" <<'EOF'
+#include <Jolt/Physics/Collision/CollisionGroup.h>
+
+namespace JPH {
+const CollisionGroup::GroupID    CollisionGroup::cInvalidGroup;
+const CollisionGroup::SubGroupID CollisionGroup::cInvalidSubGroup;
+}
+EOF
 
 # Generate the C# bindings.
 ./build/mrbind_gen_csharp \

@@ -47,7 +47,6 @@ if(EMSCRIPTEN)
     file(GLOB_RECURSE JOLT_SOURCES "${JOLT_ROOT}/Jolt/*.cpp")
     add_library(cjolt STATIC
         ${BINDING_SOURCES}
-        "${HELPER_DIR}/jolt_helper.cpp"
         ${JOLT_SOURCES}
     )
     set_target_properties(cjolt PROPERTIES PREFIX "")
@@ -56,7 +55,6 @@ if(EMSCRIPTEN)
 else()
     add_library(cjolt SHARED
         ${BINDING_SOURCES}
-        "${HELPER_DIR}/jolt_helper.cpp"
     )
     # Absorb the entire Jolt static lib into libcjolt so consumers only
     # need to link a single library.  We use add_dependencies for build
@@ -79,7 +77,7 @@ else()
 endif()
 
 # Propagate Jolt's include dirs and compile definitions to our binding code
-# so jolt_helper.cpp and the generated sources see the same defines Jolt used.
+# the generated sources see the same defines Jolt used.
 target_include_directories(cjolt PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/include"
     "${CMAKE_CURRENT_SOURCE_DIR}/src"
@@ -91,8 +89,6 @@ target_compile_definitions(cjolt PRIVATE
     $<TARGET_PROPERTY:Jolt,INTERFACE_COMPILE_DEFINITIONS>
 )
 # Inherit Jolt's PUBLIC compile options (SIMD flags: -msse4.1, -msse4.2,
-# -mavx, -mavx2, -mfma, etc.) so jolt_helper.cpp compiles with the same
-# architecture features as the Jolt library itself.
 target_compile_options(cjolt PRIVATE
     $<TARGET_PROPERTY:Jolt,INTERFACE_COMPILE_OPTIONS>
 )
@@ -102,6 +98,14 @@ set_target_properties(cjolt PROPERTIES
     POSITION_INDEPENDENT_CODE ON
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
+)
+
+# All raw Jolt headers require <Jolt/Jolt.h> to be included first (macros,
+# types, namespace). The generated .cpp files don't do this explicitly, so
+# use a PCH to force it — same pattern as Jolt's own UnitTests target.
+target_precompile_headers(cjolt PRIVATE
+    "${JOLT_ROOT}/Jolt/Jolt.h"
+    "${JOLT_ROOT}/Jolt/Core/Atomics.h"   # CharacterID.h uses atomic<uint32> without including this
 )
 
 if(MSVC AND NOT CMAKE_CXX_COMPILER_ID STREQUAL "Clang")

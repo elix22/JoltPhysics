@@ -1,0 +1,480 @@
+// machine generated, do not edit
+#pragma once
+
+#include <exports.h>
+
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
+typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
+typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
+typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
+typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
+
+
+/// Class used to store the configuration of a constraint. Allows run-time creation of constraints.
+/// Generated from class `JPH::ConstraintSettings`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JPH::SerializableObject`
+///     `JPH::RefTarget<JPH::ConstraintSettings>`
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::TwoBodyConstraintSettings`
+///   Indirect: (non-virtual)
+///     `JPH::DistanceConstraintSettings`
+///     `JPH::FixedConstraintSettings`
+///     `JPH::HingeConstraintSettings`
+///     `JPH::PointConstraintSettings`
+typedef struct JPH_ConstraintSettings JPH_ConstraintSettings;
+
+/// Base class for all physics constraints. A constraint removes one or more degrees of freedom for a rigid body.
+/// Generated from class `JPH::Constraint`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JPH::RefTarget<JPH::Constraint>`
+///     `JPH::NonCopyable`
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::TwoBodyConstraint`
+///   Indirect: (non-virtual)
+///     `JPH::DistanceConstraint`
+///     `JPH::FixedConstraint`
+///     `JPH::HingeConstraint`
+///     `JPH::PointConstraint`
+typedef struct JPH_Constraint JPH_Constraint;
+
+/// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
+/// Returns a pointer to a member variable of class `JPH::ConstraintSettings` named `mEnabled`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const bool *JPH_ConstraintSettings_Get_mEnabled(const JPH_ConstraintSettings *_this);
+
+/// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
+/// Modifies a member variable of class `JPH::ConstraintSettings` named `mEnabled`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `mEnabled`.
+JOLT_API void JPH_ConstraintSettings_Set_mEnabled(JPH_ConstraintSettings *_this, bool value);
+
+/// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
+/// Returns a mutable pointer to a member variable of class `JPH::ConstraintSettings` named `mEnabled`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API bool *JPH_ConstraintSettings_GetMutable_mEnabled(JPH_ConstraintSettings *_this);
+
+/// Priority of the constraint when solving. Higher numbers are more likely to be solved correctly.
+/// Note that if you want a deterministic simulation and you cannot guarantee the order in which constraints are added/removed, you can make the priority for all constraints unique to get a deterministic ordering.
+/// Returns a pointer to a member variable of class `JPH::ConstraintSettings` named `mConstraintPriority`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const unsigned int *JPH_ConstraintSettings_Get_mConstraintPriority(const JPH_ConstraintSettings *_this);
+
+/// Priority of the constraint when solving. Higher numbers are more likely to be solved correctly.
+/// Note that if you want a deterministic simulation and you cannot guarantee the order in which constraints are added/removed, you can make the priority for all constraints unique to get a deterministic ordering.
+/// Modifies a member variable of class `JPH::ConstraintSettings` named `mConstraintPriority`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mConstraintPriority`.
+/// When this function is called, this object will drop object references it held previously in `mConstraintPriority`.
+JOLT_API void JPH_ConstraintSettings_Set_mConstraintPriority(JPH_ConstraintSettings *_this, unsigned int value);
+
+/// Priority of the constraint when solving. Higher numbers are more likely to be solved correctly.
+/// Note that if you want a deterministic simulation and you cannot guarantee the order in which constraints are added/removed, you can make the priority for all constraints unique to get a deterministic ordering.
+/// Returns a mutable pointer to a member variable of class `JPH::ConstraintSettings` named `mConstraintPriority`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API unsigned int *JPH_ConstraintSettings_GetMutable_mConstraintPriority(JPH_ConstraintSettings *_this);
+
+/// Used only when the constraint is active. Override for the number of solver velocity iterations to run, 0 means use the default in PhysicsSettings::mNumVelocitySteps. The number of iterations to use is the max of all contacts and constraints in the island.
+/// Returns a pointer to a member variable of class `JPH::ConstraintSettings` named `mNumVelocityStepsOverride`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const unsigned int *JPH_ConstraintSettings_Get_mNumVelocityStepsOverride(const JPH_ConstraintSettings *_this);
+
+/// Used only when the constraint is active. Override for the number of solver velocity iterations to run, 0 means use the default in PhysicsSettings::mNumVelocitySteps. The number of iterations to use is the max of all contacts and constraints in the island.
+/// Modifies a member variable of class `JPH::ConstraintSettings` named `mNumVelocityStepsOverride`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mNumVelocityStepsOverride`.
+/// When this function is called, this object will drop object references it held previously in `mNumVelocityStepsOverride`.
+JOLT_API void JPH_ConstraintSettings_Set_mNumVelocityStepsOverride(JPH_ConstraintSettings *_this, unsigned int value);
+
+/// Used only when the constraint is active. Override for the number of solver velocity iterations to run, 0 means use the default in PhysicsSettings::mNumVelocitySteps. The number of iterations to use is the max of all contacts and constraints in the island.
+/// Returns a mutable pointer to a member variable of class `JPH::ConstraintSettings` named `mNumVelocityStepsOverride`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API unsigned int *JPH_ConstraintSettings_GetMutable_mNumVelocityStepsOverride(JPH_ConstraintSettings *_this);
+
+/// Used only when the constraint is active. Override for the number of solver position iterations to run, 0 means use the default in PhysicsSettings::mNumPositionSteps. The number of iterations to use is the max of all contacts and constraints in the island.
+/// Returns a pointer to a member variable of class `JPH::ConstraintSettings` named `mNumPositionStepsOverride`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const unsigned int *JPH_ConstraintSettings_Get_mNumPositionStepsOverride(const JPH_ConstraintSettings *_this);
+
+/// Used only when the constraint is active. Override for the number of solver position iterations to run, 0 means use the default in PhysicsSettings::mNumPositionSteps. The number of iterations to use is the max of all contacts and constraints in the island.
+/// Modifies a member variable of class `JPH::ConstraintSettings` named `mNumPositionStepsOverride`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mNumPositionStepsOverride`.
+/// When this function is called, this object will drop object references it held previously in `mNumPositionStepsOverride`.
+JOLT_API void JPH_ConstraintSettings_Set_mNumPositionStepsOverride(JPH_ConstraintSettings *_this, unsigned int value);
+
+/// Used only when the constraint is active. Override for the number of solver position iterations to run, 0 means use the default in PhysicsSettings::mNumPositionSteps. The number of iterations to use is the max of all contacts and constraints in the island.
+/// Returns a mutable pointer to a member variable of class `JPH::ConstraintSettings` named `mNumPositionStepsOverride`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API unsigned int *JPH_ConstraintSettings_GetMutable_mNumPositionStepsOverride(JPH_ConstraintSettings *_this);
+
+/// Size of constraint when drawing it through the debug renderer
+/// Returns a pointer to a member variable of class `JPH::ConstraintSettings` named `mDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JPH_ConstraintSettings_Get_mDrawConstraintSize(const JPH_ConstraintSettings *_this);
+
+/// Size of constraint when drawing it through the debug renderer
+/// Modifies a member variable of class `JPH::ConstraintSettings` named `mDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `mDrawConstraintSize`.
+JOLT_API void JPH_ConstraintSettings_Set_mDrawConstraintSize(JPH_ConstraintSettings *_this, float value);
+
+/// Size of constraint when drawing it through the debug renderer
+/// Returns a mutable pointer to a member variable of class `JPH::ConstraintSettings` named `mDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JPH_ConstraintSettings_GetMutable_mDrawConstraintSize(JPH_ConstraintSettings *_this);
+
+/// User data value (can be used by application)
+/// Returns a pointer to a member variable of class `JPH::ConstraintSettings` named `mUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const uint64_t *JPH_ConstraintSettings_Get_mUserData(const JPH_ConstraintSettings *_this);
+
+/// User data value (can be used by application)
+/// Modifies a member variable of class `JPH::ConstraintSettings` named `mUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mUserData`.
+/// When this function is called, this object will drop object references it held previously in `mUserData`.
+JOLT_API void JPH_ConstraintSettings_Set_mUserData(JPH_ConstraintSettings *_this, uint64_t value);
+
+/// User data value (can be used by application)
+/// Returns a mutable pointer to a member variable of class `JPH::ConstraintSettings` named `mUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API uint64_t *JPH_ConstraintSettings_GetMutable_mUserData(JPH_ConstraintSettings *_this);
+
+/// Destroys a heap-allocated instance of `JPH_ConstraintSettings`. Does nothing if the pointer is null.
+JOLT_API void JPH_ConstraintSettings_Destroy(const JPH_ConstraintSettings *_this);
+
+/// Destroys a heap-allocated array of `JPH_ConstraintSettings`. Does nothing if the pointer is null.
+JOLT_API void JPH_ConstraintSettings_DestroyArray(const JPH_ConstraintSettings *_this);
+
+/// Generated from method `JPH::ConstraintSettings::operator new`.
+JOLT_API void *Jolt_new_JPH_ConstraintSettings_unsigned_long(unsigned long inCount);
+
+/// Generated from method `JPH::ConstraintSettings::operator delete`.
+JOLT_API void Jolt_delete_JPH_ConstraintSettings_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::ConstraintSettings::operator delete`.
+JOLT_API void Jolt_delete_JPH_ConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+
+/// Generated from method `JPH::ConstraintSettings::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_ConstraintSettings_unsigned_long(unsigned long inCount);
+
+/// Generated from method `JPH::ConstraintSettings::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_ConstraintSettings_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::ConstraintSettings::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_ConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+
+/// Generated from method `JPH::ConstraintSettings::operator new`.
+JOLT_API void *Jolt_new_JPH_ConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+
+/// Generated from method `JPH::ConstraintSettings::operator delete`.
+JOLT_API void Jolt_delete_JPH_ConstraintSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Generated from method `JPH::ConstraintSettings::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_ConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+
+/// Generated from method `JPH::ConstraintSettings::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_ConstraintSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+/// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+/// the object and at that point in time it is checked that no references are left to the structure.
+/// Generated from method `JPH::ConstraintSettings::SetEmbedded`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_ConstraintSettings_SetEmbedded(const JPH_ConstraintSettings *_this);
+
+/// Get current refcount of this object
+/// Generated from method `JPH::ConstraintSettings::GetRefCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_ConstraintSettings_GetRefCount(const JPH_ConstraintSettings *_this);
+
+/// Add or release a reference to this object
+/// Generated from method `JPH::ConstraintSettings::AddRef`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_ConstraintSettings_AddRef(const JPH_ConstraintSettings *_this);
+
+/// Generated from method `JPH::ConstraintSettings::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_ConstraintSettings_Release(const JPH_ConstraintSettings *_this);
+
+/// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+/// Generated from method `JPH::ConstraintSettings::sInternalGetRefCountOffset`.
+JOLT_API int JPH_ConstraintSettings_sInternalGetRefCountOffset(void);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_ConstraintSettings *JPH_ConstraintSettings_OffsetPtr(const JPH_ConstraintSettings *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_ConstraintSettings *JPH_ConstraintSettings_OffsetMutablePtr(JPH_ConstraintSettings *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JPH::ConstraintSettings` to its base class `JPH::SerializableObject`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_SerializableObject *JPH_ConstraintSettings_UpcastTo_JPH_SerializableObject(const JPH_ConstraintSettings *object);
+
+/// Upcasts an instance of `JPH::ConstraintSettings` to its base class `JPH::SerializableObject`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_SerializableObject *JPH_ConstraintSettings_MutableUpcastTo_JPH_SerializableObject(JPH_ConstraintSettings *object);
+
+/// Downcasts an instance of `JPH::SerializableObject` to a derived class `JPH::ConstraintSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_ConstraintSettings *JPH_ConstraintSettings_StaticDowncastFrom_JPH_SerializableObject(const JPH_SerializableObject *object);
+
+/// Downcasts an instance of `JPH::SerializableObject` to a derived class `JPH::ConstraintSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_ConstraintSettings *JPH_ConstraintSettings_MutableStaticDowncastFrom_JPH_SerializableObject(JPH_SerializableObject *object);
+
+/// Upcasts an instance of `JPH::ConstraintSettings` to its base class `JPH::RefTarget<JPH::ConstraintSettings>`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_RefTarget_JPH_ConstraintSettings *JPH_ConstraintSettings_UpcastTo_JPH_RefTarget_JPH_ConstraintSettings(const JPH_ConstraintSettings *object);
+
+/// Upcasts an instance of `JPH::ConstraintSettings` to its base class `JPH::RefTarget<JPH::ConstraintSettings>`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_RefTarget_JPH_ConstraintSettings *JPH_ConstraintSettings_MutableUpcastTo_JPH_RefTarget_JPH_ConstraintSettings(JPH_ConstraintSettings *object);
+
+/// Downcasts an instance of `JPH::RefTarget<JPH::ConstraintSettings>` to a derived class `JPH::ConstraintSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_ConstraintSettings *JPH_ConstraintSettings_StaticDowncastFrom_JPH_RefTarget_JPH_ConstraintSettings(const JPH_RefTarget_JPH_ConstraintSettings *object);
+
+/// Downcasts an instance of `JPH::RefTarget<JPH::ConstraintSettings>` to a derived class `JPH::ConstraintSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_ConstraintSettings *JPH_ConstraintSettings_MutableStaticDowncastFrom_JPH_RefTarget_JPH_ConstraintSettings(JPH_RefTarget_JPH_ConstraintSettings *object);
+
+/// Destroys a heap-allocated instance of `JPH_Constraint`. Does nothing if the pointer is null.
+JOLT_API void JPH_Constraint_Destroy(const JPH_Constraint *_this);
+
+/// Destroys a heap-allocated array of `JPH_Constraint`. Does nothing if the pointer is null.
+JOLT_API void JPH_Constraint_DestroyArray(const JPH_Constraint *_this);
+
+/// Generated from method `JPH::Constraint::operator new`.
+JOLT_API void *Jolt_new_JPH_Constraint_unsigned_long(unsigned long inCount);
+
+/// Generated from method `JPH::Constraint::operator delete`.
+JOLT_API void Jolt_delete_JPH_Constraint_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::Constraint::operator delete`.
+JOLT_API void Jolt_delete_JPH_Constraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+
+/// Generated from method `JPH::Constraint::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_Constraint_unsigned_long(unsigned long inCount);
+
+/// Generated from method `JPH::Constraint::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_Constraint_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::Constraint::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_Constraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+
+/// Generated from method `JPH::Constraint::operator new`.
+JOLT_API void *Jolt_new_JPH_Constraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+
+/// Generated from method `JPH::Constraint::operator delete`.
+JOLT_API void Jolt_delete_JPH_Constraint_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Generated from method `JPH::Constraint::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_Constraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+
+/// Generated from method `JPH::Constraint::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_Constraint_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Priority of the constraint when solving. Higher numbers have are more likely to be solved correctly.
+/// Note that if you want a deterministic simulation and you cannot guarantee the order in which constraints are added/removed, you can make the priority for all constraints unique to get a deterministic ordering.
+/// Generated from method `JPH::Constraint::GetConstraintPriority`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_Constraint_GetConstraintPriority(const JPH_Constraint *_this);
+
+/// Generated from method `JPH::Constraint::SetConstraintPriority`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_SetConstraintPriority(JPH_Constraint *_this, unsigned int inPriority);
+
+/// Used only when the constraint is active. Override for the number of solver velocity iterations to run, 0 means use the default in PhysicsSettings::mNumVelocitySteps. The number of iterations to use is the max of all contacts and constraints in the island.
+/// Generated from method `JPH::Constraint::SetNumVelocityStepsOverride`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_SetNumVelocityStepsOverride(JPH_Constraint *_this, unsigned int inN);
+
+/// Generated from method `JPH::Constraint::GetNumVelocityStepsOverride`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_Constraint_GetNumVelocityStepsOverride(const JPH_Constraint *_this);
+
+/// Used only when the constraint is active. Override for the number of solver position iterations to run, 0 means use the default in PhysicsSettings::mNumPositionSteps. The number of iterations to use is the max of all contacts and constraints in the island.
+/// Generated from method `JPH::Constraint::SetNumPositionStepsOverride`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_SetNumPositionStepsOverride(JPH_Constraint *_this, unsigned int inN);
+
+/// Generated from method `JPH::Constraint::GetNumPositionStepsOverride`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_Constraint_GetNumPositionStepsOverride(const JPH_Constraint *_this);
+
+/// Enable / disable this constraint. This can e.g. be used to implement a breakable constraint by detecting that the constraint impulse
+/// (see e.g. PointConstraint::GetTotalLambdaPosition) went over a certain limit and then disabling the constraint.
+/// Note that although a disabled constraint will not affect the simulation in any way anymore, it does incur some processing overhead.
+/// Alternatively you can remove a constraint from the constraint manager (which may be more costly if you want to disable the constraint for a short while).
+/// Generated from method `JPH::Constraint::SetEnabled`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_SetEnabled(JPH_Constraint *_this, bool inEnabled);
+
+/// Test if a constraint is enabled.
+/// Generated from method `JPH::Constraint::GetEnabled`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JPH_Constraint_GetEnabled(const JPH_Constraint *_this);
+
+/// Access to the user data, can be used for anything by the application
+/// Generated from method `JPH::Constraint::GetUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API uint64_t JPH_Constraint_GetUserData(const JPH_Constraint *_this);
+
+/// Generated from method `JPH::Constraint::SetUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_SetUserData(JPH_Constraint *_this, uint64_t inUserData);
+
+/// Notify the system that the configuration of the bodies and/or constraint has changed enough so that the warm start impulses should not be applied the next frame.
+/// You can use this function for example when repositioning a ragdoll through Ragdoll::SetPose in such a way that the orientation of the bodies completely changes so that
+/// the previous frame impulses are no longer a good approximation of what the impulses will be in the next frame. Calling this function when there are no big changes
+/// will result in the constraints being much 'softer' than usual so they are more easily violated (e.g. a long chain of bodies might sag a bit if you call this every frame).
+/// Generated from method `JPH::Constraint::ResetWarmStart`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_ResetWarmStart(JPH_Constraint *_this);
+
+///@name Solver interface
+///@{
+/// Generated from method `JPH::Constraint::IsActive`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JPH_Constraint_IsActive(const JPH_Constraint *_this);
+
+/// Generated from method `JPH::Constraint::SetupVelocityConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_SetupVelocityConstraint(JPH_Constraint *_this, float inDeltaTime);
+
+/// Generated from method `JPH::Constraint::WarmStartVelocityConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_WarmStartVelocityConstraint(JPH_Constraint *_this, float inWarmStartImpulseRatio);
+
+/// Generated from method `JPH::Constraint::SolveVelocityConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JPH_Constraint_SolveVelocityConstraint(JPH_Constraint *_this, float inDeltaTime);
+
+/// Generated from method `JPH::Constraint::SolvePositionConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JPH_Constraint_SolvePositionConstraint(JPH_Constraint *_this, float inDeltaTime, float inBaumgarte);
+
+/// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+/// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+/// the object and at that point in time it is checked that no references are left to the structure.
+/// Generated from method `JPH::Constraint::SetEmbedded`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_SetEmbedded(const JPH_Constraint *_this);
+
+/// Get current refcount of this object
+/// Generated from method `JPH::Constraint::GetRefCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_Constraint_GetRefCount(const JPH_Constraint *_this);
+
+/// Add or release a reference to this object
+/// Generated from method `JPH::Constraint::AddRef`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_AddRef(const JPH_Constraint *_this);
+
+/// Generated from method `JPH::Constraint::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_Release(const JPH_Constraint *_this);
+
+/// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+/// Generated from method `JPH::Constraint::sInternalGetRefCountOffset`.
+JOLT_API int JPH_Constraint_sInternalGetRefCountOffset(void);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_Constraint *JPH_Constraint_OffsetPtr(const JPH_Constraint *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_Constraint *JPH_Constraint_OffsetMutablePtr(JPH_Constraint *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JPH::Constraint` to its base class `JPH::RefTarget<JPH::Constraint>`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_RefTarget_JPH_Constraint *JPH_Constraint_UpcastTo_JPH_RefTarget_JPH_Constraint(const JPH_Constraint *object);
+
+/// Upcasts an instance of `JPH::Constraint` to its base class `JPH::RefTarget<JPH::Constraint>`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_RefTarget_JPH_Constraint *JPH_Constraint_MutableUpcastTo_JPH_RefTarget_JPH_Constraint(JPH_Constraint *object);
+
+/// Downcasts an instance of `JPH::RefTarget<JPH::Constraint>` to a derived class `JPH::Constraint`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_Constraint *JPH_Constraint_StaticDowncastFrom_JPH_RefTarget_JPH_Constraint(const JPH_RefTarget_JPH_Constraint *object);
+
+/// Downcasts an instance of `JPH::RefTarget<JPH::Constraint>` to a derived class `JPH::Constraint`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_Constraint *JPH_Constraint_MutableStaticDowncastFrom_JPH_RefTarget_JPH_Constraint(JPH_RefTarget_JPH_Constraint *object);
+
+/// Upcasts an instance of `JPH::Constraint` to its base class `JPH::NonCopyable`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_NonCopyable *JPH_Constraint_UpcastTo_JPH_NonCopyable(const JPH_Constraint *object);
+
+/// Upcasts an instance of `JPH::Constraint` to its base class `JPH::NonCopyable`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_NonCopyable *JPH_Constraint_MutableUpcastTo_JPH_NonCopyable(JPH_Constraint *object);
+
+/// Downcasts an instance of `JPH::NonCopyable` to a derived class `JPH::Constraint`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_Constraint *JPH_Constraint_StaticDowncastFrom_JPH_NonCopyable(const JPH_NonCopyable *object);
+
+/// Downcasts an instance of `JPH::NonCopyable` to a derived class `JPH::Constraint`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_Constraint *JPH_Constraint_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCopyable *object);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
