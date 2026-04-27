@@ -16,12 +16,14 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Fixed constraint settings, used to create a fixed constraint
@@ -67,6 +69,82 @@ JOLT_API void JPH_FixedConstraintSettings_Set_mAutoDetectPoint(JPH_FixedConstrai
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API bool *JPH_FixedConstraintSettings_GetMutable_mAutoDetectPoint(JPH_FixedConstraintSettings *_this);
+
+/// Body 1 constraint reference frame (space determined by mSpace)
+/// Returns a pointer to a member variable of class `JPH::FixedConstraintSettings` named `mPoint1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mPoint1(const JPH_FixedConstraintSettings *_this);
+
+/// Body 1 constraint reference frame (space determined by mSpace)
+/// Returns a mutable pointer to a member variable of class `JPH::FixedConstraintSettings` named `mPoint1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mPoint1(JPH_FixedConstraintSettings *_this);
+
+/// Returns a pointer to a member variable of class `JPH::FixedConstraintSettings` named `mAxisX1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mAxisX1(const JPH_FixedConstraintSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::FixedConstraintSettings` named `mAxisX1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mAxisX1(JPH_FixedConstraintSettings *_this);
+
+/// Returns a pointer to a member variable of class `JPH::FixedConstraintSettings` named `mAxisY1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mAxisY1(const JPH_FixedConstraintSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::FixedConstraintSettings` named `mAxisY1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mAxisY1(JPH_FixedConstraintSettings *_this);
+
+/// Body 2 constraint reference frame (space determined by mSpace)
+/// Returns a pointer to a member variable of class `JPH::FixedConstraintSettings` named `mPoint2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mPoint2(const JPH_FixedConstraintSettings *_this);
+
+/// Body 2 constraint reference frame (space determined by mSpace)
+/// Returns a mutable pointer to a member variable of class `JPH::FixedConstraintSettings` named `mPoint2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mPoint2(JPH_FixedConstraintSettings *_this);
+
+/// Returns a pointer to a member variable of class `JPH::FixedConstraintSettings` named `mAxisX2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mAxisX2(const JPH_FixedConstraintSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::FixedConstraintSettings` named `mAxisX2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mAxisX2(JPH_FixedConstraintSettings *_this);
+
+/// Returns a pointer to a member variable of class `JPH::FixedConstraintSettings` named `mAxisY2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mAxisY2(const JPH_FixedConstraintSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::FixedConstraintSettings` named `mAxisY2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mAxisY2(JPH_FixedConstraintSettings *_this);
 
 /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
 /// Returns a pointer to a member variable of class `JPH::FixedConstraintSettings` named `mEnabled`.
@@ -504,6 +582,12 @@ JOLT_API void *Jolt_new_array_JPH_FixedConstraint_size_t_void_ptr(unsigned long 
 /// Generated from method `JPH::FixedConstraint::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_FixedConstraint_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
+/// Generated from method `JPH::FixedConstraint::NotifyShapeChanged`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inDeltaCOM` can not be null. It is a single object.
+JOLT_API void JPH_FixedConstraint_NotifyShapeChanged(JPH_FixedConstraint *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inDeltaCOM);
+
 /// Generated from method `JPH::FixedConstraint::SetupVelocityConstraint`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_FixedConstraint_SetupVelocityConstraint(JPH_FixedConstraint *_this, float inDeltaTime);
@@ -523,6 +607,28 @@ JOLT_API bool JPH_FixedConstraint_SolveVelocityConstraint(JPH_FixedConstraint *_
 /// Generated from method `JPH::FixedConstraint::SolvePositionConstraint`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_FixedConstraint_SolvePositionConstraint(JPH_FixedConstraint *_this, float inDeltaTime, float inBaumgarte);
+
+// See: TwoBodyConstraint
+/// Generated from method `JPH::FixedConstraint::GetConstraintToBody1Matrix`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_FixedConstraint_GetConstraintToBody1Matrix(const JPH_FixedConstraint *_this);
+
+/// Generated from method `JPH::FixedConstraint::GetConstraintToBody2Matrix`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_FixedConstraint_GetConstraintToBody2Matrix(const JPH_FixedConstraint *_this);
+
+///@name Get Lagrange multiplier from last physics update (the linear/angular impulse applied to satisfy the constraint)
+/// Generated from method `JPH::FixedConstraint::GetTotalLambdaPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_FixedConstraint_GetTotalLambdaPosition(const JPH_FixedConstraint *_this);
+
+/// Generated from method `JPH::FixedConstraint::GetTotalLambdaRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_FixedConstraint_GetTotalLambdaRotation(const JPH_FixedConstraint *_this);
 
 /// Solver interface
 /// Generated from method `JPH::FixedConstraint::IsActive`.

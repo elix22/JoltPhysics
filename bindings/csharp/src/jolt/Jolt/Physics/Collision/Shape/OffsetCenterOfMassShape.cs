@@ -129,6 +129,24 @@ public static partial class Jolt
                 return ret;
             }
 
+            ///< Offset to be applied to the center of mass of the child shape
+            public unsafe Jolt.JPH.Const_Vec3 mOffset
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Get_mOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Get_mOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_OffsetCenterOfMassShapeSettings_Get_mOffset(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_OffsetCenterOfMassShapeSettings_Get_mOffset(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// User data (to be used freely by the application)
             public unsafe ulong mUserData
             {
@@ -176,6 +194,32 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::OffsetCenterOfMassShapeSettings::OffsetCenterOfMassShapeSettings`.
             public Const_OffsetCenterOfMassShapeSettings(OffsetCenterOfMassShapeSettings _other) : this((Const_OffsetCenterOfMassShapeSettings)_other) {}
+
+            /// Construct with shape settings, can be serialized.
+            /// Generated from constructor `JPH::OffsetCenterOfMassShapeSettings::OffsetCenterOfMassShapeSettings`.
+            public unsafe Const_OffsetCenterOfMassShapeSettings(Jolt.JPH.Const_Vec3 inOffset, Jolt.JPH.Const_ShapeSettings? inShape) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.OffsetCenterOfMassShapeSettings._Underlying *__JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_ShapeSettings_ptr(Jolt.JPH.Vec3._Underlying *inOffset, Jolt.JPH.Const_ShapeSettings._Underlying *inShape);
+                _UnderlyingPtr = __JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_ShapeSettings_ptr(inOffset._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+            }
+
+            /// Variant that uses a concrete shape, which means this object cannot be serialized.
+            /// Generated from constructor `JPH::OffsetCenterOfMassShapeSettings::OffsetCenterOfMassShapeSettings`.
+            public unsafe Const_OffsetCenterOfMassShapeSettings(Jolt.JPH.Const_Vec3 inOffset, Jolt.JPH.Const_Shape? inShape) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.OffsetCenterOfMassShapeSettings._Underlying *__JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_Shape_ptr(Jolt.JPH.Vec3._Underlying *inOffset, Jolt.JPH.Const_Shape._Underlying *inShape);
+                _UnderlyingPtr = __JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_Shape_ptr(inOffset._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+            }
 
             /// Generated from method `JPH::OffsetCenterOfMassShapeSettings::operator new`.
             /// Returns a mutable pointer.
@@ -484,6 +528,24 @@ public static partial class Jolt
                 return ret;
             }
 
+            ///< Offset to be applied to the center of mass of the child shape
+            public new unsafe Jolt.JPH.Vec3 mOffset
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_GetMutable_mOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_GetMutable_mOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_OffsetCenterOfMassShapeSettings_GetMutable_mOffset(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_OffsetCenterOfMassShapeSettings_GetMutable_mOffset(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// User data (to be used freely by the application)
             public new unsafe ref ulong mUserData
             {
@@ -531,6 +593,32 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::OffsetCenterOfMassShapeSettings::OffsetCenterOfMassShapeSettings`.
             public OffsetCenterOfMassShapeSettings(OffsetCenterOfMassShapeSettings _other) : this((Const_OffsetCenterOfMassShapeSettings)_other) {}
+
+            /// Construct with shape settings, can be serialized.
+            /// Generated from constructor `JPH::OffsetCenterOfMassShapeSettings::OffsetCenterOfMassShapeSettings`.
+            public unsafe OffsetCenterOfMassShapeSettings(Jolt.JPH.Const_Vec3 inOffset, Jolt.JPH.Const_ShapeSettings? inShape) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.OffsetCenterOfMassShapeSettings._Underlying *__JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_ShapeSettings_ptr(Jolt.JPH.Vec3._Underlying *inOffset, Jolt.JPH.Const_ShapeSettings._Underlying *inShape);
+                _UnderlyingPtr = __JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_ShapeSettings_ptr(inOffset._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+            }
+
+            /// Variant that uses a concrete shape, which means this object cannot be serialized.
+            /// Generated from constructor `JPH::OffsetCenterOfMassShapeSettings::OffsetCenterOfMassShapeSettings`.
+            public unsafe OffsetCenterOfMassShapeSettings(Jolt.JPH.Const_Vec3 inOffset, Jolt.JPH.Const_Shape? inShape) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.OffsetCenterOfMassShapeSettings._Underlying *__JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_Shape_ptr(Jolt.JPH.Vec3._Underlying *inOffset, Jolt.JPH.Const_Shape._Underlying *inShape);
+                _UnderlyingPtr = __JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_Shape_ptr(inOffset._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+            }
 
             /// Generated from method `JPH::OffsetCenterOfMassShapeSettings::operator=`.
             public unsafe Jolt.JPH.OffsetCenterOfMassShapeSettings Assign(Jolt.JPH._ByValue_OffsetCenterOfMassShapeSettings _other)
@@ -752,6 +840,31 @@ public static partial class Jolt
                 _UnderlyingPtr = __JPH_OffsetCenterOfMassShape_DefaultConstruct();
             }
 
+            /// Generated from constructor `JPH::OffsetCenterOfMassShape::OffsetCenterOfMassShape`.
+            public unsafe Const_OffsetCenterOfMassShape(Jolt.JPH.Const_Shape? inShape, Jolt.JPH.Const_Vec3 inOffset) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.OffsetCenterOfMassShape._Underlying *__JPH_OffsetCenterOfMassShape_Construct_const_JPH_Shape_ptr(Jolt.JPH.Const_Shape._Underlying *inShape, Jolt.JPH.Vec3._Underlying *inOffset);
+                _UnderlyingPtr = __JPH_OffsetCenterOfMassShape_Construct_const_JPH_Shape_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inOffset._UnderlyingPtr);
+            }
+
+            /// Get world space bounds including convex radius.
+            /// Generated from method `JPH::OffsetCenterOfMassShape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_DMat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_DMat44(_Underlying *_this, Jolt.JPH.Const_DMat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_DMat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             /// Generated from method `JPH::OffsetCenterOfMassShape::operator new`.
             /// Returns a mutable pointer.
             public static unsafe void *New(ulong inCount)
@@ -886,6 +999,32 @@ public static partial class Jolt
                 __Jolt_delete_array_JPH_OffsetCenterOfMassShape_void_ptr_void_ptr(inPointer, inPlace);
             }
 
+            /// Access the offset that is applied to the center of mass
+            /// Generated from method `JPH::OffsetCenterOfMassShape::GetOffset`.
+            public unsafe Jolt.JPH.Vec3 GetOffset()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_OffsetCenterOfMassShape_GetOffset(_Underlying *_this);
+                return new(__JPH_OffsetCenterOfMassShape_GetOffset(_UnderlyingPtr), is_owning: true);
+            }
+
+            // See Shape::GetCenterOfMass
+            /// Generated from method `JPH::OffsetCenterOfMassShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_OffsetCenterOfMassShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_OffsetCenterOfMassShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetLocalBounds
             /// Generated from method `JPH::OffsetCenterOfMassShape::GetLocalBounds`.
             public unsafe Jolt.JPH.AABox GetLocalBounds()
@@ -899,6 +1038,19 @@ public static partial class Jolt
                 return new(__JPH_OffsetCenterOfMassShape_GetLocalBounds(_UnderlyingPtr), is_owning: true);
             }
 
+            // See Shape::GetWorldSpaceBounds
+            /// Generated from method `JPH::OffsetCenterOfMassShape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_Mat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_Mat44(_Underlying *_this, Jolt.JPH.Const_Mat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_Mat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetInnerRadius
             /// Generated from method `JPH::OffsetCenterOfMassShape::GetInnerRadius`.
             public unsafe float GetInnerRadius()
@@ -910,6 +1062,45 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_OffsetCenterOfMassShape_GetInnerRadius(_Underlying *_this);
                 return __JPH_OffsetCenterOfMassShape_GetInnerRadius(_UnderlyingPtr);
+            }
+
+            // See Shape::GetSurfaceNormal
+            /// Generated from method `JPH::OffsetCenterOfMassShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_OffsetCenterOfMassShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_OffsetCenterOfMassShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            // See Shape::GetTrianglesStart
+            /// Generated from method `JPH::OffsetCenterOfMassShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_OffsetCenterOfMassShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_OffsetCenterOfMassShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            // See Shape::GetTrianglesNext
+            /// Generated from method `JPH::OffsetCenterOfMassShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_OffsetCenterOfMassShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_OffsetCenterOfMassShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
             }
 
             // See Shape::GetStats
@@ -1030,6 +1221,32 @@ public static partial class Jolt
                 #endif
                 extern static ulong __JPH_OffsetCenterOfMassShape_GetSubShapeUserData(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID);
                 return __JPH_OffsetCenterOfMassShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
+            }
+
+            // See Shape::IsValidScale
+            /// Generated from method `JPH::OffsetCenterOfMassShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_OffsetCenterOfMassShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_OffsetCenterOfMassShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            // See Shape::MakeScaleValid
+            /// Generated from method `JPH::OffsetCenterOfMassShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_OffsetCenterOfMassShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_OffsetCenterOfMassShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             /// User data (to be used freely by the application)
@@ -1216,6 +1433,18 @@ public static partial class Jolt
                 #endif
                 extern static Jolt.JPH.OffsetCenterOfMassShape._Underlying *__JPH_OffsetCenterOfMassShape_DefaultConstruct();
                 _UnderlyingPtr = __JPH_OffsetCenterOfMassShape_DefaultConstruct();
+            }
+
+            /// Generated from constructor `JPH::OffsetCenterOfMassShape::OffsetCenterOfMassShape`.
+            public unsafe OffsetCenterOfMassShape(Jolt.JPH.Const_Shape? inShape, Jolt.JPH.Const_Vec3 inOffset) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_OffsetCenterOfMassShape_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.OffsetCenterOfMassShape._Underlying *__JPH_OffsetCenterOfMassShape_Construct_const_JPH_Shape_ptr(Jolt.JPH.Const_Shape._Underlying *inShape, Jolt.JPH.Vec3._Underlying *inOffset);
+                _UnderlyingPtr = __JPH_OffsetCenterOfMassShape_Construct_const_JPH_Shape_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inOffset._UnderlyingPtr);
             }
 
             /// Generated from method `JPH::OffsetCenterOfMassShape::SetUserData`.

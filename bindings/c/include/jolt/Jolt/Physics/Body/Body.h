@@ -16,10 +16,13 @@ typedef struct JPH_BodyCreationSettings JPH_BodyCreationSettings; // Defined in 
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_BroadPhaseLayer JPH_BroadPhaseLayer; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
 typedef struct JPH_CollisionGroup JPH_CollisionGroup; // Defined in `#include <jolt/Jolt/Physics/Collision/CollisionGroup.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SoftBodyCreationSettings JPH_SoftBodyCreationSettings; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyCreationSettings.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Generated from class `JPH::Body`.
@@ -244,6 +247,94 @@ JOLT_API float JPH_Body_GetRestitution(const JPH_Body *_this);
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_Body_SetRestitution(JPH_Body *_this, float inRestitution);
 
+/// Get world space linear velocity of the center of mass (unit: m/s)
+/// Generated from method `JPH::Body::GetLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Body_GetLinearVelocity(const JPH_Body *_this);
+
+/// Set world space linear velocity of the center of mass (unit: m/s).
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
+/// Generated from method `JPH::Body::SetLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLinearVelocity` can not be null. It is a single object.
+JOLT_API void JPH_Body_SetLinearVelocity(JPH_Body *_this, const JPH_Vec3 *inLinearVelocity);
+
+/// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
+/// Generated from method `JPH::Body::SetLinearVelocityClamped`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLinearVelocity` can not be null. It is a single object.
+JOLT_API void JPH_Body_SetLinearVelocityClamped(JPH_Body *_this, const JPH_Vec3 *inLinearVelocity);
+
+/// Get world space angular velocity of the center of mass (unit: rad/s)
+/// Generated from method `JPH::Body::GetAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Body_GetAngularVelocity(const JPH_Body *_this);
+
+/// Set world space angular velocity of the center of mass (unit: rad/s).
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
+/// Generated from method `JPH::Body::SetAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inAngularVelocity` can not be null. It is a single object.
+JOLT_API void JPH_Body_SetAngularVelocity(JPH_Body *_this, const JPH_Vec3 *inAngularVelocity);
+
+/// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
+/// Generated from method `JPH::Body::SetAngularVelocityClamped`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inAngularVelocity` can not be null. It is a single object.
+JOLT_API void JPH_Body_SetAngularVelocityClamped(JPH_Body *_this, const JPH_Vec3 *inAngularVelocity);
+
+/// Velocity of point inPoint (in center of mass space, e.g. on the surface of the body) of the body (unit: m/s)
+/// Generated from method `JPH::Body::GetPointVelocityCOM`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPointRelativeToCOM` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Body_GetPointVelocityCOM(const JPH_Body *_this, const JPH_Vec3 *inPointRelativeToCOM);
+
+/// Velocity of point inPoint (in world space, e.g. on the surface of the body) of the body (unit: m/s)
+/// Generated from method `JPH::Body::GetPointVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPoint` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Body_GetPointVelocity(const JPH_Body *_this, const JPH_Vec3 *inPoint);
+
+/// Add force (unit: N) at center of mass for the next time step, will be reset after the next call to PhysicsSystem::Update.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::AddForce instead.
+/// Generated from method `JPH::Body::AddForce`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inForce` can not be null. It is a single object.
+JOLT_API void JPH_Body_AddForce_1(JPH_Body *_this, const JPH_Vec3 *inForce);
+
+/// Add force (unit: N) at world space position inPosition for the next time step, will be reset after the next call to PhysicsSystem::Update.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::AddForce instead.
+/// Generated from method `JPH::Body::AddForce`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inForce` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+JOLT_API void JPH_Body_AddForce_2(JPH_Body *_this, const JPH_Vec3 *inForce, const JPH_Vec3 *inPosition);
+
+/// Add torque (unit: N m) for the next time step, will be reset after the next call to PhysicsSystem::Update.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::AddTorque instead.
+/// Generated from method `JPH::Body::AddTorque`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inTorque` can not be null. It is a single object.
+JOLT_API void JPH_Body_AddTorque(JPH_Body *_this, const JPH_Vec3 *inTorque);
+
+// Get the total amount of force applied to the center of mass this time step (through AddForce calls). Note that it will reset to zero after PhysicsSystem::Update.
+/// Generated from method `JPH::Body::GetAccumulatedForce`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Body_GetAccumulatedForce(const JPH_Body *_this);
+
+// Get the total amount of torque applied to the center of mass this time step (through AddForce/AddTorque calls). Note that it will reset to zero after PhysicsSystem::Update.
+/// Generated from method `JPH::Body::GetAccumulatedTorque`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Body_GetAccumulatedTorque(const JPH_Body *_this);
+
 // Reset the total accumulated force, not that this will be done automatically after every time step.
 /// Generated from method `JPH::Body::ResetForce`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -258,6 +349,95 @@ JOLT_API void JPH_Body_ResetTorque(JPH_Body *_this);
 /// Generated from method `JPH::Body::ResetMotion`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_Body_ResetMotion(JPH_Body *_this);
+
+/// Get inverse inertia tensor in world space
+/// Generated from method `JPH::Body::GetInverseInertia`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_Body_GetInverseInertia(const JPH_Body *_this);
+
+/// Add impulse to center of mass (unit: kg m/s).
+/// If you want the body to wake up when it is sleeping, use BodyInterface::AddImpulse instead.
+/// Generated from method `JPH::Body::AddImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inImpulse` can not be null. It is a single object.
+JOLT_API void JPH_Body_AddImpulse_1(JPH_Body *_this, const JPH_Vec3 *inImpulse);
+
+/// Add impulse to point in world space (unit: kg m/s).
+/// If you want the body to wake up when it is sleeping, use BodyInterface::AddImpulse instead.
+/// Generated from method `JPH::Body::AddImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inImpulse` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+JOLT_API void JPH_Body_AddImpulse_2(JPH_Body *_this, const JPH_Vec3 *inImpulse, const JPH_Vec3 *inPosition);
+
+/// Add angular impulse in world space (unit: N m s).
+/// If you want the body to wake up when it is sleeping, use BodyInterface::AddAngularImpulse instead.
+/// Generated from method `JPH::Body::AddAngularImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inAngularImpulse` can not be null. It is a single object.
+JOLT_API void JPH_Body_AddAngularImpulse(JPH_Body *_this, const JPH_Vec3 *inAngularImpulse);
+
+/// Set velocity of body such that it will be positioned at inTargetPosition/Rotation in inDeltaTime seconds.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::MoveKinematic instead.
+/// Generated from method `JPH::Body::MoveKinematic`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inTargetPosition` can not be null. It is a single object.
+/// Parameter `inTargetRotation` can not be null. It is a single object.
+JOLT_API void JPH_Body_MoveKinematic(JPH_Body *_this, const JPH_Vec3 *inTargetPosition, const JPH_Quat *inTargetRotation, float inDeltaTime);
+
+/// Gets the properties needed to do buoyancy calculations
+/// @param inSurfacePosition Position of the fluid surface in world space
+/// @param inSurfaceNormal Normal of the fluid surface (should point up)
+/// @param outTotalVolume On return this contains the total volume of the shape
+/// @param outSubmergedVolume On return this contains the submerged volume of the shape
+/// @param outRelativeCenterOfBuoyancy On return this contains the center of mass of the submerged volume relative to the center of mass of the body
+/// Generated from method `JPH::Body::GetSubmergedVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSurfacePosition` can not be null. It is a single object.
+/// Parameter `inSurfaceNormal` can not be null. It is a single object.
+/// Parameter `outTotalVolume` can not be null. It is a single object.
+/// Parameter `outSubmergedVolume` can not be null. It is a single object.
+/// Parameter `outRelativeCenterOfBuoyancy` can not be null. It is a single object.
+JOLT_API void JPH_Body_GetSubmergedVolume(const JPH_Body *_this, const JPH_Vec3 *inSurfacePosition, const JPH_Vec3 *inSurfaceNormal, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outRelativeCenterOfBuoyancy);
+
+/// Applies an impulse to the body that simulates fluid buoyancy and drag.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::ApplyBuoyancyImpulse instead.
+/// @param inSurfacePosition Position of the fluid surface in world space
+/// @param inSurfaceNormal Normal of the fluid surface (should point up)
+/// @param inBuoyancy The buoyancy factor for the body. 1 = neutral body, < 1 sinks, > 1 floats. Note that we don't use the fluid density since it is harder to configure than a simple number between [0, 2]
+/// @param inLinearDrag Linear drag factor that slows down the body when in the fluid (approx. 0.5)
+/// @param inAngularDrag Angular drag factor that slows down rotation when the body is in the fluid (approx. 0.01)
+/// @param inFluidVelocity The average velocity of the fluid (in m/s) in which the body resides
+/// @param inGravity The gravity vector (pointing down)
+/// @param inDeltaTime Delta time of the next simulation step (in s)
+/// @return true if an impulse was applied, false if the body was not in the fluid
+/// Generated from method `JPH::Body::ApplyBuoyancyImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSurfacePosition` can not be null. It is a single object.
+/// Parameter `inSurfaceNormal` can not be null. It is a single object.
+/// Parameter `inFluidVelocity` can not be null. It is a single object.
+/// Parameter `inGravity` can not be null. It is a single object.
+JOLT_API bool JPH_Body_ApplyBuoyancyImpulse_8(JPH_Body *_this, const JPH_Vec3 *inSurfacePosition, const JPH_Vec3 *inSurfaceNormal, float inBuoyancy, float inLinearDrag, float inAngularDrag, const JPH_Vec3 *inFluidVelocity, const JPH_Vec3 *inGravity, float inDeltaTime);
+
+/// Applies an impulse to the body that simulates fluid buoyancy and drag.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::ApplyBuoyancyImpulse instead.
+/// @param inTotalVolume Total volume of the shape of this body (m^3)
+/// @param inSubmergedVolume Submerged volume of the shape of this body (m^3)
+/// @param inRelativeCenterOfBuoyancy The center of mass of the submerged volume relative to the center of mass of the body
+/// @param inBuoyancy The buoyancy factor for the body. 1 = neutral body, < 1 sinks, > 1 floats. Note that we don't use the fluid density since it is harder to configure than a simple number between [0, 2]
+/// @param inLinearDrag Linear drag factor that slows down the body when in the fluid (approx. 0.5)
+/// @param inAngularDrag Angular drag factor that slows down rotation when the body is in the fluid (approx. 0.01)
+/// @param inFluidVelocity The average velocity of the fluid (in m/s) in which the body resides
+/// @param inGravity The gravity vector (pointing down)
+/// @param inDeltaTime Delta time of the next simulation step (in s)
+/// @return true if an impulse was applied, false if the body was not in the fluid
+/// Generated from method `JPH::Body::ApplyBuoyancyImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRelativeCenterOfBuoyancy` can not be null. It is a single object.
+/// Parameter `inFluidVelocity` can not be null. It is a single object.
+/// Parameter `inGravity` can not be null. It is a single object.
+JOLT_API bool JPH_Body_ApplyBuoyancyImpulse_9(JPH_Body *_this, float inTotalVolume, float inSubmergedVolume, const JPH_Vec3 *inRelativeCenterOfBuoyancy, float inBuoyancy, float inLinearDrag, float inAngularDrag, const JPH_Vec3 *inFluidVelocity, const JPH_Vec3 *inGravity, float inDeltaTime);
 
 /// Check if this body has been added to the physics system
 /// Generated from method `JPH::Body::IsInBroadPhase`.
@@ -274,6 +454,42 @@ JOLT_API bool JPH_Body_IsCollisionCacheInvalid(const JPH_Body *_this);
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API const JPH_Shape *JPH_Body_GetShape(const JPH_Body *_this);
 
+/// World space position of the body
+/// Generated from method `JPH::Body::GetPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Body_GetPosition(const JPH_Body *_this);
+
+/// World space rotation of the body
+/// Generated from method `JPH::Body::GetRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Quat_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Quat *JPH_Body_GetRotation(const JPH_Body *_this);
+
+/// Calculates the transform of this body
+/// Generated from method `JPH::Body::GetWorldTransform`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_Body_GetWorldTransform(const JPH_Body *_this);
+
+/// Gets the world space position of this body's center of mass
+/// Generated from method `JPH::Body::GetCenterOfMassPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Body_GetCenterOfMassPosition(const JPH_Body *_this);
+
+/// Calculates the transform for this body's center of mass
+/// Generated from method `JPH::Body::GetCenterOfMassTransform`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_Body_GetCenterOfMassTransform(const JPH_Body *_this);
+
+/// Calculates the inverse of the transform for this body's center of mass
+/// Generated from method `JPH::Body::GetInverseCenterOfMassTransform`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_Body_GetInverseCenterOfMassTransform(const JPH_Body *_this);
+
 /// Get world space bounding box
 /// Generated from method `JPH::Body::GetWorldSpaceBounds`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -288,6 +504,14 @@ JOLT_API uint64_t JPH_Body_GetUserData(const JPH_Body *_this);
 /// Generated from method `JPH::Body::SetUserData`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_Body_SetUserData(JPH_Body *_this, uint64_t inUserData);
+
+/// Get surface normal of a particular sub shape and its world space surface position on this body
+/// Generated from method `JPH::Body::GetWorldSpaceSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Body_GetWorldSpaceSurfaceNormal(const JPH_Body *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inPosition);
 
 /// Debug function to convert a body back to a body creation settings object to be able to save/recreate the body later
 /// Generated from method `JPH::Body::GetBodyCreationSettings`.
@@ -308,6 +532,28 @@ JOLT_API JPH_SoftBodyCreationSettings *JPH_Body_GetSoftBodyCreationSettings(cons
 /// Parameter `inBody2` can not be null. It is a single object.
 JOLT_API bool JPH_Body_sFindCollidingPairsCanCollide(const JPH_Body *inBody1, const JPH_Body *inBody2);
 
+/// Update position using an Euler step (used during position integrate & constraint solving)
+/// Generated from method `JPH::Body::AddPositionStep`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLinearVelocityTimesDeltaTime` can not be null. It is a single object.
+JOLT_API void JPH_Body_AddPositionStep(JPH_Body *_this, const JPH_Vec3 *inLinearVelocityTimesDeltaTime);
+
+/// Generated from method `JPH::Body::SubPositionStep`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLinearVelocityTimesDeltaTime` can not be null. It is a single object.
+JOLT_API void JPH_Body_SubPositionStep(JPH_Body *_this, const JPH_Vec3 *inLinearVelocityTimesDeltaTime);
+
+/// Update rotation using an Euler step (used during position integrate & constraint solving)
+/// Generated from method `JPH::Body::AddRotationStep`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inAngularVelocityTimesDeltaTime` can not be null. It is a single object.
+JOLT_API void JPH_Body_AddRotationStep(JPH_Body *_this, const JPH_Vec3 *inAngularVelocityTimesDeltaTime);
+
+/// Generated from method `JPH::Body::SubRotationStep`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inAngularVelocityTimesDeltaTime` can not be null. It is a single object.
+JOLT_API void JPH_Body_SubRotationStep(JPH_Body *_this, const JPH_Vec3 *inAngularVelocityTimesDeltaTime);
+
 /// Flag if body is in the broadphase (should only be called by the BroadPhase)
 /// Generated from method `JPH::Body::SetInBroadPhaseInternal`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -327,6 +573,22 @@ JOLT_API void JPH_Body_ValidateContactCacheInternal(JPH_Body *_this);
 /// Generated from method `JPH::Body::CalculateWorldSpaceBoundsInternal`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_Body_CalculateWorldSpaceBoundsInternal(JPH_Body *_this);
+
+/// Function to update body's position (should only be called by the BodyInterface since it also requires updating the broadphase)
+/// Generated from method `JPH::Body::SetPositionAndRotationInternal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inResetSleepTimer` has a default argument: `true`, pass a null pointer to use it.
+JOLT_API void JPH_Body_SetPositionAndRotationInternal(JPH_Body *_this, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, const bool *inResetSleepTimer);
+
+/// Updates the center of mass and optionally mass properties after shifting the center of mass or changes to the shape (should only be called by the BodyInterface since it also requires updating the broadphase)
+/// @param inPreviousCenterOfMass Center of mass of the shape before the alterations
+/// @param inUpdateMassProperties When true, the mass and inertia tensor is recalculated
+/// Generated from method `JPH::Body::UpdateCenterOfMassInternal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPreviousCenterOfMass` can not be null. It is a single object.
+JOLT_API void JPH_Body_UpdateCenterOfMassInternal(JPH_Body *_this, const JPH_Vec3 *inPreviousCenterOfMass, bool inUpdateMassProperties);
 
 /// Function to update a body's shape (should only be called by the BodyInterface since it also requires updating the broadphase)
 /// @param inShape The new shape for this body

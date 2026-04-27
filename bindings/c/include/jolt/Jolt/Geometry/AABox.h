@@ -10,11 +10,42 @@
 extern "C" {
 #endif
 
+typedef struct JPH_DMat44 JPH_DMat44; // Defined in `#include <jolt/Jolt/Math/DMat44.h>`.
+typedef struct JPH_DVec3 JPH_DVec3; // Defined in `#include <jolt/Jolt/Math/DVec3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+
 
 /// Axis aligned box
 /// Generated from class `JPH::AABox`.
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_AABox JPH_AABox;
+
+/// Bounding box min and max
+/// Returns a pointer to a member variable of class `JPH::AABox` named `mMin`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_AABox_Get_mMin(const JPH_AABox *_this);
+
+/// Bounding box min and max
+/// Returns a mutable pointer to a member variable of class `JPH::AABox` named `mMin`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_AABox_GetMutable_mMin(JPH_AABox *_this);
+
+/// Returns a pointer to a member variable of class `JPH::AABox` named `mMax`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_AABox_Get_mMax(const JPH_AABox *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::AABox` named `mMax`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_AABox_GetMutable_mMax(JPH_AABox *_this);
 
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
@@ -38,6 +69,23 @@ JOLT_API JPH_AABox *JPH_AABox_OffsetMutablePtr(JPH_AABox *ptr, ptrdiff_t i);
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
 JOLT_API JPH_AABox *JPH_AABox_ConstructFromAnother(const JPH_AABox *_other);
+
+/// Generated from constructor `JPH::AABox::AABox`.
+/// Parameter `inMin` can not be null. It is a single object.
+/// Parameter `inMax` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_AABox_Construct_const_JPH_Vec3_JPH_Vec3(const JPH_Vec3 *inMin, const JPH_Vec3 *inMax);
+
+/// Generated from constructor `JPH::AABox::AABox`.
+/// Parameter `inMin` can not be null. It is a single object.
+/// Parameter `inMax` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_AABox_Construct_const_JPH_DVec3_ref(const JPH_DVec3 *inMin, const JPH_DVec3 *inMax);
+
+/// Generated from constructor `JPH::AABox::AABox`.
+/// Parameter `inCenter` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_AABox_Construct_const_JPH_Vec3_float(const JPH_Vec3 *inCenter, float inRadius);
 
 /// Destroys a heap-allocated instance of `JPH_AABox`. Does nothing if the pointer is null.
 JOLT_API void JPH_AABox_Destroy(const JPH_AABox *_this);
@@ -83,6 +131,13 @@ JOLT_API void *Jolt_new_array_JPH_AABox_size_t_void_ptr(unsigned long inCount, v
 /// Generated from method `JPH::AABox::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_AABox_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
+/// Create box from 2 points
+/// Generated from method `JPH::AABox::sFromTwoPoints`.
+/// Parameter `inP1` can not be null. It is a single object.
+/// Parameter `inP2` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_AABox_sFromTwoPoints(const JPH_Vec3 *inP1, const JPH_Vec3 *inP2);
+
 /// Get bounding box of size FLT_MAX
 /// Generated from method `JPH::AABox::sBiggest`.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
@@ -109,6 +164,12 @@ JOLT_API void JPH_AABox_SetEmpty(JPH_AABox *_this);
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_AABox_IsValid(const JPH_AABox *_this);
 
+/// Encapsulate point in bounding box
+/// Generated from method `JPH::AABox::Encapsulate`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPos` can not be null. It is a single object.
+JOLT_API void JPH_AABox_Encapsulate_1_JPH_Vec3(JPH_AABox *_this, const JPH_Vec3 *inPos);
+
 /// Encapsulate bounding box in bounding box
 /// Generated from method `JPH::AABox::Encapsulate`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -127,6 +188,30 @@ JOLT_API JPH_AABox *JPH_AABox_Intersect(const JPH_AABox *_this, const JPH_AABox 
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_AABox_EnsureMinimalEdgeLength(JPH_AABox *_this, float inMinEdgeLength);
 
+/// Widen the box on both sides by inVector
+/// Generated from method `JPH::AABox::ExpandBy`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inVector` can not be null. It is a single object.
+JOLT_API void JPH_AABox_ExpandBy(JPH_AABox *_this, const JPH_Vec3 *inVector);
+
+/// Get center of bounding box
+/// Generated from method `JPH::AABox::GetCenter`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_AABox_GetCenter(const JPH_AABox *_this);
+
+/// Get extent of bounding box (half of the size)
+/// Generated from method `JPH::AABox::GetExtent`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_AABox_GetExtent(const JPH_AABox *_this);
+
+/// Get size of bounding box
+/// Generated from method `JPH::AABox::GetSize`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_AABox_GetSize(const JPH_AABox *_this);
+
 /// Get surface area of bounding box
 /// Generated from method `JPH::AABox::GetSurfaceArea`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -143,11 +228,76 @@ JOLT_API float JPH_AABox_GetVolume(const JPH_AABox *_this);
 /// Parameter `inOther` can not be null. It is a single object.
 JOLT_API bool JPH_AABox_Contains_JPH_AABox(const JPH_AABox *_this, const JPH_AABox *inOther);
 
+/// Check if this box contains a point
+/// Generated from method `JPH::AABox::Contains`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inOther` can not be null. It is a single object.
+JOLT_API bool JPH_AABox_Contains_JPH_Vec3(const JPH_AABox *_this, const JPH_Vec3 *inOther);
+
+/// Check if this box contains a point
+/// Generated from method `JPH::AABox::Contains`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inOther` can not be null. It is a single object.
+JOLT_API bool JPH_AABox_Contains_JPH_DVec3(const JPH_AABox *_this, const JPH_DVec3 *inOther);
+
 /// Check if this box overlaps with another box
 /// Generated from method `JPH::AABox::Overlaps`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inOther` can not be null. It is a single object.
 JOLT_API bool JPH_AABox_Overlaps_JPH_AABox(const JPH_AABox *_this, const JPH_AABox *inOther);
+
+/// Translate bounding box
+/// Generated from method `JPH::AABox::Translate`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inTranslation` can not be null. It is a single object.
+JOLT_API void JPH_AABox_Translate_JPH_Vec3(JPH_AABox *_this, const JPH_Vec3 *inTranslation);
+
+/// Translate bounding box
+/// Generated from method `JPH::AABox::Translate`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inTranslation` can not be null. It is a single object.
+JOLT_API void JPH_AABox_Translate_JPH_DVec3(JPH_AABox *_this, const JPH_DVec3 *inTranslation);
+
+/// Transform bounding box
+/// Generated from method `JPH::AABox::Transformed`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inMatrix` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_AABox_Transformed_JPH_Mat44(const JPH_AABox *_this, const JPH_Mat44 *inMatrix);
+
+/// Transform bounding box
+/// Generated from method `JPH::AABox::Transformed`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inMatrix` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_AABox_Transformed_JPH_DMat44(const JPH_AABox *_this, const JPH_DMat44 *inMatrix);
+
+/// Scale this bounding box, can handle non-uniform and negative scaling
+/// Generated from method `JPH::AABox::Scaled`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_AABox_Scaled(const JPH_AABox *_this, const JPH_Vec3 *inScale);
+
+/// Calculate the support vector for this convex shape.
+/// Generated from method `JPH::AABox::GetSupport`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inDirection` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_AABox_GetSupport(const JPH_AABox *_this, const JPH_Vec3 *inDirection);
+
+/// Get the closest point on or in this box to inPoint
+/// Generated from method `JPH::AABox::GetClosestPoint`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPoint` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_AABox_GetClosestPoint(const JPH_AABox *_this, const JPH_Vec3 *inPoint);
+
+/// Get the squared distance between inPoint and this box (will be 0 if in Point is inside the box)
+/// Generated from method `JPH::AABox::GetSqDistanceTo`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPoint` can not be null. It is a single object.
+JOLT_API float JPH_AABox_GetSqDistanceTo(const JPH_AABox *_this, const JPH_Vec3 *inPoint);
 
 #ifdef __cplusplus
 } // extern "C"

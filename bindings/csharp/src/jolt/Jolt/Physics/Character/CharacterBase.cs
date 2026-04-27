@@ -48,6 +48,24 @@ public static partial class Jolt
                 return ret;
             }
 
+            /// Vector indicating the up direction of the character
+            public unsafe Jolt.JPH.Const_Vec3 mUp
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBaseSettings_Get_mUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBaseSettings_Get_mUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_CharacterBaseSettings_Get_mUp(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_CharacterBaseSettings_Get_mUp(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// Maximum angle of slope that character can still walk on (radians).
             public unsafe float mMaxSlopeAngle
             {
@@ -335,6 +353,24 @@ public static partial class Jolt
                 Jolt.JPH.RefTarget_JPHCharacterBaseSettings ret = new(__JPH_CharacterBaseSettings_UpcastTo_JPH_RefTarget_JPH_CharacterBaseSettings(self._UnderlyingPtr), is_owning: false);
                 ret._KeepAliveEnclosingObject = self;
                 return ret;
+            }
+
+            /// Vector indicating the up direction of the character
+            public new unsafe Jolt.JPH.Vec3 mUp
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBaseSettings_GetMutable_mUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBaseSettings_GetMutable_mUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterBaseSettings_GetMutable_mUp(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_CharacterBaseSettings_GetMutable_mUp(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
             }
 
             /// Maximum angle of slope that character can still walk on (radians).
@@ -683,6 +719,31 @@ public static partial class Jolt
                 return __JPH_CharacterBase_GetCosMaxSlopeAngle(_UnderlyingPtr);
             }
 
+            /// Generated from method `JPH::CharacterBase::GetUp`.
+            public unsafe Jolt.JPH.Vec3 GetUp()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_GetUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_GetUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterBase_GetUp(_Underlying *_this);
+                return new(__JPH_CharacterBase_GetUp(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Check if the normal of the ground surface is too steep to walk on
+            /// Generated from method `JPH::CharacterBase::IsSlopeTooSteep`.
+            public unsafe bool IsSlopeTooSteep(Jolt.JPH.Const_Vec3 inNormal)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_IsSlopeTooSteep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_IsSlopeTooSteep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_CharacterBase_IsSlopeTooSteep(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inNormal);
+                return __JPH_CharacterBase_IsSlopeTooSteep(_UnderlyingPtr, inNormal._UnderlyingPtr) != 0;
+            }
+
             /// Get the current shape that the character is using.
             /// Generated from method `JPH::CharacterBase::GetShape`.
             public unsafe Jolt.JPH.Const_Shape? GetShape()
@@ -735,6 +796,45 @@ public static partial class Jolt
                 #endif
                 extern static byte __JPH_CharacterBase_IsSupported(_Underlying *_this);
                 return __JPH_CharacterBase_IsSupported(_UnderlyingPtr) != 0;
+            }
+
+            /// Get the contact point with the ground
+            /// Generated from method `JPH::CharacterBase::GetGroundPosition`.
+            public unsafe Jolt.JPH.Vec3 GetGroundPosition()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_GetGroundPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_GetGroundPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterBase_GetGroundPosition(_Underlying *_this);
+                return new(__JPH_CharacterBase_GetGroundPosition(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get the contact normal with the ground
+            /// Generated from method `JPH::CharacterBase::GetGroundNormal`.
+            public unsafe Jolt.JPH.Vec3 GetGroundNormal()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_GetGroundNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_GetGroundNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterBase_GetGroundNormal(_Underlying *_this);
+                return new(__JPH_CharacterBase_GetGroundNormal(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Velocity in world space of ground
+            /// Generated from method `JPH::CharacterBase::GetGroundVelocity`.
+            public unsafe Jolt.JPH.Vec3 GetGroundVelocity()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_GetGroundVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_GetGroundVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterBase_GetGroundVelocity(_Underlying *_this);
+                return new(__JPH_CharacterBase_GetGroundVelocity(_UnderlyingPtr), is_owning: true);
             }
 
             /// Material that the character is standing on
@@ -933,6 +1033,19 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_CharacterBase_SetMaxSlopeAngle(_Underlying *_this, float inMaxSlopeAngle);
                 __JPH_CharacterBase_SetMaxSlopeAngle(_UnderlyingPtr, inMaxSlopeAngle);
+            }
+
+            /// Set the up vector for the character
+            /// Generated from method `JPH::CharacterBase::SetUp`.
+            public unsafe void SetUp(Jolt.JPH.Const_Vec3 inUp)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_SetUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_SetUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterBase_SetUp(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inUp);
+                __JPH_CharacterBase_SetUp(_UnderlyingPtr, inUp._UnderlyingPtr);
             }
         }
 

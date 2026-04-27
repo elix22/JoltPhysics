@@ -1113,6 +1113,59 @@ public static partial class Jolt
                 return __JPH_CylinderShape_GetInnerRadius(_UnderlyingPtr);
             }
 
+            // See Shape::GetSurfaceNormal
+            /// Generated from method `JPH::CylinderShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CylinderShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CylinderShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CylinderShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_CylinderShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            // See ConvexShape::GetSupportFunction
+            /// Generated from method `JPH::CylinderShape::GetSupportFunction`.
+            public unsafe Jolt.JPH.ConvexShape.Const_Support? GetSupportFunction(Jolt.JPH.ConvexShape.ESupportMode inMode, Jolt.JPH.ConvexShape.SupportBuffer inBuffer, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CylinderShape_GetSupportFunction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CylinderShape_GetSupportFunction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ConvexShape.Const_Support._Underlying *__JPH_CylinderShape_GetSupportFunction(_Underlying *_this, Jolt.JPH.ConvexShape.ESupportMode inMode, Jolt.JPH.ConvexShape.SupportBuffer._Underlying *inBuffer, Jolt.JPH.Vec3._Underlying *inScale);
+                var __c_ret = __JPH_CylinderShape_GetSupportFunction(_UnderlyingPtr, inMode, inBuffer._UnderlyingPtr, inScale._UnderlyingPtr);
+                return __c_ret is not null ? new Jolt.JPH.ConvexShape.Const_Support(__c_ret, is_owning: false) : null;
+            }
+
+            // See Shape::GetTrianglesStart
+            /// Generated from method `JPH::CylinderShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CylinderShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CylinderShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CylinderShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_CylinderShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            // See Shape::GetTrianglesNext
+            /// Generated from method `JPH::CylinderShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CylinderShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CylinderShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_CylinderShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_CylinderShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
+            }
+
             // See Shape::GetStats
             /// Generated from method `JPH::CylinderShape::GetStats`.
             public unsafe Jolt.JPH.Shape.Stats GetStats()
@@ -1150,6 +1203,32 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_CylinderShape_GetConvexRadius(_Underlying *_this);
                 return __JPH_CylinderShape_GetConvexRadius(_UnderlyingPtr);
+            }
+
+            // See Shape::IsValidScale
+            /// Generated from method `JPH::CylinderShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CylinderShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CylinderShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_CylinderShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_CylinderShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            // See Shape::MakeScaleValid
+            /// Generated from method `JPH::CylinderShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CylinderShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CylinderShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CylinderShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_CylinderShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             // Register shape functions with the registry
@@ -1215,6 +1294,19 @@ public static partial class Jolt
                 #endif
                 extern static byte __JPH_CylinderShape_MustBeStatic(_Underlying *_this);
                 return __JPH_CylinderShape_MustBeStatic(_UnderlyingPtr) != 0;
+            }
+
+            /// All shapes are centered around their center of mass. This function returns the center of mass position that needs to be applied to transform the shape to where it was created.
+            /// Generated from method `JPH::CylinderShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CylinderShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CylinderShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CylinderShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_CylinderShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
             }
 
             /// Get the leaf shape for a particular sub shape ID.

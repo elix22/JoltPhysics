@@ -739,6 +739,19 @@ public static partial class Jolt
                 return __JPH_DecoratedShape_MustBeStatic(_UnderlyingPtr) != 0;
             }
 
+            // See Shape::GetCenterOfMass
+            /// Generated from method `JPH::DecoratedShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DecoratedShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DecoratedShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_DecoratedShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_DecoratedShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetSubShapeIDBitsRecursive
             /// Generated from method `JPH::DecoratedShape::GetSubShapeIDBitsRecursive`.
             public unsafe uint GetSubShapeIDBitsRecursive()
@@ -793,6 +806,32 @@ public static partial class Jolt
                 return __JPH_DecoratedShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
             }
 
+            // See Shape::IsValidScale
+            /// Generated from method `JPH::DecoratedShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DecoratedShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DecoratedShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_DecoratedShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_DecoratedShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            // See Shape::MakeScaleValid
+            /// Generated from method `JPH::DecoratedShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DecoratedShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DecoratedShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_DecoratedShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_DecoratedShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             /// User data (to be used freely by the application)
             /// Generated from method `JPH::DecoratedShape::GetUserData`.
             public unsafe ulong GetUserData()
@@ -831,6 +870,55 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_DecoratedShape_GetInnerRadius(_Underlying *_this);
                 return __JPH_DecoratedShape_GetInnerRadius(_UnderlyingPtr);
+            }
+
+            /// Get the surface normal of a particular sub shape ID and point on surface (all vectors are relative to center of mass for this shape).
+            /// Note: When you have a CollideShapeResult or ShapeCastResult you should use -mPenetrationAxis.Normalized() as contact normal as GetSurfaceNormal will only return face normals (and not vertex or edge normals).
+            /// Generated from method `JPH::DecoratedShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DecoratedShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DecoratedShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_DecoratedShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_DecoratedShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            /// To start iterating over triangles, call this function first.
+            /// ioContext is a temporary buffer and should remain untouched until the last call to GetTrianglesNext.
+            /// inBox is the world space bounding in which you want to get the triangles.
+            /// inPositionCOM/inRotation/inScale describes the transform of this shape.
+            /// To get the actual triangles call GetTrianglesNext.
+            /// Generated from method `JPH::DecoratedShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DecoratedShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DecoratedShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_DecoratedShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_DecoratedShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            /// Call this repeatedly to get all triangles in the box.
+            /// outTriangleVertices should be large enough to hold 3 * inMaxTriangleRequested entries.
+            /// outMaterials (if it is not null) should contain inMaxTrianglesRequested entries.
+            /// The function returns the amount of triangles that it found (which will be <= inMaxTrianglesRequested), or 0 if there are no more triangles.
+            /// Note that the function can return a value < inMaxTrianglesRequested and still have more triangles to process (triangles can be returned in blocks).
+            /// Note that the function may return triangles outside of the requested box, only coarse culling is performed on the returned triangles.
+            /// Generated from method `JPH::DecoratedShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DecoratedShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DecoratedShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_DecoratedShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_DecoratedShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
             }
 
             /// Get stats of this shape. Use for logging / data collection purposes only. Does not add values from child shapes, use GetStatsRecursive for this.

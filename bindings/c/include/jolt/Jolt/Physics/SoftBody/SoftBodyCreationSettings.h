@@ -13,7 +13,9 @@ extern "C" {
 #endif
 
 typedef struct JPH_CollisionGroup JPH_CollisionGroup; // Defined in `#include <jolt/Jolt/Physics/Collision/CollisionGroup.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_SoftBodySharedSettings JPH_SoftBodySharedSettings; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodySharedSettings.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// This class contains the information needed to create a soft body object
@@ -21,6 +23,34 @@ typedef struct JPH_SoftBodySharedSettings JPH_SoftBodySharedSettings; // Defined
 /// Generated from class `JPH::SoftBodyCreationSettings`.
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_SoftBodyCreationSettings JPH_SoftBodyCreationSettings;
+
+///< Initial position of the soft body
+/// Returns a pointer to a member variable of class `JPH::SoftBodyCreationSettings` named `mPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_SoftBodyCreationSettings_Get_mPosition(const JPH_SoftBodyCreationSettings *_this);
+
+///< Initial position of the soft body
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodyCreationSettings` named `mPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_SoftBodyCreationSettings_GetMutable_mPosition(JPH_SoftBodyCreationSettings *_this);
+
+///< Initial rotation of the soft body
+/// Returns a pointer to a member variable of class `JPH::SoftBodyCreationSettings` named `mRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Quat *JPH_SoftBodyCreationSettings_Get_mRotation(const JPH_SoftBodyCreationSettings *_this);
+
+///< Initial rotation of the soft body
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodyCreationSettings` named `mRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Quat *JPH_SoftBodyCreationSettings_GetMutable_mRotation(JPH_SoftBodyCreationSettings *_this);
 
 /// User data value (can be used by application)
 /// Returns a pointer to a member variable of class `JPH::SoftBodyCreationSettings` named `mUserData`.
@@ -347,6 +377,12 @@ JOLT_API JPH_SoftBodyCreationSettings *JPH_SoftBodyCreationSettings_OffsetMutabl
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodyCreationSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_SoftBodyCreationSettings *JPH_SoftBodyCreationSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_SoftBodyCreationSettings *_other);
+
+/// Generated from constructor `JPH::SoftBodyCreationSettings::SoftBodyCreationSettings`.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodyCreationSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_SoftBodyCreationSettings *JPH_SoftBodyCreationSettings_Construct(const JPH_SoftBodySharedSettings *inSettings, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, unsigned short inObjectLayer);
 
 /// Destroys a heap-allocated instance of `JPH_SoftBodyCreationSettings`. Does nothing if the pointer is null.
 JOLT_API void JPH_SoftBodyCreationSettings_Destroy(const JPH_SoftBodyCreationSettings *_this);

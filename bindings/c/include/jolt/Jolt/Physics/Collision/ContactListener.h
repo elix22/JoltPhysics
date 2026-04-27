@@ -14,6 +14,7 @@ extern "C" {
 typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Body/Body.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_SubShapeIDPair JPH_SubShapeIDPair; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeIDPair.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Manifold class, describes the contact surface between two bodies
@@ -44,6 +45,34 @@ typedef struct JPH_ContactSettings JPH_ContactSettings;
 /// Generated from class `JPH::ContactListener`.
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_ContactListener JPH_ContactListener;
+
+///< Offset to which all the contact points are relative
+/// Returns a pointer to a member variable of class `JPH::ContactManifold` named `mBaseOffset`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_ContactManifold_Get_mBaseOffset(const JPH_ContactManifold *_this);
+
+///< Offset to which all the contact points are relative
+/// Returns a mutable pointer to a member variable of class `JPH::ContactManifold` named `mBaseOffset`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_ContactManifold_GetMutable_mBaseOffset(JPH_ContactManifold *_this);
+
+///< Normal for this manifold, direction along which to move body 2 out of collision along the shortest path
+/// Returns a pointer to a member variable of class `JPH::ContactManifold` named `mWorldSpaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_ContactManifold_Get_mWorldSpaceNormal(const JPH_ContactManifold *_this);
+
+///< Normal for this manifold, direction along which to move body 2 out of collision along the shortest path
+/// Returns a mutable pointer to a member variable of class `JPH::ContactManifold` named `mWorldSpaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_ContactManifold_GetMutable_mWorldSpaceNormal(JPH_ContactManifold *_this);
 
 ///< Penetration depth (move shape 2 by this distance to resolve the collision). If this value is negative, this is a speculative contact point and may not actually result in a velocity change as during solving the bodies may not actually collide.
 /// Returns a pointer to a member variable of class `JPH::ContactManifold` named `mPenetrationDepth`.
@@ -138,6 +167,17 @@ JOLT_API JPH_ContactManifold *JPH_ContactManifold_AssignFromAnother(JPH_ContactM
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_ContactManifold_Destroy()` to free it when you're done using it.
 JOLT_API JPH_ContactManifold *JPH_ContactManifold_SwapShapes(const JPH_ContactManifold *_this);
+
+/// Access to the world space contact positions
+/// Generated from method `JPH::ContactManifold::GetWorldSpaceContactPointOn1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_ContactManifold_GetWorldSpaceContactPointOn1(const JPH_ContactManifold *_this, unsigned int inIndex);
+
+/// Generated from method `JPH::ContactManifold::GetWorldSpaceContactPointOn2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_ContactManifold_GetWorldSpaceContactPointOn2(const JPH_ContactManifold *_this, unsigned int inIndex);
 
 ///< Combined friction for the body pair (see: PhysicsSystem::SetCombineFriction)
 /// Returns a pointer to a member variable of class `JPH::ContactSettings` named `mCombinedFriction`.
@@ -279,6 +319,34 @@ JOLT_API void JPH_ContactSettings_Set_mIsSensor(JPH_ContactSettings *_this, bool
 /// The reference to this object might be preserved as the return value.
 JOLT_API bool *JPH_ContactSettings_GetMutable_mIsSensor(JPH_ContactSettings *_this);
 
+///< Relative linear surface velocity between the bodies (world space surface velocity of body 2 - world space surface velocity of body 1), can be used to create a conveyor belt effect
+/// Returns a pointer to a member variable of class `JPH::ContactSettings` named `mRelativeLinearSurfaceVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_ContactSettings_Get_mRelativeLinearSurfaceVelocity(const JPH_ContactSettings *_this);
+
+///< Relative linear surface velocity between the bodies (world space surface velocity of body 2 - world space surface velocity of body 1), can be used to create a conveyor belt effect
+/// Returns a mutable pointer to a member variable of class `JPH::ContactSettings` named `mRelativeLinearSurfaceVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_ContactSettings_GetMutable_mRelativeLinearSurfaceVelocity(JPH_ContactSettings *_this);
+
+///< Relative angular surface velocity between the bodies (world space angular surface velocity of body 2 - world space angular surface velocity of body 1). Note that this angular velocity is relative to the center of mass of body 1, so if you want it relative to body 2's center of mass you need to add body 2 angular velocity x (body 1 world space center of mass - body 2 world space center of mass) to mRelativeLinearSurfaceVelocity.
+/// Returns a pointer to a member variable of class `JPH::ContactSettings` named `mRelativeAngularSurfaceVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_ContactSettings_Get_mRelativeAngularSurfaceVelocity(const JPH_ContactSettings *_this);
+
+///< Relative angular surface velocity between the bodies (world space angular surface velocity of body 2 - world space angular surface velocity of body 1). Note that this angular velocity is relative to the center of mass of body 1, so if you want it relative to body 2's center of mass you need to add body 2 angular velocity x (body 1 world space center of mass - body 2 world space center of mass) to mRelativeLinearSurfaceVelocity.
+/// Returns a mutable pointer to a member variable of class `JPH::ContactSettings` named `mRelativeAngularSurfaceVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_ContactSettings_GetMutable_mRelativeAngularSurfaceVelocity(JPH_ContactSettings *_this);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_ContactSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_ContactSettings *JPH_ContactSettings_DefaultConstruct(void);
@@ -287,6 +355,23 @@ JOLT_API JPH_ContactSettings *JPH_ContactSettings_DefaultConstruct(void);
 /// The array must be destroyed using `JPH_ContactSettings_DestroyArray()`.
 /// Use `JPH_ContactSettings_OffsetMutablePtr()` and `JPH_ContactSettings_OffsetPtr()` to access the array elements.
 JOLT_API JPH_ContactSettings *JPH_ContactSettings_DefaultConstructArray(size_t num_elems);
+
+/// Constructs `JPH::ContactSettings` elementwise.
+/// Parameter `mRelativeLinearSurfaceVelocity` can not be null. It is a single object.
+/// The reference to the parameter `mRelativeLinearSurfaceVelocity` might be preserved in the constructed object.
+/// Parameter `mRelativeAngularSurfaceVelocity` can not be null. It is a single object.
+/// The reference to the parameter `mRelativeAngularSurfaceVelocity` might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_ContactSettings_Destroy()` to free it when you're done using it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JPH_ContactSettings *JPH_ContactSettings_ConstructFrom(float mCombinedFriction, float mCombinedRestitution, float mInvMassScale1, float mInvInertiaScale1, float mInvMassScale2, float mInvInertiaScale2, bool mIsSensor, const JPH_Vec3 *mRelativeLinearSurfaceVelocity, const JPH_Vec3 *mRelativeAngularSurfaceVelocity);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_ContactSettings *JPH_ContactSettings_OffsetPtr(const JPH_ContactSettings *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_ContactSettings *JPH_ContactSettings_OffsetMutablePtr(JPH_ContactSettings *ptr, ptrdiff_t i);
 
 /// Generated from constructor `JPH::ContactSettings::ContactSettings`.
 /// Parameter `_other` can not be null. It is a single object.

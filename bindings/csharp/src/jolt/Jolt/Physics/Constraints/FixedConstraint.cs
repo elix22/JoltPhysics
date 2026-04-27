@@ -144,6 +144,110 @@ public static partial class Jolt
                 }
             }
 
+            /// Body 1 constraint reference frame (space determined by mSpace)
+            public unsafe Jolt.JPH.Const_Vec3 mPoint1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_FixedConstraintSettings_Get_mPoint1(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_Get_mPoint1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mAxisX1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mAxisX1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mAxisX1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_FixedConstraintSettings_Get_mAxisX1(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_Get_mAxisX1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mAxisY1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mAxisY1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mAxisY1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_FixedConstraintSettings_Get_mAxisY1(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_Get_mAxisY1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            /// Body 2 constraint reference frame (space determined by mSpace)
+            public unsafe Jolt.JPH.Const_Vec3 mPoint2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_FixedConstraintSettings_Get_mPoint2(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_Get_mPoint2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mAxisX2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mAxisX2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mAxisX2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_FixedConstraintSettings_Get_mAxisX2(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_Get_mAxisX2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mAxisY2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mAxisY2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_Get_mAxisY2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_FixedConstraintSettings_Get_mAxisY2(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_Get_mAxisY2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
             public unsafe bool mEnabled
             {
@@ -604,6 +708,110 @@ public static partial class Jolt
                 }
             }
 
+            /// Body 1 constraint reference frame (space determined by mSpace)
+            public new unsafe Jolt.JPH.Vec3 mPoint1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_FixedConstraintSettings_GetMutable_mPoint1(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_GetMutable_mPoint1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mAxisX1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mAxisX1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mAxisX1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_FixedConstraintSettings_GetMutable_mAxisX1(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_GetMutable_mAxisX1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mAxisY1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mAxisY1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mAxisY1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_FixedConstraintSettings_GetMutable_mAxisY1(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_GetMutable_mAxisY1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            /// Body 2 constraint reference frame (space determined by mSpace)
+            public new unsafe Jolt.JPH.Vec3 mPoint2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_FixedConstraintSettings_GetMutable_mPoint2(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_GetMutable_mPoint2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mAxisX2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mAxisX2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mAxisX2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_FixedConstraintSettings_GetMutable_mAxisX2(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_GetMutable_mAxisX2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mAxisY2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mAxisY2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraintSettings_GetMutable_mAxisY2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_FixedConstraintSettings_GetMutable_mAxisY2(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_FixedConstraintSettings_GetMutable_mAxisY2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
             public new unsafe ref bool mEnabled
             {
@@ -1055,6 +1263,56 @@ public static partial class Jolt
                 __Jolt_delete_array_JPH_FixedConstraint_void_ptr_void_ptr(inPointer, inPlace);
             }
 
+            // See: TwoBodyConstraint
+            /// Generated from method `JPH::FixedConstraint::GetConstraintToBody1Matrix`.
+            public unsafe Jolt.JPH.Mat44 GetConstraintToBody1Matrix()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraint_GetConstraintToBody1Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraint_GetConstraintToBody1Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_FixedConstraint_GetConstraintToBody1Matrix(_Underlying *_this);
+                return new(__JPH_FixedConstraint_GetConstraintToBody1Matrix(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Generated from method `JPH::FixedConstraint::GetConstraintToBody2Matrix`.
+            public unsafe Jolt.JPH.Mat44 GetConstraintToBody2Matrix()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraint_GetConstraintToBody2Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraint_GetConstraintToBody2Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_FixedConstraint_GetConstraintToBody2Matrix(_Underlying *_this);
+                return new(__JPH_FixedConstraint_GetConstraintToBody2Matrix(_UnderlyingPtr), is_owning: true);
+            }
+
+            ///@name Get Lagrange multiplier from last physics update (the linear/angular impulse applied to satisfy the constraint)
+            /// Generated from method `JPH::FixedConstraint::GetTotalLambdaPosition`.
+            public unsafe Jolt.JPH.Vec3 GetTotalLambdaPosition()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraint_GetTotalLambdaPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraint_GetTotalLambdaPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_FixedConstraint_GetTotalLambdaPosition(_Underlying *_this);
+                return new(__JPH_FixedConstraint_GetTotalLambdaPosition(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Generated from method `JPH::FixedConstraint::GetTotalLambdaRotation`.
+            public unsafe Jolt.JPH.Vec3 GetTotalLambdaRotation()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraint_GetTotalLambdaRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraint_GetTotalLambdaRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_FixedConstraint_GetTotalLambdaRotation(_Underlying *_this);
+                return new(__JPH_FixedConstraint_GetTotalLambdaRotation(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Solver interface
             /// Generated from method `JPH::FixedConstraint::IsActive`.
             public unsafe bool IsActive()
@@ -1332,6 +1590,21 @@ public static partial class Jolt
                 #endif
                 extern static Jolt.JPH.FixedConstraint._Underlying *__JPH_FixedConstraint_Construct(Jolt.JPH.Body._Underlying *inBody1, Jolt.JPH.Body._Underlying *inBody2, Jolt.JPH.Const_FixedConstraintSettings._Underlying *inSettings);
                 _UnderlyingPtr = __JPH_FixedConstraint_Construct(inBody1._UnderlyingPtr, inBody2._UnderlyingPtr, inSettings._UnderlyingPtr);
+            }
+
+            /// Generated from method `JPH::FixedConstraint::NotifyShapeChanged`.
+            public unsafe void NotifyShapeChanged(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inDeltaCOM)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_FixedConstraint_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_FixedConstraint_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_FixedConstraint_NotifyShapeChanged(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inDeltaCOM);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_FixedConstraint_NotifyShapeChanged(_UnderlyingPtr, __ptr_inBodyID, inDeltaCOM._UnderlyingPtr);
+                }
             }
 
             /// Generated from method `JPH::FixedConstraint::SetupVelocityConstraint`.

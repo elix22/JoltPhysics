@@ -936,6 +936,19 @@ public static partial class Jolt
                 __JPH_MutableCompoundShape_sRegister();
             }
 
+            // See Shape::GetCenterOfMass
+            /// Generated from method `JPH::MutableCompoundShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_MutableCompoundShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_MutableCompoundShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::MustBeStatic
             /// Generated from method `JPH::MutableCompoundShape::MustBeStatic`.
             public unsafe bool MustBeStatic()
@@ -1029,6 +1042,45 @@ public static partial class Jolt
                 return __JPH_MutableCompoundShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
             }
 
+            // See Shape::GetSurfaceNormal
+            /// Generated from method `JPH::MutableCompoundShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_MutableCompoundShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_MutableCompoundShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            // See Shape::GetTrianglesStart
+            /// Generated from method `JPH::MutableCompoundShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_MutableCompoundShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            // See Shape::GetTrianglesNext
+            /// Generated from method `JPH::MutableCompoundShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_MutableCompoundShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_MutableCompoundShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
+            }
+
             /// Get the total number of sub shapes
             /// Generated from method `JPH::MutableCompoundShape::GetNumSubShapes`.
             public unsafe uint GetNumSubShapes()
@@ -1110,6 +1162,32 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_MutableCompoundShape_GetVolume(_Underlying *_this);
                 return __JPH_MutableCompoundShape_GetVolume(_UnderlyingPtr);
+            }
+
+            // See Shape::IsValidScale
+            /// Generated from method `JPH::MutableCompoundShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_MutableCompoundShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_MutableCompoundShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            // See Shape::MakeScaleValid
+            /// Generated from method `JPH::MutableCompoundShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_MutableCompoundShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_MutableCompoundShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             /// User data (to be used freely by the application)
@@ -1306,6 +1384,30 @@ public static partial class Jolt
                 _UnderlyingPtr = __JPH_MutableCompoundShape_DefaultConstruct();
             }
 
+            /// Adding a new shape.
+            /// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+            /// @param inPosition The position of the new shape
+            /// @param inRotation The orientation of the new shape
+            /// @param inShape The shape to add
+            /// @param inUserData User data that will be stored with the shape and can be retrieved using GetCompoundUserData
+            /// @param inIndex Index where to insert the shape, UINT_MAX to add to the end
+            /// @return The index of the newly added shape
+            /// Generated from method `JPH::MutableCompoundShape::AddShape`.
+            /// Parameter `inUserData` defaults to `0`.
+            /// Parameter `inIndex` defaults to `(2147483647*2u+1u)`.
+            public unsafe uint AddShape(Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Shape? inShape, uint? inUserData = null, uint? inIndex = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_AddShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_AddShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint __JPH_MutableCompoundShape_AddShape(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Const_Shape._Underlying *inShape, uint *inUserData, uint *inIndex);
+                uint __deref_inUserData = inUserData.GetValueOrDefault();
+                uint __deref_inIndex = inIndex.GetValueOrDefault();
+                return __JPH_MutableCompoundShape_AddShape(_UnderlyingPtr, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null, inUserData.HasValue ? &__deref_inUserData : null, inIndex.HasValue ? &__deref_inIndex : null);
+            }
+
             /// Remove a shape by index.
             /// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
             /// Generated from method `JPH::MutableCompoundShape::RemoveShape`.
@@ -1318,6 +1420,58 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_MutableCompoundShape_RemoveShape(_Underlying *_this, uint inIndex);
                 __JPH_MutableCompoundShape_RemoveShape(_UnderlyingPtr, inIndex);
+            }
+
+            /// Modify the position / orientation of a shape.
+            /// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+            /// Generated from method `JPH::MutableCompoundShape::ModifyShape`.
+            public unsafe void ModifyShape(uint inIndex, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShape_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShape_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_ModifyShape_3(_Underlying *_this, uint inIndex, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation);
+                __JPH_MutableCompoundShape_ModifyShape_3(_UnderlyingPtr, inIndex, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr);
+            }
+
+            /// Modify the position / orientation and shape at the same time.
+            /// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+            /// Generated from method `JPH::MutableCompoundShape::ModifyShape`.
+            public unsafe void ModifyShape(uint inIndex, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Shape? inShape)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShape_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShape_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_ModifyShape_4(_Underlying *_this, uint inIndex, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Const_Shape._Underlying *inShape);
+                __JPH_MutableCompoundShape_ModifyShape_4(_UnderlyingPtr, inIndex, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+            }
+
+            /// @brief Batch set positions / orientations, this avoids duplicate work due to bounding box calculation.
+            /// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+            /// @param inStartIndex Index of first shape to update
+            /// @param inNumber Number of shapes to update
+            /// @param inPositions A list of positions with arbitrary stride
+            /// @param inRotations A list of orientations with arbitrary stride
+            /// @param inPositionStride The position stride (the number of bytes between the first and second element)
+            /// @param inRotationStride The orientation stride (the number of bytes between the first and second element)
+            /// Generated from method `JPH::MutableCompoundShape::ModifyShapes`.
+            /// Parameter `inPositionStride` defaults to `sizeof(JPH::Vec3)`.
+            /// Parameter `inRotationStride` defaults to `sizeof(JPH::Quat)`.
+            public unsafe void ModifyShapes(uint inStartIndex, uint inNumber, Jolt.JPH.Const_Vec3? inPositions, Jolt.JPH.Const_Quat? inRotations, uint? inPositionStride = null, uint? inRotationStride = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_MutableCompoundShape_ModifyShapes(_Underlying *_this, uint inStartIndex, uint inNumber, Jolt.JPH.Const_Vec3._Underlying *inPositions, Jolt.JPH.Const_Quat._Underlying *inRotations, uint *inPositionStride, uint *inRotationStride);
+                uint __deref_inPositionStride = inPositionStride.GetValueOrDefault();
+                uint __deref_inRotationStride = inRotationStride.GetValueOrDefault();
+                __JPH_MutableCompoundShape_ModifyShapes(_UnderlyingPtr, inStartIndex, inNumber, inPositions is not null ? inPositions._UnderlyingPtr : null, inRotations is not null ? inRotations._UnderlyingPtr : null, inPositionStride.HasValue ? &__deref_inPositionStride : null, inRotationStride.HasValue ? &__deref_inRotationStride : null);
             }
 
             /// Recalculate the center of mass and shift all objects so they're centered around it

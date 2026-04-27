@@ -716,6 +716,19 @@ public static partial class Jolt
                 return __JPH_Shape_MustBeStatic(_UnderlyingPtr) != 0;
             }
 
+            /// All shapes are centered around their center of mass. This function returns the center of mass position that needs to be applied to transform the shape to where it was created.
+            /// Generated from method `JPH::Shape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Shape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_Shape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Get local bounding box including convex radius, this box is centered around the center of mass rather than the world transform
             /// Generated from method `JPH::Shape::GetLocalBounds`.
             public unsafe Jolt.JPH.AABox GetLocalBounds()
@@ -740,6 +753,34 @@ public static partial class Jolt
                 #endif
                 extern static uint __JPH_Shape_GetSubShapeIDBitsRecursive(_Underlying *_this);
                 return __JPH_Shape_GetSubShapeIDBitsRecursive(_UnderlyingPtr);
+            }
+
+            /// Get world space bounds including convex radius.
+            /// This shape is scaled by inScale in local space first.
+            /// This function can be overridden to return a closer fitting world space bounding box, by default it will just transform what GetLocalBounds() returns.
+            /// Generated from method `JPH::Shape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_Mat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_Shape_GetWorldSpaceBounds_JPH_Mat44(_Underlying *_this, Jolt.JPH.Const_Mat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_Shape_GetWorldSpaceBounds_JPH_Mat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get world space bounds including convex radius.
+            /// Generated from method `JPH::Shape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_DMat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_Shape_GetWorldSpaceBounds_JPH_DMat44(_Underlying *_this, Jolt.JPH.Const_DMat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_Shape_GetWorldSpaceBounds_JPH_DMat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             /// Returns the radius of the biggest sphere that fits entirely in the shape. In case this shape consists of multiple sub shapes, it returns the smallest sphere of the parts.
@@ -787,6 +828,20 @@ public static partial class Jolt
                 return __c_ret is not null ? new Jolt.JPH.Const_PhysicsMaterial(__c_ret, is_owning: false) : null;
             }
 
+            /// Get the surface normal of a particular sub shape ID and point on surface (all vectors are relative to center of mass for this shape).
+            /// Note: When you have a CollideShapeResult or ShapeCastResult you should use -mPenetrationAxis.Normalized() as contact normal as GetSurfaceNormal will only return face normals (and not vertex or edge normals).
+            /// Generated from method `JPH::Shape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Shape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_Shape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
             /// Get the user data of a particular sub shape ID. Corresponds with the value stored in Shape::GetUserData of the leaf shape pointed to by inSubShapeID.
             /// Generated from method `JPH::Shape::GetSubShapeUserData`.
             public unsafe ulong GetSubShapeUserData(Jolt.JPH.Const_SubShapeID inSubShapeID)
@@ -798,6 +853,41 @@ public static partial class Jolt
                 #endif
                 extern static ulong __JPH_Shape_GetSubShapeUserData(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID);
                 return __JPH_Shape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
+            }
+
+            /// To start iterating over triangles, call this function first.
+            /// ioContext is a temporary buffer and should remain untouched until the last call to GetTrianglesNext.
+            /// inBox is the world space bounding in which you want to get the triangles.
+            /// inPositionCOM/inRotation/inScale describes the transform of this shape.
+            /// To get the actual triangles call GetTrianglesNext.
+            /// Generated from method `JPH::Shape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Shape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_Shape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            /// Call this repeatedly to get all triangles in the box.
+            /// outTriangleVertices should be large enough to hold 3 * inMaxTriangleRequested entries.
+            /// outMaterials (if it is not null) should contain inMaxTrianglesRequested entries.
+            /// The function returns the amount of triangles that it found (which will be <= inMaxTrianglesRequested), or 0 if there are no more triangles.
+            /// Note that the function can return a value < inMaxTrianglesRequested and still have more triangles to process (triangles can be returned in blocks).
+            /// Note that the function may return triangles outside of the requested box, only coarse culling is performed on the returned triangles.
+            /// Generated from method `JPH::Shape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_Shape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_Shape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
             }
 
             /// Get stats of this shape. Use for logging / data collection purposes only. Does not add values from child shapes, use GetStatsRecursive for this.
@@ -823,6 +913,47 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_Shape_GetVolume(_Underlying *_this);
                 return __JPH_Shape_GetVolume(_UnderlyingPtr);
+            }
+
+            /// Test if inScale is a valid scale for this shape. Some shapes can only be scaled uniformly, compound shapes cannot handle shapes
+            /// being rotated and scaled (this would cause shearing), scale can never be zero. When the scale is invalid, the function will return false.
+            ///
+            /// Here's a list of supported scales:
+            /// * SphereShape: Scale must be uniform (signs of scale are ignored).
+            /// * BoxShape: Any scale supported (signs of scale are ignored).
+            /// * TriangleShape: Any scale supported when convex radius is zero, otherwise only uniform scale supported.
+            /// * CapsuleShape: Scale must be uniform (signs of scale are ignored).
+            /// * TaperedCapsuleShape: Scale must be uniform (sign of Y scale can be used to flip the capsule).
+            /// * CylinderShape: Scale must be uniform in XZ plane, Y can scale independently (signs of scale are ignored).
+            /// * RotatedTranslatedShape: Scale must not cause shear in the child shape.
+            /// * CompoundShape: Scale must not cause shear in any of the child shapes.
+            /// Generated from method `JPH::Shape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_Shape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_Shape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            /// This function will make sure that if you wrap this shape in a ScaledShape that the scale is valid.
+            /// Note that this involves discarding components of the scale that are invalid, so the resulting scaled shape may be different than the requested scale.
+            /// Compare the return value of this function with the scale you passed in to detect major inconsistencies and possibly warn the user.
+            /// @param inScale Local space scale for this shape.
+            /// @return Scale that can be used to wrap this shape in a ScaledShape. IsValidScale will return true for this scale.
+            /// Generated from method `JPH::Shape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Shape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_Shape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.

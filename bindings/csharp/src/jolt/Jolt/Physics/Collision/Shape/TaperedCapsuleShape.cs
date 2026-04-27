@@ -931,6 +931,19 @@ public static partial class Jolt
                 _UnderlyingPtr = __JPH_TaperedCapsuleShape_DefaultConstruct();
             }
 
+            /// Get world space bounds including convex radius.
+            /// Generated from method `JPH::TaperedCapsuleShape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_DMat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_DMat44(_Underlying *_this, Jolt.JPH.Const_DMat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_DMat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             /// Generated from method `JPH::TaperedCapsuleShape::operator new`.
             /// Returns a mutable pointer.
             public static unsafe void *New(ulong inCount)
@@ -1104,6 +1117,19 @@ public static partial class Jolt
                 return __JPH_TaperedCapsuleShape_GetHalfHeight(_UnderlyingPtr);
             }
 
+            // See Shape::GetCenterOfMass
+            /// Generated from method `JPH::TaperedCapsuleShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_TaperedCapsuleShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_TaperedCapsuleShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetLocalBounds
             /// Generated from method `JPH::TaperedCapsuleShape::GetLocalBounds`.
             public unsafe Jolt.JPH.AABox GetLocalBounds()
@@ -1117,6 +1143,19 @@ public static partial class Jolt
                 return new(__JPH_TaperedCapsuleShape_GetLocalBounds(_UnderlyingPtr), is_owning: true);
             }
 
+            // See Shape::GetWorldSpaceBounds
+            /// Generated from method `JPH::TaperedCapsuleShape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_Mat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_Mat44(_Underlying *_this, Jolt.JPH.Const_Mat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_Mat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetInnerRadius
             /// Generated from method `JPH::TaperedCapsuleShape::GetInnerRadius`.
             public unsafe float GetInnerRadius()
@@ -1128,6 +1167,33 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_TaperedCapsuleShape_GetInnerRadius(_Underlying *_this);
                 return __JPH_TaperedCapsuleShape_GetInnerRadius(_UnderlyingPtr);
+            }
+
+            // See Shape::GetSurfaceNormal
+            /// Generated from method `JPH::TaperedCapsuleShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_TaperedCapsuleShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_TaperedCapsuleShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            // See ConvexShape::GetSupportFunction
+            /// Generated from method `JPH::TaperedCapsuleShape::GetSupportFunction`.
+            public unsafe Jolt.JPH.ConvexShape.Const_Support? GetSupportFunction(Jolt.JPH.ConvexShape.ESupportMode inMode, Jolt.JPH.ConvexShape.SupportBuffer inBuffer, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetSupportFunction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetSupportFunction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ConvexShape.Const_Support._Underlying *__JPH_TaperedCapsuleShape_GetSupportFunction(_Underlying *_this, Jolt.JPH.ConvexShape.ESupportMode inMode, Jolt.JPH.ConvexShape.SupportBuffer._Underlying *inBuffer, Jolt.JPH.Vec3._Underlying *inScale);
+                var __c_ret = __JPH_TaperedCapsuleShape_GetSupportFunction(_UnderlyingPtr, inMode, inBuffer._UnderlyingPtr, inScale._UnderlyingPtr);
+                return __c_ret is not null ? new Jolt.JPH.ConvexShape.Const_Support(__c_ret, is_owning: false) : null;
             }
 
             // See Shape::GetStats
@@ -1156,6 +1222,32 @@ public static partial class Jolt
                 return __JPH_TaperedCapsuleShape_GetVolume(_UnderlyingPtr);
             }
 
+            // See Shape::IsValidScale
+            /// Generated from method `JPH::TaperedCapsuleShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TaperedCapsuleShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TaperedCapsuleShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_TaperedCapsuleShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_TaperedCapsuleShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            // See Shape::MakeScaleValid
+            /// Generated from method `JPH::TaperedCapsuleShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TaperedCapsuleShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TaperedCapsuleShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_TaperedCapsuleShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_TaperedCapsuleShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             // Register shape functions with the registry
             /// Generated from method `JPH::TaperedCapsuleShape::sRegister`.
             public static void SRegister()
@@ -1180,6 +1272,32 @@ public static partial class Jolt
                 #endif
                 extern static uint __JPH_TaperedCapsuleShape_GetSubShapeIDBitsRecursive(_Underlying *_this);
                 return __JPH_TaperedCapsuleShape_GetSubShapeIDBitsRecursive(_UnderlyingPtr);
+            }
+
+            // See Shape::GetTrianglesStart
+            /// Generated from method `JPH::TaperedCapsuleShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_TaperedCapsuleShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_TaperedCapsuleShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            // See Shape::GetTrianglesNext
+            /// Generated from method `JPH::TaperedCapsuleShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_TaperedCapsuleShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_TaperedCapsuleShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
             }
 
             /// Get density of the shape (kg / m^3)

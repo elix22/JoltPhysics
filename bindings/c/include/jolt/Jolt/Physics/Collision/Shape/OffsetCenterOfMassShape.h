@@ -13,10 +13,14 @@ extern "C" {
 #endif
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_DMat44 JPH_DMat44; // Defined in `#include <jolt/Jolt/Math/DMat44.h>`.
 typedef struct JPH_DecoratedShape JPH_DecoratedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/DecoratedShape.h>`.
 typedef struct JPH_DecoratedShapeSettings JPH_DecoratedShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/DecoratedShape.h>`.
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
@@ -25,6 +29,7 @@ typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jol
 typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Class that constructs an OffsetCenterOfMassShape
@@ -50,6 +55,20 @@ typedef struct JPH_OffsetCenterOfMassShapeSettings JPH_OffsetCenterOfMassShapeSe
 ///     `JPH::Shape`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_OffsetCenterOfMassShape JPH_OffsetCenterOfMassShape;
+
+///< Offset to be applied to the center of mass of the child shape
+/// Returns a pointer to a member variable of class `JPH::OffsetCenterOfMassShapeSettings` named `mOffset`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_OffsetCenterOfMassShapeSettings_Get_mOffset(const JPH_OffsetCenterOfMassShapeSettings *_this);
+
+///< Offset to be applied to the center of mass of the child shape
+/// Returns a mutable pointer to a member variable of class `JPH::OffsetCenterOfMassShapeSettings` named `mOffset`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_OffsetCenterOfMassShapeSettings_GetMutable_mOffset(JPH_OffsetCenterOfMassShapeSettings *_this);
 
 /// User data (to be used freely by the application)
 /// Returns a pointer to a member variable of class `JPH::OffsetCenterOfMassShapeSettings` named `mUserData`.
@@ -173,6 +192,18 @@ JOLT_API JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSetting
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_OffsetCenterOfMassShapeSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_OffsetCenterOfMassShapeSettings *_other);
+
+/// Construct with shape settings, can be serialized.
+/// Generated from constructor `JPH::OffsetCenterOfMassShapeSettings::OffsetCenterOfMassShapeSettings`.
+/// Parameter `inOffset` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_OffsetCenterOfMassShapeSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_ShapeSettings_ptr(const JPH_Vec3 *inOffset, const JPH_ShapeSettings *inShape);
+
+/// Variant that uses a concrete shape, which means this object cannot be serialized.
+/// Generated from constructor `JPH::OffsetCenterOfMassShapeSettings::OffsetCenterOfMassShapeSettings`.
+/// Parameter `inOffset` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_OffsetCenterOfMassShapeSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_Shape_ptr(const JPH_Vec3 *inOffset, const JPH_Shape *inShape);
 
 /// Destroys a heap-allocated instance of `JPH_OffsetCenterOfMassShapeSettings`. Does nothing if the pointer is null.
 JOLT_API void JPH_OffsetCenterOfMassShapeSettings_Destroy(const JPH_OffsetCenterOfMassShapeSettings *_this);
@@ -350,11 +381,24 @@ JOLT_API const JPH_OffsetCenterOfMassShape *JPH_OffsetCenterOfMassShape_StaticDo
 /// The reference to the parameter `object` might be preserved in the return value.
 JOLT_API JPH_OffsetCenterOfMassShape *JPH_OffsetCenterOfMassShape_MutableStaticDowncastFrom_JPH_DecoratedShape(JPH_DecoratedShape *object);
 
+/// Generated from constructor `JPH::OffsetCenterOfMassShape::OffsetCenterOfMassShape`.
+/// Parameter `inOffset` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_OffsetCenterOfMassShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_OffsetCenterOfMassShape *JPH_OffsetCenterOfMassShape_Construct_const_JPH_Shape_ptr(const JPH_Shape *inShape, const JPH_Vec3 *inOffset);
+
 /// Destroys a heap-allocated instance of `JPH_OffsetCenterOfMassShape`. Does nothing if the pointer is null.
 JOLT_API void JPH_OffsetCenterOfMassShape_Destroy(const JPH_OffsetCenterOfMassShape *_this);
 
 /// Destroys a heap-allocated array of `JPH_OffsetCenterOfMassShape`. Does nothing if the pointer is null.
 JOLT_API void JPH_OffsetCenterOfMassShape_DestroyArray(const JPH_OffsetCenterOfMassShape *_this);
+
+/// Get world space bounds including convex radius.
+/// Generated from method `JPH::OffsetCenterOfMassShape::GetWorldSpaceBounds`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_OffsetCenterOfMassShape *_this, const JPH_DMat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
 
 /// Generated from method `JPH::OffsetCenterOfMassShape::operator new`.
 JOLT_API void *Jolt_new_JPH_OffsetCenterOfMassShape_size_t(unsigned long inCount);
@@ -386,16 +430,61 @@ JOLT_API void *Jolt_new_array_JPH_OffsetCenterOfMassShape_size_t_void_ptr(unsign
 /// Generated from method `JPH::OffsetCenterOfMassShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_OffsetCenterOfMassShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
+/// Access the offset that is applied to the center of mass
+/// Generated from method `JPH::OffsetCenterOfMassShape::GetOffset`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_OffsetCenterOfMassShape_GetOffset(const JPH_OffsetCenterOfMassShape *_this);
+
+// See Shape::GetCenterOfMass
+/// Generated from method `JPH::OffsetCenterOfMassShape::GetCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_OffsetCenterOfMassShape_GetCenterOfMass(const JPH_OffsetCenterOfMassShape *_this);
+
 // See Shape::GetLocalBounds
 /// Generated from method `JPH::OffsetCenterOfMassShape::GetLocalBounds`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
 JOLT_API JPH_AABox *JPH_OffsetCenterOfMassShape_GetLocalBounds(const JPH_OffsetCenterOfMassShape *_this);
 
+// See Shape::GetWorldSpaceBounds
+/// Generated from method `JPH::OffsetCenterOfMassShape::GetWorldSpaceBounds`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_Mat44(const JPH_OffsetCenterOfMassShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
+
 // See Shape::GetInnerRadius
 /// Generated from method `JPH::OffsetCenterOfMassShape::GetInnerRadius`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_OffsetCenterOfMassShape_GetInnerRadius(const JPH_OffsetCenterOfMassShape *_this);
+
+// See Shape::GetSurfaceNormal
+/// Generated from method `JPH::OffsetCenterOfMassShape::GetSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_OffsetCenterOfMassShape_GetSurfaceNormal(const JPH_OffsetCenterOfMassShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
+// See Shape::GetTrianglesStart
+/// Generated from method `JPH::OffsetCenterOfMassShape::GetTrianglesStart`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `inBox` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_OffsetCenterOfMassShape_GetTrianglesStart(const JPH_OffsetCenterOfMassShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale);
+
+// See Shape::GetTrianglesNext
+/// Generated from method `JPH::OffsetCenterOfMassShape::GetTrianglesNext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `outMaterials` defaults to a null pointer in C++.
+JOLT_API int JPH_OffsetCenterOfMassShape_GetTrianglesNext(const JPH_OffsetCenterOfMassShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
 
 // See Shape::GetStats
 /// Generated from method `JPH::OffsetCenterOfMassShape::GetStats`.
@@ -445,6 +534,19 @@ JOLT_API const JPH_PhysicsMaterial *JPH_OffsetCenterOfMassShape_GetMaterial(cons
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API uint64_t JPH_OffsetCenterOfMassShape_GetSubShapeUserData(const JPH_OffsetCenterOfMassShape *_this, const JPH_SubShapeID *inSubShapeID);
+
+// See Shape::IsValidScale
+/// Generated from method `JPH::OffsetCenterOfMassShape::IsValidScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API bool JPH_OffsetCenterOfMassShape_IsValidScale(const JPH_OffsetCenterOfMassShape *_this, const JPH_Vec3 *inScale);
+
+// See Shape::MakeScaleValid
+/// Generated from method `JPH::OffsetCenterOfMassShape::MakeScaleValid`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_OffsetCenterOfMassShape_MakeScaleValid(const JPH_OffsetCenterOfMassShape *_this, const JPH_Vec3 *inScale);
 
 /// User data (to be used freely by the application)
 /// Generated from method `JPH::OffsetCenterOfMassShape::GetUserData`.

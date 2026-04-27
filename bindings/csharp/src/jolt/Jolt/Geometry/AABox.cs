@@ -28,6 +28,41 @@ public static partial class Jolt
             public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
             ~Const_AABox() {Dispose(false);}
 
+            /// Bounding box min and max
+            public unsafe Jolt.JPH.Const_Vec3 mMin
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Get_mMin", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Get_mMin", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_AABox_Get_mMin(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_AABox_Get_mMin(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mMax
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Get_mMax", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Get_mMax", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_AABox_Get_mMax(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_AABox_Get_mMax(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             internal unsafe Const_AABox(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
             /// Constructs an empty (default-constructed) instance.
@@ -57,6 +92,42 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::AABox::AABox`.
             public Const_AABox(AABox _other) : this((Const_AABox)_other) {}
+
+            /// Generated from constructor `JPH::AABox::AABox`.
+            public unsafe Const_AABox(Jolt.JPH.Const_Vec3 inMin, Jolt.JPH.Const_Vec3 inMax) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_Vec3_JPH_Vec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_Vec3_JPH_Vec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_AABox_Construct_const_JPH_Vec3_JPH_Vec3(Jolt.JPH.Vec3._Underlying *inMin, Jolt.JPH.Vec3._Underlying *inMax);
+                _UnderlyingPtr = __JPH_AABox_Construct_const_JPH_Vec3_JPH_Vec3(inMin._UnderlyingPtr, inMax._UnderlyingPtr);
+            }
+
+            /// Generated from constructor `JPH::AABox::AABox`.
+            public unsafe Const_AABox(Jolt.JPH.Const_DVec3 inMin, Jolt.JPH.Const_DVec3 inMax) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_DVec3_ref", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_DVec3_ref", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_AABox_Construct_const_JPH_DVec3_ref(Jolt.JPH.Const_DVec3._Underlying *inMin, Jolt.JPH.Const_DVec3._Underlying *inMax);
+                _UnderlyingPtr = __JPH_AABox_Construct_const_JPH_DVec3_ref(inMin._UnderlyingPtr, inMax._UnderlyingPtr);
+            }
+
+            /// Generated from constructor `JPH::AABox::AABox`.
+            public unsafe Const_AABox(Jolt.JPH.Const_Vec3 inCenter, float inRadius) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_Vec3_float", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_Vec3_float", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_AABox_Construct_const_JPH_Vec3_float(Jolt.JPH.Vec3._Underlying *inCenter, float inRadius);
+                _UnderlyingPtr = __JPH_AABox_Construct_const_JPH_Vec3_float(inCenter._UnderlyingPtr, inRadius);
+            }
 
             /// Generated from method `JPH::AABox::operator new`.
             /// Returns a mutable pointer.
@@ -192,6 +263,19 @@ public static partial class Jolt
                 __Jolt_delete_array_JPH_AABox_void_ptr_void_ptr(inPointer, inPlace);
             }
 
+            /// Create box from 2 points
+            /// Generated from method `JPH::AABox::sFromTwoPoints`.
+            public static unsafe Jolt.JPH.AABox SFromTwoPoints(Jolt.JPH.Const_Vec3 inP1, Jolt.JPH.Const_Vec3 inP2)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_sFromTwoPoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_sFromTwoPoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_AABox_sFromTwoPoints(Jolt.JPH.Vec3._Underlying *inP1, Jolt.JPH.Vec3._Underlying *inP2);
+                return new(__JPH_AABox_sFromTwoPoints(inP1._UnderlyingPtr, inP2._UnderlyingPtr), is_owning: true);
+            }
+
             /// Get bounding box of size FLT_MAX
             /// Generated from method `JPH::AABox::sBiggest`.
             public static unsafe Jolt.JPH.AABox SBiggest()
@@ -249,6 +333,45 @@ public static partial class Jolt
                 return new(__JPH_AABox_Intersect(_UnderlyingPtr, inOther._UnderlyingPtr), is_owning: true);
             }
 
+            /// Get center of bounding box
+            /// Generated from method `JPH::AABox::GetCenter`.
+            public unsafe Jolt.JPH.Vec3 GetCenter()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_GetCenter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_GetCenter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_AABox_GetCenter(_Underlying *_this);
+                return new(__JPH_AABox_GetCenter(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get extent of bounding box (half of the size)
+            /// Generated from method `JPH::AABox::GetExtent`.
+            public unsafe Jolt.JPH.Vec3 GetExtent()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_GetExtent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_GetExtent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_AABox_GetExtent(_Underlying *_this);
+                return new(__JPH_AABox_GetExtent(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get size of bounding box
+            /// Generated from method `JPH::AABox::GetSize`.
+            public unsafe Jolt.JPH.Vec3 GetSize()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_GetSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_GetSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_AABox_GetSize(_Underlying *_this);
+                return new(__JPH_AABox_GetSize(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Get surface area of bounding box
             /// Generated from method `JPH::AABox::GetSurfaceArea`.
             public unsafe float GetSurfaceArea()
@@ -288,6 +411,32 @@ public static partial class Jolt
                 return __JPH_AABox_Contains_JPH_AABox(_UnderlyingPtr, inOther._UnderlyingPtr) != 0;
             }
 
+            /// Check if this box contains a point
+            /// Generated from method `JPH::AABox::Contains`.
+            public unsafe bool Contains(Jolt.JPH.Const_Vec3 inOther)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Contains_JPH_Vec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Contains_JPH_Vec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_AABox_Contains_JPH_Vec3(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inOther);
+                return __JPH_AABox_Contains_JPH_Vec3(_UnderlyingPtr, inOther._UnderlyingPtr) != 0;
+            }
+
+            /// Check if this box contains a point
+            /// Generated from method `JPH::AABox::Contains`.
+            public unsafe bool Contains(Jolt.JPH.Const_DVec3 inOther)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Contains_JPH_DVec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Contains_JPH_DVec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_AABox_Contains_JPH_DVec3(_Underlying *_this, Jolt.JPH.Const_DVec3._Underlying *inOther);
+                return __JPH_AABox_Contains_JPH_DVec3(_UnderlyingPtr, inOther._UnderlyingPtr) != 0;
+            }
+
             /// Check if this box overlaps with another box
             /// Generated from method `JPH::AABox::Overlaps`.
             public unsafe bool Overlaps(Jolt.JPH.Const_AABox inOther)
@@ -299,6 +448,84 @@ public static partial class Jolt
                 #endif
                 extern static byte __JPH_AABox_Overlaps_JPH_AABox(_Underlying *_this, Jolt.JPH.Const_AABox._Underlying *inOther);
                 return __JPH_AABox_Overlaps_JPH_AABox(_UnderlyingPtr, inOther._UnderlyingPtr) != 0;
+            }
+
+            /// Transform bounding box
+            /// Generated from method `JPH::AABox::Transformed`.
+            public unsafe Jolt.JPH.AABox Transformed(Jolt.JPH.Const_Mat44 inMatrix)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Transformed_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Transformed_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_AABox_Transformed_JPH_Mat44(_Underlying *_this, Jolt.JPH.Const_Mat44._Underlying *inMatrix);
+                return new(__JPH_AABox_Transformed_JPH_Mat44(_UnderlyingPtr, inMatrix._UnderlyingPtr), is_owning: true);
+            }
+
+            /// Transform bounding box
+            /// Generated from method `JPH::AABox::Transformed`.
+            public unsafe Jolt.JPH.AABox Transformed(Jolt.JPH.Const_DMat44 inMatrix)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Transformed_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Transformed_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_AABox_Transformed_JPH_DMat44(_Underlying *_this, Jolt.JPH.Const_DMat44._Underlying *inMatrix);
+                return new(__JPH_AABox_Transformed_JPH_DMat44(_UnderlyingPtr, inMatrix._UnderlyingPtr), is_owning: true);
+            }
+
+            /// Scale this bounding box, can handle non-uniform and negative scaling
+            /// Generated from method `JPH::AABox::Scaled`.
+            public unsafe Jolt.JPH.AABox Scaled(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Scaled", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Scaled", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_AABox_Scaled(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_AABox_Scaled(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
+            /// Calculate the support vector for this convex shape.
+            /// Generated from method `JPH::AABox::GetSupport`.
+            public unsafe Jolt.JPH.Vec3 GetSupport(Jolt.JPH.Const_Vec3 inDirection)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_GetSupport", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_GetSupport", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_AABox_GetSupport(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inDirection);
+                return new(__JPH_AABox_GetSupport(_UnderlyingPtr, inDirection._UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get the closest point on or in this box to inPoint
+            /// Generated from method `JPH::AABox::GetClosestPoint`.
+            public unsafe Jolt.JPH.Vec3 GetClosestPoint(Jolt.JPH.Const_Vec3 inPoint)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_GetClosestPoint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_GetClosestPoint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_AABox_GetClosestPoint(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inPoint);
+                return new(__JPH_AABox_GetClosestPoint(_UnderlyingPtr, inPoint._UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get the squared distance between inPoint and this box (will be 0 if in Point is inside the box)
+            /// Generated from method `JPH::AABox::GetSqDistanceTo`.
+            public unsafe float GetSqDistanceTo(Jolt.JPH.Const_Vec3 inPoint)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_GetSqDistanceTo", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_GetSqDistanceTo", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float __JPH_AABox_GetSqDistanceTo(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inPoint);
+                return __JPH_AABox_GetSqDistanceTo(_UnderlyingPtr, inPoint._UnderlyingPtr);
             }
 
             // IEquatable:
@@ -325,6 +552,41 @@ public static partial class Jolt
         /// This is the non-const half of the class.
         public class AABox : Const_AABox
         {
+            /// Bounding box min and max
+            public new unsafe Jolt.JPH.Vec3 mMin
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_GetMutable_mMin", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_GetMutable_mMin", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_AABox_GetMutable_mMin(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_AABox_GetMutable_mMin(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mMax
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_GetMutable_mMax", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_GetMutable_mMax", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_AABox_GetMutable_mMax(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_AABox_GetMutable_mMax(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             internal unsafe AABox(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
             /// Constructs an empty (default-constructed) instance.
@@ -355,6 +617,42 @@ public static partial class Jolt
             /// Generated from constructor `JPH::AABox::AABox`.
             public AABox(AABox _other) : this((Const_AABox)_other) {}
 
+            /// Generated from constructor `JPH::AABox::AABox`.
+            public unsafe AABox(Jolt.JPH.Const_Vec3 inMin, Jolt.JPH.Const_Vec3 inMax) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_Vec3_JPH_Vec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_Vec3_JPH_Vec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_AABox_Construct_const_JPH_Vec3_JPH_Vec3(Jolt.JPH.Vec3._Underlying *inMin, Jolt.JPH.Vec3._Underlying *inMax);
+                _UnderlyingPtr = __JPH_AABox_Construct_const_JPH_Vec3_JPH_Vec3(inMin._UnderlyingPtr, inMax._UnderlyingPtr);
+            }
+
+            /// Generated from constructor `JPH::AABox::AABox`.
+            public unsafe AABox(Jolt.JPH.Const_DVec3 inMin, Jolt.JPH.Const_DVec3 inMax) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_DVec3_ref", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_DVec3_ref", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_AABox_Construct_const_JPH_DVec3_ref(Jolt.JPH.Const_DVec3._Underlying *inMin, Jolt.JPH.Const_DVec3._Underlying *inMax);
+                _UnderlyingPtr = __JPH_AABox_Construct_const_JPH_DVec3_ref(inMin._UnderlyingPtr, inMax._UnderlyingPtr);
+            }
+
+            /// Generated from constructor `JPH::AABox::AABox`.
+            public unsafe AABox(Jolt.JPH.Const_Vec3 inCenter, float inRadius) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_Vec3_float", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Construct_const_JPH_Vec3_float", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_AABox_Construct_const_JPH_Vec3_float(Jolt.JPH.Vec3._Underlying *inCenter, float inRadius);
+                _UnderlyingPtr = __JPH_AABox_Construct_const_JPH_Vec3_float(inCenter._UnderlyingPtr, inRadius);
+            }
+
             /// Generated from method `JPH::AABox::operator=`.
             public unsafe Jolt.JPH.AABox Assign(Jolt.JPH.Const_AABox _other)
             {
@@ -382,6 +680,19 @@ public static partial class Jolt
                 __JPH_AABox_SetEmpty(_UnderlyingPtr);
             }
 
+            /// Encapsulate point in bounding box
+            /// Generated from method `JPH::AABox::Encapsulate`.
+            public unsafe void Encapsulate(Jolt.JPH.Const_Vec3 inPos)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Encapsulate_1_JPH_Vec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Encapsulate_1_JPH_Vec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_AABox_Encapsulate_1_JPH_Vec3(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inPos);
+                __JPH_AABox_Encapsulate_1_JPH_Vec3(_UnderlyingPtr, inPos._UnderlyingPtr);
+            }
+
             /// Encapsulate bounding box in bounding box
             /// Generated from method `JPH::AABox::Encapsulate`.
             public unsafe void Encapsulate(Jolt.JPH.Const_AABox inRHS)
@@ -406,6 +717,45 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_AABox_EnsureMinimalEdgeLength(_Underlying *_this, float inMinEdgeLength);
                 __JPH_AABox_EnsureMinimalEdgeLength(_UnderlyingPtr, inMinEdgeLength);
+            }
+
+            /// Widen the box on both sides by inVector
+            /// Generated from method `JPH::AABox::ExpandBy`.
+            public unsafe void ExpandBy(Jolt.JPH.Const_Vec3 inVector)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_ExpandBy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_ExpandBy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_AABox_ExpandBy(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inVector);
+                __JPH_AABox_ExpandBy(_UnderlyingPtr, inVector._UnderlyingPtr);
+            }
+
+            /// Translate bounding box
+            /// Generated from method `JPH::AABox::Translate`.
+            public unsafe void Translate(Jolt.JPH.Const_Vec3 inTranslation)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Translate_JPH_Vec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Translate_JPH_Vec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_AABox_Translate_JPH_Vec3(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inTranslation);
+                __JPH_AABox_Translate_JPH_Vec3(_UnderlyingPtr, inTranslation._UnderlyingPtr);
+            }
+
+            /// Translate bounding box
+            /// Generated from method `JPH::AABox::Translate`.
+            public unsafe void Translate(Jolt.JPH.Const_DVec3 inTranslation)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_AABox_Translate_JPH_DVec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_AABox_Translate_JPH_DVec3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_AABox_Translate_JPH_DVec3(_Underlying *_this, Jolt.JPH.Const_DVec3._Underlying *inTranslation);
+                __JPH_AABox_Translate_JPH_DVec3(_UnderlyingPtr, inTranslation._UnderlyingPtr);
             }
         }
 

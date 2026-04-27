@@ -16,8 +16,11 @@ typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/
 typedef struct JPH_CompoundShape JPH_CompoundShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
 typedef struct JPH_CompoundShapeSettings JPH_CompoundShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
 typedef struct JPH_CompoundShape_SubShape JPH_CompoundShape_SubShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
@@ -27,6 +30,7 @@ typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // D
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Class that constructs a StaticCompoundShape. Note that if you only want a compound of 1 shape, use a RotatedTranslatedShape instead.
@@ -406,6 +410,12 @@ JOLT_API JPH_Shape_Stats *JPH_StaticCompoundShape_GetStats(const JPH_StaticCompo
 /// Generated from method `JPH::StaticCompoundShape::sRegister`.
 JOLT_API void JPH_StaticCompoundShape_sRegister(void);
 
+// See Shape::GetCenterOfMass
+/// Generated from method `JPH::StaticCompoundShape::GetCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_StaticCompoundShape_GetCenterOfMass(const JPH_StaticCompoundShape *_this);
+
 // See Shape::MustBeStatic
 /// Generated from method `JPH::StaticCompoundShape::MustBeStatic`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -445,6 +455,31 @@ JOLT_API const JPH_Shape *JPH_StaticCompoundShape_GetLeafShape(const JPH_StaticC
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API uint64_t JPH_StaticCompoundShape_GetSubShapeUserData(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID);
+
+// See Shape::GetSurfaceNormal
+/// Generated from method `JPH::StaticCompoundShape::GetSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_StaticCompoundShape_GetSurfaceNormal(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
+// See Shape::GetTrianglesStart
+/// Generated from method `JPH::StaticCompoundShape::GetTrianglesStart`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `inBox` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShape_GetTrianglesStart(const JPH_StaticCompoundShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale);
+
+// See Shape::GetTrianglesNext
+/// Generated from method `JPH::StaticCompoundShape::GetTrianglesNext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `outMaterials` defaults to a null pointer in C++.
+JOLT_API int JPH_StaticCompoundShape_GetTrianglesNext(const JPH_StaticCompoundShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
 
 /// Get the total number of sub shapes
 /// Generated from method `JPH::StaticCompoundShape::GetNumSubShapes`.
@@ -489,6 +524,19 @@ JOLT_API unsigned int JPH_StaticCompoundShape_GetSubShapeIndexFromID(const JPH_S
 /// Generated from method `JPH::StaticCompoundShape::GetVolume`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_StaticCompoundShape_GetVolume(const JPH_StaticCompoundShape *_this);
+
+// See Shape::IsValidScale
+/// Generated from method `JPH::StaticCompoundShape::IsValidScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API bool JPH_StaticCompoundShape_IsValidScale(const JPH_StaticCompoundShape *_this, const JPH_Vec3 *inScale);
+
+// See Shape::MakeScaleValid
+/// Generated from method `JPH::StaticCompoundShape::MakeScaleValid`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_StaticCompoundShape_MakeScaleValid(const JPH_StaticCompoundShape *_this, const JPH_Vec3 *inScale);
 
 /// User data (to be used freely by the application)
 /// Generated from method `JPH::StaticCompoundShape::GetUserData`.

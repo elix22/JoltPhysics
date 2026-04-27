@@ -16,9 +16,14 @@ extern "C" {
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
 typedef struct JPH_ConvexShape JPH_ConvexShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
 typedef struct JPH_ConvexShapeSettings JPH_ConvexShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
+typedef struct JPH_ConvexShape_Support JPH_ConvexShape_Support; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
 typedef struct JPH_ConvexShape_SupportBuffer JPH_ConvexShape_SupportBuffer; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
+typedef struct JPH_DMat44 JPH_DMat44; // Defined in `#include <jolt/Jolt/Math/DMat44.h>`.
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
@@ -27,6 +32,7 @@ typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jol
 typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Class that constructs a TriangleShape
@@ -52,6 +58,42 @@ typedef struct JPH_TriangleShapeSettings JPH_TriangleShapeSettings;
 ///     `JPH::Shape`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_TriangleShape JPH_TriangleShape;
+
+/// Returns a pointer to a member variable of class `JPH::TriangleShapeSettings` named `mV1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_TriangleShapeSettings_Get_mV1(const JPH_TriangleShapeSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::TriangleShapeSettings` named `mV1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_TriangleShapeSettings_GetMutable_mV1(JPH_TriangleShapeSettings *_this);
+
+/// Returns a pointer to a member variable of class `JPH::TriangleShapeSettings` named `mV2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_TriangleShapeSettings_Get_mV2(const JPH_TriangleShapeSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::TriangleShapeSettings` named `mV2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_TriangleShapeSettings_GetMutable_mV2(JPH_TriangleShapeSettings *_this);
+
+/// Returns a pointer to a member variable of class `JPH::TriangleShapeSettings` named `mV3`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_TriangleShapeSettings_Get_mV3(const JPH_TriangleShapeSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::TriangleShapeSettings` named `mV3`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_TriangleShapeSettings_GetMutable_mV3(JPH_TriangleShapeSettings *_this);
 
 /// Returns a pointer to a member variable of class `JPH::TriangleShapeSettings` named `mConvexRadius`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -212,6 +254,17 @@ JOLT_API JPH_TriangleShapeSettings *JPH_TriangleShapeSettings_MutableStaticDownc
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TriangleShapeSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_TriangleShapeSettings *JPH_TriangleShapeSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_TriangleShapeSettings *_other);
+
+/// Create a triangle with points (inV1, inV2, inV3) (counter clockwise) and convex radius inConvexRadius.
+/// Note that the convex radius is currently only used for shape vs shape collision, for all other purposes the triangle is infinitely thin.
+/// Generated from constructor `JPH::TriangleShapeSettings::TriangleShapeSettings`.
+/// Parameter `inV1` can not be null. It is a single object.
+/// Parameter `inV2` can not be null. It is a single object.
+/// Parameter `inV3` can not be null. It is a single object.
+/// Parameter `inConvexRadius` has a default argument: `0.0f`, pass a null pointer to use it.
+/// Parameter `inMaterial` defaults to a null pointer in C++.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TriangleShapeSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_TriangleShapeSettings *JPH_TriangleShapeSettings_Construct(const JPH_Vec3 *inV1, const JPH_Vec3 *inV2, const JPH_Vec3 *inV3, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial);
 
 /// Destroys a heap-allocated instance of `JPH_TriangleShapeSettings`. Does nothing if the pointer is null.
 JOLT_API void JPH_TriangleShapeSettings_Destroy(const JPH_TriangleShapeSettings *_this);
@@ -394,11 +447,30 @@ JOLT_API const JPH_TriangleShape *JPH_TriangleShape_StaticDowncastFrom_JPH_Conve
 /// The reference to the parameter `object` might be preserved in the return value.
 JOLT_API JPH_TriangleShape *JPH_TriangleShape_MutableStaticDowncastFrom_JPH_ConvexShape(JPH_ConvexShape *object);
 
+/// Create a triangle with points (inV1, inV2, inV3) (counter clockwise) and convex radius inConvexRadius.
+/// Note that the convex radius is currently only used for shape vs shape collision, for all other purposes the triangle is infinitely thin.
+/// Generated from constructor `JPH::TriangleShape::TriangleShape`.
+/// Parameter `inV1` can not be null. It is a single object.
+/// Parameter `inV2` can not be null. It is a single object.
+/// Parameter `inV3` can not be null. It is a single object.
+/// Parameter `inConvexRadius` has a default argument: `0.0f`, pass a null pointer to use it.
+/// Parameter `inMaterial` defaults to a null pointer in C++.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TriangleShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_TriangleShape *JPH_TriangleShape_Construct_5(const JPH_Vec3 *inV1, const JPH_Vec3 *inV2, const JPH_Vec3 *inV3, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial);
+
 /// Destroys a heap-allocated instance of `JPH_TriangleShape`. Does nothing if the pointer is null.
 JOLT_API void JPH_TriangleShape_Destroy(const JPH_TriangleShape *_this);
 
 /// Destroys a heap-allocated array of `JPH_TriangleShape`. Does nothing if the pointer is null.
 JOLT_API void JPH_TriangleShape_DestroyArray(const JPH_TriangleShape *_this);
+
+/// Get world space bounds including convex radius.
+/// Generated from method `JPH::TriangleShape::GetWorldSpaceBounds`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_TriangleShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_TriangleShape *_this, const JPH_DMat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
 
 /// Generated from method `JPH::TriangleShape::operator new`.
 JOLT_API void *Jolt_new_JPH_TriangleShape_size_t(unsigned long inCount);
@@ -430,6 +502,22 @@ JOLT_API void *Jolt_new_array_JPH_TriangleShape_size_t_void_ptr(unsigned long in
 /// Generated from method `JPH::TriangleShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TriangleShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
+/// Get the vertices of the triangle
+/// Generated from method `JPH::TriangleShape::GetVertex1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_TriangleShape_GetVertex1(const JPH_TriangleShape *_this);
+
+/// Generated from method `JPH::TriangleShape::GetVertex2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_TriangleShape_GetVertex2(const JPH_TriangleShape *_this);
+
+/// Generated from method `JPH::TriangleShape::GetVertex3`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_TriangleShape_GetVertex3(const JPH_TriangleShape *_this);
+
 /// Convex radius
 /// Generated from method `JPH::TriangleShape::GetConvexRadius`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -441,10 +529,50 @@ JOLT_API float JPH_TriangleShape_GetConvexRadius(const JPH_TriangleShape *_this)
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
 JOLT_API JPH_AABox *JPH_TriangleShape_GetLocalBounds(const JPH_TriangleShape *_this);
 
+// See Shape::GetWorldSpaceBounds
+/// Generated from method `JPH::TriangleShape::GetWorldSpaceBounds`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_TriangleShape_GetWorldSpaceBounds_JPH_Mat44(const JPH_TriangleShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
+
 // See Shape::GetInnerRadius
 /// Generated from method `JPH::TriangleShape::GetInnerRadius`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_TriangleShape_GetInnerRadius(const JPH_TriangleShape *_this);
+
+// See Shape::GetSurfaceNormal
+/// Generated from method `JPH::TriangleShape::GetSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_TriangleShape_GetSurfaceNormal(const JPH_TriangleShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
+// See ConvexShape::GetSupportFunction
+/// Generated from method `JPH::TriangleShape::GetSupportFunction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBuffer` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API const JPH_ConvexShape_Support *JPH_TriangleShape_GetSupportFunction(const JPH_TriangleShape *_this, JPH_ConvexShape_ESupportMode inMode, JPH_ConvexShape_SupportBuffer *inBuffer, const JPH_Vec3 *inScale);
+
+// See Shape::GetTrianglesStart
+/// Generated from method `JPH::TriangleShape::GetTrianglesStart`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `inBox` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_TriangleShape_GetTrianglesStart(const JPH_TriangleShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale);
+
+// See Shape::GetTrianglesNext
+/// Generated from method `JPH::TriangleShape::GetTrianglesNext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `outMaterials` defaults to a null pointer in C++.
+JOLT_API int JPH_TriangleShape_GetTrianglesNext(const JPH_TriangleShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
 
 // See Shape::GetStats
 /// Generated from method `JPH::TriangleShape::GetStats`.
@@ -456,6 +584,19 @@ JOLT_API JPH_Shape_Stats *JPH_TriangleShape_GetStats(const JPH_TriangleShape *_t
 /// Generated from method `JPH::TriangleShape::GetVolume`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_TriangleShape_GetVolume(const JPH_TriangleShape *_this);
+
+// See Shape::IsValidScale
+/// Generated from method `JPH::TriangleShape::IsValidScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API bool JPH_TriangleShape_IsValidScale(const JPH_TriangleShape *_this, const JPH_Vec3 *inScale);
+
+// See Shape::MakeScaleValid
+/// Generated from method `JPH::TriangleShape::MakeScaleValid`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_TriangleShape_MakeScaleValid(const JPH_TriangleShape *_this, const JPH_Vec3 *inScale);
 
 // Register shape functions with the registry
 /// Generated from method `JPH::TriangleShape::sRegister`.
@@ -494,6 +635,12 @@ JOLT_API void JPH_TriangleShape_SetUserData(JPH_TriangleShape *_this, uint64_t i
 /// Generated from method `JPH::TriangleShape::MustBeStatic`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_TriangleShape_MustBeStatic(const JPH_TriangleShape *_this);
+
+/// All shapes are centered around their center of mass. This function returns the center of mass position that needs to be applied to transform the shape to where it was created.
+/// Generated from method `JPH::TriangleShape::GetCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_TriangleShape_GetCenterOfMass(const JPH_TriangleShape *_this);
 
 /// Get the leaf shape for a particular sub shape ID.
 /// @param inSubShapeID The full sub shape ID that indicates the path to the leaf shape

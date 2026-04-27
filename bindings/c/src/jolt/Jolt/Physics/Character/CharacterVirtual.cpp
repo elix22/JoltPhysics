@@ -5,6 +5,9 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Core/TempAllocator.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyFilter.h>
 #include <Jolt/Physics/Body/BodyID.h>
@@ -17,6 +20,7 @@
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
 #include <Jolt/Physics/Collision/ShapeFilter.h>
+#include <Jolt/Physics/PhysicsSystem.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -68,6 +72,16 @@ void JPH_CharacterVirtualSettings_Set_mMaxStrength(JPH_CharacterVirtualSettings 
 float *JPH_CharacterVirtualSettings_GetMutable_mMaxStrength(JPH_CharacterVirtualSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtualSettings *)(_this)).mMaxStrength);
+}
+
+const JPH_Vec3 *JPH_CharacterVirtualSettings_Get_mShapeOffset(const JPH_CharacterVirtualSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtualSettings *)(_this)).mShapeOffset);
+}
+
+JPH_Vec3 *JPH_CharacterVirtualSettings_GetMutable_mShapeOffset(JPH_CharacterVirtualSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtualSettings *)(_this)).mShapeOffset);
 }
 
 const float *JPH_CharacterVirtualSettings_Get_mPredictiveContactDistance(const JPH_CharacterVirtualSettings *_this)
@@ -233,6 +247,16 @@ void JPH_CharacterVirtualSettings_Set_mInnerBodyLayer(JPH_CharacterVirtualSettin
 unsigned short *JPH_CharacterVirtualSettings_GetMutable_mInnerBodyLayer(JPH_CharacterVirtualSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtualSettings *)(_this)).mInnerBodyLayer);
+}
+
+const JPH_Vec3 *JPH_CharacterVirtualSettings_Get_mUp(const JPH_CharacterVirtualSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtualSettings *)(_this)).mUp);
+}
+
+JPH_Vec3 *JPH_CharacterVirtualSettings_GetMutable_mUp(JPH_CharacterVirtualSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtualSettings *)(_this)).mUp);
 }
 
 const float *JPH_CharacterVirtualSettings_Get_mMaxSlopeAngle(const JPH_CharacterVirtualSettings *_this)
@@ -596,6 +620,16 @@ JPH_CharacterContactListener *JPH_CharacterContactListener_AssignFromAnother(JPH
     ));
 }
 
+void JPH_CharacterContactListener_OnAdjustBodyVelocity(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_Body *inBody2, JPH_Vec3 *ioLinearVelocity, JPH_Vec3 *ioAngularVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnAdjustBodyVelocity(
+        ((const JPH::CharacterVirtual *)inCharacter),
+        ((inBody2 ? void() : MRBINDC_THROW("Parameter `inBody2` can not be null.", void)), *(const JPH::Body *)(inBody2)),
+        ((ioLinearVelocity ? void() : MRBINDC_THROW("Parameter `ioLinearVelocity` can not be null.", void)), *(JPH::Vec3 *)(ioLinearVelocity)),
+        ((ioAngularVelocity ? void() : MRBINDC_THROW("Parameter `ioAngularVelocity` can not be null.", void)), *(JPH::Vec3 *)(ioAngularVelocity))
+    );
+}
+
 bool JPH_CharacterContactListener_OnContactValidate(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnContactValidate(
@@ -614,6 +648,30 @@ bool JPH_CharacterContactListener_OnCharacterContactValidate(JPH_CharacterContac
     );
 }
 
+void JPH_CharacterContactListener_OnContactAdded(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnContactAdded(
+        ((const JPH::CharacterVirtual *)inCharacter),
+        ((inBodyID2 ? void() : MRBINDC_THROW("Parameter `inBodyID2` can not be null.", void)), *(const JPH::BodyID *)(inBodyID2)),
+        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2)),
+        ((inContactPosition ? void() : MRBINDC_THROW("Parameter `inContactPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactPosition)),
+        ((inContactNormal ? void() : MRBINDC_THROW("Parameter `inContactNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactNormal)),
+        ((ioSettings ? void() : MRBINDC_THROW("Parameter `ioSettings` can not be null.", void)), *(JPH::CharacterContactSettings *)(ioSettings))
+    );
+}
+
+void JPH_CharacterContactListener_OnContactPersisted(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnContactPersisted(
+        ((const JPH::CharacterVirtual *)inCharacter),
+        ((inBodyID2 ? void() : MRBINDC_THROW("Parameter `inBodyID2` can not be null.", void)), *(const JPH::BodyID *)(inBodyID2)),
+        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2)),
+        ((inContactPosition ? void() : MRBINDC_THROW("Parameter `inContactPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactPosition)),
+        ((inContactNormal ? void() : MRBINDC_THROW("Parameter `inContactNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactNormal)),
+        ((ioSettings ? void() : MRBINDC_THROW("Parameter `ioSettings` can not be null.", void)), *(JPH::CharacterContactSettings *)(ioSettings))
+    );
+}
+
 void JPH_CharacterContactListener_OnContactRemoved(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnContactRemoved(
@@ -623,12 +681,66 @@ void JPH_CharacterContactListener_OnContactRemoved(JPH_CharacterContactListener 
     );
 }
 
+void JPH_CharacterContactListener_OnCharacterContactAdded(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnCharacterContactAdded(
+        ((const JPH::CharacterVirtual *)inCharacter),
+        ((const JPH::CharacterVirtual *)inOtherCharacter),
+        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2)),
+        ((inContactPosition ? void() : MRBINDC_THROW("Parameter `inContactPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactPosition)),
+        ((inContactNormal ? void() : MRBINDC_THROW("Parameter `inContactNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactNormal)),
+        ((ioSettings ? void() : MRBINDC_THROW("Parameter `ioSettings` can not be null.", void)), *(JPH::CharacterContactSettings *)(ioSettings))
+    );
+}
+
+void JPH_CharacterContactListener_OnCharacterContactPersisted(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnCharacterContactPersisted(
+        ((const JPH::CharacterVirtual *)inCharacter),
+        ((const JPH::CharacterVirtual *)inOtherCharacter),
+        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2)),
+        ((inContactPosition ? void() : MRBINDC_THROW("Parameter `inContactPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactPosition)),
+        ((inContactNormal ? void() : MRBINDC_THROW("Parameter `inContactNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactNormal)),
+        ((ioSettings ? void() : MRBINDC_THROW("Parameter `ioSettings` can not be null.", void)), *(JPH::CharacterContactSettings *)(ioSettings))
+    );
+}
+
 void JPH_CharacterContactListener_OnCharacterContactRemoved(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterID *inOtherCharacterID, const JPH_SubShapeID *inSubShapeID2)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnCharacterContactRemoved(
         ((const JPH::CharacterVirtual *)inCharacter),
         ((inOtherCharacterID ? void() : MRBINDC_THROW("Parameter `inOtherCharacterID` can not be null.", void)), *(const JPH::CharacterID *)(inOtherCharacterID)),
         ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2))
+    );
+}
+
+void JPH_CharacterContactListener_OnContactSolve(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, const JPH_Vec3 *inContactVelocity, const JPH_PhysicsMaterial *inContactMaterial, const JPH_Vec3 *inCharacterVelocity, JPH_Vec3 *ioNewCharacterVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnContactSolve(
+        ((const JPH::CharacterVirtual *)inCharacter),
+        ((inBodyID2 ? void() : MRBINDC_THROW("Parameter `inBodyID2` can not be null.", void)), *(const JPH::BodyID *)(inBodyID2)),
+        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2)),
+        ((inContactPosition ? void() : MRBINDC_THROW("Parameter `inContactPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactPosition)),
+        ((inContactNormal ? void() : MRBINDC_THROW("Parameter `inContactNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactNormal)),
+        ((inContactVelocity ? void() : MRBINDC_THROW("Parameter `inContactVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactVelocity)),
+        ((const JPH::PhysicsMaterial *)inContactMaterial),
+        ((inCharacterVelocity ? void() : MRBINDC_THROW("Parameter `inCharacterVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inCharacterVelocity)),
+        ((ioNewCharacterVelocity ? void() : MRBINDC_THROW("Parameter `ioNewCharacterVelocity` can not be null.", void)), *(JPH::Vec3 *)(ioNewCharacterVelocity))
+    );
+}
+
+void JPH_CharacterContactListener_OnCharacterContactSolve(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, const JPH_Vec3 *inContactVelocity, const JPH_PhysicsMaterial *inContactMaterial, const JPH_Vec3 *inCharacterVelocity, JPH_Vec3 *ioNewCharacterVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnCharacterContactSolve(
+        ((const JPH::CharacterVirtual *)inCharacter),
+        ((const JPH::CharacterVirtual *)inOtherCharacter),
+        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2)),
+        ((inContactPosition ? void() : MRBINDC_THROW("Parameter `inContactPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactPosition)),
+        ((inContactNormal ? void() : MRBINDC_THROW("Parameter `inContactNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactNormal)),
+        ((inContactVelocity ? void() : MRBINDC_THROW("Parameter `inContactVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactVelocity)),
+        ((const JPH::PhysicsMaterial *)inContactMaterial),
+        ((inCharacterVelocity ? void() : MRBINDC_THROW("Parameter `inCharacterVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inCharacterVelocity)),
+        ((ioNewCharacterVelocity ? void() : MRBINDC_THROW("Parameter `ioNewCharacterVelocity` can not be null.", void)), *(JPH::Vec3 *)(ioNewCharacterVelocity))
     );
 }
 
@@ -780,6 +892,121 @@ void JPH_CharacterVsCharacterCollisionSimple_Remove(JPH_CharacterVsCharacterColl
     );
 }
 
+JPH_CharacterVirtual *JPH_CharacterVirtual_Construct_5(const JPH_CharacterVirtualSettings *inSettings, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, uint64_t inUserData, JPH_PhysicsSystem *inSystem)
+{
+    return (JPH_CharacterVirtual *)new JPH::CharacterVirtual(JPH::CharacterVirtual(
+        ((const JPH::CharacterVirtualSettings *)inSettings),
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        inUserData,
+        ((JPH::PhysicsSystem *)inSystem)
+    ));
+}
+
+const JPH_CharacterVirtual *JPH_CharacterVirtual_OffsetPtr(const JPH_CharacterVirtual *ptr, ptrdiff_t i)
+{
+    return (const JPH_CharacterVirtual *)(((const JPH::CharacterVirtual *)ptr) + i);
+}
+
+JPH_CharacterVirtual *JPH_CharacterVirtual_OffsetMutablePtr(JPH_CharacterVirtual *ptr, ptrdiff_t i)
+{
+    return (JPH_CharacterVirtual *)(((JPH::CharacterVirtual *)ptr) + i);
+}
+
+const JPH_RefTarget_JPH_CharacterBase *JPH_CharacterVirtual_UpcastTo_JPH_RefTarget_JPH_CharacterBase(const JPH_CharacterVirtual *object)
+{
+    return (const JPH_RefTarget_JPH_CharacterBase *)(static_cast<const JPH::RefTarget<JPH::CharacterBase> *>(
+        ((const JPH::CharacterVirtual *)object)
+    ));
+}
+
+JPH_RefTarget_JPH_CharacterBase *JPH_CharacterVirtual_MutableUpcastTo_JPH_RefTarget_JPH_CharacterBase(JPH_CharacterVirtual *object)
+{
+    return (JPH_RefTarget_JPH_CharacterBase *)(static_cast<JPH::RefTarget<JPH::CharacterBase> *>(
+        ((JPH::CharacterVirtual *)object)
+    ));
+}
+
+const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(const JPH_RefTarget_JPH_CharacterBase *object)
+{
+    return (const JPH_CharacterVirtual *)(static_cast<const JPH::CharacterVirtual *>(
+        ((const JPH::RefTarget<JPH::CharacterBase> *)object)
+    ));
+}
+
+JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(JPH_RefTarget_JPH_CharacterBase *object)
+{
+    return (JPH_CharacterVirtual *)(static_cast<JPH::CharacterVirtual *>(
+        ((JPH::RefTarget<JPH::CharacterBase> *)object)
+    ));
+}
+
+const JPH_NonCopyable *JPH_CharacterVirtual_UpcastTo_JPH_NonCopyable(const JPH_CharacterVirtual *object)
+{
+    return (const JPH_NonCopyable *)(static_cast<const JPH::NonCopyable *>(
+        ((const JPH::CharacterVirtual *)object)
+    ));
+}
+
+JPH_NonCopyable *JPH_CharacterVirtual_MutableUpcastTo_JPH_NonCopyable(JPH_CharacterVirtual *object)
+{
+    return (JPH_NonCopyable *)(static_cast<JPH::NonCopyable *>(
+        ((JPH::CharacterVirtual *)object)
+    ));
+}
+
+const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_NonCopyable(const JPH_NonCopyable *object)
+{
+    return (const JPH_CharacterVirtual *)(static_cast<const JPH::CharacterVirtual *>(
+        ((const JPH::NonCopyable *)object)
+    ));
+}
+
+JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCopyable *object)
+{
+    return (JPH_CharacterVirtual *)(static_cast<JPH::CharacterVirtual *>(
+        ((JPH::NonCopyable *)object)
+    ));
+}
+
+const JPH_CharacterBase *JPH_CharacterVirtual_UpcastTo_JPH_CharacterBase(const JPH_CharacterVirtual *object)
+{
+    return (const JPH_CharacterBase *)(static_cast<const JPH::CharacterBase *>(
+        ((const JPH::CharacterVirtual *)object)
+    ));
+}
+
+JPH_CharacterBase *JPH_CharacterVirtual_MutableUpcastTo_JPH_CharacterBase(JPH_CharacterVirtual *object)
+{
+    return (JPH_CharacterBase *)(static_cast<JPH::CharacterBase *>(
+        ((JPH::CharacterVirtual *)object)
+    ));
+}
+
+const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_CharacterBase(const JPH_CharacterBase *object)
+{
+    return (const JPH_CharacterVirtual *)(static_cast<const JPH::CharacterVirtual *>(
+        ((const JPH::CharacterBase *)object)
+    ));
+}
+
+JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_CharacterBase(JPH_CharacterBase *object)
+{
+    return (JPH_CharacterVirtual *)(static_cast<JPH::CharacterVirtual *>(
+        ((JPH::CharacterBase *)object)
+    ));
+}
+
+JPH_CharacterVirtual *JPH_CharacterVirtual_Construct_4(const JPH_CharacterVirtualSettings *inSettings, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, JPH_PhysicsSystem *inSystem)
+{
+    return (JPH_CharacterVirtual *)new JPH::CharacterVirtual(JPH::CharacterVirtual(
+        ((const JPH::CharacterVirtualSettings *)inSettings),
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((JPH::PhysicsSystem *)inSystem)
+    ));
+}
+
 void JPH_CharacterVirtual_Destroy(const JPH_CharacterVirtual *_this)
 {
     delete ((const JPH::CharacterVirtual *)_this);
@@ -890,6 +1117,57 @@ void JPH_CharacterVirtual_SetCharacterVsCharacterCollision(JPH_CharacterVirtual 
     );
 }
 
+JPH_Vec3 *JPH_CharacterVirtual_GetLinearVelocity(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetLinearVelocity());
+}
+
+void JPH_CharacterVirtual_SetLinearVelocity(JPH_CharacterVirtual *_this, const JPH_Vec3 *inLinearVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).SetLinearVelocity(
+        ((inLinearVelocity ? void() : MRBINDC_THROW("Parameter `inLinearVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLinearVelocity))
+    );
+}
+
+JPH_Vec3 *JPH_CharacterVirtual_GetPosition(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetPosition());
+}
+
+void JPH_CharacterVirtual_SetPosition(JPH_CharacterVirtual *_this, const JPH_Vec3 *inPosition)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).SetPosition(
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition))
+    );
+}
+
+JPH_Quat *JPH_CharacterVirtual_GetRotation(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_Quat *)new JPH::Quat(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetRotation());
+}
+
+void JPH_CharacterVirtual_SetRotation(JPH_CharacterVirtual *_this, const JPH_Quat *inRotation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).SetRotation(
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation))
+    );
+}
+
+JPH_Vec3 *JPH_CharacterVirtual_GetCenterOfMassPosition(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetCenterOfMassPosition());
+}
+
+JPH_Mat44 *JPH_CharacterVirtual_GetWorldTransform(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetWorldTransform());
+}
+
+JPH_Mat44 *JPH_CharacterVirtual_GetCenterOfMassTransform(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetCenterOfMassTransform());
+}
+
 float JPH_CharacterVirtual_GetMass(const JPH_CharacterVirtual *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetMass();
@@ -972,6 +1250,18 @@ bool JPH_CharacterVirtual_GetMaxHitsExceeded(const JPH_CharacterVirtual *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetMaxHitsExceeded();
 }
 
+JPH_Vec3 *JPH_CharacterVirtual_GetShapeOffset(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetShapeOffset());
+}
+
+void JPH_CharacterVirtual_SetShapeOffset(JPH_CharacterVirtual *_this, const JPH_Vec3 *inShapeOffset)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).SetShapeOffset(
+        ((inShapeOffset ? void() : MRBINDC_THROW("Parameter `inShapeOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inShapeOffset))
+    );
+}
+
 uint64_t JPH_CharacterVirtual_GetUserData(const JPH_CharacterVirtual *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetUserData();
@@ -989,6 +1279,13 @@ JPH_BodyID JPH_CharacterVirtual_GetInnerBodyID(const JPH_CharacterVirtual *_this
     return MRBINDC_BIT_CAST((JPH_BodyID), ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetInnerBodyID());
 }
 
+JPH_Vec3 *JPH_CharacterVirtual_CancelVelocityTowardsSteepSlopes(const JPH_CharacterVirtual *_this, const JPH_Vec3 *inDesiredVelocity)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).CancelVelocityTowardsSteepSlopes(
+        ((inDesiredVelocity ? void() : MRBINDC_THROW("Parameter `inDesiredVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inDesiredVelocity))
+    ));
+}
+
 void JPH_CharacterVirtual_StartTrackingContactChanges(JPH_CharacterVirtual *_this)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).StartTrackingContactChanges();
@@ -997,6 +1294,68 @@ void JPH_CharacterVirtual_StartTrackingContactChanges(JPH_CharacterVirtual *_thi
 void JPH_CharacterVirtual_FinishTrackingContactChanges(JPH_CharacterVirtual *_this)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).FinishTrackingContactChanges();
+}
+
+void JPH_CharacterVirtual_Update(JPH_CharacterVirtual *_this, float inDeltaTime, const JPH_Vec3 *inGravity, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter, const JPH_ShapeFilter *inShapeFilter, JPH_TempAllocator *inAllocator)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).Update(
+        inDeltaTime,
+        ((inGravity ? void() : MRBINDC_THROW("Parameter `inGravity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inGravity)),
+        ((inBroadPhaseLayerFilter ? void() : MRBINDC_THROW("Parameter `inBroadPhaseLayerFilter` can not be null.", void)), *(const JPH::BroadPhaseLayerFilter *)(inBroadPhaseLayerFilter)),
+        ((inObjectLayerFilter ? void() : MRBINDC_THROW("Parameter `inObjectLayerFilter` can not be null.", void)), *(const JPH::ObjectLayerFilter *)(inObjectLayerFilter)),
+        ((inBodyFilter ? void() : MRBINDC_THROW("Parameter `inBodyFilter` can not be null.", void)), *(const JPH::BodyFilter *)(inBodyFilter)),
+        ((inShapeFilter ? void() : MRBINDC_THROW("Parameter `inShapeFilter` can not be null.", void)), *(const JPH::ShapeFilter *)(inShapeFilter)),
+        ((inAllocator ? void() : MRBINDC_THROW("Parameter `inAllocator` can not be null.", void)), *(JPH::TempAllocator *)(inAllocator))
+    );
+}
+
+bool JPH_CharacterVirtual_CanWalkStairs(const JPH_CharacterVirtual *_this, const JPH_Vec3 *inLinearVelocity)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).CanWalkStairs(
+        ((inLinearVelocity ? void() : MRBINDC_THROW("Parameter `inLinearVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLinearVelocity))
+    );
+}
+
+bool JPH_CharacterVirtual_WalkStairs(JPH_CharacterVirtual *_this, float inDeltaTime, const JPH_Vec3 *inStepUp, const JPH_Vec3 *inStepForward, const JPH_Vec3 *inStepForwardTest, const JPH_Vec3 *inStepDownExtra, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter, const JPH_ShapeFilter *inShapeFilter, JPH_TempAllocator *inAllocator)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).WalkStairs(
+        inDeltaTime,
+        ((inStepUp ? void() : MRBINDC_THROW("Parameter `inStepUp` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inStepUp)),
+        ((inStepForward ? void() : MRBINDC_THROW("Parameter `inStepForward` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inStepForward)),
+        ((inStepForwardTest ? void() : MRBINDC_THROW("Parameter `inStepForwardTest` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inStepForwardTest)),
+        ((inStepDownExtra ? void() : MRBINDC_THROW("Parameter `inStepDownExtra` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inStepDownExtra)),
+        ((inBroadPhaseLayerFilter ? void() : MRBINDC_THROW("Parameter `inBroadPhaseLayerFilter` can not be null.", void)), *(const JPH::BroadPhaseLayerFilter *)(inBroadPhaseLayerFilter)),
+        ((inObjectLayerFilter ? void() : MRBINDC_THROW("Parameter `inObjectLayerFilter` can not be null.", void)), *(const JPH::ObjectLayerFilter *)(inObjectLayerFilter)),
+        ((inBodyFilter ? void() : MRBINDC_THROW("Parameter `inBodyFilter` can not be null.", void)), *(const JPH::BodyFilter *)(inBodyFilter)),
+        ((inShapeFilter ? void() : MRBINDC_THROW("Parameter `inShapeFilter` can not be null.", void)), *(const JPH::ShapeFilter *)(inShapeFilter)),
+        ((inAllocator ? void() : MRBINDC_THROW("Parameter `inAllocator` can not be null.", void)), *(JPH::TempAllocator *)(inAllocator))
+    );
+}
+
+bool JPH_CharacterVirtual_StickToFloor(JPH_CharacterVirtual *_this, const JPH_Vec3 *inStepDown, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter, const JPH_ShapeFilter *inShapeFilter, JPH_TempAllocator *inAllocator)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).StickToFloor(
+        ((inStepDown ? void() : MRBINDC_THROW("Parameter `inStepDown` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inStepDown)),
+        ((inBroadPhaseLayerFilter ? void() : MRBINDC_THROW("Parameter `inBroadPhaseLayerFilter` can not be null.", void)), *(const JPH::BroadPhaseLayerFilter *)(inBroadPhaseLayerFilter)),
+        ((inObjectLayerFilter ? void() : MRBINDC_THROW("Parameter `inObjectLayerFilter` can not be null.", void)), *(const JPH::ObjectLayerFilter *)(inObjectLayerFilter)),
+        ((inBodyFilter ? void() : MRBINDC_THROW("Parameter `inBodyFilter` can not be null.", void)), *(const JPH::BodyFilter *)(inBodyFilter)),
+        ((inShapeFilter ? void() : MRBINDC_THROW("Parameter `inShapeFilter` can not be null.", void)), *(const JPH::ShapeFilter *)(inShapeFilter)),
+        ((inAllocator ? void() : MRBINDC_THROW("Parameter `inAllocator` can not be null.", void)), *(JPH::TempAllocator *)(inAllocator))
+    );
+}
+
+void JPH_CharacterVirtual_ExtendedUpdate(JPH_CharacterVirtual *_this, float inDeltaTime, const JPH_Vec3 *inGravity, const JPH_CharacterVirtual_ExtendedUpdateSettings *inSettings, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter, const JPH_ShapeFilter *inShapeFilter, JPH_TempAllocator *inAllocator)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).ExtendedUpdate(
+        inDeltaTime,
+        ((inGravity ? void() : MRBINDC_THROW("Parameter `inGravity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inGravity)),
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::CharacterVirtual::ExtendedUpdateSettings *)(inSettings)),
+        ((inBroadPhaseLayerFilter ? void() : MRBINDC_THROW("Parameter `inBroadPhaseLayerFilter` can not be null.", void)), *(const JPH::BroadPhaseLayerFilter *)(inBroadPhaseLayerFilter)),
+        ((inObjectLayerFilter ? void() : MRBINDC_THROW("Parameter `inObjectLayerFilter` can not be null.", void)), *(const JPH::ObjectLayerFilter *)(inObjectLayerFilter)),
+        ((inBodyFilter ? void() : MRBINDC_THROW("Parameter `inBodyFilter` can not be null.", void)), *(const JPH::BodyFilter *)(inBodyFilter)),
+        ((inShapeFilter ? void() : MRBINDC_THROW("Parameter `inShapeFilter` can not be null.", void)), *(const JPH::ShapeFilter *)(inShapeFilter)),
+        ((inAllocator ? void() : MRBINDC_THROW("Parameter `inAllocator` can not be null.", void)), *(JPH::TempAllocator *)(inAllocator))
+    );
 }
 
 void JPH_CharacterVirtual_RefreshContacts(JPH_CharacterVirtual *_this, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter, const JPH_ShapeFilter *inShapeFilter, JPH_TempAllocator *inAllocator)
@@ -1073,6 +1432,25 @@ float JPH_CharacterVirtual_GetCosMaxSlopeAngle(const JPH_CharacterVirtual *_this
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetCosMaxSlopeAngle();
 }
 
+void JPH_CharacterVirtual_SetUp(JPH_CharacterVirtual *_this, const JPH_Vec3 *inUp)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).SetUp(
+        ((inUp ? void() : MRBINDC_THROW("Parameter `inUp` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inUp))
+    );
+}
+
+JPH_Vec3 *JPH_CharacterVirtual_GetUp(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetUp());
+}
+
+bool JPH_CharacterVirtual_IsSlopeTooSteep(const JPH_CharacterVirtual *_this, const JPH_Vec3 *inNormal)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).IsSlopeTooSteep(
+        ((inNormal ? void() : MRBINDC_THROW("Parameter `inNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inNormal))
+    );
+}
+
 const JPH_Shape *JPH_CharacterVirtual_GetShape(const JPH_CharacterVirtual *_this)
 {
     return (const JPH_Shape *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetShape());
@@ -1093,6 +1471,21 @@ JPH_CharacterBase_EGroundState JPH_CharacterVirtual_GetGroundState(const JPH_Cha
 bool JPH_CharacterVirtual_IsSupported(const JPH_CharacterVirtual *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).IsSupported();
+}
+
+JPH_Vec3 *JPH_CharacterVirtual_GetGroundPosition(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetGroundPosition());
+}
+
+JPH_Vec3 *JPH_CharacterVirtual_GetGroundNormal(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetGroundNormal());
+}
+
+JPH_Vec3 *JPH_CharacterVirtual_GetGroundVelocity(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetGroundVelocity());
 }
 
 const JPH_PhysicsMaterial *JPH_CharacterVirtual_GetGroundMaterial(const JPH_CharacterVirtual *_this)
@@ -1140,98 +1533,24 @@ int JPH_CharacterVirtual_sInternalGetRefCountOffset(void)
     return JPH::CharacterVirtual::sInternalGetRefCountOffset();
 }
 
-const JPH_CharacterVirtual *JPH_CharacterVirtual_OffsetPtr(const JPH_CharacterVirtual *ptr, ptrdiff_t i)
+const JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mStickToFloorStepDown(const JPH_CharacterVirtual_ExtendedUpdateSettings *_this)
 {
-    return (const JPH_CharacterVirtual *)(((const JPH::CharacterVirtual *)ptr) + i);
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::ExtendedUpdateSettings *)(_this)).mStickToFloorStepDown);
 }
 
-JPH_CharacterVirtual *JPH_CharacterVirtual_OffsetMutablePtr(JPH_CharacterVirtual *ptr, ptrdiff_t i)
+JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mStickToFloorStepDown(JPH_CharacterVirtual_ExtendedUpdateSettings *_this)
 {
-    return (JPH_CharacterVirtual *)(((JPH::CharacterVirtual *)ptr) + i);
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ExtendedUpdateSettings *)(_this)).mStickToFloorStepDown);
 }
 
-const JPH_RefTarget_JPH_CharacterBase *JPH_CharacterVirtual_UpcastTo_JPH_RefTarget_JPH_CharacterBase(const JPH_CharacterVirtual *object)
+const JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepUp(const JPH_CharacterVirtual_ExtendedUpdateSettings *_this)
 {
-    return (const JPH_RefTarget_JPH_CharacterBase *)(static_cast<const JPH::RefTarget<JPH::CharacterBase> *>(
-        ((const JPH::CharacterVirtual *)object)
-    ));
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::ExtendedUpdateSettings *)(_this)).mWalkStairsStepUp);
 }
 
-JPH_RefTarget_JPH_CharacterBase *JPH_CharacterVirtual_MutableUpcastTo_JPH_RefTarget_JPH_CharacterBase(JPH_CharacterVirtual *object)
+JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepUp(JPH_CharacterVirtual_ExtendedUpdateSettings *_this)
 {
-    return (JPH_RefTarget_JPH_CharacterBase *)(static_cast<JPH::RefTarget<JPH::CharacterBase> *>(
-        ((JPH::CharacterVirtual *)object)
-    ));
-}
-
-const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(const JPH_RefTarget_JPH_CharacterBase *object)
-{
-    return (const JPH_CharacterVirtual *)(static_cast<const JPH::CharacterVirtual *>(
-        ((const JPH::RefTarget<JPH::CharacterBase> *)object)
-    ));
-}
-
-JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(JPH_RefTarget_JPH_CharacterBase *object)
-{
-    return (JPH_CharacterVirtual *)(static_cast<JPH::CharacterVirtual *>(
-        ((JPH::RefTarget<JPH::CharacterBase> *)object)
-    ));
-}
-
-const JPH_NonCopyable *JPH_CharacterVirtual_UpcastTo_JPH_NonCopyable(const JPH_CharacterVirtual *object)
-{
-    return (const JPH_NonCopyable *)(static_cast<const JPH::NonCopyable *>(
-        ((const JPH::CharacterVirtual *)object)
-    ));
-}
-
-JPH_NonCopyable *JPH_CharacterVirtual_MutableUpcastTo_JPH_NonCopyable(JPH_CharacterVirtual *object)
-{
-    return (JPH_NonCopyable *)(static_cast<JPH::NonCopyable *>(
-        ((JPH::CharacterVirtual *)object)
-    ));
-}
-
-const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_NonCopyable(const JPH_NonCopyable *object)
-{
-    return (const JPH_CharacterVirtual *)(static_cast<const JPH::CharacterVirtual *>(
-        ((const JPH::NonCopyable *)object)
-    ));
-}
-
-JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCopyable *object)
-{
-    return (JPH_CharacterVirtual *)(static_cast<JPH::CharacterVirtual *>(
-        ((JPH::NonCopyable *)object)
-    ));
-}
-
-const JPH_CharacterBase *JPH_CharacterVirtual_UpcastTo_JPH_CharacterBase(const JPH_CharacterVirtual *object)
-{
-    return (const JPH_CharacterBase *)(static_cast<const JPH::CharacterBase *>(
-        ((const JPH::CharacterVirtual *)object)
-    ));
-}
-
-JPH_CharacterBase *JPH_CharacterVirtual_MutableUpcastTo_JPH_CharacterBase(JPH_CharacterVirtual *object)
-{
-    return (JPH_CharacterBase *)(static_cast<JPH::CharacterBase *>(
-        ((JPH::CharacterVirtual *)object)
-    ));
-}
-
-const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_CharacterBase(const JPH_CharacterBase *object)
-{
-    return (const JPH_CharacterVirtual *)(static_cast<const JPH::CharacterVirtual *>(
-        ((const JPH::CharacterBase *)object)
-    ));
-}
-
-JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_CharacterBase(JPH_CharacterBase *object)
-{
-    return (JPH_CharacterVirtual *)(static_cast<JPH::CharacterVirtual *>(
-        ((JPH::CharacterBase *)object)
-    ));
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ExtendedUpdateSettings *)(_this)).mWalkStairsStepUp);
 }
 
 const float *JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsMinStepForward(const JPH_CharacterVirtual_ExtendedUpdateSettings *_this)
@@ -1279,6 +1598,16 @@ float *JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsCosAngl
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ExtendedUpdateSettings *)(_this)).mWalkStairsCosAngleForwardContact);
 }
 
+const JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepDownExtra(const JPH_CharacterVirtual_ExtendedUpdateSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::ExtendedUpdateSettings *)(_this)).mWalkStairsStepDownExtra);
+}
+
+JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepDownExtra(JPH_CharacterVirtual_ExtendedUpdateSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ExtendedUpdateSettings *)(_this)).mWalkStairsStepDownExtra);
+}
+
 JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_DefaultConstruct(void)
 {
     return (JPH_CharacterVirtual_ExtendedUpdateSettings *)new JPH::CharacterVirtual::ExtendedUpdateSettings(JPH::CharacterVirtual::ExtendedUpdateSettings());
@@ -1287,6 +1616,28 @@ JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdate
 JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_DefaultConstructArray(size_t num_elems)
 {
     return (JPH_CharacterVirtual_ExtendedUpdateSettings *)(new JPH::CharacterVirtual::ExtendedUpdateSettings[num_elems]{});
+}
+
+JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFrom(const JPH_Vec3 *mStickToFloorStepDown, const JPH_Vec3 *mWalkStairsStepUp, float mWalkStairsMinStepForward, float mWalkStairsStepForwardTest, float mWalkStairsCosAngleForwardContact, const JPH_Vec3 *mWalkStairsStepDownExtra)
+{
+    return (JPH_CharacterVirtual_ExtendedUpdateSettings *)new JPH::CharacterVirtual::ExtendedUpdateSettings(JPH::CharacterVirtual::ExtendedUpdateSettings{
+        ((mStickToFloorStepDown ? void() : MRBINDC_THROW("Parameter `mStickToFloorStepDown` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)mStickToFloorStepDown)),
+        ((mWalkStairsStepUp ? void() : MRBINDC_THROW("Parameter `mWalkStairsStepUp` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)mWalkStairsStepUp)),
+        mWalkStairsMinStepForward,
+        mWalkStairsStepForwardTest,
+        mWalkStairsCosAngleForwardContact,
+        ((mWalkStairsStepDownExtra ? void() : MRBINDC_THROW("Parameter `mWalkStairsStepDownExtra` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)mWalkStairsStepDownExtra))
+    });
+}
+
+const JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_OffsetPtr(const JPH_CharacterVirtual_ExtendedUpdateSettings *ptr, ptrdiff_t i)
+{
+    return (const JPH_CharacterVirtual_ExtendedUpdateSettings *)(((const JPH::CharacterVirtual::ExtendedUpdateSettings *)ptr) + i);
+}
+
+JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_OffsetMutablePtr(JPH_CharacterVirtual_ExtendedUpdateSettings *ptr, ptrdiff_t i)
+{
+    return (JPH_CharacterVirtual_ExtendedUpdateSettings *)(((JPH::CharacterVirtual::ExtendedUpdateSettings *)ptr) + i);
 }
 
 JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFromAnother(const JPH_CharacterVirtual_ExtendedUpdateSettings *_other)
@@ -1442,6 +1793,46 @@ bool Jolt_not_equal_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_C
 uint64_t JPH_CharacterVirtual_ContactKey_GetHash(const JPH_CharacterVirtual_ContactKey *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(_this)).GetHash();
+}
+
+const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mPosition(const JPH_CharacterVirtual_Contact *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mPosition);
+}
+
+JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mPosition(JPH_CharacterVirtual_Contact *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mPosition);
+}
+
+const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mLinearVelocity(const JPH_CharacterVirtual_Contact *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mLinearVelocity);
+}
+
+JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mLinearVelocity(JPH_CharacterVirtual_Contact *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mLinearVelocity);
+}
+
+const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mContactNormal(const JPH_CharacterVirtual_Contact *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mContactNormal);
+}
+
+JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mContactNormal(JPH_CharacterVirtual_Contact *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mContactNormal);
+}
+
+const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mSurfaceNormal(const JPH_CharacterVirtual_Contact *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mSurfaceNormal);
+}
+
+JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mSurfaceNormal(JPH_CharacterVirtual_Contact *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mSurfaceNormal);
 }
 
 const float *JPH_CharacterVirtual_Contact_Get_mDistance(const JPH_CharacterVirtual_Contact *_this)

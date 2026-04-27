@@ -16,8 +16,11 @@ typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/
 typedef struct JPH_CompoundShape JPH_CompoundShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
 typedef struct JPH_CompoundShapeSettings JPH_CompoundShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
 typedef struct JPH_CompoundShape_SubShape JPH_CompoundShape_SubShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
@@ -26,6 +29,7 @@ typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jol
 typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Class that constructs a MutableCompoundShape.
@@ -407,11 +411,57 @@ JOLT_API int JPH_MutableCompoundShape_GetIntersectingSubShapes_JPH_AABox(const J
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Shape_Stats_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Shape_Stats *JPH_MutableCompoundShape_GetStats(const JPH_MutableCompoundShape *_this);
 
+/// Adding a new shape.
+/// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+/// @param inPosition The position of the new shape
+/// @param inRotation The orientation of the new shape
+/// @param inShape The shape to add
+/// @param inUserData User data that will be stored with the shape and can be retrieved using GetCompoundUserData
+/// @param inIndex Index where to insert the shape, UINT_MAX to add to the end
+/// @return The index of the newly added shape
+/// Generated from method `JPH::MutableCompoundShape::AddShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inUserData` has a default argument: `0`, pass a null pointer to use it.
+/// Parameter `inIndex` has a default argument: `(2147483647*2u+1u)`, pass a null pointer to use it.
+JOLT_API unsigned int JPH_MutableCompoundShape_AddShape(JPH_MutableCompoundShape *_this, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, const JPH_Shape *inShape, const unsigned int *inUserData, const unsigned int *inIndex);
+
 /// Remove a shape by index.
 /// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
 /// Generated from method `JPH::MutableCompoundShape::RemoveShape`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_MutableCompoundShape_RemoveShape(JPH_MutableCompoundShape *_this, unsigned int inIndex);
+
+/// Modify the position / orientation of a shape.
+/// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+/// Generated from method `JPH::MutableCompoundShape::ModifyShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+JOLT_API void JPH_MutableCompoundShape_ModifyShape_3(JPH_MutableCompoundShape *_this, unsigned int inIndex, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation);
+
+/// Modify the position / orientation and shape at the same time.
+/// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+/// Generated from method `JPH::MutableCompoundShape::ModifyShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+JOLT_API void JPH_MutableCompoundShape_ModifyShape_4(JPH_MutableCompoundShape *_this, unsigned int inIndex, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, const JPH_Shape *inShape);
+
+/// @brief Batch set positions / orientations, this avoids duplicate work due to bounding box calculation.
+/// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+/// @param inStartIndex Index of first shape to update
+/// @param inNumber Number of shapes to update
+/// @param inPositions A list of positions with arbitrary stride
+/// @param inRotations A list of orientations with arbitrary stride
+/// @param inPositionStride The position stride (the number of bytes between the first and second element)
+/// @param inRotationStride The orientation stride (the number of bytes between the first and second element)
+/// Generated from method `JPH::MutableCompoundShape::ModifyShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPositionStride` has a default argument: `sizeof(JPH::Vec3)`, pass a null pointer to use it.
+/// Parameter `inRotationStride` has a default argument: `sizeof(JPH::Quat)`, pass a null pointer to use it.
+JOLT_API void JPH_MutableCompoundShape_ModifyShapes(JPH_MutableCompoundShape *_this, unsigned int inStartIndex, unsigned int inNumber, const JPH_Vec3 *inPositions, const JPH_Quat *inRotations, const unsigned int *inPositionStride, const unsigned int *inRotationStride);
 
 /// Recalculate the center of mass and shift all objects so they're centered around it
 /// (this needs to be done of dynamic bodies and if the center of mass changes significantly due to adding / removing / repositioning sub shapes or else the simulation will look unnatural)
@@ -424,6 +474,12 @@ JOLT_API void JPH_MutableCompoundShape_AdjustCenterOfMass(JPH_MutableCompoundSha
 // Register shape functions with the registry
 /// Generated from method `JPH::MutableCompoundShape::sRegister`.
 JOLT_API void JPH_MutableCompoundShape_sRegister(void);
+
+// See Shape::GetCenterOfMass
+/// Generated from method `JPH::MutableCompoundShape::GetCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_MutableCompoundShape_GetCenterOfMass(const JPH_MutableCompoundShape *_this);
 
 // See Shape::MustBeStatic
 /// Generated from method `JPH::MutableCompoundShape::MustBeStatic`.
@@ -464,6 +520,31 @@ JOLT_API const JPH_Shape *JPH_MutableCompoundShape_GetLeafShape(const JPH_Mutabl
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API uint64_t JPH_MutableCompoundShape_GetSubShapeUserData(const JPH_MutableCompoundShape *_this, const JPH_SubShapeID *inSubShapeID);
+
+// See Shape::GetSurfaceNormal
+/// Generated from method `JPH::MutableCompoundShape::GetSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_MutableCompoundShape_GetSurfaceNormal(const JPH_MutableCompoundShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
+// See Shape::GetTrianglesStart
+/// Generated from method `JPH::MutableCompoundShape::GetTrianglesStart`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `inBox` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_MutableCompoundShape_GetTrianglesStart(const JPH_MutableCompoundShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale);
+
+// See Shape::GetTrianglesNext
+/// Generated from method `JPH::MutableCompoundShape::GetTrianglesNext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `outMaterials` defaults to a null pointer in C++.
+JOLT_API int JPH_MutableCompoundShape_GetTrianglesNext(const JPH_MutableCompoundShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
 
 /// Get the total number of sub shapes
 /// Generated from method `JPH::MutableCompoundShape::GetNumSubShapes`.
@@ -508,6 +589,19 @@ JOLT_API unsigned int JPH_MutableCompoundShape_GetSubShapeIndexFromID(const JPH_
 /// Generated from method `JPH::MutableCompoundShape::GetVolume`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_MutableCompoundShape_GetVolume(const JPH_MutableCompoundShape *_this);
+
+// See Shape::IsValidScale
+/// Generated from method `JPH::MutableCompoundShape::IsValidScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API bool JPH_MutableCompoundShape_IsValidScale(const JPH_MutableCompoundShape *_this, const JPH_Vec3 *inScale);
+
+// See Shape::MakeScaleValid
+/// Generated from method `JPH::MutableCompoundShape::MakeScaleValid`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_MutableCompoundShape_MakeScaleValid(const JPH_MutableCompoundShape *_this, const JPH_Vec3 *inScale);
 
 /// User data (to be used freely by the application)
 /// Generated from method `JPH::MutableCompoundShape::GetUserData`.

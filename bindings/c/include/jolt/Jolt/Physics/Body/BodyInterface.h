@@ -18,14 +18,17 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyCreationSettings JPH_BodyCreationSettings; // Defined in `#include <jolt/Jolt/Physics/Body/BodyCreationSettings.h>`.
 typedef struct JPH_BroadPhaseLayerFilter JPH_BroadPhaseLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
 typedef struct JPH_CollisionGroup JPH_CollisionGroup; // Defined in `#include <jolt/Jolt/Physics/Collision/CollisionGroup.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_ObjectLayerFilter JPH_ObjectLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/ObjectLayer.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SoftBodyCreationSettings JPH_SoftBodyCreationSettings; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyCreationSettings.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Class that provides operations on bodies using a body ID. Note that if you need to do multiple operations on a single body, it is more efficient to lock the body once and combine the operations.
@@ -292,6 +295,17 @@ JOLT_API void JPH_BodyInterface_ActivateConstraint(JPH_BodyInterface *_this, con
 /// Parameter `inBodyID` can not be null. It is a single object.
 JOLT_API void JPH_BodyInterface_SetShape(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Shape *inShape, bool inUpdateMassProperties, JPH_EActivation inActivationMode);
 
+/// Notify all systems to indicate that a shape has changed (usable for MutableCompoundShapes)
+/// @param inBodyID Body ID of body that had its shape changed
+/// @param inPreviousCenterOfMass Center of mass of the shape before the alterations
+/// @param inUpdateMassProperties When true, the mass and inertia tensor is recalculated
+/// @param inActivationMode Whether or not to activate the body
+/// Generated from method `JPH::BodyInterface::NotifyShapeChanged`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inPreviousCenterOfMass` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_NotifyShapeChanged(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inPreviousCenterOfMass, bool inUpdateMassProperties, JPH_EActivation inActivationMode);
+
 ///@name Object layer of a body
 ///@{
 /// Generated from method `JPH::BodyInterface::SetObjectLayer`.
@@ -303,6 +317,219 @@ JOLT_API void JPH_BodyInterface_SetObjectLayer(JPH_BodyInterface *_this, const J
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inBodyID` can not be null. It is a single object.
 JOLT_API unsigned short JPH_BodyInterface_GetObjectLayer(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
+
+///@name Position and rotation of a body
+///@{
+/// Generated from method `JPH::BodyInterface::SetPositionAndRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_SetPositionAndRotation(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, JPH_EActivation inActivationMode);
+
+/// Generated from method `JPH::BodyInterface::SetPositionAndRotationWhenChanged`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_SetPositionAndRotationWhenChanged(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, JPH_EActivation inActivationMode);
+
+/// Generated from method `JPH::BodyInterface::GetPositionAndRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `outPosition` can not be null. It is a single object.
+/// Parameter `outRotation` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_GetPositionAndRotation(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, JPH_Vec3 *outPosition, JPH_Quat *outRotation);
+
+/// Generated from method `JPH::BodyInterface::SetPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_SetPosition(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inPosition, JPH_EActivation inActivationMode);
+
+/// Generated from method `JPH::BodyInterface::GetPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_BodyInterface_GetPosition(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
+
+/// Generated from method `JPH::BodyInterface::GetCenterOfMassPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_BodyInterface_GetCenterOfMassPosition(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
+
+/// Generated from method `JPH::BodyInterface::SetRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_SetRotation(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Quat *inRotation, JPH_EActivation inActivationMode);
+
+/// Generated from method `JPH::BodyInterface::GetRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Quat_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Quat *JPH_BodyInterface_GetRotation(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
+
+/// Generated from method `JPH::BodyInterface::GetWorldTransform`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_BodyInterface_GetWorldTransform(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
+
+/// Generated from method `JPH::BodyInterface::GetCenterOfMassTransform`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_BodyInterface_GetCenterOfMassTransform(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
+
+/// Set velocity of body such that it will be positioned at inTargetPosition/Rotation in inDeltaTime seconds (will activate body if needed)
+/// Generated from method `JPH::BodyInterface::MoveKinematic`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inTargetPosition` can not be null. It is a single object.
+/// Parameter `inTargetRotation` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_MoveKinematic(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inTargetPosition, const JPH_Quat *inTargetRotation, float inDeltaTime);
+
+/// Linear or angular velocity (functions will activate body if needed).
+/// Note that the linear velocity is the velocity of the center of mass, which may not coincide with the position of your object, to correct for this: \f$VelocityCOM = Velocity - AngularVelocity \times ShapeCOM\f$
+/// Generated from method `JPH::BodyInterface::SetLinearAndAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inLinearVelocity` can not be null. It is a single object.
+/// Parameter `inAngularVelocity` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_SetLinearAndAngularVelocity(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inLinearVelocity, const JPH_Vec3 *inAngularVelocity);
+
+/// Generated from method `JPH::BodyInterface::GetLinearAndAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `outLinearVelocity` can not be null. It is a single object.
+/// Parameter `outAngularVelocity` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_GetLinearAndAngularVelocity(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, JPH_Vec3 *outLinearVelocity, JPH_Vec3 *outAngularVelocity);
+
+/// Generated from method `JPH::BodyInterface::SetLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inLinearVelocity` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_SetLinearVelocity(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inLinearVelocity);
+
+/// Generated from method `JPH::BodyInterface::GetLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_BodyInterface_GetLinearVelocity(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
+
+/// Generated from method `JPH::BodyInterface::AddLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inLinearVelocity` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_AddLinearVelocity(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inLinearVelocity);
+
+/// Generated from method `JPH::BodyInterface::AddLinearAndAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inLinearVelocity` can not be null. It is a single object.
+/// Parameter `inAngularVelocity` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_AddLinearAndAngularVelocity(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inLinearVelocity, const JPH_Vec3 *inAngularVelocity);
+
+/// Generated from method `JPH::BodyInterface::SetAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inAngularVelocity` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_SetAngularVelocity(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inAngularVelocity);
+
+/// Generated from method `JPH::BodyInterface::GetAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_BodyInterface_GetAngularVelocity(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
+
+/// Generated from method `JPH::BodyInterface::GetPointVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inPoint` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_BodyInterface_GetPointVelocity(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inPoint);
+
+/// Set the complete motion state of a body.
+/// Note that the linear velocity is the velocity of the center of mass, which may not coincide with the position of your object, to correct for this: \f$VelocityCOM = Velocity - AngularVelocity \times ShapeCOM\f$
+/// Generated from method `JPH::BodyInterface::SetPositionRotationAndVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inLinearVelocity` can not be null. It is a single object.
+/// Parameter `inAngularVelocity` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_SetPositionRotationAndVelocity(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, const JPH_Vec3 *inLinearVelocity, const JPH_Vec3 *inAngularVelocity);
+
+///@name Add forces to the body. Note that you should add a body to the physics system before applying forces or torques.
+///@{
+/// Generated from method `JPH::BodyInterface::AddForce`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inForce` can not be null. It is a single object.
+/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+JOLT_API void JPH_BodyInterface_AddForce_3(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inForce, const JPH_EActivation *inActivationMode);
+
+/// Generated from method `JPH::BodyInterface::AddForce`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inForce` can not be null. It is a single object.
+/// Parameter `inPoint` can not be null. It is a single object.
+/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+JOLT_API void JPH_BodyInterface_AddForce_4(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inForce, const JPH_Vec3 *inPoint, const JPH_EActivation *inActivationMode);
+
+/// Generated from method `JPH::BodyInterface::AddTorque`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inTorque` can not be null. It is a single object.
+/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+JOLT_API void JPH_BodyInterface_AddTorque(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inTorque, const JPH_EActivation *inActivationMode);
+
+/// Generated from method `JPH::BodyInterface::AddForceAndTorque`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inForce` can not be null. It is a single object.
+/// Parameter `inTorque` can not be null. It is a single object.
+/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+JOLT_API void JPH_BodyInterface_AddForceAndTorque(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inForce, const JPH_Vec3 *inTorque, const JPH_EActivation *inActivationMode);
+
+///@name Add an impulse to the body. Note that you should add a body to the physics system before applying impulses.
+///@{
+/// Generated from method `JPH::BodyInterface::AddImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inImpulse` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_AddImpulse_2(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inImpulse);
+
+/// Generated from method `JPH::BodyInterface::AddImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inImpulse` can not be null. It is a single object.
+/// Parameter `inPoint` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_AddImpulse_3(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inImpulse, const JPH_Vec3 *inPoint);
+
+/// Generated from method `JPH::BodyInterface::AddAngularImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inAngularImpulse` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_AddAngularImpulse(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inAngularImpulse);
+
+/// Generated from method `JPH::BodyInterface::ApplyBuoyancyImpulse`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inSurfacePosition` can not be null. It is a single object.
+/// Parameter `inSurfaceNormal` can not be null. It is a single object.
+/// Parameter `inFluidVelocity` can not be null. It is a single object.
+/// Parameter `inGravity` can not be null. It is a single object.
+JOLT_API bool JPH_BodyInterface_ApplyBuoyancyImpulse(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inSurfacePosition, const JPH_Vec3 *inSurfaceNormal, float inBuoyancy, float inLinearDrag, float inAngularDrag, const JPH_Vec3 *inFluidVelocity, const JPH_Vec3 *inGravity, float inDeltaTime);
+
+/// Get inverse inertia tensor in world space
+/// Generated from method `JPH::BodyInterface::GetInverseInertia`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_BodyInterface_GetInverseInertia(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
 
 ///@name Restitution
 ///@{

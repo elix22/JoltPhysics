@@ -12,8 +12,11 @@ extern "C" {
 #endif
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
@@ -22,6 +25,7 @@ typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jol
 typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Class that constructs a DecoratedShape
@@ -261,6 +265,12 @@ JOLT_API const JPH_Shape *JPH_DecoratedShape_GetInnerShape(const JPH_DecoratedSh
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_DecoratedShape_MustBeStatic(const JPH_DecoratedShape *_this);
 
+// See Shape::GetCenterOfMass
+/// Generated from method `JPH::DecoratedShape::GetCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_DecoratedShape_GetCenterOfMass(const JPH_DecoratedShape *_this);
+
 // See Shape::GetSubShapeIDBitsRecursive
 /// Generated from method `JPH::DecoratedShape::GetSubShapeIDBitsRecursive`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -285,6 +295,19 @@ JOLT_API const JPH_PhysicsMaterial *JPH_DecoratedShape_GetMaterial(const JPH_Dec
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API uint64_t JPH_DecoratedShape_GetSubShapeUserData(const JPH_DecoratedShape *_this, const JPH_SubShapeID *inSubShapeID);
 
+// See Shape::IsValidScale
+/// Generated from method `JPH::DecoratedShape::IsValidScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API bool JPH_DecoratedShape_IsValidScale(const JPH_DecoratedShape *_this, const JPH_Vec3 *inScale);
+
+// See Shape::MakeScaleValid
+/// Generated from method `JPH::DecoratedShape::MakeScaleValid`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_DecoratedShape_MakeScaleValid(const JPH_DecoratedShape *_this, const JPH_Vec3 *inScale);
+
 /// User data (to be used freely by the application)
 /// Generated from method `JPH::DecoratedShape::GetUserData`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -305,6 +328,41 @@ JOLT_API JPH_AABox *JPH_DecoratedShape_GetLocalBounds(const JPH_DecoratedShape *
 /// Generated from method `JPH::DecoratedShape::GetInnerRadius`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_DecoratedShape_GetInnerRadius(const JPH_DecoratedShape *_this);
+
+/// Get the surface normal of a particular sub shape ID and point on surface (all vectors are relative to center of mass for this shape).
+/// Note: When you have a CollideShapeResult or ShapeCastResult you should use -mPenetrationAxis.Normalized() as contact normal as GetSurfaceNormal will only return face normals (and not vertex or edge normals).
+/// Generated from method `JPH::DecoratedShape::GetSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_DecoratedShape_GetSurfaceNormal(const JPH_DecoratedShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
+/// To start iterating over triangles, call this function first.
+/// ioContext is a temporary buffer and should remain untouched until the last call to GetTrianglesNext.
+/// inBox is the world space bounding in which you want to get the triangles.
+/// inPositionCOM/inRotation/inScale describes the transform of this shape.
+/// To get the actual triangles call GetTrianglesNext.
+/// Generated from method `JPH::DecoratedShape::GetTrianglesStart`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `inBox` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_DecoratedShape_GetTrianglesStart(const JPH_DecoratedShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale);
+
+/// Call this repeatedly to get all triangles in the box.
+/// outTriangleVertices should be large enough to hold 3 * inMaxTriangleRequested entries.
+/// outMaterials (if it is not null) should contain inMaxTrianglesRequested entries.
+/// The function returns the amount of triangles that it found (which will be <= inMaxTrianglesRequested), or 0 if there are no more triangles.
+/// Note that the function can return a value < inMaxTrianglesRequested and still have more triangles to process (triangles can be returned in blocks).
+/// Note that the function may return triangles outside of the requested box, only coarse culling is performed on the returned triangles.
+/// Generated from method `JPH::DecoratedShape::GetTrianglesNext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `outMaterials` defaults to a null pointer in C++.
+JOLT_API int JPH_DecoratedShape_GetTrianglesNext(const JPH_DecoratedShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
 
 /// Get stats of this shape. Use for logging / data collection purposes only. Does not add values from child shapes, use GetStatsRecursive for this.
 /// Generated from method `JPH::DecoratedShape::GetStats`.

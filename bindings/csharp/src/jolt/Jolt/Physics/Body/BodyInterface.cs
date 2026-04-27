@@ -155,6 +155,26 @@ public static partial class Jolt
                 }
             }
 
+            /// Notify all systems to indicate that a shape has changed (usable for MutableCompoundShapes)
+            /// @param inBodyID Body ID of body that had its shape changed
+            /// @param inPreviousCenterOfMass Center of mass of the shape before the alterations
+            /// @param inUpdateMassProperties When true, the mass and inertia tensor is recalculated
+            /// @param inActivationMode Whether or not to activate the body
+            /// Generated from method `JPH::BodyInterface::NotifyShapeChanged`.
+            public unsafe void NotifyShapeChanged(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inPreviousCenterOfMass, bool inUpdateMassProperties, Jolt.JPH.EActivation inActivationMode)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_NotifyShapeChanged(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inPreviousCenterOfMass, byte inUpdateMassProperties, Jolt.JPH.EActivation inActivationMode);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_NotifyShapeChanged(_UnderlyingPtr, __ptr_inBodyID, inPreviousCenterOfMass._UnderlyingPtr, inUpdateMassProperties ? (byte)1 : (byte)0, inActivationMode);
+                }
+            }
+
             /// Generated from method `JPH::BodyInterface::GetObjectLayer`.
             public unsafe ushort GetObjectLayer(in Jolt.JPH.BodyID inBodyID)
             {
@@ -167,6 +187,172 @@ public static partial class Jolt
                 fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
                 {
                     return __JPH_BodyInterface_GetObjectLayer(_UnderlyingPtr, __ptr_inBodyID);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::GetPositionAndRotation`.
+            public unsafe void GetPositionAndRotation(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Vec3 outPosition, Jolt.JPH.Quat outRotation)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetPositionAndRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetPositionAndRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_GetPositionAndRotation(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *outPosition, Jolt.JPH.Quat._Underlying *outRotation);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_GetPositionAndRotation(_UnderlyingPtr, __ptr_inBodyID, outPosition._UnderlyingPtr, outRotation._UnderlyingPtr);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::GetPosition`.
+            public unsafe Jolt.JPH.Vec3 GetPosition(in Jolt.JPH.BodyID inBodyID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_BodyInterface_GetPosition(_Underlying *_this, Jolt.JPH.BodyID *inBodyID);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    return new(__JPH_BodyInterface_GetPosition(_UnderlyingPtr, __ptr_inBodyID), is_owning: true);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::GetCenterOfMassPosition`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMassPosition(in Jolt.JPH.BodyID inBodyID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetCenterOfMassPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetCenterOfMassPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_BodyInterface_GetCenterOfMassPosition(_Underlying *_this, Jolt.JPH.BodyID *inBodyID);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    return new(__JPH_BodyInterface_GetCenterOfMassPosition(_UnderlyingPtr, __ptr_inBodyID), is_owning: true);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::GetRotation`.
+            public unsafe Jolt.JPH.Quat GetRotation(in Jolt.JPH.BodyID inBodyID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Quat._Underlying *__JPH_BodyInterface_GetRotation(_Underlying *_this, Jolt.JPH.BodyID *inBodyID);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    return new(__JPH_BodyInterface_GetRotation(_UnderlyingPtr, __ptr_inBodyID), is_owning: true);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::GetWorldTransform`.
+            public unsafe Jolt.JPH.Mat44 GetWorldTransform(in Jolt.JPH.BodyID inBodyID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetWorldTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetWorldTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_BodyInterface_GetWorldTransform(_Underlying *_this, Jolt.JPH.BodyID *inBodyID);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    return new(__JPH_BodyInterface_GetWorldTransform(_UnderlyingPtr, __ptr_inBodyID), is_owning: true);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::GetCenterOfMassTransform`.
+            public unsafe Jolt.JPH.Mat44 GetCenterOfMassTransform(in Jolt.JPH.BodyID inBodyID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetCenterOfMassTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetCenterOfMassTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_BodyInterface_GetCenterOfMassTransform(_Underlying *_this, Jolt.JPH.BodyID *inBodyID);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    return new(__JPH_BodyInterface_GetCenterOfMassTransform(_UnderlyingPtr, __ptr_inBodyID), is_owning: true);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::GetLinearAndAngularVelocity`.
+            public unsafe void GetLinearAndAngularVelocity(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Vec3 outLinearVelocity, Jolt.JPH.Vec3 outAngularVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_GetLinearAndAngularVelocity(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *outLinearVelocity, Jolt.JPH.Vec3._Underlying *outAngularVelocity);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_GetLinearAndAngularVelocity(_UnderlyingPtr, __ptr_inBodyID, outLinearVelocity._UnderlyingPtr, outAngularVelocity._UnderlyingPtr);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::GetLinearVelocity`.
+            public unsafe Jolt.JPH.Vec3 GetLinearVelocity(in Jolt.JPH.BodyID inBodyID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_BodyInterface_GetLinearVelocity(_Underlying *_this, Jolt.JPH.BodyID *inBodyID);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    return new(__JPH_BodyInterface_GetLinearVelocity(_UnderlyingPtr, __ptr_inBodyID), is_owning: true);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::GetAngularVelocity`.
+            public unsafe Jolt.JPH.Vec3 GetAngularVelocity(in Jolt.JPH.BodyID inBodyID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_BodyInterface_GetAngularVelocity(_Underlying *_this, Jolt.JPH.BodyID *inBodyID);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    return new(__JPH_BodyInterface_GetAngularVelocity(_UnderlyingPtr, __ptr_inBodyID), is_owning: true);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::GetPointVelocity`.
+            public unsafe Jolt.JPH.Vec3 GetPointVelocity(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inPoint)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetPointVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetPointVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_BodyInterface_GetPointVelocity(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inPoint);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    return new(__JPH_BodyInterface_GetPointVelocity(_UnderlyingPtr, __ptr_inBodyID, inPoint._UnderlyingPtr), is_owning: true);
+                }
+            }
+
+            /// Get inverse inertia tensor in world space
+            /// Generated from method `JPH::BodyInterface::GetInverseInertia`.
+            public unsafe Jolt.JPH.Mat44 GetInverseInertia(in Jolt.JPH.BodyID inBodyID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetInverseInertia", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetInverseInertia", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_BodyInterface_GetInverseInertia(_Underlying *_this, Jolt.JPH.BodyID *inBodyID);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    return new(__JPH_BodyInterface_GetInverseInertia(_UnderlyingPtr, __ptr_inBodyID), is_owning: true);
                 }
             }
 
@@ -806,6 +992,310 @@ public static partial class Jolt
                 fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
                 {
                     __JPH_BodyInterface_SetObjectLayer(_UnderlyingPtr, __ptr_inBodyID, inLayer);
+                }
+            }
+
+            ///@name Position and rotation of a body
+            ///@{
+            /// Generated from method `JPH::BodyInterface::SetPositionAndRotation`.
+            public unsafe void SetPositionAndRotation(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.EActivation inActivationMode)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_SetPositionAndRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_SetPositionAndRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_SetPositionAndRotation(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.EActivation inActivationMode);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_SetPositionAndRotation(_UnderlyingPtr, __ptr_inBodyID, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inActivationMode);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::SetPositionAndRotationWhenChanged`.
+            public unsafe void SetPositionAndRotationWhenChanged(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.EActivation inActivationMode)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_SetPositionAndRotationWhenChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_SetPositionAndRotationWhenChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_SetPositionAndRotationWhenChanged(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.EActivation inActivationMode);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_SetPositionAndRotationWhenChanged(_UnderlyingPtr, __ptr_inBodyID, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inActivationMode);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::SetPosition`.
+            public unsafe void SetPosition(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.EActivation inActivationMode)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_SetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_SetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_SetPosition(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.EActivation inActivationMode);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_SetPosition(_UnderlyingPtr, __ptr_inBodyID, inPosition._UnderlyingPtr, inActivationMode);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::SetRotation`.
+            public unsafe void SetRotation(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.EActivation inActivationMode)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_SetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_SetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_SetRotation(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.EActivation inActivationMode);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_SetRotation(_UnderlyingPtr, __ptr_inBodyID, inRotation._UnderlyingPtr, inActivationMode);
+                }
+            }
+
+            /// Set velocity of body such that it will be positioned at inTargetPosition/Rotation in inDeltaTime seconds (will activate body if needed)
+            /// Generated from method `JPH::BodyInterface::MoveKinematic`.
+            public unsafe void MoveKinematic(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inTargetPosition, Jolt.JPH.Const_Quat inTargetRotation, float inDeltaTime)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_MoveKinematic", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_MoveKinematic", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_MoveKinematic(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inTargetPosition, Jolt.JPH.Quat._Underlying *inTargetRotation, float inDeltaTime);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_MoveKinematic(_UnderlyingPtr, __ptr_inBodyID, inTargetPosition._UnderlyingPtr, inTargetRotation._UnderlyingPtr, inDeltaTime);
+                }
+            }
+
+            /// Linear or angular velocity (functions will activate body if needed).
+            /// Note that the linear velocity is the velocity of the center of mass, which may not coincide with the position of your object, to correct for this: \f$VelocityCOM = Velocity - AngularVelocity \times ShapeCOM\f$
+            /// Generated from method `JPH::BodyInterface::SetLinearAndAngularVelocity`.
+            public unsafe void SetLinearAndAngularVelocity(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inLinearVelocity, Jolt.JPH.Const_Vec3 inAngularVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_SetLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_SetLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_SetLinearAndAngularVelocity(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inLinearVelocity, Jolt.JPH.Vec3._Underlying *inAngularVelocity);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_SetLinearAndAngularVelocity(_UnderlyingPtr, __ptr_inBodyID, inLinearVelocity._UnderlyingPtr, inAngularVelocity._UnderlyingPtr);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::SetLinearVelocity`.
+            public unsafe void SetLinearVelocity(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inLinearVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_SetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_SetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_SetLinearVelocity(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inLinearVelocity);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_SetLinearVelocity(_UnderlyingPtr, __ptr_inBodyID, inLinearVelocity._UnderlyingPtr);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::AddLinearVelocity`.
+            public unsafe void AddLinearVelocity(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inLinearVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_AddLinearVelocity(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inLinearVelocity);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_AddLinearVelocity(_UnderlyingPtr, __ptr_inBodyID, inLinearVelocity._UnderlyingPtr);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::AddLinearAndAngularVelocity`.
+            public unsafe void AddLinearAndAngularVelocity(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inLinearVelocity, Jolt.JPH.Const_Vec3 inAngularVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddLinearAndAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_AddLinearAndAngularVelocity(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inLinearVelocity, Jolt.JPH.Vec3._Underlying *inAngularVelocity);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_AddLinearAndAngularVelocity(_UnderlyingPtr, __ptr_inBodyID, inLinearVelocity._UnderlyingPtr, inAngularVelocity._UnderlyingPtr);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::SetAngularVelocity`.
+            public unsafe void SetAngularVelocity(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inAngularVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_SetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_SetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_SetAngularVelocity(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inAngularVelocity);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_SetAngularVelocity(_UnderlyingPtr, __ptr_inBodyID, inAngularVelocity._UnderlyingPtr);
+                }
+            }
+
+            /// Set the complete motion state of a body.
+            /// Note that the linear velocity is the velocity of the center of mass, which may not coincide with the position of your object, to correct for this: \f$VelocityCOM = Velocity - AngularVelocity \times ShapeCOM\f$
+            /// Generated from method `JPH::BodyInterface::SetPositionRotationAndVelocity`.
+            public unsafe void SetPositionRotationAndVelocity(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inLinearVelocity, Jolt.JPH.Const_Vec3 inAngularVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_SetPositionRotationAndVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_SetPositionRotationAndVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_SetPositionRotationAndVelocity(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inLinearVelocity, Jolt.JPH.Vec3._Underlying *inAngularVelocity);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_SetPositionRotationAndVelocity(_UnderlyingPtr, __ptr_inBodyID, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inLinearVelocity._UnderlyingPtr, inAngularVelocity._UnderlyingPtr);
+                }
+            }
+
+            ///@name Add forces to the body. Note that you should add a body to the physics system before applying forces or torques.
+            ///@{
+            /// Generated from method `JPH::BodyInterface::AddForce`.
+            /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+            public unsafe void AddForce(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inForce, Jolt.JPH.EActivation? inActivationMode = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddForce_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddForce_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_AddForce_3(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inForce, Jolt.JPH.EActivation *inActivationMode);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    Jolt.JPH.EActivation __deref_inActivationMode = inActivationMode.GetValueOrDefault();
+                    __JPH_BodyInterface_AddForce_3(_UnderlyingPtr, __ptr_inBodyID, inForce._UnderlyingPtr, inActivationMode.HasValue ? &__deref_inActivationMode : null);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::AddForce`.
+            /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+            public unsafe void AddForce(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inForce, Jolt.JPH.Const_Vec3 inPoint, Jolt.JPH.EActivation? inActivationMode = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddForce_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddForce_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_AddForce_4(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inForce, Jolt.JPH.Vec3._Underlying *inPoint, Jolt.JPH.EActivation *inActivationMode);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    Jolt.JPH.EActivation __deref_inActivationMode = inActivationMode.GetValueOrDefault();
+                    __JPH_BodyInterface_AddForce_4(_UnderlyingPtr, __ptr_inBodyID, inForce._UnderlyingPtr, inPoint._UnderlyingPtr, inActivationMode.HasValue ? &__deref_inActivationMode : null);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::AddTorque`.
+            /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+            public unsafe void AddTorque(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inTorque, Jolt.JPH.EActivation? inActivationMode = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_AddTorque(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inTorque, Jolt.JPH.EActivation *inActivationMode);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    Jolt.JPH.EActivation __deref_inActivationMode = inActivationMode.GetValueOrDefault();
+                    __JPH_BodyInterface_AddTorque(_UnderlyingPtr, __ptr_inBodyID, inTorque._UnderlyingPtr, inActivationMode.HasValue ? &__deref_inActivationMode : null);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::AddForceAndTorque`.
+            /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+            public unsafe void AddForceAndTorque(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inForce, Jolt.JPH.Const_Vec3 inTorque, Jolt.JPH.EActivation? inActivationMode = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddForceAndTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddForceAndTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_AddForceAndTorque(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inForce, Jolt.JPH.Vec3._Underlying *inTorque, Jolt.JPH.EActivation *inActivationMode);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    Jolt.JPH.EActivation __deref_inActivationMode = inActivationMode.GetValueOrDefault();
+                    __JPH_BodyInterface_AddForceAndTorque(_UnderlyingPtr, __ptr_inBodyID, inForce._UnderlyingPtr, inTorque._UnderlyingPtr, inActivationMode.HasValue ? &__deref_inActivationMode : null);
+                }
+            }
+
+            ///@name Add an impulse to the body. Note that you should add a body to the physics system before applying impulses.
+            ///@{
+            /// Generated from method `JPH::BodyInterface::AddImpulse`.
+            public unsafe void AddImpulse(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inImpulse)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddImpulse_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddImpulse_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_AddImpulse_2(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inImpulse);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_AddImpulse_2(_UnderlyingPtr, __ptr_inBodyID, inImpulse._UnderlyingPtr);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::AddImpulse`.
+            public unsafe void AddImpulse(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inImpulse, Jolt.JPH.Const_Vec3 inPoint)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddImpulse_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddImpulse_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_AddImpulse_3(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inImpulse, Jolt.JPH.Vec3._Underlying *inPoint);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_AddImpulse_3(_UnderlyingPtr, __ptr_inBodyID, inImpulse._UnderlyingPtr, inPoint._UnderlyingPtr);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::AddAngularImpulse`.
+            public unsafe void AddAngularImpulse(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inAngularImpulse)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddAngularImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddAngularImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BodyInterface_AddAngularImpulse(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inAngularImpulse);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_BodyInterface_AddAngularImpulse(_UnderlyingPtr, __ptr_inBodyID, inAngularImpulse._UnderlyingPtr);
+                }
+            }
+
+            /// Generated from method `JPH::BodyInterface::ApplyBuoyancyImpulse`.
+            public unsafe bool ApplyBuoyancyImpulse(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inSurfacePosition, Jolt.JPH.Const_Vec3 inSurfaceNormal, float inBuoyancy, float inLinearDrag, float inAngularDrag, Jolt.JPH.Const_Vec3 inFluidVelocity, Jolt.JPH.Const_Vec3 inGravity, float inDeltaTime)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_ApplyBuoyancyImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_ApplyBuoyancyImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_BodyInterface_ApplyBuoyancyImpulse(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inSurfacePosition, Jolt.JPH.Vec3._Underlying *inSurfaceNormal, float inBuoyancy, float inLinearDrag, float inAngularDrag, Jolt.JPH.Vec3._Underlying *inFluidVelocity, Jolt.JPH.Vec3._Underlying *inGravity, float inDeltaTime);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    return __JPH_BodyInterface_ApplyBuoyancyImpulse(_UnderlyingPtr, __ptr_inBodyID, inSurfacePosition._UnderlyingPtr, inSurfaceNormal._UnderlyingPtr, inBuoyancy, inLinearDrag, inAngularDrag, inFluidVelocity._UnderlyingPtr, inGravity._UnderlyingPtr, inDeltaTime) != 0;
                 }
             }
 

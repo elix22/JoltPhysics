@@ -20,6 +20,7 @@ typedef struct JPH_RefTarget_JPH_CharacterBase JPH_RefTarget_JPH_CharacterBase; 
 typedef struct JPH_RefTarget_JPH_CharacterBaseSettings JPH_RefTarget_JPH_CharacterBaseSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Base class for configuration of a character
@@ -55,6 +56,20 @@ typedef enum JPH_CharacterBase_EGroundState
 ///   Direct: (non-virtual)
 ///     `JPH::CharacterVirtual`
 typedef struct JPH_CharacterBase JPH_CharacterBase;
+
+/// Vector indicating the up direction of the character
+/// Returns a pointer to a member variable of class `JPH::CharacterBaseSettings` named `mUp`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_CharacterBaseSettings_Get_mUp(const JPH_CharacterBaseSettings *_this);
+
+/// Vector indicating the up direction of the character
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterBaseSettings` named `mUp`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_CharacterBaseSettings_GetMutable_mUp(JPH_CharacterBaseSettings *_this);
 
 /// Maximum angle of slope that character can still walk on (radians).
 /// Returns a pointer to a member variable of class `JPH::CharacterBaseSettings` named `mMaxSlopeAngle`.
@@ -305,6 +320,23 @@ JOLT_API void JPH_CharacterBase_SetMaxSlopeAngle(JPH_CharacterBase *_this, float
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_CharacterBase_GetCosMaxSlopeAngle(const JPH_CharacterBase *_this);
 
+/// Set the up vector for the character
+/// Generated from method `JPH::CharacterBase::SetUp`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inUp` can not be null. It is a single object.
+JOLT_API void JPH_CharacterBase_SetUp(JPH_CharacterBase *_this, const JPH_Vec3 *inUp);
+
+/// Generated from method `JPH::CharacterBase::GetUp`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterBase_GetUp(const JPH_CharacterBase *_this);
+
+/// Check if the normal of the ground surface is too steep to walk on
+/// Generated from method `JPH::CharacterBase::IsSlopeTooSteep`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inNormal` can not be null. It is a single object.
+JOLT_API bool JPH_CharacterBase_IsSlopeTooSteep(const JPH_CharacterBase *_this, const JPH_Vec3 *inNormal);
+
 /// Get the current shape that the character is using.
 /// Generated from method `JPH::CharacterBase::GetShape`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -323,6 +355,24 @@ JOLT_API JPH_CharacterBase_EGroundState JPH_CharacterBase_GetGroundState(const J
 /// Generated from method `JPH::CharacterBase::IsSupported`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_CharacterBase_IsSupported(const JPH_CharacterBase *_this);
+
+/// Get the contact point with the ground
+/// Generated from method `JPH::CharacterBase::GetGroundPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterBase_GetGroundPosition(const JPH_CharacterBase *_this);
+
+/// Get the contact normal with the ground
+/// Generated from method `JPH::CharacterBase::GetGroundNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterBase_GetGroundNormal(const JPH_CharacterBase *_this);
+
+/// Velocity in world space of ground
+/// Generated from method `JPH::CharacterBase::GetGroundVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterBase_GetGroundVelocity(const JPH_CharacterBase *_this);
 
 /// Material that the character is standing on
 /// Generated from method `JPH::CharacterBase::GetGroundMaterial`.

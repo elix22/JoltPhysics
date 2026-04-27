@@ -15,10 +15,12 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Base class for settings for all constraints that involve 2 bodies
@@ -367,6 +369,18 @@ JOLT_API JPH_Body *JPH_TwoBodyConstraint_GetBody1(const JPH_TwoBodyConstraint *_
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API JPH_Body *JPH_TwoBodyConstraint_GetBody2(const JPH_TwoBodyConstraint *_this);
 
+/// Calculates the transform that transforms from constraint space to body 1 space. The first column of the matrix is the primary constraint axis (e.g. the hinge axis / slider direction), second column the secondary etc.
+/// Generated from method `JPH::TwoBodyConstraint::GetConstraintToBody1Matrix`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_TwoBodyConstraint_GetConstraintToBody1Matrix(const JPH_TwoBodyConstraint *_this);
+
+/// Calculates the transform that transforms from constraint space to body 2 space. The first column of the matrix is the primary constraint axis (e.g. the hinge axis / slider direction), second column the secondary etc.
+/// Generated from method `JPH::TwoBodyConstraint::GetConstraintToBody2Matrix`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_TwoBodyConstraint_GetConstraintToBody2Matrix(const JPH_TwoBodyConstraint *_this);
+
 /// Priority of the constraint when solving. Higher numbers have are more likely to be solved correctly.
 /// Note that if you want a deterministic simulation and you cannot guarantee the order in which constraints are added/removed, you can make the priority for all constraints unique to get a deterministic ordering.
 /// Generated from method `JPH::TwoBodyConstraint::GetConstraintPriority`.
@@ -416,6 +430,16 @@ JOLT_API uint64_t JPH_TwoBodyConstraint_GetUserData(const JPH_TwoBodyConstraint 
 /// Generated from method `JPH::TwoBodyConstraint::SetUserData`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_TwoBodyConstraint_SetUserData(JPH_TwoBodyConstraint *_this, uint64_t inUserData);
+
+/// Notify the constraint that the shape of a body has changed and that its center of mass has moved by inDeltaCOM.
+/// Bodies don't know which constraints are connected to them so the user is responsible for notifying the relevant constraints when a body changes.
+/// @param inBodyID ID of the body that has changed
+/// @param inDeltaCOM The delta of the center of mass of the body (shape->GetCenterOfMass() - shape_before_change->GetCenterOfMass())
+/// Generated from method `JPH::TwoBodyConstraint::NotifyShapeChanged`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inDeltaCOM` can not be null. It is a single object.
+JOLT_API void JPH_TwoBodyConstraint_NotifyShapeChanged(JPH_TwoBodyConstraint *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inDeltaCOM);
 
 /// Notify the system that the configuration of the bodies and/or constraint has changed enough so that the warm start impulses should not be applied the next frame.
 /// You can use this function for example when repositioning a ragdoll through Ragdoll::SetPose in such a way that the orientation of the bodies completely changes so that

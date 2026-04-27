@@ -5,6 +5,10 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/Float3.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/ConvexShape.h>
@@ -369,6 +373,36 @@ const JPH_PhysicsMaterial *JPH_ConvexShape_GetMaterial_1(const JPH_ConvexShape *
     ));
 }
 
+void JPH_ConvexShape_GetTrianglesStart(const JPH_ConvexShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape *)(_this)).GetTrianglesStart(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        ((inBox ? void() : MRBINDC_THROW("Parameter `inBox` can not be null.", void)), *(const JPH::AABox *)(inBox)),
+        ((inPositionCOM ? void() : MRBINDC_THROW("Parameter `inPositionCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPositionCOM)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+int JPH_ConvexShape_GetTrianglesNext(const JPH_ConvexShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape *)(_this)).GetTrianglesNext(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        inMaxTrianglesRequested,
+        ((JPH::Float3 *)outTriangleVertices),
+        ((const JPH::PhysicsMaterial **)outMaterials)
+    );
+}
+
+const JPH_ConvexShape_Support *JPH_ConvexShape_GetSupportFunction(const JPH_ConvexShape *_this, JPH_ConvexShape_ESupportMode inMode, JPH_ConvexShape_SupportBuffer *inBuffer, const JPH_Vec3 *inScale)
+{
+    return (const JPH_ConvexShape_Support *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape *)(_this)).GetSupportFunction(
+        ((JPH::ConvexShape::ESupportMode)inMode),
+        ((inBuffer ? void() : MRBINDC_THROW("Parameter `inBuffer` can not be null.", void)), *(JPH::ConvexShape::SupportBuffer *)(inBuffer)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
 void JPH_ConvexShape_SetMaterial(JPH_ConvexShape *_this, const JPH_PhysicsMaterial *inMaterial)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ConvexShape *)(_this)).SetMaterial(
@@ -415,6 +449,11 @@ bool JPH_ConvexShape_MustBeStatic(const JPH_ConvexShape *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape *)(_this)).MustBeStatic();
 }
 
+JPH_Vec3 *JPH_ConvexShape_GetCenterOfMass(const JPH_ConvexShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape *)(_this)).GetCenterOfMass());
+}
+
 JPH_AABox *JPH_ConvexShape_GetLocalBounds(const JPH_ConvexShape *_this)
 {
     return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape *)(_this)).GetLocalBounds());
@@ -433,6 +472,14 @@ const JPH_Shape *JPH_ConvexShape_GetLeafShape(const JPH_ConvexShape *_this, cons
     ));
 }
 
+JPH_Vec3 *JPH_ConvexShape_GetSurfaceNormal(const JPH_ConvexShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape *)(_this)).GetSurfaceNormal(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inLocalSurfacePosition ? void() : MRBINDC_THROW("Parameter `inLocalSurfacePosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLocalSurfacePosition))
+    ));
+}
+
 uint64_t JPH_ConvexShape_GetSubShapeUserData(const JPH_ConvexShape *_this, const JPH_SubShapeID *inSubShapeID)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape *)(_this)).GetSubShapeUserData(
@@ -448,6 +495,20 @@ JPH_Shape_Stats *JPH_ConvexShape_GetStats(const JPH_ConvexShape *_this)
 float JPH_ConvexShape_GetVolume(const JPH_ConvexShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape *)(_this)).GetVolume();
+}
+
+bool JPH_ConvexShape_IsValidScale(const JPH_ConvexShape *_this, const JPH_Vec3 *inScale)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape *)(_this)).IsValidScale(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+JPH_Vec3 *JPH_ConvexShape_MakeScaleValid(const JPH_ConvexShape *_this, const JPH_Vec3 *inScale)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape *)(_this)).MakeScaleValid(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 void JPH_ConvexShape_SetEmbedded(const JPH_ConvexShape *_this)
@@ -577,6 +638,13 @@ void JPH_ConvexShape_Support_Destroy(const JPH_ConvexShape_Support *_this)
 void JPH_ConvexShape_Support_DestroyArray(const JPH_ConvexShape_Support *_this)
 {
     delete[] ((const JPH::ConvexShape::Support *)_this);
+}
+
+JPH_Vec3 *JPH_ConvexShape_Support_GetSupport(const JPH_ConvexShape_Support *_this, const JPH_Vec3 *inDirection)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexShape::Support *)(_this)).GetSupport(
+        ((inDirection ? void() : MRBINDC_THROW("Parameter `inDirection` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inDirection))
+    ));
 }
 
 float JPH_ConvexShape_Support_GetConvexRadius(const JPH_ConvexShape_Support *_this)

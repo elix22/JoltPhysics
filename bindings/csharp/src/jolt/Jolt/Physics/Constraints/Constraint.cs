@@ -1014,6 +1014,25 @@ public static partial class Jolt
                 __JPH_Constraint_SetUserData(_UnderlyingPtr, inUserData);
             }
 
+            /// Notify the constraint that the shape of a body has changed and that its center of mass has moved by inDeltaCOM.
+            /// Bodies don't know which constraints are connected to them so the user is responsible for notifying the relevant constraints when a body changes.
+            /// @param inBodyID ID of the body that has changed
+            /// @param inDeltaCOM The delta of the center of mass of the body (shape->GetCenterOfMass() - shape_before_change->GetCenterOfMass())
+            /// Generated from method `JPH::Constraint::NotifyShapeChanged`.
+            public unsafe void NotifyShapeChanged(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inDeltaCOM)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Constraint_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Constraint_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Constraint_NotifyShapeChanged(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inDeltaCOM);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_Constraint_NotifyShapeChanged(_UnderlyingPtr, __ptr_inBodyID, inDeltaCOM._UnderlyingPtr);
+                }
+            }
+
             /// Notify the system that the configuration of the bodies and/or constraint has changed enough so that the warm start impulses should not be applied the next frame.
             /// You can use this function for example when repositioning a ragdoll through Ragdoll::SetPose in such a way that the orientation of the bodies completely changes so that
             /// the previous frame impulses are no longer a good approximation of what the impulses will be in the next frame. Calling this function when there are no big changes

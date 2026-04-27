@@ -467,6 +467,121 @@ public static partial class Jolt
                 return __JPH_Body_GetRestitution(_UnderlyingPtr);
             }
 
+            /// Get world space linear velocity of the center of mass (unit: m/s)
+            /// Generated from method `JPH::Body::GetLinearVelocity`.
+            public unsafe Jolt.JPH.Vec3 GetLinearVelocity()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Body_GetLinearVelocity(_Underlying *_this);
+                return new(__JPH_Body_GetLinearVelocity(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get world space angular velocity of the center of mass (unit: rad/s)
+            /// Generated from method `JPH::Body::GetAngularVelocity`.
+            public unsafe Jolt.JPH.Vec3 GetAngularVelocity()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Body_GetAngularVelocity(_Underlying *_this);
+                return new(__JPH_Body_GetAngularVelocity(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Velocity of point inPoint (in center of mass space, e.g. on the surface of the body) of the body (unit: m/s)
+            /// Generated from method `JPH::Body::GetPointVelocityCOM`.
+            public unsafe Jolt.JPH.Vec3 GetPointVelocityCOM(Jolt.JPH.Const_Vec3 inPointRelativeToCOM)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetPointVelocityCOM", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetPointVelocityCOM", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Body_GetPointVelocityCOM(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inPointRelativeToCOM);
+                return new(__JPH_Body_GetPointVelocityCOM(_UnderlyingPtr, inPointRelativeToCOM._UnderlyingPtr), is_owning: true);
+            }
+
+            /// Velocity of point inPoint (in world space, e.g. on the surface of the body) of the body (unit: m/s)
+            /// Generated from method `JPH::Body::GetPointVelocity`.
+            public unsafe Jolt.JPH.Vec3 GetPointVelocity(Jolt.JPH.Const_Vec3 inPoint)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetPointVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetPointVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Body_GetPointVelocity(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inPoint);
+                return new(__JPH_Body_GetPointVelocity(_UnderlyingPtr, inPoint._UnderlyingPtr), is_owning: true);
+            }
+
+            // Get the total amount of force applied to the center of mass this time step (through AddForce calls). Note that it will reset to zero after PhysicsSystem::Update.
+            /// Generated from method `JPH::Body::GetAccumulatedForce`.
+            public unsafe Jolt.JPH.Vec3 GetAccumulatedForce()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetAccumulatedForce", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetAccumulatedForce", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Body_GetAccumulatedForce(_Underlying *_this);
+                return new(__JPH_Body_GetAccumulatedForce(_UnderlyingPtr), is_owning: true);
+            }
+
+            // Get the total amount of torque applied to the center of mass this time step (through AddForce/AddTorque calls). Note that it will reset to zero after PhysicsSystem::Update.
+            /// Generated from method `JPH::Body::GetAccumulatedTorque`.
+            public unsafe Jolt.JPH.Vec3 GetAccumulatedTorque()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetAccumulatedTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetAccumulatedTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Body_GetAccumulatedTorque(_Underlying *_this);
+                return new(__JPH_Body_GetAccumulatedTorque(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get inverse inertia tensor in world space
+            /// Generated from method `JPH::Body::GetInverseInertia`.
+            public unsafe Jolt.JPH.Mat44 GetInverseInertia()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetInverseInertia", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetInverseInertia", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_Body_GetInverseInertia(_Underlying *_this);
+                return new(__JPH_Body_GetInverseInertia(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Gets the properties needed to do buoyancy calculations
+            /// @param inSurfacePosition Position of the fluid surface in world space
+            /// @param inSurfaceNormal Normal of the fluid surface (should point up)
+            /// @param outTotalVolume On return this contains the total volume of the shape
+            /// @param outSubmergedVolume On return this contains the submerged volume of the shape
+            /// @param outRelativeCenterOfBuoyancy On return this contains the center of mass of the submerged volume relative to the center of mass of the body
+            /// Generated from method `JPH::Body::GetSubmergedVolume`.
+            public unsafe void GetSubmergedVolume(Jolt.JPH.Const_Vec3 inSurfacePosition, Jolt.JPH.Const_Vec3 inSurfaceNormal, ref float outTotalVolume, ref float outSubmergedVolume, Jolt.JPH.Vec3 outRelativeCenterOfBuoyancy)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetSubmergedVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetSubmergedVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_GetSubmergedVolume(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inSurfacePosition, Jolt.JPH.Vec3._Underlying *inSurfaceNormal, float *outTotalVolume, float *outSubmergedVolume, Jolt.JPH.Vec3._Underlying *outRelativeCenterOfBuoyancy);
+                fixed (float *__ptr_outTotalVolume = &outTotalVolume)
+                {
+                    fixed (float *__ptr_outSubmergedVolume = &outSubmergedVolume)
+                    {
+                        __JPH_Body_GetSubmergedVolume(_UnderlyingPtr, inSurfacePosition._UnderlyingPtr, inSurfaceNormal._UnderlyingPtr, __ptr_outTotalVolume, __ptr_outSubmergedVolume, outRelativeCenterOfBuoyancy._UnderlyingPtr);
+                    }
+                }
+            }
+
             /// Check if this body has been added to the physics system
             /// Generated from method `JPH::Body::IsInBroadPhase`.
             public unsafe bool IsInBroadPhase()
@@ -507,6 +622,84 @@ public static partial class Jolt
                 return __c_ret is not null ? new Jolt.JPH.Const_Shape(__c_ret, is_owning: false) : null;
             }
 
+            /// World space position of the body
+            /// Generated from method `JPH::Body::GetPosition`.
+            public unsafe Jolt.JPH.Vec3 GetPosition()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Body_GetPosition(_Underlying *_this);
+                return new(__JPH_Body_GetPosition(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// World space rotation of the body
+            /// Generated from method `JPH::Body::GetRotation`.
+            public unsafe Jolt.JPH.Quat GetRotation()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Quat._Underlying *__JPH_Body_GetRotation(_Underlying *_this);
+                return new(__JPH_Body_GetRotation(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Calculates the transform of this body
+            /// Generated from method `JPH::Body::GetWorldTransform`.
+            public unsafe Jolt.JPH.Mat44 GetWorldTransform()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetWorldTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetWorldTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_Body_GetWorldTransform(_Underlying *_this);
+                return new(__JPH_Body_GetWorldTransform(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Gets the world space position of this body's center of mass
+            /// Generated from method `JPH::Body::GetCenterOfMassPosition`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMassPosition()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetCenterOfMassPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetCenterOfMassPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Body_GetCenterOfMassPosition(_Underlying *_this);
+                return new(__JPH_Body_GetCenterOfMassPosition(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Calculates the transform for this body's center of mass
+            /// Generated from method `JPH::Body::GetCenterOfMassTransform`.
+            public unsafe Jolt.JPH.Mat44 GetCenterOfMassTransform()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetCenterOfMassTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetCenterOfMassTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_Body_GetCenterOfMassTransform(_Underlying *_this);
+                return new(__JPH_Body_GetCenterOfMassTransform(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Calculates the inverse of the transform for this body's center of mass
+            /// Generated from method `JPH::Body::GetInverseCenterOfMassTransform`.
+            public unsafe Jolt.JPH.Mat44 GetInverseCenterOfMassTransform()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetInverseCenterOfMassTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetInverseCenterOfMassTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_Body_GetInverseCenterOfMassTransform(_Underlying *_this);
+                return new(__JPH_Body_GetInverseCenterOfMassTransform(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Get world space bounding box
             /// Generated from method `JPH::Body::GetWorldSpaceBounds`.
             public unsafe Jolt.JPH.Const_AABox GetWorldSpaceBounds()
@@ -531,6 +724,19 @@ public static partial class Jolt
                 #endif
                 extern static ulong __JPH_Body_GetUserData(_Underlying *_this);
                 return __JPH_Body_GetUserData(_UnderlyingPtr);
+            }
+
+            /// Get surface normal of a particular sub shape and its world space surface position on this body
+            /// Generated from method `JPH::Body::GetWorldSpaceSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetWorldSpaceSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inPosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetWorldSpaceSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetWorldSpaceSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_Body_GetWorldSpaceSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inPosition);
+                return new(__JPH_Body_GetWorldSpaceSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inPosition._UnderlyingPtr), is_owning: true);
             }
 
             /// Debug function to convert a body back to a body creation settings object to be able to save/recreate the body later
@@ -757,6 +963,104 @@ public static partial class Jolt
                 __JPH_Body_SetRestitution(_UnderlyingPtr, inRestitution);
             }
 
+            /// Set world space linear velocity of the center of mass (unit: m/s).
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
+            /// Generated from method `JPH::Body::SetLinearVelocity`.
+            public unsafe void SetLinearVelocity(Jolt.JPH.Const_Vec3 inLinearVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_SetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_SetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_SetLinearVelocity(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inLinearVelocity);
+                __JPH_Body_SetLinearVelocity(_UnderlyingPtr, inLinearVelocity._UnderlyingPtr);
+            }
+
+            /// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity.
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
+            /// Generated from method `JPH::Body::SetLinearVelocityClamped`.
+            public unsafe void SetLinearVelocityClamped(Jolt.JPH.Const_Vec3 inLinearVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_SetLinearVelocityClamped", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_SetLinearVelocityClamped", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_SetLinearVelocityClamped(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inLinearVelocity);
+                __JPH_Body_SetLinearVelocityClamped(_UnderlyingPtr, inLinearVelocity._UnderlyingPtr);
+            }
+
+            /// Set world space angular velocity of the center of mass (unit: rad/s).
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
+            /// Generated from method `JPH::Body::SetAngularVelocity`.
+            public unsafe void SetAngularVelocity(Jolt.JPH.Const_Vec3 inAngularVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_SetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_SetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_SetAngularVelocity(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inAngularVelocity);
+                __JPH_Body_SetAngularVelocity(_UnderlyingPtr, inAngularVelocity._UnderlyingPtr);
+            }
+
+            /// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity.
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
+            /// Generated from method `JPH::Body::SetAngularVelocityClamped`.
+            public unsafe void SetAngularVelocityClamped(Jolt.JPH.Const_Vec3 inAngularVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_SetAngularVelocityClamped", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_SetAngularVelocityClamped", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_SetAngularVelocityClamped(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inAngularVelocity);
+                __JPH_Body_SetAngularVelocityClamped(_UnderlyingPtr, inAngularVelocity._UnderlyingPtr);
+            }
+
+            /// Add force (unit: N) at center of mass for the next time step, will be reset after the next call to PhysicsSystem::Update.
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::AddForce instead.
+            /// Generated from method `JPH::Body::AddForce`.
+            public unsafe void AddForce(Jolt.JPH.Const_Vec3 inForce)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_AddForce_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_AddForce_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_AddForce_1(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inForce);
+                __JPH_Body_AddForce_1(_UnderlyingPtr, inForce._UnderlyingPtr);
+            }
+
+            /// Add force (unit: N) at world space position inPosition for the next time step, will be reset after the next call to PhysicsSystem::Update.
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::AddForce instead.
+            /// Generated from method `JPH::Body::AddForce`.
+            public unsafe void AddForce(Jolt.JPH.Const_Vec3 inForce, Jolt.JPH.Const_Vec3 inPosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_AddForce_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_AddForce_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_AddForce_2(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inForce, Jolt.JPH.Vec3._Underlying *inPosition);
+                __JPH_Body_AddForce_2(_UnderlyingPtr, inForce._UnderlyingPtr, inPosition._UnderlyingPtr);
+            }
+
+            /// Add torque (unit: N m) for the next time step, will be reset after the next call to PhysicsSystem::Update.
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::AddTorque instead.
+            /// Generated from method `JPH::Body::AddTorque`.
+            public unsafe void AddTorque(Jolt.JPH.Const_Vec3 inTorque)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_AddTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_AddTorque", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_AddTorque(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inTorque);
+                __JPH_Body_AddTorque(_UnderlyingPtr, inTorque._UnderlyingPtr);
+            }
+
             // Reset the total accumulated force, not that this will be done automatically after every time step.
             /// Generated from method `JPH::Body::ResetForce`.
             public unsafe void ResetForce()
@@ -796,6 +1100,109 @@ public static partial class Jolt
                 __JPH_Body_ResetMotion(_UnderlyingPtr);
             }
 
+            /// Add impulse to center of mass (unit: kg m/s).
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::AddImpulse instead.
+            /// Generated from method `JPH::Body::AddImpulse`.
+            public unsafe void AddImpulse(Jolt.JPH.Const_Vec3 inImpulse)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_AddImpulse_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_AddImpulse_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_AddImpulse_1(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inImpulse);
+                __JPH_Body_AddImpulse_1(_UnderlyingPtr, inImpulse._UnderlyingPtr);
+            }
+
+            /// Add impulse to point in world space (unit: kg m/s).
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::AddImpulse instead.
+            /// Generated from method `JPH::Body::AddImpulse`.
+            public unsafe void AddImpulse(Jolt.JPH.Const_Vec3 inImpulse, Jolt.JPH.Const_Vec3 inPosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_AddImpulse_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_AddImpulse_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_AddImpulse_2(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inImpulse, Jolt.JPH.Vec3._Underlying *inPosition);
+                __JPH_Body_AddImpulse_2(_UnderlyingPtr, inImpulse._UnderlyingPtr, inPosition._UnderlyingPtr);
+            }
+
+            /// Add angular impulse in world space (unit: N m s).
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::AddAngularImpulse instead.
+            /// Generated from method `JPH::Body::AddAngularImpulse`.
+            public unsafe void AddAngularImpulse(Jolt.JPH.Const_Vec3 inAngularImpulse)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_AddAngularImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_AddAngularImpulse", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_AddAngularImpulse(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inAngularImpulse);
+                __JPH_Body_AddAngularImpulse(_UnderlyingPtr, inAngularImpulse._UnderlyingPtr);
+            }
+
+            /// Set velocity of body such that it will be positioned at inTargetPosition/Rotation in inDeltaTime seconds.
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::MoveKinematic instead.
+            /// Generated from method `JPH::Body::MoveKinematic`.
+            public unsafe void MoveKinematic(Jolt.JPH.Const_Vec3 inTargetPosition, Jolt.JPH.Const_Quat inTargetRotation, float inDeltaTime)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_MoveKinematic", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_MoveKinematic", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_MoveKinematic(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inTargetPosition, Jolt.JPH.Quat._Underlying *inTargetRotation, float inDeltaTime);
+                __JPH_Body_MoveKinematic(_UnderlyingPtr, inTargetPosition._UnderlyingPtr, inTargetRotation._UnderlyingPtr, inDeltaTime);
+            }
+
+            /// Applies an impulse to the body that simulates fluid buoyancy and drag.
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::ApplyBuoyancyImpulse instead.
+            /// @param inSurfacePosition Position of the fluid surface in world space
+            /// @param inSurfaceNormal Normal of the fluid surface (should point up)
+            /// @param inBuoyancy The buoyancy factor for the body. 1 = neutral body, < 1 sinks, > 1 floats. Note that we don't use the fluid density since it is harder to configure than a simple number between [0, 2]
+            /// @param inLinearDrag Linear drag factor that slows down the body when in the fluid (approx. 0.5)
+            /// @param inAngularDrag Angular drag factor that slows down rotation when the body is in the fluid (approx. 0.01)
+            /// @param inFluidVelocity The average velocity of the fluid (in m/s) in which the body resides
+            /// @param inGravity The gravity vector (pointing down)
+            /// @param inDeltaTime Delta time of the next simulation step (in s)
+            /// @return true if an impulse was applied, false if the body was not in the fluid
+            /// Generated from method `JPH::Body::ApplyBuoyancyImpulse`.
+            public unsafe bool ApplyBuoyancyImpulse(Jolt.JPH.Const_Vec3 inSurfacePosition, Jolt.JPH.Const_Vec3 inSurfaceNormal, float inBuoyancy, float inLinearDrag, float inAngularDrag, Jolt.JPH.Const_Vec3 inFluidVelocity, Jolt.JPH.Const_Vec3 inGravity, float inDeltaTime)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_ApplyBuoyancyImpulse_8", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_ApplyBuoyancyImpulse_8", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_Body_ApplyBuoyancyImpulse_8(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inSurfacePosition, Jolt.JPH.Vec3._Underlying *inSurfaceNormal, float inBuoyancy, float inLinearDrag, float inAngularDrag, Jolt.JPH.Vec3._Underlying *inFluidVelocity, Jolt.JPH.Vec3._Underlying *inGravity, float inDeltaTime);
+                return __JPH_Body_ApplyBuoyancyImpulse_8(_UnderlyingPtr, inSurfacePosition._UnderlyingPtr, inSurfaceNormal._UnderlyingPtr, inBuoyancy, inLinearDrag, inAngularDrag, inFluidVelocity._UnderlyingPtr, inGravity._UnderlyingPtr, inDeltaTime) != 0;
+            }
+
+            /// Applies an impulse to the body that simulates fluid buoyancy and drag.
+            /// If you want the body to wake up when it is sleeping, use BodyInterface::ApplyBuoyancyImpulse instead.
+            /// @param inTotalVolume Total volume of the shape of this body (m^3)
+            /// @param inSubmergedVolume Submerged volume of the shape of this body (m^3)
+            /// @param inRelativeCenterOfBuoyancy The center of mass of the submerged volume relative to the center of mass of the body
+            /// @param inBuoyancy The buoyancy factor for the body. 1 = neutral body, < 1 sinks, > 1 floats. Note that we don't use the fluid density since it is harder to configure than a simple number between [0, 2]
+            /// @param inLinearDrag Linear drag factor that slows down the body when in the fluid (approx. 0.5)
+            /// @param inAngularDrag Angular drag factor that slows down rotation when the body is in the fluid (approx. 0.01)
+            /// @param inFluidVelocity The average velocity of the fluid (in m/s) in which the body resides
+            /// @param inGravity The gravity vector (pointing down)
+            /// @param inDeltaTime Delta time of the next simulation step (in s)
+            /// @return true if an impulse was applied, false if the body was not in the fluid
+            /// Generated from method `JPH::Body::ApplyBuoyancyImpulse`.
+            public unsafe bool ApplyBuoyancyImpulse(float inTotalVolume, float inSubmergedVolume, Jolt.JPH.Const_Vec3 inRelativeCenterOfBuoyancy, float inBuoyancy, float inLinearDrag, float inAngularDrag, Jolt.JPH.Const_Vec3 inFluidVelocity, Jolt.JPH.Const_Vec3 inGravity, float inDeltaTime)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_ApplyBuoyancyImpulse_9", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_ApplyBuoyancyImpulse_9", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_Body_ApplyBuoyancyImpulse_9(_Underlying *_this, float inTotalVolume, float inSubmergedVolume, Jolt.JPH.Vec3._Underlying *inRelativeCenterOfBuoyancy, float inBuoyancy, float inLinearDrag, float inAngularDrag, Jolt.JPH.Vec3._Underlying *inFluidVelocity, Jolt.JPH.Vec3._Underlying *inGravity, float inDeltaTime);
+                return __JPH_Body_ApplyBuoyancyImpulse_9(_UnderlyingPtr, inTotalVolume, inSubmergedVolume, inRelativeCenterOfBuoyancy._UnderlyingPtr, inBuoyancy, inLinearDrag, inAngularDrag, inFluidVelocity._UnderlyingPtr, inGravity._UnderlyingPtr, inDeltaTime) != 0;
+            }
+
             /// Generated from method `JPH::Body::SetUserData`.
             public unsafe void SetUserData(ulong inUserData)
             {
@@ -806,6 +1213,56 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_Body_SetUserData(_Underlying *_this, ulong inUserData);
                 __JPH_Body_SetUserData(_UnderlyingPtr, inUserData);
+            }
+
+            /// Update position using an Euler step (used during position integrate & constraint solving)
+            /// Generated from method `JPH::Body::AddPositionStep`.
+            public unsafe void AddPositionStep(Jolt.JPH.Const_Vec3 inLinearVelocityTimesDeltaTime)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_AddPositionStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_AddPositionStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_AddPositionStep(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inLinearVelocityTimesDeltaTime);
+                __JPH_Body_AddPositionStep(_UnderlyingPtr, inLinearVelocityTimesDeltaTime._UnderlyingPtr);
+            }
+
+            /// Generated from method `JPH::Body::SubPositionStep`.
+            public unsafe void SubPositionStep(Jolt.JPH.Const_Vec3 inLinearVelocityTimesDeltaTime)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_SubPositionStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_SubPositionStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_SubPositionStep(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inLinearVelocityTimesDeltaTime);
+                __JPH_Body_SubPositionStep(_UnderlyingPtr, inLinearVelocityTimesDeltaTime._UnderlyingPtr);
+            }
+
+            /// Update rotation using an Euler step (used during position integrate & constraint solving)
+            /// Generated from method `JPH::Body::AddRotationStep`.
+            public unsafe void AddRotationStep(Jolt.JPH.Const_Vec3 inAngularVelocityTimesDeltaTime)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_AddRotationStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_AddRotationStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_AddRotationStep(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inAngularVelocityTimesDeltaTime);
+                __JPH_Body_AddRotationStep(_UnderlyingPtr, inAngularVelocityTimesDeltaTime._UnderlyingPtr);
+            }
+
+            /// Generated from method `JPH::Body::SubRotationStep`.
+            public unsafe void SubRotationStep(Jolt.JPH.Const_Vec3 inAngularVelocityTimesDeltaTime)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_SubRotationStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_SubRotationStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_SubRotationStep(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inAngularVelocityTimesDeltaTime);
+                __JPH_Body_SubRotationStep(_UnderlyingPtr, inAngularVelocityTimesDeltaTime._UnderlyingPtr);
             }
 
             /// Flag if body is in the broadphase (should only be called by the BroadPhase)
@@ -858,6 +1315,36 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_Body_CalculateWorldSpaceBoundsInternal(_Underlying *_this);
                 __JPH_Body_CalculateWorldSpaceBoundsInternal(_UnderlyingPtr);
+            }
+
+            /// Function to update body's position (should only be called by the BodyInterface since it also requires updating the broadphase)
+            /// Generated from method `JPH::Body::SetPositionAndRotationInternal`.
+            /// Parameter `inResetSleepTimer` defaults to `true`.
+            public unsafe void SetPositionAndRotationInternal(Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, bool? inResetSleepTimer = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_SetPositionAndRotationInternal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_SetPositionAndRotationInternal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_SetPositionAndRotationInternal(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, byte *inResetSleepTimer);
+                byte __deref_inResetSleepTimer = inResetSleepTimer.GetValueOrDefault() ? (byte)1 : (byte)0;
+                __JPH_Body_SetPositionAndRotationInternal(_UnderlyingPtr, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inResetSleepTimer.HasValue ? &__deref_inResetSleepTimer : null);
+            }
+
+            /// Updates the center of mass and optionally mass properties after shifting the center of mass or changes to the shape (should only be called by the BodyInterface since it also requires updating the broadphase)
+            /// @param inPreviousCenterOfMass Center of mass of the shape before the alterations
+            /// @param inUpdateMassProperties When true, the mass and inertia tensor is recalculated
+            /// Generated from method `JPH::Body::UpdateCenterOfMassInternal`.
+            public unsafe void UpdateCenterOfMassInternal(Jolt.JPH.Const_Vec3 inPreviousCenterOfMass, bool inUpdateMassProperties)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_UpdateCenterOfMassInternal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_UpdateCenterOfMassInternal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_Body_UpdateCenterOfMassInternal(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inPreviousCenterOfMass, byte inUpdateMassProperties);
+                __JPH_Body_UpdateCenterOfMassInternal(_UnderlyingPtr, inPreviousCenterOfMass._UnderlyingPtr, inUpdateMassProperties ? (byte)1 : (byte)0);
             }
 
             /// Function to update a body's shape (should only be called by the BodyInterface since it also requires updating the broadphase)

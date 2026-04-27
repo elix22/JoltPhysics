@@ -345,6 +345,18 @@ public static partial class Jolt
                 return new(__JPH_PhysicsSystem_GetNarrowPhaseQueryNoLock(_UnderlyingPtr), is_owning: false);
             }
 
+            /// Generated from method `JPH::PhysicsSystem::GetGravity`.
+            public unsafe Jolt.JPH.Vec3 GetGravity()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_GetGravity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_GetGravity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_PhysicsSystem_GetGravity(_Underlying *_this);
+                return new(__JPH_PhysicsSystem_GetGravity(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Broadphase layer filter that decides if two objects can collide, this was passed to the Init function.
             /// Generated from method `JPH::PhysicsSystem::GetObjectVsBroadPhaseLayerFilter`.
             public unsafe Jolt.JPH.Const_ObjectVsBroadPhaseLayerFilter GetObjectVsBroadPhaseLayerFilter()
@@ -651,6 +663,19 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_PhysicsSystem_OptimizeBroadPhase(_Underlying *_this);
                 __JPH_PhysicsSystem_OptimizeBroadPhase(_UnderlyingPtr);
+            }
+
+            /// Set gravity value
+            /// Generated from method `JPH::PhysicsSystem::SetGravity`.
+            public unsafe void SetGravity(Jolt.JPH.Const_Vec3 inGravity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_SetGravity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_SetGravity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_PhysicsSystem_SetGravity(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inGravity);
+                __JPH_PhysicsSystem_SetGravity(_UnderlyingPtr, inGravity._UnderlyingPtr);
             }
         }
 

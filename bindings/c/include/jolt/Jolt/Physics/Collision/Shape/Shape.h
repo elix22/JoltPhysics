@@ -12,12 +12,17 @@ extern "C" {
 #endif
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_DMat44 JPH_DMat44; // Defined in `#include <jolt/Jolt/Math/DMat44.h>`.
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Class that can construct shapes and that is serializable using the ObjectStream system.
@@ -288,6 +293,12 @@ JOLT_API void JPH_Shape_SetUserData(JPH_Shape *_this, uint64_t inUserData);
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_Shape_MustBeStatic(const JPH_Shape *_this);
 
+/// All shapes are centered around their center of mass. This function returns the center of mass position that needs to be applied to transform the shape to where it was created.
+/// Generated from method `JPH::Shape::GetCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Shape_GetCenterOfMass(const JPH_Shape *_this);
+
 /// Get local bounding box including convex radius, this box is centered around the center of mass rather than the world transform
 /// Generated from method `JPH::Shape::GetLocalBounds`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -298,6 +309,24 @@ JOLT_API JPH_AABox *JPH_Shape_GetLocalBounds(const JPH_Shape *_this);
 /// Generated from method `JPH::Shape::GetSubShapeIDBitsRecursive`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API unsigned int JPH_Shape_GetSubShapeIDBitsRecursive(const JPH_Shape *_this);
+
+/// Get world space bounds including convex radius.
+/// This shape is scaled by inScale in local space first.
+/// This function can be overridden to return a closer fitting world space bounding box, by default it will just transform what GetLocalBounds() returns.
+/// Generated from method `JPH::Shape::GetWorldSpaceBounds`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_Shape_GetWorldSpaceBounds_JPH_Mat44(const JPH_Shape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
+
+/// Get world space bounds including convex radius.
+/// Generated from method `JPH::Shape::GetWorldSpaceBounds`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_Shape_GetWorldSpaceBounds_JPH_DMat44(const JPH_Shape *_this, const JPH_DMat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
 
 /// Returns the radius of the biggest sphere that fits entirely in the shape. In case this shape consists of multiple sub shapes, it returns the smallest sphere of the parts.
 /// This can be used as a measure of how far the shape can be moved without risking going through geometry.
@@ -321,11 +350,46 @@ JOLT_API const JPH_Shape *JPH_Shape_GetLeafShape(const JPH_Shape *_this, const J
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API const JPH_PhysicsMaterial *JPH_Shape_GetMaterial(const JPH_Shape *_this, const JPH_SubShapeID *inSubShapeID);
 
+/// Get the surface normal of a particular sub shape ID and point on surface (all vectors are relative to center of mass for this shape).
+/// Note: When you have a CollideShapeResult or ShapeCastResult you should use -mPenetrationAxis.Normalized() as contact normal as GetSurfaceNormal will only return face normals (and not vertex or edge normals).
+/// Generated from method `JPH::Shape::GetSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Shape_GetSurfaceNormal(const JPH_Shape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
 /// Get the user data of a particular sub shape ID. Corresponds with the value stored in Shape::GetUserData of the leaf shape pointed to by inSubShapeID.
 /// Generated from method `JPH::Shape::GetSubShapeUserData`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API uint64_t JPH_Shape_GetSubShapeUserData(const JPH_Shape *_this, const JPH_SubShapeID *inSubShapeID);
+
+/// To start iterating over triangles, call this function first.
+/// ioContext is a temporary buffer and should remain untouched until the last call to GetTrianglesNext.
+/// inBox is the world space bounding in which you want to get the triangles.
+/// inPositionCOM/inRotation/inScale describes the transform of this shape.
+/// To get the actual triangles call GetTrianglesNext.
+/// Generated from method `JPH::Shape::GetTrianglesStart`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `inBox` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_Shape_GetTrianglesStart(const JPH_Shape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale);
+
+/// Call this repeatedly to get all triangles in the box.
+/// outTriangleVertices should be large enough to hold 3 * inMaxTriangleRequested entries.
+/// outMaterials (if it is not null) should contain inMaxTrianglesRequested entries.
+/// The function returns the amount of triangles that it found (which will be <= inMaxTrianglesRequested), or 0 if there are no more triangles.
+/// Note that the function can return a value < inMaxTrianglesRequested and still have more triangles to process (triangles can be returned in blocks).
+/// Note that the function may return triangles outside of the requested box, only coarse culling is performed on the returned triangles.
+/// Generated from method `JPH::Shape::GetTrianglesNext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `outMaterials` defaults to a null pointer in C++.
+JOLT_API int JPH_Shape_GetTrianglesNext(const JPH_Shape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
 
 /// Get stats of this shape. Use for logging / data collection purposes only. Does not add values from child shapes, use GetStatsRecursive for this.
 /// Generated from method `JPH::Shape::GetStats`.
@@ -336,6 +400,34 @@ JOLT_API JPH_Shape_Stats *JPH_Shape_GetStats(const JPH_Shape *_this);
 /// Generated from method `JPH::Shape::GetVolume`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_Shape_GetVolume(const JPH_Shape *_this);
+
+/// Test if inScale is a valid scale for this shape. Some shapes can only be scaled uniformly, compound shapes cannot handle shapes
+/// being rotated and scaled (this would cause shearing), scale can never be zero. When the scale is invalid, the function will return false.
+///
+/// Here's a list of supported scales:
+/// * SphereShape: Scale must be uniform (signs of scale are ignored).
+/// * BoxShape: Any scale supported (signs of scale are ignored).
+/// * TriangleShape: Any scale supported when convex radius is zero, otherwise only uniform scale supported.
+/// * CapsuleShape: Scale must be uniform (signs of scale are ignored).
+/// * TaperedCapsuleShape: Scale must be uniform (sign of Y scale can be used to flip the capsule).
+/// * CylinderShape: Scale must be uniform in XZ plane, Y can scale independently (signs of scale are ignored).
+/// * RotatedTranslatedShape: Scale must not cause shear in the child shape.
+/// * CompoundShape: Scale must not cause shear in any of the child shapes.
+/// Generated from method `JPH::Shape::IsValidScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API bool JPH_Shape_IsValidScale(const JPH_Shape *_this, const JPH_Vec3 *inScale);
+
+/// This function will make sure that if you wrap this shape in a ScaledShape that the scale is valid.
+/// Note that this involves discarding components of the scale that are invalid, so the resulting scaled shape may be different than the requested scale.
+/// Compare the return value of this function with the scale you passed in to detect major inconsistencies and possibly warn the user.
+/// @param inScale Local space scale for this shape.
+/// @return Scale that can be used to wrap this shape in a ScaledShape. IsValidScale will return true for this scale.
+/// Generated from method `JPH::Shape::MakeScaleValid`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Shape_MakeScaleValid(const JPH_Shape *_this, const JPH_Vec3 *inScale);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

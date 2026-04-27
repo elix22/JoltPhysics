@@ -102,6 +102,24 @@ public static partial class Jolt
                 return ret;
             }
 
+            ///< Determines the center of mass for this shape
+            public unsafe Jolt.JPH.Const_Vec3 mCenterOfMass
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShapeSettings_Get_mCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShapeSettings_Get_mCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_EmptyShapeSettings_Get_mCenterOfMass(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_EmptyShapeSettings_Get_mCenterOfMass(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// User data (to be used freely by the application)
             public unsafe ulong mUserData
             {
@@ -149,6 +167,18 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::EmptyShapeSettings::EmptyShapeSettings`.
             public Const_EmptyShapeSettings(EmptyShapeSettings _other) : this((Const_EmptyShapeSettings)_other) {}
+
+            /// Generated from constructor `JPH::EmptyShapeSettings::EmptyShapeSettings`.
+            public unsafe Const_EmptyShapeSettings(Jolt.JPH.Const_Vec3 inCenterOfMass) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.EmptyShapeSettings._Underlying *__JPH_EmptyShapeSettings_Construct(Jolt.JPH.Vec3._Underlying *inCenterOfMass);
+                _UnderlyingPtr = __JPH_EmptyShapeSettings_Construct(inCenterOfMass._UnderlyingPtr);
+            }
 
             /// Generated from method `JPH::EmptyShapeSettings::operator new`.
             /// Returns a mutable pointer.
@@ -430,6 +460,24 @@ public static partial class Jolt
                 return ret;
             }
 
+            ///< Determines the center of mass for this shape
+            public new unsafe Jolt.JPH.Vec3 mCenterOfMass
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShapeSettings_GetMutable_mCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShapeSettings_GetMutable_mCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_EmptyShapeSettings_GetMutable_mCenterOfMass(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_EmptyShapeSettings_GetMutable_mCenterOfMass(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// User data (to be used freely by the application)
             public new unsafe ref ulong mUserData
             {
@@ -477,6 +525,18 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::EmptyShapeSettings::EmptyShapeSettings`.
             public EmptyShapeSettings(EmptyShapeSettings _other) : this((Const_EmptyShapeSettings)_other) {}
+
+            /// Generated from constructor `JPH::EmptyShapeSettings::EmptyShapeSettings`.
+            public unsafe EmptyShapeSettings(Jolt.JPH.Const_Vec3 inCenterOfMass) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.EmptyShapeSettings._Underlying *__JPH_EmptyShapeSettings_Construct(Jolt.JPH.Vec3._Underlying *inCenterOfMass);
+                _UnderlyingPtr = __JPH_EmptyShapeSettings_Construct(inCenterOfMass._UnderlyingPtr);
+            }
 
             /// Generated from method `JPH::EmptyShapeSettings::operator=`.
             public unsafe Jolt.JPH.EmptyShapeSettings Assign(Jolt.JPH._ByValue_EmptyShapeSettings _other)
@@ -678,6 +738,31 @@ public static partial class Jolt
                 _UnderlyingPtr = __JPH_EmptyShape_DefaultConstruct();
             }
 
+            /// Generated from constructor `JPH::EmptyShape::EmptyShape`.
+            public unsafe Const_EmptyShape(Jolt.JPH.Const_Vec3 inCenterOfMass) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShape_Construct_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShape_Construct_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.EmptyShape._Underlying *__JPH_EmptyShape_Construct_1(Jolt.JPH.Vec3._Underlying *inCenterOfMass);
+                _UnderlyingPtr = __JPH_EmptyShape_Construct_1(inCenterOfMass._UnderlyingPtr);
+            }
+
+            // See: Shape
+            /// Generated from method `JPH::EmptyShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_EmptyShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_EmptyShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Generated from method `JPH::EmptyShape::GetLocalBounds`.
             public unsafe Jolt.JPH.AABox GetLocalBounds()
             {
@@ -727,6 +812,42 @@ public static partial class Jolt
                 return __c_ret is not null ? new Jolt.JPH.Const_PhysicsMaterial(__c_ret, is_owning: false) : null;
             }
 
+            /// Generated from method `JPH::EmptyShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_EmptyShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_EmptyShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            /// Generated from method `JPH::EmptyShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_EmptyShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_EmptyShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            /// Generated from method `JPH::EmptyShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_EmptyShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_EmptyShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
+            }
+
             /// Generated from method `JPH::EmptyShape::GetStats`.
             public unsafe Jolt.JPH.Shape.Stats GetStats()
             {
@@ -749,6 +870,18 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_EmptyShape_GetVolume(_Underlying *_this);
                 return __JPH_EmptyShape_GetVolume(_UnderlyingPtr);
+            }
+
+            /// Generated from method `JPH::EmptyShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_EmptyShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_EmptyShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
             }
 
             // Register shape functions with the registry
@@ -818,6 +951,23 @@ public static partial class Jolt
                 #endif
                 extern static ulong __JPH_EmptyShape_GetSubShapeUserData(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID);
                 return __JPH_EmptyShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
+            }
+
+            /// This function will make sure that if you wrap this shape in a ScaledShape that the scale is valid.
+            /// Note that this involves discarding components of the scale that are invalid, so the resulting scaled shape may be different than the requested scale.
+            /// Compare the return value of this function with the scale you passed in to detect major inconsistencies and possibly warn the user.
+            /// @param inScale Local space scale for this shape.
+            /// @return Scale that can be used to wrap this shape in a ScaledShape. IsValidScale will return true for this scale.
+            /// Generated from method `JPH::EmptyShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_EmptyShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_EmptyShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
@@ -971,6 +1121,18 @@ public static partial class Jolt
                 #endif
                 extern static Jolt.JPH.EmptyShape._Underlying *__JPH_EmptyShape_DefaultConstruct();
                 _UnderlyingPtr = __JPH_EmptyShape_DefaultConstruct();
+            }
+
+            /// Generated from constructor `JPH::EmptyShape::EmptyShape`.
+            public unsafe EmptyShape(Jolt.JPH.Const_Vec3 inCenterOfMass) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_EmptyShape_Construct_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_EmptyShape_Construct_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.EmptyShape._Underlying *__JPH_EmptyShape_Construct_1(Jolt.JPH.Vec3._Underlying *inCenterOfMass);
+                _UnderlyingPtr = __JPH_EmptyShape_Construct_1(inCenterOfMass._UnderlyingPtr);
             }
 
             /// Generated from method `JPH::EmptyShape::SetUserData`.

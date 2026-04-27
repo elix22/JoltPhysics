@@ -11,6 +11,9 @@
 extern "C" {
 #endif
 
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_SoftBodySharedSettings JPH_RefTarget_JPH_SoftBodySharedSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 
 
@@ -478,6 +481,34 @@ JOLT_API void JPH_SoftBodySharedSettings_OptimizationResults_DestroyArray(const 
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_AssignFromAnother(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy _other_pass_by, JPH_SoftBodySharedSettings_OptimizationResults *_other);
 
+///< Initial position of the vertex
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::Vertex` named `mPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Float3 *JPH_SoftBodySharedSettings_Vertex_Get_mPosition(const JPH_SoftBodySharedSettings_Vertex *_this);
+
+///< Initial position of the vertex
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::Vertex` named `mPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Float3 *JPH_SoftBodySharedSettings_Vertex_GetMutable_mPosition(JPH_SoftBodySharedSettings_Vertex *_this);
+
+///< Initial velocity of the vertex
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::Vertex` named `mVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Float3 *JPH_SoftBodySharedSettings_Vertex_Get_mVelocity(const JPH_SoftBodySharedSettings_Vertex *_this);
+
+///< Initial velocity of the vertex
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::Vertex` named `mVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Float3 *JPH_SoftBodySharedSettings_Vertex_GetMutable_mVelocity(JPH_SoftBodySharedSettings_Vertex *_this);
+
 ///< Initial inverse of the mass of the vertex
 /// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::Vertex` named `mInvMass`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -520,6 +551,14 @@ JOLT_API JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_Of
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_Vertex_Destroy()` to free it when you're done using it.
 JOLT_API JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_ConstructFromAnother(const JPH_SoftBodySharedSettings_Vertex *_other);
+
+/// Generated from constructor `JPH::SoftBodySharedSettings::Vertex::Vertex`.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inVelocity` is a single object.
+/// Parameter `inVelocity` has a default argument: `JPH::Float3(0, 0, 0)`, pass a null pointer to use it.
+/// Parameter `inInvMass` has a default argument: `1.0f`, pass a null pointer to use it.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_Vertex_Destroy()` to free it when you're done using it.
+JOLT_API JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_Construct(const JPH_Float3 *inPosition, const JPH_Float3 *inVelocity, const float *inInvMass);
 
 /// Destroys a heap-allocated instance of `JPH_SoftBodySharedSettings_Vertex`. Does nothing if the pointer is null.
 JOLT_API void JPH_SoftBodySharedSettings_Vertex_Destroy(const JPH_SoftBodySharedSettings_Vertex *_this);
@@ -1103,6 +1142,20 @@ JOLT_API void JPH_SoftBodySharedSettings_InvBind_Set_mJointIndex(JPH_SoftBodySha
 /// The reference to this object might be preserved as the return value.
 JOLT_API unsigned int *JPH_SoftBodySharedSettings_InvBind_GetMutable_mJointIndex(JPH_SoftBodySharedSettings_InvBind *_this);
 
+///< The inverse bind matrix, this takes a vertex in its bind pose (Vertex::mPosition) to joint local space
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::InvBind` named `mInvBind`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Mat44 *JPH_SoftBodySharedSettings_InvBind_Get_mInvBind(const JPH_SoftBodySharedSettings_InvBind *_this);
+
+///< The inverse bind matrix, this takes a vertex in its bind pose (Vertex::mPosition) to joint local space
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::InvBind` named `mInvBind`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Mat44 *JPH_SoftBodySharedSettings_InvBind_GetMutable_mInvBind(JPH_SoftBodySharedSettings_InvBind *_this);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_InvBind_Destroy()` to free it when you're done using it.
 JOLT_API JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_DefaultConstruct(void);
@@ -1125,6 +1178,11 @@ JOLT_API JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_InvBind_Destroy()` to free it when you're done using it.
 JOLT_API JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_ConstructFromAnother(const JPH_SoftBodySharedSettings_InvBind *_other);
+
+/// Generated from constructor `JPH::SoftBodySharedSettings::InvBind::InvBind`.
+/// Parameter `inInvBind` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_InvBind_Destroy()` to free it when you're done using it.
+JOLT_API JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_Construct(unsigned int inJointIndex, const JPH_Mat44 *inInvBind);
 
 /// Destroys a heap-allocated instance of `JPH_SoftBodySharedSettings_InvBind`. Does nothing if the pointer is null.
 JOLT_API void JPH_SoftBodySharedSettings_InvBind_Destroy(const JPH_SoftBodySharedSettings_InvBind *_this);
@@ -1672,6 +1730,20 @@ JOLT_API void JPH_SoftBodySharedSettings_RodStretchShear_Set_mCompliance(JPH_Sof
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_SoftBodySharedSettings_RodStretchShear_GetMutable_mCompliance(JPH_SoftBodySharedSettings_RodStretchShear *_this);
 
+///< The Bishop frame of the rod (the rotation of the rod in its rest pose so that it has zero twist towards adjacent rods), calculated by CalculateRodProperties
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::RodStretchShear` named `mBishop`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Quat *JPH_SoftBodySharedSettings_RodStretchShear_Get_mBishop(const JPH_SoftBodySharedSettings_RodStretchShear *_this);
+
+///< The Bishop frame of the rod (the rotation of the rod in its rest pose so that it has zero twist towards adjacent rods), calculated by CalculateRodProperties
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::RodStretchShear` named `mBishop`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Quat *JPH_SoftBodySharedSettings_RodStretchShear_GetMutable_mBishop(JPH_SoftBodySharedSettings_RodStretchShear *_this);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_RodStretchShear_Destroy()` to free it when you're done using it.
 JOLT_API JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_RodStretchShear_DefaultConstruct(void);
@@ -1785,6 +1857,20 @@ JOLT_API void JPH_SoftBodySharedSettings_RodBendTwist_Set_mCompliance(JPH_SoftBo
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_SoftBodySharedSettings_RodBendTwist_GetMutable_mCompliance(JPH_SoftBodySharedSettings_RodBendTwist *_this);
+
+///< The initial rotation between the rods: rod1.mBishop.Conjugated() * rod2.mBishop, calculated by CalculateRodProperties
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::RodBendTwist` named `mOmega0`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Quat *JPH_SoftBodySharedSettings_RodBendTwist_Get_mOmega0(const JPH_SoftBodySharedSettings_RodBendTwist *_this);
+
+///< The initial rotation between the rods: rod1.mBishop.Conjugated() * rod2.mBishop, calculated by CalculateRodProperties
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::RodBendTwist` named `mOmega0`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Quat *JPH_SoftBodySharedSettings_RodBendTwist_GetMutable_mOmega0(JPH_SoftBodySharedSettings_RodBendTwist *_this);
 
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_RodBendTwist_Destroy()` to free it when you're done using it.

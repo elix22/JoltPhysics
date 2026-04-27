@@ -129,6 +129,44 @@ public static partial class Jolt
                 return ret;
             }
 
+            /// Body 1 constraint reference frame (space determined by mSpace).
+            /// Constraint will keep mPoint1 (a point on body 1) and mPoint2 (a point on body 2) at the same distance.
+            /// Note that this constraint can be used as a cheap PointConstraint by setting mPoint1 = mPoint2 (but this removes only 1 degree of freedom instead of 3).
+            public unsafe Jolt.JPH.Const_Vec3 mPoint1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraintSettings_Get_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraintSettings_Get_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_DistanceConstraintSettings_Get_mPoint1(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_DistanceConstraintSettings_Get_mPoint1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            /// Body 2 constraint reference frame (space determined by mSpace)
+            public unsafe Jolt.JPH.Const_Vec3 mPoint2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraintSettings_Get_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraintSettings_Get_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_DistanceConstraintSettings_Get_mPoint2(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_DistanceConstraintSettings_Get_mPoint2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// Ability to override the distance range at which the two points are kept apart. If the value is negative, it will be replaced by the distance between mPoint1 and mPoint2 (works only if mSpace is world space).
             public unsafe float mMinDistance
             {
@@ -601,6 +639,44 @@ public static partial class Jolt
                 DistanceConstraintSettings ret = new(ptr, is_owning: false);
                 ret._KeepAliveEnclosingObject = parent;
                 return ret;
+            }
+
+            /// Body 1 constraint reference frame (space determined by mSpace).
+            /// Constraint will keep mPoint1 (a point on body 1) and mPoint2 (a point on body 2) at the same distance.
+            /// Note that this constraint can be used as a cheap PointConstraint by setting mPoint1 = mPoint2 (but this removes only 1 degree of freedom instead of 3).
+            public new unsafe Jolt.JPH.Vec3 mPoint1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraintSettings_GetMutable_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraintSettings_GetMutable_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_DistanceConstraintSettings_GetMutable_mPoint1(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_DistanceConstraintSettings_GetMutable_mPoint1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            /// Body 2 constraint reference frame (space determined by mSpace)
+            public new unsafe Jolt.JPH.Vec3 mPoint2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraintSettings_GetMutable_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraintSettings_GetMutable_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_DistanceConstraintSettings_GetMutable_mPoint2(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_DistanceConstraintSettings_GetMutable_mPoint2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
             }
 
             /// Ability to override the distance range at which the two points are kept apart. If the value is negative, it will be replaced by the distance between mPoint1 and mPoint2 (works only if mSpace is world space).
@@ -1082,6 +1158,31 @@ public static partial class Jolt
                 __Jolt_delete_array_JPH_DistanceConstraint_void_ptr_void_ptr(inPointer, inPlace);
             }
 
+            // See: TwoBodyConstraint
+            /// Generated from method `JPH::DistanceConstraint::GetConstraintToBody1Matrix`.
+            public unsafe Jolt.JPH.Mat44 GetConstraintToBody1Matrix()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraint_GetConstraintToBody1Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraint_GetConstraintToBody1Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_DistanceConstraint_GetConstraintToBody1Matrix(_Underlying *_this);
+                return new(__JPH_DistanceConstraint_GetConstraintToBody1Matrix(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Generated from method `JPH::DistanceConstraint::GetConstraintToBody2Matrix`.
+            public unsafe Jolt.JPH.Mat44 GetConstraintToBody2Matrix()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraint_GetConstraintToBody2Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraint_GetConstraintToBody2Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_DistanceConstraint_GetConstraintToBody2Matrix(_Underlying *_this);
+                return new(__JPH_DistanceConstraint_GetConstraintToBody2Matrix(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Generated from method `JPH::DistanceConstraint::GetMinDistance`.
             public unsafe float GetMinDistance()
             {
@@ -1395,6 +1496,21 @@ public static partial class Jolt
                 #endif
                 extern static Jolt.JPH.DistanceConstraint._Underlying *__JPH_DistanceConstraint_Construct(Jolt.JPH.Body._Underlying *inBody1, Jolt.JPH.Body._Underlying *inBody2, Jolt.JPH.Const_DistanceConstraintSettings._Underlying *inSettings);
                 _UnderlyingPtr = __JPH_DistanceConstraint_Construct(inBody1._UnderlyingPtr, inBody2._UnderlyingPtr, inSettings._UnderlyingPtr);
+            }
+
+            /// Generated from method `JPH::DistanceConstraint::NotifyShapeChanged`.
+            public unsafe void NotifyShapeChanged(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inDeltaCOM)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraint_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraint_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_DistanceConstraint_NotifyShapeChanged(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inDeltaCOM);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_DistanceConstraint_NotifyShapeChanged(_UnderlyingPtr, __ptr_inBodyID, inDeltaCOM._UnderlyingPtr);
+                }
             }
 
             /// Generated from method `JPH::DistanceConstraint::SetupVelocityConstraint`.

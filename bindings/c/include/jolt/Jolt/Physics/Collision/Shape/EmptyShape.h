@@ -13,8 +13,11 @@ extern "C" {
 #endif
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
@@ -23,6 +26,7 @@ typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jol
 typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Class that constructs an EmptyShape
@@ -53,6 +57,20 @@ typedef struct JPH_EmptyShapeSettings JPH_EmptyShapeSettings;
 ///     `JPH::NonCopyable`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_EmptyShape JPH_EmptyShape;
+
+///< Determines the center of mass for this shape
+/// Returns a pointer to a member variable of class `JPH::EmptyShapeSettings` named `mCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_EmptyShapeSettings_Get_mCenterOfMass(const JPH_EmptyShapeSettings *_this);
+
+///< Determines the center of mass for this shape
+/// Returns a mutable pointer to a member variable of class `JPH::EmptyShapeSettings` named `mCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_EmptyShapeSettings_GetMutable_mCenterOfMass(JPH_EmptyShapeSettings *_this);
 
 /// User data (to be used freely by the application)
 /// Returns a pointer to a member variable of class `JPH::EmptyShapeSettings` named `mUserData`.
@@ -156,6 +174,11 @@ JOLT_API JPH_EmptyShapeSettings *JPH_EmptyShapeSettings_MutableStaticDowncastFro
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_EmptyShapeSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_EmptyShapeSettings *JPH_EmptyShapeSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_EmptyShapeSettings *_other);
+
+/// Generated from constructor `JPH::EmptyShapeSettings::EmptyShapeSettings`.
+/// Parameter `inCenterOfMass` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_EmptyShapeSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_EmptyShapeSettings *JPH_EmptyShapeSettings_Construct(const JPH_Vec3 *inCenterOfMass);
 
 /// Destroys a heap-allocated instance of `JPH_EmptyShapeSettings`. Does nothing if the pointer is null.
 JOLT_API void JPH_EmptyShapeSettings_Destroy(const JPH_EmptyShapeSettings *_this);
@@ -313,11 +336,22 @@ JOLT_API const JPH_EmptyShape *JPH_EmptyShape_StaticDowncastFrom_JPH_Shape(const
 /// The reference to the parameter `object` might be preserved in the return value.
 JOLT_API JPH_EmptyShape *JPH_EmptyShape_MutableStaticDowncastFrom_JPH_Shape(JPH_Shape *object);
 
+/// Generated from constructor `JPH::EmptyShape::EmptyShape`.
+/// Parameter `inCenterOfMass` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_EmptyShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_EmptyShape *JPH_EmptyShape_Construct_1(const JPH_Vec3 *inCenterOfMass);
+
 /// Destroys a heap-allocated instance of `JPH_EmptyShape`. Does nothing if the pointer is null.
 JOLT_API void JPH_EmptyShape_Destroy(const JPH_EmptyShape *_this);
 
 /// Destroys a heap-allocated array of `JPH_EmptyShape`. Does nothing if the pointer is null.
 JOLT_API void JPH_EmptyShape_DestroyArray(const JPH_EmptyShape *_this);
+
+// See: Shape
+/// Generated from method `JPH::EmptyShape::GetCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_EmptyShape_GetCenterOfMass(const JPH_EmptyShape *_this);
 
 /// Generated from method `JPH::EmptyShape::GetLocalBounds`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -337,6 +371,28 @@ JOLT_API float JPH_EmptyShape_GetInnerRadius(const JPH_EmptyShape *_this);
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API const JPH_PhysicsMaterial *JPH_EmptyShape_GetMaterial(const JPH_EmptyShape *_this, const JPH_SubShapeID *inSubShapeID);
 
+/// Generated from method `JPH::EmptyShape::GetSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_EmptyShape_GetSurfaceNormal(const JPH_EmptyShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
+/// Generated from method `JPH::EmptyShape::GetTrianglesStart`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `inBox` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_EmptyShape_GetTrianglesStart(const JPH_EmptyShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale);
+
+/// Generated from method `JPH::EmptyShape::GetTrianglesNext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `outMaterials` defaults to a null pointer in C++.
+JOLT_API int JPH_EmptyShape_GetTrianglesNext(const JPH_EmptyShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
+
 /// Generated from method `JPH::EmptyShape::GetStats`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Shape_Stats_Destroy()` to free it when you're done using it.
@@ -345,6 +401,11 @@ JOLT_API JPH_Shape_Stats *JPH_EmptyShape_GetStats(const JPH_EmptyShape *_this);
 /// Generated from method `JPH::EmptyShape::GetVolume`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_EmptyShape_GetVolume(const JPH_EmptyShape *_this);
+
+/// Generated from method `JPH::EmptyShape::IsValidScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API bool JPH_EmptyShape_IsValidScale(const JPH_EmptyShape *_this, const JPH_Vec3 *inScale);
 
 // Register shape functions with the registry
 /// Generated from method `JPH::EmptyShape::sRegister`.
@@ -379,6 +440,17 @@ JOLT_API const JPH_Shape *JPH_EmptyShape_GetLeafShape(const JPH_EmptyShape *_thi
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API uint64_t JPH_EmptyShape_GetSubShapeUserData(const JPH_EmptyShape *_this, const JPH_SubShapeID *inSubShapeID);
+
+/// This function will make sure that if you wrap this shape in a ScaledShape that the scale is valid.
+/// Note that this involves discarding components of the scale that are invalid, so the resulting scaled shape may be different than the requested scale.
+/// Compare the return value of this function with the scale you passed in to detect major inconsistencies and possibly warn the user.
+/// @param inScale Local space scale for this shape.
+/// @return Scale that can be used to wrap this shape in a ScaledShape. IsValidScale will return true for this scale.
+/// Generated from method `JPH::EmptyShape::MakeScaleValid`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_EmptyShape_MakeScaleValid(const JPH_EmptyShape *_this, const JPH_Vec3 *inScale);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

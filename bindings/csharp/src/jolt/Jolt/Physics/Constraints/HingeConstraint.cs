@@ -129,6 +129,115 @@ public static partial class Jolt
                 return ret;
             }
 
+            /// Body 1 constraint reference frame (space determined by mSpace).
+            /// Hinge axis is the axis where rotation is allowed.
+            /// When the normal axis of both bodies align in world space, the hinge angle is defined to be 0.
+            /// mHingeAxis1 and mNormalAxis1 should be perpendicular. mHingeAxis2 and mNormalAxis2 should also be perpendicular.
+            /// If you configure the joint in world space and create both bodies with a relative rotation you want to be defined as zero,
+            /// you can simply set mHingeAxis1 = mHingeAxis2 and mNormalAxis1 = mNormalAxis2.
+            public unsafe Jolt.JPH.Const_Vec3 mPoint1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_HingeConstraintSettings_Get_mPoint1(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_Get_mPoint1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mHingeAxis1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mHingeAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mHingeAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_HingeConstraintSettings_Get_mHingeAxis1(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_Get_mHingeAxis1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mNormalAxis1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mNormalAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mNormalAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_HingeConstraintSettings_Get_mNormalAxis1(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_Get_mNormalAxis1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            /// Body 2 constraint reference frame (space determined by mSpace)
+            public unsafe Jolt.JPH.Const_Vec3 mPoint2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_HingeConstraintSettings_Get_mPoint2(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_Get_mPoint2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mHingeAxis2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mHingeAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mHingeAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_HingeConstraintSettings_Get_mHingeAxis2(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_Get_mHingeAxis2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mNormalAxis2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mNormalAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mNormalAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_HingeConstraintSettings_Get_mNormalAxis2(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_Get_mNormalAxis2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// Rotation around the hinge axis will be limited between [mLimitsMin, mLimitsMax] where mLimitsMin e [-pi, 0] and mLimitsMax e [0, pi].
             /// Both angles are in radians.
             public unsafe float mLimitsMin
@@ -617,6 +726,115 @@ public static partial class Jolt
                 HingeConstraintSettings ret = new(ptr, is_owning: false);
                 ret._KeepAliveEnclosingObject = parent;
                 return ret;
+            }
+
+            /// Body 1 constraint reference frame (space determined by mSpace).
+            /// Hinge axis is the axis where rotation is allowed.
+            /// When the normal axis of both bodies align in world space, the hinge angle is defined to be 0.
+            /// mHingeAxis1 and mNormalAxis1 should be perpendicular. mHingeAxis2 and mNormalAxis2 should also be perpendicular.
+            /// If you configure the joint in world space and create both bodies with a relative rotation you want to be defined as zero,
+            /// you can simply set mHingeAxis1 = mHingeAxis2 and mNormalAxis1 = mNormalAxis2.
+            public new unsafe Jolt.JPH.Vec3 mPoint1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mPoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraintSettings_GetMutable_mPoint1(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_GetMutable_mPoint1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mHingeAxis1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mHingeAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mHingeAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraintSettings_GetMutable_mHingeAxis1(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_GetMutable_mHingeAxis1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mNormalAxis1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mNormalAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mNormalAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraintSettings_GetMutable_mNormalAxis1(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_GetMutable_mNormalAxis1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            /// Body 2 constraint reference frame (space determined by mSpace)
+            public new unsafe Jolt.JPH.Vec3 mPoint2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mPoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraintSettings_GetMutable_mPoint2(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_GetMutable_mPoint2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mHingeAxis2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mHingeAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mHingeAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraintSettings_GetMutable_mHingeAxis2(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_GetMutable_mHingeAxis2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mNormalAxis2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mNormalAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mNormalAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraintSettings_GetMutable_mNormalAxis2(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_HingeConstraintSettings_GetMutable_mNormalAxis2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
             }
 
             /// Rotation around the hinge axis will be limited between [mLimitsMin, mLimitsMax] where mLimitsMin e [-pi, 0] and mLimitsMax e [0, pi].
@@ -1114,6 +1332,107 @@ public static partial class Jolt
                 __Jolt_delete_array_JPH_HingeConstraint_void_ptr_void_ptr(inPointer, inPlace);
             }
 
+            // See: TwoBodyConstraint
+            /// Generated from method `JPH::HingeConstraint::GetConstraintToBody1Matrix`.
+            public unsafe Jolt.JPH.Mat44 GetConstraintToBody1Matrix()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetConstraintToBody1Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetConstraintToBody1Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_HingeConstraint_GetConstraintToBody1Matrix(_Underlying *_this);
+                return new(__JPH_HingeConstraint_GetConstraintToBody1Matrix(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Generated from method `JPH::HingeConstraint::GetConstraintToBody2Matrix`.
+            public unsafe Jolt.JPH.Mat44 GetConstraintToBody2Matrix()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetConstraintToBody2Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetConstraintToBody2Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_HingeConstraint_GetConstraintToBody2Matrix(_Underlying *_this);
+                return new(__JPH_HingeConstraint_GetConstraintToBody2Matrix(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get the attachment point for body 1 relative to body 1 COM (transform by Body::GetCenterOfMassTransform to take to world space)
+            /// Generated from method `JPH::HingeConstraint::GetLocalSpacePoint1`.
+            public unsafe Jolt.JPH.Vec3 GetLocalSpacePoint1()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpacePoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpacePoint1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraint_GetLocalSpacePoint1(_Underlying *_this);
+                return new(__JPH_HingeConstraint_GetLocalSpacePoint1(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get the attachment point for body 2 relative to body 2 COM (transform by Body::GetCenterOfMassTransform to take to world space)
+            /// Generated from method `JPH::HingeConstraint::GetLocalSpacePoint2`.
+            public unsafe Jolt.JPH.Vec3 GetLocalSpacePoint2()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpacePoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpacePoint2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraint_GetLocalSpacePoint2(_Underlying *_this);
+                return new(__JPH_HingeConstraint_GetLocalSpacePoint2(_UnderlyingPtr), is_owning: true);
+            }
+
+            // Local space hinge directions (transform direction by Body::GetCenterOfMassTransform to take to world space)
+            /// Generated from method `JPH::HingeConstraint::GetLocalSpaceHingeAxis1`.
+            public unsafe Jolt.JPH.Vec3 GetLocalSpaceHingeAxis1()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpaceHingeAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpaceHingeAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraint_GetLocalSpaceHingeAxis1(_Underlying *_this);
+                return new(__JPH_HingeConstraint_GetLocalSpaceHingeAxis1(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Generated from method `JPH::HingeConstraint::GetLocalSpaceHingeAxis2`.
+            public unsafe Jolt.JPH.Vec3 GetLocalSpaceHingeAxis2()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpaceHingeAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpaceHingeAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraint_GetLocalSpaceHingeAxis2(_Underlying *_this);
+                return new(__JPH_HingeConstraint_GetLocalSpaceHingeAxis2(_UnderlyingPtr), is_owning: true);
+            }
+
+            // Local space normal directions (transform direction by Body::GetCenterOfMassTransform to take to world space)
+            /// Generated from method `JPH::HingeConstraint::GetLocalSpaceNormalAxis1`.
+            public unsafe Jolt.JPH.Vec3 GetLocalSpaceNormalAxis1()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpaceNormalAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpaceNormalAxis1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraint_GetLocalSpaceNormalAxis1(_Underlying *_this);
+                return new(__JPH_HingeConstraint_GetLocalSpaceNormalAxis1(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Generated from method `JPH::HingeConstraint::GetLocalSpaceNormalAxis2`.
+            public unsafe Jolt.JPH.Vec3 GetLocalSpaceNormalAxis2()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpaceNormalAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetLocalSpaceNormalAxis2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraint_GetLocalSpaceNormalAxis2(_Underlying *_this);
+                return new(__JPH_HingeConstraint_GetLocalSpaceNormalAxis2(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Get the current rotation angle from the rest position
             /// Generated from method `JPH::HingeConstraint::GetCurrentAngle`.
             public unsafe float GetCurrentAngle()
@@ -1197,6 +1516,31 @@ public static partial class Jolt
                 #endif
                 extern static byte __JPH_HingeConstraint_HasLimits(_Underlying *_this);
                 return __JPH_HingeConstraint_HasLimits(_UnderlyingPtr) != 0;
+            }
+
+            ///@name Get Lagrange multiplier from last physics update (the linear/angular impulse applied to satisfy the constraint)
+            /// Generated from method `JPH::HingeConstraint::GetTotalLambdaPosition`.
+            public unsafe Jolt.JPH.Vec3 GetTotalLambdaPosition()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetTotalLambdaPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetTotalLambdaPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_HingeConstraint_GetTotalLambdaPosition(_Underlying *_this);
+                return new(__JPH_HingeConstraint_GetTotalLambdaPosition(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Generated from method `JPH::HingeConstraint::GetTotalLambdaRotation`.
+            public unsafe Jolt.JPH.Vector_2 GetTotalLambdaRotation()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetTotalLambdaRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetTotalLambdaRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vector_2._Underlying *__JPH_HingeConstraint_GetTotalLambdaRotation(_Underlying *_this);
+                return new(__JPH_HingeConstraint_GetTotalLambdaRotation(_UnderlyingPtr), is_owning: true);
             }
 
             /// Generated from method `JPH::HingeConstraint::GetTotalLambdaRotationLimits`.
@@ -1501,6 +1845,21 @@ public static partial class Jolt
                 _UnderlyingPtr = __JPH_HingeConstraint_Construct(inBody1._UnderlyingPtr, inBody2._UnderlyingPtr, inSettings._UnderlyingPtr);
             }
 
+            /// Generated from method `JPH::HingeConstraint::NotifyShapeChanged`.
+            public unsafe void NotifyShapeChanged(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inDeltaCOM)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_HingeConstraint_NotifyShapeChanged(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inDeltaCOM);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_HingeConstraint_NotifyShapeChanged(_UnderlyingPtr, __ptr_inBodyID, inDeltaCOM._UnderlyingPtr);
+                }
+            }
+
             /// Generated from method `JPH::HingeConstraint::SetupVelocityConstraint`.
             public unsafe void SetupVelocityConstraint(float inDeltaTime)
             {
@@ -1596,6 +1955,21 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_HingeConstraint_SetTargetAngle(_Underlying *_this, float inAngle);
                 __JPH_HingeConstraint_SetTargetAngle(_UnderlyingPtr, inAngle);
+            }
+
+            /// Set the target orientation in body space (R2 = R1 * inOrientation, where R1 and R2 are the world space rotations for body 1 and 2).
+            /// Calculates the local space target angle and calls SetTargetAngle. Motor state must be EMotorState::Position for this to have any effect.
+            /// May set the wrong angle if inOrientation contains large rotations around other axis than the hinge axis.
+            /// Generated from method `JPH::HingeConstraint::SetTargetOrientationBS`.
+            public unsafe void SetTargetOrientationBS(Jolt.JPH.Const_Quat inOrientation)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_SetTargetOrientationBS", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_SetTargetOrientationBS", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_HingeConstraint_SetTargetOrientationBS(_Underlying *_this, Jolt.JPH.Quat._Underlying *inOrientation);
+                __JPH_HingeConstraint_SetTargetOrientationBS(_UnderlyingPtr, inOrientation._UnderlyingPtr);
             }
 
             /// Update the rotation limits of the hinge, value in radians (see HingeConstraintSettings)

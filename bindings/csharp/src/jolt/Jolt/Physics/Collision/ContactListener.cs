@@ -28,6 +28,42 @@ public static partial class Jolt
             public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
             ~Const_ContactManifold() {Dispose(false);}
 
+            ///< Offset to which all the contact points are relative
+            public unsafe Jolt.JPH.Const_Vec3 mBaseOffset
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactManifold_Get_mBaseOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactManifold_Get_mBaseOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_ContactManifold_Get_mBaseOffset(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_ContactManifold_Get_mBaseOffset(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Normal for this manifold, direction along which to move body 2 out of collision along the shortest path
+            public unsafe Jolt.JPH.Const_Vec3 mWorldSpaceNormal
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactManifold_Get_mWorldSpaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactManifold_Get_mWorldSpaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_ContactManifold_Get_mWorldSpaceNormal(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_ContactManifold_Get_mWorldSpaceNormal(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             ///< Penetration depth (move shape 2 by this distance to resolve the collision). If this value is negative, this is a speculative contact point and may not actually result in a velocity change as during solving the bodies may not actually collide.
             public unsafe float mPenetrationDepth
             {
@@ -123,6 +159,31 @@ public static partial class Jolt
                 extern static Jolt.JPH.ContactManifold._Underlying *__JPH_ContactManifold_SwapShapes(_Underlying *_this);
                 return new(__JPH_ContactManifold_SwapShapes(_UnderlyingPtr), is_owning: true);
             }
+
+            /// Access to the world space contact positions
+            /// Generated from method `JPH::ContactManifold::GetWorldSpaceContactPointOn1`.
+            public unsafe Jolt.JPH.Vec3 GetWorldSpaceContactPointOn1(uint inIndex)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactManifold_GetWorldSpaceContactPointOn1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactManifold_GetWorldSpaceContactPointOn1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_ContactManifold_GetWorldSpaceContactPointOn1(_Underlying *_this, uint inIndex);
+                return new(__JPH_ContactManifold_GetWorldSpaceContactPointOn1(_UnderlyingPtr, inIndex), is_owning: true);
+            }
+
+            /// Generated from method `JPH::ContactManifold::GetWorldSpaceContactPointOn2`.
+            public unsafe Jolt.JPH.Vec3 GetWorldSpaceContactPointOn2(uint inIndex)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactManifold_GetWorldSpaceContactPointOn2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactManifold_GetWorldSpaceContactPointOn2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_ContactManifold_GetWorldSpaceContactPointOn2(_Underlying *_this, uint inIndex);
+                return new(__JPH_ContactManifold_GetWorldSpaceContactPointOn2(_UnderlyingPtr, inIndex), is_owning: true);
+            }
         }
 
         /// Manifold class, describes the contact surface between two bodies
@@ -130,6 +191,42 @@ public static partial class Jolt
         /// This is the non-const half of the class.
         public class ContactManifold : Const_ContactManifold
         {
+            ///< Offset to which all the contact points are relative
+            public new unsafe Jolt.JPH.Vec3 mBaseOffset
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactManifold_GetMutable_mBaseOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactManifold_GetMutable_mBaseOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_ContactManifold_GetMutable_mBaseOffset(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_ContactManifold_GetMutable_mBaseOffset(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Normal for this manifold, direction along which to move body 2 out of collision along the shortest path
+            public new unsafe Jolt.JPH.Vec3 mWorldSpaceNormal
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactManifold_GetMutable_mWorldSpaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactManifold_GetMutable_mWorldSpaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_ContactManifold_GetMutable_mWorldSpaceNormal(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_ContactManifold_GetMutable_mWorldSpaceNormal(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             ///< Penetration depth (move shape 2 by this distance to resolve the collision). If this value is negative, this is a speculative contact point and may not actually result in a velocity change as during solving the bodies may not actually collide.
             public new unsafe ref float mPenetrationDepth
             {
@@ -409,6 +506,42 @@ public static partial class Jolt
                 }
             }
 
+            ///< Relative linear surface velocity between the bodies (world space surface velocity of body 2 - world space surface velocity of body 1), can be used to create a conveyor belt effect
+            public unsafe Jolt.JPH.Const_Vec3 mRelativeLinearSurfaceVelocity
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactSettings_Get_mRelativeLinearSurfaceVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactSettings_Get_mRelativeLinearSurfaceVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_ContactSettings_Get_mRelativeLinearSurfaceVelocity(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_ContactSettings_Get_mRelativeLinearSurfaceVelocity(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Relative angular surface velocity between the bodies (world space angular surface velocity of body 2 - world space angular surface velocity of body 1). Note that this angular velocity is relative to the center of mass of body 1, so if you want it relative to body 2's center of mass you need to add body 2 angular velocity x (body 1 world space center of mass - body 2 world space center of mass) to mRelativeLinearSurfaceVelocity.
+            public unsafe Jolt.JPH.Const_Vec3 mRelativeAngularSurfaceVelocity
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactSettings_Get_mRelativeAngularSurfaceVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactSettings_Get_mRelativeAngularSurfaceVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_ContactSettings_Get_mRelativeAngularSurfaceVelocity(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_ContactSettings_Get_mRelativeAngularSurfaceVelocity(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             internal unsafe Const_ContactSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
             /// Constructs an empty (default-constructed) instance.
@@ -421,6 +554,20 @@ public static partial class Jolt
                 #endif
                 extern static Jolt.JPH.ContactSettings._Underlying *__JPH_ContactSettings_DefaultConstruct();
                 _UnderlyingPtr = __JPH_ContactSettings_DefaultConstruct();
+            }
+
+            /// Constructs `JPH::ContactSettings` elementwise.
+            public unsafe Const_ContactSettings(float mCombinedFriction, float mCombinedRestitution, float mInvMassScale1, float mInvInertiaScale1, float mInvMassScale2, float mInvInertiaScale2, bool mIsSensor, Jolt.JPH.Const_Vec3 mRelativeLinearSurfaceVelocity, Jolt.JPH.Const_Vec3 mRelativeAngularSurfaceVelocity) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ContactSettings._Underlying *__JPH_ContactSettings_ConstructFrom(float mCombinedFriction, float mCombinedRestitution, float mInvMassScale1, float mInvInertiaScale1, float mInvMassScale2, float mInvInertiaScale2, byte mIsSensor, Jolt.JPH.Vec3._Underlying *mRelativeLinearSurfaceVelocity, Jolt.JPH.Vec3._Underlying *mRelativeAngularSurfaceVelocity);
+                _UnderlyingPtr = __JPH_ContactSettings_ConstructFrom(mCombinedFriction, mCombinedRestitution, mInvMassScale1, mInvInertiaScale1, mInvMassScale2, mInvInertiaScale2, mIsSensor ? (byte)1 : (byte)0, mRelativeLinearSurfaceVelocity._UnderlyingPtr, mRelativeAngularSurfaceVelocity._UnderlyingPtr);
+                _KeepAlive(mRelativeLinearSurfaceVelocity);
+                _KeepAlive(mRelativeAngularSurfaceVelocity);
             }
 
             /// Generated from constructor `JPH::ContactSettings::ContactSettings`.
@@ -551,6 +698,42 @@ public static partial class Jolt
                 }
             }
 
+            ///< Relative linear surface velocity between the bodies (world space surface velocity of body 2 - world space surface velocity of body 1), can be used to create a conveyor belt effect
+            public new unsafe Jolt.JPH.Vec3 mRelativeLinearSurfaceVelocity
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactSettings_GetMutable_mRelativeLinearSurfaceVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactSettings_GetMutable_mRelativeLinearSurfaceVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_ContactSettings_GetMutable_mRelativeLinearSurfaceVelocity(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_ContactSettings_GetMutable_mRelativeLinearSurfaceVelocity(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Relative angular surface velocity between the bodies (world space angular surface velocity of body 2 - world space angular surface velocity of body 1). Note that this angular velocity is relative to the center of mass of body 1, so if you want it relative to body 2's center of mass you need to add body 2 angular velocity x (body 1 world space center of mass - body 2 world space center of mass) to mRelativeLinearSurfaceVelocity.
+            public new unsafe Jolt.JPH.Vec3 mRelativeAngularSurfaceVelocity
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactSettings_GetMutable_mRelativeAngularSurfaceVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactSettings_GetMutable_mRelativeAngularSurfaceVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_ContactSettings_GetMutable_mRelativeAngularSurfaceVelocity(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_ContactSettings_GetMutable_mRelativeAngularSurfaceVelocity(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             internal unsafe ContactSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
             /// Constructs an empty (default-constructed) instance.
@@ -563,6 +746,20 @@ public static partial class Jolt
                 #endif
                 extern static Jolt.JPH.ContactSettings._Underlying *__JPH_ContactSettings_DefaultConstruct();
                 _UnderlyingPtr = __JPH_ContactSettings_DefaultConstruct();
+            }
+
+            /// Constructs `JPH::ContactSettings` elementwise.
+            public unsafe ContactSettings(float mCombinedFriction, float mCombinedRestitution, float mInvMassScale1, float mInvInertiaScale1, float mInvMassScale2, float mInvInertiaScale2, bool mIsSensor, Jolt.JPH.Const_Vec3 mRelativeLinearSurfaceVelocity, Jolt.JPH.Const_Vec3 mRelativeAngularSurfaceVelocity) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ContactSettings._Underlying *__JPH_ContactSettings_ConstructFrom(float mCombinedFriction, float mCombinedRestitution, float mInvMassScale1, float mInvInertiaScale1, float mInvMassScale2, float mInvInertiaScale2, byte mIsSensor, Jolt.JPH.Vec3._Underlying *mRelativeLinearSurfaceVelocity, Jolt.JPH.Vec3._Underlying *mRelativeAngularSurfaceVelocity);
+                _UnderlyingPtr = __JPH_ContactSettings_ConstructFrom(mCombinedFriction, mCombinedRestitution, mInvMassScale1, mInvInertiaScale1, mInvMassScale2, mInvInertiaScale2, mIsSensor ? (byte)1 : (byte)0, mRelativeLinearSurfaceVelocity._UnderlyingPtr, mRelativeAngularSurfaceVelocity._UnderlyingPtr);
+                _KeepAlive(mRelativeLinearSurfaceVelocity);
+                _KeepAlive(mRelativeAngularSurfaceVelocity);
             }
 
             /// Generated from constructor `JPH::ContactSettings::ContactSettings`.

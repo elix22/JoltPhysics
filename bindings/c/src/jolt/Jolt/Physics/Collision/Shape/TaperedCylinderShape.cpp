@@ -5,6 +5,10 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/Float3.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/ConvexShape.h>
@@ -635,6 +639,11 @@ float JPH_TaperedCylinderShape_GetHalfHeight(const JPH_TaperedCylinderShape *_th
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).GetHalfHeight();
 }
 
+JPH_Vec3 *JPH_TaperedCylinderShape_GetCenterOfMass(const JPH_TaperedCylinderShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).GetCenterOfMass());
+}
+
 JPH_AABox *JPH_TaperedCylinderShape_GetLocalBounds(const JPH_TaperedCylinderShape *_this)
 {
     return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).GetLocalBounds());
@@ -645,6 +654,44 @@ float JPH_TaperedCylinderShape_GetInnerRadius(const JPH_TaperedCylinderShape *_t
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).GetInnerRadius();
 }
 
+JPH_Vec3 *JPH_TaperedCylinderShape_GetSurfaceNormal(const JPH_TaperedCylinderShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).GetSurfaceNormal(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inLocalSurfacePosition ? void() : MRBINDC_THROW("Parameter `inLocalSurfacePosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLocalSurfacePosition))
+    ));
+}
+
+const JPH_ConvexShape_Support *JPH_TaperedCylinderShape_GetSupportFunction(const JPH_TaperedCylinderShape *_this, JPH_ConvexShape_ESupportMode inMode, JPH_ConvexShape_SupportBuffer *inBuffer, const JPH_Vec3 *inScale)
+{
+    return (const JPH_ConvexShape_Support *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).GetSupportFunction(
+        ((JPH::ConvexShape::ESupportMode)inMode),
+        ((inBuffer ? void() : MRBINDC_THROW("Parameter `inBuffer` can not be null.", void)), *(JPH::ConvexShape::SupportBuffer *)(inBuffer)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
+void JPH_TaperedCylinderShape_GetTrianglesStart(const JPH_TaperedCylinderShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).GetTrianglesStart(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        ((inBox ? void() : MRBINDC_THROW("Parameter `inBox` can not be null.", void)), *(const JPH::AABox *)(inBox)),
+        ((inPositionCOM ? void() : MRBINDC_THROW("Parameter `inPositionCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPositionCOM)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+int JPH_TaperedCylinderShape_GetTrianglesNext(const JPH_TaperedCylinderShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).GetTrianglesNext(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        inMaxTrianglesRequested,
+        ((JPH::Float3 *)outTriangleVertices),
+        ((const JPH::PhysicsMaterial **)outMaterials)
+    );
+}
+
 JPH_Shape_Stats *JPH_TaperedCylinderShape_GetStats(const JPH_TaperedCylinderShape *_this)
 {
     return (JPH_Shape_Stats *)new JPH::Shape::Stats(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).GetStats());
@@ -653,6 +700,20 @@ JPH_Shape_Stats *JPH_TaperedCylinderShape_GetStats(const JPH_TaperedCylinderShap
 float JPH_TaperedCylinderShape_GetVolume(const JPH_TaperedCylinderShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).GetVolume();
+}
+
+bool JPH_TaperedCylinderShape_IsValidScale(const JPH_TaperedCylinderShape *_this, const JPH_Vec3 *inScale)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).IsValidScale(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+JPH_Vec3 *JPH_TaperedCylinderShape_MakeScaleValid(const JPH_TaperedCylinderShape *_this, const JPH_Vec3 *inScale)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCylinderShape *)(_this)).MakeScaleValid(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 void JPH_TaperedCylinderShape_sRegister(void)

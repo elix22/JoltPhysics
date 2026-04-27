@@ -4,6 +4,8 @@
 
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyID.h>
@@ -17,6 +19,26 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_DistanceConstraintSettings_Get_mPoint1(const JPH_DistanceConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraintSettings *)(_this)).mPoint1);
+}
+
+JPH_Vec3 *JPH_DistanceConstraintSettings_GetMutable_mPoint1(JPH_DistanceConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DistanceConstraintSettings *)(_this)).mPoint1);
+}
+
+const JPH_Vec3 *JPH_DistanceConstraintSettings_Get_mPoint2(const JPH_DistanceConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraintSettings *)(_this)).mPoint2);
+}
+
+JPH_Vec3 *JPH_DistanceConstraintSettings_GetMutable_mPoint2(JPH_DistanceConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DistanceConstraintSettings *)(_this)).mPoint2);
+}
 
 const float *JPH_DistanceConstraintSettings_Get_mMinDistance(const JPH_DistanceConstraintSettings *_this)
 {
@@ -622,6 +644,14 @@ void Jolt_delete_array_JPH_DistanceConstraint_void_ptr_void_ptr(void *inPointer,
     );
 }
 
+void JPH_DistanceConstraint_NotifyShapeChanged(JPH_DistanceConstraint *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inDeltaCOM)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DistanceConstraint *)(_this)).NotifyShapeChanged(
+        ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID)),
+        ((inDeltaCOM ? void() : MRBINDC_THROW("Parameter `inDeltaCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inDeltaCOM))
+    );
+}
+
 void JPH_DistanceConstraint_SetupVelocityConstraint(JPH_DistanceConstraint *_this, float inDeltaTime)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DistanceConstraint *)(_this)).SetupVelocityConstraint(
@@ -654,6 +684,16 @@ bool JPH_DistanceConstraint_SolvePositionConstraint(JPH_DistanceConstraint *_thi
         inDeltaTime,
         inBaumgarte
     );
+}
+
+JPH_Mat44 *JPH_DistanceConstraint_GetConstraintToBody1Matrix(const JPH_DistanceConstraint *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraint *)(_this)).GetConstraintToBody1Matrix());
+}
+
+JPH_Mat44 *JPH_DistanceConstraint_GetConstraintToBody2Matrix(const JPH_DistanceConstraint *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraint *)(_this)).GetConstraintToBody2Matrix());
 }
 
 void JPH_DistanceConstraint_SetDistance(JPH_DistanceConstraint *_this, float inMinDistance, float inMaxDistance)

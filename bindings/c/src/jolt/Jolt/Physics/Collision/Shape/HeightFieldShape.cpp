@@ -6,6 +6,10 @@
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Core/TempAllocator.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/Float3.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
@@ -18,6 +22,26 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_HeightFieldShapeSettings_Get_mOffset(const JPH_HeightFieldShapeSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShapeSettings *)(_this)).mOffset);
+}
+
+JPH_Vec3 *JPH_HeightFieldShapeSettings_GetMutable_mOffset(JPH_HeightFieldShapeSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HeightFieldShapeSettings *)(_this)).mOffset);
+}
+
+const JPH_Vec3 *JPH_HeightFieldShapeSettings_Get_mScale(const JPH_HeightFieldShapeSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShapeSettings *)(_this)).mScale);
+}
+
+JPH_Vec3 *JPH_HeightFieldShapeSettings_GetMutable_mScale(JPH_HeightFieldShapeSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HeightFieldShapeSettings *)(_this)).mScale);
+}
 
 const unsigned int *JPH_HeightFieldShapeSettings_Get_mSampleCount(const JPH_HeightFieldShapeSettings *_this)
 {
@@ -631,11 +655,57 @@ const JPH_PhysicsMaterial *JPH_HeightFieldShape_GetMaterial_2(const JPH_HeightFi
     ));
 }
 
+JPH_Vec3 *JPH_HeightFieldShape_GetSurfaceNormal(const JPH_HeightFieldShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetSurfaceNormal(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inLocalSurfacePosition ? void() : MRBINDC_THROW("Parameter `inLocalSurfacePosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLocalSurfacePosition))
+    ));
+}
+
+void JPH_HeightFieldShape_GetTrianglesStart(const JPH_HeightFieldShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetTrianglesStart(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        ((inBox ? void() : MRBINDC_THROW("Parameter `inBox` can not be null.", void)), *(const JPH::AABox *)(inBox)),
+        ((inPositionCOM ? void() : MRBINDC_THROW("Parameter `inPositionCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPositionCOM)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+int JPH_HeightFieldShape_GetTrianglesNext(const JPH_HeightFieldShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetTrianglesNext(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        inMaxTrianglesRequested,
+        ((JPH::Float3 *)outTriangleVertices),
+        ((const JPH::PhysicsMaterial **)outMaterials)
+    );
+}
+
+JPH_Vec3 *JPH_HeightFieldShape_GetPosition(const JPH_HeightFieldShape *_this, unsigned int inX, unsigned int inY)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetPosition(
+        inX,
+        inY
+    ));
+}
+
 bool JPH_HeightFieldShape_IsNoCollision(const JPH_HeightFieldShape *_this, unsigned int inX, unsigned int inY)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).IsNoCollision(
         inX,
         inY
+    );
+}
+
+bool JPH_HeightFieldShape_ProjectOntoSurface(const JPH_HeightFieldShape *_this, const JPH_Vec3 *inLocalPosition, JPH_Vec3 *outSurfacePosition, JPH_SubShapeID *outSubShapeID)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).ProjectOntoSurface(
+        ((inLocalPosition ? void() : MRBINDC_THROW("Parameter `inLocalPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLocalPosition)),
+        ((outSurfacePosition ? void() : MRBINDC_THROW("Parameter `outSurfacePosition` can not be null.", void)), *(JPH::Vec3 *)(outSurfacePosition)),
+        ((outSubShapeID ? void() : MRBINDC_THROW("Parameter `outSubShapeID` can not be null.", void)), *(JPH::SubShapeID *)(outSubShapeID))
     );
 }
 
@@ -725,6 +795,11 @@ void JPH_HeightFieldShape_SetUserData(JPH_HeightFieldShape *_this, uint64_t inUs
     );
 }
 
+JPH_Vec3 *JPH_HeightFieldShape_GetCenterOfMass(const JPH_HeightFieldShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetCenterOfMass());
+}
+
 const JPH_Shape *JPH_HeightFieldShape_GetLeafShape(const JPH_HeightFieldShape *_this, const JPH_SubShapeID *inSubShapeID, JPH_SubShapeID *outRemainder)
 {
     return (const JPH_Shape *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetLeafShape(
@@ -738,6 +813,20 @@ uint64_t JPH_HeightFieldShape_GetSubShapeUserData(const JPH_HeightFieldShape *_t
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetSubShapeUserData(
         ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID))
     );
+}
+
+bool JPH_HeightFieldShape_IsValidScale(const JPH_HeightFieldShape *_this, const JPH_Vec3 *inScale)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).IsValidScale(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+JPH_Vec3 *JPH_HeightFieldShape_MakeScaleValid(const JPH_HeightFieldShape *_this, const JPH_Vec3 *inScale)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).MakeScaleValid(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 void JPH_HeightFieldShape_SetEmbedded(const JPH_HeightFieldShape *_this)

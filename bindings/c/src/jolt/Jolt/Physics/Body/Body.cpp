@@ -4,6 +4,9 @@
 
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyCreationSettings.h>
 #include <Jolt/Physics/Body/BodyID.h>
@@ -293,6 +296,90 @@ void JPH_Body_SetRestitution(JPH_Body *_this, float inRestitution)
     );
 }
 
+JPH_Vec3 *JPH_Body_GetLinearVelocity(const JPH_Body *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetLinearVelocity());
+}
+
+void JPH_Body_SetLinearVelocity(JPH_Body *_this, const JPH_Vec3 *inLinearVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).SetLinearVelocity(
+        ((inLinearVelocity ? void() : MRBINDC_THROW("Parameter `inLinearVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLinearVelocity))
+    );
+}
+
+void JPH_Body_SetLinearVelocityClamped(JPH_Body *_this, const JPH_Vec3 *inLinearVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).SetLinearVelocityClamped(
+        ((inLinearVelocity ? void() : MRBINDC_THROW("Parameter `inLinearVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLinearVelocity))
+    );
+}
+
+JPH_Vec3 *JPH_Body_GetAngularVelocity(const JPH_Body *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetAngularVelocity());
+}
+
+void JPH_Body_SetAngularVelocity(JPH_Body *_this, const JPH_Vec3 *inAngularVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).SetAngularVelocity(
+        ((inAngularVelocity ? void() : MRBINDC_THROW("Parameter `inAngularVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inAngularVelocity))
+    );
+}
+
+void JPH_Body_SetAngularVelocityClamped(JPH_Body *_this, const JPH_Vec3 *inAngularVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).SetAngularVelocityClamped(
+        ((inAngularVelocity ? void() : MRBINDC_THROW("Parameter `inAngularVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inAngularVelocity))
+    );
+}
+
+JPH_Vec3 *JPH_Body_GetPointVelocityCOM(const JPH_Body *_this, const JPH_Vec3 *inPointRelativeToCOM)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetPointVelocityCOM(
+        ((inPointRelativeToCOM ? void() : MRBINDC_THROW("Parameter `inPointRelativeToCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPointRelativeToCOM))
+    ));
+}
+
+JPH_Vec3 *JPH_Body_GetPointVelocity(const JPH_Body *_this, const JPH_Vec3 *inPoint)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetPointVelocity(
+        ((inPoint ? void() : MRBINDC_THROW("Parameter `inPoint` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPoint))
+    ));
+}
+
+void JPH_Body_AddForce_1(JPH_Body *_this, const JPH_Vec3 *inForce)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).AddForce(
+        ((inForce ? void() : MRBINDC_THROW("Parameter `inForce` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inForce))
+    );
+}
+
+void JPH_Body_AddForce_2(JPH_Body *_this, const JPH_Vec3 *inForce, const JPH_Vec3 *inPosition)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).AddForce(
+        ((inForce ? void() : MRBINDC_THROW("Parameter `inForce` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inForce)),
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition))
+    );
+}
+
+void JPH_Body_AddTorque(JPH_Body *_this, const JPH_Vec3 *inTorque)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).AddTorque(
+        ((inTorque ? void() : MRBINDC_THROW("Parameter `inTorque` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inTorque))
+    );
+}
+
+JPH_Vec3 *JPH_Body_GetAccumulatedForce(const JPH_Body *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetAccumulatedForce());
+}
+
+JPH_Vec3 *JPH_Body_GetAccumulatedTorque(const JPH_Body *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetAccumulatedTorque());
+}
+
 void JPH_Body_ResetForce(JPH_Body *_this)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).ResetForce();
@@ -308,6 +395,82 @@ void JPH_Body_ResetMotion(JPH_Body *_this)
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).ResetMotion();
 }
 
+JPH_Mat44 *JPH_Body_GetInverseInertia(const JPH_Body *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetInverseInertia());
+}
+
+void JPH_Body_AddImpulse_1(JPH_Body *_this, const JPH_Vec3 *inImpulse)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).AddImpulse(
+        ((inImpulse ? void() : MRBINDC_THROW("Parameter `inImpulse` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inImpulse))
+    );
+}
+
+void JPH_Body_AddImpulse_2(JPH_Body *_this, const JPH_Vec3 *inImpulse, const JPH_Vec3 *inPosition)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).AddImpulse(
+        ((inImpulse ? void() : MRBINDC_THROW("Parameter `inImpulse` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inImpulse)),
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition))
+    );
+}
+
+void JPH_Body_AddAngularImpulse(JPH_Body *_this, const JPH_Vec3 *inAngularImpulse)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).AddAngularImpulse(
+        ((inAngularImpulse ? void() : MRBINDC_THROW("Parameter `inAngularImpulse` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inAngularImpulse))
+    );
+}
+
+void JPH_Body_MoveKinematic(JPH_Body *_this, const JPH_Vec3 *inTargetPosition, const JPH_Quat *inTargetRotation, float inDeltaTime)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).MoveKinematic(
+        ((inTargetPosition ? void() : MRBINDC_THROW("Parameter `inTargetPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inTargetPosition)),
+        ((inTargetRotation ? void() : MRBINDC_THROW("Parameter `inTargetRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inTargetRotation)),
+        inDeltaTime
+    );
+}
+
+void JPH_Body_GetSubmergedVolume(const JPH_Body *_this, const JPH_Vec3 *inSurfacePosition, const JPH_Vec3 *inSurfaceNormal, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outRelativeCenterOfBuoyancy)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetSubmergedVolume(
+        ((inSurfacePosition ? void() : MRBINDC_THROW("Parameter `inSurfacePosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inSurfacePosition)),
+        ((inSurfaceNormal ? void() : MRBINDC_THROW("Parameter `inSurfaceNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inSurfaceNormal)),
+        ((outTotalVolume ? void() : MRBINDC_THROW("Parameter `outTotalVolume` can not be null.", void)), *outTotalVolume),
+        ((outSubmergedVolume ? void() : MRBINDC_THROW("Parameter `outSubmergedVolume` can not be null.", void)), *outSubmergedVolume),
+        ((outRelativeCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outRelativeCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outRelativeCenterOfBuoyancy))
+    );
+}
+
+bool JPH_Body_ApplyBuoyancyImpulse_8(JPH_Body *_this, const JPH_Vec3 *inSurfacePosition, const JPH_Vec3 *inSurfaceNormal, float inBuoyancy, float inLinearDrag, float inAngularDrag, const JPH_Vec3 *inFluidVelocity, const JPH_Vec3 *inGravity, float inDeltaTime)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).ApplyBuoyancyImpulse(
+        ((inSurfacePosition ? void() : MRBINDC_THROW("Parameter `inSurfacePosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inSurfacePosition)),
+        ((inSurfaceNormal ? void() : MRBINDC_THROW("Parameter `inSurfaceNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inSurfaceNormal)),
+        inBuoyancy,
+        inLinearDrag,
+        inAngularDrag,
+        ((inFluidVelocity ? void() : MRBINDC_THROW("Parameter `inFluidVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inFluidVelocity)),
+        ((inGravity ? void() : MRBINDC_THROW("Parameter `inGravity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inGravity)),
+        inDeltaTime
+    );
+}
+
+bool JPH_Body_ApplyBuoyancyImpulse_9(JPH_Body *_this, float inTotalVolume, float inSubmergedVolume, const JPH_Vec3 *inRelativeCenterOfBuoyancy, float inBuoyancy, float inLinearDrag, float inAngularDrag, const JPH_Vec3 *inFluidVelocity, const JPH_Vec3 *inGravity, float inDeltaTime)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).ApplyBuoyancyImpulse(
+        inTotalVolume,
+        inSubmergedVolume,
+        ((inRelativeCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `inRelativeCenterOfBuoyancy` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inRelativeCenterOfBuoyancy)),
+        inBuoyancy,
+        inLinearDrag,
+        inAngularDrag,
+        ((inFluidVelocity ? void() : MRBINDC_THROW("Parameter `inFluidVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inFluidVelocity)),
+        ((inGravity ? void() : MRBINDC_THROW("Parameter `inGravity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inGravity)),
+        inDeltaTime
+    );
+}
+
 bool JPH_Body_IsInBroadPhase(const JPH_Body *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).IsInBroadPhase();
@@ -321,6 +484,36 @@ bool JPH_Body_IsCollisionCacheInvalid(const JPH_Body *_this)
 const JPH_Shape *JPH_Body_GetShape(const JPH_Body *_this)
 {
     return (const JPH_Shape *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetShape());
+}
+
+JPH_Vec3 *JPH_Body_GetPosition(const JPH_Body *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetPosition());
+}
+
+JPH_Quat *JPH_Body_GetRotation(const JPH_Body *_this)
+{
+    return (JPH_Quat *)new JPH::Quat(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetRotation());
+}
+
+JPH_Mat44 *JPH_Body_GetWorldTransform(const JPH_Body *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetWorldTransform());
+}
+
+JPH_Vec3 *JPH_Body_GetCenterOfMassPosition(const JPH_Body *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetCenterOfMassPosition());
+}
+
+JPH_Mat44 *JPH_Body_GetCenterOfMassTransform(const JPH_Body *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetCenterOfMassTransform());
+}
+
+JPH_Mat44 *JPH_Body_GetInverseCenterOfMassTransform(const JPH_Body *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetInverseCenterOfMassTransform());
 }
 
 const JPH_AABox *JPH_Body_GetWorldSpaceBounds(const JPH_Body *_this)
@@ -340,6 +533,14 @@ void JPH_Body_SetUserData(JPH_Body *_this, uint64_t inUserData)
     );
 }
 
+JPH_Vec3 *JPH_Body_GetWorldSpaceSurfaceNormal(const JPH_Body *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inPosition)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetWorldSpaceSurfaceNormal(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition))
+    ));
+}
+
 JPH_BodyCreationSettings *JPH_Body_GetBodyCreationSettings(const JPH_Body *_this)
 {
     return (JPH_BodyCreationSettings *)new JPH::BodyCreationSettings(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetBodyCreationSettings());
@@ -355,6 +556,34 @@ bool JPH_Body_sFindCollidingPairsCanCollide(const JPH_Body *inBody1, const JPH_B
     return JPH::Body::sFindCollidingPairsCanCollide(
         ((inBody1 ? void() : MRBINDC_THROW("Parameter `inBody1` can not be null.", void)), *(const JPH::Body *)(inBody1)),
         ((inBody2 ? void() : MRBINDC_THROW("Parameter `inBody2` can not be null.", void)), *(const JPH::Body *)(inBody2))
+    );
+}
+
+void JPH_Body_AddPositionStep(JPH_Body *_this, const JPH_Vec3 *inLinearVelocityTimesDeltaTime)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).AddPositionStep(
+        ((inLinearVelocityTimesDeltaTime ? void() : MRBINDC_THROW("Parameter `inLinearVelocityTimesDeltaTime` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLinearVelocityTimesDeltaTime))
+    );
+}
+
+void JPH_Body_SubPositionStep(JPH_Body *_this, const JPH_Vec3 *inLinearVelocityTimesDeltaTime)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).SubPositionStep(
+        ((inLinearVelocityTimesDeltaTime ? void() : MRBINDC_THROW("Parameter `inLinearVelocityTimesDeltaTime` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLinearVelocityTimesDeltaTime))
+    );
+}
+
+void JPH_Body_AddRotationStep(JPH_Body *_this, const JPH_Vec3 *inAngularVelocityTimesDeltaTime)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).AddRotationStep(
+        ((inAngularVelocityTimesDeltaTime ? void() : MRBINDC_THROW("Parameter `inAngularVelocityTimesDeltaTime` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inAngularVelocityTimesDeltaTime))
+    );
+}
+
+void JPH_Body_SubRotationStep(JPH_Body *_this, const JPH_Vec3 *inAngularVelocityTimesDeltaTime)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).SubRotationStep(
+        ((inAngularVelocityTimesDeltaTime ? void() : MRBINDC_THROW("Parameter `inAngularVelocityTimesDeltaTime` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inAngularVelocityTimesDeltaTime))
     );
 }
 
@@ -378,6 +607,24 @@ void JPH_Body_ValidateContactCacheInternal(JPH_Body *_this)
 void JPH_Body_CalculateWorldSpaceBoundsInternal(JPH_Body *_this)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).CalculateWorldSpaceBoundsInternal();
+}
+
+void JPH_Body_SetPositionAndRotationInternal(JPH_Body *_this, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, const bool *inResetSleepTimer)
+{
+    using namespace JPH;
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).SetPositionAndRotationInternal(
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        (inResetSleepTimer ? *inResetSleepTimer : static_cast<bool>(true))
+    );
+}
+
+void JPH_Body_UpdateCenterOfMassInternal(JPH_Body *_this, const JPH_Vec3 *inPreviousCenterOfMass, bool inUpdateMassProperties)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).UpdateCenterOfMassInternal(
+        ((inPreviousCenterOfMass ? void() : MRBINDC_THROW("Parameter `inPreviousCenterOfMass` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPreviousCenterOfMass)),
+        inUpdateMassProperties
+    );
 }
 
 void JPH_Body_SetShapeInternal(JPH_Body *_this, const JPH_Shape *inShape, bool inUpdateMassProperties)

@@ -4,6 +4,7 @@
 
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Character/CharacterBase.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
@@ -17,6 +18,16 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_CharacterBaseSettings_Get_mUp(const JPH_CharacterBaseSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterBaseSettings *)(_this)).mUp);
+}
+
+JPH_Vec3 *JPH_CharacterBaseSettings_GetMutable_mUp(JPH_CharacterBaseSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterBaseSettings *)(_this)).mUp);
+}
 
 const float *JPH_CharacterBaseSettings_Get_mMaxSlopeAngle(const JPH_CharacterBaseSettings *_this)
 {
@@ -395,6 +406,25 @@ float JPH_CharacterBase_GetCosMaxSlopeAngle(const JPH_CharacterBase *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterBase *)(_this)).GetCosMaxSlopeAngle();
 }
 
+void JPH_CharacterBase_SetUp(JPH_CharacterBase *_this, const JPH_Vec3 *inUp)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterBase *)(_this)).SetUp(
+        ((inUp ? void() : MRBINDC_THROW("Parameter `inUp` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inUp))
+    );
+}
+
+JPH_Vec3 *JPH_CharacterBase_GetUp(const JPH_CharacterBase *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterBase *)(_this)).GetUp());
+}
+
+bool JPH_CharacterBase_IsSlopeTooSteep(const JPH_CharacterBase *_this, const JPH_Vec3 *inNormal)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterBase *)(_this)).IsSlopeTooSteep(
+        ((inNormal ? void() : MRBINDC_THROW("Parameter `inNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inNormal))
+    );
+}
+
 const JPH_Shape *JPH_CharacterBase_GetShape(const JPH_CharacterBase *_this)
 {
     return (const JPH_Shape *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterBase *)(_this)).GetShape());
@@ -415,6 +445,21 @@ JPH_CharacterBase_EGroundState JPH_CharacterBase_GetGroundState(const JPH_Charac
 bool JPH_CharacterBase_IsSupported(const JPH_CharacterBase *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterBase *)(_this)).IsSupported();
+}
+
+JPH_Vec3 *JPH_CharacterBase_GetGroundPosition(const JPH_CharacterBase *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterBase *)(_this)).GetGroundPosition());
+}
+
+JPH_Vec3 *JPH_CharacterBase_GetGroundNormal(const JPH_CharacterBase *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterBase *)(_this)).GetGroundNormal());
+}
+
+JPH_Vec3 *JPH_CharacterBase_GetGroundVelocity(const JPH_CharacterBase *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterBase *)(_this)).GetGroundVelocity());
 }
 
 const JPH_PhysicsMaterial *JPH_CharacterBase_GetGroundMaterial(const JPH_CharacterBase *_this)

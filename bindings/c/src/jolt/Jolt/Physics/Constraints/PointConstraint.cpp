@@ -4,6 +4,8 @@
 
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyID.h>
@@ -17,6 +19,26 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_PointConstraintSettings_Get_mPoint1(const JPH_PointConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PointConstraintSettings *)(_this)).mPoint1);
+}
+
+JPH_Vec3 *JPH_PointConstraintSettings_GetMutable_mPoint1(JPH_PointConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PointConstraintSettings *)(_this)).mPoint1);
+}
+
+const JPH_Vec3 *JPH_PointConstraintSettings_Get_mPoint2(const JPH_PointConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PointConstraintSettings *)(_this)).mPoint2);
+}
+
+JPH_Vec3 *JPH_PointConstraintSettings_GetMutable_mPoint2(JPH_PointConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PointConstraintSettings *)(_this)).mPoint2);
+}
 
 const bool *JPH_PointConstraintSettings_Get_mEnabled(const JPH_PointConstraintSettings *_this)
 {
@@ -592,6 +614,14 @@ void Jolt_delete_array_JPH_PointConstraint_void_ptr_void_ptr(void *inPointer, vo
     );
 }
 
+void JPH_PointConstraint_NotifyShapeChanged(JPH_PointConstraint *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inDeltaCOM)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PointConstraint *)(_this)).NotifyShapeChanged(
+        ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID)),
+        ((inDeltaCOM ? void() : MRBINDC_THROW("Parameter `inDeltaCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inDeltaCOM))
+    );
+}
+
 void JPH_PointConstraint_SetupVelocityConstraint(JPH_PointConstraint *_this, float inDeltaTime)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PointConstraint *)(_this)).SetupVelocityConstraint(
@@ -624,6 +654,31 @@ bool JPH_PointConstraint_SolvePositionConstraint(JPH_PointConstraint *_this, flo
         inDeltaTime,
         inBaumgarte
     );
+}
+
+JPH_Vec3 *JPH_PointConstraint_GetLocalSpacePoint1(const JPH_PointConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PointConstraint *)(_this)).GetLocalSpacePoint1());
+}
+
+JPH_Vec3 *JPH_PointConstraint_GetLocalSpacePoint2(const JPH_PointConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PointConstraint *)(_this)).GetLocalSpacePoint2());
+}
+
+JPH_Mat44 *JPH_PointConstraint_GetConstraintToBody1Matrix(const JPH_PointConstraint *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PointConstraint *)(_this)).GetConstraintToBody1Matrix());
+}
+
+JPH_Mat44 *JPH_PointConstraint_GetConstraintToBody2Matrix(const JPH_PointConstraint *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PointConstraint *)(_this)).GetConstraintToBody2Matrix());
+}
+
+JPH_Vec3 *JPH_PointConstraint_GetTotalLambdaPosition(const JPH_PointConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PointConstraint *)(_this)).GetTotalLambdaPosition());
 }
 
 bool JPH_PointConstraint_IsActive(const JPH_PointConstraint *_this)

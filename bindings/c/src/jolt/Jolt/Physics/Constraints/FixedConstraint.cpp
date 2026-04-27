@@ -4,6 +4,8 @@
 
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyID.h>
@@ -31,6 +33,66 @@ void JPH_FixedConstraintSettings_Set_mAutoDetectPoint(JPH_FixedConstraintSetting
 bool *JPH_FixedConstraintSettings_GetMutable_mAutoDetectPoint(JPH_FixedConstraintSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::FixedConstraintSettings *)(_this)).mAutoDetectPoint);
+}
+
+const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mPoint1(const JPH_FixedConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraintSettings *)(_this)).mPoint1);
+}
+
+JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mPoint1(JPH_FixedConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::FixedConstraintSettings *)(_this)).mPoint1);
+}
+
+const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mAxisX1(const JPH_FixedConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraintSettings *)(_this)).mAxisX1);
+}
+
+JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mAxisX1(JPH_FixedConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::FixedConstraintSettings *)(_this)).mAxisX1);
+}
+
+const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mAxisY1(const JPH_FixedConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraintSettings *)(_this)).mAxisY1);
+}
+
+JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mAxisY1(JPH_FixedConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::FixedConstraintSettings *)(_this)).mAxisY1);
+}
+
+const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mPoint2(const JPH_FixedConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraintSettings *)(_this)).mPoint2);
+}
+
+JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mPoint2(JPH_FixedConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::FixedConstraintSettings *)(_this)).mPoint2);
+}
+
+const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mAxisX2(const JPH_FixedConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraintSettings *)(_this)).mAxisX2);
+}
+
+JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mAxisX2(JPH_FixedConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::FixedConstraintSettings *)(_this)).mAxisX2);
+}
+
+const JPH_Vec3 *JPH_FixedConstraintSettings_Get_mAxisY2(const JPH_FixedConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraintSettings *)(_this)).mAxisY2);
+}
+
+JPH_Vec3 *JPH_FixedConstraintSettings_GetMutable_mAxisY2(JPH_FixedConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::FixedConstraintSettings *)(_this)).mAxisY2);
 }
 
 const bool *JPH_FixedConstraintSettings_Get_mEnabled(const JPH_FixedConstraintSettings *_this)
@@ -607,6 +669,14 @@ void Jolt_delete_array_JPH_FixedConstraint_void_ptr_void_ptr(void *inPointer, vo
     );
 }
 
+void JPH_FixedConstraint_NotifyShapeChanged(JPH_FixedConstraint *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inDeltaCOM)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::FixedConstraint *)(_this)).NotifyShapeChanged(
+        ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID)),
+        ((inDeltaCOM ? void() : MRBINDC_THROW("Parameter `inDeltaCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inDeltaCOM))
+    );
+}
+
 void JPH_FixedConstraint_SetupVelocityConstraint(JPH_FixedConstraint *_this, float inDeltaTime)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::FixedConstraint *)(_this)).SetupVelocityConstraint(
@@ -639,6 +709,26 @@ bool JPH_FixedConstraint_SolvePositionConstraint(JPH_FixedConstraint *_this, flo
         inDeltaTime,
         inBaumgarte
     );
+}
+
+JPH_Mat44 *JPH_FixedConstraint_GetConstraintToBody1Matrix(const JPH_FixedConstraint *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraint *)(_this)).GetConstraintToBody1Matrix());
+}
+
+JPH_Mat44 *JPH_FixedConstraint_GetConstraintToBody2Matrix(const JPH_FixedConstraint *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraint *)(_this)).GetConstraintToBody2Matrix());
+}
+
+JPH_Vec3 *JPH_FixedConstraint_GetTotalLambdaPosition(const JPH_FixedConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraint *)(_this)).GetTotalLambdaPosition());
+}
+
+JPH_Vec3 *JPH_FixedConstraint_GetTotalLambdaRotation(const JPH_FixedConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraint *)(_this)).GetTotalLambdaRotation());
 }
 
 bool JPH_FixedConstraint_IsActive(const JPH_FixedConstraint *_this)

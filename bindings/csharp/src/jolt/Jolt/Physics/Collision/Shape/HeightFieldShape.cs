@@ -102,6 +102,42 @@ public static partial class Jolt
                 return ret;
             }
 
+            /// The height field is a surface defined by: mOffset + mScale * (x, mHeightSamples[y * mSampleCount + x], y).
+            /// where x and y are integers in the range x and y e [0, mSampleCount - 1].
+            public unsafe Jolt.JPH.Const_Vec3 mOffset
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_Get_mOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_Get_mOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_HeightFieldShapeSettings_Get_mOffset(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_HeightFieldShapeSettings_Get_mOffset(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mScale
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_Get_mScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_Get_mScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_HeightFieldShapeSettings_Get_mScale(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_HeightFieldShapeSettings_Get_mScale(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             public unsafe uint mSampleCount
             {
                 get
@@ -577,6 +613,42 @@ public static partial class Jolt
                 HeightFieldShapeSettings ret = new(ptr, is_owning: false);
                 ret._KeepAliveEnclosingObject = parent;
                 return ret;
+            }
+
+            /// The height field is a surface defined by: mOffset + mScale * (x, mHeightSamples[y * mSampleCount + x], y).
+            /// where x and y are integers in the range x and y e [0, mSampleCount - 1].
+            public new unsafe Jolt.JPH.Vec3 mOffset
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_GetMutable_mOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_GetMutable_mOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_HeightFieldShapeSettings_GetMutable_mOffset(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_HeightFieldShapeSettings_GetMutable_mOffset(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mScale
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_GetMutable_mScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_GetMutable_mScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_HeightFieldShapeSettings_GetMutable_mScale(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_HeightFieldShapeSettings_GetMutable_mScale(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
             }
 
             public new unsafe ref uint mSampleCount
@@ -1173,6 +1245,59 @@ public static partial class Jolt
                 return __c_ret is not null ? new Jolt.JPH.Const_PhysicsMaterial(__c_ret, is_owning: false) : null;
             }
 
+            // See Shape::GetSurfaceNormal
+            /// Generated from method `JPH::HeightFieldShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_HeightFieldShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_HeightFieldShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            // See Shape::GetTrianglesStart
+            /// Generated from method `JPH::HeightFieldShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_HeightFieldShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_HeightFieldShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            // See Shape::GetTrianglesNext
+            /// Generated from method `JPH::HeightFieldShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_HeightFieldShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_HeightFieldShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
+            }
+
+            /// Get height field position at sampled location (inX, inY).
+            /// where inX and inY are integers in the range inX e [0, mSampleCount - 1] and inY e [0, mSampleCount - 1].
+            /// Generated from method `JPH::HeightFieldShape::GetPosition`.
+            public unsafe Jolt.JPH.Vec3 GetPosition(uint inX, uint inY)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_HeightFieldShape_GetPosition(_Underlying *_this, uint inX, uint inY);
+                return new(__JPH_HeightFieldShape_GetPosition(_UnderlyingPtr, inX, inY), is_owning: true);
+            }
+
             /// Check if height field at sampled location (inX, inY) has collision (has a hole or not)
             /// Generated from method `JPH::HeightFieldShape::IsNoCollision`.
             public unsafe bool IsNoCollision(uint inX, uint inY)
@@ -1184,6 +1309,20 @@ public static partial class Jolt
                 #endif
                 extern static byte __JPH_HeightFieldShape_IsNoCollision(_Underlying *_this, uint inX, uint inY);
                 return __JPH_HeightFieldShape_IsNoCollision(_UnderlyingPtr, inX, inY) != 0;
+            }
+
+            /// Projects inLocalPosition (a point in the space of the shape) along the Y axis onto the surface and returns it in outSurfacePosition.
+            /// When there is no surface position (because of a hole or because the point is outside the heightfield) the function will return false.
+            /// Generated from method `JPH::HeightFieldShape::ProjectOntoSurface`.
+            public unsafe bool ProjectOntoSurface(Jolt.JPH.Const_Vec3 inLocalPosition, Jolt.JPH.Vec3 outSurfacePosition, Jolt.JPH.SubShapeID outSubShapeID)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_ProjectOntoSurface", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_ProjectOntoSurface", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_HeightFieldShape_ProjectOntoSurface(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inLocalPosition, Jolt.JPH.Vec3._Underlying *outSurfacePosition, Jolt.JPH.SubShapeID._Underlying *outSubShapeID);
+                return __JPH_HeightFieldShape_ProjectOntoSurface(_UnderlyingPtr, inLocalPosition._UnderlyingPtr, outSurfacePosition._UnderlyingPtr, outSubShapeID._UnderlyingPtr) != 0;
             }
 
             /// Returns the coordinates of the triangle that a sub shape ID represents
@@ -1332,6 +1471,19 @@ public static partial class Jolt
                 return __JPH_HeightFieldShape_GetUserData(_UnderlyingPtr);
             }
 
+            /// All shapes are centered around their center of mass. This function returns the center of mass position that needs to be applied to transform the shape to where it was created.
+            /// Generated from method `JPH::HeightFieldShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_HeightFieldShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_HeightFieldShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Get the leaf shape for a particular sub shape ID.
             /// @param inSubShapeID The full sub shape ID that indicates the path to the leaf shape
             /// @param outRemainder What remains of the sub shape ID after removing the path to the leaf shape (could e.g. refer to a triangle within a MeshShape)
@@ -1360,6 +1512,47 @@ public static partial class Jolt
                 #endif
                 extern static ulong __JPH_HeightFieldShape_GetSubShapeUserData(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID);
                 return __JPH_HeightFieldShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
+            }
+
+            /// Test if inScale is a valid scale for this shape. Some shapes can only be scaled uniformly, compound shapes cannot handle shapes
+            /// being rotated and scaled (this would cause shearing), scale can never be zero. When the scale is invalid, the function will return false.
+            ///
+            /// Here's a list of supported scales:
+            /// * SphereShape: Scale must be uniform (signs of scale are ignored).
+            /// * BoxShape: Any scale supported (signs of scale are ignored).
+            /// * TriangleShape: Any scale supported when convex radius is zero, otherwise only uniform scale supported.
+            /// * CapsuleShape: Scale must be uniform (signs of scale are ignored).
+            /// * TaperedCapsuleShape: Scale must be uniform (sign of Y scale can be used to flip the capsule).
+            /// * CylinderShape: Scale must be uniform in XZ plane, Y can scale independently (signs of scale are ignored).
+            /// * RotatedTranslatedShape: Scale must not cause shear in the child shape.
+            /// * CompoundShape: Scale must not cause shear in any of the child shapes.
+            /// Generated from method `JPH::HeightFieldShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_HeightFieldShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_HeightFieldShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            /// This function will make sure that if you wrap this shape in a ScaledShape that the scale is valid.
+            /// Note that this involves discarding components of the scale that are invalid, so the resulting scaled shape may be different than the requested scale.
+            /// Compare the return value of this function with the scale you passed in to detect major inconsistencies and possibly warn the user.
+            /// @param inScale Local space scale for this shape.
+            /// @return Scale that can be used to wrap this shape in a ScaledShape. IsValidScale will return true for this scale.
+            /// Generated from method `JPH::HeightFieldShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_HeightFieldShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_HeightFieldShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.

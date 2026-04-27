@@ -4,6 +4,8 @@
 
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyID.h>
@@ -421,6 +423,16 @@ JPH_Body *JPH_TwoBodyConstraint_GetBody2(const JPH_TwoBodyConstraint *_this)
     return (JPH_Body *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TwoBodyConstraint *)(_this)).GetBody2());
 }
 
+JPH_Mat44 *JPH_TwoBodyConstraint_GetConstraintToBody1Matrix(const JPH_TwoBodyConstraint *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TwoBodyConstraint *)(_this)).GetConstraintToBody1Matrix());
+}
+
+JPH_Mat44 *JPH_TwoBodyConstraint_GetConstraintToBody2Matrix(const JPH_TwoBodyConstraint *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TwoBodyConstraint *)(_this)).GetConstraintToBody2Matrix());
+}
+
 unsigned int JPH_TwoBodyConstraint_GetConstraintPriority(const JPH_TwoBodyConstraint *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TwoBodyConstraint *)(_this)).GetConstraintPriority();
@@ -478,6 +490,14 @@ void JPH_TwoBodyConstraint_SetUserData(JPH_TwoBodyConstraint *_this, uint64_t in
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::TwoBodyConstraint *)(_this)).SetUserData(
         inUserData
+    );
+}
+
+void JPH_TwoBodyConstraint_NotifyShapeChanged(JPH_TwoBodyConstraint *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inDeltaCOM)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::TwoBodyConstraint *)(_this)).NotifyShapeChanged(
+        ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID)),
+        ((inDeltaCOM ? void() : MRBINDC_THROW("Parameter `inDeltaCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inDeltaCOM))
     );
 }
 

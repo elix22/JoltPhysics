@@ -6,6 +6,8 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/TempAllocator.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyActivationListener.h>
 #include <Jolt/Physics/Body/BodyID.h>
@@ -291,6 +293,18 @@ void JPH_PhysicsSystem_RemoveConstraints(JPH_PhysicsSystem *_this, JPH_Constrain
 void JPH_PhysicsSystem_OptimizeBroadPhase(JPH_PhysicsSystem *_this)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).OptimizeBroadPhase();
+}
+
+void JPH_PhysicsSystem_SetGravity(JPH_PhysicsSystem *_this, const JPH_Vec3 *inGravity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).SetGravity(
+        ((inGravity ? void() : MRBINDC_THROW("Parameter `inGravity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inGravity))
+    );
+}
+
+JPH_Vec3 *JPH_PhysicsSystem_GetGravity(const JPH_PhysicsSystem *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSystem *)(_this)).GetGravity());
 }
 
 const JPH_ObjectVsBroadPhaseLayerFilter *JPH_PhysicsSystem_GetObjectVsBroadPhaseLayerFilter(const JPH_PhysicsSystem *_this)

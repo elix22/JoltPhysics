@@ -893,6 +893,32 @@ public static partial class Jolt
                 return __c_ret is not null ? new Jolt.JPH.Body(__c_ret, is_owning: false) : null;
             }
 
+            /// Calculates the transform that transforms from constraint space to body 1 space. The first column of the matrix is the primary constraint axis (e.g. the hinge axis / slider direction), second column the secondary etc.
+            /// Generated from method `JPH::TwoBodyConstraint::GetConstraintToBody1Matrix`.
+            public unsafe Jolt.JPH.Mat44 GetConstraintToBody1Matrix()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TwoBodyConstraint_GetConstraintToBody1Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TwoBodyConstraint_GetConstraintToBody1Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_TwoBodyConstraint_GetConstraintToBody1Matrix(_Underlying *_this);
+                return new(__JPH_TwoBodyConstraint_GetConstraintToBody1Matrix(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Calculates the transform that transforms from constraint space to body 2 space. The first column of the matrix is the primary constraint axis (e.g. the hinge axis / slider direction), second column the secondary etc.
+            /// Generated from method `JPH::TwoBodyConstraint::GetConstraintToBody2Matrix`.
+            public unsafe Jolt.JPH.Mat44 GetConstraintToBody2Matrix()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TwoBodyConstraint_GetConstraintToBody2Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TwoBodyConstraint_GetConstraintToBody2Matrix", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_TwoBodyConstraint_GetConstraintToBody2Matrix(_Underlying *_this);
+                return new(__JPH_TwoBodyConstraint_GetConstraintToBody2Matrix(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Priority of the constraint when solving. Higher numbers have are more likely to be solved correctly.
             /// Note that if you want a deterministic simulation and you cannot guarantee the order in which constraints are added/removed, you can make the priority for all constraints unique to get a deterministic ordering.
             /// Generated from method `JPH::TwoBodyConstraint::GetConstraintPriority`.
@@ -1161,6 +1187,25 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_TwoBodyConstraint_SetUserData(_Underlying *_this, ulong inUserData);
                 __JPH_TwoBodyConstraint_SetUserData(_UnderlyingPtr, inUserData);
+            }
+
+            /// Notify the constraint that the shape of a body has changed and that its center of mass has moved by inDeltaCOM.
+            /// Bodies don't know which constraints are connected to them so the user is responsible for notifying the relevant constraints when a body changes.
+            /// @param inBodyID ID of the body that has changed
+            /// @param inDeltaCOM The delta of the center of mass of the body (shape->GetCenterOfMass() - shape_before_change->GetCenterOfMass())
+            /// Generated from method `JPH::TwoBodyConstraint::NotifyShapeChanged`.
+            public unsafe void NotifyShapeChanged(in Jolt.JPH.BodyID inBodyID, Jolt.JPH.Const_Vec3 inDeltaCOM)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TwoBodyConstraint_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TwoBodyConstraint_NotifyShapeChanged", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_TwoBodyConstraint_NotifyShapeChanged(_Underlying *_this, Jolt.JPH.BodyID *inBodyID, Jolt.JPH.Vec3._Underlying *inDeltaCOM);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID = &inBodyID)
+                {
+                    __JPH_TwoBodyConstraint_NotifyShapeChanged(_UnderlyingPtr, __ptr_inBodyID, inDeltaCOM._UnderlyingPtr);
+                }
             }
 
             /// Notify the system that the configuration of the bodies and/or constraint has changed enough so that the warm start impulses should not be applied the next frame.

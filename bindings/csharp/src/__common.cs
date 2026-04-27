@@ -187,6 +187,12 @@ public static partial class Jolt
     }
 
 
+    public struct ArrayFloat2
+    {
+        public unsafe fixed float _elem[2];
+        public unsafe ref float this[nint i] => ref _elem[i];
+    }
+
     public struct ArrayUnsignedChar4
     {
         public unsafe fixed byte _elem[4];
@@ -243,6 +249,28 @@ public static partial class Jolt
                     #endif
                     extern static Jolt.JPH.SoftBodySharedSettings.SkinWeight._Underlying *__JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr(Jolt.JPH.SoftBodySharedSettings.SkinWeight._Underlying *ptr, nint i);
                     return new(__JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr(Ptr, i), is_owning: false);
+                }
+            }
+        }
+
+        public unsafe struct ArrayVector2_2
+        {
+            internal Jolt.JPH.Vector_2._Underlying *Ptr;
+
+            internal ArrayVector2_2(Jolt.JPH.Vector_2._Underlying *new_ptr) {Ptr = new_ptr;}
+
+            public Jolt.JPH.Vector_2 this[nint i]
+            {
+                get
+                {
+                    System.Diagnostics.Trace.Assert(i >= 0 && i < 2);
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vector_2_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vector_2_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vector_2._Underlying *__JPH_Vector_2_OffsetPtr(Jolt.JPH.Vector_2._Underlying *ptr, nint i);
+                    return new(__JPH_Vector_2_OffsetPtr(Ptr, i), is_owning: false);
                 }
             }
         }

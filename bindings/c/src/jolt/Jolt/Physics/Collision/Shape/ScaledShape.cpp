@@ -5,6 +5,11 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/DMat44.h>
+#include <Jolt/Math/Float3.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/DecoratedShape.h>
@@ -18,6 +23,16 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_ScaledShapeSettings_Get_mScale(const JPH_ScaledShapeSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShapeSettings *)(_this)).mScale);
+}
+
+JPH_Vec3 *JPH_ScaledShapeSettings_GetMutable_mScale(JPH_ScaledShapeSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ScaledShapeSettings *)(_this)).mScale);
+}
 
 const uint64_t *JPH_ScaledShapeSettings_Get_mUserData(const JPH_ScaledShapeSettings *_this)
 {
@@ -171,6 +186,22 @@ JPH_ScaledShapeSettings *JPH_ScaledShapeSettings_ConstructFromAnother(Jolt_PassB
     MRBINDC_CLASSARG_GUARD(_other, JPH::ScaledShapeSettings);
     return (JPH_ScaledShapeSettings *)new JPH::ScaledShapeSettings(JPH::ScaledShapeSettings(
         (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::ScaledShapeSettings) MRBINDC_CLASSARG_COPY(_other, (JPH::ScaledShapeSettings), JPH::ScaledShapeSettings) MRBINDC_CLASSARG_MOVE(_other, (JPH::ScaledShapeSettings), JPH::ScaledShapeSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::ScaledShapeSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::ScaledShapeSettings) MRBINDC_CLASSARG_END(_other, JPH::ScaledShapeSettings))
+    ));
+}
+
+JPH_ScaledShapeSettings *JPH_ScaledShapeSettings_Construct_const_JPH_ShapeSettings_ptr(const JPH_ShapeSettings *inShape, const JPH_Vec3 *inScale)
+{
+    return (JPH_ScaledShapeSettings *)new JPH::ScaledShapeSettings(JPH::ScaledShapeSettings(
+        ((const JPH::ShapeSettings *)inShape),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
+JPH_ScaledShapeSettings *JPH_ScaledShapeSettings_Construct_const_JPH_Shape_ptr(const JPH_Shape *inShape, const JPH_Vec3 *inScale)
+{
+    return (JPH_ScaledShapeSettings *)new JPH::ScaledShapeSettings(JPH::ScaledShapeSettings(
+        ((const JPH::Shape *)inShape),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
     ));
 }
 
@@ -435,6 +466,14 @@ JPH_ScaledShape *JPH_ScaledShape_MutableStaticDowncastFrom_JPH_DecoratedShape(JP
     ));
 }
 
+JPH_ScaledShape *JPH_ScaledShape_Construct_const_JPH_Shape_ptr(const JPH_Shape *inShape, const JPH_Vec3 *inScale)
+{
+    return (JPH_ScaledShape *)new JPH::ScaledShape(JPH::ScaledShape(
+        ((const JPH::Shape *)inShape),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
 void JPH_ScaledShape_Destroy(const JPH_ScaledShape *_this)
 {
     delete ((const JPH::ScaledShape *)_this);
@@ -443,6 +482,14 @@ void JPH_ScaledShape_Destroy(const JPH_ScaledShape *_this)
 void JPH_ScaledShape_DestroyArray(const JPH_ScaledShape *_this)
 {
     delete[] ((const JPH::ScaledShape *)_this);
+}
+
+JPH_AABox *JPH_ScaledShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_ScaledShape *_this, const JPH_DMat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).GetWorldSpaceBounds(
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::DMat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 void *Jolt_new_JPH_ScaledShape_size_t(unsigned long inCount)
@@ -521,14 +568,61 @@ void Jolt_delete_array_JPH_ScaledShape_void_ptr_void_ptr(void *inPointer, void *
     );
 }
 
+JPH_Vec3 *JPH_ScaledShape_GetScale(const JPH_ScaledShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).GetScale());
+}
+
+JPH_Vec3 *JPH_ScaledShape_GetCenterOfMass(const JPH_ScaledShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).GetCenterOfMass());
+}
+
 JPH_AABox *JPH_ScaledShape_GetLocalBounds(const JPH_ScaledShape *_this)
 {
     return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).GetLocalBounds());
 }
 
+JPH_AABox *JPH_ScaledShape_GetWorldSpaceBounds_JPH_Mat44(const JPH_ScaledShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).GetWorldSpaceBounds(
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
 float JPH_ScaledShape_GetInnerRadius(const JPH_ScaledShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).GetInnerRadius();
+}
+
+JPH_Vec3 *JPH_ScaledShape_GetSurfaceNormal(const JPH_ScaledShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).GetSurfaceNormal(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inLocalSurfacePosition ? void() : MRBINDC_THROW("Parameter `inLocalSurfacePosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLocalSurfacePosition))
+    ));
+}
+
+void JPH_ScaledShape_GetTrianglesStart(const JPH_ScaledShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).GetTrianglesStart(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        ((inBox ? void() : MRBINDC_THROW("Parameter `inBox` can not be null.", void)), *(const JPH::AABox *)(inBox)),
+        ((inPositionCOM ? void() : MRBINDC_THROW("Parameter `inPositionCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPositionCOM)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+int JPH_ScaledShape_GetTrianglesNext(const JPH_ScaledShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).GetTrianglesNext(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        inMaxTrianglesRequested,
+        ((JPH::Float3 *)outTriangleVertices),
+        ((const JPH::PhysicsMaterial **)outMaterials)
+    );
 }
 
 JPH_Shape_Stats *JPH_ScaledShape_GetStats(const JPH_ScaledShape *_this)
@@ -539,6 +633,20 @@ JPH_Shape_Stats *JPH_ScaledShape_GetStats(const JPH_ScaledShape *_this)
 float JPH_ScaledShape_GetVolume(const JPH_ScaledShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).GetVolume();
+}
+
+bool JPH_ScaledShape_IsValidScale(const JPH_ScaledShape *_this, const JPH_Vec3 *inScale)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).IsValidScale(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+JPH_Vec3 *JPH_ScaledShape_MakeScaleValid(const JPH_ScaledShape *_this, const JPH_Vec3 *inScale)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ScaledShape *)(_this)).MakeScaleValid(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 void JPH_ScaledShape_sRegister(void)

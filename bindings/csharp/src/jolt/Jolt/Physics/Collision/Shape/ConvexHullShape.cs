@@ -237,6 +237,22 @@ public static partial class Jolt
             /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
             public Const_ConvexHullShapeSettings(ConvexHullShapeSettings _other) : this((Const_ConvexHullShapeSettings)_other) {}
 
+            /// Create a convex hull from inPoints and maximum convex radius inMaxConvexRadius, the radius is automatically lowered if the hull requires it.
+            /// (internally this will be subtracted so the total size will not grow with the convex radius).
+            /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
+            /// Parameter `inMaxConvexRadius` defaults to `cDefaultConvexRadius`.
+            public unsafe Const_ConvexHullShapeSettings(Jolt.JPH.Const_Vec3? inPoints, int inNumPoints, float? inMaxConvexRadius = null, Jolt.JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ConvexHullShapeSettings._Underlying *__JPH_ConvexHullShapeSettings_Construct_4(Jolt.JPH.Const_Vec3._Underlying *inPoints, int inNumPoints, float *inMaxConvexRadius, Jolt.JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+                float __deref_inMaxConvexRadius = inMaxConvexRadius.GetValueOrDefault();
+                _UnderlyingPtr = __JPH_ConvexHullShapeSettings_Construct_4(inPoints is not null ? inPoints._UnderlyingPtr : null, inNumPoints, inMaxConvexRadius.HasValue ? &__deref_inMaxConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            }
+
             /// Generated from method `JPH::ConvexHullShapeSettings::operator new`.
             /// Returns a mutable pointer.
             public static unsafe void *New(ulong inCount)
@@ -652,6 +668,22 @@ public static partial class Jolt
             /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
             public ConvexHullShapeSettings(ConvexHullShapeSettings _other) : this((Const_ConvexHullShapeSettings)_other) {}
 
+            /// Create a convex hull from inPoints and maximum convex radius inMaxConvexRadius, the radius is automatically lowered if the hull requires it.
+            /// (internally this will be subtracted so the total size will not grow with the convex radius).
+            /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
+            /// Parameter `inMaxConvexRadius` defaults to `cDefaultConvexRadius`.
+            public unsafe ConvexHullShapeSettings(Jolt.JPH.Const_Vec3? inPoints, int inNumPoints, float? inMaxConvexRadius = null, Jolt.JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ConvexHullShapeSettings._Underlying *__JPH_ConvexHullShapeSettings_Construct_4(Jolt.JPH.Const_Vec3._Underlying *inPoints, int inNumPoints, float *inMaxConvexRadius, Jolt.JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+                float __deref_inMaxConvexRadius = inMaxConvexRadius.GetValueOrDefault();
+                _UnderlyingPtr = __JPH_ConvexHullShapeSettings_Construct_4(inPoints is not null ? inPoints._UnderlyingPtr : null, inNumPoints, inMaxConvexRadius.HasValue ? &__deref_inMaxConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            }
+
             /// Generated from method `JPH::ConvexHullShapeSettings::operator=`.
             public unsafe Jolt.JPH.ConvexHullShapeSettings Assign(Jolt.JPH._ByValue_ConvexHullShapeSettings _other)
             {
@@ -1035,6 +1067,19 @@ public static partial class Jolt
                 __Jolt_delete_array_JPH_ConvexHullShape_void_ptr_void_ptr(inPointer, inPlace);
             }
 
+            // See Shape::GetCenterOfMass
+            /// Generated from method `JPH::ConvexHullShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_ConvexHullShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_ConvexHullShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetLocalBounds
             /// Generated from method `JPH::ConvexHullShape::GetLocalBounds`.
             public unsafe Jolt.JPH.AABox GetLocalBounds()
@@ -1059,6 +1104,59 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_ConvexHullShape_GetInnerRadius(_Underlying *_this);
                 return __JPH_ConvexHullShape_GetInnerRadius(_UnderlyingPtr);
+            }
+
+            // See Shape::GetSurfaceNormal
+            /// Generated from method `JPH::ConvexHullShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_ConvexHullShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_ConvexHullShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            // See ConvexShape::GetSupportFunction
+            /// Generated from method `JPH::ConvexHullShape::GetSupportFunction`.
+            public unsafe Jolt.JPH.ConvexShape.Const_Support? GetSupportFunction(Jolt.JPH.ConvexShape.ESupportMode inMode, Jolt.JPH.ConvexShape.SupportBuffer inBuffer, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShape_GetSupportFunction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShape_GetSupportFunction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ConvexShape.Const_Support._Underlying *__JPH_ConvexHullShape_GetSupportFunction(_Underlying *_this, Jolt.JPH.ConvexShape.ESupportMode inMode, Jolt.JPH.ConvexShape.SupportBuffer._Underlying *inBuffer, Jolt.JPH.Vec3._Underlying *inScale);
+                var __c_ret = __JPH_ConvexHullShape_GetSupportFunction(_UnderlyingPtr, inMode, inBuffer._UnderlyingPtr, inScale._UnderlyingPtr);
+                return __c_ret is not null ? new Jolt.JPH.ConvexShape.Const_Support(__c_ret, is_owning: false) : null;
+            }
+
+            // See Shape::GetTrianglesStart
+            /// Generated from method `JPH::ConvexHullShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_ConvexHullShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_ConvexHullShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            // See Shape::GetTrianglesNext
+            /// Generated from method `JPH::ConvexHullShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_ConvexHullShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_ConvexHullShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
             }
 
             // See Shape::GetStats
@@ -1111,6 +1209,19 @@ public static partial class Jolt
                 #endif
                 extern static uint __JPH_ConvexHullShape_GetNumPoints(_Underlying *_this);
                 return __JPH_ConvexHullShape_GetNumPoints(_UnderlyingPtr);
+            }
+
+            /// Get a vertex of this convex hull relative to the center of mass
+            /// Generated from method `JPH::ConvexHullShape::GetPoint`.
+            public unsafe Jolt.JPH.Vec3 GetPoint(uint inIndex)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShape_GetPoint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShape_GetPoint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_ConvexHullShape_GetPoint(_Underlying *_this, uint inIndex);
+                return new(__JPH_ConvexHullShape_GetPoint(_UnderlyingPtr, inIndex), is_owning: true);
             }
 
             /// Get the number of faces in this convex hull
@@ -1252,6 +1363,47 @@ public static partial class Jolt
                 #endif
                 extern static ulong __JPH_ConvexHullShape_GetSubShapeUserData(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID);
                 return __JPH_ConvexHullShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
+            }
+
+            /// Test if inScale is a valid scale for this shape. Some shapes can only be scaled uniformly, compound shapes cannot handle shapes
+            /// being rotated and scaled (this would cause shearing), scale can never be zero. When the scale is invalid, the function will return false.
+            ///
+            /// Here's a list of supported scales:
+            /// * SphereShape: Scale must be uniform (signs of scale are ignored).
+            /// * BoxShape: Any scale supported (signs of scale are ignored).
+            /// * TriangleShape: Any scale supported when convex radius is zero, otherwise only uniform scale supported.
+            /// * CapsuleShape: Scale must be uniform (signs of scale are ignored).
+            /// * TaperedCapsuleShape: Scale must be uniform (sign of Y scale can be used to flip the capsule).
+            /// * CylinderShape: Scale must be uniform in XZ plane, Y can scale independently (signs of scale are ignored).
+            /// * RotatedTranslatedShape: Scale must not cause shear in the child shape.
+            /// * CompoundShape: Scale must not cause shear in any of the child shapes.
+            /// Generated from method `JPH::ConvexHullShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_ConvexHullShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_ConvexHullShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            /// This function will make sure that if you wrap this shape in a ScaledShape that the scale is valid.
+            /// Note that this involves discarding components of the scale that are invalid, so the resulting scaled shape may be different than the requested scale.
+            /// Compare the return value of this function with the scale you passed in to detect major inconsistencies and possibly warn the user.
+            /// @param inScale Local space scale for this shape.
+            /// @return Scale that can be used to wrap this shape in a ScaledShape. IsValidScale will return true for this scale.
+            /// Generated from method `JPH::ConvexHullShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_ConvexHullShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_ConvexHullShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.

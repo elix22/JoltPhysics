@@ -129,6 +129,24 @@ public static partial class Jolt
                 return ret;
             }
 
+            ///< Half the size of the box (including convex radius)
+            public unsafe Jolt.JPH.Const_Vec3 mHalfExtent
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShapeSettings_Get_mHalfExtent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShapeSettings_Get_mHalfExtent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_BoxShapeSettings_Get_mHalfExtent(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_BoxShapeSettings_Get_mHalfExtent(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             public unsafe float mConvexRadius
             {
                 get
@@ -205,6 +223,22 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::BoxShapeSettings::BoxShapeSettings`.
             public Const_BoxShapeSettings(BoxShapeSettings _other) : this((Const_BoxShapeSettings)_other) {}
+
+            /// Create a box with half edge length inHalfExtent and convex radius inConvexRadius.
+            /// (internally the convex radius will be subtracted from the half extent so the total box will not grow with the convex radius).
+            /// Generated from constructor `JPH::BoxShapeSettings::BoxShapeSettings`.
+            /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+            public unsafe Const_BoxShapeSettings(Jolt.JPH.Const_Vec3 inHalfExtent, float? inConvexRadius = null, Jolt.JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.BoxShapeSettings._Underlying *__JPH_BoxShapeSettings_Construct(Jolt.JPH.Vec3._Underlying *inHalfExtent, float *inConvexRadius, Jolt.JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+                float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
+                _UnderlyingPtr = __JPH_BoxShapeSettings_Construct(inHalfExtent._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            }
 
             /// Generated from method `JPH::BoxShapeSettings::operator new`.
             /// Returns a mutable pointer.
@@ -513,6 +547,24 @@ public static partial class Jolt
                 return ret;
             }
 
+            ///< Half the size of the box (including convex radius)
+            public new unsafe Jolt.JPH.Vec3 mHalfExtent
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShapeSettings_GetMutable_mHalfExtent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShapeSettings_GetMutable_mHalfExtent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_BoxShapeSettings_GetMutable_mHalfExtent(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_BoxShapeSettings_GetMutable_mHalfExtent(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             public new unsafe ref float mConvexRadius
             {
                 get
@@ -589,6 +641,22 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::BoxShapeSettings::BoxShapeSettings`.
             public BoxShapeSettings(BoxShapeSettings _other) : this((Const_BoxShapeSettings)_other) {}
+
+            /// Create a box with half edge length inHalfExtent and convex radius inConvexRadius.
+            /// (internally the convex radius will be subtracted from the half extent so the total box will not grow with the convex radius).
+            /// Generated from constructor `JPH::BoxShapeSettings::BoxShapeSettings`.
+            /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+            public unsafe BoxShapeSettings(Jolt.JPH.Const_Vec3 inHalfExtent, float? inConvexRadius = null, Jolt.JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.BoxShapeSettings._Underlying *__JPH_BoxShapeSettings_Construct(Jolt.JPH.Vec3._Underlying *inHalfExtent, float *inConvexRadius, Jolt.JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+                float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
+                _UnderlyingPtr = __JPH_BoxShapeSettings_Construct(inHalfExtent._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            }
 
             /// Generated from method `JPH::BoxShapeSettings::operator=`.
             public unsafe Jolt.JPH.BoxShapeSettings Assign(Jolt.JPH._ByValue_BoxShapeSettings _other)
@@ -823,6 +891,22 @@ public static partial class Jolt
                 _UnderlyingPtr = __JPH_BoxShape_DefaultConstruct();
             }
 
+            /// Create a box with half edge length inHalfExtent and convex radius inConvexRadius.
+            /// (internally the convex radius will be subtracted from the half extent so the total box will not grow with the convex radius).
+            /// Generated from constructor `JPH::BoxShape::BoxShape`.
+            /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+            public unsafe Const_BoxShape(Jolt.JPH.Const_Vec3 inHalfExtent, float? inConvexRadius = null, Jolt.JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.BoxShape._Underlying *__JPH_BoxShape_Construct_3(Jolt.JPH.Vec3._Underlying *inHalfExtent, float *inConvexRadius, Jolt.JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+                float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
+                _UnderlyingPtr = __JPH_BoxShape_Construct_3(inHalfExtent._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            }
+
             /// Generated from method `JPH::BoxShape::operator new`.
             /// Returns a mutable pointer.
             public static unsafe void *New(ulong inCount)
@@ -957,6 +1041,19 @@ public static partial class Jolt
                 __Jolt_delete_array_JPH_BoxShape_void_ptr_void_ptr(inPointer, inPlace);
             }
 
+            /// Get half extent of box
+            /// Generated from method `JPH::BoxShape::GetHalfExtent`.
+            public unsafe Jolt.JPH.Vec3 GetHalfExtent()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShape_GetHalfExtent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShape_GetHalfExtent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_BoxShape_GetHalfExtent(_Underlying *_this);
+                return new(__JPH_BoxShape_GetHalfExtent(_UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetLocalBounds
             /// Generated from method `JPH::BoxShape::GetLocalBounds`.
             public unsafe Jolt.JPH.AABox GetLocalBounds()
@@ -981,6 +1078,59 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_BoxShape_GetInnerRadius(_Underlying *_this);
                 return __JPH_BoxShape_GetInnerRadius(_UnderlyingPtr);
+            }
+
+            // See Shape::GetSurfaceNormal
+            /// Generated from method `JPH::BoxShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_BoxShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_BoxShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            // See ConvexShape::GetSupportFunction
+            /// Generated from method `JPH::BoxShape::GetSupportFunction`.
+            public unsafe Jolt.JPH.ConvexShape.Const_Support? GetSupportFunction(Jolt.JPH.ConvexShape.ESupportMode inMode, Jolt.JPH.ConvexShape.SupportBuffer inBuffer, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShape_GetSupportFunction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShape_GetSupportFunction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ConvexShape.Const_Support._Underlying *__JPH_BoxShape_GetSupportFunction(_Underlying *_this, Jolt.JPH.ConvexShape.ESupportMode inMode, Jolt.JPH.ConvexShape.SupportBuffer._Underlying *inBuffer, Jolt.JPH.Vec3._Underlying *inScale);
+                var __c_ret = __JPH_BoxShape_GetSupportFunction(_UnderlyingPtr, inMode, inBuffer._UnderlyingPtr, inScale._UnderlyingPtr);
+                return __c_ret is not null ? new Jolt.JPH.ConvexShape.Const_Support(__c_ret, is_owning: false) : null;
+            }
+
+            // See Shape::GetTrianglesStart
+            /// Generated from method `JPH::BoxShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_BoxShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_BoxShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            // See Shape::GetTrianglesNext
+            /// Generated from method `JPH::BoxShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_BoxShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_BoxShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
             }
 
             // See Shape::GetStats
@@ -1087,6 +1237,19 @@ public static partial class Jolt
                 return __JPH_BoxShape_MustBeStatic(_UnderlyingPtr) != 0;
             }
 
+            /// All shapes are centered around their center of mass. This function returns the center of mass position that needs to be applied to transform the shape to where it was created.
+            /// Generated from method `JPH::BoxShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_BoxShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_BoxShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Get the leaf shape for a particular sub shape ID.
             /// @param inSubShapeID The full sub shape ID that indicates the path to the leaf shape
             /// @param outRemainder What remains of the sub shape ID after removing the path to the leaf shape (could e.g. refer to a triangle within a MeshShape)
@@ -1115,6 +1278,47 @@ public static partial class Jolt
                 #endif
                 extern static ulong __JPH_BoxShape_GetSubShapeUserData(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID);
                 return __JPH_BoxShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
+            }
+
+            /// Test if inScale is a valid scale for this shape. Some shapes can only be scaled uniformly, compound shapes cannot handle shapes
+            /// being rotated and scaled (this would cause shearing), scale can never be zero. When the scale is invalid, the function will return false.
+            ///
+            /// Here's a list of supported scales:
+            /// * SphereShape: Scale must be uniform (signs of scale are ignored).
+            /// * BoxShape: Any scale supported (signs of scale are ignored).
+            /// * TriangleShape: Any scale supported when convex radius is zero, otherwise only uniform scale supported.
+            /// * CapsuleShape: Scale must be uniform (signs of scale are ignored).
+            /// * TaperedCapsuleShape: Scale must be uniform (sign of Y scale can be used to flip the capsule).
+            /// * CylinderShape: Scale must be uniform in XZ plane, Y can scale independently (signs of scale are ignored).
+            /// * RotatedTranslatedShape: Scale must not cause shear in the child shape.
+            /// * CompoundShape: Scale must not cause shear in any of the child shapes.
+            /// Generated from method `JPH::BoxShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_BoxShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_BoxShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            /// This function will make sure that if you wrap this shape in a ScaledShape that the scale is valid.
+            /// Note that this involves discarding components of the scale that are invalid, so the resulting scaled shape may be different than the requested scale.
+            /// Compare the return value of this function with the scale you passed in to detect major inconsistencies and possibly warn the user.
+            /// @param inScale Local space scale for this shape.
+            /// @return Scale that can be used to wrap this shape in a ScaledShape. IsValidScale will return true for this scale.
+            /// Generated from method `JPH::BoxShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_BoxShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_BoxShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
@@ -1288,6 +1492,22 @@ public static partial class Jolt
                 #endif
                 extern static Jolt.JPH.BoxShape._Underlying *__JPH_BoxShape_DefaultConstruct();
                 _UnderlyingPtr = __JPH_BoxShape_DefaultConstruct();
+            }
+
+            /// Create a box with half edge length inHalfExtent and convex radius inConvexRadius.
+            /// (internally the convex radius will be subtracted from the half extent so the total box will not grow with the convex radius).
+            /// Generated from constructor `JPH::BoxShape::BoxShape`.
+            /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+            public unsafe BoxShape(Jolt.JPH.Const_Vec3 inHalfExtent, float? inConvexRadius = null, Jolt.JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BoxShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BoxShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.BoxShape._Underlying *__JPH_BoxShape_Construct_3(Jolt.JPH.Vec3._Underlying *inHalfExtent, float *inConvexRadius, Jolt.JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+                float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
+                _UnderlyingPtr = __JPH_BoxShape_Construct_3(inHalfExtent._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
             }
 
             /// Material of the shape

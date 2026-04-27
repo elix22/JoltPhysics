@@ -3,6 +3,9 @@
 #include "jolt/Jolt/Physics/SoftBody/SoftBodySharedSettings.h"
 
 #include <Jolt/Core/Reference.h>
+#include <Jolt/Math/Float3.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
 #include <__mrbind_c_details.h>
 
@@ -417,6 +420,26 @@ JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_Optim
     ));
 }
 
+const JPH_Float3 *JPH_SoftBodySharedSettings_Vertex_Get_mPosition(const JPH_SoftBodySharedSettings_Vertex *_this)
+{
+    return (const JPH_Float3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::Vertex *)(_this)).mPosition);
+}
+
+JPH_Float3 *JPH_SoftBodySharedSettings_Vertex_GetMutable_mPosition(JPH_SoftBodySharedSettings_Vertex *_this)
+{
+    return (JPH_Float3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::Vertex *)(_this)).mPosition);
+}
+
+const JPH_Float3 *JPH_SoftBodySharedSettings_Vertex_Get_mVelocity(const JPH_SoftBodySharedSettings_Vertex *_this)
+{
+    return (const JPH_Float3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::Vertex *)(_this)).mVelocity);
+}
+
+JPH_Float3 *JPH_SoftBodySharedSettings_Vertex_GetMutable_mVelocity(JPH_SoftBodySharedSettings_Vertex *_this)
+{
+    return (JPH_Float3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::Vertex *)(_this)).mVelocity);
+}
+
 const float *JPH_SoftBodySharedSettings_Vertex_Get_mInvMass(const JPH_SoftBodySharedSettings_Vertex *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::Vertex *)(_this)).mInvMass);
@@ -456,6 +479,16 @@ JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_ConstructFr
 {
     return (JPH_SoftBodySharedSettings_Vertex *)new JPH::SoftBodySharedSettings::Vertex(JPH::SoftBodySharedSettings::Vertex(
         ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JPH::SoftBodySharedSettings::Vertex(*(JPH::SoftBodySharedSettings::Vertex *)_other))
+    ));
+}
+
+JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_Construct(const JPH_Float3 *inPosition, const JPH_Float3 *inVelocity, const float *inInvMass)
+{
+    using namespace JPH;
+    return (JPH_SoftBodySharedSettings_Vertex *)new JPH::SoftBodySharedSettings::Vertex(JPH::SoftBodySharedSettings::Vertex(
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), *(const JPH::Float3 *)(inPosition)),
+        (inVelocity ? *(const JPH::Float3 *)(inVelocity) : static_cast<const JPH::Float3 &>(JPH::Float3(0, 0, 0))),
+        (inInvMass ? *inInvMass : static_cast<float>(1.F))
     ));
 }
 
@@ -1277,6 +1310,16 @@ unsigned int *JPH_SoftBodySharedSettings_InvBind_GetMutable_mJointIndex(JPH_Soft
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::InvBind *)(_this)).mJointIndex);
 }
 
+const JPH_Mat44 *JPH_SoftBodySharedSettings_InvBind_Get_mInvBind(const JPH_SoftBodySharedSettings_InvBind *_this)
+{
+    return (const JPH_Mat44 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::InvBind *)(_this)).mInvBind);
+}
+
+JPH_Mat44 *JPH_SoftBodySharedSettings_InvBind_GetMutable_mInvBind(JPH_SoftBodySharedSettings_InvBind *_this)
+{
+    return (JPH_Mat44 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::InvBind *)(_this)).mInvBind);
+}
+
 JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_DefaultConstruct(void)
 {
     return (JPH_SoftBodySharedSettings_InvBind *)new JPH::SoftBodySharedSettings::InvBind(JPH::SoftBodySharedSettings::InvBind());
@@ -1301,6 +1344,14 @@ JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_Construct
 {
     return (JPH_SoftBodySharedSettings_InvBind *)new JPH::SoftBodySharedSettings::InvBind(JPH::SoftBodySharedSettings::InvBind(
         ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JPH::SoftBodySharedSettings::InvBind(*(JPH::SoftBodySharedSettings::InvBind *)_other))
+    ));
+}
+
+JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_Construct(unsigned int inJointIndex, const JPH_Mat44 *inInvBind)
+{
+    return (JPH_SoftBodySharedSettings_InvBind *)new JPH::SoftBodySharedSettings::InvBind(JPH::SoftBodySharedSettings::InvBind(
+        inJointIndex,
+        ((inInvBind ? void() : MRBINDC_THROW("Parameter `inInvBind` can not be null.", void)), *(const JPH::Mat44 *)(inInvBind))
     ));
 }
 
@@ -2009,6 +2060,16 @@ float *JPH_SoftBodySharedSettings_RodStretchShear_GetMutable_mCompliance(JPH_Sof
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::RodStretchShear *)(_this)).mCompliance);
 }
 
+const JPH_Quat *JPH_SoftBodySharedSettings_RodStretchShear_Get_mBishop(const JPH_SoftBodySharedSettings_RodStretchShear *_this)
+{
+    return (const JPH_Quat *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::RodStretchShear *)(_this)).mBishop);
+}
+
+JPH_Quat *JPH_SoftBodySharedSettings_RodStretchShear_GetMutable_mBishop(JPH_SoftBodySharedSettings_RodStretchShear *_this)
+{
+    return (JPH_Quat *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::RodStretchShear *)(_this)).mBishop);
+}
+
 JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_RodStretchShear_DefaultConstruct(void)
 {
     return (JPH_SoftBodySharedSettings_RodStretchShear *)new JPH::SoftBodySharedSettings::RodStretchShear(JPH::SoftBodySharedSettings::RodStretchShear());
@@ -2172,6 +2233,16 @@ void JPH_SoftBodySharedSettings_RodBendTwist_Set_mCompliance(JPH_SoftBodySharedS
 float *JPH_SoftBodySharedSettings_RodBendTwist_GetMutable_mCompliance(JPH_SoftBodySharedSettings_RodBendTwist *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::RodBendTwist *)(_this)).mCompliance);
+}
+
+const JPH_Quat *JPH_SoftBodySharedSettings_RodBendTwist_Get_mOmega0(const JPH_SoftBodySharedSettings_RodBendTwist *_this)
+{
+    return (const JPH_Quat *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::RodBendTwist *)(_this)).mOmega0);
+}
+
+JPH_Quat *JPH_SoftBodySharedSettings_RodBendTwist_GetMutable_mOmega0(JPH_SoftBodySharedSettings_RodBendTwist *_this)
+{
+    return (JPH_Quat *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::RodBendTwist *)(_this)).mOmega0);
 }
 
 JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_RodBendTwist_DefaultConstruct(void)

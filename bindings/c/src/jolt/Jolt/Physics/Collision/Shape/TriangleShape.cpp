@@ -5,6 +5,11 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/DMat44.h>
+#include <Jolt/Math/Float3.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/ConvexShape.h>
@@ -18,6 +23,36 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_TriangleShapeSettings_Get_mV1(const JPH_TriangleShapeSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShapeSettings *)(_this)).mV1);
+}
+
+JPH_Vec3 *JPH_TriangleShapeSettings_GetMutable_mV1(JPH_TriangleShapeSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::TriangleShapeSettings *)(_this)).mV1);
+}
+
+const JPH_Vec3 *JPH_TriangleShapeSettings_Get_mV2(const JPH_TriangleShapeSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShapeSettings *)(_this)).mV2);
+}
+
+JPH_Vec3 *JPH_TriangleShapeSettings_GetMutable_mV2(JPH_TriangleShapeSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::TriangleShapeSettings *)(_this)).mV2);
+}
+
+const JPH_Vec3 *JPH_TriangleShapeSettings_Get_mV3(const JPH_TriangleShapeSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShapeSettings *)(_this)).mV3);
+}
+
+JPH_Vec3 *JPH_TriangleShapeSettings_GetMutable_mV3(JPH_TriangleShapeSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::TriangleShapeSettings *)(_this)).mV3);
+}
 
 const float *JPH_TriangleShapeSettings_Get_mConvexRadius(const JPH_TriangleShapeSettings *_this)
 {
@@ -201,6 +236,18 @@ JPH_TriangleShapeSettings *JPH_TriangleShapeSettings_ConstructFromAnother(Jolt_P
     MRBINDC_CLASSARG_GUARD(_other, JPH::TriangleShapeSettings);
     return (JPH_TriangleShapeSettings *)new JPH::TriangleShapeSettings(JPH::TriangleShapeSettings(
         (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::TriangleShapeSettings) MRBINDC_CLASSARG_COPY(_other, (JPH::TriangleShapeSettings), JPH::TriangleShapeSettings) MRBINDC_CLASSARG_MOVE(_other, (JPH::TriangleShapeSettings), JPH::TriangleShapeSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::TriangleShapeSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::TriangleShapeSettings) MRBINDC_CLASSARG_END(_other, JPH::TriangleShapeSettings))
+    ));
+}
+
+JPH_TriangleShapeSettings *JPH_TriangleShapeSettings_Construct(const JPH_Vec3 *inV1, const JPH_Vec3 *inV2, const JPH_Vec3 *inV3, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial)
+{
+    using namespace JPH;
+    return (JPH_TriangleShapeSettings *)new JPH::TriangleShapeSettings(JPH::TriangleShapeSettings(
+        ((inV1 ? void() : MRBINDC_THROW("Parameter `inV1` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV1)),
+        ((inV2 ? void() : MRBINDC_THROW("Parameter `inV2` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV2)),
+        ((inV3 ? void() : MRBINDC_THROW("Parameter `inV3` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV3)),
+        (inConvexRadius ? *inConvexRadius : static_cast<float>(0.F)),
+        ((const JPH::PhysicsMaterial *)inMaterial)
     ));
 }
 
@@ -472,6 +519,18 @@ JPH_TriangleShape *JPH_TriangleShape_MutableStaticDowncastFrom_JPH_ConvexShape(J
     ));
 }
 
+JPH_TriangleShape *JPH_TriangleShape_Construct_5(const JPH_Vec3 *inV1, const JPH_Vec3 *inV2, const JPH_Vec3 *inV3, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial)
+{
+    using namespace JPH;
+    return (JPH_TriangleShape *)new JPH::TriangleShape(JPH::TriangleShape(
+        ((inV1 ? void() : MRBINDC_THROW("Parameter `inV1` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV1)),
+        ((inV2 ? void() : MRBINDC_THROW("Parameter `inV2` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV2)),
+        ((inV3 ? void() : MRBINDC_THROW("Parameter `inV3` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV3)),
+        (inConvexRadius ? *inConvexRadius : static_cast<float>(0.F)),
+        ((const JPH::PhysicsMaterial *)inMaterial)
+    ));
+}
+
 void JPH_TriangleShape_Destroy(const JPH_TriangleShape *_this)
 {
     delete ((const JPH::TriangleShape *)_this);
@@ -480,6 +539,14 @@ void JPH_TriangleShape_Destroy(const JPH_TriangleShape *_this)
 void JPH_TriangleShape_DestroyArray(const JPH_TriangleShape *_this)
 {
     delete[] ((const JPH::TriangleShape *)_this);
+}
+
+JPH_AABox *JPH_TriangleShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_TriangleShape *_this, const JPH_DMat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetWorldSpaceBounds(
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::DMat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 void *Jolt_new_JPH_TriangleShape_size_t(unsigned long inCount)
@@ -558,6 +625,21 @@ void Jolt_delete_array_JPH_TriangleShape_void_ptr_void_ptr(void *inPointer, void
     );
 }
 
+JPH_Vec3 *JPH_TriangleShape_GetVertex1(const JPH_TriangleShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetVertex1());
+}
+
+JPH_Vec3 *JPH_TriangleShape_GetVertex2(const JPH_TriangleShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetVertex2());
+}
+
+JPH_Vec3 *JPH_TriangleShape_GetVertex3(const JPH_TriangleShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetVertex3());
+}
+
 float JPH_TriangleShape_GetConvexRadius(const JPH_TriangleShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetConvexRadius();
@@ -568,9 +650,55 @@ JPH_AABox *JPH_TriangleShape_GetLocalBounds(const JPH_TriangleShape *_this)
     return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetLocalBounds());
 }
 
+JPH_AABox *JPH_TriangleShape_GetWorldSpaceBounds_JPH_Mat44(const JPH_TriangleShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetWorldSpaceBounds(
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
 float JPH_TriangleShape_GetInnerRadius(const JPH_TriangleShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetInnerRadius();
+}
+
+JPH_Vec3 *JPH_TriangleShape_GetSurfaceNormal(const JPH_TriangleShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetSurfaceNormal(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inLocalSurfacePosition ? void() : MRBINDC_THROW("Parameter `inLocalSurfacePosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLocalSurfacePosition))
+    ));
+}
+
+const JPH_ConvexShape_Support *JPH_TriangleShape_GetSupportFunction(const JPH_TriangleShape *_this, JPH_ConvexShape_ESupportMode inMode, JPH_ConvexShape_SupportBuffer *inBuffer, const JPH_Vec3 *inScale)
+{
+    return (const JPH_ConvexShape_Support *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetSupportFunction(
+        ((JPH::ConvexShape::ESupportMode)inMode),
+        ((inBuffer ? void() : MRBINDC_THROW("Parameter `inBuffer` can not be null.", void)), *(JPH::ConvexShape::SupportBuffer *)(inBuffer)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
+void JPH_TriangleShape_GetTrianglesStart(const JPH_TriangleShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetTrianglesStart(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        ((inBox ? void() : MRBINDC_THROW("Parameter `inBox` can not be null.", void)), *(const JPH::AABox *)(inBox)),
+        ((inPositionCOM ? void() : MRBINDC_THROW("Parameter `inPositionCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPositionCOM)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+int JPH_TriangleShape_GetTrianglesNext(const JPH_TriangleShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetTrianglesNext(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        inMaxTrianglesRequested,
+        ((JPH::Float3 *)outTriangleVertices),
+        ((const JPH::PhysicsMaterial **)outMaterials)
+    );
 }
 
 JPH_Shape_Stats *JPH_TriangleShape_GetStats(const JPH_TriangleShape *_this)
@@ -581,6 +709,20 @@ JPH_Shape_Stats *JPH_TriangleShape_GetStats(const JPH_TriangleShape *_this)
 float JPH_TriangleShape_GetVolume(const JPH_TriangleShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetVolume();
+}
+
+bool JPH_TriangleShape_IsValidScale(const JPH_TriangleShape *_this, const JPH_Vec3 *inScale)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).IsValidScale(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+JPH_Vec3 *JPH_TriangleShape_MakeScaleValid(const JPH_TriangleShape *_this, const JPH_Vec3 *inScale)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).MakeScaleValid(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 void JPH_TriangleShape_sRegister(void)
@@ -627,6 +769,11 @@ void JPH_TriangleShape_SetUserData(JPH_TriangleShape *_this, uint64_t inUserData
 bool JPH_TriangleShape_MustBeStatic(const JPH_TriangleShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).MustBeStatic();
+}
+
+JPH_Vec3 *JPH_TriangleShape_GetCenterOfMass(const JPH_TriangleShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetCenterOfMass());
 }
 
 const JPH_Shape *JPH_TriangleShape_GetLeafShape(const JPH_TriangleShape *_this, const JPH_SubShapeID *inSubShapeID, JPH_SubShapeID *outRemainder)

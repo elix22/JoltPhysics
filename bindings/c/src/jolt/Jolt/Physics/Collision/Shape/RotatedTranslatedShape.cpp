@@ -5,6 +5,11 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/DMat44.h>
+#include <Jolt/Math/Float3.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/DecoratedShape.h>
@@ -18,6 +23,26 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_RotatedTranslatedShapeSettings_Get_mPosition(const JPH_RotatedTranslatedShapeSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShapeSettings *)(_this)).mPosition);
+}
+
+JPH_Vec3 *JPH_RotatedTranslatedShapeSettings_GetMutable_mPosition(JPH_RotatedTranslatedShapeSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RotatedTranslatedShapeSettings *)(_this)).mPosition);
+}
+
+const JPH_Quat *JPH_RotatedTranslatedShapeSettings_Get_mRotation(const JPH_RotatedTranslatedShapeSettings *_this)
+{
+    return (const JPH_Quat *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShapeSettings *)(_this)).mRotation);
+}
+
+JPH_Quat *JPH_RotatedTranslatedShapeSettings_GetMutable_mRotation(JPH_RotatedTranslatedShapeSettings *_this)
+{
+    return (JPH_Quat *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RotatedTranslatedShapeSettings *)(_this)).mRotation);
+}
 
 const uint64_t *JPH_RotatedTranslatedShapeSettings_Get_mUserData(const JPH_RotatedTranslatedShapeSettings *_this)
 {
@@ -171,6 +196,24 @@ JPH_RotatedTranslatedShapeSettings *JPH_RotatedTranslatedShapeSettings_Construct
     MRBINDC_CLASSARG_GUARD(_other, JPH::RotatedTranslatedShapeSettings);
     return (JPH_RotatedTranslatedShapeSettings *)new JPH::RotatedTranslatedShapeSettings(JPH::RotatedTranslatedShapeSettings(
         (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RotatedTranslatedShapeSettings) MRBINDC_CLASSARG_COPY(_other, (JPH::RotatedTranslatedShapeSettings), JPH::RotatedTranslatedShapeSettings) MRBINDC_CLASSARG_MOVE(_other, (JPH::RotatedTranslatedShapeSettings), JPH::RotatedTranslatedShapeSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RotatedTranslatedShapeSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RotatedTranslatedShapeSettings) MRBINDC_CLASSARG_END(_other, JPH::RotatedTranslatedShapeSettings))
+    ));
+}
+
+JPH_RotatedTranslatedShapeSettings *JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_ShapeSettings_ptr(const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, const JPH_ShapeSettings *inShape)
+{
+    return (JPH_RotatedTranslatedShapeSettings *)new JPH::RotatedTranslatedShapeSettings(JPH::RotatedTranslatedShapeSettings(
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((const JPH::ShapeSettings *)inShape)
+    ));
+}
+
+JPH_RotatedTranslatedShapeSettings *JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_Shape_ptr(const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, const JPH_Shape *inShape)
+{
+    return (JPH_RotatedTranslatedShapeSettings *)new JPH::RotatedTranslatedShapeSettings(JPH::RotatedTranslatedShapeSettings(
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((const JPH::Shape *)inShape)
     ));
 }
 
@@ -435,6 +478,15 @@ JPH_RotatedTranslatedShape *JPH_RotatedTranslatedShape_MutableStaticDowncastFrom
     ));
 }
 
+JPH_RotatedTranslatedShape *JPH_RotatedTranslatedShape_Construct_3(const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, const JPH_Shape *inShape)
+{
+    return (JPH_RotatedTranslatedShape *)new JPH::RotatedTranslatedShape(JPH::RotatedTranslatedShape(
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((const JPH::Shape *)inShape)
+    ));
+}
+
 void JPH_RotatedTranslatedShape_Destroy(const JPH_RotatedTranslatedShape *_this)
 {
     delete ((const JPH::RotatedTranslatedShape *)_this);
@@ -443,6 +495,14 @@ void JPH_RotatedTranslatedShape_Destroy(const JPH_RotatedTranslatedShape *_this)
 void JPH_RotatedTranslatedShape_DestroyArray(const JPH_RotatedTranslatedShape *_this)
 {
     delete[] ((const JPH::RotatedTranslatedShape *)_this);
+}
+
+JPH_AABox *JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_RotatedTranslatedShape *_this, const JPH_DMat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetWorldSpaceBounds(
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::DMat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 void *Jolt_new_JPH_RotatedTranslatedShape_size_t(unsigned long inCount)
@@ -521,14 +581,66 @@ void Jolt_delete_array_JPH_RotatedTranslatedShape_void_ptr_void_ptr(void *inPoin
     );
 }
 
+JPH_Quat *JPH_RotatedTranslatedShape_GetRotation(const JPH_RotatedTranslatedShape *_this)
+{
+    return (JPH_Quat *)new JPH::Quat(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetRotation());
+}
+
+JPH_Vec3 *JPH_RotatedTranslatedShape_GetPosition(const JPH_RotatedTranslatedShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetPosition());
+}
+
+JPH_Vec3 *JPH_RotatedTranslatedShape_GetCenterOfMass(const JPH_RotatedTranslatedShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetCenterOfMass());
+}
+
 JPH_AABox *JPH_RotatedTranslatedShape_GetLocalBounds(const JPH_RotatedTranslatedShape *_this)
 {
     return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetLocalBounds());
 }
 
+JPH_AABox *JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_Mat44(const JPH_RotatedTranslatedShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetWorldSpaceBounds(
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
 float JPH_RotatedTranslatedShape_GetInnerRadius(const JPH_RotatedTranslatedShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetInnerRadius();
+}
+
+JPH_Vec3 *JPH_RotatedTranslatedShape_GetSurfaceNormal(const JPH_RotatedTranslatedShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetSurfaceNormal(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inLocalSurfacePosition ? void() : MRBINDC_THROW("Parameter `inLocalSurfacePosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLocalSurfacePosition))
+    ));
+}
+
+void JPH_RotatedTranslatedShape_GetTrianglesStart(const JPH_RotatedTranslatedShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetTrianglesStart(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        ((inBox ? void() : MRBINDC_THROW("Parameter `inBox` can not be null.", void)), *(const JPH::AABox *)(inBox)),
+        ((inPositionCOM ? void() : MRBINDC_THROW("Parameter `inPositionCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPositionCOM)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+int JPH_RotatedTranslatedShape_GetTrianglesNext(const JPH_RotatedTranslatedShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetTrianglesNext(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        inMaxTrianglesRequested,
+        ((JPH::Float3 *)outTriangleVertices),
+        ((const JPH::PhysicsMaterial **)outMaterials)
+    );
 }
 
 JPH_Shape_Stats *JPH_RotatedTranslatedShape_GetStats(const JPH_RotatedTranslatedShape *_this)
@@ -539,6 +651,27 @@ JPH_Shape_Stats *JPH_RotatedTranslatedShape_GetStats(const JPH_RotatedTranslated
 float JPH_RotatedTranslatedShape_GetVolume(const JPH_RotatedTranslatedShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetVolume();
+}
+
+bool JPH_RotatedTranslatedShape_IsValidScale(const JPH_RotatedTranslatedShape *_this, const JPH_Vec3 *inScale)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).IsValidScale(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+JPH_Vec3 *JPH_RotatedTranslatedShape_MakeScaleValid(const JPH_RotatedTranslatedShape *_this, const JPH_Vec3 *inScale)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).MakeScaleValid(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
+JPH_Vec3 *JPH_RotatedTranslatedShape_TransformScale(const JPH_RotatedTranslatedShape *_this, const JPH_Vec3 *inScale)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).TransformScale(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 void JPH_RotatedTranslatedShape_sRegister(void)

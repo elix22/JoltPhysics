@@ -129,6 +129,57 @@ public static partial class Jolt
                 return ret;
             }
 
+            public unsafe Jolt.JPH.Const_Vec3 mv1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_Get_mV1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_Get_mV1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_TriangleShapeSettings_Get_mV1(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_TriangleShapeSettings_Get_mV1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mv2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_Get_mV2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_Get_mV2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_TriangleShapeSettings_Get_mV2(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_TriangleShapeSettings_Get_mV2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public unsafe Jolt.JPH.Const_Vec3 mv3
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_Get_mV3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_Get_mV3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_TriangleShapeSettings_Get_mV3(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_TriangleShapeSettings_Get_mV3(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             public unsafe float mConvexRadius
             {
                 get
@@ -205,6 +256,22 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::TriangleShapeSettings::TriangleShapeSettings`.
             public Const_TriangleShapeSettings(TriangleShapeSettings _other) : this((Const_TriangleShapeSettings)_other) {}
+
+            /// Create a triangle with points (inV1, inV2, inV3) (counter clockwise) and convex radius inConvexRadius.
+            /// Note that the convex radius is currently only used for shape vs shape collision, for all other purposes the triangle is infinitely thin.
+            /// Generated from constructor `JPH::TriangleShapeSettings::TriangleShapeSettings`.
+            /// Parameter `inConvexRadius` defaults to `0.0f`.
+            public unsafe Const_TriangleShapeSettings(Jolt.JPH.Const_Vec3 inV1, Jolt.JPH.Const_Vec3 inV2, Jolt.JPH.Const_Vec3 inV3, float? inConvexRadius = null, Jolt.JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.TriangleShapeSettings._Underlying *__JPH_TriangleShapeSettings_Construct(Jolt.JPH.Vec3._Underlying *inV1, Jolt.JPH.Vec3._Underlying *inV2, Jolt.JPH.Vec3._Underlying *inV3, float *inConvexRadius, Jolt.JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+                float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
+                _UnderlyingPtr = __JPH_TriangleShapeSettings_Construct(inV1._UnderlyingPtr, inV2._UnderlyingPtr, inV3._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            }
 
             /// Generated from method `JPH::TriangleShapeSettings::operator new`.
             /// Returns a mutable pointer.
@@ -513,6 +580,57 @@ public static partial class Jolt
                 return ret;
             }
 
+            public new unsafe Jolt.JPH.Vec3 mv1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_GetMutable_mV1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_GetMutable_mV1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_TriangleShapeSettings_GetMutable_mV1(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_TriangleShapeSettings_GetMutable_mV1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mv2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_GetMutable_mV2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_GetMutable_mV2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_TriangleShapeSettings_GetMutable_mV2(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_TriangleShapeSettings_GetMutable_mV2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            public new unsafe Jolt.JPH.Vec3 mv3
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_GetMutable_mV3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_GetMutable_mV3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_TriangleShapeSettings_GetMutable_mV3(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_TriangleShapeSettings_GetMutable_mV3(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             public new unsafe ref float mConvexRadius
             {
                 get
@@ -589,6 +707,22 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::TriangleShapeSettings::TriangleShapeSettings`.
             public TriangleShapeSettings(TriangleShapeSettings _other) : this((Const_TriangleShapeSettings)_other) {}
+
+            /// Create a triangle with points (inV1, inV2, inV3) (counter clockwise) and convex radius inConvexRadius.
+            /// Note that the convex radius is currently only used for shape vs shape collision, for all other purposes the triangle is infinitely thin.
+            /// Generated from constructor `JPH::TriangleShapeSettings::TriangleShapeSettings`.
+            /// Parameter `inConvexRadius` defaults to `0.0f`.
+            public unsafe TriangleShapeSettings(Jolt.JPH.Const_Vec3 inV1, Jolt.JPH.Const_Vec3 inV2, Jolt.JPH.Const_Vec3 inV3, float? inConvexRadius = null, Jolt.JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.TriangleShapeSettings._Underlying *__JPH_TriangleShapeSettings_Construct(Jolt.JPH.Vec3._Underlying *inV1, Jolt.JPH.Vec3._Underlying *inV2, Jolt.JPH.Vec3._Underlying *inV3, float *inConvexRadius, Jolt.JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+                float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
+                _UnderlyingPtr = __JPH_TriangleShapeSettings_Construct(inV1._UnderlyingPtr, inV2._UnderlyingPtr, inV3._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            }
 
             /// Generated from method `JPH::TriangleShapeSettings::operator=`.
             public unsafe Jolt.JPH.TriangleShapeSettings Assign(Jolt.JPH._ByValue_TriangleShapeSettings _other)
@@ -823,6 +957,35 @@ public static partial class Jolt
                 _UnderlyingPtr = __JPH_TriangleShape_DefaultConstruct();
             }
 
+            /// Create a triangle with points (inV1, inV2, inV3) (counter clockwise) and convex radius inConvexRadius.
+            /// Note that the convex radius is currently only used for shape vs shape collision, for all other purposes the triangle is infinitely thin.
+            /// Generated from constructor `JPH::TriangleShape::TriangleShape`.
+            /// Parameter `inConvexRadius` defaults to `0.0f`.
+            public unsafe Const_TriangleShape(Jolt.JPH.Const_Vec3 inV1, Jolt.JPH.Const_Vec3 inV2, Jolt.JPH.Const_Vec3 inV3, float? inConvexRadius = null, Jolt.JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.TriangleShape._Underlying *__JPH_TriangleShape_Construct_5(Jolt.JPH.Vec3._Underlying *inV1, Jolt.JPH.Vec3._Underlying *inV2, Jolt.JPH.Vec3._Underlying *inV3, float *inConvexRadius, Jolt.JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+                float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
+                _UnderlyingPtr = __JPH_TriangleShape_Construct_5(inV1._UnderlyingPtr, inV2._UnderlyingPtr, inV3._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            }
+
+            /// Get world space bounds including convex radius.
+            /// Generated from method `JPH::TriangleShape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_DMat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_TriangleShape_GetWorldSpaceBounds_JPH_DMat44(_Underlying *_this, Jolt.JPH.Const_DMat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_TriangleShape_GetWorldSpaceBounds_JPH_DMat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             /// Generated from method `JPH::TriangleShape::operator new`.
             /// Returns a mutable pointer.
             public static unsafe void *New(ulong inCount)
@@ -957,6 +1120,43 @@ public static partial class Jolt
                 __Jolt_delete_array_JPH_TriangleShape_void_ptr_void_ptr(inPointer, inPlace);
             }
 
+            /// Get the vertices of the triangle
+            /// Generated from method `JPH::TriangleShape::GetVertex1`.
+            public unsafe Jolt.JPH.Vec3 GetVertex1()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_GetVertex1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_GetVertex1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_TriangleShape_GetVertex1(_Underlying *_this);
+                return new(__JPH_TriangleShape_GetVertex1(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Generated from method `JPH::TriangleShape::GetVertex2`.
+            public unsafe Jolt.JPH.Vec3 GetVertex2()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_GetVertex2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_GetVertex2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_TriangleShape_GetVertex2(_Underlying *_this);
+                return new(__JPH_TriangleShape_GetVertex2(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Generated from method `JPH::TriangleShape::GetVertex3`.
+            public unsafe Jolt.JPH.Vec3 GetVertex3()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_GetVertex3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_GetVertex3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_TriangleShape_GetVertex3(_Underlying *_this);
+                return new(__JPH_TriangleShape_GetVertex3(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Convex radius
             /// Generated from method `JPH::TriangleShape::GetConvexRadius`.
             public unsafe float GetConvexRadius()
@@ -983,6 +1183,19 @@ public static partial class Jolt
                 return new(__JPH_TriangleShape_GetLocalBounds(_UnderlyingPtr), is_owning: true);
             }
 
+            // See Shape::GetWorldSpaceBounds
+            /// Generated from method `JPH::TriangleShape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_Mat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_TriangleShape_GetWorldSpaceBounds_JPH_Mat44(_Underlying *_this, Jolt.JPH.Const_Mat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_TriangleShape_GetWorldSpaceBounds_JPH_Mat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetInnerRadius
             /// Generated from method `JPH::TriangleShape::GetInnerRadius`.
             public unsafe float GetInnerRadius()
@@ -994,6 +1207,59 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_TriangleShape_GetInnerRadius(_Underlying *_this);
                 return __JPH_TriangleShape_GetInnerRadius(_UnderlyingPtr);
+            }
+
+            // See Shape::GetSurfaceNormal
+            /// Generated from method `JPH::TriangleShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_TriangleShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_TriangleShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            // See ConvexShape::GetSupportFunction
+            /// Generated from method `JPH::TriangleShape::GetSupportFunction`.
+            public unsafe Jolt.JPH.ConvexShape.Const_Support? GetSupportFunction(Jolt.JPH.ConvexShape.ESupportMode inMode, Jolt.JPH.ConvexShape.SupportBuffer inBuffer, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_GetSupportFunction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_GetSupportFunction", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ConvexShape.Const_Support._Underlying *__JPH_TriangleShape_GetSupportFunction(_Underlying *_this, Jolt.JPH.ConvexShape.ESupportMode inMode, Jolt.JPH.ConvexShape.SupportBuffer._Underlying *inBuffer, Jolt.JPH.Vec3._Underlying *inScale);
+                var __c_ret = __JPH_TriangleShape_GetSupportFunction(_UnderlyingPtr, inMode, inBuffer._UnderlyingPtr, inScale._UnderlyingPtr);
+                return __c_ret is not null ? new Jolt.JPH.ConvexShape.Const_Support(__c_ret, is_owning: false) : null;
+            }
+
+            // See Shape::GetTrianglesStart
+            /// Generated from method `JPH::TriangleShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_TriangleShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_TriangleShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            // See Shape::GetTrianglesNext
+            /// Generated from method `JPH::TriangleShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_TriangleShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_TriangleShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
             }
 
             // See Shape::GetStats
@@ -1020,6 +1286,32 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_TriangleShape_GetVolume(_Underlying *_this);
                 return __JPH_TriangleShape_GetVolume(_UnderlyingPtr);
+            }
+
+            // See Shape::IsValidScale
+            /// Generated from method `JPH::TriangleShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_TriangleShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_TriangleShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            // See Shape::MakeScaleValid
+            /// Generated from method `JPH::TriangleShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_TriangleShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_TriangleShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             // Register shape functions with the registry
@@ -1085,6 +1377,19 @@ public static partial class Jolt
                 #endif
                 extern static byte __JPH_TriangleShape_MustBeStatic(_Underlying *_this);
                 return __JPH_TriangleShape_MustBeStatic(_UnderlyingPtr) != 0;
+            }
+
+            /// All shapes are centered around their center of mass. This function returns the center of mass position that needs to be applied to transform the shape to where it was created.
+            /// Generated from method `JPH::TriangleShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_TriangleShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_TriangleShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
             }
 
             /// Get the leaf shape for a particular sub shape ID.
@@ -1288,6 +1593,22 @@ public static partial class Jolt
                 #endif
                 extern static Jolt.JPH.TriangleShape._Underlying *__JPH_TriangleShape_DefaultConstruct();
                 _UnderlyingPtr = __JPH_TriangleShape_DefaultConstruct();
+            }
+
+            /// Create a triangle with points (inV1, inV2, inV3) (counter clockwise) and convex radius inConvexRadius.
+            /// Note that the convex radius is currently only used for shape vs shape collision, for all other purposes the triangle is infinitely thin.
+            /// Generated from constructor `JPH::TriangleShape::TriangleShape`.
+            /// Parameter `inConvexRadius` defaults to `0.0f`.
+            public unsafe TriangleShape(Jolt.JPH.Const_Vec3 inV1, Jolt.JPH.Const_Vec3 inV2, Jolt.JPH.Const_Vec3 inV3, float? inConvexRadius = null, Jolt.JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.TriangleShape._Underlying *__JPH_TriangleShape_Construct_5(Jolt.JPH.Vec3._Underlying *inV1, Jolt.JPH.Vec3._Underlying *inV2, Jolt.JPH.Vec3._Underlying *inV3, float *inConvexRadius, Jolt.JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+                float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
+                _UnderlyingPtr = __JPH_TriangleShape_Construct_5(inV1._UnderlyingPtr, inV2._UnderlyingPtr, inV3._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
             }
 
             /// Material of the shape

@@ -4,6 +4,8 @@
 
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Collision/NarrowPhaseQuery.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <__mrbind_c_details.h>

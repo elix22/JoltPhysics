@@ -16,6 +16,7 @@ typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jo
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Class used to store the configuration of a constraint. Allows run-time creation of constraints.
@@ -371,6 +372,16 @@ JOLT_API uint64_t JPH_Constraint_GetUserData(const JPH_Constraint *_this);
 /// Generated from method `JPH::Constraint::SetUserData`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_Constraint_SetUserData(JPH_Constraint *_this, uint64_t inUserData);
+
+/// Notify the constraint that the shape of a body has changed and that its center of mass has moved by inDeltaCOM.
+/// Bodies don't know which constraints are connected to them so the user is responsible for notifying the relevant constraints when a body changes.
+/// @param inBodyID ID of the body that has changed
+/// @param inDeltaCOM The delta of the center of mass of the body (shape->GetCenterOfMass() - shape_before_change->GetCenterOfMass())
+/// Generated from method `JPH::Constraint::NotifyShapeChanged`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inDeltaCOM` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_NotifyShapeChanged(JPH_Constraint *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inDeltaCOM);
 
 /// Notify the system that the configuration of the bodies and/or constraint has changed enough so that the warm start impulses should not be applied the next frame.
 /// You can use this function for example when repositioning a ragdoll through Ragdoll::SetPose in such a way that the orientation of the bodies completely changes so that

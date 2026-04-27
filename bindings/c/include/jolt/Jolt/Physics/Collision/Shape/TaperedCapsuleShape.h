@@ -16,9 +16,14 @@ extern "C" {
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
 typedef struct JPH_ConvexShape JPH_ConvexShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
 typedef struct JPH_ConvexShapeSettings JPH_ConvexShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
+typedef struct JPH_ConvexShape_Support JPH_ConvexShape_Support; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
 typedef struct JPH_ConvexShape_SupportBuffer JPH_ConvexShape_SupportBuffer; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
+typedef struct JPH_DMat44 JPH_DMat44; // Defined in `#include <jolt/Jolt/Math/DMat44.h>`.
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
@@ -27,6 +32,7 @@ typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jol
 typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Class that constructs a TaperedCapsuleShape
@@ -450,6 +456,14 @@ JOLT_API void JPH_TaperedCapsuleShape_Destroy(const JPH_TaperedCapsuleShape *_th
 /// Destroys a heap-allocated array of `JPH_TaperedCapsuleShape`. Does nothing if the pointer is null.
 JOLT_API void JPH_TaperedCapsuleShape_DestroyArray(const JPH_TaperedCapsuleShape *_this);
 
+/// Get world space bounds including convex radius.
+/// Generated from method `JPH::TaperedCapsuleShape::GetWorldSpaceBounds`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_TaperedCapsuleShape *_this, const JPH_DMat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
+
 /// Generated from method `JPH::TaperedCapsuleShape::operator new`.
 JOLT_API void *Jolt_new_JPH_TaperedCapsuleShape_size_t(unsigned long inCount);
 
@@ -495,16 +509,45 @@ JOLT_API float JPH_TaperedCapsuleShape_GetBottomRadius(const JPH_TaperedCapsuleS
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_TaperedCapsuleShape_GetHalfHeight(const JPH_TaperedCapsuleShape *_this);
 
+// See Shape::GetCenterOfMass
+/// Generated from method `JPH::TaperedCapsuleShape::GetCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_TaperedCapsuleShape_GetCenterOfMass(const JPH_TaperedCapsuleShape *_this);
+
 // See Shape::GetLocalBounds
 /// Generated from method `JPH::TaperedCapsuleShape::GetLocalBounds`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
 JOLT_API JPH_AABox *JPH_TaperedCapsuleShape_GetLocalBounds(const JPH_TaperedCapsuleShape *_this);
 
+// See Shape::GetWorldSpaceBounds
+/// Generated from method `JPH::TaperedCapsuleShape::GetWorldSpaceBounds`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_Mat44(const JPH_TaperedCapsuleShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
+
 // See Shape::GetInnerRadius
 /// Generated from method `JPH::TaperedCapsuleShape::GetInnerRadius`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_TaperedCapsuleShape_GetInnerRadius(const JPH_TaperedCapsuleShape *_this);
+
+// See Shape::GetSurfaceNormal
+/// Generated from method `JPH::TaperedCapsuleShape::GetSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_TaperedCapsuleShape_GetSurfaceNormal(const JPH_TaperedCapsuleShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
+// See ConvexShape::GetSupportFunction
+/// Generated from method `JPH::TaperedCapsuleShape::GetSupportFunction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBuffer` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API const JPH_ConvexShape_Support *JPH_TaperedCapsuleShape_GetSupportFunction(const JPH_TaperedCapsuleShape *_this, JPH_ConvexShape_ESupportMode inMode, JPH_ConvexShape_SupportBuffer *inBuffer, const JPH_Vec3 *inScale);
 
 // See Shape::GetStats
 /// Generated from method `JPH::TaperedCapsuleShape::GetStats`.
@@ -517,6 +560,19 @@ JOLT_API JPH_Shape_Stats *JPH_TaperedCapsuleShape_GetStats(const JPH_TaperedCaps
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_TaperedCapsuleShape_GetVolume(const JPH_TaperedCapsuleShape *_this);
 
+// See Shape::IsValidScale
+/// Generated from method `JPH::TaperedCapsuleShape::IsValidScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API bool JPH_TaperedCapsuleShape_IsValidScale(const JPH_TaperedCapsuleShape *_this, const JPH_Vec3 *inScale);
+
+// See Shape::MakeScaleValid
+/// Generated from method `JPH::TaperedCapsuleShape::MakeScaleValid`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_TaperedCapsuleShape_MakeScaleValid(const JPH_TaperedCapsuleShape *_this, const JPH_Vec3 *inScale);
+
 // Register shape functions with the registry
 /// Generated from method `JPH::TaperedCapsuleShape::sRegister`.
 JOLT_API void JPH_TaperedCapsuleShape_sRegister(void);
@@ -525,6 +581,23 @@ JOLT_API void JPH_TaperedCapsuleShape_sRegister(void);
 /// Generated from method `JPH::TaperedCapsuleShape::GetSubShapeIDBitsRecursive`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API unsigned int JPH_TaperedCapsuleShape_GetSubShapeIDBitsRecursive(const JPH_TaperedCapsuleShape *_this);
+
+// See Shape::GetTrianglesStart
+/// Generated from method `JPH::TaperedCapsuleShape::GetTrianglesStart`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `inBox` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_TaperedCapsuleShape_GetTrianglesStart(const JPH_TaperedCapsuleShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale);
+
+// See Shape::GetTrianglesNext
+/// Generated from method `JPH::TaperedCapsuleShape::GetTrianglesNext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `outMaterials` defaults to a null pointer in C++.
+JOLT_API int JPH_TaperedCapsuleShape_GetTrianglesNext(const JPH_TaperedCapsuleShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
 
 /// Material of the shape
 /// Generated from method `JPH::TaperedCapsuleShape::SetMaterial`.

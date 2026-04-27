@@ -2,6 +2,8 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Physics/SoftBody/SoftBodyCreationSettings.h"
 
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Collision/CollisionGroup.h>
 #include <Jolt/Physics/SoftBody/SoftBodyCreationSettings.h>
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
@@ -12,6 +14,26 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_SoftBodyCreationSettings_Get_mPosition(const JPH_SoftBodyCreationSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodyCreationSettings *)(_this)).mPosition);
+}
+
+JPH_Vec3 *JPH_SoftBodyCreationSettings_GetMutable_mPosition(JPH_SoftBodyCreationSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodyCreationSettings *)(_this)).mPosition);
+}
+
+const JPH_Quat *JPH_SoftBodyCreationSettings_Get_mRotation(const JPH_SoftBodyCreationSettings *_this)
+{
+    return (const JPH_Quat *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodyCreationSettings *)(_this)).mRotation);
+}
+
+JPH_Quat *JPH_SoftBodyCreationSettings_GetMutable_mRotation(JPH_SoftBodyCreationSettings *_this)
+{
+    return (JPH_Quat *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodyCreationSettings *)(_this)).mRotation);
+}
 
 const uint64_t *JPH_SoftBodyCreationSettings_Get_mUserData(const JPH_SoftBodyCreationSettings *_this)
 {
@@ -264,6 +286,16 @@ JPH_SoftBodyCreationSettings *JPH_SoftBodyCreationSettings_ConstructFromAnother(
     MRBINDC_CLASSARG_GUARD(_other, JPH::SoftBodyCreationSettings);
     return (JPH_SoftBodyCreationSettings *)new JPH::SoftBodyCreationSettings(JPH::SoftBodyCreationSettings(
         (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::SoftBodyCreationSettings) MRBINDC_CLASSARG_COPY(_other, (JPH::SoftBodyCreationSettings), JPH::SoftBodyCreationSettings) MRBINDC_CLASSARG_MOVE(_other, (JPH::SoftBodyCreationSettings), JPH::SoftBodyCreationSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::SoftBodyCreationSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::SoftBodyCreationSettings) MRBINDC_CLASSARG_END(_other, JPH::SoftBodyCreationSettings))
+    ));
+}
+
+JPH_SoftBodyCreationSettings *JPH_SoftBodyCreationSettings_Construct(const JPH_SoftBodySharedSettings *inSettings, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, unsigned short inObjectLayer)
+{
+    return (JPH_SoftBodyCreationSettings *)new JPH::SoftBodyCreationSettings(JPH::SoftBodyCreationSettings(
+        ((const JPH::SoftBodySharedSettings *)inSettings),
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        inObjectLayer
     ));
 }
 

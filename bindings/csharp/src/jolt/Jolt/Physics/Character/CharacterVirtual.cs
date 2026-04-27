@@ -123,6 +123,24 @@ public static partial class Jolt
                 }
             }
 
+            /// An extra offset applied to the shape in local space. This allows applying an extra offset to the shape in local space.
+            public unsafe Jolt.JPH.Const_Vec3 mShapeOffset
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtualSettings_Get_mShapeOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtualSettings_Get_mShapeOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_CharacterVirtualSettings_Get_mShapeOffset(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_CharacterVirtualSettings_Get_mShapeOffset(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             ///< How far to scan outside of the shape for predictive contacts. A value of 0 will most likely cause the character to get stuck as it cannot properly calculate a sliding direction anymore. A value that's too high will cause ghost collisions.
             public unsafe float mPredictiveContactDistance
             {
@@ -286,6 +304,24 @@ public static partial class Jolt
                     #endif
                     extern static ushort *__JPH_CharacterVirtualSettings_Get_mInnerBodyLayer(_Underlying *_this);
                     return *__JPH_CharacterVirtualSettings_Get_mInnerBodyLayer(_UnderlyingPtr);
+                }
+            }
+
+            /// Vector indicating the up direction of the character
+            public unsafe Jolt.JPH.Const_Vec3 mUp
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtualSettings_Get_mUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtualSettings_Get_mUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_CharacterVirtualSettings_Get_mUp(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_CharacterVirtualSettings_Get_mUp(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
                 }
             }
 
@@ -653,6 +689,24 @@ public static partial class Jolt
                 }
             }
 
+            /// An extra offset applied to the shape in local space. This allows applying an extra offset to the shape in local space.
+            public new unsafe Jolt.JPH.Vec3 mShapeOffset
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtualSettings_GetMutable_mShapeOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtualSettings_GetMutable_mShapeOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtualSettings_GetMutable_mShapeOffset(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_CharacterVirtualSettings_GetMutable_mShapeOffset(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             ///< How far to scan outside of the shape for predictive contacts. A value of 0 will most likely cause the character to get stuck as it cannot properly calculate a sliding direction anymore. A value that's too high will cause ghost collisions.
             public new unsafe ref float mPredictiveContactDistance
             {
@@ -816,6 +870,24 @@ public static partial class Jolt
                     #endif
                     extern static ushort *__JPH_CharacterVirtualSettings_GetMutable_mInnerBodyLayer(_Underlying *_this);
                     return ref *__JPH_CharacterVirtualSettings_GetMutable_mInnerBodyLayer(_UnderlyingPtr);
+                }
+            }
+
+            /// Vector indicating the up direction of the character
+            public new unsafe Jolt.JPH.Vec3 mUp
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtualSettings_GetMutable_mUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtualSettings_GetMutable_mUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtualSettings_GetMutable_mUp(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_CharacterVirtualSettings_GetMutable_mUp(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
                 }
             }
 
@@ -1283,6 +1355,20 @@ public static partial class Jolt
                 return new(__JPH_CharacterContactListener_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
             }
 
+            /// Callback to adjust the velocity of a body as seen by the character. Can be adjusted to e.g. implement a conveyor belt or an inertial dampener system of a sci-fi space ship.
+            /// Note that inBody2 is locked during the callback so you can read its properties freely.
+            /// Generated from method `JPH::CharacterContactListener::OnAdjustBodyVelocity`.
+            public unsafe void OnAdjustBodyVelocity(Jolt.JPH.Const_CharacterVirtual? inCharacter, Jolt.JPH.Const_Body inBody2, Jolt.JPH.Vec3 ioLinearVelocity, Jolt.JPH.Vec3 ioAngularVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterContactListener_OnAdjustBodyVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterContactListener_OnAdjustBodyVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterContactListener_OnAdjustBodyVelocity(_Underlying *_this, Jolt.JPH.Const_CharacterVirtual._Underlying *inCharacter, Jolt.JPH.Const_Body._Underlying *inBody2, Jolt.JPH.Vec3._Underlying *ioLinearVelocity, Jolt.JPH.Vec3._Underlying *ioAngularVelocity);
+                __JPH_CharacterContactListener_OnAdjustBodyVelocity(_UnderlyingPtr, inCharacter is not null ? inCharacter._UnderlyingPtr : null, inBody2._UnderlyingPtr, ioLinearVelocity._UnderlyingPtr, ioAngularVelocity._UnderlyingPtr);
+            }
+
             /// Checks if a character can collide with specified body. Return true if the contact is valid.
             /// Generated from method `JPH::CharacterContactListener::OnContactValidate`.
             public unsafe bool OnContactValidate(Jolt.JPH.Const_CharacterVirtual? inCharacter, in Jolt.JPH.BodyID inBodyID2, Jolt.JPH.Const_SubShapeID inSubShapeID2)
@@ -1312,6 +1398,50 @@ public static partial class Jolt
                 return __JPH_CharacterContactListener_OnCharacterContactValidate(_UnderlyingPtr, inCharacter is not null ? inCharacter._UnderlyingPtr : null, inOtherCharacter is not null ? inOtherCharacter._UnderlyingPtr : null, inSubShapeID2._UnderlyingPtr) != 0;
             }
 
+            /// Called whenever the character collides with a body for the first time.
+            /// @param inCharacter Character that is being solved
+            /// @param inBodyID2 Body ID of body that is being hit
+            /// @param inSubShapeID2 Sub shape ID of shape that is being hit
+            /// @param inContactPosition World space contact position
+            /// @param inContactNormal World space contact normal
+            /// @param ioSettings Settings returned by the contact callback to indicate how the character should behave
+            /// Generated from method `JPH::CharacterContactListener::OnContactAdded`.
+            public unsafe void OnContactAdded(Jolt.JPH.Const_CharacterVirtual? inCharacter, in Jolt.JPH.BodyID inBodyID2, Jolt.JPH.Const_SubShapeID inSubShapeID2, Jolt.JPH.Const_Vec3 inContactPosition, Jolt.JPH.Const_Vec3 inContactNormal, Jolt.JPH.CharacterContactSettings ioSettings)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterContactListener_OnContactAdded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterContactListener_OnContactAdded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterContactListener_OnContactAdded(_Underlying *_this, Jolt.JPH.Const_CharacterVirtual._Underlying *inCharacter, Jolt.JPH.BodyID *inBodyID2, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID2, Jolt.JPH.Vec3._Underlying *inContactPosition, Jolt.JPH.Vec3._Underlying *inContactNormal, Jolt.JPH.CharacterContactSettings._Underlying *ioSettings);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID2 = &inBodyID2)
+                {
+                    __JPH_CharacterContactListener_OnContactAdded(_UnderlyingPtr, inCharacter is not null ? inCharacter._UnderlyingPtr : null, __ptr_inBodyID2, inSubShapeID2._UnderlyingPtr, inContactPosition._UnderlyingPtr, inContactNormal._UnderlyingPtr, ioSettings._UnderlyingPtr);
+                }
+            }
+
+            /// Called whenever the character persists colliding with a body.
+            /// @param inCharacter Character that is being solved
+            /// @param inBodyID2 Body ID of body that is being hit
+            /// @param inSubShapeID2 Sub shape ID of shape that is being hit
+            /// @param inContactPosition World space contact position
+            /// @param inContactNormal World space contact normal
+            /// @param ioSettings Settings returned by the contact callback to indicate how the character should behave
+            /// Generated from method `JPH::CharacterContactListener::OnContactPersisted`.
+            public unsafe void OnContactPersisted(Jolt.JPH.Const_CharacterVirtual? inCharacter, in Jolt.JPH.BodyID inBodyID2, Jolt.JPH.Const_SubShapeID inSubShapeID2, Jolt.JPH.Const_Vec3 inContactPosition, Jolt.JPH.Const_Vec3 inContactNormal, Jolt.JPH.CharacterContactSettings ioSettings)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterContactListener_OnContactPersisted", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterContactListener_OnContactPersisted", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterContactListener_OnContactPersisted(_Underlying *_this, Jolt.JPH.Const_CharacterVirtual._Underlying *inCharacter, Jolt.JPH.BodyID *inBodyID2, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID2, Jolt.JPH.Vec3._Underlying *inContactPosition, Jolt.JPH.Vec3._Underlying *inContactNormal, Jolt.JPH.CharacterContactSettings._Underlying *ioSettings);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID2 = &inBodyID2)
+                {
+                    __JPH_CharacterContactListener_OnContactPersisted(_UnderlyingPtr, inCharacter is not null ? inCharacter._UnderlyingPtr : null, __ptr_inBodyID2, inSubShapeID2._UnderlyingPtr, inContactPosition._UnderlyingPtr, inContactNormal._UnderlyingPtr, ioSettings._UnderlyingPtr);
+                }
+            }
+
             /// Called whenever the character loses contact with a body.
             /// Note that there is no guarantee that the body or its sub shape still exists at this point. The body may have been deleted since the last update.
             /// @param inCharacter Character that is being solved
@@ -1332,6 +1462,32 @@ public static partial class Jolt
                 }
             }
 
+            /// Same as OnContactAdded but when colliding with a CharacterVirtual
+            /// Generated from method `JPH::CharacterContactListener::OnCharacterContactAdded`.
+            public unsafe void OnCharacterContactAdded(Jolt.JPH.Const_CharacterVirtual? inCharacter, Jolt.JPH.Const_CharacterVirtual? inOtherCharacter, Jolt.JPH.Const_SubShapeID inSubShapeID2, Jolt.JPH.Const_Vec3 inContactPosition, Jolt.JPH.Const_Vec3 inContactNormal, Jolt.JPH.CharacterContactSettings ioSettings)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterContactListener_OnCharacterContactAdded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterContactListener_OnCharacterContactAdded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterContactListener_OnCharacterContactAdded(_Underlying *_this, Jolt.JPH.Const_CharacterVirtual._Underlying *inCharacter, Jolt.JPH.Const_CharacterVirtual._Underlying *inOtherCharacter, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID2, Jolt.JPH.Vec3._Underlying *inContactPosition, Jolt.JPH.Vec3._Underlying *inContactNormal, Jolt.JPH.CharacterContactSettings._Underlying *ioSettings);
+                __JPH_CharacterContactListener_OnCharacterContactAdded(_UnderlyingPtr, inCharacter is not null ? inCharacter._UnderlyingPtr : null, inOtherCharacter is not null ? inOtherCharacter._UnderlyingPtr : null, inSubShapeID2._UnderlyingPtr, inContactPosition._UnderlyingPtr, inContactNormal._UnderlyingPtr, ioSettings._UnderlyingPtr);
+            }
+
+            /// Same as OnContactPersisted but when colliding with a CharacterVirtual
+            /// Generated from method `JPH::CharacterContactListener::OnCharacterContactPersisted`.
+            public unsafe void OnCharacterContactPersisted(Jolt.JPH.Const_CharacterVirtual? inCharacter, Jolt.JPH.Const_CharacterVirtual? inOtherCharacter, Jolt.JPH.Const_SubShapeID inSubShapeID2, Jolt.JPH.Const_Vec3 inContactPosition, Jolt.JPH.Const_Vec3 inContactNormal, Jolt.JPH.CharacterContactSettings ioSettings)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterContactListener_OnCharacterContactPersisted", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterContactListener_OnCharacterContactPersisted", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterContactListener_OnCharacterContactPersisted(_Underlying *_this, Jolt.JPH.Const_CharacterVirtual._Underlying *inCharacter, Jolt.JPH.Const_CharacterVirtual._Underlying *inOtherCharacter, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID2, Jolt.JPH.Vec3._Underlying *inContactPosition, Jolt.JPH.Vec3._Underlying *inContactNormal, Jolt.JPH.CharacterContactSettings._Underlying *ioSettings);
+                __JPH_CharacterContactListener_OnCharacterContactPersisted(_UnderlyingPtr, inCharacter is not null ? inCharacter._UnderlyingPtr : null, inOtherCharacter is not null ? inOtherCharacter._UnderlyingPtr : null, inSubShapeID2._UnderlyingPtr, inContactPosition._UnderlyingPtr, inContactNormal._UnderlyingPtr, ioSettings._UnderlyingPtr);
+            }
+
             /// Same as OnContactRemoved but when colliding with a CharacterVirtual
             /// Note that inOtherCharacterID can be the ID of a character that has been deleted. This happens if the character was in contact with this character during the last update, but has been deleted since.
             /// Generated from method `JPH::CharacterContactListener::OnCharacterContactRemoved`.
@@ -1344,6 +1500,44 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_CharacterContactListener_OnCharacterContactRemoved(_Underlying *_this, Jolt.JPH.Const_CharacterVirtual._Underlying *inCharacter, Jolt.JPH.Const_CharacterID._Underlying *inOtherCharacterID, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID2);
                 __JPH_CharacterContactListener_OnCharacterContactRemoved(_UnderlyingPtr, inCharacter is not null ? inCharacter._UnderlyingPtr : null, inOtherCharacterID._UnderlyingPtr, inSubShapeID2._UnderlyingPtr);
+            }
+
+            /// Called whenever a contact is being used by the solver. Allows the listener to override the resulting character velocity (e.g. by preventing sliding along certain surfaces).
+            /// @param inCharacter Character that is being solved
+            /// @param inBodyID2 Body ID of body that is being hit
+            /// @param inSubShapeID2 Sub shape ID of shape that is being hit
+            /// @param inContactPosition World space contact position
+            /// @param inContactNormal World space contact normal
+            /// @param inContactVelocity World space velocity of contact point (e.g. for a moving platform)
+            /// @param inContactMaterial Material of contact point
+            /// @param inCharacterVelocity World space velocity of the character prior to hitting this contact
+            /// @param ioNewCharacterVelocity Contains the calculated world space velocity of the character after hitting this contact, this velocity slides along the surface of the contact. Can be modified by the listener to provide an alternative velocity.
+            /// Generated from method `JPH::CharacterContactListener::OnContactSolve`.
+            public unsafe void OnContactSolve(Jolt.JPH.Const_CharacterVirtual? inCharacter, in Jolt.JPH.BodyID inBodyID2, Jolt.JPH.Const_SubShapeID inSubShapeID2, Jolt.JPH.Const_Vec3 inContactPosition, Jolt.JPH.Const_Vec3 inContactNormal, Jolt.JPH.Const_Vec3 inContactVelocity, Jolt.JPH.Const_PhysicsMaterial? inContactMaterial, Jolt.JPH.Const_Vec3 inCharacterVelocity, Jolt.JPH.Vec3 ioNewCharacterVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterContactListener_OnContactSolve", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterContactListener_OnContactSolve", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterContactListener_OnContactSolve(_Underlying *_this, Jolt.JPH.Const_CharacterVirtual._Underlying *inCharacter, Jolt.JPH.BodyID *inBodyID2, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID2, Jolt.JPH.Vec3._Underlying *inContactPosition, Jolt.JPH.Vec3._Underlying *inContactNormal, Jolt.JPH.Vec3._Underlying *inContactVelocity, Jolt.JPH.Const_PhysicsMaterial._Underlying *inContactMaterial, Jolt.JPH.Vec3._Underlying *inCharacterVelocity, Jolt.JPH.Vec3._Underlying *ioNewCharacterVelocity);
+                fixed (Jolt.JPH.BodyID *__ptr_inBodyID2 = &inBodyID2)
+                {
+                    __JPH_CharacterContactListener_OnContactSolve(_UnderlyingPtr, inCharacter is not null ? inCharacter._UnderlyingPtr : null, __ptr_inBodyID2, inSubShapeID2._UnderlyingPtr, inContactPosition._UnderlyingPtr, inContactNormal._UnderlyingPtr, inContactVelocity._UnderlyingPtr, inContactMaterial is not null ? inContactMaterial._UnderlyingPtr : null, inCharacterVelocity._UnderlyingPtr, ioNewCharacterVelocity._UnderlyingPtr);
+                }
+            }
+
+            /// Same as OnContactSolve but when colliding with a CharacterVirtual
+            /// Generated from method `JPH::CharacterContactListener::OnCharacterContactSolve`.
+            public unsafe void OnCharacterContactSolve(Jolt.JPH.Const_CharacterVirtual? inCharacter, Jolt.JPH.Const_CharacterVirtual? inOtherCharacter, Jolt.JPH.Const_SubShapeID inSubShapeID2, Jolt.JPH.Const_Vec3 inContactPosition, Jolt.JPH.Const_Vec3 inContactNormal, Jolt.JPH.Const_Vec3 inContactVelocity, Jolt.JPH.Const_PhysicsMaterial? inContactMaterial, Jolt.JPH.Const_Vec3 inCharacterVelocity, Jolt.JPH.Vec3 ioNewCharacterVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterContactListener_OnCharacterContactSolve", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterContactListener_OnCharacterContactSolve", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterContactListener_OnCharacterContactSolve(_Underlying *_this, Jolt.JPH.Const_CharacterVirtual._Underlying *inCharacter, Jolt.JPH.Const_CharacterVirtual._Underlying *inOtherCharacter, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID2, Jolt.JPH.Vec3._Underlying *inContactPosition, Jolt.JPH.Vec3._Underlying *inContactNormal, Jolt.JPH.Vec3._Underlying *inContactVelocity, Jolt.JPH.Const_PhysicsMaterial._Underlying *inContactMaterial, Jolt.JPH.Vec3._Underlying *inCharacterVelocity, Jolt.JPH.Vec3._Underlying *ioNewCharacterVelocity);
+                __JPH_CharacterContactListener_OnCharacterContactSolve(_UnderlyingPtr, inCharacter is not null ? inCharacter._UnderlyingPtr : null, inOtherCharacter is not null ? inOtherCharacter._UnderlyingPtr : null, inSubShapeID2._UnderlyingPtr, inContactPosition._UnderlyingPtr, inContactNormal._UnderlyingPtr, inContactVelocity._UnderlyingPtr, inContactMaterial is not null ? inContactMaterial._UnderlyingPtr : null, inCharacterVelocity._UnderlyingPtr, ioNewCharacterVelocity._UnderlyingPtr);
             }
         }
 
@@ -1824,6 +2018,37 @@ public static partial class Jolt
 
             internal unsafe Const_CharacterVirtual(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
+            /// Constructor
+            /// @param inSettings The settings for the character
+            /// @param inPosition Initial position for the character
+            /// @param inRotation Initial rotation for the character (usually only around the up-axis)
+            /// @param inUserData Application specific value
+            /// @param inSystem Physics system that this character will be added to
+            /// Generated from constructor `JPH::CharacterVirtual::CharacterVirtual`.
+            public unsafe Const_CharacterVirtual(Jolt.JPH.Const_CharacterVirtualSettings? inSettings, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, ulong inUserData, Jolt.JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.CharacterVirtual._Underlying *__JPH_CharacterVirtual_Construct_5(Jolt.JPH.Const_CharacterVirtualSettings._Underlying *inSettings, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, ulong inUserData, Jolt.JPH.PhysicsSystem._Underlying *inSystem);
+                _UnderlyingPtr = __JPH_CharacterVirtual_Construct_5(inSettings is not null ? inSettings._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inUserData, inSystem is not null ? inSystem._UnderlyingPtr : null);
+            }
+
+            /// Constructor without user data
+            /// Generated from constructor `JPH::CharacterVirtual::CharacterVirtual`.
+            public unsafe Const_CharacterVirtual(Jolt.JPH.Const_CharacterVirtualSettings? inSettings, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.CharacterVirtual._Underlying *__JPH_CharacterVirtual_Construct_4(Jolt.JPH.Const_CharacterVirtualSettings._Underlying *inSettings, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.PhysicsSystem._Underlying *inSystem);
+                _UnderlyingPtr = __JPH_CharacterVirtual_Construct_4(inSettings is not null ? inSettings._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inSystem is not null ? inSystem._UnderlyingPtr : null);
+            }
+
             /// Generated from method `JPH::CharacterVirtual::operator new`.
             /// Returns a mutable pointer.
             public static unsafe void *New(ulong inCount)
@@ -1985,6 +2210,84 @@ public static partial class Jolt
                 return __c_ret is not null ? new Jolt.JPH.CharacterContactListener(__c_ret, is_owning: false) : null;
             }
 
+            /// Get the linear velocity of the character (m / s)
+            /// Generated from method `JPH::CharacterVirtual::GetLinearVelocity`.
+            public unsafe Jolt.JPH.Vec3 GetLinearVelocity()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_GetLinearVelocity(_Underlying *_this);
+                return new(__JPH_CharacterVirtual_GetLinearVelocity(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get the position of the character
+            /// Generated from method `JPH::CharacterVirtual::GetPosition`.
+            public unsafe Jolt.JPH.Vec3 GetPosition()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_GetPosition(_Underlying *_this);
+                return new(__JPH_CharacterVirtual_GetPosition(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get the rotation of the character
+            /// Generated from method `JPH::CharacterVirtual::GetRotation`.
+            public unsafe Jolt.JPH.Quat GetRotation()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Quat._Underlying *__JPH_CharacterVirtual_GetRotation(_Underlying *_this);
+                return new(__JPH_CharacterVirtual_GetRotation(_UnderlyingPtr), is_owning: true);
+            }
+
+            // Get the center of mass position of the shape
+            /// Generated from method `JPH::CharacterVirtual::GetCenterOfMassPosition`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMassPosition()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetCenterOfMassPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetCenterOfMassPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_GetCenterOfMassPosition(_Underlying *_this);
+                return new(__JPH_CharacterVirtual_GetCenterOfMassPosition(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Calculate the world transform of the character
+            /// Generated from method `JPH::CharacterVirtual::GetWorldTransform`.
+            public unsafe Jolt.JPH.Mat44 GetWorldTransform()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetWorldTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetWorldTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_CharacterVirtual_GetWorldTransform(_Underlying *_this);
+                return new(__JPH_CharacterVirtual_GetWorldTransform(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Calculates the transform for this character's center of mass
+            /// Generated from method `JPH::CharacterVirtual::GetCenterOfMassTransform`.
+            public unsafe Jolt.JPH.Mat44 GetCenterOfMassTransform()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetCenterOfMassTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetCenterOfMassTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Mat44._Underlying *__JPH_CharacterVirtual_GetCenterOfMassTransform(_Underlying *_this);
+                return new(__JPH_CharacterVirtual_GetCenterOfMassTransform(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Character mass (kg)
             /// Generated from method `JPH::CharacterVirtual::GetMass`.
             public unsafe float GetMass()
@@ -2092,6 +2395,19 @@ public static partial class Jolt
                 return __JPH_CharacterVirtual_GetMaxHitsExceeded(_UnderlyingPtr) != 0;
             }
 
+            /// An extra offset applied to the shape in local space. This allows applying an extra offset to the shape in local space. Note that setting it on the fly can cause the shape to teleport into collision.
+            /// Generated from method `JPH::CharacterVirtual::GetShapeOffset`.
+            public unsafe Jolt.JPH.Vec3 GetShapeOffset()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetShapeOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetShapeOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_GetShapeOffset(_Underlying *_this);
+                return new(__JPH_CharacterVirtual_GetShapeOffset(_UnderlyingPtr), is_owning: true);
+            }
+
             /// Access to the user data, can be used for anything by the application
             /// Generated from method `JPH::CharacterVirtual::GetUserData`.
             public unsafe ulong GetUserData()
@@ -2116,6 +2432,37 @@ public static partial class Jolt
                 #endif
                 extern static Jolt.JPH.BodyID __JPH_CharacterVirtual_GetInnerBodyID(_Underlying *_this);
                 return __JPH_CharacterVirtual_GetInnerBodyID(_UnderlyingPtr);
+            }
+
+            /// This function can be called prior to calling Update() to convert a desired velocity into a velocity that won't make the character move further onto steep slopes.
+            /// This velocity can then be set on the character using SetLinearVelocity()
+            /// @param inDesiredVelocity Velocity to clamp against steep walls
+            /// @return A new velocity vector that won't make the character move up steep slopes
+            /// Generated from method `JPH::CharacterVirtual::CancelVelocityTowardsSteepSlopes`.
+            public unsafe Jolt.JPH.Vec3 CancelVelocityTowardsSteepSlopes(Jolt.JPH.Const_Vec3 inDesiredVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_CancelVelocityTowardsSteepSlopes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_CancelVelocityTowardsSteepSlopes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_CancelVelocityTowardsSteepSlopes(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inDesiredVelocity);
+                return new(__JPH_CharacterVirtual_CancelVelocityTowardsSteepSlopes(_UnderlyingPtr, inDesiredVelocity._UnderlyingPtr), is_owning: true);
+            }
+
+            /// This function will return true if the character has moved into a slope that is too steep (e.g. a vertical wall).
+            /// You would call WalkStairs to attempt to step up stairs.
+            /// @param inLinearVelocity The linear velocity that the player desired. This is used to determine if we're pushing into a step.
+            /// Generated from method `JPH::CharacterVirtual::CanWalkStairs`.
+            public unsafe bool CanWalkStairs(Jolt.JPH.Const_Vec3 inLinearVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_CanWalkStairs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_CanWalkStairs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_CharacterVirtual_CanWalkStairs(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inLinearVelocity);
+                return __JPH_CharacterVirtual_CanWalkStairs(_UnderlyingPtr, inLinearVelocity._UnderlyingPtr) != 0;
             }
 
             /// Get the character settings that can recreate this character
@@ -2185,6 +2532,31 @@ public static partial class Jolt
                 return __JPH_CharacterVirtual_GetCosMaxSlopeAngle(_UnderlyingPtr);
             }
 
+            /// Generated from method `JPH::CharacterVirtual::GetUp`.
+            public unsafe Jolt.JPH.Vec3 GetUp()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_GetUp(_Underlying *_this);
+                return new(__JPH_CharacterVirtual_GetUp(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Check if the normal of the ground surface is too steep to walk on
+            /// Generated from method `JPH::CharacterVirtual::IsSlopeTooSteep`.
+            public unsafe bool IsSlopeTooSteep(Jolt.JPH.Const_Vec3 inNormal)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_IsSlopeTooSteep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_IsSlopeTooSteep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_CharacterVirtual_IsSlopeTooSteep(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inNormal);
+                return __JPH_CharacterVirtual_IsSlopeTooSteep(_UnderlyingPtr, inNormal._UnderlyingPtr) != 0;
+            }
+
             /// Get the current shape that the character is using.
             /// Generated from method `JPH::CharacterVirtual::GetShape`.
             public unsafe Jolt.JPH.Const_Shape? GetShape()
@@ -2237,6 +2609,45 @@ public static partial class Jolt
                 #endif
                 extern static byte __JPH_CharacterVirtual_IsSupported(_Underlying *_this);
                 return __JPH_CharacterVirtual_IsSupported(_UnderlyingPtr) != 0;
+            }
+
+            /// Get the contact point with the ground
+            /// Generated from method `JPH::CharacterVirtual::GetGroundPosition`.
+            public unsafe Jolt.JPH.Vec3 GetGroundPosition()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetGroundPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetGroundPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_GetGroundPosition(_Underlying *_this);
+                return new(__JPH_CharacterVirtual_GetGroundPosition(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Get the contact normal with the ground
+            /// Generated from method `JPH::CharacterVirtual::GetGroundNormal`.
+            public unsafe Jolt.JPH.Vec3 GetGroundNormal()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetGroundNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetGroundNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_GetGroundNormal(_Underlying *_this);
+                return new(__JPH_CharacterVirtual_GetGroundNormal(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Velocity in world space of ground
+            /// Generated from method `JPH::CharacterVirtual::GetGroundVelocity`.
+            public unsafe Jolt.JPH.Vec3 GetGroundVelocity()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetGroundVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetGroundVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_GetGroundVelocity(_Underlying *_this);
+                return new(__JPH_CharacterVirtual_GetGroundVelocity(_UnderlyingPtr), is_owning: true);
             }
 
             /// Material that the character is standing on
@@ -2398,6 +2809,78 @@ public static partial class Jolt
                     Jolt.JPH.CharacterVirtual.Const_ContactKey ret = new(__JPH_CharacterVirtual_Contact_UpcastTo_JPH_CharacterVirtual_ContactKey(self._UnderlyingPtr), is_owning: false);
                     ret._KeepAliveEnclosingObject = self;
                     return ret;
+                }
+
+                ///< Position where the character makes contact
+                public unsafe Jolt.JPH.Const_Vec3 mPosition
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_Get_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_Get_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_CharacterVirtual_Contact_Get_mPosition(_Underlying *_this);
+                        Jolt.JPH.Const_Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_Contact_Get_mPosition(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
+                ///< Velocity of the contact point
+                public unsafe Jolt.JPH.Const_Vec3 mLinearVelocity
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_Get_mLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_Get_mLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_CharacterVirtual_Contact_Get_mLinearVelocity(_Underlying *_this);
+                        Jolt.JPH.Const_Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_Contact_Get_mLinearVelocity(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
+                ///< Contact normal, pointing towards the character
+                public unsafe Jolt.JPH.Const_Vec3 mContactNormal
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_Get_mContactNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_Get_mContactNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_CharacterVirtual_Contact_Get_mContactNormal(_Underlying *_this);
+                        Jolt.JPH.Const_Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_Contact_Get_mContactNormal(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
+                ///< Surface normal of the contact
+                public unsafe Jolt.JPH.Const_Vec3 mSurfaceNormal
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_Get_mSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_Get_mSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_CharacterVirtual_Contact_Get_mSurfaceNormal(_Underlying *_this);
+                        Jolt.JPH.Const_Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_Contact_Get_mSurfaceNormal(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
                 }
 
                 ///< Distance to the contact <= 0 means that it is an actual contact, > 0 means predictive
@@ -2713,6 +3196,78 @@ public static partial class Jolt
                     Jolt.JPH.CharacterVirtual.ContactKey ret = new(__JPH_CharacterVirtual_Contact_UpcastTo_JPH_CharacterVirtual_ContactKey(self._UnderlyingPtr), is_owning: false);
                     ret._KeepAliveEnclosingObject = self;
                     return ret;
+                }
+
+                ///< Position where the character makes contact
+                public new unsafe Jolt.JPH.Vec3 mPosition
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetMutable_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetMutable_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_Contact_GetMutable_mPosition(_Underlying *_this);
+                        Jolt.JPH.Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_Contact_GetMutable_mPosition(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
+                ///< Velocity of the contact point
+                public new unsafe Jolt.JPH.Vec3 mLinearVelocity
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetMutable_mLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetMutable_mLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_Contact_GetMutable_mLinearVelocity(_Underlying *_this);
+                        Jolt.JPH.Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_Contact_GetMutable_mLinearVelocity(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
+                ///< Contact normal, pointing towards the character
+                public new unsafe Jolt.JPH.Vec3 mContactNormal
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetMutable_mContactNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetMutable_mContactNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_Contact_GetMutable_mContactNormal(_Underlying *_this);
+                        Jolt.JPH.Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_Contact_GetMutable_mContactNormal(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
+                ///< Surface normal of the contact
+                public new unsafe Jolt.JPH.Vec3 mSurfaceNormal
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetMutable_mSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetMutable_mSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_Contact_GetMutable_mSurfaceNormal(_Underlying *_this);
+                        Jolt.JPH.Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_Contact_GetMutable_mSurfaceNormal(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
                 }
 
                 ///< Distance to the contact <= 0 means that it is an actual contact, > 0 means predictive
@@ -3374,6 +3929,42 @@ public static partial class Jolt
                 public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
                 ~Const_ExtendedUpdateSettings() {Dispose(false);}
 
+                ///< See StickToFloor inStepDown parameter. Can be zero to turn off.
+                public unsafe Jolt.JPH.Const_Vec3 mStickToFloorStepDown
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mStickToFloorStepDown", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mStickToFloorStepDown", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mStickToFloorStepDown(_Underlying *_this);
+                        Jolt.JPH.Const_Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mStickToFloorStepDown(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
+                ///< See WalkStairs inStepUp parameter. Can be zero to turn off.
+                public unsafe Jolt.JPH.Const_Vec3 mWalkStairsStepUp
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepUp(_Underlying *_this);
+                        Jolt.JPH.Const_Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepUp(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
                 ///< See WalkStairs inStepForward parameter. Note that the parameter only indicates a magnitude, direction is taken from current velocity.
                 public unsafe float mWalkStairsMinStepForward
                 {
@@ -3419,6 +4010,24 @@ public static partial class Jolt
                     }
                 }
 
+                ///< See WalkStairs inStepDownExtra
+                public unsafe Jolt.JPH.Const_Vec3 mWalkStairsStepDownExtra
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepDownExtra", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepDownExtra", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepDownExtra(_Underlying *_this);
+                        Jolt.JPH.Const_Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepDownExtra(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
                 internal unsafe Const_ExtendedUpdateSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
                 /// Constructs an empty (default-constructed) instance.
@@ -3431,6 +4040,21 @@ public static partial class Jolt
                     #endif
                     extern static Jolt.JPH.CharacterVirtual.ExtendedUpdateSettings._Underlying *__JPH_CharacterVirtual_ExtendedUpdateSettings_DefaultConstruct();
                     _UnderlyingPtr = __JPH_CharacterVirtual_ExtendedUpdateSettings_DefaultConstruct();
+                }
+
+                /// Constructs `JPH::CharacterVirtual::ExtendedUpdateSettings` elementwise.
+                public unsafe Const_ExtendedUpdateSettings(Jolt.JPH.Const_Vec3 mStickToFloorStepDown, Jolt.JPH.Const_Vec3 mWalkStairsStepUp, float mWalkStairsMinStepForward, float mWalkStairsStepForwardTest, float mWalkStairsCosAngleForwardContact, Jolt.JPH.Const_Vec3 mWalkStairsStepDownExtra) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.CharacterVirtual.ExtendedUpdateSettings._Underlying *__JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFrom(Jolt.JPH.Vec3._Underlying *mStickToFloorStepDown, Jolt.JPH.Vec3._Underlying *mWalkStairsStepUp, float mWalkStairsMinStepForward, float mWalkStairsStepForwardTest, float mWalkStairsCosAngleForwardContact, Jolt.JPH.Vec3._Underlying *mWalkStairsStepDownExtra);
+                    _UnderlyingPtr = __JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFrom(mStickToFloorStepDown._UnderlyingPtr, mWalkStairsStepUp._UnderlyingPtr, mWalkStairsMinStepForward, mWalkStairsStepForwardTest, mWalkStairsCosAngleForwardContact, mWalkStairsStepDownExtra._UnderlyingPtr);
+                    _KeepAlive(mStickToFloorStepDown);
+                    _KeepAlive(mWalkStairsStepUp);
+                    _KeepAlive(mWalkStairsStepDownExtra);
                 }
 
                 /// Generated from constructor `JPH::CharacterVirtual::ExtendedUpdateSettings::ExtendedUpdateSettings`.
@@ -3455,6 +4079,42 @@ public static partial class Jolt
             /// This is the non-const half of the class.
             public class ExtendedUpdateSettings : Const_ExtendedUpdateSettings
             {
+                ///< See StickToFloor inStepDown parameter. Can be zero to turn off.
+                public new unsafe Jolt.JPH.Vec3 mStickToFloorStepDown
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mStickToFloorStepDown", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mStickToFloorStepDown", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mStickToFloorStepDown(_Underlying *_this);
+                        Jolt.JPH.Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mStickToFloorStepDown(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
+                ///< See WalkStairs inStepUp parameter. Can be zero to turn off.
+                public new unsafe Jolt.JPH.Vec3 mWalkStairsStepUp
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepUp(_Underlying *_this);
+                        Jolt.JPH.Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepUp(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
                 ///< See WalkStairs inStepForward parameter. Note that the parameter only indicates a magnitude, direction is taken from current velocity.
                 public new unsafe ref float mWalkStairsMinStepForward
                 {
@@ -3500,6 +4160,24 @@ public static partial class Jolt
                     }
                 }
 
+                ///< See WalkStairs inStepDownExtra
+                public new unsafe Jolt.JPH.Vec3 mWalkStairsStepDownExtra
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepDownExtra", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepDownExtra", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Vec3._Underlying *__JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepDownExtra(_Underlying *_this);
+                        Jolt.JPH.Vec3 __ret;
+                        __ret = new(__JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepDownExtra(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
                 internal unsafe ExtendedUpdateSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
                 /// Constructs an empty (default-constructed) instance.
@@ -3512,6 +4190,21 @@ public static partial class Jolt
                     #endif
                     extern static Jolt.JPH.CharacterVirtual.ExtendedUpdateSettings._Underlying *__JPH_CharacterVirtual_ExtendedUpdateSettings_DefaultConstruct();
                     _UnderlyingPtr = __JPH_CharacterVirtual_ExtendedUpdateSettings_DefaultConstruct();
+                }
+
+                /// Constructs `JPH::CharacterVirtual::ExtendedUpdateSettings` elementwise.
+                public unsafe ExtendedUpdateSettings(Jolt.JPH.Const_Vec3 mStickToFloorStepDown, Jolt.JPH.Const_Vec3 mWalkStairsStepUp, float mWalkStairsMinStepForward, float mWalkStairsStepForwardTest, float mWalkStairsCosAngleForwardContact, Jolt.JPH.Const_Vec3 mWalkStairsStepDownExtra) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.CharacterVirtual.ExtendedUpdateSettings._Underlying *__JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFrom(Jolt.JPH.Vec3._Underlying *mStickToFloorStepDown, Jolt.JPH.Vec3._Underlying *mWalkStairsStepUp, float mWalkStairsMinStepForward, float mWalkStairsStepForwardTest, float mWalkStairsCosAngleForwardContact, Jolt.JPH.Vec3._Underlying *mWalkStairsStepDownExtra);
+                    _UnderlyingPtr = __JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFrom(mStickToFloorStepDown._UnderlyingPtr, mWalkStairsStepUp._UnderlyingPtr, mWalkStairsMinStepForward, mWalkStairsStepForwardTest, mWalkStairsCosAngleForwardContact, mWalkStairsStepDownExtra._UnderlyingPtr);
+                    _KeepAlive(mStickToFloorStepDown);
+                    _KeepAlive(mWalkStairsStepUp);
+                    _KeepAlive(mWalkStairsStepDownExtra);
                 }
 
                 /// Generated from constructor `JPH::CharacterVirtual::ExtendedUpdateSettings::ExtendedUpdateSettings`.
@@ -3648,6 +4341,37 @@ public static partial class Jolt
 
             internal unsafe CharacterVirtual(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
+            /// Constructor
+            /// @param inSettings The settings for the character
+            /// @param inPosition Initial position for the character
+            /// @param inRotation Initial rotation for the character (usually only around the up-axis)
+            /// @param inUserData Application specific value
+            /// @param inSystem Physics system that this character will be added to
+            /// Generated from constructor `JPH::CharacterVirtual::CharacterVirtual`.
+            public unsafe CharacterVirtual(Jolt.JPH.Const_CharacterVirtualSettings? inSettings, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, ulong inUserData, Jolt.JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.CharacterVirtual._Underlying *__JPH_CharacterVirtual_Construct_5(Jolt.JPH.Const_CharacterVirtualSettings._Underlying *inSettings, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, ulong inUserData, Jolt.JPH.PhysicsSystem._Underlying *inSystem);
+                _UnderlyingPtr = __JPH_CharacterVirtual_Construct_5(inSettings is not null ? inSettings._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inUserData, inSystem is not null ? inSystem._UnderlyingPtr : null);
+            }
+
+            /// Constructor without user data
+            /// Generated from constructor `JPH::CharacterVirtual::CharacterVirtual`.
+            public unsafe CharacterVirtual(Jolt.JPH.Const_CharacterVirtualSettings? inSettings, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_4", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.CharacterVirtual._Underlying *__JPH_CharacterVirtual_Construct_4(Jolt.JPH.Const_CharacterVirtualSettings._Underlying *inSettings, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.PhysicsSystem._Underlying *inSystem);
+                _UnderlyingPtr = __JPH_CharacterVirtual_Construct_4(inSettings is not null ? inSettings._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inSystem is not null ? inSystem._UnderlyingPtr : null);
+            }
+
             /// Set the contact listener
             /// Generated from method `JPH::CharacterVirtual::SetListener`.
             public unsafe void SetListener(Jolt.JPH.CharacterContactListener? inListener)
@@ -3672,6 +4396,45 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_CharacterVirtual_SetCharacterVsCharacterCollision(_Underlying *_this, Jolt.JPH.CharacterVsCharacterCollision._Underlying *inCharacterVsCharacterCollision);
                 __JPH_CharacterVirtual_SetCharacterVsCharacterCollision(_UnderlyingPtr, inCharacterVsCharacterCollision is not null ? inCharacterVsCharacterCollision._UnderlyingPtr : null);
+            }
+
+            /// Set the linear velocity of the character (m / s)
+            /// Generated from method `JPH::CharacterVirtual::SetLinearVelocity`.
+            public unsafe void SetLinearVelocity(Jolt.JPH.Const_Vec3 inLinearVelocity)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_SetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_SetLinearVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterVirtual_SetLinearVelocity(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inLinearVelocity);
+                __JPH_CharacterVirtual_SetLinearVelocity(_UnderlyingPtr, inLinearVelocity._UnderlyingPtr);
+            }
+
+            /// Set the position of the character
+            /// Generated from method `JPH::CharacterVirtual::SetPosition`.
+            public unsafe void SetPosition(Jolt.JPH.Const_Vec3 inPosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_SetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_SetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterVirtual_SetPosition(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inPosition);
+                __JPH_CharacterVirtual_SetPosition(_UnderlyingPtr, inPosition._UnderlyingPtr);
+            }
+
+            /// Set the rotation of the character
+            /// Generated from method `JPH::CharacterVirtual::SetRotation`.
+            public unsafe void SetRotation(Jolt.JPH.Const_Quat inRotation)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_SetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_SetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterVirtual_SetRotation(_Underlying *_this, Jolt.JPH.Quat._Underlying *inRotation);
+                __JPH_CharacterVirtual_SetRotation(_UnderlyingPtr, inRotation._UnderlyingPtr);
             }
 
             /// Generated from method `JPH::CharacterVirtual::SetMass`.
@@ -3746,6 +4509,18 @@ public static partial class Jolt
                 __JPH_CharacterVirtual_SetHitReductionCosMaxAngle(_UnderlyingPtr, inCosMaxAngle);
             }
 
+            /// Generated from method `JPH::CharacterVirtual::SetShapeOffset`.
+            public unsafe void SetShapeOffset(Jolt.JPH.Const_Vec3 inShapeOffset)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_SetShapeOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_SetShapeOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterVirtual_SetShapeOffset(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inShapeOffset);
+                __JPH_CharacterVirtual_SetShapeOffset(_UnderlyingPtr, inShapeOffset._UnderlyingPtr);
+            }
+
             /// Generated from method `JPH::CharacterVirtual::SetUserData`.
             public unsafe void SetUserData(ulong inUserData)
             {
@@ -3785,6 +4560,98 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_CharacterVirtual_FinishTrackingContactChanges(_Underlying *_this);
                 __JPH_CharacterVirtual_FinishTrackingContactChanges(_UnderlyingPtr);
+            }
+
+            /// This is the main update function. It moves the character according to its current velocity (the character is similar to a kinematic body in the sense
+            /// that you set the velocity and the character will follow unless collision is blocking the way). Note it's your own responsibility to apply gravity to the character velocity!
+            /// Different surface materials (like ice) can be emulated by getting the ground material and adjusting the velocity and/or the max slope angle accordingly every frame.
+            /// @param inDeltaTime Time step to simulate.
+            /// @param inGravity Gravity vector (m/s^2). This gravity vector is only used when the character is standing on top of another object to apply downward force.
+            /// @param inBroadPhaseLayerFilter Filter that is used to check if the character collides with something in the broadphase.
+            /// @param inObjectLayerFilter Filter that is used to check if a character collides with a layer.
+            /// @param inBodyFilter Filter that is used to check if a character collides with a body.
+            /// @param inShapeFilter Filter that is used to check if a character collides with a subshape.
+            /// @param inAllocator An allocator for temporary allocations. All memory will be freed by the time this function returns.
+            /// Generated from method `JPH::CharacterVirtual::Update`.
+            public unsafe void Update(float inDeltaTime, Jolt.JPH.Const_Vec3 inGravity, Jolt.JPH.Const_BroadPhaseLayerFilter inBroadPhaseLayerFilter, Jolt.JPH.Const_ObjectLayerFilter inObjectLayerFilter, Jolt.JPH.Const_BodyFilter inBodyFilter, Jolt.JPH.Const_ShapeFilter inShapeFilter, Jolt.JPH.TempAllocator inAllocator)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Update", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Update", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterVirtual_Update(_Underlying *_this, float inDeltaTime, Jolt.JPH.Vec3._Underlying *inGravity, Jolt.JPH.Const_BroadPhaseLayerFilter._Underlying *inBroadPhaseLayerFilter, Jolt.JPH.Const_ObjectLayerFilter._Underlying *inObjectLayerFilter, Jolt.JPH.Const_BodyFilter._Underlying *inBodyFilter, Jolt.JPH.Const_ShapeFilter._Underlying *inShapeFilter, Jolt.JPH.TempAllocator._Underlying *inAllocator);
+                __JPH_CharacterVirtual_Update(_UnderlyingPtr, inDeltaTime, inGravity._UnderlyingPtr, inBroadPhaseLayerFilter._UnderlyingPtr, inObjectLayerFilter._UnderlyingPtr, inBodyFilter._UnderlyingPtr, inShapeFilter._UnderlyingPtr, inAllocator._UnderlyingPtr);
+            }
+
+            /// When stair walking is needed, you can call the WalkStairs function to cast up, forward and down again to try to find a valid position
+            /// @param inDeltaTime Time step to simulate.
+            /// @param inStepUp The direction and distance to step up (this corresponds to the max step height)
+            /// @param inStepForward The direction and distance to step forward after the step up
+            /// @param inStepForwardTest When running at a high frequency, inStepForward can be very small and it's likely that you hit the side of the stairs on the way down. This could produce a normal that violates the max slope angle. If this happens, we test again using this distance from the up position to see if we find a valid slope.
+            /// @param inStepDownExtra An additional translation that is added when stepping down at the end. Allows you to step further down than up. Set to zero if you don't want this. Should be in the opposite direction of up.
+            /// @param inBroadPhaseLayerFilter Filter that is used to check if the character collides with something in the broadphase.
+            /// @param inObjectLayerFilter Filter that is used to check if a character collides with a layer.
+            /// @param inBodyFilter Filter that is used to check if a character collides with a body.
+            /// @param inShapeFilter Filter that is used to check if a character collides with a subshape.
+            /// @param inAllocator An allocator for temporary allocations. All memory will be freed by the time this function returns.
+            /// @return true if the stair walk was successful
+            /// Generated from method `JPH::CharacterVirtual::WalkStairs`.
+            public unsafe bool WalkStairs(float inDeltaTime, Jolt.JPH.Const_Vec3 inStepUp, Jolt.JPH.Const_Vec3 inStepForward, Jolt.JPH.Const_Vec3 inStepForwardTest, Jolt.JPH.Const_Vec3 inStepDownExtra, Jolt.JPH.Const_BroadPhaseLayerFilter inBroadPhaseLayerFilter, Jolt.JPH.Const_ObjectLayerFilter inObjectLayerFilter, Jolt.JPH.Const_BodyFilter inBodyFilter, Jolt.JPH.Const_ShapeFilter inShapeFilter, Jolt.JPH.TempAllocator inAllocator)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_WalkStairs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_WalkStairs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_CharacterVirtual_WalkStairs(_Underlying *_this, float inDeltaTime, Jolt.JPH.Vec3._Underlying *inStepUp, Jolt.JPH.Vec3._Underlying *inStepForward, Jolt.JPH.Vec3._Underlying *inStepForwardTest, Jolt.JPH.Vec3._Underlying *inStepDownExtra, Jolt.JPH.Const_BroadPhaseLayerFilter._Underlying *inBroadPhaseLayerFilter, Jolt.JPH.Const_ObjectLayerFilter._Underlying *inObjectLayerFilter, Jolt.JPH.Const_BodyFilter._Underlying *inBodyFilter, Jolt.JPH.Const_ShapeFilter._Underlying *inShapeFilter, Jolt.JPH.TempAllocator._Underlying *inAllocator);
+                return __JPH_CharacterVirtual_WalkStairs(_UnderlyingPtr, inDeltaTime, inStepUp._UnderlyingPtr, inStepForward._UnderlyingPtr, inStepForwardTest._UnderlyingPtr, inStepDownExtra._UnderlyingPtr, inBroadPhaseLayerFilter._UnderlyingPtr, inObjectLayerFilter._UnderlyingPtr, inBodyFilter._UnderlyingPtr, inShapeFilter._UnderlyingPtr, inAllocator._UnderlyingPtr) != 0;
+            }
+
+            /// This function can be used to artificially keep the character to the floor. Normally when a character is on a small step and starts moving horizontally, the character will
+            /// lose contact with the floor because the initial vertical velocity is zero while the horizontal velocity is quite high. To prevent the character from losing contact with the floor,
+            /// we do an additional collision check downwards and if we find the floor within a certain distance, we project the character onto the floor.
+            /// @param inStepDown Max amount to project the character downwards (if no floor is found within this distance, the function will return false)
+            /// @param inBroadPhaseLayerFilter Filter that is used to check if the character collides with something in the broadphase.
+            /// @param inObjectLayerFilter Filter that is used to check if a character collides with a layer.
+            /// @param inBodyFilter Filter that is used to check if a character collides with a body.
+            /// @param inShapeFilter Filter that is used to check if a character collides with a subshape.
+            /// @param inAllocator An allocator for temporary allocations. All memory will be freed by the time this function returns.
+            /// @return True if the character was successfully projected onto the floor.
+            /// Generated from method `JPH::CharacterVirtual::StickToFloor`.
+            public unsafe bool StickToFloor(Jolt.JPH.Const_Vec3 inStepDown, Jolt.JPH.Const_BroadPhaseLayerFilter inBroadPhaseLayerFilter, Jolt.JPH.Const_ObjectLayerFilter inObjectLayerFilter, Jolt.JPH.Const_BodyFilter inBodyFilter, Jolt.JPH.Const_ShapeFilter inShapeFilter, Jolt.JPH.TempAllocator inAllocator)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_StickToFloor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_StickToFloor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_CharacterVirtual_StickToFloor(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inStepDown, Jolt.JPH.Const_BroadPhaseLayerFilter._Underlying *inBroadPhaseLayerFilter, Jolt.JPH.Const_ObjectLayerFilter._Underlying *inObjectLayerFilter, Jolt.JPH.Const_BodyFilter._Underlying *inBodyFilter, Jolt.JPH.Const_ShapeFilter._Underlying *inShapeFilter, Jolt.JPH.TempAllocator._Underlying *inAllocator);
+                return __JPH_CharacterVirtual_StickToFloor(_UnderlyingPtr, inStepDown._UnderlyingPtr, inBroadPhaseLayerFilter._UnderlyingPtr, inObjectLayerFilter._UnderlyingPtr, inBodyFilter._UnderlyingPtr, inShapeFilter._UnderlyingPtr, inAllocator._UnderlyingPtr) != 0;
+            }
+
+            /// This function combines Update, StickToFloor and WalkStairs. This function serves as an example of how these functions could be combined.
+            /// Before calling, call SetLinearVelocity to update the horizontal/vertical speed of the character, typically this is:
+            /// - When on OnGround and not moving away from ground: velocity = GetGroundVelocity() + horizontal speed as input by player + optional vertical jump velocity + delta time * gravity
+            /// - Else: velocity = current vertical velocity + horizontal speed as input by player + delta time * gravity
+            /// @param inDeltaTime Time step to simulate.
+            /// @param inGravity Gravity vector (m/s^2). This gravity vector is only used when the character is standing on top of another object to apply downward force.
+            /// @param inSettings A structure containing settings for the algorithm.
+            /// @param inBroadPhaseLayerFilter Filter that is used to check if the character collides with something in the broadphase.
+            /// @param inObjectLayerFilter Filter that is used to check if a character collides with a layer.
+            /// @param inBodyFilter Filter that is used to check if a character collides with a body.
+            /// @param inShapeFilter Filter that is used to check if a character collides with a subshape.
+            /// @param inAllocator An allocator for temporary allocations. All memory will be freed by the time this function returns.
+            /// Generated from method `JPH::CharacterVirtual::ExtendedUpdate`.
+            public unsafe void ExtendedUpdate(float inDeltaTime, Jolt.JPH.Const_Vec3 inGravity, Jolt.JPH.CharacterVirtual.Const_ExtendedUpdateSettings inSettings, Jolt.JPH.Const_BroadPhaseLayerFilter inBroadPhaseLayerFilter, Jolt.JPH.Const_ObjectLayerFilter inObjectLayerFilter, Jolt.JPH.Const_BodyFilter inBodyFilter, Jolt.JPH.Const_ShapeFilter inShapeFilter, Jolt.JPH.TempAllocator inAllocator)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdate", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_ExtendedUpdate", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterVirtual_ExtendedUpdate(_Underlying *_this, float inDeltaTime, Jolt.JPH.Vec3._Underlying *inGravity, Jolt.JPH.CharacterVirtual.Const_ExtendedUpdateSettings._Underlying *inSettings, Jolt.JPH.Const_BroadPhaseLayerFilter._Underlying *inBroadPhaseLayerFilter, Jolt.JPH.Const_ObjectLayerFilter._Underlying *inObjectLayerFilter, Jolt.JPH.Const_BodyFilter._Underlying *inBodyFilter, Jolt.JPH.Const_ShapeFilter._Underlying *inShapeFilter, Jolt.JPH.TempAllocator._Underlying *inAllocator);
+                __JPH_CharacterVirtual_ExtendedUpdate(_UnderlyingPtr, inDeltaTime, inGravity._UnderlyingPtr, inSettings._UnderlyingPtr, inBroadPhaseLayerFilter._UnderlyingPtr, inObjectLayerFilter._UnderlyingPtr, inBodyFilter._UnderlyingPtr, inShapeFilter._UnderlyingPtr, inAllocator._UnderlyingPtr);
             }
 
             /// This function can be used after a character has teleported to determine the new contacts with the world.
@@ -3859,6 +4726,19 @@ public static partial class Jolt
                 #endif
                 extern static void __JPH_CharacterVirtual_SetMaxSlopeAngle(_Underlying *_this, float inMaxSlopeAngle);
                 __JPH_CharacterVirtual_SetMaxSlopeAngle(_UnderlyingPtr, inMaxSlopeAngle);
+            }
+
+            /// Set the up vector for the character
+            /// Generated from method `JPH::CharacterVirtual::SetUp`.
+            public unsafe void SetUp(Jolt.JPH.Const_Vec3 inUp)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_SetUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_SetUp", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_CharacterVirtual_SetUp(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inUp);
+                __JPH_CharacterVirtual_SetUp(_UnderlyingPtr, inUp._UnderlyingPtr);
             }
         }
 

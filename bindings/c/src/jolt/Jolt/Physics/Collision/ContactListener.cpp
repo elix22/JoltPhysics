@@ -2,6 +2,7 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Physics/Collision/ContactListener.h"
 
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Collision/ContactListener.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
@@ -12,6 +13,26 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_ContactManifold_Get_mBaseOffset(const JPH_ContactManifold *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ContactManifold *)(_this)).mBaseOffset);
+}
+
+JPH_Vec3 *JPH_ContactManifold_GetMutable_mBaseOffset(JPH_ContactManifold *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ContactManifold *)(_this)).mBaseOffset);
+}
+
+const JPH_Vec3 *JPH_ContactManifold_Get_mWorldSpaceNormal(const JPH_ContactManifold *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ContactManifold *)(_this)).mWorldSpaceNormal);
+}
+
+JPH_Vec3 *JPH_ContactManifold_GetMutable_mWorldSpaceNormal(JPH_ContactManifold *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ContactManifold *)(_this)).mWorldSpaceNormal);
+}
 
 const float *JPH_ContactManifold_Get_mPenetrationDepth(const JPH_ContactManifold *_this)
 {
@@ -97,6 +118,20 @@ JPH_ContactManifold *JPH_ContactManifold_AssignFromAnother(JPH_ContactManifold *
 JPH_ContactManifold *JPH_ContactManifold_SwapShapes(const JPH_ContactManifold *_this)
 {
     return (JPH_ContactManifold *)new JPH::ContactManifold(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ContactManifold *)(_this)).SwapShapes());
+}
+
+JPH_Vec3 *JPH_ContactManifold_GetWorldSpaceContactPointOn1(const JPH_ContactManifold *_this, unsigned int inIndex)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ContactManifold *)(_this)).GetWorldSpaceContactPointOn1(
+        inIndex
+    ));
+}
+
+JPH_Vec3 *JPH_ContactManifold_GetWorldSpaceContactPointOn2(const JPH_ContactManifold *_this, unsigned int inIndex)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ContactManifold *)(_this)).GetWorldSpaceContactPointOn2(
+        inIndex
+    ));
 }
 
 const float *JPH_ContactSettings_Get_mCombinedFriction(const JPH_ContactSettings *_this)
@@ -204,6 +239,26 @@ bool *JPH_ContactSettings_GetMutable_mIsSensor(JPH_ContactSettings *_this)
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ContactSettings *)(_this)).mIsSensor);
 }
 
+const JPH_Vec3 *JPH_ContactSettings_Get_mRelativeLinearSurfaceVelocity(const JPH_ContactSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ContactSettings *)(_this)).mRelativeLinearSurfaceVelocity);
+}
+
+JPH_Vec3 *JPH_ContactSettings_GetMutable_mRelativeLinearSurfaceVelocity(JPH_ContactSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ContactSettings *)(_this)).mRelativeLinearSurfaceVelocity);
+}
+
+const JPH_Vec3 *JPH_ContactSettings_Get_mRelativeAngularSurfaceVelocity(const JPH_ContactSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ContactSettings *)(_this)).mRelativeAngularSurfaceVelocity);
+}
+
+JPH_Vec3 *JPH_ContactSettings_GetMutable_mRelativeAngularSurfaceVelocity(JPH_ContactSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ContactSettings *)(_this)).mRelativeAngularSurfaceVelocity);
+}
+
 JPH_ContactSettings *JPH_ContactSettings_DefaultConstruct(void)
 {
     return (JPH_ContactSettings *)new JPH::ContactSettings(JPH::ContactSettings());
@@ -212,6 +267,31 @@ JPH_ContactSettings *JPH_ContactSettings_DefaultConstruct(void)
 JPH_ContactSettings *JPH_ContactSettings_DefaultConstructArray(size_t num_elems)
 {
     return (JPH_ContactSettings *)(new JPH::ContactSettings[num_elems]{});
+}
+
+JPH_ContactSettings *JPH_ContactSettings_ConstructFrom(float mCombinedFriction, float mCombinedRestitution, float mInvMassScale1, float mInvInertiaScale1, float mInvMassScale2, float mInvInertiaScale2, bool mIsSensor, const JPH_Vec3 *mRelativeLinearSurfaceVelocity, const JPH_Vec3 *mRelativeAngularSurfaceVelocity)
+{
+    return (JPH_ContactSettings *)new JPH::ContactSettings(JPH::ContactSettings{
+        mCombinedFriction,
+        mCombinedRestitution,
+        mInvMassScale1,
+        mInvInertiaScale1,
+        mInvMassScale2,
+        mInvInertiaScale2,
+        mIsSensor,
+        ((mRelativeLinearSurfaceVelocity ? void() : MRBINDC_THROW("Parameter `mRelativeLinearSurfaceVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)mRelativeLinearSurfaceVelocity)),
+        ((mRelativeAngularSurfaceVelocity ? void() : MRBINDC_THROW("Parameter `mRelativeAngularSurfaceVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)mRelativeAngularSurfaceVelocity))
+    });
+}
+
+const JPH_ContactSettings *JPH_ContactSettings_OffsetPtr(const JPH_ContactSettings *ptr, ptrdiff_t i)
+{
+    return (const JPH_ContactSettings *)(((const JPH::ContactSettings *)ptr) + i);
+}
+
+JPH_ContactSettings *JPH_ContactSettings_OffsetMutablePtr(JPH_ContactSettings *ptr, ptrdiff_t i)
+{
+    return (JPH_ContactSettings *)(((JPH::ContactSettings *)ptr) + i);
 }
 
 JPH_ContactSettings *JPH_ContactSettings_ConstructFromAnother(const JPH_ContactSettings *_other)

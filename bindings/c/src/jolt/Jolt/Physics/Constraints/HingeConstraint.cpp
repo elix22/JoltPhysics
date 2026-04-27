@@ -4,6 +4,10 @@
 
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
+#include <Jolt/Math/Vector.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyID.h>
@@ -17,6 +21,66 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mPoint1(const JPH_HingeConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraintSettings *)(_this)).mPoint1);
+}
+
+JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mPoint1(JPH_HingeConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraintSettings *)(_this)).mPoint1);
+}
+
+const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mHingeAxis1(const JPH_HingeConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraintSettings *)(_this)).mHingeAxis1);
+}
+
+JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mHingeAxis1(JPH_HingeConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraintSettings *)(_this)).mHingeAxis1);
+}
+
+const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mNormalAxis1(const JPH_HingeConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraintSettings *)(_this)).mNormalAxis1);
+}
+
+JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mNormalAxis1(JPH_HingeConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraintSettings *)(_this)).mNormalAxis1);
+}
+
+const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mPoint2(const JPH_HingeConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraintSettings *)(_this)).mPoint2);
+}
+
+JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mPoint2(JPH_HingeConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraintSettings *)(_this)).mPoint2);
+}
+
+const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mHingeAxis2(const JPH_HingeConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraintSettings *)(_this)).mHingeAxis2);
+}
+
+JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mHingeAxis2(JPH_HingeConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraintSettings *)(_this)).mHingeAxis2);
+}
+
+const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mNormalAxis2(const JPH_HingeConstraintSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraintSettings *)(_this)).mNormalAxis2);
+}
+
+JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mNormalAxis2(JPH_HingeConstraintSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraintSettings *)(_this)).mNormalAxis2);
+}
 
 const float *JPH_HingeConstraintSettings_Get_mLimitsMin(const JPH_HingeConstraintSettings *_this)
 {
@@ -637,6 +701,14 @@ void Jolt_delete_array_JPH_HingeConstraint_void_ptr_void_ptr(void *inPointer, vo
     );
 }
 
+void JPH_HingeConstraint_NotifyShapeChanged(JPH_HingeConstraint *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inDeltaCOM)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraint *)(_this)).NotifyShapeChanged(
+        ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID)),
+        ((inDeltaCOM ? void() : MRBINDC_THROW("Parameter `inDeltaCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inDeltaCOM))
+    );
+}
+
 void JPH_HingeConstraint_SetupVelocityConstraint(JPH_HingeConstraint *_this, float inDeltaTime)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraint *)(_this)).SetupVelocityConstraint(
@@ -669,6 +741,46 @@ bool JPH_HingeConstraint_SolvePositionConstraint(JPH_HingeConstraint *_this, flo
         inDeltaTime,
         inBaumgarte
     );
+}
+
+JPH_Mat44 *JPH_HingeConstraint_GetConstraintToBody1Matrix(const JPH_HingeConstraint *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetConstraintToBody1Matrix());
+}
+
+JPH_Mat44 *JPH_HingeConstraint_GetConstraintToBody2Matrix(const JPH_HingeConstraint *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetConstraintToBody2Matrix());
+}
+
+JPH_Vec3 *JPH_HingeConstraint_GetLocalSpacePoint1(const JPH_HingeConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetLocalSpacePoint1());
+}
+
+JPH_Vec3 *JPH_HingeConstraint_GetLocalSpacePoint2(const JPH_HingeConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetLocalSpacePoint2());
+}
+
+JPH_Vec3 *JPH_HingeConstraint_GetLocalSpaceHingeAxis1(const JPH_HingeConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetLocalSpaceHingeAxis1());
+}
+
+JPH_Vec3 *JPH_HingeConstraint_GetLocalSpaceHingeAxis2(const JPH_HingeConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetLocalSpaceHingeAxis2());
+}
+
+JPH_Vec3 *JPH_HingeConstraint_GetLocalSpaceNormalAxis1(const JPH_HingeConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetLocalSpaceNormalAxis1());
+}
+
+JPH_Vec3 *JPH_HingeConstraint_GetLocalSpaceNormalAxis2(const JPH_HingeConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetLocalSpaceNormalAxis2());
 }
 
 float JPH_HingeConstraint_GetCurrentAngle(const JPH_HingeConstraint *_this)
@@ -712,6 +824,13 @@ float JPH_HingeConstraint_GetTargetAngle(const JPH_HingeConstraint *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetTargetAngle();
 }
 
+void JPH_HingeConstraint_SetTargetOrientationBS(JPH_HingeConstraint *_this, const JPH_Quat *inOrientation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraint *)(_this)).SetTargetOrientationBS(
+        ((inOrientation ? void() : MRBINDC_THROW("Parameter `inOrientation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inOrientation))
+    );
+}
+
 void JPH_HingeConstraint_SetLimits(JPH_HingeConstraint *_this, float inLimitsMin, float inLimitsMax)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraint *)(_this)).SetLimits(
@@ -733,6 +852,16 @@ float JPH_HingeConstraint_GetLimitsMax(const JPH_HingeConstraint *_this)
 bool JPH_HingeConstraint_HasLimits(const JPH_HingeConstraint *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).HasLimits();
+}
+
+JPH_Vec3 *JPH_HingeConstraint_GetTotalLambdaPosition(const JPH_HingeConstraint *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetTotalLambdaPosition());
+}
+
+JPH_Vector_2 *JPH_HingeConstraint_GetTotalLambdaRotation(const JPH_HingeConstraint *_this)
+{
+    return (JPH_Vector_2 *)new JPH::Vector<2>(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetTotalLambdaRotation());
 }
 
 float JPH_HingeConstraint_GetTotalLambdaRotationLimits(const JPH_HingeConstraint *_this)

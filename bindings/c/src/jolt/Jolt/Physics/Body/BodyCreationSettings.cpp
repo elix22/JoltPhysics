@@ -2,6 +2,8 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Physics/Body/BodyCreationSettings.h"
 
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/BodyCreationSettings.h>
 #include <Jolt/Physics/Collision/CollisionGroup.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
@@ -12,6 +14,46 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_BodyCreationSettings_Get_mPosition(const JPH_BodyCreationSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyCreationSettings *)(_this)).mPosition);
+}
+
+JPH_Vec3 *JPH_BodyCreationSettings_GetMutable_mPosition(JPH_BodyCreationSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyCreationSettings *)(_this)).mPosition);
+}
+
+const JPH_Quat *JPH_BodyCreationSettings_Get_mRotation(const JPH_BodyCreationSettings *_this)
+{
+    return (const JPH_Quat *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyCreationSettings *)(_this)).mRotation);
+}
+
+JPH_Quat *JPH_BodyCreationSettings_GetMutable_mRotation(JPH_BodyCreationSettings *_this)
+{
+    return (JPH_Quat *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyCreationSettings *)(_this)).mRotation);
+}
+
+const JPH_Vec3 *JPH_BodyCreationSettings_Get_mLinearVelocity(const JPH_BodyCreationSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyCreationSettings *)(_this)).mLinearVelocity);
+}
+
+JPH_Vec3 *JPH_BodyCreationSettings_GetMutable_mLinearVelocity(JPH_BodyCreationSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyCreationSettings *)(_this)).mLinearVelocity);
+}
+
+const JPH_Vec3 *JPH_BodyCreationSettings_Get_mAngularVelocity(const JPH_BodyCreationSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyCreationSettings *)(_this)).mAngularVelocity);
+}
+
+JPH_Vec3 *JPH_BodyCreationSettings_GetMutable_mAngularVelocity(JPH_BodyCreationSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyCreationSettings *)(_this)).mAngularVelocity);
+}
 
 const uint64_t *JPH_BodyCreationSettings_Get_mUserData(const JPH_BodyCreationSettings *_this)
 {

@@ -20,15 +20,19 @@ typedef struct JPH_BroadPhaseLayerFilter JPH_BroadPhaseLayerFilter; // Defined i
 typedef struct JPH_CharacterBase JPH_CharacterBase; // Defined in `#include <jolt/Jolt/Physics/Character/CharacterBase.h>`.
 typedef struct JPH_CharacterBaseSettings JPH_CharacterBaseSettings; // Defined in `#include <jolt/Jolt/Physics/Character/CharacterBase.h>`.
 typedef struct JPH_CharacterID JPH_CharacterID; // Defined in `#include <jolt/Jolt/Physics/Character/CharacterID.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_ObjectLayerFilter JPH_ObjectLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/ObjectLayer.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_PhysicsSystem JPH_PhysicsSystem; // Defined in `#include <jolt/Jolt/Physics/PhysicsSystem.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_CharacterBase JPH_RefTarget_JPH_CharacterBase; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_CharacterBaseSettings JPH_RefTarget_JPH_CharacterBaseSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_ShapeFilter JPH_ShapeFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/ShapeFilter.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Contains the configuration of a character
@@ -174,6 +178,20 @@ JOLT_API void JPH_CharacterVirtualSettings_Set_mMaxStrength(JPH_CharacterVirtual
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_CharacterVirtualSettings_GetMutable_mMaxStrength(JPH_CharacterVirtualSettings *_this);
+
+/// An extra offset applied to the shape in local space. This allows applying an extra offset to the shape in local space.
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtualSettings` named `mShapeOffset`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_CharacterVirtualSettings_Get_mShapeOffset(const JPH_CharacterVirtualSettings *_this);
+
+/// An extra offset applied to the shape in local space. This allows applying an extra offset to the shape in local space.
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtualSettings` named `mShapeOffset`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtualSettings_GetMutable_mShapeOffset(JPH_CharacterVirtualSettings *_this);
 
 ///< How far to scan outside of the shape for predictive contacts. A value of 0 will most likely cause the character to get stuck as it cannot properly calculate a sliding direction anymore. A value that's too high will cause ghost collisions.
 /// Returns a pointer to a member variable of class `JPH::CharacterVirtualSettings` named `mPredictiveContactDistance`.
@@ -402,6 +420,20 @@ JOLT_API void JPH_CharacterVirtualSettings_Set_mInnerBodyLayer(JPH_CharacterVirt
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API unsigned short *JPH_CharacterVirtualSettings_GetMutable_mInnerBodyLayer(JPH_CharacterVirtualSettings *_this);
+
+/// Vector indicating the up direction of the character
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtualSettings` named `mUp`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_CharacterVirtualSettings_Get_mUp(const JPH_CharacterVirtualSettings *_this);
+
+/// Vector indicating the up direction of the character
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtualSettings` named `mUp`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtualSettings_GetMutable_mUp(JPH_CharacterVirtualSettings *_this);
 
 /// Maximum angle of slope that character can still walk on (radians).
 /// Returns a pointer to a member variable of class `JPH::CharacterVirtualSettings` named `mMaxSlopeAngle`.
@@ -697,6 +729,15 @@ JOLT_API void JPH_CharacterContactListener_DestroyArray(const JPH_CharacterConta
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API JPH_CharacterContactListener *JPH_CharacterContactListener_AssignFromAnother(JPH_CharacterContactListener *_this, Jolt_PassBy _other_pass_by, JPH_CharacterContactListener *_other);
 
+/// Callback to adjust the velocity of a body as seen by the character. Can be adjusted to e.g. implement a conveyor belt or an inertial dampener system of a sci-fi space ship.
+/// Note that inBody2 is locked during the callback so you can read its properties freely.
+/// Generated from method `JPH::CharacterContactListener::OnAdjustBodyVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBody2` can not be null. It is a single object.
+/// Parameter `ioLinearVelocity` can not be null. It is a single object.
+/// Parameter `ioAngularVelocity` can not be null. It is a single object.
+JOLT_API void JPH_CharacterContactListener_OnAdjustBodyVelocity(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_Body *inBody2, JPH_Vec3 *ioLinearVelocity, JPH_Vec3 *ioAngularVelocity);
+
 /// Checks if a character can collide with specified body. Return true if the contact is valid.
 /// Generated from method `JPH::CharacterContactListener::OnContactValidate`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -710,6 +751,38 @@ JOLT_API bool JPH_CharacterContactListener_OnContactValidate(JPH_CharacterContac
 /// Parameter `inSubShapeID2` can not be null. It is a single object.
 JOLT_API bool JPH_CharacterContactListener_OnCharacterContactValidate(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2);
 
+/// Called whenever the character collides with a body for the first time.
+/// @param inCharacter Character that is being solved
+/// @param inBodyID2 Body ID of body that is being hit
+/// @param inSubShapeID2 Sub shape ID of shape that is being hit
+/// @param inContactPosition World space contact position
+/// @param inContactNormal World space contact normal
+/// @param ioSettings Settings returned by the contact callback to indicate how the character should behave
+/// Generated from method `JPH::CharacterContactListener::OnContactAdded`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID2` can not be null. It is a single object.
+/// Parameter `inSubShapeID2` can not be null. It is a single object.
+/// Parameter `inContactPosition` can not be null. It is a single object.
+/// Parameter `inContactNormal` can not be null. It is a single object.
+/// Parameter `ioSettings` can not be null. It is a single object.
+JOLT_API void JPH_CharacterContactListener_OnContactAdded(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings);
+
+/// Called whenever the character persists colliding with a body.
+/// @param inCharacter Character that is being solved
+/// @param inBodyID2 Body ID of body that is being hit
+/// @param inSubShapeID2 Sub shape ID of shape that is being hit
+/// @param inContactPosition World space contact position
+/// @param inContactNormal World space contact normal
+/// @param ioSettings Settings returned by the contact callback to indicate how the character should behave
+/// Generated from method `JPH::CharacterContactListener::OnContactPersisted`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID2` can not be null. It is a single object.
+/// Parameter `inSubShapeID2` can not be null. It is a single object.
+/// Parameter `inContactPosition` can not be null. It is a single object.
+/// Parameter `inContactNormal` can not be null. It is a single object.
+/// Parameter `ioSettings` can not be null. It is a single object.
+JOLT_API void JPH_CharacterContactListener_OnContactPersisted(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings);
+
 /// Called whenever the character loses contact with a body.
 /// Note that there is no guarantee that the body or its sub shape still exists at this point. The body may have been deleted since the last update.
 /// @param inCharacter Character that is being solved
@@ -721,6 +794,24 @@ JOLT_API bool JPH_CharacterContactListener_OnCharacterContactValidate(JPH_Charac
 /// Parameter `inSubShapeID2` can not be null. It is a single object.
 JOLT_API void JPH_CharacterContactListener_OnContactRemoved(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2);
 
+/// Same as OnContactAdded but when colliding with a CharacterVirtual
+/// Generated from method `JPH::CharacterContactListener::OnCharacterContactAdded`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID2` can not be null. It is a single object.
+/// Parameter `inContactPosition` can not be null. It is a single object.
+/// Parameter `inContactNormal` can not be null. It is a single object.
+/// Parameter `ioSettings` can not be null. It is a single object.
+JOLT_API void JPH_CharacterContactListener_OnCharacterContactAdded(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings);
+
+/// Same as OnContactPersisted but when colliding with a CharacterVirtual
+/// Generated from method `JPH::CharacterContactListener::OnCharacterContactPersisted`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID2` can not be null. It is a single object.
+/// Parameter `inContactPosition` can not be null. It is a single object.
+/// Parameter `inContactNormal` can not be null. It is a single object.
+/// Parameter `ioSettings` can not be null. It is a single object.
+JOLT_API void JPH_CharacterContactListener_OnCharacterContactPersisted(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings);
+
 /// Same as OnContactRemoved but when colliding with a CharacterVirtual
 /// Note that inOtherCharacterID can be the ID of a character that has been deleted. This happens if the character was in contact with this character during the last update, but has been deleted since.
 /// Generated from method `JPH::CharacterContactListener::OnCharacterContactRemoved`.
@@ -728,6 +819,38 @@ JOLT_API void JPH_CharacterContactListener_OnContactRemoved(JPH_CharacterContact
 /// Parameter `inOtherCharacterID` can not be null. It is a single object.
 /// Parameter `inSubShapeID2` can not be null. It is a single object.
 JOLT_API void JPH_CharacterContactListener_OnCharacterContactRemoved(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterID *inOtherCharacterID, const JPH_SubShapeID *inSubShapeID2);
+
+/// Called whenever a contact is being used by the solver. Allows the listener to override the resulting character velocity (e.g. by preventing sliding along certain surfaces).
+/// @param inCharacter Character that is being solved
+/// @param inBodyID2 Body ID of body that is being hit
+/// @param inSubShapeID2 Sub shape ID of shape that is being hit
+/// @param inContactPosition World space contact position
+/// @param inContactNormal World space contact normal
+/// @param inContactVelocity World space velocity of contact point (e.g. for a moving platform)
+/// @param inContactMaterial Material of contact point
+/// @param inCharacterVelocity World space velocity of the character prior to hitting this contact
+/// @param ioNewCharacterVelocity Contains the calculated world space velocity of the character after hitting this contact, this velocity slides along the surface of the contact. Can be modified by the listener to provide an alternative velocity.
+/// Generated from method `JPH::CharacterContactListener::OnContactSolve`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID2` can not be null. It is a single object.
+/// Parameter `inSubShapeID2` can not be null. It is a single object.
+/// Parameter `inContactPosition` can not be null. It is a single object.
+/// Parameter `inContactNormal` can not be null. It is a single object.
+/// Parameter `inContactVelocity` can not be null. It is a single object.
+/// Parameter `inCharacterVelocity` can not be null. It is a single object.
+/// Parameter `ioNewCharacterVelocity` can not be null. It is a single object.
+JOLT_API void JPH_CharacterContactListener_OnContactSolve(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, const JPH_Vec3 *inContactVelocity, const JPH_PhysicsMaterial *inContactMaterial, const JPH_Vec3 *inCharacterVelocity, JPH_Vec3 *ioNewCharacterVelocity);
+
+/// Same as OnContactSolve but when colliding with a CharacterVirtual
+/// Generated from method `JPH::CharacterContactListener::OnCharacterContactSolve`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID2` can not be null. It is a single object.
+/// Parameter `inContactPosition` can not be null. It is a single object.
+/// Parameter `inContactNormal` can not be null. It is a single object.
+/// Parameter `inContactVelocity` can not be null. It is a single object.
+/// Parameter `inCharacterVelocity` can not be null. It is a single object.
+/// Parameter `ioNewCharacterVelocity` can not be null. It is a single object.
+JOLT_API void JPH_CharacterContactListener_OnCharacterContactSolve(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, const JPH_Vec3 *inContactVelocity, const JPH_PhysicsMaterial *inContactMaterial, const JPH_Vec3 *inCharacterVelocity, JPH_Vec3 *ioNewCharacterVelocity);
 
 /// Destroys a heap-allocated instance of `JPH_CharacterVsCharacterCollision`. Does nothing if the pointer is null.
 JOLT_API void JPH_CharacterVsCharacterCollision_Destroy(const JPH_CharacterVsCharacterCollision *_this);
@@ -836,6 +959,93 @@ JOLT_API void JPH_CharacterVsCharacterCollisionSimple_Add(JPH_CharacterVsCharact
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_CharacterVsCharacterCollisionSimple_Remove(JPH_CharacterVsCharacterCollisionSimple *_this, const JPH_CharacterVirtual *inCharacter);
 
+/// Constructor
+/// @param inSettings The settings for the character
+/// @param inPosition Initial position for the character
+/// @param inRotation Initial rotation for the character (usually only around the up-axis)
+/// @param inUserData Application specific value
+/// @param inSystem Physics system that this character will be added to
+/// Generated from constructor `JPH::CharacterVirtual::CharacterVirtual`.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtual_Destroy()` to free it when you're done using it.
+JOLT_API JPH_CharacterVirtual *JPH_CharacterVirtual_Construct_5(const JPH_CharacterVirtualSettings *inSettings, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, uint64_t inUserData, JPH_PhysicsSystem *inSystem);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_CharacterVirtual *JPH_CharacterVirtual_OffsetPtr(const JPH_CharacterVirtual *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_CharacterVirtual *JPH_CharacterVirtual_OffsetMutablePtr(JPH_CharacterVirtual *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::RefTarget<JPH::CharacterBase>`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_RefTarget_JPH_CharacterBase *JPH_CharacterVirtual_UpcastTo_JPH_RefTarget_JPH_CharacterBase(const JPH_CharacterVirtual *object);
+
+/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::RefTarget<JPH::CharacterBase>`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_RefTarget_JPH_CharacterBase *JPH_CharacterVirtual_MutableUpcastTo_JPH_RefTarget_JPH_CharacterBase(JPH_CharacterVirtual *object);
+
+/// Downcasts an instance of `JPH::RefTarget<JPH::CharacterBase>` to a derived class `JPH::CharacterVirtual`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(const JPH_RefTarget_JPH_CharacterBase *object);
+
+/// Downcasts an instance of `JPH::RefTarget<JPH::CharacterBase>` to a derived class `JPH::CharacterVirtual`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(JPH_RefTarget_JPH_CharacterBase *object);
+
+/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::NonCopyable`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_NonCopyable *JPH_CharacterVirtual_UpcastTo_JPH_NonCopyable(const JPH_CharacterVirtual *object);
+
+/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::NonCopyable`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_NonCopyable *JPH_CharacterVirtual_MutableUpcastTo_JPH_NonCopyable(JPH_CharacterVirtual *object);
+
+/// Downcasts an instance of `JPH::NonCopyable` to a derived class `JPH::CharacterVirtual`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_NonCopyable(const JPH_NonCopyable *object);
+
+/// Downcasts an instance of `JPH::NonCopyable` to a derived class `JPH::CharacterVirtual`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCopyable *object);
+
+/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::CharacterBase`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_CharacterBase *JPH_CharacterVirtual_UpcastTo_JPH_CharacterBase(const JPH_CharacterVirtual *object);
+
+/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::CharacterBase`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_CharacterBase *JPH_CharacterVirtual_MutableUpcastTo_JPH_CharacterBase(JPH_CharacterVirtual *object);
+
+/// Downcasts an instance of `JPH::CharacterBase` to a derived class `JPH::CharacterVirtual`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_CharacterBase(const JPH_CharacterBase *object);
+
+/// Downcasts an instance of `JPH::CharacterBase` to a derived class `JPH::CharacterVirtual`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_CharacterBase(JPH_CharacterBase *object);
+
+/// Constructor without user data
+/// Generated from constructor `JPH::CharacterVirtual::CharacterVirtual`.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtual_Destroy()` to free it when you're done using it.
+JOLT_API JPH_CharacterVirtual *JPH_CharacterVirtual_Construct_4(const JPH_CharacterVirtualSettings *inSettings, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, JPH_PhysicsSystem *inSystem);
+
 /// Destroys a heap-allocated instance of `JPH_CharacterVirtual`. Does nothing if the pointer is null.
 JOLT_API void JPH_CharacterVirtual_Destroy(const JPH_CharacterVirtual *_this);
 
@@ -892,6 +1102,60 @@ JOLT_API JPH_CharacterContactListener *JPH_CharacterVirtual_GetListener(const JP
 /// Generated from method `JPH::CharacterVirtual::SetCharacterVsCharacterCollision`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_CharacterVirtual_SetCharacterVsCharacterCollision(JPH_CharacterVirtual *_this, JPH_CharacterVsCharacterCollision *inCharacterVsCharacterCollision);
+
+/// Get the linear velocity of the character (m / s)
+/// Generated from method `JPH::CharacterVirtual::GetLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_GetLinearVelocity(const JPH_CharacterVirtual *_this);
+
+/// Set the linear velocity of the character (m / s)
+/// Generated from method `JPH::CharacterVirtual::SetLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLinearVelocity` can not be null. It is a single object.
+JOLT_API void JPH_CharacterVirtual_SetLinearVelocity(JPH_CharacterVirtual *_this, const JPH_Vec3 *inLinearVelocity);
+
+/// Get the position of the character
+/// Generated from method `JPH::CharacterVirtual::GetPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_GetPosition(const JPH_CharacterVirtual *_this);
+
+/// Set the position of the character
+/// Generated from method `JPH::CharacterVirtual::SetPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+JOLT_API void JPH_CharacterVirtual_SetPosition(JPH_CharacterVirtual *_this, const JPH_Vec3 *inPosition);
+
+/// Get the rotation of the character
+/// Generated from method `JPH::CharacterVirtual::GetRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Quat_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Quat *JPH_CharacterVirtual_GetRotation(const JPH_CharacterVirtual *_this);
+
+/// Set the rotation of the character
+/// Generated from method `JPH::CharacterVirtual::SetRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+JOLT_API void JPH_CharacterVirtual_SetRotation(JPH_CharacterVirtual *_this, const JPH_Quat *inRotation);
+
+// Get the center of mass position of the shape
+/// Generated from method `JPH::CharacterVirtual::GetCenterOfMassPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_GetCenterOfMassPosition(const JPH_CharacterVirtual *_this);
+
+/// Calculate the world transform of the character
+/// Generated from method `JPH::CharacterVirtual::GetWorldTransform`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_CharacterVirtual_GetWorldTransform(const JPH_CharacterVirtual *_this);
+
+/// Calculates the transform for this character's center of mass
+/// Generated from method `JPH::CharacterVirtual::GetCenterOfMassTransform`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_CharacterVirtual_GetCenterOfMassTransform(const JPH_CharacterVirtual *_this);
 
 /// Character mass (kg)
 /// Generated from method `JPH::CharacterVirtual::GetMass`.
@@ -960,6 +1224,17 @@ JOLT_API void JPH_CharacterVirtual_SetHitReductionCosMaxAngle(JPH_CharacterVirtu
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_CharacterVirtual_GetMaxHitsExceeded(const JPH_CharacterVirtual *_this);
 
+/// An extra offset applied to the shape in local space. This allows applying an extra offset to the shape in local space. Note that setting it on the fly can cause the shape to teleport into collision.
+/// Generated from method `JPH::CharacterVirtual::GetShapeOffset`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_GetShapeOffset(const JPH_CharacterVirtual *_this);
+
+/// Generated from method `JPH::CharacterVirtual::SetShapeOffset`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inShapeOffset` can not be null. It is a single object.
+JOLT_API void JPH_CharacterVirtual_SetShapeOffset(JPH_CharacterVirtual *_this, const JPH_Vec3 *inShapeOffset);
+
 /// Access to the user data, can be used for anything by the application
 /// Generated from method `JPH::CharacterVirtual::GetUserData`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -974,6 +1249,16 @@ JOLT_API void JPH_CharacterVirtual_SetUserData(JPH_CharacterVirtual *_this, uint
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API JPH_BodyID JPH_CharacterVirtual_GetInnerBodyID(const JPH_CharacterVirtual *_this);
 
+/// This function can be called prior to calling Update() to convert a desired velocity into a velocity that won't make the character move further onto steep slopes.
+/// This velocity can then be set on the character using SetLinearVelocity()
+/// @param inDesiredVelocity Velocity to clamp against steep walls
+/// @return A new velocity vector that won't make the character move up steep slopes
+/// Generated from method `JPH::CharacterVirtual::CancelVelocityTowardsSteepSlopes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inDesiredVelocity` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_CancelVelocityTowardsSteepSlopes(const JPH_CharacterVirtual *_this, const JPH_Vec3 *inDesiredVelocity);
+
 /// This function is internally called by Update, WalkStairs, StickToFloor and ExtendedUpdate and is responsible for tracking if contacts are added, persisted or removed.
 /// If you want to do multiple operations on a character (e.g. first Update then WalkStairs), you can surround the code with a StartTrackingContactChanges and FinishTrackingContactChanges pair
 /// to only receive a single callback per contact on the CharacterContactListener. If you don't do this then you could for example receive a contact added callback during the Update and a
@@ -986,6 +1271,102 @@ JOLT_API void JPH_CharacterVirtual_StartTrackingContactChanges(JPH_CharacterVirt
 /// Generated from method `JPH::CharacterVirtual::FinishTrackingContactChanges`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_CharacterVirtual_FinishTrackingContactChanges(JPH_CharacterVirtual *_this);
+
+/// This is the main update function. It moves the character according to its current velocity (the character is similar to a kinematic body in the sense
+/// that you set the velocity and the character will follow unless collision is blocking the way). Note it's your own responsibility to apply gravity to the character velocity!
+/// Different surface materials (like ice) can be emulated by getting the ground material and adjusting the velocity and/or the max slope angle accordingly every frame.
+/// @param inDeltaTime Time step to simulate.
+/// @param inGravity Gravity vector (m/s^2). This gravity vector is only used when the character is standing on top of another object to apply downward force.
+/// @param inBroadPhaseLayerFilter Filter that is used to check if the character collides with something in the broadphase.
+/// @param inObjectLayerFilter Filter that is used to check if a character collides with a layer.
+/// @param inBodyFilter Filter that is used to check if a character collides with a body.
+/// @param inShapeFilter Filter that is used to check if a character collides with a subshape.
+/// @param inAllocator An allocator for temporary allocations. All memory will be freed by the time this function returns.
+/// Generated from method `JPH::CharacterVirtual::Update`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inGravity` can not be null. It is a single object.
+/// Parameter `inBroadPhaseLayerFilter` can not be null. It is a single object.
+/// Parameter `inObjectLayerFilter` can not be null. It is a single object.
+/// Parameter `inBodyFilter` can not be null. It is a single object.
+/// Parameter `inShapeFilter` can not be null. It is a single object.
+/// Parameter `inAllocator` can not be null. It is a single object.
+JOLT_API void JPH_CharacterVirtual_Update(JPH_CharacterVirtual *_this, float inDeltaTime, const JPH_Vec3 *inGravity, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter, const JPH_ShapeFilter *inShapeFilter, JPH_TempAllocator *inAllocator);
+
+/// This function will return true if the character has moved into a slope that is too steep (e.g. a vertical wall).
+/// You would call WalkStairs to attempt to step up stairs.
+/// @param inLinearVelocity The linear velocity that the player desired. This is used to determine if we're pushing into a step.
+/// Generated from method `JPH::CharacterVirtual::CanWalkStairs`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLinearVelocity` can not be null. It is a single object.
+JOLT_API bool JPH_CharacterVirtual_CanWalkStairs(const JPH_CharacterVirtual *_this, const JPH_Vec3 *inLinearVelocity);
+
+/// When stair walking is needed, you can call the WalkStairs function to cast up, forward and down again to try to find a valid position
+/// @param inDeltaTime Time step to simulate.
+/// @param inStepUp The direction and distance to step up (this corresponds to the max step height)
+/// @param inStepForward The direction and distance to step forward after the step up
+/// @param inStepForwardTest When running at a high frequency, inStepForward can be very small and it's likely that you hit the side of the stairs on the way down. This could produce a normal that violates the max slope angle. If this happens, we test again using this distance from the up position to see if we find a valid slope.
+/// @param inStepDownExtra An additional translation that is added when stepping down at the end. Allows you to step further down than up. Set to zero if you don't want this. Should be in the opposite direction of up.
+/// @param inBroadPhaseLayerFilter Filter that is used to check if the character collides with something in the broadphase.
+/// @param inObjectLayerFilter Filter that is used to check if a character collides with a layer.
+/// @param inBodyFilter Filter that is used to check if a character collides with a body.
+/// @param inShapeFilter Filter that is used to check if a character collides with a subshape.
+/// @param inAllocator An allocator for temporary allocations. All memory will be freed by the time this function returns.
+/// @return true if the stair walk was successful
+/// Generated from method `JPH::CharacterVirtual::WalkStairs`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inStepUp` can not be null. It is a single object.
+/// Parameter `inStepForward` can not be null. It is a single object.
+/// Parameter `inStepForwardTest` can not be null. It is a single object.
+/// Parameter `inStepDownExtra` can not be null. It is a single object.
+/// Parameter `inBroadPhaseLayerFilter` can not be null. It is a single object.
+/// Parameter `inObjectLayerFilter` can not be null. It is a single object.
+/// Parameter `inBodyFilter` can not be null. It is a single object.
+/// Parameter `inShapeFilter` can not be null. It is a single object.
+/// Parameter `inAllocator` can not be null. It is a single object.
+JOLT_API bool JPH_CharacterVirtual_WalkStairs(JPH_CharacterVirtual *_this, float inDeltaTime, const JPH_Vec3 *inStepUp, const JPH_Vec3 *inStepForward, const JPH_Vec3 *inStepForwardTest, const JPH_Vec3 *inStepDownExtra, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter, const JPH_ShapeFilter *inShapeFilter, JPH_TempAllocator *inAllocator);
+
+/// This function can be used to artificially keep the character to the floor. Normally when a character is on a small step and starts moving horizontally, the character will
+/// lose contact with the floor because the initial vertical velocity is zero while the horizontal velocity is quite high. To prevent the character from losing contact with the floor,
+/// we do an additional collision check downwards and if we find the floor within a certain distance, we project the character onto the floor.
+/// @param inStepDown Max amount to project the character downwards (if no floor is found within this distance, the function will return false)
+/// @param inBroadPhaseLayerFilter Filter that is used to check if the character collides with something in the broadphase.
+/// @param inObjectLayerFilter Filter that is used to check if a character collides with a layer.
+/// @param inBodyFilter Filter that is used to check if a character collides with a body.
+/// @param inShapeFilter Filter that is used to check if a character collides with a subshape.
+/// @param inAllocator An allocator for temporary allocations. All memory will be freed by the time this function returns.
+/// @return True if the character was successfully projected onto the floor.
+/// Generated from method `JPH::CharacterVirtual::StickToFloor`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inStepDown` can not be null. It is a single object.
+/// Parameter `inBroadPhaseLayerFilter` can not be null. It is a single object.
+/// Parameter `inObjectLayerFilter` can not be null. It is a single object.
+/// Parameter `inBodyFilter` can not be null. It is a single object.
+/// Parameter `inShapeFilter` can not be null. It is a single object.
+/// Parameter `inAllocator` can not be null. It is a single object.
+JOLT_API bool JPH_CharacterVirtual_StickToFloor(JPH_CharacterVirtual *_this, const JPH_Vec3 *inStepDown, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter, const JPH_ShapeFilter *inShapeFilter, JPH_TempAllocator *inAllocator);
+
+/// This function combines Update, StickToFloor and WalkStairs. This function serves as an example of how these functions could be combined.
+/// Before calling, call SetLinearVelocity to update the horizontal/vertical speed of the character, typically this is:
+/// - When on OnGround and not moving away from ground: velocity = GetGroundVelocity() + horizontal speed as input by player + optional vertical jump velocity + delta time * gravity
+/// - Else: velocity = current vertical velocity + horizontal speed as input by player + delta time * gravity
+/// @param inDeltaTime Time step to simulate.
+/// @param inGravity Gravity vector (m/s^2). This gravity vector is only used when the character is standing on top of another object to apply downward force.
+/// @param inSettings A structure containing settings for the algorithm.
+/// @param inBroadPhaseLayerFilter Filter that is used to check if the character collides with something in the broadphase.
+/// @param inObjectLayerFilter Filter that is used to check if a character collides with a layer.
+/// @param inBodyFilter Filter that is used to check if a character collides with a body.
+/// @param inShapeFilter Filter that is used to check if a character collides with a subshape.
+/// @param inAllocator An allocator for temporary allocations. All memory will be freed by the time this function returns.
+/// Generated from method `JPH::CharacterVirtual::ExtendedUpdate`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inGravity` can not be null. It is a single object.
+/// Parameter `inSettings` can not be null. It is a single object.
+/// Parameter `inBroadPhaseLayerFilter` can not be null. It is a single object.
+/// Parameter `inObjectLayerFilter` can not be null. It is a single object.
+/// Parameter `inBodyFilter` can not be null. It is a single object.
+/// Parameter `inShapeFilter` can not be null. It is a single object.
+/// Parameter `inAllocator` can not be null. It is a single object.
+JOLT_API void JPH_CharacterVirtual_ExtendedUpdate(JPH_CharacterVirtual *_this, float inDeltaTime, const JPH_Vec3 *inGravity, const JPH_CharacterVirtual_ExtendedUpdateSettings *inSettings, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter, const JPH_ShapeFilter *inShapeFilter, JPH_TempAllocator *inAllocator);
 
 /// This function can be used after a character has teleported to determine the new contacts with the world.
 /// Generated from method `JPH::CharacterVirtual::RefreshContacts`.
@@ -1058,6 +1439,23 @@ JOLT_API void JPH_CharacterVirtual_SetMaxSlopeAngle(JPH_CharacterVirtual *_this,
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_CharacterVirtual_GetCosMaxSlopeAngle(const JPH_CharacterVirtual *_this);
 
+/// Set the up vector for the character
+/// Generated from method `JPH::CharacterVirtual::SetUp`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inUp` can not be null. It is a single object.
+JOLT_API void JPH_CharacterVirtual_SetUp(JPH_CharacterVirtual *_this, const JPH_Vec3 *inUp);
+
+/// Generated from method `JPH::CharacterVirtual::GetUp`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_GetUp(const JPH_CharacterVirtual *_this);
+
+/// Check if the normal of the ground surface is too steep to walk on
+/// Generated from method `JPH::CharacterVirtual::IsSlopeTooSteep`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inNormal` can not be null. It is a single object.
+JOLT_API bool JPH_CharacterVirtual_IsSlopeTooSteep(const JPH_CharacterVirtual *_this, const JPH_Vec3 *inNormal);
+
 /// Get the current shape that the character is using.
 /// Generated from method `JPH::CharacterVirtual::GetShape`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -1076,6 +1474,24 @@ JOLT_API JPH_CharacterBase_EGroundState JPH_CharacterVirtual_GetGroundState(cons
 /// Generated from method `JPH::CharacterVirtual::IsSupported`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_CharacterVirtual_IsSupported(const JPH_CharacterVirtual *_this);
+
+/// Get the contact point with the ground
+/// Generated from method `JPH::CharacterVirtual::GetGroundPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_GetGroundPosition(const JPH_CharacterVirtual *_this);
+
+/// Get the contact normal with the ground
+/// Generated from method `JPH::CharacterVirtual::GetGroundNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_GetGroundNormal(const JPH_CharacterVirtual *_this);
+
+/// Velocity in world space of ground
+/// Generated from method `JPH::CharacterVirtual::GetGroundVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_GetGroundVelocity(const JPH_CharacterVirtual *_this);
 
 /// Material that the character is standing on
 /// Generated from method `JPH::CharacterVirtual::GetGroundMaterial`.
@@ -1123,73 +1539,33 @@ JOLT_API void JPH_CharacterVirtual_Release(const JPH_CharacterVirtual *_this);
 /// Generated from method `JPH::CharacterVirtual::sInternalGetRefCountOffset`.
 JOLT_API int JPH_CharacterVirtual_sInternalGetRefCountOffset(void);
 
-/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
-/// The reference to the parameter `ptr` might be preserved in the return value.
-JOLT_API const JPH_CharacterVirtual *JPH_CharacterVirtual_OffsetPtr(const JPH_CharacterVirtual *ptr, ptrdiff_t i);
+///< See StickToFloor inStepDown parameter. Can be zero to turn off.
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::ExtendedUpdateSettings` named `mStickToFloorStepDown`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mStickToFloorStepDown(const JPH_CharacterVirtual_ExtendedUpdateSettings *_this);
 
-/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
-/// The reference to the parameter `ptr` might be preserved in the return value.
-JOLT_API JPH_CharacterVirtual *JPH_CharacterVirtual_OffsetMutablePtr(JPH_CharacterVirtual *ptr, ptrdiff_t i);
+///< See StickToFloor inStepDown parameter. Can be zero to turn off.
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::ExtendedUpdateSettings` named `mStickToFloorStepDown`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mStickToFloorStepDown(JPH_CharacterVirtual_ExtendedUpdateSettings *_this);
 
-/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::RefTarget<JPH::CharacterBase>`.
-/// This version is acting on mutable pointers.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API const JPH_RefTarget_JPH_CharacterBase *JPH_CharacterVirtual_UpcastTo_JPH_RefTarget_JPH_CharacterBase(const JPH_CharacterVirtual *object);
+///< See WalkStairs inStepUp parameter. Can be zero to turn off.
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::ExtendedUpdateSettings` named `mWalkStairsStepUp`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepUp(const JPH_CharacterVirtual_ExtendedUpdateSettings *_this);
 
-/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::RefTarget<JPH::CharacterBase>`.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API JPH_RefTarget_JPH_CharacterBase *JPH_CharacterVirtual_MutableUpcastTo_JPH_RefTarget_JPH_CharacterBase(JPH_CharacterVirtual *object);
-
-/// Downcasts an instance of `JPH::RefTarget<JPH::CharacterBase>` to a derived class `JPH::CharacterVirtual`.
-/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
-/// This version is acting on mutable pointers.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(const JPH_RefTarget_JPH_CharacterBase *object);
-
-/// Downcasts an instance of `JPH::RefTarget<JPH::CharacterBase>` to a derived class `JPH::CharacterVirtual`.
-/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(JPH_RefTarget_JPH_CharacterBase *object);
-
-/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::NonCopyable`.
-/// This version is acting on mutable pointers.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API const JPH_NonCopyable *JPH_CharacterVirtual_UpcastTo_JPH_NonCopyable(const JPH_CharacterVirtual *object);
-
-/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::NonCopyable`.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API JPH_NonCopyable *JPH_CharacterVirtual_MutableUpcastTo_JPH_NonCopyable(JPH_CharacterVirtual *object);
-
-/// Downcasts an instance of `JPH::NonCopyable` to a derived class `JPH::CharacterVirtual`.
-/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
-/// This version is acting on mutable pointers.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_NonCopyable(const JPH_NonCopyable *object);
-
-/// Downcasts an instance of `JPH::NonCopyable` to a derived class `JPH::CharacterVirtual`.
-/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCopyable *object);
-
-/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::CharacterBase`.
-/// This version is acting on mutable pointers.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API const JPH_CharacterBase *JPH_CharacterVirtual_UpcastTo_JPH_CharacterBase(const JPH_CharacterVirtual *object);
-
-/// Upcasts an instance of `JPH::CharacterVirtual` to its base class `JPH::CharacterBase`.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API JPH_CharacterBase *JPH_CharacterVirtual_MutableUpcastTo_JPH_CharacterBase(JPH_CharacterVirtual *object);
-
-/// Downcasts an instance of `JPH::CharacterBase` to a derived class `JPH::CharacterVirtual`.
-/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
-/// This version is acting on mutable pointers.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API const JPH_CharacterVirtual *JPH_CharacterVirtual_StaticDowncastFrom_JPH_CharacterBase(const JPH_CharacterBase *object);
-
-/// Downcasts an instance of `JPH::CharacterBase` to a derived class `JPH::CharacterVirtual`.
-/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API JPH_CharacterVirtual *JPH_CharacterVirtual_MutableStaticDowncastFrom_JPH_CharacterBase(JPH_CharacterBase *object);
+///< See WalkStairs inStepUp parameter. Can be zero to turn off.
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::ExtendedUpdateSettings` named `mWalkStairsStepUp`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepUp(JPH_CharacterVirtual_ExtendedUpdateSettings *_this);
 
 ///< See WalkStairs inStepForward parameter. Note that the parameter only indicates a magnitude, direction is taken from current velocity.
 /// Returns a pointer to a member variable of class `JPH::CharacterVirtual::ExtendedUpdateSettings` named `mWalkStairsMinStepForward`.
@@ -1251,6 +1627,20 @@ JOLT_API void JPH_CharacterVirtual_ExtendedUpdateSettings_Set_mWalkStairsCosAngl
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsCosAngleForwardContact(JPH_CharacterVirtual_ExtendedUpdateSettings *_this);
 
+///< See WalkStairs inStepDownExtra
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::ExtendedUpdateSettings` named `mWalkStairsStepDownExtra`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_Get_mWalkStairsStepDownExtra(const JPH_CharacterVirtual_ExtendedUpdateSettings *_this);
+
+///< See WalkStairs inStepDownExtra
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::ExtendedUpdateSettings` named `mWalkStairsStepDownExtra`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStepDownExtra(JPH_CharacterVirtual_ExtendedUpdateSettings *_this);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtual_ExtendedUpdateSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_DefaultConstruct(void);
@@ -1259,6 +1649,25 @@ JOLT_API JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_Exten
 /// The array must be destroyed using `JPH_CharacterVirtual_ExtendedUpdateSettings_DestroyArray()`.
 /// Use `JPH_CharacterVirtual_ExtendedUpdateSettings_OffsetMutablePtr()` and `JPH_CharacterVirtual_ExtendedUpdateSettings_OffsetPtr()` to access the array elements.
 JOLT_API JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_DefaultConstructArray(size_t num_elems);
+
+/// Constructs `JPH::CharacterVirtual::ExtendedUpdateSettings` elementwise.
+/// Parameter `mStickToFloorStepDown` can not be null. It is a single object.
+/// The reference to the parameter `mStickToFloorStepDown` might be preserved in the constructed object.
+/// Parameter `mWalkStairsStepUp` can not be null. It is a single object.
+/// The reference to the parameter `mWalkStairsStepUp` might be preserved in the constructed object.
+/// Parameter `mWalkStairsStepDownExtra` can not be null. It is a single object.
+/// The reference to the parameter `mWalkStairsStepDownExtra` might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtual_ExtendedUpdateSettings_Destroy()` to free it when you're done using it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFrom(const JPH_Vec3 *mStickToFloorStepDown, const JPH_Vec3 *mWalkStairsStepUp, float mWalkStairsMinStepForward, float mWalkStairsStepForwardTest, float mWalkStairsCosAngleForwardContact, const JPH_Vec3 *mWalkStairsStepDownExtra);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_OffsetPtr(const JPH_CharacterVirtual_ExtendedUpdateSettings *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_OffsetMutablePtr(JPH_CharacterVirtual_ExtendedUpdateSettings *ptr, ptrdiff_t i);
 
 /// Generated from constructor `JPH::CharacterVirtual::ExtendedUpdateSettings::ExtendedUpdateSettings`.
 /// Parameter `_other` can not be null. It is a single object.
@@ -1416,6 +1825,62 @@ JOLT_API bool Jolt_not_equal_JPH_CharacterVirtual_ContactKey(const JPH_Character
 /// Generated from method `JPH::CharacterVirtual::ContactKey::GetHash`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API uint64_t JPH_CharacterVirtual_ContactKey_GetHash(const JPH_CharacterVirtual_ContactKey *_this);
+
+///< Position where the character makes contact
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mPosition(const JPH_CharacterVirtual_Contact *_this);
+
+///< Position where the character makes contact
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mPosition(JPH_CharacterVirtual_Contact *_this);
+
+///< Velocity of the contact point
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mLinearVelocity(const JPH_CharacterVirtual_Contact *_this);
+
+///< Velocity of the contact point
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mLinearVelocity(JPH_CharacterVirtual_Contact *_this);
+
+///< Contact normal, pointing towards the character
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mContactNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mContactNormal(const JPH_CharacterVirtual_Contact *_this);
+
+///< Contact normal, pointing towards the character
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mContactNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mContactNormal(JPH_CharacterVirtual_Contact *_this);
+
+///< Surface normal of the contact
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mSurfaceNormal(const JPH_CharacterVirtual_Contact *_this);
+
+///< Surface normal of the contact
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mSurfaceNormal(JPH_CharacterVirtual_Contact *_this);
 
 ///< Distance to the contact <= 0 means that it is an actual contact, > 0 means predictive
 /// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mDistance`.

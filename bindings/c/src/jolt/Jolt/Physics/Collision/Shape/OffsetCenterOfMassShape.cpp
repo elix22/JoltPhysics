@@ -5,6 +5,11 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/DMat44.h>
+#include <Jolt/Math/Float3.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/DecoratedShape.h>
@@ -18,6 +23,16 @@
 #include <memory>
 #include <stdexcept>
 
+
+const JPH_Vec3 *JPH_OffsetCenterOfMassShapeSettings_Get_mOffset(const JPH_OffsetCenterOfMassShapeSettings *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShapeSettings *)(_this)).mOffset);
+}
+
+JPH_Vec3 *JPH_OffsetCenterOfMassShapeSettings_GetMutable_mOffset(JPH_OffsetCenterOfMassShapeSettings *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::OffsetCenterOfMassShapeSettings *)(_this)).mOffset);
+}
 
 const uint64_t *JPH_OffsetCenterOfMassShapeSettings_Get_mUserData(const JPH_OffsetCenterOfMassShapeSettings *_this)
 {
@@ -171,6 +186,22 @@ JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_Constru
     MRBINDC_CLASSARG_GUARD(_other, JPH::OffsetCenterOfMassShapeSettings);
     return (JPH_OffsetCenterOfMassShapeSettings *)new JPH::OffsetCenterOfMassShapeSettings(JPH::OffsetCenterOfMassShapeSettings(
         (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::OffsetCenterOfMassShapeSettings) MRBINDC_CLASSARG_COPY(_other, (JPH::OffsetCenterOfMassShapeSettings), JPH::OffsetCenterOfMassShapeSettings) MRBINDC_CLASSARG_MOVE(_other, (JPH::OffsetCenterOfMassShapeSettings), JPH::OffsetCenterOfMassShapeSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::OffsetCenterOfMassShapeSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::OffsetCenterOfMassShapeSettings) MRBINDC_CLASSARG_END(_other, JPH::OffsetCenterOfMassShapeSettings))
+    ));
+}
+
+JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_ShapeSettings_ptr(const JPH_Vec3 *inOffset, const JPH_ShapeSettings *inShape)
+{
+    return (JPH_OffsetCenterOfMassShapeSettings *)new JPH::OffsetCenterOfMassShapeSettings(JPH::OffsetCenterOfMassShapeSettings(
+        ((inOffset ? void() : MRBINDC_THROW("Parameter `inOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inOffset)),
+        ((const JPH::ShapeSettings *)inShape)
+    ));
+}
+
+JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_Construct_const_JPH_Shape_ptr(const JPH_Vec3 *inOffset, const JPH_Shape *inShape)
+{
+    return (JPH_OffsetCenterOfMassShapeSettings *)new JPH::OffsetCenterOfMassShapeSettings(JPH::OffsetCenterOfMassShapeSettings(
+        ((inOffset ? void() : MRBINDC_THROW("Parameter `inOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inOffset)),
+        ((const JPH::Shape *)inShape)
     ));
 }
 
@@ -435,6 +466,14 @@ JPH_OffsetCenterOfMassShape *JPH_OffsetCenterOfMassShape_MutableStaticDowncastFr
     ));
 }
 
+JPH_OffsetCenterOfMassShape *JPH_OffsetCenterOfMassShape_Construct_const_JPH_Shape_ptr(const JPH_Shape *inShape, const JPH_Vec3 *inOffset)
+{
+    return (JPH_OffsetCenterOfMassShape *)new JPH::OffsetCenterOfMassShape(JPH::OffsetCenterOfMassShape(
+        ((const JPH::Shape *)inShape),
+        ((inOffset ? void() : MRBINDC_THROW("Parameter `inOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inOffset))
+    ));
+}
+
 void JPH_OffsetCenterOfMassShape_Destroy(const JPH_OffsetCenterOfMassShape *_this)
 {
     delete ((const JPH::OffsetCenterOfMassShape *)_this);
@@ -443,6 +482,14 @@ void JPH_OffsetCenterOfMassShape_Destroy(const JPH_OffsetCenterOfMassShape *_thi
 void JPH_OffsetCenterOfMassShape_DestroyArray(const JPH_OffsetCenterOfMassShape *_this)
 {
     delete[] ((const JPH::OffsetCenterOfMassShape *)_this);
+}
+
+JPH_AABox *JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_OffsetCenterOfMassShape *_this, const JPH_DMat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).GetWorldSpaceBounds(
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::DMat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 void *Jolt_new_JPH_OffsetCenterOfMassShape_size_t(unsigned long inCount)
@@ -521,14 +568,61 @@ void Jolt_delete_array_JPH_OffsetCenterOfMassShape_void_ptr_void_ptr(void *inPoi
     );
 }
 
+JPH_Vec3 *JPH_OffsetCenterOfMassShape_GetOffset(const JPH_OffsetCenterOfMassShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).GetOffset());
+}
+
+JPH_Vec3 *JPH_OffsetCenterOfMassShape_GetCenterOfMass(const JPH_OffsetCenterOfMassShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).GetCenterOfMass());
+}
+
 JPH_AABox *JPH_OffsetCenterOfMassShape_GetLocalBounds(const JPH_OffsetCenterOfMassShape *_this)
 {
     return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).GetLocalBounds());
 }
 
+JPH_AABox *JPH_OffsetCenterOfMassShape_GetWorldSpaceBounds_JPH_Mat44(const JPH_OffsetCenterOfMassShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).GetWorldSpaceBounds(
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
 float JPH_OffsetCenterOfMassShape_GetInnerRadius(const JPH_OffsetCenterOfMassShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).GetInnerRadius();
+}
+
+JPH_Vec3 *JPH_OffsetCenterOfMassShape_GetSurfaceNormal(const JPH_OffsetCenterOfMassShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).GetSurfaceNormal(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inLocalSurfacePosition ? void() : MRBINDC_THROW("Parameter `inLocalSurfacePosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLocalSurfacePosition))
+    ));
+}
+
+void JPH_OffsetCenterOfMassShape_GetTrianglesStart(const JPH_OffsetCenterOfMassShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).GetTrianglesStart(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        ((inBox ? void() : MRBINDC_THROW("Parameter `inBox` can not be null.", void)), *(const JPH::AABox *)(inBox)),
+        ((inPositionCOM ? void() : MRBINDC_THROW("Parameter `inPositionCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPositionCOM)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+int JPH_OffsetCenterOfMassShape_GetTrianglesNext(const JPH_OffsetCenterOfMassShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).GetTrianglesNext(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        inMaxTrianglesRequested,
+        ((JPH::Float3 *)outTriangleVertices),
+        ((const JPH::PhysicsMaterial **)outMaterials)
+    );
 }
 
 JPH_Shape_Stats *JPH_OffsetCenterOfMassShape_GetStats(const JPH_OffsetCenterOfMassShape *_this)
@@ -581,6 +675,20 @@ uint64_t JPH_OffsetCenterOfMassShape_GetSubShapeUserData(const JPH_OffsetCenterO
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).GetSubShapeUserData(
         ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID))
     );
+}
+
+bool JPH_OffsetCenterOfMassShape_IsValidScale(const JPH_OffsetCenterOfMassShape *_this, const JPH_Vec3 *inScale)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).IsValidScale(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+JPH_Vec3 *JPH_OffsetCenterOfMassShape_MakeScaleValid(const JPH_OffsetCenterOfMassShape *_this, const JPH_Vec3 *inScale)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).MakeScaleValid(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 uint64_t JPH_OffsetCenterOfMassShape_GetUserData(const JPH_OffsetCenterOfMassShape *_this)

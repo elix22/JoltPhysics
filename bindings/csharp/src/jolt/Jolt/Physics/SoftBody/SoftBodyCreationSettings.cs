@@ -29,6 +29,42 @@ public static partial class Jolt
             public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
             ~Const_SoftBodyCreationSettings() {Dispose(false);}
 
+            ///< Initial position of the soft body
+            public unsafe Jolt.JPH.Const_Vec3 mPosition
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_Get_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_Get_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_SoftBodyCreationSettings_Get_mPosition(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_SoftBodyCreationSettings_Get_mPosition(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Initial rotation of the soft body
+            public unsafe Jolt.JPH.Const_Quat mRotation
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_Get_mRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_Get_mRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Quat._Underlying *__JPH_SoftBodyCreationSettings_Get_mRotation(_Underlying *_this);
+                    Jolt.JPH.Const_Quat __ret;
+                    __ret = new(__JPH_SoftBodyCreationSettings_Get_mRotation(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// User data value (can be used by application)
             public unsafe ulong mUserData
             {
@@ -290,6 +326,18 @@ public static partial class Jolt
             /// Generated from constructor `JPH::SoftBodyCreationSettings::SoftBodyCreationSettings`.
             public Const_SoftBodyCreationSettings(SoftBodyCreationSettings _other) : this((Const_SoftBodyCreationSettings)_other) {}
 
+            /// Generated from constructor `JPH::SoftBodyCreationSettings::SoftBodyCreationSettings`.
+            public unsafe Const_SoftBodyCreationSettings(Jolt.JPH.Const_SoftBodySharedSettings? inSettings, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, ushort inObjectLayer) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.SoftBodyCreationSettings._Underlying *__JPH_SoftBodyCreationSettings_Construct(Jolt.JPH.Const_SoftBodySharedSettings._Underlying *inSettings, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, ushort inObjectLayer);
+                _UnderlyingPtr = __JPH_SoftBodyCreationSettings_Construct(inSettings is not null ? inSettings._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inObjectLayer);
+            }
+
             /// Generated from method `JPH::SoftBodyCreationSettings::operator new`.
             /// Returns a mutable pointer.
             public static unsafe void *New(ulong inCount)
@@ -431,6 +479,42 @@ public static partial class Jolt
         /// This is the non-const half of the class.
         public class SoftBodyCreationSettings : Const_SoftBodyCreationSettings
         {
+            ///< Initial position of the soft body
+            public new unsafe Jolt.JPH.Vec3 mPosition
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_GetMutable_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_GetMutable_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_SoftBodyCreationSettings_GetMutable_mPosition(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_SoftBodyCreationSettings_GetMutable_mPosition(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Initial rotation of the soft body
+            public new unsafe Jolt.JPH.Quat mRotation
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_GetMutable_mRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_GetMutable_mRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Quat._Underlying *__JPH_SoftBodyCreationSettings_GetMutable_mRotation(_Underlying *_this);
+                    Jolt.JPH.Quat __ret;
+                    __ret = new(__JPH_SoftBodyCreationSettings_GetMutable_mRotation(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// User data value (can be used by application)
             public new unsafe ref ulong mUserData
             {
@@ -691,6 +775,18 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::SoftBodyCreationSettings::SoftBodyCreationSettings`.
             public SoftBodyCreationSettings(SoftBodyCreationSettings _other) : this((Const_SoftBodyCreationSettings)_other) {}
+
+            /// Generated from constructor `JPH::SoftBodyCreationSettings::SoftBodyCreationSettings`.
+            public unsafe SoftBodyCreationSettings(Jolt.JPH.Const_SoftBodySharedSettings? inSettings, Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, ushort inObjectLayer) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyCreationSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.SoftBodyCreationSettings._Underlying *__JPH_SoftBodyCreationSettings_Construct(Jolt.JPH.Const_SoftBodySharedSettings._Underlying *inSettings, Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, ushort inObjectLayer);
+                _UnderlyingPtr = __JPH_SoftBodyCreationSettings_Construct(inSettings is not null ? inSettings._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inObjectLayer);
+            }
 
             /// Generated from method `JPH::SoftBodyCreationSettings::operator=`.
             public unsafe Jolt.JPH.SoftBodyCreationSettings Assign(Jolt.JPH._ByValue_SoftBodyCreationSettings _other)

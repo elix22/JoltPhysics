@@ -22,12 +22,14 @@ typedef struct JPH_ContactListener JPH_ContactListener; // Defined in `#include 
 typedef struct JPH_DefaultBroadPhaseLayerFilter JPH_DefaultBroadPhaseLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
 typedef struct JPH_DefaultObjectLayerFilter JPH_DefaultObjectLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/ObjectLayer.h>`.
 typedef struct JPH_JobSystem JPH_JobSystem; // Defined in `#include <jolt/Jolt/Core/JobSystem.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NarrowPhaseQuery JPH_NarrowPhaseQuery; // Defined in `#include <jolt/Jolt/Physics/Collision/NarrowPhaseQuery.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_ObjectLayerPairFilter JPH_ObjectLayerPairFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/ObjectLayer.h>`.
 typedef struct JPH_ObjectVsBroadPhaseLayerFilter JPH_ObjectVsBroadPhaseLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
 typedef struct JPH_PhysicsSettings JPH_PhysicsSettings; // Defined in `#include <jolt/Jolt/Physics/PhysicsSettings.h>`.
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// The main class for the physics system. It contains all rigid bodies and simulates them.
@@ -244,6 +246,17 @@ JOLT_API void JPH_PhysicsSystem_RemoveConstraints(JPH_PhysicsSystem *_this, JPH_
 /// Generated from method `JPH::PhysicsSystem::OptimizeBroadPhase`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_PhysicsSystem_OptimizeBroadPhase(JPH_PhysicsSystem *_this);
+
+/// Set gravity value
+/// Generated from method `JPH::PhysicsSystem::SetGravity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inGravity` can not be null. It is a single object.
+JOLT_API void JPH_PhysicsSystem_SetGravity(JPH_PhysicsSystem *_this, const JPH_Vec3 *inGravity);
+
+/// Generated from method `JPH::PhysicsSystem::GetGravity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_PhysicsSystem_GetGravity(const JPH_PhysicsSystem *_this);
 
 /// Broadphase layer filter that decides if two objects can collide, this was passed to the Init function.
 /// Generated from method `JPH::PhysicsSystem::GetObjectVsBroadPhaseLayerFilter`.

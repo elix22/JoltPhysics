@@ -16,12 +16,14 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Distance constraint settings, used to create a distance constraint
@@ -46,6 +48,38 @@ typedef struct JPH_DistanceConstraintSettings JPH_DistanceConstraintSettings;
 ///     `JPH::NonCopyable`
 ///     `JPH::Constraint`
 typedef struct JPH_DistanceConstraint JPH_DistanceConstraint;
+
+/// Body 1 constraint reference frame (space determined by mSpace).
+/// Constraint will keep mPoint1 (a point on body 1) and mPoint2 (a point on body 2) at the same distance.
+/// Note that this constraint can be used as a cheap PointConstraint by setting mPoint1 = mPoint2 (but this removes only 1 degree of freedom instead of 3).
+/// Returns a pointer to a member variable of class `JPH::DistanceConstraintSettings` named `mPoint1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_DistanceConstraintSettings_Get_mPoint1(const JPH_DistanceConstraintSettings *_this);
+
+/// Body 1 constraint reference frame (space determined by mSpace).
+/// Constraint will keep mPoint1 (a point on body 1) and mPoint2 (a point on body 2) at the same distance.
+/// Note that this constraint can be used as a cheap PointConstraint by setting mPoint1 = mPoint2 (but this removes only 1 degree of freedom instead of 3).
+/// Returns a mutable pointer to a member variable of class `JPH::DistanceConstraintSettings` named `mPoint1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_DistanceConstraintSettings_GetMutable_mPoint1(JPH_DistanceConstraintSettings *_this);
+
+/// Body 2 constraint reference frame (space determined by mSpace)
+/// Returns a pointer to a member variable of class `JPH::DistanceConstraintSettings` named `mPoint2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_DistanceConstraintSettings_Get_mPoint2(const JPH_DistanceConstraintSettings *_this);
+
+/// Body 2 constraint reference frame (space determined by mSpace)
+/// Returns a mutable pointer to a member variable of class `JPH::DistanceConstraintSettings` named `mPoint2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_DistanceConstraintSettings_GetMutable_mPoint2(JPH_DistanceConstraintSettings *_this);
 
 /// Ability to override the distance range at which the two points are kept apart. If the value is negative, it will be replaced by the distance between mPoint1 and mPoint2 (works only if mSpace is world space).
 /// Returns a pointer to a member variable of class `JPH::DistanceConstraintSettings` named `mMinDistance`.
@@ -520,6 +554,12 @@ JOLT_API void *Jolt_new_array_JPH_DistanceConstraint_size_t_void_ptr(unsigned lo
 /// Generated from method `JPH::DistanceConstraint::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_DistanceConstraint_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
+/// Generated from method `JPH::DistanceConstraint::NotifyShapeChanged`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inDeltaCOM` can not be null. It is a single object.
+JOLT_API void JPH_DistanceConstraint_NotifyShapeChanged(JPH_DistanceConstraint *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inDeltaCOM);
+
 /// Generated from method `JPH::DistanceConstraint::SetupVelocityConstraint`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_DistanceConstraint_SetupVelocityConstraint(JPH_DistanceConstraint *_this, float inDeltaTime);
@@ -539,6 +579,17 @@ JOLT_API bool JPH_DistanceConstraint_SolveVelocityConstraint(JPH_DistanceConstra
 /// Generated from method `JPH::DistanceConstraint::SolvePositionConstraint`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_DistanceConstraint_SolvePositionConstraint(JPH_DistanceConstraint *_this, float inDeltaTime, float inBaumgarte);
+
+// See: TwoBodyConstraint
+/// Generated from method `JPH::DistanceConstraint::GetConstraintToBody1Matrix`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_DistanceConstraint_GetConstraintToBody1Matrix(const JPH_DistanceConstraint *_this);
+
+/// Generated from method `JPH::DistanceConstraint::GetConstraintToBody2Matrix`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_DistanceConstraint_GetConstraintToBody2Matrix(const JPH_DistanceConstraint *_this);
 
 /// Update the minimum and maximum distance for the constraint
 /// Generated from method `JPH::DistanceConstraint::SetDistance`.

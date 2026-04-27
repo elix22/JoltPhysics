@@ -1548,6 +1548,24 @@ public static partial class Jolt
                     }
                 }
 
+                ///< The inverse bind matrix, this takes a vertex in its bind pose (Vertex::mPosition) to joint local space
+                public unsafe Jolt.JPH.Const_Mat44 mInvBind
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_InvBind_Get_mInvBind", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_InvBind_Get_mInvBind", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Mat44._Underlying *__JPH_SoftBodySharedSettings_InvBind_Get_mInvBind(_Underlying *_this);
+                        Jolt.JPH.Const_Mat44 __ret;
+                        __ret = new(__JPH_SoftBodySharedSettings_InvBind_Get_mInvBind(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
                 internal unsafe Const_InvBind(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
                 /// Constructs an empty (default-constructed) instance.
@@ -1577,6 +1595,18 @@ public static partial class Jolt
 
                 /// Generated from constructor `JPH::SoftBodySharedSettings::InvBind::InvBind`.
                 public Const_InvBind(InvBind _other) : this((Const_InvBind)_other) {}
+
+                /// Generated from constructor `JPH::SoftBodySharedSettings::InvBind::InvBind`.
+                public unsafe Const_InvBind(uint inJointIndex, Jolt.JPH.Const_Mat44 inInvBind) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_InvBind_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_InvBind_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.SoftBodySharedSettings.InvBind._Underlying *__JPH_SoftBodySharedSettings_InvBind_Construct(uint inJointIndex, Jolt.JPH.Const_Mat44._Underlying *inInvBind);
+                    _UnderlyingPtr = __JPH_SoftBodySharedSettings_InvBind_Construct(inJointIndex, inInvBind._UnderlyingPtr);
+                }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator new`.
                 /// Returns a mutable pointer.
@@ -1733,6 +1763,24 @@ public static partial class Jolt
                     }
                 }
 
+                ///< The inverse bind matrix, this takes a vertex in its bind pose (Vertex::mPosition) to joint local space
+                public new unsafe Jolt.JPH.Mat44 mInvBind
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_InvBind_GetMutable_mInvBind", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_InvBind_GetMutable_mInvBind", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Mat44._Underlying *__JPH_SoftBodySharedSettings_InvBind_GetMutable_mInvBind(_Underlying *_this);
+                        Jolt.JPH.Mat44 __ret;
+                        __ret = new(__JPH_SoftBodySharedSettings_InvBind_GetMutable_mInvBind(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
                 internal unsafe InvBind(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
                 /// Constructs an empty (default-constructed) instance.
@@ -1762,6 +1810,18 @@ public static partial class Jolt
 
                 /// Generated from constructor `JPH::SoftBodySharedSettings::InvBind::InvBind`.
                 public InvBind(InvBind _other) : this((Const_InvBind)_other) {}
+
+                /// Generated from constructor `JPH::SoftBodySharedSettings::InvBind::InvBind`.
+                public unsafe InvBind(uint inJointIndex, Jolt.JPH.Const_Mat44 inInvBind) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_InvBind_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_InvBind_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.SoftBodySharedSettings.InvBind._Underlying *__JPH_SoftBodySharedSettings_InvBind_Construct(uint inJointIndex, Jolt.JPH.Const_Mat44._Underlying *inInvBind);
+                    _UnderlyingPtr = __JPH_SoftBodySharedSettings_InvBind_Construct(inJointIndex, inInvBind._UnderlyingPtr);
+                }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator=`.
                 public unsafe Jolt.JPH.SoftBodySharedSettings.InvBind Assign(Jolt.JPH.SoftBodySharedSettings.Const_InvBind _other)
@@ -2394,6 +2454,24 @@ public static partial class Jolt
                     }
                 }
 
+                ///< The initial rotation between the rods: rod1.mBishop.Conjugated() * rod2.mBishop, calculated by CalculateRodProperties
+                public unsafe Jolt.JPH.Const_Quat mOmega0
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_RodBendTwist_Get_mOmega0", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_RodBendTwist_Get_mOmega0", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Quat._Underlying *__JPH_SoftBodySharedSettings_RodBendTwist_Get_mOmega0(_Underlying *_this);
+                        Jolt.JPH.Const_Quat __ret;
+                        __ret = new(__JPH_SoftBodySharedSettings_RodBendTwist_Get_mOmega0(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
                 internal unsafe Const_RodBendTwist(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
                 /// Constructs an empty (default-constructed) instance.
@@ -2608,6 +2686,24 @@ public static partial class Jolt
                     }
                 }
 
+                ///< The initial rotation between the rods: rod1.mBishop.Conjugated() * rod2.mBishop, calculated by CalculateRodProperties
+                public new unsafe Jolt.JPH.Quat mOmega0
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_RodBendTwist_GetMutable_mOmega0", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_RodBendTwist_GetMutable_mOmega0", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Quat._Underlying *__JPH_SoftBodySharedSettings_RodBendTwist_GetMutable_mOmega0(_Underlying *_this);
+                        Jolt.JPH.Quat __ret;
+                        __ret = new(__JPH_SoftBodySharedSettings_RodBendTwist_GetMutable_mOmega0(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
                 internal unsafe RodBendTwist(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
                 /// Constructs an empty (default-constructed) instance.
@@ -2785,6 +2881,24 @@ public static partial class Jolt
                         #endif
                         extern static float *__JPH_SoftBodySharedSettings_RodStretchShear_Get_mCompliance(_Underlying *_this);
                         return *__JPH_SoftBodySharedSettings_RodStretchShear_Get_mCompliance(_UnderlyingPtr);
+                    }
+                }
+
+                ///< The Bishop frame of the rod (the rotation of the rod in its rest pose so that it has zero twist towards adjacent rods), calculated by CalculateRodProperties
+                public unsafe Jolt.JPH.Const_Quat mBishop
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_RodStretchShear_Get_mBishop", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_RodStretchShear_Get_mBishop", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Quat._Underlying *__JPH_SoftBodySharedSettings_RodStretchShear_Get_mBishop(_Underlying *_this);
+                        Jolt.JPH.Const_Quat __ret;
+                        __ret = new(__JPH_SoftBodySharedSettings_RodStretchShear_Get_mBishop(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
                     }
                 }
 
@@ -3048,6 +3162,24 @@ public static partial class Jolt
                         #endif
                         extern static float *__JPH_SoftBodySharedSettings_RodStretchShear_GetMutable_mCompliance(_Underlying *_this);
                         return ref *__JPH_SoftBodySharedSettings_RodStretchShear_GetMutable_mCompliance(_UnderlyingPtr);
+                    }
+                }
+
+                ///< The Bishop frame of the rod (the rotation of the rod in its rest pose so that it has zero twist towards adjacent rods), calculated by CalculateRodProperties
+                public new unsafe Jolt.JPH.Quat mBishop
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_RodStretchShear_GetMutable_mBishop", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_RodStretchShear_GetMutable_mBishop", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Quat._Underlying *__JPH_SoftBodySharedSettings_RodStretchShear_GetMutable_mBishop(_Underlying *_this);
+                        Jolt.JPH.Quat __ret;
+                        __ret = new(__JPH_SoftBodySharedSettings_RodStretchShear_GetMutable_mBishop(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
                     }
                 }
 
@@ -4021,6 +4153,42 @@ public static partial class Jolt
                 public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
                 ~Const_Vertex() {Dispose(false);}
 
+                ///< Initial position of the vertex
+                public unsafe Jolt.JPH.Const_Float3 mPosition
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_Get_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_Get_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Float3._Underlying *__JPH_SoftBodySharedSettings_Vertex_Get_mPosition(_Underlying *_this);
+                        Jolt.JPH.Const_Float3 __ret;
+                        __ret = new(__JPH_SoftBodySharedSettings_Vertex_Get_mPosition(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
+                ///< Initial velocity of the vertex
+                public unsafe Jolt.JPH.Const_Float3 mVelocity
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_Get_mVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_Get_mVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Const_Float3._Underlying *__JPH_SoftBodySharedSettings_Vertex_Get_mVelocity(_Underlying *_this);
+                        Jolt.JPH.Const_Float3 __ret;
+                        __ret = new(__JPH_SoftBodySharedSettings_Vertex_Get_mVelocity(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
                 ///< Initial inverse of the mass of the vertex
                 public unsafe float mInvMass
                 {
@@ -4065,6 +4233,21 @@ public static partial class Jolt
 
                 /// Generated from constructor `JPH::SoftBodySharedSettings::Vertex::Vertex`.
                 public Const_Vertex(Vertex _other) : this((Const_Vertex)_other) {}
+
+                /// Generated from constructor `JPH::SoftBodySharedSettings::Vertex::Vertex`.
+                /// Parameter `inVelocity` defaults to `JPH::Float3(0, 0, 0)`.
+                /// Parameter `inInvMass` defaults to `1.0f`.
+                public unsafe Const_Vertex(Jolt.JPH.Const_Float3 inPosition, Jolt.JPH.Const_Float3? inVelocity = null, float? inInvMass = null) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.SoftBodySharedSettings.Vertex._Underlying *__JPH_SoftBodySharedSettings_Vertex_Construct(Jolt.JPH.Const_Float3._Underlying *inPosition, Jolt.JPH.Const_Float3._Underlying *inVelocity, float *inInvMass);
+                    float __deref_inInvMass = inInvMass.GetValueOrDefault();
+                    _UnderlyingPtr = __JPH_SoftBodySharedSettings_Vertex_Construct(inPosition._UnderlyingPtr, inVelocity is not null ? inVelocity._UnderlyingPtr : null, inInvMass.HasValue ? &__deref_inInvMass : null);
+                }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator new`.
                 /// Returns a mutable pointer.
@@ -4206,6 +4389,42 @@ public static partial class Jolt
             /// This is the non-const half of the class.
             public class Vertex : Const_Vertex
             {
+                ///< Initial position of the vertex
+                public new unsafe Jolt.JPH.Float3 mPosition
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_GetMutable_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_GetMutable_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Float3._Underlying *__JPH_SoftBodySharedSettings_Vertex_GetMutable_mPosition(_Underlying *_this);
+                        Jolt.JPH.Float3 __ret;
+                        __ret = new(__JPH_SoftBodySharedSettings_Vertex_GetMutable_mPosition(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
+                ///< Initial velocity of the vertex
+                public new unsafe Jolt.JPH.Float3 mVelocity
+                {
+                    get
+                    {
+                        #if __IOS__
+                        [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_GetMutable_mVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #else
+                        [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_GetMutable_mVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                        #endif
+                        extern static Jolt.JPH.Float3._Underlying *__JPH_SoftBodySharedSettings_Vertex_GetMutable_mVelocity(_Underlying *_this);
+                        Jolt.JPH.Float3 __ret;
+                        __ret = new(__JPH_SoftBodySharedSettings_Vertex_GetMutable_mVelocity(_UnderlyingPtr), is_owning: false);
+                        __ret._KeepAliveEnclosingObject = this;
+                        return __ret;
+                    }
+                }
+
                 ///< Initial inverse of the mass of the vertex
                 public new unsafe ref float mInvMass
                 {
@@ -4250,6 +4469,21 @@ public static partial class Jolt
 
                 /// Generated from constructor `JPH::SoftBodySharedSettings::Vertex::Vertex`.
                 public Vertex(Vertex _other) : this((Const_Vertex)_other) {}
+
+                /// Generated from constructor `JPH::SoftBodySharedSettings::Vertex::Vertex`.
+                /// Parameter `inVelocity` defaults to `JPH::Float3(0, 0, 0)`.
+                /// Parameter `inInvMass` defaults to `1.0f`.
+                public unsafe Vertex(Jolt.JPH.Const_Float3 inPosition, Jolt.JPH.Const_Float3? inVelocity = null, float? inInvMass = null) : this(null, is_owning: true)
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Vertex_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.SoftBodySharedSettings.Vertex._Underlying *__JPH_SoftBodySharedSettings_Vertex_Construct(Jolt.JPH.Const_Float3._Underlying *inPosition, Jolt.JPH.Const_Float3._Underlying *inVelocity, float *inInvMass);
+                    float __deref_inInvMass = inInvMass.GetValueOrDefault();
+                    _UnderlyingPtr = __JPH_SoftBodySharedSettings_Vertex_Construct(inPosition._UnderlyingPtr, inVelocity is not null ? inVelocity._UnderlyingPtr : null, inInvMass.HasValue ? &__deref_inInvMass : null);
+                }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator=`.
                 public unsafe Jolt.JPH.SoftBodySharedSettings.Vertex Assign(Jolt.JPH.SoftBodySharedSettings.Const_Vertex _other)

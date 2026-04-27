@@ -129,6 +129,23 @@ public static partial class Jolt
                 return ret;
             }
 
+            public unsafe Jolt.JPH.Const_Vec3 mScale
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShapeSettings_Get_mScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShapeSettings_Get_mScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_ScaledShapeSettings_Get_mScale(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_ScaledShapeSettings_Get_mScale(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// User data (to be used freely by the application)
             public unsafe ulong mUserData
             {
@@ -176,6 +193,32 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::ScaledShapeSettings::ScaledShapeSettings`.
             public Const_ScaledShapeSettings(ScaledShapeSettings _other) : this((Const_ScaledShapeSettings)_other) {}
+
+            /// Constructor that decorates another shape with a scale
+            /// Generated from constructor `JPH::ScaledShapeSettings::ScaledShapeSettings`.
+            public unsafe Const_ScaledShapeSettings(Jolt.JPH.Const_ShapeSettings? inShape, Jolt.JPH.Const_Vec3 inScale) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ScaledShapeSettings._Underlying *__JPH_ScaledShapeSettings_Construct_const_JPH_ShapeSettings_ptr(Jolt.JPH.Const_ShapeSettings._Underlying *inShape, Jolt.JPH.Vec3._Underlying *inScale);
+                _UnderlyingPtr = __JPH_ScaledShapeSettings_Construct_const_JPH_ShapeSettings_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inScale._UnderlyingPtr);
+            }
+
+            /// Variant that uses a concrete shape, which means this object cannot be serialized.
+            /// Generated from constructor `JPH::ScaledShapeSettings::ScaledShapeSettings`.
+            public unsafe Const_ScaledShapeSettings(Jolt.JPH.Const_Shape? inShape, Jolt.JPH.Const_Vec3 inScale) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ScaledShapeSettings._Underlying *__JPH_ScaledShapeSettings_Construct_const_JPH_Shape_ptr(Jolt.JPH.Const_Shape._Underlying *inShape, Jolt.JPH.Vec3._Underlying *inScale);
+                _UnderlyingPtr = __JPH_ScaledShapeSettings_Construct_const_JPH_Shape_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inScale._UnderlyingPtr);
+            }
 
             /// Generated from method `JPH::ScaledShapeSettings::operator new`.
             /// Returns a mutable pointer.
@@ -484,6 +527,23 @@ public static partial class Jolt
                 return ret;
             }
 
+            public new unsafe Jolt.JPH.Vec3 mScale
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShapeSettings_GetMutable_mScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShapeSettings_GetMutable_mScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_ScaledShapeSettings_GetMutable_mScale(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_ScaledShapeSettings_GetMutable_mScale(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// User data (to be used freely by the application)
             public new unsafe ref ulong mUserData
             {
@@ -531,6 +591,32 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::ScaledShapeSettings::ScaledShapeSettings`.
             public ScaledShapeSettings(ScaledShapeSettings _other) : this((Const_ScaledShapeSettings)_other) {}
+
+            /// Constructor that decorates another shape with a scale
+            /// Generated from constructor `JPH::ScaledShapeSettings::ScaledShapeSettings`.
+            public unsafe ScaledShapeSettings(Jolt.JPH.Const_ShapeSettings? inShape, Jolt.JPH.Const_Vec3 inScale) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ScaledShapeSettings._Underlying *__JPH_ScaledShapeSettings_Construct_const_JPH_ShapeSettings_ptr(Jolt.JPH.Const_ShapeSettings._Underlying *inShape, Jolt.JPH.Vec3._Underlying *inScale);
+                _UnderlyingPtr = __JPH_ScaledShapeSettings_Construct_const_JPH_ShapeSettings_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inScale._UnderlyingPtr);
+            }
+
+            /// Variant that uses a concrete shape, which means this object cannot be serialized.
+            /// Generated from constructor `JPH::ScaledShapeSettings::ScaledShapeSettings`.
+            public unsafe ScaledShapeSettings(Jolt.JPH.Const_Shape? inShape, Jolt.JPH.Const_Vec3 inScale) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ScaledShapeSettings._Underlying *__JPH_ScaledShapeSettings_Construct_const_JPH_Shape_ptr(Jolt.JPH.Const_Shape._Underlying *inShape, Jolt.JPH.Vec3._Underlying *inScale);
+                _UnderlyingPtr = __JPH_ScaledShapeSettings_Construct_const_JPH_Shape_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inScale._UnderlyingPtr);
+            }
 
             /// Generated from method `JPH::ScaledShapeSettings::operator=`.
             public unsafe Jolt.JPH.ScaledShapeSettings Assign(Jolt.JPH._ByValue_ScaledShapeSettings _other)
@@ -752,6 +838,32 @@ public static partial class Jolt
                 _UnderlyingPtr = __JPH_ScaledShape_DefaultConstruct();
             }
 
+            /// Constructor that decorates another shape with a scale
+            /// Generated from constructor `JPH::ScaledShape::ScaledShape`.
+            public unsafe Const_ScaledShape(Jolt.JPH.Const_Shape? inShape, Jolt.JPH.Const_Vec3 inScale) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShape_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShape_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ScaledShape._Underlying *__JPH_ScaledShape_Construct_const_JPH_Shape_ptr(Jolt.JPH.Const_Shape._Underlying *inShape, Jolt.JPH.Vec3._Underlying *inScale);
+                _UnderlyingPtr = __JPH_ScaledShape_Construct_const_JPH_Shape_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inScale._UnderlyingPtr);
+            }
+
+            /// Get world space bounds including convex radius.
+            /// Generated from method `JPH::ScaledShape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_DMat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_ScaledShape_GetWorldSpaceBounds_JPH_DMat44(_Underlying *_this, Jolt.JPH.Const_DMat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_ScaledShape_GetWorldSpaceBounds_JPH_DMat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             /// Generated from method `JPH::ScaledShape::operator new`.
             /// Returns a mutable pointer.
             public static unsafe void *New(ulong inCount)
@@ -886,6 +998,32 @@ public static partial class Jolt
                 __Jolt_delete_array_JPH_ScaledShape_void_ptr_void_ptr(inPointer, inPlace);
             }
 
+            /// Get the scale
+            /// Generated from method `JPH::ScaledShape::GetScale`.
+            public unsafe Jolt.JPH.Vec3 GetScale()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShape_GetScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShape_GetScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_ScaledShape_GetScale(_Underlying *_this);
+                return new(__JPH_ScaledShape_GetScale(_UnderlyingPtr), is_owning: true);
+            }
+
+            // See Shape::GetCenterOfMass
+            /// Generated from method `JPH::ScaledShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_ScaledShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_ScaledShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetLocalBounds
             /// Generated from method `JPH::ScaledShape::GetLocalBounds`.
             public unsafe Jolt.JPH.AABox GetLocalBounds()
@@ -899,6 +1037,19 @@ public static partial class Jolt
                 return new(__JPH_ScaledShape_GetLocalBounds(_UnderlyingPtr), is_owning: true);
             }
 
+            // See Shape::GetWorldSpaceBounds
+            /// Generated from method `JPH::ScaledShape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_Mat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_ScaledShape_GetWorldSpaceBounds_JPH_Mat44(_Underlying *_this, Jolt.JPH.Const_Mat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_ScaledShape_GetWorldSpaceBounds_JPH_Mat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetInnerRadius
             /// Generated from method `JPH::ScaledShape::GetInnerRadius`.
             public unsafe float GetInnerRadius()
@@ -910,6 +1061,45 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_ScaledShape_GetInnerRadius(_Underlying *_this);
                 return __JPH_ScaledShape_GetInnerRadius(_UnderlyingPtr);
+            }
+
+            // See Shape::GetSurfaceNormal
+            /// Generated from method `JPH::ScaledShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_ScaledShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_ScaledShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            // See Shape::GetTrianglesStart
+            /// Generated from method `JPH::ScaledShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_ScaledShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_ScaledShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            // See Shape::GetTrianglesNext
+            /// Generated from method `JPH::ScaledShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_ScaledShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_ScaledShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
             }
 
             // See Shape::GetStats
@@ -936,6 +1126,32 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_ScaledShape_GetVolume(_Underlying *_this);
                 return __JPH_ScaledShape_GetVolume(_UnderlyingPtr);
+            }
+
+            // See Shape::IsValidScale
+            /// Generated from method `JPH::ScaledShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_ScaledShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_ScaledShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            // See Shape::MakeScaleValid
+            /// Generated from method `JPH::ScaledShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_ScaledShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_ScaledShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             // Register shape functions with the registry
@@ -1216,6 +1432,19 @@ public static partial class Jolt
                 #endif
                 extern static Jolt.JPH.ScaledShape._Underlying *__JPH_ScaledShape_DefaultConstruct();
                 _UnderlyingPtr = __JPH_ScaledShape_DefaultConstruct();
+            }
+
+            /// Constructor that decorates another shape with a scale
+            /// Generated from constructor `JPH::ScaledShape::ScaledShape`.
+            public unsafe ScaledShape(Jolt.JPH.Const_Shape? inShape, Jolt.JPH.Const_Vec3 inScale) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ScaledShape_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ScaledShape_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.ScaledShape._Underlying *__JPH_ScaledShape_Construct_const_JPH_Shape_ptr(Jolt.JPH.Const_Shape._Underlying *inShape, Jolt.JPH.Vec3._Underlying *inScale);
+                _UnderlyingPtr = __JPH_ScaledShape_Construct_const_JPH_Shape_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inScale._UnderlyingPtr);
             }
 
             /// Generated from method `JPH::ScaledShape::SetUserData`.

@@ -5,6 +5,11 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/DMat44.h>
+#include <Jolt/Math/Float3.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/ConvexShape.h>
@@ -532,6 +537,14 @@ void JPH_TaperedCapsuleShape_DestroyArray(const JPH_TaperedCapsuleShape *_this)
     delete[] ((const JPH::TaperedCapsuleShape *)_this);
 }
 
+JPH_AABox *JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_TaperedCapsuleShape *_this, const JPH_DMat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetWorldSpaceBounds(
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::DMat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
 void *Jolt_new_JPH_TaperedCapsuleShape_size_t(unsigned long inCount)
 {
     return JPH::TaperedCapsuleShape::operator new(
@@ -623,14 +636,44 @@ float JPH_TaperedCapsuleShape_GetHalfHeight(const JPH_TaperedCapsuleShape *_this
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetHalfHeight();
 }
 
+JPH_Vec3 *JPH_TaperedCapsuleShape_GetCenterOfMass(const JPH_TaperedCapsuleShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetCenterOfMass());
+}
+
 JPH_AABox *JPH_TaperedCapsuleShape_GetLocalBounds(const JPH_TaperedCapsuleShape *_this)
 {
     return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetLocalBounds());
 }
 
+JPH_AABox *JPH_TaperedCapsuleShape_GetWorldSpaceBounds_JPH_Mat44(const JPH_TaperedCapsuleShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    return (JPH_AABox *)new JPH::AABox(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetWorldSpaceBounds(
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
 float JPH_TaperedCapsuleShape_GetInnerRadius(const JPH_TaperedCapsuleShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetInnerRadius();
+}
+
+JPH_Vec3 *JPH_TaperedCapsuleShape_GetSurfaceNormal(const JPH_TaperedCapsuleShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetSurfaceNormal(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inLocalSurfacePosition ? void() : MRBINDC_THROW("Parameter `inLocalSurfacePosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLocalSurfacePosition))
+    ));
+}
+
+const JPH_ConvexShape_Support *JPH_TaperedCapsuleShape_GetSupportFunction(const JPH_TaperedCapsuleShape *_this, JPH_ConvexShape_ESupportMode inMode, JPH_ConvexShape_SupportBuffer *inBuffer, const JPH_Vec3 *inScale)
+{
+    return (const JPH_ConvexShape_Support *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetSupportFunction(
+        ((JPH::ConvexShape::ESupportMode)inMode),
+        ((inBuffer ? void() : MRBINDC_THROW("Parameter `inBuffer` can not be null.", void)), *(JPH::ConvexShape::SupportBuffer *)(inBuffer)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 JPH_Shape_Stats *JPH_TaperedCapsuleShape_GetStats(const JPH_TaperedCapsuleShape *_this)
@@ -643,6 +686,20 @@ float JPH_TaperedCapsuleShape_GetVolume(const JPH_TaperedCapsuleShape *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetVolume();
 }
 
+bool JPH_TaperedCapsuleShape_IsValidScale(const JPH_TaperedCapsuleShape *_this, const JPH_Vec3 *inScale)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).IsValidScale(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+JPH_Vec3 *JPH_TaperedCapsuleShape_MakeScaleValid(const JPH_TaperedCapsuleShape *_this, const JPH_Vec3 *inScale)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).MakeScaleValid(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
+}
+
 void JPH_TaperedCapsuleShape_sRegister(void)
 {
     JPH::TaperedCapsuleShape::sRegister();
@@ -651,6 +708,27 @@ void JPH_TaperedCapsuleShape_sRegister(void)
 unsigned int JPH_TaperedCapsuleShape_GetSubShapeIDBitsRecursive(const JPH_TaperedCapsuleShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetSubShapeIDBitsRecursive();
+}
+
+void JPH_TaperedCapsuleShape_GetTrianglesStart(const JPH_TaperedCapsuleShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetTrianglesStart(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        ((inBox ? void() : MRBINDC_THROW("Parameter `inBox` can not be null.", void)), *(const JPH::AABox *)(inBox)),
+        ((inPositionCOM ? void() : MRBINDC_THROW("Parameter `inPositionCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPositionCOM)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+int JPH_TaperedCapsuleShape_GetTrianglesNext(const JPH_TaperedCapsuleShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TaperedCapsuleShape *)(_this)).GetTrianglesNext(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        inMaxTrianglesRequested,
+        ((JPH::Float3 *)outTriangleVertices),
+        ((const JPH::PhysicsMaterial **)outMaterials)
+    );
 }
 
 void JPH_TaperedCapsuleShape_SetMaterial(JPH_TaperedCapsuleShape *_this, const JPH_PhysicsMaterial *inMaterial)

@@ -141,6 +141,21 @@ echo "#include \"$ROOT/Jolt/Physics/Character/CharacterVirtual.h\"" >>"$BINDINGS
 echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayerInterfaceTable.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Collision/ObjectLayerPairFilterTable.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/ObjectVsBroadPhaseLayerFilterTable.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/BVec16.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/DMat44.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/Double3.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/DVec3.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/Float2.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/Float3.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/Float4.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/Mat44.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/Matrix.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/Quat.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/UVec4.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/Vec3.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/Vec4.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Math/Vector.h\"" >>"$BINDINGS/tmp/combined_input.h"
+
 
 # Parse the input header.
 ./build/mrbind \
@@ -148,6 +163,20 @@ echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/ObjectVsBroadPhaseLayer
     -o "$BINDINGS/tmp/parse_result.json" \
     --ignore :: \
     --skip-mentions-of std::align_val_t \
+    --allow JPH::BVec16 \
+    --allow JPH::DMat44 \
+    --allow JPH::Double3 \
+    --allow JPH::DVec3 \
+    --allow JPH::Float2 \
+    --allow JPH::Float3 \
+    --allow JPH::Float4 \
+    --allow JPH::Mat44 \
+    --allow JPH::Matrix \
+    --allow JPH::Quat \
+    --allow JPH::UVec4 \
+    --allow JPH::Vec3 \
+    --allow JPH::Vec4 \
+    --allow JPH::Vector \
     --allow JPH::RefTarget \
     --allow JPH::NonCopyable \
     --allow JPH::SerializableObject \

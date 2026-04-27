@@ -13,8 +13,11 @@ extern "C" {
 #endif
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
@@ -24,6 +27,7 @@ typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // D
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Class that constructs a HeightFieldShape
@@ -51,6 +55,34 @@ typedef struct JPH_HeightFieldShapeSettings JPH_HeightFieldShapeSettings;
 ///     `JPH::NonCopyable`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_HeightFieldShape JPH_HeightFieldShape;
+
+/// The height field is a surface defined by: mOffset + mScale * (x, mHeightSamples[y * mSampleCount + x], y).
+/// where x and y are integers in the range x and y e [0, mSampleCount - 1].
+/// Returns a pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mOffset`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_HeightFieldShapeSettings_Get_mOffset(const JPH_HeightFieldShapeSettings *_this);
+
+/// The height field is a surface defined by: mOffset + mScale * (x, mHeightSamples[y * mSampleCount + x], y).
+/// where x and y are integers in the range x and y e [0, mSampleCount - 1].
+/// Returns a mutable pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mOffset`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_HeightFieldShapeSettings_GetMutable_mOffset(JPH_HeightFieldShapeSettings *_this);
+
+/// Returns a pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_HeightFieldShapeSettings_Get_mScale(const JPH_HeightFieldShapeSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_HeightFieldShapeSettings_GetMutable_mScale(JPH_HeightFieldShapeSettings *_this);
 
 /// Returns a pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mSampleCount`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -563,10 +595,51 @@ JOLT_API const JPH_PhysicsMaterial *JPH_HeightFieldShape_GetMaterial_1(const JPH
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API const JPH_PhysicsMaterial *JPH_HeightFieldShape_GetMaterial_2(const JPH_HeightFieldShape *_this, unsigned int inX, unsigned int inY);
 
+// See Shape::GetSurfaceNormal
+/// Generated from method `JPH::HeightFieldShape::GetSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_HeightFieldShape_GetSurfaceNormal(const JPH_HeightFieldShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
+// See Shape::GetTrianglesStart
+/// Generated from method `JPH::HeightFieldShape::GetTrianglesStart`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `inBox` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_HeightFieldShape_GetTrianglesStart(const JPH_HeightFieldShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale);
+
+// See Shape::GetTrianglesNext
+/// Generated from method `JPH::HeightFieldShape::GetTrianglesNext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `outMaterials` defaults to a null pointer in C++.
+JOLT_API int JPH_HeightFieldShape_GetTrianglesNext(const JPH_HeightFieldShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
+
+/// Get height field position at sampled location (inX, inY).
+/// where inX and inY are integers in the range inX e [0, mSampleCount - 1] and inY e [0, mSampleCount - 1].
+/// Generated from method `JPH::HeightFieldShape::GetPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_HeightFieldShape_GetPosition(const JPH_HeightFieldShape *_this, unsigned int inX, unsigned int inY);
+
 /// Check if height field at sampled location (inX, inY) has collision (has a hole or not)
 /// Generated from method `JPH::HeightFieldShape::IsNoCollision`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_HeightFieldShape_IsNoCollision(const JPH_HeightFieldShape *_this, unsigned int inX, unsigned int inY);
+
+/// Projects inLocalPosition (a point in the space of the shape) along the Y axis onto the surface and returns it in outSurfacePosition.
+/// When there is no surface position (because of a hole or because the point is outside the heightfield) the function will return false.
+/// Generated from method `JPH::HeightFieldShape::ProjectOntoSurface`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLocalPosition` can not be null. It is a single object.
+/// Parameter `outSurfacePosition` can not be null. It is a single object.
+/// Parameter `outSubShapeID` can not be null. It is a single object.
+JOLT_API bool JPH_HeightFieldShape_ProjectOntoSurface(const JPH_HeightFieldShape *_this, const JPH_Vec3 *inLocalPosition, JPH_Vec3 *outSurfacePosition, JPH_SubShapeID *outSubShapeID);
 
 /// Returns the coordinates of the triangle that a sub shape ID represents
 /// @param inSubShapeID The sub shape ID to decode
@@ -654,6 +727,12 @@ JOLT_API uint64_t JPH_HeightFieldShape_GetUserData(const JPH_HeightFieldShape *_
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_HeightFieldShape_SetUserData(JPH_HeightFieldShape *_this, uint64_t inUserData);
 
+/// All shapes are centered around their center of mass. This function returns the center of mass position that needs to be applied to transform the shape to where it was created.
+/// Generated from method `JPH::HeightFieldShape::GetCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_HeightFieldShape_GetCenterOfMass(const JPH_HeightFieldShape *_this);
+
 /// Get the leaf shape for a particular sub shape ID.
 /// @param inSubShapeID The full sub shape ID that indicates the path to the leaf shape
 /// @param outRemainder What remains of the sub shape ID after removing the path to the leaf shape (could e.g. refer to a triangle within a MeshShape)
@@ -669,6 +748,34 @@ JOLT_API const JPH_Shape *JPH_HeightFieldShape_GetLeafShape(const JPH_HeightFiel
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API uint64_t JPH_HeightFieldShape_GetSubShapeUserData(const JPH_HeightFieldShape *_this, const JPH_SubShapeID *inSubShapeID);
+
+/// Test if inScale is a valid scale for this shape. Some shapes can only be scaled uniformly, compound shapes cannot handle shapes
+/// being rotated and scaled (this would cause shearing), scale can never be zero. When the scale is invalid, the function will return false.
+///
+/// Here's a list of supported scales:
+/// * SphereShape: Scale must be uniform (signs of scale are ignored).
+/// * BoxShape: Any scale supported (signs of scale are ignored).
+/// * TriangleShape: Any scale supported when convex radius is zero, otherwise only uniform scale supported.
+/// * CapsuleShape: Scale must be uniform (signs of scale are ignored).
+/// * TaperedCapsuleShape: Scale must be uniform (sign of Y scale can be used to flip the capsule).
+/// * CylinderShape: Scale must be uniform in XZ plane, Y can scale independently (signs of scale are ignored).
+/// * RotatedTranslatedShape: Scale must not cause shear in the child shape.
+/// * CompoundShape: Scale must not cause shear in any of the child shapes.
+/// Generated from method `JPH::HeightFieldShape::IsValidScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API bool JPH_HeightFieldShape_IsValidScale(const JPH_HeightFieldShape *_this, const JPH_Vec3 *inScale);
+
+/// This function will make sure that if you wrap this shape in a ScaledShape that the scale is valid.
+/// Note that this involves discarding components of the scale that are invalid, so the resulting scaled shape may be different than the requested scale.
+/// Compare the return value of this function with the scale you passed in to detect major inconsistencies and possibly warn the user.
+/// @param inScale Local space scale for this shape.
+/// @return Scale that can be used to wrap this shape in a ScaledShape. IsValidScale will return true for this scale.
+/// Generated from method `JPH::HeightFieldShape::MakeScaleValid`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_HeightFieldShape_MakeScaleValid(const JPH_HeightFieldShape *_this, const JPH_Vec3 *inScale);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

@@ -16,12 +16,16 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct JPH_Vector_2 JPH_Vector_2; // Defined in `#include <jolt/Jolt/Math/Vector.h>`.
 
 
 /// Hinge constraint settings, used to create a hinge constraint
@@ -46,6 +50,92 @@ typedef struct JPH_HingeConstraintSettings JPH_HingeConstraintSettings;
 ///     `JPH::NonCopyable`
 ///     `JPH::Constraint`
 typedef struct JPH_HingeConstraint JPH_HingeConstraint;
+
+/// Body 1 constraint reference frame (space determined by mSpace).
+/// Hinge axis is the axis where rotation is allowed.
+/// When the normal axis of both bodies align in world space, the hinge angle is defined to be 0.
+/// mHingeAxis1 and mNormalAxis1 should be perpendicular. mHingeAxis2 and mNormalAxis2 should also be perpendicular.
+/// If you configure the joint in world space and create both bodies with a relative rotation you want to be defined as zero,
+/// you can simply set mHingeAxis1 = mHingeAxis2 and mNormalAxis1 = mNormalAxis2.
+/// Returns a pointer to a member variable of class `JPH::HingeConstraintSettings` named `mPoint1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mPoint1(const JPH_HingeConstraintSettings *_this);
+
+/// Body 1 constraint reference frame (space determined by mSpace).
+/// Hinge axis is the axis where rotation is allowed.
+/// When the normal axis of both bodies align in world space, the hinge angle is defined to be 0.
+/// mHingeAxis1 and mNormalAxis1 should be perpendicular. mHingeAxis2 and mNormalAxis2 should also be perpendicular.
+/// If you configure the joint in world space and create both bodies with a relative rotation you want to be defined as zero,
+/// you can simply set mHingeAxis1 = mHingeAxis2 and mNormalAxis1 = mNormalAxis2.
+/// Returns a mutable pointer to a member variable of class `JPH::HingeConstraintSettings` named `mPoint1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mPoint1(JPH_HingeConstraintSettings *_this);
+
+/// Returns a pointer to a member variable of class `JPH::HingeConstraintSettings` named `mHingeAxis1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mHingeAxis1(const JPH_HingeConstraintSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::HingeConstraintSettings` named `mHingeAxis1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mHingeAxis1(JPH_HingeConstraintSettings *_this);
+
+/// Returns a pointer to a member variable of class `JPH::HingeConstraintSettings` named `mNormalAxis1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mNormalAxis1(const JPH_HingeConstraintSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::HingeConstraintSettings` named `mNormalAxis1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mNormalAxis1(JPH_HingeConstraintSettings *_this);
+
+/// Body 2 constraint reference frame (space determined by mSpace)
+/// Returns a pointer to a member variable of class `JPH::HingeConstraintSettings` named `mPoint2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mPoint2(const JPH_HingeConstraintSettings *_this);
+
+/// Body 2 constraint reference frame (space determined by mSpace)
+/// Returns a mutable pointer to a member variable of class `JPH::HingeConstraintSettings` named `mPoint2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mPoint2(JPH_HingeConstraintSettings *_this);
+
+/// Returns a pointer to a member variable of class `JPH::HingeConstraintSettings` named `mHingeAxis2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mHingeAxis2(const JPH_HingeConstraintSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::HingeConstraintSettings` named `mHingeAxis2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mHingeAxis2(JPH_HingeConstraintSettings *_this);
+
+/// Returns a pointer to a member variable of class `JPH::HingeConstraintSettings` named `mNormalAxis2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_HingeConstraintSettings_Get_mNormalAxis2(const JPH_HingeConstraintSettings *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::HingeConstraintSettings` named `mNormalAxis2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_HingeConstraintSettings_GetMutable_mNormalAxis2(JPH_HingeConstraintSettings *_this);
 
 /// Rotation around the hinge axis will be limited between [mLimitsMin, mLimitsMax] where mLimitsMin e [-pi, 0] and mLimitsMax e [0, pi].
 /// Both angles are in radians.
@@ -543,6 +633,12 @@ JOLT_API void *Jolt_new_array_JPH_HingeConstraint_size_t_void_ptr(unsigned long 
 /// Generated from method `JPH::HingeConstraint::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_HingeConstraint_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
+/// Generated from method `JPH::HingeConstraint::NotifyShapeChanged`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inDeltaCOM` can not be null. It is a single object.
+JOLT_API void JPH_HingeConstraint_NotifyShapeChanged(JPH_HingeConstraint *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inDeltaCOM);
+
 /// Generated from method `JPH::HingeConstraint::SetupVelocityConstraint`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_HingeConstraint_SetupVelocityConstraint(JPH_HingeConstraint *_this, float inDeltaTime);
@@ -562,6 +658,51 @@ JOLT_API bool JPH_HingeConstraint_SolveVelocityConstraint(JPH_HingeConstraint *_
 /// Generated from method `JPH::HingeConstraint::SolvePositionConstraint`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_HingeConstraint_SolvePositionConstraint(JPH_HingeConstraint *_this, float inDeltaTime, float inBaumgarte);
+
+// See: TwoBodyConstraint
+/// Generated from method `JPH::HingeConstraint::GetConstraintToBody1Matrix`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_HingeConstraint_GetConstraintToBody1Matrix(const JPH_HingeConstraint *_this);
+
+/// Generated from method `JPH::HingeConstraint::GetConstraintToBody2Matrix`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_HingeConstraint_GetConstraintToBody2Matrix(const JPH_HingeConstraint *_this);
+
+/// Get the attachment point for body 1 relative to body 1 COM (transform by Body::GetCenterOfMassTransform to take to world space)
+/// Generated from method `JPH::HingeConstraint::GetLocalSpacePoint1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_HingeConstraint_GetLocalSpacePoint1(const JPH_HingeConstraint *_this);
+
+/// Get the attachment point for body 2 relative to body 2 COM (transform by Body::GetCenterOfMassTransform to take to world space)
+/// Generated from method `JPH::HingeConstraint::GetLocalSpacePoint2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_HingeConstraint_GetLocalSpacePoint2(const JPH_HingeConstraint *_this);
+
+// Local space hinge directions (transform direction by Body::GetCenterOfMassTransform to take to world space)
+/// Generated from method `JPH::HingeConstraint::GetLocalSpaceHingeAxis1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_HingeConstraint_GetLocalSpaceHingeAxis1(const JPH_HingeConstraint *_this);
+
+/// Generated from method `JPH::HingeConstraint::GetLocalSpaceHingeAxis2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_HingeConstraint_GetLocalSpaceHingeAxis2(const JPH_HingeConstraint *_this);
+
+// Local space normal directions (transform direction by Body::GetCenterOfMassTransform to take to world space)
+/// Generated from method `JPH::HingeConstraint::GetLocalSpaceNormalAxis1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_HingeConstraint_GetLocalSpaceNormalAxis1(const JPH_HingeConstraint *_this);
+
+/// Generated from method `JPH::HingeConstraint::GetLocalSpaceNormalAxis2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_HingeConstraint_GetLocalSpaceNormalAxis2(const JPH_HingeConstraint *_this);
 
 /// Get the current rotation angle from the rest position
 /// Generated from method `JPH::HingeConstraint::GetCurrentAngle`.
@@ -593,6 +734,14 @@ JOLT_API void JPH_HingeConstraint_SetTargetAngle(JPH_HingeConstraint *_this, flo
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_HingeConstraint_GetTargetAngle(const JPH_HingeConstraint *_this);
 
+/// Set the target orientation in body space (R2 = R1 * inOrientation, where R1 and R2 are the world space rotations for body 1 and 2).
+/// Calculates the local space target angle and calls SetTargetAngle. Motor state must be EMotorState::Position for this to have any effect.
+/// May set the wrong angle if inOrientation contains large rotations around other axis than the hinge axis.
+/// Generated from method `JPH::HingeConstraint::SetTargetOrientationBS`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inOrientation` can not be null. It is a single object.
+JOLT_API void JPH_HingeConstraint_SetTargetOrientationBS(JPH_HingeConstraint *_this, const JPH_Quat *inOrientation);
+
 /// Update the rotation limits of the hinge, value in radians (see HingeConstraintSettings)
 /// Generated from method `JPH::HingeConstraint::SetLimits`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -609,6 +758,17 @@ JOLT_API float JPH_HingeConstraint_GetLimitsMax(const JPH_HingeConstraint *_this
 /// Generated from method `JPH::HingeConstraint::HasLimits`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_HingeConstraint_HasLimits(const JPH_HingeConstraint *_this);
+
+///@name Get Lagrange multiplier from last physics update (the linear/angular impulse applied to satisfy the constraint)
+/// Generated from method `JPH::HingeConstraint::GetTotalLambdaPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_HingeConstraint_GetTotalLambdaPosition(const JPH_HingeConstraint *_this);
+
+/// Generated from method `JPH::HingeConstraint::GetTotalLambdaRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vector_2_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vector_2 *JPH_HingeConstraint_GetTotalLambdaRotation(const JPH_HingeConstraint *_this);
 
 /// Generated from method `JPH::HingeConstraint::GetTotalLambdaRotationLimits`.
 /// Parameter `_this` can not be null. It is a single object.

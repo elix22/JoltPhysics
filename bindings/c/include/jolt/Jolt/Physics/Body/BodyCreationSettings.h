@@ -13,14 +13,72 @@ extern "C" {
 #endif
 
 typedef struct JPH_CollisionGroup JPH_CollisionGroup; // Defined in `#include <jolt/Jolt/Physics/Collision/CollisionGroup.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Settings for constructing a rigid body
 /// Generated from class `JPH::BodyCreationSettings`.
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_BodyCreationSettings JPH_BodyCreationSettings;
+
+///< Position of the body (not of the center of mass)
+/// Returns a pointer to a member variable of class `JPH::BodyCreationSettings` named `mPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_BodyCreationSettings_Get_mPosition(const JPH_BodyCreationSettings *_this);
+
+///< Position of the body (not of the center of mass)
+/// Returns a mutable pointer to a member variable of class `JPH::BodyCreationSettings` named `mPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_BodyCreationSettings_GetMutable_mPosition(JPH_BodyCreationSettings *_this);
+
+///< Rotation of the body
+/// Returns a pointer to a member variable of class `JPH::BodyCreationSettings` named `mRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Quat *JPH_BodyCreationSettings_Get_mRotation(const JPH_BodyCreationSettings *_this);
+
+///< Rotation of the body
+/// Returns a mutable pointer to a member variable of class `JPH::BodyCreationSettings` named `mRotation`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Quat *JPH_BodyCreationSettings_GetMutable_mRotation(JPH_BodyCreationSettings *_this);
+
+///< World space linear velocity of the center of mass (m/s)
+/// Returns a pointer to a member variable of class `JPH::BodyCreationSettings` named `mLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_BodyCreationSettings_Get_mLinearVelocity(const JPH_BodyCreationSettings *_this);
+
+///< World space linear velocity of the center of mass (m/s)
+/// Returns a mutable pointer to a member variable of class `JPH::BodyCreationSettings` named `mLinearVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_BodyCreationSettings_GetMutable_mLinearVelocity(JPH_BodyCreationSettings *_this);
+
+///< World space angular velocity (rad/s)
+/// Returns a pointer to a member variable of class `JPH::BodyCreationSettings` named `mAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_BodyCreationSettings_Get_mAngularVelocity(const JPH_BodyCreationSettings *_this);
+
+///< World space angular velocity (rad/s)
+/// Returns a mutable pointer to a member variable of class `JPH::BodyCreationSettings` named `mAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_BodyCreationSettings_GetMutable_mAngularVelocity(JPH_BodyCreationSettings *_this);
 
 /// User data value (can be used by application)
 /// Returns a pointer to a member variable of class `JPH::BodyCreationSettings` named `mUserData`.

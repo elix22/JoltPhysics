@@ -5,6 +5,10 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Math/Float3.h>
+#include <Jolt/Math/Mat44.h>
+#include <Jolt/Math/Quat.h>
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/CompoundShape.h>
@@ -535,10 +539,54 @@ JPH_Shape_Stats *JPH_MutableCompoundShape_GetStats(const JPH_MutableCompoundShap
     return (JPH_Shape_Stats *)new JPH::Shape::Stats(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MutableCompoundShape *)(_this)).GetStats());
 }
 
+unsigned int JPH_MutableCompoundShape_AddShape(JPH_MutableCompoundShape *_this, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, const JPH_Shape *inShape, const unsigned int *inUserData, const unsigned int *inIndex)
+{
+    using namespace JPH;
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MutableCompoundShape *)(_this)).AddShape(
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((const JPH::Shape *)inShape),
+        (inUserData ? *inUserData : static_cast<unsigned int>(0)),
+        (inIndex ? *inIndex : static_cast<unsigned int>((2147483647 * 2U + 1U)))
+    );
+}
+
 void JPH_MutableCompoundShape_RemoveShape(JPH_MutableCompoundShape *_this, unsigned int inIndex)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MutableCompoundShape *)(_this)).RemoveShape(
         inIndex
+    );
+}
+
+void JPH_MutableCompoundShape_ModifyShape_3(JPH_MutableCompoundShape *_this, unsigned int inIndex, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MutableCompoundShape *)(_this)).ModifyShape(
+        inIndex,
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation))
+    );
+}
+
+void JPH_MutableCompoundShape_ModifyShape_4(JPH_MutableCompoundShape *_this, unsigned int inIndex, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, const JPH_Shape *inShape)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MutableCompoundShape *)(_this)).ModifyShape(
+        inIndex,
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((const JPH::Shape *)inShape)
+    );
+}
+
+void JPH_MutableCompoundShape_ModifyShapes(JPH_MutableCompoundShape *_this, unsigned int inStartIndex, unsigned int inNumber, const JPH_Vec3 *inPositions, const JPH_Quat *inRotations, const unsigned int *inPositionStride, const unsigned int *inRotationStride)
+{
+    using namespace JPH;
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MutableCompoundShape *)(_this)).ModifyShapes(
+        inStartIndex,
+        inNumber,
+        ((const JPH::Vec3 *)inPositions),
+        ((const JPH::Quat *)inRotations),
+        (inPositionStride ? *inPositionStride : static_cast<unsigned int>(sizeof(JPH::Vec3))),
+        (inRotationStride ? *inRotationStride : static_cast<unsigned int>(sizeof(JPH::Quat)))
     );
 }
 
@@ -550,6 +598,11 @@ void JPH_MutableCompoundShape_AdjustCenterOfMass(JPH_MutableCompoundShape *_this
 void JPH_MutableCompoundShape_sRegister(void)
 {
     JPH::MutableCompoundShape::sRegister();
+}
+
+JPH_Vec3 *JPH_MutableCompoundShape_GetCenterOfMass(const JPH_MutableCompoundShape *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MutableCompoundShape *)(_this)).GetCenterOfMass());
 }
 
 bool JPH_MutableCompoundShape_MustBeStatic(const JPH_MutableCompoundShape *_this)
@@ -591,6 +644,35 @@ uint64_t JPH_MutableCompoundShape_GetSubShapeUserData(const JPH_MutableCompoundS
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MutableCompoundShape *)(_this)).GetSubShapeUserData(
         ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID))
+    );
+}
+
+JPH_Vec3 *JPH_MutableCompoundShape_GetSurfaceNormal(const JPH_MutableCompoundShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MutableCompoundShape *)(_this)).GetSurfaceNormal(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inLocalSurfacePosition ? void() : MRBINDC_THROW("Parameter `inLocalSurfacePosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLocalSurfacePosition))
+    ));
+}
+
+void JPH_MutableCompoundShape_GetTrianglesStart(const JPH_MutableCompoundShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MutableCompoundShape *)(_this)).GetTrianglesStart(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        ((inBox ? void() : MRBINDC_THROW("Parameter `inBox` can not be null.", void)), *(const JPH::AABox *)(inBox)),
+        ((inPositionCOM ? void() : MRBINDC_THROW("Parameter `inPositionCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPositionCOM)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+int JPH_MutableCompoundShape_GetTrianglesNext(const JPH_MutableCompoundShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MutableCompoundShape *)(_this)).GetTrianglesNext(
+        ((ioContext ? void() : MRBINDC_THROW("Parameter `ioContext` can not be null.", void)), *(JPH::Shape::GetTrianglesContext *)(ioContext)),
+        inMaxTrianglesRequested,
+        ((JPH::Float3 *)outTriangleVertices),
+        ((const JPH::PhysicsMaterial **)outMaterials)
     );
 }
 
@@ -639,6 +721,20 @@ unsigned int JPH_MutableCompoundShape_GetSubShapeIndexFromID(const JPH_MutableCo
 float JPH_MutableCompoundShape_GetVolume(const JPH_MutableCompoundShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MutableCompoundShape *)(_this)).GetVolume();
+}
+
+bool JPH_MutableCompoundShape_IsValidScale(const JPH_MutableCompoundShape *_this, const JPH_Vec3 *inScale)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MutableCompoundShape *)(_this)).IsValidScale(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
+}
+
+JPH_Vec3 *JPH_MutableCompoundShape_MakeScaleValid(const JPH_MutableCompoundShape *_this, const JPH_Vec3 *inScale)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MutableCompoundShape *)(_this)).MakeScaleValid(
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    ));
 }
 
 uint64_t JPH_MutableCompoundShape_GetUserData(const JPH_MutableCompoundShape *_this)

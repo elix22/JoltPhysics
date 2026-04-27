@@ -129,6 +129,42 @@ public static partial class Jolt
                 return ret;
             }
 
+            ///< Position of the sub shape
+            public unsafe Jolt.JPH.Const_Vec3 mPosition
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Get_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Get_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Vec3._Underlying *__JPH_RotatedTranslatedShapeSettings_Get_mPosition(_Underlying *_this);
+                    Jolt.JPH.Const_Vec3 __ret;
+                    __ret = new(__JPH_RotatedTranslatedShapeSettings_Get_mPosition(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Rotation of the sub shape
+            public unsafe Jolt.JPH.Const_Quat mRotation
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Get_mRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Get_mRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Const_Quat._Underlying *__JPH_RotatedTranslatedShapeSettings_Get_mRotation(_Underlying *_this);
+                    Jolt.JPH.Const_Quat __ret;
+                    __ret = new(__JPH_RotatedTranslatedShapeSettings_Get_mRotation(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// User data (to be used freely by the application)
             public unsafe ulong mUserData
             {
@@ -176,6 +212,32 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::RotatedTranslatedShapeSettings::RotatedTranslatedShapeSettings`.
             public Const_RotatedTranslatedShapeSettings(RotatedTranslatedShapeSettings _other) : this((Const_RotatedTranslatedShapeSettings)_other) {}
+
+            /// Construct with shape settings, can be serialized.
+            /// Generated from constructor `JPH::RotatedTranslatedShapeSettings::RotatedTranslatedShapeSettings`.
+            public unsafe Const_RotatedTranslatedShapeSettings(Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_ShapeSettings? inShape) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.RotatedTranslatedShapeSettings._Underlying *__JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_ShapeSettings_ptr(Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Const_ShapeSettings._Underlying *inShape);
+                _UnderlyingPtr = __JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_ShapeSettings_ptr(inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+            }
+
+            /// Variant that uses a concrete shape, which means this object cannot be serialized.
+            /// Generated from constructor `JPH::RotatedTranslatedShapeSettings::RotatedTranslatedShapeSettings`.
+            public unsafe Const_RotatedTranslatedShapeSettings(Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Shape? inShape) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.RotatedTranslatedShapeSettings._Underlying *__JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_Shape_ptr(Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Const_Shape._Underlying *inShape);
+                _UnderlyingPtr = __JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_Shape_ptr(inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+            }
 
             /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator new`.
             /// Returns a mutable pointer.
@@ -484,6 +546,42 @@ public static partial class Jolt
                 return ret;
             }
 
+            ///< Position of the sub shape
+            public new unsafe Jolt.JPH.Vec3 mPosition
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_GetMutable_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_GetMutable_mPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Vec3._Underlying *__JPH_RotatedTranslatedShapeSettings_GetMutable_mPosition(_Underlying *_this);
+                    Jolt.JPH.Vec3 __ret;
+                    __ret = new(__JPH_RotatedTranslatedShapeSettings_GetMutable_mPosition(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Rotation of the sub shape
+            public new unsafe Jolt.JPH.Quat mRotation
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_GetMutable_mRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_GetMutable_mRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static Jolt.JPH.Quat._Underlying *__JPH_RotatedTranslatedShapeSettings_GetMutable_mRotation(_Underlying *_this);
+                    Jolt.JPH.Quat __ret;
+                    __ret = new(__JPH_RotatedTranslatedShapeSettings_GetMutable_mRotation(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// User data (to be used freely by the application)
             public new unsafe ref ulong mUserData
             {
@@ -531,6 +629,32 @@ public static partial class Jolt
 
             /// Generated from constructor `JPH::RotatedTranslatedShapeSettings::RotatedTranslatedShapeSettings`.
             public RotatedTranslatedShapeSettings(RotatedTranslatedShapeSettings _other) : this((Const_RotatedTranslatedShapeSettings)_other) {}
+
+            /// Construct with shape settings, can be serialized.
+            /// Generated from constructor `JPH::RotatedTranslatedShapeSettings::RotatedTranslatedShapeSettings`.
+            public unsafe RotatedTranslatedShapeSettings(Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_ShapeSettings? inShape) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.RotatedTranslatedShapeSettings._Underlying *__JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_ShapeSettings_ptr(Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Const_ShapeSettings._Underlying *inShape);
+                _UnderlyingPtr = __JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_ShapeSettings_ptr(inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+            }
+
+            /// Variant that uses a concrete shape, which means this object cannot be serialized.
+            /// Generated from constructor `JPH::RotatedTranslatedShapeSettings::RotatedTranslatedShapeSettings`.
+            public unsafe RotatedTranslatedShapeSettings(Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Shape? inShape) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.RotatedTranslatedShapeSettings._Underlying *__JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_Shape_ptr(Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Const_Shape._Underlying *inShape);
+                _UnderlyingPtr = __JPH_RotatedTranslatedShapeSettings_Construct_const_JPH_Shape_ptr(inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+            }
 
             /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator=`.
             public unsafe Jolt.JPH.RotatedTranslatedShapeSettings Assign(Jolt.JPH._ByValue_RotatedTranslatedShapeSettings _other)
@@ -753,6 +877,31 @@ public static partial class Jolt
                 _UnderlyingPtr = __JPH_RotatedTranslatedShape_DefaultConstruct();
             }
 
+            /// Generated from constructor `JPH::RotatedTranslatedShape::RotatedTranslatedShape`.
+            public unsafe Const_RotatedTranslatedShape(Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Shape? inShape) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.RotatedTranslatedShape._Underlying *__JPH_RotatedTranslatedShape_Construct_3(Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Const_Shape._Underlying *inShape);
+                _UnderlyingPtr = __JPH_RotatedTranslatedShape_Construct_3(inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+            }
+
+            /// Get world space bounds including convex radius.
+            /// Generated from method `JPH::RotatedTranslatedShape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_DMat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_DMat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_DMat44(_Underlying *_this, Jolt.JPH.Const_DMat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_DMat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             /// Generated from method `JPH::RotatedTranslatedShape::operator new`.
             /// Returns a mutable pointer.
             public static unsafe void *New(ulong inCount)
@@ -887,6 +1036,45 @@ public static partial class Jolt
                 __Jolt_delete_array_JPH_RotatedTranslatedShape_void_ptr_void_ptr(inPointer, inPlace);
             }
 
+            /// Access the rotation that is applied to the inner shape
+            /// Generated from method `JPH::RotatedTranslatedShape::GetRotation`.
+            public unsafe Jolt.JPH.Quat GetRotation()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetRotation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Quat._Underlying *__JPH_RotatedTranslatedShape_GetRotation(_Underlying *_this);
+                return new(__JPH_RotatedTranslatedShape_GetRotation(_UnderlyingPtr), is_owning: true);
+            }
+
+            /// Access the translation that has been applied to the inner shape
+            /// Generated from method `JPH::RotatedTranslatedShape::GetPosition`.
+            public unsafe Jolt.JPH.Vec3 GetPosition()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetPosition", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_RotatedTranslatedShape_GetPosition(_Underlying *_this);
+                return new(__JPH_RotatedTranslatedShape_GetPosition(_UnderlyingPtr), is_owning: true);
+            }
+
+            // See Shape::GetCenterOfMass
+            /// Generated from method `JPH::RotatedTranslatedShape::GetCenterOfMass`.
+            public unsafe Jolt.JPH.Vec3 GetCenterOfMass()
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetCenterOfMass", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_RotatedTranslatedShape_GetCenterOfMass(_Underlying *_this);
+                return new(__JPH_RotatedTranslatedShape_GetCenterOfMass(_UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetLocalBounds
             /// Generated from method `JPH::RotatedTranslatedShape::GetLocalBounds`.
             public unsafe Jolt.JPH.AABox GetLocalBounds()
@@ -900,6 +1088,19 @@ public static partial class Jolt
                 return new(__JPH_RotatedTranslatedShape_GetLocalBounds(_UnderlyingPtr), is_owning: true);
             }
 
+            // See Shape::GetWorldSpaceBounds
+            /// Generated from method `JPH::RotatedTranslatedShape::GetWorldSpaceBounds`.
+            public unsafe Jolt.JPH.AABox GetWorldSpaceBounds(Jolt.JPH.Const_Mat44 inCenterOfMassTransform, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_Mat44", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.AABox._Underlying *__JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_Mat44(_Underlying *_this, Jolt.JPH.Const_Mat44._Underlying *inCenterOfMassTransform, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_Mat44(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
             // See Shape::GetInnerRadius
             /// Generated from method `JPH::RotatedTranslatedShape::GetInnerRadius`.
             public unsafe float GetInnerRadius()
@@ -911,6 +1112,45 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_RotatedTranslatedShape_GetInnerRadius(_Underlying *_this);
                 return __JPH_RotatedTranslatedShape_GetInnerRadius(_UnderlyingPtr);
+            }
+
+            // See Shape::GetSurfaceNormal
+            /// Generated from method `JPH::RotatedTranslatedShape::GetSurfaceNormal`.
+            public unsafe Jolt.JPH.Vec3 GetSurfaceNormal(Jolt.JPH.Const_SubShapeID inSubShapeID, Jolt.JPH.Const_Vec3 inLocalSurfacePosition)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetSurfaceNormal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_RotatedTranslatedShape_GetSurfaceNormal(_Underlying *_this, Jolt.JPH.Const_SubShapeID._Underlying *inSubShapeID, Jolt.JPH.Vec3._Underlying *inLocalSurfacePosition);
+                return new(__JPH_RotatedTranslatedShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
+            }
+
+            // See Shape::GetTrianglesStart
+            /// Generated from method `JPH::RotatedTranslatedShape::GetTrianglesStart`.
+            public unsafe void GetTrianglesStart(Jolt.JPH.Shape.GetTrianglesContext ioContext, Jolt.JPH.Const_AABox inBox, Jolt.JPH.Const_Vec3 inPositionCOM, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetTrianglesStart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __JPH_RotatedTranslatedShape_GetTrianglesStart(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, Jolt.JPH.Const_AABox._Underlying *inBox, Jolt.JPH.Vec3._Underlying *inPositionCOM, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Vec3._Underlying *inScale);
+                __JPH_RotatedTranslatedShape_GetTrianglesStart(_UnderlyingPtr, ioContext._UnderlyingPtr, inBox._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr);
+            }
+
+            // See Shape::GetTrianglesNext
+            /// Generated from method `JPH::RotatedTranslatedShape::GetTrianglesNext`.
+            public unsafe int GetTrianglesNext(Jolt.JPH.Shape.GetTrianglesContext ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3? outTriangleVertices, void **outMaterials = null)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_GetTrianglesNext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static int __JPH_RotatedTranslatedShape_GetTrianglesNext(_Underlying *_this, Jolt.JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, Jolt.JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
+                return __JPH_RotatedTranslatedShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
             }
 
             // See Shape::GetStats
@@ -937,6 +1177,45 @@ public static partial class Jolt
                 #endif
                 extern static float __JPH_RotatedTranslatedShape_GetVolume(_Underlying *_this);
                 return __JPH_RotatedTranslatedShape_GetVolume(_UnderlyingPtr);
+            }
+
+            // See Shape::IsValidScale
+            /// Generated from method `JPH::RotatedTranslatedShape::IsValidScale`.
+            public unsafe bool IsValidScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_IsValidScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __JPH_RotatedTranslatedShape_IsValidScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return __JPH_RotatedTranslatedShape_IsValidScale(_UnderlyingPtr, inScale._UnderlyingPtr) != 0;
+            }
+
+            // See Shape::MakeScaleValid
+            /// Generated from method `JPH::RotatedTranslatedShape::MakeScaleValid`.
+            public unsafe Jolt.JPH.Vec3 MakeScaleValid(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_MakeScaleValid", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_RotatedTranslatedShape_MakeScaleValid(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_RotatedTranslatedShape_MakeScaleValid(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
+            }
+
+            /// Transform the scale to the local space of the child shape
+            /// Generated from method `JPH::RotatedTranslatedShape::TransformScale`.
+            public unsafe Jolt.JPH.Vec3 TransformScale(Jolt.JPH.Const_Vec3 inScale)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_TransformScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_TransformScale", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.Vec3._Underlying *__JPH_RotatedTranslatedShape_TransformScale(_Underlying *_this, Jolt.JPH.Vec3._Underlying *inScale);
+                return new(__JPH_RotatedTranslatedShape_TransformScale(_UnderlyingPtr, inScale._UnderlyingPtr), is_owning: true);
             }
 
             // Register shape functions with the registry
@@ -1218,6 +1497,18 @@ public static partial class Jolt
                 #endif
                 extern static Jolt.JPH.RotatedTranslatedShape._Underlying *__JPH_RotatedTranslatedShape_DefaultConstruct();
                 _UnderlyingPtr = __JPH_RotatedTranslatedShape_DefaultConstruct();
+            }
+
+            /// Generated from constructor `JPH::RotatedTranslatedShape::RotatedTranslatedShape`.
+            public unsafe RotatedTranslatedShape(Jolt.JPH.Const_Vec3 inPosition, Jolt.JPH.Const_Quat inRotation, Jolt.JPH.Const_Shape? inShape) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RotatedTranslatedShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RotatedTranslatedShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static Jolt.JPH.RotatedTranslatedShape._Underlying *__JPH_RotatedTranslatedShape_Construct_3(Jolt.JPH.Vec3._Underlying *inPosition, Jolt.JPH.Quat._Underlying *inRotation, Jolt.JPH.Const_Shape._Underlying *inShape);
+                _UnderlyingPtr = __JPH_RotatedTranslatedShape_Construct_3(inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
             }
 
             /// Generated from method `JPH::RotatedTranslatedShape::SetUserData`.

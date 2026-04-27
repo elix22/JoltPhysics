@@ -16,12 +16,14 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
 /// Point constraint settings, used to create a point constraint
@@ -46,6 +48,36 @@ typedef struct JPH_PointConstraintSettings JPH_PointConstraintSettings;
 ///     `JPH::NonCopyable`
 ///     `JPH::Constraint`
 typedef struct JPH_PointConstraint JPH_PointConstraint;
+
+/// Body 1 constraint position (space determined by mSpace).
+/// Returns a pointer to a member variable of class `JPH::PointConstraintSettings` named `mPoint1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_PointConstraintSettings_Get_mPoint1(const JPH_PointConstraintSettings *_this);
+
+/// Body 1 constraint position (space determined by mSpace).
+/// Returns a mutable pointer to a member variable of class `JPH::PointConstraintSettings` named `mPoint1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_PointConstraintSettings_GetMutable_mPoint1(JPH_PointConstraintSettings *_this);
+
+/// Body 2 constraint position (space determined by mSpace).
+/// Note: Normally you would set mPoint1 = mPoint2 if the bodies are already placed how you want to constrain them (if mSpace = world space).
+/// Returns a pointer to a member variable of class `JPH::PointConstraintSettings` named `mPoint2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *JPH_PointConstraintSettings_Get_mPoint2(const JPH_PointConstraintSettings *_this);
+
+/// Body 2 constraint position (space determined by mSpace).
+/// Note: Normally you would set mPoint1 = mPoint2 if the bodies are already placed how you want to constrain them (if mSpace = world space).
+/// Returns a mutable pointer to a member variable of class `JPH::PointConstraintSettings` named `mPoint2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *JPH_PointConstraintSettings_GetMutable_mPoint2(JPH_PointConstraintSettings *_this);
 
 /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
 /// Returns a pointer to a member variable of class `JPH::PointConstraintSettings` named `mEnabled`.
@@ -483,6 +515,12 @@ JOLT_API void *Jolt_new_array_JPH_PointConstraint_size_t_void_ptr(unsigned long 
 /// Generated from method `JPH::PointConstraint::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_PointConstraint_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
+/// Generated from method `JPH::PointConstraint::NotifyShapeChanged`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inDeltaCOM` can not be null. It is a single object.
+JOLT_API void JPH_PointConstraint_NotifyShapeChanged(JPH_PointConstraint *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inDeltaCOM);
+
 /// Generated from method `JPH::PointConstraint::SetupVelocityConstraint`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_PointConstraint_SetupVelocityConstraint(JPH_PointConstraint *_this, float inDeltaTime);
@@ -502,6 +540,35 @@ JOLT_API bool JPH_PointConstraint_SolveVelocityConstraint(JPH_PointConstraint *_
 /// Generated from method `JPH::PointConstraint::SolvePositionConstraint`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_PointConstraint_SolvePositionConstraint(JPH_PointConstraint *_this, float inDeltaTime, float inBaumgarte);
+
+/// Get the attachment point for body 1 relative to body 1 COM (transform by Body::GetCenterOfMassTransform to take to world space)
+/// Generated from method `JPH::PointConstraint::GetLocalSpacePoint1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_PointConstraint_GetLocalSpacePoint1(const JPH_PointConstraint *_this);
+
+/// Get the attachment point for body 2 relative to body 2 COM (transform by Body::GetCenterOfMassTransform to take to world space)
+/// Generated from method `JPH::PointConstraint::GetLocalSpacePoint2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_PointConstraint_GetLocalSpacePoint2(const JPH_PointConstraint *_this);
+
+// See: TwoBodyConstraint
+/// Generated from method `JPH::PointConstraint::GetConstraintToBody1Matrix`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_PointConstraint_GetConstraintToBody1Matrix(const JPH_PointConstraint *_this);
+
+/// Generated from method `JPH::PointConstraint::GetConstraintToBody2Matrix`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_PointConstraint_GetConstraintToBody2Matrix(const JPH_PointConstraint *_this);
+
+///@name Get Lagrange multiplier from last physics update (the linear impulse applied to satisfy the constraint)
+/// Generated from method `JPH::PointConstraint::GetTotalLambdaPosition`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_PointConstraint_GetTotalLambdaPosition(const JPH_PointConstraint *_this);
 
 /// Solver interface
 /// Generated from method `JPH::PointConstraint::IsActive`.
