@@ -663,6 +663,24 @@ public static partial class JPH
             __JPH_PhysicsSystem_OptimizeBroadPhase(_UnderlyingPtr);
         }
 
+        /// Simulate the system.
+        /// The world steps for a total of inDeltaTime seconds. This is divided in inCollisionSteps iterations.
+        /// Each iteration consists of collision detection followed by an integration step.
+        /// This function internally spawns jobs using inJobSystem and waits for them to complete, so no jobs will be running when this function returns.
+        /// The temp allocator is used, for example, to store the list of bodies that are in contact, how they form islands together
+        /// and data to solve the contacts between bodies. At the end of the Update call, all allocated memory will have been freed.
+        /// Generated from method `JPH::PhysicsSystem::Update`.
+        public unsafe JPH.EPhysicsUpdateError Update(float inDeltaTime, int inCollisionSteps, JPH.TempAllocator? inTempAllocator, JPH.JobSystem? inJobSystem)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_Update", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_Update", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.EPhysicsUpdateError __JPH_PhysicsSystem_Update(_Underlying *_this, float inDeltaTime, int inCollisionSteps, JPH.TempAllocator._Underlying *inTempAllocator, JPH.JobSystem._Underlying *inJobSystem);
+            return __JPH_PhysicsSystem_Update(_UnderlyingPtr, inDeltaTime, inCollisionSteps, inTempAllocator is not null ? inTempAllocator._UnderlyingPtr : null, inJobSystem is not null ? inJobSystem._UnderlyingPtr : null);
+        }
+
         /// Set gravity value
         /// Generated from method `JPH::PhysicsSystem::SetGravity`.
         public unsafe void SetGravity(JPH.Const_Vec3 inGravity)

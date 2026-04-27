@@ -2,6 +2,7 @@
 #pragma once
 
 #include <exports.h>
+#include <jolt/Jolt/Physics/Body/MotionType.h>
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -187,6 +188,16 @@ JOLT_API bool JPH_Body_GetEnhancedInternalEdgeRemoval(const JPH_Body *_this);
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inBody2` can not be null. It is a single object.
 JOLT_API bool JPH_Body_GetEnhancedInternalEdgeRemovalWithBody(const JPH_Body *_this, const JPH_Body *inBody2);
+
+/// Get the bodies motion type.
+/// Generated from method `JPH::Body::GetMotionType`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API JPH_EMotionType JPH_Body_GetMotionType(const JPH_Body *_this);
+
+/// Set the motion type of this body. Consider using BodyInterface::SetMotionType instead of this function if the body may be active or if it needs to be activated.
+/// Generated from method `JPH::Body::SetMotionType`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Body_SetMotionType(JPH_Body *_this, JPH_EMotionType inMotionType);
 
 /// Get broadphase layer, this determines in which broad phase sub-tree the object is placed
 /// Generated from method `JPH::Body::GetBroadPhaseLayer`.

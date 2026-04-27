@@ -10,6 +10,7 @@
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyCreationSettings.h>
 #include <Jolt/Physics/Body/BodyID.h>
+#include <Jolt/Physics/Body/MotionType.h>
 #include <Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>
 #include <Jolt/Physics/Collision/CollisionGroup.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
@@ -225,6 +226,18 @@ bool JPH_Body_GetEnhancedInternalEdgeRemovalWithBody(const JPH_Body *_this, cons
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetEnhancedInternalEdgeRemovalWithBody(
         ((inBody2 ? void() : MRBINDC_THROW("Parameter `inBody2` can not be null.", void)), *(const JPH::Body *)(inBody2))
+    );
+}
+
+JPH_EMotionType JPH_Body_GetMotionType(const JPH_Body *_this)
+{
+    return (JPH_EMotionType)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetMotionType());
+}
+
+void JPH_Body_SetMotionType(JPH_Body *_this, JPH_EMotionType inMotionType)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).SetMotionType(
+        ((JPH::EMotionType)inMotionType)
     );
 }
 

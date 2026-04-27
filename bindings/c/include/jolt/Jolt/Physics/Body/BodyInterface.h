@@ -3,6 +3,7 @@
 
 #include <exports.h>
 #include <jolt/Jolt/Physics/Body/BodyID.h>
+#include <jolt/Jolt/Physics/Body/MotionType.h>
 #include <jolt/Jolt/Physics/EActivation.h>
 
 #include <stdbool.h>
@@ -523,6 +524,18 @@ JOLT_API void JPH_BodyInterface_AddAngularImpulse(JPH_BodyInterface *_this, cons
 /// Parameter `inFluidVelocity` can not be null. It is a single object.
 /// Parameter `inGravity` can not be null. It is a single object.
 JOLT_API bool JPH_BodyInterface_ApplyBuoyancyImpulse(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inSurfacePosition, const JPH_Vec3 *inSurfaceNormal, float inBuoyancy, float inLinearDrag, float inAngularDrag, const JPH_Vec3 *inFluidVelocity, const JPH_Vec3 *inGravity, float inDeltaTime);
+
+///@name Body motion type
+///@{
+/// Generated from method `JPH::BodyInterface::SetMotionType`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_SetMotionType(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, JPH_EMotionType inMotionType, JPH_EActivation inActivationMode);
+
+/// Generated from method `JPH::BodyInterface::GetMotionType`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+JOLT_API JPH_EMotionType JPH_BodyInterface_GetMotionType(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
 
 /// Get inverse inertia tensor in world space
 /// Generated from method `JPH::BodyInterface::GetInverseInertia`.

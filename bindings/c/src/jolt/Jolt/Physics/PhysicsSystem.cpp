@@ -18,6 +18,7 @@
 #include <Jolt/Physics/Collision/NarrowPhaseQuery.h>
 #include <Jolt/Physics/Collision/ObjectLayer.h>
 #include <Jolt/Physics/Constraints/Constraint.h>
+#include <Jolt/Physics/EPhysicsUpdateError.h>
 #include <Jolt/Physics/PhysicsSettings.h>
 #include <Jolt/Physics/PhysicsSystem.h>
 #include <__mrbind_c_details.h>
@@ -293,6 +294,16 @@ void JPH_PhysicsSystem_RemoveConstraints(JPH_PhysicsSystem *_this, JPH_Constrain
 void JPH_PhysicsSystem_OptimizeBroadPhase(JPH_PhysicsSystem *_this)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).OptimizeBroadPhase();
+}
+
+JPH_EPhysicsUpdateError JPH_PhysicsSystem_Update(JPH_PhysicsSystem *_this, float inDeltaTime, int inCollisionSteps, JPH_TempAllocator *inTempAllocator, JPH_JobSystem *inJobSystem)
+{
+    return (JPH_EPhysicsUpdateError)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).Update(
+        inDeltaTime,
+        inCollisionSteps,
+        ((JPH::TempAllocator *)inTempAllocator),
+        ((JPH::JobSystem *)inJobSystem)
+    ));
 }
 
 void JPH_PhysicsSystem_SetGravity(JPH_PhysicsSystem *_this, const JPH_Vec3 *inGravity)

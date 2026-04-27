@@ -3,6 +3,7 @@
 
 #include <common.h>
 #include <exports.h>
+#include <jolt/Jolt/Physics/Body/MotionType.h>
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -142,6 +143,27 @@ JOLT_API void JPH_BodyCreationSettings_Set_mCollisionGroup(JPH_BodyCreationSetti
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API JPH_CollisionGroup *JPH_BodyCreationSettings_GetMutable_mCollisionGroup(JPH_BodyCreationSettings *_this);
+
+///< Motion type, determines if the object is static, dynamic or kinematic
+/// Returns a pointer to a member variable of class `JPH::BodyCreationSettings` named `mMotionType`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_EMotionType *JPH_BodyCreationSettings_Get_mMotionType(const JPH_BodyCreationSettings *_this);
+
+///< Motion type, determines if the object is static, dynamic or kinematic
+/// Modifies a member variable of class `JPH::BodyCreationSettings` named `mMotionType`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mMotionType`.
+/// When this function is called, this object will drop object references it held previously in `mMotionType`.
+JOLT_API void JPH_BodyCreationSettings_Set_mMotionType(JPH_BodyCreationSettings *_this, JPH_EMotionType value);
+
+///< Motion type, determines if the object is static, dynamic or kinematic
+/// Returns a mutable pointer to a member variable of class `JPH::BodyCreationSettings` named `mMotionType`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_EMotionType *JPH_BodyCreationSettings_GetMutable_mMotionType(JPH_BodyCreationSettings *_this);
 
 ///< When this body is created as static, this setting tells the system to create a MotionProperties object so that the object can be switched to kinematic or dynamic
 /// Returns a pointer to a member variable of class `JPH::BodyCreationSettings` named `mAllowDynamicOrKinematic`.
@@ -506,6 +528,18 @@ JOLT_API JPH_BodyCreationSettings *JPH_BodyCreationSettings_OffsetMutablePtr(JPH
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_BodyCreationSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_BodyCreationSettings *JPH_BodyCreationSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_BodyCreationSettings *_other);
+
+/// Generated from constructor `JPH::BodyCreationSettings::BodyCreationSettings`.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_BodyCreationSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_BodyCreationSettings *JPH_BodyCreationSettings_Construct_const_JPH_ShapeSettings_ptr(const JPH_ShapeSettings *inShape, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, JPH_EMotionType inMotionType, unsigned short inObjectLayer);
+
+/// Generated from constructor `JPH::BodyCreationSettings::BodyCreationSettings`.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_BodyCreationSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_BodyCreationSettings *JPH_BodyCreationSettings_Construct_const_JPH_Shape_ptr(const JPH_Shape *inShape, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, JPH_EMotionType inMotionType, unsigned short inObjectLayer);
 
 /// Destroys a heap-allocated instance of `JPH_BodyCreationSettings`. Does nothing if the pointer is null.
 JOLT_API void JPH_BodyCreationSettings_Destroy(const JPH_BodyCreationSettings *_this);

@@ -4,6 +4,7 @@
 #include <common.h>
 #include <exports.h>
 #include <jolt/Jolt/Physics/Body/BodyID.h>
+#include <jolt/Jolt/Physics/Body/MotionType.h>
 #include <jolt/Jolt/Physics/Character/CharacterBase.h>
 
 #include <stdbool.h>
@@ -1921,6 +1922,27 @@ JOLT_API void JPH_CharacterVirtual_Contact_Set_mFraction(JPH_CharacterVirtual_Co
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_CharacterVirtual_Contact_GetMutable_mFraction(JPH_CharacterVirtual_Contact *_this);
+
+///< Motion type of B, used to determine the priority of the contact
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mMotionTypeB`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_EMotionType *JPH_CharacterVirtual_Contact_Get_mMotionTypeB(const JPH_CharacterVirtual_Contact *_this);
+
+///< Motion type of B, used to determine the priority of the contact
+/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mMotionTypeB`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mMotionTypeB`.
+/// When this function is called, this object will drop object references it held previously in `mMotionTypeB`.
+JOLT_API void JPH_CharacterVirtual_Contact_Set_mMotionTypeB(JPH_CharacterVirtual_Contact *_this, JPH_EMotionType value);
+
+///< Motion type of B, used to determine the priority of the contact
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mMotionTypeB`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_EMotionType *JPH_CharacterVirtual_Contact_GetMutable_mMotionTypeB(JPH_CharacterVirtual_Contact *_this);
 
 ///< If B is a sensor
 /// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mIsSensorB`.

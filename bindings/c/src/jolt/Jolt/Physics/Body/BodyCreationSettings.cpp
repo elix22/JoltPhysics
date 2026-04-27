@@ -5,6 +5,7 @@
 #include <Jolt/Math/Quat.h>
 #include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/BodyCreationSettings.h>
+#include <Jolt/Physics/Body/MotionType.h>
 #include <Jolt/Physics/Collision/CollisionGroup.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <__mrbind_c_details.h>
@@ -99,6 +100,21 @@ void JPH_BodyCreationSettings_Set_mCollisionGroup(JPH_BodyCreationSettings *_thi
 JPH_CollisionGroup *JPH_BodyCreationSettings_GetMutable_mCollisionGroup(JPH_BodyCreationSettings *_this)
 {
     return (JPH_CollisionGroup *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyCreationSettings *)(_this)).mCollisionGroup);
+}
+
+const JPH_EMotionType *JPH_BodyCreationSettings_Get_mMotionType(const JPH_BodyCreationSettings *_this)
+{
+    return (const JPH_EMotionType *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyCreationSettings *)(_this)).mMotionType);
+}
+
+void JPH_BodyCreationSettings_Set_mMotionType(JPH_BodyCreationSettings *_this, JPH_EMotionType value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyCreationSettings *)(_this)).mMotionType = ((JPH::EMotionType)value);
+}
+
+JPH_EMotionType *JPH_BodyCreationSettings_GetMutable_mMotionType(JPH_BodyCreationSettings *_this)
+{
+    return (JPH_EMotionType *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyCreationSettings *)(_this)).mMotionType);
 }
 
 const bool *JPH_BodyCreationSettings_Get_mAllowDynamicOrKinematic(const JPH_BodyCreationSettings *_this)
@@ -381,6 +397,28 @@ JPH_BodyCreationSettings *JPH_BodyCreationSettings_ConstructFromAnother(Jolt_Pas
     MRBINDC_CLASSARG_GUARD(_other, JPH::BodyCreationSettings);
     return (JPH_BodyCreationSettings *)new JPH::BodyCreationSettings(JPH::BodyCreationSettings(
         (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::BodyCreationSettings) MRBINDC_CLASSARG_COPY(_other, (JPH::BodyCreationSettings), JPH::BodyCreationSettings) MRBINDC_CLASSARG_MOVE(_other, (JPH::BodyCreationSettings), JPH::BodyCreationSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::BodyCreationSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::BodyCreationSettings) MRBINDC_CLASSARG_END(_other, JPH::BodyCreationSettings))
+    ));
+}
+
+JPH_BodyCreationSettings *JPH_BodyCreationSettings_Construct_const_JPH_ShapeSettings_ptr(const JPH_ShapeSettings *inShape, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, JPH_EMotionType inMotionType, unsigned short inObjectLayer)
+{
+    return (JPH_BodyCreationSettings *)new JPH::BodyCreationSettings(JPH::BodyCreationSettings(
+        ((const JPH::ShapeSettings *)inShape),
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((JPH::EMotionType)inMotionType),
+        inObjectLayer
+    ));
+}
+
+JPH_BodyCreationSettings *JPH_BodyCreationSettings_Construct_const_JPH_Shape_ptr(const JPH_Shape *inShape, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, JPH_EMotionType inMotionType, unsigned short inObjectLayer)
+{
+    return (JPH_BodyCreationSettings *)new JPH::BodyCreationSettings(JPH::BodyCreationSettings(
+        ((const JPH::Shape *)inShape),
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((JPH::EMotionType)inMotionType),
+        inObjectLayer
     ));
 }
 

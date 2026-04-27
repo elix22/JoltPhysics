@@ -11,6 +11,7 @@
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyFilter.h>
 #include <Jolt/Physics/Body/BodyID.h>
+#include <Jolt/Physics/Body/MotionType.h>
 #include <Jolt/Physics/Character/CharacterBase.h>
 #include <Jolt/Physics/Character/CharacterID.h>
 #include <Jolt/Physics/Character/CharacterVirtual.h>
@@ -1863,6 +1864,21 @@ void JPH_CharacterVirtual_Contact_Set_mFraction(JPH_CharacterVirtual_Contact *_t
 float *JPH_CharacterVirtual_Contact_GetMutable_mFraction(JPH_CharacterVirtual_Contact *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mFraction);
+}
+
+const JPH_EMotionType *JPH_CharacterVirtual_Contact_Get_mMotionTypeB(const JPH_CharacterVirtual_Contact *_this)
+{
+    return (const JPH_EMotionType *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mMotionTypeB);
+}
+
+void JPH_CharacterVirtual_Contact_Set_mMotionTypeB(JPH_CharacterVirtual_Contact *_this, JPH_EMotionType value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mMotionTypeB = ((JPH::EMotionType)value);
+}
+
+JPH_EMotionType *JPH_CharacterVirtual_Contact_GetMutable_mMotionTypeB(JPH_CharacterVirtual_Contact *_this)
+{
+    return (JPH_EMotionType *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mMotionTypeB);
 }
 
 const bool *JPH_CharacterVirtual_Contact_Get_mIsSensorB(const JPH_CharacterVirtual_Contact *_this)

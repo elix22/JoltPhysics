@@ -146,6 +146,21 @@ public static partial class JPH
             }
         }
 
+        ///< Motion type, determines if the object is static, dynamic or kinematic
+        public unsafe JPH.EMotionType mMotionType
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyCreationSettings_Get_mMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_Get_mMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.EMotionType *__JPH_BodyCreationSettings_Get_mMotionType(_Underlying *_this);
+                return *__JPH_BodyCreationSettings_Get_mMotionType(_UnderlyingPtr);
+            }
+        }
+
         ///< When this body is created as static, this setting tells the system to create a MotionProperties object so that the object can be switched to kinematic or dynamic
         public unsafe bool mAllowDynamicOrKinematic
         {
@@ -433,6 +448,30 @@ public static partial class JPH
 
         /// Generated from constructor `JPH::BodyCreationSettings::BodyCreationSettings`.
         public Const_BodyCreationSettings(BodyCreationSettings _other) : this((Const_BodyCreationSettings)_other) {}
+
+        /// Generated from constructor `JPH::BodyCreationSettings::BodyCreationSettings`.
+        public unsafe Const_BodyCreationSettings(JPH.Const_ShapeSettings? inShape, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, JPH.EMotionType inMotionType, ushort inObjectLayer) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyCreationSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.BodyCreationSettings._Underlying *__JPH_BodyCreationSettings_Construct_const_JPH_ShapeSettings_ptr(JPH.Const_ShapeSettings._Underlying *inShape, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, JPH.EMotionType inMotionType, ushort inObjectLayer);
+            _UnderlyingPtr = __JPH_BodyCreationSettings_Construct_const_JPH_ShapeSettings_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inMotionType, inObjectLayer);
+        }
+
+        /// Generated from constructor `JPH::BodyCreationSettings::BodyCreationSettings`.
+        public unsafe Const_BodyCreationSettings(JPH.Const_Shape? inShape, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, JPH.EMotionType inMotionType, ushort inObjectLayer) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyCreationSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.BodyCreationSettings._Underlying *__JPH_BodyCreationSettings_Construct_const_JPH_Shape_ptr(JPH.Const_Shape._Underlying *inShape, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, JPH.EMotionType inMotionType, ushort inObjectLayer);
+            _UnderlyingPtr = __JPH_BodyCreationSettings_Construct_const_JPH_Shape_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inMotionType, inObjectLayer);
+        }
 
         /// Generated from method `JPH::BodyCreationSettings::operator new`.
         /// Returns a mutable pointer.
@@ -735,6 +774,21 @@ public static partial class JPH
             }
         }
 
+        ///< Motion type, determines if the object is static, dynamic or kinematic
+        public new unsafe ref JPH.EMotionType mMotionType
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyCreationSettings_GetMutable_mMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_GetMutable_mMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.EMotionType *__JPH_BodyCreationSettings_GetMutable_mMotionType(_Underlying *_this);
+                return ref *__JPH_BodyCreationSettings_GetMutable_mMotionType(_UnderlyingPtr);
+            }
+        }
+
         ///< When this body is created as static, this setting tells the system to create a MotionProperties object so that the object can be switched to kinematic or dynamic
         public new unsafe ref bool mAllowDynamicOrKinematic
         {
@@ -1022,6 +1076,30 @@ public static partial class JPH
 
         /// Generated from constructor `JPH::BodyCreationSettings::BodyCreationSettings`.
         public BodyCreationSettings(BodyCreationSettings _other) : this((Const_BodyCreationSettings)_other) {}
+
+        /// Generated from constructor `JPH::BodyCreationSettings::BodyCreationSettings`.
+        public unsafe BodyCreationSettings(JPH.Const_ShapeSettings? inShape, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, JPH.EMotionType inMotionType, ushort inObjectLayer) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyCreationSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_Construct_const_JPH_ShapeSettings_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.BodyCreationSettings._Underlying *__JPH_BodyCreationSettings_Construct_const_JPH_ShapeSettings_ptr(JPH.Const_ShapeSettings._Underlying *inShape, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, JPH.EMotionType inMotionType, ushort inObjectLayer);
+            _UnderlyingPtr = __JPH_BodyCreationSettings_Construct_const_JPH_ShapeSettings_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inMotionType, inObjectLayer);
+        }
+
+        /// Generated from constructor `JPH::BodyCreationSettings::BodyCreationSettings`.
+        public unsafe BodyCreationSettings(JPH.Const_Shape? inShape, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, JPH.EMotionType inMotionType, ushort inObjectLayer) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyCreationSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_Construct_const_JPH_Shape_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.BodyCreationSettings._Underlying *__JPH_BodyCreationSettings_Construct_const_JPH_Shape_ptr(JPH.Const_Shape._Underlying *inShape, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, JPH.EMotionType inMotionType, ushort inObjectLayer);
+            _UnderlyingPtr = __JPH_BodyCreationSettings_Construct_const_JPH_Shape_ptr(inShape is not null ? inShape._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inMotionType, inObjectLayer);
+        }
 
         /// Generated from method `JPH::BodyCreationSettings::operator=`.
         public unsafe JPH.BodyCreationSettings Assign(JPH._ByValue_BodyCreationSettings _other)

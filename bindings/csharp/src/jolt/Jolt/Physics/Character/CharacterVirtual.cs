@@ -2911,6 +2911,21 @@ public static partial class JPH
                 }
             }
 
+            ///< Motion type of B, used to determine the priority of the contact
+            public unsafe JPH.EMotionType mMotionTypeB
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_Get_mMotionTypeB", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_Get_mMotionTypeB", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.EMotionType *__JPH_CharacterVirtual_Contact_Get_mMotionTypeB(_Underlying *_this);
+                    return *__JPH_CharacterVirtual_Contact_Get_mMotionTypeB(_UnderlyingPtr);
+                }
+            }
+
             ///< If B is a sensor
             public unsafe bool mIsSensorB
             {
@@ -3295,6 +3310,21 @@ public static partial class JPH
                     #endif
                     extern static float *__JPH_CharacterVirtual_Contact_GetMutable_mFraction(_Underlying *_this);
                     return ref *__JPH_CharacterVirtual_Contact_GetMutable_mFraction(_UnderlyingPtr);
+                }
+            }
+
+            ///< Motion type of B, used to determine the priority of the contact
+            public new unsafe ref JPH.EMotionType mMotionTypeB
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetMutable_mMotionTypeB", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetMutable_mMotionTypeB", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.EMotionType *__JPH_CharacterVirtual_Contact_GetMutable_mMotionTypeB(_Underlying *_this);
+                    return ref *__JPH_CharacterVirtual_Contact_GetMutable_mMotionTypeB(_UnderlyingPtr);
                 }
             }
 

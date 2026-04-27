@@ -387,6 +387,19 @@ public static partial class JPH
             return __JPH_Body_GetEnhancedInternalEdgeRemovalWithBody(_UnderlyingPtr, inBody2._UnderlyingPtr) != 0;
         }
 
+        /// Get the bodies motion type.
+        /// Generated from method `JPH::Body::GetMotionType`.
+        public unsafe JPH.EMotionType GetMotionType()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.EMotionType __JPH_Body_GetMotionType(_Underlying *_this);
+            return __JPH_Body_GetMotionType(_UnderlyingPtr);
+        }
+
         /// Get broadphase layer, this determines in which broad phase sub-tree the object is placed
         /// Generated from method `JPH::Body::GetBroadPhaseLayer`.
         public unsafe JPH.BroadPhaseLayer GetBroadPhaseLayer()
@@ -886,6 +899,19 @@ public static partial class JPH
             #endif
             extern static void __JPH_Body_SetEnhancedInternalEdgeRemoval(_Underlying *_this, byte inApply);
             __JPH_Body_SetEnhancedInternalEdgeRemoval(_UnderlyingPtr, inApply ? (byte)1 : (byte)0);
+        }
+
+        /// Set the motion type of this body. Consider using BodyInterface::SetMotionType instead of this function if the body may be active or if it needs to be activated.
+        /// Generated from method `JPH::Body::SetMotionType`.
+        public unsafe void SetMotionType(JPH.EMotionType inMotionType)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_SetMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_SetMotionType", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_Body_SetMotionType(_Underlying *_this, JPH.EMotionType inMotionType);
+            __JPH_Body_SetMotionType(_UnderlyingPtr, inMotionType);
         }
 
         /// Generated from method `JPH::Body::GetCollisionGroup`.

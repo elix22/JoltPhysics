@@ -2,6 +2,7 @@
 #pragma once
 
 #include <exports.h>
+#include <jolt/Jolt/Physics/EPhysicsUpdateError.h>
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -246,6 +247,16 @@ JOLT_API void JPH_PhysicsSystem_RemoveConstraints(JPH_PhysicsSystem *_this, JPH_
 /// Generated from method `JPH::PhysicsSystem::OptimizeBroadPhase`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_PhysicsSystem_OptimizeBroadPhase(JPH_PhysicsSystem *_this);
+
+/// Simulate the system.
+/// The world steps for a total of inDeltaTime seconds. This is divided in inCollisionSteps iterations.
+/// Each iteration consists of collision detection followed by an integration step.
+/// This function internally spawns jobs using inJobSystem and waits for them to complete, so no jobs will be running when this function returns.
+/// The temp allocator is used, for example, to store the list of bodies that are in contact, how they form islands together
+/// and data to solve the contacts between bodies. At the end of the Update call, all allocated memory will have been freed.
+/// Generated from method `JPH::PhysicsSystem::Update`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API JPH_EPhysicsUpdateError JPH_PhysicsSystem_Update(JPH_PhysicsSystem *_this, float inDeltaTime, int inCollisionSteps, JPH_TempAllocator *inTempAllocator, JPH_JobSystem *inJobSystem);
 
 /// Set gravity value
 /// Generated from method `JPH::PhysicsSystem::SetGravity`.

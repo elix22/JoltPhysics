@@ -182,6 +182,8 @@ echo "#include \"$ROOT/Jolt/Math/Vector.h\"" >>"$BINDINGS/tmp/combined_input.h"
     --allow JPH::RefTarget \
     --allow JPH::NonCopyable \
     --allow JPH::SerializableObject \
+    --allow JPH::EMotionType \
+    --allow JPH::EPhysicsUpdateError \
     --allow JPH::ShapeSettings \
     --allow JPH::ConvexShapeSettings \
     --allow JPH::DecoratedShapeSettings \

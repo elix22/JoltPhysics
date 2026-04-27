@@ -11,6 +11,7 @@
 #include <Jolt/Physics/Body/BodyCreationSettings.h>
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Body/BodyInterface.h>
+#include <Jolt/Physics/Body/MotionType.h>
 #include <Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>
 #include <Jolt/Physics/Collision/CollisionGroup.h>
 #include <Jolt/Physics/Collision/ObjectLayer.h>
@@ -616,6 +617,22 @@ bool JPH_BodyInterface_ApplyBuoyancyImpulse(JPH_BodyInterface *_this, const JPH_
         ((inGravity ? void() : MRBINDC_THROW("Parameter `inGravity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inGravity)),
         inDeltaTime
     );
+}
+
+void JPH_BodyInterface_SetMotionType(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, JPH_EMotionType inMotionType, JPH_EActivation inActivationMode)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyInterface *)(_this)).SetMotionType(
+        ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID)),
+        ((JPH::EMotionType)inMotionType),
+        ((JPH::EActivation)inActivationMode)
+    );
+}
+
+JPH_EMotionType JPH_BodyInterface_GetMotionType(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID)
+{
+    return (JPH_EMotionType)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyInterface *)(_this)).GetMotionType(
+        ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID))
+    ));
 }
 
 JPH_Mat44 *JPH_BodyInterface_GetInverseInertia(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID)
