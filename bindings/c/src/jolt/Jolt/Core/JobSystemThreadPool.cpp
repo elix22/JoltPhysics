@@ -137,7 +137,7 @@ void JPH_JobSystemThreadPool_DestroyArray(const JPH_JobSystemThreadPool *_this)
     delete[] ((const JPH::JobSystemThreadPool *)_this);
 }
 
-void *Jolt_new_JPH_JobSystemThreadPool_size_t(unsigned long inCount)
+void *Jolt_new_JPH_JobSystemThreadPool_size_t(size_t inCount)
 {
     return JPH::JobSystemThreadPool::operator new(
         inCount
@@ -151,7 +151,7 @@ void Jolt_delete_JPH_JobSystemThreadPool_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_JobSystemThreadPool_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_JobSystemThreadPool_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::JobSystemThreadPool::operator delete(
         inPointer,
@@ -159,7 +159,7 @@ void Jolt_delete_JPH_JobSystemThreadPool_void_ptr_size_t(void *inPointer, unsign
     );
 }
 
-void *Jolt_new_array_JPH_JobSystemThreadPool_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_JobSystemThreadPool_size_t(size_t inCount)
 {
     return JPH::JobSystemThreadPool::operator new[](
         inCount
@@ -173,7 +173,7 @@ void Jolt_delete_array_JPH_JobSystemThreadPool_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_JobSystemThreadPool_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_JobSystemThreadPool_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::JobSystemThreadPool::operator delete[](
         inPointer,
@@ -181,7 +181,7 @@ void Jolt_delete_array_JPH_JobSystemThreadPool_void_ptr_size_t(void *inPointer, 
     );
 }
 
-void *Jolt_new_JPH_JobSystemThreadPool_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_JobSystemThreadPool_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::JobSystemThreadPool::operator new(
         inCount,
@@ -197,7 +197,7 @@ void Jolt_delete_JPH_JobSystemThreadPool_void_ptr_void_ptr(void *inPointer, void
     );
 }
 
-void *Jolt_new_array_JPH_JobSystemThreadPool_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_JobSystemThreadPool_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::JobSystemThreadPool::operator new[](
         inCount,

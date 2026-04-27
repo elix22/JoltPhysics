@@ -26,7 +26,6 @@ typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jol
 typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
-typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
@@ -357,31 +356,31 @@ JOLT_API void JPH_HeightFieldShapeSettings_DestroyArray(const JPH_HeightFieldSha
 JOLT_API JPH_HeightFieldShapeSettings *JPH_HeightFieldShapeSettings_AssignFromAnother(JPH_HeightFieldShapeSettings *_this, Jolt_PassBy _other_pass_by, JPH_HeightFieldShapeSettings *_other);
 
 /// Generated from method `JPH::HeightFieldShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_HeightFieldShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_HeightFieldShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::HeightFieldShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::HeightFieldShapeSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::HeightFieldShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_HeightFieldShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_HeightFieldShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::HeightFieldShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::HeightFieldShapeSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::HeightFieldShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_HeightFieldShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_HeightFieldShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::HeightFieldShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::HeightFieldShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_HeightFieldShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_HeightFieldShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::HeightFieldShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -524,31 +523,31 @@ JOLT_API void JPH_HeightFieldShape_Destroy(const JPH_HeightFieldShape *_this);
 JOLT_API void JPH_HeightFieldShape_DestroyArray(const JPH_HeightFieldShape *_this);
 
 /// Generated from method `JPH::HeightFieldShape::operator new`.
-JOLT_API void *Jolt_new_JPH_HeightFieldShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_HeightFieldShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::HeightFieldShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_HeightFieldShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::HeightFieldShape::operator delete`.
-JOLT_API void Jolt_delete_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::HeightFieldShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_HeightFieldShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_HeightFieldShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::HeightFieldShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_HeightFieldShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::HeightFieldShape::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::HeightFieldShape::operator new`.
-JOLT_API void *Jolt_new_JPH_HeightFieldShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_HeightFieldShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::HeightFieldShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_HeightFieldShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::HeightFieldShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_HeightFieldShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_HeightFieldShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::HeightFieldShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_HeightFieldShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -662,46 +661,6 @@ JOLT_API float JPH_HeightFieldShape_GetMinHeightValue(const JPH_HeightFieldShape
 /// Generated from method `JPH::HeightFieldShape::GetMaxHeightValue`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_HeightFieldShape_GetMaxHeightValue(const JPH_HeightFieldShape *_this);
-
-/// Get the height values of a block of data.
-/// Note that the height values are decompressed so will be slightly different from what the shape was originally created with.
-/// @param inX Start X position, must be a multiple of mBlockSize and in the range [0, mSampleCount - 1]
-/// @param inY Start Y position, must be a multiple of mBlockSize and in the range [0, mSampleCount - 1]
-/// @param inSizeX Number of samples in X direction, must be a multiple of mBlockSize and in the range [0, mSampleCount - inX]
-/// @param inSizeY Number of samples in Y direction, must be a multiple of mBlockSize and in the range [0, mSampleCount - inY]
-/// @param outHeights Returned height values, must be at least inSizeX * inSizeY floats. Values are returned in x-major order and can be cNoCollisionValue.
-/// @param inHeightsStride Stride in floats between two consecutive rows of outHeights (can be negative if the data is upside down).
-/// Generated from method `JPH::HeightFieldShape::GetHeights`.
-/// Parameter `_this` can not be null. It is a single object.
-JOLT_API void JPH_HeightFieldShape_GetHeights(const JPH_HeightFieldShape *_this, unsigned int inX, unsigned int inY, unsigned int inSizeX, unsigned int inSizeY, float *outHeights, long inHeightsStride);
-
-/// Set the height values of a block of data.
-/// Note that this requires decompressing and recompressing a border of size mBlockSize in the negative x/y direction so will cause some precision loss.
-/// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
-/// @param inX Start X position, must be a multiple of mBlockSize and in the range [0, mSampleCount - 1]
-/// @param inY Start Y position, must be a multiple of mBlockSize and in the range [0, mSampleCount - 1]
-/// @param inSizeX Number of samples in X direction, must be a multiple of mBlockSize and in the range [0, mSampleCount - inX]
-/// @param inSizeY Number of samples in Y direction, must be a multiple of mBlockSize and in the range [0, mSampleCount - inY]
-/// @param inHeights The new height values to set, must be an array of inSizeX * inSizeY floats, can be cNoCollisionValue. Values outside of the range [GetMinHeightValue(), GetMaxHeightValue()] will be clamped.
-/// @param inHeightsStride Stride in floats between two consecutive rows of inHeights (can be negative if the data is upside down).
-/// @param inAllocator Allocator to use for temporary memory
-/// @param inActiveEdgeCosThresholdAngle Cosine of the threshold angle (if the angle between the two triangles is bigger than this, the edge is active, note that a concave edge is always inactive).
-/// Generated from method `JPH::HeightFieldShape::SetHeights`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inAllocator` can not be null. It is a single object.
-/// Parameter `inActiveEdgeCosThresholdAngle` has a default argument: `0.996195018F`, pass a null pointer to use it.
-JOLT_API void JPH_HeightFieldShape_SetHeights(JPH_HeightFieldShape *_this, unsigned int inX, unsigned int inY, unsigned int inSizeX, unsigned int inSizeY, const float *inHeights, long inHeightsStride, JPH_TempAllocator *inAllocator, const float *inActiveEdgeCosThresholdAngle);
-
-/// Get the material indices of a block of data.
-/// @param inX Start X position, must in the range [0, mSampleCount - 1]
-/// @param inY Start Y position, must in the range [0, mSampleCount - 1]
-/// @param inSizeX Number of samples in X direction
-/// @param inSizeY Number of samples in Y direction
-/// @param outMaterials Returned material indices, must be at least inSizeX * inSizeY uint8s. Values are returned in x-major order.
-/// @param inMaterialsStride Stride in uint8s between two consecutive rows of outMaterials (can be negative if the data is upside down).
-/// Generated from method `JPH::HeightFieldShape::GetMaterials`.
-/// Parameter `_this` can not be null. It is a single object.
-JOLT_API void JPH_HeightFieldShape_GetMaterials(const JPH_HeightFieldShape *_this, unsigned int inX, unsigned int inY, unsigned int inSizeX, unsigned int inSizeY, unsigned char *outMaterials, long inMaterialsStride);
 
 // See Shape::GetStats
 /// Generated from method `JPH::HeightFieldShape::GetStats`.

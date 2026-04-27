@@ -4,7 +4,6 @@
 
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
-#include <Jolt/Core/TempAllocator.h>
 #include <Jolt/Geometry/AABox.h>
 #include <Jolt/Math/Float3.h>
 #include <Jolt/Math/Mat44.h>
@@ -293,7 +292,7 @@ JPH_HeightFieldShapeSettings *JPH_HeightFieldShapeSettings_AssignFromAnother(JPH
     ));
 }
 
-void *Jolt_new_JPH_HeightFieldShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_JPH_HeightFieldShapeSettings_size_t(size_t inCount)
 {
     return JPH::HeightFieldShapeSettings::operator new(
         inCount
@@ -307,7 +306,7 @@ void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::HeightFieldShapeSettings::operator delete(
         inPointer,
@@ -315,7 +314,7 @@ void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, u
     );
 }
 
-void *Jolt_new_array_JPH_HeightFieldShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_HeightFieldShapeSettings_size_t(size_t inCount)
 {
     return JPH::HeightFieldShapeSettings::operator new[](
         inCount
@@ -329,7 +328,7 @@ void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::HeightFieldShapeSettings::operator delete[](
         inPointer,
@@ -337,7 +336,7 @@ void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPoin
     );
 }
 
-void *Jolt_new_JPH_HeightFieldShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_HeightFieldShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::HeightFieldShapeSettings::operator new(
         inCount,
@@ -353,7 +352,7 @@ void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_void_ptr(void *inPointer,
     );
 }
 
-void *Jolt_new_array_JPH_HeightFieldShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_HeightFieldShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::HeightFieldShapeSettings::operator new[](
         inCount,
@@ -534,7 +533,7 @@ void JPH_HeightFieldShape_DestroyArray(const JPH_HeightFieldShape *_this)
     delete[] ((const JPH::HeightFieldShape *)_this);
 }
 
-void *Jolt_new_JPH_HeightFieldShape_size_t(unsigned long inCount)
+void *Jolt_new_JPH_HeightFieldShape_size_t(size_t inCount)
 {
     return JPH::HeightFieldShape::operator new(
         inCount
@@ -548,7 +547,7 @@ void Jolt_delete_JPH_HeightFieldShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::HeightFieldShape::operator delete(
         inPointer,
@@ -556,7 +555,7 @@ void Jolt_delete_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, unsigned 
     );
 }
 
-void *Jolt_new_array_JPH_HeightFieldShape_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_HeightFieldShape_size_t(size_t inCount)
 {
     return JPH::HeightFieldShape::operator new[](
         inCount
@@ -570,7 +569,7 @@ void Jolt_delete_array_JPH_HeightFieldShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::HeightFieldShape::operator delete[](
         inPointer,
@@ -578,7 +577,7 @@ void Jolt_delete_array_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, uns
     );
 }
 
-void *Jolt_new_JPH_HeightFieldShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_HeightFieldShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::HeightFieldShape::operator new(
         inCount,
@@ -594,7 +593,7 @@ void Jolt_delete_JPH_HeightFieldShape_void_ptr_void_ptr(void *inPointer, void *i
     );
 }
 
-void *Jolt_new_array_JPH_HeightFieldShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_HeightFieldShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::HeightFieldShape::operator new[](
         inCount,
@@ -727,45 +726,6 @@ float JPH_HeightFieldShape_GetMinHeightValue(const JPH_HeightFieldShape *_this)
 float JPH_HeightFieldShape_GetMaxHeightValue(const JPH_HeightFieldShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetMaxHeightValue();
-}
-
-void JPH_HeightFieldShape_GetHeights(const JPH_HeightFieldShape *_this, unsigned int inX, unsigned int inY, unsigned int inSizeX, unsigned int inSizeY, float *outHeights, long inHeightsStride)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetHeights(
-        inX,
-        inY,
-        inSizeX,
-        inSizeY,
-        outHeights,
-        inHeightsStride
-    );
-}
-
-void JPH_HeightFieldShape_SetHeights(JPH_HeightFieldShape *_this, unsigned int inX, unsigned int inY, unsigned int inSizeX, unsigned int inSizeY, const float *inHeights, long inHeightsStride, JPH_TempAllocator *inAllocator, const float *inActiveEdgeCosThresholdAngle)
-{
-    using namespace JPH;
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HeightFieldShape *)(_this)).SetHeights(
-        inX,
-        inY,
-        inSizeX,
-        inSizeY,
-        inHeights,
-        inHeightsStride,
-        ((inAllocator ? void() : MRBINDC_THROW("Parameter `inAllocator` can not be null.", void)), *(JPH::TempAllocator *)(inAllocator)),
-        (inActiveEdgeCosThresholdAngle ? *inActiveEdgeCosThresholdAngle : static_cast<float>(0.996195018F))
-    );
-}
-
-void JPH_HeightFieldShape_GetMaterials(const JPH_HeightFieldShape *_this, unsigned int inX, unsigned int inY, unsigned int inSizeX, unsigned int inSizeY, unsigned char *outMaterials, long inMaterialsStride)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetMaterials(
-        inX,
-        inY,
-        inSizeX,
-        inSizeY,
-        outMaterials,
-        inMaterialsStride
-    );
 }
 
 JPH_Shape_Stats *JPH_HeightFieldShape_GetStats(const JPH_HeightFieldShape *_this)

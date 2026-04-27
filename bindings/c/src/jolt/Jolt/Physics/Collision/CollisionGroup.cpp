@@ -71,7 +71,7 @@ JPH_CollisionGroup *JPH_CollisionGroup_AssignFromAnother(JPH_CollisionGroup *_th
     ));
 }
 
-void *Jolt_new_JPH_CollisionGroup_size_t(unsigned long inCount)
+void *Jolt_new_JPH_CollisionGroup_size_t(size_t inCount)
 {
     return JPH::CollisionGroup::operator new(
         inCount
@@ -85,7 +85,7 @@ void Jolt_delete_JPH_CollisionGroup_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CollisionGroup_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CollisionGroup_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::CollisionGroup::operator delete(
         inPointer,
@@ -93,7 +93,7 @@ void Jolt_delete_JPH_CollisionGroup_void_ptr_size_t(void *inPointer, unsigned lo
     );
 }
 
-void *Jolt_new_array_JPH_CollisionGroup_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_CollisionGroup_size_t(size_t inCount)
 {
     return JPH::CollisionGroup::operator new[](
         inCount
@@ -107,7 +107,7 @@ void Jolt_delete_array_JPH_CollisionGroup_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CollisionGroup_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CollisionGroup_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::CollisionGroup::operator delete[](
         inPointer,
@@ -115,7 +115,7 @@ void Jolt_delete_array_JPH_CollisionGroup_void_ptr_size_t(void *inPointer, unsig
     );
 }
 
-void *Jolt_new_JPH_CollisionGroup_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CollisionGroup_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::CollisionGroup::operator new(
         inCount,
@@ -131,7 +131,7 @@ void Jolt_delete_JPH_CollisionGroup_void_ptr_void_ptr(void *inPointer, void *inP
     );
 }
 
-void *Jolt_new_array_JPH_CollisionGroup_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CollisionGroup_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::CollisionGroup::operator new[](
         inCount,

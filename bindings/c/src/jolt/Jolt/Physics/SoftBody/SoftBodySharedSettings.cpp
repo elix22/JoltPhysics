@@ -89,7 +89,7 @@ JPH_SoftBodySharedSettings *JPH_SoftBodySharedSettings_AssignFromAnother(JPH_Sof
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::operator new(
         inCount
@@ -103,7 +103,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::operator delete(
         inPointer,
@@ -111,7 +111,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointer, uns
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::operator new[](
         inCount
@@ -125,7 +125,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::operator delete[](
         inPointer,
@@ -133,7 +133,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointe
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::operator new(
         inCount,
@@ -149,7 +149,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_void_ptr(void *inPointer, v
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::operator new[](
         inCount,
@@ -509,7 +509,7 @@ JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_AssignFromA
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::Vertex::operator new(
         inCount
@@ -523,7 +523,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::Vertex::operator delete(
         inPointer,
@@ -531,7 +531,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *inPoint
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::Vertex::operator new[](
         inCount
@@ -545,7 +545,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr(void *inPointe
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::Vertex::operator delete[](
         inPointer,
@@ -553,7 +553,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *i
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::Vertex::operator new(
         inCount,
@@ -569,7 +569,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_void_ptr(void *inPoi
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::Vertex::operator new[](
         inCount,
@@ -670,7 +670,7 @@ JPH_SoftBodySharedSettings_Face *JPH_SoftBodySharedSettings_Face_AssignFromAnoth
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_Face_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_Face_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::Face::operator new(
         inCount
@@ -684,7 +684,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::Face::operator delete(
         inPointer,
@@ -692,7 +692,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inPointer
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::Face::operator new[](
         inCount
@@ -706,7 +706,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::Face::operator delete[](
         inPointer,
@@ -714,7 +714,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inP
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::Face::operator new(
         inCount,
@@ -730,7 +730,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_void_ptr(void *inPoint
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::Face::operator new[](
         inCount,
@@ -850,7 +850,7 @@ JPH_SoftBodySharedSettings_Edge *JPH_SoftBodySharedSettings_Edge_AssignFromAnoth
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::Edge::operator new(
         inCount
@@ -864,7 +864,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::Edge::operator delete(
         inPointer,
@@ -872,7 +872,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inPointer
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::Edge::operator new[](
         inCount
@@ -886,7 +886,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::Edge::operator delete[](
         inPointer,
@@ -894,7 +894,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inP
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::Edge::operator new(
         inCount,
@@ -910,7 +910,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_void_ptr(void *inPoint
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::Edge::operator new[](
         inCount,
@@ -1032,7 +1032,7 @@ JPH_SoftBodySharedSettings_DihedralBend *JPH_SoftBodySharedSettings_DihedralBend
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::DihedralBend::operator new(
         inCount
@@ -1046,7 +1046,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr(void *inPointe
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::DihedralBend::operator delete(
         inPointer,
@@ -1054,7 +1054,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(void *i
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::DihedralBend::operator new[](
         inCount
@@ -1068,7 +1068,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr(void *in
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::DihedralBend::operator delete[](
         inPointer,
@@ -1076,7 +1076,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(v
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::DihedralBend::operator new(
         inCount,
@@ -1092,7 +1092,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_void_ptr(void 
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::DihedralBend::operator new[](
         inCount,
@@ -1214,7 +1214,7 @@ JPH_SoftBodySharedSettings_Volume *JPH_SoftBodySharedSettings_Volume_AssignFromA
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::Volume::operator new(
         inCount
@@ -1228,7 +1228,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::Volume::operator delete(
         inPointer,
@@ -1236,7 +1236,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *inPoint
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::Volume::operator new[](
         inCount
@@ -1250,7 +1250,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr(void *inPointe
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::Volume::operator delete[](
         inPointer,
@@ -1258,7 +1258,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *i
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::Volume::operator new(
         inCount,
@@ -1274,7 +1274,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_void_ptr(void *inPoi
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::Volume::operator new[](
         inCount,
@@ -1372,7 +1372,7 @@ JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_AssignFro
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::InvBind::operator new(
         inCount
@@ -1386,7 +1386,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::InvBind::operator delete(
         inPointer,
@@ -1394,7 +1394,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *inPoin
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::InvBind::operator new[](
         inCount
@@ -1408,7 +1408,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr(void *inPoint
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::InvBind::operator delete[](
         inPointer,
@@ -1416,7 +1416,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::InvBind::operator new(
         inCount,
@@ -1432,7 +1432,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_void_ptr(void *inPo
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::InvBind::operator new[](
         inCount,
@@ -1530,7 +1530,7 @@ JPH_SoftBodySharedSettings_SkinWeight *JPH_SoftBodySharedSettings_SkinWeight_Ass
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::SkinWeight::operator new(
         inCount
@@ -1544,7 +1544,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::SkinWeight::operator delete(
         inPointer,
@@ -1552,7 +1552,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(void *inP
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::SkinWeight::operator new[](
         inCount
@@ -1566,7 +1566,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr(void *inPo
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::SkinWeight::operator delete[](
         inPointer,
@@ -1574,7 +1574,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(voi
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::SkinWeight::operator new(
         inCount,
@@ -1590,7 +1590,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_void_ptr(void *i
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::SkinWeight::operator new[](
         inCount,
@@ -1755,7 +1755,7 @@ JPH_SoftBodySharedSettings_Skinned *JPH_SoftBodySharedSettings_Skinned_AssignFro
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::Skinned::operator new(
         inCount
@@ -1769,7 +1769,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::Skinned::operator delete(
         inPointer,
@@ -1777,7 +1777,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *inPoin
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::Skinned::operator new[](
         inCount
@@ -1791,7 +1791,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr(void *inPoint
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::Skinned::operator delete[](
         inPointer,
@@ -1799,7 +1799,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::Skinned::operator new(
         inCount,
@@ -1815,7 +1815,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_void_ptr(void *inPo
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::Skinned::operator new[](
         inCount,
@@ -1919,7 +1919,7 @@ JPH_SoftBodySharedSettings_LRA *JPH_SoftBodySharedSettings_LRA_AssignFromAnother
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::LRA::operator new(
         inCount
@@ -1933,7 +1933,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::LRA::operator delete(
         inPointer,
@@ -1941,7 +1941,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPointer,
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::LRA::operator new[](
         inCount
@@ -1955,7 +1955,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::LRA::operator delete[](
         inPointer,
@@ -1963,7 +1963,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPo
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::LRA::operator new(
         inCount,
@@ -1979,7 +1979,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_void_ptr(void *inPointe
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::LRA::operator new[](
         inCount,
@@ -2124,7 +2124,7 @@ JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_RodStretc
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::RodStretchShear::operator new(
         inCount
@@ -2138,7 +2138,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr(void *inPoi
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::RodStretchShear::operator delete(
         inPointer,
@@ -2146,7 +2146,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(void
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::RodStretchShear::operator new[](
         inCount
@@ -2160,7 +2160,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr(void 
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::RodStretchShear::operator delete[](
         inPointer,
@@ -2168,7 +2168,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::RodStretchShear::operator new(
         inCount,
@@ -2184,7 +2184,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_void_ptr(vo
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::RodStretchShear::operator new[](
         inCount,
@@ -2299,7 +2299,7 @@ JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_RodBendTwist
     ));
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::RodBendTwist::operator new(
         inCount
@@ -2313,7 +2313,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr(void *inPointe
     );
 }
 
-void Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::RodBendTwist::operator delete(
         inPointer,
@@ -2321,7 +2321,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(void *i
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t(size_t inCount)
 {
     return JPH::SoftBodySharedSettings::RodBendTwist::operator new[](
         inCount
@@ -2335,7 +2335,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr(void *in
     );
 }
 
-void Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SoftBodySharedSettings::RodBendTwist::operator delete[](
         inPointer,
@@ -2343,7 +2343,7 @@ void Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(v
     );
 }
 
-void *Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::RodBendTwist::operator new(
         inCount,
@@ -2359,7 +2359,7 @@ void Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_void_ptr(void 
     );
 }
 
-void *Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SoftBodySharedSettings::RodBendTwist::operator new[](
         inCount,

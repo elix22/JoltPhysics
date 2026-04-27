@@ -71,7 +71,7 @@ JPH_Factory *JPH_Factory_AssignFromAnother(JPH_Factory *_this, Jolt_PassBy _othe
     ));
 }
 
-void *Jolt_new_JPH_Factory_size_t(unsigned long inCount)
+void *Jolt_new_JPH_Factory_size_t(size_t inCount)
 {
     return JPH::Factory::operator new(
         inCount
@@ -85,7 +85,7 @@ void Jolt_delete_JPH_Factory_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_Factory_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_Factory_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::Factory::operator delete(
         inPointer,
@@ -93,7 +93,7 @@ void Jolt_delete_JPH_Factory_void_ptr_size_t(void *inPointer, unsigned long inSi
     );
 }
 
-void *Jolt_new_array_JPH_Factory_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_Factory_size_t(size_t inCount)
 {
     return JPH::Factory::operator new[](
         inCount
@@ -107,7 +107,7 @@ void Jolt_delete_array_JPH_Factory_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_Factory_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_Factory_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::Factory::operator delete[](
         inPointer,
@@ -115,7 +115,7 @@ void Jolt_delete_array_JPH_Factory_void_ptr_size_t(void *inPointer, unsigned lon
     );
 }
 
-void *Jolt_new_JPH_Factory_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_Factory_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::Factory::operator new(
         inCount,
@@ -131,7 +131,7 @@ void Jolt_delete_JPH_Factory_void_ptr_void_ptr(void *inPointer, void *inPlace)
     );
 }
 
-void *Jolt_new_array_JPH_Factory_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_Factory_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::Factory::operator new[](
         inCount,

@@ -358,7 +358,7 @@ public static partial class JPH
         }
 
         /// User data value (can be used by application)
-        public unsafe ulong mUserData
+        public unsafe UIntPtr mUserData
         {
             get
             {
@@ -367,7 +367,7 @@ public static partial class JPH
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static ulong *__JPH_HingeConstraintSettings_Get_mUserData(_Underlying *_this);
+                extern static UIntPtr *__JPH_HingeConstraintSettings_Get_mUserData(_Underlying *_this);
                 return *__JPH_HingeConstraintSettings_Get_mUserData(_UnderlyingPtr);
             }
         }
@@ -407,14 +407,14 @@ public static partial class JPH
 
         /// Generated from method `JPH::HingeConstraintSettings::operator new`.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount)
+        public static unsafe void *New(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_HingeConstraintSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_HingeConstraintSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_HingeConstraintSettings_size_t(ulong inCount);
+            extern static void *__Jolt_new_JPH_HingeConstraintSettings_size_t(UIntPtr inCount);
             return __Jolt_new_JPH_HingeConstraintSettings_size_t(inCount);
         }
 
@@ -433,27 +433,27 @@ public static partial class JPH
 
         /// Generated from method `JPH::HingeConstraintSettings::operator delete`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void Delete(void *inPointer, ulong inSize)
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_HingeConstraintSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_HingeConstraintSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_JPH_HingeConstraintSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_JPH_HingeConstraintSettings_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_JPH_HingeConstraintSettings_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::HingeConstraintSettings::operator new[]`.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount)
+        public static unsafe void *NewArray(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_HingeConstraintSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_HingeConstraintSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_HingeConstraintSettings_size_t(ulong inCount);
+            extern static void *__Jolt_new_array_JPH_HingeConstraintSettings_size_t(UIntPtr inCount);
             return __Jolt_new_array_JPH_HingeConstraintSettings_size_t(inCount);
         }
 
@@ -472,28 +472,28 @@ public static partial class JPH
 
         /// Generated from method `JPH::HingeConstraintSettings::operator delete[]`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::HingeConstraintSettings::operator new`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount, void *inPointer)
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_HingeConstraintSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_HingeConstraintSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_HingeConstraintSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_JPH_HingeConstraintSettings_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_JPH_HingeConstraintSettings_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -514,14 +514,14 @@ public static partial class JPH
         /// Generated from method `JPH::HingeConstraintSettings::operator new[]`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount, void *inPointer)
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_HingeConstraintSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_HingeConstraintSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_HingeConstraintSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_array_JPH_HingeConstraintSettings_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_array_JPH_HingeConstraintSettings_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -957,7 +957,7 @@ public static partial class JPH
         }
 
         /// User data value (can be used by application)
-        public new unsafe ref ulong mUserData
+        public new unsafe ref UIntPtr mUserData
         {
             get
             {
@@ -966,7 +966,7 @@ public static partial class JPH
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static ulong *__JPH_HingeConstraintSettings_GetMutable_mUserData(_Underlying *_this);
+                extern static UIntPtr *__JPH_HingeConstraintSettings_GetMutable_mUserData(_Underlying *_this);
                 return ref *__JPH_HingeConstraintSettings_GetMutable_mUserData(_UnderlyingPtr);
             }
         }
@@ -1198,14 +1198,14 @@ public static partial class JPH
 
         /// Generated from method `JPH::HingeConstraint::operator new`.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount)
+        public static unsafe void *New(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_HingeConstraint_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_HingeConstraint_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_HingeConstraint_size_t(ulong inCount);
+            extern static void *__Jolt_new_JPH_HingeConstraint_size_t(UIntPtr inCount);
             return __Jolt_new_JPH_HingeConstraint_size_t(inCount);
         }
 
@@ -1224,27 +1224,27 @@ public static partial class JPH
 
         /// Generated from method `JPH::HingeConstraint::operator delete`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void Delete(void *inPointer, ulong inSize)
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_HingeConstraint_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_HingeConstraint_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_JPH_HingeConstraint_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_JPH_HingeConstraint_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_JPH_HingeConstraint_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::HingeConstraint::operator new[]`.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount)
+        public static unsafe void *NewArray(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_HingeConstraint_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_HingeConstraint_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_HingeConstraint_size_t(ulong inCount);
+            extern static void *__Jolt_new_array_JPH_HingeConstraint_size_t(UIntPtr inCount);
             return __Jolt_new_array_JPH_HingeConstraint_size_t(inCount);
         }
 
@@ -1263,28 +1263,28 @@ public static partial class JPH
 
         /// Generated from method `JPH::HingeConstraint::operator delete[]`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_HingeConstraint_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_HingeConstraint_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_array_JPH_HingeConstraint_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_array_JPH_HingeConstraint_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_array_JPH_HingeConstraint_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::HingeConstraint::operator new`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount, void *inPointer)
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_HingeConstraint_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_HingeConstraint_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_HingeConstraint_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_JPH_HingeConstraint_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_JPH_HingeConstraint_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -1305,14 +1305,14 @@ public static partial class JPH
         /// Generated from method `JPH::HingeConstraint::operator new[]`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount, void *inPointer)
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_HingeConstraint_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_HingeConstraint_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_HingeConstraint_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_array_JPH_HingeConstraint_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_array_JPH_HingeConstraint_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -1658,14 +1658,14 @@ public static partial class JPH
 
         /// Access to the user data, can be used for anything by the application
         /// Generated from method `JPH::HingeConstraint::GetUserData`.
-        public unsafe ulong GetUserData()
+        public unsafe UIntPtr GetUserData()
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static ulong __JPH_HingeConstraint_GetUserData(_Underlying *_this);
+            extern static UIntPtr __JPH_HingeConstraint_GetUserData(_Underlying *_this);
             return __JPH_HingeConstraint_GetUserData(_UnderlyingPtr);
         }
 
@@ -2038,14 +2038,14 @@ public static partial class JPH
         }
 
         /// Generated from method `JPH::HingeConstraint::SetUserData`.
-        public unsafe void SetUserData(ulong inUserData)
+        public unsafe void SetUserData(UIntPtr inUserData)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_HingeConstraint_SetUserData(_Underlying *_this, ulong inUserData);
+            extern static void __JPH_HingeConstraint_SetUserData(_Underlying *_this, UIntPtr inUserData);
             __JPH_HingeConstraint_SetUserData(_UnderlyingPtr, inUserData);
         }
     }

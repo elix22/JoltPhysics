@@ -246,7 +246,7 @@ JPH_BoxShapeSettings *JPH_BoxShapeSettings_AssignFromAnother(JPH_BoxShapeSetting
     ));
 }
 
-void *Jolt_new_JPH_BoxShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_JPH_BoxShapeSettings_size_t(size_t inCount)
 {
     return JPH::BoxShapeSettings::operator new(
         inCount
@@ -260,7 +260,7 @@ void Jolt_delete_JPH_BoxShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::BoxShapeSettings::operator delete(
         inPointer,
@@ -268,7 +268,7 @@ void Jolt_delete_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, unsigned 
     );
 }
 
-void *Jolt_new_array_JPH_BoxShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_BoxShapeSettings_size_t(size_t inCount)
 {
     return JPH::BoxShapeSettings::operator new[](
         inCount
@@ -282,7 +282,7 @@ void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::BoxShapeSettings::operator delete[](
         inPointer,
@@ -290,7 +290,7 @@ void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, uns
     );
 }
 
-void *Jolt_new_JPH_BoxShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_BoxShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::BoxShapeSettings::operator new(
         inCount,
@@ -306,7 +306,7 @@ void Jolt_delete_JPH_BoxShapeSettings_void_ptr_void_ptr(void *inPointer, void *i
     );
 }
 
-void *Jolt_new_array_JPH_BoxShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_BoxShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::BoxShapeSettings::operator new[](
         inCount,
@@ -516,7 +516,7 @@ void JPH_BoxShape_DestroyArray(const JPH_BoxShape *_this)
     delete[] ((const JPH::BoxShape *)_this);
 }
 
-void *Jolt_new_JPH_BoxShape_size_t(unsigned long inCount)
+void *Jolt_new_JPH_BoxShape_size_t(size_t inCount)
 {
     return JPH::BoxShape::operator new(
         inCount
@@ -530,7 +530,7 @@ void Jolt_delete_JPH_BoxShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_BoxShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_BoxShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::BoxShape::operator delete(
         inPointer,
@@ -538,7 +538,7 @@ void Jolt_delete_JPH_BoxShape_void_ptr_size_t(void *inPointer, unsigned long inS
     );
 }
 
-void *Jolt_new_array_JPH_BoxShape_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_BoxShape_size_t(size_t inCount)
 {
     return JPH::BoxShape::operator new[](
         inCount
@@ -552,7 +552,7 @@ void Jolt_delete_array_JPH_BoxShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_BoxShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_BoxShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::BoxShape::operator delete[](
         inPointer,
@@ -560,7 +560,7 @@ void Jolt_delete_array_JPH_BoxShape_void_ptr_size_t(void *inPointer, unsigned lo
     );
 }
 
-void *Jolt_new_JPH_BoxShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_BoxShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::BoxShape::operator new(
         inCount,
@@ -576,7 +576,7 @@ void Jolt_delete_JPH_BoxShape_void_ptr_void_ptr(void *inPointer, void *inPlace)
     );
 }
 
-void *Jolt_new_array_JPH_BoxShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_BoxShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::BoxShape::operator new[](
         inCount,

@@ -267,7 +267,7 @@ JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_AssignFromAnother(JPH_C
     ));
 }
 
-void *Jolt_new_JPH_ConvexHullShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_JPH_ConvexHullShapeSettings_size_t(size_t inCount)
 {
     return JPH::ConvexHullShapeSettings::operator new(
         inCount
@@ -281,7 +281,7 @@ void Jolt_delete_JPH_ConvexHullShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_ConvexHullShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_ConvexHullShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::ConvexHullShapeSettings::operator delete(
         inPointer,
@@ -289,7 +289,7 @@ void Jolt_delete_JPH_ConvexHullShapeSettings_void_ptr_size_t(void *inPointer, un
     );
 }
 
-void *Jolt_new_array_JPH_ConvexHullShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_ConvexHullShapeSettings_size_t(size_t inCount)
 {
     return JPH::ConvexHullShapeSettings::operator new[](
         inCount
@@ -303,7 +303,7 @@ void Jolt_delete_array_JPH_ConvexHullShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_ConvexHullShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_ConvexHullShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::ConvexHullShapeSettings::operator delete[](
         inPointer,
@@ -311,7 +311,7 @@ void Jolt_delete_array_JPH_ConvexHullShapeSettings_void_ptr_size_t(void *inPoint
     );
 }
 
-void *Jolt_new_JPH_ConvexHullShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_ConvexHullShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::ConvexHullShapeSettings::operator new(
         inCount,
@@ -327,7 +327,7 @@ void Jolt_delete_JPH_ConvexHullShapeSettings_void_ptr_void_ptr(void *inPointer, 
     );
 }
 
-void *Jolt_new_array_JPH_ConvexHullShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_ConvexHullShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::ConvexHullShapeSettings::operator new[](
         inCount,
@@ -532,7 +532,7 @@ void JPH_ConvexHullShape_DestroyArray(const JPH_ConvexHullShape *_this)
     delete[] ((const JPH::ConvexHullShape *)_this);
 }
 
-void *Jolt_new_JPH_ConvexHullShape_size_t(unsigned long inCount)
+void *Jolt_new_JPH_ConvexHullShape_size_t(size_t inCount)
 {
     return JPH::ConvexHullShape::operator new(
         inCount
@@ -546,7 +546,7 @@ void Jolt_delete_JPH_ConvexHullShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_ConvexHullShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_ConvexHullShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::ConvexHullShape::operator delete(
         inPointer,
@@ -554,7 +554,7 @@ void Jolt_delete_JPH_ConvexHullShape_void_ptr_size_t(void *inPointer, unsigned l
     );
 }
 
-void *Jolt_new_array_JPH_ConvexHullShape_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_ConvexHullShape_size_t(size_t inCount)
 {
     return JPH::ConvexHullShape::operator new[](
         inCount
@@ -568,7 +568,7 @@ void Jolt_delete_array_JPH_ConvexHullShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_ConvexHullShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_ConvexHullShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::ConvexHullShape::operator delete[](
         inPointer,
@@ -576,7 +576,7 @@ void Jolt_delete_array_JPH_ConvexHullShape_void_ptr_size_t(void *inPointer, unsi
     );
 }
 
-void *Jolt_new_JPH_ConvexHullShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_ConvexHullShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::ConvexHullShape::operator new(
         inCount,
@@ -592,7 +592,7 @@ void Jolt_delete_JPH_ConvexHullShape_void_ptr_void_ptr(void *inPointer, void *in
     );
 }
 
-void *Jolt_new_array_JPH_ConvexHullShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_ConvexHullShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::ConvexHullShape::operator new[](
         inCount,

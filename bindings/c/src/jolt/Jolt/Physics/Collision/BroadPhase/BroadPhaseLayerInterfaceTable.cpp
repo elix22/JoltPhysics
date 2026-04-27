@@ -95,7 +95,7 @@ void JPH_BroadPhaseLayerInterfaceTable_DestroyArray(const JPH_BroadPhaseLayerInt
     delete[] ((const JPH::BroadPhaseLayerInterfaceTable *)_this);
 }
 
-void *Jolt_new_JPH_BroadPhaseLayerInterfaceTable_size_t(unsigned long inCount)
+void *Jolt_new_JPH_BroadPhaseLayerInterfaceTable_size_t(size_t inCount)
 {
     return JPH::BroadPhaseLayerInterfaceTable::operator new(
         inCount
@@ -109,7 +109,7 @@ void Jolt_delete_JPH_BroadPhaseLayerInterfaceTable_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_BroadPhaseLayerInterfaceTable_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_BroadPhaseLayerInterfaceTable_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::BroadPhaseLayerInterfaceTable::operator delete(
         inPointer,
@@ -117,7 +117,7 @@ void Jolt_delete_JPH_BroadPhaseLayerInterfaceTable_void_ptr_size_t(void *inPoint
     );
 }
 
-void *Jolt_new_array_JPH_BroadPhaseLayerInterfaceTable_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_BroadPhaseLayerInterfaceTable_size_t(size_t inCount)
 {
     return JPH::BroadPhaseLayerInterfaceTable::operator new[](
         inCount
@@ -131,7 +131,7 @@ void Jolt_delete_array_JPH_BroadPhaseLayerInterfaceTable_void_ptr(void *inPointe
     );
 }
 
-void Jolt_delete_array_JPH_BroadPhaseLayerInterfaceTable_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_BroadPhaseLayerInterfaceTable_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::BroadPhaseLayerInterfaceTable::operator delete[](
         inPointer,
@@ -139,7 +139,7 @@ void Jolt_delete_array_JPH_BroadPhaseLayerInterfaceTable_void_ptr_size_t(void *i
     );
 }
 
-void *Jolt_new_JPH_BroadPhaseLayerInterfaceTable_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_BroadPhaseLayerInterfaceTable_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::BroadPhaseLayerInterfaceTable::operator new(
         inCount,
@@ -155,7 +155,7 @@ void Jolt_delete_JPH_BroadPhaseLayerInterfaceTable_void_ptr_void_ptr(void *inPoi
     );
 }
 
-void *Jolt_new_array_JPH_BroadPhaseLayerInterfaceTable_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_BroadPhaseLayerInterfaceTable_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::BroadPhaseLayerInterfaceTable::operator new[](
         inCount,

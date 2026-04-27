@@ -195,31 +195,31 @@ JOLT_API void JPH_SoftBodySharedSettings_DestroyArray(const JPH_SoftBodySharedSe
 JOLT_API JPH_SoftBodySharedSettings *JPH_SoftBodySharedSettings_AssignFromAnother(JPH_SoftBodySharedSettings *_this, Jolt_PassBy _other_pass_by, JPH_SoftBodySharedSettings *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -575,31 +575,31 @@ JOLT_API void JPH_SoftBodySharedSettings_Vertex_DestroyArray(const JPH_SoftBodyS
 JOLT_API JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_AssignFromAnother(JPH_SoftBodySharedSettings_Vertex *_this, const JPH_SoftBodySharedSettings_Vertex *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -685,31 +685,31 @@ JOLT_API void JPH_SoftBodySharedSettings_Face_DestroyArray(const JPH_SoftBodySha
 JOLT_API JPH_SoftBodySharedSettings_Face *JPH_SoftBodySharedSettings_Face_AssignFromAnother(JPH_SoftBodySharedSettings_Face *_this, const JPH_SoftBodySharedSettings_Face *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Face_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Face_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -819,31 +819,31 @@ JOLT_API void JPH_SoftBodySharedSettings_Edge_DestroyArray(const JPH_SoftBodySha
 JOLT_API JPH_SoftBodySharedSettings_Edge *JPH_SoftBodySharedSettings_Edge_AssignFromAnother(JPH_SoftBodySharedSettings_Edge *_this, const JPH_SoftBodySharedSettings_Edge *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -953,31 +953,31 @@ JOLT_API void JPH_SoftBodySharedSettings_DihedralBend_DestroyArray(const JPH_Sof
 JOLT_API JPH_SoftBodySharedSettings_DihedralBend *JPH_SoftBodySharedSettings_DihedralBend_AssignFromAnother(JPH_SoftBodySharedSettings_DihedralBend *_this, const JPH_SoftBodySharedSettings_DihedralBend *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -1087,31 +1087,31 @@ JOLT_API void JPH_SoftBodySharedSettings_Volume_DestroyArray(const JPH_SoftBodyS
 JOLT_API JPH_SoftBodySharedSettings_Volume *JPH_SoftBodySharedSettings_Volume_AssignFromAnother(JPH_SoftBodySharedSettings_Volume *_this, const JPH_SoftBodySharedSettings_Volume *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -1199,31 +1199,31 @@ JOLT_API void JPH_SoftBodySharedSettings_InvBind_DestroyArray(const JPH_SoftBody
 JOLT_API JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_AssignFromAnother(JPH_SoftBodySharedSettings_InvBind *_this, const JPH_SoftBodySharedSettings_InvBind *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -1311,31 +1311,31 @@ JOLT_API void JPH_SoftBodySharedSettings_SkinWeight_DestroyArray(const JPH_SoftB
 JOLT_API JPH_SoftBodySharedSettings_SkinWeight *JPH_SoftBodySharedSettings_SkinWeight_AssignFromAnother(JPH_SoftBodySharedSettings_SkinWeight *_this, const JPH_SoftBodySharedSettings_SkinWeight *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -1506,31 +1506,31 @@ JOLT_API void JPH_SoftBodySharedSettings_Skinned_DestroyArray(const JPH_SoftBody
 JOLT_API JPH_SoftBodySharedSettings_Skinned *JPH_SoftBodySharedSettings_Skinned_AssignFromAnother(JPH_SoftBodySharedSettings_Skinned *_this, const JPH_SoftBodySharedSettings_Skinned *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -1619,31 +1619,31 @@ JOLT_API void JPH_SoftBodySharedSettings_LRA_DestroyArray(const JPH_SoftBodyShar
 JOLT_API JPH_SoftBodySharedSettings_LRA *JPH_SoftBodySharedSettings_LRA_AssignFromAnother(JPH_SoftBodySharedSettings_LRA *_this, const JPH_SoftBodySharedSettings_LRA *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -1787,31 +1787,31 @@ JOLT_API void JPH_SoftBodySharedSettings_RodStretchShear_DestroyArray(const JPH_
 JOLT_API JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_RodStretchShear_AssignFromAnother(JPH_SoftBodySharedSettings_RodStretchShear *_this, const JPH_SoftBodySharedSettings_RodStretchShear *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -1915,31 +1915,31 @@ JOLT_API void JPH_SoftBodySharedSettings_RodBendTwist_DestroyArray(const JPH_Sof
 JOLT_API JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_RodBendTwist_AssignFromAnother(JPH_SoftBodySharedSettings_RodBendTwist *_this, const JPH_SoftBodySharedSettings_RodBendTwist *_other);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t(size_t inCount);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_void_ptr(void *inPointer, void *inPlace);

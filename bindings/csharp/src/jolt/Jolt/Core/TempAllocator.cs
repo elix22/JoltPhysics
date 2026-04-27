@@ -70,14 +70,14 @@ public static partial class JPH
 
         /// Generated from method `JPH::TempAllocator::operator new`.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount)
+        public static unsafe void *New(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_TempAllocator_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_TempAllocator_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_TempAllocator_size_t(ulong inCount);
+            extern static void *__Jolt_new_JPH_TempAllocator_size_t(UIntPtr inCount);
             return __Jolt_new_JPH_TempAllocator_size_t(inCount);
         }
 
@@ -96,27 +96,27 @@ public static partial class JPH
 
         /// Generated from method `JPH::TempAllocator::operator delete`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void Delete(void *inPointer, ulong inSize)
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_TempAllocator_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_TempAllocator_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_JPH_TempAllocator_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_JPH_TempAllocator_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_JPH_TempAllocator_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::TempAllocator::operator new[]`.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount)
+        public static unsafe void *NewArray(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocator_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocator_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_TempAllocator_size_t(ulong inCount);
+            extern static void *__Jolt_new_array_JPH_TempAllocator_size_t(UIntPtr inCount);
             return __Jolt_new_array_JPH_TempAllocator_size_t(inCount);
         }
 
@@ -135,28 +135,28 @@ public static partial class JPH
 
         /// Generated from method `JPH::TempAllocator::operator delete[]`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_TempAllocator_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_TempAllocator_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_array_JPH_TempAllocator_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_array_JPH_TempAllocator_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_array_JPH_TempAllocator_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::TempAllocator::operator new`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount, void *inPointer)
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_TempAllocator_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_TempAllocator_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_TempAllocator_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_JPH_TempAllocator_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_JPH_TempAllocator_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -177,14 +177,14 @@ public static partial class JPH
         /// Generated from method `JPH::TempAllocator::operator new[]`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount, void *inPointer)
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocator_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocator_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_TempAllocator_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_array_JPH_TempAllocator_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_array_JPH_TempAllocator_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -385,27 +385,27 @@ public static partial class JPH
 
         /// Constructs the allocator with a maximum allocatable size of inSize
         /// Generated from constructor `JPH::TempAllocatorImpl::TempAllocatorImpl`.
-        public unsafe Const_TempAllocatorImpl(ulong inSize) : this(null, is_owning: true)
+        public unsafe Const_TempAllocatorImpl(UIntPtr inSize) : this(null, is_owning: true)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TempAllocatorImpl_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TempAllocatorImpl_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static JPH.TempAllocatorImpl._Underlying *__JPH_TempAllocatorImpl_Construct(ulong inSize);
+            extern static JPH.TempAllocatorImpl._Underlying *__JPH_TempAllocatorImpl_Construct(UIntPtr inSize);
             _UnderlyingPtr = __JPH_TempAllocatorImpl_Construct(inSize);
         }
 
         /// Generated from method `JPH::TempAllocatorImpl::operator new`.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount)
+        public static unsafe void *New(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorImpl_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorImpl_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_TempAllocatorImpl_size_t(ulong inCount);
+            extern static void *__Jolt_new_JPH_TempAllocatorImpl_size_t(UIntPtr inCount);
             return __Jolt_new_JPH_TempAllocatorImpl_size_t(inCount);
         }
 
@@ -424,27 +424,27 @@ public static partial class JPH
 
         /// Generated from method `JPH::TempAllocatorImpl::operator delete`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void Delete(void *inPointer, ulong inSize)
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_TempAllocatorImpl_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_TempAllocatorImpl_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_JPH_TempAllocatorImpl_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::TempAllocatorImpl::operator new[]`.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount)
+        public static unsafe void *NewArray(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorImpl_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorImpl_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_TempAllocatorImpl_size_t(ulong inCount);
+            extern static void *__Jolt_new_array_JPH_TempAllocatorImpl_size_t(UIntPtr inCount);
             return __Jolt_new_array_JPH_TempAllocatorImpl_size_t(inCount);
         }
 
@@ -463,28 +463,28 @@ public static partial class JPH
 
         /// Generated from method `JPH::TempAllocatorImpl::operator delete[]`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::TempAllocatorImpl::operator new`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount, void *inPointer)
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorImpl_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorImpl_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_TempAllocatorImpl_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_JPH_TempAllocatorImpl_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_JPH_TempAllocatorImpl_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -505,14 +505,14 @@ public static partial class JPH
         /// Generated from method `JPH::TempAllocatorImpl::operator new[]`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount, void *inPointer)
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorImpl_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorImpl_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_TempAllocatorImpl_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_array_JPH_TempAllocatorImpl_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_array_JPH_TempAllocatorImpl_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -545,27 +545,27 @@ public static partial class JPH
 
         /// Get the total size of the fixed buffer
         /// Generated from method `JPH::TempAllocatorImpl::GetSize`.
-        public unsafe ulong GetSize()
+        public unsafe UIntPtr GetSize()
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TempAllocatorImpl_GetSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TempAllocatorImpl_GetSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static ulong __JPH_TempAllocatorImpl_GetSize(_Underlying *_this);
+            extern static UIntPtr __JPH_TempAllocatorImpl_GetSize(_Underlying *_this);
             return __JPH_TempAllocatorImpl_GetSize(_UnderlyingPtr);
         }
 
         /// Get current usage in bytes of the buffer
         /// Generated from method `JPH::TempAllocatorImpl::GetUsage`.
-        public unsafe ulong GetUsage()
+        public unsafe UIntPtr GetUsage()
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TempAllocatorImpl_GetUsage", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TempAllocatorImpl_GetUsage", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static ulong __JPH_TempAllocatorImpl_GetUsage(_Underlying *_this);
+            extern static UIntPtr __JPH_TempAllocatorImpl_GetUsage(_Underlying *_this);
             return __JPH_TempAllocatorImpl_GetUsage(_UnderlyingPtr);
         }
 
@@ -653,14 +653,14 @@ public static partial class JPH
 
         /// Constructs the allocator with a maximum allocatable size of inSize
         /// Generated from constructor `JPH::TempAllocatorImpl::TempAllocatorImpl`.
-        public unsafe TempAllocatorImpl(ulong inSize) : this(null, is_owning: true)
+        public unsafe TempAllocatorImpl(UIntPtr inSize) : this(null, is_owning: true)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TempAllocatorImpl_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TempAllocatorImpl_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static JPH.TempAllocatorImpl._Underlying *__JPH_TempAllocatorImpl_Construct(ulong inSize);
+            extern static JPH.TempAllocatorImpl._Underlying *__JPH_TempAllocatorImpl_Construct(UIntPtr inSize);
             _UnderlyingPtr = __JPH_TempAllocatorImpl_Construct(inSize);
         }
 
@@ -827,14 +827,14 @@ public static partial class JPH
 
         /// Generated from method `JPH::TempAllocatorMalloc::operator new`.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount)
+        public static unsafe void *New(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorMalloc_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorMalloc_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_TempAllocatorMalloc_size_t(ulong inCount);
+            extern static void *__Jolt_new_JPH_TempAllocatorMalloc_size_t(UIntPtr inCount);
             return __Jolt_new_JPH_TempAllocatorMalloc_size_t(inCount);
         }
 
@@ -853,27 +853,27 @@ public static partial class JPH
 
         /// Generated from method `JPH::TempAllocatorMalloc::operator delete`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void Delete(void *inPointer, ulong inSize)
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::TempAllocatorMalloc::operator new[]`.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount)
+        public static unsafe void *NewArray(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorMalloc_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorMalloc_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_TempAllocatorMalloc_size_t(ulong inCount);
+            extern static void *__Jolt_new_array_JPH_TempAllocatorMalloc_size_t(UIntPtr inCount);
             return __Jolt_new_array_JPH_TempAllocatorMalloc_size_t(inCount);
         }
 
@@ -892,28 +892,28 @@ public static partial class JPH
 
         /// Generated from method `JPH::TempAllocatorMalloc::operator delete[]`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::TempAllocatorMalloc::operator new`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount, void *inPointer)
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorMalloc_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorMalloc_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_TempAllocatorMalloc_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_JPH_TempAllocatorMalloc_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_JPH_TempAllocatorMalloc_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -934,14 +934,14 @@ public static partial class JPH
         /// Generated from method `JPH::TempAllocatorMalloc::operator new[]`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount, void *inPointer)
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorMalloc_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorMalloc_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_TempAllocatorMalloc_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_array_JPH_TempAllocatorMalloc_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_array_JPH_TempAllocatorMalloc_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -1203,14 +1203,14 @@ public static partial class JPH
 
         /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator new`.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount)
+        public static unsafe void *New(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t(ulong inCount);
+            extern static void *__Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t(UIntPtr inCount);
             return __Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t(inCount);
         }
 
@@ -1229,27 +1229,27 @@ public static partial class JPH
 
         /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator delete`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void Delete(void *inPointer, ulong inSize)
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator new[]`.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount)
+        public static unsafe void *NewArray(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t(ulong inCount);
+            extern static void *__Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t(UIntPtr inCount);
             return __Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t(inCount);
         }
 
@@ -1268,28 +1268,28 @@ public static partial class JPH
 
         /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator delete[]`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator new`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount, void *inPointer)
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -1310,14 +1310,14 @@ public static partial class JPH
         /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator new[]`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount, void *inPointer)
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(inCount, inPointer);
         }
 

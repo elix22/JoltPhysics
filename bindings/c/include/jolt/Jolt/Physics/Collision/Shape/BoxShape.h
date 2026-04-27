@@ -255,31 +255,31 @@ JOLT_API void JPH_BoxShapeSettings_DestroyArray(const JPH_BoxShapeSettings *_thi
 JOLT_API JPH_BoxShapeSettings *JPH_BoxShapeSettings_AssignFromAnother(JPH_BoxShapeSettings *_this, Jolt_PassBy _other_pass_by, JPH_BoxShapeSettings *_other);
 
 /// Generated from method `JPH::BoxShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_BoxShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_BoxShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::BoxShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_BoxShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::BoxShapeSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::BoxShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_BoxShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_BoxShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::BoxShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::BoxShapeSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::BoxShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_BoxShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_BoxShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::BoxShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_BoxShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::BoxShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_BoxShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_BoxShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::BoxShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -438,31 +438,31 @@ JOLT_API void JPH_BoxShape_Destroy(const JPH_BoxShape *_this);
 JOLT_API void JPH_BoxShape_DestroyArray(const JPH_BoxShape *_this);
 
 /// Generated from method `JPH::BoxShape::operator new`.
-JOLT_API void *Jolt_new_JPH_BoxShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_BoxShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::BoxShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_BoxShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::BoxShape::operator delete`.
-JOLT_API void Jolt_delete_JPH_BoxShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_BoxShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::BoxShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_BoxShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_BoxShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::BoxShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_BoxShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::BoxShape::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_BoxShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_BoxShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::BoxShape::operator new`.
-JOLT_API void *Jolt_new_JPH_BoxShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_BoxShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::BoxShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_BoxShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::BoxShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_BoxShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_BoxShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::BoxShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_BoxShape_void_ptr_void_ptr(void *inPointer, void *inPlace);

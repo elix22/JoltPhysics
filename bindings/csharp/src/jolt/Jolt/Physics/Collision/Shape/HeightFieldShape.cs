@@ -246,7 +246,7 @@ public static partial class JPH
         }
 
         /// User data (to be used freely by the application)
-        public unsafe ulong mUserData
+        public unsafe UIntPtr mUserData
         {
             get
             {
@@ -255,7 +255,7 @@ public static partial class JPH
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_Get_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static ulong *__JPH_HeightFieldShapeSettings_Get_mUserData(_Underlying *_this);
+                extern static UIntPtr *__JPH_HeightFieldShapeSettings_Get_mUserData(_Underlying *_this);
                 return *__JPH_HeightFieldShapeSettings_Get_mUserData(_UnderlyingPtr);
             }
         }
@@ -295,14 +295,14 @@ public static partial class JPH
 
         /// Generated from method `JPH::HeightFieldShapeSettings::operator new`.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount)
+        public static unsafe void *New(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_HeightFieldShapeSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_HeightFieldShapeSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_HeightFieldShapeSettings_size_t(ulong inCount);
+            extern static void *__Jolt_new_JPH_HeightFieldShapeSettings_size_t(UIntPtr inCount);
             return __Jolt_new_JPH_HeightFieldShapeSettings_size_t(inCount);
         }
 
@@ -321,27 +321,27 @@ public static partial class JPH
 
         /// Generated from method `JPH::HeightFieldShapeSettings::operator delete`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void Delete(void *inPointer, ulong inSize)
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::HeightFieldShapeSettings::operator new[]`.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount)
+        public static unsafe void *NewArray(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_HeightFieldShapeSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_HeightFieldShapeSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_HeightFieldShapeSettings_size_t(ulong inCount);
+            extern static void *__Jolt_new_array_JPH_HeightFieldShapeSettings_size_t(UIntPtr inCount);
             return __Jolt_new_array_JPH_HeightFieldShapeSettings_size_t(inCount);
         }
 
@@ -360,28 +360,28 @@ public static partial class JPH
 
         /// Generated from method `JPH::HeightFieldShapeSettings::operator delete[]`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::HeightFieldShapeSettings::operator new`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount, void *inPointer)
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_HeightFieldShapeSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_HeightFieldShapeSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_HeightFieldShapeSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_JPH_HeightFieldShapeSettings_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_JPH_HeightFieldShapeSettings_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -402,14 +402,14 @@ public static partial class JPH
         /// Generated from method `JPH::HeightFieldShapeSettings::operator new[]`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount, void *inPointer)
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_HeightFieldShapeSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_HeightFieldShapeSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_HeightFieldShapeSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_array_JPH_HeightFieldShapeSettings_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_array_JPH_HeightFieldShapeSettings_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -759,7 +759,7 @@ public static partial class JPH
         }
 
         /// User data (to be used freely by the application)
-        public new unsafe ref ulong mUserData
+        public new unsafe ref UIntPtr mUserData
         {
             get
             {
@@ -768,7 +768,7 @@ public static partial class JPH
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_GetMutable_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static ulong *__JPH_HeightFieldShapeSettings_GetMutable_mUserData(_Underlying *_this);
+                extern static UIntPtr *__JPH_HeightFieldShapeSettings_GetMutable_mUserData(_Underlying *_this);
                 return ref *__JPH_HeightFieldShapeSettings_GetMutable_mUserData(_UnderlyingPtr);
             }
         }
@@ -1005,14 +1005,14 @@ public static partial class JPH
 
         /// Generated from method `JPH::HeightFieldShape::operator new`.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount)
+        public static unsafe void *New(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_HeightFieldShape_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_HeightFieldShape_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_HeightFieldShape_size_t(ulong inCount);
+            extern static void *__Jolt_new_JPH_HeightFieldShape_size_t(UIntPtr inCount);
             return __Jolt_new_JPH_HeightFieldShape_size_t(inCount);
         }
 
@@ -1031,27 +1031,27 @@ public static partial class JPH
 
         /// Generated from method `JPH::HeightFieldShape::operator delete`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void Delete(void *inPointer, ulong inSize)
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_HeightFieldShape_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_HeightFieldShape_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_JPH_HeightFieldShape_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::HeightFieldShape::operator new[]`.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount)
+        public static unsafe void *NewArray(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_HeightFieldShape_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_HeightFieldShape_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_HeightFieldShape_size_t(ulong inCount);
+            extern static void *__Jolt_new_array_JPH_HeightFieldShape_size_t(UIntPtr inCount);
             return __Jolt_new_array_JPH_HeightFieldShape_size_t(inCount);
         }
 
@@ -1070,28 +1070,28 @@ public static partial class JPH
 
         /// Generated from method `JPH::HeightFieldShape::operator delete[]`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_HeightFieldShape_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_HeightFieldShape_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_array_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_array_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_array_JPH_HeightFieldShape_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::HeightFieldShape::operator new`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount, void *inPointer)
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_HeightFieldShape_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_HeightFieldShape_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_HeightFieldShape_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_JPH_HeightFieldShape_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_JPH_HeightFieldShape_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -1112,14 +1112,14 @@ public static partial class JPH
         /// Generated from method `JPH::HeightFieldShape::operator new[]`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount, void *inPointer)
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_HeightFieldShape_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_HeightFieldShape_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_HeightFieldShape_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_array_JPH_HeightFieldShape_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_array_JPH_HeightFieldShape_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -1374,49 +1374,6 @@ public static partial class JPH
             return __JPH_HeightFieldShape_GetMaxHeightValue(_UnderlyingPtr);
         }
 
-        /// Get the height values of a block of data.
-        /// Note that the height values are decompressed so will be slightly different from what the shape was originally created with.
-        /// @param inX Start X position, must be a multiple of mBlockSize and in the range [0, mSampleCount - 1]
-        /// @param inY Start Y position, must be a multiple of mBlockSize and in the range [0, mSampleCount - 1]
-        /// @param inSizeX Number of samples in X direction, must be a multiple of mBlockSize and in the range [0, mSampleCount - inX]
-        /// @param inSizeY Number of samples in Y direction, must be a multiple of mBlockSize and in the range [0, mSampleCount - inY]
-        /// @param outHeights Returned height values, must be at least inSizeX * inSizeY floats. Values are returned in x-major order and can be cNoCollisionValue.
-        /// @param inHeightsStride Stride in floats between two consecutive rows of outHeights (can be negative if the data is upside down).
-        /// Generated from method `JPH::HeightFieldShape::GetHeights`.
-        public unsafe void GetHeights(uint inX, uint inY, uint inSizeX, uint inSizeY, JPH.InOut<float>? outHeights, long inHeightsStride)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_GetHeights", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_GetHeights", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_HeightFieldShape_GetHeights(_Underlying *_this, uint inX, uint inY, uint inSizeX, uint inSizeY, float *outHeights, long inHeightsStride);
-            float __value_outHeights = outHeights is not null ? outHeights.Value : default(float);
-            if (outHeights is not null) outHeights.Value = __value_outHeights;
-            __JPH_HeightFieldShape_GetHeights(_UnderlyingPtr, inX, inY, inSizeX, inSizeY, outHeights is not null ? &__value_outHeights : null, inHeightsStride);
-        }
-
-        /// Get the material indices of a block of data.
-        /// @param inX Start X position, must in the range [0, mSampleCount - 1]
-        /// @param inY Start Y position, must in the range [0, mSampleCount - 1]
-        /// @param inSizeX Number of samples in X direction
-        /// @param inSizeY Number of samples in Y direction
-        /// @param outMaterials Returned material indices, must be at least inSizeX * inSizeY uint8s. Values are returned in x-major order.
-        /// @param inMaterialsStride Stride in uint8s between two consecutive rows of outMaterials (can be negative if the data is upside down).
-        /// Generated from method `JPH::HeightFieldShape::GetMaterials`.
-        public unsafe void GetMaterials(uint inX, uint inY, uint inSizeX, uint inSizeY, JPH.InOut<byte>? outMaterials, long inMaterialsStride)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_GetMaterials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_GetMaterials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_HeightFieldShape_GetMaterials(_Underlying *_this, uint inX, uint inY, uint inSizeX, uint inSizeY, byte *outMaterials, long inMaterialsStride);
-            byte __value_outMaterials = outMaterials is not null ? outMaterials.Value : default(byte);
-            if (outMaterials is not null) outMaterials.Value = __value_outMaterials;
-            __JPH_HeightFieldShape_GetMaterials(_UnderlyingPtr, inX, inY, inSizeX, inSizeY, outMaterials is not null ? &__value_outMaterials : null, inMaterialsStride);
-        }
-
         // See Shape::GetStats
         /// Generated from method `JPH::HeightFieldShape::GetStats`.
         public unsafe JPH.Shape.Stats GetStats()
@@ -1458,14 +1415,14 @@ public static partial class JPH
 
         /// User data (to be used freely by the application)
         /// Generated from method `JPH::HeightFieldShape::GetUserData`.
-        public unsafe ulong GetUserData()
+        public unsafe UIntPtr GetUserData()
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static ulong __JPH_HeightFieldShape_GetUserData(_Underlying *_this);
+            extern static UIntPtr __JPH_HeightFieldShape_GetUserData(_Underlying *_this);
             return __JPH_HeightFieldShape_GetUserData(_UnderlyingPtr);
         }
 
@@ -1501,14 +1458,14 @@ public static partial class JPH
 
         /// Get the user data of a particular sub shape ID. Corresponds with the value stored in Shape::GetUserData of the leaf shape pointed to by inSubShapeID.
         /// Generated from method `JPH::HeightFieldShape::GetSubShapeUserData`.
-        public unsafe ulong GetSubShapeUserData(JPH.Const_SubShapeID inSubShapeID)
+        public unsafe UIntPtr GetSubShapeUserData(JPH.Const_SubShapeID inSubShapeID)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_GetSubShapeUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_GetSubShapeUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static ulong __JPH_HeightFieldShape_GetSubShapeUserData(_Underlying *_this, JPH.Const_SubShapeID._Underlying *inSubShapeID);
+            extern static UIntPtr __JPH_HeightFieldShape_GetSubShapeUserData(_Underlying *_this, JPH.Const_SubShapeID._Underlying *inSubShapeID);
             return __JPH_HeightFieldShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
         }
 
@@ -1703,41 +1660,15 @@ public static partial class JPH
             _UnderlyingPtr = __JPH_HeightFieldShape_DefaultConstruct();
         }
 
-        /// Set the height values of a block of data.
-        /// Note that this requires decompressing and recompressing a border of size mBlockSize in the negative x/y direction so will cause some precision loss.
-        /// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
-        /// @param inX Start X position, must be a multiple of mBlockSize and in the range [0, mSampleCount - 1]
-        /// @param inY Start Y position, must be a multiple of mBlockSize and in the range [0, mSampleCount - 1]
-        /// @param inSizeX Number of samples in X direction, must be a multiple of mBlockSize and in the range [0, mSampleCount - inX]
-        /// @param inSizeY Number of samples in Y direction, must be a multiple of mBlockSize and in the range [0, mSampleCount - inY]
-        /// @param inHeights The new height values to set, must be an array of inSizeX * inSizeY floats, can be cNoCollisionValue. Values outside of the range [GetMinHeightValue(), GetMaxHeightValue()] will be clamped.
-        /// @param inHeightsStride Stride in floats between two consecutive rows of inHeights (can be negative if the data is upside down).
-        /// @param inAllocator Allocator to use for temporary memory
-        /// @param inActiveEdgeCosThresholdAngle Cosine of the threshold angle (if the angle between the two triangles is bigger than this, the edge is active, note that a concave edge is always inactive).
-        /// Generated from method `JPH::HeightFieldShape::SetHeights`.
-        /// Parameter `inActiveEdgeCosThresholdAngle` defaults to ``.
-        public unsafe void SetHeights(uint inX, uint inY, uint inSizeX, uint inSizeY, float? inHeights, long inHeightsStride, JPH.TempAllocator inAllocator, float? inActiveEdgeCosThresholdAngle = null)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_SetHeights", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_SetHeights", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_HeightFieldShape_SetHeights(_Underlying *_this, uint inX, uint inY, uint inSizeX, uint inSizeY, float *inHeights, long inHeightsStride, JPH.TempAllocator._Underlying *inAllocator, float *inActiveEdgeCosThresholdAngle);
-            float __deref_inHeights = inHeights.GetValueOrDefault();
-            float __deref_inActiveEdgeCosThresholdAngle = inActiveEdgeCosThresholdAngle.GetValueOrDefault();
-            __JPH_HeightFieldShape_SetHeights(_UnderlyingPtr, inX, inY, inSizeX, inSizeY, inHeights.HasValue ? &__deref_inHeights : null, inHeightsStride, inAllocator._UnderlyingPtr, inActiveEdgeCosThresholdAngle.HasValue ? &__deref_inActiveEdgeCosThresholdAngle : null);
-        }
-
         /// Generated from method `JPH::HeightFieldShape::SetUserData`.
-        public unsafe void SetUserData(ulong inUserData)
+        public unsafe void SetUserData(UIntPtr inUserData)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShape_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShape_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_HeightFieldShape_SetUserData(_Underlying *_this, ulong inUserData);
+            extern static void __JPH_HeightFieldShape_SetUserData(_Underlying *_this, UIntPtr inUserData);
             __JPH_HeightFieldShape_SetUserData(_UnderlyingPtr, inUserData);
         }
     }

@@ -124,7 +124,7 @@ JPH_Float4 *JPH_Float4_AssignFromAnother(JPH_Float4 *_this, const JPH_Float4 *in
     ));
 }
 
-void *Jolt_new_JPH_Float4_size_t(unsigned long inCount)
+void *Jolt_new_JPH_Float4_size_t(size_t inCount)
 {
     return JPH::Float4::operator new(
         inCount
@@ -138,7 +138,7 @@ void Jolt_delete_JPH_Float4_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_Float4_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_Float4_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::Float4::operator delete(
         inPointer,
@@ -146,7 +146,7 @@ void Jolt_delete_JPH_Float4_void_ptr_size_t(void *inPointer, unsigned long inSiz
     );
 }
 
-void *Jolt_new_array_JPH_Float4_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_Float4_size_t(size_t inCount)
 {
     return JPH::Float4::operator new[](
         inCount
@@ -160,7 +160,7 @@ void Jolt_delete_array_JPH_Float4_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_Float4_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_Float4_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::Float4::operator delete[](
         inPointer,
@@ -168,7 +168,7 @@ void Jolt_delete_array_JPH_Float4_void_ptr_size_t(void *inPointer, unsigned long
     );
 }
 
-void *Jolt_new_JPH_Float4_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_Float4_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::Float4::operator new(
         inCount,
@@ -184,7 +184,7 @@ void Jolt_delete_JPH_Float4_void_ptr_void_ptr(void *inPointer, void *inPlace)
     );
 }
 
-void *Jolt_new_array_JPH_Float4_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_Float4_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::Float4::operator new[](
         inCount,

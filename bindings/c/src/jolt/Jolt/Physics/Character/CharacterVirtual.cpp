@@ -392,7 +392,7 @@ JPH_CharacterVirtualSettings *JPH_CharacterVirtualSettings_AssignFromAnother(JPH
     ));
 }
 
-void *Jolt_new_JPH_CharacterVirtualSettings_size_t(unsigned long inCount)
+void *Jolt_new_JPH_CharacterVirtualSettings_size_t(size_t inCount)
 {
     return JPH::CharacterVirtualSettings::operator new(
         inCount
@@ -406,7 +406,7 @@ void Jolt_delete_JPH_CharacterVirtualSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::CharacterVirtualSettings::operator delete(
         inPointer,
@@ -414,7 +414,7 @@ void Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, u
     );
 }
 
-void *Jolt_new_array_JPH_CharacterVirtualSettings_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_CharacterVirtualSettings_size_t(size_t inCount)
 {
     return JPH::CharacterVirtualSettings::operator new[](
         inCount
@@ -428,7 +428,7 @@ void Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::CharacterVirtualSettings::operator delete[](
         inPointer,
@@ -436,7 +436,7 @@ void Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPoin
     );
 }
 
-void *Jolt_new_JPH_CharacterVirtualSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CharacterVirtualSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::CharacterVirtualSettings::operator new(
         inCount,
@@ -452,7 +452,7 @@ void Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_void_ptr(void *inPointer,
     );
 }
 
-void *Jolt_new_array_JPH_CharacterVirtualSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CharacterVirtualSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::CharacterVirtualSettings::operator new[](
         inCount,
@@ -1018,7 +1018,7 @@ void JPH_CharacterVirtual_DestroyArray(const JPH_CharacterVirtual *_this)
     delete[] ((const JPH::CharacterVirtual *)_this);
 }
 
-void *Jolt_new_JPH_CharacterVirtual_size_t(unsigned long inCount)
+void *Jolt_new_JPH_CharacterVirtual_size_t(size_t inCount)
 {
     return JPH::CharacterVirtual::operator new(
         inCount
@@ -1032,7 +1032,7 @@ void Jolt_delete_JPH_CharacterVirtual_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::CharacterVirtual::operator delete(
         inPointer,
@@ -1040,7 +1040,7 @@ void Jolt_delete_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, unsigned 
     );
 }
 
-void *Jolt_new_array_JPH_CharacterVirtual_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_CharacterVirtual_size_t(size_t inCount)
 {
     return JPH::CharacterVirtual::operator new[](
         inCount
@@ -1054,7 +1054,7 @@ void Jolt_delete_array_JPH_CharacterVirtual_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::CharacterVirtual::operator delete[](
         inPointer,
@@ -1062,7 +1062,7 @@ void Jolt_delete_array_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, uns
     );
 }
 
-void *Jolt_new_JPH_CharacterVirtual_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CharacterVirtual_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::CharacterVirtual::operator new(
         inCount,
@@ -1078,7 +1078,7 @@ void Jolt_delete_JPH_CharacterVirtual_void_ptr_void_ptr(void *inPointer, void *i
     );
 }
 
-void *Jolt_new_array_JPH_CharacterVirtual_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CharacterVirtual_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::CharacterVirtual::operator new[](
         inCount,

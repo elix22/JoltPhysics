@@ -99,7 +99,7 @@ public static partial class JPH
         }
 
         /// User data value (can be used by application)
-        public unsafe ulong mUserData
+        public unsafe UIntPtr mUserData
         {
             get
             {
@@ -108,7 +108,7 @@ public static partial class JPH
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_Get_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static ulong *__JPH_BodyCreationSettings_Get_mUserData(_Underlying *_this);
+                extern static UIntPtr *__JPH_BodyCreationSettings_Get_mUserData(_Underlying *_this);
                 return *__JPH_BodyCreationSettings_Get_mUserData(_UnderlyingPtr);
             }
         }
@@ -475,14 +475,14 @@ public static partial class JPH
 
         /// Generated from method `JPH::BodyCreationSettings::operator new`.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount)
+        public static unsafe void *New(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_BodyCreationSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_BodyCreationSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_BodyCreationSettings_size_t(ulong inCount);
+            extern static void *__Jolt_new_JPH_BodyCreationSettings_size_t(UIntPtr inCount);
             return __Jolt_new_JPH_BodyCreationSettings_size_t(inCount);
         }
 
@@ -501,27 +501,27 @@ public static partial class JPH
 
         /// Generated from method `JPH::BodyCreationSettings::operator delete`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void Delete(void *inPointer, ulong inSize)
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_BodyCreationSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_BodyCreationSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_JPH_BodyCreationSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_JPH_BodyCreationSettings_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_JPH_BodyCreationSettings_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::BodyCreationSettings::operator new[]`.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount)
+        public static unsafe void *NewArray(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_BodyCreationSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_BodyCreationSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_BodyCreationSettings_size_t(ulong inCount);
+            extern static void *__Jolt_new_array_JPH_BodyCreationSettings_size_t(UIntPtr inCount);
             return __Jolt_new_array_JPH_BodyCreationSettings_size_t(inCount);
         }
 
@@ -540,28 +540,28 @@ public static partial class JPH
 
         /// Generated from method `JPH::BodyCreationSettings::operator delete[]`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_BodyCreationSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_BodyCreationSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_array_JPH_BodyCreationSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_array_JPH_BodyCreationSettings_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_array_JPH_BodyCreationSettings_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::BodyCreationSettings::operator new`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount, void *inPointer)
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_BodyCreationSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_BodyCreationSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_BodyCreationSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_JPH_BodyCreationSettings_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_JPH_BodyCreationSettings_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -582,14 +582,14 @@ public static partial class JPH
         /// Generated from method `JPH::BodyCreationSettings::operator new[]`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount, void *inPointer)
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_BodyCreationSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_BodyCreationSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_BodyCreationSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_array_JPH_BodyCreationSettings_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_array_JPH_BodyCreationSettings_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -727,7 +727,7 @@ public static partial class JPH
         }
 
         /// User data value (can be used by application)
-        public new unsafe ref ulong mUserData
+        public new unsafe ref UIntPtr mUserData
         {
             get
             {
@@ -736,7 +736,7 @@ public static partial class JPH
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_GetMutable_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static ulong *__JPH_BodyCreationSettings_GetMutable_mUserData(_Underlying *_this);
+                extern static UIntPtr *__JPH_BodyCreationSettings_GetMutable_mUserData(_Underlying *_this);
                 return ref *__JPH_BodyCreationSettings_GetMutable_mUserData(_UnderlyingPtr);
             }
         }

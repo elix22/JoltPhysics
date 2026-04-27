@@ -235,7 +235,7 @@ JPH_RotatedTranslatedShapeSettings *JPH_RotatedTranslatedShapeSettings_AssignFro
     ));
 }
 
-void *Jolt_new_JPH_RotatedTranslatedShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_JPH_RotatedTranslatedShapeSettings_size_t(size_t inCount)
 {
     return JPH::RotatedTranslatedShapeSettings::operator new(
         inCount
@@ -249,7 +249,7 @@ void Jolt_delete_JPH_RotatedTranslatedShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_RotatedTranslatedShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_RotatedTranslatedShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::RotatedTranslatedShapeSettings::operator delete(
         inPointer,
@@ -257,7 +257,7 @@ void Jolt_delete_JPH_RotatedTranslatedShapeSettings_void_ptr_size_t(void *inPoin
     );
 }
 
-void *Jolt_new_array_JPH_RotatedTranslatedShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_RotatedTranslatedShapeSettings_size_t(size_t inCount)
 {
     return JPH::RotatedTranslatedShapeSettings::operator new[](
         inCount
@@ -271,7 +271,7 @@ void Jolt_delete_array_JPH_RotatedTranslatedShapeSettings_void_ptr(void *inPoint
     );
 }
 
-void Jolt_delete_array_JPH_RotatedTranslatedShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_RotatedTranslatedShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::RotatedTranslatedShapeSettings::operator delete[](
         inPointer,
@@ -279,7 +279,7 @@ void Jolt_delete_array_JPH_RotatedTranslatedShapeSettings_void_ptr_size_t(void *
     );
 }
 
-void *Jolt_new_JPH_RotatedTranslatedShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_RotatedTranslatedShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::RotatedTranslatedShapeSettings::operator new(
         inCount,
@@ -295,7 +295,7 @@ void Jolt_delete_JPH_RotatedTranslatedShapeSettings_void_ptr_void_ptr(void *inPo
     );
 }
 
-void *Jolt_new_array_JPH_RotatedTranslatedShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_RotatedTranslatedShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::RotatedTranslatedShapeSettings::operator new[](
         inCount,
@@ -505,7 +505,7 @@ JPH_AABox *JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_R
     ));
 }
 
-void *Jolt_new_JPH_RotatedTranslatedShape_size_t(unsigned long inCount)
+void *Jolt_new_JPH_RotatedTranslatedShape_size_t(size_t inCount)
 {
     return JPH::RotatedTranslatedShape::operator new(
         inCount
@@ -519,7 +519,7 @@ void Jolt_delete_JPH_RotatedTranslatedShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_RotatedTranslatedShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_RotatedTranslatedShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::RotatedTranslatedShape::operator delete(
         inPointer,
@@ -527,7 +527,7 @@ void Jolt_delete_JPH_RotatedTranslatedShape_void_ptr_size_t(void *inPointer, uns
     );
 }
 
-void *Jolt_new_array_JPH_RotatedTranslatedShape_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_RotatedTranslatedShape_size_t(size_t inCount)
 {
     return JPH::RotatedTranslatedShape::operator new[](
         inCount
@@ -541,7 +541,7 @@ void Jolt_delete_array_JPH_RotatedTranslatedShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_RotatedTranslatedShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_RotatedTranslatedShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::RotatedTranslatedShape::operator delete[](
         inPointer,
@@ -549,7 +549,7 @@ void Jolt_delete_array_JPH_RotatedTranslatedShape_void_ptr_size_t(void *inPointe
     );
 }
 
-void *Jolt_new_JPH_RotatedTranslatedShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_RotatedTranslatedShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::RotatedTranslatedShape::operator new(
         inCount,
@@ -565,7 +565,7 @@ void Jolt_delete_JPH_RotatedTranslatedShape_void_ptr_void_ptr(void *inPointer, v
     );
 }
 
-void *Jolt_new_array_JPH_RotatedTranslatedShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_RotatedTranslatedShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::RotatedTranslatedShape::operator new[](
         inCount,

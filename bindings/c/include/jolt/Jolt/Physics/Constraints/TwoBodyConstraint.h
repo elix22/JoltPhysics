@@ -189,31 +189,31 @@ JOLT_API void JPH_TwoBodyConstraintSettings_Destroy(const JPH_TwoBodyConstraintS
 JOLT_API void JPH_TwoBodyConstraintSettings_DestroyArray(const JPH_TwoBodyConstraintSettings *_this);
 
 /// Generated from method `JPH::TwoBodyConstraintSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_TwoBodyConstraintSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_TwoBodyConstraintSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::TwoBodyConstraintSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_TwoBodyConstraintSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TwoBodyConstraintSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_TwoBodyConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_TwoBodyConstraintSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::TwoBodyConstraintSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TwoBodyConstraintSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_TwoBodyConstraintSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::TwoBodyConstraintSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TwoBodyConstraintSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TwoBodyConstraintSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_TwoBodyConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_TwoBodyConstraintSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::TwoBodyConstraintSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_TwoBodyConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_TwoBodyConstraintSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::TwoBodyConstraintSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_TwoBodyConstraintSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::TwoBodyConstraintSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TwoBodyConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_TwoBodyConstraintSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::TwoBodyConstraintSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TwoBodyConstraintSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -326,31 +326,31 @@ JOLT_API void JPH_TwoBodyConstraint_Destroy(const JPH_TwoBodyConstraint *_this);
 JOLT_API void JPH_TwoBodyConstraint_DestroyArray(const JPH_TwoBodyConstraint *_this);
 
 /// Generated from method `JPH::TwoBodyConstraint::operator new`.
-JOLT_API void *Jolt_new_JPH_TwoBodyConstraint_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_TwoBodyConstraint_size_t(size_t inCount);
 
 /// Generated from method `JPH::TwoBodyConstraint::operator delete`.
 JOLT_API void Jolt_delete_JPH_TwoBodyConstraint_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TwoBodyConstraint::operator delete`.
-JOLT_API void Jolt_delete_JPH_TwoBodyConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_TwoBodyConstraint_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::TwoBodyConstraint::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TwoBodyConstraint_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_TwoBodyConstraint_size_t(size_t inCount);
 
 /// Generated from method `JPH::TwoBodyConstraint::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TwoBodyConstraint_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TwoBodyConstraint::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_TwoBodyConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_TwoBodyConstraint_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::TwoBodyConstraint::operator new`.
-JOLT_API void *Jolt_new_JPH_TwoBodyConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_TwoBodyConstraint_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::TwoBodyConstraint::operator delete`.
 JOLT_API void Jolt_delete_JPH_TwoBodyConstraint_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::TwoBodyConstraint::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TwoBodyConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_TwoBodyConstraint_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::TwoBodyConstraint::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TwoBodyConstraint_void_ptr_void_ptr(void *inPointer, void *inPlace);

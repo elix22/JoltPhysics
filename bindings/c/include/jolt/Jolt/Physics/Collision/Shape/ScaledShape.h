@@ -217,31 +217,31 @@ JOLT_API void JPH_ScaledShapeSettings_DestroyArray(const JPH_ScaledShapeSettings
 JOLT_API JPH_ScaledShapeSettings *JPH_ScaledShapeSettings_AssignFromAnother(JPH_ScaledShapeSettings *_this, Jolt_PassBy _other_pass_by, JPH_ScaledShapeSettings *_other);
 
 /// Generated from method `JPH::ScaledShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_ScaledShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_ScaledShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::ScaledShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_ScaledShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::ScaledShapeSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_ScaledShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_ScaledShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::ScaledShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_ScaledShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_ScaledShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::ScaledShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_ScaledShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::ScaledShapeSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_ScaledShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_ScaledShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::ScaledShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_ScaledShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_ScaledShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::ScaledShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_ScaledShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::ScaledShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_ScaledShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_ScaledShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::ScaledShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_ScaledShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -400,31 +400,31 @@ JOLT_API void JPH_ScaledShape_DestroyArray(const JPH_ScaledShape *_this);
 JOLT_API JPH_AABox *JPH_ScaledShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_ScaledShape *_this, const JPH_DMat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
 
 /// Generated from method `JPH::ScaledShape::operator new`.
-JOLT_API void *Jolt_new_JPH_ScaledShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_ScaledShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::ScaledShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_ScaledShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::ScaledShape::operator delete`.
-JOLT_API void Jolt_delete_JPH_ScaledShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_ScaledShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::ScaledShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_ScaledShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_ScaledShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::ScaledShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_ScaledShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::ScaledShape::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_ScaledShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_ScaledShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::ScaledShape::operator new`.
-JOLT_API void *Jolt_new_JPH_ScaledShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_ScaledShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::ScaledShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_ScaledShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::ScaledShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_ScaledShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_ScaledShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::ScaledShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_ScaledShape_void_ptr_void_ptr(void *inPointer, void *inPlace);

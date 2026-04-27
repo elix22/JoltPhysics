@@ -283,31 +283,31 @@ JOLT_API void JPH_ConvexHullShapeSettings_DestroyArray(const JPH_ConvexHullShape
 JOLT_API JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_AssignFromAnother(JPH_ConvexHullShapeSettings *_this, Jolt_PassBy _other_pass_by, JPH_ConvexHullShapeSettings *_other);
 
 /// Generated from method `JPH::ConvexHullShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_ConvexHullShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_ConvexHullShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::ConvexHullShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_ConvexHullShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::ConvexHullShapeSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_ConvexHullShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_ConvexHullShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::ConvexHullShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_ConvexHullShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_ConvexHullShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::ConvexHullShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_ConvexHullShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::ConvexHullShapeSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_ConvexHullShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_ConvexHullShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::ConvexHullShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_ConvexHullShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_ConvexHullShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::ConvexHullShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_ConvexHullShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::ConvexHullShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_ConvexHullShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_ConvexHullShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::ConvexHullShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_ConvexHullShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -463,31 +463,31 @@ JOLT_API void JPH_ConvexHullShape_Destroy(const JPH_ConvexHullShape *_this);
 JOLT_API void JPH_ConvexHullShape_DestroyArray(const JPH_ConvexHullShape *_this);
 
 /// Generated from method `JPH::ConvexHullShape::operator new`.
-JOLT_API void *Jolt_new_JPH_ConvexHullShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_ConvexHullShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::ConvexHullShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_ConvexHullShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::ConvexHullShape::operator delete`.
-JOLT_API void Jolt_delete_JPH_ConvexHullShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_ConvexHullShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::ConvexHullShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_ConvexHullShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_ConvexHullShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::ConvexHullShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_ConvexHullShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::ConvexHullShape::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_ConvexHullShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_ConvexHullShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::ConvexHullShape::operator new`.
-JOLT_API void *Jolt_new_JPH_ConvexHullShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_ConvexHullShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::ConvexHullShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_ConvexHullShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::ConvexHullShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_ConvexHullShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_ConvexHullShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::ConvexHullShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_ConvexHullShape_void_ptr_void_ptr(void *inPointer, void *inPlace);

@@ -553,31 +553,31 @@ JOLT_API void JPH_CharacterVirtualSettings_DestroyArray(const JPH_CharacterVirtu
 JOLT_API JPH_CharacterVirtualSettings *JPH_CharacterVirtualSettings_AssignFromAnother(JPH_CharacterVirtualSettings *_this, Jolt_PassBy _other_pass_by, JPH_CharacterVirtualSettings *_other);
 
 /// Generated from method `JPH::CharacterVirtualSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_CharacterVirtualSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_CharacterVirtualSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::CharacterVirtualSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_CharacterVirtualSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::CharacterVirtualSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::CharacterVirtualSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_CharacterVirtualSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_CharacterVirtualSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::CharacterVirtualSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::CharacterVirtualSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::CharacterVirtualSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_CharacterVirtualSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_CharacterVirtualSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::CharacterVirtualSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::CharacterVirtualSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_CharacterVirtualSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_CharacterVirtualSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::CharacterVirtualSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -1054,31 +1054,31 @@ JOLT_API void JPH_CharacterVirtual_Destroy(const JPH_CharacterVirtual *_this);
 JOLT_API void JPH_CharacterVirtual_DestroyArray(const JPH_CharacterVirtual *_this);
 
 /// Generated from method `JPH::CharacterVirtual::operator new`.
-JOLT_API void *Jolt_new_JPH_CharacterVirtual_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_CharacterVirtual_size_t(size_t inCount);
 
 /// Generated from method `JPH::CharacterVirtual::operator delete`.
 JOLT_API void Jolt_delete_JPH_CharacterVirtual_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::CharacterVirtual::operator delete`.
-JOLT_API void Jolt_delete_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::CharacterVirtual::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_CharacterVirtual_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_CharacterVirtual_size_t(size_t inCount);
 
 /// Generated from method `JPH::CharacterVirtual::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CharacterVirtual_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::CharacterVirtual::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::CharacterVirtual::operator new`.
-JOLT_API void *Jolt_new_JPH_CharacterVirtual_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_CharacterVirtual_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::CharacterVirtual::operator delete`.
 JOLT_API void Jolt_delete_JPH_CharacterVirtual_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::CharacterVirtual::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_CharacterVirtual_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_CharacterVirtual_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::CharacterVirtual::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CharacterVirtual_void_ptr_void_ptr(void *inPointer, void *inPlace);

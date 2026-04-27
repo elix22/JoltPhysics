@@ -318,7 +318,7 @@ JPH_DistanceConstraintSettings *JPH_DistanceConstraintSettings_AssignFromAnother
     ));
 }
 
-void *Jolt_new_JPH_DistanceConstraintSettings_size_t(unsigned long inCount)
+void *Jolt_new_JPH_DistanceConstraintSettings_size_t(size_t inCount)
 {
     return JPH::DistanceConstraintSettings::operator new(
         inCount
@@ -332,7 +332,7 @@ void Jolt_delete_JPH_DistanceConstraintSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_DistanceConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_DistanceConstraintSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::DistanceConstraintSettings::operator delete(
         inPointer,
@@ -340,7 +340,7 @@ void Jolt_delete_JPH_DistanceConstraintSettings_void_ptr_size_t(void *inPointer,
     );
 }
 
-void *Jolt_new_array_JPH_DistanceConstraintSettings_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_DistanceConstraintSettings_size_t(size_t inCount)
 {
     return JPH::DistanceConstraintSettings::operator new[](
         inCount
@@ -354,7 +354,7 @@ void Jolt_delete_array_JPH_DistanceConstraintSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_DistanceConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_DistanceConstraintSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::DistanceConstraintSettings::operator delete[](
         inPointer,
@@ -362,7 +362,7 @@ void Jolt_delete_array_JPH_DistanceConstraintSettings_void_ptr_size_t(void *inPo
     );
 }
 
-void *Jolt_new_JPH_DistanceConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_DistanceConstraintSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::DistanceConstraintSettings::operator new(
         inCount,
@@ -378,7 +378,7 @@ void Jolt_delete_JPH_DistanceConstraintSettings_void_ptr_void_ptr(void *inPointe
     );
 }
 
-void *Jolt_new_array_JPH_DistanceConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_DistanceConstraintSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::DistanceConstraintSettings::operator new[](
         inCount,
@@ -568,7 +568,7 @@ void JPH_DistanceConstraint_DestroyArray(const JPH_DistanceConstraint *_this)
     delete[] ((const JPH::DistanceConstraint *)_this);
 }
 
-void *Jolt_new_JPH_DistanceConstraint_size_t(unsigned long inCount)
+void *Jolt_new_JPH_DistanceConstraint_size_t(size_t inCount)
 {
     return JPH::DistanceConstraint::operator new(
         inCount
@@ -582,7 +582,7 @@ void Jolt_delete_JPH_DistanceConstraint_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_DistanceConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_DistanceConstraint_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::DistanceConstraint::operator delete(
         inPointer,
@@ -590,7 +590,7 @@ void Jolt_delete_JPH_DistanceConstraint_void_ptr_size_t(void *inPointer, unsigne
     );
 }
 
-void *Jolt_new_array_JPH_DistanceConstraint_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_DistanceConstraint_size_t(size_t inCount)
 {
     return JPH::DistanceConstraint::operator new[](
         inCount
@@ -604,7 +604,7 @@ void Jolt_delete_array_JPH_DistanceConstraint_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_DistanceConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_DistanceConstraint_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::DistanceConstraint::operator delete[](
         inPointer,
@@ -612,7 +612,7 @@ void Jolt_delete_array_JPH_DistanceConstraint_void_ptr_size_t(void *inPointer, u
     );
 }
 
-void *Jolt_new_JPH_DistanceConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_DistanceConstraint_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::DistanceConstraint::operator new(
         inCount,
@@ -628,7 +628,7 @@ void Jolt_delete_JPH_DistanceConstraint_void_ptr_void_ptr(void *inPointer, void 
     );
 }
 
-void *Jolt_new_array_JPH_DistanceConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_DistanceConstraint_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::DistanceConstraint::operator new[](
         inCount,

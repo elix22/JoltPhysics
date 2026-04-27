@@ -236,31 +236,31 @@ JOLT_API void JPH_RotatedTranslatedShapeSettings_DestroyArray(const JPH_RotatedT
 JOLT_API JPH_RotatedTranslatedShapeSettings *JPH_RotatedTranslatedShapeSettings_AssignFromAnother(JPH_RotatedTranslatedShapeSettings *_this, Jolt_PassBy _other_pass_by, JPH_RotatedTranslatedShapeSettings *_other);
 
 /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_RotatedTranslatedShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_RotatedTranslatedShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_RotatedTranslatedShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_RotatedTranslatedShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_RotatedTranslatedShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_RotatedTranslatedShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_RotatedTranslatedShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_RotatedTranslatedShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_RotatedTranslatedShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_RotatedTranslatedShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_RotatedTranslatedShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_RotatedTranslatedShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_RotatedTranslatedShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_RotatedTranslatedShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_RotatedTranslatedShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::RotatedTranslatedShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_RotatedTranslatedShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -419,31 +419,31 @@ JOLT_API void JPH_RotatedTranslatedShape_DestroyArray(const JPH_RotatedTranslate
 JOLT_API JPH_AABox *JPH_RotatedTranslatedShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_RotatedTranslatedShape *_this, const JPH_DMat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
 
 /// Generated from method `JPH::RotatedTranslatedShape::operator new`.
-JOLT_API void *Jolt_new_JPH_RotatedTranslatedShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_RotatedTranslatedShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::RotatedTranslatedShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_RotatedTranslatedShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::RotatedTranslatedShape::operator delete`.
-JOLT_API void Jolt_delete_JPH_RotatedTranslatedShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_RotatedTranslatedShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::RotatedTranslatedShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_RotatedTranslatedShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_RotatedTranslatedShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::RotatedTranslatedShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_RotatedTranslatedShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::RotatedTranslatedShape::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_RotatedTranslatedShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_RotatedTranslatedShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::RotatedTranslatedShape::operator new`.
-JOLT_API void *Jolt_new_JPH_RotatedTranslatedShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_RotatedTranslatedShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::RotatedTranslatedShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_RotatedTranslatedShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::RotatedTranslatedShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_RotatedTranslatedShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_RotatedTranslatedShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::RotatedTranslatedShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_RotatedTranslatedShape_void_ptr_void_ptr(void *inPointer, void *inPlace);

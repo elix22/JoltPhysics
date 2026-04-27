@@ -26,7 +26,7 @@ void JPH_TempAllocator_DestroyArray(const JPH_TempAllocator *_this)
     delete[] ((const JPH::TempAllocator *)_this);
 }
 
-void *Jolt_new_JPH_TempAllocator_size_t(unsigned long inCount)
+void *Jolt_new_JPH_TempAllocator_size_t(size_t inCount)
 {
     return JPH::TempAllocator::operator new(
         inCount
@@ -40,7 +40,7 @@ void Jolt_delete_JPH_TempAllocator_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_TempAllocator_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_TempAllocator_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::TempAllocator::operator delete(
         inPointer,
@@ -48,7 +48,7 @@ void Jolt_delete_JPH_TempAllocator_void_ptr_size_t(void *inPointer, unsigned lon
     );
 }
 
-void *Jolt_new_array_JPH_TempAllocator_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_TempAllocator_size_t(size_t inCount)
 {
     return JPH::TempAllocator::operator new[](
         inCount
@@ -62,7 +62,7 @@ void Jolt_delete_array_JPH_TempAllocator_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_TempAllocator_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_TempAllocator_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::TempAllocator::operator delete[](
         inPointer,
@@ -70,7 +70,7 @@ void Jolt_delete_array_JPH_TempAllocator_void_ptr_size_t(void *inPointer, unsign
     );
 }
 
-void *Jolt_new_JPH_TempAllocator_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_TempAllocator_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::TempAllocator::operator new(
         inCount,
@@ -86,7 +86,7 @@ void Jolt_delete_JPH_TempAllocator_void_ptr_void_ptr(void *inPointer, void *inPl
     );
 }
 
-void *Jolt_new_array_JPH_TempAllocator_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_TempAllocator_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::TempAllocator::operator new[](
         inCount,
@@ -160,7 +160,7 @@ const bool *JPH_TempAllocatorImpl_Get_needs_aligned_allocate(void)
     return std::addressof(JPH::TempAllocatorImpl::needs_aligned_allocate);
 }
 
-JPH_TempAllocatorImpl *JPH_TempAllocatorImpl_Construct(unsigned long inSize)
+JPH_TempAllocatorImpl *JPH_TempAllocatorImpl_Construct(size_t inSize)
 {
     return (JPH_TempAllocatorImpl *)new JPH::TempAllocatorImpl(JPH::TempAllocatorImpl(
         inSize
@@ -243,7 +243,7 @@ void JPH_TempAllocatorImpl_DestroyArray(const JPH_TempAllocatorImpl *_this)
     delete[] ((const JPH::TempAllocatorImpl *)_this);
 }
 
-void *Jolt_new_JPH_TempAllocatorImpl_size_t(unsigned long inCount)
+void *Jolt_new_JPH_TempAllocatorImpl_size_t(size_t inCount)
 {
     return JPH::TempAllocatorImpl::operator new(
         inCount
@@ -257,7 +257,7 @@ void Jolt_delete_JPH_TempAllocatorImpl_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::TempAllocatorImpl::operator delete(
         inPointer,
@@ -265,7 +265,7 @@ void Jolt_delete_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, unsigned
     );
 }
 
-void *Jolt_new_array_JPH_TempAllocatorImpl_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_TempAllocatorImpl_size_t(size_t inCount)
 {
     return JPH::TempAllocatorImpl::operator new[](
         inCount
@@ -279,7 +279,7 @@ void Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::TempAllocatorImpl::operator delete[](
         inPointer,
@@ -287,7 +287,7 @@ void Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, un
     );
 }
 
-void *Jolt_new_JPH_TempAllocatorImpl_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_TempAllocatorImpl_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::TempAllocatorImpl::operator new(
         inCount,
@@ -303,7 +303,7 @@ void Jolt_delete_JPH_TempAllocatorImpl_void_ptr_void_ptr(void *inPointer, void *
     );
 }
 
-void *Jolt_new_array_JPH_TempAllocatorImpl_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_TempAllocatorImpl_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::TempAllocatorImpl::operator new[](
         inCount,
@@ -454,7 +454,7 @@ void JPH_TempAllocatorMalloc_DestroyArray(const JPH_TempAllocatorMalloc *_this)
     delete[] ((const JPH::TempAllocatorMalloc *)_this);
 }
 
-void *Jolt_new_JPH_TempAllocatorMalloc_size_t(unsigned long inCount)
+void *Jolt_new_JPH_TempAllocatorMalloc_size_t(size_t inCount)
 {
     return JPH::TempAllocatorMalloc::operator new(
         inCount
@@ -468,7 +468,7 @@ void Jolt_delete_JPH_TempAllocatorMalloc_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::TempAllocatorMalloc::operator delete(
         inPointer,
@@ -476,7 +476,7 @@ void Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, unsign
     );
 }
 
-void *Jolt_new_array_JPH_TempAllocatorMalloc_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_TempAllocatorMalloc_size_t(size_t inCount)
 {
     return JPH::TempAllocatorMalloc::operator new[](
         inCount
@@ -490,7 +490,7 @@ void Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::TempAllocatorMalloc::operator delete[](
         inPointer,
@@ -498,7 +498,7 @@ void Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, 
     );
 }
 
-void *Jolt_new_JPH_TempAllocatorMalloc_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_TempAllocatorMalloc_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::TempAllocatorMalloc::operator new(
         inCount,
@@ -514,7 +514,7 @@ void Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_void_ptr(void *inPointer, void
     );
 }
 
-void *Jolt_new_array_JPH_TempAllocatorMalloc_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_TempAllocatorMalloc_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::TempAllocatorMalloc::operator new[](
         inCount,
@@ -633,7 +633,7 @@ void JPH_TempAllocatorImplWithMallocFallback_DestroyArray(const JPH_TempAllocato
     delete[] ((const JPH::TempAllocatorImplWithMallocFallback *)_this);
 }
 
-void *Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t(unsigned long inCount)
+void *Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t(size_t inCount)
 {
     return JPH::TempAllocatorImplWithMallocFallback::operator new(
         inCount
@@ -647,7 +647,7 @@ void Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr(void *inPointe
     );
 }
 
-void Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::TempAllocatorImplWithMallocFallback::operator delete(
         inPointer,
@@ -655,7 +655,7 @@ void Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(void *i
     );
 }
 
-void *Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t(size_t inCount)
 {
     return JPH::TempAllocatorImplWithMallocFallback::operator new[](
         inCount
@@ -669,7 +669,7 @@ void Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr(void *in
     );
 }
 
-void Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::TempAllocatorImplWithMallocFallback::operator delete[](
         inPointer,
@@ -677,7 +677,7 @@ void Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(v
     );
 }
 
-void *Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::TempAllocatorImplWithMallocFallback::operator new(
         inCount,
@@ -693,7 +693,7 @@ void Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_void_ptr(void 
     );
 }
 
-void *Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::TempAllocatorImplWithMallocFallback::operator new[](
         inCount,

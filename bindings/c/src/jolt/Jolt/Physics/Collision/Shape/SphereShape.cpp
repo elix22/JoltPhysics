@@ -235,7 +235,7 @@ JPH_SphereShapeSettings *JPH_SphereShapeSettings_AssignFromAnother(JPH_SphereSha
     ));
 }
 
-void *Jolt_new_JPH_SphereShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SphereShapeSettings_size_t(size_t inCount)
 {
     return JPH::SphereShapeSettings::operator new(
         inCount
@@ -249,7 +249,7 @@ void Jolt_delete_JPH_SphereShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SphereShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SphereShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SphereShapeSettings::operator delete(
         inPointer,
@@ -257,7 +257,7 @@ void Jolt_delete_JPH_SphereShapeSettings_void_ptr_size_t(void *inPointer, unsign
     );
 }
 
-void *Jolt_new_array_JPH_SphereShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SphereShapeSettings_size_t(size_t inCount)
 {
     return JPH::SphereShapeSettings::operator new[](
         inCount
@@ -271,7 +271,7 @@ void Jolt_delete_array_JPH_SphereShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_SphereShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SphereShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SphereShapeSettings::operator delete[](
         inPointer,
@@ -279,7 +279,7 @@ void Jolt_delete_array_JPH_SphereShapeSettings_void_ptr_size_t(void *inPointer, 
     );
 }
 
-void *Jolt_new_JPH_SphereShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SphereShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SphereShapeSettings::operator new(
         inCount,
@@ -295,7 +295,7 @@ void Jolt_delete_JPH_SphereShapeSettings_void_ptr_void_ptr(void *inPointer, void
     );
 }
 
-void *Jolt_new_array_JPH_SphereShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SphereShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SphereShapeSettings::operator new[](
         inCount,
@@ -511,7 +511,7 @@ JPH_AABox *JPH_SphereShape_GetWorldSpaceBounds_JPH_DMat44(const JPH_SphereShape 
     ));
 }
 
-void *Jolt_new_JPH_SphereShape_size_t(unsigned long inCount)
+void *Jolt_new_JPH_SphereShape_size_t(size_t inCount)
 {
     return JPH::SphereShape::operator new(
         inCount
@@ -525,7 +525,7 @@ void Jolt_delete_JPH_SphereShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SphereShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SphereShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SphereShape::operator delete(
         inPointer,
@@ -533,7 +533,7 @@ void Jolt_delete_JPH_SphereShape_void_ptr_size_t(void *inPointer, unsigned long 
     );
 }
 
-void *Jolt_new_array_JPH_SphereShape_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_SphereShape_size_t(size_t inCount)
 {
     return JPH::SphereShape::operator new[](
         inCount
@@ -547,7 +547,7 @@ void Jolt_delete_array_JPH_SphereShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_SphereShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SphereShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::SphereShape::operator delete[](
         inPointer,
@@ -555,7 +555,7 @@ void Jolt_delete_array_JPH_SphereShape_void_ptr_size_t(void *inPointer, unsigned
     );
 }
 
-void *Jolt_new_JPH_SphereShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SphereShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SphereShape::operator new(
         inCount,
@@ -571,7 +571,7 @@ void Jolt_delete_JPH_SphereShape_void_ptr_void_ptr(void *inPointer, void *inPlac
     );
 }
 
-void *Jolt_new_array_JPH_SphereShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SphereShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::SphereShape::operator new[](
         inCount,

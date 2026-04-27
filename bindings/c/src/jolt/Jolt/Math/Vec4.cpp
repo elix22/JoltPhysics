@@ -83,7 +83,7 @@ JPH_Vec4 *JPH_Vec4_AssignFromAnother(JPH_Vec4 *_this, const JPH_Vec4 *inRHS)
     ));
 }
 
-void *Jolt_new_JPH_Vec4_size_t(unsigned long inCount)
+void *Jolt_new_JPH_Vec4_size_t(size_t inCount)
 {
     return JPH::Vec4::operator new(
         inCount
@@ -97,7 +97,7 @@ void Jolt_delete_JPH_Vec4_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_Vec4_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_Vec4_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::Vec4::operator delete(
         inPointer,
@@ -105,7 +105,7 @@ void Jolt_delete_JPH_Vec4_void_ptr_size_t(void *inPointer, unsigned long inSize)
     );
 }
 
-void *Jolt_new_array_JPH_Vec4_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_Vec4_size_t(size_t inCount)
 {
     return JPH::Vec4::operator new[](
         inCount
@@ -119,7 +119,7 @@ void Jolt_delete_array_JPH_Vec4_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_Vec4_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_Vec4_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::Vec4::operator delete[](
         inPointer,
@@ -127,7 +127,7 @@ void Jolt_delete_array_JPH_Vec4_void_ptr_size_t(void *inPointer, unsigned long i
     );
 }
 
-void *Jolt_new_JPH_Vec4_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_Vec4_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::Vec4::operator new(
         inCount,
@@ -143,7 +143,7 @@ void Jolt_delete_JPH_Vec4_void_ptr_void_ptr(void *inPointer, void *inPlace)
     );
 }
 
-void *Jolt_new_array_JPH_Vec4_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_Vec4_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::Vec4::operator new[](
         inCount,

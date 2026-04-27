@@ -195,31 +195,31 @@ JOLT_API void JPH_PlaneShapeSettings_DestroyArray(const JPH_PlaneShapeSettings *
 JOLT_API JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_AssignFromAnother(JPH_PlaneShapeSettings *_this, Jolt_PassBy _other_pass_by, JPH_PlaneShapeSettings *_other);
 
 /// Generated from method `JPH::PlaneShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_PlaneShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_PlaneShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::PlaneShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_PlaneShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::PlaneShapeSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_PlaneShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_PlaneShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::PlaneShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_PlaneShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_PlaneShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::PlaneShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_PlaneShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::PlaneShapeSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_PlaneShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_PlaneShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::PlaneShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_PlaneShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_PlaneShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::PlaneShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_PlaneShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::PlaneShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_PlaneShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_PlaneShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::PlaneShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_PlaneShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -344,31 +344,31 @@ JOLT_API void JPH_PlaneShape_Destroy(const JPH_PlaneShape *_this);
 JOLT_API void JPH_PlaneShape_DestroyArray(const JPH_PlaneShape *_this);
 
 /// Generated from method `JPH::PlaneShape::operator new`.
-JOLT_API void *Jolt_new_JPH_PlaneShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_PlaneShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::PlaneShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_PlaneShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::PlaneShape::operator delete`.
-JOLT_API void Jolt_delete_JPH_PlaneShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_PlaneShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::PlaneShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_PlaneShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_PlaneShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::PlaneShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_PlaneShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::PlaneShape::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_PlaneShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_PlaneShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::PlaneShape::operator new`.
-JOLT_API void *Jolt_new_JPH_PlaneShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_PlaneShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::PlaneShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_PlaneShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::PlaneShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_PlaneShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_PlaneShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::PlaneShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_PlaneShape_void_ptr_void_ptr(void *inPointer, void *inPlace);

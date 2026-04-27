@@ -41,14 +41,14 @@ public static partial class JPH
         /// Called whenever a body activates, note this can be called from any thread so make sure your code is thread safe.
         /// At the time of the callback the body inBodyID will be locked and no bodies can be written/activated/deactivated from the callback.
         /// Generated from method `JPH::BodyActivationListener::OnBodyActivated`.
-        public unsafe void OnBodyActivated(in JPH.BodyID inBodyID, ulong inBodyUserData)
+        public unsafe void OnBodyActivated(in JPH.BodyID inBodyID, UIntPtr inBodyUserData)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyActivationListener_OnBodyActivated", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyActivationListener_OnBodyActivated", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_BodyActivationListener_OnBodyActivated(_Underlying *_this, JPH.BodyID *inBodyID, ulong inBodyUserData);
+            extern static void __JPH_BodyActivationListener_OnBodyActivated(_Underlying *_this, JPH.BodyID *inBodyID, UIntPtr inBodyUserData);
             fixed (JPH.BodyID *__ptr_inBodyID = &inBodyID)
             {
                 __JPH_BodyActivationListener_OnBodyActivated(_UnderlyingPtr, __ptr_inBodyID, inBodyUserData);
@@ -58,14 +58,14 @@ public static partial class JPH
         /// Called whenever a body deactivates, note this can be called from any thread so make sure your code is thread safe.
         /// At the time of the callback the body inBodyID will be locked and no bodies can be written/activated/deactivated from the callback.
         /// Generated from method `JPH::BodyActivationListener::OnBodyDeactivated`.
-        public unsafe void OnBodyDeactivated(in JPH.BodyID inBodyID, ulong inBodyUserData)
+        public unsafe void OnBodyDeactivated(in JPH.BodyID inBodyID, UIntPtr inBodyUserData)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyActivationListener_OnBodyDeactivated", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyActivationListener_OnBodyDeactivated", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_BodyActivationListener_OnBodyDeactivated(_Underlying *_this, JPH.BodyID *inBodyID, ulong inBodyUserData);
+            extern static void __JPH_BodyActivationListener_OnBodyDeactivated(_Underlying *_this, JPH.BodyID *inBodyID, UIntPtr inBodyUserData);
             fixed (JPH.BodyID *__ptr_inBodyID = &inBodyID)
             {
                 __JPH_BodyActivationListener_OnBodyDeactivated(_UnderlyingPtr, __ptr_inBodyID, inBodyUserData);

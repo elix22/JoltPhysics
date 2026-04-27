@@ -388,14 +388,14 @@ public static partial class JPH
 
         /// Generated from method `JPH::CharacterVirtualSettings::operator new`.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount)
+        public static unsafe void *New(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_CharacterVirtualSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_CharacterVirtualSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_CharacterVirtualSettings_size_t(ulong inCount);
+            extern static void *__Jolt_new_JPH_CharacterVirtualSettings_size_t(UIntPtr inCount);
             return __Jolt_new_JPH_CharacterVirtualSettings_size_t(inCount);
         }
 
@@ -414,27 +414,27 @@ public static partial class JPH
 
         /// Generated from method `JPH::CharacterVirtualSettings::operator delete`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void Delete(void *inPointer, ulong inSize)
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_JPH_CharacterVirtualSettings_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::CharacterVirtualSettings::operator new[]`.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount)
+        public static unsafe void *NewArray(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_CharacterVirtualSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_CharacterVirtualSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_CharacterVirtualSettings_size_t(ulong inCount);
+            extern static void *__Jolt_new_array_JPH_CharacterVirtualSettings_size_t(UIntPtr inCount);
             return __Jolt_new_array_JPH_CharacterVirtualSettings_size_t(inCount);
         }
 
@@ -453,28 +453,28 @@ public static partial class JPH
 
         /// Generated from method `JPH::CharacterVirtualSettings::operator delete[]`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_array_JPH_CharacterVirtualSettings_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::CharacterVirtualSettings::operator new`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount, void *inPointer)
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_CharacterVirtualSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_CharacterVirtualSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_CharacterVirtualSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_JPH_CharacterVirtualSettings_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_JPH_CharacterVirtualSettings_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -495,14 +495,14 @@ public static partial class JPH
         /// Generated from method `JPH::CharacterVirtualSettings::operator new[]`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount, void *inPointer)
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_CharacterVirtualSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_CharacterVirtualSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_CharacterVirtualSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_array_JPH_CharacterVirtualSettings_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_array_JPH_CharacterVirtualSettings_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -2023,14 +2023,14 @@ public static partial class JPH
         /// @param inUserData Application specific value
         /// @param inSystem Physics system that this character will be added to
         /// Generated from constructor `JPH::CharacterVirtual::CharacterVirtual`.
-        public unsafe Const_CharacterVirtual(JPH.Const_CharacterVirtualSettings? inSettings, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, ulong inUserData, JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
+        public unsafe Const_CharacterVirtual(JPH.Const_CharacterVirtualSettings? inSettings, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, UIntPtr inUserData, JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static JPH.CharacterVirtual._Underlying *__JPH_CharacterVirtual_Construct_5(JPH.Const_CharacterVirtualSettings._Underlying *inSettings, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, ulong inUserData, JPH.PhysicsSystem._Underlying *inSystem);
+            extern static JPH.CharacterVirtual._Underlying *__JPH_CharacterVirtual_Construct_5(JPH.Const_CharacterVirtualSettings._Underlying *inSettings, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, UIntPtr inUserData, JPH.PhysicsSystem._Underlying *inSystem);
             _UnderlyingPtr = __JPH_CharacterVirtual_Construct_5(inSettings is not null ? inSettings._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inUserData, inSystem is not null ? inSystem._UnderlyingPtr : null);
         }
 
@@ -2049,14 +2049,14 @@ public static partial class JPH
 
         /// Generated from method `JPH::CharacterVirtual::operator new`.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount)
+        public static unsafe void *New(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_CharacterVirtual_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_CharacterVirtual_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_CharacterVirtual_size_t(ulong inCount);
+            extern static void *__Jolt_new_JPH_CharacterVirtual_size_t(UIntPtr inCount);
             return __Jolt_new_JPH_CharacterVirtual_size_t(inCount);
         }
 
@@ -2075,27 +2075,27 @@ public static partial class JPH
 
         /// Generated from method `JPH::CharacterVirtual::operator delete`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void Delete(void *inPointer, ulong inSize)
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_CharacterVirtual_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_CharacterVirtual_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_JPH_CharacterVirtual_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::CharacterVirtual::operator new[]`.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount)
+        public static unsafe void *NewArray(UIntPtr inCount)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_CharacterVirtual_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_CharacterVirtual_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_CharacterVirtual_size_t(ulong inCount);
+            extern static void *__Jolt_new_array_JPH_CharacterVirtual_size_t(UIntPtr inCount);
             return __Jolt_new_array_JPH_CharacterVirtual_size_t(inCount);
         }
 
@@ -2114,28 +2114,28 @@ public static partial class JPH
 
         /// Generated from method `JPH::CharacterVirtual::operator delete[]`.
         /// Parameter `inPointer` is a mutable pointer.
-        public static unsafe void DeleteArray(void *inPointer, ulong inSize)
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_CharacterVirtual_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_CharacterVirtual_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __Jolt_delete_array_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, ulong inSize);
+            extern static void __Jolt_delete_array_JPH_CharacterVirtual_void_ptr_size_t(void *inPointer, UIntPtr inSize);
             __Jolt_delete_array_JPH_CharacterVirtual_void_ptr_size_t(inPointer, inSize);
         }
 
         /// Generated from method `JPH::CharacterVirtual::operator new`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *New(ulong inCount, void *inPointer)
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_CharacterVirtual_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_CharacterVirtual_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_JPH_CharacterVirtual_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_JPH_CharacterVirtual_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_JPH_CharacterVirtual_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -2156,14 +2156,14 @@ public static partial class JPH
         /// Generated from method `JPH::CharacterVirtual::operator new[]`.
         /// Parameter `inPointer` is a mutable pointer.
         /// Returns a mutable pointer.
-        public static unsafe void *NewArray(ulong inCount, void *inPointer)
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_CharacterVirtual_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_CharacterVirtual_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void *__Jolt_new_array_JPH_CharacterVirtual_size_t_void_ptr(ulong inCount, void *inPointer);
+            extern static void *__Jolt_new_array_JPH_CharacterVirtual_size_t_void_ptr(UIntPtr inCount, void *inPointer);
             return __Jolt_new_array_JPH_CharacterVirtual_size_t_void_ptr(inCount, inPointer);
         }
 
@@ -2408,14 +2408,14 @@ public static partial class JPH
 
         /// Access to the user data, can be used for anything by the application
         /// Generated from method `JPH::CharacterVirtual::GetUserData`.
-        public unsafe ulong GetUserData()
+        public unsafe UIntPtr GetUserData()
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static ulong __JPH_CharacterVirtual_GetUserData(_Underlying *_this);
+            extern static UIntPtr __JPH_CharacterVirtual_GetUserData(_Underlying *_this);
             return __JPH_CharacterVirtual_GetUserData(_UnderlyingPtr);
         }
 
@@ -2690,14 +2690,14 @@ public static partial class JPH
 
         /// User data value of the body that we're standing on
         /// Generated from method `JPH::CharacterVirtual::GetGroundUserData`.
-        public unsafe ulong GetGroundUserData()
+        public unsafe UIntPtr GetGroundUserData()
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetGroundUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetGroundUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static ulong __JPH_CharacterVirtual_GetGroundUserData(_Underlying *_this);
+            extern static UIntPtr __JPH_CharacterVirtual_GetGroundUserData(_Underlying *_this);
             return __JPH_CharacterVirtual_GetGroundUserData(_UnderlyingPtr);
         }
 
@@ -2964,7 +2964,7 @@ public static partial class JPH
             }
 
             ///< User data of B
-            public unsafe ulong mUserData
+            public unsafe UIntPtr mUserData
             {
                 get
                 {
@@ -2973,7 +2973,7 @@ public static partial class JPH
                     #else
                     [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_Get_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static ulong *__JPH_CharacterVirtual_Contact_Get_mUserData(_Underlying *_this);
+                    extern static UIntPtr *__JPH_CharacterVirtual_Contact_Get_mUserData(_Underlying *_this);
                     return *__JPH_CharacterVirtual_Contact_Get_mUserData(_UnderlyingPtr);
                 }
             }
@@ -3159,14 +3159,14 @@ public static partial class JPH
 
             /// Hash of this structure
             /// Generated from method `JPH::CharacterVirtual::Contact::GetHash`.
-            public unsafe ulong GetHash()
+            public unsafe UIntPtr GetHash()
             {
                 #if __IOS__
                 [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetHash", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetHash", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static ulong __JPH_CharacterVirtual_Contact_GetHash(_Underlying *_this);
+                extern static UIntPtr __JPH_CharacterVirtual_Contact_GetHash(_Underlying *_this);
                 return __JPH_CharacterVirtual_Contact_GetHash(_UnderlyingPtr);
             }
 
@@ -3364,7 +3364,7 @@ public static partial class JPH
             }
 
             ///< User data of B
-            public new unsafe ref ulong mUserData
+            public new unsafe ref UIntPtr mUserData
             {
                 get
                 {
@@ -3373,7 +3373,7 @@ public static partial class JPH
                     #else
                     [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Contact_GetMutable_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static ulong *__JPH_CharacterVirtual_Contact_GetMutable_mUserData(_Underlying *_this);
+                    extern static UIntPtr *__JPH_CharacterVirtual_Contact_GetMutable_mUserData(_Underlying *_this);
                     return ref *__JPH_CharacterVirtual_Contact_GetMutable_mUserData(_UnderlyingPtr);
                 }
             }
@@ -3738,14 +3738,14 @@ public static partial class JPH
 
             /// Hash of this structure
             /// Generated from method `JPH::CharacterVirtual::ContactKey::GetHash`.
-            public unsafe ulong GetHash()
+            public unsafe UIntPtr GetHash()
             {
                 #if __IOS__
                 [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_ContactKey_GetHash", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_ContactKey_GetHash", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static ulong __JPH_CharacterVirtual_ContactKey_GetHash(_Underlying *_this);
+                extern static UIntPtr __JPH_CharacterVirtual_ContactKey_GetHash(_Underlying *_this);
                 return __JPH_CharacterVirtual_ContactKey_GetHash(_UnderlyingPtr);
             }
 
@@ -4376,14 +4376,14 @@ public static partial class JPH
         /// @param inUserData Application specific value
         /// @param inSystem Physics system that this character will be added to
         /// Generated from constructor `JPH::CharacterVirtual::CharacterVirtual`.
-        public unsafe CharacterVirtual(JPH.Const_CharacterVirtualSettings? inSettings, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, ulong inUserData, JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
+        public unsafe CharacterVirtual(JPH.Const_CharacterVirtualSettings? inSettings, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, UIntPtr inUserData, JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static JPH.CharacterVirtual._Underlying *__JPH_CharacterVirtual_Construct_5(JPH.Const_CharacterVirtualSettings._Underlying *inSettings, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, ulong inUserData, JPH.PhysicsSystem._Underlying *inSystem);
+            extern static JPH.CharacterVirtual._Underlying *__JPH_CharacterVirtual_Construct_5(JPH.Const_CharacterVirtualSettings._Underlying *inSettings, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, UIntPtr inUserData, JPH.PhysicsSystem._Underlying *inSystem);
             _UnderlyingPtr = __JPH_CharacterVirtual_Construct_5(inSettings is not null ? inSettings._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inUserData, inSystem is not null ? inSystem._UnderlyingPtr : null);
         }
 
@@ -4550,14 +4550,14 @@ public static partial class JPH
         }
 
         /// Generated from method `JPH::CharacterVirtual::SetUserData`.
-        public unsafe void SetUserData(ulong inUserData)
+        public unsafe void SetUserData(UIntPtr inUserData)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_CharacterVirtual_SetUserData(_Underlying *_this, ulong inUserData);
+            extern static void __JPH_CharacterVirtual_SetUserData(_Underlying *_this, UIntPtr inUserData);
             __JPH_CharacterVirtual_SetUserData(_UnderlyingPtr, inUserData);
         }
 

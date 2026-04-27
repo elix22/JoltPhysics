@@ -267,7 +267,7 @@ JPH_CylinderShapeSettings *JPH_CylinderShapeSettings_AssignFromAnother(JPH_Cylin
     ));
 }
 
-void *Jolt_new_JPH_CylinderShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_JPH_CylinderShapeSettings_size_t(size_t inCount)
 {
     return JPH::CylinderShapeSettings::operator new(
         inCount
@@ -281,7 +281,7 @@ void Jolt_delete_JPH_CylinderShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CylinderShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CylinderShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::CylinderShapeSettings::operator delete(
         inPointer,
@@ -289,7 +289,7 @@ void Jolt_delete_JPH_CylinderShapeSettings_void_ptr_size_t(void *inPointer, unsi
     );
 }
 
-void *Jolt_new_array_JPH_CylinderShapeSettings_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_CylinderShapeSettings_size_t(size_t inCount)
 {
     return JPH::CylinderShapeSettings::operator new[](
         inCount
@@ -303,7 +303,7 @@ void Jolt_delete_array_JPH_CylinderShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CylinderShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CylinderShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::CylinderShapeSettings::operator delete[](
         inPointer,
@@ -311,7 +311,7 @@ void Jolt_delete_array_JPH_CylinderShapeSettings_void_ptr_size_t(void *inPointer
     );
 }
 
-void *Jolt_new_JPH_CylinderShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CylinderShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::CylinderShapeSettings::operator new(
         inCount,
@@ -327,7 +327,7 @@ void Jolt_delete_JPH_CylinderShapeSettings_void_ptr_void_ptr(void *inPointer, vo
     );
 }
 
-void *Jolt_new_array_JPH_CylinderShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CylinderShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::CylinderShapeSettings::operator new[](
         inCount,
@@ -538,7 +538,7 @@ void JPH_CylinderShape_DestroyArray(const JPH_CylinderShape *_this)
     delete[] ((const JPH::CylinderShape *)_this);
 }
 
-void *Jolt_new_JPH_CylinderShape_size_t(unsigned long inCount)
+void *Jolt_new_JPH_CylinderShape_size_t(size_t inCount)
 {
     return JPH::CylinderShape::operator new(
         inCount
@@ -552,7 +552,7 @@ void Jolt_delete_JPH_CylinderShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CylinderShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CylinderShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::CylinderShape::operator delete(
         inPointer,
@@ -560,7 +560,7 @@ void Jolt_delete_JPH_CylinderShape_void_ptr_size_t(void *inPointer, unsigned lon
     );
 }
 
-void *Jolt_new_array_JPH_CylinderShape_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_CylinderShape_size_t(size_t inCount)
 {
     return JPH::CylinderShape::operator new[](
         inCount
@@ -574,7 +574,7 @@ void Jolt_delete_array_JPH_CylinderShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CylinderShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CylinderShape_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::CylinderShape::operator delete[](
         inPointer,
@@ -582,7 +582,7 @@ void Jolt_delete_array_JPH_CylinderShape_void_ptr_size_t(void *inPointer, unsign
     );
 }
 
-void *Jolt_new_JPH_CylinderShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CylinderShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::CylinderShape::operator new(
         inCount,
@@ -598,7 +598,7 @@ void Jolt_delete_JPH_CylinderShape_void_ptr_void_ptr(void *inPointer, void *inPl
     );
 }
 
-void *Jolt_new_array_JPH_CylinderShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CylinderShape_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::CylinderShape::operator new[](
         inCount,

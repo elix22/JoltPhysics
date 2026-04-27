@@ -79,7 +79,7 @@ JPH_Mat44 *JPH_Mat44_AssignFromAnother(JPH_Mat44 *_this, const JPH_Mat44 *inM2)
     ));
 }
 
-void *Jolt_new_JPH_Mat44_size_t(unsigned long inCount)
+void *Jolt_new_JPH_Mat44_size_t(size_t inCount)
 {
     return JPH::Mat44::operator new(
         inCount
@@ -93,7 +93,7 @@ void Jolt_delete_JPH_Mat44_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_Mat44_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_Mat44_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::Mat44::operator delete(
         inPointer,
@@ -101,7 +101,7 @@ void Jolt_delete_JPH_Mat44_void_ptr_size_t(void *inPointer, unsigned long inSize
     );
 }
 
-void *Jolt_new_array_JPH_Mat44_size_t(unsigned long inCount)
+void *Jolt_new_array_JPH_Mat44_size_t(size_t inCount)
 {
     return JPH::Mat44::operator new[](
         inCount
@@ -115,7 +115,7 @@ void Jolt_delete_array_JPH_Mat44_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_Mat44_void_ptr_size_t(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_Mat44_void_ptr_size_t(void *inPointer, size_t inSize)
 {
     JPH::Mat44::operator delete[](
         inPointer,
@@ -123,7 +123,7 @@ void Jolt_delete_array_JPH_Mat44_void_ptr_size_t(void *inPointer, unsigned long 
     );
 }
 
-void *Jolt_new_JPH_Mat44_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_Mat44_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::Mat44::operator new(
         inCount,
@@ -139,7 +139,7 @@ void Jolt_delete_JPH_Mat44_void_ptr_void_ptr(void *inPointer, void *inPlace)
     );
 }
 
-void *Jolt_new_array_JPH_Mat44_size_t_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_Mat44_size_t_void_ptr(size_t inCount, void *inPointer)
 {
     return JPH::Mat44::operator new[](
         inCount,

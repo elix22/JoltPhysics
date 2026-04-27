@@ -201,31 +201,31 @@ JOLT_API void JPH_MutableCompoundShapeSettings_DestroyArray(const JPH_MutableCom
 JOLT_API JPH_MutableCompoundShapeSettings *JPH_MutableCompoundShapeSettings_AssignFromAnother(JPH_MutableCompoundShapeSettings *_this, Jolt_PassBy _other_pass_by, JPH_MutableCompoundShapeSettings *_other);
 
 /// Generated from method `JPH::MutableCompoundShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_MutableCompoundShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_MutableCompoundShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::MutableCompoundShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_MutableCompoundShapeSettings_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_MutableCompoundShapeSettings_size_t(size_t inCount);
 
 /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::MutableCompoundShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_MutableCompoundShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_MutableCompoundShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::MutableCompoundShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_MutableCompoundShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_MutableCompoundShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::MutableCompoundShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -370,31 +370,31 @@ JOLT_API void JPH_MutableCompoundShape_Destroy(const JPH_MutableCompoundShape *_
 JOLT_API void JPH_MutableCompoundShape_DestroyArray(const JPH_MutableCompoundShape *_this);
 
 /// Generated from method `JPH::MutableCompoundShape::operator new`.
-JOLT_API void *Jolt_new_JPH_MutableCompoundShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_MutableCompoundShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::MutableCompoundShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_MutableCompoundShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::MutableCompoundShape::operator delete`.
-JOLT_API void Jolt_delete_JPH_MutableCompoundShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_MutableCompoundShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::MutableCompoundShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_MutableCompoundShape_size_t(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_MutableCompoundShape_size_t(size_t inCount);
 
 /// Generated from method `JPH::MutableCompoundShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_MutableCompoundShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::MutableCompoundShape::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_size_t(void *inPointer, size_t inSize);
 
 /// Generated from method `JPH::MutableCompoundShape::operator new`.
-JOLT_API void *Jolt_new_JPH_MutableCompoundShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_MutableCompoundShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::MutableCompoundShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_MutableCompoundShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::MutableCompoundShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_MutableCompoundShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_MutableCompoundShape_size_t_void_ptr(size_t inCount, void *inPointer);
 
 /// Generated from method `JPH::MutableCompoundShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
