@@ -1,8 +1,8 @@
 // machine generated, do not edit
-public static partial class Jolt
+public static partial class JPH
 {
     /// This is the base class for all our classes.
-    public abstract class Object<T> : Jolt.KeepAliveHolder<T>
+    public abstract class Object<T> : JPH.KeepAliveHolder<T>
     {
         protected bool _IsOwningVal;
         /// Returns true if this is an owning instance, and when disposed, will destroy the underlying C++ instance.
@@ -229,49 +229,46 @@ public static partial class Jolt
         public unsafe ref uint this[nint i] => ref _elem[i];
     }
 
-    public static partial class JPH
+    public unsafe struct ArraySoftBodySharedSettingsSkinWeight4
     {
-        public unsafe struct ArraySoftBodySharedSettingsSkinWeight4
+        internal JPH.SoftBodySharedSettings.SkinWeight._Underlying *Ptr;
+
+        internal ArraySoftBodySharedSettingsSkinWeight4(JPH.SoftBodySharedSettings.SkinWeight._Underlying *new_ptr) {Ptr = new_ptr;}
+
+        public JPH.SoftBodySharedSettings.SkinWeight this[nint i]
         {
-            internal Jolt.JPH.SoftBodySharedSettings.SkinWeight._Underlying *Ptr;
-
-            internal ArraySoftBodySharedSettingsSkinWeight4(Jolt.JPH.SoftBodySharedSettings.SkinWeight._Underlying *new_ptr) {Ptr = new_ptr;}
-
-            public Jolt.JPH.SoftBodySharedSettings.SkinWeight this[nint i]
+            get
             {
-                get
-                {
-                    System.Diagnostics.Trace.Assert(i >= 0 && i < 4);
-                    #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-                    #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-                    #endif
-                    extern static Jolt.JPH.SoftBodySharedSettings.SkinWeight._Underlying *__JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr(Jolt.JPH.SoftBodySharedSettings.SkinWeight._Underlying *ptr, nint i);
-                    return new(__JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr(Ptr, i), is_owning: false);
-                }
+                System.Diagnostics.Trace.Assert(i >= 0 && i < 4);
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.SoftBodySharedSettings.SkinWeight._Underlying *__JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr(JPH.SoftBodySharedSettings.SkinWeight._Underlying *ptr, nint i);
+                return new(__JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr(Ptr, i), is_owning: false);
             }
         }
+    }
 
-        public unsafe struct ArrayVector2_2
+    public unsafe struct ArrayVector2_2
+    {
+        internal JPH.Vector_2._Underlying *Ptr;
+
+        internal ArrayVector2_2(JPH.Vector_2._Underlying *new_ptr) {Ptr = new_ptr;}
+
+        public JPH.Vector_2 this[nint i]
         {
-            internal Jolt.JPH.Vector_2._Underlying *Ptr;
-
-            internal ArrayVector2_2(Jolt.JPH.Vector_2._Underlying *new_ptr) {Ptr = new_ptr;}
-
-            public Jolt.JPH.Vector_2 this[nint i]
+            get
             {
-                get
-                {
-                    System.Diagnostics.Trace.Assert(i >= 0 && i < 2);
-                    #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vector_2_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-                    #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vector_2_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-                    #endif
-                    extern static Jolt.JPH.Vector_2._Underlying *__JPH_Vector_2_OffsetPtr(Jolt.JPH.Vector_2._Underlying *ptr, nint i);
-                    return new(__JPH_Vector_2_OffsetPtr(Ptr, i), is_owning: false);
-                }
+                System.Diagnostics.Trace.Assert(i >= 0 && i < 2);
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vector_2_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vector_2_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Vector_2._Underlying *__JPH_Vector_2_OffsetPtr(JPH.Vector_2._Underlying *ptr, nint i);
+                return new(__JPH_Vector_2_OffsetPtr(Ptr, i), is_owning: false);
             }
         }
     }

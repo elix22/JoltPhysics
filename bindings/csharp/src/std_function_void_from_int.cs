@@ -1,11 +1,11 @@
 // machine generated, do not edit
-public static partial class Jolt
+public static partial class JPH
 {
     public static partial class Std
     {
         /// Stores a functor of type: `void(int)`. Possibly stateful.
         /// This is the const half of the class.
-        public class Const_Function_Void_From_Int : Jolt.Object<Const_Function_Void_From_Int>, System.IDisposable
+        public class Const_Function_Void_From_Int : JPH.Object<Const_Function_Void_From_Int>, System.IDisposable
         {
             internal struct _Underlying {} // Represents the underlying C++ type.
 
@@ -37,19 +37,19 @@ public static partial class Jolt
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_std_function_void_from_int_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static Jolt.Std.Function_Void_From_Int._Underlying *__Jolt_std_function_void_from_int_DefaultConstruct();
+                extern static JPH.Std.Function_Void_From_Int._Underlying *__Jolt_std_function_void_from_int_DefaultConstruct();
                 _UnderlyingPtr = __Jolt_std_function_void_from_int_DefaultConstruct();
             }
 
             /// Constructs a copy of another instance. The source remains alive.
-            public unsafe Const_Function_Void_From_Int(Jolt.Std._ByValue_Function_Void_From_Int other) : this(null, is_owning: true)
+            public unsafe Const_Function_Void_From_Int(JPH.Std._ByValue_Function_Void_From_Int other) : this(null, is_owning: true)
             {
                 #if __IOS__
                 [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_std_function_void_from_int_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_std_function_void_from_int_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static Jolt.Std.Function_Void_From_Int._Underlying *__Jolt_std_function_void_from_int_ConstructFromAnother(Jolt._PassBy other_pass_by, Jolt.Std.Function_Void_From_Int._Underlying *other);
+                extern static JPH.Std.Function_Void_From_Int._Underlying *__Jolt_std_function_void_from_int_ConstructFromAnother(JPH._PassBy other_pass_by, JPH.Std.Function_Void_From_Int._Underlying *other);
                 _UnderlyingPtr = __Jolt_std_function_void_from_int_ConstructFromAnother(other.PassByMode, other.Value is not null ? other.Value._UnderlyingPtr : null);
                 if (other.Value is not null) _KeepAlive(other.Value);
             }
@@ -61,14 +61,14 @@ public static partial class Jolt
             public Const_Function_Void_From_Int(Function_Void_From_Int other) : this((Const_Function_Void_From_Int)other) {}
 
             /// Returns true if this instance stores a callable, as opposed to being null.
-            public static unsafe implicit operator bool(Jolt.Std.Const_Function_Void_From_Int _this)
+            public static unsafe implicit operator bool(JPH.Std.Const_Function_Void_From_Int _this)
             {
                 #if __IOS__
                 [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_std_function_void_from_int_has_value", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_std_function_void_from_int_has_value", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static byte __Jolt_std_function_void_from_int_has_value(Jolt.Std.Const_Function_Void_From_Int._Underlying *_this);
+                extern static byte __Jolt_std_function_void_from_int_has_value(JPH.Std.Const_Function_Void_From_Int._Underlying *_this);
                 return __Jolt_std_function_void_from_int_has_value(_this._UnderlyingPtr) != 0;
             }
 
@@ -105,11 +105,11 @@ public static partial class Jolt
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_std_function_void_from_int_ConstructEx", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static Const_Function_Void_From_Int._Underlying *__Jolt_std_function_void_from_int_ConstructEx(_CDelegate func, void *userdata, Jolt.StdFunctionPostCallCallbackDelegate postcall_callback, Jolt.StdFunctionUserdataCallbackDelegate userdata_callback);
-                _UnderlyingPtr = __Jolt_std_function_void_from_int_ConstructEx(_CCallWrapper, (void *)System.Runtime.InteropServices.GCHandle.ToIntPtr(System.Runtime.InteropServices.GCHandle.Alloc(func)), Jolt.StdFunctionPostCallCallback, Jolt.StdFunctionUserdataCallback);
+                extern static Const_Function_Void_From_Int._Underlying *__Jolt_std_function_void_from_int_ConstructEx(_CDelegate func, void *userdata, JPH.StdFunctionPostCallCallbackDelegate postcall_callback, JPH.StdFunctionUserdataCallbackDelegate userdata_callback);
+                _UnderlyingPtr = __Jolt_std_function_void_from_int_ConstructEx(_CCallWrapper, (void *)System.Runtime.InteropServices.GCHandle.ToIntPtr(System.Runtime.InteropServices.GCHandle.Alloc(func)), JPH.StdFunctionPostCallCallback, JPH.StdFunctionUserdataCallback);
             }
 
-            public static unsafe implicit operator Const_Function_Void_From_Int(Jolt.Std.Function_Void_From_Int.Delegate func) {return new(func);}
+            public static unsafe implicit operator Const_Function_Void_From_Int(JPH.Std.Function_Void_From_Int.Delegate func) {return new(func);}
         }
 
         /// Stores a functor of type: `void(int)`. Possibly stateful.
@@ -126,19 +126,19 @@ public static partial class Jolt
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_std_function_void_from_int_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static Jolt.Std.Function_Void_From_Int._Underlying *__Jolt_std_function_void_from_int_DefaultConstruct();
+                extern static JPH.Std.Function_Void_From_Int._Underlying *__Jolt_std_function_void_from_int_DefaultConstruct();
                 _UnderlyingPtr = __Jolt_std_function_void_from_int_DefaultConstruct();
             }
 
             /// Constructs a copy of another instance. The source remains alive.
-            public unsafe Function_Void_From_Int(Jolt.Std._ByValue_Function_Void_From_Int other) : this(null, is_owning: true)
+            public unsafe Function_Void_From_Int(JPH.Std._ByValue_Function_Void_From_Int other) : this(null, is_owning: true)
             {
                 #if __IOS__
                 [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_std_function_void_from_int_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_std_function_void_from_int_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static Jolt.Std.Function_Void_From_Int._Underlying *__Jolt_std_function_void_from_int_ConstructFromAnother(Jolt._PassBy other_pass_by, Jolt.Std.Function_Void_From_Int._Underlying *other);
+                extern static JPH.Std.Function_Void_From_Int._Underlying *__Jolt_std_function_void_from_int_ConstructFromAnother(JPH._PassBy other_pass_by, JPH.Std.Function_Void_From_Int._Underlying *other);
                 _UnderlyingPtr = __Jolt_std_function_void_from_int_ConstructFromAnother(other.PassByMode, other.Value is not null ? other.Value._UnderlyingPtr : null);
                 if (other.Value is not null) _KeepAlive(other.Value);
             }
@@ -150,14 +150,14 @@ public static partial class Jolt
             public Function_Void_From_Int(Function_Void_From_Int other) : this((Const_Function_Void_From_Int)other) {}
 
             /// Assigns the contents from another instance. Both objects remain alive after the call.
-            public unsafe void Assign(Jolt.Std._ByValue_Function_Void_From_Int other)
+            public unsafe void Assign(JPH.Std._ByValue_Function_Void_From_Int other)
             {
                 #if __IOS__
                 [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_std_function_void_from_int_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_std_function_void_from_int_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void __Jolt_std_function_void_from_int_AssignFromAnother(_Underlying *_this, Jolt._PassBy other_pass_by, Jolt.Std.Function_Void_From_Int._Underlying *other);
+                extern static void __Jolt_std_function_void_from_int_AssignFromAnother(_Underlying *_this, JPH._PassBy other_pass_by, JPH.Std.Function_Void_From_Int._Underlying *other);
                 _DiscardKeepAlive();
                 if (other.Value is not null) _KeepAlive(other.Value);
                 __Jolt_std_function_void_from_int_AssignFromAnother(_UnderlyingPtr, other.PassByMode, other.Value is not null ? other.Value._UnderlyingPtr : null);
@@ -188,8 +188,8 @@ public static partial class Jolt
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_std_function_void_from_int_AssignEx", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void __Jolt_std_function_void_from_int_AssignEx(Function_Void_From_Int._Underlying *_this, _CDelegate func, void *userdata, Jolt.StdFunctionPostCallCallbackDelegate postcall_callback, Jolt.StdFunctionUserdataCallbackDelegate userdata_callback);
-                __Jolt_std_function_void_from_int_AssignEx(_UnderlyingPtr, _CCallWrapper, (void *)System.Runtime.InteropServices.GCHandle.ToIntPtr(System.Runtime.InteropServices.GCHandle.Alloc(func)), Jolt.StdFunctionPostCallCallback, Jolt.StdFunctionUserdataCallback);
+                extern static void __Jolt_std_function_void_from_int_AssignEx(Function_Void_From_Int._Underlying *_this, _CDelegate func, void *userdata, JPH.StdFunctionPostCallCallbackDelegate postcall_callback, JPH.StdFunctionUserdataCallbackDelegate userdata_callback);
+                __Jolt_std_function_void_from_int_AssignEx(_UnderlyingPtr, _CCallWrapper, (void *)System.Runtime.InteropServices.GCHandle.ToIntPtr(System.Runtime.InteropServices.GCHandle.Alloc(func)), JPH.StdFunctionPostCallCallback, JPH.StdFunctionUserdataCallback);
             }
         }
 
@@ -205,14 +205,14 @@ public static partial class Jolt
             #pragma warning disable CS0649
             internal readonly Const_Function_Void_From_Int? Value;
             #pragma warning restore CS0649
-            internal readonly Jolt._PassBy PassByMode;
-            public _ByValue_Function_Void_From_Int() {PassByMode = Jolt._PassBy.default_construct;}
-            public _ByValue_Function_Void_From_Int(Const_Function_Void_From_Int new_value) {Value = new_value; PassByMode = Jolt._PassBy.copy;}
+            internal readonly JPH._PassBy PassByMode;
+            public _ByValue_Function_Void_From_Int() {PassByMode = JPH._PassBy.default_construct;}
+            public _ByValue_Function_Void_From_Int(Const_Function_Void_From_Int new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
             public static implicit operator _ByValue_Function_Void_From_Int(Const_Function_Void_From_Int arg) {return new(arg);}
-            public _ByValue_Function_Void_From_Int(Jolt._Moved<Function_Void_From_Int> moved) {Value = moved.Value; PassByMode = Jolt._PassBy.move;}
-            public static implicit operator _ByValue_Function_Void_From_Int(Jolt._Moved<Function_Void_From_Int> arg) {return new(arg);}
+            public _ByValue_Function_Void_From_Int(JPH._Moved<Function_Void_From_Int> moved) {Value = moved.Value; PassByMode = JPH._PassBy.move;}
+            public static implicit operator _ByValue_Function_Void_From_Int(JPH._Moved<Function_Void_From_Int> arg) {return new(arg);}
 
-            public static unsafe implicit operator _ByValue_Function_Void_From_Int(Jolt.Std.Function_Void_From_Int.Delegate func) {return new Function_Void_From_Int(func);}}
+            public static unsafe implicit operator _ByValue_Function_Void_From_Int(JPH.Std.Function_Void_From_Int.Delegate func) {return new Function_Void_From_Int(func);}}
 
         /// This is used for optional parameters of class `Function_Void_From_Int` with default arguments.
         /// This is only used mutable parameters. For const ones we have `_InOptConst_Function_Void_From_Int`.
@@ -243,6 +243,6 @@ public static partial class Jolt
             public _InOptConst_Function_Void_From_Int(Const_Function_Void_From_Int value) {Opt = value;}
             public static implicit operator _InOptConst_Function_Void_From_Int(Const_Function_Void_From_Int value) {return new(value);}
 
-            public static unsafe implicit operator _InOptConst_Function_Void_From_Int(Jolt.Std.Function_Void_From_Int.Delegate func) {return new Function_Void_From_Int(func);}}
+            public static unsafe implicit operator _InOptConst_Function_Void_From_Int(JPH.Std.Function_Void_From_Int.Delegate func) {return new Function_Void_From_Int(func);}}
     }
 }

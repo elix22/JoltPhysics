@@ -334,6 +334,6 @@ EOF
     --input-json "$BINDINGS/tmp/c_desc.json" \
     --output-dir "$BINDINGS/csharp/src" \
     --imported-lib-name cjolt \
-    --helpers-namespace Jolt \
-    --force-namespace Jolt \
+    --helpers-namespace JPH \
+    --force-namespace JPH \
     "${EXTRA_GEN_FLAGS[@]}"
