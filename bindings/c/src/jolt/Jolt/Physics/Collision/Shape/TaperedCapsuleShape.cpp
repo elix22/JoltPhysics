@@ -262,7 +262,7 @@ JPH_TaperedCapsuleShapeSettings *JPH_TaperedCapsuleShapeSettings_AssignFromAnoth
     ));
 }
 
-void *Jolt_new_JPH_TaperedCapsuleShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_TaperedCapsuleShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::TaperedCapsuleShapeSettings::operator new(
         inCount
@@ -276,7 +276,7 @@ void Jolt_delete_JPH_TaperedCapsuleShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_TaperedCapsuleShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_TaperedCapsuleShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TaperedCapsuleShapeSettings::operator delete(
         inPointer,
@@ -284,7 +284,7 @@ void Jolt_delete_JPH_TaperedCapsuleShapeSettings_void_ptr_unsigned_long(void *in
     );
 }
 
-void *Jolt_new_array_JPH_TaperedCapsuleShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_TaperedCapsuleShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::TaperedCapsuleShapeSettings::operator new[](
         inCount
@@ -298,7 +298,7 @@ void Jolt_delete_array_JPH_TaperedCapsuleShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_TaperedCapsuleShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_TaperedCapsuleShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TaperedCapsuleShapeSettings::operator delete[](
         inPointer,
@@ -306,7 +306,7 @@ void Jolt_delete_array_JPH_TaperedCapsuleShapeSettings_void_ptr_unsigned_long(vo
     );
 }
 
-void *Jolt_new_JPH_TaperedCapsuleShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_TaperedCapsuleShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TaperedCapsuleShapeSettings::operator new(
         inCount,
@@ -322,7 +322,7 @@ void Jolt_delete_JPH_TaperedCapsuleShapeSettings_void_ptr_void_ptr(void *inPoint
     );
 }
 
-void *Jolt_new_array_JPH_TaperedCapsuleShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_TaperedCapsuleShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TaperedCapsuleShapeSettings::operator new[](
         inCount,
@@ -532,7 +532,7 @@ void JPH_TaperedCapsuleShape_DestroyArray(const JPH_TaperedCapsuleShape *_this)
     delete[] ((const JPH::TaperedCapsuleShape *)_this);
 }
 
-void *Jolt_new_JPH_TaperedCapsuleShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_TaperedCapsuleShape_size_t(unsigned long inCount)
 {
     return JPH::TaperedCapsuleShape::operator new(
         inCount
@@ -546,7 +546,7 @@ void Jolt_delete_JPH_TaperedCapsuleShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_TaperedCapsuleShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_TaperedCapsuleShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TaperedCapsuleShape::operator delete(
         inPointer,
@@ -554,7 +554,7 @@ void Jolt_delete_JPH_TaperedCapsuleShape_void_ptr_unsigned_long(void *inPointer,
     );
 }
 
-void *Jolt_new_array_JPH_TaperedCapsuleShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_TaperedCapsuleShape_size_t(unsigned long inCount)
 {
     return JPH::TaperedCapsuleShape::operator new[](
         inCount
@@ -568,7 +568,7 @@ void Jolt_delete_array_JPH_TaperedCapsuleShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_TaperedCapsuleShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_TaperedCapsuleShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TaperedCapsuleShape::operator delete[](
         inPointer,
@@ -576,7 +576,7 @@ void Jolt_delete_array_JPH_TaperedCapsuleShape_void_ptr_unsigned_long(void *inPo
     );
 }
 
-void *Jolt_new_JPH_TaperedCapsuleShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_TaperedCapsuleShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TaperedCapsuleShape::operator new(
         inCount,
@@ -592,7 +592,7 @@ void Jolt_delete_JPH_TaperedCapsuleShape_void_ptr_void_ptr(void *inPointer, void
     );
 }
 
-void *Jolt_new_array_JPH_TaperedCapsuleShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_TaperedCapsuleShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TaperedCapsuleShape::operator new[](
         inCount,

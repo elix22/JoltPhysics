@@ -360,7 +360,7 @@ JPH_BodyCreationSettings *JPH_BodyCreationSettings_AssignFromAnother(JPH_BodyCre
     ));
 }
 
-void *Jolt_new_JPH_BodyCreationSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_BodyCreationSettings_size_t(unsigned long inCount)
 {
     return JPH::BodyCreationSettings::operator new(
         inCount
@@ -374,7 +374,7 @@ void Jolt_delete_JPH_BodyCreationSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_BodyCreationSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_BodyCreationSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::BodyCreationSettings::operator delete(
         inPointer,
@@ -382,7 +382,7 @@ void Jolt_delete_JPH_BodyCreationSettings_void_ptr_unsigned_long(void *inPointer
     );
 }
 
-void *Jolt_new_array_JPH_BodyCreationSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_BodyCreationSettings_size_t(unsigned long inCount)
 {
     return JPH::BodyCreationSettings::operator new[](
         inCount
@@ -396,7 +396,7 @@ void Jolt_delete_array_JPH_BodyCreationSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_BodyCreationSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_BodyCreationSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::BodyCreationSettings::operator delete[](
         inPointer,
@@ -404,7 +404,7 @@ void Jolt_delete_array_JPH_BodyCreationSettings_void_ptr_unsigned_long(void *inP
     );
 }
 
-void *Jolt_new_JPH_BodyCreationSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_BodyCreationSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::BodyCreationSettings::operator new(
         inCount,
@@ -420,7 +420,7 @@ void Jolt_delete_JPH_BodyCreationSettings_void_ptr_void_ptr(void *inPointer, voi
     );
 }
 
-void *Jolt_new_array_JPH_BodyCreationSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_BodyCreationSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::BodyCreationSettings::operator new[](
         inCount,

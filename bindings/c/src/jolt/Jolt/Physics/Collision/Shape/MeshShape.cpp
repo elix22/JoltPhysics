@@ -223,7 +223,7 @@ JPH_MeshShapeSettings *JPH_MeshShapeSettings_AssignFromAnother(JPH_MeshShapeSett
     ));
 }
 
-void *Jolt_new_JPH_MeshShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_MeshShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::MeshShapeSettings::operator new(
         inCount
@@ -237,7 +237,7 @@ void Jolt_delete_JPH_MeshShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_MeshShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_MeshShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::MeshShapeSettings::operator delete(
         inPointer,
@@ -245,7 +245,7 @@ void Jolt_delete_JPH_MeshShapeSettings_void_ptr_unsigned_long(void *inPointer, u
     );
 }
 
-void *Jolt_new_array_JPH_MeshShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_MeshShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::MeshShapeSettings::operator new[](
         inCount
@@ -259,7 +259,7 @@ void Jolt_delete_array_JPH_MeshShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_MeshShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_MeshShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::MeshShapeSettings::operator delete[](
         inPointer,
@@ -267,7 +267,7 @@ void Jolt_delete_array_JPH_MeshShapeSettings_void_ptr_unsigned_long(void *inPoin
     );
 }
 
-void *Jolt_new_JPH_MeshShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_MeshShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::MeshShapeSettings::operator new(
         inCount,
@@ -283,7 +283,7 @@ void Jolt_delete_JPH_MeshShapeSettings_void_ptr_void_ptr(void *inPointer, void *
     );
 }
 
-void *Jolt_new_array_JPH_MeshShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_MeshShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::MeshShapeSettings::operator new[](
         inCount,
@@ -453,7 +453,7 @@ void JPH_MeshShape_DestroyArray(const JPH_MeshShape *_this)
     delete[] ((const JPH::MeshShape *)_this);
 }
 
-void *Jolt_new_JPH_MeshShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_MeshShape_size_t(unsigned long inCount)
 {
     return JPH::MeshShape::operator new(
         inCount
@@ -467,7 +467,7 @@ void Jolt_delete_JPH_MeshShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_MeshShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_MeshShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::MeshShape::operator delete(
         inPointer,
@@ -475,7 +475,7 @@ void Jolt_delete_JPH_MeshShape_void_ptr_unsigned_long(void *inPointer, unsigned 
     );
 }
 
-void *Jolt_new_array_JPH_MeshShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_MeshShape_size_t(unsigned long inCount)
 {
     return JPH::MeshShape::operator new[](
         inCount
@@ -489,7 +489,7 @@ void Jolt_delete_array_JPH_MeshShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_MeshShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_MeshShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::MeshShape::operator delete[](
         inPointer,
@@ -497,7 +497,7 @@ void Jolt_delete_array_JPH_MeshShape_void_ptr_unsigned_long(void *inPointer, uns
     );
 }
 
-void *Jolt_new_JPH_MeshShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_MeshShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::MeshShape::operator new(
         inCount,
@@ -513,7 +513,7 @@ void Jolt_delete_JPH_MeshShape_void_ptr_void_ptr(void *inPointer, void *inPlace)
     );
 }
 
-void *Jolt_new_array_JPH_MeshShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_MeshShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::MeshShape::operator new[](
         inCount,

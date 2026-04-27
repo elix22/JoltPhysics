@@ -98,7 +98,7 @@ void JPH_PhysicsSystem_DestroyArray(const JPH_PhysicsSystem *_this)
     delete[] ((const JPH::PhysicsSystem *)_this);
 }
 
-void *Jolt_new_JPH_PhysicsSystem_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_PhysicsSystem_size_t(unsigned long inCount)
 {
     return JPH::PhysicsSystem::operator new(
         inCount
@@ -112,7 +112,7 @@ void Jolt_delete_JPH_PhysicsSystem_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_PhysicsSystem_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_PhysicsSystem_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::PhysicsSystem::operator delete(
         inPointer,
@@ -120,7 +120,7 @@ void Jolt_delete_JPH_PhysicsSystem_void_ptr_unsigned_long(void *inPointer, unsig
     );
 }
 
-void *Jolt_new_array_JPH_PhysicsSystem_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_PhysicsSystem_size_t(unsigned long inCount)
 {
     return JPH::PhysicsSystem::operator new[](
         inCount
@@ -134,7 +134,7 @@ void Jolt_delete_array_JPH_PhysicsSystem_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_PhysicsSystem_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_PhysicsSystem_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::PhysicsSystem::operator delete[](
         inPointer,
@@ -142,7 +142,7 @@ void Jolt_delete_array_JPH_PhysicsSystem_void_ptr_unsigned_long(void *inPointer,
     );
 }
 
-void *Jolt_new_JPH_PhysicsSystem_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_PhysicsSystem_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::PhysicsSystem::operator new(
         inCount,
@@ -158,7 +158,7 @@ void Jolt_delete_JPH_PhysicsSystem_void_ptr_void_ptr(void *inPointer, void *inPl
     );
 }
 
-void *Jolt_new_array_JPH_PhysicsSystem_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_PhysicsSystem_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::PhysicsSystem::operator new[](
         inCount,

@@ -84,31 +84,31 @@ JOLT_API void JPH_BroadPhaseLayerInterfaceTable_Destroy(const JPH_BroadPhaseLaye
 JOLT_API void JPH_BroadPhaseLayerInterfaceTable_DestroyArray(const JPH_BroadPhaseLayerInterfaceTable *_this);
 
 /// Generated from method `JPH::BroadPhaseLayerInterfaceTable::operator new`.
-JOLT_API void *Jolt_new_JPH_BroadPhaseLayerInterfaceTable_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_BroadPhaseLayerInterfaceTable_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::BroadPhaseLayerInterfaceTable::operator delete`.
 JOLT_API void Jolt_delete_JPH_BroadPhaseLayerInterfaceTable_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::BroadPhaseLayerInterfaceTable::operator delete`.
-JOLT_API void Jolt_delete_JPH_BroadPhaseLayerInterfaceTable_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_BroadPhaseLayerInterfaceTable_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::BroadPhaseLayerInterfaceTable::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_BroadPhaseLayerInterfaceTable_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_BroadPhaseLayerInterfaceTable_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::BroadPhaseLayerInterfaceTable::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_BroadPhaseLayerInterfaceTable_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::BroadPhaseLayerInterfaceTable::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_BroadPhaseLayerInterfaceTable_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_BroadPhaseLayerInterfaceTable_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::BroadPhaseLayerInterfaceTable::operator new`.
-JOLT_API void *Jolt_new_JPH_BroadPhaseLayerInterfaceTable_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_BroadPhaseLayerInterfaceTable_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::BroadPhaseLayerInterfaceTable::operator delete`.
 JOLT_API void Jolt_delete_JPH_BroadPhaseLayerInterfaceTable_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::BroadPhaseLayerInterfaceTable::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_BroadPhaseLayerInterfaceTable_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_BroadPhaseLayerInterfaceTable_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::BroadPhaseLayerInterfaceTable::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_BroadPhaseLayerInterfaceTable_void_ptr_void_ptr(void *inPointer, void *inPlace);

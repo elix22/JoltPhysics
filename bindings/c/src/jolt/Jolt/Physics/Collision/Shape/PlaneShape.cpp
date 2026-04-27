@@ -183,7 +183,7 @@ JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_AssignFromAnother(JPH_PlaneShapeS
     ));
 }
 
-void *Jolt_new_JPH_PlaneShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_PlaneShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::PlaneShapeSettings::operator new(
         inCount
@@ -197,7 +197,7 @@ void Jolt_delete_JPH_PlaneShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_PlaneShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_PlaneShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::PlaneShapeSettings::operator delete(
         inPointer,
@@ -205,7 +205,7 @@ void Jolt_delete_JPH_PlaneShapeSettings_void_ptr_unsigned_long(void *inPointer, 
     );
 }
 
-void *Jolt_new_array_JPH_PlaneShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_PlaneShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::PlaneShapeSettings::operator new[](
         inCount
@@ -219,7 +219,7 @@ void Jolt_delete_array_JPH_PlaneShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_PlaneShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_PlaneShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::PlaneShapeSettings::operator delete[](
         inPointer,
@@ -227,7 +227,7 @@ void Jolt_delete_array_JPH_PlaneShapeSettings_void_ptr_unsigned_long(void *inPoi
     );
 }
 
-void *Jolt_new_JPH_PlaneShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_PlaneShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::PlaneShapeSettings::operator new(
         inCount,
@@ -243,7 +243,7 @@ void Jolt_delete_JPH_PlaneShapeSettings_void_ptr_void_ptr(void *inPointer, void 
     );
 }
 
-void *Jolt_new_array_JPH_PlaneShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_PlaneShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::PlaneShapeSettings::operator new[](
         inCount,
@@ -408,7 +408,7 @@ void JPH_PlaneShape_DestroyArray(const JPH_PlaneShape *_this)
     delete[] ((const JPH::PlaneShape *)_this);
 }
 
-void *Jolt_new_JPH_PlaneShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_PlaneShape_size_t(unsigned long inCount)
 {
     return JPH::PlaneShape::operator new(
         inCount
@@ -422,7 +422,7 @@ void Jolt_delete_JPH_PlaneShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_PlaneShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_PlaneShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::PlaneShape::operator delete(
         inPointer,
@@ -430,7 +430,7 @@ void Jolt_delete_JPH_PlaneShape_void_ptr_unsigned_long(void *inPointer, unsigned
     );
 }
 
-void *Jolt_new_array_JPH_PlaneShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_PlaneShape_size_t(unsigned long inCount)
 {
     return JPH::PlaneShape::operator new[](
         inCount
@@ -444,7 +444,7 @@ void Jolt_delete_array_JPH_PlaneShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_PlaneShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_PlaneShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::PlaneShape::operator delete[](
         inPointer,
@@ -452,7 +452,7 @@ void Jolt_delete_array_JPH_PlaneShape_void_ptr_unsigned_long(void *inPointer, un
     );
 }
 
-void *Jolt_new_JPH_PlaneShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_PlaneShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::PlaneShape::operator new(
         inCount,
@@ -468,7 +468,7 @@ void Jolt_delete_JPH_PlaneShape_void_ptr_void_ptr(void *inPointer, void *inPlace
     );
 }
 
-void *Jolt_new_array_JPH_PlaneShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_PlaneShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::PlaneShape::operator new[](
         inCount,

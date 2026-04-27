@@ -230,7 +230,7 @@ JPH_SphereShapeSettings *JPH_SphereShapeSettings_AssignFromAnother(JPH_SphereSha
     ));
 }
 
-void *Jolt_new_JPH_SphereShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_SphereShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::SphereShapeSettings::operator new(
         inCount
@@ -244,7 +244,7 @@ void Jolt_delete_JPH_SphereShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SphereShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SphereShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::SphereShapeSettings::operator delete(
         inPointer,
@@ -252,7 +252,7 @@ void Jolt_delete_JPH_SphereShapeSettings_void_ptr_unsigned_long(void *inPointer,
     );
 }
 
-void *Jolt_new_array_JPH_SphereShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_SphereShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::SphereShapeSettings::operator new[](
         inCount
@@ -266,7 +266,7 @@ void Jolt_delete_array_JPH_SphereShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_SphereShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SphereShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::SphereShapeSettings::operator delete[](
         inPointer,
@@ -274,7 +274,7 @@ void Jolt_delete_array_JPH_SphereShapeSettings_void_ptr_unsigned_long(void *inPo
     );
 }
 
-void *Jolt_new_JPH_SphereShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SphereShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::SphereShapeSettings::operator new(
         inCount,
@@ -290,7 +290,7 @@ void Jolt_delete_JPH_SphereShapeSettings_void_ptr_void_ptr(void *inPointer, void
     );
 }
 
-void *Jolt_new_array_JPH_SphereShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SphereShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::SphereShapeSettings::operator new[](
         inCount,
@@ -498,7 +498,7 @@ void JPH_SphereShape_DestroyArray(const JPH_SphereShape *_this)
     delete[] ((const JPH::SphereShape *)_this);
 }
 
-void *Jolt_new_JPH_SphereShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_SphereShape_size_t(unsigned long inCount)
 {
     return JPH::SphereShape::operator new(
         inCount
@@ -512,7 +512,7 @@ void Jolt_delete_JPH_SphereShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SphereShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SphereShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::SphereShape::operator delete(
         inPointer,
@@ -520,7 +520,7 @@ void Jolt_delete_JPH_SphereShape_void_ptr_unsigned_long(void *inPointer, unsigne
     );
 }
 
-void *Jolt_new_array_JPH_SphereShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_SphereShape_size_t(unsigned long inCount)
 {
     return JPH::SphereShape::operator new[](
         inCount
@@ -534,7 +534,7 @@ void Jolt_delete_array_JPH_SphereShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_SphereShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SphereShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::SphereShape::operator delete[](
         inPointer,
@@ -542,7 +542,7 @@ void Jolt_delete_array_JPH_SphereShape_void_ptr_unsigned_long(void *inPointer, u
     );
 }
 
-void *Jolt_new_JPH_SphereShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SphereShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::SphereShape::operator new(
         inCount,
@@ -558,7 +558,7 @@ void Jolt_delete_JPH_SphereShape_void_ptr_void_ptr(void *inPointer, void *inPlac
     );
 }
 
-void *Jolt_new_array_JPH_SphereShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SphereShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::SphereShape::operator new[](
         inCount,

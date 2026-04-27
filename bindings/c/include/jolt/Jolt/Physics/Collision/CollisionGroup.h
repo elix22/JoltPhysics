@@ -69,31 +69,31 @@ JOLT_API void JPH_CollisionGroup_DestroyArray(const JPH_CollisionGroup *_this);
 JOLT_API JPH_CollisionGroup *JPH_CollisionGroup_AssignFromAnother(JPH_CollisionGroup *_this, Jolt_PassBy _other_pass_by, JPH_CollisionGroup *_other);
 
 /// Generated from method `JPH::CollisionGroup::operator new`.
-JOLT_API void *Jolt_new_JPH_CollisionGroup_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_CollisionGroup_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::CollisionGroup::operator delete`.
 JOLT_API void Jolt_delete_JPH_CollisionGroup_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::CollisionGroup::operator delete`.
-JOLT_API void Jolt_delete_JPH_CollisionGroup_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_CollisionGroup_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::CollisionGroup::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_CollisionGroup_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_CollisionGroup_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::CollisionGroup::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CollisionGroup_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::CollisionGroup::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_CollisionGroup_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_CollisionGroup_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::CollisionGroup::operator new`.
-JOLT_API void *Jolt_new_JPH_CollisionGroup_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_CollisionGroup_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::CollisionGroup::operator delete`.
 JOLT_API void Jolt_delete_JPH_CollisionGroup_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::CollisionGroup::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_CollisionGroup_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_CollisionGroup_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::CollisionGroup::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CollisionGroup_void_ptr_void_ptr(void *inPointer, void *inPlace);

@@ -279,7 +279,7 @@ JPH_TaperedCylinderShapeSettings *JPH_TaperedCylinderShapeSettings_AssignFromAno
     ));
 }
 
-void *Jolt_new_JPH_TaperedCylinderShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_TaperedCylinderShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::TaperedCylinderShapeSettings::operator new(
         inCount
@@ -293,7 +293,7 @@ void Jolt_delete_JPH_TaperedCylinderShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_TaperedCylinderShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_TaperedCylinderShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TaperedCylinderShapeSettings::operator delete(
         inPointer,
@@ -301,7 +301,7 @@ void Jolt_delete_JPH_TaperedCylinderShapeSettings_void_ptr_unsigned_long(void *i
     );
 }
 
-void *Jolt_new_array_JPH_TaperedCylinderShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_TaperedCylinderShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::TaperedCylinderShapeSettings::operator new[](
         inCount
@@ -315,7 +315,7 @@ void Jolt_delete_array_JPH_TaperedCylinderShapeSettings_void_ptr(void *inPointer
     );
 }
 
-void Jolt_delete_array_JPH_TaperedCylinderShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_TaperedCylinderShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TaperedCylinderShapeSettings::operator delete[](
         inPointer,
@@ -323,7 +323,7 @@ void Jolt_delete_array_JPH_TaperedCylinderShapeSettings_void_ptr_unsigned_long(v
     );
 }
 
-void *Jolt_new_JPH_TaperedCylinderShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_TaperedCylinderShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TaperedCylinderShapeSettings::operator new(
         inCount,
@@ -339,7 +339,7 @@ void Jolt_delete_JPH_TaperedCylinderShapeSettings_void_ptr_void_ptr(void *inPoin
     );
 }
 
-void *Jolt_new_array_JPH_TaperedCylinderShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_TaperedCylinderShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TaperedCylinderShapeSettings::operator new[](
         inCount,
@@ -539,7 +539,7 @@ void JPH_TaperedCylinderShape_DestroyArray(const JPH_TaperedCylinderShape *_this
     delete[] ((const JPH::TaperedCylinderShape *)_this);
 }
 
-void *Jolt_new_JPH_TaperedCylinderShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_TaperedCylinderShape_size_t(unsigned long inCount)
 {
     return JPH::TaperedCylinderShape::operator new(
         inCount
@@ -553,7 +553,7 @@ void Jolt_delete_JPH_TaperedCylinderShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_TaperedCylinderShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_TaperedCylinderShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TaperedCylinderShape::operator delete(
         inPointer,
@@ -561,7 +561,7 @@ void Jolt_delete_JPH_TaperedCylinderShape_void_ptr_unsigned_long(void *inPointer
     );
 }
 
-void *Jolt_new_array_JPH_TaperedCylinderShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_TaperedCylinderShape_size_t(unsigned long inCount)
 {
     return JPH::TaperedCylinderShape::operator new[](
         inCount
@@ -575,7 +575,7 @@ void Jolt_delete_array_JPH_TaperedCylinderShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_TaperedCylinderShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_TaperedCylinderShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TaperedCylinderShape::operator delete[](
         inPointer,
@@ -583,7 +583,7 @@ void Jolt_delete_array_JPH_TaperedCylinderShape_void_ptr_unsigned_long(void *inP
     );
 }
 
-void *Jolt_new_JPH_TaperedCylinderShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_TaperedCylinderShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TaperedCylinderShape::operator new(
         inCount,
@@ -599,7 +599,7 @@ void Jolt_delete_JPH_TaperedCylinderShape_void_ptr_void_ptr(void *inPointer, voi
     );
 }
 
-void *Jolt_new_array_JPH_TaperedCylinderShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_TaperedCylinderShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TaperedCylinderShape::operator new[](
         inCount,

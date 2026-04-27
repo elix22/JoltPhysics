@@ -269,31 +269,31 @@ JOLT_API void JPH_CylinderShapeSettings_DestroyArray(const JPH_CylinderShapeSett
 JOLT_API JPH_CylinderShapeSettings *JPH_CylinderShapeSettings_AssignFromAnother(JPH_CylinderShapeSettings *_this, Jolt_PassBy _other_pass_by, JPH_CylinderShapeSettings *_other);
 
 /// Generated from method `JPH::CylinderShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_CylinderShapeSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_CylinderShapeSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::CylinderShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_CylinderShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::CylinderShapeSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_CylinderShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_CylinderShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::CylinderShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_CylinderShapeSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_CylinderShapeSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::CylinderShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CylinderShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::CylinderShapeSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_CylinderShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_CylinderShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::CylinderShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_CylinderShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_CylinderShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::CylinderShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_CylinderShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::CylinderShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_CylinderShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_CylinderShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::CylinderShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CylinderShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -451,31 +451,31 @@ JOLT_API void JPH_CylinderShape_Destroy(const JPH_CylinderShape *_this);
 JOLT_API void JPH_CylinderShape_DestroyArray(const JPH_CylinderShape *_this);
 
 /// Generated from method `JPH::CylinderShape::operator new`.
-JOLT_API void *Jolt_new_JPH_CylinderShape_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_CylinderShape_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::CylinderShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_CylinderShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::CylinderShape::operator delete`.
-JOLT_API void Jolt_delete_JPH_CylinderShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_CylinderShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::CylinderShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_CylinderShape_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_CylinderShape_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::CylinderShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CylinderShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::CylinderShape::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_CylinderShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_CylinderShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::CylinderShape::operator new`.
-JOLT_API void *Jolt_new_JPH_CylinderShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_CylinderShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::CylinderShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_CylinderShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::CylinderShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_CylinderShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_CylinderShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::CylinderShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CylinderShape_void_ptr_void_ptr(void *inPointer, void *inPlace);

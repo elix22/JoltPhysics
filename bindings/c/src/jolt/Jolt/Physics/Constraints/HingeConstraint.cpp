@@ -311,7 +311,7 @@ JPH_HingeConstraintSettings *JPH_HingeConstraintSettings_AssignFromAnother(JPH_H
     ));
 }
 
-void *Jolt_new_JPH_HingeConstraintSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_HingeConstraintSettings_size_t(unsigned long inCount)
 {
     return JPH::HingeConstraintSettings::operator new(
         inCount
@@ -325,7 +325,7 @@ void Jolt_delete_JPH_HingeConstraintSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_HingeConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_HingeConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::HingeConstraintSettings::operator delete(
         inPointer,
@@ -333,7 +333,7 @@ void Jolt_delete_JPH_HingeConstraintSettings_void_ptr_unsigned_long(void *inPoin
     );
 }
 
-void *Jolt_new_array_JPH_HingeConstraintSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_HingeConstraintSettings_size_t(unsigned long inCount)
 {
     return JPH::HingeConstraintSettings::operator new[](
         inCount
@@ -347,7 +347,7 @@ void Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::HingeConstraintSettings::operator delete[](
         inPointer,
@@ -355,7 +355,7 @@ void Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr_unsigned_long(void *
     );
 }
 
-void *Jolt_new_JPH_HingeConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_HingeConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::HingeConstraintSettings::operator new(
         inCount,
@@ -371,7 +371,7 @@ void Jolt_delete_JPH_HingeConstraintSettings_void_ptr_void_ptr(void *inPointer, 
     );
 }
 
-void *Jolt_new_array_JPH_HingeConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_HingeConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::HingeConstraintSettings::operator new[](
         inCount,
@@ -561,7 +561,7 @@ void JPH_HingeConstraint_DestroyArray(const JPH_HingeConstraint *_this)
     delete[] ((const JPH::HingeConstraint *)_this);
 }
 
-void *Jolt_new_JPH_HingeConstraint_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_HingeConstraint_size_t(unsigned long inCount)
 {
     return JPH::HingeConstraint::operator new(
         inCount
@@ -575,7 +575,7 @@ void Jolt_delete_JPH_HingeConstraint_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_HingeConstraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_HingeConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::HingeConstraint::operator delete(
         inPointer,
@@ -583,7 +583,7 @@ void Jolt_delete_JPH_HingeConstraint_void_ptr_unsigned_long(void *inPointer, uns
     );
 }
 
-void *Jolt_new_array_JPH_HingeConstraint_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_HingeConstraint_size_t(unsigned long inCount)
 {
     return JPH::HingeConstraint::operator new[](
         inCount
@@ -597,7 +597,7 @@ void Jolt_delete_array_JPH_HingeConstraint_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_HingeConstraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_HingeConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::HingeConstraint::operator delete[](
         inPointer,
@@ -605,7 +605,7 @@ void Jolt_delete_array_JPH_HingeConstraint_void_ptr_unsigned_long(void *inPointe
     );
 }
 
-void *Jolt_new_JPH_HingeConstraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_HingeConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::HingeConstraint::operator new(
         inCount,
@@ -621,7 +621,7 @@ void Jolt_delete_JPH_HingeConstraint_void_ptr_void_ptr(void *inPointer, void *in
     );
 }
 
-void *Jolt_new_array_JPH_HingeConstraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_HingeConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::HingeConstraint::operator new[](
         inCount,

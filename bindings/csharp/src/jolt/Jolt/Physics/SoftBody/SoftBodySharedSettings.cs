@@ -84,12 +84,12 @@ public static partial class Jolt
             public static unsafe void *New(ulong inCount)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_JPH_SoftBodySharedSettings_unsigned_long(ulong inCount);
-                return __Jolt_new_JPH_SoftBodySharedSettings_unsigned_long(inCount);
+                extern static void *__Jolt_new_JPH_SoftBodySharedSettings_size_t(ulong inCount);
+                return __Jolt_new_JPH_SoftBodySharedSettings_size_t(inCount);
             }
 
             /// Generated from method `JPH::SoftBodySharedSettings::operator delete`.
@@ -110,12 +110,12 @@ public static partial class Jolt
             public static unsafe void Delete(void *inPointer, ulong inSize)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void __Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                __Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_unsigned_long(inPointer, inSize);
+                extern static void __Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+                __Jolt_delete_JPH_SoftBodySharedSettings_void_ptr_size_t(inPointer, inSize);
             }
 
             /// Generated from method `JPH::SoftBodySharedSettings::operator new[]`.
@@ -123,12 +123,12 @@ public static partial class Jolt
             public static unsafe void *NewArray(ulong inCount)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_unsigned_long(ulong inCount);
-                return __Jolt_new_array_JPH_SoftBodySharedSettings_unsigned_long(inCount);
+                extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_size_t(ulong inCount);
+                return __Jolt_new_array_JPH_SoftBodySharedSettings_size_t(inCount);
             }
 
             /// Generated from method `JPH::SoftBodySharedSettings::operator delete[]`.
@@ -149,12 +149,12 @@ public static partial class Jolt
             public static unsafe void DeleteArray(void *inPointer, ulong inSize)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                __Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_unsigned_long(inPointer, inSize);
+                extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+                __Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_size_t(inPointer, inSize);
             }
 
             /// Generated from method `JPH::SoftBodySharedSettings::operator new`.
@@ -163,12 +163,12 @@ public static partial class Jolt
             public static unsafe void *New(ulong inCount, void *inPointer)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_JPH_SoftBodySharedSettings_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                return __Jolt_new_JPH_SoftBodySharedSettings_unsigned_long_void_ptr(inCount, inPointer);
+                extern static void *__Jolt_new_JPH_SoftBodySharedSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_JPH_SoftBodySharedSettings_size_t_void_ptr(inCount, inPointer);
             }
 
             /// Generated from method `JPH::SoftBodySharedSettings::operator delete`.
@@ -191,12 +191,12 @@ public static partial class Jolt
             public static unsafe void *NewArray(ulong inCount, void *inPointer)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                return __Jolt_new_array_JPH_SoftBodySharedSettings_unsigned_long_void_ptr(inCount, inPointer);
+                extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_array_JPH_SoftBodySharedSettings_size_t_void_ptr(inCount, inPointer);
             }
 
             /// Generated from method `JPH::SoftBodySharedSettings::operator delete[]`.
@@ -415,12 +415,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long(ulong inCount);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long(inCount);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t(ulong inCount);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator delete`.
@@ -441,12 +441,12 @@ public static partial class Jolt
                 public static unsafe void Delete(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator new[]`.
@@ -454,12 +454,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long(ulong inCount);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long(inCount);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t(ulong inCount);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator delete[]`.
@@ -480,12 +480,12 @@ public static partial class Jolt
                 public static unsafe void DeleteArray(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_array_JPH_SoftBodySharedSettings_DihedralBend_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator new`.
@@ -494,12 +494,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator delete`.
@@ -522,12 +522,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_DihedralBend_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::DihedralBend::operator delete[]`.
@@ -855,12 +855,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Edge_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Edge_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Edge_unsigned_long(ulong inCount);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_Edge_unsigned_long(inCount);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t(ulong inCount);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator delete`.
@@ -881,12 +881,12 @@ public static partial class Jolt
                 public static unsafe void Delete(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator new[]`.
@@ -894,12 +894,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Edge_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Edge_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Edge_unsigned_long(ulong inCount);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Edge_unsigned_long(inCount);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t(ulong inCount);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator delete[]`.
@@ -920,12 +920,12 @@ public static partial class Jolt
                 public static unsafe void DeleteArray(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_array_JPH_SoftBodySharedSettings_Edge_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator new`.
@@ -934,12 +934,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Edge_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Edge_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Edge_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_Edge_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator delete`.
@@ -962,12 +962,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Edge_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Edge_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Edge_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Edge_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Edge_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Edge::operator delete[]`.
@@ -1241,12 +1241,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Face_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Face_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Face_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Face_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Face_unsigned_long(ulong inCount);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_Face_unsigned_long(inCount);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Face_size_t(ulong inCount);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_Face_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator delete`.
@@ -1267,12 +1267,12 @@ public static partial class Jolt
                 public static unsafe void Delete(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator new[]`.
@@ -1280,12 +1280,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Face_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Face_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Face_unsigned_long(ulong inCount);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Face_unsigned_long(inCount);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t(ulong inCount);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator delete[]`.
@@ -1306,12 +1306,12 @@ public static partial class Jolt
                 public static unsafe void DeleteArray(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_array_JPH_SoftBodySharedSettings_Face_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator new`.
@@ -1320,12 +1320,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Face_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Face_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Face_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Face_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Face_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_Face_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator delete`.
@@ -1348,12 +1348,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Face_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Face_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Face_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Face_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Face_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Face::operator delete[]`.
@@ -1583,12 +1583,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_InvBind_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_InvBind_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_InvBind_unsigned_long(ulong inCount);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_InvBind_unsigned_long(inCount);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t(ulong inCount);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator delete`.
@@ -1609,12 +1609,12 @@ public static partial class Jolt
                 public static unsafe void Delete(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator new[]`.
@@ -1622,12 +1622,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_unsigned_long(ulong inCount);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_unsigned_long(inCount);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t(ulong inCount);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator delete[]`.
@@ -1648,12 +1648,12 @@ public static partial class Jolt
                 public static unsafe void DeleteArray(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_array_JPH_SoftBodySharedSettings_InvBind_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator new`.
@@ -1662,12 +1662,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_InvBind_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_InvBind_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_InvBind_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_InvBind_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator delete`.
@@ -1690,12 +1690,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_InvBind_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::InvBind::operator delete[]`.
@@ -1911,12 +1911,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_LRA_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_LRA_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_LRA_unsigned_long(ulong inCount);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_LRA_unsigned_long(inCount);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t(ulong inCount);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator delete`.
@@ -1937,12 +1937,12 @@ public static partial class Jolt
                 public static unsafe void Delete(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator new[]`.
@@ -1950,12 +1950,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_LRA_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_LRA_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_LRA_unsigned_long(ulong inCount);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_LRA_unsigned_long(inCount);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t(ulong inCount);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator delete[]`.
@@ -1976,12 +1976,12 @@ public static partial class Jolt
                 public static unsafe void DeleteArray(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_array_JPH_SoftBodySharedSettings_LRA_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator new`.
@@ -1990,12 +1990,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_LRA_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_LRA_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_LRA_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_LRA_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator delete`.
@@ -2018,12 +2018,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_LRA_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_LRA_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_LRA_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_LRA_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_LRA_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::LRA::operator delete[]`.
@@ -2443,12 +2443,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long(ulong inCount);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long(inCount);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t(ulong inCount);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator delete`.
@@ -2469,12 +2469,12 @@ public static partial class Jolt
                 public static unsafe void Delete(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator new[]`.
@@ -2482,12 +2482,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long(ulong inCount);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long(inCount);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t(ulong inCount);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator delete[]`.
@@ -2508,12 +2508,12 @@ public static partial class Jolt
                 public static unsafe void DeleteArray(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_array_JPH_SoftBodySharedSettings_RodBendTwist_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator new`.
@@ -2522,12 +2522,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator delete`.
@@ -2550,12 +2550,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_RodBendTwist_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodBendTwist::operator delete[]`.
@@ -2837,12 +2837,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long(ulong inCount);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long(inCount);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t(ulong inCount);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator delete`.
@@ -2863,12 +2863,12 @@ public static partial class Jolt
                 public static unsafe void Delete(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator new[]`.
@@ -2876,12 +2876,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long(ulong inCount);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long(inCount);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t(ulong inCount);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator delete[]`.
@@ -2902,12 +2902,12 @@ public static partial class Jolt
                 public static unsafe void DeleteArray(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_array_JPH_SoftBodySharedSettings_RodStretchShear_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator new`.
@@ -2916,12 +2916,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator delete`.
@@ -2944,12 +2944,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_RodStretchShear_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::RodStretchShear::operator delete[]`.
@@ -3242,12 +3242,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long(ulong inCount);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long(inCount);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t(ulong inCount);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator delete`.
@@ -3268,12 +3268,12 @@ public static partial class Jolt
                 public static unsafe void Delete(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator new[]`.
@@ -3281,12 +3281,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long(ulong inCount);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long(inCount);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t(ulong inCount);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator delete[]`.
@@ -3307,12 +3307,12 @@ public static partial class Jolt
                 public static unsafe void DeleteArray(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_array_JPH_SoftBodySharedSettings_SkinWeight_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator new`.
@@ -3321,12 +3321,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator delete`.
@@ -3349,12 +3349,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_SkinWeight_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::SkinWeight::operator delete[]`.
@@ -3671,12 +3671,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Skinned_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Skinned_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Skinned_unsigned_long(ulong inCount);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_Skinned_unsigned_long(inCount);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t(ulong inCount);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator delete`.
@@ -3697,12 +3697,12 @@ public static partial class Jolt
                 public static unsafe void Delete(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator new[]`.
@@ -3710,12 +3710,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_unsigned_long(ulong inCount);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_unsigned_long(inCount);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t(ulong inCount);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator delete[]`.
@@ -3736,12 +3736,12 @@ public static partial class Jolt
                 public static unsafe void DeleteArray(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_array_JPH_SoftBodySharedSettings_Skinned_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator new`.
@@ -3750,12 +3750,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Skinned_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Skinned_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Skinned_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_Skinned_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator delete`.
@@ -3778,12 +3778,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Skinned_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Skinned::operator delete[]`.
@@ -4071,12 +4071,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Vertex_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Vertex_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Vertex_unsigned_long(ulong inCount);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_Vertex_unsigned_long(inCount);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t(ulong inCount);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator delete`.
@@ -4097,12 +4097,12 @@ public static partial class Jolt
                 public static unsafe void Delete(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator new[]`.
@@ -4110,12 +4110,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_unsigned_long(ulong inCount);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_unsigned_long(inCount);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t(ulong inCount);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator delete[]`.
@@ -4136,12 +4136,12 @@ public static partial class Jolt
                 public static unsafe void DeleteArray(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_array_JPH_SoftBodySharedSettings_Vertex_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator new`.
@@ -4150,12 +4150,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Vertex_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Vertex_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Vertex_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_Vertex_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator delete`.
@@ -4178,12 +4178,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Vertex_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Vertex::operator delete[]`.
@@ -4737,12 +4737,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Volume_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Volume_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Volume_unsigned_long(ulong inCount);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_Volume_unsigned_long(inCount);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t(ulong inCount);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator delete`.
@@ -4763,12 +4763,12 @@ public static partial class Jolt
                 public static unsafe void Delete(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator new[]`.
@@ -4776,12 +4776,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Volume_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Volume_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Volume_unsigned_long(ulong inCount);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Volume_unsigned_long(inCount);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t(ulong inCount);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t(inCount);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator delete[]`.
@@ -4802,12 +4802,12 @@ public static partial class Jolt
                 public static unsafe void DeleteArray(void *inPointer, ulong inSize)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                    __Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_unsigned_long(inPointer, inSize);
+                    extern static void __Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(void *inPointer, ulong inSize);
+                    __Jolt_delete_array_JPH_SoftBodySharedSettings_Volume_void_ptr_size_t(inPointer, inSize);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator new`.
@@ -4816,12 +4816,12 @@ public static partial class Jolt
                 public static unsafe void *New(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Volume_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Volume_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Volume_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_JPH_SoftBodySharedSettings_Volume_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator delete`.
@@ -4844,12 +4844,12 @@ public static partial class Jolt
                 public static unsafe void *NewArray(ulong inCount, void *inPointer)
                 {
                     #if __IOS__
-                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Volume_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #else
-                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Volume_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Volume_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Volume_unsigned_long_void_ptr(inCount, inPointer);
+                    extern static void *__Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(ulong inCount, void *inPointer);
+                    return __Jolt_new_array_JPH_SoftBodySharedSettings_Volume_size_t_void_ptr(inCount, inPointer);
                 }
 
                 /// Generated from method `JPH::SoftBodySharedSettings::Volume::operator delete[]`.

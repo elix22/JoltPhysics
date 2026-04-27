@@ -192,7 +192,7 @@ JPH_ScaledShapeSettings *JPH_ScaledShapeSettings_AssignFromAnother(JPH_ScaledSha
     ));
 }
 
-void *Jolt_new_JPH_ScaledShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_ScaledShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::ScaledShapeSettings::operator new(
         inCount
@@ -206,7 +206,7 @@ void Jolt_delete_JPH_ScaledShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_ScaledShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_ScaledShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ScaledShapeSettings::operator delete(
         inPointer,
@@ -214,7 +214,7 @@ void Jolt_delete_JPH_ScaledShapeSettings_void_ptr_unsigned_long(void *inPointer,
     );
 }
 
-void *Jolt_new_array_JPH_ScaledShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_ScaledShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::ScaledShapeSettings::operator new[](
         inCount
@@ -228,7 +228,7 @@ void Jolt_delete_array_JPH_ScaledShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_ScaledShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_ScaledShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ScaledShapeSettings::operator delete[](
         inPointer,
@@ -236,7 +236,7 @@ void Jolt_delete_array_JPH_ScaledShapeSettings_void_ptr_unsigned_long(void *inPo
     );
 }
 
-void *Jolt_new_JPH_ScaledShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_ScaledShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ScaledShapeSettings::operator new(
         inCount,
@@ -252,7 +252,7 @@ void Jolt_delete_JPH_ScaledShapeSettings_void_ptr_void_ptr(void *inPointer, void
     );
 }
 
-void *Jolt_new_array_JPH_ScaledShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_ScaledShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ScaledShapeSettings::operator new[](
         inCount,
@@ -445,7 +445,7 @@ void JPH_ScaledShape_DestroyArray(const JPH_ScaledShape *_this)
     delete[] ((const JPH::ScaledShape *)_this);
 }
 
-void *Jolt_new_JPH_ScaledShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_ScaledShape_size_t(unsigned long inCount)
 {
     return JPH::ScaledShape::operator new(
         inCount
@@ -459,7 +459,7 @@ void Jolt_delete_JPH_ScaledShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_ScaledShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_ScaledShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ScaledShape::operator delete(
         inPointer,
@@ -467,7 +467,7 @@ void Jolt_delete_JPH_ScaledShape_void_ptr_unsigned_long(void *inPointer, unsigne
     );
 }
 
-void *Jolt_new_array_JPH_ScaledShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_ScaledShape_size_t(unsigned long inCount)
 {
     return JPH::ScaledShape::operator new[](
         inCount
@@ -481,7 +481,7 @@ void Jolt_delete_array_JPH_ScaledShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_ScaledShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_ScaledShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ScaledShape::operator delete[](
         inPointer,
@@ -489,7 +489,7 @@ void Jolt_delete_array_JPH_ScaledShape_void_ptr_unsigned_long(void *inPointer, u
     );
 }
 
-void *Jolt_new_JPH_ScaledShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_ScaledShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ScaledShape::operator new(
         inCount,
@@ -505,7 +505,7 @@ void Jolt_delete_JPH_ScaledShape_void_ptr_void_ptr(void *inPointer, void *inPlac
     );
 }
 
-void *Jolt_new_array_JPH_ScaledShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_ScaledShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ScaledShape::operator new[](
         inCount,

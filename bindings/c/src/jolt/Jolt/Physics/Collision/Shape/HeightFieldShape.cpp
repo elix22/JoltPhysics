@@ -269,7 +269,7 @@ JPH_HeightFieldShapeSettings *JPH_HeightFieldShapeSettings_AssignFromAnother(JPH
     ));
 }
 
-void *Jolt_new_JPH_HeightFieldShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_HeightFieldShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::HeightFieldShapeSettings::operator new(
         inCount
@@ -283,7 +283,7 @@ void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::HeightFieldShapeSettings::operator delete(
         inPointer,
@@ -291,7 +291,7 @@ void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_unsigned_long(void *inPoi
     );
 }
 
-void *Jolt_new_array_JPH_HeightFieldShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_HeightFieldShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::HeightFieldShapeSettings::operator new[](
         inCount
@@ -305,7 +305,7 @@ void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::HeightFieldShapeSettings::operator delete[](
         inPointer,
@@ -313,7 +313,7 @@ void Jolt_delete_array_JPH_HeightFieldShapeSettings_void_ptr_unsigned_long(void 
     );
 }
 
-void *Jolt_new_JPH_HeightFieldShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_HeightFieldShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::HeightFieldShapeSettings::operator new(
         inCount,
@@ -329,7 +329,7 @@ void Jolt_delete_JPH_HeightFieldShapeSettings_void_ptr_void_ptr(void *inPointer,
     );
 }
 
-void *Jolt_new_array_JPH_HeightFieldShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_HeightFieldShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::HeightFieldShapeSettings::operator new[](
         inCount,
@@ -510,7 +510,7 @@ void JPH_HeightFieldShape_DestroyArray(const JPH_HeightFieldShape *_this)
     delete[] ((const JPH::HeightFieldShape *)_this);
 }
 
-void *Jolt_new_JPH_HeightFieldShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_HeightFieldShape_size_t(unsigned long inCount)
 {
     return JPH::HeightFieldShape::operator new(
         inCount
@@ -524,7 +524,7 @@ void Jolt_delete_JPH_HeightFieldShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_HeightFieldShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::HeightFieldShape::operator delete(
         inPointer,
@@ -532,7 +532,7 @@ void Jolt_delete_JPH_HeightFieldShape_void_ptr_unsigned_long(void *inPointer, un
     );
 }
 
-void *Jolt_new_array_JPH_HeightFieldShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_HeightFieldShape_size_t(unsigned long inCount)
 {
     return JPH::HeightFieldShape::operator new[](
         inCount
@@ -546,7 +546,7 @@ void Jolt_delete_array_JPH_HeightFieldShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_HeightFieldShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_HeightFieldShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::HeightFieldShape::operator delete[](
         inPointer,
@@ -554,7 +554,7 @@ void Jolt_delete_array_JPH_HeightFieldShape_void_ptr_unsigned_long(void *inPoint
     );
 }
 
-void *Jolt_new_JPH_HeightFieldShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_HeightFieldShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::HeightFieldShape::operator new(
         inCount,
@@ -570,7 +570,7 @@ void Jolt_delete_JPH_HeightFieldShape_void_ptr_void_ptr(void *inPointer, void *i
     );
 }
 
-void *Jolt_new_array_JPH_HeightFieldShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_HeightFieldShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::HeightFieldShape::operator new[](
         inCount,

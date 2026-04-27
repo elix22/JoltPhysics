@@ -129,12 +129,12 @@ public static partial class Jolt
             public static unsafe void *New(ulong inCount)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShapeSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShapeSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_JPH_DecoratedShapeSettings_unsigned_long(ulong inCount);
-                return __Jolt_new_JPH_DecoratedShapeSettings_unsigned_long(inCount);
+                extern static void *__Jolt_new_JPH_DecoratedShapeSettings_size_t(ulong inCount);
+                return __Jolt_new_JPH_DecoratedShapeSettings_size_t(inCount);
             }
 
             /// Generated from method `JPH::DecoratedShapeSettings::operator delete`.
@@ -155,12 +155,12 @@ public static partial class Jolt
             public static unsafe void Delete(void *inPointer, ulong inSize)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void __Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                __Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_unsigned_long(inPointer, inSize);
+                extern static void __Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+                __Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_size_t(inPointer, inSize);
             }
 
             /// Generated from method `JPH::DecoratedShapeSettings::operator new[]`.
@@ -168,12 +168,12 @@ public static partial class Jolt
             public static unsafe void *NewArray(ulong inCount)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShapeSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShapeSettings_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShapeSettings_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_array_JPH_DecoratedShapeSettings_unsigned_long(ulong inCount);
-                return __Jolt_new_array_JPH_DecoratedShapeSettings_unsigned_long(inCount);
+                extern static void *__Jolt_new_array_JPH_DecoratedShapeSettings_size_t(ulong inCount);
+                return __Jolt_new_array_JPH_DecoratedShapeSettings_size_t(inCount);
             }
 
             /// Generated from method `JPH::DecoratedShapeSettings::operator delete[]`.
@@ -194,12 +194,12 @@ public static partial class Jolt
             public static unsafe void DeleteArray(void *inPointer, ulong inSize)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void __Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                __Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr_unsigned_long(inPointer, inSize);
+                extern static void __Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr_size_t(void *inPointer, ulong inSize);
+                __Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr_size_t(inPointer, inSize);
             }
 
             /// Generated from method `JPH::DecoratedShapeSettings::operator new`.
@@ -208,12 +208,12 @@ public static partial class Jolt
             public static unsafe void *New(ulong inCount, void *inPointer)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShapeSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShapeSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_JPH_DecoratedShapeSettings_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                return __Jolt_new_JPH_DecoratedShapeSettings_unsigned_long_void_ptr(inCount, inPointer);
+                extern static void *__Jolt_new_JPH_DecoratedShapeSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_JPH_DecoratedShapeSettings_size_t_void_ptr(inCount, inPointer);
             }
 
             /// Generated from method `JPH::DecoratedShapeSettings::operator delete`.
@@ -236,12 +236,12 @@ public static partial class Jolt
             public static unsafe void *NewArray(ulong inCount, void *inPointer)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShapeSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShapeSettings_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShapeSettings_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_array_JPH_DecoratedShapeSettings_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                return __Jolt_new_array_JPH_DecoratedShapeSettings_unsigned_long_void_ptr(inCount, inPointer);
+                extern static void *__Jolt_new_array_JPH_DecoratedShapeSettings_size_t_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_array_JPH_DecoratedShapeSettings_size_t_void_ptr(inCount, inPointer);
             }
 
             /// Generated from method `JPH::DecoratedShapeSettings::operator delete[]`.
@@ -583,12 +583,12 @@ public static partial class Jolt
             public static unsafe void *New(ulong inCount)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShape_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShape_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_JPH_DecoratedShape_unsigned_long(ulong inCount);
-                return __Jolt_new_JPH_DecoratedShape_unsigned_long(inCount);
+                extern static void *__Jolt_new_JPH_DecoratedShape_size_t(ulong inCount);
+                return __Jolt_new_JPH_DecoratedShape_size_t(inCount);
             }
 
             /// Generated from method `JPH::DecoratedShape::operator delete`.
@@ -609,12 +609,12 @@ public static partial class Jolt
             public static unsafe void Delete(void *inPointer, ulong inSize)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DecoratedShape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DecoratedShape_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DecoratedShape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DecoratedShape_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void __Jolt_delete_JPH_DecoratedShape_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                __Jolt_delete_JPH_DecoratedShape_void_ptr_unsigned_long(inPointer, inSize);
+                extern static void __Jolt_delete_JPH_DecoratedShape_void_ptr_size_t(void *inPointer, ulong inSize);
+                __Jolt_delete_JPH_DecoratedShape_void_ptr_size_t(inPointer, inSize);
             }
 
             /// Generated from method `JPH::DecoratedShape::operator new[]`.
@@ -622,12 +622,12 @@ public static partial class Jolt
             public static unsafe void *NewArray(ulong inCount)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShape_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShape_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShape_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_array_JPH_DecoratedShape_unsigned_long(ulong inCount);
-                return __Jolt_new_array_JPH_DecoratedShape_unsigned_long(inCount);
+                extern static void *__Jolt_new_array_JPH_DecoratedShape_size_t(ulong inCount);
+                return __Jolt_new_array_JPH_DecoratedShape_size_t(inCount);
             }
 
             /// Generated from method `JPH::DecoratedShape::operator delete[]`.
@@ -648,12 +648,12 @@ public static partial class Jolt
             public static unsafe void DeleteArray(void *inPointer, ulong inSize)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DecoratedShape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DecoratedShape_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DecoratedShape_void_ptr_unsigned_long", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DecoratedShape_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void __Jolt_delete_array_JPH_DecoratedShape_void_ptr_unsigned_long(void *inPointer, ulong inSize);
-                __Jolt_delete_array_JPH_DecoratedShape_void_ptr_unsigned_long(inPointer, inSize);
+                extern static void __Jolt_delete_array_JPH_DecoratedShape_void_ptr_size_t(void *inPointer, ulong inSize);
+                __Jolt_delete_array_JPH_DecoratedShape_void_ptr_size_t(inPointer, inSize);
             }
 
             /// Generated from method `JPH::DecoratedShape::operator new`.
@@ -662,12 +662,12 @@ public static partial class Jolt
             public static unsafe void *New(ulong inCount, void *inPointer)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShape_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DecoratedShape_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_JPH_DecoratedShape_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                return __Jolt_new_JPH_DecoratedShape_unsigned_long_void_ptr(inCount, inPointer);
+                extern static void *__Jolt_new_JPH_DecoratedShape_size_t_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_JPH_DecoratedShape_size_t_void_ptr(inCount, inPointer);
             }
 
             /// Generated from method `JPH::DecoratedShape::operator delete`.
@@ -690,12 +690,12 @@ public static partial class Jolt
             public static unsafe void *NewArray(ulong inCount, void *inPointer)
             {
                 #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShape_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShape_unsigned_long_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DecoratedShape_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static void *__Jolt_new_array_JPH_DecoratedShape_unsigned_long_void_ptr(ulong inCount, void *inPointer);
-                return __Jolt_new_array_JPH_DecoratedShape_unsigned_long_void_ptr(inCount, inPointer);
+                extern static void *__Jolt_new_array_JPH_DecoratedShape_size_t_void_ptr(ulong inCount, void *inPointer);
+                return __Jolt_new_array_JPH_DecoratedShape_size_t_void_ptr(inCount, inPointer);
             }
 
             /// Generated from method `JPH::DecoratedShape::operator delete[]`.

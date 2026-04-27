@@ -246,7 +246,7 @@ JPH_CapsuleShapeSettings *JPH_CapsuleShapeSettings_AssignFromAnother(JPH_Capsule
     ));
 }
 
-void *Jolt_new_JPH_CapsuleShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_CapsuleShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::CapsuleShapeSettings::operator new(
         inCount
@@ -260,7 +260,7 @@ void Jolt_delete_JPH_CapsuleShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CapsuleShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CapsuleShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CapsuleShapeSettings::operator delete(
         inPointer,
@@ -268,7 +268,7 @@ void Jolt_delete_JPH_CapsuleShapeSettings_void_ptr_unsigned_long(void *inPointer
     );
 }
 
-void *Jolt_new_array_JPH_CapsuleShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_CapsuleShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::CapsuleShapeSettings::operator new[](
         inCount
@@ -282,7 +282,7 @@ void Jolt_delete_array_JPH_CapsuleShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CapsuleShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CapsuleShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CapsuleShapeSettings::operator delete[](
         inPointer,
@@ -290,7 +290,7 @@ void Jolt_delete_array_JPH_CapsuleShapeSettings_void_ptr_unsigned_long(void *inP
     );
 }
 
-void *Jolt_new_JPH_CapsuleShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CapsuleShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CapsuleShapeSettings::operator new(
         inCount,
@@ -306,7 +306,7 @@ void Jolt_delete_JPH_CapsuleShapeSettings_void_ptr_void_ptr(void *inPointer, voi
     );
 }
 
-void *Jolt_new_array_JPH_CapsuleShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CapsuleShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CapsuleShapeSettings::operator new[](
         inCount,
@@ -525,7 +525,7 @@ void JPH_CapsuleShape_DestroyArray(const JPH_CapsuleShape *_this)
     delete[] ((const JPH::CapsuleShape *)_this);
 }
 
-void *Jolt_new_JPH_CapsuleShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_CapsuleShape_size_t(unsigned long inCount)
 {
     return JPH::CapsuleShape::operator new(
         inCount
@@ -539,7 +539,7 @@ void Jolt_delete_JPH_CapsuleShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CapsuleShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CapsuleShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CapsuleShape::operator delete(
         inPointer,
@@ -547,7 +547,7 @@ void Jolt_delete_JPH_CapsuleShape_void_ptr_unsigned_long(void *inPointer, unsign
     );
 }
 
-void *Jolt_new_array_JPH_CapsuleShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_CapsuleShape_size_t(unsigned long inCount)
 {
     return JPH::CapsuleShape::operator new[](
         inCount
@@ -561,7 +561,7 @@ void Jolt_delete_array_JPH_CapsuleShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CapsuleShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CapsuleShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CapsuleShape::operator delete[](
         inPointer,
@@ -569,7 +569,7 @@ void Jolt_delete_array_JPH_CapsuleShape_void_ptr_unsigned_long(void *inPointer, 
     );
 }
 
-void *Jolt_new_JPH_CapsuleShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CapsuleShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CapsuleShape::operator new(
         inCount,
@@ -585,7 +585,7 @@ void Jolt_delete_JPH_CapsuleShape_void_ptr_void_ptr(void *inPointer, void *inPla
     );
 }
 
-void *Jolt_new_array_JPH_CapsuleShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CapsuleShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CapsuleShape::operator new[](
         inCount,

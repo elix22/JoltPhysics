@@ -350,31 +350,31 @@ JOLT_API void JPH_HingeConstraintSettings_DestroyArray(const JPH_HingeConstraint
 JOLT_API JPH_HingeConstraintSettings *JPH_HingeConstraintSettings_AssignFromAnother(JPH_HingeConstraintSettings *_this, Jolt_PassBy _other_pass_by, JPH_HingeConstraintSettings *_other);
 
 /// Generated from method `JPH::HingeConstraintSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_HingeConstraintSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_HingeConstraintSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::HingeConstraintSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_HingeConstraintSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::HingeConstraintSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_HingeConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_HingeConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::HingeConstraintSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_HingeConstraintSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_HingeConstraintSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::HingeConstraintSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::HingeConstraintSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::HingeConstraintSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_HingeConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_HingeConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::HingeConstraintSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_HingeConstraintSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::HingeConstraintSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_HingeConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_HingeConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::HingeConstraintSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_HingeConstraintSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -514,31 +514,31 @@ JOLT_API void JPH_HingeConstraint_Destroy(const JPH_HingeConstraint *_this);
 JOLT_API void JPH_HingeConstraint_DestroyArray(const JPH_HingeConstraint *_this);
 
 /// Generated from method `JPH::HingeConstraint::operator new`.
-JOLT_API void *Jolt_new_JPH_HingeConstraint_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_HingeConstraint_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::HingeConstraint::operator delete`.
 JOLT_API void Jolt_delete_JPH_HingeConstraint_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::HingeConstraint::operator delete`.
-JOLT_API void Jolt_delete_JPH_HingeConstraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_HingeConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::HingeConstraint::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_HingeConstraint_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_HingeConstraint_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::HingeConstraint::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_HingeConstraint_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::HingeConstraint::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_HingeConstraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_HingeConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::HingeConstraint::operator new`.
-JOLT_API void *Jolt_new_JPH_HingeConstraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_HingeConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::HingeConstraint::operator delete`.
 JOLT_API void Jolt_delete_JPH_HingeConstraint_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::HingeConstraint::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_HingeConstraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_HingeConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::HingeConstraint::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_HingeConstraint_void_ptr_void_ptr(void *inPointer, void *inPlace);

@@ -171,31 +171,31 @@ JOLT_API void JPH_EmptyShapeSettings_DestroyArray(const JPH_EmptyShapeSettings *
 JOLT_API JPH_EmptyShapeSettings *JPH_EmptyShapeSettings_AssignFromAnother(JPH_EmptyShapeSettings *_this, Jolt_PassBy _other_pass_by, JPH_EmptyShapeSettings *_other);
 
 /// Generated from method `JPH::EmptyShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_EmptyShapeSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_EmptyShapeSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::EmptyShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_EmptyShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::EmptyShapeSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_EmptyShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_EmptyShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::EmptyShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_EmptyShapeSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_EmptyShapeSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::EmptyShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_EmptyShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::EmptyShapeSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_EmptyShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_EmptyShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::EmptyShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_EmptyShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_EmptyShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::EmptyShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_EmptyShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::EmptyShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_EmptyShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_EmptyShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::EmptyShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_EmptyShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);

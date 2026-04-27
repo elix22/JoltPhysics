@@ -125,31 +125,31 @@ JOLT_API void JPH_ShapeSettings_Destroy(const JPH_ShapeSettings *_this);
 JOLT_API void JPH_ShapeSettings_DestroyArray(const JPH_ShapeSettings *_this);
 
 /// Generated from method `JPH::ShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_ShapeSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_ShapeSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::ShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_ShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::ShapeSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_ShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_ShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::ShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_ShapeSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_ShapeSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::ShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_ShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::ShapeSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_ShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_ShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::ShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_ShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_ShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::ShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_ShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::ShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_ShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_ShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::ShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_ShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -245,31 +245,31 @@ JOLT_API void JPH_Shape_Destroy(const JPH_Shape *_this);
 JOLT_API void JPH_Shape_DestroyArray(const JPH_Shape *_this);
 
 /// Generated from method `JPH::Shape::operator new`.
-JOLT_API void *Jolt_new_JPH_Shape_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_Shape_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::Shape::operator delete`.
 JOLT_API void Jolt_delete_JPH_Shape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::Shape::operator delete`.
-JOLT_API void Jolt_delete_JPH_Shape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_Shape_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::Shape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_Shape_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_Shape_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::Shape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_Shape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::Shape::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_Shape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_Shape_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::Shape::operator new`.
-JOLT_API void *Jolt_new_JPH_Shape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_Shape_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::Shape::operator delete`.
 JOLT_API void Jolt_delete_JPH_Shape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::Shape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_Shape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_Shape_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::Shape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_Shape_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -467,21 +467,21 @@ JOLT_API JPH_Shape_GetTrianglesContext *JPH_Shape_GetTrianglesContext_AssignFrom
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
-JOLT_API const unsigned long *JPH_Shape_Stats_Get_mSizeBytes(const JPH_Shape_Stats *_this);
+JOLT_API const size_t *JPH_Shape_Stats_Get_mSizeBytes(const JPH_Shape_Stats *_this);
 
 ///< Amount of memory used by this shape (size in bytes)
 /// Modifies a member variable of class `JPH::Shape::Stats` named `mSizeBytes`.
 /// Parameter `_this` can not be null. It is a single object.
 /// The reference to the parameter `value` might be preserved in this object in element `mSizeBytes`.
 /// When this function is called, this object will drop object references it held previously in `mSizeBytes`.
-JOLT_API void JPH_Shape_Stats_Set_mSizeBytes(JPH_Shape_Stats *_this, unsigned long value);
+JOLT_API void JPH_Shape_Stats_Set_mSizeBytes(JPH_Shape_Stats *_this, size_t value);
 
 ///< Amount of memory used by this shape (size in bytes)
 /// Returns a mutable pointer to a member variable of class `JPH::Shape::Stats` named `mSizeBytes`.
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
-JOLT_API unsigned long *JPH_Shape_Stats_GetMutable_mSizeBytes(JPH_Shape_Stats *_this);
+JOLT_API size_t *JPH_Shape_Stats_GetMutable_mSizeBytes(JPH_Shape_Stats *_this);
 
 ///< Number of triangles in this shape (when applicable)
 /// Returns a pointer to a member variable of class `JPH::Shape::Stats` named `mNumTriangles`.

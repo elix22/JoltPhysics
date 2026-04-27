@@ -227,31 +227,31 @@ JOLT_API void JPH_TriangleShapeSettings_DestroyArray(const JPH_TriangleShapeSett
 JOLT_API JPH_TriangleShapeSettings *JPH_TriangleShapeSettings_AssignFromAnother(JPH_TriangleShapeSettings *_this, Jolt_PassBy _other_pass_by, JPH_TriangleShapeSettings *_other);
 
 /// Generated from method `JPH::TriangleShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_TriangleShapeSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_TriangleShapeSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TriangleShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_TriangleShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TriangleShapeSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_TriangleShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_TriangleShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TriangleShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TriangleShapeSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_TriangleShapeSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TriangleShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TriangleShapeSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TriangleShapeSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_TriangleShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_TriangleShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TriangleShapeSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_TriangleShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_TriangleShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TriangleShapeSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_TriangleShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::TriangleShapeSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TriangleShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_TriangleShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TriangleShapeSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TriangleShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -401,31 +401,31 @@ JOLT_API void JPH_TriangleShape_Destroy(const JPH_TriangleShape *_this);
 JOLT_API void JPH_TriangleShape_DestroyArray(const JPH_TriangleShape *_this);
 
 /// Generated from method `JPH::TriangleShape::operator new`.
-JOLT_API void *Jolt_new_JPH_TriangleShape_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_TriangleShape_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TriangleShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_TriangleShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TriangleShape::operator delete`.
-JOLT_API void Jolt_delete_JPH_TriangleShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_TriangleShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TriangleShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TriangleShape_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_TriangleShape_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TriangleShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TriangleShape_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TriangleShape::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_TriangleShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_TriangleShape_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TriangleShape::operator new`.
-JOLT_API void *Jolt_new_JPH_TriangleShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_TriangleShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TriangleShape::operator delete`.
 JOLT_API void Jolt_delete_JPH_TriangleShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::TriangleShape::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TriangleShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_TriangleShape_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TriangleShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TriangleShape_void_ptr_void_ptr(void *inPointer, void *inPlace);

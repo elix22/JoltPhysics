@@ -43,7 +43,7 @@ void JPH_ShapeSettings_DestroyArray(const JPH_ShapeSettings *_this)
     delete[] ((const JPH::ShapeSettings *)_this);
 }
 
-void *Jolt_new_JPH_ShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_ShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::ShapeSettings::operator new(
         inCount
@@ -57,7 +57,7 @@ void Jolt_delete_JPH_ShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_ShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_ShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ShapeSettings::operator delete(
         inPointer,
@@ -65,7 +65,7 @@ void Jolt_delete_JPH_ShapeSettings_void_ptr_unsigned_long(void *inPointer, unsig
     );
 }
 
-void *Jolt_new_array_JPH_ShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_ShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::ShapeSettings::operator new[](
         inCount
@@ -79,7 +79,7 @@ void Jolt_delete_array_JPH_ShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_ShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_ShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ShapeSettings::operator delete[](
         inPointer,
@@ -87,7 +87,7 @@ void Jolt_delete_array_JPH_ShapeSettings_void_ptr_unsigned_long(void *inPointer,
     );
 }
 
-void *Jolt_new_JPH_ShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_ShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ShapeSettings::operator new(
         inCount,
@@ -103,7 +103,7 @@ void Jolt_delete_JPH_ShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPl
     );
 }
 
-void *Jolt_new_array_JPH_ShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_ShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ShapeSettings::operator new[](
         inCount,
@@ -230,7 +230,7 @@ void JPH_Shape_DestroyArray(const JPH_Shape *_this)
     delete[] ((const JPH::Shape *)_this);
 }
 
-void *Jolt_new_JPH_Shape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_Shape_size_t(unsigned long inCount)
 {
     return JPH::Shape::operator new(
         inCount
@@ -244,7 +244,7 @@ void Jolt_delete_JPH_Shape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_Shape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_Shape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::Shape::operator delete(
         inPointer,
@@ -252,7 +252,7 @@ void Jolt_delete_JPH_Shape_void_ptr_unsigned_long(void *inPointer, unsigned long
     );
 }
 
-void *Jolt_new_array_JPH_Shape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_Shape_size_t(unsigned long inCount)
 {
     return JPH::Shape::operator new[](
         inCount
@@ -266,7 +266,7 @@ void Jolt_delete_array_JPH_Shape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_Shape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_Shape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::Shape::operator delete[](
         inPointer,
@@ -274,7 +274,7 @@ void Jolt_delete_array_JPH_Shape_void_ptr_unsigned_long(void *inPointer, unsigne
     );
 }
 
-void *Jolt_new_JPH_Shape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_Shape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::Shape::operator new(
         inCount,
@@ -290,7 +290,7 @@ void Jolt_delete_JPH_Shape_void_ptr_void_ptr(void *inPointer, void *inPlace)
     );
 }
 
-void *Jolt_new_array_JPH_Shape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_Shape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::Shape::operator new[](
         inCount,
@@ -520,17 +520,17 @@ JPH_Shape_GetTrianglesContext *JPH_Shape_GetTrianglesContext_AssignFromAnother(J
     ));
 }
 
-const unsigned long *JPH_Shape_Stats_Get_mSizeBytes(const JPH_Shape_Stats *_this)
+const size_t *JPH_Shape_Stats_Get_mSizeBytes(const JPH_Shape_Stats *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Shape::Stats *)(_this)).mSizeBytes);
 }
 
-void JPH_Shape_Stats_Set_mSizeBytes(JPH_Shape_Stats *_this, unsigned long value)
+void JPH_Shape_Stats_Set_mSizeBytes(JPH_Shape_Stats *_this, size_t value)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Shape::Stats *)(_this)).mSizeBytes = value;
 }
 
-unsigned long *JPH_Shape_Stats_GetMutable_mSizeBytes(JPH_Shape_Stats *_this)
+size_t *JPH_Shape_Stats_GetMutable_mSizeBytes(JPH_Shape_Stats *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Shape::Stats *)(_this)).mSizeBytes);
 }

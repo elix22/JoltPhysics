@@ -59,7 +59,7 @@ void JPH_ConvexShapeSettings_DestroyArray(const JPH_ConvexShapeSettings *_this)
     delete[] ((const JPH::ConvexShapeSettings *)_this);
 }
 
-void *Jolt_new_JPH_ConvexShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_ConvexShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::ConvexShapeSettings::operator new(
         inCount
@@ -73,7 +73,7 @@ void Jolt_delete_JPH_ConvexShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_ConvexShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_ConvexShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ConvexShapeSettings::operator delete(
         inPointer,
@@ -81,7 +81,7 @@ void Jolt_delete_JPH_ConvexShapeSettings_void_ptr_unsigned_long(void *inPointer,
     );
 }
 
-void *Jolt_new_array_JPH_ConvexShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_ConvexShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::ConvexShapeSettings::operator new[](
         inCount
@@ -95,7 +95,7 @@ void Jolt_delete_array_JPH_ConvexShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_ConvexShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_ConvexShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ConvexShapeSettings::operator delete[](
         inPointer,
@@ -103,7 +103,7 @@ void Jolt_delete_array_JPH_ConvexShapeSettings_void_ptr_unsigned_long(void *inPo
     );
 }
 
-void *Jolt_new_JPH_ConvexShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_ConvexShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ConvexShapeSettings::operator new(
         inCount,
@@ -119,7 +119,7 @@ void Jolt_delete_JPH_ConvexShapeSettings_void_ptr_void_ptr(void *inPointer, void
     );
 }
 
-void *Jolt_new_array_JPH_ConvexShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_ConvexShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ConvexShapeSettings::operator new[](
         inCount,
@@ -281,7 +281,7 @@ void JPH_ConvexShape_DestroyArray(const JPH_ConvexShape *_this)
     delete[] ((const JPH::ConvexShape *)_this);
 }
 
-void *Jolt_new_JPH_ConvexShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_ConvexShape_size_t(unsigned long inCount)
 {
     return JPH::ConvexShape::operator new(
         inCount
@@ -295,7 +295,7 @@ void Jolt_delete_JPH_ConvexShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_ConvexShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_ConvexShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ConvexShape::operator delete(
         inPointer,
@@ -303,7 +303,7 @@ void Jolt_delete_JPH_ConvexShape_void_ptr_unsigned_long(void *inPointer, unsigne
     );
 }
 
-void *Jolt_new_array_JPH_ConvexShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_ConvexShape_size_t(unsigned long inCount)
 {
     return JPH::ConvexShape::operator new[](
         inCount
@@ -317,7 +317,7 @@ void Jolt_delete_array_JPH_ConvexShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_ConvexShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_ConvexShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ConvexShape::operator delete[](
         inPointer,
@@ -325,7 +325,7 @@ void Jolt_delete_array_JPH_ConvexShape_void_ptr_unsigned_long(void *inPointer, u
     );
 }
 
-void *Jolt_new_JPH_ConvexShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_ConvexShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ConvexShape::operator new(
         inCount,
@@ -341,7 +341,7 @@ void Jolt_delete_JPH_ConvexShape_void_ptr_void_ptr(void *inPointer, void *inPlac
     );
 }
 
-void *Jolt_new_array_JPH_ConvexShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_ConvexShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ConvexShape::operator new[](
         inCount,

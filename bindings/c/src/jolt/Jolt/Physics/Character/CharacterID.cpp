@@ -67,7 +67,7 @@ JPH_CharacterID *JPH_CharacterID_AssignFromAnother(JPH_CharacterID *_this, const
     ));
 }
 
-void *Jolt_new_JPH_CharacterID_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_CharacterID_size_t(unsigned long inCount)
 {
     return JPH::CharacterID::operator new(
         inCount
@@ -81,7 +81,7 @@ void Jolt_delete_JPH_CharacterID_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CharacterID_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CharacterID_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CharacterID::operator delete(
         inPointer,
@@ -89,7 +89,7 @@ void Jolt_delete_JPH_CharacterID_void_ptr_unsigned_long(void *inPointer, unsigne
     );
 }
 
-void *Jolt_new_array_JPH_CharacterID_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_CharacterID_size_t(unsigned long inCount)
 {
     return JPH::CharacterID::operator new[](
         inCount
@@ -103,7 +103,7 @@ void Jolt_delete_array_JPH_CharacterID_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CharacterID_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CharacterID_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CharacterID::operator delete[](
         inPointer,
@@ -111,7 +111,7 @@ void Jolt_delete_array_JPH_CharacterID_void_ptr_unsigned_long(void *inPointer, u
     );
 }
 
-void *Jolt_new_JPH_CharacterID_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CharacterID_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CharacterID::operator new(
         inCount,
@@ -127,7 +127,7 @@ void Jolt_delete_JPH_CharacterID_void_ptr_void_ptr(void *inPointer, void *inPlac
     );
 }
 
-void *Jolt_new_array_JPH_CharacterID_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CharacterID_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CharacterID::operator new[](
         inCount,

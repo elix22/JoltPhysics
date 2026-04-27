@@ -44,31 +44,31 @@ JOLT_API JPH_Body *JPH_Body_GetMutable_sFixedToWorld(void);
 JOLT_API const unsigned int *JPH_Body_Get_cInactiveIndex(void);
 
 /// Generated from method `JPH::Body::operator new`.
-JOLT_API void *Jolt_new_JPH_Body_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_Body_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::Body::operator delete`.
 JOLT_API void Jolt_delete_JPH_Body_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::Body::operator delete`.
-JOLT_API void Jolt_delete_JPH_Body_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_Body_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::Body::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_Body_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_Body_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::Body::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_Body_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::Body::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_Body_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_Body_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::Body::operator new`.
-JOLT_API void *Jolt_new_JPH_Body_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_Body_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::Body::operator delete`.
 JOLT_API void Jolt_delete_JPH_Body_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::Body::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_Body_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_Body_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::Body::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_Body_void_ptr_void_ptr(void *inPointer, void *inPlace);

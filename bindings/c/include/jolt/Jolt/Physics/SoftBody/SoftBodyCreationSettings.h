@@ -362,31 +362,31 @@ JOLT_API void JPH_SoftBodyCreationSettings_DestroyArray(const JPH_SoftBodyCreati
 JOLT_API JPH_SoftBodyCreationSettings *JPH_SoftBodyCreationSettings_AssignFromAnother(JPH_SoftBodyCreationSettings *_this, Jolt_PassBy _other_pass_by, JPH_SoftBodyCreationSettings *_other);
 
 /// Generated from method `JPH::SoftBodyCreationSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodyCreationSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SoftBodyCreationSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::SoftBodyCreationSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodyCreationSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodyCreationSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_SoftBodyCreationSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SoftBodyCreationSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::SoftBodyCreationSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodyCreationSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SoftBodyCreationSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::SoftBodyCreationSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodyCreationSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SoftBodyCreationSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SoftBodyCreationSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SoftBodyCreationSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::SoftBodyCreationSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_SoftBodyCreationSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SoftBodyCreationSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodyCreationSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_SoftBodyCreationSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SoftBodyCreationSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SoftBodyCreationSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SoftBodyCreationSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::SoftBodyCreationSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SoftBodyCreationSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);

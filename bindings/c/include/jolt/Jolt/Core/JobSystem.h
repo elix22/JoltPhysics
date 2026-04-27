@@ -98,31 +98,31 @@ JOLT_API void JPH_JobSystem_Destroy(const JPH_JobSystem *_this);
 JOLT_API void JPH_JobSystem_DestroyArray(const JPH_JobSystem *_this);
 
 /// Generated from method `JPH::JobSystem::operator new`.
-JOLT_API void *Jolt_new_JPH_JobSystem_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_JobSystem_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::JobSystem::operator delete`.
 JOLT_API void Jolt_delete_JPH_JobSystem_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::JobSystem::operator delete`.
-JOLT_API void Jolt_delete_JPH_JobSystem_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_JobSystem_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::JobSystem::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_JobSystem_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_JobSystem_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::JobSystem::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_JobSystem_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::JobSystem::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_JobSystem_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_JobSystem_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::JobSystem::operator new`.
-JOLT_API void *Jolt_new_JPH_JobSystem_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_JobSystem_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::JobSystem::operator delete`.
 JOLT_API void Jolt_delete_JPH_JobSystem_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::JobSystem::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_JobSystem_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_JobSystem_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::JobSystem::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_JobSystem_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -241,31 +241,31 @@ JOLT_API void JPH_JobSystem_JobHandle_RemoveDependency(const JPH_JobSystem_JobHa
 JOLT_API void JPH_JobSystem_JobHandle_sRemoveDependencies(const JPH_JobSystem_JobHandle *inHandles, unsigned int inNumHandles, const int *inCount);
 
 /// Generated from method `JPH::JobSystem::Barrier::operator new`.
-JOLT_API void *Jolt_new_JPH_JobSystem_Barrier_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_JobSystem_Barrier_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::JobSystem::Barrier::operator delete`.
 JOLT_API void Jolt_delete_JPH_JobSystem_Barrier_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::JobSystem::Barrier::operator delete`.
-JOLT_API void Jolt_delete_JPH_JobSystem_Barrier_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_JobSystem_Barrier_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::JobSystem::Barrier::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_JobSystem_Barrier_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_JobSystem_Barrier_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::JobSystem::Barrier::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_JobSystem_Barrier_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::JobSystem::Barrier::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_JobSystem_Barrier_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_JobSystem_Barrier_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::JobSystem::Barrier::operator new`.
-JOLT_API void *Jolt_new_JPH_JobSystem_Barrier_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_JobSystem_Barrier_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::JobSystem::Barrier::operator delete`.
 JOLT_API void Jolt_delete_JPH_JobSystem_Barrier_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::JobSystem::Barrier::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_JobSystem_Barrier_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_JobSystem_Barrier_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::JobSystem::Barrier::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_JobSystem_Barrier_void_ptr_void_ptr(void *inPointer, void *inPlace);

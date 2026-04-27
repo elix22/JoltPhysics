@@ -43,7 +43,7 @@ void JPH_DecoratedShapeSettings_DestroyArray(const JPH_DecoratedShapeSettings *_
     delete[] ((const JPH::DecoratedShapeSettings *)_this);
 }
 
-void *Jolt_new_JPH_DecoratedShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_DecoratedShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::DecoratedShapeSettings::operator new(
         inCount
@@ -57,7 +57,7 @@ void Jolt_delete_JPH_DecoratedShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::DecoratedShapeSettings::operator delete(
         inPointer,
@@ -65,7 +65,7 @@ void Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_unsigned_long(void *inPoint
     );
 }
 
-void *Jolt_new_array_JPH_DecoratedShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_DecoratedShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::DecoratedShapeSettings::operator new[](
         inCount
@@ -79,7 +79,7 @@ void Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::DecoratedShapeSettings::operator delete[](
         inPointer,
@@ -87,7 +87,7 @@ void Jolt_delete_array_JPH_DecoratedShapeSettings_void_ptr_unsigned_long(void *i
     );
 }
 
-void *Jolt_new_JPH_DecoratedShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_DecoratedShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::DecoratedShapeSettings::operator new(
         inCount,
@@ -103,7 +103,7 @@ void Jolt_delete_JPH_DecoratedShapeSettings_void_ptr_void_ptr(void *inPointer, v
     );
 }
 
-void *Jolt_new_array_JPH_DecoratedShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_DecoratedShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::DecoratedShapeSettings::operator new[](
         inCount,
@@ -258,7 +258,7 @@ void JPH_DecoratedShape_DestroyArray(const JPH_DecoratedShape *_this)
     delete[] ((const JPH::DecoratedShape *)_this);
 }
 
-void *Jolt_new_JPH_DecoratedShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_DecoratedShape_size_t(unsigned long inCount)
 {
     return JPH::DecoratedShape::operator new(
         inCount
@@ -272,7 +272,7 @@ void Jolt_delete_JPH_DecoratedShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_DecoratedShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_DecoratedShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::DecoratedShape::operator delete(
         inPointer,
@@ -280,7 +280,7 @@ void Jolt_delete_JPH_DecoratedShape_void_ptr_unsigned_long(void *inPointer, unsi
     );
 }
 
-void *Jolt_new_array_JPH_DecoratedShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_DecoratedShape_size_t(unsigned long inCount)
 {
     return JPH::DecoratedShape::operator new[](
         inCount
@@ -294,7 +294,7 @@ void Jolt_delete_array_JPH_DecoratedShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_DecoratedShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_DecoratedShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::DecoratedShape::operator delete[](
         inPointer,
@@ -302,7 +302,7 @@ void Jolt_delete_array_JPH_DecoratedShape_void_ptr_unsigned_long(void *inPointer
     );
 }
 
-void *Jolt_new_JPH_DecoratedShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_DecoratedShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::DecoratedShape::operator new(
         inCount,
@@ -318,7 +318,7 @@ void Jolt_delete_JPH_DecoratedShape_void_ptr_void_ptr(void *inPointer, void *inP
     );
 }
 
-void *Jolt_new_array_JPH_DecoratedShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_DecoratedShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::DecoratedShape::operator new[](
         inCount,

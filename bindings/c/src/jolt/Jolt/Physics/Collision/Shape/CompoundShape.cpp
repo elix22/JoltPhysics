@@ -43,7 +43,7 @@ void JPH_CompoundShapeSettings_DestroyArray(const JPH_CompoundShapeSettings *_th
     delete[] ((const JPH::CompoundShapeSettings *)_this);
 }
 
-void *Jolt_new_JPH_CompoundShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_CompoundShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::CompoundShapeSettings::operator new(
         inCount
@@ -57,7 +57,7 @@ void Jolt_delete_JPH_CompoundShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CompoundShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CompoundShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CompoundShapeSettings::operator delete(
         inPointer,
@@ -65,7 +65,7 @@ void Jolt_delete_JPH_CompoundShapeSettings_void_ptr_unsigned_long(void *inPointe
     );
 }
 
-void *Jolt_new_array_JPH_CompoundShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_CompoundShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::CompoundShapeSettings::operator new[](
         inCount
@@ -79,7 +79,7 @@ void Jolt_delete_array_JPH_CompoundShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CompoundShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CompoundShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CompoundShapeSettings::operator delete[](
         inPointer,
@@ -87,7 +87,7 @@ void Jolt_delete_array_JPH_CompoundShapeSettings_void_ptr_unsigned_long(void *in
     );
 }
 
-void *Jolt_new_JPH_CompoundShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CompoundShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CompoundShapeSettings::operator new(
         inCount,
@@ -103,7 +103,7 @@ void Jolt_delete_JPH_CompoundShapeSettings_void_ptr_void_ptr(void *inPointer, vo
     );
 }
 
-void *Jolt_new_array_JPH_CompoundShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CompoundShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CompoundShapeSettings::operator new[](
         inCount,
@@ -294,7 +294,7 @@ JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSe
     ));
 }
 
-void *Jolt_new_JPH_CompoundShapeSettings_SubShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_CompoundShapeSettings_SubShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::CompoundShapeSettings::SubShapeSettings::operator new(
         inCount
@@ -308,7 +308,7 @@ void Jolt_delete_JPH_CompoundShapeSettings_SubShapeSettings_void_ptr(void *inPoi
     );
 }
 
-void Jolt_delete_JPH_CompoundShapeSettings_SubShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CompoundShapeSettings_SubShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CompoundShapeSettings::SubShapeSettings::operator delete(
         inPointer,
@@ -316,7 +316,7 @@ void Jolt_delete_JPH_CompoundShapeSettings_SubShapeSettings_void_ptr_unsigned_lo
     );
 }
 
-void *Jolt_new_array_JPH_CompoundShapeSettings_SubShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_CompoundShapeSettings_SubShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::CompoundShapeSettings::SubShapeSettings::operator new[](
         inCount
@@ -330,7 +330,7 @@ void Jolt_delete_array_JPH_CompoundShapeSettings_SubShapeSettings_void_ptr(void 
     );
 }
 
-void Jolt_delete_array_JPH_CompoundShapeSettings_SubShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CompoundShapeSettings_SubShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CompoundShapeSettings::SubShapeSettings::operator delete[](
         inPointer,
@@ -338,7 +338,7 @@ void Jolt_delete_array_JPH_CompoundShapeSettings_SubShapeSettings_void_ptr_unsig
     );
 }
 
-void *Jolt_new_JPH_CompoundShapeSettings_SubShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CompoundShapeSettings_SubShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CompoundShapeSettings::SubShapeSettings::operator new(
         inCount,
@@ -354,7 +354,7 @@ void Jolt_delete_JPH_CompoundShapeSettings_SubShapeSettings_void_ptr_void_ptr(vo
     );
 }
 
-void *Jolt_new_array_JPH_CompoundShapeSettings_SubShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CompoundShapeSettings_SubShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CompoundShapeSettings::SubShapeSettings::operator new[](
         inCount,
@@ -385,7 +385,7 @@ void JPH_CompoundShape_DestroyArray(const JPH_CompoundShape *_this)
     delete[] ((const JPH::CompoundShape *)_this);
 }
 
-void *Jolt_new_JPH_CompoundShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_CompoundShape_size_t(unsigned long inCount)
 {
     return JPH::CompoundShape::operator new(
         inCount
@@ -399,7 +399,7 @@ void Jolt_delete_JPH_CompoundShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CompoundShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CompoundShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CompoundShape::operator delete(
         inPointer,
@@ -407,7 +407,7 @@ void Jolt_delete_JPH_CompoundShape_void_ptr_unsigned_long(void *inPointer, unsig
     );
 }
 
-void *Jolt_new_array_JPH_CompoundShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_CompoundShape_size_t(unsigned long inCount)
 {
     return JPH::CompoundShape::operator new[](
         inCount
@@ -421,7 +421,7 @@ void Jolt_delete_array_JPH_CompoundShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CompoundShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CompoundShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CompoundShape::operator delete[](
         inPointer,
@@ -429,7 +429,7 @@ void Jolt_delete_array_JPH_CompoundShape_void_ptr_unsigned_long(void *inPointer,
     );
 }
 
-void *Jolt_new_JPH_CompoundShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CompoundShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CompoundShape::operator new(
         inCount,
@@ -445,7 +445,7 @@ void Jolt_delete_JPH_CompoundShape_void_ptr_void_ptr(void *inPointer, void *inPl
     );
 }
 
-void *Jolt_new_array_JPH_CompoundShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CompoundShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CompoundShape::operator new[](
         inCount,

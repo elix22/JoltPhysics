@@ -192,7 +192,7 @@ JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_AssignF
     ));
 }
 
-void *Jolt_new_JPH_OffsetCenterOfMassShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_OffsetCenterOfMassShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::OffsetCenterOfMassShapeSettings::operator new(
         inCount
@@ -206,7 +206,7 @@ void Jolt_delete_JPH_OffsetCenterOfMassShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_OffsetCenterOfMassShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_OffsetCenterOfMassShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::OffsetCenterOfMassShapeSettings::operator delete(
         inPointer,
@@ -214,7 +214,7 @@ void Jolt_delete_JPH_OffsetCenterOfMassShapeSettings_void_ptr_unsigned_long(void
     );
 }
 
-void *Jolt_new_array_JPH_OffsetCenterOfMassShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_OffsetCenterOfMassShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::OffsetCenterOfMassShapeSettings::operator new[](
         inCount
@@ -228,7 +228,7 @@ void Jolt_delete_array_JPH_OffsetCenterOfMassShapeSettings_void_ptr(void *inPoin
     );
 }
 
-void Jolt_delete_array_JPH_OffsetCenterOfMassShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_OffsetCenterOfMassShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::OffsetCenterOfMassShapeSettings::operator delete[](
         inPointer,
@@ -236,7 +236,7 @@ void Jolt_delete_array_JPH_OffsetCenterOfMassShapeSettings_void_ptr_unsigned_lon
     );
 }
 
-void *Jolt_new_JPH_OffsetCenterOfMassShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_OffsetCenterOfMassShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::OffsetCenterOfMassShapeSettings::operator new(
         inCount,
@@ -252,7 +252,7 @@ void Jolt_delete_JPH_OffsetCenterOfMassShapeSettings_void_ptr_void_ptr(void *inP
     );
 }
 
-void *Jolt_new_array_JPH_OffsetCenterOfMassShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_OffsetCenterOfMassShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::OffsetCenterOfMassShapeSettings::operator new[](
         inCount,
@@ -445,7 +445,7 @@ void JPH_OffsetCenterOfMassShape_DestroyArray(const JPH_OffsetCenterOfMassShape 
     delete[] ((const JPH::OffsetCenterOfMassShape *)_this);
 }
 
-void *Jolt_new_JPH_OffsetCenterOfMassShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_OffsetCenterOfMassShape_size_t(unsigned long inCount)
 {
     return JPH::OffsetCenterOfMassShape::operator new(
         inCount
@@ -459,7 +459,7 @@ void Jolt_delete_JPH_OffsetCenterOfMassShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_OffsetCenterOfMassShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_OffsetCenterOfMassShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::OffsetCenterOfMassShape::operator delete(
         inPointer,
@@ -467,7 +467,7 @@ void Jolt_delete_JPH_OffsetCenterOfMassShape_void_ptr_unsigned_long(void *inPoin
     );
 }
 
-void *Jolt_new_array_JPH_OffsetCenterOfMassShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_OffsetCenterOfMassShape_size_t(unsigned long inCount)
 {
     return JPH::OffsetCenterOfMassShape::operator new[](
         inCount
@@ -481,7 +481,7 @@ void Jolt_delete_array_JPH_OffsetCenterOfMassShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_OffsetCenterOfMassShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_OffsetCenterOfMassShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::OffsetCenterOfMassShape::operator delete[](
         inPointer,
@@ -489,7 +489,7 @@ void Jolt_delete_array_JPH_OffsetCenterOfMassShape_void_ptr_unsigned_long(void *
     );
 }
 
-void *Jolt_new_JPH_OffsetCenterOfMassShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_OffsetCenterOfMassShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::OffsetCenterOfMassShape::operator new(
         inCount,
@@ -505,7 +505,7 @@ void Jolt_delete_JPH_OffsetCenterOfMassShape_void_ptr_void_ptr(void *inPointer, 
     );
 }
 
-void *Jolt_new_array_JPH_OffsetCenterOfMassShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_OffsetCenterOfMassShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::OffsetCenterOfMassShape::operator new[](
         inCount,

@@ -115,7 +115,7 @@ void JPH_ConstraintSettings_DestroyArray(const JPH_ConstraintSettings *_this)
     delete[] ((const JPH::ConstraintSettings *)_this);
 }
 
-void *Jolt_new_JPH_ConstraintSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_ConstraintSettings_size_t(unsigned long inCount)
 {
     return JPH::ConstraintSettings::operator new(
         inCount
@@ -129,7 +129,7 @@ void Jolt_delete_JPH_ConstraintSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_ConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_ConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ConstraintSettings::operator delete(
         inPointer,
@@ -137,7 +137,7 @@ void Jolt_delete_JPH_ConstraintSettings_void_ptr_unsigned_long(void *inPointer, 
     );
 }
 
-void *Jolt_new_array_JPH_ConstraintSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_ConstraintSettings_size_t(unsigned long inCount)
 {
     return JPH::ConstraintSettings::operator new[](
         inCount
@@ -151,7 +151,7 @@ void Jolt_delete_array_JPH_ConstraintSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_ConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_ConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ConstraintSettings::operator delete[](
         inPointer,
@@ -159,7 +159,7 @@ void Jolt_delete_array_JPH_ConstraintSettings_void_ptr_unsigned_long(void *inPoi
     );
 }
 
-void *Jolt_new_JPH_ConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_ConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ConstraintSettings::operator new(
         inCount,
@@ -175,7 +175,7 @@ void Jolt_delete_JPH_ConstraintSettings_void_ptr_void_ptr(void *inPointer, void 
     );
 }
 
-void *Jolt_new_array_JPH_ConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_ConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ConstraintSettings::operator new[](
         inCount,
@@ -292,7 +292,7 @@ void JPH_Constraint_DestroyArray(const JPH_Constraint *_this)
     delete[] ((const JPH::Constraint *)_this);
 }
 
-void *Jolt_new_JPH_Constraint_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_Constraint_size_t(unsigned long inCount)
 {
     return JPH::Constraint::operator new(
         inCount
@@ -306,7 +306,7 @@ void Jolt_delete_JPH_Constraint_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_Constraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_Constraint_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::Constraint::operator delete(
         inPointer,
@@ -314,7 +314,7 @@ void Jolt_delete_JPH_Constraint_void_ptr_unsigned_long(void *inPointer, unsigned
     );
 }
 
-void *Jolt_new_array_JPH_Constraint_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_Constraint_size_t(unsigned long inCount)
 {
     return JPH::Constraint::operator new[](
         inCount
@@ -328,7 +328,7 @@ void Jolt_delete_array_JPH_Constraint_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_Constraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_Constraint_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::Constraint::operator delete[](
         inPointer,
@@ -336,7 +336,7 @@ void Jolt_delete_array_JPH_Constraint_void_ptr_unsigned_long(void *inPointer, un
     );
 }
 
-void *Jolt_new_JPH_Constraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_Constraint_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::Constraint::operator new(
         inCount,
@@ -352,7 +352,7 @@ void Jolt_delete_JPH_Constraint_void_ptr_void_ptr(void *inPointer, void *inPlace
     );
 }
 
-void *Jolt_new_array_JPH_Constraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_Constraint_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::Constraint::operator new[](
         inCount,

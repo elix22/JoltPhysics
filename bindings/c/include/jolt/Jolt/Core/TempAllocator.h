@@ -69,31 +69,31 @@ JOLT_API void JPH_TempAllocator_Destroy(const JPH_TempAllocator *_this);
 JOLT_API void JPH_TempAllocator_DestroyArray(const JPH_TempAllocator *_this);
 
 /// Generated from method `JPH::TempAllocator::operator new`.
-JOLT_API void *Jolt_new_JPH_TempAllocator_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_TempAllocator_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TempAllocator::operator delete`.
 JOLT_API void Jolt_delete_JPH_TempAllocator_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TempAllocator::operator delete`.
-JOLT_API void Jolt_delete_JPH_TempAllocator_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_TempAllocator_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TempAllocator::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TempAllocator_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_TempAllocator_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TempAllocator::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TempAllocator_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TempAllocator::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_TempAllocator_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_TempAllocator_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TempAllocator::operator new`.
-JOLT_API void *Jolt_new_JPH_TempAllocator_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_TempAllocator_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TempAllocator::operator delete`.
 JOLT_API void Jolt_delete_JPH_TempAllocator_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::TempAllocator::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TempAllocator_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_TempAllocator_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TempAllocator::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TempAllocator_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -201,31 +201,31 @@ JOLT_API void JPH_TempAllocatorImpl_Destroy(const JPH_TempAllocatorImpl *_this);
 JOLT_API void JPH_TempAllocatorImpl_DestroyArray(const JPH_TempAllocatorImpl *_this);
 
 /// Generated from method `JPH::TempAllocatorImpl::operator new`.
-JOLT_API void *Jolt_new_JPH_TempAllocatorImpl_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_TempAllocatorImpl_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TempAllocatorImpl::operator delete`.
 JOLT_API void Jolt_delete_JPH_TempAllocatorImpl_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorImpl::operator delete`.
-JOLT_API void Jolt_delete_JPH_TempAllocatorImpl_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TempAllocatorImpl::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TempAllocatorImpl_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_TempAllocatorImpl_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TempAllocatorImpl::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorImpl::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TempAllocatorImpl::operator new`.
-JOLT_API void *Jolt_new_JPH_TempAllocatorImpl_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_TempAllocatorImpl_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorImpl::operator delete`.
 JOLT_API void Jolt_delete_JPH_TempAllocatorImpl_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::TempAllocatorImpl::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TempAllocatorImpl_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_TempAllocatorImpl_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorImpl::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TempAllocatorImpl_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -248,12 +248,12 @@ JOLT_API bool JPH_TempAllocatorImpl_IsEmpty(const JPH_TempAllocatorImpl *_this);
 /// Get the total size of the fixed buffer
 /// Generated from method `JPH::TempAllocatorImpl::GetSize`.
 /// Parameter `_this` can not be null. It is a single object.
-JOLT_API unsigned long JPH_TempAllocatorImpl_GetSize(const JPH_TempAllocatorImpl *_this);
+JOLT_API size_t JPH_TempAllocatorImpl_GetSize(const JPH_TempAllocatorImpl *_this);
 
 /// Get current usage in bytes of the buffer
 /// Generated from method `JPH::TempAllocatorImpl::GetUsage`.
 /// Parameter `_this` can not be null. It is a single object.
-JOLT_API unsigned long JPH_TempAllocatorImpl_GetUsage(const JPH_TempAllocatorImpl *_this);
+JOLT_API size_t JPH_TempAllocatorImpl_GetUsage(const JPH_TempAllocatorImpl *_this);
 
 /// Check if an allocation of inSize can be made in this fixed buffer allocator
 /// Generated from method `JPH::TempAllocatorImpl::CanAllocate`.
@@ -334,31 +334,31 @@ JOLT_API void JPH_TempAllocatorMalloc_Destroy(const JPH_TempAllocatorMalloc *_th
 JOLT_API void JPH_TempAllocatorMalloc_DestroyArray(const JPH_TempAllocatorMalloc *_this);
 
 /// Generated from method `JPH::TempAllocatorMalloc::operator new`.
-JOLT_API void *Jolt_new_JPH_TempAllocatorMalloc_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_TempAllocatorMalloc_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TempAllocatorMalloc::operator delete`.
 JOLT_API void Jolt_delete_JPH_TempAllocatorMalloc_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorMalloc::operator delete`.
-JOLT_API void Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TempAllocatorMalloc::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TempAllocatorMalloc_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_TempAllocatorMalloc_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TempAllocatorMalloc::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorMalloc::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TempAllocatorMalloc::operator new`.
-JOLT_API void *Jolt_new_JPH_TempAllocatorMalloc_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_TempAllocatorMalloc_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorMalloc::operator delete`.
 JOLT_API void Jolt_delete_JPH_TempAllocatorMalloc_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::TempAllocatorMalloc::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TempAllocatorMalloc_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_TempAllocatorMalloc_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorMalloc::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TempAllocatorMalloc_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -438,31 +438,31 @@ JOLT_API void JPH_TempAllocatorImplWithMallocFallback_Destroy(const JPH_TempAllo
 JOLT_API void JPH_TempAllocatorImplWithMallocFallback_DestroyArray(const JPH_TempAllocatorImplWithMallocFallback *_this);
 
 /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator new`.
-JOLT_API void *Jolt_new_JPH_TempAllocatorImplWithMallocFallback_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator delete`.
 JOLT_API void Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator delete`.
-JOLT_API void Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator new`.
-JOLT_API void *Jolt_new_JPH_TempAllocatorImplWithMallocFallback_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator delete`.
 JOLT_API void Jolt_delete_JPH_TempAllocatorImplWithMallocFallback_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_TempAllocatorImplWithMallocFallback_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::TempAllocatorImplWithMallocFallback::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_TempAllocatorImplWithMallocFallback_void_ptr_void_ptr(void *inPointer, void *inPlace);

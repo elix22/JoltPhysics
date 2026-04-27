@@ -311,31 +311,31 @@ JOLT_API void JPH_FixedConstraintSettings_DestroyArray(const JPH_FixedConstraint
 JOLT_API JPH_FixedConstraintSettings *JPH_FixedConstraintSettings_AssignFromAnother(JPH_FixedConstraintSettings *_this, Jolt_PassBy _other_pass_by, JPH_FixedConstraintSettings *_other);
 
 /// Generated from method `JPH::FixedConstraintSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_FixedConstraintSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_FixedConstraintSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::FixedConstraintSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_FixedConstraintSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::FixedConstraintSettings::operator delete`.
-JOLT_API void Jolt_delete_JPH_FixedConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_FixedConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::FixedConstraintSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_FixedConstraintSettings_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_FixedConstraintSettings_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::FixedConstraintSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_FixedConstraintSettings_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::FixedConstraintSettings::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_FixedConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_FixedConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::FixedConstraintSettings::operator new`.
-JOLT_API void *Jolt_new_JPH_FixedConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_FixedConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::FixedConstraintSettings::operator delete`.
 JOLT_API void Jolt_delete_JPH_FixedConstraintSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::FixedConstraintSettings::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_FixedConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_FixedConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::FixedConstraintSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_FixedConstraintSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -475,31 +475,31 @@ JOLT_API void JPH_FixedConstraint_Destroy(const JPH_FixedConstraint *_this);
 JOLT_API void JPH_FixedConstraint_DestroyArray(const JPH_FixedConstraint *_this);
 
 /// Generated from method `JPH::FixedConstraint::operator new`.
-JOLT_API void *Jolt_new_JPH_FixedConstraint_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_FixedConstraint_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::FixedConstraint::operator delete`.
 JOLT_API void Jolt_delete_JPH_FixedConstraint_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::FixedConstraint::operator delete`.
-JOLT_API void Jolt_delete_JPH_FixedConstraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_FixedConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::FixedConstraint::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_FixedConstraint_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_FixedConstraint_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::FixedConstraint::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_FixedConstraint_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::FixedConstraint::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_FixedConstraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_FixedConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::FixedConstraint::operator new`.
-JOLT_API void *Jolt_new_JPH_FixedConstraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_FixedConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::FixedConstraint::operator delete`.
 JOLT_API void Jolt_delete_JPH_FixedConstraint_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::FixedConstraint::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_FixedConstraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_FixedConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::FixedConstraint::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_FixedConstraint_void_ptr_void_ptr(void *inPointer, void *inPlace);

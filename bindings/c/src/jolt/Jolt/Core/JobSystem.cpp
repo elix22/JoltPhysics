@@ -21,7 +21,7 @@ void JPH_JobSystem_DestroyArray(const JPH_JobSystem *_this)
     delete[] ((const JPH::JobSystem *)_this);
 }
 
-void *Jolt_new_JPH_JobSystem_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_JobSystem_size_t(unsigned long inCount)
 {
     return JPH::JobSystem::operator new(
         inCount
@@ -35,7 +35,7 @@ void Jolt_delete_JPH_JobSystem_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_JobSystem_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_JobSystem_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::JobSystem::operator delete(
         inPointer,
@@ -43,7 +43,7 @@ void Jolt_delete_JPH_JobSystem_void_ptr_unsigned_long(void *inPointer, unsigned 
     );
 }
 
-void *Jolt_new_array_JPH_JobSystem_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_JobSystem_size_t(unsigned long inCount)
 {
     return JPH::JobSystem::operator new[](
         inCount
@@ -57,7 +57,7 @@ void Jolt_delete_array_JPH_JobSystem_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_JobSystem_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_JobSystem_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::JobSystem::operator delete[](
         inPointer,
@@ -65,7 +65,7 @@ void Jolt_delete_array_JPH_JobSystem_void_ptr_unsigned_long(void *inPointer, uns
     );
 }
 
-void *Jolt_new_JPH_JobSystem_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_JobSystem_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::JobSystem::operator new(
         inCount,
@@ -81,7 +81,7 @@ void Jolt_delete_JPH_JobSystem_void_ptr_void_ptr(void *inPointer, void *inPlace)
     );
 }
 
-void *Jolt_new_array_JPH_JobSystem_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_JobSystem_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::JobSystem::operator new[](
         inCount,
@@ -241,7 +241,7 @@ void JPH_JobSystem_JobHandle_sRemoveDependencies(const JPH_JobSystem_JobHandle *
     );
 }
 
-void *Jolt_new_JPH_JobSystem_Barrier_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_JobSystem_Barrier_size_t(unsigned long inCount)
 {
     return JPH::JobSystem::Barrier::operator new(
         inCount
@@ -255,7 +255,7 @@ void Jolt_delete_JPH_JobSystem_Barrier_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_JobSystem_Barrier_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_JobSystem_Barrier_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::JobSystem::Barrier::operator delete(
         inPointer,
@@ -263,7 +263,7 @@ void Jolt_delete_JPH_JobSystem_Barrier_void_ptr_unsigned_long(void *inPointer, u
     );
 }
 
-void *Jolt_new_array_JPH_JobSystem_Barrier_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_JobSystem_Barrier_size_t(unsigned long inCount)
 {
     return JPH::JobSystem::Barrier::operator new[](
         inCount
@@ -277,7 +277,7 @@ void Jolt_delete_array_JPH_JobSystem_Barrier_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_JobSystem_Barrier_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_JobSystem_Barrier_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::JobSystem::Barrier::operator delete[](
         inPointer,
@@ -285,7 +285,7 @@ void Jolt_delete_array_JPH_JobSystem_Barrier_void_ptr_unsigned_long(void *inPoin
     );
 }
 
-void *Jolt_new_JPH_JobSystem_Barrier_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_JobSystem_Barrier_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::JobSystem::Barrier::operator new(
         inCount,
@@ -301,7 +301,7 @@ void Jolt_delete_JPH_JobSystem_Barrier_void_ptr_void_ptr(void *inPointer, void *
     );
 }
 
-void *Jolt_new_array_JPH_JobSystem_Barrier_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_JobSystem_Barrier_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::JobSystem::Barrier::operator new[](
         inCount,

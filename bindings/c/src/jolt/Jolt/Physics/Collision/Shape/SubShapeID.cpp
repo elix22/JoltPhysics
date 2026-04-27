@@ -59,7 +59,7 @@ JPH_SubShapeID *JPH_SubShapeID_AssignFromAnother(JPH_SubShapeID *_this, const JP
     ));
 }
 
-void *Jolt_new_JPH_SubShapeID_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_SubShapeID_size_t(unsigned long inCount)
 {
     return JPH::SubShapeID::operator new(
         inCount
@@ -73,7 +73,7 @@ void Jolt_delete_JPH_SubShapeID_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SubShapeID_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SubShapeID_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::SubShapeID::operator delete(
         inPointer,
@@ -81,7 +81,7 @@ void Jolt_delete_JPH_SubShapeID_void_ptr_unsigned_long(void *inPointer, unsigned
     );
 }
 
-void *Jolt_new_array_JPH_SubShapeID_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_SubShapeID_size_t(unsigned long inCount)
 {
     return JPH::SubShapeID::operator new[](
         inCount
@@ -95,7 +95,7 @@ void Jolt_delete_array_JPH_SubShapeID_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_SubShapeID_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SubShapeID_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::SubShapeID::operator delete[](
         inPointer,
@@ -103,7 +103,7 @@ void Jolt_delete_array_JPH_SubShapeID_void_ptr_unsigned_long(void *inPointer, un
     );
 }
 
-void *Jolt_new_JPH_SubShapeID_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SubShapeID_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::SubShapeID::operator new(
         inCount,
@@ -119,7 +119,7 @@ void Jolt_delete_JPH_SubShapeID_void_ptr_void_ptr(void *inPointer, void *inPlace
     );
 }
 
-void *Jolt_new_array_JPH_SubShapeID_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SubShapeID_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::SubShapeID::operator new[](
         inCount,

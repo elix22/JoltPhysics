@@ -192,7 +192,7 @@ JPH_MutableCompoundShapeSettings *JPH_MutableCompoundShapeSettings_AssignFromAno
     ));
 }
 
-void *Jolt_new_JPH_MutableCompoundShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_MutableCompoundShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::MutableCompoundShapeSettings::operator new(
         inCount
@@ -206,7 +206,7 @@ void Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::MutableCompoundShapeSettings::operator delete(
         inPointer,
@@ -214,7 +214,7 @@ void Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long(void *i
     );
 }
 
-void *Jolt_new_array_JPH_MutableCompoundShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_MutableCompoundShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::MutableCompoundShapeSettings::operator new[](
         inCount
@@ -228,7 +228,7 @@ void Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr(void *inPointer
     );
 }
 
-void Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::MutableCompoundShapeSettings::operator delete[](
         inPointer,
@@ -236,7 +236,7 @@ void Jolt_delete_array_JPH_MutableCompoundShapeSettings_void_ptr_unsigned_long(v
     );
 }
 
-void *Jolt_new_JPH_MutableCompoundShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_MutableCompoundShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::MutableCompoundShapeSettings::operator new(
         inCount,
@@ -252,7 +252,7 @@ void Jolt_delete_JPH_MutableCompoundShapeSettings_void_ptr_void_ptr(void *inPoin
     );
 }
 
-void *Jolt_new_array_JPH_MutableCompoundShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_MutableCompoundShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::MutableCompoundShapeSettings::operator new[](
         inCount,
@@ -445,7 +445,7 @@ void JPH_MutableCompoundShape_DestroyArray(const JPH_MutableCompoundShape *_this
     delete[] ((const JPH::MutableCompoundShape *)_this);
 }
 
-void *Jolt_new_JPH_MutableCompoundShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_MutableCompoundShape_size_t(unsigned long inCount)
 {
     return JPH::MutableCompoundShape::operator new(
         inCount
@@ -459,7 +459,7 @@ void Jolt_delete_JPH_MutableCompoundShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_MutableCompoundShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_MutableCompoundShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::MutableCompoundShape::operator delete(
         inPointer,
@@ -467,7 +467,7 @@ void Jolt_delete_JPH_MutableCompoundShape_void_ptr_unsigned_long(void *inPointer
     );
 }
 
-void *Jolt_new_array_JPH_MutableCompoundShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_MutableCompoundShape_size_t(unsigned long inCount)
 {
     return JPH::MutableCompoundShape::operator new[](
         inCount
@@ -481,7 +481,7 @@ void Jolt_delete_array_JPH_MutableCompoundShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::MutableCompoundShape::operator delete[](
         inPointer,
@@ -489,7 +489,7 @@ void Jolt_delete_array_JPH_MutableCompoundShape_void_ptr_unsigned_long(void *inP
     );
 }
 
-void *Jolt_new_JPH_MutableCompoundShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_MutableCompoundShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::MutableCompoundShape::operator new(
         inCount,
@@ -505,7 +505,7 @@ void Jolt_delete_JPH_MutableCompoundShape_void_ptr_void_ptr(void *inPointer, voi
     );
 }
 
-void *Jolt_new_array_JPH_MutableCompoundShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_MutableCompoundShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::MutableCompoundShape::operator new[](
         inCount,

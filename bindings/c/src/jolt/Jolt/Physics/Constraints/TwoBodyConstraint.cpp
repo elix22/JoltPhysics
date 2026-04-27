@@ -117,7 +117,7 @@ void JPH_TwoBodyConstraintSettings_DestroyArray(const JPH_TwoBodyConstraintSetti
     delete[] ((const JPH::TwoBodyConstraintSettings *)_this);
 }
 
-void *Jolt_new_JPH_TwoBodyConstraintSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_TwoBodyConstraintSettings_size_t(unsigned long inCount)
 {
     return JPH::TwoBodyConstraintSettings::operator new(
         inCount
@@ -131,7 +131,7 @@ void Jolt_delete_JPH_TwoBodyConstraintSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_TwoBodyConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_TwoBodyConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TwoBodyConstraintSettings::operator delete(
         inPointer,
@@ -139,7 +139,7 @@ void Jolt_delete_JPH_TwoBodyConstraintSettings_void_ptr_unsigned_long(void *inPo
     );
 }
 
-void *Jolt_new_array_JPH_TwoBodyConstraintSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_TwoBodyConstraintSettings_size_t(unsigned long inCount)
 {
     return JPH::TwoBodyConstraintSettings::operator new[](
         inCount
@@ -153,7 +153,7 @@ void Jolt_delete_array_JPH_TwoBodyConstraintSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_TwoBodyConstraintSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_TwoBodyConstraintSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TwoBodyConstraintSettings::operator delete[](
         inPointer,
@@ -161,7 +161,7 @@ void Jolt_delete_array_JPH_TwoBodyConstraintSettings_void_ptr_unsigned_long(void
     );
 }
 
-void *Jolt_new_JPH_TwoBodyConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_TwoBodyConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TwoBodyConstraintSettings::operator new(
         inCount,
@@ -177,7 +177,7 @@ void Jolt_delete_JPH_TwoBodyConstraintSettings_void_ptr_void_ptr(void *inPointer
     );
 }
 
-void *Jolt_new_array_JPH_TwoBodyConstraintSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_TwoBodyConstraintSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TwoBodyConstraintSettings::operator new[](
         inCount,
@@ -330,7 +330,7 @@ void JPH_TwoBodyConstraint_DestroyArray(const JPH_TwoBodyConstraint *_this)
     delete[] ((const JPH::TwoBodyConstraint *)_this);
 }
 
-void *Jolt_new_JPH_TwoBodyConstraint_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_TwoBodyConstraint_size_t(unsigned long inCount)
 {
     return JPH::TwoBodyConstraint::operator new(
         inCount
@@ -344,7 +344,7 @@ void Jolt_delete_JPH_TwoBodyConstraint_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_TwoBodyConstraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_TwoBodyConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TwoBodyConstraint::operator delete(
         inPointer,
@@ -352,7 +352,7 @@ void Jolt_delete_JPH_TwoBodyConstraint_void_ptr_unsigned_long(void *inPointer, u
     );
 }
 
-void *Jolt_new_array_JPH_TwoBodyConstraint_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_TwoBodyConstraint_size_t(unsigned long inCount)
 {
     return JPH::TwoBodyConstraint::operator new[](
         inCount
@@ -366,7 +366,7 @@ void Jolt_delete_array_JPH_TwoBodyConstraint_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_TwoBodyConstraint_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_TwoBodyConstraint_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::TwoBodyConstraint::operator delete[](
         inPointer,
@@ -374,7 +374,7 @@ void Jolt_delete_array_JPH_TwoBodyConstraint_void_ptr_unsigned_long(void *inPoin
     );
 }
 
-void *Jolt_new_JPH_TwoBodyConstraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_TwoBodyConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TwoBodyConstraint::operator new(
         inCount,
@@ -390,7 +390,7 @@ void Jolt_delete_JPH_TwoBodyConstraint_void_ptr_void_ptr(void *inPointer, void *
     );
 }
 
-void *Jolt_new_array_JPH_TwoBodyConstraint_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_TwoBodyConstraint_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::TwoBodyConstraint::operator new[](
         inCount,

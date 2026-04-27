@@ -94,7 +94,7 @@ void JPH_ObjectLayerPairFilterTable_DestroyArray(const JPH_ObjectLayerPairFilter
     delete[] ((const JPH::ObjectLayerPairFilterTable *)_this);
 }
 
-void *Jolt_new_JPH_ObjectLayerPairFilterTable_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_ObjectLayerPairFilterTable_size_t(unsigned long inCount)
 {
     return JPH::ObjectLayerPairFilterTable::operator new(
         inCount
@@ -108,7 +108,7 @@ void Jolt_delete_JPH_ObjectLayerPairFilterTable_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_ObjectLayerPairFilterTable_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_ObjectLayerPairFilterTable_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ObjectLayerPairFilterTable::operator delete(
         inPointer,
@@ -116,7 +116,7 @@ void Jolt_delete_JPH_ObjectLayerPairFilterTable_void_ptr_unsigned_long(void *inP
     );
 }
 
-void *Jolt_new_array_JPH_ObjectLayerPairFilterTable_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_ObjectLayerPairFilterTable_size_t(unsigned long inCount)
 {
     return JPH::ObjectLayerPairFilterTable::operator new[](
         inCount
@@ -130,7 +130,7 @@ void Jolt_delete_array_JPH_ObjectLayerPairFilterTable_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_ObjectLayerPairFilterTable_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_ObjectLayerPairFilterTable_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::ObjectLayerPairFilterTable::operator delete[](
         inPointer,
@@ -138,7 +138,7 @@ void Jolt_delete_array_JPH_ObjectLayerPairFilterTable_void_ptr_unsigned_long(voi
     );
 }
 
-void *Jolt_new_JPH_ObjectLayerPairFilterTable_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_ObjectLayerPairFilterTable_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ObjectLayerPairFilterTable::operator new(
         inCount,
@@ -154,7 +154,7 @@ void Jolt_delete_JPH_ObjectLayerPairFilterTable_void_ptr_void_ptr(void *inPointe
     );
 }
 
-void *Jolt_new_array_JPH_ObjectLayerPairFilterTable_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_ObjectLayerPairFilterTable_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::ObjectLayerPairFilterTable::operator new[](
         inCount,

@@ -19,7 +19,7 @@ void JPH_SerializableObject_DestroyArray(const JPH_SerializableObject *_this)
     delete[] ((const JPH::SerializableObject *)_this);
 }
 
-void *Jolt_new_JPH_SerializableObject_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_SerializableObject_size_t(unsigned long inCount)
 {
     return JPH::SerializableObject::operator new(
         inCount
@@ -33,7 +33,7 @@ void Jolt_delete_JPH_SerializableObject_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_SerializableObject_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_SerializableObject_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::SerializableObject::operator delete(
         inPointer,
@@ -41,7 +41,7 @@ void Jolt_delete_JPH_SerializableObject_void_ptr_unsigned_long(void *inPointer, 
     );
 }
 
-void *Jolt_new_array_JPH_SerializableObject_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_SerializableObject_size_t(unsigned long inCount)
 {
     return JPH::SerializableObject::operator new[](
         inCount
@@ -55,7 +55,7 @@ void Jolt_delete_array_JPH_SerializableObject_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_SerializableObject_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_SerializableObject_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::SerializableObject::operator delete[](
         inPointer,
@@ -63,7 +63,7 @@ void Jolt_delete_array_JPH_SerializableObject_void_ptr_unsigned_long(void *inPoi
     );
 }
 
-void *Jolt_new_JPH_SerializableObject_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_SerializableObject_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::SerializableObject::operator new(
         inCount,
@@ -79,7 +79,7 @@ void Jolt_delete_JPH_SerializableObject_void_ptr_void_ptr(void *inPointer, void 
     );
 }
 
-void *Jolt_new_array_JPH_SerializableObject_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_SerializableObject_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::SerializableObject::operator new[](
         inCount,

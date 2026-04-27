@@ -94,7 +94,7 @@ JPH_BroadPhaseCastResult *JPH_BroadPhaseCastResult_AssignFromAnother(JPH_BroadPh
     ));
 }
 
-void *Jolt_new_JPH_BroadPhaseCastResult_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_BroadPhaseCastResult_size_t(unsigned long inCount)
 {
     return JPH::BroadPhaseCastResult::operator new(
         inCount
@@ -108,7 +108,7 @@ void Jolt_delete_JPH_BroadPhaseCastResult_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_BroadPhaseCastResult_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_BroadPhaseCastResult_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::BroadPhaseCastResult::operator delete(
         inPointer,
@@ -116,7 +116,7 @@ void Jolt_delete_JPH_BroadPhaseCastResult_void_ptr_unsigned_long(void *inPointer
     );
 }
 
-void *Jolt_new_array_JPH_BroadPhaseCastResult_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_BroadPhaseCastResult_size_t(unsigned long inCount)
 {
     return JPH::BroadPhaseCastResult::operator new[](
         inCount
@@ -130,7 +130,7 @@ void Jolt_delete_array_JPH_BroadPhaseCastResult_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_BroadPhaseCastResult_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_BroadPhaseCastResult_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::BroadPhaseCastResult::operator delete[](
         inPointer,
@@ -138,7 +138,7 @@ void Jolt_delete_array_JPH_BroadPhaseCastResult_void_ptr_unsigned_long(void *inP
     );
 }
 
-void *Jolt_new_JPH_BroadPhaseCastResult_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_BroadPhaseCastResult_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::BroadPhaseCastResult::operator new(
         inCount,
@@ -154,7 +154,7 @@ void Jolt_delete_JPH_BroadPhaseCastResult_void_ptr_void_ptr(void *inPointer, voi
     );
 }
 
-void *Jolt_new_array_JPH_BroadPhaseCastResult_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_BroadPhaseCastResult_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::BroadPhaseCastResult::operator new[](
         inCount,
@@ -297,7 +297,7 @@ JPH_RayCastResult *JPH_RayCastResult_AssignFromAnother(JPH_RayCastResult *_this,
     ));
 }
 
-void *Jolt_new_JPH_RayCastResult_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_RayCastResult_size_t(unsigned long inCount)
 {
     return JPH::RayCastResult::operator new(
         inCount
@@ -311,7 +311,7 @@ void Jolt_delete_JPH_RayCastResult_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_RayCastResult_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_RayCastResult_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::RayCastResult::operator delete(
         inPointer,
@@ -319,7 +319,7 @@ void Jolt_delete_JPH_RayCastResult_void_ptr_unsigned_long(void *inPointer, unsig
     );
 }
 
-void *Jolt_new_array_JPH_RayCastResult_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_RayCastResult_size_t(unsigned long inCount)
 {
     return JPH::RayCastResult::operator new[](
         inCount
@@ -333,7 +333,7 @@ void Jolt_delete_array_JPH_RayCastResult_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_RayCastResult_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_RayCastResult_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::RayCastResult::operator delete[](
         inPointer,
@@ -341,7 +341,7 @@ void Jolt_delete_array_JPH_RayCastResult_void_ptr_unsigned_long(void *inPointer,
     );
 }
 
-void *Jolt_new_JPH_RayCastResult_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_RayCastResult_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::RayCastResult::operator new(
         inCount,
@@ -357,7 +357,7 @@ void Jolt_delete_JPH_RayCastResult_void_ptr_void_ptr(void *inPointer, void *inPl
     );
 }
 
-void *Jolt_new_array_JPH_RayCastResult_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_RayCastResult_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::RayCastResult::operator new[](
         inCount,

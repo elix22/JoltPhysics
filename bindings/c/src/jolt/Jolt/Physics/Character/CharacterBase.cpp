@@ -122,7 +122,7 @@ JPH_CharacterBaseSettings *JPH_CharacterBaseSettings_AssignFromAnother(JPH_Chara
     ));
 }
 
-void *Jolt_new_JPH_CharacterBaseSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_CharacterBaseSettings_size_t(unsigned long inCount)
 {
     return JPH::CharacterBaseSettings::operator new(
         inCount
@@ -136,7 +136,7 @@ void Jolt_delete_JPH_CharacterBaseSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CharacterBaseSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CharacterBaseSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CharacterBaseSettings::operator delete(
         inPointer,
@@ -144,7 +144,7 @@ void Jolt_delete_JPH_CharacterBaseSettings_void_ptr_unsigned_long(void *inPointe
     );
 }
 
-void *Jolt_new_array_JPH_CharacterBaseSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_CharacterBaseSettings_size_t(unsigned long inCount)
 {
     return JPH::CharacterBaseSettings::operator new[](
         inCount
@@ -158,7 +158,7 @@ void Jolt_delete_array_JPH_CharacterBaseSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CharacterBaseSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CharacterBaseSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CharacterBaseSettings::operator delete[](
         inPointer,
@@ -166,7 +166,7 @@ void Jolt_delete_array_JPH_CharacterBaseSettings_void_ptr_unsigned_long(void *in
     );
 }
 
-void *Jolt_new_JPH_CharacterBaseSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CharacterBaseSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CharacterBaseSettings::operator new(
         inCount,
@@ -182,7 +182,7 @@ void Jolt_delete_JPH_CharacterBaseSettings_void_ptr_void_ptr(void *inPointer, vo
     );
 }
 
-void *Jolt_new_array_JPH_CharacterBaseSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CharacterBaseSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CharacterBaseSettings::operator new[](
         inCount,
@@ -307,7 +307,7 @@ void JPH_CharacterBase_DestroyArray(const JPH_CharacterBase *_this)
     delete[] ((const JPH::CharacterBase *)_this);
 }
 
-void *Jolt_new_JPH_CharacterBase_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_CharacterBase_size_t(unsigned long inCount)
 {
     return JPH::CharacterBase::operator new(
         inCount
@@ -321,7 +321,7 @@ void Jolt_delete_JPH_CharacterBase_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_CharacterBase_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_CharacterBase_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CharacterBase::operator delete(
         inPointer,
@@ -329,7 +329,7 @@ void Jolt_delete_JPH_CharacterBase_void_ptr_unsigned_long(void *inPointer, unsig
     );
 }
 
-void *Jolt_new_array_JPH_CharacterBase_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_CharacterBase_size_t(unsigned long inCount)
 {
     return JPH::CharacterBase::operator new[](
         inCount
@@ -343,7 +343,7 @@ void Jolt_delete_array_JPH_CharacterBase_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_CharacterBase_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_CharacterBase_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::CharacterBase::operator delete[](
         inPointer,
@@ -351,7 +351,7 @@ void Jolt_delete_array_JPH_CharacterBase_void_ptr_unsigned_long(void *inPointer,
     );
 }
 
-void *Jolt_new_JPH_CharacterBase_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_CharacterBase_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CharacterBase::operator new(
         inCount,
@@ -367,7 +367,7 @@ void Jolt_delete_JPH_CharacterBase_void_ptr_void_ptr(void *inPointer, void *inPl
     );
 }
 
-void *Jolt_new_array_JPH_CharacterBase_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_CharacterBase_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::CharacterBase::operator new[](
         inCount,

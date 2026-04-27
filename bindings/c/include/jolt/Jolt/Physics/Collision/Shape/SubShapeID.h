@@ -71,31 +71,31 @@ JOLT_API void JPH_SubShapeID_DestroyArray(const JPH_SubShapeID *_this);
 JOLT_API JPH_SubShapeID *JPH_SubShapeID_AssignFromAnother(JPH_SubShapeID *_this, const JPH_SubShapeID *_other);
 
 /// Generated from method `JPH::SubShapeID::operator new`.
-JOLT_API void *Jolt_new_JPH_SubShapeID_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_SubShapeID_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::SubShapeID::operator delete`.
 JOLT_API void Jolt_delete_JPH_SubShapeID_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SubShapeID::operator delete`.
-JOLT_API void Jolt_delete_JPH_SubShapeID_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_SubShapeID_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::SubShapeID::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SubShapeID_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_SubShapeID_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::SubShapeID::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SubShapeID_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::SubShapeID::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_SubShapeID_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_SubShapeID_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::SubShapeID::operator new`.
-JOLT_API void *Jolt_new_JPH_SubShapeID_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_SubShapeID_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::SubShapeID::operator delete`.
 JOLT_API void Jolt_delete_JPH_SubShapeID_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::SubShapeID::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_SubShapeID_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_SubShapeID_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::SubShapeID::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_SubShapeID_void_ptr_void_ptr(void *inPointer, void *inPlace);

@@ -222,7 +222,7 @@ JPH_BoxShapeSettings *JPH_BoxShapeSettings_AssignFromAnother(JPH_BoxShapeSetting
     ));
 }
 
-void *Jolt_new_JPH_BoxShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_BoxShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::BoxShapeSettings::operator new(
         inCount
@@ -236,7 +236,7 @@ void Jolt_delete_JPH_BoxShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_BoxShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::BoxShapeSettings::operator delete(
         inPointer,
@@ -244,7 +244,7 @@ void Jolt_delete_JPH_BoxShapeSettings_void_ptr_unsigned_long(void *inPointer, un
     );
 }
 
-void *Jolt_new_array_JPH_BoxShapeSettings_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_BoxShapeSettings_size_t(unsigned long inCount)
 {
     return JPH::BoxShapeSettings::operator new[](
         inCount
@@ -258,7 +258,7 @@ void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::BoxShapeSettings::operator delete[](
         inPointer,
@@ -266,7 +266,7 @@ void Jolt_delete_array_JPH_BoxShapeSettings_void_ptr_unsigned_long(void *inPoint
     );
 }
 
-void *Jolt_new_JPH_BoxShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_BoxShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::BoxShapeSettings::operator new(
         inCount,
@@ -282,7 +282,7 @@ void Jolt_delete_JPH_BoxShapeSettings_void_ptr_void_ptr(void *inPointer, void *i
     );
 }
 
-void *Jolt_new_array_JPH_BoxShapeSettings_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_BoxShapeSettings_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::BoxShapeSettings::operator new[](
         inCount,
@@ -482,7 +482,7 @@ void JPH_BoxShape_DestroyArray(const JPH_BoxShape *_this)
     delete[] ((const JPH::BoxShape *)_this);
 }
 
-void *Jolt_new_JPH_BoxShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_JPH_BoxShape_size_t(unsigned long inCount)
 {
     return JPH::BoxShape::operator new(
         inCount
@@ -496,7 +496,7 @@ void Jolt_delete_JPH_BoxShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_JPH_BoxShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_JPH_BoxShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::BoxShape::operator delete(
         inPointer,
@@ -504,7 +504,7 @@ void Jolt_delete_JPH_BoxShape_void_ptr_unsigned_long(void *inPointer, unsigned l
     );
 }
 
-void *Jolt_new_array_JPH_BoxShape_unsigned_long(unsigned long inCount)
+void *Jolt_new_array_JPH_BoxShape_size_t(unsigned long inCount)
 {
     return JPH::BoxShape::operator new[](
         inCount
@@ -518,7 +518,7 @@ void Jolt_delete_array_JPH_BoxShape_void_ptr(void *inPointer)
     );
 }
 
-void Jolt_delete_array_JPH_BoxShape_void_ptr_unsigned_long(void *inPointer, unsigned long inSize)
+void Jolt_delete_array_JPH_BoxShape_void_ptr_size_t(void *inPointer, unsigned long inSize)
 {
     JPH::BoxShape::operator delete[](
         inPointer,
@@ -526,7 +526,7 @@ void Jolt_delete_array_JPH_BoxShape_void_ptr_unsigned_long(void *inPointer, unsi
     );
 }
 
-void *Jolt_new_JPH_BoxShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_JPH_BoxShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::BoxShape::operator new(
         inCount,
@@ -542,7 +542,7 @@ void Jolt_delete_JPH_BoxShape_void_ptr_void_ptr(void *inPointer, void *inPlace)
     );
 }
 
-void *Jolt_new_array_JPH_BoxShape_unsigned_long_void_ptr(unsigned long inCount, void *inPointer)
+void *Jolt_new_array_JPH_BoxShape_size_t_void_ptr(unsigned long inCount, void *inPointer)
 {
     return JPH::BoxShape::operator new[](
         inCount,

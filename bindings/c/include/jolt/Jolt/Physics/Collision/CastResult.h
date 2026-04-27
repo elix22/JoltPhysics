@@ -114,31 +114,31 @@ JOLT_API void JPH_BroadPhaseCastResult_DestroyArray(const JPH_BroadPhaseCastResu
 JOLT_API JPH_BroadPhaseCastResult *JPH_BroadPhaseCastResult_AssignFromAnother(JPH_BroadPhaseCastResult *_this, const JPH_BroadPhaseCastResult *_other);
 
 /// Generated from method `JPH::BroadPhaseCastResult::operator new`.
-JOLT_API void *Jolt_new_JPH_BroadPhaseCastResult_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_BroadPhaseCastResult_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::BroadPhaseCastResult::operator delete`.
 JOLT_API void Jolt_delete_JPH_BroadPhaseCastResult_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::BroadPhaseCastResult::operator delete`.
-JOLT_API void Jolt_delete_JPH_BroadPhaseCastResult_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_BroadPhaseCastResult_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::BroadPhaseCastResult::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_BroadPhaseCastResult_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_BroadPhaseCastResult_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::BroadPhaseCastResult::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_BroadPhaseCastResult_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::BroadPhaseCastResult::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_BroadPhaseCastResult_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_BroadPhaseCastResult_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::BroadPhaseCastResult::operator new`.
-JOLT_API void *Jolt_new_JPH_BroadPhaseCastResult_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_BroadPhaseCastResult_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::BroadPhaseCastResult::operator delete`.
 JOLT_API void Jolt_delete_JPH_BroadPhaseCastResult_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::BroadPhaseCastResult::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_BroadPhaseCastResult_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_BroadPhaseCastResult_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::BroadPhaseCastResult::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_BroadPhaseCastResult_void_ptr_void_ptr(void *inPointer, void *inPlace);
@@ -274,31 +274,31 @@ JOLT_API void JPH_RayCastResult_DestroyArray(const JPH_RayCastResult *_this);
 JOLT_API JPH_RayCastResult *JPH_RayCastResult_AssignFromAnother(JPH_RayCastResult *_this, const JPH_RayCastResult *_other);
 
 /// Generated from method `JPH::RayCastResult::operator new`.
-JOLT_API void *Jolt_new_JPH_RayCastResult_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_JPH_RayCastResult_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::RayCastResult::operator delete`.
 JOLT_API void Jolt_delete_JPH_RayCastResult_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::RayCastResult::operator delete`.
-JOLT_API void Jolt_delete_JPH_RayCastResult_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_JPH_RayCastResult_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::RayCastResult::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_RayCastResult_unsigned_long(unsigned long inCount);
+JOLT_API void *Jolt_new_array_JPH_RayCastResult_size_t(unsigned long inCount);
 
 /// Generated from method `JPH::RayCastResult::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_RayCastResult_void_ptr(void *inPointer);
 
 /// Generated from method `JPH::RayCastResult::operator delete[]`.
-JOLT_API void Jolt_delete_array_JPH_RayCastResult_void_ptr_unsigned_long(void *inPointer, unsigned long inSize);
+JOLT_API void Jolt_delete_array_JPH_RayCastResult_void_ptr_size_t(void *inPointer, unsigned long inSize);
 
 /// Generated from method `JPH::RayCastResult::operator new`.
-JOLT_API void *Jolt_new_JPH_RayCastResult_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_JPH_RayCastResult_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::RayCastResult::operator delete`.
 JOLT_API void Jolt_delete_JPH_RayCastResult_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// Generated from method `JPH::RayCastResult::operator new[]`.
-JOLT_API void *Jolt_new_array_JPH_RayCastResult_unsigned_long_void_ptr(unsigned long inCount, void *inPointer);
+JOLT_API void *Jolt_new_array_JPH_RayCastResult_size_t_void_ptr(unsigned long inCount, void *inPointer);
 
 /// Generated from method `JPH::RayCastResult::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_RayCastResult_void_ptr_void_ptr(void *inPointer, void *inPlace);
