@@ -90,6 +90,7 @@ set -x
 
 # Assemble the combined input header.
 echo "#pragma once" >"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/bindings/jolt_init_wrapper.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Jolt.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/RegisterTypes.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Core/Factory.h\"" >>"$BINDINGS/tmp/combined_input.h"
@@ -163,6 +164,7 @@ echo "#include \"$ROOT/Jolt/Math/Vector.h\"" >>"$BINDINGS/tmp/combined_input.h"
     -o "$BINDINGS/tmp/parse_result.json" \
     --ignore :: \
     --skip-mentions-of std::align_val_t \
+    --allow JoltHelpers \
     --allow JPH::BVec16 \
     --allow JPH::DMat44 \
     --allow JPH::Double3 \

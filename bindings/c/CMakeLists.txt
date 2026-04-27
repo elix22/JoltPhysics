@@ -48,6 +48,7 @@ if(EMSCRIPTEN)
     add_library(cjolt STATIC
         ${BINDING_SOURCES}
         ${JOLT_SOURCES}
+        "${CMAKE_CURRENT_SOURCE_DIR}/../jolt_init.cpp"
     )
     set_target_properties(cjolt PROPERTIES PREFIX "")
     # add_dependencies for ordering only — ensures Jolt's interface properties are ready
@@ -55,6 +56,7 @@ if(EMSCRIPTEN)
 else()
     add_library(cjolt SHARED
         ${BINDING_SOURCES}
+        "${CMAKE_CURRENT_SOURCE_DIR}/../jolt_init.cpp"
     )
     # Absorb the entire Jolt static lib into libcjolt so consumers only
     # need to link a single library.  We use add_dependencies for build
