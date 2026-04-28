@@ -70,36 +70,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_PlaneShapeSettings?(JPH.Const_SerializableObject parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(JPH.Const_SerializableObject._Underlying *_this);
-            var ptr = __JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_PlaneShapeSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-        public static unsafe explicit operator Const_PlaneShapeSettings?(JPH.Const_ShapeSettings parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings(JPH.Const_ShapeSettings._Underlying *_this);
-            var ptr = __JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_PlaneShapeSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         ///< Default half-extent of the plane (total size along 1 axis will be 2 * half-extent)
         public static unsafe float CDefaultHalfExtent
         {
@@ -428,36 +398,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator PlaneShapeSettings?(JPH.SerializableObject parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(JPH.SerializableObject._Underlying *_this);
-            var ptr = __JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            PlaneShapeSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-        public static unsafe explicit operator PlaneShapeSettings?(JPH.ShapeSettings parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings(JPH.ShapeSettings._Underlying *_this);
-            var ptr = __JPH_PlaneShapeSettings_DynamicDowncastFrom_JPH_ShapeSettings(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            PlaneShapeSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         ///< The bounding box of this plane will run from [-half_extent, half_extent]. Keep this as low as possible for better broad phase performance.
         public new unsafe ref float mHalfExtent
         {
@@ -668,22 +608,6 @@ public static partial class JPH
             extern static JPH.Const_Shape._Underlying *__JPH_PlaneShape_UpcastTo_JPH_Shape(_Underlying *_this);
             JPH.Const_Shape ret = new(__JPH_PlaneShape_UpcastTo_JPH_Shape(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator Const_PlaneShape?(JPH.Const_Shape parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShape_DynamicDowncastFrom_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShape_DynamicDowncastFrom_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_PlaneShape_DynamicDowncastFrom_JPH_Shape(JPH.Const_Shape._Underlying *_this);
-            var ptr = __JPH_PlaneShape_DynamicDowncastFrom_JPH_Shape(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_PlaneShape ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -1232,22 +1156,6 @@ public static partial class JPH
             extern static JPH.Shape._Underlying *__JPH_PlaneShape_UpcastTo_JPH_Shape(_Underlying *_this);
             JPH.Shape ret = new(__JPH_PlaneShape_UpcastTo_JPH_Shape(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator PlaneShape?(JPH.Shape parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShape_DynamicDowncastFrom_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShape_DynamicDowncastFrom_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_PlaneShape_DynamicDowncastFrom_JPH_Shape(JPH.Shape._Underlying *_this);
-            var ptr = __JPH_PlaneShape_DynamicDowncastFrom_JPH_Shape(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            PlaneShape ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

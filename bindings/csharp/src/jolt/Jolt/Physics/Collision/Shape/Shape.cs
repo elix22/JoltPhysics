@@ -84,22 +84,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_ShapeSettings?(JPH.Const_SerializableObject parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(JPH.Const_SerializableObject._Underlying *_this);
-            var ptr = __JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_ShapeSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         /// User data (to be used freely by the application)
         public unsafe UIntPtr mUserData
         {
@@ -378,22 +362,6 @@ public static partial class JPH
             extern static JPH.RefTarget_JPHShapeSettings._Underlying *__JPH_ShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
             JPH.RefTarget_JPHShapeSettings ret = new(__JPH_ShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator ShapeSettings?(JPH.SerializableObject parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(JPH.SerializableObject._Underlying *_this);
-            var ptr = __JPH_ShapeSettings_DynamicDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            ShapeSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

@@ -760,22 +760,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_DefaultBroadPhaseLayerFilter?(JPH.Const_BroadPhaseLayerFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DefaultBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DefaultBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_DefaultBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter(JPH.Const_BroadPhaseLayerFilter._Underlying *_this);
-            var ptr = __JPH_DefaultBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_DefaultBroadPhaseLayerFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         internal unsafe Const_DefaultBroadPhaseLayerFilter(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructor
@@ -838,22 +822,6 @@ public static partial class JPH
             extern static JPH.BroadPhaseLayerFilter._Underlying *__JPH_DefaultBroadPhaseLayerFilter_UpcastTo_JPH_BroadPhaseLayerFilter(_Underlying *_this);
             JPH.BroadPhaseLayerFilter ret = new(__JPH_DefaultBroadPhaseLayerFilter_UpcastTo_JPH_BroadPhaseLayerFilter(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator DefaultBroadPhaseLayerFilter?(JPH.BroadPhaseLayerFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DefaultBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DefaultBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_DefaultBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter(JPH.BroadPhaseLayerFilter._Underlying *_this);
-            var ptr = __JPH_DefaultBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            DefaultBroadPhaseLayerFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -959,22 +927,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_SpecifiedBroadPhaseLayerFilter?(JPH.Const_BroadPhaseLayerFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SpecifiedBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SpecifiedBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_SpecifiedBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter(JPH.Const_BroadPhaseLayerFilter._Underlying *_this);
-            var ptr = __JPH_SpecifiedBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_SpecifiedBroadPhaseLayerFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         internal unsafe Const_SpecifiedBroadPhaseLayerFilter(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructor
@@ -1037,22 +989,6 @@ public static partial class JPH
             extern static JPH.BroadPhaseLayerFilter._Underlying *__JPH_SpecifiedBroadPhaseLayerFilter_UpcastTo_JPH_BroadPhaseLayerFilter(_Underlying *_this);
             JPH.BroadPhaseLayerFilter ret = new(__JPH_SpecifiedBroadPhaseLayerFilter_UpcastTo_JPH_BroadPhaseLayerFilter(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator SpecifiedBroadPhaseLayerFilter?(JPH.BroadPhaseLayerFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SpecifiedBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SpecifiedBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_SpecifiedBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter(JPH.BroadPhaseLayerFilter._Underlying *_this);
-            var ptr = __JPH_SpecifiedBroadPhaseLayerFilter_DynamicDowncastFrom_JPH_BroadPhaseLayerFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            SpecifiedBroadPhaseLayerFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

@@ -59,22 +59,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_BroadPhaseLayerInterfaceTable?(JPH.Const_BroadPhaseLayerInterface parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BroadPhaseLayerInterfaceTable_DynamicDowncastFrom_JPH_BroadPhaseLayerInterface", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BroadPhaseLayerInterfaceTable_DynamicDowncastFrom_JPH_BroadPhaseLayerInterface", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_BroadPhaseLayerInterfaceTable_DynamicDowncastFrom_JPH_BroadPhaseLayerInterface(JPH.Const_BroadPhaseLayerInterface._Underlying *_this);
-            var ptr = __JPH_BroadPhaseLayerInterfaceTable_DynamicDowncastFrom_JPH_BroadPhaseLayerInterface(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_BroadPhaseLayerInterfaceTable ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         internal unsafe Const_BroadPhaseLayerInterfaceTable(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Generated from constructor `JPH::BroadPhaseLayerInterfaceTable::BroadPhaseLayerInterfaceTable`.
@@ -283,22 +267,6 @@ public static partial class JPH
             extern static JPH.BroadPhaseLayerInterface._Underlying *__JPH_BroadPhaseLayerInterfaceTable_UpcastTo_JPH_BroadPhaseLayerInterface(_Underlying *_this);
             JPH.BroadPhaseLayerInterface ret = new(__JPH_BroadPhaseLayerInterfaceTable_UpcastTo_JPH_BroadPhaseLayerInterface(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator BroadPhaseLayerInterfaceTable?(JPH.BroadPhaseLayerInterface parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BroadPhaseLayerInterfaceTable_DynamicDowncastFrom_JPH_BroadPhaseLayerInterface", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BroadPhaseLayerInterfaceTable_DynamicDowncastFrom_JPH_BroadPhaseLayerInterface", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_BroadPhaseLayerInterfaceTable_DynamicDowncastFrom_JPH_BroadPhaseLayerInterface(JPH.BroadPhaseLayerInterface._Underlying *_this);
-            var ptr = __JPH_BroadPhaseLayerInterfaceTable_DynamicDowncastFrom_JPH_BroadPhaseLayerInterface(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            BroadPhaseLayerInterfaceTable ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

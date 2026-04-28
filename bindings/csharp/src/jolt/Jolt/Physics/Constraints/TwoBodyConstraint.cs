@@ -76,36 +76,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_TwoBodyConstraintSettings?(JPH.Const_SerializableObject parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_SerializableObject(JPH.Const_SerializableObject._Underlying *_this);
-            var ptr = __JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_TwoBodyConstraintSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-        public static unsafe explicit operator Const_TwoBodyConstraintSettings?(JPH.Const_ConstraintSettings parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_ConstraintSettings(JPH.Const_ConstraintSettings._Underlying *_this);
-            var ptr = __JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_ConstraintSettings(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_TwoBodyConstraintSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
         public unsafe bool mEnabled
         {
@@ -470,36 +440,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator TwoBodyConstraintSettings?(JPH.SerializableObject parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_SerializableObject(JPH.SerializableObject._Underlying *_this);
-            var ptr = __JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            TwoBodyConstraintSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-        public static unsafe explicit operator TwoBodyConstraintSettings?(JPH.ConstraintSettings parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_ConstraintSettings(JPH.ConstraintSettings._Underlying *_this);
-            var ptr = __JPH_TwoBodyConstraintSettings_DynamicDowncastFrom_JPH_ConstraintSettings(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            TwoBodyConstraintSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
         public new unsafe ref bool mEnabled
         {
@@ -696,22 +636,6 @@ public static partial class JPH
             extern static JPH.Const_Constraint._Underlying *__JPH_TwoBodyConstraint_UpcastTo_JPH_Constraint(_Underlying *_this);
             JPH.Const_Constraint ret = new(__JPH_TwoBodyConstraint_UpcastTo_JPH_Constraint(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator Const_TwoBodyConstraint?(JPH.Const_Constraint parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TwoBodyConstraint_DynamicDowncastFrom_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TwoBodyConstraint_DynamicDowncastFrom_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TwoBodyConstraint_DynamicDowncastFrom_JPH_Constraint(JPH.Const_Constraint._Underlying *_this);
-            var ptr = __JPH_TwoBodyConstraint_DynamicDowncastFrom_JPH_Constraint(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_TwoBodyConstraint ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -1100,22 +1024,6 @@ public static partial class JPH
             extern static JPH.Constraint._Underlying *__JPH_TwoBodyConstraint_UpcastTo_JPH_Constraint(_Underlying *_this);
             JPH.Constraint ret = new(__JPH_TwoBodyConstraint_UpcastTo_JPH_Constraint(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator TwoBodyConstraint?(JPH.Constraint parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TwoBodyConstraint_DynamicDowncastFrom_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TwoBodyConstraint_DynamicDowncastFrom_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TwoBodyConstraint_DynamicDowncastFrom_JPH_Constraint(JPH.Constraint._Underlying *_this);
-            var ptr = __JPH_TwoBodyConstraint_DynamicDowncastFrom_JPH_Constraint(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            TwoBodyConstraint ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

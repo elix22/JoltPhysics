@@ -268,22 +268,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_ReversedShapeFilter?(JPH.Const_ShapeFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ReversedShapeFilter_DynamicDowncastFrom_JPH_ShapeFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ReversedShapeFilter_DynamicDowncastFrom_JPH_ShapeFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_ReversedShapeFilter_DynamicDowncastFrom_JPH_ShapeFilter(JPH.Const_ShapeFilter._Underlying *_this);
-            var ptr = __JPH_ReversedShapeFilter_DynamicDowncastFrom_JPH_ShapeFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_ReversedShapeFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         /// Used during NarrowPhase queries and TransformedShape queries. Set to the body ID of inShape2 before calling ShouldCollide.
         /// Provides context to the filter to indicate which body is colliding.
         public unsafe ref readonly JPH.BodyID mBodyID2
@@ -373,22 +357,6 @@ public static partial class JPH
             extern static JPH.ShapeFilter._Underlying *__JPH_ReversedShapeFilter_UpcastTo_JPH_ShapeFilter(_Underlying *_this);
             JPH.ShapeFilter ret = new(__JPH_ReversedShapeFilter_UpcastTo_JPH_ShapeFilter(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator ReversedShapeFilter?(JPH.ShapeFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ReversedShapeFilter_DynamicDowncastFrom_JPH_ShapeFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ReversedShapeFilter_DynamicDowncastFrom_JPH_ShapeFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_ReversedShapeFilter_DynamicDowncastFrom_JPH_ShapeFilter(JPH.ShapeFilter._Underlying *_this);
-            var ptr = __JPH_ReversedShapeFilter_DynamicDowncastFrom_JPH_ShapeFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            ReversedShapeFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

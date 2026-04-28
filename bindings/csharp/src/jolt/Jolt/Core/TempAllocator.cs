@@ -350,22 +350,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_TempAllocatorImpl?(JPH.Const_TempAllocator parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TempAllocatorImpl_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TempAllocatorImpl_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TempAllocatorImpl_DynamicDowncastFrom_JPH_TempAllocator(JPH.Const_TempAllocator._Underlying *_this);
-            var ptr = __JPH_TempAllocatorImpl_DynamicDowncastFrom_JPH_TempAllocator(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_TempAllocatorImpl ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         /// If this allocator needs to fall back to aligned allocations because JPH_RVECTOR_ALIGNMENT is bigger than the platform default
         public static unsafe bool NeedsAlignedAllocate
         {
@@ -633,22 +617,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator TempAllocatorImpl?(JPH.TempAllocator parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TempAllocatorImpl_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TempAllocatorImpl_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TempAllocatorImpl_DynamicDowncastFrom_JPH_TempAllocator(JPH.TempAllocator._Underlying *_this);
-            var ptr = __JPH_TempAllocatorImpl_DynamicDowncastFrom_JPH_TempAllocator(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            TempAllocatorImpl ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         internal unsafe TempAllocatorImpl(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructs the allocator with a maximum allocatable size of inSize
@@ -777,22 +745,6 @@ public static partial class JPH
             extern static JPH.Const_TempAllocator._Underlying *__JPH_TempAllocatorMalloc_UpcastTo_JPH_TempAllocator(_Underlying *_this);
             JPH.Const_TempAllocator ret = new(__JPH_TempAllocatorMalloc_UpcastTo_JPH_TempAllocator(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator Const_TempAllocatorMalloc?(JPH.Const_TempAllocator parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TempAllocatorMalloc_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TempAllocatorMalloc_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TempAllocatorMalloc_DynamicDowncastFrom_JPH_TempAllocator(JPH.Const_TempAllocator._Underlying *_this);
-            var ptr = __JPH_TempAllocatorMalloc_DynamicDowncastFrom_JPH_TempAllocator(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_TempAllocatorMalloc ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -997,22 +949,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator TempAllocatorMalloc?(JPH.TempAllocator parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TempAllocatorMalloc_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TempAllocatorMalloc_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TempAllocatorMalloc_DynamicDowncastFrom_JPH_TempAllocator(JPH.TempAllocator._Underlying *_this);
-            var ptr = __JPH_TempAllocatorMalloc_DynamicDowncastFrom_JPH_TempAllocator(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            TempAllocatorMalloc ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         internal unsafe TempAllocatorMalloc(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructs an empty (default-constructed) instance.
@@ -1152,22 +1088,6 @@ public static partial class JPH
             extern static JPH.Const_TempAllocator._Underlying *__JPH_TempAllocatorImplWithMallocFallback_UpcastTo_JPH_TempAllocator(_Underlying *_this);
             JPH.Const_TempAllocator ret = new(__JPH_TempAllocatorImplWithMallocFallback_UpcastTo_JPH_TempAllocator(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator Const_TempAllocatorImplWithMallocFallback?(JPH.Const_TempAllocator parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TempAllocatorImplWithMallocFallback_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TempAllocatorImplWithMallocFallback_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TempAllocatorImplWithMallocFallback_DynamicDowncastFrom_JPH_TempAllocator(JPH.Const_TempAllocator._Underlying *_this);
-            var ptr = __JPH_TempAllocatorImplWithMallocFallback_DynamicDowncastFrom_JPH_TempAllocator(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_TempAllocatorImplWithMallocFallback ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -1369,22 +1289,6 @@ public static partial class JPH
             extern static JPH.TempAllocator._Underlying *__JPH_TempAllocatorImplWithMallocFallback_UpcastTo_JPH_TempAllocator(_Underlying *_this);
             JPH.TempAllocator ret = new(__JPH_TempAllocatorImplWithMallocFallback_UpcastTo_JPH_TempAllocator(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator TempAllocatorImplWithMallocFallback?(JPH.TempAllocator parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TempAllocatorImplWithMallocFallback_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TempAllocatorImplWithMallocFallback_DynamicDowncastFrom_JPH_TempAllocator", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_TempAllocatorImplWithMallocFallback_DynamicDowncastFrom_JPH_TempAllocator(JPH.TempAllocator._Underlying *_this);
-            var ptr = __JPH_TempAllocatorImplWithMallocFallback_DynamicDowncastFrom_JPH_TempAllocator(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            TempAllocatorImplWithMallocFallback ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

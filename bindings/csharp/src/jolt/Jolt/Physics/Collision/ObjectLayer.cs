@@ -371,22 +371,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_DefaultObjectLayerFilter?(JPH.Const_ObjectLayerFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DefaultObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DefaultObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_DefaultObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter(JPH.Const_ObjectLayerFilter._Underlying *_this);
-            var ptr = __JPH_DefaultObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_DefaultObjectLayerFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         internal unsafe Const_DefaultObjectLayerFilter(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Copy constructor
@@ -471,22 +455,6 @@ public static partial class JPH
             extern static JPH.ObjectLayerFilter._Underlying *__JPH_DefaultObjectLayerFilter_UpcastTo_JPH_ObjectLayerFilter(_Underlying *_this);
             JPH.ObjectLayerFilter ret = new(__JPH_DefaultObjectLayerFilter_UpcastTo_JPH_ObjectLayerFilter(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator DefaultObjectLayerFilter?(JPH.ObjectLayerFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DefaultObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DefaultObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_DefaultObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter(JPH.ObjectLayerFilter._Underlying *_this);
-            var ptr = __JPH_DefaultObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            DefaultObjectLayerFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -628,22 +596,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_SpecifiedObjectLayerFilter?(JPH.Const_ObjectLayerFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SpecifiedObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SpecifiedObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_SpecifiedObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter(JPH.Const_ObjectLayerFilter._Underlying *_this);
-            var ptr = __JPH_SpecifiedObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_SpecifiedObjectLayerFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         internal unsafe Const_SpecifiedObjectLayerFilter(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructor
@@ -706,22 +658,6 @@ public static partial class JPH
             extern static JPH.ObjectLayerFilter._Underlying *__JPH_SpecifiedObjectLayerFilter_UpcastTo_JPH_ObjectLayerFilter(_Underlying *_this);
             JPH.ObjectLayerFilter ret = new(__JPH_SpecifiedObjectLayerFilter_UpcastTo_JPH_ObjectLayerFilter(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator SpecifiedObjectLayerFilter?(JPH.ObjectLayerFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SpecifiedObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SpecifiedObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_SpecifiedObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter(JPH.ObjectLayerFilter._Underlying *_this);
-            var ptr = __JPH_SpecifiedObjectLayerFilter_DynamicDowncastFrom_JPH_ObjectLayerFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            SpecifiedObjectLayerFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

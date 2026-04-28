@@ -70,22 +70,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_JobSystemWithBarrier?(JPH.Const_JobSystem parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemWithBarrier_DynamicDowncastFrom_JPH_JobSystem", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemWithBarrier_DynamicDowncastFrom_JPH_JobSystem", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_JobSystemWithBarrier_DynamicDowncastFrom_JPH_JobSystem(JPH.Const_JobSystem._Underlying *_this);
-            var ptr = __JPH_JobSystemWithBarrier_DynamicDowncastFrom_JPH_JobSystem(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_JobSystemWithBarrier ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         internal unsafe Const_JobSystemWithBarrier(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Generated from method `JPH::JobSystemWithBarrier::operator new`.
@@ -282,22 +266,6 @@ public static partial class JPH
             extern static JPH.JobSystem._Underlying *__JPH_JobSystemWithBarrier_UpcastTo_JPH_JobSystem(_Underlying *_this);
             JPH.JobSystem ret = new(__JPH_JobSystemWithBarrier_UpcastTo_JPH_JobSystem(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator JobSystemWithBarrier?(JPH.JobSystem parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemWithBarrier_DynamicDowncastFrom_JPH_JobSystem", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemWithBarrier_DynamicDowncastFrom_JPH_JobSystem", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_JobSystemWithBarrier_DynamicDowncastFrom_JPH_JobSystem(JPH.JobSystem._Underlying *_this);
-            var ptr = __JPH_JobSystemWithBarrier_DynamicDowncastFrom_JPH_JobSystem(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            JobSystemWithBarrier ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

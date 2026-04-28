@@ -57,22 +57,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_CharacterVirtualSettings?(JPH.Const_CharacterBaseSettings parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtualSettings_DynamicDowncastFrom_JPH_CharacterBaseSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtualSettings_DynamicDowncastFrom_JPH_CharacterBaseSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_CharacterVirtualSettings_DynamicDowncastFrom_JPH_CharacterBaseSettings(JPH.Const_CharacterBaseSettings._Underlying *_this);
-            var ptr = __JPH_CharacterVirtualSettings_DynamicDowncastFrom_JPH_CharacterBaseSettings(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_CharacterVirtualSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         /// ID to give to this character. This is used for deterministically sorting and as an identifier to represent the character in the contact removal callback.
         public unsafe JPH.Const_CharacterID mid
         {
@@ -620,22 +604,6 @@ public static partial class JPH
             extern static JPH.CharacterBaseSettings._Underlying *__JPH_CharacterVirtualSettings_UpcastTo_JPH_CharacterBaseSettings(_Underlying *_this);
             JPH.CharacterBaseSettings ret = new(__JPH_CharacterVirtualSettings_UpcastTo_JPH_CharacterBaseSettings(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator CharacterVirtualSettings?(JPH.CharacterBaseSettings parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtualSettings_DynamicDowncastFrom_JPH_CharacterBaseSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtualSettings_DynamicDowncastFrom_JPH_CharacterBaseSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_CharacterVirtualSettings_DynamicDowncastFrom_JPH_CharacterBaseSettings(JPH.CharacterBaseSettings._Underlying *_this);
-            var ptr = __JPH_CharacterVirtualSettings_DynamicDowncastFrom_JPH_CharacterBaseSettings(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            CharacterVirtualSettings ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -1754,22 +1722,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_CharacterVsCharacterCollisionSimple?(JPH.Const_CharacterVsCharacterCollision parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVsCharacterCollisionSimple_DynamicDowncastFrom_JPH_CharacterVsCharacterCollision", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVsCharacterCollisionSimple_DynamicDowncastFrom_JPH_CharacterVsCharacterCollision", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_CharacterVsCharacterCollisionSimple_DynamicDowncastFrom_JPH_CharacterVsCharacterCollision(JPH.Const_CharacterVsCharacterCollision._Underlying *_this);
-            var ptr = __JPH_CharacterVsCharacterCollisionSimple_DynamicDowncastFrom_JPH_CharacterVsCharacterCollision(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_CharacterVsCharacterCollisionSimple ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         internal unsafe Const_CharacterVsCharacterCollisionSimple(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -1821,22 +1773,6 @@ public static partial class JPH
             extern static JPH.CharacterVsCharacterCollision._Underlying *__JPH_CharacterVsCharacterCollisionSimple_UpcastTo_JPH_CharacterVsCharacterCollision(_Underlying *_this);
             JPH.CharacterVsCharacterCollision ret = new(__JPH_CharacterVsCharacterCollisionSimple_UpcastTo_JPH_CharacterVsCharacterCollision(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator CharacterVsCharacterCollisionSimple?(JPH.CharacterVsCharacterCollision parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVsCharacterCollisionSimple_DynamicDowncastFrom_JPH_CharacterVsCharacterCollision", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVsCharacterCollisionSimple_DynamicDowncastFrom_JPH_CharacterVsCharacterCollision", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_CharacterVsCharacterCollisionSimple_DynamicDowncastFrom_JPH_CharacterVsCharacterCollision(JPH.CharacterVsCharacterCollision._Underlying *_this);
-            var ptr = __JPH_CharacterVsCharacterCollisionSimple_DynamicDowncastFrom_JPH_CharacterVsCharacterCollision(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            CharacterVsCharacterCollisionSimple ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -1995,22 +1931,6 @@ public static partial class JPH
             extern static JPH.Const_CharacterBase._Underlying *__JPH_CharacterVirtual_UpcastTo_JPH_CharacterBase(_Underlying *_this);
             JPH.Const_CharacterBase ret = new(__JPH_CharacterVirtual_UpcastTo_JPH_CharacterBase(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator Const_CharacterVirtual?(JPH.Const_CharacterBase parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_DynamicDowncastFrom_JPH_CharacterBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_DynamicDowncastFrom_JPH_CharacterBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_CharacterVirtual_DynamicDowncastFrom_JPH_CharacterBase(JPH.Const_CharacterBase._Underlying *_this);
-            var ptr = __JPH_CharacterVirtual_DynamicDowncastFrom_JPH_CharacterBase(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_CharacterVirtual ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -4348,22 +4268,6 @@ public static partial class JPH
             extern static JPH.CharacterBase._Underlying *__JPH_CharacterVirtual_UpcastTo_JPH_CharacterBase(_Underlying *_this);
             JPH.CharacterBase ret = new(__JPH_CharacterVirtual_UpcastTo_JPH_CharacterBase(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator CharacterVirtual?(JPH.CharacterBase parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_DynamicDowncastFrom_JPH_CharacterBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_DynamicDowncastFrom_JPH_CharacterBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_CharacterVirtual_DynamicDowncastFrom_JPH_CharacterBase(JPH.CharacterBase._Underlying *_this);
-            var ptr = __JPH_CharacterVirtual_DynamicDowncastFrom_JPH_CharacterBase(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            CharacterVirtual ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

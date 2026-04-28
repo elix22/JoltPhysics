@@ -231,22 +231,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_IgnoreSingleBodyFilter?(JPH.Const_BodyFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_IgnoreSingleBodyFilter_DynamicDowncastFrom_JPH_BodyFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_IgnoreSingleBodyFilter_DynamicDowncastFrom_JPH_BodyFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_IgnoreSingleBodyFilter_DynamicDowncastFrom_JPH_BodyFilter(JPH.Const_BodyFilter._Underlying *_this);
-            var ptr = __JPH_IgnoreSingleBodyFilter_DynamicDowncastFrom_JPH_BodyFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_IgnoreSingleBodyFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         internal unsafe Const_IgnoreSingleBodyFilter(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructor, pass the body you want to ignore
@@ -328,22 +312,6 @@ public static partial class JPH
             extern static JPH.BodyFilter._Underlying *__JPH_IgnoreSingleBodyFilter_UpcastTo_JPH_BodyFilter(_Underlying *_this);
             JPH.BodyFilter ret = new(__JPH_IgnoreSingleBodyFilter_UpcastTo_JPH_BodyFilter(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator IgnoreSingleBodyFilter?(JPH.BodyFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_IgnoreSingleBodyFilter_DynamicDowncastFrom_JPH_BodyFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_IgnoreSingleBodyFilter_DynamicDowncastFrom_JPH_BodyFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_IgnoreSingleBodyFilter_DynamicDowncastFrom_JPH_BodyFilter(JPH.BodyFilter._Underlying *_this);
-            var ptr = __JPH_IgnoreSingleBodyFilter_DynamicDowncastFrom_JPH_BodyFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            IgnoreSingleBodyFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -452,22 +420,6 @@ public static partial class JPH
             return ret;
         }
 
-        // Downcasts:
-        public static unsafe explicit operator Const_IgnoreMultipleBodiesFilter?(JPH.Const_BodyFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_IgnoreMultipleBodiesFilter_DynamicDowncastFrom_JPH_BodyFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_IgnoreMultipleBodiesFilter_DynamicDowncastFrom_JPH_BodyFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_IgnoreMultipleBodiesFilter_DynamicDowncastFrom_JPH_BodyFilter(JPH.Const_BodyFilter._Underlying *_this);
-            var ptr = __JPH_IgnoreMultipleBodiesFilter_DynamicDowncastFrom_JPH_BodyFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            Const_IgnoreMultipleBodiesFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
-            return ret;
-        }
-
         internal unsafe Const_IgnoreMultipleBodiesFilter(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -545,22 +497,6 @@ public static partial class JPH
             extern static JPH.BodyFilter._Underlying *__JPH_IgnoreMultipleBodiesFilter_UpcastTo_JPH_BodyFilter(_Underlying *_this);
             JPH.BodyFilter ret = new(__JPH_IgnoreMultipleBodiesFilter_UpcastTo_JPH_BodyFilter(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
-            return ret;
-        }
-
-        // Downcasts:
-        public static unsafe explicit operator IgnoreMultipleBodiesFilter?(JPH.BodyFilter parent)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_IgnoreMultipleBodiesFilter_DynamicDowncastFrom_JPH_BodyFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_IgnoreMultipleBodiesFilter_DynamicDowncastFrom_JPH_BodyFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static _Underlying *__JPH_IgnoreMultipleBodiesFilter_DynamicDowncastFrom_JPH_BodyFilter(JPH.BodyFilter._Underlying *_this);
-            var ptr = __JPH_IgnoreMultipleBodiesFilter_DynamicDowncastFrom_JPH_BodyFilter(parent._UnderlyingPtr);
-            if (ptr is null) return null;
-            IgnoreMultipleBodiesFilter ret = new(ptr, is_owning: false);
-            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
