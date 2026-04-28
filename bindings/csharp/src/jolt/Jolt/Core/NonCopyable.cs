@@ -44,6 +44,7 @@ public static partial class JPH
     ///     `JPH::HingeConstraint`
     ///     `JPH::IgnoreMultipleBodiesFilter`
     ///     `JPH::IgnoreSingleBodyFilter`
+    ///     `JPH::JobSystemSingleThreaded`
     ///     `JPH::JobSystemThreadPool`
     ///     `JPH::JobSystemWithBarrier`
     ///     `JPH::MeshShape`
@@ -148,6 +149,7 @@ public static partial class JPH
     ///     `JPH::HingeConstraint`
     ///     `JPH::IgnoreMultipleBodiesFilter`
     ///     `JPH::IgnoreSingleBodyFilter`
+    ///     `JPH::JobSystemSingleThreaded`
     ///     `JPH::JobSystemThreadPool`
     ///     `JPH::JobSystemWithBarrier`
     ///     `JPH::MeshShape`

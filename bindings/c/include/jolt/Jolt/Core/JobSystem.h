@@ -86,6 +86,7 @@ typedef struct JPH_JobSystem_Barrier JPH_JobSystem_Barrier;
 ///     `JPH::NonCopyable`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::JobSystemSingleThreaded`
 ///     `JPH::JobSystemWithBarrier`
 ///   Indirect: (non-virtual)
 ///     `JPH::JobSystemThreadPool`

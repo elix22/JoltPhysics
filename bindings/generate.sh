@@ -95,6 +95,7 @@ echo "#include \"$ROOT/Jolt/Jolt.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/RegisterTypes.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Core/Factory.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Core/JobSystemThreadPool.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Core/JobSystemSingleThreaded.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/PhysicsSettings.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/PhysicsSystem.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/BoxShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
@@ -267,6 +268,7 @@ echo "#include \"$ROOT/Jolt/Math/Vector.h\"" >>"$BINDINGS/tmp/combined_input.h"
     --allow JPH::JobSystem \
     --allow JPH::JobSystemWithBarrier \
     --allow JPH::JobSystemThreadPool \
+    --allow JPH::JobSystemSingleThreaded \
     --allow JPH::PhysicsSettings \
     --allow JPH::PhysicsSystem \
     --allow JPH::Factory \
