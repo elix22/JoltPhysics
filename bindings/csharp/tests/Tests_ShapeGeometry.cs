@@ -7,7 +7,7 @@ using Xunit;
 
 namespace JoltTests;
 
-// Pure-math / no-physics-system tests — no [Collection("Jolt")] needed.
+[Collection("Jolt")]
 public sealed class Tests_ShapeGeometry
 {
     const float Eps = 1e-4f;

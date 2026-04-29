@@ -6,7 +6,7 @@ using Xunit;
 
 namespace JoltTests;
 
-// No physics system needed — pure shape construction tests.
+[Collection("Jolt")]
 public sealed class Tests_MutableCompound
 {
     // ─────────────────────────────────────────────────────────────────────────
