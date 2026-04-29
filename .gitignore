@@ -12,3 +12,9 @@
 /detlog.txt
 /Assets/Shaders/VK/*.spv
 /Assets/Shaders/MTL/*.metallib
+
+# C# build output
+bindings/csharp/bin/
+bindings/csharp/obj/
+bindings/csharp/tests/bin/
+bindings/csharp/tests/obj/

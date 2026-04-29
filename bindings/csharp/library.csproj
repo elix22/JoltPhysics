@@ -9,4 +9,9 @@
     <NoWarn>CS0659;CS0661</NoWarn>
   </PropertyGroup>
 
+  <ItemGroup>
+    <!-- Exclude the tests subfolder so it does not get compiled into the library. -->
+    <Compile Remove="tests/**/*.cs" />
+  </ItemGroup>
+
 </Project>

@@ -6,6 +6,7 @@ on:
     paths:
       - 'Jolt/**'
       - 'bindings/c/**'
+      - 'bindings/csharp/**'
       - 'scripts/**'
       - '.github/workflows/build-cjolt.yml'
   pull_request:
@@ -13,6 +14,7 @@ on:
     paths:
       - 'Jolt/**'
       - 'bindings/c/**'
+      - 'bindings/csharp/**'
       - 'scripts/**'
       - '.github/workflows/build-cjolt.yml'
   workflow_dispatch:  # Allow manual triggering
@@ -168,6 +170,77 @@ jobs:
         name: ios-arm64
         path: libs/ios/**/*
         retention-days: 30
+
+  # ── C# binding tests ──────────────────────────────────────────────────────
+  test-windows:
+    name: Test C# Bindings (Windows x64)
+    needs: build-windows
+    runs-on: windows-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download Windows library
+      uses: actions/download-artifact@v4
+      with:
+        name: windows-x64
+        path: libs/windows
+
+    - name: Setup .NET 8
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Run C# tests
+      shell: bash
+      run: bash bindings/csharp/tests/run_tests.sh
+
+  test-macos:
+    name: Test C# Bindings (macOS arm64)
+    needs: build-macos
+    runs-on: macos-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download macOS arm64 library
+      uses: actions/download-artifact@v4
+      with:
+        name: macos-arm64
+        path: libs/macos/arm64
+
+    - name: Setup .NET 8
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Run C# tests
+      run: bash bindings/csharp/tests/run_tests.sh
+
+  test-linux:
+    name: Test C# Bindings (Linux x64)
+    needs: build-linux
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install .NET dependencies
+      run: sudo apt-get install -y libicu-dev
+
+    - name: Download Linux library
+      uses: actions/download-artifact@v4
+      with:
+        name: linux-X64
+        path: libs/linux
+
+    - name: Setup .NET 8
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Run C# tests
+      run: bash bindings/csharp/tests/run_tests.sh
 
   # Combine all artifacts
   combine-artifacts:
