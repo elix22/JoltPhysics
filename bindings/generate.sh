@@ -340,4 +340,5 @@ EOF
     --imported-lib-name cjolt \
     --helpers-namespace JPH \
     --force-namespace JPH \
+    --intrinsic-ref-counted-base "JPH::RefTarget" \
     "${EXTRA_GEN_FLAGS[@]}"

@@ -22,12 +22,18 @@ public static partial class JPH
             if (_UnderlyingPtr is null || !_IsOwningVal)
                 return;
             #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_TriangleShapeSettings_Destroy(_Underlying *_this);
-            __JPH_TriangleShapeSettings_Destroy(_UnderlyingPtr);
+            extern static void *__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ShapeSettings_Release(void *_this);
+            __JPH_RefTarget_JPH_ShapeSettings_Release(__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_UnderlyingPtr));
             _UnderlyingPtr = null;
         }
         public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
@@ -190,6 +196,19 @@ public static partial class JPH
             #endif
             extern static JPH.TriangleShapeSettings._Underlying *__JPH_TriangleShapeSettings_DefaultConstruct();
             _UnderlyingPtr = __JPH_TriangleShapeSettings_DefaultConstruct();
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ShapeSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_ShapeSettings_AddRef(__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_UnderlyingPtr));
         }
 
         /// Generated from constructor `JPH::TriangleShapeSettings::TriangleShapeSettings`.
@@ -202,6 +221,19 @@ public static partial class JPH
             #endif
             extern static JPH.TriangleShapeSettings._Underlying *__JPH_TriangleShapeSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.TriangleShapeSettings._Underlying *_other);
             _UnderlyingPtr = __JPH_TriangleShapeSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ShapeSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_ShapeSettings_AddRef(__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_UnderlyingPtr));
             if (_other.Value is not null) _KeepAlive(_other.Value);
         }
 
@@ -225,6 +257,19 @@ public static partial class JPH
             extern static JPH.TriangleShapeSettings._Underlying *__JPH_TriangleShapeSettings_Construct(JPH.Vec3._Underlying *inV1, JPH.Vec3._Underlying *inV2, JPH.Vec3._Underlying *inV3, float *inConvexRadius, JPH.Const_PhysicsMaterial._Underlying *inMaterial);
             float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
             _UnderlyingPtr = __JPH_TriangleShapeSettings_Construct(inV1._UnderlyingPtr, inV2._UnderlyingPtr, inV3._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ShapeSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_ShapeSettings_AddRef(__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_UnderlyingPtr));
         }
 
         /// Generated from method `JPH::TriangleShapeSettings::operator new`.
@@ -597,6 +642,19 @@ public static partial class JPH
             #endif
             extern static JPH.TriangleShapeSettings._Underlying *__JPH_TriangleShapeSettings_DefaultConstruct();
             _UnderlyingPtr = __JPH_TriangleShapeSettings_DefaultConstruct();
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ShapeSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_ShapeSettings_AddRef(__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_UnderlyingPtr));
         }
 
         /// Generated from constructor `JPH::TriangleShapeSettings::TriangleShapeSettings`.
@@ -609,6 +667,19 @@ public static partial class JPH
             #endif
             extern static JPH.TriangleShapeSettings._Underlying *__JPH_TriangleShapeSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.TriangleShapeSettings._Underlying *_other);
             _UnderlyingPtr = __JPH_TriangleShapeSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ShapeSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_ShapeSettings_AddRef(__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_UnderlyingPtr));
             if (_other.Value is not null) _KeepAlive(_other.Value);
         }
 
@@ -632,6 +703,19 @@ public static partial class JPH
             extern static JPH.TriangleShapeSettings._Underlying *__JPH_TriangleShapeSettings_Construct(JPH.Vec3._Underlying *inV1, JPH.Vec3._Underlying *inV2, JPH.Vec3._Underlying *inV3, float *inConvexRadius, JPH.Const_PhysicsMaterial._Underlying *inMaterial);
             float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
             _UnderlyingPtr = __JPH_TriangleShapeSettings_Construct(inV1._UnderlyingPtr, inV2._UnderlyingPtr, inV3._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ShapeSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_ShapeSettings_AddRef(__JPH_TriangleShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_UnderlyingPtr));
         }
 
         /// Generated from method `JPH::TriangleShapeSettings::operator=`.
@@ -747,12 +831,18 @@ public static partial class JPH
             if (_UnderlyingPtr is null || !_IsOwningVal)
                 return;
             #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_TriangleShape_Destroy(_Underlying *_this);
-            __JPH_TriangleShape_Destroy(_UnderlyingPtr);
+            extern static void *__JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_Shape_Release(void *_this);
+            __JPH_RefTarget_JPH_Shape_Release(__JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape(_UnderlyingPtr));
             _UnderlyingPtr = null;
         }
         public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
@@ -835,6 +925,19 @@ public static partial class JPH
             #endif
             extern static JPH.TriangleShape._Underlying *__JPH_TriangleShape_DefaultConstruct();
             _UnderlyingPtr = __JPH_TriangleShape_DefaultConstruct();
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_Shape_AddRef(void *_this);
+            __JPH_RefTarget_JPH_Shape_AddRef(__JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape(_UnderlyingPtr));
         }
 
         /// Create a triangle with points (inV1, inV2, inV3) (counter clockwise) and convex radius inConvexRadius.
@@ -851,6 +954,19 @@ public static partial class JPH
             extern static JPH.TriangleShape._Underlying *__JPH_TriangleShape_Construct_5(JPH.Vec3._Underlying *inV1, JPH.Vec3._Underlying *inV2, JPH.Vec3._Underlying *inV3, float *inConvexRadius, JPH.Const_PhysicsMaterial._Underlying *inMaterial);
             float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
             _UnderlyingPtr = __JPH_TriangleShape_Construct_5(inV1._UnderlyingPtr, inV2._UnderlyingPtr, inV3._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_Shape_AddRef(void *_this);
+            __JPH_RefTarget_JPH_Shape_AddRef(__JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape(_UnderlyingPtr));
         }
 
         /// Get world space bounds including convex radius.
@@ -1443,6 +1559,19 @@ public static partial class JPH
             #endif
             extern static JPH.TriangleShape._Underlying *__JPH_TriangleShape_DefaultConstruct();
             _UnderlyingPtr = __JPH_TriangleShape_DefaultConstruct();
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_Shape_AddRef(void *_this);
+            __JPH_RefTarget_JPH_Shape_AddRef(__JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape(_UnderlyingPtr));
         }
 
         /// Create a triangle with points (inV1, inV2, inV3) (counter clockwise) and convex radius inConvexRadius.
@@ -1459,6 +1588,19 @@ public static partial class JPH
             extern static JPH.TriangleShape._Underlying *__JPH_TriangleShape_Construct_5(JPH.Vec3._Underlying *inV1, JPH.Vec3._Underlying *inV2, JPH.Vec3._Underlying *inV3, float *inConvexRadius, JPH.Const_PhysicsMaterial._Underlying *inMaterial);
             float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
             _UnderlyingPtr = __JPH_TriangleShape_Construct_5(inV1._UnderlyingPtr, inV2._UnderlyingPtr, inV3._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_Shape_AddRef(void *_this);
+            __JPH_RefTarget_JPH_Shape_AddRef(__JPH_TriangleShape_UpcastTo_JPH_RefTarget_JPH_Shape(_UnderlyingPtr));
         }
 
         /// Material of the shape

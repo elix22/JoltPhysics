@@ -19,12 +19,18 @@ public static partial class JPH
             if (_UnderlyingPtr is null || !_IsOwningVal)
                 return;
             #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_SoftBodySharedSettings_Destroy(_Underlying *_this);
-            __JPH_SoftBodySharedSettings_Destroy(_UnderlyingPtr);
+            extern static void *__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SoftBodySharedSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SoftBodySharedSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_SoftBodySharedSettings_Release(void *_this);
+            __JPH_RefTarget_JPH_SoftBodySharedSettings_Release(__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(_UnderlyingPtr));
             _UnderlyingPtr = null;
         }
         public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
@@ -56,6 +62,19 @@ public static partial class JPH
             #endif
             extern static JPH.SoftBodySharedSettings._Underlying *__JPH_SoftBodySharedSettings_DefaultConstruct();
             _UnderlyingPtr = __JPH_SoftBodySharedSettings_DefaultConstruct();
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef(__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(_UnderlyingPtr));
         }
 
         /// Generated from constructor `JPH::SoftBodySharedSettings::SoftBodySharedSettings`.
@@ -68,6 +87,19 @@ public static partial class JPH
             #endif
             extern static JPH.SoftBodySharedSettings._Underlying *__JPH_SoftBodySharedSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.SoftBodySharedSettings._Underlying *_other);
             _UnderlyingPtr = __JPH_SoftBodySharedSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef(__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(_UnderlyingPtr));
             if (_other.Value is not null) _KeepAlive(_other.Value);
         }
 
@@ -5287,6 +5319,19 @@ public static partial class JPH
             #endif
             extern static JPH.SoftBodySharedSettings._Underlying *__JPH_SoftBodySharedSettings_DefaultConstruct();
             _UnderlyingPtr = __JPH_SoftBodySharedSettings_DefaultConstruct();
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef(__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(_UnderlyingPtr));
         }
 
         /// Generated from constructor `JPH::SoftBodySharedSettings::SoftBodySharedSettings`.
@@ -5299,6 +5344,19 @@ public static partial class JPH
             #endif
             extern static JPH.SoftBodySharedSettings._Underlying *__JPH_SoftBodySharedSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.SoftBodySharedSettings._Underlying *_other);
             _UnderlyingPtr = __JPH_SoftBodySharedSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_SoftBodySharedSettings_AddRef(__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(_UnderlyingPtr));
             if (_other.Value is not null) _KeepAlive(_other.Value);
         }
 
