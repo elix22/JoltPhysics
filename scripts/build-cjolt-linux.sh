@@ -23,9 +23,22 @@ echo "=========================================="
 mkdir -p "$BUILD_DIR"
 cd "$BUILD_DIR"
 
+# Prefer clang for better vectorization and fewer false-positive warnings with Jolt.
+# Fall back to whatever the system provides if clang is not available.
+if command -v clang++ &>/dev/null; then
+    C_COMPILER="clang"
+    CXX_COMPILER="clang++"
+else
+    C_COMPILER="${CC:-cc}"
+    CXX_COMPILER="${CXX:-c++}"
+fi
+echo "Compiler: $CXX_COMPILER"
+
 # Configure with CMake
 cmake "$BINDINGS_C_DIR" \
-    -DCMAKE_BUILD_TYPE="$BUILD_TYPE"
+    -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
+    -DCMAKE_C_COMPILER="$C_COMPILER" \
+    -DCMAKE_CXX_COMPILER="$CXX_COMPILER"
 
 # Build
 cmake --build . --config "$BUILD_TYPE" -- -j$(nproc)

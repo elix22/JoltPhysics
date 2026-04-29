@@ -30,7 +30,8 @@ cd "$BUILD_DIR"
 cmake "$BINDINGS_C_DIR" \
     -G Xcode \
     -DCMAKE_OSX_ARCHITECTURES="$ARCH" \
-    -DCMAKE_OSX_DEPLOYMENT_TARGET="11.0"
+    -DCMAKE_OSX_DEPLOYMENT_TARGET="11.0" \
+    -DGENERATE_DEBUG_SYMBOLS=OFF
 
 # Build
 cmake --build . --config "$BUILD_TYPE"
@@ -53,6 +54,10 @@ if [ -f "$BUILD_DIR/$BUILD_TYPE/libcjolt.dylib" ]; then
     echo "=========================================="
     echo "✓ Copied to: $OUTPUT_DIR/libcjolt.dylib"
     echo "=========================================="
+    echo "Tip: to create a universal binary run both arm64 and x86_64 builds then:"
+    echo "  lipo -create libs/macos/arm64/release/libcjolt.dylib \\"
+    echo "              libs/macos/x86_64/release/libcjolt.dylib \\"
+    echo "       -output libs/macos/universal/release/libcjolt.dylib"
 else
     echo "✗ Failed to build libcjolt.dylib"
     exit 1

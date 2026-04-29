@@ -10,6 +10,17 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 JOLT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 BINDINGS_C_DIR="$JOLT_DIR/bindings/c"
 
+# Use local emsdk (tools/emsdk relative to workspace root) when available.
+# This ensures we use the same Emscripten 3.1.56 that the .NET SDK's bundled
+# wasm-opt expects, rather than whatever version is active system-wide.
+WORKSPACE_ROOT="$(cd "$JOLT_DIR/../.." && pwd)"
+LOCAL_EMSDK_ENV="$WORKSPACE_ROOT/tools/emsdk/emsdk_env.sh"
+if [ -f "$LOCAL_EMSDK_ENV" ]; then
+    echo "Sourcing local emsdk: $LOCAL_EMSDK_ENV"
+    source "$LOCAL_EMSDK_ENV"
+fi
+
+
 # Parse arguments
 BUILD_TYPE="${1:-Release}"
 
@@ -38,7 +49,8 @@ cd "$BUILD_DIR"
 # Configure with CMake using Emscripten toolchain
 echo "Configuring CMake..."
 emcmake cmake "$BINDINGS_C_DIR" \
-    -DCMAKE_BUILD_TYPE="$BUILD_TYPE"
+    -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
+    -DUSE_WASM_SIMD=ON  # All major browsers support WASM SIMD since 2023
 
 # Build
 echo "Building..."
