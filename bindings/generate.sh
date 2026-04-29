@@ -127,6 +127,7 @@ echo "#include \"$ROOT/Jolt/Physics/Constraints/HingeConstraint.h\"" >>"$BINDING
 echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodySharedSettings.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodyCreationSettings.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Geometry/AABox.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Geometry/Plane.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Core/TempAllocator.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Body/BodyInterface.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Body/BodyActivationListener.h\"" >>"$BINDINGS/tmp/combined_input.h"
@@ -179,6 +180,7 @@ echo "#include \"$ROOT/Jolt/Math/Vector.h\"" >>"$BINDINGS/tmp/combined_input.h"
     --allow JPH::UVec4 \
     --allow JPH::Vec3 \
     --allow JPH::Vec4 \
+    --allow JPH::Plane \
     --allow JPH::Vector \
     --allow JPH::RefTarget \
     --allow JPH::NonCopyable \

@@ -91,6 +91,24 @@ public static partial class JPH
             }
         }
 
+        ///< Plane that describes the shape. The negative half space is considered solid.
+        public unsafe JPH.Const_Plane mPlane
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShapeSettings_Get_mPlane", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShapeSettings_Get_mPlane", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Plane._Underlying *__JPH_PlaneShapeSettings_Get_mPlane(_Underlying *_this);
+                JPH.Const_Plane __ret;
+                __ret = new(__JPH_PlaneShapeSettings_Get_mPlane(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< The bounding box of this plane will run from [-half_extent, half_extent]. Keep this as low as possible for better broad phase performance.
         public unsafe float mHalfExtent
         {
@@ -179,6 +197,34 @@ public static partial class JPH
 
         /// Generated from constructor `JPH::PlaneShapeSettings::PlaneShapeSettings`.
         public Const_PlaneShapeSettings(PlaneShapeSettings _other) : this((Const_PlaneShapeSettings)_other) {}
+
+        /// Create a plane shape.
+        /// Generated from constructor `JPH::PlaneShapeSettings::PlaneShapeSettings`.
+        /// Parameter `inHalfExtent` defaults to `cDefaultHalfExtent`.
+        public unsafe Const_PlaneShapeSettings(JPH.Const_Plane inPlane, JPH.Const_PhysicsMaterial? inMaterial = null, float? inHalfExtent = null) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.PlaneShapeSettings._Underlying *__JPH_PlaneShapeSettings_Construct(JPH.Const_Plane._Underlying *inPlane, JPH.Const_PhysicsMaterial._Underlying *inMaterial, float *inHalfExtent);
+            float __deref_inHalfExtent = inHalfExtent.GetValueOrDefault();
+            _UnderlyingPtr = __JPH_PlaneShapeSettings_Construct(inPlane._UnderlyingPtr, inMaterial is not null ? inMaterial._UnderlyingPtr : null, inHalfExtent.HasValue ? &__deref_inHalfExtent : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_PlaneShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ShapeSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_ShapeSettings_AddRef(__JPH_PlaneShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_UnderlyingPtr));
+        }
 
         /// Generated from method `JPH::PlaneShapeSettings::operator new`.
         /// Returns a mutable pointer.
@@ -430,6 +476,24 @@ public static partial class JPH
             return ret;
         }
 
+        ///< Plane that describes the shape. The negative half space is considered solid.
+        public new unsafe JPH.Plane mPlane
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShapeSettings_GetMutable_mPlane", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShapeSettings_GetMutable_mPlane", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Plane._Underlying *__JPH_PlaneShapeSettings_GetMutable_mPlane(_Underlying *_this);
+                JPH.Plane __ret;
+                __ret = new(__JPH_PlaneShapeSettings_GetMutable_mPlane(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< The bounding box of this plane will run from [-half_extent, half_extent]. Keep this as low as possible for better broad phase performance.
         public new unsafe ref float mHalfExtent
         {
@@ -518,6 +582,34 @@ public static partial class JPH
 
         /// Generated from constructor `JPH::PlaneShapeSettings::PlaneShapeSettings`.
         public PlaneShapeSettings(PlaneShapeSettings _other) : this((Const_PlaneShapeSettings)_other) {}
+
+        /// Create a plane shape.
+        /// Generated from constructor `JPH::PlaneShapeSettings::PlaneShapeSettings`.
+        /// Parameter `inHalfExtent` defaults to `cDefaultHalfExtent`.
+        public unsafe PlaneShapeSettings(JPH.Const_Plane inPlane, JPH.Const_PhysicsMaterial? inMaterial = null, float? inHalfExtent = null) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShapeSettings_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.PlaneShapeSettings._Underlying *__JPH_PlaneShapeSettings_Construct(JPH.Const_Plane._Underlying *inPlane, JPH.Const_PhysicsMaterial._Underlying *inMaterial, float *inHalfExtent);
+            float __deref_inHalfExtent = inHalfExtent.GetValueOrDefault();
+            _UnderlyingPtr = __JPH_PlaneShapeSettings_Construct(inPlane._UnderlyingPtr, inMaterial is not null ? inMaterial._UnderlyingPtr : null, inHalfExtent.HasValue ? &__deref_inHalfExtent : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_PlaneShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ShapeSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_ShapeSettings_AddRef(__JPH_PlaneShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_UnderlyingPtr));
+        }
 
         /// Generated from method `JPH::PlaneShapeSettings::operator=`.
         public unsafe JPH.PlaneShapeSettings Assign(JPH._ByValue_PlaneShapeSettings _other)
@@ -717,6 +809,33 @@ public static partial class JPH
             __JPH_RefTarget_JPH_Shape_AddRef(__JPH_PlaneShape_UpcastTo_JPH_RefTarget_JPH_Shape(_UnderlyingPtr));
         }
 
+        /// Generated from constructor `JPH::PlaneShape::PlaneShape`.
+        /// Parameter `inHalfExtent` defaults to `PlaneShapeSettings::cDefaultHalfExtent`.
+        public unsafe Const_PlaneShape(JPH.Const_Plane inPlane, JPH.Const_PhysicsMaterial? inMaterial = null, float? inHalfExtent = null) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.PlaneShape._Underlying *__JPH_PlaneShape_Construct_3(JPH.Const_Plane._Underlying *inPlane, JPH.Const_PhysicsMaterial._Underlying *inMaterial, float *inHalfExtent);
+            float __deref_inHalfExtent = inHalfExtent.GetValueOrDefault();
+            _UnderlyingPtr = __JPH_PlaneShape_Construct_3(inPlane._UnderlyingPtr, inMaterial is not null ? inMaterial._UnderlyingPtr : null, inHalfExtent.HasValue ? &__deref_inHalfExtent : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_PlaneShape_UpcastTo_JPH_RefTarget_JPH_Shape(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_Shape_AddRef(void *_this);
+            __JPH_RefTarget_JPH_Shape_AddRef(__JPH_PlaneShape_UpcastTo_JPH_RefTarget_JPH_Shape(_UnderlyingPtr));
+        }
+
         /// Generated from method `JPH::PlaneShape::operator new`.
         /// Returns a mutable pointer.
         public static unsafe void *New(UIntPtr inCount)
@@ -851,6 +970,19 @@ public static partial class JPH
             __Jolt_delete_array_JPH_PlaneShape_void_ptr_void_ptr(inPointer, inPlace);
         }
 
+        /// Get the plane
+        /// Generated from method `JPH::PlaneShape::GetPlane`.
+        public unsafe JPH.Const_Plane GetPlane()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShape_GetPlane", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShape_GetPlane", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Plane._Underlying *__JPH_PlaneShape_GetPlane(_Underlying *_this);
+            return new(__JPH_PlaneShape_GetPlane(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Get the half-extent of the bounding box of the plane
         /// Generated from method `JPH::PlaneShape::GetHalfExtent`.
         public unsafe float GetHalfExtent()
@@ -967,6 +1099,25 @@ public static partial class JPH
             #endif
             extern static int __JPH_PlaneShape_GetTrianglesNext(_Underlying *_this, JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
             return __JPH_PlaneShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
+        }
+
+        // See Shape::GetSubmergedVolume
+        /// Generated from method `JPH::PlaneShape::GetSubmergedVolume`.
+        public unsafe void GetSubmergedVolume(JPH.Const_Mat44 inCenterOfMassTransform, JPH.Const_Vec3 inScale, JPH.Const_Plane inSurface, ref float outTotalVolume, ref float outSubmergedVolume, JPH.Vec3 outCenterOfBuoyancy)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShape_GetSubmergedVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShape_GetSubmergedVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PlaneShape_GetSubmergedVolume(_Underlying *_this, JPH.Const_Mat44._Underlying *inCenterOfMassTransform, JPH.Vec3._Underlying *inScale, JPH.Const_Plane._Underlying *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH.Vec3._Underlying *outCenterOfBuoyancy);
+            fixed (float *__ptr_outTotalVolume = &outTotalVolume)
+            {
+                fixed (float *__ptr_outSubmergedVolume = &outSubmergedVolume)
+                {
+                    __JPH_PlaneShape_GetSubmergedVolume(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr, inSurface._UnderlyingPtr, __ptr_outTotalVolume, __ptr_outSubmergedVolume, outCenterOfBuoyancy._UnderlyingPtr);
+                }
+            }
         }
 
         // See Shape::GetStats
@@ -1248,6 +1399,33 @@ public static partial class JPH
             #endif
             extern static JPH.PlaneShape._Underlying *__JPH_PlaneShape_DefaultConstruct();
             _UnderlyingPtr = __JPH_PlaneShape_DefaultConstruct();
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_PlaneShape_UpcastTo_JPH_RefTarget_JPH_Shape(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Shape_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_Shape_AddRef(void *_this);
+            __JPH_RefTarget_JPH_Shape_AddRef(__JPH_PlaneShape_UpcastTo_JPH_RefTarget_JPH_Shape(_UnderlyingPtr));
+        }
+
+        /// Generated from constructor `JPH::PlaneShape::PlaneShape`.
+        /// Parameter `inHalfExtent` defaults to `PlaneShapeSettings::cDefaultHalfExtent`.
+        public unsafe PlaneShape(JPH.Const_Plane inPlane, JPH.Const_PhysicsMaterial? inMaterial = null, float? inHalfExtent = null) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PlaneShape_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.PlaneShape._Underlying *__JPH_PlaneShape_Construct_3(JPH.Const_Plane._Underlying *inPlane, JPH.Const_PhysicsMaterial._Underlying *inMaterial, float *inHalfExtent);
+            float __deref_inHalfExtent = inHalfExtent.GetValueOrDefault();
+            _UnderlyingPtr = __JPH_PlaneShape_Construct_3(inPlane._UnderlyingPtr, inMaterial is not null ? inMaterial._UnderlyingPtr : null, inHalfExtent.HasValue ? &__deref_inHalfExtent : null);
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PlaneShape_UpcastTo_JPH_RefTarget_JPH_Shape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else

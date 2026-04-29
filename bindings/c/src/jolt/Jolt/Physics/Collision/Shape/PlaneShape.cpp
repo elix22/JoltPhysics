@@ -5,6 +5,7 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Geometry/Plane.h>
 #include <Jolt/Math/Float3.h>
 #include <Jolt/Math/Mat44.h>
 #include <Jolt/Math/Quat.h>
@@ -25,6 +26,21 @@
 const float *JPH_PlaneShapeSettings_Get_cDefaultHalfExtent(void)
 {
     return std::addressof(JPH::PlaneShapeSettings::cDefaultHalfExtent);
+}
+
+const JPH_Plane *JPH_PlaneShapeSettings_Get_mPlane(const JPH_PlaneShapeSettings *_this)
+{
+    return (const JPH_Plane *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PlaneShapeSettings *)(_this)).mPlane);
+}
+
+void JPH_PlaneShapeSettings_Set_mPlane(JPH_PlaneShapeSettings *_this, const JPH_Plane *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PlaneShapeSettings *)(_this)).mPlane = ((value ? void() : MRBINDC_THROW("Parameter `value` can not be null.", void)), JPH::Plane(*(JPH::Plane *)value));
+}
+
+JPH_Plane *JPH_PlaneShapeSettings_GetMutable_mPlane(JPH_PlaneShapeSettings *_this)
+{
+    return (JPH_Plane *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PlaneShapeSettings *)(_this)).mPlane);
 }
 
 const float *JPH_PlaneShapeSettings_Get_mHalfExtent(const JPH_PlaneShapeSettings *_this)
@@ -166,6 +182,16 @@ JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_ConstructFromAnother(Jolt_PassBy 
     MRBINDC_CLASSARG_GUARD(_other, JPH::PlaneShapeSettings);
     return (JPH_PlaneShapeSettings *)new JPH::PlaneShapeSettings(JPH::PlaneShapeSettings(
         (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::PlaneShapeSettings) MRBINDC_CLASSARG_COPY(_other, (JPH::PlaneShapeSettings), JPH::PlaneShapeSettings) MRBINDC_CLASSARG_MOVE(_other, (JPH::PlaneShapeSettings), JPH::PlaneShapeSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::PlaneShapeSettings) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::PlaneShapeSettings) MRBINDC_CLASSARG_END(_other, JPH::PlaneShapeSettings))
+    ));
+}
+
+JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_Construct(const JPH_Plane *inPlane, const JPH_PhysicsMaterial *inMaterial, const float *inHalfExtent)
+{
+    using namespace JPH;
+    return (JPH_PlaneShapeSettings *)new JPH::PlaneShapeSettings(JPH::PlaneShapeSettings(
+        ((inPlane ? void() : MRBINDC_THROW("Parameter `inPlane` can not be null.", void)), *(const JPH::Plane *)(inPlane)),
+        ((const JPH::PhysicsMaterial *)inMaterial),
+        (inHalfExtent ? *inHalfExtent : static_cast<float>(JPH::PlaneShapeSettings::cDefaultHalfExtent))
     ));
 }
 
@@ -402,6 +428,16 @@ JPH_PlaneShape *JPH_PlaneShape_MutableStaticDowncastFrom_JPH_Shape(JPH_Shape *ob
     ));
 }
 
+JPH_PlaneShape *JPH_PlaneShape_Construct_3(const JPH_Plane *inPlane, const JPH_PhysicsMaterial *inMaterial, const float *inHalfExtent)
+{
+    using namespace JPH;
+    return (JPH_PlaneShape *)new JPH::PlaneShape(JPH::PlaneShape(
+        ((inPlane ? void() : MRBINDC_THROW("Parameter `inPlane` can not be null.", void)), *(const JPH::Plane *)(inPlane)),
+        ((const JPH::PhysicsMaterial *)inMaterial),
+        (inHalfExtent ? *inHalfExtent : static_cast<float>(JPH::PlaneShapeSettings::cDefaultHalfExtent))
+    ));
+}
+
 void JPH_PlaneShape_Destroy(const JPH_PlaneShape *_this)
 {
     delete ((const JPH::PlaneShape *)_this);
@@ -488,6 +524,11 @@ void Jolt_delete_array_JPH_PlaneShape_void_ptr_void_ptr(void *inPointer, void *i
     );
 }
 
+const JPH_Plane *JPH_PlaneShape_GetPlane(const JPH_PlaneShape *_this)
+{
+    return (const JPH_Plane *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PlaneShape *)(_this)).GetPlane());
+}
+
 float JPH_PlaneShape_GetHalfExtent(const JPH_PlaneShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PlaneShape *)(_this)).GetHalfExtent();
@@ -546,6 +587,18 @@ int JPH_PlaneShape_GetTrianglesNext(const JPH_PlaneShape *_this, JPH_Shape_GetTr
         inMaxTrianglesRequested,
         ((JPH::Float3 *)outTriangleVertices),
         ((const JPH::PhysicsMaterial **)outMaterials)
+    );
+}
+
+void JPH_PlaneShape_GetSubmergedVolume(const JPH_PlaneShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PlaneShape *)(_this)).GetSubmergedVolume(
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inSurface ? void() : MRBINDC_THROW("Parameter `inSurface` can not be null.", void)), *(const JPH::Plane *)(inSurface)),
+        ((outTotalVolume ? void() : MRBINDC_THROW("Parameter `outTotalVolume` can not be null.", void)), *outTotalVolume),
+        ((outSubmergedVolume ? void() : MRBINDC_THROW("Parameter `outSubmergedVolume` can not be null.", void)), *outSubmergedVolume),
+        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy))
     );
 }
 

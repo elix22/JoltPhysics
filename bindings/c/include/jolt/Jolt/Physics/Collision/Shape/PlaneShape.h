@@ -17,6 +17,7 @@ typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Fl
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Plane JPH_Plane; // Defined in `#include <jolt/Jolt/Geometry/Plane.h>`.
 typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
@@ -57,6 +58,28 @@ typedef struct JPH_PlaneShape JPH_PlaneShape;
 /// Returns a pointer to a member variable of class `JPH::PlaneShapeSettings` named `cDefaultHalfExtent`.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const float *JPH_PlaneShapeSettings_Get_cDefaultHalfExtent(void);
+
+///< Plane that describes the shape. The negative half space is considered solid.
+/// Returns a pointer to a member variable of class `JPH::PlaneShapeSettings` named `mPlane`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Plane *JPH_PlaneShapeSettings_Get_mPlane(const JPH_PlaneShapeSettings *_this);
+
+///< Plane that describes the shape. The negative half space is considered solid.
+/// Modifies a member variable of class `JPH::PlaneShapeSettings` named `mPlane`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `value` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mPlane`.
+/// When this function is called, this object will drop object references it held previously in `mPlane`.
+JOLT_API void JPH_PlaneShapeSettings_Set_mPlane(JPH_PlaneShapeSettings *_this, const JPH_Plane *value);
+
+///< Plane that describes the shape. The negative half space is considered solid.
+/// Returns a mutable pointer to a member variable of class `JPH::PlaneShapeSettings` named `mPlane`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Plane *JPH_PlaneShapeSettings_GetMutable_mPlane(JPH_PlaneShapeSettings *_this);
 
 ///< The bounding box of this plane will run from [-half_extent, half_extent]. Keep this as low as possible for better broad phase performance.
 /// Returns a pointer to a member variable of class `JPH::PlaneShapeSettings` named `mHalfExtent`.
@@ -180,6 +203,14 @@ JOLT_API JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_MutableStaticDowncastFro
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_PlaneShapeSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_PlaneShapeSettings *_other);
+
+/// Create a plane shape.
+/// Generated from constructor `JPH::PlaneShapeSettings::PlaneShapeSettings`.
+/// Parameter `inPlane` can not be null. It is a single object.
+/// Parameter `inMaterial` defaults to a null pointer in C++.
+/// Parameter `inHalfExtent` has a default argument: `cDefaultHalfExtent`, pass a null pointer to use it.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_PlaneShapeSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_Construct(const JPH_Plane *inPlane, const JPH_PhysicsMaterial *inMaterial, const float *inHalfExtent);
 
 /// Destroys a heap-allocated instance of `JPH_PlaneShapeSettings`. Does nothing if the pointer is null.
 JOLT_API void JPH_PlaneShapeSettings_Destroy(const JPH_PlaneShapeSettings *_this);
@@ -337,6 +368,13 @@ JOLT_API const JPH_PlaneShape *JPH_PlaneShape_StaticDowncastFrom_JPH_Shape(const
 /// The reference to the parameter `object` might be preserved in the return value.
 JOLT_API JPH_PlaneShape *JPH_PlaneShape_MutableStaticDowncastFrom_JPH_Shape(JPH_Shape *object);
 
+/// Generated from constructor `JPH::PlaneShape::PlaneShape`.
+/// Parameter `inPlane` can not be null. It is a single object.
+/// Parameter `inMaterial` defaults to a null pointer in C++.
+/// Parameter `inHalfExtent` has a default argument: `PlaneShapeSettings::cDefaultHalfExtent`, pass a null pointer to use it.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_PlaneShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_PlaneShape *JPH_PlaneShape_Construct_3(const JPH_Plane *inPlane, const JPH_PhysicsMaterial *inMaterial, const float *inHalfExtent);
+
 /// Destroys a heap-allocated instance of `JPH_PlaneShape`. Does nothing if the pointer is null.
 JOLT_API void JPH_PlaneShape_Destroy(const JPH_PlaneShape *_this);
 
@@ -372,6 +410,12 @@ JOLT_API void *Jolt_new_array_JPH_PlaneShape_size_t_void_ptr(size_t inCount, voi
 
 /// Generated from method `JPH::PlaneShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_PlaneShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Get the plane
+/// Generated from method `JPH::PlaneShape::GetPlane`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_Plane *JPH_PlaneShape_GetPlane(const JPH_PlaneShape *_this);
 
 /// Get the half-extent of the bounding box of the plane
 /// Generated from method `JPH::PlaneShape::GetHalfExtent`.
@@ -429,6 +473,17 @@ JOLT_API void JPH_PlaneShape_GetTrianglesStart(const JPH_PlaneShape *_this, JPH_
 /// Parameter `ioContext` can not be null. It is a single object.
 /// Parameter `outMaterials` defaults to a null pointer in C++.
 JOLT_API int JPH_PlaneShape_GetTrianglesNext(const JPH_PlaneShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
+
+// See Shape::GetSubmergedVolume
+/// Generated from method `JPH::PlaneShape::GetSubmergedVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inSurface` can not be null. It is a single object.
+/// Parameter `outTotalVolume` can not be null. It is a single object.
+/// Parameter `outSubmergedVolume` can not be null. It is a single object.
+/// Parameter `outCenterOfBuoyancy` can not be null. It is a single object.
+JOLT_API void JPH_PlaneShape_GetSubmergedVolume(const JPH_PlaneShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy);
 
 // See Shape::GetStats
 /// Generated from method `JPH::PlaneShape::GetStats`.

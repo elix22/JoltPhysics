@@ -70,6 +70,26 @@ public static partial class JPH
             }
         }
 
+        /// Plane, defined in local space relative to the character. Every contact behind this plane can support the
+        /// character, every contact in front of this plane is treated as only colliding with the player.
+        /// Default: Accept any contact.
+        public unsafe JPH.Const_Plane mSupportingVolume
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBaseSettings_Get_mSupportingVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBaseSettings_Get_mSupportingVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Plane._Underlying *__JPH_CharacterBaseSettings_Get_mSupportingVolume(_Underlying *_this);
+                JPH.Const_Plane __ret;
+                __ret = new(__JPH_CharacterBaseSettings_Get_mSupportingVolume(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         /// Maximum angle of slope that character can still walk on (radians).
         public unsafe float mMaxSlopeAngle
         {
@@ -398,6 +418,26 @@ public static partial class JPH
                 extern static JPH.Vec3._Underlying *__JPH_CharacterBaseSettings_GetMutable_mUp(_Underlying *_this);
                 JPH.Vec3 __ret;
                 __ret = new(__JPH_CharacterBaseSettings_GetMutable_mUp(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        /// Plane, defined in local space relative to the character. Every contact behind this plane can support the
+        /// character, every contact in front of this plane is treated as only colliding with the player.
+        /// Default: Accept any contact.
+        public new unsafe JPH.Plane mSupportingVolume
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBaseSettings_GetMutable_mSupportingVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBaseSettings_GetMutable_mSupportingVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Plane._Underlying *__JPH_CharacterBaseSettings_GetMutable_mSupportingVolume(_Underlying *_this);
+                JPH.Plane __ret;
+                __ret = new(__JPH_CharacterBaseSettings_GetMutable_mSupportingVolume(_UnderlyingPtr), is_owning: false);
                 __ret._KeepAliveEnclosingObject = this;
                 return __ret;
             }

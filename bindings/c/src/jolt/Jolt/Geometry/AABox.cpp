@@ -3,6 +3,7 @@
 #include "jolt/Jolt/Geometry/AABox.h"
 
 #include <Jolt/Geometry/AABox.h>
+#include <Jolt/Geometry/Plane.h>
 #include <Jolt/Math/DMat44.h>
 #include <Jolt/Math/DVec3.h>
 #include <Jolt/Math/Mat44.h>
@@ -300,6 +301,13 @@ bool JPH_AABox_Overlaps_JPH_AABox(const JPH_AABox *_this, const JPH_AABox *inOth
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::AABox *)(_this)).Overlaps(
         ((inOther ? void() : MRBINDC_THROW("Parameter `inOther` can not be null.", void)), *(const JPH::AABox *)(inOther))
+    );
+}
+
+bool JPH_AABox_Overlaps_JPH_Plane(const JPH_AABox *_this, const JPH_Plane *inPlane)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::AABox *)(_this)).Overlaps(
+        ((inPlane ? void() : MRBINDC_THROW("Parameter `inPlane` can not be null.", void)), *(const JPH::Plane *)(inPlane))
     );
 }
 

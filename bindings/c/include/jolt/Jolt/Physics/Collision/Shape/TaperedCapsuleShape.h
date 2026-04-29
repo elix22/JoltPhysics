@@ -23,6 +23,7 @@ typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Fl
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Plane JPH_Plane; // Defined in `#include <jolt/Jolt/Geometry/Plane.h>`.
 typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
@@ -598,6 +599,17 @@ JOLT_API void JPH_TaperedCapsuleShape_GetTrianglesStart(const JPH_TaperedCapsule
 /// Parameter `ioContext` can not be null. It is a single object.
 /// Parameter `outMaterials` defaults to a null pointer in C++.
 JOLT_API int JPH_TaperedCapsuleShape_GetTrianglesNext(const JPH_TaperedCapsuleShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
+
+// See Shape::GetSubmergedVolume
+/// Generated from method `JPH::TaperedCapsuleShape::GetSubmergedVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inSurface` can not be null. It is a single object.
+/// Parameter `outTotalVolume` can not be null. It is a single object.
+/// Parameter `outSubmergedVolume` can not be null. It is a single object.
+/// Parameter `outCenterOfBuoyancy` can not be null. It is a single object.
+JOLT_API void JPH_TaperedCapsuleShape_GetSubmergedVolume(const JPH_TaperedCapsuleShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy);
 
 /// Material of the shape
 /// Generated from method `JPH::TaperedCapsuleShape::SetMaterial`.

@@ -16,6 +16,7 @@ extern "C" {
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
 typedef struct JPH_PhysicsSystem JPH_PhysicsSystem; // Defined in `#include <jolt/Jolt/Physics/PhysicsSystem.h>`.
+typedef struct JPH_Plane JPH_Plane; // Defined in `#include <jolt/Jolt/Geometry/Plane.h>`.
 typedef struct JPH_RefTarget_JPH_CharacterBase JPH_RefTarget_JPH_CharacterBase; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_CharacterBaseSettings JPH_RefTarget_JPH_CharacterBaseSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
@@ -70,6 +71,34 @@ JOLT_API const JPH_Vec3 *JPH_CharacterBaseSettings_Get_mUp(const JPH_CharacterBa
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API JPH_Vec3 *JPH_CharacterBaseSettings_GetMutable_mUp(JPH_CharacterBaseSettings *_this);
+
+/// Plane, defined in local space relative to the character. Every contact behind this plane can support the
+/// character, every contact in front of this plane is treated as only colliding with the player.
+/// Default: Accept any contact.
+/// Returns a pointer to a member variable of class `JPH::CharacterBaseSettings` named `mSupportingVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Plane *JPH_CharacterBaseSettings_Get_mSupportingVolume(const JPH_CharacterBaseSettings *_this);
+
+/// Plane, defined in local space relative to the character. Every contact behind this plane can support the
+/// character, every contact in front of this plane is treated as only colliding with the player.
+/// Default: Accept any contact.
+/// Modifies a member variable of class `JPH::CharacterBaseSettings` named `mSupportingVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `value` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mSupportingVolume`.
+/// When this function is called, this object will drop object references it held previously in `mSupportingVolume`.
+JOLT_API void JPH_CharacterBaseSettings_Set_mSupportingVolume(JPH_CharacterBaseSettings *_this, const JPH_Plane *value);
+
+/// Plane, defined in local space relative to the character. Every contact behind this plane can support the
+/// character, every contact in front of this plane is treated as only colliding with the player.
+/// Default: Accept any contact.
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterBaseSettings` named `mSupportingVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Plane *JPH_CharacterBaseSettings_GetMutable_mSupportingVolume(JPH_CharacterBaseSettings *_this);
 
 /// Maximum angle of slope that character can still walk on (radians).
 /// Returns a pointer to a member variable of class `JPH::CharacterBaseSettings` named `mMaxSlopeAngle`.

@@ -16,6 +16,7 @@ typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Fl
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Plane JPH_Plane; // Defined in `#include <jolt/Jolt/Geometry/Plane.h>`.
 typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
@@ -337,6 +338,16 @@ JOLT_API float JPH_DecoratedShape_GetInnerRadius(const JPH_DecoratedShape *_this
 /// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_DecoratedShape_GetSurfaceNormal(const JPH_DecoratedShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
+/// Generated from method `JPH::DecoratedShape::GetSubmergedVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inSurface` can not be null. It is a single object.
+/// Parameter `outTotalVolume` can not be null. It is a single object.
+/// Parameter `outSubmergedVolume` can not be null. It is a single object.
+/// Parameter `outCenterOfBuoyancy` can not be null. It is a single object.
+JOLT_API void JPH_DecoratedShape_GetSubmergedVolume(const JPH_DecoratedShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy);
 
 /// To start iterating over triangles, call this function first.
 /// ioContext is a temporary buffer and should remain untouched until the last call to GetTrianglesNext.

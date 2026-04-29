@@ -833,6 +833,24 @@ public static partial class JPH
             return __JPH_Shape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
         }
 
+        /// Generated from method `JPH::Shape::GetSubmergedVolume`.
+        public unsafe void GetSubmergedVolume(JPH.Const_Mat44 inCenterOfMassTransform, JPH.Const_Vec3 inScale, JPH.Const_Plane inSurface, ref float outTotalVolume, ref float outSubmergedVolume, JPH.Vec3 outCenterOfBuoyancy)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Shape_GetSubmergedVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Shape_GetSubmergedVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_Shape_GetSubmergedVolume(_Underlying *_this, JPH.Const_Mat44._Underlying *inCenterOfMassTransform, JPH.Vec3._Underlying *inScale, JPH.Const_Plane._Underlying *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH.Vec3._Underlying *outCenterOfBuoyancy);
+            fixed (float *__ptr_outTotalVolume = &outTotalVolume)
+            {
+                fixed (float *__ptr_outSubmergedVolume = &outSubmergedVolume)
+                {
+                    __JPH_Shape_GetSubmergedVolume(_UnderlyingPtr, inCenterOfMassTransform._UnderlyingPtr, inScale._UnderlyingPtr, inSurface._UnderlyingPtr, __ptr_outTotalVolume, __ptr_outSubmergedVolume, outCenterOfBuoyancy._UnderlyingPtr);
+                }
+            }
+        }
+
         /// To start iterating over triangles, call this function first.
         /// ioContext is a temporary buffer and should remain untouched until the last call to GetTrianglesNext.
         /// inBox is the world space bounding in which you want to get the triangles.

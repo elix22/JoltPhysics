@@ -4,6 +4,7 @@
 
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
+#include <Jolt/Geometry/Plane.h>
 #include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Character/CharacterBase.h>
@@ -27,6 +28,21 @@ const JPH_Vec3 *JPH_CharacterBaseSettings_Get_mUp(const JPH_CharacterBaseSetting
 JPH_Vec3 *JPH_CharacterBaseSettings_GetMutable_mUp(JPH_CharacterBaseSettings *_this)
 {
     return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterBaseSettings *)(_this)).mUp);
+}
+
+const JPH_Plane *JPH_CharacterBaseSettings_Get_mSupportingVolume(const JPH_CharacterBaseSettings *_this)
+{
+    return (const JPH_Plane *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterBaseSettings *)(_this)).mSupportingVolume);
+}
+
+void JPH_CharacterBaseSettings_Set_mSupportingVolume(JPH_CharacterBaseSettings *_this, const JPH_Plane *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterBaseSettings *)(_this)).mSupportingVolume = ((value ? void() : MRBINDC_THROW("Parameter `value` can not be null.", void)), JPH::Plane(*(JPH::Plane *)value));
+}
+
+JPH_Plane *JPH_CharacterBaseSettings_GetMutable_mSupportingVolume(JPH_CharacterBaseSettings *_this)
+{
+    return (JPH_Plane *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterBaseSettings *)(_this)).mSupportingVolume);
 }
 
 const float *JPH_CharacterBaseSettings_Get_mMaxSlopeAngle(const JPH_CharacterBaseSettings *_this)

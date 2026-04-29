@@ -13,6 +13,7 @@ extern "C" {
 typedef struct JPH_DMat44 JPH_DMat44; // Defined in `#include <jolt/Jolt/Math/DMat44.h>`.
 typedef struct JPH_DVec3 JPH_DVec3; // Defined in `#include <jolt/Jolt/Math/DVec3.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
+typedef struct JPH_Plane JPH_Plane; // Defined in `#include <jolt/Jolt/Geometry/Plane.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
@@ -245,6 +246,12 @@ JOLT_API bool JPH_AABox_Contains_JPH_DVec3(const JPH_AABox *_this, const JPH_DVe
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inOther` can not be null. It is a single object.
 JOLT_API bool JPH_AABox_Overlaps_JPH_AABox(const JPH_AABox *_this, const JPH_AABox *inOther);
+
+/// Check if this box overlaps with a plane
+/// Generated from method `JPH::AABox::Overlaps`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPlane` can not be null. It is a single object.
+JOLT_API bool JPH_AABox_Overlaps_JPH_Plane(const JPH_AABox *_this, const JPH_Plane *inPlane);
 
 /// Translate bounding box
 /// Generated from method `JPH::AABox::Translate`.
