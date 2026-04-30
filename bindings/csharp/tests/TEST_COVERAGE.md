@@ -143,13 +143,13 @@ cd deps/JoltPhysics/bindings/csharp/tests
 |---|---|---|
 | Math | 8 | 238 |
 | Geometry | 2 | 35 |
-| Physics | 17 | 203 |
+| Physics | 20 | 251 |
 | Other | 6 | 127 |
-| **Total** | **33** | **603** |
+| **Total** | **36** | **651** |
 
 > **Note:** Test count reflects state after this session.
-> Added 3 new test files: `Tests_CapsuleShape.cs` (13), `Tests_DecoratedShapes.cs` (11),
-> `Tests_HeightFieldShape.cs` (12). Previous session total was 567 tests; new total is **603 tests**.
+> Added 3 new test files: `Tests_TaperedCapsuleShape.cs` (16), `Tests_TriangleAndPlaneShapes.cs` (16),
+> `Tests_PhysicsSettings.cs` (16). Previous session total was 603 tests; new total is **651 tests**.
 
 ---
 
