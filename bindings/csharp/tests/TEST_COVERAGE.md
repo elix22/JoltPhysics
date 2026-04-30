@@ -140,6 +140,9 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_SixDOFConstraint.cs` | 14 | SixDOFConstraintSettings defaults + EAxis enum, GetTranslationLimitsMin/Max, MakeFixedAxis/IsFixedAxis, direct construction, simulation |
 | `Tests_ObjectLayerPairFilterMask.cs` | 10 | ObjectLayerPairFilterMask lifecycle, CNumBits/CMask constants, SGetObjectLayer/SGetGroup/SGetMask static helpers, ShouldCollide logic |
 | `Tests_MotionQuality.cs` | 11 | EMotionQuality enum values, GetMotionQuality/SetMotionQuality on BodyInterface, mMotionQuality on BodyCreationSettings |
+| `Tests_CylinderShape.cs` | 19 | CylinderShapeSettings defaults + field round-trips (mHalfHeight, mRadius, mConvexRadius, mDensity); CylinderShape direct construction, GetHalfHeight, GetRadius, GetLocalBounds (height + width), GetInnerRadius, GetVolume, GetDensity, SetDensity; dynamic body simulation |
+| `Tests_Float2Float3Float4.cs` | 22 | Float2 (constructor, x/y, ==, !=, Equals); Float3 (constructor, x/y/z, indexer, ==, !=, copy); Float4 (constructor, x/y/z/w, ==, !=, Equals) |
+| `Tests_Double3.cs` | 11 | Double3 (default/parameterized/copy constructor, x/y/z fields, indexer, ==, !=, Equals) |
 | `Tests_PhysicsQuery.cs` | 15 | GetGravity default/round-trip/zero; GetNumBodies init/add/remove; GetMaxBodies; WereBodiesInContact (separated and after collision); GetBroadPhaseQuery/GetNarrowPhaseQuery not-null; BroadPhaseQuery.GetBounds before/after body; activation/contact listener defaults |
 
 ---
@@ -148,16 +151,15 @@ cd deps/JoltPhysics/bindings/csharp/tests
 
 | Category | Total C# Test Files | Total C# Tests |
 |---|---|---|
-| Math | 8 | 238 |
+| Math | 9 | 271 |
 | Geometry | 2 | 35 |
-| Physics | 25 | 316 |
-| Other | 8 | 152 |
-| **Total** | **43** | **741** |
+| Physics | 26 | 335 |
+| Other | 9 | 151 |
+| **Total** | **46** | **792** |
 
 > **Note:** Test count reflects state after this session.
-> Added 4 new test files: `Tests_SliderConstraint.cs` (15), `Tests_SixDOFConstraint.cs` (14),
-> `Tests_ObjectLayerPairFilterMask.cs` (10), `Tests_MotionQuality.cs` (11).
-> Previous session total was 694 tests; new total is **741 tests**.
+> Added 3 new test files: `Tests_CylinderShape.cs` (19), `Tests_Float2Float3Float4.cs` (22),
+> `Tests_Double3.cs` (11). Previous session total was 741 tests; new total is **792 tests**.
 
 ---
 
