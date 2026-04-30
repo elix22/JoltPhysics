@@ -88,7 +88,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/CollisionGroupTests.cpp` | `Tests_CollisionGroupAndSettings.cs` | ✅ | 21 | CollisionGroup defaults + round-trips, CanCollide (no filter, different groups), PhysicsSettings defaults + round-trips, GetPhysicsSettings/SetPhysicsSettings integration |
 | `UnitTests/Physics/ObjectLayerPairFilterTableTests.cpp` | `Tests_ObjectLayers.cs` | ⚠️ | 9 | ObjectLayerPairFilterTable; mask filter not covered |
 | `UnitTests/Physics/ObjectLayerPairFilterMaskTests.cpp` | `Tests_ObjectLayerPairFilterMask.cs` | ✅ | 10 | ObjectLayerPairFilterMask lifecycle, CNumBits/CMask constants, SGetObjectLayer/SGetGroup/SGetMask static helpers, ShouldCollide logic |
-| `UnitTests/Physics/BroadPhaseTests.cpp` | `Tests_PhysicsQuery.cs` | ⚠️ | 15 | GetBroadPhaseQuery / GetNarrowPhaseQuery, GetBounds after body add, gravity round-trip, WereBodiesInContact; raw broadphase cast queries not yet tested |
+| `UnitTests/Physics/BroadPhaseTests.cpp` | `Tests_PhysicsQuery.cs` + `Tests_CastResult.cs` | ⚠️ | 29 | GetBroadPhaseQuery / GetNarrowPhaseQuery, GetBounds after body add, gravity round-trip, WereBodiesInContact; BroadPhaseCastResult + RayCastResult result struct defaults, construction, Reset, GetEarlyOutFraction; full broadphase cast execution not yet tested |
 | `UnitTests/Physics/CastShapeTests.cpp` | — | ❌ | 0 | Shape cast queries not yet tested |
 | `UnitTests/Physics/CollideShapeTests.cpp` | — | ❌ | 0 | CollideShape queries not yet tested |
 | `UnitTests/Physics/RayShapeTests.cpp` | — | ❌ | 0 | Ray-shape intersections not yet tested |
@@ -100,7 +100,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/SliderConstraintTests.cpp` | `Tests_SliderConstraint.cs` | ✅ | 15 | SliderConstraintSettings defaults + round-trips, HasLimits, GetLimitsMin/Max, direct construction, simulation |
 | `UnitTests/Physics/SixDOFConstraintTests.cpp` | `Tests_SixDOFConstraint.cs` | ✅ | 14 | SixDOFConstraintSettings defaults + EAxis enum, GetTranslationLimitsMin/Max, MakeFixedAxis/IsFixedAxis, direct construction, simulation |
 | `UnitTests/Physics/PathConstraintTests.cpp` | — | ❌ | 0 | Path constraint not yet tested |
-| `UnitTests/Physics/ContactListenerTests.cpp` | — | ❌ | 0 | Contact listeners not yet tested |
+| `UnitTests/Physics/ContactListenerTests.cpp` | `Tests_ContactSettings.cs` | ⚠️ | 15 | ContactSettings + Const_ContactSettings struct defaults (mInvMassScale1/2=1, mInvInertiaScale1/2=1) + round-trips + mIsSensor round-trip; actual contact-listener callback wiring not yet tested |
 | `UnitTests/Physics/SensorTests.cpp` | `Tests_Bodies.cs` + `Tests_BodyProperties.cs` | ⚠️ | 3 | SensorBody_DoesNotBlockDynamicBody; IsSensor getter for sensor and non-sensor bodies |
 | `UnitTests/Physics/ActiveEdgesTests.cpp` | — | 🚫 | — | Internal mesh active-edge logic |
 | `UnitTests/Physics/ConvexVsTrianglesTest.cpp` | — | 🚫 | — | Internal convex-triangle collision |
@@ -108,7 +108,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/MotionQualityLinearCastTests.cpp` | `Tests_MotionQuality.cs` | ✅ | 11 | EMotionQuality enum values, GetMotionQuality/SetMotionQuality on BodyInterface, mMotionQuality on BodyCreationSettings |
 | `UnitTests/Physics/SubShapeIDTest.cpp` | — | 🚫 | — | SubShapeID internals; complex compound shape paths |
 | `UnitTests/Physics/TaperedCylinderShapeTests.cpp` | `Tests_TaperedCylinder.cs` | ✅ | 12 | Settings field round-trips (parameterized constructor, mutable fields, SetDensity), dynamic body creation and simulation |
-| `UnitTests/Physics/CharacterVirtualTests.cpp` | — | ❌ | 0 | CharacterVirtual partially bound (settings skipped) |
+| `UnitTests/Physics/CharacterVirtualTests.cpp` | `Tests_CharacterVirtualSettings.cs` | ⚠️ | 22 | CharacterVirtualSettings defaults (mMass/mMaxStrength/mPredictiveContactDistance/mMaxCollisionIterations/mMaxConstraintIterations/mCollisionTolerance/mCharacterPadding/mMaxNumHits/mHitReductionCosMaxAngle/mPenetrationRecoverySpeed/mInnerBodyLayer/mEnhancedInternalEdgeRemoval/mMaxSlopeAngle) + round-trips; CharacterContactSettings defaults + round-trips; full CharacterVirtual simulation not yet tested |
 | `UnitTests/Physics/SoftBodyTests.cpp` | — | ❌ | 0 | SoftBody not yet bound |
 | `UnitTests/Physics/WheeledVehicleTests.cpp` | — | ❌ | 0 | WheeledVehicle not yet bound |
 | `UnitTests/Physics/ShapeFilterTests.cpp` | `Tests_ShapeFilter.cs` | ✅ | 9 | Const/mutable lifecycle, mBodyID2 default-invalid, ShouldCollide default pass-through (2-arg and 4-arg), use alongside physics system |
