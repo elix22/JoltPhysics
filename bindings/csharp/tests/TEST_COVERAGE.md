@@ -161,6 +161,11 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_CastResult.cs` | 14 | BroadPhaseCastResult: default construct (mBodyID.IsInvalid, mFraction>1); GetEarlyOutFraction==mFraction; construct with BodyID+fraction (mBodyID matches, mFraction matches, GetEarlyOutFraction); Reset restores mBodyID.IsInvalid+mFraction>1; copy construct preserves mBodyID+mFraction; RayCastResult: default construct (mBodyID.IsInvalid, mFraction>1, mSubShapeID2.IsEmpty) |
 | `Tests_ContactSettings.cs` | 15 | ContactSettings: default construct NoCrash; mInvMassScale1/2=1.0 and mInvInertiaScale1/2=1.0 defaults; round-trips for mInvMassScale1/2 and mInvInertiaScale2; mIsSensor round-trips (set true/false); copy construct preserves mInvMassScale1/2; Const_ContactSettings: default construct NoCrash; mInvMassScale1=1.0 default |
 | `Tests_CharacterVirtualSettings.cs` | 22 | CharacterVirtualSettings: default construct NoCrash; mMass=70/mMaxStrength=100/mPredictiveContactDistance=0.1/mMaxCollisionIterations=5/mMaxConstraintIterations=15/mCollisionTolerance=1e-3/mCharacterPadding=0.02/mMaxNumHits=256/mHitReductionCosMaxAngle=0.999/mPenetrationRecoverySpeed=1.0/mInnerBodyLayer=0/mEnhancedInternalEdgeRemoval=false/mMaxSlopeAngle=rad(50) defaults; round-trips for mMass/mMaxNumHits/mMaxCollisionIterations/mPenetrationRecoverySpeed; CharacterContactSettings: default construct; mCanPushCharacter=true/mCanReceiveImpulses=true defaults; round-trips for both |
+| `Tests_CharacterID.cs` | 13 | CInvalidCharacterID==0xFFFFFFFFu; DefaultConstruct NoCrash/IsInvalid/GetValue==CInvalidCharacterID; CharacterID(999u) GetValue==999/IsNotInvalid; ==, !=, <, > operators; copy construct preserves value; GetHash same IDs same hash; Equals SameValue true |
+| `Tests_SubShapeIDPair.cs` | 10 | DefaultConstruct NoCrash; Construct(BodyID(42),sub1,BodyID(99),sub2) GetBody1/2ID correct; GetSubShapeID1/2 values after SetValue; ==, != operators; copy construct preserves Body1ID; GetHash same pairs same hash; Equals SamePair true |
+| `Tests_PhysicsMaterial.cs` | 7 | DefaultConstruct NoCrash; GetRefCount initially 1 (C binding calls AddRef); AddRef increments to 2; SetEmbedded adds cEmbedded (0x0ebedded) to refcount; SInternalGetRefCountOffset >= 0; Const_PhysicsMaterial default construct/GetRefCount==1 |
+| `Tests_LayerTables.cs` | 12 | BroadPhaseLayer GetValue round-trip/==/!=/explicit byte cast/<; BroadPhaseLayerInterfaceTable GetNumBroadPhaseLayers/MapObjectToBroadPhaseLayer/GetBroadPhaseLayer round-trips; ObjectVsBroadPhaseLayerFilterTable construct NoCrash/ShouldCollide false (no collision enabled)/ShouldCollide true (EnableCollision)/symmetric moving vs non-moving |
+| `Tests_PlaneShape.cs` | 13 | PlaneShapeSettings CDefaultHalfExtent==1000/defaults (mHalfExtent=CDefaultHalfExtent, mUserData=0)/mHalfExtent round-trip/mUserData round-trip/Construct with half extent; PlaneShape DefaultConstruct/GetHalfExtent==0/MustBeStatic/CGetTrianglesMinTrianglesRequested/Construct with half extent/GetHalfExtent after construct/GetLocalBounds |
 
 ---
 
@@ -171,16 +176,13 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | Math | 9 | 271 |
 | Geometry | 2 | 35 |
 | Physics | 29 | 372 |
-| Other | 17 | 309 |
-| **Total** | **63** | **1083** |
+| Other | 22 | 364 |
+| **Total** | **68** | **1138** |
 
 > **Note:** Test count reflects state after this session.
-> Added `Tests_CastResult.cs` (14 tests), `Tests_ContactSettings.cs` (15 tests), and `Tests_CharacterVirtualSettings.cs` (22 tests)
-> this session, bringing the total from 1031 to **1083 tests** across **63 files**.
->
-> Previous session note:
-> Added 3 new test files: `Tests_Body.cs` (16), `Tests_ConstraintBase.cs` (12),
-> `Tests_MeshShapeSettings.cs` (9). Previous session total was 896 tests; new total is **933 tests**.
+> Added `Tests_CharacterID.cs` (13 tests), `Tests_SubShapeIDPair.cs` (10 tests),
+> `Tests_PhysicsMaterial.cs` (7 tests), `Tests_LayerTables.cs` (12 tests), and
+> `Tests_PlaneShape.cs` (13 tests) this session, bringing the total from 1083 to **1138 tests** across **68 files**.
 
 ---
 
