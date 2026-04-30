@@ -145,6 +145,9 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_Double3.cs` | 11 | Double3 (default/parameterized/copy constructor, x/y/z fields, indexer, ==, !=, Equals) |
 | `Tests_PhysicsQuery.cs` | 15 | GetGravity default/round-trip/zero; GetNumBodies init/add/remove; GetMaxBodies; WereBodiesInContact (separated and after collision); GetBroadPhaseQuery/GetNarrowPhaseQuery not-null; BroadPhaseQuery.GetBounds before/after body; activation/contact listener defaults |
 | `Tests_TriangleShape.cs` | 19 | TriangleShapeSettings defaults + field round-trips (mV1/V2/V3, mConvexRadius, mDensity, SetDensity); TriangleShape direct construct, MustBeStatic (returns false), GetLocalBounds, GetInnerRadius, GetVolume, GetDensity, SetDensity; static body creation, dynamic body creation, dynamic body in compound falls due to gravity |
+| `Tests_BoxShape.cs` | 19 | BoxShapeSettings defaults + field round-trips (mHalfExtent, mConvexRadius, mDensity, SetDensity); BoxShape direct construct, GetHalfExtent, GetConvexRadius, GetLocalBounds (2× halfExtent), GetInnerRadius, GetVolume (unit box = 8), MustBeStatic (false), GetDensity, SetDensity; static body creation, dynamic body falls due to gravity |
+| `Tests_SphereShape.cs` | 16 | SphereShapeSettings defaults + field round-trips (mRadius, mDensity, SetDensity); SphereShape direct construct, GetRadius, GetLocalBounds (diameter = 2r), GetInnerRadius (= radius), GetVolume (≈ 4π/3 for r=1), MustBeStatic (false), GetDensity, SetDensity; dynamic body falls due to gravity |
+| `Tests_BodyInterface.cs` | 15 | IsAdded (before/after AddBody); SetObjectLayer round-trip; GetMaxLinearVelocity default + SetMaxLinearVelocity; GetMaxAngularVelocity default + SetMaxAngularVelocity; GetUseManifoldReduction default + SetUseManifoldReduction; GetPointVelocity (static body = zero); SetRotation; GetCenterOfMassTransform translation; GetMotionQuality default = Discrete; CreateBodyWithoutID + AssignBodyID; ResetSleepTimer |
 | `Tests_MutableCompoundShape.cs` | 14 | MutableCompoundShapeSettings defaults; MutableCompoundShape construct/NumSubShapes, MustBeStatic (false), AddShape (index + count), RemoveShape, ModifyShape, GetLocalBounds (empty + with sphere), GetVolume/GetInnerRadius (with sphere), dynamic body simulation |
 | `Tests_CollisionGroupAndSettings.cs` | 21 | CollisionGroup CInvalidGroup/CInvalidSubGroup/SInvalid constants; default construct + ID defaults; SetGroupID/SubGroupID round-trips; CanCollide (no filter, different groups); PhysicsSettings defaults (NumVelocitySteps=10, NumPositionSteps=2, AllowSleeping=true, DeterministicSimulation=true, Baumgarte≈0.2, ConstraintWarmStart=true); GetPhysicsSettings/SetPhysicsSettings integration round-trips |
 
@@ -157,12 +160,12 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | Math | 9 | 271 |
 | Geometry | 2 | 35 |
 | Physics | 26 | 335 |
-| Other | 12 | 205 |
-| **Total** | **49** | **846** |
+| Other | 15 | 255 |
+| **Total** | **52** | **896** |
 
 > **Note:** Test count reflects state after this session.
-> Added 3 new test files: `Tests_TriangleShape.cs` (19), `Tests_MutableCompoundShape.cs` (14),
-> `Tests_CollisionGroupAndSettings.cs` (21). Previous session total was 792 tests; new total is **846 tests**.
+> Added 3 new test files this session: `Tests_BoxShape.cs` (19), `Tests_SphereShape.cs` (16),
+> `Tests_BodyInterface.cs` (15). Previous session total was 846 tests; new total is **896 tests**.
 
 ---
 
