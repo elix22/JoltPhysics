@@ -3,6 +3,36 @@
 This document tracks which native Jolt C++ unit tests have been ported to C#, which are
 partially covered, and which are still missing.
 
+**Regenerating the bindings:**
+
+The C and C# binding sources under `deps/JoltPhysics/bindings/c/` and
+`deps/JoltPhysics/bindings/csharp/src/` are **machine-generated** — never edit them by hand.
+To regenerate after changing `generate.sh` or the upstream Jolt headers:
+
+```bash
+# From the repo root (mrbind must already be built):
+bash deps/JoltPhysics/bindings/generate.sh
+```
+
+The script runs the full pipeline in order:
+1. **mrbind** — parses the combined Jolt C++ input header into `bindings/tmp/parse_result.json`
+2. **mrbind_gen_c** — generates the C header + source files into `bindings/c/`
+3. **mrbind_gen_csharp** — generates the C# source files into `bindings/csharp/src/`
+
+After regeneration, rebuild the native `cjolt` shared library using the platform build script
+(e.g. `deps/JoltPhysics/scripts/build-cjolt-macos.sh`) before running tests.
+
+**Running the tests:**
+
+```bash
+cd deps/JoltPhysics/bindings/csharp/tests
+./run_tests.sh
+```
+
+`run_tests.sh` auto-detects the OS/architecture, sets `DYLD_LIBRARY_PATH` / `LD_LIBRARY_PATH` /
+`PATH` to the pre-built `cjolt` native library under `deps/JoltPhysics/libs/`, and then calls
+`dotnet test`. Do **not** call `dotnet test` directly — the native library will not be found.
+
 **Legend:**
 - ✅ Ported — C# test file exists with meaningful coverage
 - ⚠️ Partial — Some tests ported, coverage is incomplete
@@ -65,22 +95,22 @@ partially covered, and which are still missing.
 | `UnitTests/Physics/TransformedShapeTests.cpp` | — | ❌ | 0 | TransformedShape not yet tested |
 | `UnitTests/Physics/HeightFieldShapeTests.cpp` | — | ❌ | 0 | HeightFieldShape not yet tested |
 | `UnitTests/Physics/DistanceConstraintTests.cpp` | `Tests_Constraints.cs` | ⚠️ | 7 | Basic constraint setup; not all constraint types |
-| `UnitTests/Physics/HingeConstraintTests.cpp` | — | ❌ | 0 | Hinge constraint not yet tested |
+| `UnitTests/Physics/HingeConstraintTests.cpp` | `Tests_HingeConstraint.cs` | ✅ | 11 | Settings field round-trips (limits, axes, points), constraint creation and simulation |
 | `UnitTests/Physics/SliderConstraintTests.cpp` | — | ❌ | 0 | Slider constraint not yet tested |
 | `UnitTests/Physics/SixDOFConstraintTests.cpp` | — | ❌ | 0 | 6DOF constraint not yet tested |
 | `UnitTests/Physics/PathConstraintTests.cpp` | — | ❌ | 0 | Path constraint not yet tested |
 | `UnitTests/Physics/ContactListenerTests.cpp` | — | ❌ | 0 | Contact listeners not yet tested |
-| `UnitTests/Physics/SensorTests.cpp` | — | ❌ | 0 | Sensor bodies not yet tested |
+| `UnitTests/Physics/SensorTests.cpp` | `Tests_Bodies.cs` + `Tests_BodyProperties.cs` | ⚠️ | 3 | SensorBody_DoesNotBlockDynamicBody; IsSensor getter for sensor and non-sensor bodies |
 | `UnitTests/Physics/ActiveEdgesTests.cpp` | — | 🚫 | — | Internal mesh active-edge logic |
 | `UnitTests/Physics/ConvexVsTrianglesTest.cpp` | — | 🚫 | — | Internal convex-triangle collision |
 | `UnitTests/Physics/EstimateCollisionResponseTest.cpp` | — | ❌ | 0 | Not yet tested |
 | `UnitTests/Physics/MotionQualityLinearCastTests.cpp` | — | ❌ | 0 | Linear cast motion quality not yet tested |
 | `UnitTests/Physics/SubShapeIDTest.cpp` | — | 🚫 | — | SubShapeID internals; complex compound shape paths |
-| `UnitTests/Physics/TaperedCylinderShapeTests.cpp` | — | ❌ | 0 | TaperedCylinder not yet tested |
+| `UnitTests/Physics/TaperedCylinderShapeTests.cpp` | `Tests_TaperedCylinder.cs` | ✅ | 12 | Settings field round-trips (parameterized constructor, mutable fields, SetDensity), dynamic body creation and simulation |
 | `UnitTests/Physics/CharacterVirtualTests.cpp` | — | ❌ | 0 | CharacterVirtual partially bound (settings skipped) |
 | `UnitTests/Physics/SoftBodyTests.cpp` | — | ❌ | 0 | SoftBody not yet bound |
 | `UnitTests/Physics/WheeledVehicleTests.cpp` | — | ❌ | 0 | WheeledVehicle not yet bound |
-| `UnitTests/Physics/ShapeFilterTests.cpp` | — | ❌ | 0 | ShapeFilter not yet tested |
+| `UnitTests/Physics/ShapeFilterTests.cpp` | `Tests_ShapeFilter.cs` | ✅ | 9 | Const/mutable lifecycle, mBodyID2 default-invalid, ShouldCollide default pass-through (2-arg and 4-arg), use alongside physics system |
 | `UnitTests/Physics/PhysicsDeterminismTests.cpp` | — | ❌ | 0 | Determinism tests require multi-run setup |
 | `UnitTests/Physics/PhysicsStepListenerTests.cpp` | — | ❌ | 0 | StepListener not yet tested |
 
@@ -91,6 +121,11 @@ partially covered, and which are still missing.
 | C# Test File | Tests | Description |
 |---|---|---|
 | `Tests_Bodies.cs` | 16 | Body creation, activation, property queries |
+| `Tests_BodyProperties.cs` | 15 | GravityFactor (default/set/zero), MotionType, IsSensor, ObjectLayer, UserData, SetPosition, GetPositionAndRotation, GetWorldTransform |
+| `Tests_HingeConstraint.cs` | 11 | HingeConstraintSettings field round-trips, constraint creation and simulation |
+| `Tests_PointConstraint.cs` | 7 | PointConstraintSettings field round-trips, constraint creation and two-body simulation |
+| `Tests_TaperedCylinder.cs` | 12 | TaperedCylinderShapeSettings fields, dynamic body creation and simulation |
+| `Tests_ShapeFilter.cs` | 9 | ShapeFilter lifecycle, mBodyID2, ShouldCollide default pass-through |
 | `Tests_RefCounting.cs` | 8 | Ref-counted shape/settings lifetime |
 
 ---
@@ -101,12 +136,14 @@ partially covered, and which are still missing.
 |---|---|---|
 | Math | 8 | 238 |
 | Geometry | 2 | 35 |
-| Physics | 10 | 109 |
-| Other | 2 | 24 |
-| **Total** | **22** | **470** |
+| Physics | 14 | 162 |
+| Other | 3 | 39 |
+| **Total** | **27** | **524** |
 
-> **Note:** Test count above reflects state after adding `Tests_Plane.cs` (15 new tests).
-> Previous session total was 455 tests; new total is **470 tests**.
+> **Note:** Test count reflects state after this session.
+> Added 5 new test files: `Tests_HingeConstraint.cs` (11), `Tests_PointConstraint.cs` (7),
+> `Tests_TaperedCylinder.cs` (12), `Tests_ShapeFilter.cs` (9), `Tests_BodyProperties.cs` (15).
+> Previous session total was 470 tests; new total is **524 tests**.
 
 ---
 
