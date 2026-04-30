@@ -93,9 +93,10 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/CollideShapeTests.cpp` | — | ❌ | 0 | CollideShape queries not yet tested |
 | `UnitTests/Physics/RayShapeTests.cpp` | — | ❌ | 0 | Ray-shape intersections not yet tested |
 | `UnitTests/Physics/TransformedShapeTests.cpp` | — | ❌ | 0 | TransformedShape not yet tested |
-| `UnitTests/Physics/HeightFieldShapeTests.cpp` | — | ❌ | 0 | HeightFieldShape not yet tested |
-| `UnitTests/Physics/DistanceConstraintTests.cpp` | `Tests_Constraints.cs` | ⚠️ | 7 | Basic constraint setup; not all constraint types |
+| `UnitTests/Physics/HeightFieldShapeTests.cpp` | `Tests_HeightFieldShape.cs` | ⚠️ | 12 | HeightFieldShapeSettings field defaults + round-trips; CalculateBitsPerSampleForError requires mHeightSamples (no sample-array constructor in bindings — not testable) |
+| `UnitTests/Physics/DistanceConstraintTests.cpp` | `Tests_Constraints.cs` + `Tests_DistanceConstraint.cs` | ✅ | 20 | DistanceConstraintSettings defaults + round-trips, direct construction, GetMinDistance/MaxDistance, SetDistance, GetEnabled/SetEnabled, lambda after simulation |
 | `UnitTests/Physics/HingeConstraintTests.cpp` | `Tests_HingeConstraint.cs` | ✅ | 11 | Settings field round-trips (limits, axes, points), constraint creation and simulation |
+| `UnitTests/Physics/FixedConstraintTests.cpp` | `Tests_FixedConstraint.cs` + `Tests_Constraints.cs` | ✅ | 17 | Settings defaults + round-trips (AutoDetectPoint, Enabled, Priority, UserData, VelocitySteps), GetBody1/2, GetEnabled/SetEnabled, GetConstraintPriority/Set, lambda after simulation |
 | `UnitTests/Physics/SliderConstraintTests.cpp` | — | ❌ | 0 | Slider constraint not yet tested |
 | `UnitTests/Physics/SixDOFConstraintTests.cpp` | — | ❌ | 0 | 6DOF constraint not yet tested |
 | `UnitTests/Physics/PathConstraintTests.cpp` | — | ❌ | 0 | Path constraint not yet tested |
@@ -126,6 +127,12 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_PointConstraint.cs` | 7 | PointConstraintSettings field round-trips, constraint creation and two-body simulation |
 | `Tests_TaperedCylinder.cs` | 12 | TaperedCylinderShapeSettings fields, dynamic body creation and simulation |
 | `Tests_ShapeFilter.cs` | 9 | ShapeFilter lifecycle, mBodyID2, ShouldCollide default pass-through |
+| `Tests_FixedConstraint.cs` | 14 | FixedConstraintSettings defaults + round-trips, GetBody1/2, GetEnabled/SetEnabled, GetConstraintPriority/Set, lambda after simulation |
+| `Tests_DistanceConstraint.cs` | 13 | DistanceConstraintSettings defaults, direct construction, GetMinDistance/MaxDistance, SetDistance, GetEnabled/SetEnabled, lambda after simulation |
+| `Tests_Velocity.cs` | 14 | Default/set/add linear velocity, AddImpulse, default/set angular velocity, GetLinearAndAngularVelocity, friction/restitution/maxV defaults + round-trips, body moves with initial velocity |
+| `Tests_CapsuleShape.cs` | 13 | CapsuleShape construction, GetRadius, GetHalfHeightOfCylinder, GetLocalBounds, GetInnerRadius, GetVolume, SetDensity; CapsuleShapeSettings IsValid/IsSphere; dynamic body simulation |
+| `Tests_DecoratedShapes.cs` | 11 | RotatedTranslatedShape (construction, GetPosition, GetRotation, GetLocalBounds, simulation); ScaledShape (construction, GetScale, GetLocalBounds, size comparison, static body) |
+| `Tests_HeightFieldShape.cs` | 12 | HeightFieldShapeSettings field defaults (SampleCount, BlockSize, BitsPerSample, MinHeightValue, MaxHeightValue, ActiveEdgeCosThreshold) and round-trips |
 | `Tests_RefCounting.cs` | 8 | Ref-counted shape/settings lifetime |
 
 ---
@@ -136,14 +143,13 @@ cd deps/JoltPhysics/bindings/csharp/tests
 |---|---|---|
 | Math | 8 | 238 |
 | Geometry | 2 | 35 |
-| Physics | 14 | 162 |
-| Other | 3 | 39 |
-| **Total** | **27** | **524** |
+| Physics | 17 | 203 |
+| Other | 6 | 127 |
+| **Total** | **33** | **603** |
 
 > **Note:** Test count reflects state after this session.
-> Added 5 new test files: `Tests_HingeConstraint.cs` (11), `Tests_PointConstraint.cs` (7),
-> `Tests_TaperedCylinder.cs` (12), `Tests_ShapeFilter.cs` (9), `Tests_BodyProperties.cs` (15).
-> Previous session total was 470 tests; new total is **524 tests**.
+> Added 3 new test files: `Tests_CapsuleShape.cs` (13), `Tests_DecoratedShapes.cs` (11),
+> `Tests_HeightFieldShape.cs` (12). Previous session total was 567 tests; new total is **603 tests**.
 
 ---
 
