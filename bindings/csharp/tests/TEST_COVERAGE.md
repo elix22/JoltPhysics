@@ -148,6 +148,9 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_BoxShape.cs` | 19 | BoxShapeSettings defaults + field round-trips (mHalfExtent, mConvexRadius, mDensity, SetDensity); BoxShape direct construct, GetHalfExtent, GetConvexRadius, GetLocalBounds (2× halfExtent), GetInnerRadius, GetVolume (unit box = 8), MustBeStatic (false), GetDensity, SetDensity; static body creation, dynamic body falls due to gravity |
 | `Tests_SphereShape.cs` | 16 | SphereShapeSettings defaults + field round-trips (mRadius, mDensity, SetDensity); SphereShape direct construct, GetRadius, GetLocalBounds (diameter = 2r), GetInnerRadius (= radius), GetVolume (≈ 4π/3 for r=1), MustBeStatic (false), GetDensity, SetDensity; dynamic body falls due to gravity |
 | `Tests_BodyInterface.cs` | 15 | IsAdded (before/after AddBody); SetObjectLayer round-trip; GetMaxLinearVelocity default + SetMaxLinearVelocity; GetMaxAngularVelocity default + SetMaxAngularVelocity; GetUseManifoldReduction default + SetUseManifoldReduction; GetPointVelocity (static body = zero); SetRotation; GetCenterOfMassTransform translation; GetMotionQuality default = Discrete; CreateBodyWithoutID + AssignBodyID; ResetSleepTimer |
+| `Tests_Body.cs` | 16 | Body type predicates: IsRigidBody (dynamic), IsDynamic, IsStatic, IsKinematic (false for dynamic), CanBeKinematicOrDynamic (true/false); GetShape non-null; GetInverseInertia non-zero for dynamic body (only valid on dynamic/kinematic); GetWorldSpaceBounds valid; IsInBroadPhase false before add / true after add; GetInverseCenterOfMassTransform valid; GetPosition matches creation coordinates; GetFriction/GetRestitution ≥ 0; GetAllowSleeping default true |
+| `Tests_ConstraintBase.cs` | 12 | Constraint base: GetNumVelocityStepsOverride/SetNumVelocityStepsOverride round-trip (default=0); GetNumPositionStepsOverride/SetNumPositionStepsOverride round-trip (default=0); GetEnabled default true; SetEnabled false; IsActive true with active bodies after step; ResetWarmStart no-crash; TwoBodyConstraint: GetBody1/GetBody2 non-null; GetConstraintToBody1Matrix/GetConstraintToBody2Matrix valid Mat44 |
+| `Tests_MeshShapeSettings.cs` | 9 | MeshShapeSettings default construct; mMaxTrianglesPerLeaf default=8 + round-trip; mActiveEdgeCosThresholdAngle default≈0.996195 + round-trip; mPerTriangleUserData default=false + round-trip; mBuildQuality default=FavorRuntimePerformance + round-trip |
 | `Tests_MutableCompoundShape.cs` | 14 | MutableCompoundShapeSettings defaults; MutableCompoundShape construct/NumSubShapes, MustBeStatic (false), AddShape (index + count), RemoveShape, ModifyShape, GetLocalBounds (empty + with sphere), GetVolume/GetInnerRadius (with sphere), dynamic body simulation |
 | `Tests_CollisionGroupAndSettings.cs` | 21 | CollisionGroup CInvalidGroup/CInvalidSubGroup/SInvalid constants; default construct + ID defaults; SetGroupID/SubGroupID round-trips; CanCollide (no filter, different groups); PhysicsSettings defaults (NumVelocitySteps=10, NumPositionSteps=2, AllowSleeping=true, DeterministicSimulation=true, Baumgarte≈0.2, ConstraintWarmStart=true); GetPhysicsSettings/SetPhysicsSettings integration round-trips |
 
@@ -159,13 +162,13 @@ cd deps/JoltPhysics/bindings/csharp/tests
 |---|---|---|
 | Math | 9 | 271 |
 | Geometry | 2 | 35 |
-| Physics | 26 | 335 |
+| Physics | 29 | 372 |
 | Other | 15 | 255 |
-| **Total** | **52** | **896** |
+| **Total** | **55** | **933** |
 
 > **Note:** Test count reflects state after this session.
-> Added 3 new test files this session: `Tests_BoxShape.cs` (19), `Tests_SphereShape.cs` (16),
-> `Tests_BodyInterface.cs` (15). Previous session total was 846 tests; new total is **896 tests**.
+> Added 3 new test files this session: `Tests_Body.cs` (16), `Tests_ConstraintBase.cs` (12),
+> `Tests_MeshShapeSettings.cs` (9). Previous session total was 896 tests; new total is **933 tests**.
 
 ---
 
@@ -189,3 +192,12 @@ headers) before C# tests can be written:
 member references in default argument expressions (e.g., `cDefaultHalfExtent` → 
 `JPH::PlaneShapeSettings::cDefaultHalfExtent`). Previously only enum constants were qualified.
 This was blocking `PlaneShape.cpp` from compiling in the native library build.
+
+**`--method-precondition` generator flag (mrbind_gen_csharp):** A new CLI flag injects a
+runtime C# precondition guard into a generated method body before the native call. Used to
+protect `GetInverseInertia()`, which has a Jolt-internal `JPH_ASSERT(IsDynamic())` that would
+hang/crash the process if called on a static body. The guard throws
+`System.InvalidOperationException` instead. Any other method with a similar Jolt-internal
+assert (e.g. `GetLinearVelocity`, `GetAngularVelocity`, `AddForce` — all also assert
+`IsDynamic()`) can be guarded the same way by adding more lines to `EXTRA_GEN_FLAGS` in
+`generate.sh`.

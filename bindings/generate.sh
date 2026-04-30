@@ -60,6 +60,8 @@ EXTRA_GEN_C_FLAGS=(
 EXTRA_GEN_FLAGS=(
     --csharp-version=12
     --dotnet-version=std2.0
+    # Guard methods that assert a precondition internally in Jolt (would hang/crash if violated from C#).
+    --method-precondition JPH_Body_GetInverseInertia "IsDynamic() || IsKinematic()" "Body.GetInverseInertia() requires a dynamic or kinematic body (static bodies have no motion properties)."
 )
 
 SHARED_LIBRARY_EXT=.so

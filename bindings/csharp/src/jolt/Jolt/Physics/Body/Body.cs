@@ -566,6 +566,8 @@ public static partial class JPH
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetInverseInertia", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
             extern static JPH.Mat44._Underlying *__JPH_Body_GetInverseInertia(_Underlying *_this);
+            if (!(IsDynamic() || IsKinematic()))
+                throw new System.InvalidOperationException("Body.GetInverseInertia() requires a dynamic or kinematic body (static bodies have no motion properties).");
             return new(__JPH_Body_GetInverseInertia(_UnderlyingPtr), is_owning: true);
         }
 
