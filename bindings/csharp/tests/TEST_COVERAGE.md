@@ -155,6 +155,9 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_ConvexHullShape.cs` | 24 | ConvexHullShapeSettings: default construct; mMaxConvexRadius=0/mMaxErrorConvexRadius=0.05/mHullTolerance=0.001/mDensity=1000/mUserData=0 defaults; field round-trips (mMaxConvexRadius, mMaxErrorConvexRadius, mHullTolerance, mDensity, mUserData); SetDensity; CMaxPointsInHull/CGetTrianglesMinTrianglesRequested static consts; ConvexHullShape: default construct; GetNumPoints=0/GetNumFaces=0/GetDensity=1000/GetUserData=0/MustBeStatic=false/GetConvexRadius=0/GetInnerRadius=FLT_MAX on default-constructed; SetDensity/SetUserData round-trips |
 | `Tests_MutableCompoundShape.cs` | 14 | MutableCompoundShapeSettings defaults; MutableCompoundShape construct/NumSubShapes, MustBeStatic (false), AddShape (index + count), RemoveShape, ModifyShape, GetLocalBounds (empty + with sphere), GetVolume/GetInnerRadius (with sphere), dynamic body simulation |
 | `Tests_CollisionGroupAndSettings.cs` | 21 | CollisionGroup CInvalidGroup/CInvalidSubGroup/SInvalid constants; default construct + ID defaults; SetGroupID/SubGroupID round-trips; CanCollide (no filter, different groups); PhysicsSettings defaults (NumVelocitySteps=10, NumPositionSteps=2, AllowSleeping=true, DeterministicSimulation=true, Baumgarte≈0.2, ConstraintWarmStart=true); GetPhysicsSettings/SetPhysicsSettings integration round-trips |
+| `Tests_BodyID.cs` | 19 | BodyID: CInvalidBodyID/CBroadPhaseBit/CMaxBodyIndex/CMaxSequenceNumber/CSequenceNumberShift constants; default construct IsInvalid/GetIndexAndSequenceNumber; BodyID(uint) GetIndex/GetSequenceNumber/GetIndexAndSequenceNumber/IsNotInvalid; BodyID(uint,byte) index+seq GetIndex/GetSequenceNumber/GetIndexAndSequenceNumber/IsNotInvalid; ==, !=, <, > operators; copy preserves value |
+| `Tests_SubShapeID.cs` | 10 | SubShapeID: MaxBits==32 static constant; default construct NoCrash/IsEmpty/GetValue==0xFFFFFFFF; SetValue round-trip; SetValue(0) IsNotEmpty; SetValue(0xFFFFFFFF) IsEmpty; == same values; != different values; == both default |
+| `Tests_BodyFilter.cs` | 13 | BodyFilter: default construct NoCrash; ShouldCollide returns true for any/invalid ID; IgnoreSingleBodyFilter: construct; ShouldCollide returns false for ignored ID/true for other/true for different seq-num; IgnoreMultipleBodiesFilter: default construct; ShouldCollide before ignore returns true; Reserve NoCrash; IgnoreBody ShouldCollide returns false; non-ignored returns true; multiple ignored all false; Clear resets ignore list |
 
 ---
 
@@ -166,11 +169,11 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | Geometry | 2 | 35 |
 | Physics | 29 | 372 |
 | Other | 17 | 309 |
-| **Total** | **57** | **987** |
+| **Total** | **60** | **1031** |
 
 > **Note:** Test count reflects state after this session.
-> Added `Tests_BodyCreationSettings.cs` (29 tests) and `Tests_ConvexHullShape.cs` (24 tests)
-> this session, bringing the total from 934 to **987 tests** across **57 files**.
+> Added `Tests_BodyID.cs` (19 tests), `Tests_SubShapeID.cs` (10 tests), and `Tests_BodyFilter.cs` (13 tests)
+> this session, bringing the total from 987 to **1031 tests** across **60 files**.
 >
 > Previous session note:
 > Added 3 new test files: `Tests_Body.cs` (16), `Tests_ConstraintBase.cs` (12),
