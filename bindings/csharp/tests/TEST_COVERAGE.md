@@ -87,7 +87,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/OffsetCenterOfMassShapeTests.cpp` | `Tests_OffsetCOM.cs` | ✅ | 10 | Offset center of mass shape |
 | `UnitTests/Physics/CollisionGroupTests.cpp` | `Tests_CollisionGroups.cs` | ✅ | 12 | Collision group and filter mask logic |
 | `UnitTests/Physics/ObjectLayerPairFilterTableTests.cpp` | `Tests_ObjectLayers.cs` | ⚠️ | 9 | ObjectLayerPairFilterTable; mask filter not covered |
-| `UnitTests/Physics/ObjectLayerPairFilterMaskTests.cpp` | — | ❌ | 0 | ObjectLayerPairFilterMask not yet bound |
+| `UnitTests/Physics/ObjectLayerPairFilterMaskTests.cpp` | `Tests_ObjectLayerPairFilterMask.cs` | ✅ | 10 | ObjectLayerPairFilterMask lifecycle, CNumBits/CMask constants, SGetObjectLayer/SGetGroup/SGetMask static helpers, ShouldCollide logic |
 | `UnitTests/Physics/BroadPhaseTests.cpp` | `Tests_PhysicsQuery.cs` | ⚠️ | 15 | GetBroadPhaseQuery / GetNarrowPhaseQuery, GetBounds after body add, gravity round-trip, WereBodiesInContact; raw broadphase cast queries not yet tested |
 | `UnitTests/Physics/CastShapeTests.cpp` | — | ❌ | 0 | Shape cast queries not yet tested |
 | `UnitTests/Physics/CollideShapeTests.cpp` | — | ❌ | 0 | CollideShape queries not yet tested |
@@ -97,15 +97,15 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/DistanceConstraintTests.cpp` | `Tests_Constraints.cs` + `Tests_DistanceConstraint.cs` | ✅ | 20 | DistanceConstraintSettings defaults + round-trips, direct construction, GetMinDistance/MaxDistance, SetDistance, GetEnabled/SetEnabled, lambda after simulation |
 | `UnitTests/Physics/HingeConstraintTests.cpp` | `Tests_HingeConstraint.cs` | ✅ | 11 | Settings field round-trips (limits, axes, points), constraint creation and simulation |
 | `UnitTests/Physics/FixedConstraintTests.cpp` | `Tests_FixedConstraint.cs` + `Tests_Constraints.cs` | ✅ | 17 | Settings defaults + round-trips (AutoDetectPoint, Enabled, Priority, UserData, VelocitySteps), GetBody1/2, GetEnabled/SetEnabled, GetConstraintPriority/Set, lambda after simulation |
-| `UnitTests/Physics/SliderConstraintTests.cpp` | — | ❌ | 0 | Slider constraint not yet tested |
-| `UnitTests/Physics/SixDOFConstraintTests.cpp` | — | ❌ | 0 | 6DOF constraint not yet tested |
+| `UnitTests/Physics/SliderConstraintTests.cpp` | `Tests_SliderConstraint.cs` | ✅ | 15 | SliderConstraintSettings defaults + round-trips, HasLimits, GetLimitsMin/Max, direct construction, simulation |
+| `UnitTests/Physics/SixDOFConstraintTests.cpp` | `Tests_SixDOFConstraint.cs` | ✅ | 14 | SixDOFConstraintSettings defaults + EAxis enum, GetTranslationLimitsMin/Max, MakeFixedAxis/IsFixedAxis, direct construction, simulation |
 | `UnitTests/Physics/PathConstraintTests.cpp` | — | ❌ | 0 | Path constraint not yet tested |
 | `UnitTests/Physics/ContactListenerTests.cpp` | — | ❌ | 0 | Contact listeners not yet tested |
 | `UnitTests/Physics/SensorTests.cpp` | `Tests_Bodies.cs` + `Tests_BodyProperties.cs` | ⚠️ | 3 | SensorBody_DoesNotBlockDynamicBody; IsSensor getter for sensor and non-sensor bodies |
 | `UnitTests/Physics/ActiveEdgesTests.cpp` | — | 🚫 | — | Internal mesh active-edge logic |
 | `UnitTests/Physics/ConvexVsTrianglesTest.cpp` | — | 🚫 | — | Internal convex-triangle collision |
 | `UnitTests/Physics/EstimateCollisionResponseTest.cpp` | — | ❌ | 0 | Not yet tested |
-| `UnitTests/Physics/MotionQualityLinearCastTests.cpp` | — | ❌ | 0 | Linear cast motion quality not yet tested |
+| `UnitTests/Physics/MotionQualityLinearCastTests.cpp` | `Tests_MotionQuality.cs` | ✅ | 11 | EMotionQuality enum values, GetMotionQuality/SetMotionQuality on BodyInterface, mMotionQuality on BodyCreationSettings |
 | `UnitTests/Physics/SubShapeIDTest.cpp` | — | 🚫 | — | SubShapeID internals; complex compound shape paths |
 | `UnitTests/Physics/TaperedCylinderShapeTests.cpp` | `Tests_TaperedCylinder.cs` | ✅ | 12 | Settings field round-trips (parameterized constructor, mutable fields, SetDensity), dynamic body creation and simulation |
 | `UnitTests/Physics/CharacterVirtualTests.cpp` | — | ❌ | 0 | CharacterVirtual partially bound (settings skipped) |
@@ -136,6 +136,10 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_RefCounting.cs` | 8 | Ref-counted shape/settings lifetime |
 | `Tests_EmptyShape.cs` | 15 | EmptyShapeSettings defaults, mCenterOfMass/mUserData round-trips; EmptyShape construction, GetLocalBounds (zero-size), GetInnerRadius/GetVolume (zero), MustBeStatic, SetUserData/GetUserData, static body creation |
 | `Tests_StaticCompoundShape.cs` | 13 | StaticCompoundShapeSettings defaults, mUserData round-trip, AddShape via CompoundShapeSettings upcast; StaticCompoundShape default construct/GetNumSubShapes/GetLocalBounds/MustBeStatic; static body creation, GetNumBodies increment/decrement, GetShape InnerRadius and Volume |
+| `Tests_SliderConstraint.cs` | 15 | SliderConstraintSettings field round-trips, HasLimits, GetLimitsMin/Max, direct construction, simulation |
+| `Tests_SixDOFConstraint.cs` | 14 | SixDOFConstraintSettings defaults + EAxis enum, GetTranslationLimitsMin/Max, MakeFixedAxis/IsFixedAxis, direct construction, simulation |
+| `Tests_ObjectLayerPairFilterMask.cs` | 10 | ObjectLayerPairFilterMask lifecycle, CNumBits/CMask constants, SGetObjectLayer/SGetGroup/SGetMask static helpers, ShouldCollide logic |
+| `Tests_MotionQuality.cs` | 11 | EMotionQuality enum values, GetMotionQuality/SetMotionQuality on BodyInterface, mMotionQuality on BodyCreationSettings |
 | `Tests_PhysicsQuery.cs` | 15 | GetGravity default/round-trip/zero; GetNumBodies init/add/remove; GetMaxBodies; WereBodiesInContact (separated and after collision); GetBroadPhaseQuery/GetNarrowPhaseQuery not-null; BroadPhaseQuery.GetBounds before/after body; activation/contact listener defaults |
 
 ---
@@ -146,13 +150,14 @@ cd deps/JoltPhysics/bindings/csharp/tests
 |---|---|---|
 | Math | 8 | 238 |
 | Geometry | 2 | 35 |
-| Physics | 21 | 266 |
-| Other | 9 | 155 |
-| **Total** | **39** | **694** |
+| Physics | 25 | 316 |
+| Other | 8 | 152 |
+| **Total** | **43** | **741** |
 
 > **Note:** Test count reflects state after this session.
-> Added 3 new test files: `Tests_EmptyShape.cs` (15), `Tests_StaticCompoundShape.cs` (13),
-> `Tests_PhysicsQuery.cs` (15). Previous session total was 651 tests; new total is **694 tests**.
+> Added 4 new test files: `Tests_SliderConstraint.cs` (15), `Tests_SixDOFConstraint.cs` (14),
+> `Tests_ObjectLayerPairFilterMask.cs` (10), `Tests_MotionQuality.cs` (11).
+> Previous session total was 694 tests; new total is **741 tests**.
 
 ---
 
@@ -161,7 +166,6 @@ cd deps/JoltPhysics/bindings/csharp/tests
 The following items would need new `--allow` lines in `generate.sh` (and possibly new wrapper
 headers) before C# tests can be written:
 
-- `JPH::ObjectLayerPairFilterMask` — needs `--allow JPH::ObjectLayerPairFilterMask`
 - `JPH::Ellipse` — needs `--allow JPH::Ellipse` + Ellipse.h include
 - `JPH::CharacterVirtual` (full) — `mShape`, `mInnerBodyShape`, `mBackFaceMode` fields are
   currently skipped due to complex types

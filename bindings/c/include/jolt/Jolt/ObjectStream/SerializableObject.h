@@ -39,6 +39,8 @@ extern "C" {
 ///     `JPH::PointConstraintSettings`
 ///     `JPH::RotatedTranslatedShapeSettings`
 ///     `JPH::ScaledShapeSettings`
+///     `JPH::SixDOFConstraintSettings`
+///     `JPH::SliderConstraintSettings`
 ///     `JPH::SphereShapeSettings`
 ///     `JPH::StaticCompoundShapeSettings`
 ///     `JPH::TaperedCapsuleShapeSettings`

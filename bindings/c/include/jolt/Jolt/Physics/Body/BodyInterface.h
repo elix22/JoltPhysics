@@ -3,6 +3,7 @@
 
 #include <exports.h>
 #include <jolt/Jolt/Physics/Body/BodyID.h>
+#include <jolt/Jolt/Physics/Body/MotionQuality.h>
 #include <jolt/Jolt/Physics/Body/MotionType.h>
 #include <jolt/Jolt/Physics/EActivation.h>
 
@@ -536,6 +537,18 @@ JOLT_API void JPH_BodyInterface_SetMotionType(JPH_BodyInterface *_this, const JP
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inBodyID` can not be null. It is a single object.
 JOLT_API JPH_EMotionType JPH_BodyInterface_GetMotionType(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
+
+///@name Body motion quality
+///@{
+/// Generated from method `JPH::BodyInterface::SetMotionQuality`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+JOLT_API void JPH_BodyInterface_SetMotionQuality(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, JPH_EMotionQuality inMotionQuality);
+
+/// Generated from method `JPH::BodyInterface::GetMotionQuality`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+JOLT_API JPH_EMotionQuality JPH_BodyInterface_GetMotionQuality(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
 
 /// Get inverse inertia tensor in world space
 /// Generated from method `JPH::BodyInterface::GetInverseInertia`.

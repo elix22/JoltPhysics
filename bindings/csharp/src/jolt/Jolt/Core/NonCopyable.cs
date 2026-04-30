@@ -49,6 +49,7 @@ public static partial class JPH
     ///     `JPH::JobSystemWithBarrier`
     ///     `JPH::MeshShape`
     ///     `JPH::MutableCompoundShape`
+    ///     `JPH::ObjectLayerPairFilterMask`
     ///     `JPH::ObjectLayerPairFilterTable`
     ///     `JPH::ObjectVsBroadPhaseLayerFilterTable`
     ///     `JPH::OffsetCenterOfMassShape`
@@ -57,6 +58,8 @@ public static partial class JPH
     ///     `JPH::ReversedShapeFilter`
     ///     `JPH::RotatedTranslatedShape`
     ///     `JPH::ScaledShape`
+    ///     `JPH::SixDOFConstraint`
+    ///     `JPH::SliderConstraint`
     ///     `JPH::SpecifiedBroadPhaseLayerFilter`
     ///     `JPH::SpecifiedObjectLayerFilter`
     ///     `JPH::SphereShape`
@@ -154,6 +157,7 @@ public static partial class JPH
     ///     `JPH::JobSystemWithBarrier`
     ///     `JPH::MeshShape`
     ///     `JPH::MutableCompoundShape`
+    ///     `JPH::ObjectLayerPairFilterMask`
     ///     `JPH::ObjectLayerPairFilterTable`
     ///     `JPH::ObjectVsBroadPhaseLayerFilterTable`
     ///     `JPH::OffsetCenterOfMassShape`
@@ -162,6 +166,8 @@ public static partial class JPH
     ///     `JPH::ReversedShapeFilter`
     ///     `JPH::RotatedTranslatedShape`
     ///     `JPH::ScaledShape`
+    ///     `JPH::SixDOFConstraint`
+    ///     `JPH::SliderConstraint`
     ///     `JPH::SpecifiedBroadPhaseLayerFilter`
     ///     `JPH::SpecifiedObjectLayerFilter`
     ///     `JPH::SphereShape`

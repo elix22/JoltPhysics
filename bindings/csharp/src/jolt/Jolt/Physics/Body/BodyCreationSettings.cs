@@ -236,6 +236,21 @@ public static partial class JPH
             }
         }
 
+        ///< Motion quality, or how well it detects collisions when it has a high velocity
+        public unsafe JPH.EMotionQuality mMotionQuality
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyCreationSettings_Get_mMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_Get_mMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.EMotionQuality *__JPH_BodyCreationSettings_Get_mMotionQuality(_Underlying *_this);
+                return *__JPH_BodyCreationSettings_Get_mMotionQuality(_UnderlyingPtr);
+            }
+        }
+
         ///< Set to indicate that extra effort should be made to try to remove ghost contacts (collisions with internal edges of a mesh). This is more expensive but makes bodies move smoother over a mesh with convex edges.
         public unsafe bool mEnhancedInternalEdgeRemoval
         {
@@ -861,6 +876,21 @@ public static partial class JPH
                 #endif
                 extern static bool *__JPH_BodyCreationSettings_GetMutable_mApplyGyroscopicForce(_Underlying *_this);
                 return ref *__JPH_BodyCreationSettings_GetMutable_mApplyGyroscopicForce(_UnderlyingPtr);
+            }
+        }
+
+        ///< Motion quality, or how well it detects collisions when it has a high velocity
+        public new unsafe ref JPH.EMotionQuality mMotionQuality
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyCreationSettings_GetMutable_mMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_GetMutable_mMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.EMotionQuality *__JPH_BodyCreationSettings_GetMutable_mMotionQuality(_Underlying *_this);
+                return ref *__JPH_BodyCreationSettings_GetMutable_mMotionQuality(_UnderlyingPtr);
             }
         }
 

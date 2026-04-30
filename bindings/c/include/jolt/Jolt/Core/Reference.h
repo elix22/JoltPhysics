@@ -177,6 +177,8 @@ typedef struct JPH_RefTarget_JPH_PhysicsMaterial JPH_RefTarget_JPH_PhysicsMateri
 ///     `JPH::FixedConstraintSettings`
 ///     `JPH::HingeConstraintSettings`
 ///     `JPH::PointConstraintSettings`
+///     `JPH::SixDOFConstraintSettings`
+///     `JPH::SliderConstraintSettings`
 ///     `JPH::TwoBodyConstraintSettings`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings;
@@ -208,6 +210,8 @@ typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_Constraint
 ///     `JPH::FixedConstraint`
 ///     `JPH::HingeConstraint`
 ///     `JPH::PointConstraint`
+///     `JPH::SixDOFConstraint`
+///     `JPH::SliderConstraint`
 ///     `JPH::TwoBodyConstraint`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint;

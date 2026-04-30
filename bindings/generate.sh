@@ -124,6 +124,10 @@ echo "#include \"$ROOT/Jolt/Physics/Constraints/FixedConstraint.h\"" >>"$BINDING
 echo "#include \"$ROOT/Jolt/Physics/Constraints/DistanceConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Constraints/PointConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Constraints/HingeConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/SliderConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/SixDOFConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/ObjectLayerPairFilterMask.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Body/MotionQuality.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodySharedSettings.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodyCreationSettings.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Geometry/AABox.h\"" >>"$BINDINGS/tmp/combined_input.h"
@@ -186,6 +190,7 @@ echo "#include \"$ROOT/Jolt/Math/Vector.h\"" >>"$BINDINGS/tmp/combined_input.h"
     --allow JPH::NonCopyable \
     --allow JPH::SerializableObject \
     --allow JPH::EMotionType \
+    --allow JPH::EMotionQuality \
     --allow JPH::EPhysicsUpdateError \
     --allow JPH::ShapeSettings \
     --allow JPH::ConvexShapeSettings \
@@ -239,12 +244,17 @@ echo "#include \"$ROOT/Jolt/Math/Vector.h\"" >>"$BINDINGS/tmp/combined_input.h"
     --allow JPH::DistanceConstraintSettings \
     --allow JPH::PointConstraintSettings \
     --allow JPH::HingeConstraintSettings \
+    --allow JPH::SliderConstraintSettings \
+    --allow JPH::SixDOFConstraintSettings \
+    --allow JPH::SixDOFConstraintSettings::EAxis \
     --allow JPH::Constraint \
     --allow JPH::TwoBodyConstraint \
     --allow JPH::FixedConstraint \
     --allow JPH::DistanceConstraint \
     --allow JPH::PointConstraint \
     --allow JPH::HingeConstraint \
+    --allow JPH::SliderConstraint \
+    --allow JPH::SixDOFConstraint \
     --allow JPH::SoftBodySharedSettings \
     --allow JPH::SoftBodyCreationSettings \
     --allow JPH::SubShapeID \
@@ -298,6 +308,7 @@ echo "#include \"$ROOT/Jolt/Math/Vector.h\"" >>"$BINDINGS/tmp/combined_input.h"
     --allow JPH::CharacterVirtual \
     --allow JPH::BroadPhaseLayerInterfaceTable \
     --allow JPH::ObjectLayerPairFilterTable \
+    --allow JPH::ObjectLayerPairFilterMask \
     --allow JPH::ObjectVsBroadPhaseLayerFilterTable \
     --canonicalize-64-to-fixed-size-typedefs \
     "${EXTRA_PARSER_FLAGS[@]+"${EXTRA_PARSER_FLAGS[@]}"}" \

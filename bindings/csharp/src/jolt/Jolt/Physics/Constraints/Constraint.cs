@@ -15,6 +15,8 @@ public static partial class JPH
     ///     `JPH::FixedConstraintSettings`
     ///     `JPH::HingeConstraintSettings`
     ///     `JPH::PointConstraintSettings`
+    ///     `JPH::SixDOFConstraintSettings`
+    ///     `JPH::SliderConstraintSettings`
     /// This is the const half of the class.
     public class Const_ConstraintSettings : JPH.Object<Const_ConstraintSettings>, System.IDisposable
     {
@@ -378,6 +380,8 @@ public static partial class JPH
     ///     `JPH::FixedConstraintSettings`
     ///     `JPH::HingeConstraintSettings`
     ///     `JPH::PointConstraintSettings`
+    ///     `JPH::SixDOFConstraintSettings`
+    ///     `JPH::SliderConstraintSettings`
     /// This is the non-const half of the class.
     public class ConstraintSettings : Const_ConstraintSettings
     {
@@ -545,6 +549,8 @@ public static partial class JPH
     ///     `JPH::FixedConstraint`
     ///     `JPH::HingeConstraint`
     ///     `JPH::PointConstraint`
+    ///     `JPH::SixDOFConstraint`
+    ///     `JPH::SliderConstraint`
     /// This is the const half of the class.
     public class Const_Constraint : JPH.Object<Const_Constraint>, System.IDisposable
     {
@@ -895,6 +901,8 @@ public static partial class JPH
     ///     `JPH::FixedConstraint`
     ///     `JPH::HingeConstraint`
     ///     `JPH::PointConstraint`
+    ///     `JPH::SixDOFConstraint`
+    ///     `JPH::SliderConstraint`
     /// This is the non-const half of the class.
     public class Constraint : Const_Constraint
     {

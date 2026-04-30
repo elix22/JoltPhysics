@@ -954,6 +954,19 @@ public static partial class JPH
             return new(__JPH_Vec4_Swizzle_3_0_3_2(_UnderlyingPtr), is_owning: true);
         }
 
+        /// Swizzle the elements in inV
+        /// Generated from method `JPH::Vec4::Swizzle<1, 1, 2, 2>`.
+        public unsafe JPH.Vec4 Swizzle_1_1_2_2()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vec4_Swizzle_1_1_2_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vec4_Swizzle_1_1_2_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Vec4._Underlying *__JPH_Vec4_Swizzle_1_1_2_2(_Underlying *_this);
+            return new(__JPH_Vec4_Swizzle_1_1_2_2(_UnderlyingPtr), is_owning: true);
+        }
+
         /// Replicate the X component to all components
         /// Generated from method `JPH::Vec4::SplatX`.
         public unsafe JPH.Vec4 SplatX()

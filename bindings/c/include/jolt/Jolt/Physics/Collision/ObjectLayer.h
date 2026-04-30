@@ -33,6 +33,7 @@ typedef struct JPH_ObjectLayerFilter JPH_ObjectLayerFilter;
 ///     `JPH::NonCopyable`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::ObjectLayerPairFilterMask`
 ///     `JPH::ObjectLayerPairFilterTable`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_ObjectLayerPairFilter JPH_ObjectLayerPairFilter;

@@ -193,6 +193,12 @@ public static partial class JPH
         public unsafe ref float this[nint i] => ref _elem[i];
     }
 
+    public struct ArrayFloat6
+    {
+        public unsafe fixed float _elem[6];
+        public unsafe ref float this[nint i] => ref _elem[i];
+    }
+
     public struct ArrayUnsignedChar4
     {
         public unsafe fixed byte _elem[4];

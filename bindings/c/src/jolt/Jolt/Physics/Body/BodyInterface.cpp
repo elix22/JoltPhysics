@@ -11,6 +11,7 @@
 #include <Jolt/Physics/Body/BodyCreationSettings.h>
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Body/BodyInterface.h>
+#include <Jolt/Physics/Body/MotionQuality.h>
 #include <Jolt/Physics/Body/MotionType.h>
 #include <Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>
 #include <Jolt/Physics/Collision/CollisionGroup.h>
@@ -631,6 +632,21 @@ void JPH_BodyInterface_SetMotionType(JPH_BodyInterface *_this, const JPH_BodyID 
 JPH_EMotionType JPH_BodyInterface_GetMotionType(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID)
 {
     return (JPH_EMotionType)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyInterface *)(_this)).GetMotionType(
+        ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID))
+    ));
+}
+
+void JPH_BodyInterface_SetMotionQuality(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, JPH_EMotionQuality inMotionQuality)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyInterface *)(_this)).SetMotionQuality(
+        ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID)),
+        ((JPH::EMotionQuality)inMotionQuality)
+    );
+}
+
+JPH_EMotionQuality JPH_BodyInterface_GetMotionQuality(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID)
+{
+    return (JPH_EMotionQuality)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyInterface *)(_this)).GetMotionQuality(
         ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID))
     ));
 }

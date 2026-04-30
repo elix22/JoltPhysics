@@ -353,6 +353,21 @@ public static partial class JPH
             }
         }
 
+        /// Generated from method `JPH::BodyInterface::GetMotionQuality`.
+        public unsafe JPH.EMotionQuality GetMotionQuality(in JPH.BodyID inBodyID)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.EMotionQuality __JPH_BodyInterface_GetMotionQuality(_Underlying *_this, JPH.BodyID *inBodyID);
+            fixed (JPH.BodyID *__ptr_inBodyID = &inBodyID)
+            {
+                return __JPH_BodyInterface_GetMotionQuality(_UnderlyingPtr, __ptr_inBodyID);
+            }
+        }
+
         /// Get inverse inertia tensor in world space
         /// Generated from method `JPH::BodyInterface::GetInverseInertia`.
         public unsafe JPH.Mat44 GetInverseInertia(in JPH.BodyID inBodyID)
@@ -1326,6 +1341,23 @@ public static partial class JPH
             fixed (JPH.BodyID *__ptr_inBodyID = &inBodyID)
             {
                 __JPH_BodyInterface_SetMotionType(_UnderlyingPtr, __ptr_inBodyID, inMotionType, inActivationMode);
+            }
+        }
+
+        ///@name Body motion quality
+        ///@{
+        /// Generated from method `JPH::BodyInterface::SetMotionQuality`.
+        public unsafe void SetMotionQuality(in JPH.BodyID inBodyID, JPH.EMotionQuality inMotionQuality)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_SetMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_SetMotionQuality", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_BodyInterface_SetMotionQuality(_Underlying *_this, JPH.BodyID *inBodyID, JPH.EMotionQuality inMotionQuality);
+            fixed (JPH.BodyID *__ptr_inBodyID = &inBodyID)
+            {
+                __JPH_BodyInterface_SetMotionQuality(_UnderlyingPtr, __ptr_inBodyID, inMotionQuality);
             }
         }
 

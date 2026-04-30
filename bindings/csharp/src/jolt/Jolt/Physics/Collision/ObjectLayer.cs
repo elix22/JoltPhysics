@@ -166,6 +166,7 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::ObjectLayerPairFilterMask`
     ///     `JPH::ObjectLayerPairFilterTable`
     /// This is the const half of the class.
     public class Const_ObjectLayerPairFilter : JPH.Object<Const_ObjectLayerPairFilter>, System.IDisposable
@@ -239,6 +240,7 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::ObjectLayerPairFilterMask`
     ///     `JPH::ObjectLayerPairFilterTable`
     /// This is the non-const half of the class.
     public class ObjectLayerPairFilter : Const_ObjectLayerPairFilter

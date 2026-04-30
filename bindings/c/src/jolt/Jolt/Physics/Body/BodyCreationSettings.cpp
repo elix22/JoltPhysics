@@ -5,6 +5,7 @@
 #include <Jolt/Math/Quat.h>
 #include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/BodyCreationSettings.h>
+#include <Jolt/Physics/Body/MotionQuality.h>
 #include <Jolt/Physics/Body/MotionType.h>
 #include <Jolt/Physics/Collision/CollisionGroup.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
@@ -190,6 +191,21 @@ void JPH_BodyCreationSettings_Set_mApplyGyroscopicForce(JPH_BodyCreationSettings
 bool *JPH_BodyCreationSettings_GetMutable_mApplyGyroscopicForce(JPH_BodyCreationSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyCreationSettings *)(_this)).mApplyGyroscopicForce);
+}
+
+const JPH_EMotionQuality *JPH_BodyCreationSettings_Get_mMotionQuality(const JPH_BodyCreationSettings *_this)
+{
+    return (const JPH_EMotionQuality *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyCreationSettings *)(_this)).mMotionQuality);
+}
+
+void JPH_BodyCreationSettings_Set_mMotionQuality(JPH_BodyCreationSettings *_this, JPH_EMotionQuality value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyCreationSettings *)(_this)).mMotionQuality = ((JPH::EMotionQuality)value);
+}
+
+JPH_EMotionQuality *JPH_BodyCreationSettings_GetMutable_mMotionQuality(JPH_BodyCreationSettings *_this)
+{
+    return (JPH_EMotionQuality *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BodyCreationSettings *)(_this)).mMotionQuality);
 }
 
 const bool *JPH_BodyCreationSettings_Get_mEnhancedInternalEdgeRemoval(const JPH_BodyCreationSettings *_this)

@@ -37,6 +37,8 @@ typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h
 ///     `JPH::FixedConstraintSettings`
 ///     `JPH::HingeConstraintSettings`
 ///     `JPH::PointConstraintSettings`
+///     `JPH::SixDOFConstraintSettings`
+///     `JPH::SliderConstraintSettings`
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings;
 
 /// Base class for all constraints that involve 2 bodies. Body1 is usually considered the parent, Body2 the child.
@@ -53,6 +55,8 @@ typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings;
 ///     `JPH::FixedConstraint`
 ///     `JPH::HingeConstraint`
 ///     `JPH::PointConstraint`
+///     `JPH::SixDOFConstraint`
+///     `JPH::SliderConstraint`
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint;
 
 /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.

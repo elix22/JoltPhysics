@@ -3,6 +3,7 @@
 
 #include <common.h>
 #include <exports.h>
+#include <jolt/Jolt/Physics/Body/MotionQuality.h>
 #include <jolt/Jolt/Physics/Body/MotionType.h>
 
 #include <stdbool.h>
@@ -264,6 +265,27 @@ JOLT_API void JPH_BodyCreationSettings_Set_mApplyGyroscopicForce(JPH_BodyCreatio
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API bool *JPH_BodyCreationSettings_GetMutable_mApplyGyroscopicForce(JPH_BodyCreationSettings *_this);
+
+///< Motion quality, or how well it detects collisions when it has a high velocity
+/// Returns a pointer to a member variable of class `JPH::BodyCreationSettings` named `mMotionQuality`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_EMotionQuality *JPH_BodyCreationSettings_Get_mMotionQuality(const JPH_BodyCreationSettings *_this);
+
+///< Motion quality, or how well it detects collisions when it has a high velocity
+/// Modifies a member variable of class `JPH::BodyCreationSettings` named `mMotionQuality`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mMotionQuality`.
+/// When this function is called, this object will drop object references it held previously in `mMotionQuality`.
+JOLT_API void JPH_BodyCreationSettings_Set_mMotionQuality(JPH_BodyCreationSettings *_this, JPH_EMotionQuality value);
+
+///< Motion quality, or how well it detects collisions when it has a high velocity
+/// Returns a mutable pointer to a member variable of class `JPH::BodyCreationSettings` named `mMotionQuality`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_EMotionQuality *JPH_BodyCreationSettings_GetMutable_mMotionQuality(JPH_BodyCreationSettings *_this);
 
 ///< Set to indicate that extra effort should be made to try to remove ghost contacts (collisions with internal edges of a mesh). This is more expensive but makes bodies move smoother over a mesh with convex edges.
 /// Returns a pointer to a member variable of class `JPH::BodyCreationSettings` named `mEnhancedInternalEdgeRemoval`.

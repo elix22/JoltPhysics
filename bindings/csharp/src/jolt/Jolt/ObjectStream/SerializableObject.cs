@@ -30,6 +30,8 @@ public static partial class JPH
     ///     `JPH::PointConstraintSettings`
     ///     `JPH::RotatedTranslatedShapeSettings`
     ///     `JPH::ScaledShapeSettings`
+    ///     `JPH::SixDOFConstraintSettings`
+    ///     `JPH::SliderConstraintSettings`
     ///     `JPH::SphereShapeSettings`
     ///     `JPH::StaticCompoundShapeSettings`
     ///     `JPH::TaperedCapsuleShapeSettings`
@@ -225,6 +227,8 @@ public static partial class JPH
     ///     `JPH::PointConstraintSettings`
     ///     `JPH::RotatedTranslatedShapeSettings`
     ///     `JPH::ScaledShapeSettings`
+    ///     `JPH::SixDOFConstraintSettings`
+    ///     `JPH::SliderConstraintSettings`
     ///     `JPH::SphereShapeSettings`
     ///     `JPH::StaticCompoundShapeSettings`
     ///     `JPH::TaperedCapsuleShapeSettings`

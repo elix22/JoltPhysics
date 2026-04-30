@@ -33,6 +33,8 @@ typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h
 ///     `JPH::FixedConstraintSettings`
 ///     `JPH::HingeConstraintSettings`
 ///     `JPH::PointConstraintSettings`
+///     `JPH::SixDOFConstraintSettings`
+///     `JPH::SliderConstraintSettings`
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings;
 
 /// Base class for all physics constraints. A constraint removes one or more degrees of freedom for a rigid body.
@@ -49,6 +51,8 @@ typedef struct JPH_ConstraintSettings JPH_ConstraintSettings;
 ///     `JPH::FixedConstraint`
 ///     `JPH::HingeConstraint`
 ///     `JPH::PointConstraint`
+///     `JPH::SixDOFConstraint`
+///     `JPH::SliderConstraint`
 typedef struct JPH_Constraint JPH_Constraint;
 
 /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.

@@ -601,6 +601,11 @@ JPH_Vec4 *JPH_Vec4_Swizzle_3_0_3_2(const JPH_Vec4 *_this)
     return (JPH_Vec4 *)new JPH::Vec4(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec4 *)(_this)).Swizzle<3, 0, 3, 2>());
 }
 
+JPH_Vec4 *JPH_Vec4_Swizzle_1_1_2_2(const JPH_Vec4 *_this)
+{
+    return (JPH_Vec4 *)new JPH::Vec4(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec4 *)(_this)).Swizzle<1, 1, 2, 2>());
+}
+
 JPH_Vec4 *JPH_Vec4_SplatX(const JPH_Vec4 *_this)
 {
     return (JPH_Vec4 *)new JPH::Vec4(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec4 *)(_this)).SplatX());

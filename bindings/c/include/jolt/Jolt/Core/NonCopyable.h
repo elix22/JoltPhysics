@@ -58,6 +58,7 @@ extern "C" {
 ///     `JPH::JobSystemWithBarrier`
 ///     `JPH::MeshShape`
 ///     `JPH::MutableCompoundShape`
+///     `JPH::ObjectLayerPairFilterMask`
 ///     `JPH::ObjectLayerPairFilterTable`
 ///     `JPH::ObjectVsBroadPhaseLayerFilterTable`
 ///     `JPH::OffsetCenterOfMassShape`
@@ -66,6 +67,8 @@ extern "C" {
 ///     `JPH::ReversedShapeFilter`
 ///     `JPH::RotatedTranslatedShape`
 ///     `JPH::ScaledShape`
+///     `JPH::SixDOFConstraint`
+///     `JPH::SliderConstraint`
 ///     `JPH::SpecifiedBroadPhaseLayerFilter`
 ///     `JPH::SpecifiedObjectLayerFilter`
 ///     `JPH::SphereShape`
