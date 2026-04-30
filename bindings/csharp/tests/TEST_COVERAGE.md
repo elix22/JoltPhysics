@@ -151,6 +151,8 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_Body.cs` | 16 | Body type predicates: IsRigidBody (dynamic), IsDynamic, IsStatic, IsKinematic (false for dynamic), CanBeKinematicOrDynamic (true/false); GetShape non-null; GetInverseInertia non-zero for dynamic body (only valid on dynamic/kinematic); GetWorldSpaceBounds valid; IsInBroadPhase false before add / true after add; GetInverseCenterOfMassTransform valid; GetPosition matches creation coordinates; GetFriction/GetRestitution ≥ 0; GetAllowSleeping default true |
 | `Tests_ConstraintBase.cs` | 12 | Constraint base: GetNumVelocityStepsOverride/SetNumVelocityStepsOverride round-trip (default=0); GetNumPositionStepsOverride/SetNumPositionStepsOverride round-trip (default=0); GetEnabled default true; SetEnabled false; IsActive true with active bodies after step; ResetWarmStart no-crash; TwoBodyConstraint: GetBody1/GetBody2 non-null; GetConstraintToBody1Matrix/GetConstraintToBody2Matrix valid Mat44 |
 | `Tests_MeshShapeSettings.cs` | 9 | MeshShapeSettings default construct; mMaxTrianglesPerLeaf default=8 + round-trip; mActiveEdgeCosThresholdAngle default≈0.996195 + round-trip; mPerTriangleUserData default=false + round-trip; mBuildQuality default=FavorRuntimePerformance + round-trip |
+| `Tests_BodyCreationSettings.cs` | 29 | BodyCreationSettings: default construct; mMotionType default=Dynamic + round-trip; HasMassProperties (Dynamic=true, Static=false, Static+mAllowDynamicOrKinematic=true); mIsSensor/mAllowSleeping/mApplyGyroscopicForce/mUseManifoldReduction/mCollideKinematicVsNonDynamic/mEnhancedInternalEdgeRemoval defaults; mFriction=0.2/mRestitution=0/mLinearDamping=0.05/mAngularDamping=0.05/mMaxLinearVelocity=500/mGravityFactor=1/mInertiaMultiplier=1 defaults; mNumVelocityStepsOverride=0/mNumPositionStepsOverride=0; mMotionQuality=Discrete; field round-trips (mFriction, mRestitution, mGravityFactor, mUserData, mAllowSleeping, mInertiaMultiplier); constructor with shape |
+| `Tests_ConvexHullShape.cs` | 24 | ConvexHullShapeSettings: default construct; mMaxConvexRadius=0/mMaxErrorConvexRadius=0.05/mHullTolerance=0.001/mDensity=1000/mUserData=0 defaults; field round-trips (mMaxConvexRadius, mMaxErrorConvexRadius, mHullTolerance, mDensity, mUserData); SetDensity; CMaxPointsInHull/CGetTrianglesMinTrianglesRequested static consts; ConvexHullShape: default construct; GetNumPoints=0/GetNumFaces=0/GetDensity=1000/GetUserData=0/MustBeStatic=false/GetConvexRadius=0/GetInnerRadius=FLT_MAX on default-constructed; SetDensity/SetUserData round-trips |
 | `Tests_MutableCompoundShape.cs` | 14 | MutableCompoundShapeSettings defaults; MutableCompoundShape construct/NumSubShapes, MustBeStatic (false), AddShape (index + count), RemoveShape, ModifyShape, GetLocalBounds (empty + with sphere), GetVolume/GetInnerRadius (with sphere), dynamic body simulation |
 | `Tests_CollisionGroupAndSettings.cs` | 21 | CollisionGroup CInvalidGroup/CInvalidSubGroup/SInvalid constants; default construct + ID defaults; SetGroupID/SubGroupID round-trips; CanCollide (no filter, different groups); PhysicsSettings defaults (NumVelocitySteps=10, NumPositionSteps=2, AllowSleeping=true, DeterministicSimulation=true, Baumgarte≈0.2, ConstraintWarmStart=true); GetPhysicsSettings/SetPhysicsSettings integration round-trips |
 
@@ -163,11 +165,15 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | Math | 9 | 271 |
 | Geometry | 2 | 35 |
 | Physics | 29 | 372 |
-| Other | 15 | 255 |
-| **Total** | **55** | **933** |
+| Other | 17 | 309 |
+| **Total** | **57** | **987** |
 
 > **Note:** Test count reflects state after this session.
-> Added 3 new test files this session: `Tests_Body.cs` (16), `Tests_ConstraintBase.cs` (12),
+> Added `Tests_BodyCreationSettings.cs` (29 tests) and `Tests_ConvexHullShape.cs` (24 tests)
+> this session, bringing the total from 934 to **987 tests** across **57 files**.
+>
+> Previous session note:
+> Added 3 new test files: `Tests_Body.cs` (16), `Tests_ConstraintBase.cs` (12),
 > `Tests_MeshShapeSettings.cs` (9). Previous session total was 896 tests; new total is **933 tests**.
 
 ---
