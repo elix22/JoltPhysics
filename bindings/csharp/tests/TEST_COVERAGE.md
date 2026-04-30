@@ -83,9 +83,9 @@ cd deps/JoltPhysics/bindings/csharp/tests
 |---|---|---|---|---|
 | `UnitTests/Physics/PhysicsTests.cpp` | `Tests_Physics.cs` | ⚠️ | 10 | Basic simulation: add body, step, position check; doesn't cover all scenarios |
 | `UnitTests/Physics/ShapeTests.cpp` | `Tests_Shapes.cs` + `Tests_ShapeGeometry.cs` | ⚠️ | 38 | Shape creation and geometry queries; volume/surface area not covered for all shapes |
-| `UnitTests/Physics/MutableCompoundShapeTests.cpp` | `Tests_MutableCompound.cs` | ✅ | 14 | Mutable compound shape operations |
+| `UnitTests/Physics/MutableCompoundShapeTests.cpp` | `Tests_MutableCompoundShape.cs` | ✅ | 14 | Mutable compound shape operations |
 | `UnitTests/Physics/OffsetCenterOfMassShapeTests.cpp` | `Tests_OffsetCOM.cs` | ✅ | 10 | Offset center of mass shape |
-| `UnitTests/Physics/CollisionGroupTests.cpp` | `Tests_CollisionGroups.cs` | ✅ | 12 | Collision group and filter mask logic |
+| `UnitTests/Physics/CollisionGroupTests.cpp` | `Tests_CollisionGroupAndSettings.cs` | ✅ | 21 | CollisionGroup defaults + round-trips, CanCollide (no filter, different groups), PhysicsSettings defaults + round-trips, GetPhysicsSettings/SetPhysicsSettings integration |
 | `UnitTests/Physics/ObjectLayerPairFilterTableTests.cpp` | `Tests_ObjectLayers.cs` | ⚠️ | 9 | ObjectLayerPairFilterTable; mask filter not covered |
 | `UnitTests/Physics/ObjectLayerPairFilterMaskTests.cpp` | `Tests_ObjectLayerPairFilterMask.cs` | ✅ | 10 | ObjectLayerPairFilterMask lifecycle, CNumBits/CMask constants, SGetObjectLayer/SGetGroup/SGetMask static helpers, ShouldCollide logic |
 | `UnitTests/Physics/BroadPhaseTests.cpp` | `Tests_PhysicsQuery.cs` | ⚠️ | 15 | GetBroadPhaseQuery / GetNarrowPhaseQuery, GetBounds after body add, gravity round-trip, WereBodiesInContact; raw broadphase cast queries not yet tested |
@@ -144,6 +144,9 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_Float2Float3Float4.cs` | 22 | Float2 (constructor, x/y, ==, !=, Equals); Float3 (constructor, x/y/z, indexer, ==, !=, copy); Float4 (constructor, x/y/z/w, ==, !=, Equals) |
 | `Tests_Double3.cs` | 11 | Double3 (default/parameterized/copy constructor, x/y/z fields, indexer, ==, !=, Equals) |
 | `Tests_PhysicsQuery.cs` | 15 | GetGravity default/round-trip/zero; GetNumBodies init/add/remove; GetMaxBodies; WereBodiesInContact (separated and after collision); GetBroadPhaseQuery/GetNarrowPhaseQuery not-null; BroadPhaseQuery.GetBounds before/after body; activation/contact listener defaults |
+| `Tests_TriangleShape.cs` | 19 | TriangleShapeSettings defaults + field round-trips (mV1/V2/V3, mConvexRadius, mDensity, SetDensity); TriangleShape direct construct, MustBeStatic (returns false), GetLocalBounds, GetInnerRadius, GetVolume, GetDensity, SetDensity; static body creation, dynamic body creation, dynamic body in compound falls due to gravity |
+| `Tests_MutableCompoundShape.cs` | 14 | MutableCompoundShapeSettings defaults; MutableCompoundShape construct/NumSubShapes, MustBeStatic (false), AddShape (index + count), RemoveShape, ModifyShape, GetLocalBounds (empty + with sphere), GetVolume/GetInnerRadius (with sphere), dynamic body simulation |
+| `Tests_CollisionGroupAndSettings.cs` | 21 | CollisionGroup CInvalidGroup/CInvalidSubGroup/SInvalid constants; default construct + ID defaults; SetGroupID/SubGroupID round-trips; CanCollide (no filter, different groups); PhysicsSettings defaults (NumVelocitySteps=10, NumPositionSteps=2, AllowSleeping=true, DeterministicSimulation=true, Baumgarte≈0.2, ConstraintWarmStart=true); GetPhysicsSettings/SetPhysicsSettings integration round-trips |
 
 ---
 
@@ -154,12 +157,12 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | Math | 9 | 271 |
 | Geometry | 2 | 35 |
 | Physics | 26 | 335 |
-| Other | 9 | 151 |
-| **Total** | **46** | **792** |
+| Other | 12 | 205 |
+| **Total** | **49** | **846** |
 
 > **Note:** Test count reflects state after this session.
-> Added 3 new test files: `Tests_CylinderShape.cs` (19), `Tests_Float2Float3Float4.cs` (22),
-> `Tests_Double3.cs` (11). Previous session total was 741 tests; new total is **792 tests**.
+> Added 3 new test files: `Tests_TriangleShape.cs` (19), `Tests_MutableCompoundShape.cs` (14),
+> `Tests_CollisionGroupAndSettings.cs` (21). Previous session total was 792 tests; new total is **846 tests**.
 
 ---
 
