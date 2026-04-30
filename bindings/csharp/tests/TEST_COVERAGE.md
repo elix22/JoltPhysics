@@ -88,7 +88,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/CollisionGroupTests.cpp` | `Tests_CollisionGroups.cs` | ✅ | 12 | Collision group and filter mask logic |
 | `UnitTests/Physics/ObjectLayerPairFilterTableTests.cpp` | `Tests_ObjectLayers.cs` | ⚠️ | 9 | ObjectLayerPairFilterTable; mask filter not covered |
 | `UnitTests/Physics/ObjectLayerPairFilterMaskTests.cpp` | — | ❌ | 0 | ObjectLayerPairFilterMask not yet bound |
-| `UnitTests/Physics/BroadPhaseTests.cpp` | — | ❌ | 0 | Broadphase queries not directly exposed |
+| `UnitTests/Physics/BroadPhaseTests.cpp` | `Tests_PhysicsQuery.cs` | ⚠️ | 15 | GetBroadPhaseQuery / GetNarrowPhaseQuery, GetBounds after body add, gravity round-trip, WereBodiesInContact; raw broadphase cast queries not yet tested |
 | `UnitTests/Physics/CastShapeTests.cpp` | — | ❌ | 0 | Shape cast queries not yet tested |
 | `UnitTests/Physics/CollideShapeTests.cpp` | — | ❌ | 0 | CollideShape queries not yet tested |
 | `UnitTests/Physics/RayShapeTests.cpp` | — | ❌ | 0 | Ray-shape intersections not yet tested |
@@ -134,6 +134,9 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_DecoratedShapes.cs` | 11 | RotatedTranslatedShape (construction, GetPosition, GetRotation, GetLocalBounds, simulation); ScaledShape (construction, GetScale, GetLocalBounds, size comparison, static body) |
 | `Tests_HeightFieldShape.cs` | 12 | HeightFieldShapeSettings field defaults (SampleCount, BlockSize, BitsPerSample, MinHeightValue, MaxHeightValue, ActiveEdgeCosThreshold) and round-trips |
 | `Tests_RefCounting.cs` | 8 | Ref-counted shape/settings lifetime |
+| `Tests_EmptyShape.cs` | 15 | EmptyShapeSettings defaults, mCenterOfMass/mUserData round-trips; EmptyShape construction, GetLocalBounds (zero-size), GetInnerRadius/GetVolume (zero), MustBeStatic, SetUserData/GetUserData, static body creation |
+| `Tests_StaticCompoundShape.cs` | 13 | StaticCompoundShapeSettings defaults, mUserData round-trip, AddShape via CompoundShapeSettings upcast; StaticCompoundShape default construct/GetNumSubShapes/GetLocalBounds/MustBeStatic; static body creation, GetNumBodies increment/decrement, GetShape InnerRadius and Volume |
+| `Tests_PhysicsQuery.cs` | 15 | GetGravity default/round-trip/zero; GetNumBodies init/add/remove; GetMaxBodies; WereBodiesInContact (separated and after collision); GetBroadPhaseQuery/GetNarrowPhaseQuery not-null; BroadPhaseQuery.GetBounds before/after body; activation/contact listener defaults |
 
 ---
 
@@ -143,13 +146,13 @@ cd deps/JoltPhysics/bindings/csharp/tests
 |---|---|---|
 | Math | 8 | 238 |
 | Geometry | 2 | 35 |
-| Physics | 20 | 251 |
-| Other | 6 | 127 |
-| **Total** | **36** | **651** |
+| Physics | 21 | 266 |
+| Other | 9 | 155 |
+| **Total** | **39** | **694** |
 
 > **Note:** Test count reflects state after this session.
-> Added 3 new test files: `Tests_TaperedCapsuleShape.cs` (16), `Tests_TriangleAndPlaneShapes.cs` (16),
-> `Tests_PhysicsSettings.cs` (16). Previous session total was 603 tests; new total is **651 tests**.
+> Added 3 new test files: `Tests_EmptyShape.cs` (15), `Tests_StaticCompoundShape.cs` (13),
+> `Tests_PhysicsQuery.cs` (15). Previous session total was 651 tests; new total is **694 tests**.
 
 ---
 
