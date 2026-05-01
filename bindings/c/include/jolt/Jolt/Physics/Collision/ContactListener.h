@@ -29,6 +29,20 @@ typedef struct JPH_ContactManifold JPH_ContactManifold;
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_ContactSettings JPH_ContactSettings;
 
+/// Return value for the OnContactValidate callback. Determines if the contact is being processed or not.
+/// Results are ordered so that the strongest accept has the lowest number and the strongest reject the highest number (which allows for easy combining of results)
+typedef enum JPH_ValidateResult
+{
+    ///< Accept this and any further contact points for this body pair
+    JPH_ValidateResult_AcceptAllContactsForThisBodyPair = 0,
+    ///< Accept this contact only (and continue calling this callback for every contact manifold for the same body pair)
+    JPH_ValidateResult_AcceptContact = 1,
+    ///< Reject this contact only (but process any other contact manifolds for the same body pair)
+    JPH_ValidateResult_RejectContact = 2,
+    ///< Rejects this and any further contact points for this body pair
+    JPH_ValidateResult_RejectAllContactsForThisBodyPair = 3,
+} JPH_ValidateResult;
+
 /// A listener class that receives collision contact events. It can be registered through PhysicsSystem::SetContactListener.
 /// Only a single contact listener can be registered. A common pattern is to create a contact listener that casts Body::GetUserData
 /// to a game object and then forwards the call to a handler specific for that game object.
@@ -44,6 +58,10 @@ typedef struct JPH_ContactSettings JPH_ContactSettings;
 /// For EMotionQuality::LinearCast bodies, you may get an OnContactAdded followed by an OnContactPersisted for the same body/sub shape pair.
 /// This happens when a body collides both in the discrete and the continuous collision detection stage.
 /// Generated from class `JPH::ContactListener`.
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `EstimateResponseContactListener`
+///     `SimpleContactEventListener`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_ContactListener JPH_ContactListener;
 
@@ -428,6 +446,26 @@ JOLT_API void JPH_ContactListener_DestroyArray(const JPH_ContactListener *_this)
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API JPH_ContactListener *JPH_ContactListener_AssignFromAnother(JPH_ContactListener *_this, Jolt_PassBy _other_pass_by, JPH_ContactListener *_other);
+
+/// Called after detecting a collision between a body pair, but before calling OnContactAdded and before adding the contact constraint.
+/// If the function rejects the contact, the contact will not be processed by the simulation.
+/// This is a rather expensive time to reject a contact point since a lot of the collision detection has happened already, make sure you
+/// filter out the majority of undesired body pairs through the ObjectLayerPairFilter that is registered on the PhysicsSystem.
+///
+/// This function may not be called again the next update if a contact persists and no new contact pairs between sub shapes are found.
+///
+/// Note that this callback is called when all bodies are locked, so don't use any locking functions! See detailed class description of ContactListener.
+///
+/// Body 1 will have a motion type that is larger or equal than body 2's motion type (order from large to small: dynamic -> kinematic -> static). When motion types are equal, they are ordered by BodyID.
+///
+/// The collision result (inCollisionResult) is reported relative to inBaseOffset.
+/// Generated from method `JPH::ContactListener::OnContactValidate`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBody1` can not be null. It is a single object.
+/// Parameter `inBody2` can not be null. It is a single object.
+/// Parameter `inBaseOffset` can not be null. It is a single object.
+/// Parameter `inCollisionResult` can not be null. It is a single object.
+JOLT_API JPH_ValidateResult JPH_ContactListener_OnContactValidate(JPH_ContactListener *_this, const JPH_Body *inBody1, const JPH_Body *inBody2, const JPH_Vec3 *inBaseOffset, const JPH_CollideShapeResult *inCollisionResult);
 
 /// Called whenever a new contact point is detected.
 ///

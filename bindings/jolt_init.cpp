@@ -6,6 +6,7 @@
 #include <Jolt/Core/Factory.h>
 #include <Jolt/RegisterTypes.h>
 #include <Jolt/Physics/PhysicsSystem.h>
+#include <Jolt/Physics/Body/BodyLock.h>
 
 #include <cstdarg>
 #include <cstdio>
@@ -78,5 +79,181 @@ JPH::WheeledVehicleController* JoltHelpers::VehicleConstraintGetWheeledControlle
     // Jolt is compiled without RTTI; use static_cast since the caller is responsible
     // for only calling this when the vehicle uses a WheeledVehicleControllerSettings.
     return static_cast<JPH::WheeledVehicleController*>(constraint.GetController());
+}
+
+// ---------------------------------------------------------------------------
+// HeightFieldShape helpers
+// ---------------------------------------------------------------------------
+
+void JoltHelpers::HeightFieldSettingsSetHeightSamples(JPH::HeightFieldShapeSettings& inSettings, const float* inSamples, unsigned int inCount)
+{
+    inSettings.mHeightSamples.assign(inSamples, inSamples + inCount);
+}
+
+void JoltHelpers::HeightFieldSettingsResizeHeightSamples(JPH::HeightFieldShapeSettings& inSettings, unsigned int inCount, float inFillValue)
+{
+    inSettings.mHeightSamples.resize(inCount, inFillValue);
+}
+
+void JoltHelpers::HeightFieldSettingsSetHeightSampleAt(JPH::HeightFieldShapeSettings& inSettings, unsigned int inIndex, float inValue)
+{
+    inSettings.mHeightSamples[inIndex] = inValue;
+}
+
+unsigned int JoltHelpers::HeightFieldSettingsGetHeightSamplesCount(const JPH::HeightFieldShapeSettings& inSettings)
+{
+    return static_cast<unsigned int>(inSettings.mHeightSamples.size());
+}
+
+float JoltHelpers::HeightFieldSettingsGetHeightSample(const JPH::HeightFieldShapeSettings& inSettings, unsigned int inIndex)
+{
+    return inSettings.mHeightSamples[inIndex];
+}
+
+float JoltHelpers::HeightFieldShapeConstantsNoCollisionValue()
+{
+    return JPH::HeightFieldShapeConstants::cNoCollisionValue;
+}
+
+JPH::Vec3 JoltHelpers::HeightFieldShapeGetPosition(const JPH::Shape& inShape, JPH::uint inX, JPH::uint inY)
+{
+    return static_cast<const JPH::HeightFieldShape&>(inShape).GetPosition(inX, inY);
+}
+
+bool JoltHelpers::HeightFieldShapeIsNoCollision(const JPH::Shape& inShape, JPH::uint inX, JPH::uint inY)
+{
+    return static_cast<const JPH::HeightFieldShape&>(inShape).IsNoCollision(inX, inY);
+}
+
+// ---------------------------------------------------------------------------
+// SoftBody helpers
+// ---------------------------------------------------------------------------
+
+void JoltHelpers::SoftBodySettingsAddVertex(JPH::SoftBodySharedSettings& inSettings, const JPH::SoftBodySharedSettings::Vertex& inVertex)
+{
+    inSettings.mVertices.push_back(inVertex);
+}
+
+unsigned int JoltHelpers::SoftBodySettingsGetVertexCount(const JPH::SoftBodySharedSettings& inSettings)
+{
+    return static_cast<unsigned int>(inSettings.mVertices.size());
+}
+
+JPH::SoftBodySharedSettings* JoltHelpers::SoftBodySettingsCreateCube(JPH::uint inGridSize, float inGridSpacing)
+{
+    JPH::Ref<JPH::SoftBodySharedSettings> ref = JPH::SoftBodySharedSettings::sCreateCube(inGridSize, inGridSpacing);
+    ref->AddRef(); // Transfer ownership: prevent destruction when ref goes out of scope
+    return ref.GetPtr();
+}
+
+unsigned int JoltHelpers::BodyGetSoftBodyVertexCount(const JPH::Body& inBody)
+{
+    const auto* mp = static_cast<const JPH::SoftBodyMotionProperties*>(inBody.GetMotionProperties());
+    return static_cast<unsigned int>(mp->GetVertices().size());
+}
+
+JPH::Vec3 JoltHelpers::BodyGetSoftBodyVertexPosition(const JPH::Body& inBody, JPH::uint inIndex)
+{
+    const auto* mp = static_cast<const JPH::SoftBodyMotionProperties*>(inBody.GetMotionProperties());
+    return mp->GetVertex(inIndex).mPosition;
+}
+
+void JoltHelpers::BodySetSoftBodyVertexPosition(JPH::Body& inBody, JPH::uint inIndex, JPH::Vec3Arg inPosition)
+{
+    auto* mp = static_cast<JPH::SoftBodyMotionProperties*>(inBody.GetMotionProperties());
+    mp->GetVertex(inIndex).mPosition = inPosition;
+}
+
+float JoltHelpers::BodyGetInverseMass(const JPH::Body& inBody)
+{
+    return inBody.GetMotionProperties()->GetInverseMass();
+}
+
+unsigned int JoltHelpers::PhysicsSystemGetSoftBodyVertexCount(const JPH::PhysicsSystem& inSystem, const JPH::BodyID& inBodyID)
+{
+    JPH::BodyLockRead lock(inSystem.GetBodyLockInterface(), inBodyID);
+    if (!lock.Succeeded()) return 0;
+    const JPH::Body& body = lock.GetBody();
+    return static_cast<unsigned int>(
+        static_cast<const JPH::SoftBodyMotionProperties*>(body.GetMotionProperties())->GetVertices().size());
+}
+
+JPH::Vec3 JoltHelpers::PhysicsSystemGetSoftBodyVertexPosition(const JPH::PhysicsSystem& inSystem, const JPH::BodyID& inBodyID, JPH::uint inIndex)
+{
+    JPH::BodyLockRead lock(inSystem.GetBodyLockInterface(), inBodyID);
+    if (!lock.Succeeded()) return JPH::Vec3::sZero();
+    const JPH::Body& body = lock.GetBody();
+    const auto& verts = static_cast<const JPH::SoftBodyMotionProperties*>(body.GetMotionProperties())->GetVertices();
+    if (inIndex >= verts.size()) return JPH::Vec3::sZero();
+    return verts[inIndex].mPosition;
+}
+
+// ---------------------------------------------------------------------------
+// CountingPhysicsStepListener
+// ---------------------------------------------------------------------------
+
+void CountingPhysicsStepListener::OnStep(const JPH::PhysicsStepListenerContext& inContext)
+{
+    mCount++;
+    mLastDeltaTime = inContext.mDeltaTime;
+    mLastIsFirst   = inContext.mIsFirstStep;
+    mLastIsLast    = inContext.mIsLastStep;
+}
+
+// ---------------------------------------------------------------------------
+// SimpleContactEventListener
+// ---------------------------------------------------------------------------
+
+void SimpleContactEventListener::Reset()
+{
+    mValidateCount = mAddedCount = mPersistedCount = mRemovedCount = 0;
+    mLastAddedBody1 = mLastAddedBody2 = JPH::BodyID();
+}
+
+JPH::ValidateResult SimpleContactEventListener::OnContactValidate(
+    const JPH::Body& /*inBody1*/, const JPH::Body& /*inBody2*/,
+    JPH::RVec3Arg /*inBaseOffset*/, const JPH::CollideShapeResult& /*inCollisionResult*/)
+{
+    mValidateCount++;
+    return JPH::ValidateResult::AcceptAllContactsForThisBodyPair;
+}
+
+void SimpleContactEventListener::OnContactAdded(
+    const JPH::Body& inBody1, const JPH::Body& inBody2,
+    const JPH::ContactManifold& /*inManifold*/, JPH::ContactSettings& /*ioSettings*/)
+{
+    mAddedCount++;
+    mLastAddedBody1 = inBody1.GetID();
+    mLastAddedBody2 = inBody2.GetID();
+}
+
+void SimpleContactEventListener::OnContactPersisted(
+    const JPH::Body& /*inBody1*/, const JPH::Body& /*inBody2*/,
+    const JPH::ContactManifold& /*inManifold*/, JPH::ContactSettings& /*ioSettings*/)
+{
+    mPersistedCount++;
+}
+
+void SimpleContactEventListener::OnContactRemoved(const JPH::SubShapeIDPair& /*inSubShapePair*/)
+{
+    mRemovedCount++;
+}
+
+// ---------------------------------------------------------------------------
+// EstimateResponseContactListener
+// ---------------------------------------------------------------------------
+
+void EstimateResponseContactListener::OnContactAdded(
+    const JPH::Body& inBody1, const JPH::Body& inBody2,
+    const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings)
+{
+    JPH::CollisionEstimationResult result;
+    JPH::EstimateCollisionResponse(inBody1, inBody2, inManifold, result,
+        ioSettings.mCombinedFriction, ioSettings.mCombinedRestitution);
+    mLinearVelocity1  = result.mLinearVelocity1;
+    mAngularVelocity1 = result.mAngularVelocity1;
+    mLinearVelocity2  = result.mLinearVelocity2;
+    mAngularVelocity2 = result.mAngularVelocity2;
+    mWasCalled = true;
 }
 

@@ -22,6 +22,7 @@ typedef struct JPH_PhysicsStepListenerContext JPH_PhysicsStepListenerContext;
 /// Generated from class `JPH::PhysicsStepListener`.
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `CountingPhysicsStepListener`
 ///     `JPH::VehicleConstraint`
 typedef struct JPH_PhysicsStepListener JPH_PhysicsStepListener;
 

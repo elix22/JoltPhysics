@@ -379,6 +379,16 @@ JPH_ContactListener *JPH_ContactListener_AssignFromAnother(JPH_ContactListener *
     ));
 }
 
+JPH_ValidateResult JPH_ContactListener_OnContactValidate(JPH_ContactListener *_this, const JPH_Body *inBody1, const JPH_Body *inBody2, const JPH_Vec3 *inBaseOffset, const JPH_CollideShapeResult *inCollisionResult)
+{
+    return (JPH_ValidateResult)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ContactListener *)(_this)).OnContactValidate(
+        ((inBody1 ? void() : MRBINDC_THROW("Parameter `inBody1` can not be null.", void)), *(const JPH::Body *)(inBody1)),
+        ((inBody2 ? void() : MRBINDC_THROW("Parameter `inBody2` can not be null.", void)), *(const JPH::Body *)(inBody2)),
+        ((inBaseOffset ? void() : MRBINDC_THROW("Parameter `inBaseOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBaseOffset)),
+        ((inCollisionResult ? void() : MRBINDC_THROW("Parameter `inCollisionResult` can not be null.", void)), *(const JPH::CollideShapeResult *)(inCollisionResult))
+    ));
+}
+
 void JPH_ContactListener_OnContactAdded(JPH_ContactListener *_this, const JPH_Body *inBody1, const JPH_Body *inBody2, const JPH_ContactManifold *inManifold, JPH_ContactSettings *ioSettings)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ContactListener *)(_this)).OnContactAdded(

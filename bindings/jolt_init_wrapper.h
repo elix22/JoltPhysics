@@ -3,11 +3,19 @@
  * Only contains APIs that cannot be expressed through Jolt's own headers:
  *   - Global lifecycle (mrbind only binds named types, not free functions)
  *   - Vec3/RVec3 bridge methods (SIMD types mrbind cannot bind directly)
- *   - Free function wrappers (mrbind only binds named types, not free functions) */
+ *   - Free function wrappers (mrbind only binds named types, not free functions)
+ *   - Concrete subclasses for virtual dispatch (C# cannot subclass C++ virtual classes) */
 
 #include <Jolt/Jolt.h>
 #include <Jolt/Geometry/RayAABox.h>
 #include <Jolt/Physics/Vehicle/WheeledVehicleController.h>
+#include <Jolt/Physics/PhysicsStepListener.h>
+#include <Jolt/Physics/Collision/ContactListener.h>
+#include <Jolt/Physics/Collision/EstimateCollisionResponse.h>
+#include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
+#include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
+#include <Jolt/Physics/SoftBody/SoftBodyMotionProperties.h>
+#include <Jolt/Physics/PhysicsSystem.h>
 
 /// Minimal helpers for Jolt global lifecycle.
 /// These are the only hand-implemented methods; their C/C# bindings are machine-generated.
@@ -42,4 +50,121 @@ struct JoltHelpers
     /// Cast the VehicleController on a VehicleConstraint to WheeledVehicleController.
     /// Returns nullptr if the controller is not a WheeledVehicleController.
     static JPH::WheeledVehicleController* VehicleConstraintGetWheeledController(JPH::VehicleConstraint& constraint);
+
+    // -----------------------------------------------------------------------
+    // HeightFieldShape helpers — expose mHeightSamples array to C#
+    // (mHeightSamples is std::vector<float>, mrbind cannot bind STL containers).
+    // -----------------------------------------------------------------------
+
+    /// Assign the height samples array (replaces existing content).
+    static void HeightFieldSettingsSetHeightSamples(JPH::HeightFieldShapeSettings& inSettings, const float* inSamples, unsigned int inCount);
+    /// Resize the height samples array to inCount elements, filling with inFillValue.
+    static void HeightFieldSettingsResizeHeightSamples(JPH::HeightFieldShapeSettings& inSettings, unsigned int inCount, float inFillValue);
+    /// Set the height sample at a specific index.
+    static void HeightFieldSettingsSetHeightSampleAt(JPH::HeightFieldShapeSettings& inSettings, unsigned int inIndex, float inValue);
+    /// Return the number of height samples currently stored.
+    static unsigned int HeightFieldSettingsGetHeightSamplesCount(const JPH::HeightFieldShapeSettings& inSettings);
+    /// Return a single height sample by index.
+    static float HeightFieldSettingsGetHeightSample(const JPH::HeightFieldShapeSettings& inSettings, unsigned int inIndex);
+    /// Return HeightFieldShapeConstants::cNoCollisionValue (sentinel height = no-collision).
+    static float HeightFieldShapeConstantsNoCollisionValue();
+    /// Return the world-space position of a HeightFieldShape sample at (inX, inY).
+    /// (Wraps HeightFieldShape::GetPosition; accepts base Shape& to avoid requiring a downcast in C#.)
+    static JPH::Vec3 HeightFieldShapeGetPosition(const JPH::Shape& inShape, JPH::uint inX, JPH::uint inY);
+    /// Return true if the sample at (inX, inY) has no collision (is a "hole").
+    static bool HeightFieldShapeIsNoCollision(const JPH::Shape& inShape, JPH::uint inX, JPH::uint inY);
+
+    // -----------------------------------------------------------------------
+    // SoftBody helpers — vertex array + runtime vertex access.
+    // -----------------------------------------------------------------------
+
+    /// Append a vertex to SoftBodySharedSettings::mVertices.
+    static void SoftBodySettingsAddVertex(JPH::SoftBodySharedSettings& inSettings, const JPH::SoftBodySharedSettings::Vertex& inVertex);
+    /// Return the number of vertices in SoftBodySharedSettings::mVertices.
+    static unsigned int SoftBodySettingsGetVertexCount(const JPH::SoftBodySharedSettings& inSettings);
+    /// Create a cube soft body and return an owning pointer (caller must eventually Release() it).
+    static JPH::SoftBodySharedSettings* SoftBodySettingsCreateCube(JPH::uint inGridSize, float inGridSpacing);
+    /// Return the number of runtime vertices in a soft body (via SoftBodyMotionProperties).
+    static unsigned int BodyGetSoftBodyVertexCount(const JPH::Body& inBody);
+    /// Return the position of a runtime soft body vertex.
+    static JPH::Vec3 BodyGetSoftBodyVertexPosition(const JPH::Body& inBody, JPH::uint inIndex);
+    /// Set the position of a runtime soft body vertex.
+    static void BodySetSoftBodyVertexPosition(JPH::Body& inBody, JPH::uint inIndex, JPH::Vec3Arg inPosition);
+    /// Return the inverse mass of the body (soft or rigid) via MotionProperties.
+    static float BodyGetInverseMass(const JPH::Body& inBody);
+    /// Get the number of soft-body vertices for the body with the given ID.
+    /// Must be called with the physics system locked (outside of simulation step).
+    static unsigned int PhysicsSystemGetSoftBodyVertexCount(const JPH::PhysicsSystem& inSystem, const JPH::BodyID& inBodyID);
+    /// Get the position of a soft-body vertex by body ID and vertex index.
+    /// Must be called with the physics system locked (outside of simulation step).
+    static JPH::Vec3 PhysicsSystemGetSoftBodyVertexPosition(const JPH::PhysicsSystem& inSystem, const JPH::BodyID& inBodyID, JPH::uint inIndex);
+};
+
+// ---------------------------------------------------------------------------
+// CountingPhysicsStepListener — concrete PhysicsStepListener for C# tests.
+// Counts how many times OnStep was called and stores the last context values.
+// ---------------------------------------------------------------------------
+struct CountingPhysicsStepListener : public JPH::PhysicsStepListener
+{
+    int   mCount          = 0;
+    float mLastDeltaTime  = 0.0f;
+    bool  mLastIsFirst    = false;
+    bool  mLastIsLast     = false;
+
+    void  Reset()                { mCount = 0; mLastDeltaTime = 0.0f; mLastIsFirst = false; mLastIsLast = false; }
+    int   GetCount()       const { return mCount; }
+    float GetLastDeltaTime() const { return mLastDeltaTime; }
+    bool  GetLastIsFirst() const { return mLastIsFirst; }
+    bool  GetLastIsLast()  const { return mLastIsLast; }
+
+    virtual void OnStep(const JPH::PhysicsStepListenerContext& inContext) override;
+};
+
+// ---------------------------------------------------------------------------
+// SimpleContactEventListener — concrete ContactListener for C# tests.
+// Counts contact events and records the last added body pair.
+// ---------------------------------------------------------------------------
+struct SimpleContactEventListener : public JPH::ContactListener
+{
+    int         mValidateCount  = 0;
+    int         mAddedCount     = 0;
+    int         mPersistedCount = 0;
+    int         mRemovedCount   = 0;
+    JPH::BodyID mLastAddedBody1;
+    JPH::BodyID mLastAddedBody2;
+
+    void Reset();
+    int  GetValidateCount()  const { return mValidateCount; }
+    int  GetAddedCount()     const { return mAddedCount; }
+    int  GetPersistedCount() const { return mPersistedCount; }
+    int  GetRemovedCount()   const { return mRemovedCount; }
+    const JPH::BodyID& GetLastAddedBody1() const { return mLastAddedBody1; }
+    const JPH::BodyID& GetLastAddedBody2() const { return mLastAddedBody2; }
+
+    virtual JPH::ValidateResult OnContactValidate(const JPH::Body& inBody1, const JPH::Body& inBody2, JPH::RVec3Arg inBaseOffset, const JPH::CollideShapeResult& inCollisionResult) override;
+    virtual void OnContactAdded(const JPH::Body& inBody1, const JPH::Body& inBody2, const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings) override;
+    virtual void OnContactPersisted(const JPH::Body& inBody1, const JPH::Body& inBody2, const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings) override;
+    virtual void OnContactRemoved(const JPH::SubShapeIDPair& inSubShapePair) override;
+};
+
+// ---------------------------------------------------------------------------
+// EstimateResponseContactListener — concrete ContactListener that runs
+// EstimateCollisionResponse in OnContactAdded and stores the result.
+// ---------------------------------------------------------------------------
+struct EstimateResponseContactListener : public JPH::ContactListener
+{
+    bool      mWasCalled        = false;
+    JPH::Vec3 mLinearVelocity1  = JPH::Vec3::sZero();
+    JPH::Vec3 mAngularVelocity1 = JPH::Vec3::sZero();
+    JPH::Vec3 mLinearVelocity2  = JPH::Vec3::sZero();
+    JPH::Vec3 mAngularVelocity2 = JPH::Vec3::sZero();
+
+    void Reset() { mWasCalled = false; }
+    bool WasCalled() const { return mWasCalled; }
+    const JPH::Vec3& GetLinearVelocity1()  const { return mLinearVelocity1; }
+    const JPH::Vec3& GetAngularVelocity1() const { return mAngularVelocity1; }
+    const JPH::Vec3& GetLinearVelocity2()  const { return mLinearVelocity2; }
+    const JPH::Vec3& GetAngularVelocity2() const { return mAngularVelocity2; }
+
+    virtual void OnContactAdded(const JPH::Body& inBody1, const JPH::Body& inBody2, const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings) override;
 };

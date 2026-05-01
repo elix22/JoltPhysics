@@ -821,6 +821,20 @@ public static partial class JPH
         public static implicit operator _InOptConst_ContactSettings(Const_ContactSettings value) {return new(value);}
     }
 
+    /// Return value for the OnContactValidate callback. Determines if the contact is being processed or not.
+    /// Results are ordered so that the strongest accept has the lowest number and the strongest reject the highest number (which allows for easy combining of results)
+    public enum ValidateResult : int
+    {
+        ///< Accept this and any further contact points for this body pair
+        AcceptAllContactsForThisBodyPair = 0,
+        ///< Accept this contact only (and continue calling this callback for every contact manifold for the same body pair)
+        AcceptContact = 1,
+        ///< Reject this contact only (but process any other contact manifolds for the same body pair)
+        RejectContact = 2,
+        ///< Rejects this and any further contact points for this body pair
+        RejectAllContactsForThisBodyPair = 3,
+    }
+
     /// A listener class that receives collision contact events. It can be registered through PhysicsSystem::SetContactListener.
     /// Only a single contact listener can be registered. A common pattern is to create a contact listener that casts Body::GetUserData
     /// to a game object and then forwards the call to a handler specific for that game object.
@@ -836,6 +850,10 @@ public static partial class JPH
     /// For EMotionQuality::LinearCast bodies, you may get an OnContactAdded followed by an OnContactPersisted for the same body/sub shape pair.
     /// This happens when a body collides both in the discrete and the continuous collision detection stage.
     /// Generated from class `JPH::ContactListener`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `EstimateResponseContactListener`
+    ///     `SimpleContactEventListener`
     /// This is the const half of the class.
     public class Const_ContactListener : JPH.Object<Const_ContactListener>, System.IDisposable
     {
@@ -908,6 +926,10 @@ public static partial class JPH
     /// For EMotionQuality::LinearCast bodies, you may get an OnContactAdded followed by an OnContactPersisted for the same body/sub shape pair.
     /// This happens when a body collides both in the discrete and the continuous collision detection stage.
     /// Generated from class `JPH::ContactListener`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `EstimateResponseContactListener`
+    ///     `SimpleContactEventListener`
     /// This is the non-const half of the class.
     public class ContactListener : Const_ContactListener
     {
@@ -956,6 +978,30 @@ public static partial class JPH
             _DiscardKeepAlive();
             if (_other.Value is not null) _KeepAlive(_other.Value);
             return new(__JPH_ContactListener_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Called after detecting a collision between a body pair, but before calling OnContactAdded and before adding the contact constraint.
+        /// If the function rejects the contact, the contact will not be processed by the simulation.
+        /// This is a rather expensive time to reject a contact point since a lot of the collision detection has happened already, make sure you
+        /// filter out the majority of undesired body pairs through the ObjectLayerPairFilter that is registered on the PhysicsSystem.
+        ///
+        /// This function may not be called again the next update if a contact persists and no new contact pairs between sub shapes are found.
+        ///
+        /// Note that this callback is called when all bodies are locked, so don't use any locking functions! See detailed class description of ContactListener.
+        ///
+        /// Body 1 will have a motion type that is larger or equal than body 2's motion type (order from large to small: dynamic -> kinematic -> static). When motion types are equal, they are ordered by BodyID.
+        ///
+        /// The collision result (inCollisionResult) is reported relative to inBaseOffset.
+        /// Generated from method `JPH::ContactListener::OnContactValidate`.
+        public unsafe JPH.ValidateResult OnContactValidate(JPH.Const_Body inBody1, JPH.Const_Body inBody2, JPH.Const_Vec3 inBaseOffset, JPH.Const_CollideShapeResult inCollisionResult)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ContactListener_OnContactValidate", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ContactListener_OnContactValidate", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.ValidateResult __JPH_ContactListener_OnContactValidate(_Underlying *_this, JPH.Const_Body._Underlying *inBody1, JPH.Const_Body._Underlying *inBody2, JPH.Vec3._Underlying *inBaseOffset, JPH.Const_CollideShapeResult._Underlying *inCollisionResult);
+            return __JPH_ContactListener_OnContactValidate(_UnderlyingPtr, inBody1._UnderlyingPtr, inBody2._UnderlyingPtr, inBaseOffset._UnderlyingPtr, inCollisionResult._UnderlyingPtr);
         }
 
         /// Called whenever a new contact point is detected.

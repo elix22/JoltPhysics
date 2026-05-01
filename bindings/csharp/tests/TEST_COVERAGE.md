@@ -93,27 +93,27 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/CollideShapeTests.cpp` | `Tests_CollisionSettings.cs` | 🚫 | 22 | Enum values, settings defaults/round-trips, result struct accessors covered; actual CollideShape query uses CollisionDispatch::sCastShapeVsShapeLocalSpace + template collectors — not exposed by C bindings |
 | `UnitTests/Physics/RayShapeTests.cpp` | `Tests_RayCastQuery.cs` | ✅ | 13 | RRayCast default + parameterized construction; NarrowPhaseQuery.CastRay miss (empty world) + hit (fraction in range, BodyID matches) + side miss; BodyInterface.GetTransformedShape (NoCrash, BodyID, position); TransformedShape.GetWorldSpaceBounds, CastRay hit + miss; ShapeCast not yet tested |
 | `UnitTests/Physics/TransformedShapeTests.cpp` | `Tests_RayCastQuery.cs` | ✅ | — | GetTransformedShape/CastRay/GetWorldSpaceBounds covered (see RayShapeTests.cpp row) |
-| `UnitTests/Physics/HeightFieldShapeTests.cpp` | `Tests_HeightFieldShape.cs` | 🚫 | 12 | HeightFieldShapeSettings field defaults + round-trips covered; CalculateBitsPerSampleForError and full shape creation require mHeightSamples sample-array constructor not exposed by C bindings |
+| `UnitTests/Physics/HeightFieldShapeTests.cpp` | `Tests_HeightFieldShape.cs` | ✅ | 19 | HeightFieldShapeSettings field defaults + round-trips; JoltHelpers: GetHeightSamplesCount, ResizeHeightSamples, SetHeightSampleAt, GetHeightSample; HeightShapeConstantsNoCollisionValue; ray cast against a flat heightfield body; IsNoCollision fill |
 | `UnitTests/Physics/DistanceConstraintTests.cpp` | `Tests_Constraints.cs` + `Tests_DistanceConstraint.cs` | ✅ | 20 | DistanceConstraintSettings defaults + round-trips, direct construction, GetMinDistance/MaxDistance, SetDistance, GetEnabled/SetEnabled, lambda after simulation |
 | `UnitTests/Physics/HingeConstraintTests.cpp` | `Tests_HingeConstraint.cs` | ✅ | 11 | Settings field round-trips (limits, axes, points), constraint creation and simulation |
 | `UnitTests/Physics/FixedConstraintTests.cpp` | `Tests_FixedConstraint.cs` + `Tests_Constraints.cs` | ✅ | 17 | Settings defaults + round-trips (AutoDetectPoint, Enabled, Priority, UserData, VelocitySteps), GetBody1/2, GetEnabled/SetEnabled, GetConstraintPriority/Set, lambda after simulation |
 | `UnitTests/Physics/SliderConstraintTests.cpp` | `Tests_SliderConstraint.cs` | ✅ | 15 | SliderConstraintSettings defaults + round-trips, HasLimits, GetLimitsMin/Max, direct construction, simulation |
 | `UnitTests/Physics/SixDOFConstraintTests.cpp` | `Tests_SixDOFConstraint.cs` | ✅ | 14 | SixDOFConstraintSettings defaults + EAxis enum, GetTranslationLimitsMin/Max, MakeFixedAxis/IsFixedAxis, direct construction, simulation |
 | `UnitTests/Physics/PathConstraintTests.cpp` | `Tests_PathConstraint.cs` | ✅ | 16 | PathConstraintPathHermite: default construct, SetIsLooping/IsLooping round-trip, GetPathMaxFraction=1 for 2-point path; GetClosestPoint before start returns 0, after end returns 1; GetPointOnPath/GetClosestPoint round-trip for all 11 fractions 0.0–1.0 (within 1e-4); midpoint tangent is non-zero |
-| `UnitTests/Physics/ContactListenerTests.cpp` | `Tests_ContactSettings.cs`, `Tests_ContactManifold.cs` | 🚫 | 35 | ContactSettings + ContactManifold struct tests covered; actual contact-listener callback wiring requires virtual dispatch via C++ vtable — not supported in C/C# binding layer |
+| `UnitTests/Physics/ContactListenerTests.cpp` | `Tests_ContactSettings.cs`, `Tests_ContactManifold.cs`, `Tests_ContactListener.cs` | ✅ | 35 | ContactSettings + ContactManifold struct tests covered; SimpleContactEventListener trampoline wired to physics system; OnContactAdded/Validated/Persisted/Removed callbacks verified in simulation |
 | `UnitTests/Physics/SensorTests.cpp` | `Tests_Bodies.cs` + `Tests_BodyProperties.cs` | ✅ | 3 | SensorBody_DoesNotBlockDynamicBody; IsSensor getter for sensor and non-sensor bodies |
 | `UnitTests/Physics/ActiveEdgesTests.cpp` | — | 🚫 | — | Internal mesh active-edge logic |
 | `UnitTests/Physics/ConvexVsTrianglesTest.cpp` | — | 🚫 | — | Internal convex-triangle collision |
-| `UnitTests/Physics/EstimateCollisionResponseTest.cpp` | — | 🚫 | — | Requires virtual ContactListener subclassing (to receive callbacks) — virtual dispatch not supported in C/C# binding layer |
+| `UnitTests/Physics/EstimateCollisionResponseTest.cpp` | `Tests_EstimateCollisionResponse.cs` | ✅ | 6 | EstimateResponseContactListener trampoline: WasCalled after collision, GetLinearVelocity1/2 + GetAngularVelocity1/2 are finite, Reset clears state |
 | `UnitTests/Physics/MotionQualityLinearCastTests.cpp` | `Tests_MotionQuality.cs` | ✅ | 11 | EMotionQuality enum values, GetMotionQuality/SetMotionQuality on BodyInterface, mMotionQuality on BodyCreationSettings |
 | `UnitTests/Physics/SubShapeIDTest.cpp` | — | 🚫 | — | SubShapeID internals; complex compound shape paths |
 | `UnitTests/Physics/TaperedCylinderShapeTests.cpp` | `Tests_TaperedCylinder.cs` | ✅ | 12 | Settings field round-trips (parameterized constructor, mutable fields, SetDensity), dynamic body creation and simulation |
 | `UnitTests/Physics/CharacterVirtualTests.cpp` | `Tests_CharacterVirtualSettings.cs` + `Tests_CharacterVirtual.cs` | ✅ | 45 | CharacterVirtualSettings defaults + round-trips; CharacterContactSettings defaults + round-trips; CharacterVirtual construction/SetPosition/GetPosition/SetRotation/GetRotation/SetLinearVelocity/GetLinearVelocity/SetCharacterLayer/GetCharacterLayer/GetInnerBodyID/GetWorldTransform/GetCenterOfMassPosition/GetCenterOfMassTransform/GetActiveBodyID; Update + multi-step Update no-crash (SetShape fast-init path) |
-| `UnitTests/Physics/SoftBodyTests.cpp` | `Tests_SoftBody.cs` | 🚫 | 42 | SoftBodyCreationSettings field defaults + round-trips; SoftBodySharedSettings construct/lifecycle; inner Vertex/Edge/Face structs covered; full soft-body simulation requires SoftBodyContactListener virtual callbacks — not supported in C/C# binding layer |
+| `UnitTests/Physics/SoftBodyTests.cpp` | `Tests_SoftBody.cs` | ✅ | 46 | SoftBodyCreationSettings field defaults + round-trips; SoftBodySharedSettings construct/lifecycle; inner Vertex/Edge/Face structs covered; JoltHelpers: SoftBodySettingsCreateCube, AddVertex, GetVertexCount, PhysicsSystemGetSoftBodyVertexCount, PhysicsSystemGetSoftBodyVertexPosition; soft-body simulation — vertices fall under gravity |
 | `UnitTests/Physics/WheeledVehicleTests.cpp` | `Tests_WheeledVehicle.cs` | ✅ | 39 | WheeledVehicle fully bound; 39 tests covering field defaults, round-trips, construction, simulation |
 | `UnitTests/Physics/ShapeFilterTests.cpp` | `Tests_ShapeFilter.cs` | ✅ | 9 | Const/mutable lifecycle, mBodyID2 default-invalid, ShouldCollide default pass-through (2-arg and 4-arg), use alongside physics system |
 | `UnitTests/Physics/PhysicsDeterminismTests.cpp` | `Tests_PhysicsDeterminism.cs` | ✅ | 5 | TwoIdenticalRuns_ProduceSamePosition (60 steps), SingleStep, ManySteps (180 steps) — all bit-exact; mDeterministicSimulation default=true + can disable; constraint-level determinism verified via DistanceConstraint simulation |
-| `UnitTests/Physics/PhysicsStepListenerTests.cpp` | `Tests_PhysicsStepListener.cs` | 🚫 | 9 | PhysicsStepListenerContext struct tests covered; PhysicsStepListener is pure virtual — OnStep callback wiring requires virtual dispatch through C++ vtable, not supported in C/C# binding layer |
+| `UnitTests/Physics/PhysicsStepListenerTests.cpp` | `Tests_PhysicsStepListener.cs` | ✅ | 14 | PhysicsStepListenerContext struct tests; CountingPhysicsStepListener trampoline: OnStep called after Update, GetLastDeltaTime ≈ 1/60, 3-substep count, AddRemove no-crash, Reset clears count |
 
 ---
 
@@ -132,7 +132,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_Velocity.cs` | 14 | Default/set/add linear velocity, AddImpulse, default/set angular velocity, GetLinearAndAngularVelocity, friction/restitution/maxV defaults + round-trips, body moves with initial velocity |
 | `Tests_CapsuleShape.cs` | 13 | CapsuleShape construction, GetRadius, GetHalfHeightOfCylinder, GetLocalBounds, GetInnerRadius, GetVolume, SetDensity; CapsuleShapeSettings IsValid/IsSphere; dynamic body simulation |
 | `Tests_DecoratedShapes.cs` | 11 | RotatedTranslatedShape (construction, GetPosition, GetRotation, GetLocalBounds, simulation); ScaledShape (construction, GetScale, GetLocalBounds, size comparison, static body) |
-| `Tests_HeightFieldShape.cs` | 12 | HeightFieldShapeSettings field defaults (SampleCount, BlockSize, BitsPerSample, MinHeightValue, MaxHeightValue, ActiveEdgeCosThreshold) and round-trips |
+| `Tests_HeightFieldShape.cs` | 19 | HeightFieldShapeSettings field defaults + round-trips; JoltHelpers helpers: ResizeHeightSamples, SetHeightSampleAt, GetHeightSamplesCount, GetHeightSample; NoCollisionValue; ray cast against flat terrain |
 | `Tests_RefCounting.cs` | 8 | Ref-counted shape/settings lifetime |
 | `Tests_EmptyShape.cs` | 15 | EmptyShapeSettings defaults, mCenterOfMass/mUserData round-trips; EmptyShape construction, GetLocalBounds (zero-size), GetInnerRadius/GetVolume (zero), MustBeStatic, SetUserData/GetUserData, static body creation |
 | `Tests_StaticCompoundShape.cs` | 13 | StaticCompoundShapeSettings defaults, mUserData round-trip, AddShape via CompoundShapeSettings upcast; StaticCompoundShape default construct/GetNumSubShapes/GetLocalBounds/MustBeStatic; static body creation, GetNumBodies increment/decrement, GetShape InnerRadius and Volume |
@@ -170,7 +170,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_MeshShape.cs` | 7 | MeshShapeSettings default construct; MeshShape DefaultConstruct NoCrash/MustBeStatic true/CGetTrianglesMinTrianglesRequested static const/GetUserData=0; GetLocalBounds/GetStats/GetSubShapeIDBitsRecursive skipped (internal tree bug) |
 | `Tests_Vector2Matrix.cs` | 26 | Vector_2 (15 tests): construct/copy/+/-/*/÷/Dot/LengthSq/Length/Normalized/==; Matrix_2_2 (11 tests): SZero/SIdentity/construct from rows/SetRow/GetRow/==/multiply Mat/multiply Vec |
 | `Tests_ShapeBase.cs` | 11 | Shape GetType/GetSubType round-trips; GetLocalBounds non-degenerate; GetMassProperties via sphere; GetLeafShape returns same as GetInnerShape for non-compound; GetMaterial via MeshShape (null when no material set); SetUserData/GetUserData round-trip |
-| `Tests_SoftBody.cs` | 42 | SoftBodyCreationSettings field defaults + round-trips; SoftBodySharedSettings construct/GetRefCount/AddRef/SetEmbedded/CalculateEdgeLengths/Optimize; inner Vertex (default/invMass/parameterized), Edge (mRestLength/mCompliance), Face (IsDegenerate/mMaterialIndex) |
+| `Tests_SoftBody.cs` | 46 | SoftBodyCreationSettings field defaults + round-trips; SoftBodySharedSettings construct/lifecycle; inner Vertex/Edge/Face structs; JoltHelpers simulation: CreateCube, AddVertex, GetVertexCount, soft-body falling under gravity |
 | `Tests_JobSystem.cs` | 8 | JobSystemSingleThreaded: default/parameterized construct; GetMaxConcurrency==1; Init then GetMaxConcurrency==1; JobSystemThreadPool: default/parameterized construct; GetMaxConcurrency>0; fixture Jobs GetMaxConcurrency>0 |
 | `Tests_TempAllocator.cs` | 8 | TempAllocatorImpl: construct; GetSize==requested; IsEmpty initially true; GetUsage==0; CanAllocate small=true; CanAllocate oversized=false; fixture Alloc GetSize>=64MB; CanAllocate 1MB |
 | `Tests_CollisionGroups.cs` | 12 | CollisionGroup CInvalidGroup/CInvalidSubGroup constants; default construct + ID defaults; SetGroupID/SubGroupID round-trips; CanCollide (no filter, different groups) |
@@ -184,7 +184,9 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_Ellipse.cs` | 11 | Ellipse construction/copy; IsInside (origin, inside point, outside, boundary uses <=, Y-axis); GetClosestPoint on X and Y axis; GetNormal non-normalized (X and Y axis) |
 | `Tests_CollisionSettings.cs` | 22 | EBackFaceMode/EActiveEdgeMode/ECollectFacesMode enum values; RayCastSettings default+round-trips (mBackFaceModeTriangles/Convex, mTreatConvexAsSolid); CollideSettingsBase default+round-trips (mActiveEdgeMode, mCollectFacesMode); CollideShapeSettings default+round-trip (mMaxSeparationDistance); CollideShapeResult GetEarlyOutFraction, Reversed; ShapeCastSettings default+round-trips; ShapeCastResult GetEarlyOutFraction |
 | `Tests_RayCastQuery.cs` | 13 | RRayCast default + parameterized construction + field access; NarrowPhaseQuery.CastRay miss (empty world), hit (true, fraction in [0,1], BodyID matches), side-miss; BodyInterface.GetTransformedShape (NoCrash, BodyID matches, position matches); TransformedShape.GetWorldSpaceBounds valid; TransformedShape.CastRay hit + miss |
-| `Tests_PhysicsStepListener.cs` | 9 | PhysicsStepListenerContext: default/parameterized/copy construct; mDeltaTime/mIsFirstStep/mIsLastStep/mPhysicsSystem field access; mutable round-trips; context holding a real PhysicsSystem |
+| `Tests_PhysicsStepListener.cs` | 14 | PhysicsStepListenerContext: default/parameterized/copy construct; field access; CountingPhysicsStepListener: OnStep called after Update, GetLastDeltaTime ≈ 1/60, 3-substep count, AddRemove no-crash, Reset |
+| `Tests_ContactListener.cs` | 6 | SimpleContactEventListener trampoline: DefaultCounts zero; Reset; OnContactAdded/Validated after collision; OnContactPersisted on subsequent steps; LastAddedBodyIDs valid; OnContactRemoved after body removed |
+| `Tests_EstimateCollisionResponse.cs` | 6 | EstimateResponseContactListener trampoline: WasCalledFalse default; Reset; WasCalled after collision; GetLinearVelocity1/2 finite; GetAngularVelocity1/2 finite; Reset allows second detection |
 | `Tests_RayAABox.cs` | 17 | RayInvDirection construction (default, from direction, reciprocal field); RayAABox wrapper: inside box all 3 axes → negative; outside-high/outside-low toward box on X/Y/Z → ~0.1; outside pointing away → FLT_MAX; angled ray hitting top face |
 | `Tests_PathConstraint.cs` | 16 | PathConstraintPathHermite: default construct; SetIsLooping/IsLooping round-trip; GetPathMaxFraction=1 for 2-point path; GetClosestPoint before start=0/after end=1; GetPointOnPath+GetClosestPoint round-trip for fractions 0.0–1.0 (11 cases, within 1e-4); midpoint tangent non-zero |
 
@@ -196,9 +198,9 @@ cd deps/JoltPhysics/bindings/csharp/tests
 |---|---|---|
 | Math | 10 | 297 |
 | Geometry | 5 | 63 |
-| Physics | 32 | 469 |
-| Other | 45 | 550 |
-| **Total** | **92** | **1376** |
+| Physics | 34 | 487 |
+| Other | 47 | 635 |
+| **Total** | **96** | **1482** |
 
 > **Note:** Test count reflects state after latest updates.
 > The total has grown across multiple sessions:
@@ -206,7 +208,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 > - 1138 → 1202 (72 files): added Tests_CharacterVirtual.cs (19), Tests_MeshShape.cs (7), Tests_Vector2Matrix.cs (26), Tests_ShapeBase.cs (11)
 > - 1202 → **1260** (**75 files**): added Tests_SoftBody.cs (42), Tests_JobSystem.cs (8), Tests_TempAllocator.cs (8)
 > - 1260 → **1291** (**84 files**): added Tests_ContactManifold.cs (12), Tests_DefaultObjectLayerFilter.cs (6), Tests_PhysicsDeterminism.cs (5); expanded Tests_ContactSettings.cs (+8); documented 5 pre-existing files: Tests_CollisionGroups.cs (12), Tests_MutableCompound.cs (14), Tests_PhysicsSettings.cs (16), Tests_TaperedCapsuleShape.cs (16), Tests_TriangleAndPlaneShapes.cs (16)
-> - 1346 → **1376** (**92 files**): generated new bindings (RayInvDirection, PathConstraintPath, PathConstraintPathHermite; added JoltHelpers::RayAABox wrapper free-function); added Tests_RayAABox.cs (17), Tests_PathConstraint.cs (16); reclassified ClosestPointTests/CastShapeTests/EstimateCollisionResponseTest as 🚫 (internal/template/virtual-dispatch APIs not bindable)
+> - 1376 → **1482** (**96 files**): added trampoline classes (CountingPhysicsStepListener, SimpleContactEventListener, EstimateResponseContactListener) + JoltHelpers wrappers (HeightFieldSettingsResizeHeightSamples/SetHeightSampleAt, PhysicsSystemGetSoftBodyVertexCount/Position); added Tests_ContactListener.cs (6), Tests_EstimateCollisionResponse.cs (6), Tests_SoftBodySimulation class (+4); expanded Tests_HeightFieldShape.cs (+7), Tests_PhysicsStepListener.cs (+5), Tests_SoftBody.cs (+4); reclassified HeightFieldShapeTests, ContactListenerTests, EstimateCollisionResponseTest, SoftBodyTests, PhysicsStepListenerTests to ✅
 
 ---
 

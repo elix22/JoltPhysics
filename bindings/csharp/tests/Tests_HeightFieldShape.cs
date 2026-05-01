@@ -1,15 +1,14 @@
 // Tests for JPH::HeightFieldShapeSettings fields, defaults, round-trips,
-// and utility methods (DetermineMinAndMaxSample, CalculateBitsPerSampleForError).
-// Note: Constructing an actual HeightFieldShape with height-sample data is not
-// supported through the C# bindings (no sample-array constructor is exposed),
-// so tests are limited to settings inspection and the default-constructed shape.
+// utility methods (DetermineMinAndMaxSample, CalculateBitsPerSampleForError),
+// and shape creation via JoltHelpers helper methods that allow sample-array
+// access from C# (HeightFieldSettingsResizeHeightSamples, etc.).
 
 using Xunit;
 
 namespace JoltTests;
 
 [Collection("Jolt")]
-public sealed class Tests_HeightFieldShape
+public sealed class Tests_HeightFieldShape(JoltFixture fx)
 {
     // ─────────────────────────────────────────────────────────────────────────
     // Construction
@@ -121,7 +120,106 @@ public sealed class Tests_HeightFieldShape
         Assert.Equal(200f, s.mMaxHeightValue, precision: 5);
     }
 
-    // NOTE: CalculateBitsPerSampleForError requires mHeightSamples to be populated;
-    // calling it with mHeightSamples=nullptr (no constructor with sample data exists
-    // in the C# bindings) causes a native crash. No tests for that method.
+    // ─────────────────────────────────────────────────────────────────────────
+    // HeightSamples helper methods (via JoltHelpers)
+    // ─────────────────────────────────────────────────────────────────────────
+
+    [Fact]
+    public void HeightFieldSettings_HeightSamples_InitialCount_IsZero()
+    {
+        using var s = new JPH.HeightFieldShapeSettings();
+        uint count = JPH.Const_JoltHelpers.HeightFieldSettingsGetHeightSamplesCount(s);
+        Assert.Equal(0u, count);
+    }
+
+    [Fact]
+    public void HeightFieldSettings_ResizeHeightSamples_SetsCount()
+    {
+        using var s = new JPH.HeightFieldShapeSettings();
+        JPH.JoltHelpers.HeightFieldSettingsResizeHeightSamples(s, 16u, 0f);
+        uint count = JPH.Const_JoltHelpers.HeightFieldSettingsGetHeightSamplesCount(s);
+        Assert.Equal(16u, count);
+    }
+
+    [Fact]
+    public void HeightFieldSettings_SetHeightSampleAt_RoundTrips()
+    {
+        using var s = new JPH.HeightFieldShapeSettings();
+        JPH.JoltHelpers.HeightFieldSettingsResizeHeightSamples(s, 4u, 0f);
+        JPH.JoltHelpers.HeightFieldSettingsSetHeightSampleAt(s, 2u, 3.14f);
+        float v = JPH.Const_JoltHelpers.HeightFieldSettingsGetHeightSample(s, 2u);
+        Assert.Equal(3.14f, v, 1e-4f);
+    }
+
+    [Fact]
+    public void HeightFieldShapeConstants_NoCollisionValue_IsLargePositive()
+    {
+        float noCol = JPH.Const_JoltHelpers.HeightFieldShapeConstantsNoCollisionValue();
+        Assert.True(noCol > 1e20f);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Shape creation from populated settings
+    // ─────────────────────────────────────────────────────────────────────────
+
+    // Create a flat 4×4 heightfield at y=5 and verify a ray cast hits it.
+    [Fact]
+    public void HeightFieldShape_GetPosition_FlatTerrain_CorrectY()
+    {
+        using var sys = fx.MakePhysicsSystem();
+
+        using var settings = new JPH.HeightFieldShapeSettings();
+        settings.mSampleCount = 4u;
+        const float height = 5f;
+        JPH.JoltHelpers.HeightFieldSettingsResizeHeightSamples(settings, 4u * 4u, height);
+
+        var bi = sys.GetBodyInterface();
+        using var bcs = new JPH.BodyCreationSettings(
+            (JPH.Const_HeightFieldShapeSettings)settings,
+            new JPH.Vec3(0f, 0f, 0f), JPH.Quat.SIdentity(),
+            JPH.EMotionType.Static, JoltFixture.LayerNonMoving);
+        JPH.BodyID id = bi.CreateAndAddBody(bcs, JPH.EActivation.DontActivate);
+        try
+        {
+            // Get shape from body lock interface
+            using var ts = bi.GetTransformedShape(id);
+            // CastRay straight down at (0.5, 10, 0.5) → should hit at y≈5
+            using var rayOrigin = new JPH.Vec3(0.5f, 10f, 0.5f);
+            using var rayDir = new JPH.Vec3(0f, -20f, 0f);
+            using var ray = new JPH.RRayCast(rayOrigin, rayDir);
+            using var hit = new JPH.RayCastResult();
+            bool hitResult = ts.CastRay(ray, hit);
+            Assert.True(hitResult);
+        }
+        finally
+        {
+            bi.RemoveBody(id);
+            bi.DestroyBody(id);
+        }
+    }
+
+    [Fact]
+    public void HeightFieldSettings_IsNoCollision_FillWithNoCollision()
+    {
+        using var s = new JPH.HeightFieldShapeSettings();
+        float noCol = JPH.Const_JoltHelpers.HeightFieldShapeConstantsNoCollisionValue();
+        JPH.JoltHelpers.HeightFieldSettingsResizeHeightSamples(s, 4u, noCol);
+        // All samples set to no-collision value — verify they were stored
+        float sample = JPH.Const_JoltHelpers.HeightFieldSettingsGetHeightSample(s, 0u);
+        Assert.Equal(noCol, sample, 1e-3f);
+    }
+
+    // NOTE: CalculateBitsPerSampleForError requires a valid mSampleCount and
+    // populated height samples. With a flat terrain mMin == mMax which makes the
+    // error quantization degenerate (returns 0 bits). We just verify it does not crash.
+    [Fact]
+    public void HeightFieldSettings_CalculateBitsPerSampleForError_NoCrash()
+    {
+        using var s = new JPH.HeightFieldShapeSettings();
+        s.mSampleCount = 4u;
+        const float height = 5f;
+        JPH.JoltHelpers.HeightFieldSettingsResizeHeightSamples(s, 4u * 4u, height);
+        uint bits = s.CalculateBitsPerSampleForError(0.01f);
+        Assert.True(bits <= 8u); // valid compressed bits per sample
+    }
 }

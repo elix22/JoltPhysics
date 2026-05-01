@@ -266,6 +266,7 @@ public static partial class JPH
     /// Generated from class `JPH::PhysicsStepListener`.
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `CountingPhysicsStepListener`
     ///     `JPH::VehicleConstraint`
     /// This is the const half of the class.
     public class Const_PhysicsStepListener : JPH.Object<Const_PhysicsStepListener>, System.IDisposable
@@ -297,6 +298,7 @@ public static partial class JPH
     /// Generated from class `JPH::PhysicsStepListener`.
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `CountingPhysicsStepListener`
     ///     `JPH::VehicleConstraint`
     /// This is the non-const half of the class.
     public class PhysicsStepListener : Const_PhysicsStepListener

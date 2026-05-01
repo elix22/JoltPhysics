@@ -177,6 +177,8 @@ echo "#include \"$ROOT/Jolt/Geometry/RayAABox.h\"" >>"$BINDINGS/tmp/combined_inp
 echo "#include \"$ROOT/Jolt/Physics/Constraints/PathConstraintPath.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Constraints/PathConstraintPathHermite.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Vehicle/WheeledVehicleController.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodyMotionProperties.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/EstimateCollisionResponse.h\"" >>"$BINDINGS/tmp/combined_input.h"
 
 
 # Parse the input header.
@@ -188,6 +190,9 @@ echo "#include \"$ROOT/Jolt/Physics/Vehicle/WheeledVehicleController.h\"" >>"$BI
     --skip-mentions-of JPH::StaticArray \
     --skip-mentions-of JPH::PhysicsStepListenerContext \
     --allow JoltHelpers \
+    --allow CountingPhysicsStepListener \
+    --allow SimpleContactEventListener \
+    --allow EstimateResponseContactListener \
     --allow JPH::BVec16 \
     --allow JPH::DMat44 \
     --allow JPH::Double3 \
@@ -274,6 +279,7 @@ echo "#include \"$ROOT/Jolt/Physics/Vehicle/WheeledVehicleController.h\"" >>"$BI
     --allow JPH::SixDOFConstraint \
     --allow JPH::SoftBodySharedSettings \
     --allow JPH::SoftBodyCreationSettings \
+    --allow JPH::SoftBodyVertex \
     --allow JPH::SubShapeID \
     --allow JPH::AABox \
     --allow JPH::BodyID \
@@ -312,6 +318,7 @@ echo "#include \"$ROOT/Jolt/Physics/Vehicle/WheeledVehicleController.h\"" >>"$BI
     --allow JPH::ContactManifold \
     --allow JPH::ContactSettings \
     --allow JPH::ContactListener \
+    --allow JPH::ValidateResult \
     --allow JPH::BroadPhaseQuery \
     --allow JPH::NarrowPhaseQuery \
     --allow JPH::CharacterBaseSettings \

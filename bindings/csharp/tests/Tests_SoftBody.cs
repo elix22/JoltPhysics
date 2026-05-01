@@ -311,3 +311,109 @@ public sealed class Tests_SoftBodySharedSettings_Face(JoltFixture fx)
         Assert.Equal(3u, f.mMaterialIndex);
     }
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SoftBody simulation tests (via JoltHelpers)
+// ─────────────────────────────────────────────────────────────────────────────
+
+[Collection("Jolt")]
+public sealed class Tests_SoftBodySimulation(JoltFixture fx)
+{
+    [Fact]
+    public void SoftBodySettings_AddVertex_IncreasesCount()
+    {
+        using var settings = new JPH.SoftBodySharedSettings();
+        Assert.Equal(0u, JPH.Const_JoltHelpers.SoftBodySettingsGetVertexCount(settings));
+        using var v = new JPH.SoftBodySharedSettings.Vertex();
+        JPH.JoltHelpers.SoftBodySettingsAddVertex(settings, v);
+        Assert.Equal(1u, JPH.Const_JoltHelpers.SoftBodySettingsGetVertexCount(settings));
+    }
+
+    [Fact]
+    public void SoftBodySettings_CreateCube_HasVertices()
+    {
+        using var sbSettings = JPH.Const_JoltHelpers.SoftBodySettingsCreateCube(3u, 0.5f);
+        Assert.NotNull(sbSettings);
+        uint count = JPH.Const_JoltHelpers.SoftBodySettingsGetVertexCount(sbSettings);
+        Assert.True(count > 0);
+    }
+
+    [Fact]
+    public void SoftBody_Simulate_VerticesMoveWithGravity()
+    {
+        using var sys = fx.MakePhysicsSystem();
+        var bi = sys.GetBodyInterface();
+
+        using var sbSettings = JPH.Const_JoltHelpers.SoftBodySettingsCreateCube(3u, 0.5f);
+        Assert.NotNull(sbSettings);
+        sbSettings.Optimize();
+
+        using var bcs = new JPH.SoftBodyCreationSettings(
+            sbSettings,
+            new JPH.Vec3(0f, 5f, 0f),
+            JPH.Quat.SIdentity(),
+            JoltFixture.LayerMoving);
+
+        var body = bi.CreateSoftBody(bcs);
+        Assert.NotNull(body);
+        JPH.BodyID id = body.GetID();
+        bi.AddBody(id, JPH.EActivation.Activate);
+
+        try
+        {
+            // Record initial Y position of vertex 0
+            float initialY;
+            using (var pos = JPH.Const_JoltHelpers.PhysicsSystemGetSoftBodyVertexPosition(sys, id, 0u))
+                initialY = pos.GetY();
+
+            // Simulate for 30 steps (0.5 s at 60 Hz)
+            for (int i = 0; i < 30; i++)
+                sys.Update(1f / 60f, 1, fx.Alloc, fx.Jobs);
+
+            float finalY;
+            using (var pos = JPH.Const_JoltHelpers.PhysicsSystemGetSoftBodyVertexPosition(sys, id, 0u))
+                finalY = pos.GetY();
+            // Gravity is -9.81; vertices should have fallen
+            Assert.True(finalY < initialY);
+        }
+        finally
+        {
+            bi.RemoveBody(id);
+            bi.DestroyBody(id);
+        }
+    }
+
+    [Fact]
+    public void SoftBody_VertexCount_MatchesExpectedGridSize()
+    {
+        using var sys = fx.MakePhysicsSystem();
+        var bi = sys.GetBodyInterface();
+
+        const uint grid = 2u;
+        using var sbSettings = JPH.Const_JoltHelpers.SoftBodySettingsCreateCube(grid, 1f);
+        Assert.NotNull(sbSettings);
+        sbSettings.Optimize();
+
+        using var bcs = new JPH.SoftBodyCreationSettings(
+            sbSettings,
+            new JPH.Vec3(0f, 0f, 0f),
+            JPH.Quat.SIdentity(),
+            JoltFixture.LayerMoving);
+
+        var body = bi.CreateSoftBody(bcs);
+        Assert.NotNull(body);
+        JPH.BodyID id = body.GetID();
+        bi.AddBody(id, JPH.EActivation.Activate);
+
+        try
+        {
+            uint count = JPH.Const_JoltHelpers.PhysicsSystemGetSoftBodyVertexCount(sys, id);
+            Assert.True(count > 0);
+        }
+        finally
+        {
+            bi.RemoveBody(id);
+            bi.DestroyBody(id);
+        }
+    }
+}
