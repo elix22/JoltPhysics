@@ -10,6 +10,7 @@ public static partial class JPH
     /// Derived classes:
     ///   Direct: (non-virtual)
     ///     `JPH::TwoBodyConstraintSettings`
+    ///     `JPH::VehicleConstraintSettings`
     ///   Indirect: (non-virtual)
     ///     `JPH::DistanceConstraintSettings`
     ///     `JPH::FixedConstraintSettings`
@@ -375,6 +376,7 @@ public static partial class JPH
     /// Derived classes:
     ///   Direct: (non-virtual)
     ///     `JPH::TwoBodyConstraintSettings`
+    ///     `JPH::VehicleConstraintSettings`
     ///   Indirect: (non-virtual)
     ///     `JPH::DistanceConstraintSettings`
     ///     `JPH::FixedConstraintSettings`
@@ -544,6 +546,7 @@ public static partial class JPH
     /// Derived classes:
     ///   Direct: (non-virtual)
     ///     `JPH::TwoBodyConstraint`
+    ///     `JPH::VehicleConstraint`
     ///   Indirect: (non-virtual)
     ///     `JPH::DistanceConstraint`
     ///     `JPH::FixedConstraint`
@@ -896,6 +899,7 @@ public static partial class JPH
     /// Derived classes:
     ///   Direct: (non-virtual)
     ///     `JPH::TwoBodyConstraint`
+    ///     `JPH::VehicleConstraint`
     ///   Indirect: (non-virtual)
     ///     `JPH::DistanceConstraint`
     ///     `JPH::FixedConstraint`

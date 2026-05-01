@@ -15,11 +15,14 @@ typedef struct JPH_PhysicsSystem JPH_PhysicsSystem; // Defined in `#include <jol
 
 /// Context information for the step listener
 /// Generated from class `JPH::PhysicsStepListenerContext`.
-/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_PhysicsStepListenerContext JPH_PhysicsStepListenerContext;
 
 /// A listener class that receives a callback before every physics simulation step
 /// Generated from class `JPH::PhysicsStepListener`.
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::VehicleConstraint`
 typedef struct JPH_PhysicsStepListener JPH_PhysicsStepListener;
 
 ///< Delta time of the current step
@@ -126,42 +129,17 @@ JOLT_API const JPH_PhysicsStepListenerContext *JPH_PhysicsStepListenerContext_Of
 /// The reference to the parameter `ptr` might be preserved in the return value.
 JOLT_API JPH_PhysicsStepListenerContext *JPH_PhysicsStepListenerContext_OffsetMutablePtr(JPH_PhysicsStepListenerContext *ptr, ptrdiff_t i);
 
-/// Generated from constructor `JPH::PhysicsStepListenerContext::PhysicsStepListenerContext`.
-/// Parameter `_other` can not be null. It is a single object.
-/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
-/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_PhysicsStepListenerContext_Destroy()` to free it when you're done using it.
-JOLT_API JPH_PhysicsStepListenerContext *JPH_PhysicsStepListenerContext_ConstructFromAnother(const JPH_PhysicsStepListenerContext *_other);
-
 /// Destroys a heap-allocated instance of `JPH_PhysicsStepListenerContext`. Does nothing if the pointer is null.
 JOLT_API void JPH_PhysicsStepListenerContext_Destroy(const JPH_PhysicsStepListenerContext *_this);
 
 /// Destroys a heap-allocated array of `JPH_PhysicsStepListenerContext`. Does nothing if the pointer is null.
 JOLT_API void JPH_PhysicsStepListenerContext_DestroyArray(const JPH_PhysicsStepListenerContext *_this);
 
-/// Generated from method `JPH::PhysicsStepListenerContext::operator=`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `_other` can not be null. It is a single object.
-/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// When this function is called, this object will drop any object references it held previously.
-JOLT_API JPH_PhysicsStepListenerContext *JPH_PhysicsStepListenerContext_AssignFromAnother(JPH_PhysicsStepListenerContext *_this, const JPH_PhysicsStepListenerContext *_other);
-
 /// Destroys a heap-allocated instance of `JPH_PhysicsStepListener`. Does nothing if the pointer is null.
 JOLT_API void JPH_PhysicsStepListener_Destroy(const JPH_PhysicsStepListener *_this);
 
 /// Destroys a heap-allocated array of `JPH_PhysicsStepListener`. Does nothing if the pointer is null.
 JOLT_API void JPH_PhysicsStepListener_DestroyArray(const JPH_PhysicsStepListener *_this);
-
-/// Called before every simulation step (received inCollisionSteps times for every PhysicsSystem::Update(...) call)
-/// This is called while all body and constraint mutexes are locked. You can read/write bodies and constraints but not add/remove them.
-/// Multiple listeners can be executed in parallel and it is the responsibility of the listener to avoid race conditions.
-/// The best way to do this is to have each step listener operate on a subset of the bodies and constraints
-/// and making sure that these bodies and constraints are not touched by any other step listener.
-/// Note that this function is not called if there aren't any active bodies or when the physics system is updated with 0 delta time.
-/// Generated from method `JPH::PhysicsStepListener::OnStep`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inContext` can not be null. It is a single object.
-JOLT_API void JPH_PhysicsStepListener_OnStep(JPH_PhysicsStepListener *_this, const JPH_PhysicsStepListenerContext *inContext);
 
 /// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
 /// The reference to the parameter `ptr` might be preserved in the return value.

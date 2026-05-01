@@ -119,22 +119,6 @@ public static partial class JPH
             _UnderlyingPtr = __JPH_PhysicsStepListenerContext_ConstructFrom(mDeltaTime, mIsFirstStep ? (byte)1 : (byte)0, mIsLastStep ? (byte)1 : (byte)0, mPhysicsSystem is not null ? mPhysicsSystem._UnderlyingPtr : null);
             if (mPhysicsSystem is not null) _KeepAlive(mPhysicsSystem);
         }
-
-        /// Generated from constructor `JPH::PhysicsStepListenerContext::PhysicsStepListenerContext`.
-        public unsafe Const_PhysicsStepListenerContext(JPH.Const_PhysicsStepListenerContext _other) : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsStepListenerContext_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsStepListenerContext_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.PhysicsStepListenerContext._Underlying *__JPH_PhysicsStepListenerContext_ConstructFromAnother(JPH.PhysicsStepListenerContext._Underlying *_other);
-            _UnderlyingPtr = __JPH_PhysicsStepListenerContext_ConstructFromAnother(_other._UnderlyingPtr);
-            _KeepAlive(_other);
-        }
-
-        /// Generated from constructor `JPH::PhysicsStepListenerContext::PhysicsStepListenerContext`.
-        public Const_PhysicsStepListenerContext(PhysicsStepListenerContext _other) : this((Const_PhysicsStepListenerContext)_other) {}
     }
 
     /// Context information for the step listener
@@ -233,36 +217,19 @@ public static partial class JPH
             _UnderlyingPtr = __JPH_PhysicsStepListenerContext_ConstructFrom(mDeltaTime, mIsFirstStep ? (byte)1 : (byte)0, mIsLastStep ? (byte)1 : (byte)0, mPhysicsSystem is not null ? mPhysicsSystem._UnderlyingPtr : null);
             if (mPhysicsSystem is not null) _KeepAlive(mPhysicsSystem);
         }
+    }
 
-        /// Generated from constructor `JPH::PhysicsStepListenerContext::PhysicsStepListenerContext`.
-        public unsafe PhysicsStepListenerContext(JPH.Const_PhysicsStepListenerContext _other) : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsStepListenerContext_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsStepListenerContext_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.PhysicsStepListenerContext._Underlying *__JPH_PhysicsStepListenerContext_ConstructFromAnother(JPH.PhysicsStepListenerContext._Underlying *_other);
-            _UnderlyingPtr = __JPH_PhysicsStepListenerContext_ConstructFromAnother(_other._UnderlyingPtr);
-            _KeepAlive(_other);
-        }
-
-        /// Generated from constructor `JPH::PhysicsStepListenerContext::PhysicsStepListenerContext`.
-        public PhysicsStepListenerContext(PhysicsStepListenerContext _other) : this((Const_PhysicsStepListenerContext)_other) {}
-
-        /// Generated from method `JPH::PhysicsStepListenerContext::operator=`.
-        public unsafe JPH.PhysicsStepListenerContext Assign(JPH.Const_PhysicsStepListenerContext _other)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsStepListenerContext_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsStepListenerContext_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.PhysicsStepListenerContext._Underlying *__JPH_PhysicsStepListenerContext_AssignFromAnother(_Underlying *_this, JPH.PhysicsStepListenerContext._Underlying *_other);
-            _DiscardKeepAlive();
-            _KeepAlive(_other);
-            return new(__JPH_PhysicsStepListenerContext_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
-        }
+    /// This is used as a function parameter when the underlying function receives `PhysicsStepListenerContext` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_PhysicsStepListenerContext
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_PhysicsStepListenerContext? Value;
+        #pragma warning restore CS0649
+        internal readonly JPH._PassBy PassByMode;
+        public _ByValue_PhysicsStepListenerContext() {PassByMode = JPH._PassBy.default_construct;}
     }
 
     /// This is used for optional parameters of class `PhysicsStepListenerContext` with default arguments.
@@ -297,6 +264,9 @@ public static partial class JPH
 
     /// A listener class that receives a callback before every physics simulation step
     /// Generated from class `JPH::PhysicsStepListener`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::VehicleConstraint`
     /// This is the const half of the class.
     public class Const_PhysicsStepListener : JPH.Object<Const_PhysicsStepListener>, System.IDisposable
     {
@@ -325,28 +295,13 @@ public static partial class JPH
 
     /// A listener class that receives a callback before every physics simulation step
     /// Generated from class `JPH::PhysicsStepListener`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::VehicleConstraint`
     /// This is the non-const half of the class.
     public class PhysicsStepListener : Const_PhysicsStepListener
     {
         internal unsafe PhysicsStepListener(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
-
-        /// Called before every simulation step (received inCollisionSteps times for every PhysicsSystem::Update(...) call)
-        /// This is called while all body and constraint mutexes are locked. You can read/write bodies and constraints but not add/remove them.
-        /// Multiple listeners can be executed in parallel and it is the responsibility of the listener to avoid race conditions.
-        /// The best way to do this is to have each step listener operate on a subset of the bodies and constraints
-        /// and making sure that these bodies and constraints are not touched by any other step listener.
-        /// Note that this function is not called if there aren't any active bodies or when the physics system is updated with 0 delta time.
-        /// Generated from method `JPH::PhysicsStepListener::OnStep`.
-        public unsafe void OnStep(JPH.Const_PhysicsStepListenerContext inContext)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsStepListener_OnStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsStepListener_OnStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_PhysicsStepListener_OnStep(_Underlying *_this, JPH.Const_PhysicsStepListenerContext._Underlying *inContext);
-            __JPH_PhysicsStepListener_OnStep(_UnderlyingPtr, inContext._UnderlyingPtr);
-        }
     }
 
     /// This is used for optional parameters of class `PhysicsStepListener` with default arguments.

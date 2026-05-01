@@ -28,6 +28,7 @@ typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h
 /// Derived classes:
 ///   Direct: (non-virtual)
 ///     `JPH::TwoBodyConstraintSettings`
+///     `JPH::VehicleConstraintSettings`
 ///   Indirect: (non-virtual)
 ///     `JPH::DistanceConstraintSettings`
 ///     `JPH::FixedConstraintSettings`
@@ -46,6 +47,7 @@ typedef struct JPH_ConstraintSettings JPH_ConstraintSettings;
 /// Derived classes:
 ///   Direct: (non-virtual)
 ///     `JPH::TwoBodyConstraint`
+///     `JPH::VehicleConstraint`
 ///   Indirect: (non-virtual)
 ///     `JPH::DistanceConstraint`
 ///     `JPH::FixedConstraint`

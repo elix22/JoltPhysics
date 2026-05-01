@@ -5,6 +5,7 @@
 
 #include <Jolt/Core/Factory.h>
 #include <Jolt/RegisterTypes.h>
+#include <Jolt/Physics/PhysicsSystem.h>
 
 #include <cstdarg>
 #include <cstdio>
@@ -50,5 +51,32 @@ void JoltHelpers::Shutdown()
 float JoltHelpers::RayAABox(JPH::Vec3Arg inOrigin, const JPH::RayInvDirection& inInvDirection, JPH::Vec3Arg inBoundsMin, JPH::Vec3Arg inBoundsMax)
 {
     return JPH::RayAABox(inOrigin, inInvDirection, inBoundsMin, inBoundsMax);
+}
+
+void JoltHelpers::VehicleSettingsAddWheel(JPH::VehicleConstraintSettings& settings, JPH::WheelSettingsWV* wheel)
+{
+    settings.mWheels.push_back(wheel);
+}
+
+void JoltHelpers::VehicleSettingsSetController(JPH::VehicleConstraintSettings& settings, JPH::WheeledVehicleControllerSettings* ctrl)
+{
+    settings.mController = ctrl;
+}
+
+void JoltHelpers::VehicleSettingsAddAntiRollBar(JPH::VehicleConstraintSettings& settings, const JPH::VehicleAntiRollBar& bar)
+{
+    settings.mAntiRollBars.push_back(bar);
+}
+
+void JoltHelpers::WheeledControllerSettingsAddDifferential(JPH::WheeledVehicleControllerSettings& settings, const JPH::VehicleDifferentialSettings& diff)
+{
+    settings.mDifferentials.push_back(diff);
+}
+
+JPH::WheeledVehicleController* JoltHelpers::VehicleConstraintGetWheeledController(JPH::VehicleConstraint& constraint)
+{
+    // Jolt is compiled without RTTI; use static_cast since the caller is responsible
+    // for only calling this when the vehicle uses a WheeledVehicleControllerSettings.
+    return static_cast<JPH::WheeledVehicleController*>(constraint.GetController());
 }
 

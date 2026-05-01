@@ -4,6 +4,10 @@
 
 #include <Jolt/Geometry/RayAABox.h>
 #include <Jolt/Math/Vec3.h>
+#include <Jolt/Physics/Vehicle/VehicleAntiRollBar.h>
+#include <Jolt/Physics/Vehicle/VehicleConstraint.h>
+#include <Jolt/Physics/Vehicle/VehicleDifferential.h>
+#include <Jolt/Physics/Vehicle/WheeledVehicleController.h>
 #include <__mrbind_c_details.h>
 #include <jolt_init_wrapper.h>
 
@@ -80,5 +84,44 @@ float JoltHelpers_RayAABox(const JPH_Vec3 *inOrigin, const JPH_RayInvDirection *
         ((inBoundsMin ? void() : MRBINDC_THROW("Parameter `inBoundsMin` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBoundsMin)),
         ((inBoundsMax ? void() : MRBINDC_THROW("Parameter `inBoundsMax` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBoundsMax))
     );
+}
+
+void JoltHelpers_VehicleSettingsAddWheel(JPH_VehicleConstraintSettings *settings, JPH_WheelSettingsWV *wheel)
+{
+    JoltHelpers::VehicleSettingsAddWheel(
+        ((settings ? void() : MRBINDC_THROW("Parameter `settings` can not be null.", void)), *(JPH::VehicleConstraintSettings *)(settings)),
+        ((JPH::WheelSettingsWV *)wheel)
+    );
+}
+
+void JoltHelpers_VehicleSettingsSetController(JPH_VehicleConstraintSettings *settings, JPH_WheeledVehicleControllerSettings *ctrl)
+{
+    JoltHelpers::VehicleSettingsSetController(
+        ((settings ? void() : MRBINDC_THROW("Parameter `settings` can not be null.", void)), *(JPH::VehicleConstraintSettings *)(settings)),
+        ((JPH::WheeledVehicleControllerSettings *)ctrl)
+    );
+}
+
+void JoltHelpers_VehicleSettingsAddAntiRollBar(JPH_VehicleConstraintSettings *settings, const JPH_VehicleAntiRollBar *bar)
+{
+    JoltHelpers::VehicleSettingsAddAntiRollBar(
+        ((settings ? void() : MRBINDC_THROW("Parameter `settings` can not be null.", void)), *(JPH::VehicleConstraintSettings *)(settings)),
+        ((bar ? void() : MRBINDC_THROW("Parameter `bar` can not be null.", void)), *(const JPH::VehicleAntiRollBar *)(bar))
+    );
+}
+
+void JoltHelpers_WheeledControllerSettingsAddDifferential(JPH_WheeledVehicleControllerSettings *settings, const JPH_VehicleDifferentialSettings *diff)
+{
+    JoltHelpers::WheeledControllerSettingsAddDifferential(
+        ((settings ? void() : MRBINDC_THROW("Parameter `settings` can not be null.", void)), *(JPH::WheeledVehicleControllerSettings *)(settings)),
+        ((diff ? void() : MRBINDC_THROW("Parameter `diff` can not be null.", void)), *(const JPH::VehicleDifferentialSettings *)(diff))
+    );
+}
+
+JPH_WheeledVehicleController *JoltHelpers_VehicleConstraintGetWheeledController(JPH_VehicleConstraint *constraint)
+{
+    return (JPH_WheeledVehicleController *)(JoltHelpers::VehicleConstraintGetWheeledController(
+        ((constraint ? void() : MRBINDC_THROW("Parameter `constraint` can not be null.", void)), *(JPH::VehicleConstraint *)(constraint))
+    ));
 }
 

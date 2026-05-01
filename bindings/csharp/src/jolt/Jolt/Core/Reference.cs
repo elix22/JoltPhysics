@@ -19,6 +19,578 @@ public static partial class JPH
     /// lower than 1, resulting in a memory leak. By carefully designing your classes
     /// (and particularly identifying who owns who in the class hierarchy) you can avoid
     /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::ConstraintSettings>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::ConstraintSettings`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::DistanceConstraintSettings`
+    ///     `JPH::FixedConstraintSettings`
+    ///     `JPH::HingeConstraintSettings`
+    ///     `JPH::PointConstraintSettings`
+    ///     `JPH::SixDOFConstraintSettings`
+    ///     `JPH::SliderConstraintSettings`
+    ///     `JPH::TwoBodyConstraintSettings`
+    ///     `JPH::VehicleConstraintSettings`
+    /// This is the const half of the class.
+    public class Const_RefTarget_JPHConstraintSettings : JPH.Object<Const_RefTarget_JPHConstraintSettings>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ConstraintSettings_Destroy(_Underlying *_this);
+            __JPH_RefTarget_JPH_ConstraintSettings_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_RefTarget_JPHConstraintSettings() {Dispose(false);}
+
+        internal unsafe Const_RefTarget_JPHConstraintSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_RefTarget_JPHConstraintSettings() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHConstraintSettings._Underlying *__JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
+        public unsafe Const_RefTarget_JPHConstraintSettings(JPH._ByValue_RefTarget_JPHConstraintSettings _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHConstraintSettings._Underlying *__JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraintSettings._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
+        public Const_RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings _other) : this(new _ByValue_RefTarget_JPHConstraintSettings(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
+        public Const_RefTarget_JPHConstraintSettings(RefTarget_JPHConstraintSettings _other) : this((Const_RefTarget_JPHConstraintSettings)_other) {}
+
+        /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+        /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+        /// the object and at that point in time it is checked that no references are left to the structure.
+        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::SetEmbedded`.
+        public unsafe void SetEmbedded()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ConstraintSettings_SetEmbedded(_Underlying *_this);
+            __JPH_RefTarget_JPH_ConstraintSettings_SetEmbedded(_UnderlyingPtr);
+        }
+
+        /// Get current refcount of this object
+        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::GetRefCount`.
+        public unsafe uint GetRefCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JPH_RefTarget_JPH_ConstraintSettings_GetRefCount(_Underlying *_this);
+            return __JPH_RefTarget_JPH_ConstraintSettings_GetRefCount(_UnderlyingPtr);
+        }
+
+        /// Add or release a reference to this object
+        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::AddRef`.
+        public unsafe void AddRef()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ConstraintSettings_AddRef(_Underlying *_this);
+            __JPH_RefTarget_JPH_ConstraintSettings_AddRef(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ConstraintSettings_Release(_Underlying *_this);
+            __JPH_RefTarget_JPH_ConstraintSettings_Release(_UnderlyingPtr);
+        }
+
+        /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::sInternalGetRefCountOffset`.
+        public static int SInternalGetRefCountOffset()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JPH_RefTarget_JPH_ConstraintSettings_sInternalGetRefCountOffset();
+            return __JPH_RefTarget_JPH_ConstraintSettings_sInternalGetRefCountOffset();
+        }
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::ConstraintSettings>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::ConstraintSettings`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::DistanceConstraintSettings`
+    ///     `JPH::FixedConstraintSettings`
+    ///     `JPH::HingeConstraintSettings`
+    ///     `JPH::PointConstraintSettings`
+    ///     `JPH::SixDOFConstraintSettings`
+    ///     `JPH::SliderConstraintSettings`
+    ///     `JPH::TwoBodyConstraintSettings`
+    ///     `JPH::VehicleConstraintSettings`
+    /// This is the non-const half of the class.
+    public class RefTarget_JPHConstraintSettings : Const_RefTarget_JPHConstraintSettings
+    {
+        internal unsafe RefTarget_JPHConstraintSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe RefTarget_JPHConstraintSettings() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHConstraintSettings._Underlying *__JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
+        public unsafe RefTarget_JPHConstraintSettings(JPH._ByValue_RefTarget_JPHConstraintSettings _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHConstraintSettings._Underlying *__JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraintSettings._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
+        public RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings _other) : this(new _ByValue_RefTarget_JPHConstraintSettings(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
+        public RefTarget_JPHConstraintSettings(RefTarget_JPHConstraintSettings _other) : this((Const_RefTarget_JPHConstraintSettings)_other) {}
+
+        /// Assignment operator
+        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::operator=`.
+        public unsafe JPH.RefTarget_JPHConstraintSettings Assign(JPH._ByValue_RefTarget_JPHConstraintSettings _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHConstraintSettings._Underlying *__JPH_RefTarget_JPH_ConstraintSettings_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraintSettings._Underlying *_other);
+            JPH.RefTarget_JPHConstraintSettings __ret;
+            __ret = new(__JPH_RefTarget_JPH_ConstraintSettings_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            __ret._KeepAlive(this);
+            return __ret;
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `RefTarget_JPHConstraintSettings` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `RefTarget_JPHConstraintSettings`/`Const_RefTarget_JPHConstraintSettings` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_RefTarget_JPHConstraintSettings
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_RefTarget_JPHConstraintSettings? Value;
+        #pragma warning restore CS0649
+        internal readonly JPH._PassBy PassByMode;
+        public _ByValue_RefTarget_JPHConstraintSettings() {PassByMode = JPH._PassBy.default_construct;}
+        public _ByValue_RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
+        public static implicit operator _ByValue_RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHConstraintSettings` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_RefTarget_JPHConstraintSettings`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHConstraintSettings`/`Const_RefTarget_JPHConstraintSettings` directly.
+    public class _InOptMut_RefTarget_JPHConstraintSettings
+    {
+        public RefTarget_JPHConstraintSettings? Opt;
+
+        public _InOptMut_RefTarget_JPHConstraintSettings() {}
+        public _InOptMut_RefTarget_JPHConstraintSettings(RefTarget_JPHConstraintSettings value) {Opt = value;}
+        public static implicit operator _InOptMut_RefTarget_JPHConstraintSettings(RefTarget_JPHConstraintSettings value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHConstraintSettings` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_RefTarget_JPHConstraintSettings`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHConstraintSettings`/`Const_RefTarget_JPHConstraintSettings` to pass it to the function.
+    public class _InOptConst_RefTarget_JPHConstraintSettings
+    {
+        public Const_RefTarget_JPHConstraintSettings? Opt;
+
+        public _InOptConst_RefTarget_JPHConstraintSettings() {}
+        public _InOptConst_RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings value) {Opt = value;}
+        public static implicit operator _InOptConst_RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings value) {return new(value);}
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::Constraint>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::Constraint`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::DistanceConstraint`
+    ///     `JPH::FixedConstraint`
+    ///     `JPH::HingeConstraint`
+    ///     `JPH::PointConstraint`
+    ///     `JPH::SixDOFConstraint`
+    ///     `JPH::SliderConstraint`
+    ///     `JPH::TwoBodyConstraint`
+    ///     `JPH::VehicleConstraint`
+    /// This is the const half of the class.
+    public class Const_RefTarget_JPHConstraint : JPH.Object<Const_RefTarget_JPHConstraint>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_Constraint_Destroy(_Underlying *_this);
+            __JPH_RefTarget_JPH_Constraint_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_RefTarget_JPHConstraint() {Dispose(false);}
+
+        internal unsafe Const_RefTarget_JPHConstraint(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_RefTarget_JPHConstraint() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHConstraint._Underlying *__JPH_RefTarget_JPH_Constraint_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_Constraint_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
+        public unsafe Const_RefTarget_JPHConstraint(JPH._ByValue_RefTarget_JPHConstraint _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHConstraint._Underlying *__JPH_RefTarget_JPH_Constraint_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraint._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_Constraint_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
+        public Const_RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint _other) : this(new _ByValue_RefTarget_JPHConstraint(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
+        public Const_RefTarget_JPHConstraint(RefTarget_JPHConstraint _other) : this((Const_RefTarget_JPHConstraint)_other) {}
+
+        /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+        /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+        /// the object and at that point in time it is checked that no references are left to the structure.
+        /// Generated from method `JPH::RefTarget<JPH::Constraint>::SetEmbedded`.
+        public unsafe void SetEmbedded()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_Constraint_SetEmbedded(_Underlying *_this);
+            __JPH_RefTarget_JPH_Constraint_SetEmbedded(_UnderlyingPtr);
+        }
+
+        /// Get current refcount of this object
+        /// Generated from method `JPH::RefTarget<JPH::Constraint>::GetRefCount`.
+        public unsafe uint GetRefCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JPH_RefTarget_JPH_Constraint_GetRefCount(_Underlying *_this);
+            return __JPH_RefTarget_JPH_Constraint_GetRefCount(_UnderlyingPtr);
+        }
+
+        /// Add or release a reference to this object
+        /// Generated from method `JPH::RefTarget<JPH::Constraint>::AddRef`.
+        public unsafe void AddRef()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_Constraint_AddRef(_Underlying *_this);
+            __JPH_RefTarget_JPH_Constraint_AddRef(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::RefTarget<JPH::Constraint>::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_Constraint_Release(_Underlying *_this);
+            __JPH_RefTarget_JPH_Constraint_Release(_UnderlyingPtr);
+        }
+
+        /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+        /// Generated from method `JPH::RefTarget<JPH::Constraint>::sInternalGetRefCountOffset`.
+        public static int SInternalGetRefCountOffset()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JPH_RefTarget_JPH_Constraint_sInternalGetRefCountOffset();
+            return __JPH_RefTarget_JPH_Constraint_sInternalGetRefCountOffset();
+        }
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::Constraint>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::Constraint`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::DistanceConstraint`
+    ///     `JPH::FixedConstraint`
+    ///     `JPH::HingeConstraint`
+    ///     `JPH::PointConstraint`
+    ///     `JPH::SixDOFConstraint`
+    ///     `JPH::SliderConstraint`
+    ///     `JPH::TwoBodyConstraint`
+    ///     `JPH::VehicleConstraint`
+    /// This is the non-const half of the class.
+    public class RefTarget_JPHConstraint : Const_RefTarget_JPHConstraint
+    {
+        internal unsafe RefTarget_JPHConstraint(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe RefTarget_JPHConstraint() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHConstraint._Underlying *__JPH_RefTarget_JPH_Constraint_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_Constraint_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
+        public unsafe RefTarget_JPHConstraint(JPH._ByValue_RefTarget_JPHConstraint _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHConstraint._Underlying *__JPH_RefTarget_JPH_Constraint_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraint._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_Constraint_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
+        public RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint _other) : this(new _ByValue_RefTarget_JPHConstraint(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
+        public RefTarget_JPHConstraint(RefTarget_JPHConstraint _other) : this((Const_RefTarget_JPHConstraint)_other) {}
+
+        /// Assignment operator
+        /// Generated from method `JPH::RefTarget<JPH::Constraint>::operator=`.
+        public unsafe JPH.RefTarget_JPHConstraint Assign(JPH._ByValue_RefTarget_JPHConstraint _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHConstraint._Underlying *__JPH_RefTarget_JPH_Constraint_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraint._Underlying *_other);
+            JPH.RefTarget_JPHConstraint __ret;
+            __ret = new(__JPH_RefTarget_JPH_Constraint_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            __ret._KeepAlive(this);
+            return __ret;
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `RefTarget_JPHConstraint` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `RefTarget_JPHConstraint`/`Const_RefTarget_JPHConstraint` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_RefTarget_JPHConstraint
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_RefTarget_JPHConstraint? Value;
+        #pragma warning restore CS0649
+        internal readonly JPH._PassBy PassByMode;
+        public _ByValue_RefTarget_JPHConstraint() {PassByMode = JPH._PassBy.default_construct;}
+        public _ByValue_RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
+        public static implicit operator _ByValue_RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHConstraint` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_RefTarget_JPHConstraint`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHConstraint`/`Const_RefTarget_JPHConstraint` directly.
+    public class _InOptMut_RefTarget_JPHConstraint
+    {
+        public RefTarget_JPHConstraint? Opt;
+
+        public _InOptMut_RefTarget_JPHConstraint() {}
+        public _InOptMut_RefTarget_JPHConstraint(RefTarget_JPHConstraint value) {Opt = value;}
+        public static implicit operator _InOptMut_RefTarget_JPHConstraint(RefTarget_JPHConstraint value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHConstraint` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_RefTarget_JPHConstraint`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHConstraint`/`Const_RefTarget_JPHConstraint` to pass it to the function.
+    public class _InOptConst_RefTarget_JPHConstraint
+    {
+        public Const_RefTarget_JPHConstraint? Opt;
+
+        public _InOptConst_RefTarget_JPHConstraint() {}
+        public _InOptConst_RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint value) {Opt = value;}
+        public static implicit operator _InOptConst_RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint value) {return new(value);}
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
     /// Generated from class `JPH::RefTarget<JPH::ShapeSettings>`.
     /// Derived classes:
     ///   Direct: (non-virtual)
@@ -901,6 +1473,826 @@ public static partial class JPH
     /// lower than 1, resulting in a memory leak. By carefully designing your classes
     /// (and particularly identifying who owns who in the class hierarchy) you can avoid
     /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::VehicleCollisionTester>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::VehicleCollisionTester`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::VehicleCollisionTesterCastCylinder`
+    ///     `JPH::VehicleCollisionTesterCastSphere`
+    ///     `JPH::VehicleCollisionTesterRay`
+    /// This is the const half of the class.
+    public class Const_RefTarget_JPHVehicleCollisionTester : JPH.Object<Const_RefTarget_JPHVehicleCollisionTester>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_VehicleCollisionTester_Destroy(_Underlying *_this);
+            __JPH_RefTarget_JPH_VehicleCollisionTester_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_RefTarget_JPHVehicleCollisionTester() {Dispose(false);}
+
+        internal unsafe Const_RefTarget_JPHVehicleCollisionTester(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_RefTarget_JPHVehicleCollisionTester() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHVehicleCollisionTester._Underlying *__JPH_RefTarget_JPH_VehicleCollisionTester_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_VehicleCollisionTester_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleCollisionTester>::RefTarget`.
+        public unsafe Const_RefTarget_JPHVehicleCollisionTester(JPH._ByValue_RefTarget_JPHVehicleCollisionTester _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHVehicleCollisionTester._Underlying *__JPH_RefTarget_JPH_VehicleCollisionTester_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHVehicleCollisionTester._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_VehicleCollisionTester_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleCollisionTester>::RefTarget`.
+        public Const_RefTarget_JPHVehicleCollisionTester(Const_RefTarget_JPHVehicleCollisionTester _other) : this(new _ByValue_RefTarget_JPHVehicleCollisionTester(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleCollisionTester>::RefTarget`.
+        public Const_RefTarget_JPHVehicleCollisionTester(RefTarget_JPHVehicleCollisionTester _other) : this((Const_RefTarget_JPHVehicleCollisionTester)_other) {}
+
+        /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+        /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+        /// the object and at that point in time it is checked that no references are left to the structure.
+        /// Generated from method `JPH::RefTarget<JPH::VehicleCollisionTester>::SetEmbedded`.
+        public unsafe void SetEmbedded()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_VehicleCollisionTester_SetEmbedded(_Underlying *_this);
+            __JPH_RefTarget_JPH_VehicleCollisionTester_SetEmbedded(_UnderlyingPtr);
+        }
+
+        /// Get current refcount of this object
+        /// Generated from method `JPH::RefTarget<JPH::VehicleCollisionTester>::GetRefCount`.
+        public unsafe uint GetRefCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JPH_RefTarget_JPH_VehicleCollisionTester_GetRefCount(_Underlying *_this);
+            return __JPH_RefTarget_JPH_VehicleCollisionTester_GetRefCount(_UnderlyingPtr);
+        }
+
+        /// Add or release a reference to this object
+        /// Generated from method `JPH::RefTarget<JPH::VehicleCollisionTester>::AddRef`.
+        public unsafe void AddRef()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_VehicleCollisionTester_AddRef(_Underlying *_this);
+            __JPH_RefTarget_JPH_VehicleCollisionTester_AddRef(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::RefTarget<JPH::VehicleCollisionTester>::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_VehicleCollisionTester_Release(_Underlying *_this);
+            __JPH_RefTarget_JPH_VehicleCollisionTester_Release(_UnderlyingPtr);
+        }
+
+        /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+        /// Generated from method `JPH::RefTarget<JPH::VehicleCollisionTester>::sInternalGetRefCountOffset`.
+        public static int SInternalGetRefCountOffset()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JPH_RefTarget_JPH_VehicleCollisionTester_sInternalGetRefCountOffset();
+            return __JPH_RefTarget_JPH_VehicleCollisionTester_sInternalGetRefCountOffset();
+        }
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::VehicleCollisionTester>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::VehicleCollisionTester`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::VehicleCollisionTesterCastCylinder`
+    ///     `JPH::VehicleCollisionTesterCastSphere`
+    ///     `JPH::VehicleCollisionTesterRay`
+    /// This is the non-const half of the class.
+    public class RefTarget_JPHVehicleCollisionTester : Const_RefTarget_JPHVehicleCollisionTester
+    {
+        internal unsafe RefTarget_JPHVehicleCollisionTester(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe RefTarget_JPHVehicleCollisionTester() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHVehicleCollisionTester._Underlying *__JPH_RefTarget_JPH_VehicleCollisionTester_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_VehicleCollisionTester_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleCollisionTester>::RefTarget`.
+        public unsafe RefTarget_JPHVehicleCollisionTester(JPH._ByValue_RefTarget_JPHVehicleCollisionTester _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHVehicleCollisionTester._Underlying *__JPH_RefTarget_JPH_VehicleCollisionTester_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHVehicleCollisionTester._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_VehicleCollisionTester_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleCollisionTester>::RefTarget`.
+        public RefTarget_JPHVehicleCollisionTester(Const_RefTarget_JPHVehicleCollisionTester _other) : this(new _ByValue_RefTarget_JPHVehicleCollisionTester(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleCollisionTester>::RefTarget`.
+        public RefTarget_JPHVehicleCollisionTester(RefTarget_JPHVehicleCollisionTester _other) : this((Const_RefTarget_JPHVehicleCollisionTester)_other) {}
+
+        /// Assignment operator
+        /// Generated from method `JPH::RefTarget<JPH::VehicleCollisionTester>::operator=`.
+        public unsafe JPH.RefTarget_JPHVehicleCollisionTester Assign(JPH._ByValue_RefTarget_JPHVehicleCollisionTester _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleCollisionTester_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHVehicleCollisionTester._Underlying *__JPH_RefTarget_JPH_VehicleCollisionTester_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.RefTarget_JPHVehicleCollisionTester._Underlying *_other);
+            JPH.RefTarget_JPHVehicleCollisionTester __ret;
+            __ret = new(__JPH_RefTarget_JPH_VehicleCollisionTester_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            __ret._KeepAlive(this);
+            return __ret;
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `RefTarget_JPHVehicleCollisionTester` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `RefTarget_JPHVehicleCollisionTester`/`Const_RefTarget_JPHVehicleCollisionTester` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_RefTarget_JPHVehicleCollisionTester
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_RefTarget_JPHVehicleCollisionTester? Value;
+        #pragma warning restore CS0649
+        internal readonly JPH._PassBy PassByMode;
+        public _ByValue_RefTarget_JPHVehicleCollisionTester() {PassByMode = JPH._PassBy.default_construct;}
+        public _ByValue_RefTarget_JPHVehicleCollisionTester(Const_RefTarget_JPHVehicleCollisionTester new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
+        public static implicit operator _ByValue_RefTarget_JPHVehicleCollisionTester(Const_RefTarget_JPHVehicleCollisionTester arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHVehicleCollisionTester` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_RefTarget_JPHVehicleCollisionTester`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHVehicleCollisionTester`/`Const_RefTarget_JPHVehicleCollisionTester` directly.
+    public class _InOptMut_RefTarget_JPHVehicleCollisionTester
+    {
+        public RefTarget_JPHVehicleCollisionTester? Opt;
+
+        public _InOptMut_RefTarget_JPHVehicleCollisionTester() {}
+        public _InOptMut_RefTarget_JPHVehicleCollisionTester(RefTarget_JPHVehicleCollisionTester value) {Opt = value;}
+        public static implicit operator _InOptMut_RefTarget_JPHVehicleCollisionTester(RefTarget_JPHVehicleCollisionTester value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHVehicleCollisionTester` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_RefTarget_JPHVehicleCollisionTester`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHVehicleCollisionTester`/`Const_RefTarget_JPHVehicleCollisionTester` to pass it to the function.
+    public class _InOptConst_RefTarget_JPHVehicleCollisionTester
+    {
+        public Const_RefTarget_JPHVehicleCollisionTester? Opt;
+
+        public _InOptConst_RefTarget_JPHVehicleCollisionTester() {}
+        public _InOptConst_RefTarget_JPHVehicleCollisionTester(Const_RefTarget_JPHVehicleCollisionTester value) {Opt = value;}
+        public static implicit operator _InOptConst_RefTarget_JPHVehicleCollisionTester(Const_RefTarget_JPHVehicleCollisionTester value) {return new(value);}
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::WheelSettings>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::WheelSettings`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::WheelSettingsWV`
+    /// This is the const half of the class.
+    public class Const_RefTarget_JPHWheelSettings : JPH.Object<Const_RefTarget_JPHWheelSettings>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_WheelSettings_Destroy(_Underlying *_this);
+            __JPH_RefTarget_JPH_WheelSettings_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_RefTarget_JPHWheelSettings() {Dispose(false);}
+
+        internal unsafe Const_RefTarget_JPHWheelSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_RefTarget_JPHWheelSettings() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHWheelSettings._Underlying *__JPH_RefTarget_JPH_WheelSettings_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_WheelSettings_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::WheelSettings>::RefTarget`.
+        public unsafe Const_RefTarget_JPHWheelSettings(JPH._ByValue_RefTarget_JPHWheelSettings _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHWheelSettings._Underlying *__JPH_RefTarget_JPH_WheelSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHWheelSettings._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_WheelSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::WheelSettings>::RefTarget`.
+        public Const_RefTarget_JPHWheelSettings(Const_RefTarget_JPHWheelSettings _other) : this(new _ByValue_RefTarget_JPHWheelSettings(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::WheelSettings>::RefTarget`.
+        public Const_RefTarget_JPHWheelSettings(RefTarget_JPHWheelSettings _other) : this((Const_RefTarget_JPHWheelSettings)_other) {}
+
+        /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+        /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+        /// the object and at that point in time it is checked that no references are left to the structure.
+        /// Generated from method `JPH::RefTarget<JPH::WheelSettings>::SetEmbedded`.
+        public unsafe void SetEmbedded()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_WheelSettings_SetEmbedded(_Underlying *_this);
+            __JPH_RefTarget_JPH_WheelSettings_SetEmbedded(_UnderlyingPtr);
+        }
+
+        /// Get current refcount of this object
+        /// Generated from method `JPH::RefTarget<JPH::WheelSettings>::GetRefCount`.
+        public unsafe uint GetRefCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JPH_RefTarget_JPH_WheelSettings_GetRefCount(_Underlying *_this);
+            return __JPH_RefTarget_JPH_WheelSettings_GetRefCount(_UnderlyingPtr);
+        }
+
+        /// Add or release a reference to this object
+        /// Generated from method `JPH::RefTarget<JPH::WheelSettings>::AddRef`.
+        public unsafe void AddRef()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_WheelSettings_AddRef(_Underlying *_this);
+            __JPH_RefTarget_JPH_WheelSettings_AddRef(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::RefTarget<JPH::WheelSettings>::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_WheelSettings_Release(_Underlying *_this);
+            __JPH_RefTarget_JPH_WheelSettings_Release(_UnderlyingPtr);
+        }
+
+        /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+        /// Generated from method `JPH::RefTarget<JPH::WheelSettings>::sInternalGetRefCountOffset`.
+        public static int SInternalGetRefCountOffset()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JPH_RefTarget_JPH_WheelSettings_sInternalGetRefCountOffset();
+            return __JPH_RefTarget_JPH_WheelSettings_sInternalGetRefCountOffset();
+        }
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::WheelSettings>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::WheelSettings`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::WheelSettingsWV`
+    /// This is the non-const half of the class.
+    public class RefTarget_JPHWheelSettings : Const_RefTarget_JPHWheelSettings
+    {
+        internal unsafe RefTarget_JPHWheelSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe RefTarget_JPHWheelSettings() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHWheelSettings._Underlying *__JPH_RefTarget_JPH_WheelSettings_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_WheelSettings_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::WheelSettings>::RefTarget`.
+        public unsafe RefTarget_JPHWheelSettings(JPH._ByValue_RefTarget_JPHWheelSettings _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHWheelSettings._Underlying *__JPH_RefTarget_JPH_WheelSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHWheelSettings._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_WheelSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::WheelSettings>::RefTarget`.
+        public RefTarget_JPHWheelSettings(Const_RefTarget_JPHWheelSettings _other) : this(new _ByValue_RefTarget_JPHWheelSettings(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::WheelSettings>::RefTarget`.
+        public RefTarget_JPHWheelSettings(RefTarget_JPHWheelSettings _other) : this((Const_RefTarget_JPHWheelSettings)_other) {}
+
+        /// Assignment operator
+        /// Generated from method `JPH::RefTarget<JPH::WheelSettings>::operator=`.
+        public unsafe JPH.RefTarget_JPHWheelSettings Assign(JPH._ByValue_RefTarget_JPHWheelSettings _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_WheelSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHWheelSettings._Underlying *__JPH_RefTarget_JPH_WheelSettings_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.RefTarget_JPHWheelSettings._Underlying *_other);
+            JPH.RefTarget_JPHWheelSettings __ret;
+            __ret = new(__JPH_RefTarget_JPH_WheelSettings_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            __ret._KeepAlive(this);
+            return __ret;
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `RefTarget_JPHWheelSettings` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `RefTarget_JPHWheelSettings`/`Const_RefTarget_JPHWheelSettings` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_RefTarget_JPHWheelSettings
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_RefTarget_JPHWheelSettings? Value;
+        #pragma warning restore CS0649
+        internal readonly JPH._PassBy PassByMode;
+        public _ByValue_RefTarget_JPHWheelSettings() {PassByMode = JPH._PassBy.default_construct;}
+        public _ByValue_RefTarget_JPHWheelSettings(Const_RefTarget_JPHWheelSettings new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
+        public static implicit operator _ByValue_RefTarget_JPHWheelSettings(Const_RefTarget_JPHWheelSettings arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHWheelSettings` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_RefTarget_JPHWheelSettings`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHWheelSettings`/`Const_RefTarget_JPHWheelSettings` directly.
+    public class _InOptMut_RefTarget_JPHWheelSettings
+    {
+        public RefTarget_JPHWheelSettings? Opt;
+
+        public _InOptMut_RefTarget_JPHWheelSettings() {}
+        public _InOptMut_RefTarget_JPHWheelSettings(RefTarget_JPHWheelSettings value) {Opt = value;}
+        public static implicit operator _InOptMut_RefTarget_JPHWheelSettings(RefTarget_JPHWheelSettings value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHWheelSettings` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_RefTarget_JPHWheelSettings`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHWheelSettings`/`Const_RefTarget_JPHWheelSettings` to pass it to the function.
+    public class _InOptConst_RefTarget_JPHWheelSettings
+    {
+        public Const_RefTarget_JPHWheelSettings? Opt;
+
+        public _InOptConst_RefTarget_JPHWheelSettings() {}
+        public _InOptConst_RefTarget_JPHWheelSettings(Const_RefTarget_JPHWheelSettings value) {Opt = value;}
+        public static implicit operator _InOptConst_RefTarget_JPHWheelSettings(Const_RefTarget_JPHWheelSettings value) {return new(value);}
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::VehicleControllerSettings>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::VehicleControllerSettings`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::WheeledVehicleControllerSettings`
+    /// This is the const half of the class.
+    public class Const_RefTarget_JPHVehicleControllerSettings : JPH.Object<Const_RefTarget_JPHVehicleControllerSettings>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_VehicleControllerSettings_Destroy(_Underlying *_this);
+            __JPH_RefTarget_JPH_VehicleControllerSettings_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_RefTarget_JPHVehicleControllerSettings() {Dispose(false);}
+
+        internal unsafe Const_RefTarget_JPHVehicleControllerSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_RefTarget_JPHVehicleControllerSettings() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHVehicleControllerSettings._Underlying *__JPH_RefTarget_JPH_VehicleControllerSettings_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_VehicleControllerSettings_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleControllerSettings>::RefTarget`.
+        public unsafe Const_RefTarget_JPHVehicleControllerSettings(JPH._ByValue_RefTarget_JPHVehicleControllerSettings _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHVehicleControllerSettings._Underlying *__JPH_RefTarget_JPH_VehicleControllerSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHVehicleControllerSettings._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_VehicleControllerSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleControllerSettings>::RefTarget`.
+        public Const_RefTarget_JPHVehicleControllerSettings(Const_RefTarget_JPHVehicleControllerSettings _other) : this(new _ByValue_RefTarget_JPHVehicleControllerSettings(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleControllerSettings>::RefTarget`.
+        public Const_RefTarget_JPHVehicleControllerSettings(RefTarget_JPHVehicleControllerSettings _other) : this((Const_RefTarget_JPHVehicleControllerSettings)_other) {}
+
+        /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+        /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+        /// the object and at that point in time it is checked that no references are left to the structure.
+        /// Generated from method `JPH::RefTarget<JPH::VehicleControllerSettings>::SetEmbedded`.
+        public unsafe void SetEmbedded()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_VehicleControllerSettings_SetEmbedded(_Underlying *_this);
+            __JPH_RefTarget_JPH_VehicleControllerSettings_SetEmbedded(_UnderlyingPtr);
+        }
+
+        /// Get current refcount of this object
+        /// Generated from method `JPH::RefTarget<JPH::VehicleControllerSettings>::GetRefCount`.
+        public unsafe uint GetRefCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JPH_RefTarget_JPH_VehicleControllerSettings_GetRefCount(_Underlying *_this);
+            return __JPH_RefTarget_JPH_VehicleControllerSettings_GetRefCount(_UnderlyingPtr);
+        }
+
+        /// Add or release a reference to this object
+        /// Generated from method `JPH::RefTarget<JPH::VehicleControllerSettings>::AddRef`.
+        public unsafe void AddRef()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_VehicleControllerSettings_AddRef(_Underlying *_this);
+            __JPH_RefTarget_JPH_VehicleControllerSettings_AddRef(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::RefTarget<JPH::VehicleControllerSettings>::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_VehicleControllerSettings_Release(_Underlying *_this);
+            __JPH_RefTarget_JPH_VehicleControllerSettings_Release(_UnderlyingPtr);
+        }
+
+        /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+        /// Generated from method `JPH::RefTarget<JPH::VehicleControllerSettings>::sInternalGetRefCountOffset`.
+        public static int SInternalGetRefCountOffset()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JPH_RefTarget_JPH_VehicleControllerSettings_sInternalGetRefCountOffset();
+            return __JPH_RefTarget_JPH_VehicleControllerSettings_sInternalGetRefCountOffset();
+        }
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::VehicleControllerSettings>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::VehicleControllerSettings`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::WheeledVehicleControllerSettings`
+    /// This is the non-const half of the class.
+    public class RefTarget_JPHVehicleControllerSettings : Const_RefTarget_JPHVehicleControllerSettings
+    {
+        internal unsafe RefTarget_JPHVehicleControllerSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe RefTarget_JPHVehicleControllerSettings() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHVehicleControllerSettings._Underlying *__JPH_RefTarget_JPH_VehicleControllerSettings_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_VehicleControllerSettings_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleControllerSettings>::RefTarget`.
+        public unsafe RefTarget_JPHVehicleControllerSettings(JPH._ByValue_RefTarget_JPHVehicleControllerSettings _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHVehicleControllerSettings._Underlying *__JPH_RefTarget_JPH_VehicleControllerSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHVehicleControllerSettings._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_VehicleControllerSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleControllerSettings>::RefTarget`.
+        public RefTarget_JPHVehicleControllerSettings(Const_RefTarget_JPHVehicleControllerSettings _other) : this(new _ByValue_RefTarget_JPHVehicleControllerSettings(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::VehicleControllerSettings>::RefTarget`.
+        public RefTarget_JPHVehicleControllerSettings(RefTarget_JPHVehicleControllerSettings _other) : this((Const_RefTarget_JPHVehicleControllerSettings)_other) {}
+
+        /// Assignment operator
+        /// Generated from method `JPH::RefTarget<JPH::VehicleControllerSettings>::operator=`.
+        public unsafe JPH.RefTarget_JPHVehicleControllerSettings Assign(JPH._ByValue_RefTarget_JPHVehicleControllerSettings _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_VehicleControllerSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHVehicleControllerSettings._Underlying *__JPH_RefTarget_JPH_VehicleControllerSettings_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.RefTarget_JPHVehicleControllerSettings._Underlying *_other);
+            JPH.RefTarget_JPHVehicleControllerSettings __ret;
+            __ret = new(__JPH_RefTarget_JPH_VehicleControllerSettings_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            __ret._KeepAlive(this);
+            return __ret;
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `RefTarget_JPHVehicleControllerSettings` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `RefTarget_JPHVehicleControllerSettings`/`Const_RefTarget_JPHVehicleControllerSettings` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_RefTarget_JPHVehicleControllerSettings
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_RefTarget_JPHVehicleControllerSettings? Value;
+        #pragma warning restore CS0649
+        internal readonly JPH._PassBy PassByMode;
+        public _ByValue_RefTarget_JPHVehicleControllerSettings() {PassByMode = JPH._PassBy.default_construct;}
+        public _ByValue_RefTarget_JPHVehicleControllerSettings(Const_RefTarget_JPHVehicleControllerSettings new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
+        public static implicit operator _ByValue_RefTarget_JPHVehicleControllerSettings(Const_RefTarget_JPHVehicleControllerSettings arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHVehicleControllerSettings` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_RefTarget_JPHVehicleControllerSettings`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHVehicleControllerSettings`/`Const_RefTarget_JPHVehicleControllerSettings` directly.
+    public class _InOptMut_RefTarget_JPHVehicleControllerSettings
+    {
+        public RefTarget_JPHVehicleControllerSettings? Opt;
+
+        public _InOptMut_RefTarget_JPHVehicleControllerSettings() {}
+        public _InOptMut_RefTarget_JPHVehicleControllerSettings(RefTarget_JPHVehicleControllerSettings value) {Opt = value;}
+        public static implicit operator _InOptMut_RefTarget_JPHVehicleControllerSettings(RefTarget_JPHVehicleControllerSettings value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHVehicleControllerSettings` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_RefTarget_JPHVehicleControllerSettings`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHVehicleControllerSettings`/`Const_RefTarget_JPHVehicleControllerSettings` to pass it to the function.
+    public class _InOptConst_RefTarget_JPHVehicleControllerSettings
+    {
+        public Const_RefTarget_JPHVehicleControllerSettings? Opt;
+
+        public _InOptConst_RefTarget_JPHVehicleControllerSettings() {}
+        public _InOptConst_RefTarget_JPHVehicleControllerSettings(Const_RefTarget_JPHVehicleControllerSettings value) {Opt = value;}
+        public static implicit operator _InOptConst_RefTarget_JPHVehicleControllerSettings(Const_RefTarget_JPHVehicleControllerSettings value) {return new(value);}
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
     /// Generated from class `JPH::RefTarget<JPH::PhysicsMaterial>`.
     /// Derived classes:
     ///   Direct: (non-virtual)
@@ -1149,574 +2541,6 @@ public static partial class JPH
         public _InOptConst_RefTarget_JPHPhysicsMaterial() {}
         public _InOptConst_RefTarget_JPHPhysicsMaterial(Const_RefTarget_JPHPhysicsMaterial value) {Opt = value;}
         public static implicit operator _InOptConst_RefTarget_JPHPhysicsMaterial(Const_RefTarget_JPHPhysicsMaterial value) {return new(value);}
-    }
-
-    /// Simple class to facilitate reference counting / releasing
-    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
-    ///
-    /// Reference counting classes keep an integer which indicates how many references
-    /// to the object are active. Reference counting objects are derived from RefTarget
-    /// and staT & their life with a reference count of zero. They can then be assigned
-    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
-    /// If the destructor of Ref is called or another object is assigned to the reference
-    /// counting pointer it will decrease the reference count of the object again. If this
-    /// reference count becomes zero, the object is destroyed.
-    ///
-    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
-    /// some responsibility to the programmer. The most notable point is that you cannot
-    /// have one object reference another and have the other reference the first one
-    /// back, because this way the reference count of both objects will never become
-    /// lower than 1, resulting in a memory leak. By carefully designing your classes
-    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
-    /// these problems.
-    /// Generated from class `JPH::RefTarget<JPH::ConstraintSettings>`.
-    /// Derived classes:
-    ///   Direct: (non-virtual)
-    ///     `JPH::ConstraintSettings`
-    ///   Indirect: (non-virtual)
-    ///     `JPH::DistanceConstraintSettings`
-    ///     `JPH::FixedConstraintSettings`
-    ///     `JPH::HingeConstraintSettings`
-    ///     `JPH::PointConstraintSettings`
-    ///     `JPH::SixDOFConstraintSettings`
-    ///     `JPH::SliderConstraintSettings`
-    ///     `JPH::TwoBodyConstraintSettings`
-    /// This is the const half of the class.
-    public class Const_RefTarget_JPHConstraintSettings : JPH.Object<Const_RefTarget_JPHConstraintSettings>, System.IDisposable
-    {
-        internal struct _Underlying {} // Represents the underlying C++ type.
-
-        internal unsafe _Underlying *_UnderlyingPtr;
-
-        protected virtual unsafe void Dispose(bool disposing)
-        {
-            if (_UnderlyingPtr is null || !_IsOwningVal)
-                return;
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_ConstraintSettings_Destroy(_Underlying *_this);
-            __JPH_RefTarget_JPH_ConstraintSettings_Destroy(_UnderlyingPtr);
-            _UnderlyingPtr = null;
-        }
-        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
-        ~Const_RefTarget_JPHConstraintSettings() {Dispose(false);}
-
-        internal unsafe Const_RefTarget_JPHConstraintSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
-
-        /// Constructs an empty (default-constructed) instance.
-        public unsafe Const_RefTarget_JPHConstraintSettings() : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHConstraintSettings._Underlying *__JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct();
-            _UnderlyingPtr = __JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct();
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
-        public unsafe Const_RefTarget_JPHConstraintSettings(JPH._ByValue_RefTarget_JPHConstraintSettings _other) : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHConstraintSettings._Underlying *__JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraintSettings._Underlying *_other);
-            _UnderlyingPtr = __JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
-            if (_other.Value is not null) _KeepAlive(_other.Value);
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
-        public Const_RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings _other) : this(new _ByValue_RefTarget_JPHConstraintSettings(_other)) {}
-
-        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
-        public Const_RefTarget_JPHConstraintSettings(RefTarget_JPHConstraintSettings _other) : this((Const_RefTarget_JPHConstraintSettings)_other) {}
-
-        /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
-        /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
-        /// the object and at that point in time it is checked that no references are left to the structure.
-        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::SetEmbedded`.
-        public unsafe void SetEmbedded()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_ConstraintSettings_SetEmbedded(_Underlying *_this);
-            __JPH_RefTarget_JPH_ConstraintSettings_SetEmbedded(_UnderlyingPtr);
-        }
-
-        /// Get current refcount of this object
-        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::GetRefCount`.
-        public unsafe uint GetRefCount()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static uint __JPH_RefTarget_JPH_ConstraintSettings_GetRefCount(_Underlying *_this);
-            return __JPH_RefTarget_JPH_ConstraintSettings_GetRefCount(_UnderlyingPtr);
-        }
-
-        /// Add or release a reference to this object
-        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::AddRef`.
-        public unsafe void AddRef()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_ConstraintSettings_AddRef(_Underlying *_this);
-            __JPH_RefTarget_JPH_ConstraintSettings_AddRef(_UnderlyingPtr);
-        }
-
-        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::Release`.
-        public unsafe void Release()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_ConstraintSettings_Release(_Underlying *_this);
-            __JPH_RefTarget_JPH_ConstraintSettings_Release(_UnderlyingPtr);
-        }
-
-        /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
-        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::sInternalGetRefCountOffset`.
-        public static int SInternalGetRefCountOffset()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static int __JPH_RefTarget_JPH_ConstraintSettings_sInternalGetRefCountOffset();
-            return __JPH_RefTarget_JPH_ConstraintSettings_sInternalGetRefCountOffset();
-        }
-    }
-
-    /// Simple class to facilitate reference counting / releasing
-    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
-    ///
-    /// Reference counting classes keep an integer which indicates how many references
-    /// to the object are active. Reference counting objects are derived from RefTarget
-    /// and staT & their life with a reference count of zero. They can then be assigned
-    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
-    /// If the destructor of Ref is called or another object is assigned to the reference
-    /// counting pointer it will decrease the reference count of the object again. If this
-    /// reference count becomes zero, the object is destroyed.
-    ///
-    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
-    /// some responsibility to the programmer. The most notable point is that you cannot
-    /// have one object reference another and have the other reference the first one
-    /// back, because this way the reference count of both objects will never become
-    /// lower than 1, resulting in a memory leak. By carefully designing your classes
-    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
-    /// these problems.
-    /// Generated from class `JPH::RefTarget<JPH::ConstraintSettings>`.
-    /// Derived classes:
-    ///   Direct: (non-virtual)
-    ///     `JPH::ConstraintSettings`
-    ///   Indirect: (non-virtual)
-    ///     `JPH::DistanceConstraintSettings`
-    ///     `JPH::FixedConstraintSettings`
-    ///     `JPH::HingeConstraintSettings`
-    ///     `JPH::PointConstraintSettings`
-    ///     `JPH::SixDOFConstraintSettings`
-    ///     `JPH::SliderConstraintSettings`
-    ///     `JPH::TwoBodyConstraintSettings`
-    /// This is the non-const half of the class.
-    public class RefTarget_JPHConstraintSettings : Const_RefTarget_JPHConstraintSettings
-    {
-        internal unsafe RefTarget_JPHConstraintSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
-
-        /// Constructs an empty (default-constructed) instance.
-        public unsafe RefTarget_JPHConstraintSettings() : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHConstraintSettings._Underlying *__JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct();
-            _UnderlyingPtr = __JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct();
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
-        public unsafe RefTarget_JPHConstraintSettings(JPH._ByValue_RefTarget_JPHConstraintSettings _other) : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHConstraintSettings._Underlying *__JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraintSettings._Underlying *_other);
-            _UnderlyingPtr = __JPH_RefTarget_JPH_ConstraintSettings_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
-            if (_other.Value is not null) _KeepAlive(_other.Value);
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
-        public RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings _other) : this(new _ByValue_RefTarget_JPHConstraintSettings(_other)) {}
-
-        /// Generated from constructor `JPH::RefTarget<JPH::ConstraintSettings>::RefTarget`.
-        public RefTarget_JPHConstraintSettings(RefTarget_JPHConstraintSettings _other) : this((Const_RefTarget_JPHConstraintSettings)_other) {}
-
-        /// Assignment operator
-        /// Generated from method `JPH::RefTarget<JPH::ConstraintSettings>::operator=`.
-        public unsafe JPH.RefTarget_JPHConstraintSettings Assign(JPH._ByValue_RefTarget_JPHConstraintSettings _other)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ConstraintSettings_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHConstraintSettings._Underlying *__JPH_RefTarget_JPH_ConstraintSettings_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraintSettings._Underlying *_other);
-            JPH.RefTarget_JPHConstraintSettings __ret;
-            __ret = new(__JPH_RefTarget_JPH_ConstraintSettings_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
-            _DiscardKeepAlive();
-            if (_other.Value is not null) _KeepAlive(_other.Value);
-            __ret._KeepAlive(this);
-            return __ret;
-        }
-    }
-
-    /// This is used as a function parameter when the underlying function receives `RefTarget_JPHConstraintSettings` by value.
-    /// Usage:
-    /// * Pass `new()` to default-construct the instance.
-    /// * Pass an instance of `RefTarget_JPHConstraintSettings`/`Const_RefTarget_JPHConstraintSettings` to copy it into the function.
-    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
-    public class _ByValue_RefTarget_JPHConstraintSettings
-    {
-        #pragma warning disable CS0649
-        internal readonly Const_RefTarget_JPHConstraintSettings? Value;
-        #pragma warning restore CS0649
-        internal readonly JPH._PassBy PassByMode;
-        public _ByValue_RefTarget_JPHConstraintSettings() {PassByMode = JPH._PassBy.default_construct;}
-        public _ByValue_RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
-        public static implicit operator _ByValue_RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings arg) {return new(arg);}
-    }
-
-    /// This is used for optional parameters of class `RefTarget_JPHConstraintSettings` with default arguments.
-    /// This is only used mutable parameters. For const ones we have `_InOptConst_RefTarget_JPHConstraintSettings`.
-    /// Usage:
-    /// * Pass `null` to use the default argument.
-    /// * Pass `new()` to pass no object.
-    /// * Pass an instance of `RefTarget_JPHConstraintSettings`/`Const_RefTarget_JPHConstraintSettings` directly.
-    public class _InOptMut_RefTarget_JPHConstraintSettings
-    {
-        public RefTarget_JPHConstraintSettings? Opt;
-
-        public _InOptMut_RefTarget_JPHConstraintSettings() {}
-        public _InOptMut_RefTarget_JPHConstraintSettings(RefTarget_JPHConstraintSettings value) {Opt = value;}
-        public static implicit operator _InOptMut_RefTarget_JPHConstraintSettings(RefTarget_JPHConstraintSettings value) {return new(value);}
-    }
-
-    /// This is used for optional parameters of class `RefTarget_JPHConstraintSettings` with default arguments.
-    /// This is only used const parameters. For non-const ones we have `_InOptMut_RefTarget_JPHConstraintSettings`.
-    /// Usage:
-    /// * Pass `null` to use the default argument.
-    /// * Pass `new()` to pass no object.
-    /// * Pass an instance of `RefTarget_JPHConstraintSettings`/`Const_RefTarget_JPHConstraintSettings` to pass it to the function.
-    public class _InOptConst_RefTarget_JPHConstraintSettings
-    {
-        public Const_RefTarget_JPHConstraintSettings? Opt;
-
-        public _InOptConst_RefTarget_JPHConstraintSettings() {}
-        public _InOptConst_RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings value) {Opt = value;}
-        public static implicit operator _InOptConst_RefTarget_JPHConstraintSettings(Const_RefTarget_JPHConstraintSettings value) {return new(value);}
-    }
-
-    /// Simple class to facilitate reference counting / releasing
-    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
-    ///
-    /// Reference counting classes keep an integer which indicates how many references
-    /// to the object are active. Reference counting objects are derived from RefTarget
-    /// and staT & their life with a reference count of zero. They can then be assigned
-    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
-    /// If the destructor of Ref is called or another object is assigned to the reference
-    /// counting pointer it will decrease the reference count of the object again. If this
-    /// reference count becomes zero, the object is destroyed.
-    ///
-    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
-    /// some responsibility to the programmer. The most notable point is that you cannot
-    /// have one object reference another and have the other reference the first one
-    /// back, because this way the reference count of both objects will never become
-    /// lower than 1, resulting in a memory leak. By carefully designing your classes
-    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
-    /// these problems.
-    /// Generated from class `JPH::RefTarget<JPH::Constraint>`.
-    /// Derived classes:
-    ///   Direct: (non-virtual)
-    ///     `JPH::Constraint`
-    ///   Indirect: (non-virtual)
-    ///     `JPH::DistanceConstraint`
-    ///     `JPH::FixedConstraint`
-    ///     `JPH::HingeConstraint`
-    ///     `JPH::PointConstraint`
-    ///     `JPH::SixDOFConstraint`
-    ///     `JPH::SliderConstraint`
-    ///     `JPH::TwoBodyConstraint`
-    /// This is the const half of the class.
-    public class Const_RefTarget_JPHConstraint : JPH.Object<Const_RefTarget_JPHConstraint>, System.IDisposable
-    {
-        internal struct _Underlying {} // Represents the underlying C++ type.
-
-        internal unsafe _Underlying *_UnderlyingPtr;
-
-        protected virtual unsafe void Dispose(bool disposing)
-        {
-            if (_UnderlyingPtr is null || !_IsOwningVal)
-                return;
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_Constraint_Destroy(_Underlying *_this);
-            __JPH_RefTarget_JPH_Constraint_Destroy(_UnderlyingPtr);
-            _UnderlyingPtr = null;
-        }
-        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
-        ~Const_RefTarget_JPHConstraint() {Dispose(false);}
-
-        internal unsafe Const_RefTarget_JPHConstraint(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
-
-        /// Constructs an empty (default-constructed) instance.
-        public unsafe Const_RefTarget_JPHConstraint() : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHConstraint._Underlying *__JPH_RefTarget_JPH_Constraint_DefaultConstruct();
-            _UnderlyingPtr = __JPH_RefTarget_JPH_Constraint_DefaultConstruct();
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
-        public unsafe Const_RefTarget_JPHConstraint(JPH._ByValue_RefTarget_JPHConstraint _other) : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHConstraint._Underlying *__JPH_RefTarget_JPH_Constraint_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraint._Underlying *_other);
-            _UnderlyingPtr = __JPH_RefTarget_JPH_Constraint_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
-            if (_other.Value is not null) _KeepAlive(_other.Value);
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
-        public Const_RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint _other) : this(new _ByValue_RefTarget_JPHConstraint(_other)) {}
-
-        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
-        public Const_RefTarget_JPHConstraint(RefTarget_JPHConstraint _other) : this((Const_RefTarget_JPHConstraint)_other) {}
-
-        /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
-        /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
-        /// the object and at that point in time it is checked that no references are left to the structure.
-        /// Generated from method `JPH::RefTarget<JPH::Constraint>::SetEmbedded`.
-        public unsafe void SetEmbedded()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_Constraint_SetEmbedded(_Underlying *_this);
-            __JPH_RefTarget_JPH_Constraint_SetEmbedded(_UnderlyingPtr);
-        }
-
-        /// Get current refcount of this object
-        /// Generated from method `JPH::RefTarget<JPH::Constraint>::GetRefCount`.
-        public unsafe uint GetRefCount()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static uint __JPH_RefTarget_JPH_Constraint_GetRefCount(_Underlying *_this);
-            return __JPH_RefTarget_JPH_Constraint_GetRefCount(_UnderlyingPtr);
-        }
-
-        /// Add or release a reference to this object
-        /// Generated from method `JPH::RefTarget<JPH::Constraint>::AddRef`.
-        public unsafe void AddRef()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_Constraint_AddRef(_Underlying *_this);
-            __JPH_RefTarget_JPH_Constraint_AddRef(_UnderlyingPtr);
-        }
-
-        /// Generated from method `JPH::RefTarget<JPH::Constraint>::Release`.
-        public unsafe void Release()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_Constraint_Release(_Underlying *_this);
-            __JPH_RefTarget_JPH_Constraint_Release(_UnderlyingPtr);
-        }
-
-        /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
-        /// Generated from method `JPH::RefTarget<JPH::Constraint>::sInternalGetRefCountOffset`.
-        public static int SInternalGetRefCountOffset()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static int __JPH_RefTarget_JPH_Constraint_sInternalGetRefCountOffset();
-            return __JPH_RefTarget_JPH_Constraint_sInternalGetRefCountOffset();
-        }
-    }
-
-    /// Simple class to facilitate reference counting / releasing
-    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
-    ///
-    /// Reference counting classes keep an integer which indicates how many references
-    /// to the object are active. Reference counting objects are derived from RefTarget
-    /// and staT & their life with a reference count of zero. They can then be assigned
-    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
-    /// If the destructor of Ref is called or another object is assigned to the reference
-    /// counting pointer it will decrease the reference count of the object again. If this
-    /// reference count becomes zero, the object is destroyed.
-    ///
-    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
-    /// some responsibility to the programmer. The most notable point is that you cannot
-    /// have one object reference another and have the other reference the first one
-    /// back, because this way the reference count of both objects will never become
-    /// lower than 1, resulting in a memory leak. By carefully designing your classes
-    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
-    /// these problems.
-    /// Generated from class `JPH::RefTarget<JPH::Constraint>`.
-    /// Derived classes:
-    ///   Direct: (non-virtual)
-    ///     `JPH::Constraint`
-    ///   Indirect: (non-virtual)
-    ///     `JPH::DistanceConstraint`
-    ///     `JPH::FixedConstraint`
-    ///     `JPH::HingeConstraint`
-    ///     `JPH::PointConstraint`
-    ///     `JPH::SixDOFConstraint`
-    ///     `JPH::SliderConstraint`
-    ///     `JPH::TwoBodyConstraint`
-    /// This is the non-const half of the class.
-    public class RefTarget_JPHConstraint : Const_RefTarget_JPHConstraint
-    {
-        internal unsafe RefTarget_JPHConstraint(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
-
-        /// Constructs an empty (default-constructed) instance.
-        public unsafe RefTarget_JPHConstraint() : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHConstraint._Underlying *__JPH_RefTarget_JPH_Constraint_DefaultConstruct();
-            _UnderlyingPtr = __JPH_RefTarget_JPH_Constraint_DefaultConstruct();
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
-        public unsafe RefTarget_JPHConstraint(JPH._ByValue_RefTarget_JPHConstraint _other) : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHConstraint._Underlying *__JPH_RefTarget_JPH_Constraint_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraint._Underlying *_other);
-            _UnderlyingPtr = __JPH_RefTarget_JPH_Constraint_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
-            if (_other.Value is not null) _KeepAlive(_other.Value);
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
-        public RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint _other) : this(new _ByValue_RefTarget_JPHConstraint(_other)) {}
-
-        /// Generated from constructor `JPH::RefTarget<JPH::Constraint>::RefTarget`.
-        public RefTarget_JPHConstraint(RefTarget_JPHConstraint _other) : this((Const_RefTarget_JPHConstraint)_other) {}
-
-        /// Assignment operator
-        /// Generated from method `JPH::RefTarget<JPH::Constraint>::operator=`.
-        public unsafe JPH.RefTarget_JPHConstraint Assign(JPH._ByValue_RefTarget_JPHConstraint _other)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_Constraint_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHConstraint._Underlying *__JPH_RefTarget_JPH_Constraint_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.RefTarget_JPHConstraint._Underlying *_other);
-            JPH.RefTarget_JPHConstraint __ret;
-            __ret = new(__JPH_RefTarget_JPH_Constraint_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
-            _DiscardKeepAlive();
-            if (_other.Value is not null) _KeepAlive(_other.Value);
-            __ret._KeepAlive(this);
-            return __ret;
-        }
-    }
-
-    /// This is used as a function parameter when the underlying function receives `RefTarget_JPHConstraint` by value.
-    /// Usage:
-    /// * Pass `new()` to default-construct the instance.
-    /// * Pass an instance of `RefTarget_JPHConstraint`/`Const_RefTarget_JPHConstraint` to copy it into the function.
-    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
-    public class _ByValue_RefTarget_JPHConstraint
-    {
-        #pragma warning disable CS0649
-        internal readonly Const_RefTarget_JPHConstraint? Value;
-        #pragma warning restore CS0649
-        internal readonly JPH._PassBy PassByMode;
-        public _ByValue_RefTarget_JPHConstraint() {PassByMode = JPH._PassBy.default_construct;}
-        public _ByValue_RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
-        public static implicit operator _ByValue_RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint arg) {return new(arg);}
-    }
-
-    /// This is used for optional parameters of class `RefTarget_JPHConstraint` with default arguments.
-    /// This is only used mutable parameters. For const ones we have `_InOptConst_RefTarget_JPHConstraint`.
-    /// Usage:
-    /// * Pass `null` to use the default argument.
-    /// * Pass `new()` to pass no object.
-    /// * Pass an instance of `RefTarget_JPHConstraint`/`Const_RefTarget_JPHConstraint` directly.
-    public class _InOptMut_RefTarget_JPHConstraint
-    {
-        public RefTarget_JPHConstraint? Opt;
-
-        public _InOptMut_RefTarget_JPHConstraint() {}
-        public _InOptMut_RefTarget_JPHConstraint(RefTarget_JPHConstraint value) {Opt = value;}
-        public static implicit operator _InOptMut_RefTarget_JPHConstraint(RefTarget_JPHConstraint value) {return new(value);}
-    }
-
-    /// This is used for optional parameters of class `RefTarget_JPHConstraint` with default arguments.
-    /// This is only used const parameters. For non-const ones we have `_InOptMut_RefTarget_JPHConstraint`.
-    /// Usage:
-    /// * Pass `null` to use the default argument.
-    /// * Pass `new()` to pass no object.
-    /// * Pass an instance of `RefTarget_JPHConstraint`/`Const_RefTarget_JPHConstraint` to pass it to the function.
-    public class _InOptConst_RefTarget_JPHConstraint
-    {
-        public Const_RefTarget_JPHConstraint? Opt;
-
-        public _InOptConst_RefTarget_JPHConstraint() {}
-        public _InOptConst_RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint value) {Opt = value;}
-        public static implicit operator _InOptConst_RefTarget_JPHConstraint(Const_RefTarget_JPHConstraint value) {return new(value);}
     }
 
     /// Simple class to facilitate reference counting / releasing

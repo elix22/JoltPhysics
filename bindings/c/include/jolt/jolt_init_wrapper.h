@@ -11,6 +11,13 @@ extern "C" {
 
 typedef struct JPH_RayInvDirection JPH_RayInvDirection; // Defined in `#include <jolt/Jolt/Geometry/RayAABox.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct JPH_VehicleAntiRollBar JPH_VehicleAntiRollBar; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleAntiRollBar.h>`.
+typedef struct JPH_VehicleConstraint JPH_VehicleConstraint; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleConstraint.h>`.
+typedef struct JPH_VehicleConstraintSettings JPH_VehicleConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleConstraint.h>`.
+typedef struct JPH_VehicleDifferentialSettings JPH_VehicleDifferentialSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleDifferential.h>`.
+typedef struct JPH_WheelSettingsWV JPH_WheelSettingsWV; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
+typedef struct JPH_WheeledVehicleController JPH_WheeledVehicleController; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
+typedef struct JPH_WheeledVehicleControllerSettings JPH_WheeledVehicleControllerSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
 
 
 /// Minimal helpers for Jolt global lifecycle.
@@ -72,6 +79,34 @@ JOLT_API void JoltHelpers_Shutdown(void);
 /// Parameter `inBoundsMin` can not be null. It is a single object.
 /// Parameter `inBoundsMax` can not be null. It is a single object.
 JOLT_API float JoltHelpers_RayAABox(const JPH_Vec3 *inOrigin, const JPH_RayInvDirection *inInvDirection, const JPH_Vec3 *inBoundsMin, const JPH_Vec3 *inBoundsMax);
+
+/// Append a WheelSettingsWV to VehicleConstraintSettings::mWheels.
+/// Generated from method `JoltHelpers::VehicleSettingsAddWheel`.
+/// Parameter `settings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_VehicleSettingsAddWheel(JPH_VehicleConstraintSettings *settings, JPH_WheelSettingsWV *wheel);
+
+/// Set VehicleConstraintSettings::mController to a WheeledVehicleControllerSettings.
+/// Generated from method `JoltHelpers::VehicleSettingsSetController`.
+/// Parameter `settings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_VehicleSettingsSetController(JPH_VehicleConstraintSettings *settings, JPH_WheeledVehicleControllerSettings *ctrl);
+
+/// Append a VehicleAntiRollBar to VehicleConstraintSettings::mAntiRollBars.
+/// Generated from method `JoltHelpers::VehicleSettingsAddAntiRollBar`.
+/// Parameter `settings` can not be null. It is a single object.
+/// Parameter `bar` can not be null. It is a single object.
+JOLT_API void JoltHelpers_VehicleSettingsAddAntiRollBar(JPH_VehicleConstraintSettings *settings, const JPH_VehicleAntiRollBar *bar);
+
+/// Append a VehicleDifferentialSettings to WheeledVehicleControllerSettings::mDifferentials.
+/// Generated from method `JoltHelpers::WheeledControllerSettingsAddDifferential`.
+/// Parameter `settings` can not be null. It is a single object.
+/// Parameter `diff` can not be null. It is a single object.
+JOLT_API void JoltHelpers_WheeledControllerSettingsAddDifferential(JPH_WheeledVehicleControllerSettings *settings, const JPH_VehicleDifferentialSettings *diff);
+
+/// Cast the VehicleController on a VehicleConstraint to WheeledVehicleController.
+/// Returns nullptr if the controller is not a WheeledVehicleController.
+/// Generated from method `JoltHelpers::VehicleConstraintGetWheeledController`.
+/// Parameter `constraint` can not be null. It is a single object.
+JOLT_API JPH_WheeledVehicleController *JoltHelpers_VehicleConstraintGetWheeledController(JPH_VehicleConstraint *constraint);
 
 #ifdef __cplusplus
 } // extern "C"

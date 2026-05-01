@@ -110,7 +110,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/TaperedCylinderShapeTests.cpp` | `Tests_TaperedCylinder.cs` | ✅ | 12 | Settings field round-trips (parameterized constructor, mutable fields, SetDensity), dynamic body creation and simulation |
 | `UnitTests/Physics/CharacterVirtualTests.cpp` | `Tests_CharacterVirtualSettings.cs` + `Tests_CharacterVirtual.cs` | ⚠️ | 41 | CharacterVirtualSettings defaults + round-trips; CharacterContactSettings defaults + round-trips; CharacterVirtual construction/SetPosition/GetPosition/SetRotation/GetRotation/SetLinearVelocity/GetLinearVelocity/SetCharacterLayer/GetCharacterLayer/GetInnerBodyID/GetWorldTransform/GetCenterOfMassPosition/GetCenterOfMassTransform/GetActiveBodyID; Update step no-crash; full simulation edge-cases not yet tested |
 | `UnitTests/Physics/SoftBodyTests.cpp` | `Tests_SoftBody.cs` | ⚠️ | 42 | SoftBodyCreationSettings (20 tests): field defaults + round-trips (mNumIterations/mLinearDamping/mMaxLinearVelocity/mRestitution/mFriction/mPressure/mGravityFactor/mVertexRadius/mUpdatePosition/mMakeRotationIdentity/mAllowSleeping/mFacesDoubleSided/mUserData/mObjectLayer); SoftBodySharedSettings (7 tests): construct/GetRefCount/AddRef/SetEmbedded/CalculateEdgeLengths/Optimize; inner Vertex (5)/Edge (5)/Face (5); full soft-body simulation not yet tested |
-| `UnitTests/Physics/WheeledVehicleTests.cpp` | — | ❌ | 0 | WheeledVehicle not yet bound |
+| `UnitTests/Physics/WheeledVehicleTests.cpp` | `Tests_WheeledVehicle.cs` | ✅ | 39 | WheeledVehicle fully bound; 39 tests covering field defaults, round-trips, construction, simulation |
 | `UnitTests/Physics/ShapeFilterTests.cpp` | `Tests_ShapeFilter.cs` | ✅ | 9 | Const/mutable lifecycle, mBodyID2 default-invalid, ShouldCollide default pass-through (2-arg and 4-arg), use alongside physics system |
 | `UnitTests/Physics/PhysicsDeterminismTests.cpp` | `Tests_PhysicsDeterminism.cs` | ⚠️ | 5 | TwoIdenticalRuns_ProduceSamePosition (60 steps), SingleStep, ManySteps (180 steps) — all bit-exact; mDeterministicSimulation default=true + can disable; actual per-constraint determinism not verified |
 | `UnitTests/Physics/PhysicsStepListenerTests.cpp` | `Tests_PhysicsStepListener.cs` | ⚠️ | 9 | PhysicsStepListenerContext default/parameterized/copy construct, mDeltaTime/mIsFirstStep/mIsLastStep/mPhysicsSystem field round-trips; context referencing a real PhysicsSystem; PhysicsStepListener is pure virtual — actual OnStep callback not testable without virtual dispatch wiring |
@@ -218,7 +218,7 @@ headers) before C# tests can be written:
 - `JPH::CharacterVirtual` (full) — `mShape`, `mInnerBodyShape`, `mBackFaceMode` fields are
   currently skipped due to complex types
 - `JPH::SoftBodyCreationSettings` / `JPH::SoftBody` — bound; full simulation tests not yet written (no vertex/face collection accessors in bindings)
-- `JPH::WheeledVehicleController` — not yet bound
+- `JPH::WheeledVehicleController` — now bound via `generate.sh` vehicle `--allow` entries; 39 tests in `Tests_WheeledVehicle.cs`
 - `CollideShape` / `CastShape` query execution — settings/result types are bound; actual `NarrowPhaseQuery::CollideShape`/`CastShape` methods not yet exposed in C# wrappers
 - `PhysicsStepListener::OnStep` callback — pure virtual C++ class; virtual dispatch wiring not generated; cannot subclass from C#
 

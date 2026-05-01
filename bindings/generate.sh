@@ -176,6 +176,7 @@ echo "#include \"$ROOT/Jolt/Physics/PhysicsStepListener.h\"" >>"$BINDINGS/tmp/co
 echo "#include \"$ROOT/Jolt/Geometry/RayAABox.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Constraints/PathConstraintPath.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Constraints/PathConstraintPathHermite.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Vehicle/WheeledVehicleController.h\"" >>"$BINDINGS/tmp/combined_input.h"
 
 
 # Parse the input header.
@@ -185,6 +186,7 @@ echo "#include \"$ROOT/Jolt/Physics/Constraints/PathConstraintPathHermite.h\"" >
     --ignore :: \
     --skip-mentions-of std::align_val_t \
     --skip-mentions-of JPH::StaticArray \
+    --skip-mentions-of JPH::PhysicsStepListenerContext \
     --allow JoltHelpers \
     --allow JPH::BVec16 \
     --allow JPH::DMat44 \
@@ -348,6 +350,27 @@ echo "#include \"$ROOT/Jolt/Physics/Constraints/PathConstraintPathHermite.h\"" >
     --allow JPH::RayInvDirection \
     --allow JPH::PathConstraintPath \
     --allow JPH::PathConstraintPathHermite \
+    --allow JPH::WheelSettings \
+    --allow JPH::Wheel \
+    --allow JPH::WheelSettingsWV \
+    --allow JPH::WheelWV \
+    --allow JPH::VehicleAntiRollBar \
+    --allow JPH::VehicleControllerSettings \
+    --allow JPH::VehicleController \
+    --allow JPH::VehicleConstraintSettings \
+    --allow JPH::VehicleConstraint \
+    --allow JPH::VehicleEngineSettings \
+    --allow JPH::VehicleEngine \
+    --allow JPH::ETransmissionMode \
+    --allow JPH::VehicleTransmissionSettings \
+    --allow JPH::VehicleTransmission \
+    --allow JPH::VehicleDifferentialSettings \
+    --allow JPH::WheeledVehicleControllerSettings \
+    --allow JPH::WheeledVehicleController \
+    --allow JPH::VehicleCollisionTester \
+    --allow JPH::VehicleCollisionTesterRay \
+    --allow JPH::VehicleCollisionTesterCastSphere \
+    --allow JPH::VehicleCollisionTesterCastCylinder \
     --canonicalize-64-to-fixed-size-typedefs \
     "${EXTRA_PARSER_FLAGS[@]+"${EXTRA_PARSER_FLAGS[@]}"}" \
     -- \

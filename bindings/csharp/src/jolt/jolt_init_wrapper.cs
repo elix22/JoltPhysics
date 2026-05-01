@@ -96,6 +96,73 @@ public static partial class JPH
             extern static float __JoltHelpers_RayAABox(JPH.Vec3._Underlying *inOrigin, JPH.Const_RayInvDirection._Underlying *inInvDirection, JPH.Vec3._Underlying *inBoundsMin, JPH.Vec3._Underlying *inBoundsMax);
             return __JoltHelpers_RayAABox(inOrigin._UnderlyingPtr, inInvDirection._UnderlyingPtr, inBoundsMin._UnderlyingPtr, inBoundsMax._UnderlyingPtr);
         }
+
+        /// Append a WheelSettingsWV to VehicleConstraintSettings::mWheels.
+        /// Generated from method `JoltHelpers::VehicleSettingsAddWheel`.
+        public static unsafe void VehicleSettingsAddWheel(JPH.VehicleConstraintSettings settings, JPH.WheelSettingsWV? wheel)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_VehicleSettingsAddWheel", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_VehicleSettingsAddWheel", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_VehicleSettingsAddWheel(JPH.VehicleConstraintSettings._Underlying *settings, JPH.WheelSettingsWV._Underlying *wheel);
+            __JoltHelpers_VehicleSettingsAddWheel(settings._UnderlyingPtr, wheel is not null ? wheel._UnderlyingPtr : null);
+        }
+
+        /// Set VehicleConstraintSettings::mController to a WheeledVehicleControllerSettings.
+        /// Generated from method `JoltHelpers::VehicleSettingsSetController`.
+        public static unsafe void VehicleSettingsSetController(JPH.VehicleConstraintSettings settings, JPH.WheeledVehicleControllerSettings? ctrl)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_VehicleSettingsSetController", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_VehicleSettingsSetController", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_VehicleSettingsSetController(JPH.VehicleConstraintSettings._Underlying *settings, JPH.WheeledVehicleControllerSettings._Underlying *ctrl);
+            __JoltHelpers_VehicleSettingsSetController(settings._UnderlyingPtr, ctrl is not null ? ctrl._UnderlyingPtr : null);
+        }
+
+        /// Append a VehicleAntiRollBar to VehicleConstraintSettings::mAntiRollBars.
+        /// Generated from method `JoltHelpers::VehicleSettingsAddAntiRollBar`.
+        public static unsafe void VehicleSettingsAddAntiRollBar(JPH.VehicleConstraintSettings settings, JPH.Const_VehicleAntiRollBar bar)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_VehicleSettingsAddAntiRollBar", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_VehicleSettingsAddAntiRollBar", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_VehicleSettingsAddAntiRollBar(JPH.VehicleConstraintSettings._Underlying *settings, JPH.Const_VehicleAntiRollBar._Underlying *bar);
+            __JoltHelpers_VehicleSettingsAddAntiRollBar(settings._UnderlyingPtr, bar._UnderlyingPtr);
+        }
+
+        /// Append a VehicleDifferentialSettings to WheeledVehicleControllerSettings::mDifferentials.
+        /// Generated from method `JoltHelpers::WheeledControllerSettingsAddDifferential`.
+        public static unsafe void WheeledControllerSettingsAddDifferential(JPH.WheeledVehicleControllerSettings settings, JPH.Const_VehicleDifferentialSettings diff)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_WheeledControllerSettingsAddDifferential", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_WheeledControllerSettingsAddDifferential", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_WheeledControllerSettingsAddDifferential(JPH.WheeledVehicleControllerSettings._Underlying *settings, JPH.Const_VehicleDifferentialSettings._Underlying *diff);
+            __JoltHelpers_WheeledControllerSettingsAddDifferential(settings._UnderlyingPtr, diff._UnderlyingPtr);
+        }
+
+        /// Cast the VehicleController on a VehicleConstraint to WheeledVehicleController.
+        /// Returns nullptr if the controller is not a WheeledVehicleController.
+        /// Generated from method `JoltHelpers::VehicleConstraintGetWheeledController`.
+        public static unsafe JPH.WheeledVehicleController? VehicleConstraintGetWheeledController(JPH.VehicleConstraint constraint)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_VehicleConstraintGetWheeledController", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_VehicleConstraintGetWheeledController", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.WheeledVehicleController._Underlying *__JoltHelpers_VehicleConstraintGetWheeledController(JPH.VehicleConstraint._Underlying *constraint);
+            var __c_ret = __JoltHelpers_VehicleConstraintGetWheeledController(constraint._UnderlyingPtr);
+            return __c_ret is not null ? new JPH.WheeledVehicleController(__c_ret, is_owning: false) : null;
+        }
     }
 
     /// Minimal helpers for Jolt global lifecycle.

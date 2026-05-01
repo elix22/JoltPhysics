@@ -24,6 +24,9 @@ public static partial class JPH
     ///     `JPH::Shape`
     ///     `JPH::ShapeFilter`
     ///     `JPH::TempAllocator`
+    ///     `JPH::VehicleCollisionTester`
+    ///     `JPH::VehicleController`
+    ///     `JPH::Wheel`
     ///   Indirect: (non-virtual)
     ///     `JPH::BoxShape`
     ///     `JPH::BroadPhaseLayerInterfaceTable`
@@ -71,6 +74,12 @@ public static partial class JPH
     ///     `JPH::TempAllocatorMalloc`
     ///     `JPH::TriangleShape`
     ///     `JPH::TwoBodyConstraint`
+    ///     `JPH::VehicleCollisionTesterCastCylinder`
+    ///     `JPH::VehicleCollisionTesterCastSphere`
+    ///     `JPH::VehicleCollisionTesterRay`
+    ///     `JPH::VehicleConstraint`
+    ///     `JPH::WheelWV`
+    ///     `JPH::WheeledVehicleController`
     /// This is the const half of the class.
     public class Const_NonCopyable : JPH.Object<Const_NonCopyable>, System.IDisposable
     {
@@ -132,6 +141,9 @@ public static partial class JPH
     ///     `JPH::Shape`
     ///     `JPH::ShapeFilter`
     ///     `JPH::TempAllocator`
+    ///     `JPH::VehicleCollisionTester`
+    ///     `JPH::VehicleController`
+    ///     `JPH::Wheel`
     ///   Indirect: (non-virtual)
     ///     `JPH::BoxShape`
     ///     `JPH::BroadPhaseLayerInterfaceTable`
@@ -179,6 +191,12 @@ public static partial class JPH
     ///     `JPH::TempAllocatorMalloc`
     ///     `JPH::TriangleShape`
     ///     `JPH::TwoBodyConstraint`
+    ///     `JPH::VehicleCollisionTesterCastCylinder`
+    ///     `JPH::VehicleCollisionTesterCastSphere`
+    ///     `JPH::VehicleCollisionTesterRay`
+    ///     `JPH::VehicleConstraint`
+    ///     `JPH::WheelWV`
+    ///     `JPH::WheeledVehicleController`
     /// This is the non-const half of the class.
     public class NonCopyable : Const_NonCopyable
     {

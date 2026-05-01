@@ -20,6 +20,8 @@ extern "C" {
 ///     `JPH::PathConstraintPath`
 ///     `JPH::PhysicsMaterial`
 ///     `JPH::ShapeSettings`
+///     `JPH::VehicleControllerSettings`
+///     `JPH::WheelSettings`
 ///   Indirect: (non-virtual)
 ///     `JPH::BoxShapeSettings`
 ///     `JPH::CapsuleShapeSettings`
@@ -49,6 +51,9 @@ extern "C" {
 ///     `JPH::TaperedCylinderShapeSettings`
 ///     `JPH::TriangleShapeSettings`
 ///     `JPH::TwoBodyConstraintSettings`
+///     `JPH::VehicleConstraintSettings`
+///     `JPH::WheelSettingsWV`
+///     `JPH::WheeledVehicleControllerSettings`
 typedef struct JPH_SerializableObject JPH_SerializableObject;
 
 /// Destroys a heap-allocated instance of `JPH_SerializableObject`. Does nothing if the pointer is null.

@@ -33,6 +33,9 @@ extern "C" {
 ///     `JPH::Shape`
 ///     `JPH::ShapeFilter`
 ///     `JPH::TempAllocator`
+///     `JPH::VehicleCollisionTester`
+///     `JPH::VehicleController`
+///     `JPH::Wheel`
 ///   Indirect: (non-virtual)
 ///     `JPH::BoxShape`
 ///     `JPH::BroadPhaseLayerInterfaceTable`
@@ -80,6 +83,12 @@ extern "C" {
 ///     `JPH::TempAllocatorMalloc`
 ///     `JPH::TriangleShape`
 ///     `JPH::TwoBodyConstraint`
+///     `JPH::VehicleCollisionTesterCastCylinder`
+///     `JPH::VehicleCollisionTesterCastSphere`
+///     `JPH::VehicleCollisionTesterRay`
+///     `JPH::VehicleConstraint`
+///     `JPH::WheelWV`
+///     `JPH::WheeledVehicleController`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_NonCopyable JPH_NonCopyable;
 

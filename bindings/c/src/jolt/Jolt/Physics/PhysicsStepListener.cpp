@@ -107,13 +107,6 @@ JPH_PhysicsStepListenerContext *JPH_PhysicsStepListenerContext_OffsetMutablePtr(
     return (JPH_PhysicsStepListenerContext *)(((JPH::PhysicsStepListenerContext *)ptr) + i);
 }
 
-JPH_PhysicsStepListenerContext *JPH_PhysicsStepListenerContext_ConstructFromAnother(const JPH_PhysicsStepListenerContext *_other)
-{
-    return (JPH_PhysicsStepListenerContext *)new JPH::PhysicsStepListenerContext(JPH::PhysicsStepListenerContext(
-        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JPH::PhysicsStepListenerContext(*(JPH::PhysicsStepListenerContext *)_other))
-    ));
-}
-
 void JPH_PhysicsStepListenerContext_Destroy(const JPH_PhysicsStepListenerContext *_this)
 {
     delete ((const JPH::PhysicsStepListenerContext *)_this);
@@ -124,13 +117,6 @@ void JPH_PhysicsStepListenerContext_DestroyArray(const JPH_PhysicsStepListenerCo
     delete[] ((const JPH::PhysicsStepListenerContext *)_this);
 }
 
-JPH_PhysicsStepListenerContext *JPH_PhysicsStepListenerContext_AssignFromAnother(JPH_PhysicsStepListenerContext *_this, const JPH_PhysicsStepListenerContext *_other)
-{
-    return (JPH_PhysicsStepListenerContext *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsStepListenerContext *)(_this)).operator=(
-        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JPH::PhysicsStepListenerContext(*(JPH::PhysicsStepListenerContext *)_other))
-    ));
-}
-
 void JPH_PhysicsStepListener_Destroy(const JPH_PhysicsStepListener *_this)
 {
     delete ((const JPH::PhysicsStepListener *)_this);
@@ -139,13 +125,6 @@ void JPH_PhysicsStepListener_Destroy(const JPH_PhysicsStepListener *_this)
 void JPH_PhysicsStepListener_DestroyArray(const JPH_PhysicsStepListener *_this)
 {
     delete[] ((const JPH::PhysicsStepListener *)_this);
-}
-
-void JPH_PhysicsStepListener_OnStep(JPH_PhysicsStepListener *_this, const JPH_PhysicsStepListenerContext *inContext)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsStepListener *)(_this)).OnStep(
-        ((inContext ? void() : MRBINDC_THROW("Parameter `inContext` can not be null.", void)), *(const JPH::PhysicsStepListenerContext *)(inContext))
-    );
 }
 
 const JPH_PhysicsStepListener *JPH_PhysicsStepListener_OffsetPtr(const JPH_PhysicsStepListener *ptr, ptrdiff_t i)

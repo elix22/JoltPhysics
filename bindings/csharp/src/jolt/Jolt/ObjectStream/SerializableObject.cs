@@ -11,6 +11,8 @@ public static partial class JPH
     ///     `JPH::PathConstraintPath`
     ///     `JPH::PhysicsMaterial`
     ///     `JPH::ShapeSettings`
+    ///     `JPH::VehicleControllerSettings`
+    ///     `JPH::WheelSettings`
     ///   Indirect: (non-virtual)
     ///     `JPH::BoxShapeSettings`
     ///     `JPH::CapsuleShapeSettings`
@@ -40,6 +42,9 @@ public static partial class JPH
     ///     `JPH::TaperedCylinderShapeSettings`
     ///     `JPH::TriangleShapeSettings`
     ///     `JPH::TwoBodyConstraintSettings`
+    ///     `JPH::VehicleConstraintSettings`
+    ///     `JPH::WheelSettingsWV`
+    ///     `JPH::WheeledVehicleControllerSettings`
     /// This is the const half of the class.
     public class Const_SerializableObject : JPH.Object<Const_SerializableObject>, System.IDisposable
     {
@@ -210,6 +215,8 @@ public static partial class JPH
     ///     `JPH::PathConstraintPath`
     ///     `JPH::PhysicsMaterial`
     ///     `JPH::ShapeSettings`
+    ///     `JPH::VehicleControllerSettings`
+    ///     `JPH::WheelSettings`
     ///   Indirect: (non-virtual)
     ///     `JPH::BoxShapeSettings`
     ///     `JPH::CapsuleShapeSettings`
@@ -239,6 +246,9 @@ public static partial class JPH
     ///     `JPH::TaperedCylinderShapeSettings`
     ///     `JPH::TriangleShapeSettings`
     ///     `JPH::TwoBodyConstraintSettings`
+    ///     `JPH::VehicleConstraintSettings`
+    ///     `JPH::WheelSettingsWV`
+    ///     `JPH::WheeledVehicleControllerSettings`
     /// This is the non-const half of the class.
     public class SerializableObject : Const_SerializableObject
     {
