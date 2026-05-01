@@ -60,6 +60,50 @@ if [ ! -d "$NATIVE_LIB_DIR" ]; then
 fi
 
 # ── Run tests ─────────────────────────────────────────────────────────────────
-exec dotnet test "$SCRIPT_DIR/tests.csproj" \
+# Pipe through awk which streams all output in real-time, buffers only the
+# final "Test Run …" / "Test summary:" block, then injects a skipped/failed
+# details section immediately before that block.  Works on macOS, Linux,
+# Windows (Git Bash), and GitHub Actions — requires only POSIX awk and bash.
+dotnet test "$SCRIPT_DIR/tests.csproj" \
     --logger "console;verbosity=detailed" \
-    "$@"
+    "$@" | awk '
+BEGIN { in_summary = 0; buf = ""; skip_n = 0; fail_n = 0 }
+
+/^  Skipped / {
+    name = $0
+    sub(/^  Skipped /, "", name)
+    sub(/ \[.*$/, "", name)
+    skipped[skip_n++] = name
+}
+/^  Failed / {
+    name = $0
+    sub(/^  Failed /, "", name)
+    sub(/ \[.*$/, "", name)
+    failed[fail_n++] = name
+}
+
+/^Test Run /     { in_summary = 1 }
+/^Test summary:/ { in_summary = 1 }
+
+in_summary { buf = buf $0 "\n"; next }
+           { print; fflush() }
+
+END {
+    if (skip_n > 0 || fail_n > 0) {
+        print ""
+        print "--- Skipped / Failed test details ---"
+        if (fail_n > 0) {
+            print "Failed:"
+            for (i = 0; i < fail_n; i++) print "  " failed[i]
+        }
+        if (skip_n > 0) {
+            print "Skipped:"
+            for (i = 0; i < skip_n; i++) print "  " skipped[i]
+        }
+        print "-------------------------------------"
+    }
+    printf "%s", buf
+}
+'
+EXIT_CODE=${PIPESTATUS[0]}
+exit $EXIT_CODE
