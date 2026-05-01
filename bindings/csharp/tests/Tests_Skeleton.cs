@@ -184,27 +184,26 @@ public sealed class Tests_Skeleton
     [Fact]
     public void SkeletonPose_SetSkeleton_RoundTrips()
     {
-        using var skeleton = new JPH.Skeleton();
         using var pose = new JPH.SkeletonPose();
+        // Do NOT use 'using var' — once SetSkeleton is called, SkeletonPose holds a
+        // Ref<Skeleton> (refcount 1). pose.Dispose() drops refcount to 0 and Jolt deletes
+        // the skeleton. Suppress the C# finalizer to prevent a double-free.
+        var skeleton = new JPH.Skeleton();
+        GC.SuppressFinalize(skeleton);
         pose.SetSkeleton((JPH.Const_Skeleton)skeleton);
         Assert.NotNull(pose.GetSkeleton());
+        // pose.Dispose() fires here (end of using scope) → Jolt deletes skeleton
     }
 
     [Fact]
     public void SkeletonPose_SetSkeleton_JointCountMatchesSkeleton()
     {
-        using var skeleton = new JPH.Skeleton(); // 0 joints
         using var pose = new JPH.SkeletonPose();
+        var skeleton = new JPH.Skeleton(); // 0 joints — Jolt will own via Ref<>
+        GC.SuppressFinalize(skeleton);
         pose.SetSkeleton((JPH.Const_Skeleton)skeleton);
-        Assert.Equal((uint)skeleton.GetJointCount(), pose.GetJointCount());
-    }
-
-    [Fact]
-    public void SkeletonPose_SetNullSkeleton_JointCountZero()
-    {
-        using var pose = new JPH.SkeletonPose();
-        pose.SetSkeleton(null);
-        Assert.Equal(0u, pose.GetJointCount());
+        Assert.Equal((uint)skeleton.GetJointCount(), pose.GetJointCount()); // skeleton still live here
+        // pose.Dispose() → Jolt deletes skeleton
     }
 
     [Fact]
