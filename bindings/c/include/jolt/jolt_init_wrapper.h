@@ -5,6 +5,7 @@
 #include <exports.h>
 #include <jolt/Jolt/Physics/Body/BodyID.h>
 #include <jolt/Jolt/Physics/Collision/ContactListener.h>
+#include <jolt/Jolt/Renderer/DebugRenderer.h>
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -13,12 +14,19 @@
 extern "C" {
 #endif
 
+typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
 typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Body/Body.h>`.
 typedef struct JPH_CollideShapeResult JPH_CollideShapeResult; // Defined in `#include <jolt/Jolt/Physics/Collision/CollideShape.h>`.
+typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
 typedef struct JPH_ContactListener JPH_ContactListener; // Defined in `#include <jolt/Jolt/Physics/Collision/ContactListener.h>`.
 typedef struct JPH_ContactManifold JPH_ContactManifold; // Defined in `#include <jolt/Jolt/Physics/Collision/ContactListener.h>`.
 typedef struct JPH_ContactSettings JPH_ContactSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/ContactListener.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
+typedef struct JPH_DebugRendererSimple JPH_DebugRendererSimple; // Defined in `#include <jolt/Jolt/Renderer/DebugRendererSimple.h>`.
+typedef struct JPH_DebugRenderer_Vertex JPH_DebugRenderer_Vertex; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_HeightFieldShapeSettings JPH_HeightFieldShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/HeightFieldShape.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
+typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsStepListener JPH_PhysicsStepListener; // Defined in `#include <jolt/Jolt/Physics/PhysicsStepListener.h>`.
 typedef struct JPH_PhysicsSystem JPH_PhysicsSystem; // Defined in `#include <jolt/Jolt/Physics/PhysicsSystem.h>`.
 typedef struct JPH_RayInvDirection JPH_RayInvDirection; // Defined in `#include <jolt/Jolt/Geometry/RayAABox.h>`.
@@ -34,6 +42,7 @@ typedef struct JPH_VehicleDifferentialSettings JPH_VehicleDifferentialSettings; 
 typedef struct JPH_WheelSettingsWV JPH_WheelSettingsWV; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
 typedef struct JPH_WheeledVehicleController JPH_WheeledVehicleController; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
 typedef struct JPH_WheeledVehicleControllerSettings JPH_WheeledVehicleControllerSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
+typedef struct Jolt_std_function_JPH_Vec3_from_JPH_Vec3 Jolt_std_function_JPH_Vec3_from_JPH_Vec3; // Defined in `#include <std_function_JPH_Vec3_from_JPH_Vec3.h>`.
 
 
 /// Minimal helpers for Jolt global lifecycle.
@@ -74,6 +83,32 @@ typedef struct SimpleContactEventListener SimpleContactEventListener;
 ///     `JPH::ContactListener`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct EstimateResponseContactListener EstimateResponseContactListener;
+
+/// Plain record of a single DrawLine call captured by RecordingDebugRenderer.
+/// Generated from class `DebugLineRecord`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct DebugLineRecord DebugLineRecord;
+
+/// Plain record of a single DrawTriangle call captured by RecordingDebugRenderer.
+/// Generated from class `DebugTriangleRecord`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct DebugTriangleRecord DebugTriangleRecord;
+
+/// Concrete DebugRenderer that records all DrawLine / DrawTriangle calls so
+/// C# can inspect them.  Inherits DebugRendererSimple to avoid re-implementing
+/// CreateTriangleBatch and DrawGeometry.
+///
+/// Lifecycle: only one instance may exist at a time (enforced by
+/// DebugRenderer's singleton assert).  Call Clear() between frames.
+/// Generated from class `RecordingDebugRenderer`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JPH::DebugRendererSimple`
+///   Indirect: (non-virtual)
+///     `JPH::NonCopyable`
+///     `JPH::DebugRenderer`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct RecordingDebugRenderer RecordingDebugRenderer;
 
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JoltHelpers_Destroy()` to free it when you're done using it.
@@ -825,6 +860,522 @@ JOLT_API void EstimateResponseContactListener_OnContactPersisted(EstimateRespons
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inSubShapePair` can not be null. It is a single object.
 JOLT_API void EstimateResponseContactListener_OnContactRemoved(EstimateResponseContactListener *_this, const JPH_SubShapeIDPair *inSubShapePair);
+
+/// Returns a pointer to a member variable of class `DebugLineRecord` named `mFrom`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *DebugLineRecord_Get_mFrom(const DebugLineRecord *_this);
+
+/// Returns a mutable pointer to a member variable of class `DebugLineRecord` named `mFrom`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *DebugLineRecord_GetMutable_mFrom(DebugLineRecord *_this);
+
+/// Returns a pointer to a member variable of class `DebugLineRecord` named `mTo`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *DebugLineRecord_Get_mTo(const DebugLineRecord *_this);
+
+/// Returns a mutable pointer to a member variable of class `DebugLineRecord` named `mTo`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *DebugLineRecord_GetMutable_mTo(DebugLineRecord *_this);
+
+/// Returns a pointer to a member variable of class `DebugLineRecord` named `mColor`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Color *DebugLineRecord_Get_mColor(const DebugLineRecord *_this);
+
+/// Returns a mutable pointer to a member variable of class `DebugLineRecord` named `mColor`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Color *DebugLineRecord_GetMutable_mColor(DebugLineRecord *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `DebugLineRecord_Destroy()` to free it when you're done using it.
+JOLT_API DebugLineRecord *DebugLineRecord_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `DebugLineRecord_DestroyArray()`.
+/// Use `DebugLineRecord_OffsetMutablePtr()` and `DebugLineRecord_OffsetPtr()` to access the array elements.
+JOLT_API DebugLineRecord *DebugLineRecord_DefaultConstructArray(size_t num_elems);
+
+/// Constructs `DebugLineRecord` elementwise.
+/// Parameter `mFrom` can not be null. It is a single object.
+/// The reference to the parameter `mFrom` might be preserved in the constructed object.
+/// Parameter `mTo` can not be null. It is a single object.
+/// The reference to the parameter `mTo` might be preserved in the constructed object.
+/// Parameter `mColor` can not be null. It is a single object.
+/// The reference to the parameter `mColor` might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `DebugLineRecord_Destroy()` to free it when you're done using it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API DebugLineRecord *DebugLineRecord_ConstructFrom(const JPH_Vec3 *mFrom, const JPH_Vec3 *mTo, const JPH_Color *mColor);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const DebugLineRecord *DebugLineRecord_OffsetPtr(const DebugLineRecord *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API DebugLineRecord *DebugLineRecord_OffsetMutablePtr(DebugLineRecord *ptr, ptrdiff_t i);
+
+/// Generated from constructor `DebugLineRecord::DebugLineRecord`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `DebugLineRecord_Destroy()` to free it when you're done using it.
+JOLT_API DebugLineRecord *DebugLineRecord_ConstructFromAnother(const DebugLineRecord *_other);
+
+/// Destroys a heap-allocated instance of `DebugLineRecord`. Does nothing if the pointer is null.
+JOLT_API void DebugLineRecord_Destroy(const DebugLineRecord *_this);
+
+/// Destroys a heap-allocated array of `DebugLineRecord`. Does nothing if the pointer is null.
+JOLT_API void DebugLineRecord_DestroyArray(const DebugLineRecord *_this);
+
+/// Generated from method `DebugLineRecord::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API DebugLineRecord *DebugLineRecord_AssignFromAnother(DebugLineRecord *_this, const DebugLineRecord *_other);
+
+/// Returns a pointer to a member variable of class `DebugTriangleRecord` named `mV1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *DebugTriangleRecord_Get_mV1(const DebugTriangleRecord *_this);
+
+/// Returns a mutable pointer to a member variable of class `DebugTriangleRecord` named `mV1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *DebugTriangleRecord_GetMutable_mV1(DebugTriangleRecord *_this);
+
+/// Returns a pointer to a member variable of class `DebugTriangleRecord` named `mV2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *DebugTriangleRecord_Get_mV2(const DebugTriangleRecord *_this);
+
+/// Returns a mutable pointer to a member variable of class `DebugTriangleRecord` named `mV2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *DebugTriangleRecord_GetMutable_mV2(DebugTriangleRecord *_this);
+
+/// Returns a pointer to a member variable of class `DebugTriangleRecord` named `mV3`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Vec3 *DebugTriangleRecord_Get_mV3(const DebugTriangleRecord *_this);
+
+/// Returns a mutable pointer to a member variable of class `DebugTriangleRecord` named `mV3`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Vec3 *DebugTriangleRecord_GetMutable_mV3(DebugTriangleRecord *_this);
+
+/// Returns a pointer to a member variable of class `DebugTriangleRecord` named `mColor`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_Color *DebugTriangleRecord_Get_mColor(const DebugTriangleRecord *_this);
+
+/// Returns a mutable pointer to a member variable of class `DebugTriangleRecord` named `mColor`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_Color *DebugTriangleRecord_GetMutable_mColor(DebugTriangleRecord *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `DebugTriangleRecord_Destroy()` to free it when you're done using it.
+JOLT_API DebugTriangleRecord *DebugTriangleRecord_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `DebugTriangleRecord_DestroyArray()`.
+/// Use `DebugTriangleRecord_OffsetMutablePtr()` and `DebugTriangleRecord_OffsetPtr()` to access the array elements.
+JOLT_API DebugTriangleRecord *DebugTriangleRecord_DefaultConstructArray(size_t num_elems);
+
+/// Constructs `DebugTriangleRecord` elementwise.
+/// Parameter `mV1` can not be null. It is a single object.
+/// The reference to the parameter `mV1` might be preserved in the constructed object.
+/// Parameter `mV2` can not be null. It is a single object.
+/// The reference to the parameter `mV2` might be preserved in the constructed object.
+/// Parameter `mV3` can not be null. It is a single object.
+/// The reference to the parameter `mV3` might be preserved in the constructed object.
+/// Parameter `mColor` can not be null. It is a single object.
+/// The reference to the parameter `mColor` might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `DebugTriangleRecord_Destroy()` to free it when you're done using it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API DebugTriangleRecord *DebugTriangleRecord_ConstructFrom(const JPH_Vec3 *mV1, const JPH_Vec3 *mV2, const JPH_Vec3 *mV3, const JPH_Color *mColor);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const DebugTriangleRecord *DebugTriangleRecord_OffsetPtr(const DebugTriangleRecord *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API DebugTriangleRecord *DebugTriangleRecord_OffsetMutablePtr(DebugTriangleRecord *ptr, ptrdiff_t i);
+
+/// Generated from constructor `DebugTriangleRecord::DebugTriangleRecord`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `DebugTriangleRecord_Destroy()` to free it when you're done using it.
+JOLT_API DebugTriangleRecord *DebugTriangleRecord_ConstructFromAnother(const DebugTriangleRecord *_other);
+
+/// Destroys a heap-allocated instance of `DebugTriangleRecord`. Does nothing if the pointer is null.
+JOLT_API void DebugTriangleRecord_Destroy(const DebugTriangleRecord *_this);
+
+/// Destroys a heap-allocated array of `DebugTriangleRecord`. Does nothing if the pointer is null.
+JOLT_API void DebugTriangleRecord_DestroyArray(const DebugTriangleRecord *_this);
+
+/// Generated from method `DebugTriangleRecord::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API DebugTriangleRecord *DebugTriangleRecord_AssignFromAnother(DebugTriangleRecord *_this, const DebugTriangleRecord *_other);
+
+/// Singleton instance
+/// Returns a pointer to a member variable of class `RecordingDebugRenderer` named `sInstance`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JPH_DebugRenderer *const *RecordingDebugRenderer_Get_sInstance(void);
+
+/// Singleton instance
+/// Modifies a member variable of class `RecordingDebugRenderer` named `sInstance`.
+/// The reference to the parameter `value` might be preserved in this object in element `sInstance`.
+/// When this function is called, this object will drop object references it held previously in `sInstance`.
+JOLT_API void RecordingDebugRenderer_Set_sInstance(JPH_DebugRenderer *value);
+
+/// Singleton instance
+/// Returns a mutable pointer to a member variable of class `RecordingDebugRenderer` named `sInstance`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JPH_DebugRenderer **RecordingDebugRenderer_GetMutable_sInstance(void);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `RecordingDebugRenderer_Destroy()` to free it when you're done using it.
+JOLT_API RecordingDebugRenderer *RecordingDebugRenderer_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `RecordingDebugRenderer_DestroyArray()`.
+/// Use `RecordingDebugRenderer_OffsetMutablePtr()` and `RecordingDebugRenderer_OffsetPtr()` to access the array elements.
+JOLT_API RecordingDebugRenderer *RecordingDebugRenderer_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const RecordingDebugRenderer *RecordingDebugRenderer_OffsetPtr(const RecordingDebugRenderer *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API RecordingDebugRenderer *RecordingDebugRenderer_OffsetMutablePtr(RecordingDebugRenderer *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `RecordingDebugRenderer` to its base class `JPH::NonCopyable`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_NonCopyable *RecordingDebugRenderer_UpcastTo_JPH_NonCopyable(const RecordingDebugRenderer *object);
+
+/// Upcasts an instance of `RecordingDebugRenderer` to its base class `JPH::NonCopyable`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_NonCopyable *RecordingDebugRenderer_MutableUpcastTo_JPH_NonCopyable(RecordingDebugRenderer *object);
+
+/// Downcasts an instance of `JPH::NonCopyable` to a derived class `RecordingDebugRenderer`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const RecordingDebugRenderer *RecordingDebugRenderer_StaticDowncastFrom_JPH_NonCopyable(const JPH_NonCopyable *object);
+
+/// Downcasts an instance of `JPH::NonCopyable` to a derived class `RecordingDebugRenderer`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API RecordingDebugRenderer *RecordingDebugRenderer_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCopyable *object);
+
+/// Upcasts an instance of `RecordingDebugRenderer` to its base class `JPH::DebugRenderer`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_DebugRenderer *RecordingDebugRenderer_UpcastTo_JPH_DebugRenderer(const RecordingDebugRenderer *object);
+
+/// Upcasts an instance of `RecordingDebugRenderer` to its base class `JPH::DebugRenderer`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_DebugRenderer *RecordingDebugRenderer_MutableUpcastTo_JPH_DebugRenderer(RecordingDebugRenderer *object);
+
+/// Downcasts an instance of `JPH::DebugRenderer` to a derived class `RecordingDebugRenderer`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const RecordingDebugRenderer *RecordingDebugRenderer_StaticDowncastFrom_JPH_DebugRenderer(const JPH_DebugRenderer *object);
+
+/// Downcasts an instance of `JPH::DebugRenderer` to a derived class `RecordingDebugRenderer`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API RecordingDebugRenderer *RecordingDebugRenderer_MutableStaticDowncastFrom_JPH_DebugRenderer(JPH_DebugRenderer *object);
+
+/// Upcasts an instance of `RecordingDebugRenderer` to its base class `JPH::DebugRendererSimple`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_DebugRendererSimple *RecordingDebugRenderer_UpcastTo_JPH_DebugRendererSimple(const RecordingDebugRenderer *object);
+
+/// Upcasts an instance of `RecordingDebugRenderer` to its base class `JPH::DebugRendererSimple`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_DebugRendererSimple *RecordingDebugRenderer_MutableUpcastTo_JPH_DebugRendererSimple(RecordingDebugRenderer *object);
+
+/// Downcasts an instance of `JPH::DebugRendererSimple` to a derived class `RecordingDebugRenderer`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const RecordingDebugRenderer *RecordingDebugRenderer_StaticDowncastFrom_JPH_DebugRendererSimple(const JPH_DebugRendererSimple *object);
+
+/// Downcasts an instance of `JPH::DebugRendererSimple` to a derived class `RecordingDebugRenderer`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API RecordingDebugRenderer *RecordingDebugRenderer_MutableStaticDowncastFrom_JPH_DebugRendererSimple(JPH_DebugRendererSimple *object);
+
+/// Destroys a heap-allocated instance of `RecordingDebugRenderer`. Does nothing if the pointer is null.
+JOLT_API void RecordingDebugRenderer_Destroy(const RecordingDebugRenderer *_this);
+
+/// Destroys a heap-allocated array of `RecordingDebugRenderer`. Does nothing if the pointer is null.
+JOLT_API void RecordingDebugRenderer_DestroyArray(const RecordingDebugRenderer *_this);
+
+/// Generated from method `RecordingDebugRenderer::Clear`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void RecordingDebugRenderer_Clear(RecordingDebugRenderer *_this);
+
+/// Generated from method `RecordingDebugRenderer::GetLineCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int RecordingDebugRenderer_GetLineCount(const RecordingDebugRenderer *_this);
+
+/// Generated from method `RecordingDebugRenderer::GetTriangleCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int RecordingDebugRenderer_GetTriangleCount(const RecordingDebugRenderer *_this);
+
+/// Generated from method `RecordingDebugRenderer::GetLine`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const DebugLineRecord *RecordingDebugRenderer_GetLine(const RecordingDebugRenderer *_this, unsigned int inIndex);
+
+/// Generated from method `RecordingDebugRenderer::GetTriangle`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const DebugTriangleRecord *RecordingDebugRenderer_GetTriangle(const RecordingDebugRenderer *_this, unsigned int inIndex);
+
+/// Generated from method `RecordingDebugRenderer::DrawLine`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inFrom` can not be null. It is a single object.
+/// Parameter `inTo` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void RecordingDebugRenderer_DrawLine(RecordingDebugRenderer *_this, const JPH_Vec3 *inFrom, const JPH_Vec3 *inTo, const JPH_Color *inColor);
+
+/// Generated from method `RecordingDebugRenderer::DrawTriangle`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inV1` can not be null. It is a single object.
+/// Parameter `inV2` can not be null. It is a single object.
+/// Parameter `inV3` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void RecordingDebugRenderer_DrawTriangle(RecordingDebugRenderer *_this, const JPH_Vec3 *inV1, const JPH_Vec3 *inV2, const JPH_Vec3 *inV3, const JPH_Color *inColor, JPH_DebugRenderer_ECastShadow inCastShadow);
+
+/// Should be called every frame by the application to provide the camera position.
+/// This is used to determine the correct LOD for rendering.
+/// Generated from method `RecordingDebugRenderer::SetCameraPos`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCameraPos` can not be null. It is a single object.
+JOLT_API void RecordingDebugRenderer_SetCameraPos(RecordingDebugRenderer *_this, const JPH_Vec3 *inCameraPos);
+
+/// Call once after frame is complete. Releases unused dynamically generated geometry assets.
+/// Generated from method `RecordingDebugRenderer::NextFrame`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void RecordingDebugRenderer_NextFrame(RecordingDebugRenderer *_this);
+
+/// Draw a marker on a position
+/// Generated from method `RecordingDebugRenderer::DrawMarker`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void RecordingDebugRenderer_DrawMarker(RecordingDebugRenderer *_this, const JPH_Vec3 *inPosition, const JPH_Color *inColor, float inSize);
+
+/// Draw an arrow
+/// Generated from method `RecordingDebugRenderer::DrawArrow`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inFrom` can not be null. It is a single object.
+/// Parameter `inTo` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void RecordingDebugRenderer_DrawArrow(RecordingDebugRenderer *_this, const JPH_Vec3 *inFrom, const JPH_Vec3 *inTo, const JPH_Color *inColor, float inSize);
+
+/// Draw coordinate system (3 arrows, x = red, y = green, z = blue)
+/// Generated from method `RecordingDebugRenderer::DrawCoordinateSystem`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inTransform` can not be null. It is a single object.
+/// Parameter `inSize` has a default argument: `1.0f`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawCoordinateSystem(RecordingDebugRenderer *_this, const JPH_Mat44 *inTransform, const float *inSize);
+
+/// Draw a plane through inPoint with normal inNormal
+/// Generated from method `RecordingDebugRenderer::DrawPlane`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPoint` can not be null. It is a single object.
+/// Parameter `inNormal` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void RecordingDebugRenderer_DrawPlane(RecordingDebugRenderer *_this, const JPH_Vec3 *inPoint, const JPH_Vec3 *inNormal, const JPH_Color *inColor, float inSize);
+
+/// Draw wireframe triangle
+/// Generated from method `RecordingDebugRenderer::DrawWireTriangle`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inV1` can not be null. It is a single object.
+/// Parameter `inV2` can not be null. It is a single object.
+/// Parameter `inV3` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void RecordingDebugRenderer_DrawWireTriangle(RecordingDebugRenderer *_this, const JPH_Vec3 *inV1, const JPH_Vec3 *inV2, const JPH_Vec3 *inV3, const JPH_Color *inColor);
+
+/// Draw wireframe sphere
+/// Generated from method `RecordingDebugRenderer::DrawWireSphere`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenter` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inLevel` has a default argument: `3`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawWireSphere(RecordingDebugRenderer *_this, const JPH_Vec3 *inCenter, float inRadius, const JPH_Color *inColor, const int *inLevel);
+
+/// Generated from method `RecordingDebugRenderer::DrawWireUnitSphere`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inMatrix` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inLevel` has a default argument: `3`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawWireUnitSphere(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, const JPH_Color *inColor, const int *inLevel);
+
+/// Draw a sphere
+/// Generated from method `RecordingDebugRenderer::DrawSphere`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenter` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawSphere(RecordingDebugRenderer *_this, const JPH_Vec3 *inCenter, float inRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
+
+/// Generated from method `RecordingDebugRenderer::DrawUnitSphere`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inMatrix` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawUnitSphere(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
+
+/// Draw a capsule with one half sphere at (0, -inHalfHeightOfCylinder, 0) and the other half sphere at (0, inHalfHeightOfCylinder, 0) and radius inRadius.
+/// The capsule will be transformed by inMatrix.
+/// Generated from method `RecordingDebugRenderer::DrawCapsule`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inMatrix` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawCapsule(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inHalfHeightOfCylinder, float inRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
+
+/// Draw a cylinder with top (0, inHalfHeight, 0) and bottom (0, -inHalfHeight, 0) and radius inRadius.
+/// The cylinder will be transformed by inMatrix
+/// Generated from method `RecordingDebugRenderer::DrawCylinder`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inMatrix` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawCylinder(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inHalfHeight, float inRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
+
+/// Draw a bottomless cone.
+/// @param inTop Top of cone, center of base is at inTop + inAxis.
+/// @param inAxis Height and direction of cone
+/// @param inPerpendicular Perpendicular vector to inAxis.
+/// @param inHalfAngle Specifies the cone angle in radians (angle measured between inAxis and cone surface).
+/// @param inLength The length of the cone.
+/// @param inColor Color to use for drawing the cone.
+/// @param inCastShadow determines if this geometry should cast a shadow or not.
+/// @param inDrawMode determines if we draw the geometry solid or in wireframe.
+/// Generated from method `RecordingDebugRenderer::DrawOpenCone`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inTop` can not be null. It is a single object.
+/// Parameter `inAxis` can not be null. It is a single object.
+/// Parameter `inPerpendicular` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawOpenCone(RecordingDebugRenderer *_this, const JPH_Vec3 *inTop, const JPH_Vec3 *inAxis, const JPH_Vec3 *inPerpendicular, float inHalfAngle, float inLength, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
+
+/// Draws cone rotation limits as used by the SwingTwistConstraintPart.
+/// @param inMatrix Matrix that transforms from constraint space to world space
+/// @param inSwingYHalfAngle See SwingTwistConstraintPart
+/// @param inSwingZHalfAngle See SwingTwistConstraintPart
+/// @param inEdgeLength Size of the edge of the cone shape
+/// @param inColor Color to use for drawing the cone.
+/// @param inCastShadow determines if this geometry should cast a shadow or not.
+/// @param inDrawMode determines if we draw the geometry solid or in wireframe.
+/// Generated from method `RecordingDebugRenderer::DrawSwingConeLimits`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inMatrix` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawSwingConeLimits(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inSwingYHalfAngle, float inSwingZHalfAngle, float inEdgeLength, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
+
+/// Draws rotation limits as used by the SwingTwistConstraintPart.
+/// @param inMatrix Matrix that transforms from constraint space to world space
+/// @param inMinSwingYAngle See SwingTwistConstraintPart
+/// @param inMaxSwingYAngle See SwingTwistConstraintPart
+/// @param inMinSwingZAngle See SwingTwistConstraintPart
+/// @param inMaxSwingZAngle See SwingTwistConstraintPart
+/// @param inEdgeLength Size of the edge of the cone shape
+/// @param inColor Color to use for drawing the cone.
+/// @param inCastShadow determines if this geometry should cast a shadow or not.
+/// @param inDrawMode determines if we draw the geometry solid or in wireframe.
+/// Generated from method `RecordingDebugRenderer::DrawSwingPyramidLimits`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inMatrix` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawSwingPyramidLimits(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inMinSwingYAngle, float inMaxSwingYAngle, float inMinSwingZAngle, float inMaxSwingZAngle, float inEdgeLength, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
+
+/// Draw a pie (part of a circle).
+/// @param inCenter The center of the circle.
+/// @param inRadius Radius of the circle.
+/// @param inNormal The plane normal in which the pie resides.
+/// @param inAxis The axis that defines an angle of 0 radians.
+/// @param inMinAngle The pie will be drawn between [inMinAngle, inMaxAngle] (in radians).
+/// @param inMaxAngle The pie will be drawn between [inMinAngle, inMaxAngle] (in radians).
+/// @param inColor Color to use for drawing the pie.
+/// @param inCastShadow determines if this geometry should cast a shadow or not.
+/// @param inDrawMode determines if we draw the geometry solid or in wireframe.
+/// Generated from method `RecordingDebugRenderer::DrawPie`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenter` can not be null. It is a single object.
+/// Parameter `inNormal` can not be null. It is a single object.
+/// Parameter `inAxis` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawPie(RecordingDebugRenderer *_this, const JPH_Vec3 *inCenter, float inRadius, const JPH_Vec3 *inNormal, const JPH_Vec3 *inAxis, float inMinAngle, float inMaxAngle, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
+
+/// Draw a tapered cylinder
+/// @param inMatrix Matrix that transforms the cylinder to world space.
+/// @param inTop Top of cylinder (along Y axis)
+/// @param inBottom Bottom of cylinder (along Y axis)
+/// @param inTopRadius Radius at the top
+/// @param inBottomRadius Radius at the bottom
+/// @param inColor Color to use for drawing the pie.
+/// @param inCastShadow determines if this geometry should cast a shadow or not.
+/// @param inDrawMode determines if we draw the geometry solid or in wireframe.
+/// Generated from method `RecordingDebugRenderer::DrawTaperedCylinder`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inMatrix` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+JOLT_API void RecordingDebugRenderer_DrawTaperedCylinder(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inTop, float inBottom, float inTopRadius, float inBottomRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
+
+/// Calculate bounding box for a batch of triangles
+/// Generated from method `RecordingDebugRenderer::sCalculateBounds`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *RecordingDebugRenderer_sCalculateBounds(const JPH_DebugRenderer_Vertex *inVertices, int inVertexCount);
 
 #ifdef __cplusplus
 } // extern "C"

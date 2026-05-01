@@ -13,9 +13,11 @@ extern "C" {
 #endif
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
 typedef struct JPH_CompoundShape JPH_CompoundShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
 typedef struct JPH_CompoundShapeSettings JPH_CompoundShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
 typedef struct JPH_CompoundShape_SubShape JPH_CompoundShape_SubShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
@@ -271,6 +273,21 @@ JOLT_API int JPH_MutableCompoundShapeSettings_sInternalGetRefCountOffset(void);
 /// Returns a pointer to a member variable of class `JPH::MutableCompoundShape` named `cGetTrianglesMinTrianglesRequested`.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const int *JPH_MutableCompoundShape_Get_cGetTrianglesMinTrianglesRequested(void);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a pointer to a member variable of class `JPH::MutableCompoundShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_MutableCompoundShape_Get_sDrawSubmergedVolumes(void);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Modifies a member variable of class `JPH::MutableCompoundShape` named `sDrawSubmergedVolumes`.
+/// When this function is called, this object will drop object references it held previously in `sDrawSubmergedVolumes`.
+JOLT_API void JPH_MutableCompoundShape_Set_sDrawSubmergedVolumes(bool value);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a mutable pointer to a member variable of class `JPH::MutableCompoundShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_MutableCompoundShape_GetMutable_sDrawSubmergedVolumes(void);
 
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_MutableCompoundShape_Destroy()` to free it when you're done using it.
@@ -563,7 +580,31 @@ JOLT_API JPH_Vec3 *JPH_MutableCompoundShape_GetSurfaceNormal(const JPH_MutableCo
 /// Parameter `outTotalVolume` can not be null. It is a single object.
 /// Parameter `outSubmergedVolume` can not be null. It is a single object.
 /// Parameter `outCenterOfBuoyancy` can not be null. It is a single object.
-JOLT_API void JPH_MutableCompoundShape_GetSubmergedVolume(const JPH_MutableCompoundShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy);
+/// Parameter `inBaseOffset` can not be null. It is a single object.
+JOLT_API void JPH_MutableCompoundShape_GetSubmergedVolume(const JPH_MutableCompoundShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset);
+
+// See Shape::Draw
+/// Generated from method `JPH::MutableCompoundShape::Draw`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_MutableCompoundShape_Draw(const JPH_MutableCompoundShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe);
+
+// See Shape::DrawGetSupportFunction
+/// Generated from method `JPH::MutableCompoundShape::DrawGetSupportFunction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_MutableCompoundShape_DrawGetSupportFunction(const JPH_MutableCompoundShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection);
+
+// See Shape::DrawGetSupportingFace
+/// Generated from method `JPH::MutableCompoundShape::DrawGetSupportingFace`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_MutableCompoundShape_DrawGetSupportingFace(const JPH_MutableCompoundShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
 
 // See Shape::GetTrianglesStart
 /// Generated from method `JPH::MutableCompoundShape::GetTrianglesStart`.

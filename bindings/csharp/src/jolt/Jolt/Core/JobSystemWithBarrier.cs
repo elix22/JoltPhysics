@@ -322,6 +322,23 @@ public static partial class JPH
             extern static void __JPH_JobSystemWithBarrier_WaitForJobs(_Underlying *_this, JPH.JobSystem.Barrier._Underlying *inBarrier);
             __JPH_JobSystemWithBarrier_WaitForJobs(_UnderlyingPtr, inBarrier is not null ? inBarrier._UnderlyingPtr : null);
         }
+
+        /// Create a new job, the job is started immediately if inNumDependencies == 0 otherwise it starts when
+        /// RemoveDependency causes the dependency counter to reach 0.
+        /// Generated from method `JPH::JobSystemWithBarrier::CreateJob`.
+        /// Parameter `inNumDependencies` defaults to `0`.
+        public unsafe JPH.JobSystem.JobHandle CreateJob(byte? inName, JPH.Const_Color inColor, JPH.Std.Const_Function_Void inJobFunction, uint? inNumDependencies = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemWithBarrier_CreateJob", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemWithBarrier_CreateJob", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.JobSystem.JobHandle._Underlying *__JPH_JobSystemWithBarrier_CreateJob(_Underlying *_this, byte *inName, JPH.Color._Underlying *inColor, JPH.Std.Const_Function_Void._Underlying *inJobFunction, uint *inNumDependencies);
+            byte __deref_inName = inName.GetValueOrDefault();
+            uint __deref_inNumDependencies = inNumDependencies.GetValueOrDefault();
+            return new(__JPH_JobSystemWithBarrier_CreateJob(_UnderlyingPtr, inName.HasValue ? &__deref_inName : null, inColor._UnderlyingPtr, inJobFunction._UnderlyingPtr, inNumDependencies.HasValue ? &__deref_inNumDependencies : null), is_owning: true);
+        }
     }
 
     /// This is used for optional parameters of class `JobSystemWithBarrier` with default arguments.

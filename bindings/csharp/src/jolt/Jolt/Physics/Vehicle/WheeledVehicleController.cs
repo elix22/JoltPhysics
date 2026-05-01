@@ -2923,6 +2923,19 @@ public static partial class JPH
             extern static void __JPH_WheeledVehicleController_SetTireMaxImpulseCallback(_Underlying *_this, JPH.Std.Const_Function_Void_From_UnsignedInt_FloatRef_FloatRef_Float_Float_Float_Float_Float_Float._Underlying *inTireMaxImpulseCallback);
             __JPH_WheeledVehicleController_SetTireMaxImpulseCallback(_UnderlyingPtr, inTireMaxImpulseCallback._UnderlyingPtr);
         }
+
+        /// Debug drawing of RPM meter
+        /// Generated from method `JPH::WheeledVehicleController::SetRPMMeter`.
+        public unsafe void SetRPMMeter(JPH.Const_Vec3 inPosition, float inSize)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleController_SetRPMMeter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleController_SetRPMMeter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_WheeledVehicleController_SetRPMMeter(_Underlying *_this, JPH.Vec3._Underlying *inPosition, float inSize);
+            __JPH_WheeledVehicleController_SetRPMMeter(_UnderlyingPtr, inPosition._UnderlyingPtr, inSize);
+        }
     }
 
     /// This is used for optional parameters of class `WheeledVehicleController` with default arguments.

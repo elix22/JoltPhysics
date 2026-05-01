@@ -16,6 +16,7 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsStepListener JPH_PhysicsStepListener; // Defined in `#include <jolt/Jolt/Physics/PhysicsStepListener.h>`.
@@ -722,6 +723,14 @@ JOLT_API bool JPH_VehicleConstraint_SolveVelocityConstraint(JPH_VehicleConstrain
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_VehicleConstraint_SolvePositionConstraint(JPH_VehicleConstraint *_this, float inDeltaTime, float inBaumgarte);
 
+/// Generated from method `JPH::VehicleConstraint::DrawConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_VehicleConstraint_DrawConstraint(const JPH_VehicleConstraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Generated from method `JPH::VehicleConstraint::DrawConstraintLimits`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_VehicleConstraint_DrawConstraintLimits(const JPH_VehicleConstraint *_this, JPH_DebugRenderer *inRenderer);
+
 /// Priority of the constraint when solving. Higher numbers have are more likely to be solved correctly.
 /// Note that if you want a deterministic simulation and you cannot guarantee the order in which constraints are added/removed, you can make the priority for all constraints unique to get a deterministic ordering.
 /// Generated from method `JPH::VehicleConstraint::GetConstraintPriority`.
@@ -771,6 +780,19 @@ JOLT_API uint64_t JPH_VehicleConstraint_GetUserData(const JPH_VehicleConstraint 
 /// Generated from method `JPH::VehicleConstraint::SetUserData`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_VehicleConstraint_SetUserData(JPH_VehicleConstraint *_this, uint64_t inUserData);
+
+/// Generated from method `JPH::VehicleConstraint::DrawConstraintReferenceFrame`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_VehicleConstraint_DrawConstraintReferenceFrame(const JPH_VehicleConstraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Size of constraint when drawing it through the debug renderer
+/// Generated from method `JPH::VehicleConstraint::GetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_VehicleConstraint_GetDrawConstraintSize(const JPH_VehicleConstraint *_this);
+
+/// Generated from method `JPH::VehicleConstraint::SetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_VehicleConstraint_SetDrawConstraintSize(JPH_VehicleConstraint *_this, float inSize);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

@@ -15,6 +15,7 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
@@ -364,6 +365,10 @@ JOLT_API void Jolt_delete_array_JPH_TwoBodyConstraint_void_ptr_void_ptr(void *in
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_TwoBodyConstraint_IsActive(const JPH_TwoBodyConstraint *_this);
 
+/// Generated from method `JPH::TwoBodyConstraint::DrawConstraintReferenceFrame`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_TwoBodyConstraint_DrawConstraintReferenceFrame(const JPH_TwoBodyConstraint *_this, JPH_DebugRenderer *inRenderer);
+
 /// Access to the connected bodies
 /// Generated from method `JPH::TwoBodyConstraint::GetBody1`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -468,6 +473,24 @@ JOLT_API bool JPH_TwoBodyConstraint_SolveVelocityConstraint(JPH_TwoBodyConstrain
 /// Generated from method `JPH::TwoBodyConstraint::SolvePositionConstraint`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_TwoBodyConstraint_SolvePositionConstraint(JPH_TwoBodyConstraint *_this, float inDeltaTime, float inBaumgarte);
+
+// Drawing interface
+/// Generated from method `JPH::TwoBodyConstraint::DrawConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_TwoBodyConstraint_DrawConstraint(const JPH_TwoBodyConstraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Generated from method `JPH::TwoBodyConstraint::DrawConstraintLimits`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_TwoBodyConstraint_DrawConstraintLimits(const JPH_TwoBodyConstraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Size of constraint when drawing it through the debug renderer
+/// Generated from method `JPH::TwoBodyConstraint::GetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_TwoBodyConstraint_GetDrawConstraintSize(const JPH_TwoBodyConstraint *_this);
+
+/// Generated from method `JPH::TwoBodyConstraint::SetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_TwoBodyConstraint_SetDrawConstraintSize(JPH_TwoBodyConstraint *_this, float inSize);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

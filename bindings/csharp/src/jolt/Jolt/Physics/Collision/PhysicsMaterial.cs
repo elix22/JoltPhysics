@@ -241,6 +241,18 @@ public static partial class JPH
             return __c_ret is not null ? *__c_ret : null;
         }
 
+        /// Generated from method `JPH::PhysicsMaterial::GetDebugColor`.
+        public unsafe JPH.Color GetDebugColor()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsMaterial_GetDebugColor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsMaterial_GetDebugColor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Color._Underlying *__JPH_PhysicsMaterial_GetDebugColor(_Underlying *_this);
+            return new(__JPH_PhysicsMaterial_GetDebugColor(_UnderlyingPtr), is_owning: true);
+        }
+
         /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
         /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
         /// the object and at that point in time it is checked that no references are left to the structure.

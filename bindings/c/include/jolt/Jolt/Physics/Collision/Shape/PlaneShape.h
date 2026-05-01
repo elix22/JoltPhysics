@@ -13,6 +13,8 @@ extern "C" {
 #endif
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
@@ -296,6 +298,21 @@ JOLT_API int JPH_PlaneShapeSettings_sInternalGetRefCountOffset(void);
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const int *JPH_PlaneShape_Get_cGetTrianglesMinTrianglesRequested(void);
 
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a pointer to a member variable of class `JPH::PlaneShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_PlaneShape_Get_sDrawSubmergedVolumes(void);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Modifies a member variable of class `JPH::PlaneShape` named `sDrawSubmergedVolumes`.
+/// When this function is called, this object will drop object references it held previously in `sDrawSubmergedVolumes`.
+JOLT_API void JPH_PlaneShape_Set_sDrawSubmergedVolumes(bool value);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a mutable pointer to a member variable of class `JPH::PlaneShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_PlaneShape_GetMutable_sDrawSubmergedVolumes(void);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_PlaneShape_Destroy()` to free it when you're done using it.
 JOLT_API JPH_PlaneShape *JPH_PlaneShape_DefaultConstruct(void);
@@ -462,6 +479,14 @@ JOLT_API const JPH_PhysicsMaterial *JPH_PlaneShape_GetMaterial_1(const JPH_Plane
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_PlaneShape_GetSurfaceNormal(const JPH_PlaneShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
 
+// See Shape::Draw
+/// Generated from method `JPH::PlaneShape::Draw`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_PlaneShape_Draw(const JPH_PlaneShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe);
+
 // See Shape::CastRay
 /// Generated from method `JPH::PlaneShape::CastRay`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -496,7 +521,8 @@ JOLT_API int JPH_PlaneShape_GetTrianglesNext(const JPH_PlaneShape *_this, JPH_Sh
 /// Parameter `outTotalVolume` can not be null. It is a single object.
 /// Parameter `outSubmergedVolume` can not be null. It is a single object.
 /// Parameter `outCenterOfBuoyancy` can not be null. It is a single object.
-JOLT_API void JPH_PlaneShape_GetSubmergedVolume(const JPH_PlaneShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy);
+/// Parameter `inBaseOffset` can not be null. It is a single object.
+JOLT_API void JPH_PlaneShape_GetSubmergedVolume(const JPH_PlaneShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset);
 
 // See Shape::GetStats
 /// Generated from method `JPH::PlaneShape::GetStats`.
@@ -569,6 +595,21 @@ JOLT_API uint64_t JPH_PlaneShape_GetSubShapeUserData(const JPH_PlaneShape *_this
 /// Parameter `outRemainder` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TransformedShape_Destroy()` to free it when you're done using it.
 JOLT_API JPH_TransformedShape *JPH_PlaneShape_GetSubShapeTransformedShape(const JPH_PlaneShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale, JPH_SubShapeID *outRemainder);
+
+/// Draw the results of the GetSupportFunction with the convex radius added back on to show any errors introduced by this process (only relevant for convex shapes)
+/// Generated from method `JPH::PlaneShape::DrawGetSupportFunction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_PlaneShape_DrawGetSupportFunction(const JPH_PlaneShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection);
+
+/// Draw the results of the GetSupportingFace function to show any errors introduced by this process (only relevant for convex shapes)
+/// Generated from method `JPH::PlaneShape::DrawGetSupportingFace`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_PlaneShape_DrawGetSupportingFace(const JPH_PlaneShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
 
 /// Test if inScale is a valid scale for this shape. Some shapes can only be scaled uniformly, compound shapes cannot handle shapes
 /// being rotated and scaled (this would cause shearing), scale can never be zero. When the scale is invalid, the function will return false.

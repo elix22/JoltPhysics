@@ -16,6 +16,7 @@
 #include <Jolt/Physics/Vehicle/VehicleConstraint.h>
 #include <Jolt/Physics/Vehicle/VehicleController.h>
 #include <Jolt/Physics/Vehicle/Wheel.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -764,6 +765,20 @@ bool JPH_VehicleConstraint_SolvePositionConstraint(JPH_VehicleConstraint *_this,
     );
 }
 
+void JPH_VehicleConstraint_DrawConstraint(const JPH_VehicleConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleConstraint *)(_this)).DrawConstraint(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+void JPH_VehicleConstraint_DrawConstraintLimits(const JPH_VehicleConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleConstraint *)(_this)).DrawConstraintLimits(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
 unsigned int JPH_VehicleConstraint_GetConstraintPriority(const JPH_VehicleConstraint *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleConstraint *)(_this)).GetConstraintPriority();
@@ -821,6 +836,25 @@ void JPH_VehicleConstraint_SetUserData(JPH_VehicleConstraint *_this, uint64_t in
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleConstraint *)(_this)).SetUserData(
         inUserData
+    );
+}
+
+void JPH_VehicleConstraint_DrawConstraintReferenceFrame(const JPH_VehicleConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleConstraint *)(_this)).DrawConstraintReferenceFrame(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+float JPH_VehicleConstraint_GetDrawConstraintSize(const JPH_VehicleConstraint *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleConstraint *)(_this)).GetDrawConstraintSize();
+}
+
+void JPH_VehicleConstraint_SetDrawConstraintSize(JPH_VehicleConstraint *_this, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleConstraint *)(_this)).SetDrawConstraintSize(
+        inSize
     );
 }
 

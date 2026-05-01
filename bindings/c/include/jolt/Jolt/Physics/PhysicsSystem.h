@@ -21,6 +21,7 @@ typedef struct JPH_BroadPhaseQuery JPH_BroadPhaseQuery; // Defined in `#include 
 typedef struct JPH_CollideShapeSettings JPH_CollideShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/CollideShape.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ContactListener JPH_ContactListener; // Defined in `#include <jolt/Jolt/Physics/Collision/ContactListener.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_DefaultBroadPhaseLayerFilter JPH_DefaultBroadPhaseLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
 typedef struct JPH_DefaultObjectLayerFilter JPH_DefaultObjectLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/ObjectLayer.h>`.
 typedef struct JPH_JobSystem JPH_JobSystem; // Defined in `#include <jolt/Jolt/Core/JobSystem.h>`.
@@ -63,6 +64,21 @@ JOLT_API const unsigned int *JPH_PhysicsSystem_Get_cMaxBodyPairsLimit(void);
 /// Returns a pointer to a member variable of class `JPH::PhysicsSystem` named `cMaxContactConstraintsLimit`.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const unsigned int *JPH_PhysicsSystem_Get_cMaxContactConstraintsLimit(void);
+
+///< Draw debug info for objects that perform continuous collision detection through the linear cast motion quality
+/// Returns a pointer to a member variable of class `JPH::PhysicsSystem` named `sDrawMotionQualityLinearCast`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_PhysicsSystem_Get_sDrawMotionQualityLinearCast(void);
+
+///< Draw debug info for objects that perform continuous collision detection through the linear cast motion quality
+/// Modifies a member variable of class `JPH::PhysicsSystem` named `sDrawMotionQualityLinearCast`.
+/// When this function is called, this object will drop object references it held previously in `sDrawMotionQualityLinearCast`.
+JOLT_API void JPH_PhysicsSystem_Set_sDrawMotionQualityLinearCast(bool value);
+
+///< Draw debug info for objects that perform continuous collision detection through the linear cast motion quality
+/// Returns a mutable pointer to a member variable of class `JPH::PhysicsSystem` named `sDrawMotionQualityLinearCast`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_PhysicsSystem_GetMutable_sDrawMotionQualityLinearCast(void);
 
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_PhysicsSystem_Destroy()` to free it when you're done using it.
@@ -269,6 +285,21 @@ JOLT_API void JPH_PhysicsSystem_RemoveStepListener(JPH_PhysicsSystem *_this, JPH
 /// Generated from method `JPH::PhysicsSystem::Update`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API JPH_EPhysicsUpdateError JPH_PhysicsSystem_Update(JPH_PhysicsSystem *_this, float inDeltaTime, int inCollisionSteps, JPH_TempAllocator *inTempAllocator, JPH_JobSystem *inJobSystem);
+
+/// Draw the constraints only (debugging purposes)
+/// Generated from method `JPH::PhysicsSystem::DrawConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_PhysicsSystem_DrawConstraints(JPH_PhysicsSystem *_this, JPH_DebugRenderer *inRenderer);
+
+/// Draw the constraint limits only (debugging purposes)
+/// Generated from method `JPH::PhysicsSystem::DrawConstraintLimits`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_PhysicsSystem_DrawConstraintLimits(JPH_PhysicsSystem *_this, JPH_DebugRenderer *inRenderer);
+
+/// Draw the constraint reference frames only (debugging purposes)
+/// Generated from method `JPH::PhysicsSystem::DrawConstraintReferenceFrame`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_PhysicsSystem_DrawConstraintReferenceFrame(JPH_PhysicsSystem *_this, JPH_DebugRenderer *inRenderer);
 
 /// Set gravity value
 /// Generated from method `JPH::PhysicsSystem::SetGravity`.

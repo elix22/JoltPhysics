@@ -9,9 +9,12 @@
 extern "C" {
 #endif
 
+typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
 typedef struct JPH_JobSystem JPH_JobSystem; // Defined in `#include <jolt/Jolt/Core/JobSystem.h>`.
 typedef struct JPH_JobSystem_Barrier JPH_JobSystem_Barrier; // Defined in `#include <jolt/Jolt/Core/JobSystem.h>`.
+typedef struct JPH_JobSystem_JobHandle JPH_JobSystem_JobHandle; // Defined in `#include <jolt/Jolt/Core/JobSystem.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
+typedef struct Jolt_std_function_void Jolt_std_function_void; // Defined in `#include <std_function_void.h>`.
 
 
 /// Implementation of the Barrier class for a JobSystem
@@ -95,6 +98,16 @@ JOLT_API void JPH_JobSystemWithBarrier_WaitForJobs(JPH_JobSystemWithBarrier *_th
 /// Generated from method `JPH::JobSystemWithBarrier::GetMaxConcurrency`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API int JPH_JobSystemWithBarrier_GetMaxConcurrency(const JPH_JobSystemWithBarrier *_this);
+
+/// Create a new job, the job is started immediately if inNumDependencies == 0 otherwise it starts when
+/// RemoveDependency causes the dependency counter to reach 0.
+/// Generated from method `JPH::JobSystemWithBarrier::CreateJob`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inJobFunction` can not be null. It is a single object.
+/// Parameter `inNumDependencies` has a default argument: `0`, pass a null pointer to use it.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_JobSystem_JobHandle_Destroy()` to free it when you're done using it.
+JOLT_API JPH_JobSystem_JobHandle *JPH_JobSystemWithBarrier_CreateJob(JPH_JobSystemWithBarrier *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, const unsigned int *inNumDependencies);
 
 /// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
 /// The reference to the parameter `ptr` might be preserved in the return value.

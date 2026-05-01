@@ -12,6 +12,7 @@
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/Constraints/FixedConstraint.h>
 #include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -717,6 +718,13 @@ bool JPH_FixedConstraint_SolvePositionConstraint(JPH_FixedConstraint *_this, flo
     );
 }
 
+void JPH_FixedConstraint_DrawConstraint(const JPH_FixedConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraint *)(_this)).DrawConstraint(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
 JPH_Mat44 *JPH_FixedConstraint_GetConstraintToBody1Matrix(const JPH_FixedConstraint *_this)
 {
     return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraint *)(_this)).GetConstraintToBody1Matrix());
@@ -740,6 +748,13 @@ JPH_Vec3 *JPH_FixedConstraint_GetTotalLambdaRotation(const JPH_FixedConstraint *
 bool JPH_FixedConstraint_IsActive(const JPH_FixedConstraint *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraint *)(_this)).IsActive();
+}
+
+void JPH_FixedConstraint_DrawConstraintReferenceFrame(const JPH_FixedConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraint *)(_this)).DrawConstraintReferenceFrame(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
 }
 
 JPH_Body *JPH_FixedConstraint_GetBody1(const JPH_FixedConstraint *_this)
@@ -809,6 +824,25 @@ void JPH_FixedConstraint_SetUserData(JPH_FixedConstraint *_this, uint64_t inUser
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::FixedConstraint *)(_this)).SetUserData(
         inUserData
+    );
+}
+
+void JPH_FixedConstraint_DrawConstraintLimits(const JPH_FixedConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraint *)(_this)).DrawConstraintLimits(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+float JPH_FixedConstraint_GetDrawConstraintSize(const JPH_FixedConstraint *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::FixedConstraint *)(_this)).GetDrawConstraintSize();
+}
+
+void JPH_FixedConstraint_SetDrawConstraintSize(JPH_FixedConstraint *_this, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::FixedConstraint *)(_this)).SetDrawConstraintSize(
+        inSize
     );
 }
 

@@ -14,10 +14,12 @@ extern "C" {
 #endif
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
 typedef struct JPH_ConvexShape JPH_ConvexShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
 typedef struct JPH_ConvexShapeSettings JPH_ConvexShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
 typedef struct JPH_ConvexShape_Support JPH_ConvexShape_Support; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
 typedef struct JPH_ConvexShape_SupportBuffer JPH_ConvexShape_SupportBuffer; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
@@ -331,6 +333,21 @@ JOLT_API int JPH_BoxShapeSettings_sInternalGetRefCountOffset(void);
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const int *JPH_BoxShape_Get_cGetTrianglesMinTrianglesRequested(void);
 
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a pointer to a member variable of class `JPH::BoxShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_BoxShape_Get_sDrawSubmergedVolumes(void);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Modifies a member variable of class `JPH::BoxShape` named `sDrawSubmergedVolumes`.
+/// When this function is called, this object will drop object references it held previously in `sDrawSubmergedVolumes`.
+JOLT_API void JPH_BoxShape_Set_sDrawSubmergedVolumes(bool value);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a mutable pointer to a member variable of class `JPH::BoxShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_BoxShape_GetMutable_sDrawSubmergedVolumes(void);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_BoxShape_Destroy()` to free it when you're done using it.
 JOLT_API JPH_BoxShape *JPH_BoxShape_DefaultConstruct(void);
@@ -505,6 +522,14 @@ JOLT_API JPH_Vec3 *JPH_BoxShape_GetSurfaceNormal(const JPH_BoxShape *_this, cons
 /// Parameter `inScale` can not be null. It is a single object.
 JOLT_API const JPH_ConvexShape_Support *JPH_BoxShape_GetSupportFunction(const JPH_BoxShape *_this, JPH_ConvexShape_ESupportMode inMode, JPH_ConvexShape_SupportBuffer *inBuffer, const JPH_Vec3 *inScale);
 
+// See Shape::Draw
+/// Generated from method `JPH::BoxShape::Draw`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_BoxShape_Draw(const JPH_BoxShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe);
+
 // See Shape::CastRay
 /// Generated from method `JPH::BoxShape::CastRay`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -564,7 +589,8 @@ JOLT_API unsigned int JPH_BoxShape_GetSubShapeIDBitsRecursive(const JPH_BoxShape
 /// Parameter `outTotalVolume` can not be null. It is a single object.
 /// Parameter `outSubmergedVolume` can not be null. It is a single object.
 /// Parameter `outCenterOfBuoyancy` can not be null. It is a single object.
-JOLT_API void JPH_BoxShape_GetSubmergedVolume(const JPH_BoxShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy);
+/// Parameter `inBaseOffset` can not be null. It is a single object.
+JOLT_API void JPH_BoxShape_GetSubmergedVolume(const JPH_BoxShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset);
 
 /// Material of the shape
 /// Generated from method `JPH::BoxShape::SetMaterial`.
@@ -580,6 +606,21 @@ JOLT_API void JPH_BoxShape_SetDensity(JPH_BoxShape *_this, float inDensity);
 /// Generated from method `JPH::BoxShape::GetDensity`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_BoxShape_GetDensity(const JPH_BoxShape *_this);
+
+// See Shape::DrawGetSupportFunction
+/// Generated from method `JPH::BoxShape::DrawGetSupportFunction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_BoxShape_DrawGetSupportFunction(const JPH_BoxShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection);
+
+// See Shape::DrawGetSupportingFace
+/// Generated from method `JPH::BoxShape::DrawGetSupportingFace`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_BoxShape_DrawGetSupportingFace(const JPH_BoxShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
 
 /// User data (to be used freely by the application)
 /// Generated from method `JPH::BoxShape::GetUserData`.

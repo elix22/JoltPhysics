@@ -658,6 +658,32 @@ public static partial class JPH
             return __JPH_VehicleEngine_GetTorque(_UnderlyingPtr, inAcceleration);
         }
 
+        // Function that converts RPM to an angle in radians for debugging purposes
+        /// Generated from method `JPH::VehicleEngine::ConvertRPMToAngle`.
+        public unsafe float ConvertRPMToAngle(float inRPM)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleEngine_ConvertRPMToAngle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleEngine_ConvertRPMToAngle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JPH_VehicleEngine_ConvertRPMToAngle(_Underlying *_this, float inRPM);
+            return __JPH_VehicleEngine_ConvertRPMToAngle(_UnderlyingPtr, inRPM);
+        }
+
+        /// Debug draw a RPM meter
+        /// Generated from method `JPH::VehicleEngine::DrawRPM`.
+        public unsafe void DrawRPM(JPH.DebugRenderer? inRenderer, JPH.Const_Vec3 inPosition, JPH.Const_Vec3 inForward, JPH.Const_Vec3 inUp, float inSize, float inShiftDownRPM, float inShiftUpRPM)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleEngine_DrawRPM", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleEngine_DrawRPM", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_VehicleEngine_DrawRPM(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer, JPH.Vec3._Underlying *inPosition, JPH.Vec3._Underlying *inForward, JPH.Vec3._Underlying *inUp, float inSize, float inShiftDownRPM, float inShiftUpRPM);
+            __JPH_VehicleEngine_DrawRPM(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null, inPosition._UnderlyingPtr, inForward._UnderlyingPtr, inUp._UnderlyingPtr, inSize, inShiftDownRPM, inShiftUpRPM);
+        }
+
         /// If the engine is idle we allow the vehicle to sleep
         /// Generated from method `JPH::VehicleEngine::AllowSleep`.
         public unsafe bool AllowSleep()

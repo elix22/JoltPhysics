@@ -16,6 +16,9 @@
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
 #include <Jolt/Physics/SoftBody/SoftBodyMotionProperties.h>
 #include <Jolt/Physics/PhysicsSystem.h>
+#ifdef JPH_DEBUG_RENDERER
+#include <Jolt/Renderer/DebugRendererSimple.h>
+#endif
 
 /// Minimal helpers for Jolt global lifecycle.
 /// These are the only hand-implemented methods; their C/C# bindings are machine-generated.
@@ -168,3 +171,54 @@ struct EstimateResponseContactListener : public JPH::ContactListener
 
     virtual void OnContactAdded(const JPH::Body& inBody1, const JPH::Body& inBody2, const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings) override;
 };
+
+// ---------------------------------------------------------------------------
+// DebugRenderer support — only compiled when JPH_DEBUG_RENDERER is defined
+// (set DEBUG_RENDERER_IN_DEBUG_AND_RELEASE=ON in CMakeLists.txt).
+// ---------------------------------------------------------------------------
+#ifdef JPH_DEBUG_RENDERER
+
+/// Plain record of a single DrawLine call captured by RecordingDebugRenderer.
+struct DebugLineRecord
+{
+    JPH::RVec3 mFrom;
+    JPH::RVec3 mTo;
+    JPH::Color mColor;
+};
+
+/// Plain record of a single DrawTriangle call captured by RecordingDebugRenderer.
+struct DebugTriangleRecord
+{
+    JPH::RVec3 mV1;
+    JPH::RVec3 mV2;
+    JPH::RVec3 mV3;
+    JPH::Color mColor;
+};
+
+/// Concrete DebugRenderer that records all DrawLine / DrawTriangle calls so
+/// C# can inspect them.  Inherits DebugRendererSimple to avoid re-implementing
+/// CreateTriangleBatch and DrawGeometry.
+///
+/// Lifecycle: only one instance may exist at a time (enforced by
+/// DebugRenderer's singleton assert).  Call Clear() between frames.
+struct RecordingDebugRenderer : public JPH::DebugRendererSimple
+{
+    JPH::Array<DebugLineRecord>     mLines;
+    JPH::Array<DebugTriangleRecord> mTriangles;
+
+    void         Clear()                              { mLines.clear(); mTriangles.clear(); }
+    unsigned int GetLineCount()             const     { return (unsigned int)mLines.size(); }
+    unsigned int GetTriangleCount()         const     { return (unsigned int)mTriangles.size(); }
+    const DebugLineRecord&     GetLine(unsigned int inIndex)     const { return mLines[inIndex]; }
+    const DebugTriangleRecord& GetTriangle(unsigned int inIndex) const { return mTriangles[inIndex]; }
+
+    virtual void DrawLine(JPH::RVec3Arg inFrom, JPH::RVec3Arg inTo, JPH::ColorArg inColor) override;
+    virtual void DrawTriangle(JPH::RVec3Arg inV1, JPH::RVec3Arg inV2, JPH::RVec3Arg inV3, JPH::ColorArg inColor, ECastShadow inCastShadow) override;
+
+private:
+    // DrawText3D uses std::string_view which cannot be marshalled; implemented
+    // as a no-op and kept private so mrbind does not try to expose it.
+    virtual void DrawText3D(JPH::RVec3Arg, const JPH::string_view&, JPH::ColorArg, float) override {}
+};
+
+#endif // JPH_DEBUG_RENDERER

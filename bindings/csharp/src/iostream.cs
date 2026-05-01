@@ -124,6 +124,19 @@ public static partial class JPH
 
             /// To String
             /// Generated from function `JPH::operator<<`.
+            public unsafe JPH.Std.Ostream Lshift(JPH.Const_Float2 inV)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_print_JPH_Float2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_print_JPH_Float2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Std.Ostream._Underlying *__Jolt_print_JPH_Float2(_Underlying *inStream, JPH.Const_Float2._Underlying *inV);
+                return new(__Jolt_print_JPH_Float2(_UnderlyingPtr, inV._UnderlyingPtr), is_owning: false);
+            }
+
+            /// To String
+            /// Generated from function `JPH::operator<<`.
             public unsafe JPH.Std.Ostream Lshift(JPH.Const_Vector_2 inV)
             {
                 #if __IOS__
@@ -146,19 +159,6 @@ public static partial class JPH
                 #endif
                 extern static JPH.Std.Ostream._Underlying *__Jolt_print_JPH_Matrix_2_2(_Underlying *inStream, JPH.Const_Matrix_2_2._Underlying *inM);
                 return new(__Jolt_print_JPH_Matrix_2_2(_UnderlyingPtr, inM._UnderlyingPtr), is_owning: false);
-            }
-
-            /// To String
-            /// Generated from function `JPH::operator<<`.
-            public unsafe JPH.Std.Ostream Lshift(JPH.Const_Float2 inV)
-            {
-                #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_print_JPH_Float2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-                #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_print_JPH_Float2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-                #endif
-                extern static JPH.Std.Ostream._Underlying *__Jolt_print_JPH_Float2(_Underlying *inStream, JPH.Const_Float2._Underlying *inV);
-                return new(__Jolt_print_JPH_Float2(_UnderlyingPtr, inV._UnderlyingPtr), is_owning: false);
             }
         }
 

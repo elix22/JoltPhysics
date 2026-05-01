@@ -1877,4 +1877,1211 @@ public static partial class JPH
         public _InOptConst_EstimateResponseContactListener(Const_EstimateResponseContactListener value) {Opt = value;}
         public static implicit operator _InOptConst_EstimateResponseContactListener(Const_EstimateResponseContactListener value) {return new(value);}
     }
+
+    /// Plain record of a single DrawLine call captured by RecordingDebugRenderer.
+    /// Generated from class `DebugLineRecord`.
+    /// This is the const half of the class.
+    public class Const_DebugLineRecord : JPH.Object<Const_DebugLineRecord>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __DebugLineRecord_Destroy(_Underlying *_this);
+            __DebugLineRecord_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_DebugLineRecord() {Dispose(false);}
+
+        public unsafe JPH.Const_Vec3 mFrom
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_Get_mFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_Get_mFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Vec3._Underlying *__DebugLineRecord_Get_mFrom(_Underlying *_this);
+                JPH.Const_Vec3 __ret;
+                __ret = new(__DebugLineRecord_Get_mFrom(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public unsafe JPH.Const_Vec3 mTo
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_Get_mTo", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_Get_mTo", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Vec3._Underlying *__DebugLineRecord_Get_mTo(_Underlying *_this);
+                JPH.Const_Vec3 __ret;
+                __ret = new(__DebugLineRecord_Get_mTo(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public unsafe JPH.Const_Color mColor
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_Get_mColor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_Get_mColor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Color._Underlying *__DebugLineRecord_Get_mColor(_Underlying *_this);
+                JPH.Const_Color __ret;
+                __ret = new(__DebugLineRecord_Get_mColor(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        internal unsafe Const_DebugLineRecord(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_DebugLineRecord() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugLineRecord._Underlying *__DebugLineRecord_DefaultConstruct();
+            _UnderlyingPtr = __DebugLineRecord_DefaultConstruct();
+        }
+
+        /// Constructs `DebugLineRecord` elementwise.
+        public unsafe Const_DebugLineRecord(JPH.Const_Vec3 mFrom, JPH.Const_Vec3 mTo, JPH.Const_Color mColor) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugLineRecord._Underlying *__DebugLineRecord_ConstructFrom(JPH.Vec3._Underlying *mFrom, JPH.Vec3._Underlying *mTo, JPH.Color._Underlying *mColor);
+            _UnderlyingPtr = __DebugLineRecord_ConstructFrom(mFrom._UnderlyingPtr, mTo._UnderlyingPtr, mColor._UnderlyingPtr);
+            _KeepAlive(mFrom);
+            _KeepAlive(mTo);
+            _KeepAlive(mColor);
+        }
+
+        /// Generated from constructor `DebugLineRecord::DebugLineRecord`.
+        public unsafe Const_DebugLineRecord(JPH.Const_DebugLineRecord _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugLineRecord._Underlying *__DebugLineRecord_ConstructFromAnother(JPH.DebugLineRecord._Underlying *_other);
+            _UnderlyingPtr = __DebugLineRecord_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `DebugLineRecord::DebugLineRecord`.
+        public Const_DebugLineRecord(DebugLineRecord _other) : this((Const_DebugLineRecord)_other) {}
+    }
+
+    /// Plain record of a single DrawLine call captured by RecordingDebugRenderer.
+    /// Generated from class `DebugLineRecord`.
+    /// This is the non-const half of the class.
+    public class DebugLineRecord : Const_DebugLineRecord
+    {
+        public new unsafe JPH.Vec3 mFrom
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_GetMutable_mFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_GetMutable_mFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Vec3._Underlying *__DebugLineRecord_GetMutable_mFrom(_Underlying *_this);
+                JPH.Vec3 __ret;
+                __ret = new(__DebugLineRecord_GetMutable_mFrom(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public new unsafe JPH.Vec3 mTo
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_GetMutable_mTo", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_GetMutable_mTo", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Vec3._Underlying *__DebugLineRecord_GetMutable_mTo(_Underlying *_this);
+                JPH.Vec3 __ret;
+                __ret = new(__DebugLineRecord_GetMutable_mTo(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public new unsafe JPH.Color mColor
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_GetMutable_mColor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_GetMutable_mColor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Color._Underlying *__DebugLineRecord_GetMutable_mColor(_Underlying *_this);
+                JPH.Color __ret;
+                __ret = new(__DebugLineRecord_GetMutable_mColor(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        internal unsafe DebugLineRecord(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe DebugLineRecord() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugLineRecord._Underlying *__DebugLineRecord_DefaultConstruct();
+            _UnderlyingPtr = __DebugLineRecord_DefaultConstruct();
+        }
+
+        /// Constructs `DebugLineRecord` elementwise.
+        public unsafe DebugLineRecord(JPH.Const_Vec3 mFrom, JPH.Const_Vec3 mTo, JPH.Const_Color mColor) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugLineRecord._Underlying *__DebugLineRecord_ConstructFrom(JPH.Vec3._Underlying *mFrom, JPH.Vec3._Underlying *mTo, JPH.Color._Underlying *mColor);
+            _UnderlyingPtr = __DebugLineRecord_ConstructFrom(mFrom._UnderlyingPtr, mTo._UnderlyingPtr, mColor._UnderlyingPtr);
+            _KeepAlive(mFrom);
+            _KeepAlive(mTo);
+            _KeepAlive(mColor);
+        }
+
+        /// Generated from constructor `DebugLineRecord::DebugLineRecord`.
+        public unsafe DebugLineRecord(JPH.Const_DebugLineRecord _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugLineRecord._Underlying *__DebugLineRecord_ConstructFromAnother(JPH.DebugLineRecord._Underlying *_other);
+            _UnderlyingPtr = __DebugLineRecord_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `DebugLineRecord::DebugLineRecord`.
+        public DebugLineRecord(DebugLineRecord _other) : this((Const_DebugLineRecord)_other) {}
+
+        /// Generated from method `DebugLineRecord::operator=`.
+        public unsafe JPH.DebugLineRecord Assign(JPH.Const_DebugLineRecord _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugLineRecord_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugLineRecord_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugLineRecord._Underlying *__DebugLineRecord_AssignFromAnother(_Underlying *_this, JPH.DebugLineRecord._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__DebugLineRecord_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+    }
+
+    /// This is used for optional parameters of class `DebugLineRecord` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_DebugLineRecord`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `DebugLineRecord`/`Const_DebugLineRecord` directly.
+    public class _InOptMut_DebugLineRecord
+    {
+        public DebugLineRecord? Opt;
+
+        public _InOptMut_DebugLineRecord() {}
+        public _InOptMut_DebugLineRecord(DebugLineRecord value) {Opt = value;}
+        public static implicit operator _InOptMut_DebugLineRecord(DebugLineRecord value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `DebugLineRecord` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_DebugLineRecord`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `DebugLineRecord`/`Const_DebugLineRecord` to pass it to the function.
+    public class _InOptConst_DebugLineRecord
+    {
+        public Const_DebugLineRecord? Opt;
+
+        public _InOptConst_DebugLineRecord() {}
+        public _InOptConst_DebugLineRecord(Const_DebugLineRecord value) {Opt = value;}
+        public static implicit operator _InOptConst_DebugLineRecord(Const_DebugLineRecord value) {return new(value);}
+    }
+
+    /// Plain record of a single DrawTriangle call captured by RecordingDebugRenderer.
+    /// Generated from class `DebugTriangleRecord`.
+    /// This is the const half of the class.
+    public class Const_DebugTriangleRecord : JPH.Object<Const_DebugTriangleRecord>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __DebugTriangleRecord_Destroy(_Underlying *_this);
+            __DebugTriangleRecord_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_DebugTriangleRecord() {Dispose(false);}
+
+        public unsafe JPH.Const_Vec3 mv1
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_Get_mV1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_Get_mV1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Vec3._Underlying *__DebugTriangleRecord_Get_mV1(_Underlying *_this);
+                JPH.Const_Vec3 __ret;
+                __ret = new(__DebugTriangleRecord_Get_mV1(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public unsafe JPH.Const_Vec3 mv2
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_Get_mV2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_Get_mV2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Vec3._Underlying *__DebugTriangleRecord_Get_mV2(_Underlying *_this);
+                JPH.Const_Vec3 __ret;
+                __ret = new(__DebugTriangleRecord_Get_mV2(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public unsafe JPH.Const_Vec3 mv3
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_Get_mV3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_Get_mV3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Vec3._Underlying *__DebugTriangleRecord_Get_mV3(_Underlying *_this);
+                JPH.Const_Vec3 __ret;
+                __ret = new(__DebugTriangleRecord_Get_mV3(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public unsafe JPH.Const_Color mColor
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_Get_mColor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_Get_mColor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Color._Underlying *__DebugTriangleRecord_Get_mColor(_Underlying *_this);
+                JPH.Const_Color __ret;
+                __ret = new(__DebugTriangleRecord_Get_mColor(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        internal unsafe Const_DebugTriangleRecord(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_DebugTriangleRecord() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugTriangleRecord._Underlying *__DebugTriangleRecord_DefaultConstruct();
+            _UnderlyingPtr = __DebugTriangleRecord_DefaultConstruct();
+        }
+
+        /// Constructs `DebugTriangleRecord` elementwise.
+        public unsafe Const_DebugTriangleRecord(JPH.Const_Vec3 mV1, JPH.Const_Vec3 mV2, JPH.Const_Vec3 mV3, JPH.Const_Color mColor) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugTriangleRecord._Underlying *__DebugTriangleRecord_ConstructFrom(JPH.Vec3._Underlying *mV1, JPH.Vec3._Underlying *mV2, JPH.Vec3._Underlying *mV3, JPH.Color._Underlying *mColor);
+            _UnderlyingPtr = __DebugTriangleRecord_ConstructFrom(mV1._UnderlyingPtr, mV2._UnderlyingPtr, mV3._UnderlyingPtr, mColor._UnderlyingPtr);
+            _KeepAlive(mV1);
+            _KeepAlive(mV2);
+            _KeepAlive(mV3);
+            _KeepAlive(mColor);
+        }
+
+        /// Generated from constructor `DebugTriangleRecord::DebugTriangleRecord`.
+        public unsafe Const_DebugTriangleRecord(JPH.Const_DebugTriangleRecord _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugTriangleRecord._Underlying *__DebugTriangleRecord_ConstructFromAnother(JPH.DebugTriangleRecord._Underlying *_other);
+            _UnderlyingPtr = __DebugTriangleRecord_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `DebugTriangleRecord::DebugTriangleRecord`.
+        public Const_DebugTriangleRecord(DebugTriangleRecord _other) : this((Const_DebugTriangleRecord)_other) {}
+    }
+
+    /// Plain record of a single DrawTriangle call captured by RecordingDebugRenderer.
+    /// Generated from class `DebugTriangleRecord`.
+    /// This is the non-const half of the class.
+    public class DebugTriangleRecord : Const_DebugTriangleRecord
+    {
+        public new unsafe JPH.Vec3 mv1
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_GetMutable_mV1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_GetMutable_mV1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Vec3._Underlying *__DebugTriangleRecord_GetMutable_mV1(_Underlying *_this);
+                JPH.Vec3 __ret;
+                __ret = new(__DebugTriangleRecord_GetMutable_mV1(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public new unsafe JPH.Vec3 mv2
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_GetMutable_mV2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_GetMutable_mV2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Vec3._Underlying *__DebugTriangleRecord_GetMutable_mV2(_Underlying *_this);
+                JPH.Vec3 __ret;
+                __ret = new(__DebugTriangleRecord_GetMutable_mV2(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public new unsafe JPH.Vec3 mv3
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_GetMutable_mV3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_GetMutable_mV3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Vec3._Underlying *__DebugTriangleRecord_GetMutable_mV3(_Underlying *_this);
+                JPH.Vec3 __ret;
+                __ret = new(__DebugTriangleRecord_GetMutable_mV3(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public new unsafe JPH.Color mColor
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_GetMutable_mColor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_GetMutable_mColor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Color._Underlying *__DebugTriangleRecord_GetMutable_mColor(_Underlying *_this);
+                JPH.Color __ret;
+                __ret = new(__DebugTriangleRecord_GetMutable_mColor(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        internal unsafe DebugTriangleRecord(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe DebugTriangleRecord() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugTriangleRecord._Underlying *__DebugTriangleRecord_DefaultConstruct();
+            _UnderlyingPtr = __DebugTriangleRecord_DefaultConstruct();
+        }
+
+        /// Constructs `DebugTriangleRecord` elementwise.
+        public unsafe DebugTriangleRecord(JPH.Const_Vec3 mV1, JPH.Const_Vec3 mV2, JPH.Const_Vec3 mV3, JPH.Const_Color mColor) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugTriangleRecord._Underlying *__DebugTriangleRecord_ConstructFrom(JPH.Vec3._Underlying *mV1, JPH.Vec3._Underlying *mV2, JPH.Vec3._Underlying *mV3, JPH.Color._Underlying *mColor);
+            _UnderlyingPtr = __DebugTriangleRecord_ConstructFrom(mV1._UnderlyingPtr, mV2._UnderlyingPtr, mV3._UnderlyingPtr, mColor._UnderlyingPtr);
+            _KeepAlive(mV1);
+            _KeepAlive(mV2);
+            _KeepAlive(mV3);
+            _KeepAlive(mColor);
+        }
+
+        /// Generated from constructor `DebugTriangleRecord::DebugTriangleRecord`.
+        public unsafe DebugTriangleRecord(JPH.Const_DebugTriangleRecord _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugTriangleRecord._Underlying *__DebugTriangleRecord_ConstructFromAnother(JPH.DebugTriangleRecord._Underlying *_other);
+            _UnderlyingPtr = __DebugTriangleRecord_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `DebugTriangleRecord::DebugTriangleRecord`.
+        public DebugTriangleRecord(DebugTriangleRecord _other) : this((Const_DebugTriangleRecord)_other) {}
+
+        /// Generated from method `DebugTriangleRecord::operator=`.
+        public unsafe JPH.DebugTriangleRecord Assign(JPH.Const_DebugTriangleRecord _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "DebugTriangleRecord_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "DebugTriangleRecord_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugTriangleRecord._Underlying *__DebugTriangleRecord_AssignFromAnother(_Underlying *_this, JPH.DebugTriangleRecord._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__DebugTriangleRecord_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+    }
+
+    /// This is used for optional parameters of class `DebugTriangleRecord` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_DebugTriangleRecord`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `DebugTriangleRecord`/`Const_DebugTriangleRecord` directly.
+    public class _InOptMut_DebugTriangleRecord
+    {
+        public DebugTriangleRecord? Opt;
+
+        public _InOptMut_DebugTriangleRecord() {}
+        public _InOptMut_DebugTriangleRecord(DebugTriangleRecord value) {Opt = value;}
+        public static implicit operator _InOptMut_DebugTriangleRecord(DebugTriangleRecord value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `DebugTriangleRecord` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_DebugTriangleRecord`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `DebugTriangleRecord`/`Const_DebugTriangleRecord` to pass it to the function.
+    public class _InOptConst_DebugTriangleRecord
+    {
+        public Const_DebugTriangleRecord? Opt;
+
+        public _InOptConst_DebugTriangleRecord() {}
+        public _InOptConst_DebugTriangleRecord(Const_DebugTriangleRecord value) {Opt = value;}
+        public static implicit operator _InOptConst_DebugTriangleRecord(Const_DebugTriangleRecord value) {return new(value);}
+    }
+
+    /// Concrete DebugRenderer that records all DrawLine / DrawTriangle calls so
+    /// C# can inspect them.  Inherits DebugRendererSimple to avoid re-implementing
+    /// CreateTriangleBatch and DrawGeometry.
+    ///
+    /// Lifecycle: only one instance may exist at a time (enforced by
+    /// DebugRenderer's singleton assert).  Call Clear() between frames.
+    /// Generated from class `RecordingDebugRenderer`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::DebugRendererSimple`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::NonCopyable`
+    ///     `JPH::DebugRenderer`
+    /// This is the const half of the class.
+    public class Const_RecordingDebugRenderer : JPH.Object<Const_RecordingDebugRenderer>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_Destroy(_Underlying *_this);
+            __RecordingDebugRenderer_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_RecordingDebugRenderer() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator JPH.Const_NonCopyable(Const_RecordingDebugRenderer self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_NonCopyable._Underlying *__RecordingDebugRenderer_UpcastTo_JPH_NonCopyable(_Underlying *_this);
+            JPH.Const_NonCopyable ret = new(__RecordingDebugRenderer_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+        public static unsafe implicit operator JPH.Const_DebugRenderer(Const_RecordingDebugRenderer self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_DebugRenderer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_DebugRenderer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_DebugRenderer._Underlying *__RecordingDebugRenderer_UpcastTo_JPH_DebugRenderer(_Underlying *_this);
+            JPH.Const_DebugRenderer ret = new(__RecordingDebugRenderer_UpcastTo_JPH_DebugRenderer(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+        public static unsafe implicit operator JPH.Const_DebugRendererSimple(Const_RecordingDebugRenderer self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_DebugRendererSimple", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_DebugRendererSimple", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_DebugRendererSimple._Underlying *__RecordingDebugRenderer_UpcastTo_JPH_DebugRendererSimple(_Underlying *_this);
+            JPH.Const_DebugRendererSimple ret = new(__RecordingDebugRenderer_UpcastTo_JPH_DebugRendererSimple(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        /// Singleton instance
+        public static unsafe JPH.DebugRenderer? SInstance
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_Get_sInstance", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_Get_sInstance", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.DebugRenderer._Underlying **__RecordingDebugRenderer_Get_sInstance();
+                var ptr = __RecordingDebugRenderer_Get_sInstance();
+                JPH.DebugRenderer? value = null;
+                if (*ptr is not null)
+                    value = new(*ptr, is_owning: false);
+                return value;
+            }
+        }
+
+        internal unsafe Const_RecordingDebugRenderer(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_RecordingDebugRenderer() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RecordingDebugRenderer._Underlying *__RecordingDebugRenderer_DefaultConstruct();
+            _UnderlyingPtr = __RecordingDebugRenderer_DefaultConstruct();
+        }
+
+        /// Generated from method `RecordingDebugRenderer::GetLineCount`.
+        public unsafe uint GetLineCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_GetLineCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_GetLineCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __RecordingDebugRenderer_GetLineCount(_Underlying *_this);
+            return __RecordingDebugRenderer_GetLineCount(_UnderlyingPtr);
+        }
+
+        /// Generated from method `RecordingDebugRenderer::GetTriangleCount`.
+        public unsafe uint GetTriangleCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_GetTriangleCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_GetTriangleCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __RecordingDebugRenderer_GetTriangleCount(_Underlying *_this);
+            return __RecordingDebugRenderer_GetTriangleCount(_UnderlyingPtr);
+        }
+
+        /// Generated from method `RecordingDebugRenderer::GetLine`.
+        public unsafe JPH.Const_DebugLineRecord GetLine(uint inIndex)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_GetLine", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_GetLine", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_DebugLineRecord._Underlying *__RecordingDebugRenderer_GetLine(_Underlying *_this, uint inIndex);
+            return new(__RecordingDebugRenderer_GetLine(_UnderlyingPtr, inIndex), is_owning: false);
+        }
+
+        /// Generated from method `RecordingDebugRenderer::GetTriangle`.
+        public unsafe JPH.Const_DebugTriangleRecord GetTriangle(uint inIndex)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_GetTriangle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_GetTriangle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_DebugTriangleRecord._Underlying *__RecordingDebugRenderer_GetTriangle(_Underlying *_this, uint inIndex);
+            return new(__RecordingDebugRenderer_GetTriangle(_UnderlyingPtr, inIndex), is_owning: false);
+        }
+
+        /// Calculate bounding box for a batch of triangles
+        /// Generated from method `RecordingDebugRenderer::sCalculateBounds`.
+        public static unsafe JPH.AABox SCalculateBounds(JPH.DebugRenderer.Const_Vertex? inVertices, int inVertexCount)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_sCalculateBounds", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_sCalculateBounds", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.AABox._Underlying *__RecordingDebugRenderer_sCalculateBounds(JPH.DebugRenderer.Const_Vertex._Underlying *inVertices, int inVertexCount);
+            return new(__RecordingDebugRenderer_sCalculateBounds(inVertices is not null ? inVertices._UnderlyingPtr : null, inVertexCount), is_owning: true);
+        }
+    }
+
+    /// Concrete DebugRenderer that records all DrawLine / DrawTriangle calls so
+    /// C# can inspect them.  Inherits DebugRendererSimple to avoid re-implementing
+    /// CreateTriangleBatch and DrawGeometry.
+    ///
+    /// Lifecycle: only one instance may exist at a time (enforced by
+    /// DebugRenderer's singleton assert).  Call Clear() between frames.
+    /// Generated from class `RecordingDebugRenderer`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::DebugRendererSimple`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::NonCopyable`
+    ///     `JPH::DebugRenderer`
+    /// This is the non-const half of the class.
+    public class RecordingDebugRenderer : Const_RecordingDebugRenderer
+    {
+        // Upcasts:
+        public static unsafe implicit operator JPH.NonCopyable(RecordingDebugRenderer self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.NonCopyable._Underlying *__RecordingDebugRenderer_UpcastTo_JPH_NonCopyable(_Underlying *_this);
+            JPH.NonCopyable ret = new(__RecordingDebugRenderer_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+        public static unsafe implicit operator JPH.DebugRenderer(RecordingDebugRenderer self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_DebugRenderer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_DebugRenderer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugRenderer._Underlying *__RecordingDebugRenderer_UpcastTo_JPH_DebugRenderer(_Underlying *_this);
+            JPH.DebugRenderer ret = new(__RecordingDebugRenderer_UpcastTo_JPH_DebugRenderer(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+        public static unsafe implicit operator JPH.DebugRendererSimple(RecordingDebugRenderer self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_DebugRendererSimple", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_UpcastTo_JPH_DebugRendererSimple", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.DebugRendererSimple._Underlying *__RecordingDebugRenderer_UpcastTo_JPH_DebugRendererSimple(_Underlying *_this);
+            JPH.DebugRendererSimple ret = new(__RecordingDebugRenderer_UpcastTo_JPH_DebugRendererSimple(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        internal unsafe RecordingDebugRenderer(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe RecordingDebugRenderer() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RecordingDebugRenderer._Underlying *__RecordingDebugRenderer_DefaultConstruct();
+            _UnderlyingPtr = __RecordingDebugRenderer_DefaultConstruct();
+        }
+
+        /// Generated from method `RecordingDebugRenderer::Clear`.
+        public unsafe void Clear()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_Clear", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_Clear", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_Clear(_Underlying *_this);
+            __RecordingDebugRenderer_Clear(_UnderlyingPtr);
+        }
+
+        /// Generated from method `RecordingDebugRenderer::DrawLine`.
+        public unsafe void DrawLine(JPH.Const_Vec3 inFrom, JPH.Const_Vec3 inTo, JPH.Const_Color inColor)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawLine", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawLine", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawLine(_Underlying *_this, JPH.Vec3._Underlying *inFrom, JPH.Vec3._Underlying *inTo, JPH.Color._Underlying *inColor);
+            __RecordingDebugRenderer_DrawLine(_UnderlyingPtr, inFrom._UnderlyingPtr, inTo._UnderlyingPtr, inColor._UnderlyingPtr);
+        }
+
+        /// Generated from method `RecordingDebugRenderer::DrawTriangle`.
+        public unsafe void DrawTriangle(JPH.Const_Vec3 inV1, JPH.Const_Vec3 inV2, JPH.Const_Vec3 inV3, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow inCastShadow)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawTriangle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawTriangle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawTriangle(_Underlying *_this, JPH.Vec3._Underlying *inV1, JPH.Vec3._Underlying *inV2, JPH.Vec3._Underlying *inV3, JPH.Color._Underlying *inColor, JPH.DebugRenderer.ECastShadow inCastShadow);
+            __RecordingDebugRenderer_DrawTriangle(_UnderlyingPtr, inV1._UnderlyingPtr, inV2._UnderlyingPtr, inV3._UnderlyingPtr, inColor._UnderlyingPtr, inCastShadow);
+        }
+
+        /// Should be called every frame by the application to provide the camera position.
+        /// This is used to determine the correct LOD for rendering.
+        /// Generated from method `RecordingDebugRenderer::SetCameraPos`.
+        public unsafe void SetCameraPos(JPH.Const_Vec3 inCameraPos)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_SetCameraPos", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_SetCameraPos", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_SetCameraPos(_Underlying *_this, JPH.Vec3._Underlying *inCameraPos);
+            __RecordingDebugRenderer_SetCameraPos(_UnderlyingPtr, inCameraPos._UnderlyingPtr);
+        }
+
+        /// Call once after frame is complete. Releases unused dynamically generated geometry assets.
+        /// Generated from method `RecordingDebugRenderer::NextFrame`.
+        public unsafe void NextFrame()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_NextFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_NextFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_NextFrame(_Underlying *_this);
+            __RecordingDebugRenderer_NextFrame(_UnderlyingPtr);
+        }
+
+        /// Draw a marker on a position
+        /// Generated from method `RecordingDebugRenderer::DrawMarker`.
+        public unsafe void DrawMarker(JPH.Const_Vec3 inPosition, JPH.Const_Color inColor, float inSize)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawMarker", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawMarker", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawMarker(_Underlying *_this, JPH.Vec3._Underlying *inPosition, JPH.Color._Underlying *inColor, float inSize);
+            __RecordingDebugRenderer_DrawMarker(_UnderlyingPtr, inPosition._UnderlyingPtr, inColor._UnderlyingPtr, inSize);
+        }
+
+        /// Draw an arrow
+        /// Generated from method `RecordingDebugRenderer::DrawArrow`.
+        public unsafe void DrawArrow(JPH.Const_Vec3 inFrom, JPH.Const_Vec3 inTo, JPH.Const_Color inColor, float inSize)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawArrow", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawArrow", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawArrow(_Underlying *_this, JPH.Vec3._Underlying *inFrom, JPH.Vec3._Underlying *inTo, JPH.Color._Underlying *inColor, float inSize);
+            __RecordingDebugRenderer_DrawArrow(_UnderlyingPtr, inFrom._UnderlyingPtr, inTo._UnderlyingPtr, inColor._UnderlyingPtr, inSize);
+        }
+
+        /// Draw coordinate system (3 arrows, x = red, y = green, z = blue)
+        /// Generated from method `RecordingDebugRenderer::DrawCoordinateSystem`.
+        /// Parameter `inSize` defaults to `1.0f`.
+        public unsafe void DrawCoordinateSystem(JPH.Const_Mat44 inTransform, float? inSize = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawCoordinateSystem", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawCoordinateSystem", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawCoordinateSystem(_Underlying *_this, JPH.Const_Mat44._Underlying *inTransform, float *inSize);
+            float __deref_inSize = inSize.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawCoordinateSystem(_UnderlyingPtr, inTransform._UnderlyingPtr, inSize.HasValue ? &__deref_inSize : null);
+        }
+
+        /// Draw a plane through inPoint with normal inNormal
+        /// Generated from method `RecordingDebugRenderer::DrawPlane`.
+        public unsafe void DrawPlane(JPH.Const_Vec3 inPoint, JPH.Const_Vec3 inNormal, JPH.Const_Color inColor, float inSize)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawPlane", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawPlane", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawPlane(_Underlying *_this, JPH.Vec3._Underlying *inPoint, JPH.Vec3._Underlying *inNormal, JPH.Color._Underlying *inColor, float inSize);
+            __RecordingDebugRenderer_DrawPlane(_UnderlyingPtr, inPoint._UnderlyingPtr, inNormal._UnderlyingPtr, inColor._UnderlyingPtr, inSize);
+        }
+
+        /// Draw wireframe triangle
+        /// Generated from method `RecordingDebugRenderer::DrawWireTriangle`.
+        public unsafe void DrawWireTriangle(JPH.Const_Vec3 inV1, JPH.Const_Vec3 inV2, JPH.Const_Vec3 inV3, JPH.Const_Color inColor)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawWireTriangle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawWireTriangle", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawWireTriangle(_Underlying *_this, JPH.Vec3._Underlying *inV1, JPH.Vec3._Underlying *inV2, JPH.Vec3._Underlying *inV3, JPH.Color._Underlying *inColor);
+            __RecordingDebugRenderer_DrawWireTriangle(_UnderlyingPtr, inV1._UnderlyingPtr, inV2._UnderlyingPtr, inV3._UnderlyingPtr, inColor._UnderlyingPtr);
+        }
+
+        /// Draw wireframe sphere
+        /// Generated from method `RecordingDebugRenderer::DrawWireSphere`.
+        /// Parameter `inLevel` defaults to `3`.
+        public unsafe void DrawWireSphere(JPH.Const_Vec3 inCenter, float inRadius, JPH.Const_Color inColor, int? inLevel = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawWireSphere", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawWireSphere", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawWireSphere(_Underlying *_this, JPH.Vec3._Underlying *inCenter, float inRadius, JPH.Color._Underlying *inColor, int *inLevel);
+            int __deref_inLevel = inLevel.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawWireSphere(_UnderlyingPtr, inCenter._UnderlyingPtr, inRadius, inColor._UnderlyingPtr, inLevel.HasValue ? &__deref_inLevel : null);
+        }
+
+        /// Generated from method `RecordingDebugRenderer::DrawWireUnitSphere`.
+        /// Parameter `inLevel` defaults to `3`.
+        public unsafe void DrawWireUnitSphere(JPH.Const_Mat44 inMatrix, JPH.Const_Color inColor, int? inLevel = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawWireUnitSphere", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawWireUnitSphere", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawWireUnitSphere(_Underlying *_this, JPH.Const_Mat44._Underlying *inMatrix, JPH.Color._Underlying *inColor, int *inLevel);
+            int __deref_inLevel = inLevel.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawWireUnitSphere(_UnderlyingPtr, inMatrix._UnderlyingPtr, inColor._UnderlyingPtr, inLevel.HasValue ? &__deref_inLevel : null);
+        }
+
+        /// Draw a sphere
+        /// Generated from method `RecordingDebugRenderer::DrawSphere`.
+        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        public unsafe void DrawSphere(JPH.Const_Vec3 inCenter, float inRadius, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawSphere", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawSphere", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawSphere(_Underlying *_this, JPH.Vec3._Underlying *inCenter, float inRadius, JPH.Color._Underlying *inColor, JPH.DebugRenderer.ECastShadow *inCastShadow, JPH.DebugRenderer.EDrawMode *inDrawMode);
+            JPH.DebugRenderer.ECastShadow __deref_inCastShadow = inCastShadow.GetValueOrDefault();
+            JPH.DebugRenderer.EDrawMode __deref_inDrawMode = inDrawMode.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawSphere(_UnderlyingPtr, inCenter._UnderlyingPtr, inRadius, inColor._UnderlyingPtr, inCastShadow.HasValue ? &__deref_inCastShadow : null, inDrawMode.HasValue ? &__deref_inDrawMode : null);
+        }
+
+        /// Generated from method `RecordingDebugRenderer::DrawUnitSphere`.
+        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        public unsafe void DrawUnitSphere(JPH.Const_Mat44 inMatrix, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawUnitSphere", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawUnitSphere", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawUnitSphere(_Underlying *_this, JPH.Const_Mat44._Underlying *inMatrix, JPH.Color._Underlying *inColor, JPH.DebugRenderer.ECastShadow *inCastShadow, JPH.DebugRenderer.EDrawMode *inDrawMode);
+            JPH.DebugRenderer.ECastShadow __deref_inCastShadow = inCastShadow.GetValueOrDefault();
+            JPH.DebugRenderer.EDrawMode __deref_inDrawMode = inDrawMode.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawUnitSphere(_UnderlyingPtr, inMatrix._UnderlyingPtr, inColor._UnderlyingPtr, inCastShadow.HasValue ? &__deref_inCastShadow : null, inDrawMode.HasValue ? &__deref_inDrawMode : null);
+        }
+
+        /// Draw a capsule with one half sphere at (0, -inHalfHeightOfCylinder, 0) and the other half sphere at (0, inHalfHeightOfCylinder, 0) and radius inRadius.
+        /// The capsule will be transformed by inMatrix.
+        /// Generated from method `RecordingDebugRenderer::DrawCapsule`.
+        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        public unsafe void DrawCapsule(JPH.Const_Mat44 inMatrix, float inHalfHeightOfCylinder, float inRadius, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawCapsule", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawCapsule", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawCapsule(_Underlying *_this, JPH.Const_Mat44._Underlying *inMatrix, float inHalfHeightOfCylinder, float inRadius, JPH.Color._Underlying *inColor, JPH.DebugRenderer.ECastShadow *inCastShadow, JPH.DebugRenderer.EDrawMode *inDrawMode);
+            JPH.DebugRenderer.ECastShadow __deref_inCastShadow = inCastShadow.GetValueOrDefault();
+            JPH.DebugRenderer.EDrawMode __deref_inDrawMode = inDrawMode.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawCapsule(_UnderlyingPtr, inMatrix._UnderlyingPtr, inHalfHeightOfCylinder, inRadius, inColor._UnderlyingPtr, inCastShadow.HasValue ? &__deref_inCastShadow : null, inDrawMode.HasValue ? &__deref_inDrawMode : null);
+        }
+
+        /// Draw a cylinder with top (0, inHalfHeight, 0) and bottom (0, -inHalfHeight, 0) and radius inRadius.
+        /// The cylinder will be transformed by inMatrix
+        /// Generated from method `RecordingDebugRenderer::DrawCylinder`.
+        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        public unsafe void DrawCylinder(JPH.Const_Mat44 inMatrix, float inHalfHeight, float inRadius, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawCylinder", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawCylinder", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawCylinder(_Underlying *_this, JPH.Const_Mat44._Underlying *inMatrix, float inHalfHeight, float inRadius, JPH.Color._Underlying *inColor, JPH.DebugRenderer.ECastShadow *inCastShadow, JPH.DebugRenderer.EDrawMode *inDrawMode);
+            JPH.DebugRenderer.ECastShadow __deref_inCastShadow = inCastShadow.GetValueOrDefault();
+            JPH.DebugRenderer.EDrawMode __deref_inDrawMode = inDrawMode.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawCylinder(_UnderlyingPtr, inMatrix._UnderlyingPtr, inHalfHeight, inRadius, inColor._UnderlyingPtr, inCastShadow.HasValue ? &__deref_inCastShadow : null, inDrawMode.HasValue ? &__deref_inDrawMode : null);
+        }
+
+        /// Draw a bottomless cone.
+        /// @param inTop Top of cone, center of base is at inTop + inAxis.
+        /// @param inAxis Height and direction of cone
+        /// @param inPerpendicular Perpendicular vector to inAxis.
+        /// @param inHalfAngle Specifies the cone angle in radians (angle measured between inAxis and cone surface).
+        /// @param inLength The length of the cone.
+        /// @param inColor Color to use for drawing the cone.
+        /// @param inCastShadow determines if this geometry should cast a shadow or not.
+        /// @param inDrawMode determines if we draw the geometry solid or in wireframe.
+        /// Generated from method `RecordingDebugRenderer::DrawOpenCone`.
+        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        public unsafe void DrawOpenCone(JPH.Const_Vec3 inTop, JPH.Const_Vec3 inAxis, JPH.Const_Vec3 inPerpendicular, float inHalfAngle, float inLength, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawOpenCone", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawOpenCone", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawOpenCone(_Underlying *_this, JPH.Vec3._Underlying *inTop, JPH.Vec3._Underlying *inAxis, JPH.Vec3._Underlying *inPerpendicular, float inHalfAngle, float inLength, JPH.Color._Underlying *inColor, JPH.DebugRenderer.ECastShadow *inCastShadow, JPH.DebugRenderer.EDrawMode *inDrawMode);
+            JPH.DebugRenderer.ECastShadow __deref_inCastShadow = inCastShadow.GetValueOrDefault();
+            JPH.DebugRenderer.EDrawMode __deref_inDrawMode = inDrawMode.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawOpenCone(_UnderlyingPtr, inTop._UnderlyingPtr, inAxis._UnderlyingPtr, inPerpendicular._UnderlyingPtr, inHalfAngle, inLength, inColor._UnderlyingPtr, inCastShadow.HasValue ? &__deref_inCastShadow : null, inDrawMode.HasValue ? &__deref_inDrawMode : null);
+        }
+
+        /// Draws cone rotation limits as used by the SwingTwistConstraintPart.
+        /// @param inMatrix Matrix that transforms from constraint space to world space
+        /// @param inSwingYHalfAngle See SwingTwistConstraintPart
+        /// @param inSwingZHalfAngle See SwingTwistConstraintPart
+        /// @param inEdgeLength Size of the edge of the cone shape
+        /// @param inColor Color to use for drawing the cone.
+        /// @param inCastShadow determines if this geometry should cast a shadow or not.
+        /// @param inDrawMode determines if we draw the geometry solid or in wireframe.
+        /// Generated from method `RecordingDebugRenderer::DrawSwingConeLimits`.
+        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        public unsafe void DrawSwingConeLimits(JPH.Const_Mat44 inMatrix, float inSwingYHalfAngle, float inSwingZHalfAngle, float inEdgeLength, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawSwingConeLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawSwingConeLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawSwingConeLimits(_Underlying *_this, JPH.Const_Mat44._Underlying *inMatrix, float inSwingYHalfAngle, float inSwingZHalfAngle, float inEdgeLength, JPH.Color._Underlying *inColor, JPH.DebugRenderer.ECastShadow *inCastShadow, JPH.DebugRenderer.EDrawMode *inDrawMode);
+            JPH.DebugRenderer.ECastShadow __deref_inCastShadow = inCastShadow.GetValueOrDefault();
+            JPH.DebugRenderer.EDrawMode __deref_inDrawMode = inDrawMode.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawSwingConeLimits(_UnderlyingPtr, inMatrix._UnderlyingPtr, inSwingYHalfAngle, inSwingZHalfAngle, inEdgeLength, inColor._UnderlyingPtr, inCastShadow.HasValue ? &__deref_inCastShadow : null, inDrawMode.HasValue ? &__deref_inDrawMode : null);
+        }
+
+        /// Draws rotation limits as used by the SwingTwistConstraintPart.
+        /// @param inMatrix Matrix that transforms from constraint space to world space
+        /// @param inMinSwingYAngle See SwingTwistConstraintPart
+        /// @param inMaxSwingYAngle See SwingTwistConstraintPart
+        /// @param inMinSwingZAngle See SwingTwistConstraintPart
+        /// @param inMaxSwingZAngle See SwingTwistConstraintPart
+        /// @param inEdgeLength Size of the edge of the cone shape
+        /// @param inColor Color to use for drawing the cone.
+        /// @param inCastShadow determines if this geometry should cast a shadow or not.
+        /// @param inDrawMode determines if we draw the geometry solid or in wireframe.
+        /// Generated from method `RecordingDebugRenderer::DrawSwingPyramidLimits`.
+        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        public unsafe void DrawSwingPyramidLimits(JPH.Const_Mat44 inMatrix, float inMinSwingYAngle, float inMaxSwingYAngle, float inMinSwingZAngle, float inMaxSwingZAngle, float inEdgeLength, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawSwingPyramidLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawSwingPyramidLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawSwingPyramidLimits(_Underlying *_this, JPH.Const_Mat44._Underlying *inMatrix, float inMinSwingYAngle, float inMaxSwingYAngle, float inMinSwingZAngle, float inMaxSwingZAngle, float inEdgeLength, JPH.Color._Underlying *inColor, JPH.DebugRenderer.ECastShadow *inCastShadow, JPH.DebugRenderer.EDrawMode *inDrawMode);
+            JPH.DebugRenderer.ECastShadow __deref_inCastShadow = inCastShadow.GetValueOrDefault();
+            JPH.DebugRenderer.EDrawMode __deref_inDrawMode = inDrawMode.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawSwingPyramidLimits(_UnderlyingPtr, inMatrix._UnderlyingPtr, inMinSwingYAngle, inMaxSwingYAngle, inMinSwingZAngle, inMaxSwingZAngle, inEdgeLength, inColor._UnderlyingPtr, inCastShadow.HasValue ? &__deref_inCastShadow : null, inDrawMode.HasValue ? &__deref_inDrawMode : null);
+        }
+
+        /// Draw a pie (part of a circle).
+        /// @param inCenter The center of the circle.
+        /// @param inRadius Radius of the circle.
+        /// @param inNormal The plane normal in which the pie resides.
+        /// @param inAxis The axis that defines an angle of 0 radians.
+        /// @param inMinAngle The pie will be drawn between [inMinAngle, inMaxAngle] (in radians).
+        /// @param inMaxAngle The pie will be drawn between [inMinAngle, inMaxAngle] (in radians).
+        /// @param inColor Color to use for drawing the pie.
+        /// @param inCastShadow determines if this geometry should cast a shadow or not.
+        /// @param inDrawMode determines if we draw the geometry solid or in wireframe.
+        /// Generated from method `RecordingDebugRenderer::DrawPie`.
+        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        public unsafe void DrawPie(JPH.Const_Vec3 inCenter, float inRadius, JPH.Const_Vec3 inNormal, JPH.Const_Vec3 inAxis, float inMinAngle, float inMaxAngle, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawPie", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawPie", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawPie(_Underlying *_this, JPH.Vec3._Underlying *inCenter, float inRadius, JPH.Vec3._Underlying *inNormal, JPH.Vec3._Underlying *inAxis, float inMinAngle, float inMaxAngle, JPH.Color._Underlying *inColor, JPH.DebugRenderer.ECastShadow *inCastShadow, JPH.DebugRenderer.EDrawMode *inDrawMode);
+            JPH.DebugRenderer.ECastShadow __deref_inCastShadow = inCastShadow.GetValueOrDefault();
+            JPH.DebugRenderer.EDrawMode __deref_inDrawMode = inDrawMode.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawPie(_UnderlyingPtr, inCenter._UnderlyingPtr, inRadius, inNormal._UnderlyingPtr, inAxis._UnderlyingPtr, inMinAngle, inMaxAngle, inColor._UnderlyingPtr, inCastShadow.HasValue ? &__deref_inCastShadow : null, inDrawMode.HasValue ? &__deref_inDrawMode : null);
+        }
+
+        /// Draw a tapered cylinder
+        /// @param inMatrix Matrix that transforms the cylinder to world space.
+        /// @param inTop Top of cylinder (along Y axis)
+        /// @param inBottom Bottom of cylinder (along Y axis)
+        /// @param inTopRadius Radius at the top
+        /// @param inBottomRadius Radius at the bottom
+        /// @param inColor Color to use for drawing the pie.
+        /// @param inCastShadow determines if this geometry should cast a shadow or not.
+        /// @param inDrawMode determines if we draw the geometry solid or in wireframe.
+        /// Generated from method `RecordingDebugRenderer::DrawTaperedCylinder`.
+        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        public unsafe void DrawTaperedCylinder(JPH.Const_Mat44 inMatrix, float inTop, float inBottom, float inTopRadius, float inBottomRadius, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_DrawTaperedCylinder", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_DrawTaperedCylinder", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __RecordingDebugRenderer_DrawTaperedCylinder(_Underlying *_this, JPH.Const_Mat44._Underlying *inMatrix, float inTop, float inBottom, float inTopRadius, float inBottomRadius, JPH.Color._Underlying *inColor, JPH.DebugRenderer.ECastShadow *inCastShadow, JPH.DebugRenderer.EDrawMode *inDrawMode);
+            JPH.DebugRenderer.ECastShadow __deref_inCastShadow = inCastShadow.GetValueOrDefault();
+            JPH.DebugRenderer.EDrawMode __deref_inDrawMode = inDrawMode.GetValueOrDefault();
+            __RecordingDebugRenderer_DrawTaperedCylinder(_UnderlyingPtr, inMatrix._UnderlyingPtr, inTop, inBottom, inTopRadius, inBottomRadius, inColor._UnderlyingPtr, inCastShadow.HasValue ? &__deref_inCastShadow : null, inDrawMode.HasValue ? &__deref_inDrawMode : null);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `RecordingDebugRenderer` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_RecordingDebugRenderer
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_RecordingDebugRenderer? Value;
+        #pragma warning restore CS0649
+        internal readonly JPH._PassBy PassByMode;
+        public _ByValue_RecordingDebugRenderer() {PassByMode = JPH._PassBy.default_construct;}
+    }
+
+    /// This is used for optional parameters of class `RecordingDebugRenderer` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_RecordingDebugRenderer`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RecordingDebugRenderer`/`Const_RecordingDebugRenderer` directly.
+    public class _InOptMut_RecordingDebugRenderer
+    {
+        public RecordingDebugRenderer? Opt;
+
+        public _InOptMut_RecordingDebugRenderer() {}
+        public _InOptMut_RecordingDebugRenderer(RecordingDebugRenderer value) {Opt = value;}
+        public static implicit operator _InOptMut_RecordingDebugRenderer(RecordingDebugRenderer value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `RecordingDebugRenderer` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_RecordingDebugRenderer`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RecordingDebugRenderer`/`Const_RecordingDebugRenderer` to pass it to the function.
+    public class _InOptConst_RecordingDebugRenderer
+    {
+        public Const_RecordingDebugRenderer? Opt;
+
+        public _InOptConst_RecordingDebugRenderer() {}
+        public _InOptConst_RecordingDebugRenderer(Const_RecordingDebugRenderer value) {Opt = value;}
+        public static implicit operator _InOptConst_RecordingDebugRenderer(Const_RecordingDebugRenderer value) {return new(value);}
+    }
 }

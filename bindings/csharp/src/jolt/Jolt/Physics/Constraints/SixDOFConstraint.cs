@@ -1381,6 +1381,30 @@ public static partial class JPH
             __Jolt_delete_array_JPH_SixDOFConstraint_void_ptr_void_ptr(inPointer, inPlace);
         }
 
+        /// Generated from method `JPH::SixDOFConstraint::DrawConstraint`.
+        public unsafe void DrawConstraint(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraint_DrawConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraint_DrawConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SixDOFConstraint_DrawConstraint(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_SixDOFConstraint_DrawConstraint(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
+        /// Generated from method `JPH::SixDOFConstraint::DrawConstraintLimits`.
+        public unsafe void DrawConstraintLimits(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraint_DrawConstraintLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraint_DrawConstraintLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SixDOFConstraint_DrawConstraintLimits(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_SixDOFConstraint_DrawConstraintLimits(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
         // See: TwoBodyConstraint
         /// Generated from method `JPH::SixDOFConstraint::GetConstraintToBody1Matrix`.
         public unsafe JPH.Mat44 GetConstraintToBody1Matrix()
@@ -1641,6 +1665,18 @@ public static partial class JPH
             return __JPH_SixDOFConstraint_IsActive(_UnderlyingPtr) != 0;
         }
 
+        /// Generated from method `JPH::SixDOFConstraint::DrawConstraintReferenceFrame`.
+        public unsafe void DrawConstraintReferenceFrame(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraint_DrawConstraintReferenceFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraint_DrawConstraintReferenceFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SixDOFConstraint_DrawConstraintReferenceFrame(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_SixDOFConstraint_DrawConstraintReferenceFrame(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
         /// Access to the connected bodies
         /// Generated from method `JPH::SixDOFConstraint::GetBody1`.
         public unsafe JPH.Body? GetBody1()
@@ -1730,6 +1766,19 @@ public static partial class JPH
             #endif
             extern static UIntPtr __JPH_SixDOFConstraint_GetUserData(_Underlying *_this);
             return __JPH_SixDOFConstraint_GetUserData(_UnderlyingPtr);
+        }
+
+        /// Size of constraint when drawing it through the debug renderer
+        /// Generated from method `JPH::SixDOFConstraint::GetDrawConstraintSize`.
+        public unsafe float GetDrawConstraintSize()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraint_GetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraint_GetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JPH_SixDOFConstraint_GetDrawConstraintSize(_Underlying *_this);
+            return __JPH_SixDOFConstraint_GetDrawConstraintSize(_UnderlyingPtr);
         }
 
         /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
@@ -2131,6 +2180,18 @@ public static partial class JPH
             #endif
             extern static void __JPH_SixDOFConstraint_SetUserData(_Underlying *_this, UIntPtr inUserData);
             __JPH_SixDOFConstraint_SetUserData(_UnderlyingPtr, inUserData);
+        }
+
+        /// Generated from method `JPH::SixDOFConstraint::SetDrawConstraintSize`.
+        public unsafe void SetDrawConstraintSize(float inSize)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraint_SetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraint_SetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SixDOFConstraint_SetDrawConstraintSize(_Underlying *_this, float inSize);
+            __JPH_SixDOFConstraint_SetDrawConstraintSize(_UnderlyingPtr, inSize);
         }
     }
 

@@ -307,6 +307,21 @@ public static partial class JPH
             __JPH_JobSystemSingleThreaded_Init(_UnderlyingPtr, inMaxJobs);
         }
 
+        /// Generated from method `JPH::JobSystemSingleThreaded::CreateJob`.
+        /// Parameter `inNumDependencies` defaults to `0`.
+        public unsafe JPH.JobSystem.JobHandle CreateJob(byte? inName, JPH.Const_Color inColor, JPH.Std.Const_Function_Void inJobFunction, uint? inNumDependencies = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemSingleThreaded_CreateJob", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemSingleThreaded_CreateJob", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.JobSystem.JobHandle._Underlying *__JPH_JobSystemSingleThreaded_CreateJob(_Underlying *_this, byte *inName, JPH.Color._Underlying *inColor, JPH.Std.Const_Function_Void._Underlying *inJobFunction, uint *inNumDependencies);
+            byte __deref_inName = inName.GetValueOrDefault();
+            uint __deref_inNumDependencies = inNumDependencies.GetValueOrDefault();
+            return new(__JPH_JobSystemSingleThreaded_CreateJob(_UnderlyingPtr, inName.HasValue ? &__deref_inName : null, inColor._UnderlyingPtr, inJobFunction._UnderlyingPtr, inNumDependencies.HasValue ? &__deref_inNumDependencies : null), is_owning: true);
+        }
+
         /// Generated from method `JPH::JobSystemSingleThreaded::CreateBarrier`.
         public unsafe JPH.JobSystem.Barrier? CreateBarrier()
         {

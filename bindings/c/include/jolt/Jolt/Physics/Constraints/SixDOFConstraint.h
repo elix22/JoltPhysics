@@ -16,6 +16,7 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
@@ -701,6 +702,14 @@ JOLT_API bool JPH_SixDOFConstraint_SolveVelocityConstraint(JPH_SixDOFConstraint 
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_SixDOFConstraint_SolvePositionConstraint(JPH_SixDOFConstraint *_this, float inDeltaTime, float inBaumgarte);
 
+/// Generated from method `JPH::SixDOFConstraint::DrawConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_SixDOFConstraint_DrawConstraint(const JPH_SixDOFConstraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Generated from method `JPH::SixDOFConstraint::DrawConstraintLimits`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_SixDOFConstraint_DrawConstraintLimits(const JPH_SixDOFConstraint *_this, JPH_DebugRenderer *inRenderer);
+
 // See: TwoBodyConstraint
 /// Generated from method `JPH::SixDOFConstraint::GetConstraintToBody1Matrix`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -856,6 +865,10 @@ JOLT_API JPH_Vec3 *JPH_SixDOFConstraint_GetTotalLambdaMotorRotation(const JPH_Si
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_SixDOFConstraint_IsActive(const JPH_SixDOFConstraint *_this);
 
+/// Generated from method `JPH::SixDOFConstraint::DrawConstraintReferenceFrame`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_SixDOFConstraint_DrawConstraintReferenceFrame(const JPH_SixDOFConstraint *_this, JPH_DebugRenderer *inRenderer);
+
 /// Access to the connected bodies
 /// Generated from method `JPH::SixDOFConstraint::GetBody1`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -914,6 +927,15 @@ JOLT_API uint64_t JPH_SixDOFConstraint_GetUserData(const JPH_SixDOFConstraint *_
 /// Generated from method `JPH::SixDOFConstraint::SetUserData`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_SixDOFConstraint_SetUserData(JPH_SixDOFConstraint *_this, uint64_t inUserData);
+
+/// Size of constraint when drawing it through the debug renderer
+/// Generated from method `JPH::SixDOFConstraint::GetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_SixDOFConstraint_GetDrawConstraintSize(const JPH_SixDOFConstraint *_this);
+
+/// Generated from method `JPH::SixDOFConstraint::SetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_SixDOFConstraint_SetDrawConstraintSize(JPH_SixDOFConstraint *_this, float inSize);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

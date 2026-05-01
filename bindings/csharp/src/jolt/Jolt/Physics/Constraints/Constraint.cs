@@ -823,6 +823,56 @@ public static partial class JPH
             return __JPH_Constraint_IsActive(_UnderlyingPtr) != 0;
         }
 
+        // Drawing interface
+        /// Generated from method `JPH::Constraint::DrawConstraint`.
+        public unsafe void DrawConstraint(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Constraint_DrawConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Constraint_DrawConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_Constraint_DrawConstraint(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_Constraint_DrawConstraint(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
+        /// Generated from method `JPH::Constraint::DrawConstraintLimits`.
+        public unsafe void DrawConstraintLimits(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Constraint_DrawConstraintLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Constraint_DrawConstraintLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_Constraint_DrawConstraintLimits(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_Constraint_DrawConstraintLimits(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
+        /// Generated from method `JPH::Constraint::DrawConstraintReferenceFrame`.
+        public unsafe void DrawConstraintReferenceFrame(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Constraint_DrawConstraintReferenceFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Constraint_DrawConstraintReferenceFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_Constraint_DrawConstraintReferenceFrame(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_Constraint_DrawConstraintReferenceFrame(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
+        /// Size of constraint when drawing it through the debug renderer
+        /// Generated from method `JPH::Constraint::GetDrawConstraintSize`.
+        public unsafe float GetDrawConstraintSize()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Constraint_GetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Constraint_GetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JPH_Constraint_GetDrawConstraintSize(_Underlying *_this);
+            return __JPH_Constraint_GetDrawConstraintSize(_UnderlyingPtr);
+        }
+
         /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
         /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
         /// the object and at that point in time it is checked that no references are left to the structure.
@@ -1085,6 +1135,18 @@ public static partial class JPH
             #endif
             extern static byte __JPH_Constraint_SolvePositionConstraint(_Underlying *_this, float inDeltaTime, float inBaumgarte);
             return __JPH_Constraint_SolvePositionConstraint(_UnderlyingPtr, inDeltaTime, inBaumgarte) != 0;
+        }
+
+        /// Generated from method `JPH::Constraint::SetDrawConstraintSize`.
+        public unsafe void SetDrawConstraintSize(float inSize)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Constraint_SetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Constraint_SetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_Constraint_SetDrawConstraintSize(_Underlying *_this, float inSize);
+            __JPH_Constraint_SetDrawConstraintSize(_UnderlyingPtr, inSize);
         }
     }
 

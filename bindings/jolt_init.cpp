@@ -257,3 +257,20 @@ void EstimateResponseContactListener::OnContactAdded(
     mWasCalled = true;
 }
 
+// ---------------------------------------------------------------------------
+// RecordingDebugRenderer
+// ---------------------------------------------------------------------------
+#ifdef JPH_DEBUG_RENDERER
+
+void RecordingDebugRenderer::DrawLine(JPH::RVec3Arg inFrom, JPH::RVec3Arg inTo, JPH::ColorArg inColor)
+{
+    mLines.push_back({inFrom, inTo, inColor});
+}
+
+void RecordingDebugRenderer::DrawTriangle(JPH::RVec3Arg inV1, JPH::RVec3Arg inV2, JPH::RVec3Arg inV3, JPH::ColorArg inColor, ECastShadow /*inCastShadow*/)
+{
+    mTriangles.push_back({inV1, inV2, inV3, inColor});
+}
+
+#endif // JPH_DEBUG_RENDERER
+

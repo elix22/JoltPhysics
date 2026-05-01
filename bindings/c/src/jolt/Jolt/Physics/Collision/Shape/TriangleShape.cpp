@@ -2,6 +2,7 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Physics/Collision/Shape/TriangleShape.h"
 
+#include <Jolt/Core/Color.h>
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
@@ -20,6 +21,7 @@
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
 #include <Jolt/Physics/Collision/Shape/TriangleShape.h>
 #include <Jolt/Physics/Collision/TransformedShape.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -397,6 +399,21 @@ const int *JPH_TriangleShape_Get_cGetTrianglesMinTrianglesRequested(void)
     return std::addressof(JPH::TriangleShape::cGetTrianglesMinTrianglesRequested);
 }
 
+const bool *JPH_TriangleShape_Get_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::TriangleShape::sDrawSubmergedVolumes);
+}
+
+void JPH_TriangleShape_Set_sDrawSubmergedVolumes(bool value)
+{
+    JPH::TriangleShape::sDrawSubmergedVolumes = value;
+}
+
+bool *JPH_TriangleShape_GetMutable_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::TriangleShape::sDrawSubmergedVolumes);
+}
+
 JPH_TriangleShape *JPH_TriangleShape_DefaultConstruct(void)
 {
     using _mrbind_T = JPH::TriangleShape;
@@ -694,7 +711,7 @@ const JPH_ConvexShape_Support *JPH_TriangleShape_GetSupportFunction(const JPH_Tr
     ));
 }
 
-void JPH_TriangleShape_GetSubmergedVolume(const JPH_TriangleShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy)
+void JPH_TriangleShape_GetSubmergedVolume(const JPH_TriangleShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetSubmergedVolume(
         ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
@@ -702,7 +719,20 @@ void JPH_TriangleShape_GetSubmergedVolume(const JPH_TriangleShape *_this, const 
         ((inSurface ? void() : MRBINDC_THROW("Parameter `inSurface` can not be null.", void)), *(const JPH::Plane *)(inSurface)),
         ((outTotalVolume ? void() : MRBINDC_THROW("Parameter `outTotalVolume` can not be null.", void)), *outTotalVolume),
         ((outSubmergedVolume ? void() : MRBINDC_THROW("Parameter `outSubmergedVolume` can not be null.", void)), *outSubmergedVolume),
-        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy))
+        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy)),
+        ((inBaseOffset ? void() : MRBINDC_THROW("Parameter `inBaseOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBaseOffset))
+    );
+}
+
+void JPH_TriangleShape_Draw(const JPH_TriangleShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).Draw(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inUseMaterialColors,
+        inDrawWireframe
     );
 }
 
@@ -787,6 +817,26 @@ void JPH_TriangleShape_SetDensity(JPH_TriangleShape *_this, float inDensity)
 float JPH_TriangleShape_GetDensity(const JPH_TriangleShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).GetDensity();
+}
+
+void JPH_TriangleShape_DrawGetSupportFunction(const JPH_TriangleShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).DrawGetSupportFunction(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inDrawSupportDirection
+    );
+}
+
+void JPH_TriangleShape_DrawGetSupportingFace(const JPH_TriangleShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TriangleShape *)(_this)).DrawGetSupportingFace(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
 }
 
 uint64_t JPH_TriangleShape_GetUserData(const JPH_TriangleShape *_this)

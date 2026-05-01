@@ -13,7 +13,9 @@ extern "C" {
 #endif
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
 typedef struct JPH_DMat44 JPH_DMat44; // Defined in `#include <jolt/Jolt/Math/DMat44.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_DecoratedShape JPH_DecoratedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/DecoratedShape.h>`.
 typedef struct JPH_DecoratedShapeSettings JPH_DecoratedShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/DecoratedShape.h>`.
 typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
@@ -288,6 +290,21 @@ JOLT_API int JPH_ScaledShapeSettings_sInternalGetRefCountOffset(void);
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const int *JPH_ScaledShape_Get_cGetTrianglesMinTrianglesRequested(void);
 
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a pointer to a member variable of class `JPH::ScaledShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_ScaledShape_Get_sDrawSubmergedVolumes(void);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Modifies a member variable of class `JPH::ScaledShape` named `sDrawSubmergedVolumes`.
+/// When this function is called, this object will drop object references it held previously in `sDrawSubmergedVolumes`.
+JOLT_API void JPH_ScaledShape_Set_sDrawSubmergedVolumes(bool value);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a mutable pointer to a member variable of class `JPH::ScaledShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_ScaledShape_GetMutable_sDrawSubmergedVolumes(void);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_ScaledShape_Destroy()` to free it when you're done using it.
 JOLT_API JPH_ScaledShape *JPH_ScaledShape_DefaultConstruct(void);
@@ -494,7 +511,31 @@ JOLT_API JPH_Vec3 *JPH_ScaledShape_GetSurfaceNormal(const JPH_ScaledShape *_this
 /// Parameter `outTotalVolume` can not be null. It is a single object.
 /// Parameter `outSubmergedVolume` can not be null. It is a single object.
 /// Parameter `outCenterOfBuoyancy` can not be null. It is a single object.
-JOLT_API void JPH_ScaledShape_GetSubmergedVolume(const JPH_ScaledShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy);
+/// Parameter `inBaseOffset` can not be null. It is a single object.
+JOLT_API void JPH_ScaledShape_GetSubmergedVolume(const JPH_ScaledShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset);
+
+// See Shape::Draw
+/// Generated from method `JPH::ScaledShape::Draw`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_ScaledShape_Draw(const JPH_ScaledShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe);
+
+// See Shape::DrawGetSupportFunction
+/// Generated from method `JPH::ScaledShape::DrawGetSupportFunction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_ScaledShape_DrawGetSupportFunction(const JPH_ScaledShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection);
+
+// See Shape::DrawGetSupportingFace
+/// Generated from method `JPH::ScaledShape::DrawGetSupportingFace`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_ScaledShape_DrawGetSupportingFace(const JPH_ScaledShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
 
 // See Shape::CastRay
 /// Generated from method `JPH::ScaledShape::CastRay`.

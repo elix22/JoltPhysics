@@ -13,6 +13,7 @@
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/Constraints/SixDOFConstraint.h>
 #include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -786,6 +787,20 @@ bool JPH_SixDOFConstraint_SolvePositionConstraint(JPH_SixDOFConstraint *_this, f
     );
 }
 
+void JPH_SixDOFConstraint_DrawConstraint(const JPH_SixDOFConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraint *)(_this)).DrawConstraint(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+void JPH_SixDOFConstraint_DrawConstraintLimits(const JPH_SixDOFConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraint *)(_this)).DrawConstraintLimits(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
 JPH_Mat44 *JPH_SixDOFConstraint_GetConstraintToBody1Matrix(const JPH_SixDOFConstraint *_this)
 {
     return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraint *)(_this)).GetConstraintToBody1Matrix());
@@ -960,6 +975,13 @@ bool JPH_SixDOFConstraint_IsActive(const JPH_SixDOFConstraint *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraint *)(_this)).IsActive();
 }
 
+void JPH_SixDOFConstraint_DrawConstraintReferenceFrame(const JPH_SixDOFConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraint *)(_this)).DrawConstraintReferenceFrame(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
 JPH_Body *JPH_SixDOFConstraint_GetBody1(const JPH_SixDOFConstraint *_this)
 {
     return (JPH_Body *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraint *)(_this)).GetBody1());
@@ -1027,6 +1049,18 @@ void JPH_SixDOFConstraint_SetUserData(JPH_SixDOFConstraint *_this, uint64_t inUs
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SixDOFConstraint *)(_this)).SetUserData(
         inUserData
+    );
+}
+
+float JPH_SixDOFConstraint_GetDrawConstraintSize(const JPH_SixDOFConstraint *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraint *)(_this)).GetDrawConstraintSize();
+}
+
+void JPH_SixDOFConstraint_SetDrawConstraintSize(JPH_SixDOFConstraint *_this, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SixDOFConstraint *)(_this)).SetDrawConstraintSize(
+        inSize
     );
 }
 

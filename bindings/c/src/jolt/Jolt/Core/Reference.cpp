@@ -13,6 +13,7 @@
 #include <Jolt/Physics/Vehicle/VehicleCollisionTester.h>
 #include <Jolt/Physics/Vehicle/VehicleController.h>
 #include <Jolt/Physics/Vehicle/Wheel.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -545,6 +546,81 @@ void JPH_RefTarget_JPH_WheelSettings_Release(const JPH_RefTarget_JPH_WheelSettin
 int JPH_RefTarget_JPH_WheelSettings_sInternalGetRefCountOffset(void)
 {
     return JPH::RefTarget<JPH::WheelSettings>::sInternalGetRefCountOffset();
+}
+
+JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstruct(void)
+{
+    using _mrbind_T = JPH::RefTarget<JPH::DebugRenderer::Geometry>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_DebugRenderer_Geometry*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstructArray(size_t num_elems)
+{
+    return (JPH_RefTarget_JPH_DebugRenderer_Geometry *)(new JPH::RefTarget<JPH::DebugRenderer::Geometry>[num_elems]{});
+}
+
+const JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_OffsetPtr(const JPH_RefTarget_JPH_DebugRenderer_Geometry *ptr, ptrdiff_t i)
+{
+    return (const JPH_RefTarget_JPH_DebugRenderer_Geometry *)(((const JPH::RefTarget<JPH::DebugRenderer::Geometry> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_OffsetMutablePtr(JPH_RefTarget_JPH_DebugRenderer_Geometry *ptr, ptrdiff_t i)
+{
+    return (JPH_RefTarget_JPH_DebugRenderer_Geometry *)(((JPH::RefTarget<JPH::DebugRenderer::Geometry> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_DebugRenderer_Geometry *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::DebugRenderer::Geometry>);
+    return (JPH_RefTarget_JPH_DebugRenderer_Geometry *)new JPH::RefTarget<JPH::DebugRenderer::Geometry>(JPH::RefTarget<JPH::DebugRenderer::Geometry>(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::DebugRenderer::Geometry>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::DebugRenderer::Geometry>), JPH::RefTarget<JPH::DebugRenderer::Geometry>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::DebugRenderer::Geometry>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::DebugRenderer::Geometry>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::DebugRenderer::Geometry>))
+    ));
+}
+
+void JPH_RefTarget_JPH_DebugRenderer_Geometry_Destroy(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this)
+{
+    delete ((const JPH::RefTarget<JPH::DebugRenderer::Geometry> *)_this);
+}
+
+void JPH_RefTarget_JPH_DebugRenderer_Geometry_DestroyArray(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this)
+{
+    delete[] ((const JPH::RefTarget<JPH::DebugRenderer::Geometry> *)_this);
+}
+
+JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_AssignFromAnother(JPH_RefTarget_JPH_DebugRenderer_Geometry *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_DebugRenderer_Geometry *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::DebugRenderer::Geometry>);
+    return (JPH_RefTarget_JPH_DebugRenderer_Geometry *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RefTarget<JPH::DebugRenderer::Geometry> *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::DebugRenderer::Geometry>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::DebugRenderer::Geometry>), JPH::RefTarget<JPH::DebugRenderer::Geometry>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::DebugRenderer::Geometry>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::DebugRenderer::Geometry>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::DebugRenderer::Geometry>)))
+    ));
+}
+
+void JPH_RefTarget_JPH_DebugRenderer_Geometry_SetEmbedded(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::DebugRenderer::Geometry> *)(_this)).SetEmbedded();
+}
+
+unsigned int JPH_RefTarget_JPH_DebugRenderer_Geometry_GetRefCount(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::DebugRenderer::Geometry> *)(_this)).GetRefCount();
+}
+
+void JPH_RefTarget_JPH_DebugRenderer_Geometry_AddRef(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::DebugRenderer::Geometry> *)(_this)).AddRef();
+}
+
+void JPH_RefTarget_JPH_DebugRenderer_Geometry_Release(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::DebugRenderer::Geometry> *)(_this)).Release();
+}
+
+int JPH_RefTarget_JPH_DebugRenderer_Geometry_sInternalGetRefCountOffset(void)
+{
+    return JPH::RefTarget<JPH::DebugRenderer::Geometry>::sInternalGetRefCountOffset();
 }
 
 JPH_RefTarget_JPH_VehicleControllerSettings *JPH_RefTarget_JPH_VehicleControllerSettings_DefaultConstruct(void)

@@ -2,6 +2,7 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Physics/Collision/Shape/MeshShape.h"
 
+#include <Jolt/Core/Color.h>
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
@@ -18,6 +19,7 @@
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
 #include <Jolt/Physics/Collision/TransformedShape.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -348,9 +350,54 @@ int JPH_MeshShapeSettings_sInternalGetRefCountOffset(void)
     return JPH::MeshShapeSettings::sInternalGetRefCountOffset();
 }
 
+const bool *JPH_MeshShape_Get_sDrawTriangleGroups(void)
+{
+    return std::addressof(JPH::MeshShape::sDrawTriangleGroups);
+}
+
+void JPH_MeshShape_Set_sDrawTriangleGroups(bool value)
+{
+    JPH::MeshShape::sDrawTriangleGroups = value;
+}
+
+bool *JPH_MeshShape_GetMutable_sDrawTriangleGroups(void)
+{
+    return std::addressof(JPH::MeshShape::sDrawTriangleGroups);
+}
+
+const bool *JPH_MeshShape_Get_sDrawTriangleOutlines(void)
+{
+    return std::addressof(JPH::MeshShape::sDrawTriangleOutlines);
+}
+
+void JPH_MeshShape_Set_sDrawTriangleOutlines(bool value)
+{
+    JPH::MeshShape::sDrawTriangleOutlines = value;
+}
+
+bool *JPH_MeshShape_GetMutable_sDrawTriangleOutlines(void)
+{
+    return std::addressof(JPH::MeshShape::sDrawTriangleOutlines);
+}
+
 const int *JPH_MeshShape_Get_cGetTrianglesMinTrianglesRequested(void)
 {
     return std::addressof(JPH::MeshShape::cGetTrianglesMinTrianglesRequested);
+}
+
+const bool *JPH_MeshShape_Get_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::MeshShape::sDrawSubmergedVolumes);
+}
+
+void JPH_MeshShape_Set_sDrawSubmergedVolumes(bool value)
+{
+    JPH::MeshShape::sDrawSubmergedVolumes = value;
+}
+
+bool *JPH_MeshShape_GetMutable_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::MeshShape::sDrawSubmergedVolumes);
 }
 
 JPH_MeshShape *JPH_MeshShape_DefaultConstruct(void)
@@ -589,6 +636,18 @@ JPH_Vec3 *JPH_MeshShape_GetSurfaceNormal(const JPH_MeshShape *_this, const JPH_S
     ));
 }
 
+void JPH_MeshShape_Draw(const JPH_MeshShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MeshShape *)(_this)).Draw(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inUseMaterialColors,
+        inDrawWireframe
+    );
+}
+
 bool JPH_MeshShape_CastRay_3(const JPH_MeshShape *_this, const JPH_RayCast *inRay, const JPH_SubShapeIDCreator *inSubShapeIDCreator, JPH_RayCastResult *ioHit)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MeshShape *)(_this)).CastRay(
@@ -619,7 +678,7 @@ int JPH_MeshShape_GetTrianglesNext(const JPH_MeshShape *_this, JPH_Shape_GetTria
     );
 }
 
-void JPH_MeshShape_GetSubmergedVolume(const JPH_MeshShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy)
+void JPH_MeshShape_GetSubmergedVolume(const JPH_MeshShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MeshShape *)(_this)).GetSubmergedVolume(
         ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
@@ -627,7 +686,8 @@ void JPH_MeshShape_GetSubmergedVolume(const JPH_MeshShape *_this, const JPH_Mat4
         ((inSurface ? void() : MRBINDC_THROW("Parameter `inSurface` can not be null.", void)), *(const JPH::Plane *)(inSurface)),
         ((outTotalVolume ? void() : MRBINDC_THROW("Parameter `outTotalVolume` can not be null.", void)), *outTotalVolume),
         ((outSubmergedVolume ? void() : MRBINDC_THROW("Parameter `outSubmergedVolume` can not be null.", void)), *outSubmergedVolume),
-        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy))
+        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy)),
+        ((inBaseOffset ? void() : MRBINDC_THROW("Parameter `inBaseOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBaseOffset))
     );
 }
 
@@ -694,6 +754,26 @@ JPH_TransformedShape *JPH_MeshShape_GetSubShapeTransformedShape(const JPH_MeshSh
         ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
         ((outRemainder ? void() : MRBINDC_THROW("Parameter `outRemainder` can not be null.", void)), *(JPH::SubShapeID *)(outRemainder))
     ));
+}
+
+void JPH_MeshShape_DrawGetSupportFunction(const JPH_MeshShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MeshShape *)(_this)).DrawGetSupportFunction(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inDrawSupportDirection
+    );
+}
+
+void JPH_MeshShape_DrawGetSupportingFace(const JPH_MeshShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MeshShape *)(_this)).DrawGetSupportingFace(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
 }
 
 bool JPH_MeshShape_IsValidScale(const JPH_MeshShape *_this, const JPH_Vec3 *inScale)

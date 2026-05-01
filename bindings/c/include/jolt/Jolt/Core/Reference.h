@@ -267,6 +267,31 @@ typedef struct JPH_RefTarget_JPH_WheelSettings JPH_RefTarget_JPH_WheelSettings;
 /// lower than 1, resulting in a memory leak. By carefully designing your classes
 /// (and particularly identifying who owns who in the class hierarchy) you can avoid
 /// these problems.
+/// Generated from class `JPH::RefTarget<JPH::DebugRenderer::Geometry>`.
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::DebugRenderer::Geometry`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JPH_RefTarget_JPH_DebugRenderer_Geometry JPH_RefTarget_JPH_DebugRenderer_Geometry;
+
+/// Simple class to facilitate reference counting / releasing
+/// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+///
+/// Reference counting classes keep an integer which indicates how many references
+/// to the object are active. Reference counting objects are derived from RefTarget
+/// and staT & their life with a reference count of zero. They can then be assigned
+/// to equivalents of pointers (Ref) which will increase the reference count immediately.
+/// If the destructor of Ref is called or another object is assigned to the reference
+/// counting pointer it will decrease the reference count of the object again. If this
+/// reference count becomes zero, the object is destroyed.
+///
+/// This provides a very powerful mechanism to prevent memory leaks, but also gives
+/// some responsibility to the programmer. The most notable point is that you cannot
+/// have one object reference another and have the other reference the first one
+/// back, because this way the reference count of both objects will never become
+/// lower than 1, resulting in a memory leak. By carefully designing your classes
+/// (and particularly identifying who owns who in the class hierarchy) you can avoid
+/// these problems.
 /// Generated from class `JPH::RefTarget<JPH::VehicleControllerSettings>`.
 /// Derived classes:
 ///   Direct: (non-virtual)
@@ -840,6 +865,68 @@ JOLT_API void JPH_RefTarget_JPH_WheelSettings_Release(const JPH_RefTarget_JPH_Wh
 /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
 /// Generated from method `JPH::RefTarget<JPH::WheelSettings>::sInternalGetRefCountOffset`.
 JOLT_API int JPH_RefTarget_JPH_WheelSettings_sInternalGetRefCountOffset(void);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_RefTarget_JPH_DebugRenderer_Geometry_Destroy()` to free it when you're done using it.
+JOLT_API JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JPH_RefTarget_JPH_DebugRenderer_Geometry_DestroyArray()`.
+/// Use `JPH_RefTarget_JPH_DebugRenderer_Geometry_OffsetMutablePtr()` and `JPH_RefTarget_JPH_DebugRenderer_Geometry_OffsetPtr()` to access the array elements.
+JOLT_API JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_OffsetPtr(const JPH_RefTarget_JPH_DebugRenderer_Geometry *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_OffsetMutablePtr(JPH_RefTarget_JPH_DebugRenderer_Geometry *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JPH::RefTarget<JPH::DebugRenderer::Geometry>::RefTarget`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_RefTarget_JPH_DebugRenderer_Geometry_Destroy()` to free it when you're done using it.
+JOLT_API JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_DebugRenderer_Geometry *_other);
+
+/// Destroys a heap-allocated instance of `JPH_RefTarget_JPH_DebugRenderer_Geometry`. Does nothing if the pointer is null.
+JOLT_API void JPH_RefTarget_JPH_DebugRenderer_Geometry_Destroy(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this);
+
+/// Destroys a heap-allocated array of `JPH_RefTarget_JPH_DebugRenderer_Geometry`. Does nothing if the pointer is null.
+JOLT_API void JPH_RefTarget_JPH_DebugRenderer_Geometry_DestroyArray(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this);
+
+/// Assignment operator
+/// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved in the return value.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_AssignFromAnother(JPH_RefTarget_JPH_DebugRenderer_Geometry *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_DebugRenderer_Geometry *_other);
+
+/// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+/// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+/// the object and at that point in time it is checked that no references are left to the structure.
+/// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::SetEmbedded`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_DebugRenderer_Geometry_SetEmbedded(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this);
+
+/// Get current refcount of this object
+/// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::GetRefCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_RefTarget_JPH_DebugRenderer_Geometry_GetRefCount(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this);
+
+/// Add or release a reference to this object
+/// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::AddRef`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_DebugRenderer_Geometry_AddRef(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this);
+
+/// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_DebugRenderer_Geometry_Release(const JPH_RefTarget_JPH_DebugRenderer_Geometry *_this);
+
+/// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+/// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::sInternalGetRefCountOffset`.
+JOLT_API int JPH_RefTarget_JPH_DebugRenderer_Geometry_sInternalGetRefCountOffset(void);
 
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_RefTarget_JPH_VehicleControllerSettings_Destroy()` to free it when you're done using it.

@@ -2021,6 +2021,274 @@ public static partial class JPH
     /// lower than 1, resulting in a memory leak. By carefully designing your classes
     /// (and particularly identifying who owns who in the class hierarchy) you can avoid
     /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::DebugRenderer::Geometry>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::DebugRenderer::Geometry`
+    /// This is the const half of the class.
+    public class Const_RefTarget_JPHDebugRendererGeometry : JPH.Object<Const_RefTarget_JPHDebugRendererGeometry>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_DebugRenderer_Geometry_Destroy(_Underlying *_this);
+            __JPH_RefTarget_JPH_DebugRenderer_Geometry_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_RefTarget_JPHDebugRendererGeometry() {Dispose(false);}
+
+        internal unsafe Const_RefTarget_JPHDebugRendererGeometry(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_RefTarget_JPHDebugRendererGeometry() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHDebugRendererGeometry._Underlying *__JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::DebugRenderer::Geometry>::RefTarget`.
+        public unsafe Const_RefTarget_JPHDebugRendererGeometry(JPH._ByValue_RefTarget_JPHDebugRendererGeometry _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHDebugRendererGeometry._Underlying *__JPH_RefTarget_JPH_DebugRenderer_Geometry_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHDebugRendererGeometry._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_DebugRenderer_Geometry_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::DebugRenderer::Geometry>::RefTarget`.
+        public Const_RefTarget_JPHDebugRendererGeometry(Const_RefTarget_JPHDebugRendererGeometry _other) : this(new _ByValue_RefTarget_JPHDebugRendererGeometry(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::DebugRenderer::Geometry>::RefTarget`.
+        public Const_RefTarget_JPHDebugRendererGeometry(RefTarget_JPHDebugRendererGeometry _other) : this((Const_RefTarget_JPHDebugRendererGeometry)_other) {}
+
+        /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+        /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+        /// the object and at that point in time it is checked that no references are left to the structure.
+        /// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::SetEmbedded`.
+        public unsafe void SetEmbedded()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_DebugRenderer_Geometry_SetEmbedded(_Underlying *_this);
+            __JPH_RefTarget_JPH_DebugRenderer_Geometry_SetEmbedded(_UnderlyingPtr);
+        }
+
+        /// Get current refcount of this object
+        /// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::GetRefCount`.
+        public unsafe uint GetRefCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JPH_RefTarget_JPH_DebugRenderer_Geometry_GetRefCount(_Underlying *_this);
+            return __JPH_RefTarget_JPH_DebugRenderer_Geometry_GetRefCount(_UnderlyingPtr);
+        }
+
+        /// Add or release a reference to this object
+        /// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::AddRef`.
+        public unsafe void AddRef()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_DebugRenderer_Geometry_AddRef(_Underlying *_this);
+            __JPH_RefTarget_JPH_DebugRenderer_Geometry_AddRef(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_DebugRenderer_Geometry_Release(_Underlying *_this);
+            __JPH_RefTarget_JPH_DebugRenderer_Geometry_Release(_UnderlyingPtr);
+        }
+
+        /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+        /// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::sInternalGetRefCountOffset`.
+        public static int SInternalGetRefCountOffset()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JPH_RefTarget_JPH_DebugRenderer_Geometry_sInternalGetRefCountOffset();
+            return __JPH_RefTarget_JPH_DebugRenderer_Geometry_sInternalGetRefCountOffset();
+        }
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::DebugRenderer::Geometry>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::DebugRenderer::Geometry`
+    /// This is the non-const half of the class.
+    public class RefTarget_JPHDebugRendererGeometry : Const_RefTarget_JPHDebugRendererGeometry
+    {
+        internal unsafe RefTarget_JPHDebugRendererGeometry(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe RefTarget_JPHDebugRendererGeometry() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHDebugRendererGeometry._Underlying *__JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::DebugRenderer::Geometry>::RefTarget`.
+        public unsafe RefTarget_JPHDebugRendererGeometry(JPH._ByValue_RefTarget_JPHDebugRendererGeometry _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHDebugRendererGeometry._Underlying *__JPH_RefTarget_JPH_DebugRenderer_Geometry_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHDebugRendererGeometry._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_DebugRenderer_Geometry_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::DebugRenderer::Geometry>::RefTarget`.
+        public RefTarget_JPHDebugRendererGeometry(Const_RefTarget_JPHDebugRendererGeometry _other) : this(new _ByValue_RefTarget_JPHDebugRendererGeometry(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::DebugRenderer::Geometry>::RefTarget`.
+        public RefTarget_JPHDebugRendererGeometry(RefTarget_JPHDebugRendererGeometry _other) : this((Const_RefTarget_JPHDebugRendererGeometry)_other) {}
+
+        /// Assignment operator
+        /// Generated from method `JPH::RefTarget<JPH::DebugRenderer::Geometry>::operator=`.
+        public unsafe JPH.RefTarget_JPHDebugRendererGeometry Assign(JPH._ByValue_RefTarget_JPHDebugRendererGeometry _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_DebugRenderer_Geometry_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHDebugRendererGeometry._Underlying *__JPH_RefTarget_JPH_DebugRenderer_Geometry_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.RefTarget_JPHDebugRendererGeometry._Underlying *_other);
+            JPH.RefTarget_JPHDebugRendererGeometry __ret;
+            __ret = new(__JPH_RefTarget_JPH_DebugRenderer_Geometry_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            __ret._KeepAlive(this);
+            return __ret;
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `RefTarget_JPHDebugRendererGeometry` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `RefTarget_JPHDebugRendererGeometry`/`Const_RefTarget_JPHDebugRendererGeometry` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_RefTarget_JPHDebugRendererGeometry
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_RefTarget_JPHDebugRendererGeometry? Value;
+        #pragma warning restore CS0649
+        internal readonly JPH._PassBy PassByMode;
+        public _ByValue_RefTarget_JPHDebugRendererGeometry() {PassByMode = JPH._PassBy.default_construct;}
+        public _ByValue_RefTarget_JPHDebugRendererGeometry(Const_RefTarget_JPHDebugRendererGeometry new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
+        public static implicit operator _ByValue_RefTarget_JPHDebugRendererGeometry(Const_RefTarget_JPHDebugRendererGeometry arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHDebugRendererGeometry` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_RefTarget_JPHDebugRendererGeometry`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHDebugRendererGeometry`/`Const_RefTarget_JPHDebugRendererGeometry` directly.
+    public class _InOptMut_RefTarget_JPHDebugRendererGeometry
+    {
+        public RefTarget_JPHDebugRendererGeometry? Opt;
+
+        public _InOptMut_RefTarget_JPHDebugRendererGeometry() {}
+        public _InOptMut_RefTarget_JPHDebugRendererGeometry(RefTarget_JPHDebugRendererGeometry value) {Opt = value;}
+        public static implicit operator _InOptMut_RefTarget_JPHDebugRendererGeometry(RefTarget_JPHDebugRendererGeometry value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHDebugRendererGeometry` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_RefTarget_JPHDebugRendererGeometry`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHDebugRendererGeometry`/`Const_RefTarget_JPHDebugRendererGeometry` to pass it to the function.
+    public class _InOptConst_RefTarget_JPHDebugRendererGeometry
+    {
+        public Const_RefTarget_JPHDebugRendererGeometry? Opt;
+
+        public _InOptConst_RefTarget_JPHDebugRendererGeometry() {}
+        public _InOptConst_RefTarget_JPHDebugRendererGeometry(Const_RefTarget_JPHDebugRendererGeometry value) {Opt = value;}
+        public static implicit operator _InOptConst_RefTarget_JPHDebugRendererGeometry(Const_RefTarget_JPHDebugRendererGeometry value) {return new(value);}
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
     /// Generated from class `JPH::RefTarget<JPH::VehicleControllerSettings>`.
     /// Derived classes:
     ///   Direct: (non-virtual)

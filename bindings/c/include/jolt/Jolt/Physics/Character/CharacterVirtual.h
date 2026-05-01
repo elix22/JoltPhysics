@@ -1014,6 +1014,51 @@ JOLT_API void JPH_CharacterVsCharacterCollisionSimple_Add(JPH_CharacterVsCharact
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_CharacterVsCharacterCollisionSimple_Remove(JPH_CharacterVsCharacterCollisionSimple *_this, const JPH_CharacterVirtual *inCharacter);
 
+///< Draw the current state of the constraints for iteration 0 when creating them
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual` named `sDrawConstraints`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_CharacterVirtual_Get_sDrawConstraints(void);
+
+///< Draw the current state of the constraints for iteration 0 when creating them
+/// Modifies a member variable of class `JPH::CharacterVirtual` named `sDrawConstraints`.
+/// When this function is called, this object will drop object references it held previously in `sDrawConstraints`.
+JOLT_API void JPH_CharacterVirtual_Set_sDrawConstraints(bool value);
+
+///< Draw the current state of the constraints for iteration 0 when creating them
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual` named `sDrawConstraints`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_CharacterVirtual_GetMutable_sDrawConstraints(void);
+
+///< Draw the state of the walk stairs algorithm
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual` named `sDrawWalkStairs`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_CharacterVirtual_Get_sDrawWalkStairs(void);
+
+///< Draw the state of the walk stairs algorithm
+/// Modifies a member variable of class `JPH::CharacterVirtual` named `sDrawWalkStairs`.
+/// When this function is called, this object will drop object references it held previously in `sDrawWalkStairs`.
+JOLT_API void JPH_CharacterVirtual_Set_sDrawWalkStairs(bool value);
+
+///< Draw the state of the walk stairs algorithm
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual` named `sDrawWalkStairs`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_CharacterVirtual_GetMutable_sDrawWalkStairs(void);
+
+///< Draw the state of the stick to floor algorithm
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual` named `sDrawStickToFloor`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_CharacterVirtual_Get_sDrawStickToFloor(void);
+
+///< Draw the state of the stick to floor algorithm
+/// Modifies a member variable of class `JPH::CharacterVirtual` named `sDrawStickToFloor`.
+/// When this function is called, this object will drop object references it held previously in `sDrawStickToFloor`.
+JOLT_API void JPH_CharacterVirtual_Set_sDrawStickToFloor(bool value);
+
+///< Draw the state of the stick to floor algorithm
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual` named `sDrawStickToFloor`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_CharacterVirtual_GetMutable_sDrawStickToFloor(void);
+
 /// Constructor
 /// @param inSettings The settings for the character
 /// @param inPosition Initial position for the character

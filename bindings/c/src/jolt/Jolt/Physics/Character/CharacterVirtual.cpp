@@ -946,6 +946,51 @@ void JPH_CharacterVsCharacterCollisionSimple_Remove(JPH_CharacterVsCharacterColl
     );
 }
 
+const bool *JPH_CharacterVirtual_Get_sDrawConstraints(void)
+{
+    return std::addressof(JPH::CharacterVirtual::sDrawConstraints);
+}
+
+void JPH_CharacterVirtual_Set_sDrawConstraints(bool value)
+{
+    JPH::CharacterVirtual::sDrawConstraints = value;
+}
+
+bool *JPH_CharacterVirtual_GetMutable_sDrawConstraints(void)
+{
+    return std::addressof(JPH::CharacterVirtual::sDrawConstraints);
+}
+
+const bool *JPH_CharacterVirtual_Get_sDrawWalkStairs(void)
+{
+    return std::addressof(JPH::CharacterVirtual::sDrawWalkStairs);
+}
+
+void JPH_CharacterVirtual_Set_sDrawWalkStairs(bool value)
+{
+    JPH::CharacterVirtual::sDrawWalkStairs = value;
+}
+
+bool *JPH_CharacterVirtual_GetMutable_sDrawWalkStairs(void)
+{
+    return std::addressof(JPH::CharacterVirtual::sDrawWalkStairs);
+}
+
+const bool *JPH_CharacterVirtual_Get_sDrawStickToFloor(void)
+{
+    return std::addressof(JPH::CharacterVirtual::sDrawStickToFloor);
+}
+
+void JPH_CharacterVirtual_Set_sDrawStickToFloor(bool value)
+{
+    JPH::CharacterVirtual::sDrawStickToFloor = value;
+}
+
+bool *JPH_CharacterVirtual_GetMutable_sDrawStickToFloor(void)
+{
+    return std::addressof(JPH::CharacterVirtual::sDrawStickToFloor);
+}
+
 JPH_CharacterVirtual *JPH_CharacterVirtual_Construct_5(const JPH_CharacterVirtualSettings *inSettings, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, uint64_t inUserData, JPH_PhysicsSystem *inSystem)
 {
     return (JPH_CharacterVirtual *)new JPH::CharacterVirtual(JPH::CharacterVirtual(

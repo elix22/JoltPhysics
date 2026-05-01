@@ -2,6 +2,7 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Physics/Collision/Shape/OffsetCenterOfMassShape.h"
 
+#include <Jolt/Core/Color.h>
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
@@ -20,6 +21,7 @@
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
 #include <Jolt/Physics/Collision/TransformedShape.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -344,6 +346,21 @@ const int *JPH_OffsetCenterOfMassShape_Get_cGetTrianglesMinTrianglesRequested(vo
     return std::addressof(JPH::OffsetCenterOfMassShape::cGetTrianglesMinTrianglesRequested);
 }
 
+const bool *JPH_OffsetCenterOfMassShape_Get_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::OffsetCenterOfMassShape::sDrawSubmergedVolumes);
+}
+
+void JPH_OffsetCenterOfMassShape_Set_sDrawSubmergedVolumes(bool value)
+{
+    JPH::OffsetCenterOfMassShape::sDrawSubmergedVolumes = value;
+}
+
+bool *JPH_OffsetCenterOfMassShape_GetMutable_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::OffsetCenterOfMassShape::sDrawSubmergedVolumes);
+}
+
 JPH_OffsetCenterOfMassShape *JPH_OffsetCenterOfMassShape_DefaultConstruct(void)
 {
     using _mrbind_T = JPH::OffsetCenterOfMassShape;
@@ -629,7 +646,7 @@ JPH_Vec3 *JPH_OffsetCenterOfMassShape_GetSurfaceNormal(const JPH_OffsetCenterOfM
     ));
 }
 
-void JPH_OffsetCenterOfMassShape_GetSubmergedVolume(const JPH_OffsetCenterOfMassShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy)
+void JPH_OffsetCenterOfMassShape_GetSubmergedVolume(const JPH_OffsetCenterOfMassShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).GetSubmergedVolume(
         ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
@@ -637,7 +654,40 @@ void JPH_OffsetCenterOfMassShape_GetSubmergedVolume(const JPH_OffsetCenterOfMass
         ((inSurface ? void() : MRBINDC_THROW("Parameter `inSurface` can not be null.", void)), *(const JPH::Plane *)(inSurface)),
         ((outTotalVolume ? void() : MRBINDC_THROW("Parameter `outTotalVolume` can not be null.", void)), *outTotalVolume),
         ((outSubmergedVolume ? void() : MRBINDC_THROW("Parameter `outSubmergedVolume` can not be null.", void)), *outSubmergedVolume),
-        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy))
+        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy)),
+        ((inBaseOffset ? void() : MRBINDC_THROW("Parameter `inBaseOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBaseOffset))
+    );
+}
+
+void JPH_OffsetCenterOfMassShape_Draw(const JPH_OffsetCenterOfMassShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).Draw(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inUseMaterialColors,
+        inDrawWireframe
+    );
+}
+
+void JPH_OffsetCenterOfMassShape_DrawGetSupportFunction(const JPH_OffsetCenterOfMassShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).DrawGetSupportFunction(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inDrawSupportDirection
+    );
+}
+
+void JPH_OffsetCenterOfMassShape_DrawGetSupportingFace(const JPH_OffsetCenterOfMassShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::OffsetCenterOfMassShape *)(_this)).DrawGetSupportingFace(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
     );
 }
 

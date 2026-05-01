@@ -1115,6 +1115,18 @@ public static partial class JPH
             __Jolt_delete_array_JPH_DistanceConstraint_void_ptr_void_ptr(inPointer, inPlace);
         }
 
+        /// Generated from method `JPH::DistanceConstraint::DrawConstraint`.
+        public unsafe void DrawConstraint(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraint_DrawConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraint_DrawConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_DistanceConstraint_DrawConstraint(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_DistanceConstraint_DrawConstraint(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
         // See: TwoBodyConstraint
         /// Generated from method `JPH::DistanceConstraint::GetConstraintToBody1Matrix`.
         public unsafe JPH.Mat44 GetConstraintToBody1Matrix()
@@ -1188,6 +1200,18 @@ public static partial class JPH
             #endif
             extern static byte __JPH_DistanceConstraint_IsActive(_Underlying *_this);
             return __JPH_DistanceConstraint_IsActive(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JPH::DistanceConstraint::DrawConstraintReferenceFrame`.
+        public unsafe void DrawConstraintReferenceFrame(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraint_DrawConstraintReferenceFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraint_DrawConstraintReferenceFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_DistanceConstraint_DrawConstraintReferenceFrame(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_DistanceConstraint_DrawConstraintReferenceFrame(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
         }
 
         /// Access to the connected bodies
@@ -1279,6 +1303,31 @@ public static partial class JPH
             #endif
             extern static UIntPtr __JPH_DistanceConstraint_GetUserData(_Underlying *_this);
             return __JPH_DistanceConstraint_GetUserData(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::DistanceConstraint::DrawConstraintLimits`.
+        public unsafe void DrawConstraintLimits(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraint_DrawConstraintLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraint_DrawConstraintLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_DistanceConstraint_DrawConstraintLimits(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_DistanceConstraint_DrawConstraintLimits(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
+        /// Size of constraint when drawing it through the debug renderer
+        /// Generated from method `JPH::DistanceConstraint::GetDrawConstraintSize`.
+        public unsafe float GetDrawConstraintSize()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraint_GetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraint_GetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JPH_DistanceConstraint_GetDrawConstraintSize(_Underlying *_this);
+            return __JPH_DistanceConstraint_GetDrawConstraintSize(_UnderlyingPtr);
         }
 
         /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
@@ -1590,6 +1639,18 @@ public static partial class JPH
             #endif
             extern static void __JPH_DistanceConstraint_SetUserData(_Underlying *_this, UIntPtr inUserData);
             __JPH_DistanceConstraint_SetUserData(_UnderlyingPtr, inUserData);
+        }
+
+        /// Generated from method `JPH::DistanceConstraint::SetDrawConstraintSize`.
+        public unsafe void SetDrawConstraintSize(float inSize)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraint_SetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraint_SetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_DistanceConstraint_SetDrawConstraintSize(_Underlying *_this, float inSize);
+            __JPH_DistanceConstraint_SetDrawConstraintSize(_UnderlyingPtr, inSize);
         }
     }
 

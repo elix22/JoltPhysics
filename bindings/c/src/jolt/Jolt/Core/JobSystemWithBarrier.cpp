@@ -2,12 +2,14 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Core/JobSystemWithBarrier.h"
 
+#include <Jolt/Core/Color.h>
 #include <Jolt/Core/JobSystem.h>
 #include <Jolt/Core/JobSystemWithBarrier.h>
 #include <Jolt/Core/NonCopyable.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <functional>
 #include <stdexcept>
 
 
@@ -126,6 +128,17 @@ void JPH_JobSystemWithBarrier_WaitForJobs(JPH_JobSystemWithBarrier *_this, JPH_J
 int JPH_JobSystemWithBarrier_GetMaxConcurrency(const JPH_JobSystemWithBarrier *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::JobSystemWithBarrier *)(_this)).GetMaxConcurrency();
+}
+
+JPH_JobSystem_JobHandle *JPH_JobSystemWithBarrier_CreateJob(JPH_JobSystemWithBarrier *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, const unsigned int *inNumDependencies)
+{
+    using namespace JPH;
+    return (JPH_JobSystem_JobHandle *)new JPH::JobSystem::JobHandle(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::JobSystemWithBarrier *)(_this)).CreateJob(
+        inName,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        ((inJobFunction ? void() : MRBINDC_THROW("Parameter `inJobFunction` can not be null.", void)), *(const std::function<void(void)> *)(inJobFunction)),
+        (inNumDependencies ? *inNumDependencies : static_cast<unsigned int>(0))
+    ));
 }
 
 const JPH_JobSystemWithBarrier *JPH_JobSystemWithBarrier_OffsetPtr(const JPH_JobSystemWithBarrier *ptr, ptrdiff_t i)

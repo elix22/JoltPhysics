@@ -14,10 +14,12 @@ extern "C" {
 #endif
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
 typedef struct JPH_ConvexShape JPH_ConvexShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
 typedef struct JPH_ConvexShapeSettings JPH_ConvexShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
 typedef struct JPH_ConvexShape_Support JPH_ConvexShape_Support; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
 typedef struct JPH_ConvexShape_SupportBuffer JPH_ConvexShape_SupportBuffer; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexShape.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
@@ -360,10 +362,40 @@ JOLT_API int JPH_ConvexHullShapeSettings_sInternalGetRefCountOffset(void);
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const int *JPH_ConvexHullShape_Get_cMaxPointsInHull(void);
 
+/// Draw the outlines of the faces of the convex hull when drawing the shape
+/// Returns a pointer to a member variable of class `JPH::ConvexHullShape` named `sDrawFaceOutlines`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_ConvexHullShape_Get_sDrawFaceOutlines(void);
+
+/// Draw the outlines of the faces of the convex hull when drawing the shape
+/// Modifies a member variable of class `JPH::ConvexHullShape` named `sDrawFaceOutlines`.
+/// When this function is called, this object will drop object references it held previously in `sDrawFaceOutlines`.
+JOLT_API void JPH_ConvexHullShape_Set_sDrawFaceOutlines(bool value);
+
+/// Draw the outlines of the faces of the convex hull when drawing the shape
+/// Returns a mutable pointer to a member variable of class `JPH::ConvexHullShape` named `sDrawFaceOutlines`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_ConvexHullShape_GetMutable_sDrawFaceOutlines(void);
+
 /// This is the minimum amount of triangles that should be requested through GetTrianglesNext.
 /// Returns a pointer to a member variable of class `JPH::ConvexHullShape` named `cGetTrianglesMinTrianglesRequested`.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const int *JPH_ConvexHullShape_Get_cGetTrianglesMinTrianglesRequested(void);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a pointer to a member variable of class `JPH::ConvexHullShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_ConvexHullShape_Get_sDrawSubmergedVolumes(void);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Modifies a member variable of class `JPH::ConvexHullShape` named `sDrawSubmergedVolumes`.
+/// When this function is called, this object will drop object references it held previously in `sDrawSubmergedVolumes`.
+JOLT_API void JPH_ConvexHullShape_Set_sDrawSubmergedVolumes(bool value);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a mutable pointer to a member variable of class `JPH::ConvexHullShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_ConvexHullShape_GetMutable_sDrawSubmergedVolumes(void);
 
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_ConvexHullShape_Destroy()` to free it when you're done using it.
@@ -539,7 +571,23 @@ JOLT_API const JPH_ConvexShape_Support *JPH_ConvexHullShape_GetSupportFunction(c
 /// Parameter `outTotalVolume` can not be null. It is a single object.
 /// Parameter `outSubmergedVolume` can not be null. It is a single object.
 /// Parameter `outCenterOfBuoyancy` can not be null. It is a single object.
-JOLT_API void JPH_ConvexHullShape_GetSubmergedVolume(const JPH_ConvexHullShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy);
+/// Parameter `inBaseOffset` can not be null. It is a single object.
+JOLT_API void JPH_ConvexHullShape_GetSubmergedVolume(const JPH_ConvexHullShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset);
+
+// See Shape::Draw
+/// Generated from method `JPH::ConvexHullShape::Draw`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_ConvexHullShape_Draw(const JPH_ConvexHullShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe);
+
+/// Debugging helper draw function that draws how all points are moved when a shape is shrunk by the convex radius
+/// Generated from method `JPH::ConvexHullShape::DrawShrunkShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_ConvexHullShape_DrawShrunkShape(const JPH_ConvexHullShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
 
 // See Shape::CastRay
 /// Generated from method `JPH::ConvexHullShape::CastRay`.
@@ -635,6 +683,21 @@ JOLT_API void JPH_ConvexHullShape_SetDensity(JPH_ConvexHullShape *_this, float i
 /// Generated from method `JPH::ConvexHullShape::GetDensity`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_ConvexHullShape_GetDensity(const JPH_ConvexHullShape *_this);
+
+// See Shape::DrawGetSupportFunction
+/// Generated from method `JPH::ConvexHullShape::DrawGetSupportFunction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_ConvexHullShape_DrawGetSupportFunction(const JPH_ConvexHullShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection);
+
+// See Shape::DrawGetSupportingFace
+/// Generated from method `JPH::ConvexHullShape::DrawGetSupportingFace`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_ConvexHullShape_DrawGetSupportingFace(const JPH_ConvexHullShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
 
 /// User data (to be used freely by the application)
 /// Generated from method `JPH::ConvexHullShape::GetUserData`.

@@ -2,6 +2,7 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Physics/Collision/Shape/RotatedTranslatedShape.h"
 
+#include <Jolt/Core/Color.h>
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
@@ -20,6 +21,7 @@
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
 #include <Jolt/Physics/Collision/TransformedShape.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -356,6 +358,21 @@ const int *JPH_RotatedTranslatedShape_Get_cGetTrianglesMinTrianglesRequested(voi
     return std::addressof(JPH::RotatedTranslatedShape::cGetTrianglesMinTrianglesRequested);
 }
 
+const bool *JPH_RotatedTranslatedShape_Get_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::RotatedTranslatedShape::sDrawSubmergedVolumes);
+}
+
+void JPH_RotatedTranslatedShape_Set_sDrawSubmergedVolumes(bool value)
+{
+    JPH::RotatedTranslatedShape::sDrawSubmergedVolumes = value;
+}
+
+bool *JPH_RotatedTranslatedShape_GetMutable_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::RotatedTranslatedShape::sDrawSubmergedVolumes);
+}
+
 JPH_RotatedTranslatedShape *JPH_RotatedTranslatedShape_DefaultConstruct(void)
 {
     using _mrbind_T = JPH::RotatedTranslatedShape;
@@ -647,7 +664,7 @@ JPH_Vec3 *JPH_RotatedTranslatedShape_GetSurfaceNormal(const JPH_RotatedTranslate
     ));
 }
 
-void JPH_RotatedTranslatedShape_GetSubmergedVolume(const JPH_RotatedTranslatedShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy)
+void JPH_RotatedTranslatedShape_GetSubmergedVolume(const JPH_RotatedTranslatedShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).GetSubmergedVolume(
         ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
@@ -655,7 +672,40 @@ void JPH_RotatedTranslatedShape_GetSubmergedVolume(const JPH_RotatedTranslatedSh
         ((inSurface ? void() : MRBINDC_THROW("Parameter `inSurface` can not be null.", void)), *(const JPH::Plane *)(inSurface)),
         ((outTotalVolume ? void() : MRBINDC_THROW("Parameter `outTotalVolume` can not be null.", void)), *outTotalVolume),
         ((outSubmergedVolume ? void() : MRBINDC_THROW("Parameter `outSubmergedVolume` can not be null.", void)), *outSubmergedVolume),
-        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy))
+        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy)),
+        ((inBaseOffset ? void() : MRBINDC_THROW("Parameter `inBaseOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBaseOffset))
+    );
+}
+
+void JPH_RotatedTranslatedShape_Draw(const JPH_RotatedTranslatedShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).Draw(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inUseMaterialColors,
+        inDrawWireframe
+    );
+}
+
+void JPH_RotatedTranslatedShape_DrawGetSupportFunction(const JPH_RotatedTranslatedShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).DrawGetSupportFunction(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inDrawSupportDirection
+    );
+}
+
+void JPH_RotatedTranslatedShape_DrawGetSupportingFace(const JPH_RotatedTranslatedShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RotatedTranslatedShape *)(_this)).DrawGetSupportingFace(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
     );
 }
 

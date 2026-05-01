@@ -11,6 +11,9 @@
 extern "C" {
 #endif
 
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+
 
 /// Generic properties for a vehicle engine
 /// Generated from class `JPH::VehicleEngineSettings`.
@@ -391,6 +394,19 @@ JOLT_API void JPH_VehicleEngine_ApplyTorque(JPH_VehicleEngine *_this, float inTo
 /// Generated from method `JPH::VehicleEngine::ApplyDamping`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_VehicleEngine_ApplyDamping(JPH_VehicleEngine *_this, float inDeltaTime);
+
+// Function that converts RPM to an angle in radians for debugging purposes
+/// Generated from method `JPH::VehicleEngine::ConvertRPMToAngle`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_VehicleEngine_ConvertRPMToAngle(const JPH_VehicleEngine *_this, float inRPM);
+
+/// Debug draw a RPM meter
+/// Generated from method `JPH::VehicleEngine::DrawRPM`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+/// Parameter `inForward` can not be null. It is a single object.
+/// Parameter `inUp` can not be null. It is a single object.
+JOLT_API void JPH_VehicleEngine_DrawRPM(const JPH_VehicleEngine *_this, JPH_DebugRenderer *inRenderer, const JPH_Vec3 *inPosition, const JPH_Vec3 *inForward, const JPH_Vec3 *inUp, float inSize, float inShiftDownRPM, float inShiftUpRPM);
 
 /// If the engine is idle we allow the vehicle to sleep
 /// Generated from method `JPH::VehicleEngine::AllowSleep`.

@@ -14,6 +14,7 @@ public static partial class JPH
     ///     `JPH::CharacterBase`
     ///     `JPH::CharacterVsCharacterCollision`
     ///     `JPH::Constraint`
+    ///     `JPH::DebugRenderer`
     ///     `JPH::JobSystem`
     ///     `JPH::JobSystem::Barrier`
     ///     `JPH::NarrowPhaseQuery`
@@ -37,6 +38,7 @@ public static partial class JPH
     ///     `JPH::ConvexHullShape`
     ///     `JPH::ConvexShape`
     ///     `JPH::CylinderShape`
+    ///     `JPH::DebugRendererSimple`
     ///     `JPH::DecoratedShape`
     ///     `JPH::DefaultBroadPhaseLayerFilter`
     ///     `JPH::DefaultObjectLayerFilter`
@@ -80,6 +82,7 @@ public static partial class JPH
     ///     `JPH::VehicleConstraint`
     ///     `JPH::WheelWV`
     ///     `JPH::WheeledVehicleController`
+    ///     `RecordingDebugRenderer`
     /// This is the const half of the class.
     public class Const_NonCopyable : JPH.Object<Const_NonCopyable>, System.IDisposable
     {
@@ -131,6 +134,7 @@ public static partial class JPH
     ///     `JPH::CharacterBase`
     ///     `JPH::CharacterVsCharacterCollision`
     ///     `JPH::Constraint`
+    ///     `JPH::DebugRenderer`
     ///     `JPH::JobSystem`
     ///     `JPH::JobSystem::Barrier`
     ///     `JPH::NarrowPhaseQuery`
@@ -154,6 +158,7 @@ public static partial class JPH
     ///     `JPH::ConvexHullShape`
     ///     `JPH::ConvexShape`
     ///     `JPH::CylinderShape`
+    ///     `JPH::DebugRendererSimple`
     ///     `JPH::DecoratedShape`
     ///     `JPH::DefaultBroadPhaseLayerFilter`
     ///     `JPH::DefaultObjectLayerFilter`
@@ -197,6 +202,7 @@ public static partial class JPH
     ///     `JPH::VehicleConstraint`
     ///     `JPH::WheelWV`
     ///     `JPH::WheeledVehicleController`
+    ///     `RecordingDebugRenderer`
     /// This is the non-const half of the class.
     public class NonCopyable : Const_NonCopyable
     {

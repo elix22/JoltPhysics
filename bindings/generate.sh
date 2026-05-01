@@ -36,10 +36,12 @@ cp "$BINDINGS/CMakeLists.txt" "$BINDINGS/c/CMakeLists.txt"
 # Clang-style flags for the parser.
 # -DNDEBUG matches the Release build: suppresses JPH_DEBUG / JPH_ENABLE_ASSERTS
 # so debug-only methods (e.g. Body::ValidateCachedBounds) are not generated.
+# -DJPH_DEBUG_RENDERER enables DebugRenderer and related headers.
 EXTRA_PARSER_CXX_FLAGS=(
     -std=c++17 -Wall -Wextra
     -fparse-all-comments
     -DNDEBUG
+    -DJPH_DEBUG_RENDERER
     -I"$HELPER_DIR"
 )
 
@@ -179,6 +181,8 @@ echo "#include \"$ROOT/Jolt/Physics/Constraints/PathConstraintPathHermite.h\"" >
 echo "#include \"$ROOT/Jolt/Physics/Vehicle/WheeledVehicleController.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodyMotionProperties.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Collision/EstimateCollisionResponse.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Renderer/DebugRendererSimple.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Core/Color.h\"" >>"$BINDINGS/tmp/combined_input.h"
 
 
 # Parse the input header.
@@ -187,12 +191,23 @@ echo "#include \"$ROOT/Jolt/Physics/Collision/EstimateCollisionResponse.h\"" >>"
     -o "$BINDINGS/tmp/parse_result.json" \
     --ignore :: \
     --skip-mentions-of std::align_val_t \
+    --skip-mentions-of std::string_view \
     --skip-mentions-of JPH::StaticArray \
     --skip-mentions-of JPH::PhysicsStepListenerContext \
+    --skip-mentions-of JPH::string_view \
     --allow JoltHelpers \
     --allow CountingPhysicsStepListener \
     --allow SimpleContactEventListener \
     --allow EstimateResponseContactListener \
+    --allow DebugLineRecord \
+    --allow DebugTriangleRecord \
+    --allow RecordingDebugRenderer \
+    --allow JPH::Color \
+    --allow JPH::DebugRenderer \
+    --allow JPH::DebugRenderer::ECastShadow \
+    --allow JPH::DebugRenderer::EDrawMode \
+    --allow JPH::DebugRenderer::ECullMode \
+    --allow JPH::DebugRendererSimple \
     --allow JPH::BVec16 \
     --allow JPH::DMat44 \
     --allow JPH::Double3 \

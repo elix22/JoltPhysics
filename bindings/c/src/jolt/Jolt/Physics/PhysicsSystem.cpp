@@ -23,6 +23,7 @@
 #include <Jolt/Physics/PhysicsSettings.h>
 #include <Jolt/Physics/PhysicsStepListener.h>
 #include <Jolt/Physics/PhysicsSystem.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -45,6 +46,21 @@ const unsigned int *JPH_PhysicsSystem_Get_cMaxBodyPairsLimit(void)
 const unsigned int *JPH_PhysicsSystem_Get_cMaxContactConstraintsLimit(void)
 {
     return std::addressof(JPH::PhysicsSystem::cMaxContactConstraintsLimit);
+}
+
+const bool *JPH_PhysicsSystem_Get_sDrawMotionQualityLinearCast(void)
+{
+    return std::addressof(JPH::PhysicsSystem::sDrawMotionQualityLinearCast);
+}
+
+void JPH_PhysicsSystem_Set_sDrawMotionQualityLinearCast(bool value)
+{
+    JPH::PhysicsSystem::sDrawMotionQualityLinearCast = value;
+}
+
+bool *JPH_PhysicsSystem_GetMutable_sDrawMotionQualityLinearCast(void)
+{
+    return std::addressof(JPH::PhysicsSystem::sDrawMotionQualityLinearCast);
 }
 
 JPH_PhysicsSystem *JPH_PhysicsSystem_DefaultConstruct(void)
@@ -326,6 +342,27 @@ JPH_EPhysicsUpdateError JPH_PhysicsSystem_Update(JPH_PhysicsSystem *_this, float
         ((JPH::TempAllocator *)inTempAllocator),
         ((JPH::JobSystem *)inJobSystem)
     ));
+}
+
+void JPH_PhysicsSystem_DrawConstraints(JPH_PhysicsSystem *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).DrawConstraints(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+void JPH_PhysicsSystem_DrawConstraintLimits(JPH_PhysicsSystem *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).DrawConstraintLimits(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+void JPH_PhysicsSystem_DrawConstraintReferenceFrame(JPH_PhysicsSystem *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).DrawConstraintReferenceFrame(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
 }
 
 void JPH_PhysicsSystem_SetGravity(JPH_PhysicsSystem *_this, const JPH_Vec3 *inGravity)

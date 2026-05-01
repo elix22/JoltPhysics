@@ -3,10 +3,12 @@
 #include "jolt/Jolt/Physics/Constraints/PathConstraintPathHermite.h"
 
 #include <Jolt/Core/Reference.h>
+#include <Jolt/Math/Mat44.h>
 #include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Constraints/PathConstraintPath.h>
 #include <Jolt/Physics/Constraints/PathConstraintPathHermite.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -269,6 +271,14 @@ void JPH_PathConstraintPathHermite_SetIsLooping(JPH_PathConstraintPathHermite *_
 bool JPH_PathConstraintPathHermite_IsLooping(const JPH_PathConstraintPathHermite *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PathConstraintPathHermite *)(_this)).IsLooping();
+}
+
+void JPH_PathConstraintPathHermite_DrawPath(const JPH_PathConstraintPathHermite *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inBaseTransform)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PathConstraintPathHermite *)(_this)).DrawPath(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inBaseTransform ? void() : MRBINDC_THROW("Parameter `inBaseTransform` can not be null.", void)), *(const JPH::Mat44 *)(inBaseTransform))
+    );
 }
 
 void JPH_PathConstraintPathHermite_SetEmbedded(const JPH_PathConstraintPathHermite *_this)

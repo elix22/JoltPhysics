@@ -2,6 +2,7 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Core/JobSystemThreadPool.h"
 
+#include <Jolt/Core/Color.h>
 #include <Jolt/Core/JobSystem.h>
 #include <Jolt/Core/JobSystemThreadPool.h>
 #include <Jolt/Core/JobSystemWithBarrier.h>
@@ -246,6 +247,17 @@ void JPH_JobSystemThreadPool_Init(JPH_JobSystemThreadPool *_this, unsigned int i
 int JPH_JobSystemThreadPool_GetMaxConcurrency(const JPH_JobSystemThreadPool *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::JobSystemThreadPool *)(_this)).GetMaxConcurrency();
+}
+
+JPH_JobSystem_JobHandle *JPH_JobSystemThreadPool_CreateJob(JPH_JobSystemThreadPool *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, const unsigned int *inNumDependencies)
+{
+    using namespace JPH;
+    return (JPH_JobSystem_JobHandle *)new JPH::JobSystem::JobHandle(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::JobSystemThreadPool *)(_this)).CreateJob(
+        inName,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        ((inJobFunction ? void() : MRBINDC_THROW("Parameter `inJobFunction` can not be null.", void)), *(const std::function<void(void)> *)(inJobFunction)),
+        (inNumDependencies ? *inNumDependencies : static_cast<unsigned int>(0))
+    ));
 }
 
 void JPH_JobSystemThreadPool_SetNumThreads(JPH_JobSystemThreadPool *_this, int inNumThreads)

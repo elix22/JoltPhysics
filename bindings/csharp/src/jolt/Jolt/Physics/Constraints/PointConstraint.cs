@@ -1055,6 +1055,18 @@ public static partial class JPH
             __Jolt_delete_array_JPH_PointConstraint_void_ptr_void_ptr(inPointer, inPlace);
         }
 
+        /// Generated from method `JPH::PointConstraint::DrawConstraint`.
+        public unsafe void DrawConstraint(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PointConstraint_DrawConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PointConstraint_DrawConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PointConstraint_DrawConstraint(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_PointConstraint_DrawConstraint(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
         /// Get the attachment point for body 1 relative to body 1 COM (transform by Body::GetCenterOfMassTransform to take to world space)
         /// Generated from method `JPH::PointConstraint::GetLocalSpacePoint1`.
         public unsafe JPH.Vec3 GetLocalSpacePoint1()
@@ -1130,6 +1142,18 @@ public static partial class JPH
             #endif
             extern static byte __JPH_PointConstraint_IsActive(_Underlying *_this);
             return __JPH_PointConstraint_IsActive(_UnderlyingPtr) != 0;
+        }
+
+        /// Generated from method `JPH::PointConstraint::DrawConstraintReferenceFrame`.
+        public unsafe void DrawConstraintReferenceFrame(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PointConstraint_DrawConstraintReferenceFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PointConstraint_DrawConstraintReferenceFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PointConstraint_DrawConstraintReferenceFrame(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_PointConstraint_DrawConstraintReferenceFrame(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
         }
 
         /// Access to the connected bodies
@@ -1221,6 +1245,31 @@ public static partial class JPH
             #endif
             extern static UIntPtr __JPH_PointConstraint_GetUserData(_Underlying *_this);
             return __JPH_PointConstraint_GetUserData(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::PointConstraint::DrawConstraintLimits`.
+        public unsafe void DrawConstraintLimits(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PointConstraint_DrawConstraintLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PointConstraint_DrawConstraintLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PointConstraint_DrawConstraintLimits(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_PointConstraint_DrawConstraintLimits(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
+        /// Size of constraint when drawing it through the debug renderer
+        /// Generated from method `JPH::PointConstraint::GetDrawConstraintSize`.
+        public unsafe float GetDrawConstraintSize()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PointConstraint_GetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PointConstraint_GetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JPH_PointConstraint_GetDrawConstraintSize(_Underlying *_this);
+            return __JPH_PointConstraint_GetDrawConstraintSize(_UnderlyingPtr);
         }
 
         /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
@@ -1519,6 +1568,18 @@ public static partial class JPH
             #endif
             extern static void __JPH_PointConstraint_SetUserData(_Underlying *_this, UIntPtr inUserData);
             __JPH_PointConstraint_SetUserData(_UnderlyingPtr, inUserData);
+        }
+
+        /// Generated from method `JPH::PointConstraint::SetDrawConstraintSize`.
+        public unsafe void SetDrawConstraintSize(float inSize)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PointConstraint_SetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PointConstraint_SetDrawConstraintSize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PointConstraint_SetDrawConstraintSize(_Underlying *_this, float inSize);
+            __JPH_PointConstraint_SetDrawConstraintSize(_UnderlyingPtr, inSize);
         }
     }
 

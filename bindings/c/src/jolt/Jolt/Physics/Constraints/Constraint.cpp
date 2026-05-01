@@ -8,6 +8,7 @@
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Constraints/Constraint.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -473,6 +474,39 @@ bool JPH_Constraint_SolvePositionConstraint(JPH_Constraint *_this, float inDelta
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Constraint *)(_this)).SolvePositionConstraint(
         inDeltaTime,
         inBaumgarte
+    );
+}
+
+void JPH_Constraint_DrawConstraint(const JPH_Constraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Constraint *)(_this)).DrawConstraint(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+void JPH_Constraint_DrawConstraintLimits(const JPH_Constraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Constraint *)(_this)).DrawConstraintLimits(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+void JPH_Constraint_DrawConstraintReferenceFrame(const JPH_Constraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Constraint *)(_this)).DrawConstraintReferenceFrame(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+float JPH_Constraint_GetDrawConstraintSize(const JPH_Constraint *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Constraint *)(_this)).GetDrawConstraintSize();
+}
+
+void JPH_Constraint_SetDrawConstraintSize(JPH_Constraint *_this, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Constraint *)(_this)).SetDrawConstraintSize(
+        inSize
     );
 }
 

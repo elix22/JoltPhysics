@@ -2,6 +2,7 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Physics/Collision/Shape/BoxShape.h"
 
+#include <Jolt/Core/Color.h>
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
@@ -19,6 +20,7 @@
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
 #include <Jolt/Physics/Collision/TransformedShape.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -374,6 +376,21 @@ const int *JPH_BoxShape_Get_cGetTrianglesMinTrianglesRequested(void)
     return std::addressof(JPH::BoxShape::cGetTrianglesMinTrianglesRequested);
 }
 
+const bool *JPH_BoxShape_Get_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::BoxShape::sDrawSubmergedVolumes);
+}
+
+void JPH_BoxShape_Set_sDrawSubmergedVolumes(bool value)
+{
+    JPH::BoxShape::sDrawSubmergedVolumes = value;
+}
+
+bool *JPH_BoxShape_GetMutable_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::BoxShape::sDrawSubmergedVolumes);
+}
+
 JPH_BoxShape *JPH_BoxShape_DefaultConstruct(void)
 {
     using _mrbind_T = JPH::BoxShape;
@@ -638,6 +655,18 @@ const JPH_ConvexShape_Support *JPH_BoxShape_GetSupportFunction(const JPH_BoxShap
     ));
 }
 
+void JPH_BoxShape_Draw(const JPH_BoxShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BoxShape *)(_this)).Draw(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inUseMaterialColors,
+        inDrawWireframe
+    );
+}
+
 bool JPH_BoxShape_CastRay_3(const JPH_BoxShape *_this, const JPH_RayCast *inRay, const JPH_SubShapeIDCreator *inSubShapeIDCreator, JPH_RayCastResult *ioHit)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BoxShape *)(_this)).CastRay(
@@ -693,7 +722,7 @@ unsigned int JPH_BoxShape_GetSubShapeIDBitsRecursive(const JPH_BoxShape *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BoxShape *)(_this)).GetSubShapeIDBitsRecursive();
 }
 
-void JPH_BoxShape_GetSubmergedVolume(const JPH_BoxShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy)
+void JPH_BoxShape_GetSubmergedVolume(const JPH_BoxShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BoxShape *)(_this)).GetSubmergedVolume(
         ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
@@ -701,7 +730,8 @@ void JPH_BoxShape_GetSubmergedVolume(const JPH_BoxShape *_this, const JPH_Mat44 
         ((inSurface ? void() : MRBINDC_THROW("Parameter `inSurface` can not be null.", void)), *(const JPH::Plane *)(inSurface)),
         ((outTotalVolume ? void() : MRBINDC_THROW("Parameter `outTotalVolume` can not be null.", void)), *outTotalVolume),
         ((outSubmergedVolume ? void() : MRBINDC_THROW("Parameter `outSubmergedVolume` can not be null.", void)), *outSubmergedVolume),
-        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy))
+        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy)),
+        ((inBaseOffset ? void() : MRBINDC_THROW("Parameter `inBaseOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBaseOffset))
     );
 }
 
@@ -722,6 +752,26 @@ void JPH_BoxShape_SetDensity(JPH_BoxShape *_this, float inDensity)
 float JPH_BoxShape_GetDensity(const JPH_BoxShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BoxShape *)(_this)).GetDensity();
+}
+
+void JPH_BoxShape_DrawGetSupportFunction(const JPH_BoxShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BoxShape *)(_this)).DrawGetSupportFunction(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inDrawSupportDirection
+    );
+}
+
+void JPH_BoxShape_DrawGetSupportingFace(const JPH_BoxShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BoxShape *)(_this)).DrawGetSupportingFace(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
 }
 
 uint64_t JPH_BoxShape_GetUserData(const JPH_BoxShape *_this)

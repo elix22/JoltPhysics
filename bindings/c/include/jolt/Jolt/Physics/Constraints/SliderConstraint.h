@@ -16,6 +16,7 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
@@ -674,6 +675,14 @@ JOLT_API bool JPH_SliderConstraint_SolveVelocityConstraint(JPH_SliderConstraint 
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_SliderConstraint_SolvePositionConstraint(JPH_SliderConstraint *_this, float inDeltaTime, float inBaumgarte);
 
+/// Generated from method `JPH::SliderConstraint::DrawConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_SliderConstraint_DrawConstraint(const JPH_SliderConstraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Generated from method `JPH::SliderConstraint::DrawConstraintLimits`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_SliderConstraint_DrawConstraintLimits(const JPH_SliderConstraint *_this, JPH_DebugRenderer *inRenderer);
+
 // See: TwoBodyConstraint
 /// Generated from method `JPH::SliderConstraint::GetConstraintToBody1Matrix`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -756,6 +765,10 @@ JOLT_API float JPH_SliderConstraint_GetTotalLambdaMotor(const JPH_SliderConstrai
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_SliderConstraint_IsActive(const JPH_SliderConstraint *_this);
 
+/// Generated from method `JPH::SliderConstraint::DrawConstraintReferenceFrame`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_SliderConstraint_DrawConstraintReferenceFrame(const JPH_SliderConstraint *_this, JPH_DebugRenderer *inRenderer);
+
 /// Access to the connected bodies
 /// Generated from method `JPH::SliderConstraint::GetBody1`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -814,6 +827,15 @@ JOLT_API uint64_t JPH_SliderConstraint_GetUserData(const JPH_SliderConstraint *_
 /// Generated from method `JPH::SliderConstraint::SetUserData`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_SliderConstraint_SetUserData(JPH_SliderConstraint *_this, uint64_t inUserData);
+
+/// Size of constraint when drawing it through the debug renderer
+/// Generated from method `JPH::SliderConstraint::GetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_SliderConstraint_GetDrawConstraintSize(const JPH_SliderConstraint *_this);
+
+/// Generated from method `JPH::SliderConstraint::SetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_SliderConstraint_SetDrawConstraintSize(JPH_SliderConstraint *_this, float inSize);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

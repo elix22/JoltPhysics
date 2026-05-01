@@ -16,6 +16,7 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
@@ -608,6 +609,10 @@ JOLT_API bool JPH_FixedConstraint_SolveVelocityConstraint(JPH_FixedConstraint *_
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_FixedConstraint_SolvePositionConstraint(JPH_FixedConstraint *_this, float inDeltaTime, float inBaumgarte);
 
+/// Generated from method `JPH::FixedConstraint::DrawConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_FixedConstraint_DrawConstraint(const JPH_FixedConstraint *_this, JPH_DebugRenderer *inRenderer);
+
 // See: TwoBodyConstraint
 /// Generated from method `JPH::FixedConstraint::GetConstraintToBody1Matrix`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -634,6 +639,10 @@ JOLT_API JPH_Vec3 *JPH_FixedConstraint_GetTotalLambdaRotation(const JPH_FixedCon
 /// Generated from method `JPH::FixedConstraint::IsActive`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_FixedConstraint_IsActive(const JPH_FixedConstraint *_this);
+
+/// Generated from method `JPH::FixedConstraint::DrawConstraintReferenceFrame`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_FixedConstraint_DrawConstraintReferenceFrame(const JPH_FixedConstraint *_this, JPH_DebugRenderer *inRenderer);
 
 /// Access to the connected bodies
 /// Generated from method `JPH::FixedConstraint::GetBody1`.
@@ -693,6 +702,19 @@ JOLT_API uint64_t JPH_FixedConstraint_GetUserData(const JPH_FixedConstraint *_th
 /// Generated from method `JPH::FixedConstraint::SetUserData`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_FixedConstraint_SetUserData(JPH_FixedConstraint *_this, uint64_t inUserData);
+
+/// Generated from method `JPH::FixedConstraint::DrawConstraintLimits`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_FixedConstraint_DrawConstraintLimits(const JPH_FixedConstraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Size of constraint when drawing it through the debug renderer
+/// Generated from method `JPH::FixedConstraint::GetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_FixedConstraint_GetDrawConstraintSize(const JPH_FixedConstraint *_this);
+
+/// Generated from method `JPH::FixedConstraint::SetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_FixedConstraint_SetDrawConstraintSize(JPH_FixedConstraint *_this, float inSize);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

@@ -2,6 +2,7 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Physics/Collision/PhysicsMaterial.h"
 
+#include <Jolt/Core/Color.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
@@ -182,6 +183,11 @@ void Jolt_delete_array_JPH_PhysicsMaterial_void_ptr_void_ptr(void *inPointer, vo
 const char *JPH_PhysicsMaterial_GetDebugName(const JPH_PhysicsMaterial *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsMaterial *)(_this)).GetDebugName();
+}
+
+JPH_Color *JPH_PhysicsMaterial_GetDebugColor(const JPH_PhysicsMaterial *_this)
+{
+    return (JPH_Color *)new JPH::Color(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsMaterial *)(_this)).GetDebugColor());
 }
 
 void JPH_PhysicsMaterial_SetEmbedded(const JPH_PhysicsMaterial *_this)

@@ -13,6 +13,7 @@
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/Constraints/SliderConstraint.h>
 #include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -770,6 +771,20 @@ bool JPH_SliderConstraint_SolvePositionConstraint(JPH_SliderConstraint *_this, f
     );
 }
 
+void JPH_SliderConstraint_DrawConstraint(const JPH_SliderConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SliderConstraint *)(_this)).DrawConstraint(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+void JPH_SliderConstraint_DrawConstraintLimits(const JPH_SliderConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SliderConstraint *)(_this)).DrawConstraintLimits(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
 JPH_Mat44 *JPH_SliderConstraint_GetConstraintToBody1Matrix(const JPH_SliderConstraint *_this)
 {
     return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SliderConstraint *)(_this)).GetConstraintToBody1Matrix());
@@ -869,6 +884,13 @@ bool JPH_SliderConstraint_IsActive(const JPH_SliderConstraint *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SliderConstraint *)(_this)).IsActive();
 }
 
+void JPH_SliderConstraint_DrawConstraintReferenceFrame(const JPH_SliderConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SliderConstraint *)(_this)).DrawConstraintReferenceFrame(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
 JPH_Body *JPH_SliderConstraint_GetBody1(const JPH_SliderConstraint *_this)
 {
     return (JPH_Body *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SliderConstraint *)(_this)).GetBody1());
@@ -936,6 +958,18 @@ void JPH_SliderConstraint_SetUserData(JPH_SliderConstraint *_this, uint64_t inUs
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SliderConstraint *)(_this)).SetUserData(
         inUserData
+    );
+}
+
+float JPH_SliderConstraint_GetDrawConstraintSize(const JPH_SliderConstraint *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SliderConstraint *)(_this)).GetDrawConstraintSize();
+}
+
+void JPH_SliderConstraint_SetDrawConstraintSize(JPH_SliderConstraint *_this, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SliderConstraint *)(_this)).SetDrawConstraintSize(
+        inSize
     );
 }
 

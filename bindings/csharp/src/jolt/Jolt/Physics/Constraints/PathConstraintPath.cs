@@ -260,6 +260,19 @@ public static partial class JPH
             return __JPH_PathConstraintPath_IsLooping(_UnderlyingPtr) != 0;
         }
 
+        /// Draw the path relative to inBaseTransform. Used for debug purposes.
+        /// Generated from method `JPH::PathConstraintPath::DrawPath`.
+        public unsafe void DrawPath(JPH.DebugRenderer? inRenderer, JPH.Const_Mat44 inBaseTransform)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PathConstraintPath_DrawPath", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PathConstraintPath_DrawPath", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PathConstraintPath_DrawPath(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer, JPH.Const_Mat44._Underlying *inBaseTransform);
+            __JPH_PathConstraintPath_DrawPath(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null, inBaseTransform._UnderlyingPtr);
+        }
+
         /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
         /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
         /// the object and at that point in time it is checked that no references are left to the structure.

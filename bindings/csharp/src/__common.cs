@@ -235,6 +235,28 @@ public static partial class JPH
         public unsafe ref uint this[nint i] => ref _elem[i];
     }
 
+    public unsafe struct ArrayDebugRendererVertex3
+    {
+        internal JPH.DebugRenderer.Vertex._Underlying *Ptr;
+
+        internal ArrayDebugRendererVertex3(JPH.DebugRenderer.Vertex._Underlying *new_ptr) {Ptr = new_ptr;}
+
+        public JPH.DebugRenderer.Vertex this[nint i]
+        {
+            get
+            {
+                System.Diagnostics.Trace.Assert(i >= 0 && i < 3);
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DebugRenderer_Vertex_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DebugRenderer_Vertex_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.DebugRenderer.Vertex._Underlying *__JPH_DebugRenderer_Vertex_OffsetPtr(JPH.DebugRenderer.Vertex._Underlying *ptr, nint i);
+                return new(__JPH_DebugRenderer_Vertex_OffsetPtr(Ptr, i), is_owning: false);
+            }
+        }
+    }
+
     public unsafe struct ArraySoftBodySharedSettingsSkinWeight4
     {
         internal JPH.SoftBodySharedSettings.SkinWeight._Underlying *Ptr;

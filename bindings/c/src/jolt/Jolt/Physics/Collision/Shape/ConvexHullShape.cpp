@@ -2,6 +2,7 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Physics/Collision/Shape/ConvexHullShape.h"
 
+#include <Jolt/Core/Color.h>
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Core/Reference.h>
 #include <Jolt/Geometry/AABox.h>
@@ -19,6 +20,7 @@
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
 #include <Jolt/Physics/Collision/TransformedShape.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -395,9 +397,39 @@ const int *JPH_ConvexHullShape_Get_cMaxPointsInHull(void)
     return std::addressof(JPH::ConvexHullShape::cMaxPointsInHull);
 }
 
+const bool *JPH_ConvexHullShape_Get_sDrawFaceOutlines(void)
+{
+    return std::addressof(JPH::ConvexHullShape::sDrawFaceOutlines);
+}
+
+void JPH_ConvexHullShape_Set_sDrawFaceOutlines(bool value)
+{
+    JPH::ConvexHullShape::sDrawFaceOutlines = value;
+}
+
+bool *JPH_ConvexHullShape_GetMutable_sDrawFaceOutlines(void)
+{
+    return std::addressof(JPH::ConvexHullShape::sDrawFaceOutlines);
+}
+
 const int *JPH_ConvexHullShape_Get_cGetTrianglesMinTrianglesRequested(void)
 {
     return std::addressof(JPH::ConvexHullShape::cGetTrianglesMinTrianglesRequested);
+}
+
+const bool *JPH_ConvexHullShape_Get_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::ConvexHullShape::sDrawSubmergedVolumes);
+}
+
+void JPH_ConvexHullShape_Set_sDrawSubmergedVolumes(bool value)
+{
+    JPH::ConvexHullShape::sDrawSubmergedVolumes = value;
+}
+
+bool *JPH_ConvexHullShape_GetMutable_sDrawSubmergedVolumes(void)
+{
+    return std::addressof(JPH::ConvexHullShape::sDrawSubmergedVolumes);
 }
 
 JPH_ConvexHullShape *JPH_ConvexHullShape_DefaultConstruct(void)
@@ -654,7 +686,7 @@ const JPH_ConvexShape_Support *JPH_ConvexHullShape_GetSupportFunction(const JPH_
     ));
 }
 
-void JPH_ConvexHullShape_GetSubmergedVolume(const JPH_ConvexHullShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy)
+void JPH_ConvexHullShape_GetSubmergedVolume(const JPH_ConvexHullShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexHullShape *)(_this)).GetSubmergedVolume(
         ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
@@ -662,7 +694,29 @@ void JPH_ConvexHullShape_GetSubmergedVolume(const JPH_ConvexHullShape *_this, co
         ((inSurface ? void() : MRBINDC_THROW("Parameter `inSurface` can not be null.", void)), *(const JPH::Plane *)(inSurface)),
         ((outTotalVolume ? void() : MRBINDC_THROW("Parameter `outTotalVolume` can not be null.", void)), *outTotalVolume),
         ((outSubmergedVolume ? void() : MRBINDC_THROW("Parameter `outSubmergedVolume` can not be null.", void)), *outSubmergedVolume),
-        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy))
+        ((outCenterOfBuoyancy ? void() : MRBINDC_THROW("Parameter `outCenterOfBuoyancy` can not be null.", void)), *(JPH::Vec3 *)(outCenterOfBuoyancy)),
+        ((inBaseOffset ? void() : MRBINDC_THROW("Parameter `inBaseOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBaseOffset))
+    );
+}
+
+void JPH_ConvexHullShape_Draw(const JPH_ConvexHullShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexHullShape *)(_this)).Draw(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inUseMaterialColors,
+        inDrawWireframe
+    );
+}
+
+void JPH_ConvexHullShape_DrawShrunkShape(const JPH_ConvexHullShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexHullShape *)(_this)).DrawShrunkShape(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
     );
 }
 
@@ -771,6 +825,26 @@ void JPH_ConvexHullShape_SetDensity(JPH_ConvexHullShape *_this, float inDensity)
 float JPH_ConvexHullShape_GetDensity(const JPH_ConvexHullShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexHullShape *)(_this)).GetDensity();
+}
+
+void JPH_ConvexHullShape_DrawGetSupportFunction(const JPH_ConvexHullShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexHullShape *)(_this)).DrawGetSupportFunction(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inDrawSupportDirection
+    );
+}
+
+void JPH_ConvexHullShape_DrawGetSupportingFace(const JPH_ConvexHullShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexHullShape *)(_this)).DrawGetSupportingFace(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inCenterOfMassTransform ? void() : MRBINDC_THROW("Parameter `inCenterOfMassTransform` can not be null.", void)), *(const JPH::Mat44 *)(inCenterOfMassTransform)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale))
+    );
 }
 
 uint64_t JPH_ConvexHullShape_GetUserData(const JPH_ConvexHullShape *_this)

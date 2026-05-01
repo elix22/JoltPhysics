@@ -11,7 +11,9 @@
 extern "C" {
 #endif
 
+typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
+typedef struct Jolt_std_function_void Jolt_std_function_void; // Defined in `#include <std_function_void.h>`.
 
 
 /// A job handle contains a reference to a job. The job will be deleted as soon as there are no JobHandles.
@@ -132,6 +134,16 @@ JOLT_API void Jolt_delete_array_JPH_JobSystem_void_ptr_void_ptr(void *inPointer,
 /// Generated from method `JPH::JobSystem::GetMaxConcurrency`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API int JPH_JobSystem_GetMaxConcurrency(const JPH_JobSystem *_this);
+
+/// Create a new job, the job is started immediately if inNumDependencies == 0 otherwise it starts when
+/// RemoveDependency causes the dependency counter to reach 0.
+/// Generated from method `JPH::JobSystem::CreateJob`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inJobFunction` can not be null. It is a single object.
+/// Parameter `inNumDependencies` has a default argument: `0`, pass a null pointer to use it.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_JobSystem_JobHandle_Destroy()` to free it when you're done using it.
+JOLT_API JPH_JobSystem_JobHandle *JPH_JobSystem_CreateJob(JPH_JobSystem *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, const unsigned int *inNumDependencies);
 
 /// Create a new barrier, used to wait on jobs
 /// Generated from method `JPH::JobSystem::CreateBarrier`.

@@ -2,7 +2,9 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/Jolt/Physics/Vehicle/VehicleEngine.h"
 
+#include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Vehicle/VehicleEngine.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -412,6 +414,26 @@ void JPH_VehicleEngine_ApplyDamping(JPH_VehicleEngine *_this, float inDeltaTime)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleEngine *)(_this)).ApplyDamping(
         inDeltaTime
+    );
+}
+
+float JPH_VehicleEngine_ConvertRPMToAngle(const JPH_VehicleEngine *_this, float inRPM)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleEngine *)(_this)).ConvertRPMToAngle(
+        inRPM
+    );
+}
+
+void JPH_VehicleEngine_DrawRPM(const JPH_VehicleEngine *_this, JPH_DebugRenderer *inRenderer, const JPH_Vec3 *inPosition, const JPH_Vec3 *inForward, const JPH_Vec3 *inUp, float inSize, float inShiftDownRPM, float inShiftUpRPM)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleEngine *)(_this)).DrawRPM(
+        ((JPH::DebugRenderer *)inRenderer),
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inForward ? void() : MRBINDC_THROW("Parameter `inForward` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inForward)),
+        ((inUp ? void() : MRBINDC_THROW("Parameter `inUp` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inUp)),
+        inSize,
+        inShiftDownRPM,
+        inShiftUpRPM
     );
 }
 

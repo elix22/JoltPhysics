@@ -94,6 +94,21 @@ public static partial class JPH
             }
         }
 
+        ///< Draw debug info for objects that perform continuous collision detection through the linear cast motion quality
+        public static unsafe ref bool SDrawMotionQualityLinearCast
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_GetMutable_sDrawMotionQualityLinearCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_GetMutable_sDrawMotionQualityLinearCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static bool *__JPH_PhysicsSystem_GetMutable_sDrawMotionQualityLinearCast();
+                return ref *__JPH_PhysicsSystem_GetMutable_sDrawMotionQualityLinearCast();
+            }
+        }
+
         internal unsafe Const_PhysicsSystem(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -705,6 +720,45 @@ public static partial class JPH
             #endif
             extern static JPH.EPhysicsUpdateError __JPH_PhysicsSystem_Update(_Underlying *_this, float inDeltaTime, int inCollisionSteps, JPH.TempAllocator._Underlying *inTempAllocator, JPH.JobSystem._Underlying *inJobSystem);
             return __JPH_PhysicsSystem_Update(_UnderlyingPtr, inDeltaTime, inCollisionSteps, inTempAllocator is not null ? inTempAllocator._UnderlyingPtr : null, inJobSystem is not null ? inJobSystem._UnderlyingPtr : null);
+        }
+
+        /// Draw the constraints only (debugging purposes)
+        /// Generated from method `JPH::PhysicsSystem::DrawConstraints`.
+        public unsafe void DrawConstraints(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_DrawConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_DrawConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PhysicsSystem_DrawConstraints(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_PhysicsSystem_DrawConstraints(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
+        /// Draw the constraint limits only (debugging purposes)
+        /// Generated from method `JPH::PhysicsSystem::DrawConstraintLimits`.
+        public unsafe void DrawConstraintLimits(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_DrawConstraintLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_DrawConstraintLimits", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PhysicsSystem_DrawConstraintLimits(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_PhysicsSystem_DrawConstraintLimits(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
+        }
+
+        /// Draw the constraint reference frames only (debugging purposes)
+        /// Generated from method `JPH::PhysicsSystem::DrawConstraintReferenceFrame`.
+        public unsafe void DrawConstraintReferenceFrame(JPH.DebugRenderer? inRenderer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_DrawConstraintReferenceFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_DrawConstraintReferenceFrame", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PhysicsSystem_DrawConstraintReferenceFrame(_Underlying *_this, JPH.DebugRenderer._Underlying *inRenderer);
+            __JPH_PhysicsSystem_DrawConstraintReferenceFrame(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null);
         }
 
         /// Set gravity value

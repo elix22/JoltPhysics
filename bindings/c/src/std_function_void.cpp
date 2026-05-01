@@ -1,0 +1,205 @@
+// machine generated, do not edit
+#define JOLT_BUILD_LIBRARY
+#include "std_function_void.h"
+
+#include <__mrbind_c_details.h>
+
+#include <cstddef>
+#include <cstring>
+#include <functional>
+#include <new>
+#include <stdexcept>
+
+
+Jolt_std_function_void *Jolt_std_function_void_DefaultConstruct(void)
+{
+    using _mrbind_T = std::function<void(void)>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (Jolt_std_function_void*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+Jolt_std_function_void *Jolt_std_function_void_DefaultConstructArray(size_t num_elems)
+{
+    return (Jolt_std_function_void *)(new std::function<void(void)>[num_elems]{});
+}
+
+Jolt_std_function_void *Jolt_std_function_void_ConstructFromAnother(Jolt_PassBy other_pass_by, Jolt_std_function_void *other)
+{
+    MRBINDC_CLASSARG_GUARD(other, std::function<void(void)>);
+    return (Jolt_std_function_void *)new std::function<void(void)>(std::function<void(void)>(
+        (MRBINDC_CLASSARG_DEF_CTOR(other, std::function<void(void)>) MRBINDC_CLASSARG_COPY(other, (std::function<void(void)>), std::function<void(void)>) MRBINDC_CLASSARG_MOVE(other, (std::function<void(void)>), std::function<void(void)>) MRBINDC_CLASSARG_NO_DEF_ARG(other, Jolt_PassBy_DefaultArgument, std::function<void(void)>) MRBINDC_CLASSARG_NO_DEF_ARG(other, Jolt_PassBy_NoObject, std::function<void(void)>) MRBINDC_CLASSARG_END(other, std::function<void(void)>))
+    ));
+}
+
+void Jolt_std_function_void_AssignFromAnother(Jolt_std_function_void *_this, Jolt_PassBy other_pass_by, Jolt_std_function_void *other)
+{
+    MRBINDC_CLASSARG_GUARD(other, std::function<void(void)>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(std::function<void(void)> *)(_this)).operator=(
+        (MRBINDC_CLASSARG_DEF_CTOR(other, std::function<void(void)>) MRBINDC_CLASSARG_COPY(other, (std::function<void(void)>), std::function<void(void)>) MRBINDC_CLASSARG_MOVE(other, (std::function<void(void)>), std::function<void(void)>) MRBINDC_CLASSARG_NO_DEF_ARG(other, Jolt_PassBy_DefaultArgument, std::function<void(void)>) MRBINDC_CLASSARG_NO_DEF_ARG(other, Jolt_PassBy_NoObject, std::function<void(void)>) MRBINDC_CLASSARG_END(other, std::function<void(void)>))
+    );
+}
+
+void Jolt_std_function_void_Destroy(const Jolt_std_function_void *_this)
+{
+    delete ((const std::function<void(void)> *)_this);
+}
+
+void Jolt_std_function_void_DestroyArray(const Jolt_std_function_void *_this)
+{
+    delete[] ((const std::function<void(void)> *)_this);
+}
+
+const Jolt_std_function_void *Jolt_std_function_void_OffsetPtr(const Jolt_std_function_void *ptr, ptrdiff_t i)
+{
+    return (const Jolt_std_function_void *)(((const std::function<void(void)> *)ptr) + i);
+}
+
+Jolt_std_function_void *Jolt_std_function_void_OffsetMutablePtr(Jolt_std_function_void *ptr, ptrdiff_t i)
+{
+    return (Jolt_std_function_void *)(((std::function<void(void)> *)ptr) + i);
+}
+
+bool Jolt_std_function_void_has_value(const Jolt_std_function_void *_this)
+{
+    return bool(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const std::function<void(void)> *)(_this)));
+}
+
+void Jolt_std_function_void_reset(Jolt_std_function_void *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(std::function<void(void)> *)(_this)) = nullptr;
+}
+
+void Jolt_std_function_void_call(const Jolt_std_function_void *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const std::function<void(void)> *)(_this)).operator()();
+}
+
+Jolt_std_function_void *Jolt_std_function_void_ConstructStateless(void (*func)(void))
+{
+    return (Jolt_std_function_void *)new std::function<void(void)>(func ? std::function<void(void)>([_f = func](void) -> void
+    {
+        _f();
+    }) : nullptr);
+}
+
+void Jolt_std_function_void_Assign(Jolt_std_function_void *_this, void (*func)(void))
+{
+    auto &_self = ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(std::function<void(void)> *)(_this));
+    if (!func)
+    {
+        _self = nullptr;
+        return;
+    }
+    _self = [_f = func](void) -> void
+    {
+        _f();
+    };
+}
+
+namespace
+{
+    struct _functor_Jolt_std_function_void
+    {
+        using FuncPtr = void (*)(void *_userdata, void **_cleanup_value);
+        using PostcallCbPtr = void (*)(void *_userdata, void *_cleanup_value);
+        using UserdataCbPtr = void (*)(void **_this_userdata, void *_other_userdata);
+
+        FuncPtr _func = nullptr;
+        void *_userdata = nullptr;
+        PostcallCbPtr _postcall_cb = nullptr;
+        UserdataCbPtr _userdata_cb = nullptr;
+
+        _functor_Jolt_std_function_void(FuncPtr _func, void *_userdata, PostcallCbPtr _postcall_cb, UserdataCbPtr _userdata_cb) : _func(_func), _userdata(_userdata), _postcall_cb(_postcall_cb), _userdata_cb(_userdata_cb) {}
+
+        _functor_Jolt_std_function_void(const _functor_Jolt_std_function_void &other) : _func(other._func), _postcall_cb(other._postcall_cb), _userdata_cb(other._userdata_cb)
+        {
+            if (!other._userdata) return; // No data to copy.
+            if (!_userdata_cb) {_userdata = other._userdata; return;} // No callback, just copy the data.
+            _userdata_cb(&_userdata, other._userdata);
+        }
+
+        _functor_Jolt_std_function_void(_functor_Jolt_std_function_void &&other) noexcept : _func(other._func), _userdata(other._userdata), _postcall_cb(other._postcall_cb), _userdata_cb(other._userdata_cb)
+        {
+            other._func = nullptr;
+            other._userdata = nullptr;
+            other._postcall_cb = nullptr;
+            other._userdata_cb = nullptr;
+        }
+
+        _functor_Jolt_std_function_void &operator=(const _functor_Jolt_std_function_void &other)
+        {
+            if (_userdata_cb && _userdata_cb != other._userdata_cb) // Callback exists but incompatible, destroy the old contents first.
+            {
+                _userdata_cb(&_userdata, nullptr);
+                _userdata = nullptr; // Don't need to zero the callbacks, we'll overwrite them anyway.
+            }
+            _func = other._func;
+            _postcall_cb = other._postcall_cb;
+            _userdata_cb = other._userdata_cb;
+            if (other._userdata && _userdata_cb) // If we have data to copy and a callback, use the callback. The data must be non-null, otherwise the callback will confuse this for a copy construction.
+                _userdata_cb(&_userdata, other._userdata);
+            else // Otherwise shallow-copy.
+                _userdata = other._userdata;
+            return *this;
+        }
+
+        _functor_Jolt_std_function_void &operator=(_functor_Jolt_std_function_void &&other) noexcept
+        {
+            _func = other._func;
+            _userdata = other._userdata;
+            _postcall_cb = other._postcall_cb;
+            _userdata_cb = other._userdata_cb;
+            other._func = nullptr;
+            other._userdata = nullptr;
+            other._userdata_cb = nullptr;
+            return *this;
+        }
+
+        ~_functor_Jolt_std_function_void()
+        {
+            if (_userdata && _userdata_cb)
+                _userdata_cb(&_userdata, nullptr);
+        }
+
+        auto operator()(void) -> void
+        {
+            struct _cleanup_guard_type
+            {
+                _functor_Jolt_std_function_void *_self = nullptr;
+                void *_value = nullptr;
+                ~_cleanup_guard_type()
+                {
+                    if (_self->_postcall_cb)
+                        _self->_postcall_cb(_self->_userdata, _value);
+                }
+            };
+            _cleanup_guard_type _cleanup_guard;
+            _cleanup_guard._self = this;
+            
+            _func(
+                _userdata,
+                _postcall_cb ? &_cleanup_guard._value : nullptr
+            );
+        }
+    };
+}
+
+Jolt_std_function_void *Jolt_std_function_void_ConstructEx(void (*func)(void *_userdata, void **_cleanup_value), void *userdata, void (*postcall_callback)(void *_userdata, void *_cleanup_value), void (*userdata_callback)(void **_this_userdata, void *_other_userdata))
+{
+    return (Jolt_std_function_void *)new std::function<void(void)>(func ? std::function<void(void)>(_functor_Jolt_std_function_void{func, userdata, postcall_callback, userdata_callback}) : nullptr);
+}
+
+void Jolt_std_function_void_AssignEx(Jolt_std_function_void *_this, void (*func)(void *_userdata, void **_cleanup_value), void *userdata, void (*postcall_callback)(void *_userdata, void *_cleanup_value), void (*userdata_callback)(void **_this_userdata, void *_other_userdata))
+{
+    auto &_self = ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(std::function<void(void)> *)(_this));
+    if (!func)
+    {
+        _self = nullptr;
+        return;
+    }
+    
+    _self = _functor_Jolt_std_function_void{func, userdata, postcall_callback, userdata_callback};
+}
+

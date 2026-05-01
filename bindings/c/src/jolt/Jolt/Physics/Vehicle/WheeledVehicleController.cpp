@@ -1415,3 +1415,11 @@ void JPH_WheeledVehicleController_SetTireMaxImpulseCallback(JPH_WheeledVehicleCo
     );
 }
 
+void JPH_WheeledVehicleController_SetRPMMeter(JPH_WheeledVehicleController *_this, const JPH_Vec3 *inPosition, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::WheeledVehicleController *)(_this)).SetRPMMeter(
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        inSize
+    );
+}
+

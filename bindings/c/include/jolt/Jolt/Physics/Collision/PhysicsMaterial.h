@@ -9,6 +9,7 @@
 extern "C" {
 #endif
 
+typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
 typedef struct JPH_RefTarget_JPH_PhysicsMaterial JPH_RefTarget_JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
 
@@ -123,6 +124,11 @@ JOLT_API void Jolt_delete_array_JPH_PhysicsMaterial_void_ptr_void_ptr(void *inPo
 /// Generated from method `JPH::PhysicsMaterial::GetDebugName`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API const char *JPH_PhysicsMaterial_GetDebugName(const JPH_PhysicsMaterial *_this);
+
+/// Generated from method `JPH::PhysicsMaterial::GetDebugColor`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Color_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Color *JPH_PhysicsMaterial_GetDebugColor(const JPH_PhysicsMaterial *_this);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

@@ -14,6 +14,7 @@
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/Constraints/HingeConstraint.h>
 #include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -749,6 +750,20 @@ bool JPH_HingeConstraint_SolvePositionConstraint(JPH_HingeConstraint *_this, flo
     );
 }
 
+void JPH_HingeConstraint_DrawConstraint(const JPH_HingeConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).DrawConstraint(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+void JPH_HingeConstraint_DrawConstraintLimits(const JPH_HingeConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).DrawConstraintLimits(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
 JPH_Mat44 *JPH_HingeConstraint_GetConstraintToBody1Matrix(const JPH_HingeConstraint *_this)
 {
     return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetConstraintToBody1Matrix());
@@ -885,6 +900,13 @@ bool JPH_HingeConstraint_IsActive(const JPH_HingeConstraint *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).IsActive();
 }
 
+void JPH_HingeConstraint_DrawConstraintReferenceFrame(const JPH_HingeConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).DrawConstraintReferenceFrame(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
 JPH_Body *JPH_HingeConstraint_GetBody1(const JPH_HingeConstraint *_this)
 {
     return (JPH_Body *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetBody1());
@@ -952,6 +974,18 @@ void JPH_HingeConstraint_SetUserData(JPH_HingeConstraint *_this, uint64_t inUser
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraint *)(_this)).SetUserData(
         inUserData
+    );
+}
+
+float JPH_HingeConstraint_GetDrawConstraintSize(const JPH_HingeConstraint *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetDrawConstraintSize();
+}
+
+void JPH_HingeConstraint_SetDrawConstraintSize(JPH_HingeConstraint *_this, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraint *)(_this)).SetDrawConstraintSize(
+        inSize
     );
 }
 

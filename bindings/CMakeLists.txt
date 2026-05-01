@@ -14,8 +14,9 @@ set(TARGET_SAMPLES                      OFF CACHE BOOL "" FORCE)
 set(TARGET_VIEWER                       OFF CACHE BOOL "" FORCE)
 set(ENABLE_ALL_WARNINGS                 OFF CACHE BOOL "" FORCE)
 set(ENABLE_INSTALL                      OFF CACHE BOOL "" FORCE)
-# Keep debug renderer and profiler out of the distribution build
-set(DEBUG_RENDERER_IN_DEBUG_AND_RELEASE OFF CACHE BOOL "" FORCE)
+# Enable debug renderer unconditionally (all configs/generators) so DebugRenderer bindings are available
+set(DEBUG_RENDERER_IN_DISTRIBUTION       ON  CACHE BOOL "" FORCE)
+set(DEBUG_RENDERER_IN_DEBUG_AND_RELEASE  ON  CACHE BOOL "" FORCE)
 set(PROFILER_IN_DEBUG_AND_RELEASE       OFF CACHE BOOL "" FORCE)
 # Build Jolt as a static library so we can absorb it into libcjolt
 set(BUILD_SHARED_LIBS                   OFF CACHE BOOL "" FORCE)
@@ -116,6 +117,7 @@ else()
     target_compile_options(cjolt PRIVATE
         -fvisibility=hidden
         -fvisibility-inlines-hidden
+        -fno-rtti          # match Jolt's -fno-rtti so no RTTI typeinfo mismatch across the boundary
     )
 endif()
 

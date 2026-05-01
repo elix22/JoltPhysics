@@ -2068,6 +2068,51 @@ public static partial class JPH
             return ret;
         }
 
+        ///< Draw the current state of the constraints for iteration 0 when creating them
+        public static unsafe ref bool SDrawConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetMutable_sDrawConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetMutable_sDrawConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static bool *__JPH_CharacterVirtual_GetMutable_sDrawConstraints();
+                return ref *__JPH_CharacterVirtual_GetMutable_sDrawConstraints();
+            }
+        }
+
+        ///< Draw the state of the walk stairs algorithm
+        public static unsafe ref bool SDrawWalkStairs
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetMutable_sDrawWalkStairs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetMutable_sDrawWalkStairs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static bool *__JPH_CharacterVirtual_GetMutable_sDrawWalkStairs();
+                return ref *__JPH_CharacterVirtual_GetMutable_sDrawWalkStairs();
+            }
+        }
+
+        ///< Draw the state of the stick to floor algorithm
+        public static unsafe ref bool SDrawStickToFloor
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetMutable_sDrawStickToFloor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetMutable_sDrawStickToFloor", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static bool *__JPH_CharacterVirtual_GetMutable_sDrawStickToFloor();
+                return ref *__JPH_CharacterVirtual_GetMutable_sDrawStickToFloor();
+            }
+        }
+
         internal unsafe Const_CharacterVirtual(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructor

@@ -1248,6 +1248,12 @@ JOLT_API const Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_floa
 /// Parameter `inTireMaxImpulseCallback` can not be null. It is a single object.
 JOLT_API void JPH_WheeledVehicleController_SetTireMaxImpulseCallback(JPH_WheeledVehicleController *_this, const Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_float_float_float *inTireMaxImpulseCallback);
 
+/// Debug drawing of RPM meter
+/// Generated from method `JPH::WheeledVehicleController::SetRPMMeter`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPosition` can not be null. It is a single object.
+JOLT_API void JPH_WheeledVehicleController_SetRPMMeter(JPH_WheeledVehicleController *_this, const JPH_Vec3 *inPosition, float inSize);
+
 #ifdef __cplusplus
 } // extern "C"
 #endif

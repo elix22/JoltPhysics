@@ -16,6 +16,7 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
@@ -659,6 +660,14 @@ JOLT_API bool JPH_HingeConstraint_SolveVelocityConstraint(JPH_HingeConstraint *_
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_HingeConstraint_SolvePositionConstraint(JPH_HingeConstraint *_this, float inDeltaTime, float inBaumgarte);
 
+/// Generated from method `JPH::HingeConstraint::DrawConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_HingeConstraint_DrawConstraint(const JPH_HingeConstraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Generated from method `JPH::HingeConstraint::DrawConstraintLimits`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_HingeConstraint_DrawConstraintLimits(const JPH_HingeConstraint *_this, JPH_DebugRenderer *inRenderer);
+
 // See: TwoBodyConstraint
 /// Generated from method `JPH::HingeConstraint::GetConstraintToBody1Matrix`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -783,6 +792,10 @@ JOLT_API float JPH_HingeConstraint_GetTotalLambdaMotor(const JPH_HingeConstraint
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_HingeConstraint_IsActive(const JPH_HingeConstraint *_this);
 
+/// Generated from method `JPH::HingeConstraint::DrawConstraintReferenceFrame`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_HingeConstraint_DrawConstraintReferenceFrame(const JPH_HingeConstraint *_this, JPH_DebugRenderer *inRenderer);
+
 /// Access to the connected bodies
 /// Generated from method `JPH::HingeConstraint::GetBody1`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -841,6 +854,15 @@ JOLT_API uint64_t JPH_HingeConstraint_GetUserData(const JPH_HingeConstraint *_th
 /// Generated from method `JPH::HingeConstraint::SetUserData`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_HingeConstraint_SetUserData(JPH_HingeConstraint *_this, uint64_t inUserData);
+
+/// Size of constraint when drawing it through the debug renderer
+/// Generated from method `JPH::HingeConstraint::GetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_HingeConstraint_GetDrawConstraintSize(const JPH_HingeConstraint *_this);
+
+/// Generated from method `JPH::HingeConstraint::SetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_HingeConstraint_SetDrawConstraintSize(JPH_HingeConstraint *_this, float inSize);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

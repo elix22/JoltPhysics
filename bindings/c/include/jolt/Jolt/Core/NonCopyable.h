@@ -23,6 +23,7 @@ extern "C" {
 ///     `JPH::CharacterBase`
 ///     `JPH::CharacterVsCharacterCollision`
 ///     `JPH::Constraint`
+///     `JPH::DebugRenderer`
 ///     `JPH::JobSystem`
 ///     `JPH::JobSystem::Barrier`
 ///     `JPH::NarrowPhaseQuery`
@@ -46,6 +47,7 @@ extern "C" {
 ///     `JPH::ConvexHullShape`
 ///     `JPH::ConvexShape`
 ///     `JPH::CylinderShape`
+///     `JPH::DebugRendererSimple`
 ///     `JPH::DecoratedShape`
 ///     `JPH::DefaultBroadPhaseLayerFilter`
 ///     `JPH::DefaultObjectLayerFilter`
@@ -89,6 +91,7 @@ extern "C" {
 ///     `JPH::VehicleConstraint`
 ///     `JPH::WheelWV`
 ///     `JPH::WheeledVehicleController`
+///     `RecordingDebugRenderer`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_NonCopyable JPH_NonCopyable;
 

@@ -12,6 +12,7 @@ extern "C" {
 #endif
 
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
@@ -418,6 +419,28 @@ JOLT_API bool JPH_Constraint_SolveVelocityConstraint(JPH_Constraint *_this, floa
 /// Generated from method `JPH::Constraint::SolvePositionConstraint`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_Constraint_SolvePositionConstraint(JPH_Constraint *_this, float inDeltaTime, float inBaumgarte);
+
+// Drawing interface
+/// Generated from method `JPH::Constraint::DrawConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_DrawConstraint(const JPH_Constraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Generated from method `JPH::Constraint::DrawConstraintLimits`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_DrawConstraintLimits(const JPH_Constraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Generated from method `JPH::Constraint::DrawConstraintReferenceFrame`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_DrawConstraintReferenceFrame(const JPH_Constraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Size of constraint when drawing it through the debug renderer
+/// Generated from method `JPH::Constraint::GetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_Constraint_GetDrawConstraintSize(const JPH_Constraint *_this);
+
+/// Generated from method `JPH::Constraint::SetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_Constraint_SetDrawConstraintSize(JPH_Constraint *_this, float inSize);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

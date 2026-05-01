@@ -16,6 +16,7 @@ typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Bod
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
@@ -541,6 +542,10 @@ JOLT_API bool JPH_PointConstraint_SolveVelocityConstraint(JPH_PointConstraint *_
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_PointConstraint_SolvePositionConstraint(JPH_PointConstraint *_this, float inDeltaTime, float inBaumgarte);
 
+/// Generated from method `JPH::PointConstraint::DrawConstraint`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_PointConstraint_DrawConstraint(const JPH_PointConstraint *_this, JPH_DebugRenderer *inRenderer);
+
 /// Get the attachment point for body 1 relative to body 1 COM (transform by Body::GetCenterOfMassTransform to take to world space)
 /// Generated from method `JPH::PointConstraint::GetLocalSpacePoint1`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -574,6 +579,10 @@ JOLT_API JPH_Vec3 *JPH_PointConstraint_GetTotalLambdaPosition(const JPH_PointCon
 /// Generated from method `JPH::PointConstraint::IsActive`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_PointConstraint_IsActive(const JPH_PointConstraint *_this);
+
+/// Generated from method `JPH::PointConstraint::DrawConstraintReferenceFrame`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_PointConstraint_DrawConstraintReferenceFrame(const JPH_PointConstraint *_this, JPH_DebugRenderer *inRenderer);
 
 /// Access to the connected bodies
 /// Generated from method `JPH::PointConstraint::GetBody1`.
@@ -633,6 +642,19 @@ JOLT_API uint64_t JPH_PointConstraint_GetUserData(const JPH_PointConstraint *_th
 /// Generated from method `JPH::PointConstraint::SetUserData`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_PointConstraint_SetUserData(JPH_PointConstraint *_this, uint64_t inUserData);
+
+/// Generated from method `JPH::PointConstraint::DrawConstraintLimits`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_PointConstraint_DrawConstraintLimits(const JPH_PointConstraint *_this, JPH_DebugRenderer *inRenderer);
+
+/// Size of constraint when drawing it through the debug renderer
+/// Generated from method `JPH::PointConstraint::GetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_PointConstraint_GetDrawConstraintSize(const JPH_PointConstraint *_this);
+
+/// Generated from method `JPH::PointConstraint::SetDrawConstraintSize`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_PointConstraint_SetDrawConstraintSize(JPH_PointConstraint *_this, float inSize);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

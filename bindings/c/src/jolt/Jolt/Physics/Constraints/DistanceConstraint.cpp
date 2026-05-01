@@ -12,6 +12,7 @@
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/Constraints/DistanceConstraint.h>
 #include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -692,6 +693,13 @@ bool JPH_DistanceConstraint_SolvePositionConstraint(JPH_DistanceConstraint *_thi
     );
 }
 
+void JPH_DistanceConstraint_DrawConstraint(const JPH_DistanceConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraint *)(_this)).DrawConstraint(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
 JPH_Mat44 *JPH_DistanceConstraint_GetConstraintToBody1Matrix(const JPH_DistanceConstraint *_this)
 {
     return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraint *)(_this)).GetConstraintToBody1Matrix());
@@ -728,6 +736,13 @@ float JPH_DistanceConstraint_GetTotalLambdaPosition(const JPH_DistanceConstraint
 bool JPH_DistanceConstraint_IsActive(const JPH_DistanceConstraint *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraint *)(_this)).IsActive();
+}
+
+void JPH_DistanceConstraint_DrawConstraintReferenceFrame(const JPH_DistanceConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraint *)(_this)).DrawConstraintReferenceFrame(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
 }
 
 JPH_Body *JPH_DistanceConstraint_GetBody1(const JPH_DistanceConstraint *_this)
@@ -797,6 +812,25 @@ void JPH_DistanceConstraint_SetUserData(JPH_DistanceConstraint *_this, uint64_t 
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DistanceConstraint *)(_this)).SetUserData(
         inUserData
+    );
+}
+
+void JPH_DistanceConstraint_DrawConstraintLimits(const JPH_DistanceConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraint *)(_this)).DrawConstraintLimits(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+float JPH_DistanceConstraint_GetDrawConstraintSize(const JPH_DistanceConstraint *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraint *)(_this)).GetDrawConstraintSize();
+}
+
+void JPH_DistanceConstraint_SetDrawConstraintSize(JPH_DistanceConstraint *_this, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DistanceConstraint *)(_this)).SetDrawConstraintSize(
+        inSize
     );
 }
 

@@ -11,6 +11,7 @@
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
+#include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -413,6 +414,13 @@ bool JPH_TwoBodyConstraint_IsActive(const JPH_TwoBodyConstraint *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TwoBodyConstraint *)(_this)).IsActive();
 }
 
+void JPH_TwoBodyConstraint_DrawConstraintReferenceFrame(const JPH_TwoBodyConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TwoBodyConstraint *)(_this)).DrawConstraintReferenceFrame(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
 JPH_Body *JPH_TwoBodyConstraint_GetBody1(const JPH_TwoBodyConstraint *_this)
 {
     return (JPH_Body *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TwoBodyConstraint *)(_this)).GetBody1());
@@ -532,6 +540,32 @@ bool JPH_TwoBodyConstraint_SolvePositionConstraint(JPH_TwoBodyConstraint *_this,
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::TwoBodyConstraint *)(_this)).SolvePositionConstraint(
         inDeltaTime,
         inBaumgarte
+    );
+}
+
+void JPH_TwoBodyConstraint_DrawConstraint(const JPH_TwoBodyConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TwoBodyConstraint *)(_this)).DrawConstraint(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+void JPH_TwoBodyConstraint_DrawConstraintLimits(const JPH_TwoBodyConstraint *_this, JPH_DebugRenderer *inRenderer)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TwoBodyConstraint *)(_this)).DrawConstraintLimits(
+        ((JPH::DebugRenderer *)inRenderer)
+    );
+}
+
+float JPH_TwoBodyConstraint_GetDrawConstraintSize(const JPH_TwoBodyConstraint *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::TwoBodyConstraint *)(_this)).GetDrawConstraintSize();
+}
+
+void JPH_TwoBodyConstraint_SetDrawConstraintSize(JPH_TwoBodyConstraint *_this, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::TwoBodyConstraint *)(_this)).SetDrawConstraintSize(
+        inSize
     );
 }
 

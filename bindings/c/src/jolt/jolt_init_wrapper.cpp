@@ -2,7 +2,11 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/jolt_init_wrapper.h"
 
+#include <Jolt/Core/Color.h>
+#include <Jolt/Core/NonCopyable.h>
+#include <Jolt/Geometry/AABox.h>
 #include <Jolt/Geometry/RayAABox.h>
+#include <Jolt/Math/Mat44.h>
 #include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyID.h>
@@ -18,11 +22,14 @@
 #include <Jolt/Physics/Vehicle/VehicleConstraint.h>
 #include <Jolt/Physics/Vehicle/VehicleDifferential.h>
 #include <Jolt/Physics/Vehicle/WheeledVehicleController.h>
+#include <Jolt/Renderer/DebugRenderer.h>
+#include <Jolt/Renderer/DebugRendererSimple.h>
 #include <__mrbind_c_details.h>
 #include <jolt_init_wrapper.h>
 
 #include <cstddef>
 #include <cstring>
+#include <functional>
 #include <memory>
 #include <new>
 #include <stdexcept>
@@ -872,5 +879,574 @@ void EstimateResponseContactListener_OnContactRemoved(EstimateResponseContactLis
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(EstimateResponseContactListener *)(_this)).OnContactRemoved(
         ((inSubShapePair ? void() : MRBINDC_THROW("Parameter `inSubShapePair` can not be null.", void)), *(const JPH::SubShapeIDPair *)(inSubShapePair))
     );
+}
+
+const JPH_Vec3 *DebugLineRecord_Get_mFrom(const DebugLineRecord *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const DebugLineRecord *)(_this)).mFrom);
+}
+
+JPH_Vec3 *DebugLineRecord_GetMutable_mFrom(DebugLineRecord *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(DebugLineRecord *)(_this)).mFrom);
+}
+
+const JPH_Vec3 *DebugLineRecord_Get_mTo(const DebugLineRecord *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const DebugLineRecord *)(_this)).mTo);
+}
+
+JPH_Vec3 *DebugLineRecord_GetMutable_mTo(DebugLineRecord *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(DebugLineRecord *)(_this)).mTo);
+}
+
+const JPH_Color *DebugLineRecord_Get_mColor(const DebugLineRecord *_this)
+{
+    return (const JPH_Color *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const DebugLineRecord *)(_this)).mColor);
+}
+
+JPH_Color *DebugLineRecord_GetMutable_mColor(DebugLineRecord *_this)
+{
+    return (JPH_Color *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(DebugLineRecord *)(_this)).mColor);
+}
+
+DebugLineRecord *DebugLineRecord_DefaultConstruct(void)
+{
+    using _mrbind_T = DebugLineRecord;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (DebugLineRecord*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+DebugLineRecord *DebugLineRecord_DefaultConstructArray(size_t num_elems)
+{
+    return (DebugLineRecord *)(new DebugLineRecord[num_elems]{});
+}
+
+DebugLineRecord *DebugLineRecord_ConstructFrom(const JPH_Vec3 *mFrom, const JPH_Vec3 *mTo, const JPH_Color *mColor)
+{
+    return (DebugLineRecord *)new DebugLineRecord(DebugLineRecord{
+        ((mFrom ? void() : MRBINDC_THROW("Parameter `mFrom` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)mFrom)),
+        ((mTo ? void() : MRBINDC_THROW("Parameter `mTo` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)mTo)),
+        ((mColor ? void() : MRBINDC_THROW("Parameter `mColor` can not be null.", void)), JPH::Color(*(JPH::Color *)mColor))
+    });
+}
+
+const DebugLineRecord *DebugLineRecord_OffsetPtr(const DebugLineRecord *ptr, ptrdiff_t i)
+{
+    return (const DebugLineRecord *)(((const DebugLineRecord *)ptr) + i);
+}
+
+DebugLineRecord *DebugLineRecord_OffsetMutablePtr(DebugLineRecord *ptr, ptrdiff_t i)
+{
+    return (DebugLineRecord *)(((DebugLineRecord *)ptr) + i);
+}
+
+DebugLineRecord *DebugLineRecord_ConstructFromAnother(const DebugLineRecord *_other)
+{
+    return (DebugLineRecord *)new DebugLineRecord(DebugLineRecord(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), DebugLineRecord(*(DebugLineRecord *)_other))
+    ));
+}
+
+void DebugLineRecord_Destroy(const DebugLineRecord *_this)
+{
+    delete ((const DebugLineRecord *)_this);
+}
+
+void DebugLineRecord_DestroyArray(const DebugLineRecord *_this)
+{
+    delete[] ((const DebugLineRecord *)_this);
+}
+
+DebugLineRecord *DebugLineRecord_AssignFromAnother(DebugLineRecord *_this, const DebugLineRecord *_other)
+{
+    return (DebugLineRecord *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(DebugLineRecord *)(_this)).operator=(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), DebugLineRecord(*(DebugLineRecord *)_other))
+    ));
+}
+
+const JPH_Vec3 *DebugTriangleRecord_Get_mV1(const DebugTriangleRecord *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const DebugTriangleRecord *)(_this)).mV1);
+}
+
+JPH_Vec3 *DebugTriangleRecord_GetMutable_mV1(DebugTriangleRecord *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(DebugTriangleRecord *)(_this)).mV1);
+}
+
+const JPH_Vec3 *DebugTriangleRecord_Get_mV2(const DebugTriangleRecord *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const DebugTriangleRecord *)(_this)).mV2);
+}
+
+JPH_Vec3 *DebugTriangleRecord_GetMutable_mV2(DebugTriangleRecord *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(DebugTriangleRecord *)(_this)).mV2);
+}
+
+const JPH_Vec3 *DebugTriangleRecord_Get_mV3(const DebugTriangleRecord *_this)
+{
+    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const DebugTriangleRecord *)(_this)).mV3);
+}
+
+JPH_Vec3 *DebugTriangleRecord_GetMutable_mV3(DebugTriangleRecord *_this)
+{
+    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(DebugTriangleRecord *)(_this)).mV3);
+}
+
+const JPH_Color *DebugTriangleRecord_Get_mColor(const DebugTriangleRecord *_this)
+{
+    return (const JPH_Color *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const DebugTriangleRecord *)(_this)).mColor);
+}
+
+JPH_Color *DebugTriangleRecord_GetMutable_mColor(DebugTriangleRecord *_this)
+{
+    return (JPH_Color *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(DebugTriangleRecord *)(_this)).mColor);
+}
+
+DebugTriangleRecord *DebugTriangleRecord_DefaultConstruct(void)
+{
+    using _mrbind_T = DebugTriangleRecord;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (DebugTriangleRecord*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+DebugTriangleRecord *DebugTriangleRecord_DefaultConstructArray(size_t num_elems)
+{
+    return (DebugTriangleRecord *)(new DebugTriangleRecord[num_elems]{});
+}
+
+DebugTriangleRecord *DebugTriangleRecord_ConstructFrom(const JPH_Vec3 *mV1, const JPH_Vec3 *mV2, const JPH_Vec3 *mV3, const JPH_Color *mColor)
+{
+    return (DebugTriangleRecord *)new DebugTriangleRecord(DebugTriangleRecord{
+        ((mV1 ? void() : MRBINDC_THROW("Parameter `mV1` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)mV1)),
+        ((mV2 ? void() : MRBINDC_THROW("Parameter `mV2` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)mV2)),
+        ((mV3 ? void() : MRBINDC_THROW("Parameter `mV3` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)mV3)),
+        ((mColor ? void() : MRBINDC_THROW("Parameter `mColor` can not be null.", void)), JPH::Color(*(JPH::Color *)mColor))
+    });
+}
+
+const DebugTriangleRecord *DebugTriangleRecord_OffsetPtr(const DebugTriangleRecord *ptr, ptrdiff_t i)
+{
+    return (const DebugTriangleRecord *)(((const DebugTriangleRecord *)ptr) + i);
+}
+
+DebugTriangleRecord *DebugTriangleRecord_OffsetMutablePtr(DebugTriangleRecord *ptr, ptrdiff_t i)
+{
+    return (DebugTriangleRecord *)(((DebugTriangleRecord *)ptr) + i);
+}
+
+DebugTriangleRecord *DebugTriangleRecord_ConstructFromAnother(const DebugTriangleRecord *_other)
+{
+    return (DebugTriangleRecord *)new DebugTriangleRecord(DebugTriangleRecord(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), DebugTriangleRecord(*(DebugTriangleRecord *)_other))
+    ));
+}
+
+void DebugTriangleRecord_Destroy(const DebugTriangleRecord *_this)
+{
+    delete ((const DebugTriangleRecord *)_this);
+}
+
+void DebugTriangleRecord_DestroyArray(const DebugTriangleRecord *_this)
+{
+    delete[] ((const DebugTriangleRecord *)_this);
+}
+
+DebugTriangleRecord *DebugTriangleRecord_AssignFromAnother(DebugTriangleRecord *_this, const DebugTriangleRecord *_other)
+{
+    return (DebugTriangleRecord *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(DebugTriangleRecord *)(_this)).operator=(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), DebugTriangleRecord(*(DebugTriangleRecord *)_other))
+    ));
+}
+
+JPH_DebugRenderer *const *RecordingDebugRenderer_Get_sInstance(void)
+{
+    return (JPH_DebugRenderer *const *)std::addressof(RecordingDebugRenderer::sInstance);
+}
+
+void RecordingDebugRenderer_Set_sInstance(JPH_DebugRenderer *value)
+{
+    RecordingDebugRenderer::sInstance = ((JPH::DebugRenderer *)value);
+}
+
+JPH_DebugRenderer **RecordingDebugRenderer_GetMutable_sInstance(void)
+{
+    return (JPH_DebugRenderer **)std::addressof(RecordingDebugRenderer::sInstance);
+}
+
+RecordingDebugRenderer *RecordingDebugRenderer_DefaultConstruct(void)
+{
+    using _mrbind_T = RecordingDebugRenderer;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (RecordingDebugRenderer*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+RecordingDebugRenderer *RecordingDebugRenderer_DefaultConstructArray(size_t num_elems)
+{
+    return (RecordingDebugRenderer *)(new RecordingDebugRenderer[num_elems]{});
+}
+
+const RecordingDebugRenderer *RecordingDebugRenderer_OffsetPtr(const RecordingDebugRenderer *ptr, ptrdiff_t i)
+{
+    return (const RecordingDebugRenderer *)(((const RecordingDebugRenderer *)ptr) + i);
+}
+
+RecordingDebugRenderer *RecordingDebugRenderer_OffsetMutablePtr(RecordingDebugRenderer *ptr, ptrdiff_t i)
+{
+    return (RecordingDebugRenderer *)(((RecordingDebugRenderer *)ptr) + i);
+}
+
+const JPH_NonCopyable *RecordingDebugRenderer_UpcastTo_JPH_NonCopyable(const RecordingDebugRenderer *object)
+{
+    return (const JPH_NonCopyable *)(static_cast<const JPH::NonCopyable *>(
+        ((const RecordingDebugRenderer *)object)
+    ));
+}
+
+JPH_NonCopyable *RecordingDebugRenderer_MutableUpcastTo_JPH_NonCopyable(RecordingDebugRenderer *object)
+{
+    return (JPH_NonCopyable *)(static_cast<JPH::NonCopyable *>(
+        ((RecordingDebugRenderer *)object)
+    ));
+}
+
+const RecordingDebugRenderer *RecordingDebugRenderer_StaticDowncastFrom_JPH_NonCopyable(const JPH_NonCopyable *object)
+{
+    return (const RecordingDebugRenderer *)(static_cast<const RecordingDebugRenderer *>(
+        ((const JPH::NonCopyable *)object)
+    ));
+}
+
+RecordingDebugRenderer *RecordingDebugRenderer_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCopyable *object)
+{
+    return (RecordingDebugRenderer *)(static_cast<RecordingDebugRenderer *>(
+        ((JPH::NonCopyable *)object)
+    ));
+}
+
+const JPH_DebugRenderer *RecordingDebugRenderer_UpcastTo_JPH_DebugRenderer(const RecordingDebugRenderer *object)
+{
+    return (const JPH_DebugRenderer *)(static_cast<const JPH::DebugRenderer *>(
+        ((const RecordingDebugRenderer *)object)
+    ));
+}
+
+JPH_DebugRenderer *RecordingDebugRenderer_MutableUpcastTo_JPH_DebugRenderer(RecordingDebugRenderer *object)
+{
+    return (JPH_DebugRenderer *)(static_cast<JPH::DebugRenderer *>(
+        ((RecordingDebugRenderer *)object)
+    ));
+}
+
+const RecordingDebugRenderer *RecordingDebugRenderer_StaticDowncastFrom_JPH_DebugRenderer(const JPH_DebugRenderer *object)
+{
+    return (const RecordingDebugRenderer *)(static_cast<const RecordingDebugRenderer *>(
+        ((const JPH::DebugRenderer *)object)
+    ));
+}
+
+RecordingDebugRenderer *RecordingDebugRenderer_MutableStaticDowncastFrom_JPH_DebugRenderer(JPH_DebugRenderer *object)
+{
+    return (RecordingDebugRenderer *)(static_cast<RecordingDebugRenderer *>(
+        ((JPH::DebugRenderer *)object)
+    ));
+}
+
+const JPH_DebugRendererSimple *RecordingDebugRenderer_UpcastTo_JPH_DebugRendererSimple(const RecordingDebugRenderer *object)
+{
+    return (const JPH_DebugRendererSimple *)(static_cast<const JPH::DebugRendererSimple *>(
+        ((const RecordingDebugRenderer *)object)
+    ));
+}
+
+JPH_DebugRendererSimple *RecordingDebugRenderer_MutableUpcastTo_JPH_DebugRendererSimple(RecordingDebugRenderer *object)
+{
+    return (JPH_DebugRendererSimple *)(static_cast<JPH::DebugRendererSimple *>(
+        ((RecordingDebugRenderer *)object)
+    ));
+}
+
+const RecordingDebugRenderer *RecordingDebugRenderer_StaticDowncastFrom_JPH_DebugRendererSimple(const JPH_DebugRendererSimple *object)
+{
+    return (const RecordingDebugRenderer *)(static_cast<const RecordingDebugRenderer *>(
+        ((const JPH::DebugRendererSimple *)object)
+    ));
+}
+
+RecordingDebugRenderer *RecordingDebugRenderer_MutableStaticDowncastFrom_JPH_DebugRendererSimple(JPH_DebugRendererSimple *object)
+{
+    return (RecordingDebugRenderer *)(static_cast<RecordingDebugRenderer *>(
+        ((JPH::DebugRendererSimple *)object)
+    ));
+}
+
+void RecordingDebugRenderer_Destroy(const RecordingDebugRenderer *_this)
+{
+    delete ((const RecordingDebugRenderer *)_this);
+}
+
+void RecordingDebugRenderer_DestroyArray(const RecordingDebugRenderer *_this)
+{
+    delete[] ((const RecordingDebugRenderer *)_this);
+}
+
+void RecordingDebugRenderer_Clear(RecordingDebugRenderer *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).Clear();
+}
+
+unsigned int RecordingDebugRenderer_GetLineCount(const RecordingDebugRenderer *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const RecordingDebugRenderer *)(_this)).GetLineCount();
+}
+
+unsigned int RecordingDebugRenderer_GetTriangleCount(const RecordingDebugRenderer *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const RecordingDebugRenderer *)(_this)).GetTriangleCount();
+}
+
+const DebugLineRecord *RecordingDebugRenderer_GetLine(const RecordingDebugRenderer *_this, unsigned int inIndex)
+{
+    return (const DebugLineRecord *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const RecordingDebugRenderer *)(_this)).GetLine(
+        inIndex
+    ));
+}
+
+const DebugTriangleRecord *RecordingDebugRenderer_GetTriangle(const RecordingDebugRenderer *_this, unsigned int inIndex)
+{
+    return (const DebugTriangleRecord *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const RecordingDebugRenderer *)(_this)).GetTriangle(
+        inIndex
+    ));
+}
+
+void RecordingDebugRenderer_DrawLine(RecordingDebugRenderer *_this, const JPH_Vec3 *inFrom, const JPH_Vec3 *inTo, const JPH_Color *inColor)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawLine(
+        ((inFrom ? void() : MRBINDC_THROW("Parameter `inFrom` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inFrom)),
+        ((inTo ? void() : MRBINDC_THROW("Parameter `inTo` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inTo)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor))
+    );
+}
+
+void RecordingDebugRenderer_DrawTriangle(RecordingDebugRenderer *_this, const JPH_Vec3 *inV1, const JPH_Vec3 *inV2, const JPH_Vec3 *inV3, const JPH_Color *inColor, JPH_DebugRenderer_ECastShadow inCastShadow)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawTriangle(
+        ((inV1 ? void() : MRBINDC_THROW("Parameter `inV1` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV1)),
+        ((inV2 ? void() : MRBINDC_THROW("Parameter `inV2` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV2)),
+        ((inV3 ? void() : MRBINDC_THROW("Parameter `inV3` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV3)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        ((JPH::DebugRenderer::ECastShadow)inCastShadow)
+    );
+}
+
+void RecordingDebugRenderer_SetCameraPos(RecordingDebugRenderer *_this, const JPH_Vec3 *inCameraPos)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).SetCameraPos(
+        ((inCameraPos ? void() : MRBINDC_THROW("Parameter `inCameraPos` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inCameraPos))
+    );
+}
+
+void RecordingDebugRenderer_NextFrame(RecordingDebugRenderer *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).NextFrame();
+}
+
+void RecordingDebugRenderer_DrawMarker(RecordingDebugRenderer *_this, const JPH_Vec3 *inPosition, const JPH_Color *inColor, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawMarker(
+        ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inSize
+    );
+}
+
+void RecordingDebugRenderer_DrawArrow(RecordingDebugRenderer *_this, const JPH_Vec3 *inFrom, const JPH_Vec3 *inTo, const JPH_Color *inColor, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawArrow(
+        ((inFrom ? void() : MRBINDC_THROW("Parameter `inFrom` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inFrom)),
+        ((inTo ? void() : MRBINDC_THROW("Parameter `inTo` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inTo)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inSize
+    );
+}
+
+void RecordingDebugRenderer_DrawCoordinateSystem(RecordingDebugRenderer *_this, const JPH_Mat44 *inTransform, const float *inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawCoordinateSystem(
+        ((inTransform ? void() : MRBINDC_THROW("Parameter `inTransform` can not be null.", void)), *(const JPH::Mat44 *)(inTransform)),
+        (inSize ? *inSize : static_cast<float>(1.F))
+    );
+}
+
+void RecordingDebugRenderer_DrawPlane(RecordingDebugRenderer *_this, const JPH_Vec3 *inPoint, const JPH_Vec3 *inNormal, const JPH_Color *inColor, float inSize)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawPlane(
+        ((inPoint ? void() : MRBINDC_THROW("Parameter `inPoint` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPoint)),
+        ((inNormal ? void() : MRBINDC_THROW("Parameter `inNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inNormal)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        inSize
+    );
+}
+
+void RecordingDebugRenderer_DrawWireTriangle(RecordingDebugRenderer *_this, const JPH_Vec3 *inV1, const JPH_Vec3 *inV2, const JPH_Vec3 *inV3, const JPH_Color *inColor)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawWireTriangle(
+        ((inV1 ? void() : MRBINDC_THROW("Parameter `inV1` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV1)),
+        ((inV2 ? void() : MRBINDC_THROW("Parameter `inV2` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV2)),
+        ((inV3 ? void() : MRBINDC_THROW("Parameter `inV3` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV3)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor))
+    );
+}
+
+void RecordingDebugRenderer_DrawWireSphere(RecordingDebugRenderer *_this, const JPH_Vec3 *inCenter, float inRadius, const JPH_Color *inColor, const int *inLevel)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawWireSphere(
+        ((inCenter ? void() : MRBINDC_THROW("Parameter `inCenter` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inCenter)),
+        inRadius,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        (inLevel ? *inLevel : static_cast<int>(3))
+    );
+}
+
+void RecordingDebugRenderer_DrawWireUnitSphere(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, const JPH_Color *inColor, const int *inLevel)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawWireUnitSphere(
+        ((inMatrix ? void() : MRBINDC_THROW("Parameter `inMatrix` can not be null.", void)), *(const JPH::Mat44 *)(inMatrix)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        (inLevel ? *inLevel : static_cast<int>(3))
+    );
+}
+
+void RecordingDebugRenderer_DrawSphere(RecordingDebugRenderer *_this, const JPH_Vec3 *inCenter, float inRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawSphere(
+        ((inCenter ? void() : MRBINDC_THROW("Parameter `inCenter` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inCenter)),
+        inRadius,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        (inCastShadow ? (JPH::DebugRenderer::ECastShadow)(*inCastShadow) : static_cast<JPH::DebugRenderer::ECastShadow>(JPH::DebugRenderer::ECastShadow::On)),
+        (inDrawMode ? (JPH::DebugRenderer::EDrawMode)(*inDrawMode) : static_cast<JPH::DebugRenderer::EDrawMode>(JPH::DebugRenderer::EDrawMode::Solid))
+    );
+}
+
+void RecordingDebugRenderer_DrawUnitSphere(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawUnitSphere(
+        ((inMatrix ? void() : MRBINDC_THROW("Parameter `inMatrix` can not be null.", void)), *(const JPH::Mat44 *)(inMatrix)),
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        (inCastShadow ? (JPH::DebugRenderer::ECastShadow)(*inCastShadow) : static_cast<JPH::DebugRenderer::ECastShadow>(JPH::DebugRenderer::ECastShadow::On)),
+        (inDrawMode ? (JPH::DebugRenderer::EDrawMode)(*inDrawMode) : static_cast<JPH::DebugRenderer::EDrawMode>(JPH::DebugRenderer::EDrawMode::Solid))
+    );
+}
+
+void RecordingDebugRenderer_DrawCapsule(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inHalfHeightOfCylinder, float inRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawCapsule(
+        ((inMatrix ? void() : MRBINDC_THROW("Parameter `inMatrix` can not be null.", void)), *(const JPH::Mat44 *)(inMatrix)),
+        inHalfHeightOfCylinder,
+        inRadius,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        (inCastShadow ? (JPH::DebugRenderer::ECastShadow)(*inCastShadow) : static_cast<JPH::DebugRenderer::ECastShadow>(JPH::DebugRenderer::ECastShadow::On)),
+        (inDrawMode ? (JPH::DebugRenderer::EDrawMode)(*inDrawMode) : static_cast<JPH::DebugRenderer::EDrawMode>(JPH::DebugRenderer::EDrawMode::Solid))
+    );
+}
+
+void RecordingDebugRenderer_DrawCylinder(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inHalfHeight, float inRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawCylinder(
+        ((inMatrix ? void() : MRBINDC_THROW("Parameter `inMatrix` can not be null.", void)), *(const JPH::Mat44 *)(inMatrix)),
+        inHalfHeight,
+        inRadius,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        (inCastShadow ? (JPH::DebugRenderer::ECastShadow)(*inCastShadow) : static_cast<JPH::DebugRenderer::ECastShadow>(JPH::DebugRenderer::ECastShadow::On)),
+        (inDrawMode ? (JPH::DebugRenderer::EDrawMode)(*inDrawMode) : static_cast<JPH::DebugRenderer::EDrawMode>(JPH::DebugRenderer::EDrawMode::Solid))
+    );
+}
+
+void RecordingDebugRenderer_DrawOpenCone(RecordingDebugRenderer *_this, const JPH_Vec3 *inTop, const JPH_Vec3 *inAxis, const JPH_Vec3 *inPerpendicular, float inHalfAngle, float inLength, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawOpenCone(
+        ((inTop ? void() : MRBINDC_THROW("Parameter `inTop` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inTop)),
+        ((inAxis ? void() : MRBINDC_THROW("Parameter `inAxis` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inAxis)),
+        ((inPerpendicular ? void() : MRBINDC_THROW("Parameter `inPerpendicular` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPerpendicular)),
+        inHalfAngle,
+        inLength,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        (inCastShadow ? (JPH::DebugRenderer::ECastShadow)(*inCastShadow) : static_cast<JPH::DebugRenderer::ECastShadow>(JPH::DebugRenderer::ECastShadow::On)),
+        (inDrawMode ? (JPH::DebugRenderer::EDrawMode)(*inDrawMode) : static_cast<JPH::DebugRenderer::EDrawMode>(JPH::DebugRenderer::EDrawMode::Solid))
+    );
+}
+
+void RecordingDebugRenderer_DrawSwingConeLimits(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inSwingYHalfAngle, float inSwingZHalfAngle, float inEdgeLength, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawSwingConeLimits(
+        ((inMatrix ? void() : MRBINDC_THROW("Parameter `inMatrix` can not be null.", void)), *(const JPH::Mat44 *)(inMatrix)),
+        inSwingYHalfAngle,
+        inSwingZHalfAngle,
+        inEdgeLength,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        (inCastShadow ? (JPH::DebugRenderer::ECastShadow)(*inCastShadow) : static_cast<JPH::DebugRenderer::ECastShadow>(JPH::DebugRenderer::ECastShadow::On)),
+        (inDrawMode ? (JPH::DebugRenderer::EDrawMode)(*inDrawMode) : static_cast<JPH::DebugRenderer::EDrawMode>(JPH::DebugRenderer::EDrawMode::Solid))
+    );
+}
+
+void RecordingDebugRenderer_DrawSwingPyramidLimits(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inMinSwingYAngle, float inMaxSwingYAngle, float inMinSwingZAngle, float inMaxSwingZAngle, float inEdgeLength, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawSwingPyramidLimits(
+        ((inMatrix ? void() : MRBINDC_THROW("Parameter `inMatrix` can not be null.", void)), *(const JPH::Mat44 *)(inMatrix)),
+        inMinSwingYAngle,
+        inMaxSwingYAngle,
+        inMinSwingZAngle,
+        inMaxSwingZAngle,
+        inEdgeLength,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        (inCastShadow ? (JPH::DebugRenderer::ECastShadow)(*inCastShadow) : static_cast<JPH::DebugRenderer::ECastShadow>(JPH::DebugRenderer::ECastShadow::On)),
+        (inDrawMode ? (JPH::DebugRenderer::EDrawMode)(*inDrawMode) : static_cast<JPH::DebugRenderer::EDrawMode>(JPH::DebugRenderer::EDrawMode::Solid))
+    );
+}
+
+void RecordingDebugRenderer_DrawPie(RecordingDebugRenderer *_this, const JPH_Vec3 *inCenter, float inRadius, const JPH_Vec3 *inNormal, const JPH_Vec3 *inAxis, float inMinAngle, float inMaxAngle, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawPie(
+        ((inCenter ? void() : MRBINDC_THROW("Parameter `inCenter` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inCenter)),
+        inRadius,
+        ((inNormal ? void() : MRBINDC_THROW("Parameter `inNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inNormal)),
+        ((inAxis ? void() : MRBINDC_THROW("Parameter `inAxis` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inAxis)),
+        inMinAngle,
+        inMaxAngle,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        (inCastShadow ? (JPH::DebugRenderer::ECastShadow)(*inCastShadow) : static_cast<JPH::DebugRenderer::ECastShadow>(JPH::DebugRenderer::ECastShadow::On)),
+        (inDrawMode ? (JPH::DebugRenderer::EDrawMode)(*inDrawMode) : static_cast<JPH::DebugRenderer::EDrawMode>(JPH::DebugRenderer::EDrawMode::Solid))
+    );
+}
+
+void RecordingDebugRenderer_DrawTaperedCylinder(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inTop, float inBottom, float inTopRadius, float inBottomRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).DrawTaperedCylinder(
+        ((inMatrix ? void() : MRBINDC_THROW("Parameter `inMatrix` can not be null.", void)), *(const JPH::Mat44 *)(inMatrix)),
+        inTop,
+        inBottom,
+        inTopRadius,
+        inBottomRadius,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        (inCastShadow ? (JPH::DebugRenderer::ECastShadow)(*inCastShadow) : static_cast<JPH::DebugRenderer::ECastShadow>(JPH::DebugRenderer::ECastShadow::On)),
+        (inDrawMode ? (JPH::DebugRenderer::EDrawMode)(*inDrawMode) : static_cast<JPH::DebugRenderer::EDrawMode>(JPH::DebugRenderer::EDrawMode::Solid))
+    );
+}
+
+JPH_AABox *RecordingDebugRenderer_sCalculateBounds(const JPH_DebugRenderer_Vertex *inVertices, int inVertexCount)
+{
+    return (JPH_AABox *)new JPH::AABox(RecordingDebugRenderer::sCalculateBounds(
+        ((const JPH::DebugRenderer::Vertex *)inVertices),
+        inVertexCount
+    ));
 }
 

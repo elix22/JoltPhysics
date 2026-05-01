@@ -11,6 +11,8 @@
 extern "C" {
 #endif
 
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_PathConstraintPath JPH_PathConstraintPath; // Defined in `#include <jolt/Jolt/Physics/Constraints/PathConstraintPath.h>`.
 typedef struct JPH_RefTarget_JPH_PathConstraintPath JPH_RefTarget_JPH_PathConstraintPath; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
@@ -193,6 +195,12 @@ JOLT_API void JPH_PathConstraintPathHermite_SetIsLooping(JPH_PathConstraintPathH
 /// Generated from method `JPH::PathConstraintPathHermite::IsLooping`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_PathConstraintPathHermite_IsLooping(const JPH_PathConstraintPathHermite *_this);
+
+/// Draw the path relative to inBaseTransform. Used for debug purposes.
+/// Generated from method `JPH::PathConstraintPathHermite::DrawPath`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBaseTransform` can not be null. It is a single object.
+JOLT_API void JPH_PathConstraintPathHermite_DrawPath(const JPH_PathConstraintPathHermite *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inBaseTransform);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated

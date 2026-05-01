@@ -9,9 +9,12 @@
 extern "C" {
 #endif
 
+typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
 typedef struct JPH_JobSystem JPH_JobSystem; // Defined in `#include <jolt/Jolt/Core/JobSystem.h>`.
 typedef struct JPH_JobSystem_Barrier JPH_JobSystem_Barrier; // Defined in `#include <jolt/Jolt/Core/JobSystem.h>`.
+typedef struct JPH_JobSystem_JobHandle JPH_JobSystem_JobHandle; // Defined in `#include <jolt/Jolt/Core/JobSystem.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
+typedef struct Jolt_std_function_void Jolt_std_function_void; // Defined in `#include <std_function_void.h>`.
 
 
 /// Implementation of a JobSystem without threads, runs jobs as soon as they are added
@@ -131,6 +134,14 @@ JOLT_API void JPH_JobSystemSingleThreaded_Init(JPH_JobSystemSingleThreaded *_thi
 /// Generated from method `JPH::JobSystemSingleThreaded::GetMaxConcurrency`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API int JPH_JobSystemSingleThreaded_GetMaxConcurrency(const JPH_JobSystemSingleThreaded *_this);
+
+/// Generated from method `JPH::JobSystemSingleThreaded::CreateJob`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inJobFunction` can not be null. It is a single object.
+/// Parameter `inNumDependencies` has a default argument: `0`, pass a null pointer to use it.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_JobSystem_JobHandle_Destroy()` to free it when you're done using it.
+JOLT_API JPH_JobSystem_JobHandle *JPH_JobSystemSingleThreaded_CreateJob(JPH_JobSystemSingleThreaded *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, const unsigned int *inNumDependencies);
 
 /// Generated from method `JPH::JobSystemSingleThreaded::CreateBarrier`.
 /// Parameter `_this` can not be null. It is a single object.
