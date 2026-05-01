@@ -272,4 +272,49 @@ public sealed class Tests_RayCastQuery(JoltFixture fx)
         bi.RemoveBody(id);
         bi.DestroyBody(id);
     }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // TransformedShape.GetWorldSpaceSurfaceNormal
+    // ─────────────────────────────────────────────────────────────────────────
+
+    [Fact]
+    public void TransformedShape_GetWorldSpaceSurfaceNormal_TopFacePointsUp()
+    {
+        // A static 1×1×1 box centred at origin.
+        // Cast a ray from directly above and get the surface normal.
+        // The top face should have a normal pointing in +Y.
+        using var sys = fx.MakePhysicsSystem();
+        sys.OptimizeBroadPhase();
+        var bi = sys.GetBodyInterface();
+        var id = AddStaticBox(bi, 0f, 0f, 0f);
+
+        using var ts = bi.GetTransformedShape(id);
+
+        using var origin = new JPH.Vec3(0f, 5f, 0f);
+        using var dir    = new JPH.Vec3(0f, -10f, 0f);
+        using var ray    = new JPH.RRayCast(origin, dir);
+        using var hit    = new JPH.RayCastResult();
+        bool found = ts.CastRay(ray, hit);
+        Assert.True(found, "Ray should hit the box");
+
+        // Hit position in world space
+        float fx2 = origin.GetX() + hit.mFraction * dir.GetX();
+        float fy2 = origin.GetY() + hit.mFraction * dir.GetY();
+        float fz2 = origin.GetZ() + hit.mFraction * dir.GetZ();
+        using var hitPos = new JPH.Vec3(fx2, fy2, fz2);
+
+        using var normal = ts.GetWorldSpaceSurfaceNormal(hit.mSubShapeID2, hitPos);
+
+        // Top face: normal.Y > 0
+        Assert.True(normal.GetY() > 0.5f,
+            $"Expected upward normal from top face; got ({normal.GetX():F3}, {normal.GetY():F3}, {normal.GetZ():F3})");
+
+        bi.RemoveBody(id);
+        bi.DestroyBody(id);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // TransformedShape.GetMaterial
+    // ─────────────────────────────────────────────────────────────────────────
+
 }

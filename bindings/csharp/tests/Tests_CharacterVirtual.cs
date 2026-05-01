@@ -274,4 +274,69 @@ public sealed class Tests_CharacterVirtual(JoltFixture fx)
         float expected = MathF.Cos(45f * MathF.PI / 180f);
         Assert.Equal(expected, cv.GetCosMaxSlopeAngle(), precision: 5);
     }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Update — no-crash smoke test
+    // ─────────────────────────────────────────────────────────────────────────
+
+    [Fact]
+    public void CharacterVirtual_Update_NoCrash()
+    {
+        using var sys = fx.MakePhysicsSystem();
+        sys.OptimizeBroadPhase();
+        using var cs = MakeSettings();
+        using var cv = MakeCharacter(sys, cs);
+
+        // CharacterBaseSettings.mShape is not exposed in C# bindings, so use
+        // SetShape to initialise mShape before Update. When mShape == null the
+        // fast path in CharacterVirtual::SetShape just assigns the shape and
+        // returns true without using any of the filter / allocator parameters.
+        using var localAlloc = new JPH.TempAllocatorImpl(4 * 1024 * 1024);
+        using var capsule    = new JPH.CapsuleShape(0.9f, 0.3f);
+        using var bpF        = new JPH.BroadPhaseLayerFilter();
+        using var olF        = new JPH.ObjectLayerFilter();
+        using var bF         = new JPH.BodyFilter();
+        using var sF         = new JPH.ShapeFilter();
+        cv.SetShape((JPH.Const_CapsuleShape)capsule, 0f, bpF, olF, bF, sF, localAlloc);
+
+        using var gravity    = new JPH.Vec3(0f, -9.81f, 0f);
+        using JPH.DefaultBroadPhaseLayerFilter bpDefault = sys.GetDefaultBroadPhaseLayerFilter(JoltFixture.LayerMoving);
+        using JPH.DefaultObjectLayerFilter olDefault     = sys.GetDefaultLayerFilter(JoltFixture.LayerMoving);
+        using var bodyFilter  = new JPH.BodyFilter();
+        using var shapeFilter = new JPH.ShapeFilter();
+
+        var ex = Record.Exception(() =>
+            cv.Update(1f / 60f, gravity, (JPH.BroadPhaseLayerFilter)bpDefault, (JPH.ObjectLayerFilter)olDefault, bodyFilter, shapeFilter, localAlloc));
+        Assert.Null(ex);
+    }
+
+    [Fact]
+    public void CharacterVirtual_Update_MultipleSteps_NoCrash()
+    {
+        using var sys = fx.MakePhysicsSystem();
+        sys.OptimizeBroadPhase();
+        using var cs = MakeSettings();
+        using var cv = MakeCharacter(sys, cs);
+
+        using var localAlloc = new JPH.TempAllocatorImpl(4 * 1024 * 1024);
+        using var capsule    = new JPH.CapsuleShape(0.9f, 0.3f);
+        using var bpF        = new JPH.BroadPhaseLayerFilter();
+        using var olF        = new JPH.ObjectLayerFilter();
+        using var bF         = new JPH.BodyFilter();
+        using var sF         = new JPH.ShapeFilter();
+        cv.SetShape((JPH.Const_CapsuleShape)capsule, 0f, bpF, olF, bF, sF, localAlloc);
+
+        using var gravity    = new JPH.Vec3(0f, -9.81f, 0f);
+        using JPH.DefaultBroadPhaseLayerFilter bpDefault = sys.GetDefaultBroadPhaseLayerFilter(JoltFixture.LayerMoving);
+        using JPH.DefaultObjectLayerFilter olDefault     = sys.GetDefaultLayerFilter(JoltFixture.LayerMoving);
+        using var bodyFilter  = new JPH.BodyFilter();
+        using var shapeFilter = new JPH.ShapeFilter();
+
+        var ex = Record.Exception(() =>
+        {
+            for (int i = 0; i < 10; i++)
+                cv.Update(1f / 60f, gravity, (JPH.BroadPhaseLayerFilter)bpDefault, (JPH.ObjectLayerFilter)olDefault, bodyFilter, shapeFilter, localAlloc);
+        });
+        Assert.Null(ex);
+    }
 }

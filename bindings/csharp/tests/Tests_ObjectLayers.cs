@@ -1,13 +1,15 @@
-// ObjectLayerPairFilterTable tests, modelled on Jolt's CollisionGroupTests.cpp.
-// Verifies that EnableCollision/DisableCollision round-trips
-// correctly and that ShouldCollide is symmetric.
+// Tests for ObjectLayerPairFilterTable and ObjectVsBroadPhaseLayerFilterTable,
+// modelled on Jolt's ObjectLayerPairFilterTableTests.cpp.
+// Verifies that EnableCollision/DisableCollision round-trips correctly,
+// that ShouldCollide is symmetric, and that the broadphase filter reflects
+// the pair filter correctly.
 
 using Xunit;
 
 namespace JoltTests;
 
 [Collection("Jolt")]
-public sealed class Tests_ObjectLayers
+public sealed class Tests_ObjectLayers(JoltFixture fx)
 {
     // ── Default / construction ────────────────────────────────────────────────
 
@@ -117,5 +119,100 @@ public sealed class Tests_ObjectLayers
             (JPH.Const_ObjectLayerPairFilterTable)pairFilter);
 
         Assert.Equal(0u, sys.GetNumBodies());
+    }
+
+    // ── ObjectVsBroadPhaseLayerFilterTable.ShouldCollide ─────────────────────
+    // Uses the fixture's ObjVsBP which was built from:
+    //   ObjectLayer 0 (NonMoving) → BroadPhaseLayer 0
+    //   ObjectLayer 1 (Moving)    → BroadPhaseLayer 1
+    //   PairFilter: Moving↔NonMoving and Moving↔Moving enabled;
+    //               NonMoving↔NonMoving NOT enabled.
+    //
+    // Derived expectations (per Jolt's OvB logic):
+    //   ShouldCollide(NonMoving=0, BpLayer(0)) → false   (no object in BpLayer0 collides with layer0)
+    //   ShouldCollide(NonMoving=0, BpLayer(1)) → true    (Moving is in BpLayer1 and collides with NonMoving)
+    //   ShouldCollide(Moving=1,    BpLayer(0)) → true    (NonMoving is in BpLayer0 and collides with Moving)
+    //   ShouldCollide(Moving=1,    BpLayer(1)) → true    (Moving is in BpLayer1 and collides with Moving)
+
+    [Fact]
+    public void ObjVsBroadPhase_NonMoving_BpLayer0_IsFalse()
+    {
+        using var bp0 = new JPH.BroadPhaseLayer(0);
+        Assert.False(fx.ObjVsBP.ShouldCollide(JoltFixture.LayerNonMoving, bp0));
+    }
+
+    [Fact]
+    public void ObjVsBroadPhase_NonMoving_BpLayer1_IsTrue()
+    {
+        using var bp1 = new JPH.BroadPhaseLayer(1);
+        Assert.True(fx.ObjVsBP.ShouldCollide(JoltFixture.LayerNonMoving, bp1));
+    }
+
+    [Fact]
+    public void ObjVsBroadPhase_Moving_BpLayer0_IsTrue()
+    {
+        using var bp0 = new JPH.BroadPhaseLayer(0);
+        Assert.True(fx.ObjVsBP.ShouldCollide(JoltFixture.LayerMoving, bp0));
+    }
+
+    [Fact]
+    public void ObjVsBroadPhase_Moving_BpLayer1_IsTrue()
+    {
+        using var bp1 = new JPH.BroadPhaseLayer(1);
+        Assert.True(fx.ObjVsBP.ShouldCollide(JoltFixture.LayerMoving, bp1));
+    }
+
+    [Fact]
+    public void ObjVsBroadPhase_CustomSetup_ExactlyOnePairEnabled()
+    {
+        // Build a fresh 2-layer filter with only Moving↔Moving enabled,
+        // and verify the broadphase filter reflects it.
+        using var bpI  = new JPH.BroadPhaseLayerInterfaceTable(2, 2);
+        using var bpL0a = new JPH.BroadPhaseLayer(0);
+        using var bpL1a = new JPH.BroadPhaseLayer(1);
+        bpI.MapObjectToBroadPhaseLayer(0, bpL0a);
+        bpI.MapObjectToBroadPhaseLayer(1, bpL1a);
+
+        using var pf = new JPH.ObjectLayerPairFilterTable(2);
+        pf.EnableCollision(1, 1); // only Moving↔Moving
+
+        using var ovb = new JPH.ObjectVsBroadPhaseLayerFilterTable(
+            (JPH.Const_BroadPhaseLayerInterfaceTable)bpI, 2,
+            (JPH.Const_ObjectLayerPairFilterTable)pf, 2);
+
+        using var bp0 = new JPH.BroadPhaseLayer(0);
+        using var bp1 = new JPH.BroadPhaseLayer(1);
+
+        Assert.False(ovb.ShouldCollide(0, bp0)); // NonMoving vs BpLayer0(NonMoving) — no pair
+        Assert.False(ovb.ShouldCollide(0, bp1)); // NonMoving vs BpLayer1(Moving)    — no pair
+        Assert.False(ovb.ShouldCollide(1, bp0)); // Moving    vs BpLayer0(NonMoving) — no pair
+        Assert.True(ovb.ShouldCollide(1, bp1));  // Moving    vs BpLayer1(Moving)    — enabled
+    }
+
+    [Fact]
+    public void ObjVsBroadPhase_CustomSetup_BothPairsEnabled()
+    {
+        using var bpI  = new JPH.BroadPhaseLayerInterfaceTable(2, 2);
+        using var bpL0b = new JPH.BroadPhaseLayer(0);
+        using var bpL1b = new JPH.BroadPhaseLayer(1);
+        bpI.MapObjectToBroadPhaseLayer(0, bpL0b);
+        bpI.MapObjectToBroadPhaseLayer(1, bpL1b);
+
+        using var pf = new JPH.ObjectLayerPairFilterTable(2);
+        pf.EnableCollision(0, 0);
+        pf.EnableCollision(0, 1);
+        pf.EnableCollision(1, 1);
+
+        using var ovb = new JPH.ObjectVsBroadPhaseLayerFilterTable(
+            (JPH.Const_BroadPhaseLayerInterfaceTable)bpI, 2,
+            (JPH.Const_ObjectLayerPairFilterTable)pf, 2);
+
+        using var bp0 = new JPH.BroadPhaseLayer(0);
+        using var bp1 = new JPH.BroadPhaseLayer(1);
+
+        Assert.True(ovb.ShouldCollide(0, bp0));
+        Assert.True(ovb.ShouldCollide(0, bp1));
+        Assert.True(ovb.ShouldCollide(1, bp0));
+        Assert.True(ovb.ShouldCollide(1, bp1));
     }
 }

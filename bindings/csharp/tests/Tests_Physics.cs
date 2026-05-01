@@ -250,4 +250,122 @@ public sealed class Tests_Physics(JoltFixture fx)
 
         Assert.Equal(0u, sys.GetNumBodies());
     }
+
+    // -------------------------------------------------------------------------
+    // Apply force
+    // -------------------------------------------------------------------------
+
+    [Fact]
+    public void AddForce_HorizontalForce_BodyMovesInForcedDirection()
+    {
+        using var sys = fx.MakePhysicsSystem();
+        var bi = sys.GetBodyInterface();
+        sys.OptimizeBroadPhase();
+
+        var id = AddSphere(bi, 0.5f, 0f, 5f, 0f, JPH.EMotionType.Dynamic);
+        float xStart;
+        using (var p = bi.GetCenterOfMassPosition(id)) xStart = p.GetX();
+
+        // Apply a strong force in +X for one step.
+        using var force = new JPH.Vec3(10000f, 0f, 0f);
+        bi.AddForce(id, force);
+        sys.Update(1f / 60f, 1, fx.Alloc, fx.Jobs);
+
+        float xEnd;
+        using (var p = bi.GetCenterOfMassPosition(id)) xEnd = p.GetX();
+
+        Assert.True(xEnd > xStart, $"Body should move in +X. xStart={xStart} xEnd={xEnd}");
+        bi.RemoveBody(id); bi.DestroyBody(id);
+    }
+
+    // -------------------------------------------------------------------------
+    // Body user data
+    // -------------------------------------------------------------------------
+
+    [Fact]
+    public void SetUserData_GetUserData_RoundTrip()
+    {
+        using var sys = fx.MakePhysicsSystem();
+        var bi = sys.GetBodyInterface();
+        sys.OptimizeBroadPhase();
+
+        var id = AddSphere(bi, 0.5f, 0f, 5f, 0f, JPH.EMotionType.Dynamic);
+        bi.SetUserData(id, (UIntPtr)0xDEADBEEF);
+        var ud = bi.GetUserData(id);
+        Assert.Equal((UIntPtr)0xDEADBEEF, ud);
+        bi.RemoveBody(id); bi.DestroyBody(id);
+    }
+
+    // -------------------------------------------------------------------------
+    // Collision: sphere falls and lands on static floor
+    // -------------------------------------------------------------------------
+
+    [Fact]
+    public void DynamicOnStaticFloor_CollisionResolved_BodyStaysAboveFloor()
+    {
+        using var sys = fx.MakePhysicsSystem();
+        var bi = sys.GetBodyInterface();
+        sys.OptimizeBroadPhase();
+
+        var floor  = AddBox(bi, 50f, 1f, 50f, 0f, -1f, 0f, JPH.EMotionType.Static);
+        var sphere = AddSphere(bi, 0.5f, 0f, 5f, 0f, JPH.EMotionType.Dynamic);
+
+        for (int i = 0; i < 120; i++)
+            sys.Update(1f / 60f, 1, fx.Alloc, fx.Jobs);
+
+        float yFinal;
+        using (var p = bi.GetCenterOfMassPosition(sphere)) yFinal = p.GetY();
+        // Floor top face at y=0, sphere radius=0.5 → resting center ≈ -0.5
+        Assert.True(yFinal > -1f, $"Sphere sank through floor. y={yFinal}");
+
+        bi.RemoveBody(sphere); bi.DestroyBody(sphere);
+        bi.RemoveBody(floor);  bi.DestroyBody(floor);
+    }
+
+    // -------------------------------------------------------------------------
+    // Kinematic body
+    // -------------------------------------------------------------------------
+
+    [Fact]
+    public void KinematicBody_MoveKinematic_FollowsCommandedPosition()
+    {
+        using var sys = fx.MakePhysicsSystem();
+        var bi = sys.GetBodyInterface();
+        sys.OptimizeBroadPhase();
+
+        var id = AddSphere(bi, 0.5f, 0f, 0f, 0f, JPH.EMotionType.Kinematic);
+
+        // Move kinematic to (10, 0, 0) over 1 second.
+        using var target = new JPH.Vec3(10f, 0f, 0f);
+        using var rot = JPH.Quat.SIdentity();
+        bi.MoveKinematic(id, target, rot, 1.0f);
+
+        for (int i = 0; i < 60; i++)
+            sys.Update(1f / 60f, 1, fx.Alloc, fx.Jobs);
+
+        float xFinal;
+        using (var p = bi.GetCenterOfMassPosition(id)) xFinal = p.GetX();
+        Assert.True(xFinal > 5f, $"Kinematic body should have moved toward +X. x={xFinal}");
+        bi.RemoveBody(id); bi.DestroyBody(id);
+    }
+
+    // -------------------------------------------------------------------------
+    // OptimizeBroadPhase
+    // -------------------------------------------------------------------------
+
+    [Fact]
+    public void OptimizeBroadPhase_AfterAddingBodies_DoesNotCrash()
+    {
+        using var sys = fx.MakePhysicsSystem();
+        var bi = sys.GetBodyInterface();
+        var id1 = AddBox(bi, 50f, 1f, 50f, 0f, -1f, 0f, JPH.EMotionType.Static);
+        var id2 = AddSphere(bi, 0.5f, 0f, 5f, 0f, JPH.EMotionType.Dynamic);
+
+        // Should not throw.
+        sys.OptimizeBroadPhase();
+        Assert.Equal(2u, sys.GetNumBodies());
+
+        bi.RemoveBody(id2); bi.DestroyBody(id2);
+        bi.RemoveBody(id1); bi.DestroyBody(id1);
+    }
 }

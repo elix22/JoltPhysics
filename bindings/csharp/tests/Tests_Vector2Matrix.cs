@@ -247,4 +247,171 @@ public sealed class Tests_Vector2Matrix(JoltFixture fx)
         using var t = m.Transposed();
         Assert.True(t.IsIdentity());
     }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Matrix_2_2 — additional coverage
+    // ─────────────────────────────────────────────────────────────────────────
+
+    [Fact]
+    public void Matrix22_SZero_IsZeroTrue()
+    {
+        using var m = JPH.Const_Matrix_2_2.SZero();
+        Assert.True(m.IsZero());
+    }
+
+    [Fact]
+    public void Matrix22_SIdentity_IsIdentityTrue()
+    {
+        using var m = JPH.Const_Matrix_2_2.SIdentity();
+        Assert.True(m.IsIdentity());
+    }
+
+    [Fact]
+    public void Matrix22_Call_SetAndGet_RoundTrip()
+    {
+        using var m = new JPH.Matrix_2_2();
+        m.SetZero();
+        m.Call(0, 0) = 3f;
+        m.Call(1, 1) = 7f;
+        Assert.Equal(3f, m.Call(0, 0), precision: 5);
+        Assert.Equal(7f, m.Call(1, 1), precision: 5);
+        Assert.Equal(0f, m.Call(0, 1), precision: 5);
+        Assert.Equal(0f, m.Call(1, 0), precision: 5);
+    }
+
+    [Fact]
+    public void Matrix22_Equality_TwoIdenticalMatrices_Equal()
+    {
+        using var a = JPH.Const_Matrix_2_2.SIdentity();
+        using var b = JPH.Const_Matrix_2_2.SIdentity();
+        Assert.True(a == b);
+        Assert.False(a != b);
+    }
+
+    [Fact]
+    public void Matrix22_Equality_DifferentMatrices_NotEqual()
+    {
+        using var a = JPH.Const_Matrix_2_2.SIdentity();
+        using var b = JPH.Const_Matrix_2_2.SZero();
+        Assert.False(a == b);
+        Assert.True(a != b);
+    }
+
+    [Fact]
+    public void Matrix22_MultiplyByVector_IdentityReturnsUnchanged()
+    {
+        using var m = JPH.Const_Matrix_2_2.SIdentity();
+        using var v = new JPH.Vector_2();
+        v[0u] = 3f;
+        v[1u] = 5f;
+        using var result = m * v;
+        Assert.Equal(3f, result[0u], precision: 5);
+        Assert.Equal(5f, result[1u], precision: 5);
+    }
+
+    [Fact]
+    public void Matrix22_SetInversed_InvertibleMatrix_MakesIdentity()
+    {
+        // Build [1 2; 3 4], invert, verify inv*mat*v ≈ v.
+        using var mat = new JPH.Matrix_2_2();
+        mat.Call(0, 0) = 1f;
+        mat.Call(0, 1) = 2f;
+        mat.Call(1, 0) = 3f;
+        mat.Call(1, 1) = 4f;
+
+        using var inv = new JPH.Matrix_2_2();
+        bool ok = inv.SetInversed(mat);
+        Assert.True(ok);
+
+        // Apply mat then inv: should recover original v.
+        using var v = new JPH.Vector_2();
+        v[0u] = 5f;
+        v[1u] = 7f;
+        using var matV = mat * v;
+        using var recovered = inv * matV;
+        Assert.Equal(5f, recovered[0u], precision: 3);
+        Assert.Equal(7f, recovered[1u], precision: 3);
+    }
+
+    [Fact]
+    public void Matrix22_SetInversed_SingularMatrix_ReturnsFalse()
+    {
+        using var mat = new JPH.Matrix_2_2();
+        mat.Call(0, 0) = 0f;
+        mat.Call(0, 1) = 0f;
+        mat.Call(1, 0) = 3f;
+        mat.Call(1, 1) = 4f;
+
+        using var inv = new JPH.Matrix_2_2();
+        bool ok = inv.SetInversed(mat);
+        Assert.False(ok);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Vector_2 — additional coverage
+    // ─────────────────────────────────────────────────────────────────────────
+
+    [Fact]
+    public void Vector2_SZero_IsZeroTrue()
+    {
+        using var v = JPH.Const_Vector_2.SZero();
+        Assert.True(v.IsZero());
+    }
+
+    [Fact]
+    public void Vector2_DivideByScalar_CorrectResult()
+    {
+        using var v = new JPH.Vector_2();
+        v[0u] = 6f;
+        v[1u] = 9f;
+        using var r = v / 3f;
+        Assert.Equal(2f, r[0u], precision: 5);
+        Assert.Equal(3f, r[1u], precision: 5);
+    }
+
+    [Fact]
+    public void Vector2_UnaryNegate_NegatesComponents()
+    {
+        using var v = new JPH.Vector_2();
+        v[0u] =  4f;
+        v[1u] = -2f;
+        using var n = -v;
+        Assert.Equal(-4f, n[0u], precision: 5);
+        Assert.Equal( 2f, n[1u], precision: 5);
+    }
+
+    [Fact]
+    public void Vector2_MultiplyByScalar_ScalesComponents()
+    {
+        using var v = new JPH.Vector_2();
+        v[0u] = 3f;
+        v[1u] = 4f;
+        using var r = v * 2f;
+        Assert.Equal(6f, r[0u], precision: 5);
+        Assert.Equal(8f, r[1u], precision: 5);
+    }
+
+    [Fact]
+    public void Vector2_AddTwoVectors_CorrectResult()
+    {
+        using var a = new JPH.Vector_2();
+        a[0u] = 1f; a[1u] = 2f;
+        using var b = new JPH.Vector_2();
+        b[0u] = 3f; b[1u] = 4f;
+        using var r = a + b;
+        Assert.Equal(4f, r[0u], precision: 5);
+        Assert.Equal(6f, r[1u], precision: 5);
+    }
+
+    [Fact]
+    public void Vector2_SubtractTwoVectors_CorrectResult()
+    {
+        using var a = new JPH.Vector_2();
+        a[0u] = 5f; a[1u] = 7f;
+        using var b = new JPH.Vector_2();
+        b[0u] = 2f; b[1u] = 3f;
+        using var r = a - b;
+        Assert.Equal(3f, r[0u], precision: 5);
+        Assert.Equal(4f, r[1u], precision: 5);
+    }
 }
