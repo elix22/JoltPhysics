@@ -14,12 +14,14 @@
 #include <Jolt/Physics/Body/BodyInterface.h>
 #include <Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>
 #include <Jolt/Physics/Collision/BroadPhase/BroadPhaseQuery.h>
+#include <Jolt/Physics/Collision/CollideShape.h>
 #include <Jolt/Physics/Collision/ContactListener.h>
 #include <Jolt/Physics/Collision/NarrowPhaseQuery.h>
 #include <Jolt/Physics/Collision/ObjectLayer.h>
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/EPhysicsUpdateError.h>
 #include <Jolt/Physics/PhysicsSettings.h>
+#include <Jolt/Physics/PhysicsStepListener.h>
 #include <Jolt/Physics/PhysicsSystem.h>
 #include <__mrbind_c_details.h>
 
@@ -294,6 +296,20 @@ void JPH_PhysicsSystem_RemoveConstraints(JPH_PhysicsSystem *_this, JPH_Constrain
 void JPH_PhysicsSystem_OptimizeBroadPhase(JPH_PhysicsSystem *_this)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).OptimizeBroadPhase();
+}
+
+void JPH_PhysicsSystem_AddStepListener(JPH_PhysicsSystem *_this, JPH_PhysicsStepListener *inListener)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).AddStepListener(
+        ((JPH::PhysicsStepListener *)inListener)
+    );
+}
+
+void JPH_PhysicsSystem_RemoveStepListener(JPH_PhysicsSystem *_this, JPH_PhysicsStepListener *inListener)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).RemoveStepListener(
+        ((JPH::PhysicsStepListener *)inListener)
+    );
 }
 
 JPH_EPhysicsUpdateError JPH_PhysicsSystem_Update(JPH_PhysicsSystem *_this, float inDeltaTime, int inCollisionSteps, JPH_TempAllocator *inTempAllocator, JPH_JobSystem *inJobSystem)

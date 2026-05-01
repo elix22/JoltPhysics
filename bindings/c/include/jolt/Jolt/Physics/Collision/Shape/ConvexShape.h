@@ -18,6 +18,9 @@ typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jo
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
 typedef struct JPH_Plane JPH_Plane; // Defined in `#include <jolt/Jolt/Geometry/Plane.h>`.
 typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
+typedef struct JPH_RayCast JPH_RayCast; // Defined in `#include <jolt/Jolt/Physics/Collision/RayCast.h>`.
+typedef struct JPH_RayCastResult JPH_RayCastResult; // Defined in `#include <jolt/Jolt/Physics/Collision/CastResult.h>`.
+typedef struct JPH_RayCastSettings JPH_RayCastSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/RayCast.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
@@ -26,6 +29,8 @@ typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jol
 typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_SubShapeIDCreator JPH_SubShapeIDCreator; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
@@ -322,6 +327,14 @@ JOLT_API unsigned int JPH_ConvexShape_GetSubShapeIDBitsRecursive(const JPH_Conve
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API const JPH_PhysicsMaterial *JPH_ConvexShape_GetMaterial_1(const JPH_ConvexShape *_this, const JPH_SubShapeID *inSubShapeID);
 
+// See Shape::CastRay
+/// Generated from method `JPH::ConvexShape::CastRay`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRay` can not be null. It is a single object.
+/// Parameter `inSubShapeIDCreator` can not be null. It is a single object.
+/// Parameter `ioHit` can not be null. It is a single object.
+JOLT_API bool JPH_ConvexShape_CastRay_3(const JPH_ConvexShape *_this, const JPH_RayCast *inRay, const JPH_SubShapeIDCreator *inSubShapeIDCreator, JPH_RayCastResult *ioHit);
+
 // See Shape::GetTrianglesStart
 /// Generated from method `JPH::ConvexShape::GetTrianglesStart`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -439,6 +452,23 @@ JOLT_API JPH_Vec3 *JPH_ConvexShape_GetSurfaceNormal(const JPH_ConvexShape *_this
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API uint64_t JPH_ConvexShape_GetSubShapeUserData(const JPH_ConvexShape *_this, const JPH_SubShapeID *inSubShapeID);
+
+/// Get the direct child sub shape and its transform for a sub shape ID.
+/// @param inSubShapeID Sub shape ID that indicates the path to the leaf shape
+/// @param inPositionCOM The position of the center of mass of this shape
+/// @param inRotation The orientation of this shape
+/// @param inScale Scale in local space of the shape (scales relative to its center of mass)
+/// @param outRemainder The remainder of the sub shape ID after removing the sub shape
+/// @return Direct child sub shape and its transform, note that the body ID and sub shape ID will be invalid
+/// Generated from method `JPH::ConvexShape::GetSubShapeTransformedShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `outRemainder` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TransformedShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_TransformedShape *JPH_ConvexShape_GetSubShapeTransformedShape(const JPH_ConvexShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale, JPH_SubShapeID *outRemainder);
 
 /// Get stats of this shape. Use for logging / data collection purposes only. Does not add values from child shapes, use GetStatsRecursive for this.
 /// Generated from method `JPH::ConvexShape::GetStats`.

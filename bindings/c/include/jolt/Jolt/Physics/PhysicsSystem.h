@@ -18,6 +18,7 @@ typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics
 typedef struct JPH_BodyInterface JPH_BodyInterface; // Defined in `#include <jolt/Jolt/Physics/Body/BodyInterface.h>`.
 typedef struct JPH_BroadPhaseLayerInterface JPH_BroadPhaseLayerInterface; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
 typedef struct JPH_BroadPhaseQuery JPH_BroadPhaseQuery; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseQuery.h>`.
+typedef struct JPH_CollideShapeSettings JPH_CollideShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/CollideShape.h>`.
 typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_ContactListener JPH_ContactListener; // Defined in `#include <jolt/Jolt/Physics/Collision/ContactListener.h>`.
 typedef struct JPH_DefaultBroadPhaseLayerFilter JPH_DefaultBroadPhaseLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
@@ -29,6 +30,7 @@ typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jo
 typedef struct JPH_ObjectLayerPairFilter JPH_ObjectLayerPairFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/ObjectLayer.h>`.
 typedef struct JPH_ObjectVsBroadPhaseLayerFilter JPH_ObjectVsBroadPhaseLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
 typedef struct JPH_PhysicsSettings JPH_PhysicsSettings; // Defined in `#include <jolt/Jolt/Physics/PhysicsSettings.h>`.
+typedef struct JPH_PhysicsStepListener JPH_PhysicsStepListener; // Defined in `#include <jolt/Jolt/Physics/PhysicsStepListener.h>`.
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
@@ -247,6 +249,16 @@ JOLT_API void JPH_PhysicsSystem_RemoveConstraints(JPH_PhysicsSystem *_this, JPH_
 /// Generated from method `JPH::PhysicsSystem::OptimizeBroadPhase`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_PhysicsSystem_OptimizeBroadPhase(JPH_PhysicsSystem *_this);
+
+/// Adds a new step listener
+/// Generated from method `JPH::PhysicsSystem::AddStepListener`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_PhysicsSystem_AddStepListener(JPH_PhysicsSystem *_this, JPH_PhysicsStepListener *inListener);
+
+/// Removes a step listener
+/// Generated from method `JPH::PhysicsSystem::RemoveStepListener`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_PhysicsSystem_RemoveStepListener(JPH_PhysicsSystem *_this, JPH_PhysicsStepListener *inListener);
 
 /// Simulate the system.
 /// The world steps for a total of inDeltaTime seconds. This is divided in inCollisionSteps iterations.

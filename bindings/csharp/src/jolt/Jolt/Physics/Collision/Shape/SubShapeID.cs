@@ -398,4 +398,181 @@ public static partial class JPH
         public _InOptConst_SubShapeID(Const_SubShapeID value) {Opt = value;}
         public static implicit operator _InOptConst_SubShapeID(Const_SubShapeID value) {return new(value);}
     }
+
+    /// A sub shape id creator can be used to create a new sub shape id by recursing through the shape
+    /// hierarchy and pushing new ID's onto the chain
+    /// Generated from class `JPH::SubShapeIDCreator`.
+    /// This is the const half of the class.
+    public class Const_SubShapeIDCreator : JPH.Object<Const_SubShapeIDCreator>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SubShapeIDCreator_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SubShapeIDCreator_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SubShapeIDCreator_Destroy(_Underlying *_this);
+            __JPH_SubShapeIDCreator_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_SubShapeIDCreator() {Dispose(false);}
+
+        internal unsafe Const_SubShapeIDCreator(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_SubShapeIDCreator() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SubShapeIDCreator_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SubShapeIDCreator_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SubShapeIDCreator._Underlying *__JPH_SubShapeIDCreator_DefaultConstruct();
+            _UnderlyingPtr = __JPH_SubShapeIDCreator_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::SubShapeIDCreator::SubShapeIDCreator`.
+        public unsafe Const_SubShapeIDCreator(JPH.Const_SubShapeIDCreator _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SubShapeIDCreator_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SubShapeIDCreator_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SubShapeIDCreator._Underlying *__JPH_SubShapeIDCreator_ConstructFromAnother(JPH.SubShapeIDCreator._Underlying *_other);
+            _UnderlyingPtr = __JPH_SubShapeIDCreator_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JPH::SubShapeIDCreator::SubShapeIDCreator`.
+        public Const_SubShapeIDCreator(SubShapeIDCreator _other) : this((Const_SubShapeIDCreator)_other) {}
+
+        /// Add a new id to the chain of id's and return it
+        /// Generated from method `JPH::SubShapeIDCreator::PushID`.
+        public unsafe JPH.SubShapeIDCreator PushID(uint inValue, uint inBits)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SubShapeIDCreator_PushID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SubShapeIDCreator_PushID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SubShapeIDCreator._Underlying *__JPH_SubShapeIDCreator_PushID(_Underlying *_this, uint inValue, uint inBits);
+            return new(__JPH_SubShapeIDCreator_PushID(_UnderlyingPtr, inValue, inBits), is_owning: true);
+        }
+
+        // Get the resulting sub shape ID
+        /// Generated from method `JPH::SubShapeIDCreator::GetID`.
+        public unsafe JPH.Const_SubShapeID GetID()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SubShapeIDCreator_GetID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SubShapeIDCreator_GetID", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_SubShapeID._Underlying *__JPH_SubShapeIDCreator_GetID(_Underlying *_this);
+            return new(__JPH_SubShapeIDCreator_GetID(_UnderlyingPtr), is_owning: false);
+        }
+
+        /// Get the number of bits that have been written to the sub shape ID so far
+        /// Generated from method `JPH::SubShapeIDCreator::GetNumBitsWritten`.
+        public unsafe uint GetNumBitsWritten()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SubShapeIDCreator_GetNumBitsWritten", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SubShapeIDCreator_GetNumBitsWritten", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JPH_SubShapeIDCreator_GetNumBitsWritten(_Underlying *_this);
+            return __JPH_SubShapeIDCreator_GetNumBitsWritten(_UnderlyingPtr);
+        }
+    }
+
+    /// A sub shape id creator can be used to create a new sub shape id by recursing through the shape
+    /// hierarchy and pushing new ID's onto the chain
+    /// Generated from class `JPH::SubShapeIDCreator`.
+    /// This is the non-const half of the class.
+    public class SubShapeIDCreator : Const_SubShapeIDCreator
+    {
+        internal unsafe SubShapeIDCreator(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe SubShapeIDCreator() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SubShapeIDCreator_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SubShapeIDCreator_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SubShapeIDCreator._Underlying *__JPH_SubShapeIDCreator_DefaultConstruct();
+            _UnderlyingPtr = __JPH_SubShapeIDCreator_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::SubShapeIDCreator::SubShapeIDCreator`.
+        public unsafe SubShapeIDCreator(JPH.Const_SubShapeIDCreator _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SubShapeIDCreator_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SubShapeIDCreator_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SubShapeIDCreator._Underlying *__JPH_SubShapeIDCreator_ConstructFromAnother(JPH.SubShapeIDCreator._Underlying *_other);
+            _UnderlyingPtr = __JPH_SubShapeIDCreator_ConstructFromAnother(_other._UnderlyingPtr);
+            _KeepAlive(_other);
+        }
+
+        /// Generated from constructor `JPH::SubShapeIDCreator::SubShapeIDCreator`.
+        public SubShapeIDCreator(SubShapeIDCreator _other) : this((Const_SubShapeIDCreator)_other) {}
+
+        /// Generated from method `JPH::SubShapeIDCreator::operator=`.
+        public unsafe JPH.SubShapeIDCreator Assign(JPH.Const_SubShapeIDCreator _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SubShapeIDCreator_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SubShapeIDCreator_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SubShapeIDCreator._Underlying *__JPH_SubShapeIDCreator_AssignFromAnother(_Underlying *_this, JPH.SubShapeIDCreator._Underlying *_other);
+            _DiscardKeepAlive();
+            _KeepAlive(_other);
+            return new(__JPH_SubShapeIDCreator_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
+        }
+    }
+
+    /// This is used for optional parameters of class `SubShapeIDCreator` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_SubShapeIDCreator`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `SubShapeIDCreator`/`Const_SubShapeIDCreator` directly.
+    public class _InOptMut_SubShapeIDCreator
+    {
+        public SubShapeIDCreator? Opt;
+
+        public _InOptMut_SubShapeIDCreator() {}
+        public _InOptMut_SubShapeIDCreator(SubShapeIDCreator value) {Opt = value;}
+        public static implicit operator _InOptMut_SubShapeIDCreator(SubShapeIDCreator value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `SubShapeIDCreator` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_SubShapeIDCreator`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `SubShapeIDCreator`/`Const_SubShapeIDCreator` to pass it to the function.
+    public class _InOptConst_SubShapeIDCreator
+    {
+        public Const_SubShapeIDCreator? Opt;
+
+        public _InOptConst_SubShapeIDCreator() {}
+        public _InOptConst_SubShapeIDCreator(Const_SubShapeIDCreator value) {Opt = value;}
+        public static implicit operator _InOptConst_SubShapeIDCreator(Const_SubShapeIDCreator value) {return new(value);}
+    }
 }

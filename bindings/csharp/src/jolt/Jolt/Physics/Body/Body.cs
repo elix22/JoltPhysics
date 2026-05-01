@@ -752,6 +752,19 @@ public static partial class JPH
             return new(__JPH_Body_GetWorldSpaceSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inPosition._UnderlyingPtr), is_owning: true);
         }
 
+        /// Get the transformed shape of this body, which can be used to do collision detection outside of a body lock
+        /// Generated from method `JPH::Body::GetTransformedShape`.
+        public unsafe JPH.TransformedShape GetTransformedShape()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.TransformedShape._Underlying *__JPH_Body_GetTransformedShape(_Underlying *_this);
+            return new(__JPH_Body_GetTransformedShape(_UnderlyingPtr), is_owning: true);
+        }
+
         /// Debug function to convert a body back to a body creation settings object to be able to save/recreate the body later
         /// Generated from method `JPH::Body::GetBodyCreationSettings`.
         public unsafe JPH.BodyCreationSettings GetBodyCreationSettings()

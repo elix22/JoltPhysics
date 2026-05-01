@@ -19,6 +19,7 @@
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
+#include <Jolt/Physics/Collision/TransformedShape.h>
 #include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
 #include <Jolt/Physics/EActivation.h>
 #include <Jolt/Physics/SoftBody/SoftBodyCreationSettings.h>
@@ -774,6 +775,13 @@ void JPH_BodyInterface_SetCollisionGroup(JPH_BodyInterface *_this, const JPH_Bod
 const JPH_CollisionGroup *JPH_BodyInterface_GetCollisionGroup(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID)
 {
     return (const JPH_CollisionGroup *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyInterface *)(_this)).GetCollisionGroup(
+        ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID))
+    ));
+}
+
+JPH_TransformedShape *JPH_BodyInterface_GetTransformedShape(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID)
+{
+    return (JPH_TransformedShape *)new JPH::TransformedShape(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyInterface *)(_this)).GetTransformedShape(
         ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID))
     ));
 }

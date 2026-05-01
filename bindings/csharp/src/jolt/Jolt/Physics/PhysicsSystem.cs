@@ -663,6 +663,32 @@ public static partial class JPH
             __JPH_PhysicsSystem_OptimizeBroadPhase(_UnderlyingPtr);
         }
 
+        /// Adds a new step listener
+        /// Generated from method `JPH::PhysicsSystem::AddStepListener`.
+        public unsafe void AddStepListener(JPH.PhysicsStepListener? inListener)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_AddStepListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_AddStepListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PhysicsSystem_AddStepListener(_Underlying *_this, JPH.PhysicsStepListener._Underlying *inListener);
+            __JPH_PhysicsSystem_AddStepListener(_UnderlyingPtr, inListener is not null ? inListener._UnderlyingPtr : null);
+        }
+
+        /// Removes a step listener
+        /// Generated from method `JPH::PhysicsSystem::RemoveStepListener`.
+        public unsafe void RemoveStepListener(JPH.PhysicsStepListener? inListener)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_RemoveStepListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_RemoveStepListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PhysicsSystem_RemoveStepListener(_Underlying *_this, JPH.PhysicsStepListener._Underlying *inListener);
+            __JPH_PhysicsSystem_RemoveStepListener(_UnderlyingPtr, inListener is not null ? inListener._UnderlyingPtr : null);
+        }
+
         /// Simulate the system.
         /// The world steps for a total of inDeltaTime seconds. This is divided in inCollisionSteps iterations.
         /// Each iteration consists of collision detection followed by an integration step.

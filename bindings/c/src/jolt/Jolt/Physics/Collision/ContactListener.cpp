@@ -4,6 +4,7 @@
 
 #include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/Body.h>
+#include <Jolt/Physics/Collision/CollideShape.h>
 #include <Jolt/Physics/Collision/ContactListener.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeIDPair.h>

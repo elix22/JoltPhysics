@@ -23,6 +23,7 @@ typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SoftBodyCreationSettings JPH_SoftBodyCreationSettings; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyCreationSettings.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
@@ -523,6 +524,12 @@ JOLT_API void JPH_Body_SetUserData(JPH_Body *_this, uint64_t inUserData);
 /// Parameter `inPosition` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_Body_GetWorldSpaceSurfaceNormal(const JPH_Body *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inPosition);
+
+/// Get the transformed shape of this body, which can be used to do collision detection outside of a body lock
+/// Generated from method `JPH::Body::GetTransformedShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TransformedShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_TransformedShape *JPH_Body_GetTransformedShape(const JPH_Body *_this);
 
 /// Debug function to convert a body back to a body creation settings object to be able to save/recreate the body later
 /// Generated from method `JPH::Body::GetBodyCreationSettings`.

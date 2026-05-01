@@ -15,6 +15,7 @@
 #include <Jolt/Physics/Collision/CollisionGroup.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
+#include <Jolt/Physics/Collision/TransformedShape.h>
 #include <Jolt/Physics/SoftBody/SoftBodyCreationSettings.h>
 #include <__mrbind_c_details.h>
 
@@ -552,6 +553,11 @@ JPH_Vec3 *JPH_Body_GetWorldSpaceSurfaceNormal(const JPH_Body *_this, const JPH_S
         ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
         ((inPosition ? void() : MRBINDC_THROW("Parameter `inPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPosition))
     ));
+}
+
+JPH_TransformedShape *JPH_Body_GetTransformedShape(const JPH_Body *_this)
+{
+    return (JPH_TransformedShape *)new JPH::TransformedShape(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetTransformedShape());
 }
 
 JPH_BodyCreationSettings *JPH_Body_GetBodyCreationSettings(const JPH_Body *_this)

@@ -28,6 +28,7 @@ typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SoftBodyCreationSettings JPH_SoftBodyCreationSettings; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyCreationSettings.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
@@ -654,6 +655,13 @@ JOLT_API void JPH_BodyInterface_SetCollisionGroup(JPH_BodyInterface *_this, cons
 /// Parameter `inBodyID` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const JPH_CollisionGroup *JPH_BodyInterface_GetCollisionGroup(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
+
+/// Get transform and shape for this body, used to perform collision detection
+/// Generated from method `JPH::BodyInterface::GetTransformedShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TransformedShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_TransformedShape *JPH_BodyInterface_GetTransformedShape(const JPH_BodyInterface *_this, const JPH_BodyID *inBodyID);
 
 /// Get the user data for a body
 /// Generated from method `JPH::BodyInterface::GetUserData`.

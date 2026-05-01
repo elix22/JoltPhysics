@@ -16,12 +16,16 @@
 #include <Jolt/Physics/Character/CharacterBase.h>
 #include <Jolt/Physics/Character/CharacterID.h>
 #include <Jolt/Physics/Character/CharacterVirtual.h>
+#include <Jolt/Physics/Collision/BackFaceMode.h>
 #include <Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>
+#include <Jolt/Physics/Collision/CollideShape.h>
 #include <Jolt/Physics/Collision/ObjectLayer.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
+#include <Jolt/Physics/Collision/ShapeCast.h>
 #include <Jolt/Physics/Collision/ShapeFilter.h>
+#include <Jolt/Physics/Collision/TransformedShape.h>
 #include <Jolt/Physics/PhysicsSystem.h>
 #include <__mrbind_c_details.h>
 
@@ -84,6 +88,21 @@ const JPH_Vec3 *JPH_CharacterVirtualSettings_Get_mShapeOffset(const JPH_Characte
 JPH_Vec3 *JPH_CharacterVirtualSettings_GetMutable_mShapeOffset(JPH_CharacterVirtualSettings *_this)
 {
     return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtualSettings *)(_this)).mShapeOffset);
+}
+
+const JPH_EBackFaceMode *JPH_CharacterVirtualSettings_Get_mBackFaceMode(const JPH_CharacterVirtualSettings *_this)
+{
+    return (const JPH_EBackFaceMode *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtualSettings *)(_this)).mBackFaceMode);
+}
+
+void JPH_CharacterVirtualSettings_Set_mBackFaceMode(JPH_CharacterVirtualSettings *_this, JPH_EBackFaceMode value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtualSettings *)(_this)).mBackFaceMode = ((JPH::EBackFaceMode)value);
+}
+
+JPH_EBackFaceMode *JPH_CharacterVirtualSettings_GetMutable_mBackFaceMode(JPH_CharacterVirtualSettings *_this)
+{
+    return (JPH_EBackFaceMode *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtualSettings *)(_this)).mBackFaceMode);
 }
 
 const float *JPH_CharacterVirtualSettings_Get_mPredictiveContactDistance(const JPH_CharacterVirtualSettings *_this)
@@ -1409,6 +1428,11 @@ void JPH_CharacterVirtual_SetInnerBodyShape(JPH_CharacterVirtual *_this, const J
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).SetInnerBodyShape(
         ((const JPH::Shape *)inShape)
     );
+}
+
+JPH_TransformedShape *JPH_CharacterVirtual_GetTransformedShape(const JPH_CharacterVirtual *_this)
+{
+    return (JPH_TransformedShape *)new JPH::TransformedShape(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetTransformedShape());
 }
 
 JPH_CharacterVirtualSettings *JPH_CharacterVirtual_GetCharacterVirtualSettings(const JPH_CharacterVirtual *_this)

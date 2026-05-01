@@ -11,10 +11,13 @@
 #include <Jolt/Math/Quat.h>
 #include <Jolt/Math/Vec3.h>
 #include <Jolt/ObjectStream/SerializableObject.h>
+#include <Jolt/Physics/Collision/CastResult.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
+#include <Jolt/Physics/Collision/RayCast.h>
 #include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
+#include <Jolt/Physics/Collision/TransformedShape.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -675,6 +678,15 @@ void JPH_HeightFieldShape_GetSubmergedVolume(const JPH_HeightFieldShape *_this, 
     );
 }
 
+bool JPH_HeightFieldShape_CastRay_3(const JPH_HeightFieldShape *_this, const JPH_RayCast *inRay, const JPH_SubShapeIDCreator *inSubShapeIDCreator, JPH_RayCastResult *ioHit)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).CastRay(
+        ((inRay ? void() : MRBINDC_THROW("Parameter `inRay` can not be null.", void)), *(const JPH::RayCast *)(inRay)),
+        ((inSubShapeIDCreator ? void() : MRBINDC_THROW("Parameter `inSubShapeIDCreator` can not be null.", void)), *(const JPH::SubShapeIDCreator *)(inSubShapeIDCreator)),
+        ((ioHit ? void() : MRBINDC_THROW("Parameter `ioHit` can not be null.", void)), *(JPH::RayCastResult *)(ioHit))
+    );
+}
+
 void JPH_HeightFieldShape_GetTrianglesStart(const JPH_HeightFieldShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetTrianglesStart(
@@ -786,6 +798,17 @@ uint64_t JPH_HeightFieldShape_GetSubShapeUserData(const JPH_HeightFieldShape *_t
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetSubShapeUserData(
         ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID))
     );
+}
+
+JPH_TransformedShape *JPH_HeightFieldShape_GetSubShapeTransformedShape(const JPH_HeightFieldShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale, JPH_SubShapeID *outRemainder)
+{
+    return (JPH_TransformedShape *)new JPH::TransformedShape(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShape *)(_this)).GetSubShapeTransformedShape(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inPositionCOM ? void() : MRBINDC_THROW("Parameter `inPositionCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPositionCOM)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((outRemainder ? void() : MRBINDC_THROW("Parameter `outRemainder` can not be null.", void)), *(JPH::SubShapeID *)(outRemainder))
+    ));
 }
 
 bool JPH_HeightFieldShape_IsValidScale(const JPH_HeightFieldShape *_this, const JPH_Vec3 *inScale)

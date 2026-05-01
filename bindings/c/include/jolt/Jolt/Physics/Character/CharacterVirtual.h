@@ -6,6 +6,7 @@
 #include <jolt/Jolt/Physics/Body/BodyID.h>
 #include <jolt/Jolt/Physics/Body/MotionType.h>
 #include <jolt/Jolt/Physics/Character/CharacterBase.h>
+#include <jolt/Jolt/Physics/Collision/BackFaceMode.h>
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -21,6 +22,7 @@ typedef struct JPH_BroadPhaseLayerFilter JPH_BroadPhaseLayerFilter; // Defined i
 typedef struct JPH_CharacterBase JPH_CharacterBase; // Defined in `#include <jolt/Jolt/Physics/Character/CharacterBase.h>`.
 typedef struct JPH_CharacterBaseSettings JPH_CharacterBaseSettings; // Defined in `#include <jolt/Jolt/Physics/Character/CharacterBase.h>`.
 typedef struct JPH_CharacterID JPH_CharacterID; // Defined in `#include <jolt/Jolt/Physics/Character/CharacterID.h>`.
+typedef struct JPH_CollideShapeSettings JPH_CollideShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/CollideShape.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_ObjectLayerFilter JPH_ObjectLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/ObjectLayer.h>`.
@@ -31,9 +33,11 @@ typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h
 typedef struct JPH_RefTarget_JPH_CharacterBase JPH_RefTarget_JPH_CharacterBase; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_CharacterBaseSettings JPH_RefTarget_JPH_CharacterBaseSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
+typedef struct JPH_ShapeCastSettings JPH_ShapeCastSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/ShapeCast.h>`.
 typedef struct JPH_ShapeFilter JPH_ShapeFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/ShapeFilter.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
+typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
@@ -194,6 +198,27 @@ JOLT_API const JPH_Vec3 *JPH_CharacterVirtualSettings_Get_mShapeOffset(const JPH
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API JPH_Vec3 *JPH_CharacterVirtualSettings_GetMutable_mShapeOffset(JPH_CharacterVirtualSettings *_this);
+
+///< When colliding with back faces, the character will not be able to move through back facing triangles. Use this if you have triangles that need to collide on both sides.
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtualSettings` named `mBackFaceMode`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_EBackFaceMode *JPH_CharacterVirtualSettings_Get_mBackFaceMode(const JPH_CharacterVirtualSettings *_this);
+
+///< When colliding with back faces, the character will not be able to move through back facing triangles. Use this if you have triangles that need to collide on both sides.
+/// Modifies a member variable of class `JPH::CharacterVirtualSettings` named `mBackFaceMode`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mBackFaceMode`.
+/// When this function is called, this object will drop object references it held previously in `mBackFaceMode`.
+JOLT_API void JPH_CharacterVirtualSettings_Set_mBackFaceMode(JPH_CharacterVirtualSettings *_this, JPH_EBackFaceMode value);
+
+///< When colliding with back faces, the character will not be able to move through back facing triangles. Use this if you have triangles that need to collide on both sides.
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtualSettings` named `mBackFaceMode`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_EBackFaceMode *JPH_CharacterVirtualSettings_GetMutable_mBackFaceMode(JPH_CharacterVirtualSettings *_this);
 
 ///< How far to scan outside of the shape for predictive contacts. A value of 0 will most likely cause the character to get stuck as it cannot properly calculate a sliding direction anymore. A value that's too high will cause ghost collisions.
 /// Returns a pointer to a member variable of class `JPH::CharacterVirtualSettings` named `mPredictiveContactDistance`.
@@ -1436,6 +1461,12 @@ JOLT_API bool JPH_CharacterVirtual_SetShape(JPH_CharacterVirtual *_this, const J
 /// Generated from method `JPH::CharacterVirtual::SetInnerBodyShape`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_CharacterVirtual_SetInnerBodyShape(JPH_CharacterVirtual *_this, const JPH_Shape *inShape);
+
+/// Get the transformed shape that represents the volume of the character, can be used for collision checks.
+/// Generated from method `JPH::CharacterVirtual::GetTransformedShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TransformedShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_TransformedShape *JPH_CharacterVirtual_GetTransformedShape(const JPH_CharacterVirtual *_this);
 
 /// Get the character settings that can recreate this character
 /// Generated from method `JPH::CharacterVirtual::GetCharacterVirtualSettings`.

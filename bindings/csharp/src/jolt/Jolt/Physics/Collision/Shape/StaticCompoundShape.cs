@@ -845,6 +845,19 @@ public static partial class JPH
             __Jolt_delete_array_JPH_StaticCompoundShape_void_ptr_void_ptr(inPointer, inPlace);
         }
 
+        // See Shape::CastRay
+        /// Generated from method `JPH::StaticCompoundShape::CastRay`.
+        public unsafe bool CastRay(JPH.Const_RayCast inRay, JPH.Const_SubShapeIDCreator inSubShapeIDCreator, JPH.RayCastResult ioHit)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_StaticCompoundShape_CastRay_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_StaticCompoundShape_CastRay_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JPH_StaticCompoundShape_CastRay_3(_Underlying *_this, JPH.Const_RayCast._Underlying *inRay, JPH.Const_SubShapeIDCreator._Underlying *inSubShapeIDCreator, JPH.RayCastResult._Underlying *ioHit);
+            return __JPH_StaticCompoundShape_CastRay_3(_UnderlyingPtr, inRay._UnderlyingPtr, inSubShapeIDCreator._UnderlyingPtr, ioHit._UnderlyingPtr) != 0;
+        }
+
         // See: CompoundShape::GetIntersectingSubShapes
         /// Generated from method `JPH::StaticCompoundShape::GetIntersectingSubShapes`.
         public unsafe int GetIntersectingSubShapes(JPH.Const_AABox inBox, JPH.InOut<uint>? outSubShapeIndices, int inMaxSubShapeIndices)
@@ -993,6 +1006,19 @@ public static partial class JPH
             return __JPH_StaticCompoundShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
         }
 
+        // See Shape::GetSubShapeTransformedShape
+        /// Generated from method `JPH::StaticCompoundShape::GetSubShapeTransformedShape`.
+        public unsafe JPH.TransformedShape GetSubShapeTransformedShape(JPH.Const_SubShapeID inSubShapeID, JPH.Const_Vec3 inPositionCOM, JPH.Const_Quat inRotation, JPH.Const_Vec3 inScale, JPH.SubShapeID outRemainder)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_StaticCompoundShape_GetSubShapeTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_StaticCompoundShape_GetSubShapeTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.TransformedShape._Underlying *__JPH_StaticCompoundShape_GetSubShapeTransformedShape(_Underlying *_this, JPH.Const_SubShapeID._Underlying *inSubShapeID, JPH.Vec3._Underlying *inPositionCOM, JPH.Quat._Underlying *inRotation, JPH.Vec3._Underlying *inScale, JPH.SubShapeID._Underlying *outRemainder);
+            return new(__JPH_StaticCompoundShape_GetSubShapeTransformedShape(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr, outRemainder._UnderlyingPtr), is_owning: true);
+        }
+
         // See Shape::GetSurfaceNormal
         /// Generated from method `JPH::StaticCompoundShape::GetSurfaceNormal`.
         public unsafe JPH.Vec3 GetSurfaceNormal(JPH.Const_SubShapeID inSubShapeID, JPH.Const_Vec3 inLocalSurfacePosition)
@@ -1119,6 +1145,22 @@ public static partial class JPH
             #endif
             extern static uint __JPH_StaticCompoundShape_GetSubShapeIndexFromID(_Underlying *_this, JPH.SubShapeID._Underlying *inSubShapeID, JPH.SubShapeID._Underlying *outRemainder);
             return __JPH_StaticCompoundShape_GetSubShapeIndexFromID(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, outRemainder._UnderlyingPtr);
+        }
+
+        /// @brief Convert a sub shape index to a sub shape ID
+        /// @param inIdx Index of the sub shape of this compound
+        /// @param inParentSubShapeID Parent SubShapeID (describing the path to the compound shape)
+        /// @return A sub shape ID creator that contains the full path to the sub shape with index inIdx
+        /// Generated from method `JPH::StaticCompoundShape::GetSubShapeIDFromIndex`.
+        public unsafe JPH.SubShapeIDCreator GetSubShapeIDFromIndex(int inIdx, JPH.Const_SubShapeIDCreator inParentSubShapeID)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_StaticCompoundShape_GetSubShapeIDFromIndex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_StaticCompoundShape_GetSubShapeIDFromIndex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SubShapeIDCreator._Underlying *__JPH_StaticCompoundShape_GetSubShapeIDFromIndex(_Underlying *_this, int inIdx, JPH.Const_SubShapeIDCreator._Underlying *inParentSubShapeID);
+            return new(__JPH_StaticCompoundShape_GetSubShapeIDFromIndex(_UnderlyingPtr, inIdx, inParentSubShapeID._UnderlyingPtr), is_owning: true);
         }
 
         // See Shape::GetVolume

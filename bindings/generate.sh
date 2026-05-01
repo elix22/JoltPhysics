@@ -164,6 +164,15 @@ echo "#include \"$ROOT/Jolt/Math/UVec4.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Math/Vec3.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Math/Vec4.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Math/Vector.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Geometry/Ellipse.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/BackFaceMode.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/ActiveEdgeMode.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/CollectFacesMode.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/RayCast.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/CollideShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/ShapeCast.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/TransformedShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/PhysicsStepListener.h\"" >>"$BINDINGS/tmp/combined_input.h"
 
 
 # Parse the input header.
@@ -172,6 +181,7 @@ echo "#include \"$ROOT/Jolt/Math/Vector.h\"" >>"$BINDINGS/tmp/combined_input.h"
     -o "$BINDINGS/tmp/parse_result.json" \
     --ignore :: \
     --skip-mentions-of std::align_val_t \
+    --skip-mentions-of JPH::StaticArray \
     --allow JoltHelpers \
     --allow JPH::BVec16 \
     --allow JPH::DMat44 \
@@ -312,6 +322,26 @@ echo "#include \"$ROOT/Jolt/Math/Vector.h\"" >>"$BINDINGS/tmp/combined_input.h"
     --allow JPH::ObjectLayerPairFilterTable \
     --allow JPH::ObjectLayerPairFilterMask \
     --allow JPH::ObjectVsBroadPhaseLayerFilterTable \
+    --allow JPH::Ellipse \
+    --allow JPH::EBackFaceMode \
+    --allow JPH::EActiveEdgeMode \
+    --allow JPH::ECollectFacesMode \
+    --allow JPH::RayCastT \
+    --allow JPH::RayCast \
+    --allow JPH::RRayCast \
+    --allow JPH::RayCastSettings \
+    --allow JPH::CollideSettingsBase \
+    --allow JPH::CollideShapeSettings \
+    --allow JPH::CollideShapeResult \
+    --allow JPH::ShapeCastT \
+    --allow JPH::ShapeCast \
+    --allow JPH::RShapeCast \
+    --allow JPH::ShapeCastSettings \
+    --allow JPH::ShapeCastResult \
+    --allow JPH::TransformedShape \
+    --allow JPH::SubShapeIDCreator \
+    --allow JPH::PhysicsStepListenerContext \
+    --allow JPH::PhysicsStepListener \
     --canonicalize-64-to-fixed-size-typedefs \
     "${EXTRA_PARSER_FLAGS[@]+"${EXTRA_PARSER_FLAGS[@]}"}" \
     -- \

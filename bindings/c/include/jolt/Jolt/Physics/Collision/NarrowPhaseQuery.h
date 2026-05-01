@@ -3,6 +3,7 @@
 
 #include <exports.h>
 
+#include <stdbool.h>
 #include <stddef.h>
 
 #ifdef __cplusplus
@@ -10,9 +11,18 @@ extern "C" {
 #endif
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_BodyFilter JPH_BodyFilter; // Defined in `#include <jolt/Jolt/Physics/Body/BodyFilter.h>`.
+typedef struct JPH_BroadPhaseLayerFilter JPH_BroadPhaseLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
+typedef struct JPH_CollideShapeSettings JPH_CollideShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/CollideShape.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
+typedef struct JPH_ObjectLayerFilter JPH_ObjectLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/ObjectLayer.h>`.
+typedef struct JPH_RRayCast JPH_RRayCast; // Defined in `#include <jolt/Jolt/Physics/Collision/RayCast.h>`.
+typedef struct JPH_RShapeCast JPH_RShapeCast; // Defined in `#include <jolt/Jolt/Physics/Collision/ShapeCast.h>`.
+typedef struct JPH_RayCastResult JPH_RayCastResult; // Defined in `#include <jolt/Jolt/Physics/Collision/CastResult.h>`.
+typedef struct JPH_RayCastSettings JPH_RayCastSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/RayCast.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
+typedef struct JPH_ShapeCastSettings JPH_ShapeCastSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/ShapeCast.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
@@ -67,6 +77,21 @@ JOLT_API void JPH_NarrowPhaseQuery_Destroy(const JPH_NarrowPhaseQuery *_this);
 
 /// Destroys a heap-allocated array of `JPH_NarrowPhaseQuery`. Does nothing if the pointer is null.
 JOLT_API void JPH_NarrowPhaseQuery_DestroyArray(const JPH_NarrowPhaseQuery *_this);
+
+/// Cast a ray and find the closest hit. Returns true if it finds a hit. Hits further than ioHit.mFraction will not be considered and in this case ioHit will remain unmodified (and the function will return false).
+/// Convex objects will be treated as solid (meaning if the ray starts inside, you'll get a hit fraction of 0) and back face hits against triangles are returned.
+/// If you want the surface normal of the hit use Body::GetWorldSpaceSurfaceNormal(ioHit.mSubShapeID2, inRay.GetPointOnRay(ioHit.mFraction)) on body with ID ioHit.mBodyID.
+/// Generated from method `JPH::NarrowPhaseQuery::CastRay`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRay` can not be null. It is a single object.
+/// Parameter `ioHit` can not be null. It is a single object.
+/// Parameter `inBroadPhaseLayerFilter` is a single object.
+/// Parameter `inBroadPhaseLayerFilter` has a default argument: `{}`, pass a null pointer to use it.
+/// Parameter `inObjectLayerFilter` is a single object.
+/// Parameter `inObjectLayerFilter` has a default argument: `{}`, pass a null pointer to use it.
+/// Parameter `inBodyFilter` is a single object.
+/// Parameter `inBodyFilter` has a default argument: `{}`, pass a null pointer to use it.
+JOLT_API bool JPH_NarrowPhaseQuery_CastRay_5(const JPH_NarrowPhaseQuery *_this, const JPH_RRayCast *inRay, JPH_RayCastResult *ioHit, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter);
 
 #ifdef __cplusplus
 } // extern "C"

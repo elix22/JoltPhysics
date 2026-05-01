@@ -28,6 +28,8 @@ typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jol
 typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_SubShapeIDCreator JPH_SubShapeIDCreator; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
@@ -454,6 +456,17 @@ JOLT_API const JPH_Shape *JPH_CompoundShape_GetLeafShape(const JPH_CompoundShape
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API uint64_t JPH_CompoundShape_GetSubShapeUserData(const JPH_CompoundShape *_this, const JPH_SubShapeID *inSubShapeID);
 
+// See Shape::GetSubShapeTransformedShape
+/// Generated from method `JPH::CompoundShape::GetSubShapeTransformedShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `outRemainder` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TransformedShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_TransformedShape *JPH_CompoundShape_GetSubShapeTransformedShape(const JPH_CompoundShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale, JPH_SubShapeID *outRemainder);
+
 // See Shape::GetSurfaceNormal
 /// Generated from method `JPH::CompoundShape::GetSurfaceNormal`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -538,6 +551,16 @@ JOLT_API bool JPH_CompoundShape_IsSubShapeIDValid(const JPH_CompoundShape *_this
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 /// Parameter `outRemainder` can not be null. It is a single object.
 JOLT_API unsigned int JPH_CompoundShape_GetSubShapeIndexFromID(const JPH_CompoundShape *_this, const JPH_SubShapeID *inSubShapeID, JPH_SubShapeID *outRemainder);
+
+/// @brief Convert a sub shape index to a sub shape ID
+/// @param inIdx Index of the sub shape of this compound
+/// @param inParentSubShapeID Parent SubShapeID (describing the path to the compound shape)
+/// @return A sub shape ID creator that contains the full path to the sub shape with index inIdx
+/// Generated from method `JPH::CompoundShape::GetSubShapeIDFromIndex`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inParentSubShapeID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SubShapeIDCreator_Destroy()` to free it when you're done using it.
+JOLT_API JPH_SubShapeIDCreator *JPH_CompoundShape_GetSubShapeIDFromIndex(const JPH_CompoundShape *_this, int inIdx, const JPH_SubShapeIDCreator *inParentSubShapeID);
 
 // See Shape::GetVolume
 /// Generated from method `JPH::CompoundShape::GetVolume`.

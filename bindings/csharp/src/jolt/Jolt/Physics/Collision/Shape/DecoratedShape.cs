@@ -820,6 +820,25 @@ public static partial class JPH
             return new(__JPH_DecoratedShape_GetSurfaceNormal(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inLocalSurfacePosition._UnderlyingPtr), is_owning: true);
         }
 
+        /// Get the direct child sub shape and its transform for a sub shape ID.
+        /// @param inSubShapeID Sub shape ID that indicates the path to the leaf shape
+        /// @param inPositionCOM The position of the center of mass of this shape
+        /// @param inRotation The orientation of this shape
+        /// @param inScale Scale in local space of the shape (scales relative to its center of mass)
+        /// @param outRemainder The remainder of the sub shape ID after removing the sub shape
+        /// @return Direct child sub shape and its transform, note that the body ID and sub shape ID will be invalid
+        /// Generated from method `JPH::DecoratedShape::GetSubShapeTransformedShape`.
+        public unsafe JPH.TransformedShape GetSubShapeTransformedShape(JPH.Const_SubShapeID inSubShapeID, JPH.Const_Vec3 inPositionCOM, JPH.Const_Quat inRotation, JPH.Const_Vec3 inScale, JPH.SubShapeID outRemainder)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DecoratedShape_GetSubShapeTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DecoratedShape_GetSubShapeTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.TransformedShape._Underlying *__JPH_DecoratedShape_GetSubShapeTransformedShape(_Underlying *_this, JPH.Const_SubShapeID._Underlying *inSubShapeID, JPH.Vec3._Underlying *inPositionCOM, JPH.Quat._Underlying *inRotation, JPH.Vec3._Underlying *inScale, JPH.SubShapeID._Underlying *outRemainder);
+            return new(__JPH_DecoratedShape_GetSubShapeTransformedShape(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr, outRemainder._UnderlyingPtr), is_owning: true);
+        }
+
         /// Generated from method `JPH::DecoratedShape::GetSubmergedVolume`.
         public unsafe void GetSubmergedVolume(JPH.Const_Mat44 inCenterOfMassTransform, JPH.Const_Vec3 inScale, JPH.Const_Plane inSurface, ref float outTotalVolume, ref float outSubmergedVolume, JPH.Vec3 outCenterOfBuoyancy)
         {

@@ -504,6 +504,22 @@ public static partial class JPH
             }
         }
 
+        /// Get transform and shape for this body, used to perform collision detection
+        /// Generated from method `JPH::BodyInterface::GetTransformedShape`.
+        public unsafe JPH.TransformedShape GetTransformedShape(in JPH.BodyID inBodyID)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_GetTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_GetTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.TransformedShape._Underlying *__JPH_BodyInterface_GetTransformedShape(_Underlying *_this, JPH.BodyID *inBodyID);
+            fixed (JPH.BodyID *__ptr_inBodyID = &inBodyID)
+            {
+                return new(__JPH_BodyInterface_GetTransformedShape(_UnderlyingPtr, __ptr_inBodyID), is_owning: true);
+            }
+        }
+
         /// Get the user data for a body
         /// Generated from method `JPH::BodyInterface::GetUserData`.
         public unsafe UIntPtr GetUserData(in JPH.BodyID inBodyID)

@@ -70,7 +70,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Geometry/AABoxTests.cpp` | `Tests_AABox.cs` | ✅ | 20 | Axis-aligned bounding box operations |
 | `UnitTests/Geometry/ClosestPointTests.cpp` | — | ❌ | 0 | ClosestPoint utilities not fully exposed |
 | `UnitTests/Geometry/ConvexHullBuilderTest.cpp` | — | 🚫 | — | Internal builder; not in binding API |
-| `UnitTests/Geometry/EllipseTest.cpp` | — | ❌ | 0 | Ellipse class not yet bound |
+| `UnitTests/Geometry/EllipseTest.cpp` | `Tests_Ellipse.cs` | ✅ | 11 | Ellipse construction, IsInside (inside/outside/boundary), GetClosestPoint on X/Y axis, GetNormal (non-normalized) |
 | `UnitTests/Geometry/EPATests.cpp` | — | 🚫 | — | EPA solver internals; not exposed |
 | `UnitTests/Geometry/GJKTests.cpp` | — | 🚫 | — | GJK collision internals; not exposed |
 | `UnitTests/Geometry/RayAABoxTests.cpp` | — | ❌ | 0 | Ray-AABox intersections not yet bound |
@@ -90,9 +90,9 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/ObjectLayerPairFilterMaskTests.cpp` | `Tests_ObjectLayerPairFilterMask.cs` | ✅ | 10 | ObjectLayerPairFilterMask lifecycle, CNumBits/CMask constants, SGetObjectLayer/SGetGroup/SGetMask static helpers, ShouldCollide logic |
 | `UnitTests/Physics/BroadPhaseTests.cpp` | `Tests_PhysicsQuery.cs` + `Tests_CastResult.cs` | ⚠️ | 29 | GetBroadPhaseQuery / GetNarrowPhaseQuery, GetBounds after body add, gravity round-trip, WereBodiesInContact; BroadPhaseCastResult + RayCastResult result struct defaults, construction, Reset, GetEarlyOutFraction; full broadphase cast execution not yet tested |
 | `UnitTests/Physics/CastShapeTests.cpp` | — | ❌ | 0 | Shape cast queries not yet tested |
-| `UnitTests/Physics/CollideShapeTests.cpp` | — | ❌ | 0 | CollideShape queries not yet tested |
-| `UnitTests/Physics/RayShapeTests.cpp` | — | ❌ | 0 | Ray-shape intersections not yet tested |
-| `UnitTests/Physics/TransformedShapeTests.cpp` | — | ❌ | 0 | TransformedShape not yet tested |
+| `UnitTests/Physics/CollideShapeTests.cpp` | `Tests_CollisionSettings.cs` | ⚠️ | 22 | Enum values (EBackFaceMode/EActiveEdgeMode/ECollectFacesMode); RayCastSettings defaults + round-trips; CollideSettingsBase defaults + round-trips; CollideShapeSettings defaults + round-trips; CollideShapeResult GetEarlyOutFraction/Reversed; ShapeCastSettings defaults + round-trips; ShapeCastResult GetEarlyOutFraction; actual CollideShape query execution not yet tested |
+| `UnitTests/Physics/RayShapeTests.cpp` | `Tests_RayCastQuery.cs` | ⚠️ | 13 | RRayCast default + parameterized construction; NarrowPhaseQuery.CastRay miss (empty world) + hit (fraction in range, BodyID matches) + side miss; BodyInterface.GetTransformedShape (NoCrash, BodyID, position); TransformedShape.GetWorldSpaceBounds, CastRay hit + miss; ShapeCast not yet tested |
+| `UnitTests/Physics/TransformedShapeTests.cpp` | `Tests_RayCastQuery.cs` | ⚠️ | — | GetTransformedShape/CastRay/GetWorldSpaceBounds covered (see RayShapeTests.cpp row) |
 | `UnitTests/Physics/HeightFieldShapeTests.cpp` | `Tests_HeightFieldShape.cs` | ⚠️ | 12 | HeightFieldShapeSettings field defaults + round-trips; CalculateBitsPerSampleForError requires mHeightSamples (no sample-array constructor in bindings — not testable) |
 | `UnitTests/Physics/DistanceConstraintTests.cpp` | `Tests_Constraints.cs` + `Tests_DistanceConstraint.cs` | ✅ | 20 | DistanceConstraintSettings defaults + round-trips, direct construction, GetMinDistance/MaxDistance, SetDistance, GetEnabled/SetEnabled, lambda after simulation |
 | `UnitTests/Physics/HingeConstraintTests.cpp` | `Tests_HingeConstraint.cs` | ✅ | 11 | Settings field round-trips (limits, axes, points), constraint creation and simulation |
@@ -113,7 +113,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/WheeledVehicleTests.cpp` | — | ❌ | 0 | WheeledVehicle not yet bound |
 | `UnitTests/Physics/ShapeFilterTests.cpp` | `Tests_ShapeFilter.cs` | ✅ | 9 | Const/mutable lifecycle, mBodyID2 default-invalid, ShouldCollide default pass-through (2-arg and 4-arg), use alongside physics system |
 | `UnitTests/Physics/PhysicsDeterminismTests.cpp` | `Tests_PhysicsDeterminism.cs` | ⚠️ | 5 | TwoIdenticalRuns_ProduceSamePosition (60 steps), SingleStep, ManySteps (180 steps) — all bit-exact; mDeterministicSimulation default=true + can disable; actual per-constraint determinism not verified |
-| `UnitTests/Physics/PhysicsStepListenerTests.cpp` | — | ❌ | 0 | StepListener not yet tested |
+| `UnitTests/Physics/PhysicsStepListenerTests.cpp` | `Tests_PhysicsStepListener.cs` | ⚠️ | 9 | PhysicsStepListenerContext default/parameterized/copy construct, mDeltaTime/mIsFirstStep/mIsLastStep/mPhysicsSystem field round-trips; context referencing a real PhysicsSystem; PhysicsStepListener is pure virtual — actual OnStep callback not testable without virtual dispatch wiring |
 
 ---
 
@@ -181,6 +181,10 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_ContactManifold.cs` | 12 | ContactManifold default construct, mPenetrationDepth/mSubShapeID1/2 defaults + mutable round-trips, copy construct, SwapShapes |
 | `Tests_DefaultObjectLayerFilter.cs` | 6 | DefaultObjectLayerFilter construct (from ObjectLayerPairFilterTable); ShouldCollide: enabled pair returns true, same layer returns false, symmetric; no-pairs filter returns false |
 | `Tests_PhysicsDeterminism.cs` | 5 | Two identical 60-step simulations produce bit-exact positions; single-step + 180-step variants; mDeterministicSimulation default=true + disable |
+| `Tests_Ellipse.cs` | 11 | Ellipse construction/copy; IsInside (origin, inside point, outside, boundary uses <=, Y-axis); GetClosestPoint on X and Y axis; GetNormal non-normalized (X and Y axis) |
+| `Tests_CollisionSettings.cs` | 22 | EBackFaceMode/EActiveEdgeMode/ECollectFacesMode enum values; RayCastSettings default+round-trips (mBackFaceModeTriangles/Convex, mTreatConvexAsSolid); CollideSettingsBase default+round-trips (mActiveEdgeMode, mCollectFacesMode); CollideShapeSettings default+round-trip (mMaxSeparationDistance); CollideShapeResult GetEarlyOutFraction, Reversed; ShapeCastSettings default+round-trips; ShapeCastResult GetEarlyOutFraction |
+| `Tests_RayCastQuery.cs` | 13 | RRayCast default + parameterized construction + field access; NarrowPhaseQuery.CastRay miss (empty world), hit (true, fraction in [0,1], BodyID matches), side-miss; BodyInterface.GetTransformedShape (NoCrash, BodyID matches, position matches); TransformedShape.GetWorldSpaceBounds valid; TransformedShape.CastRay hit + miss |
+| `Tests_PhysicsStepListener.cs` | 9 | PhysicsStepListenerContext: default/parameterized/copy construct; mDeltaTime/mIsFirstStep/mIsLastStep/mPhysicsSystem field access; mutable round-trips; context holding a real PhysicsSystem |
 
 ---
 
@@ -189,10 +193,10 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | Category | Total C# Test Files | Total C# Tests |
 |---|---|---|
 | Math | 10 | 297 |
-| Geometry | 2 | 35 |
+| Geometry | 3 | 46 |
 | Physics | 31 | 453 |
-| Other | 41 | 606 |
-| **Total** | **84** | **1391** |
+| Other | 45 | 550 |
+| **Total** | **89** | **1346** |
 
 > **Note:** Test count reflects state after latest updates.
 > The total has grown across multiple sessions:
@@ -200,6 +204,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 > - 1138 → 1202 (72 files): added Tests_CharacterVirtual.cs (19), Tests_MeshShape.cs (7), Tests_Vector2Matrix.cs (26), Tests_ShapeBase.cs (11)
 > - 1202 → **1260** (**75 files**): added Tests_SoftBody.cs (42), Tests_JobSystem.cs (8), Tests_TempAllocator.cs (8)
 > - 1260 → **1291** (**84 files**): added Tests_ContactManifold.cs (12), Tests_DefaultObjectLayerFilter.cs (6), Tests_PhysicsDeterminism.cs (5); expanded Tests_ContactSettings.cs (+8); documented 5 pre-existing files: Tests_CollisionGroups.cs (12), Tests_MutableCompound.cs (14), Tests_PhysicsSettings.cs (16), Tests_TaperedCapsuleShape.cs (16), Tests_TriangleAndPlaneShapes.cs (16)
+> - 1291 → **1346** (**89 files**): generated new bindings (Ellipse, RayCast/RRayCast, RayCastSettings, CollideSettingsBase/CollideShapeSettings/CollideShapeResult, ShapeCast/ShapeCastSettings/ShapeCastResult, TransformedShape, PhysicsStepListenerContext/PhysicsStepListener, EBackFaceMode/EActiveEdgeMode/ECollectFacesMode); added Tests_Ellipse.cs (11), Tests_CollisionSettings.cs (22), Tests_RayCastQuery.cs (13), Tests_PhysicsStepListener.cs (9)
 
 ---
 
@@ -208,14 +213,13 @@ cd deps/JoltPhysics/bindings/csharp/tests
 The following items would need new `--allow` lines in `generate.sh` (and possibly new wrapper
 headers) before C# tests can be written:
 
-- `JPH::Ellipse` — needs `--allow JPH::Ellipse` + Ellipse.h include
 - `JPH::CharacterVirtual` (full) — `mShape`, `mInnerBodyShape`, `mBackFaceMode` fields are
   currently skipped due to complex types
 - `JPH::SoftBodyCreationSettings` / `JPH::SoftBody` — bound; full simulation tests not yet written (no vertex/face collection accessors in bindings)
 - `JPH::WheeledVehicleController` — not yet bound
 - `JPH::SubShapeID` — could be bound; complex compound sub-shape path tracking
-- Ray/collision query result types (`RayCastResult`, `CollideShapeResult`, etc.) — needed for
-  cast/collide tests; partially bound
+- `CollideShape` / `CastShape` query execution — settings/result types now bound; actual query methods on `NarrowPhaseQuery` not yet covered
+- `PhysicsStepListener::OnStep` callback — pure virtual C++ class; virtual dispatch wiring not generated; cannot subclass from C#
 
 ## Generator Bug Fixed This Session
 

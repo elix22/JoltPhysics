@@ -1135,6 +1135,19 @@ public static partial class JPH
             }
         }
 
+        // See Shape::CastRay
+        /// Generated from method `JPH::ConvexHullShape::CastRay`.
+        public unsafe bool CastRay(JPH.Const_RayCast inRay, JPH.Const_SubShapeIDCreator inSubShapeIDCreator, JPH.RayCastResult ioHit)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShape_CastRay_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShape_CastRay_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JPH_ConvexHullShape_CastRay_3(_Underlying *_this, JPH.Const_RayCast._Underlying *inRay, JPH.Const_SubShapeIDCreator._Underlying *inSubShapeIDCreator, JPH.RayCastResult._Underlying *ioHit);
+            return __JPH_ConvexHullShape_CastRay_3(_UnderlyingPtr, inRay._UnderlyingPtr, inSubShapeIDCreator._UnderlyingPtr, ioHit._UnderlyingPtr) != 0;
+        }
+
         // See Shape::GetTrianglesStart
         /// Generated from method `JPH::ConvexHullShape::GetTrianglesStart`.
         public unsafe void GetTrianglesStart(JPH.Shape.GetTrianglesContext ioContext, JPH.Const_AABox inBox, JPH.Const_Vec3 inPositionCOM, JPH.Const_Quat inRotation, JPH.Const_Vec3 inScale)
@@ -1365,6 +1378,25 @@ public static partial class JPH
             #endif
             extern static UIntPtr __JPH_ConvexHullShape_GetSubShapeUserData(_Underlying *_this, JPH.Const_SubShapeID._Underlying *inSubShapeID);
             return __JPH_ConvexHullShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
+        }
+
+        /// Get the direct child sub shape and its transform for a sub shape ID.
+        /// @param inSubShapeID Sub shape ID that indicates the path to the leaf shape
+        /// @param inPositionCOM The position of the center of mass of this shape
+        /// @param inRotation The orientation of this shape
+        /// @param inScale Scale in local space of the shape (scales relative to its center of mass)
+        /// @param outRemainder The remainder of the sub shape ID after removing the sub shape
+        /// @return Direct child sub shape and its transform, note that the body ID and sub shape ID will be invalid
+        /// Generated from method `JPH::ConvexHullShape::GetSubShapeTransformedShape`.
+        public unsafe JPH.TransformedShape GetSubShapeTransformedShape(JPH.Const_SubShapeID inSubShapeID, JPH.Const_Vec3 inPositionCOM, JPH.Const_Quat inRotation, JPH.Const_Vec3 inScale, JPH.SubShapeID outRemainder)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShape_GetSubShapeTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShape_GetSubShapeTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.TransformedShape._Underlying *__JPH_ConvexHullShape_GetSubShapeTransformedShape(_Underlying *_this, JPH.Const_SubShapeID._Underlying *inSubShapeID, JPH.Vec3._Underlying *inPositionCOM, JPH.Quat._Underlying *inRotation, JPH.Vec3._Underlying *inScale, JPH.SubShapeID._Underlying *outRemainder);
+            return new(__JPH_ConvexHullShape_GetSubShapeTransformedShape(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr, outRemainder._UnderlyingPtr), is_owning: true);
         }
 
         /// Test if inScale is a valid scale for this shape. Some shapes can only be scaled uniformly, compound shapes cannot handle shapes

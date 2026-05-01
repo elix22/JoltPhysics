@@ -28,6 +28,12 @@ extern "C" {
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_SubShapeID JPH_SubShapeID;
 
+/// A sub shape id creator can be used to create a new sub shape id by recursing through the shape
+/// hierarchy and pushing new ID's onto the chain
+/// Generated from class `JPH::SubShapeIDCreator`.
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JPH_SubShapeIDCreator JPH_SubShapeIDCreator;
+
 /// How many bits we can store in this ID
 /// Returns a pointer to a member variable of class `JPH::SubShapeID` named `MaxBits`.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
@@ -133,6 +139,60 @@ JOLT_API bool Jolt_equal_JPH_SubShapeID(const JPH_SubShapeID *_this, const JPH_S
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inRHS` can not be null. It is a single object.
 JOLT_API bool Jolt_not_equal_JPH_SubShapeID(const JPH_SubShapeID *_this, const JPH_SubShapeID *inRHS);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SubShapeIDCreator_Destroy()` to free it when you're done using it.
+JOLT_API JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JPH_SubShapeIDCreator_DestroyArray()`.
+/// Use `JPH_SubShapeIDCreator_OffsetMutablePtr()` and `JPH_SubShapeIDCreator_OffsetPtr()` to access the array elements.
+JOLT_API JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_OffsetPtr(const JPH_SubShapeIDCreator *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_OffsetMutablePtr(JPH_SubShapeIDCreator *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JPH::SubShapeIDCreator::SubShapeIDCreator`.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SubShapeIDCreator_Destroy()` to free it when you're done using it.
+JOLT_API JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_ConstructFromAnother(const JPH_SubShapeIDCreator *_other);
+
+/// Destroys a heap-allocated instance of `JPH_SubShapeIDCreator`. Does nothing if the pointer is null.
+JOLT_API void JPH_SubShapeIDCreator_Destroy(const JPH_SubShapeIDCreator *_this);
+
+/// Destroys a heap-allocated array of `JPH_SubShapeIDCreator`. Does nothing if the pointer is null.
+JOLT_API void JPH_SubShapeIDCreator_DestroyArray(const JPH_SubShapeIDCreator *_this);
+
+/// Generated from method `JPH::SubShapeIDCreator::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `_other` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_AssignFromAnother(JPH_SubShapeIDCreator *_this, const JPH_SubShapeIDCreator *_other);
+
+/// Add a new id to the chain of id's and return it
+/// Generated from method `JPH::SubShapeIDCreator::PushID`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SubShapeIDCreator_Destroy()` to free it when you're done using it.
+JOLT_API JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_PushID(const JPH_SubShapeIDCreator *_this, unsigned int inValue, unsigned int inBits);
+
+// Get the resulting sub shape ID
+/// Generated from method `JPH::SubShapeIDCreator::GetID`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_SubShapeID *JPH_SubShapeIDCreator_GetID(const JPH_SubShapeIDCreator *_this);
+
+/// Get the number of bits that have been written to the sub shape ID so far
+/// Generated from method `JPH::SubShapeIDCreator::GetNumBitsWritten`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_SubShapeIDCreator_GetNumBitsWritten(const JPH_SubShapeIDCreator *_this);
 
 #ifdef __cplusplus
 } // extern "C"

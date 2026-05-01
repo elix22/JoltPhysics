@@ -16,6 +16,7 @@
 #include <Jolt/Physics/Collision/Shape/CompoundShape.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
+#include <Jolt/Physics/Collision/TransformedShape.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -572,6 +573,17 @@ uint64_t JPH_CompoundShape_GetSubShapeUserData(const JPH_CompoundShape *_this, c
     );
 }
 
+JPH_TransformedShape *JPH_CompoundShape_GetSubShapeTransformedShape(const JPH_CompoundShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale, JPH_SubShapeID *outRemainder)
+{
+    return (JPH_TransformedShape *)new JPH::TransformedShape(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CompoundShape *)(_this)).GetSubShapeTransformedShape(
+        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID)),
+        ((inPositionCOM ? void() : MRBINDC_THROW("Parameter `inPositionCOM` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inPositionCOM)),
+        ((inRotation ? void() : MRBINDC_THROW("Parameter `inRotation` can not be null.", void)), JPH::Quat(*(JPH::Quat *)inRotation)),
+        ((inScale ? void() : MRBINDC_THROW("Parameter `inScale` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inScale)),
+        ((outRemainder ? void() : MRBINDC_THROW("Parameter `outRemainder` can not be null.", void)), *(JPH::SubShapeID *)(outRemainder))
+    ));
+}
+
 JPH_Vec3 *JPH_CompoundShape_GetSurfaceNormal(const JPH_CompoundShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition)
 {
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CompoundShape *)(_this)).GetSurfaceNormal(
@@ -662,6 +674,14 @@ unsigned int JPH_CompoundShape_GetSubShapeIndexFromID(const JPH_CompoundShape *_
         ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), JPH::SubShapeID(*(JPH::SubShapeID *)inSubShapeID)),
         ((outRemainder ? void() : MRBINDC_THROW("Parameter `outRemainder` can not be null.", void)), *(JPH::SubShapeID *)(outRemainder))
     );
+}
+
+JPH_SubShapeIDCreator *JPH_CompoundShape_GetSubShapeIDFromIndex(const JPH_CompoundShape *_this, int inIdx, const JPH_SubShapeIDCreator *inParentSubShapeID)
+{
+    return (JPH_SubShapeIDCreator *)new JPH::SubShapeIDCreator(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CompoundShape *)(_this)).GetSubShapeIDFromIndex(
+        inIdx,
+        ((inParentSubShapeID ? void() : MRBINDC_THROW("Parameter `inParentSubShapeID` can not be null.", void)), *(const JPH::SubShapeIDCreator *)(inParentSubShapeID))
+    ));
 }
 
 float JPH_CompoundShape_GetVolume(const JPH_CompoundShape *_this)

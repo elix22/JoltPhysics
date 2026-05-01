@@ -129,6 +129,21 @@ public static partial class JPH
             }
         }
 
+        ///< When colliding with back faces, the character will not be able to move through back facing triangles. Use this if you have triangles that need to collide on both sides.
+        public unsafe JPH.EBackFaceMode mBackFaceMode
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtualSettings_Get_mBackFaceMode", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtualSettings_Get_mBackFaceMode", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.EBackFaceMode *__JPH_CharacterVirtualSettings_Get_mBackFaceMode(_Underlying *_this);
+                return *__JPH_CharacterVirtualSettings_Get_mBackFaceMode(_UnderlyingPtr);
+            }
+        }
+
         ///< How far to scan outside of the shape for predictive contacts. A value of 0 will most likely cause the character to get stuck as it cannot properly calculate a sliding direction anymore. A value that's too high will cause ghost collisions.
         public unsafe float mPredictiveContactDistance
         {
@@ -722,6 +737,21 @@ public static partial class JPH
                 __ret = new(__JPH_CharacterVirtualSettings_GetMutable_mShapeOffset(_UnderlyingPtr), is_owning: false);
                 __ret._KeepAliveEnclosingObject = this;
                 return __ret;
+            }
+        }
+
+        ///< When colliding with back faces, the character will not be able to move through back facing triangles. Use this if you have triangles that need to collide on both sides.
+        public new unsafe ref JPH.EBackFaceMode mBackFaceMode
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtualSettings_GetMutable_mBackFaceMode", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtualSettings_GetMutable_mBackFaceMode", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.EBackFaceMode *__JPH_CharacterVirtualSettings_GetMutable_mBackFaceMode(_Underlying *_this);
+                return ref *__JPH_CharacterVirtualSettings_GetMutable_mBackFaceMode(_UnderlyingPtr);
             }
         }
 
@@ -2511,6 +2541,19 @@ public static partial class JPH
             #endif
             extern static byte __JPH_CharacterVirtual_CanWalkStairs(_Underlying *_this, JPH.Vec3._Underlying *inLinearVelocity);
             return __JPH_CharacterVirtual_CanWalkStairs(_UnderlyingPtr, inLinearVelocity._UnderlyingPtr) != 0;
+        }
+
+        /// Get the transformed shape that represents the volume of the character, can be used for collision checks.
+        /// Generated from method `JPH::CharacterVirtual::GetTransformedShape`.
+        public unsafe JPH.TransformedShape GetTransformedShape()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.TransformedShape._Underlying *__JPH_CharacterVirtual_GetTransformedShape(_Underlying *_this);
+            return new(__JPH_CharacterVirtual_GetTransformedShape(_UnderlyingPtr), is_owning: true);
         }
 
         /// Get the character settings that can recreate this character

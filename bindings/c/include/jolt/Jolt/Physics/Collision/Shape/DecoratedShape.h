@@ -26,6 +26,8 @@ typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jol
 typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_SubShapeIDCreator JPH_SubShapeIDCreator; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
@@ -338,6 +340,23 @@ JOLT_API float JPH_DecoratedShape_GetInnerRadius(const JPH_DecoratedShape *_this
 /// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_DecoratedShape_GetSurfaceNormal(const JPH_DecoratedShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
+/// Get the direct child sub shape and its transform for a sub shape ID.
+/// @param inSubShapeID Sub shape ID that indicates the path to the leaf shape
+/// @param inPositionCOM The position of the center of mass of this shape
+/// @param inRotation The orientation of this shape
+/// @param inScale Scale in local space of the shape (scales relative to its center of mass)
+/// @param outRemainder The remainder of the sub shape ID after removing the sub shape
+/// @return Direct child sub shape and its transform, note that the body ID and sub shape ID will be invalid
+/// Generated from method `JPH::DecoratedShape::GetSubShapeTransformedShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `outRemainder` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TransformedShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_TransformedShape *JPH_DecoratedShape_GetSubShapeTransformedShape(const JPH_DecoratedShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale, JPH_SubShapeID *outRemainder);
 
 /// Generated from method `JPH::DecoratedShape::GetSubmergedVolume`.
 /// Parameter `_this` can not be null. It is a single object.

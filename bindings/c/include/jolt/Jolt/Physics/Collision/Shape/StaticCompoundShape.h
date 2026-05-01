@@ -22,6 +22,9 @@ typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jo
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
 typedef struct JPH_Plane JPH_Plane; // Defined in `#include <jolt/Jolt/Geometry/Plane.h>`.
 typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
+typedef struct JPH_RayCast JPH_RayCast; // Defined in `#include <jolt/Jolt/Physics/Collision/RayCast.h>`.
+typedef struct JPH_RayCastResult JPH_RayCastResult; // Defined in `#include <jolt/Jolt/Physics/Collision/CastResult.h>`.
+typedef struct JPH_RayCastSettings JPH_RayCastSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/RayCast.h>`.
 typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
@@ -30,7 +33,9 @@ typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jol
 typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_SubShapeIDCreator JPH_SubShapeIDCreator; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
+typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
 
@@ -395,6 +400,14 @@ JOLT_API void *Jolt_new_array_JPH_StaticCompoundShape_size_t_void_ptr(size_t inC
 /// Generated from method `JPH::StaticCompoundShape::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_StaticCompoundShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
+// See Shape::CastRay
+/// Generated from method `JPH::StaticCompoundShape::CastRay`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRay` can not be null. It is a single object.
+/// Parameter `inSubShapeIDCreator` can not be null. It is a single object.
+/// Parameter `ioHit` can not be null. It is a single object.
+JOLT_API bool JPH_StaticCompoundShape_CastRay_3(const JPH_StaticCompoundShape *_this, const JPH_RayCast *inRay, const JPH_SubShapeIDCreator *inSubShapeIDCreator, JPH_RayCastResult *ioHit);
+
 // See: CompoundShape::GetIntersectingSubShapes
 /// Generated from method `JPH::StaticCompoundShape::GetIntersectingSubShapes`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -456,6 +469,17 @@ JOLT_API const JPH_Shape *JPH_StaticCompoundShape_GetLeafShape(const JPH_StaticC
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 JOLT_API uint64_t JPH_StaticCompoundShape_GetSubShapeUserData(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID);
+
+// See Shape::GetSubShapeTransformedShape
+/// Generated from method `JPH::StaticCompoundShape::GetSubShapeTransformedShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `outRemainder` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TransformedShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_TransformedShape *JPH_StaticCompoundShape_GetSubShapeTransformedShape(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale, JPH_SubShapeID *outRemainder);
 
 // See Shape::GetSurfaceNormal
 /// Generated from method `JPH::StaticCompoundShape::GetSurfaceNormal`.
@@ -531,6 +555,16 @@ JOLT_API bool JPH_StaticCompoundShape_IsSubShapeIDValid(const JPH_StaticCompound
 /// Parameter `inSubShapeID` can not be null. It is a single object.
 /// Parameter `outRemainder` can not be null. It is a single object.
 JOLT_API unsigned int JPH_StaticCompoundShape_GetSubShapeIndexFromID(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID, JPH_SubShapeID *outRemainder);
+
+/// @brief Convert a sub shape index to a sub shape ID
+/// @param inIdx Index of the sub shape of this compound
+/// @param inParentSubShapeID Parent SubShapeID (describing the path to the compound shape)
+/// @return A sub shape ID creator that contains the full path to the sub shape with index inIdx
+/// Generated from method `JPH::StaticCompoundShape::GetSubShapeIDFromIndex`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inParentSubShapeID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SubShapeIDCreator_Destroy()` to free it when you're done using it.
+JOLT_API JPH_SubShapeIDCreator *JPH_StaticCompoundShape_GetSubShapeIDFromIndex(const JPH_StaticCompoundShape *_this, int inIdx, const JPH_SubShapeIDCreator *inParentSubShapeID);
 
 // See Shape::GetVolume
 /// Generated from method `JPH::StaticCompoundShape::GetVolume`.

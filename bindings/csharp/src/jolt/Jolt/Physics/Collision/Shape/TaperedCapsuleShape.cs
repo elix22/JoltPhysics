@@ -1371,6 +1371,25 @@ public static partial class JPH
             return __JPH_TaperedCapsuleShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
         }
 
+        /// Get the direct child sub shape and its transform for a sub shape ID.
+        /// @param inSubShapeID Sub shape ID that indicates the path to the leaf shape
+        /// @param inPositionCOM The position of the center of mass of this shape
+        /// @param inRotation The orientation of this shape
+        /// @param inScale Scale in local space of the shape (scales relative to its center of mass)
+        /// @param outRemainder The remainder of the sub shape ID after removing the sub shape
+        /// @return Direct child sub shape and its transform, note that the body ID and sub shape ID will be invalid
+        /// Generated from method `JPH::TaperedCapsuleShape::GetSubShapeTransformedShape`.
+        public unsafe JPH.TransformedShape GetSubShapeTransformedShape(JPH.Const_SubShapeID inSubShapeID, JPH.Const_Vec3 inPositionCOM, JPH.Const_Quat inRotation, JPH.Const_Vec3 inScale, JPH.SubShapeID outRemainder)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetSubShapeTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_TaperedCapsuleShape_GetSubShapeTransformedShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.TransformedShape._Underlying *__JPH_TaperedCapsuleShape_GetSubShapeTransformedShape(_Underlying *_this, JPH.Const_SubShapeID._Underlying *inSubShapeID, JPH.Vec3._Underlying *inPositionCOM, JPH.Quat._Underlying *inRotation, JPH.Vec3._Underlying *inScale, JPH.SubShapeID._Underlying *outRemainder);
+            return new(__JPH_TaperedCapsuleShape_GetSubShapeTransformedShape(_UnderlyingPtr, inSubShapeID._UnderlyingPtr, inPositionCOM._UnderlyingPtr, inRotation._UnderlyingPtr, inScale._UnderlyingPtr, outRemainder._UnderlyingPtr), is_owning: true);
+        }
+
         /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
         /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
         /// the object and at that point in time it is checked that no references are left to the structure.

@@ -6,8 +6,15 @@
 #include <Jolt/Geometry/AABox.h>
 #include <Jolt/Math/Mat44.h>
 #include <Jolt/Math/Vec3.h>
+#include <Jolt/Physics/Body/BodyFilter.h>
+#include <Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>
+#include <Jolt/Physics/Collision/CastResult.h>
+#include <Jolt/Physics/Collision/CollideShape.h>
 #include <Jolt/Physics/Collision/NarrowPhaseQuery.h>
+#include <Jolt/Physics/Collision/ObjectLayer.h>
+#include <Jolt/Physics/Collision/RayCast.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
+#include <Jolt/Physics/Collision/ShapeCast.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -70,5 +77,17 @@ void JPH_NarrowPhaseQuery_Destroy(const JPH_NarrowPhaseQuery *_this)
 void JPH_NarrowPhaseQuery_DestroyArray(const JPH_NarrowPhaseQuery *_this)
 {
     delete[] ((const JPH::NarrowPhaseQuery *)_this);
+}
+
+bool JPH_NarrowPhaseQuery_CastRay_5(const JPH_NarrowPhaseQuery *_this, const JPH_RRayCast *inRay, JPH_RayCastResult *ioHit, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter)
+{
+    using namespace JPH;
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::NarrowPhaseQuery *)(_this)).CastRay(
+        ((inRay ? void() : MRBINDC_THROW("Parameter `inRay` can not be null.", void)), *(const JPH::RRayCast *)(inRay)),
+        ((ioHit ? void() : MRBINDC_THROW("Parameter `ioHit` can not be null.", void)), *(JPH::RayCastResult *)(ioHit)),
+        (inBroadPhaseLayerFilter ? *(const JPH::BroadPhaseLayerFilter *)(inBroadPhaseLayerFilter) : static_cast<const JPH::BroadPhaseLayerFilter &>(JPH::BroadPhaseLayerFilter{})),
+        (inObjectLayerFilter ? *(const JPH::ObjectLayerFilter *)(inObjectLayerFilter) : static_cast<const JPH::ObjectLayerFilter &>(JPH::ObjectLayerFilter{})),
+        (inBodyFilter ? *(const JPH::BodyFilter *)(inBodyFilter) : static_cast<const JPH::BodyFilter &>(JPH::BodyFilter{}))
+    );
 }
 

@@ -174,3 +174,65 @@ bool Jolt_not_equal_JPH_SubShapeID(const JPH_SubShapeID *_this, const JPH_SubSha
     );
 }
 
+JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_DefaultConstruct(void)
+{
+    return (JPH_SubShapeIDCreator *)new JPH::SubShapeIDCreator(JPH::SubShapeIDCreator());
+}
+
+JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_DefaultConstructArray(size_t num_elems)
+{
+    return (JPH_SubShapeIDCreator *)(new JPH::SubShapeIDCreator[num_elems]{});
+}
+
+const JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_OffsetPtr(const JPH_SubShapeIDCreator *ptr, ptrdiff_t i)
+{
+    return (const JPH_SubShapeIDCreator *)(((const JPH::SubShapeIDCreator *)ptr) + i);
+}
+
+JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_OffsetMutablePtr(JPH_SubShapeIDCreator *ptr, ptrdiff_t i)
+{
+    return (JPH_SubShapeIDCreator *)(((JPH::SubShapeIDCreator *)ptr) + i);
+}
+
+JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_ConstructFromAnother(const JPH_SubShapeIDCreator *_other)
+{
+    return (JPH_SubShapeIDCreator *)new JPH::SubShapeIDCreator(JPH::SubShapeIDCreator(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JPH::SubShapeIDCreator(*(JPH::SubShapeIDCreator *)_other))
+    ));
+}
+
+void JPH_SubShapeIDCreator_Destroy(const JPH_SubShapeIDCreator *_this)
+{
+    delete ((const JPH::SubShapeIDCreator *)_this);
+}
+
+void JPH_SubShapeIDCreator_DestroyArray(const JPH_SubShapeIDCreator *_this)
+{
+    delete[] ((const JPH::SubShapeIDCreator *)_this);
+}
+
+JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_AssignFromAnother(JPH_SubShapeIDCreator *_this, const JPH_SubShapeIDCreator *_other)
+{
+    return (JPH_SubShapeIDCreator *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SubShapeIDCreator *)(_this)).operator=(
+        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JPH::SubShapeIDCreator(*(JPH::SubShapeIDCreator *)_other))
+    ));
+}
+
+JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_PushID(const JPH_SubShapeIDCreator *_this, unsigned int inValue, unsigned int inBits)
+{
+    return (JPH_SubShapeIDCreator *)new JPH::SubShapeIDCreator(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SubShapeIDCreator *)(_this)).PushID(
+        inValue,
+        inBits
+    ));
+}
+
+const JPH_SubShapeID *JPH_SubShapeIDCreator_GetID(const JPH_SubShapeIDCreator *_this)
+{
+    return (const JPH_SubShapeID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SubShapeIDCreator *)(_this)).GetID());
+}
+
+unsigned int JPH_SubShapeIDCreator_GetNumBitsWritten(const JPH_SubShapeIDCreator *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SubShapeIDCreator *)(_this)).GetNumBitsWritten();
+}
+

@@ -57,6 +57,24 @@ public static partial class JPH
             extern static JPH.NarrowPhaseQuery._Underlying *__JPH_NarrowPhaseQuery_DefaultConstruct();
             _UnderlyingPtr = __JPH_NarrowPhaseQuery_DefaultConstruct();
         }
+
+        /// Cast a ray and find the closest hit. Returns true if it finds a hit. Hits further than ioHit.mFraction will not be considered and in this case ioHit will remain unmodified (and the function will return false).
+        /// Convex objects will be treated as solid (meaning if the ray starts inside, you'll get a hit fraction of 0) and back face hits against triangles are returned.
+        /// If you want the surface normal of the hit use Body::GetWorldSpaceSurfaceNormal(ioHit.mSubShapeID2, inRay.GetPointOnRay(ioHit.mFraction)) on body with ID ioHit.mBodyID.
+        /// Generated from method `JPH::NarrowPhaseQuery::CastRay`.
+        /// Parameter `inBroadPhaseLayerFilter` defaults to `{}`.
+        /// Parameter `inObjectLayerFilter` defaults to `{}`.
+        /// Parameter `inBodyFilter` defaults to `{}`.
+        public unsafe bool CastRay(JPH.Const_RRayCast inRay, JPH.RayCastResult ioHit, JPH.Const_BroadPhaseLayerFilter? inBroadPhaseLayerFilter = null, JPH.Const_ObjectLayerFilter? inObjectLayerFilter = null, JPH.Const_BodyFilter? inBodyFilter = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_NarrowPhaseQuery_CastRay_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_NarrowPhaseQuery_CastRay_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JPH_NarrowPhaseQuery_CastRay_5(_Underlying *_this, JPH.Const_RRayCast._Underlying *inRay, JPH.RayCastResult._Underlying *ioHit, JPH.Const_BroadPhaseLayerFilter._Underlying *inBroadPhaseLayerFilter, JPH.Const_ObjectLayerFilter._Underlying *inObjectLayerFilter, JPH.Const_BodyFilter._Underlying *inBodyFilter);
+            return __JPH_NarrowPhaseQuery_CastRay_5(_UnderlyingPtr, inRay._UnderlyingPtr, ioHit._UnderlyingPtr, inBroadPhaseLayerFilter is not null ? inBroadPhaseLayerFilter._UnderlyingPtr : null, inObjectLayerFilter is not null ? inObjectLayerFilter._UnderlyingPtr : null, inBodyFilter is not null ? inBodyFilter._UnderlyingPtr : null) != 0;
+        }
     }
 
     /// Class that provides an interface for doing precise collision detection against the broad and then the narrow phase.
