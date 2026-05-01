@@ -800,6 +800,19 @@ public static partial class JPH
         }
 
         /// Swizzle the elements in inV
+        /// Generated from method `JPH::Vec3::Swizzle<0, 1, 0>`.
+        public unsafe JPH.Vec3 Swizzle_0_1_0()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vec3_Swizzle_0_1_0", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vec3_Swizzle_0_1_0", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Vec3._Underlying *__JPH_Vec3_Swizzle_0_1_0(_Underlying *_this);
+            return new(__JPH_Vec3_Swizzle_0_1_0(_UnderlyingPtr), is_owning: true);
+        }
+
+        /// Swizzle the elements in inV
         /// Generated from method `JPH::Vec3::Swizzle<2, 1, 0>`.
         public unsafe JPH.Vec3 Swizzle_2_1_0()
         {

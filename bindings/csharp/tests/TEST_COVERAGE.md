@@ -68,12 +68,12 @@ cd deps/JoltPhysics/bindings/csharp/tests
 |---|---|---|---|---|
 | `UnitTests/Geometry/PlaneTests.cpp` | `Tests_Plane.cs` | ✅ | 15 | Full coverage: SFromPointAndNormal, SignedDistance (above/below/on), GetTransformed, SIntersectPlanes (found/not found), ProjectPointOnPlane, Offset, SFromPointsCCW |
 | `UnitTests/Geometry/AABoxTests.cpp` | `Tests_AABox.cs` | ✅ | 20 | Axis-aligned bounding box operations |
-| `UnitTests/Geometry/ClosestPointTests.cpp` | — | ❌ | 0 | ClosestPoint utilities not fully exposed |
+| `UnitTests/Geometry/ClosestPointTests.cpp` | — | 🚫 | — | ClosestPoint utilities are static inline template methods in a namespace — not exposed in C bindings |
 | `UnitTests/Geometry/ConvexHullBuilderTest.cpp` | — | 🚫 | — | Internal builder; not in binding API |
 | `UnitTests/Geometry/EllipseTest.cpp` | `Tests_Ellipse.cs` | ✅ | 11 | Ellipse construction, IsInside (inside/outside/boundary), GetClosestPoint on X/Y axis, GetNormal (non-normalized) |
 | `UnitTests/Geometry/EPATests.cpp` | — | 🚫 | — | EPA solver internals; not exposed |
 | `UnitTests/Geometry/GJKTests.cpp` | — | 🚫 | — | GJK collision internals; not exposed |
-| `UnitTests/Geometry/RayAABoxTests.cpp` | — | ❌ | 0 | Ray-AABox intersections not yet bound |
+| `UnitTests/Geometry/RayAABoxTests.cpp` | `Tests_RayAABox.cs` | ✅ | 17 | RayInvDirection construction (default, from direction, reciprocal field check); RayAABox wrapper via JoltHelpers: inside box on all 3 axes (returns negative), outside-high/outside-low pointing toward box on X/Y/Z (fraction ~0.1), outside pointing away (FLT_MAX), angled ray hitting top face |
 
 ---
 
@@ -89,7 +89,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/ObjectLayerPairFilterTableTests.cpp` | `Tests_ObjectLayers.cs` | ⚠️ | 9 | ObjectLayerPairFilterTable; mask filter not covered |
 | `UnitTests/Physics/ObjectLayerPairFilterMaskTests.cpp` | `Tests_ObjectLayerPairFilterMask.cs` | ✅ | 10 | ObjectLayerPairFilterMask lifecycle, CNumBits/CMask constants, SGetObjectLayer/SGetGroup/SGetMask static helpers, ShouldCollide logic |
 | `UnitTests/Physics/BroadPhaseTests.cpp` | `Tests_PhysicsQuery.cs` + `Tests_CastResult.cs` | ⚠️ | 29 | GetBroadPhaseQuery / GetNarrowPhaseQuery, GetBounds after body add, gravity round-trip, WereBodiesInContact; BroadPhaseCastResult + RayCastResult result struct defaults, construction, Reset, GetEarlyOutFraction; full broadphase cast execution not yet tested |
-| `UnitTests/Physics/CastShapeTests.cpp` | — | ❌ | 0 | Shape cast queries not yet tested |
+| `UnitTests/Physics/CastShapeTests.cpp` | — | 🚫 | — | Uses CollisionDispatch::sCastShapeVsShapeLocalSpace + AllHitCollisionCollector (internal template API) — not exposed in C bindings |
 | `UnitTests/Physics/CollideShapeTests.cpp` | `Tests_CollisionSettings.cs` | ⚠️ | 22 | Enum values (EBackFaceMode/EActiveEdgeMode/ECollectFacesMode); RayCastSettings defaults + round-trips; CollideSettingsBase defaults + round-trips; CollideShapeSettings defaults + round-trips; CollideShapeResult GetEarlyOutFraction/Reversed; ShapeCastSettings defaults + round-trips; ShapeCastResult GetEarlyOutFraction; actual CollideShape query execution not yet tested |
 | `UnitTests/Physics/RayShapeTests.cpp` | `Tests_RayCastQuery.cs` | ⚠️ | 13 | RRayCast default + parameterized construction; NarrowPhaseQuery.CastRay miss (empty world) + hit (fraction in range, BodyID matches) + side miss; BodyInterface.GetTransformedShape (NoCrash, BodyID, position); TransformedShape.GetWorldSpaceBounds, CastRay hit + miss; ShapeCast not yet tested |
 | `UnitTests/Physics/TransformedShapeTests.cpp` | `Tests_RayCastQuery.cs` | ⚠️ | — | GetTransformedShape/CastRay/GetWorldSpaceBounds covered (see RayShapeTests.cpp row) |
@@ -99,12 +99,12 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/FixedConstraintTests.cpp` | `Tests_FixedConstraint.cs` + `Tests_Constraints.cs` | ✅ | 17 | Settings defaults + round-trips (AutoDetectPoint, Enabled, Priority, UserData, VelocitySteps), GetBody1/2, GetEnabled/SetEnabled, GetConstraintPriority/Set, lambda after simulation |
 | `UnitTests/Physics/SliderConstraintTests.cpp` | `Tests_SliderConstraint.cs` | ✅ | 15 | SliderConstraintSettings defaults + round-trips, HasLimits, GetLimitsMin/Max, direct construction, simulation |
 | `UnitTests/Physics/SixDOFConstraintTests.cpp` | `Tests_SixDOFConstraint.cs` | ✅ | 14 | SixDOFConstraintSettings defaults + EAxis enum, GetTranslationLimitsMin/Max, MakeFixedAxis/IsFixedAxis, direct construction, simulation |
-| `UnitTests/Physics/PathConstraintTests.cpp` | — | ❌ | 0 | Path constraint not yet tested |
+| `UnitTests/Physics/PathConstraintTests.cpp` | `Tests_PathConstraint.cs` | ✅ | 16 | PathConstraintPathHermite: default construct, SetIsLooping/IsLooping round-trip, GetPathMaxFraction=1 for 2-point path; GetClosestPoint before start returns 0, after end returns 1; GetPointOnPath/GetClosestPoint round-trip for all 11 fractions 0.0–1.0 (within 1e-4); midpoint tangent is non-zero |
 | `UnitTests/Physics/ContactListenerTests.cpp` | `Tests_ContactSettings.cs`, `Tests_ContactManifold.cs` | ⚠️ | 35 | ContactSettings (23): defaults mInvMassScale1/2=1, mInvInertiaScale1/2=1, mCombinedFriction/mCombinedRestitution=0, surface velocity defaults, round-trips, mIsSensor, ElementwiseConstructor; ContactManifold (12): default construct, mPenetrationDepth/mSubShapeID1/2 defaults + mutable round-trips, copy construct, SwapShapes; actual contact-listener callback wiring not yet tested |
 | `UnitTests/Physics/SensorTests.cpp` | `Tests_Bodies.cs` + `Tests_BodyProperties.cs` | ⚠️ | 3 | SensorBody_DoesNotBlockDynamicBody; IsSensor getter for sensor and non-sensor bodies |
 | `UnitTests/Physics/ActiveEdgesTests.cpp` | — | 🚫 | — | Internal mesh active-edge logic |
 | `UnitTests/Physics/ConvexVsTrianglesTest.cpp` | — | 🚫 | — | Internal convex-triangle collision |
-| `UnitTests/Physics/EstimateCollisionResponseTest.cpp` | — | ❌ | 0 | Not yet tested |
+| `UnitTests/Physics/EstimateCollisionResponseTest.cpp` | — | 🚫 | — | Requires virtual ContactListener subclassing (to receive callbacks) — virtual dispatch not supported in C/C# binding layer |
 | `UnitTests/Physics/MotionQualityLinearCastTests.cpp` | `Tests_MotionQuality.cs` | ✅ | 11 | EMotionQuality enum values, GetMotionQuality/SetMotionQuality on BodyInterface, mMotionQuality on BodyCreationSettings |
 | `UnitTests/Physics/SubShapeIDTest.cpp` | — | 🚫 | — | SubShapeID internals; complex compound shape paths |
 | `UnitTests/Physics/TaperedCylinderShapeTests.cpp` | `Tests_TaperedCylinder.cs` | ✅ | 12 | Settings field round-trips (parameterized constructor, mutable fields, SetDensity), dynamic body creation and simulation |
@@ -185,6 +185,8 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_CollisionSettings.cs` | 22 | EBackFaceMode/EActiveEdgeMode/ECollectFacesMode enum values; RayCastSettings default+round-trips (mBackFaceModeTriangles/Convex, mTreatConvexAsSolid); CollideSettingsBase default+round-trips (mActiveEdgeMode, mCollectFacesMode); CollideShapeSettings default+round-trip (mMaxSeparationDistance); CollideShapeResult GetEarlyOutFraction, Reversed; ShapeCastSettings default+round-trips; ShapeCastResult GetEarlyOutFraction |
 | `Tests_RayCastQuery.cs` | 13 | RRayCast default + parameterized construction + field access; NarrowPhaseQuery.CastRay miss (empty world), hit (true, fraction in [0,1], BodyID matches), side-miss; BodyInterface.GetTransformedShape (NoCrash, BodyID matches, position matches); TransformedShape.GetWorldSpaceBounds valid; TransformedShape.CastRay hit + miss |
 | `Tests_PhysicsStepListener.cs` | 9 | PhysicsStepListenerContext: default/parameterized/copy construct; mDeltaTime/mIsFirstStep/mIsLastStep/mPhysicsSystem field access; mutable round-trips; context holding a real PhysicsSystem |
+| `Tests_RayAABox.cs` | 17 | RayInvDirection construction (default, from direction, reciprocal field); RayAABox wrapper: inside box all 3 axes → negative; outside-high/outside-low toward box on X/Y/Z → ~0.1; outside pointing away → FLT_MAX; angled ray hitting top face |
+| `Tests_PathConstraint.cs` | 16 | PathConstraintPathHermite: default construct; SetIsLooping/IsLooping round-trip; GetPathMaxFraction=1 for 2-point path; GetClosestPoint before start=0/after end=1; GetPointOnPath+GetClosestPoint round-trip for fractions 0.0–1.0 (11 cases, within 1e-4); midpoint tangent non-zero |
 
 ---
 
@@ -193,10 +195,10 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | Category | Total C# Test Files | Total C# Tests |
 |---|---|---|
 | Math | 10 | 297 |
-| Geometry | 3 | 46 |
-| Physics | 31 | 453 |
+| Geometry | 5 | 63 |
+| Physics | 32 | 469 |
 | Other | 45 | 550 |
-| **Total** | **89** | **1346** |
+| **Total** | **92** | **1376** |
 
 > **Note:** Test count reflects state after latest updates.
 > The total has grown across multiple sessions:
@@ -204,7 +206,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 > - 1138 → 1202 (72 files): added Tests_CharacterVirtual.cs (19), Tests_MeshShape.cs (7), Tests_Vector2Matrix.cs (26), Tests_ShapeBase.cs (11)
 > - 1202 → **1260** (**75 files**): added Tests_SoftBody.cs (42), Tests_JobSystem.cs (8), Tests_TempAllocator.cs (8)
 > - 1260 → **1291** (**84 files**): added Tests_ContactManifold.cs (12), Tests_DefaultObjectLayerFilter.cs (6), Tests_PhysicsDeterminism.cs (5); expanded Tests_ContactSettings.cs (+8); documented 5 pre-existing files: Tests_CollisionGroups.cs (12), Tests_MutableCompound.cs (14), Tests_PhysicsSettings.cs (16), Tests_TaperedCapsuleShape.cs (16), Tests_TriangleAndPlaneShapes.cs (16)
-> - 1291 → **1346** (**89 files**): generated new bindings (Ellipse, RayCast/RRayCast, RayCastSettings, CollideSettingsBase/CollideShapeSettings/CollideShapeResult, ShapeCast/ShapeCastSettings/ShapeCastResult, TransformedShape, PhysicsStepListenerContext/PhysicsStepListener, EBackFaceMode/EActiveEdgeMode/ECollectFacesMode); added Tests_Ellipse.cs (11), Tests_CollisionSettings.cs (22), Tests_RayCastQuery.cs (13), Tests_PhysicsStepListener.cs (9)
+> - 1346 → **1376** (**92 files**): generated new bindings (RayInvDirection, PathConstraintPath, PathConstraintPathHermite; added JoltHelpers::RayAABox wrapper free-function); added Tests_RayAABox.cs (17), Tests_PathConstraint.cs (16); reclassified ClosestPointTests/CastShapeTests/EstimateCollisionResponseTest as 🚫 (internal/template/virtual-dispatch APIs not bindable)
 
 ---
 
@@ -217,8 +219,7 @@ headers) before C# tests can be written:
   currently skipped due to complex types
 - `JPH::SoftBodyCreationSettings` / `JPH::SoftBody` — bound; full simulation tests not yet written (no vertex/face collection accessors in bindings)
 - `JPH::WheeledVehicleController` — not yet bound
-- `JPH::SubShapeID` — could be bound; complex compound sub-shape path tracking
-- `CollideShape` / `CastShape` query execution — settings/result types now bound; actual query methods on `NarrowPhaseQuery` not yet covered
+- `CollideShape` / `CastShape` query execution — settings/result types are bound; actual `NarrowPhaseQuery::CollideShape`/`CastShape` methods not yet exposed in C# wrappers
 - `PhysicsStepListener::OnStep` callback — pure virtual C++ class; virtual dispatch wiring not generated; cannot subclass from C#
 
 ## Generator Bug Fixed This Session

@@ -173,6 +173,9 @@ echo "#include \"$ROOT/Jolt/Physics/Collision/CollideShape.h\"" >>"$BINDINGS/tmp
 echo "#include \"$ROOT/Jolt/Physics/Collision/ShapeCast.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Collision/TransformedShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/PhysicsStepListener.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Geometry/RayAABox.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/PathConstraintPath.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/PathConstraintPathHermite.h\"" >>"$BINDINGS/tmp/combined_input.h"
 
 
 # Parse the input header.
@@ -342,6 +345,9 @@ echo "#include \"$ROOT/Jolt/Physics/PhysicsStepListener.h\"" >>"$BINDINGS/tmp/co
     --allow JPH::SubShapeIDCreator \
     --allow JPH::PhysicsStepListenerContext \
     --allow JPH::PhysicsStepListener \
+    --allow JPH::RayInvDirection \
+    --allow JPH::PathConstraintPath \
+    --allow JPH::PathConstraintPathHermite \
     --canonicalize-64-to-fixed-size-typedefs \
     "${EXTRA_PARSER_FLAGS[@]+"${EXTRA_PARSER_FLAGS[@]}"}" \
     -- \

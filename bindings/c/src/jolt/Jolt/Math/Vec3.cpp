@@ -527,6 +527,11 @@ JPH_Vec3 *JPH_Vec3_Swizzle_1_2_0(const JPH_Vec3 *_this)
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).Swizzle<1, 2, 0>());
 }
 
+JPH_Vec3 *JPH_Vec3_Swizzle_0_1_0(const JPH_Vec3 *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).Swizzle<0, 1, 0>());
+}
+
 JPH_Vec3 *JPH_Vec3_Swizzle_2_1_0(const JPH_Vec3 *_this)
 {
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).Swizzle<2, 1, 0>());

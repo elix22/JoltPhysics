@@ -81,6 +81,21 @@ public static partial class JPH
             extern static void __JoltHelpers_Shutdown();
             __JoltHelpers_Shutdown();
         }
+
+        /// Wrapper for the free function JPH::RayAABox (mrbind only binds named types).
+        /// Returns the minimal distance along the ray, or FLT_MAX if no hit.
+        /// Note: can return a negative value if the ray starts inside the box.
+        /// Generated from method `JoltHelpers::RayAABox`.
+        public static unsafe float RayAABox(JPH.Const_Vec3 inOrigin, JPH.Const_RayInvDirection inInvDirection, JPH.Const_Vec3 inBoundsMin, JPH.Const_Vec3 inBoundsMax)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_RayAABox", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_RayAABox", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JoltHelpers_RayAABox(JPH.Vec3._Underlying *inOrigin, JPH.Const_RayInvDirection._Underlying *inInvDirection, JPH.Vec3._Underlying *inBoundsMin, JPH.Vec3._Underlying *inBoundsMax);
+            return __JoltHelpers_RayAABox(inOrigin._UnderlyingPtr, inInvDirection._UnderlyingPtr, inBoundsMin._UnderlyingPtr, inBoundsMax._UnderlyingPtr);
+        }
     }
 
     /// Minimal helpers for Jolt global lifecycle.

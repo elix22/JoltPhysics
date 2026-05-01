@@ -17,6 +17,7 @@ extern "C" {
 /// Derived classes:
 ///   Direct: (non-virtual)
 ///     `JPH::ConstraintSettings`
+///     `JPH::PathConstraintPath`
 ///     `JPH::PhysicsMaterial`
 ///     `JPH::ShapeSettings`
 ///   Indirect: (non-virtual)
@@ -35,6 +36,7 @@ extern "C" {
 ///     `JPH::MeshShapeSettings`
 ///     `JPH::MutableCompoundShapeSettings`
 ///     `JPH::OffsetCenterOfMassShapeSettings`
+///     `JPH::PathConstraintPathHermite`
 ///     `JPH::PlaneShapeSettings`
 ///     `JPH::PointConstraintSettings`
 ///     `JPH::RotatedTranslatedShapeSettings`

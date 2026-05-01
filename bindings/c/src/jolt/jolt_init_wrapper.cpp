@@ -2,6 +2,8 @@
 #define JOLT_BUILD_LIBRARY
 #include "jolt/jolt_init_wrapper.h"
 
+#include <Jolt/Geometry/RayAABox.h>
+#include <Jolt/Math/Vec3.h>
 #include <__mrbind_c_details.h>
 #include <jolt_init_wrapper.h>
 
@@ -62,5 +64,15 @@ void JoltHelpers_Init(void)
 void JoltHelpers_Shutdown(void)
 {
     JoltHelpers::Shutdown();
+}
+
+float JoltHelpers_RayAABox(const JPH_Vec3 *inOrigin, const JPH_RayInvDirection *inInvDirection, const JPH_Vec3 *inBoundsMin, const JPH_Vec3 *inBoundsMax)
+{
+    return JoltHelpers::RayAABox(
+        ((inOrigin ? void() : MRBINDC_THROW("Parameter `inOrigin` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inOrigin)),
+        ((inInvDirection ? void() : MRBINDC_THROW("Parameter `inInvDirection` can not be null.", void)), *(const JPH::RayInvDirection *)(inInvDirection)),
+        ((inBoundsMin ? void() : MRBINDC_THROW("Parameter `inBoundsMin` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBoundsMin)),
+        ((inBoundsMax ? void() : MRBINDC_THROW("Parameter `inBoundsMax` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBoundsMax))
+    );
 }
 

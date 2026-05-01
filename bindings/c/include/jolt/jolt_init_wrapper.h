@@ -9,6 +9,9 @@
 extern "C" {
 #endif
 
+typedef struct JPH_RayInvDirection JPH_RayInvDirection; // Defined in `#include <jolt/Jolt/Geometry/RayAABox.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+
 
 /// Minimal helpers for Jolt global lifecycle.
 /// These are the only hand-implemented methods; their C/C# bindings are machine-generated.
@@ -59,6 +62,16 @@ JOLT_API void JoltHelpers_Init(void);
 
 /// Generated from method `JoltHelpers::Shutdown`.
 JOLT_API void JoltHelpers_Shutdown(void);
+
+/// Wrapper for the free function JPH::RayAABox (mrbind only binds named types).
+/// Returns the minimal distance along the ray, or FLT_MAX if no hit.
+/// Note: can return a negative value if the ray starts inside the box.
+/// Generated from method `JoltHelpers::RayAABox`.
+/// Parameter `inOrigin` can not be null. It is a single object.
+/// Parameter `inInvDirection` can not be null. It is a single object.
+/// Parameter `inBoundsMin` can not be null. It is a single object.
+/// Parameter `inBoundsMax` can not be null. It is a single object.
+JOLT_API float JoltHelpers_RayAABox(const JPH_Vec3 *inOrigin, const JPH_RayInvDirection *inInvDirection, const JPH_Vec3 *inBoundsMin, const JPH_Vec3 *inBoundsMax);
 
 #ifdef __cplusplus
 } // extern "C"

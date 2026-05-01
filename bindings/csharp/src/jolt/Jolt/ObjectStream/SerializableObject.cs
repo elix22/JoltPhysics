@@ -8,6 +8,7 @@ public static partial class JPH
     /// Derived classes:
     ///   Direct: (non-virtual)
     ///     `JPH::ConstraintSettings`
+    ///     `JPH::PathConstraintPath`
     ///     `JPH::PhysicsMaterial`
     ///     `JPH::ShapeSettings`
     ///   Indirect: (non-virtual)
@@ -26,6 +27,7 @@ public static partial class JPH
     ///     `JPH::MeshShapeSettings`
     ///     `JPH::MutableCompoundShapeSettings`
     ///     `JPH::OffsetCenterOfMassShapeSettings`
+    ///     `JPH::PathConstraintPathHermite`
     ///     `JPH::PlaneShapeSettings`
     ///     `JPH::PointConstraintSettings`
     ///     `JPH::RotatedTranslatedShapeSettings`
@@ -205,6 +207,7 @@ public static partial class JPH
     /// Derived classes:
     ///   Direct: (non-virtual)
     ///     `JPH::ConstraintSettings`
+    ///     `JPH::PathConstraintPath`
     ///     `JPH::PhysicsMaterial`
     ///     `JPH::ShapeSettings`
     ///   Indirect: (non-virtual)
@@ -223,6 +226,7 @@ public static partial class JPH
     ///     `JPH::MeshShapeSettings`
     ///     `JPH::MutableCompoundShapeSettings`
     ///     `JPH::OffsetCenterOfMassShapeSettings`
+    ///     `JPH::PathConstraintPathHermite`
     ///     `JPH::PlaneShapeSettings`
     ///     `JPH::PointConstraintSettings`
     ///     `JPH::RotatedTranslatedShapeSettings`

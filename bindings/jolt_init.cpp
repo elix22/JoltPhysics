@@ -47,3 +47,8 @@ void JoltHelpers::Shutdown()
     Factory::sInstance = nullptr;
 }
 
+float JoltHelpers::RayAABox(JPH::Vec3Arg inOrigin, const JPH::RayInvDirection& inInvDirection, JPH::Vec3Arg inBoundsMin, JPH::Vec3Arg inBoundsMax)
+{
+    return JPH::RayAABox(inOrigin, inInvDirection, inBoundsMin, inBoundsMax);
+}
+
