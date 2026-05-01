@@ -54,8 +54,8 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Math/Mat44Tests.cpp` | `Tests_Mat44.cs` | ✅ | 23 | Mat44 operations |
 | `UnitTests/Math/QuatTests.cpp` | `Tests_QuatExtended.cs` + `Tests_QuatOperators.cs` | ✅ | 41 | Quaternion math and operators |
 | `UnitTests/Math/MathTests.cpp` | `Tests_Math.cs` | ⚠️ | 12 | Basic Vec3/Quat; does not cover all of MathTests |
-| `UnitTests/Math/VectorTests.cpp` | — | ❌ | 0 | Template-heavy vector tests; requires specialized approach |
-| `UnitTests/Math/MatrixTests.cpp` | — | ❌ | 0 | Generic matrix tests |
+| `UnitTests/Math/VectorTests.cpp` | `Tests_Vector2Matrix.cs` | ⚠️ | 26 | Vector_2 (15 tests): construct/copy/+/-/*/÷/Dot/LengthSq/Length/Normalized/==; Matrix_2_2 (11 tests) covered by same file — see MatrixTests row |
+| `UnitTests/Math/MatrixTests.cpp` | `Tests_Vector2Matrix.cs` | ⚠️ | — | Matrix_2_2 (11 tests): SZero/SIdentity/construct/SetRow/GetRow/==/*/Vec multiply; shared with VectorTests.cpp coverage in Tests_Vector2Matrix.cs |
 | `UnitTests/Math/EigenValueSymmetricTests.cpp` | — | 🚫 | — | Internal numerical solver; not exposed via C bindings |
 | `UnitTests/Math/HalfFloatTests.cpp` | — | 🚫 | — | Half-float conversion; not in binding API |
 | `UnitTests/Math/TrigonometryTests.cpp` | — | 🚫 | — | Internal trig lookup tables |
@@ -108,8 +108,8 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/MotionQualityLinearCastTests.cpp` | `Tests_MotionQuality.cs` | ✅ | 11 | EMotionQuality enum values, GetMotionQuality/SetMotionQuality on BodyInterface, mMotionQuality on BodyCreationSettings |
 | `UnitTests/Physics/SubShapeIDTest.cpp` | — | 🚫 | — | SubShapeID internals; complex compound shape paths |
 | `UnitTests/Physics/TaperedCylinderShapeTests.cpp` | `Tests_TaperedCylinder.cs` | ✅ | 12 | Settings field round-trips (parameterized constructor, mutable fields, SetDensity), dynamic body creation and simulation |
-| `UnitTests/Physics/CharacterVirtualTests.cpp` | `Tests_CharacterVirtualSettings.cs` | ⚠️ | 22 | CharacterVirtualSettings defaults (mMass/mMaxStrength/mPredictiveContactDistance/mMaxCollisionIterations/mMaxConstraintIterations/mCollisionTolerance/mCharacterPadding/mMaxNumHits/mHitReductionCosMaxAngle/mPenetrationRecoverySpeed/mInnerBodyLayer/mEnhancedInternalEdgeRemoval/mMaxSlopeAngle) + round-trips; CharacterContactSettings defaults + round-trips; full CharacterVirtual simulation not yet tested |
-| `UnitTests/Physics/SoftBodyTests.cpp` | — | ❌ | 0 | SoftBody not yet bound |
+| `UnitTests/Physics/CharacterVirtualTests.cpp` | `Tests_CharacterVirtualSettings.cs` + `Tests_CharacterVirtual.cs` | ⚠️ | 41 | CharacterVirtualSettings defaults + round-trips; CharacterContactSettings defaults + round-trips; CharacterVirtual construction/SetPosition/GetPosition/SetRotation/GetRotation/SetLinearVelocity/GetLinearVelocity/SetCharacterLayer/GetCharacterLayer/GetInnerBodyID/GetWorldTransform/GetCenterOfMassPosition/GetCenterOfMassTransform/GetActiveBodyID; Update step no-crash; full simulation edge-cases not yet tested |
+| `UnitTests/Physics/SoftBodyTests.cpp` | `Tests_SoftBody.cs` | ⚠️ | 42 | SoftBodyCreationSettings (20 tests): field defaults + round-trips (mNumIterations/mLinearDamping/mMaxLinearVelocity/mRestitution/mFriction/mPressure/mGravityFactor/mVertexRadius/mUpdatePosition/mMakeRotationIdentity/mAllowSleeping/mFacesDoubleSided/mUserData/mObjectLayer); SoftBodySharedSettings (7 tests): construct/GetRefCount/AddRef/SetEmbedded/CalculateEdgeLengths/Optimize; inner Vertex (5)/Edge (5)/Face (5); full soft-body simulation not yet tested |
 | `UnitTests/Physics/WheeledVehicleTests.cpp` | — | ❌ | 0 | WheeledVehicle not yet bound |
 | `UnitTests/Physics/ShapeFilterTests.cpp` | `Tests_ShapeFilter.cs` | ✅ | 9 | Const/mutable lifecycle, mBodyID2 default-invalid, ShouldCollide default pass-through (2-arg and 4-arg), use alongside physics system |
 | `UnitTests/Physics/PhysicsDeterminismTests.cpp` | — | ❌ | 0 | Determinism tests require multi-run setup |
@@ -166,6 +166,13 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_PhysicsMaterial.cs` | 7 | DefaultConstruct NoCrash; GetRefCount initially 1 (C binding calls AddRef); AddRef increments to 2; SetEmbedded adds cEmbedded (0x0ebedded) to refcount; SInternalGetRefCountOffset >= 0; Const_PhysicsMaterial default construct/GetRefCount==1 |
 | `Tests_LayerTables.cs` | 12 | BroadPhaseLayer GetValue round-trip/==/!=/explicit byte cast/<; BroadPhaseLayerInterfaceTable GetNumBroadPhaseLayers/MapObjectToBroadPhaseLayer/GetBroadPhaseLayer round-trips; ObjectVsBroadPhaseLayerFilterTable construct NoCrash/ShouldCollide false (no collision enabled)/ShouldCollide true (EnableCollision)/symmetric moving vs non-moving |
 | `Tests_PlaneShape.cs` | 13 | PlaneShapeSettings CDefaultHalfExtent==1000/defaults (mHalfExtent=CDefaultHalfExtent, mUserData=0)/mHalfExtent round-trip/mUserData round-trip/Construct with half extent; PlaneShape DefaultConstruct/GetHalfExtent==0/MustBeStatic/CGetTrianglesMinTrianglesRequested/Construct with half extent/GetHalfExtent after construct/GetLocalBounds |
+| `Tests_CharacterVirtual.cs` | 19 | CharacterVirtual construction; SetPosition/GetPosition; SetRotation/GetRotation; SetLinearVelocity/GetLinearVelocity; SetCharacterLayer/GetCharacterLayer; GetInnerBodyID valid after add; GetWorldTransform/GetCenterOfMassPosition/GetCenterOfMassTransform valid; GetActiveBodyID after add; Update step no-crash |
+| `Tests_MeshShape.cs` | 7 | MeshShapeSettings default construct; MeshShape DefaultConstruct NoCrash/MustBeStatic true/CGetTrianglesMinTrianglesRequested static const/GetUserData=0; GetLocalBounds/GetStats/GetSubShapeIDBitsRecursive skipped (internal tree bug) |
+| `Tests_Vector2Matrix.cs` | 26 | Vector_2 (15 tests): construct/copy/+/-/*/÷/Dot/LengthSq/Length/Normalized/==; Matrix_2_2 (11 tests): SZero/SIdentity/construct from rows/SetRow/GetRow/==/multiply Mat/multiply Vec |
+| `Tests_ShapeBase.cs` | 11 | Shape GetType/GetSubType round-trips; GetLocalBounds non-degenerate; GetMassProperties via sphere; GetLeafShape returns same as GetInnerShape for non-compound; GetMaterial via MeshShape (null when no material set); SetUserData/GetUserData round-trip |
+| `Tests_SoftBody.cs` | 42 | SoftBodyCreationSettings field defaults + round-trips; SoftBodySharedSettings construct/GetRefCount/AddRef/SetEmbedded/CalculateEdgeLengths/Optimize; inner Vertex (default/invMass/parameterized), Edge (mRestLength/mCompliance), Face (IsDegenerate/mMaterialIndex) |
+| `Tests_JobSystem.cs` | 8 | JobSystemSingleThreaded: default/parameterized construct; GetMaxConcurrency==1; Init then GetMaxConcurrency==1; JobSystemThreadPool: default/parameterized construct; GetMaxConcurrency>0; fixture Jobs GetMaxConcurrency>0 |
+| `Tests_TempAllocator.cs` | 8 | TempAllocatorImpl: construct; GetSize==requested; IsEmpty initially true; GetUsage==0; CanAllocate small=true; CanAllocate oversized=false; fixture Alloc GetSize>=64MB; CanAllocate 1MB |
 
 ---
 
@@ -173,16 +180,17 @@ cd deps/JoltPhysics/bindings/csharp/tests
 
 | Category | Total C# Test Files | Total C# Tests |
 |---|---|---|
-| Math | 9 | 271 |
+| Math | 10 | 297 |
 | Geometry | 2 | 35 |
-| Physics | 29 | 372 |
-| Other | 22 | 364 |
-| **Total** | **68** | **1138** |
+| Physics | 31 | 433 |
+| Other | 32 | 495 |
+| **Total** | **75** | **1260** |
 
-> **Note:** Test count reflects state after this session.
-> Added `Tests_CharacterID.cs` (13 tests), `Tests_SubShapeIDPair.cs` (10 tests),
-> `Tests_PhysicsMaterial.cs` (7 tests), `Tests_LayerTables.cs` (12 tests), and
-> `Tests_PlaneShape.cs` (13 tests) this session, bringing the total from 1083 to **1138 tests** across **68 files**.
+> **Note:** Test count reflects state after latest updates.
+> The total has grown across multiple sessions:
+> - 1083 → 1138 (68 files): added Tests_CharacterID.cs, Tests_SubShapeIDPair.cs, Tests_PhysicsMaterial.cs, Tests_LayerTables.cs, Tests_PlaneShape.cs
+> - 1138 → 1202 (72 files): added Tests_CharacterVirtual.cs (19), Tests_MeshShape.cs (7), Tests_Vector2Matrix.cs (26), Tests_ShapeBase.cs (11)
+> - 1202 → **1260** (**75 files**): added Tests_SoftBody.cs (42), Tests_JobSystem.cs (8), Tests_TempAllocator.cs (8)
 
 ---
 
@@ -194,7 +202,7 @@ headers) before C# tests can be written:
 - `JPH::Ellipse` — needs `--allow JPH::Ellipse` + Ellipse.h include
 - `JPH::CharacterVirtual` (full) — `mShape`, `mInnerBodyShape`, `mBackFaceMode` fields are
   currently skipped due to complex types
-- `JPH::SoftBodyCreationSettings` / `JPH::SoftBody` — not yet bound
+- `JPH::SoftBodyCreationSettings` / `JPH::SoftBody` — bound; full simulation tests not yet written (no vertex/face collection accessors in bindings)
 - `JPH::WheeledVehicleController` — not yet bound
 - `JPH::SubShapeID` — could be bound; complex compound sub-shape path tracking
 - Ray/collision query result types (`RayCastResult`, `CollideShapeResult`, etc.) — needed for
