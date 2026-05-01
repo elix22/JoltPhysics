@@ -100,7 +100,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/SliderConstraintTests.cpp` | `Tests_SliderConstraint.cs` | ✅ | 15 | SliderConstraintSettings defaults + round-trips, HasLimits, GetLimitsMin/Max, direct construction, simulation |
 | `UnitTests/Physics/SixDOFConstraintTests.cpp` | `Tests_SixDOFConstraint.cs` | ✅ | 14 | SixDOFConstraintSettings defaults + EAxis enum, GetTranslationLimitsMin/Max, MakeFixedAxis/IsFixedAxis, direct construction, simulation |
 | `UnitTests/Physics/PathConstraintTests.cpp` | — | ❌ | 0 | Path constraint not yet tested |
-| `UnitTests/Physics/ContactListenerTests.cpp` | `Tests_ContactSettings.cs` | ⚠️ | 15 | ContactSettings + Const_ContactSettings struct defaults (mInvMassScale1/2=1, mInvInertiaScale1/2=1) + round-trips + mIsSensor round-trip; actual contact-listener callback wiring not yet tested |
+| `UnitTests/Physics/ContactListenerTests.cpp` | `Tests_ContactSettings.cs`, `Tests_ContactManifold.cs` | ⚠️ | 35 | ContactSettings (23): defaults mInvMassScale1/2=1, mInvInertiaScale1/2=1, mCombinedFriction/mCombinedRestitution=0, surface velocity defaults, round-trips, mIsSensor, ElementwiseConstructor; ContactManifold (12): default construct, mPenetrationDepth/mSubShapeID1/2 defaults + mutable round-trips, copy construct, SwapShapes; actual contact-listener callback wiring not yet tested |
 | `UnitTests/Physics/SensorTests.cpp` | `Tests_Bodies.cs` + `Tests_BodyProperties.cs` | ⚠️ | 3 | SensorBody_DoesNotBlockDynamicBody; IsSensor getter for sensor and non-sensor bodies |
 | `UnitTests/Physics/ActiveEdgesTests.cpp` | — | 🚫 | — | Internal mesh active-edge logic |
 | `UnitTests/Physics/ConvexVsTrianglesTest.cpp` | — | 🚫 | — | Internal convex-triangle collision |
@@ -112,7 +112,7 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `UnitTests/Physics/SoftBodyTests.cpp` | `Tests_SoftBody.cs` | ⚠️ | 42 | SoftBodyCreationSettings (20 tests): field defaults + round-trips (mNumIterations/mLinearDamping/mMaxLinearVelocity/mRestitution/mFriction/mPressure/mGravityFactor/mVertexRadius/mUpdatePosition/mMakeRotationIdentity/mAllowSleeping/mFacesDoubleSided/mUserData/mObjectLayer); SoftBodySharedSettings (7 tests): construct/GetRefCount/AddRef/SetEmbedded/CalculateEdgeLengths/Optimize; inner Vertex (5)/Edge (5)/Face (5); full soft-body simulation not yet tested |
 | `UnitTests/Physics/WheeledVehicleTests.cpp` | — | ❌ | 0 | WheeledVehicle not yet bound |
 | `UnitTests/Physics/ShapeFilterTests.cpp` | `Tests_ShapeFilter.cs` | ✅ | 9 | Const/mutable lifecycle, mBodyID2 default-invalid, ShouldCollide default pass-through (2-arg and 4-arg), use alongside physics system |
-| `UnitTests/Physics/PhysicsDeterminismTests.cpp` | — | ❌ | 0 | Determinism tests require multi-run setup |
+| `UnitTests/Physics/PhysicsDeterminismTests.cpp` | `Tests_PhysicsDeterminism.cs` | ⚠️ | 5 | TwoIdenticalRuns_ProduceSamePosition (60 steps), SingleStep, ManySteps (180 steps) — all bit-exact; mDeterministicSimulation default=true + can disable; actual per-constraint determinism not verified |
 | `UnitTests/Physics/PhysicsStepListenerTests.cpp` | — | ❌ | 0 | StepListener not yet tested |
 
 ---
@@ -173,6 +173,14 @@ cd deps/JoltPhysics/bindings/csharp/tests
 | `Tests_SoftBody.cs` | 42 | SoftBodyCreationSettings field defaults + round-trips; SoftBodySharedSettings construct/GetRefCount/AddRef/SetEmbedded/CalculateEdgeLengths/Optimize; inner Vertex (default/invMass/parameterized), Edge (mRestLength/mCompliance), Face (IsDegenerate/mMaterialIndex) |
 | `Tests_JobSystem.cs` | 8 | JobSystemSingleThreaded: default/parameterized construct; GetMaxConcurrency==1; Init then GetMaxConcurrency==1; JobSystemThreadPool: default/parameterized construct; GetMaxConcurrency>0; fixture Jobs GetMaxConcurrency>0 |
 | `Tests_TempAllocator.cs` | 8 | TempAllocatorImpl: construct; GetSize==requested; IsEmpty initially true; GetUsage==0; CanAllocate small=true; CanAllocate oversized=false; fixture Alloc GetSize>=64MB; CanAllocate 1MB |
+| `Tests_CollisionGroups.cs` | 12 | CollisionGroup CInvalidGroup/CInvalidSubGroup constants; default construct + ID defaults; SetGroupID/SubGroupID round-trips; CanCollide (no filter, different groups) |
+| `Tests_MutableCompound.cs` | 14 | MutableCompound construction, NumSubShapes, AddShape (index + count), RemoveShape, ModifyShape, GetLocalBounds (empty + with sphere), GetVolume/GetInnerRadius, dynamic body simulation |
+| `Tests_PhysicsSettings.cs` | 16 | PhysicsSettings defaults + round-trips for all fields including mDeterministicSimulation, NumVelocitySteps, NumPositionSteps, Baumgarte, etc. |
+| `Tests_TaperedCapsuleShape.cs` | 16 | TaperedCapsuleShapeSettings fields, IsValid/IsSphere checks, dynamic body simulation |
+| `Tests_TriangleAndPlaneShapes.cs` | 16 | Triangle shape settings and plane shape tests |
+| `Tests_ContactManifold.cs` | 12 | ContactManifold default construct, mPenetrationDepth/mSubShapeID1/2 defaults + mutable round-trips, copy construct, SwapShapes |
+| `Tests_DefaultObjectLayerFilter.cs` | 6 | DefaultObjectLayerFilter construct (from ObjectLayerPairFilterTable); ShouldCollide: enabled pair returns true, same layer returns false, symmetric; no-pairs filter returns false |
+| `Tests_PhysicsDeterminism.cs` | 5 | Two identical 60-step simulations produce bit-exact positions; single-step + 180-step variants; mDeterministicSimulation default=true + disable |
 
 ---
 
@@ -182,15 +190,16 @@ cd deps/JoltPhysics/bindings/csharp/tests
 |---|---|---|
 | Math | 10 | 297 |
 | Geometry | 2 | 35 |
-| Physics | 31 | 433 |
-| Other | 32 | 495 |
-| **Total** | **75** | **1260** |
+| Physics | 31 | 453 |
+| Other | 41 | 606 |
+| **Total** | **84** | **1391** |
 
 > **Note:** Test count reflects state after latest updates.
 > The total has grown across multiple sessions:
 > - 1083 → 1138 (68 files): added Tests_CharacterID.cs, Tests_SubShapeIDPair.cs, Tests_PhysicsMaterial.cs, Tests_LayerTables.cs, Tests_PlaneShape.cs
 > - 1138 → 1202 (72 files): added Tests_CharacterVirtual.cs (19), Tests_MeshShape.cs (7), Tests_Vector2Matrix.cs (26), Tests_ShapeBase.cs (11)
 > - 1202 → **1260** (**75 files**): added Tests_SoftBody.cs (42), Tests_JobSystem.cs (8), Tests_TempAllocator.cs (8)
+> - 1260 → **1291** (**84 files**): added Tests_ContactManifold.cs (12), Tests_DefaultObjectLayerFilter.cs (6), Tests_PhysicsDeterminism.cs (5); expanded Tests_ContactSettings.cs (+8); documented 5 pre-existing files: Tests_CollisionGroups.cs (12), Tests_MutableCompound.cs (14), Tests_PhysicsSettings.cs (16), Tests_TaperedCapsuleShape.cs (16), Tests_TriangleAndPlaneShapes.cs (16)
 
 ---
 

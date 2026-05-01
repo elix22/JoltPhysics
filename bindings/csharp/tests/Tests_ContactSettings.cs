@@ -121,4 +121,74 @@ public sealed class Tests_ContactSettings(JoltFixture fx)
         using var cs = new JPH.Const_ContactSettings();
         Assert.Equal(1.0f, cs.mInvMassScale1);
     }
+
+    // ── Additional defaults (mCombinedFriction, mCombinedRestitution, surface velocity) ──
+
+    [Fact]
+    public void ContactSettings_DefaultConstruct_mCombinedFriction_IsZero()
+    {
+        using var cs = new JPH.ContactSettings();
+        Assert.Equal(0.0f, cs.mCombinedFriction);
+    }
+
+    [Fact]
+    public void ContactSettings_DefaultConstruct_mCombinedRestitution_IsZero()
+    {
+        using var cs = new JPH.ContactSettings();
+        Assert.Equal(0.0f, cs.mCombinedRestitution);
+    }
+
+    [Fact]
+    public void ContactSettings_mCombinedFriction_RoundTrip()
+    {
+        using var cs = new JPH.ContactSettings();
+        cs.mCombinedFriction = 0.6f;
+        Assert.Equal(0.6f, cs.mCombinedFriction, precision: 5);
+    }
+
+    [Fact]
+    public void ContactSettings_mCombinedRestitution_RoundTrip()
+    {
+        using var cs = new JPH.ContactSettings();
+        cs.mCombinedRestitution = 0.3f;
+        Assert.Equal(0.3f, cs.mCombinedRestitution, precision: 5);
+    }
+
+    [Fact]
+    public void ContactSettings_DefaultConstruct_mRelativeLinearSurfaceVelocity_IsZero()
+    {
+        using var cs = new JPH.ContactSettings();
+        var v = cs.mRelativeLinearSurfaceVelocity;
+        Assert.Equal(0.0f, v.GetX());
+        Assert.Equal(0.0f, v.GetY());
+        Assert.Equal(0.0f, v.GetZ());
+    }
+
+    [Fact]
+    public void ContactSettings_DefaultConstruct_mRelativeAngularSurfaceVelocity_IsZero()
+    {
+        using var cs = new JPH.ContactSettings();
+        var v = cs.mRelativeAngularSurfaceVelocity;
+        Assert.Equal(0.0f, v.GetX());
+        Assert.Equal(0.0f, v.GetY());
+        Assert.Equal(0.0f, v.GetZ());
+    }
+
+    [Fact]
+    public void ContactSettings_ElementwiseConstructor_RoundTrip()
+    {
+        using var linVel  = new JPH.Vec3(1.0f, 2.0f, 3.0f);
+        using var angVel  = new JPH.Vec3(4.0f, 5.0f, 6.0f);
+        using var cs = new JPH.ContactSettings(
+            0.4f, 0.1f, 2.0f, 2.0f, 0.5f, 0.5f, false, linVel, angVel);
+        Assert.Equal(0.4f, cs.mCombinedFriction, precision: 5);
+        Assert.Equal(0.1f, cs.mCombinedRestitution, precision: 5);
+        Assert.Equal(2.0f, cs.mInvMassScale1);
+        Assert.Equal(2.0f, cs.mInvInertiaScale1);
+        Assert.Equal(0.5f, cs.mInvMassScale2);
+        Assert.Equal(0.5f, cs.mInvInertiaScale2);
+        Assert.False(cs.mIsSensor);
+        Assert.Equal(1.0f, cs.mRelativeLinearSurfaceVelocity.GetX(), precision: 5);
+        Assert.Equal(4.0f, cs.mRelativeAngularSurfaceVelocity.GetX(), precision: 5);
+    }
 }
