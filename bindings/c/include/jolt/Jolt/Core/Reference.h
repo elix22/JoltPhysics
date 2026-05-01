@@ -432,6 +432,81 @@ typedef struct JPH_RefTarget_JPH_CharacterBase JPH_RefTarget_JPH_CharacterBase;
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_RefTarget_JPH_PathConstraintPath JPH_RefTarget_JPH_PathConstraintPath;
 
+/// Simple class to facilitate reference counting / releasing
+/// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+///
+/// Reference counting classes keep an integer which indicates how many references
+/// to the object are active. Reference counting objects are derived from RefTarget
+/// and staT & their life with a reference count of zero. They can then be assigned
+/// to equivalents of pointers (Ref) which will increase the reference count immediately.
+/// If the destructor of Ref is called or another object is assigned to the reference
+/// counting pointer it will decrease the reference count of the object again. If this
+/// reference count becomes zero, the object is destroyed.
+///
+/// This provides a very powerful mechanism to prevent memory leaks, but also gives
+/// some responsibility to the programmer. The most notable point is that you cannot
+/// have one object reference another and have the other reference the first one
+/// back, because this way the reference count of both objects will never become
+/// lower than 1, resulting in a memory leak. By carefully designing your classes
+/// (and particularly identifying who owns who in the class hierarchy) you can avoid
+/// these problems.
+/// Generated from class `JPH::RefTarget<JPH::Skeleton>`.
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::Skeleton`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JPH_RefTarget_JPH_Skeleton JPH_RefTarget_JPH_Skeleton;
+
+/// Simple class to facilitate reference counting / releasing
+/// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+///
+/// Reference counting classes keep an integer which indicates how many references
+/// to the object are active. Reference counting objects are derived from RefTarget
+/// and staT & their life with a reference count of zero. They can then be assigned
+/// to equivalents of pointers (Ref) which will increase the reference count immediately.
+/// If the destructor of Ref is called or another object is assigned to the reference
+/// counting pointer it will decrease the reference count of the object again. If this
+/// reference count becomes zero, the object is destroyed.
+///
+/// This provides a very powerful mechanism to prevent memory leaks, but also gives
+/// some responsibility to the programmer. The most notable point is that you cannot
+/// have one object reference another and have the other reference the first one
+/// back, because this way the reference count of both objects will never become
+/// lower than 1, resulting in a memory leak. By carefully designing your classes
+/// (and particularly identifying who owns who in the class hierarchy) you can avoid
+/// these problems.
+/// Generated from class `JPH::RefTarget<JPH::SkeletalAnimation>`.
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::SkeletalAnimation`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JPH_RefTarget_JPH_SkeletalAnimation JPH_RefTarget_JPH_SkeletalAnimation;
+
+/// Simple class to facilitate reference counting / releasing
+/// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+///
+/// Reference counting classes keep an integer which indicates how many references
+/// to the object are active. Reference counting objects are derived from RefTarget
+/// and staT & their life with a reference count of zero. They can then be assigned
+/// to equivalents of pointers (Ref) which will increase the reference count immediately.
+/// If the destructor of Ref is called or another object is assigned to the reference
+/// counting pointer it will decrease the reference count of the object again. If this
+/// reference count becomes zero, the object is destroyed.
+///
+/// This provides a very powerful mechanism to prevent memory leaks, but also gives
+/// some responsibility to the programmer. The most notable point is that you cannot
+/// have one object reference another and have the other reference the first one
+/// back, because this way the reference count of both objects will never become
+/// lower than 1, resulting in a memory leak. By carefully designing your classes
+/// (and particularly identifying who owns who in the class hierarchy) you can avoid
+/// these problems.
+/// Generated from class `JPH::RefTarget<JPH::SkeletonMapper>`.
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::SkeletonMapper`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JPH_RefTarget_JPH_SkeletonMapper JPH_RefTarget_JPH_SkeletonMapper;
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_RefTarget_JPH_ConstraintSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_RefTarget_JPH_ConstraintSettings *JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct(void);
@@ -1299,6 +1374,192 @@ JOLT_API void JPH_RefTarget_JPH_PathConstraintPath_Release(const JPH_RefTarget_J
 /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
 /// Generated from method `JPH::RefTarget<JPH::PathConstraintPath>::sInternalGetRefCountOffset`.
 JOLT_API int JPH_RefTarget_JPH_PathConstraintPath_sInternalGetRefCountOffset(void);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_RefTarget_JPH_Skeleton_Destroy()` to free it when you're done using it.
+JOLT_API JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JPH_RefTarget_JPH_Skeleton_DestroyArray()`.
+/// Use `JPH_RefTarget_JPH_Skeleton_OffsetMutablePtr()` and `JPH_RefTarget_JPH_Skeleton_OffsetPtr()` to access the array elements.
+JOLT_API JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_OffsetPtr(const JPH_RefTarget_JPH_Skeleton *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_OffsetMutablePtr(JPH_RefTarget_JPH_Skeleton *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JPH::RefTarget<JPH::Skeleton>::RefTarget`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_RefTarget_JPH_Skeleton_Destroy()` to free it when you're done using it.
+JOLT_API JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_Skeleton *_other);
+
+/// Destroys a heap-allocated instance of `JPH_RefTarget_JPH_Skeleton`. Does nothing if the pointer is null.
+JOLT_API void JPH_RefTarget_JPH_Skeleton_Destroy(const JPH_RefTarget_JPH_Skeleton *_this);
+
+/// Destroys a heap-allocated array of `JPH_RefTarget_JPH_Skeleton`. Does nothing if the pointer is null.
+JOLT_API void JPH_RefTarget_JPH_Skeleton_DestroyArray(const JPH_RefTarget_JPH_Skeleton *_this);
+
+/// Assignment operator
+/// Generated from method `JPH::RefTarget<JPH::Skeleton>::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved in the return value.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_AssignFromAnother(JPH_RefTarget_JPH_Skeleton *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_Skeleton *_other);
+
+/// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+/// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+/// the object and at that point in time it is checked that no references are left to the structure.
+/// Generated from method `JPH::RefTarget<JPH::Skeleton>::SetEmbedded`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_Skeleton_SetEmbedded(const JPH_RefTarget_JPH_Skeleton *_this);
+
+/// Get current refcount of this object
+/// Generated from method `JPH::RefTarget<JPH::Skeleton>::GetRefCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_RefTarget_JPH_Skeleton_GetRefCount(const JPH_RefTarget_JPH_Skeleton *_this);
+
+/// Add or release a reference to this object
+/// Generated from method `JPH::RefTarget<JPH::Skeleton>::AddRef`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_Skeleton_AddRef(const JPH_RefTarget_JPH_Skeleton *_this);
+
+/// Generated from method `JPH::RefTarget<JPH::Skeleton>::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_Skeleton_Release(const JPH_RefTarget_JPH_Skeleton *_this);
+
+/// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+/// Generated from method `JPH::RefTarget<JPH::Skeleton>::sInternalGetRefCountOffset`.
+JOLT_API int JPH_RefTarget_JPH_Skeleton_sInternalGetRefCountOffset(void);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_RefTarget_JPH_SkeletalAnimation_Destroy()` to free it when you're done using it.
+JOLT_API JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JPH_RefTarget_JPH_SkeletalAnimation_DestroyArray()`.
+/// Use `JPH_RefTarget_JPH_SkeletalAnimation_OffsetMutablePtr()` and `JPH_RefTarget_JPH_SkeletalAnimation_OffsetPtr()` to access the array elements.
+JOLT_API JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_OffsetPtr(const JPH_RefTarget_JPH_SkeletalAnimation *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_OffsetMutablePtr(JPH_RefTarget_JPH_SkeletalAnimation *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JPH::RefTarget<JPH::SkeletalAnimation>::RefTarget`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_RefTarget_JPH_SkeletalAnimation_Destroy()` to free it when you're done using it.
+JOLT_API JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_SkeletalAnimation *_other);
+
+/// Destroys a heap-allocated instance of `JPH_RefTarget_JPH_SkeletalAnimation`. Does nothing if the pointer is null.
+JOLT_API void JPH_RefTarget_JPH_SkeletalAnimation_Destroy(const JPH_RefTarget_JPH_SkeletalAnimation *_this);
+
+/// Destroys a heap-allocated array of `JPH_RefTarget_JPH_SkeletalAnimation`. Does nothing if the pointer is null.
+JOLT_API void JPH_RefTarget_JPH_SkeletalAnimation_DestroyArray(const JPH_RefTarget_JPH_SkeletalAnimation *_this);
+
+/// Assignment operator
+/// Generated from method `JPH::RefTarget<JPH::SkeletalAnimation>::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved in the return value.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_AssignFromAnother(JPH_RefTarget_JPH_SkeletalAnimation *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_SkeletalAnimation *_other);
+
+/// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+/// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+/// the object and at that point in time it is checked that no references are left to the structure.
+/// Generated from method `JPH::RefTarget<JPH::SkeletalAnimation>::SetEmbedded`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_SkeletalAnimation_SetEmbedded(const JPH_RefTarget_JPH_SkeletalAnimation *_this);
+
+/// Get current refcount of this object
+/// Generated from method `JPH::RefTarget<JPH::SkeletalAnimation>::GetRefCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_RefTarget_JPH_SkeletalAnimation_GetRefCount(const JPH_RefTarget_JPH_SkeletalAnimation *_this);
+
+/// Add or release a reference to this object
+/// Generated from method `JPH::RefTarget<JPH::SkeletalAnimation>::AddRef`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_SkeletalAnimation_AddRef(const JPH_RefTarget_JPH_SkeletalAnimation *_this);
+
+/// Generated from method `JPH::RefTarget<JPH::SkeletalAnimation>::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_SkeletalAnimation_Release(const JPH_RefTarget_JPH_SkeletalAnimation *_this);
+
+/// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+/// Generated from method `JPH::RefTarget<JPH::SkeletalAnimation>::sInternalGetRefCountOffset`.
+JOLT_API int JPH_RefTarget_JPH_SkeletalAnimation_sInternalGetRefCountOffset(void);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_RefTarget_JPH_SkeletonMapper_Destroy()` to free it when you're done using it.
+JOLT_API JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JPH_RefTarget_JPH_SkeletonMapper_DestroyArray()`.
+/// Use `JPH_RefTarget_JPH_SkeletonMapper_OffsetMutablePtr()` and `JPH_RefTarget_JPH_SkeletonMapper_OffsetPtr()` to access the array elements.
+JOLT_API JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_OffsetPtr(const JPH_RefTarget_JPH_SkeletonMapper *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_OffsetMutablePtr(JPH_RefTarget_JPH_SkeletonMapper *ptr, ptrdiff_t i);
+
+/// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_RefTarget_JPH_SkeletonMapper_Destroy()` to free it when you're done using it.
+JOLT_API JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_SkeletonMapper *_other);
+
+/// Destroys a heap-allocated instance of `JPH_RefTarget_JPH_SkeletonMapper`. Does nothing if the pointer is null.
+JOLT_API void JPH_RefTarget_JPH_SkeletonMapper_Destroy(const JPH_RefTarget_JPH_SkeletonMapper *_this);
+
+/// Destroys a heap-allocated array of `JPH_RefTarget_JPH_SkeletonMapper`. Does nothing if the pointer is null.
+JOLT_API void JPH_RefTarget_JPH_SkeletonMapper_DestroyArray(const JPH_RefTarget_JPH_SkeletonMapper *_this);
+
+/// Assignment operator
+/// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved in the return value.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_AssignFromAnother(JPH_RefTarget_JPH_SkeletonMapper *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_SkeletonMapper *_other);
+
+/// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+/// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+/// the object and at that point in time it is checked that no references are left to the structure.
+/// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::SetEmbedded`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_SkeletonMapper_SetEmbedded(const JPH_RefTarget_JPH_SkeletonMapper *_this);
+
+/// Get current refcount of this object
+/// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::GetRefCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_RefTarget_JPH_SkeletonMapper_GetRefCount(const JPH_RefTarget_JPH_SkeletonMapper *_this);
+
+/// Add or release a reference to this object
+/// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::AddRef`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_SkeletonMapper_AddRef(const JPH_RefTarget_JPH_SkeletonMapper *_this);
+
+/// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_RefTarget_JPH_SkeletonMapper_Release(const JPH_RefTarget_JPH_SkeletonMapper *_this);
+
+/// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+/// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::sInternalGetRefCountOffset`.
+JOLT_API int JPH_RefTarget_JPH_SkeletonMapper_sInternalGetRefCountOffset(void);
 
 #ifdef __cplusplus
 } // extern "C"

@@ -14,6 +14,9 @@
 #include <Jolt/Physics/Vehicle/VehicleController.h>
 #include <Jolt/Physics/Vehicle/Wheel.h>
 #include <Jolt/Renderer/DebugRenderer.h>
+#include <Jolt/Skeleton/SkeletalAnimation.h>
+#include <Jolt/Skeleton/Skeleton.h>
+#include <Jolt/Skeleton/SkeletonMapper.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -1071,5 +1074,230 @@ void JPH_RefTarget_JPH_PathConstraintPath_Release(const JPH_RefTarget_JPH_PathCo
 int JPH_RefTarget_JPH_PathConstraintPath_sInternalGetRefCountOffset(void)
 {
     return JPH::RefTarget<JPH::PathConstraintPath>::sInternalGetRefCountOffset();
+}
+
+JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_DefaultConstruct(void)
+{
+    using _mrbind_T = JPH::RefTarget<JPH::Skeleton>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_Skeleton*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_DefaultConstructArray(size_t num_elems)
+{
+    return (JPH_RefTarget_JPH_Skeleton *)(new JPH::RefTarget<JPH::Skeleton>[num_elems]{});
+}
+
+const JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_OffsetPtr(const JPH_RefTarget_JPH_Skeleton *ptr, ptrdiff_t i)
+{
+    return (const JPH_RefTarget_JPH_Skeleton *)(((const JPH::RefTarget<JPH::Skeleton> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_OffsetMutablePtr(JPH_RefTarget_JPH_Skeleton *ptr, ptrdiff_t i)
+{
+    return (JPH_RefTarget_JPH_Skeleton *)(((JPH::RefTarget<JPH::Skeleton> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_Skeleton *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::Skeleton>);
+    return (JPH_RefTarget_JPH_Skeleton *)new JPH::RefTarget<JPH::Skeleton>(JPH::RefTarget<JPH::Skeleton>(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::Skeleton>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::Skeleton>), JPH::RefTarget<JPH::Skeleton>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::Skeleton>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::Skeleton>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::Skeleton>))
+    ));
+}
+
+void JPH_RefTarget_JPH_Skeleton_Destroy(const JPH_RefTarget_JPH_Skeleton *_this)
+{
+    delete ((const JPH::RefTarget<JPH::Skeleton> *)_this);
+}
+
+void JPH_RefTarget_JPH_Skeleton_DestroyArray(const JPH_RefTarget_JPH_Skeleton *_this)
+{
+    delete[] ((const JPH::RefTarget<JPH::Skeleton> *)_this);
+}
+
+JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_AssignFromAnother(JPH_RefTarget_JPH_Skeleton *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_Skeleton *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::Skeleton>);
+    return (JPH_RefTarget_JPH_Skeleton *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RefTarget<JPH::Skeleton> *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::Skeleton>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::Skeleton>), JPH::RefTarget<JPH::Skeleton>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::Skeleton>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::Skeleton>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::Skeleton>)))
+    ));
+}
+
+void JPH_RefTarget_JPH_Skeleton_SetEmbedded(const JPH_RefTarget_JPH_Skeleton *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::Skeleton> *)(_this)).SetEmbedded();
+}
+
+unsigned int JPH_RefTarget_JPH_Skeleton_GetRefCount(const JPH_RefTarget_JPH_Skeleton *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::Skeleton> *)(_this)).GetRefCount();
+}
+
+void JPH_RefTarget_JPH_Skeleton_AddRef(const JPH_RefTarget_JPH_Skeleton *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::Skeleton> *)(_this)).AddRef();
+}
+
+void JPH_RefTarget_JPH_Skeleton_Release(const JPH_RefTarget_JPH_Skeleton *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::Skeleton> *)(_this)).Release();
+}
+
+int JPH_RefTarget_JPH_Skeleton_sInternalGetRefCountOffset(void)
+{
+    return JPH::RefTarget<JPH::Skeleton>::sInternalGetRefCountOffset();
+}
+
+JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_DefaultConstruct(void)
+{
+    using _mrbind_T = JPH::RefTarget<JPH::SkeletalAnimation>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_SkeletalAnimation*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_DefaultConstructArray(size_t num_elems)
+{
+    return (JPH_RefTarget_JPH_SkeletalAnimation *)(new JPH::RefTarget<JPH::SkeletalAnimation>[num_elems]{});
+}
+
+const JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_OffsetPtr(const JPH_RefTarget_JPH_SkeletalAnimation *ptr, ptrdiff_t i)
+{
+    return (const JPH_RefTarget_JPH_SkeletalAnimation *)(((const JPH::RefTarget<JPH::SkeletalAnimation> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_OffsetMutablePtr(JPH_RefTarget_JPH_SkeletalAnimation *ptr, ptrdiff_t i)
+{
+    return (JPH_RefTarget_JPH_SkeletalAnimation *)(((JPH::RefTarget<JPH::SkeletalAnimation> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_SkeletalAnimation *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::SkeletalAnimation>);
+    return (JPH_RefTarget_JPH_SkeletalAnimation *)new JPH::RefTarget<JPH::SkeletalAnimation>(JPH::RefTarget<JPH::SkeletalAnimation>(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::SkeletalAnimation>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::SkeletalAnimation>), JPH::RefTarget<JPH::SkeletalAnimation>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::SkeletalAnimation>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::SkeletalAnimation>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::SkeletalAnimation>))
+    ));
+}
+
+void JPH_RefTarget_JPH_SkeletalAnimation_Destroy(const JPH_RefTarget_JPH_SkeletalAnimation *_this)
+{
+    delete ((const JPH::RefTarget<JPH::SkeletalAnimation> *)_this);
+}
+
+void JPH_RefTarget_JPH_SkeletalAnimation_DestroyArray(const JPH_RefTarget_JPH_SkeletalAnimation *_this)
+{
+    delete[] ((const JPH::RefTarget<JPH::SkeletalAnimation> *)_this);
+}
+
+JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_AssignFromAnother(JPH_RefTarget_JPH_SkeletalAnimation *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_SkeletalAnimation *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::SkeletalAnimation>);
+    return (JPH_RefTarget_JPH_SkeletalAnimation *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RefTarget<JPH::SkeletalAnimation> *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::SkeletalAnimation>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::SkeletalAnimation>), JPH::RefTarget<JPH::SkeletalAnimation>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::SkeletalAnimation>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::SkeletalAnimation>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::SkeletalAnimation>)))
+    ));
+}
+
+void JPH_RefTarget_JPH_SkeletalAnimation_SetEmbedded(const JPH_RefTarget_JPH_SkeletalAnimation *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::SkeletalAnimation> *)(_this)).SetEmbedded();
+}
+
+unsigned int JPH_RefTarget_JPH_SkeletalAnimation_GetRefCount(const JPH_RefTarget_JPH_SkeletalAnimation *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::SkeletalAnimation> *)(_this)).GetRefCount();
+}
+
+void JPH_RefTarget_JPH_SkeletalAnimation_AddRef(const JPH_RefTarget_JPH_SkeletalAnimation *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::SkeletalAnimation> *)(_this)).AddRef();
+}
+
+void JPH_RefTarget_JPH_SkeletalAnimation_Release(const JPH_RefTarget_JPH_SkeletalAnimation *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::SkeletalAnimation> *)(_this)).Release();
+}
+
+int JPH_RefTarget_JPH_SkeletalAnimation_sInternalGetRefCountOffset(void)
+{
+    return JPH::RefTarget<JPH::SkeletalAnimation>::sInternalGetRefCountOffset();
+}
+
+JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct(void)
+{
+    using _mrbind_T = JPH::RefTarget<JPH::SkeletonMapper>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_SkeletonMapper*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_DefaultConstructArray(size_t num_elems)
+{
+    return (JPH_RefTarget_JPH_SkeletonMapper *)(new JPH::RefTarget<JPH::SkeletonMapper>[num_elems]{});
+}
+
+const JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_OffsetPtr(const JPH_RefTarget_JPH_SkeletonMapper *ptr, ptrdiff_t i)
+{
+    return (const JPH_RefTarget_JPH_SkeletonMapper *)(((const JPH::RefTarget<JPH::SkeletonMapper> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_OffsetMutablePtr(JPH_RefTarget_JPH_SkeletonMapper *ptr, ptrdiff_t i)
+{
+    return (JPH_RefTarget_JPH_SkeletonMapper *)(((JPH::RefTarget<JPH::SkeletonMapper> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_SkeletonMapper *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::SkeletonMapper>);
+    return (JPH_RefTarget_JPH_SkeletonMapper *)new JPH::RefTarget<JPH::SkeletonMapper>(JPH::RefTarget<JPH::SkeletonMapper>(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::SkeletonMapper>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::SkeletonMapper>), JPH::RefTarget<JPH::SkeletonMapper>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::SkeletonMapper>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::SkeletonMapper>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::SkeletonMapper>))
+    ));
+}
+
+void JPH_RefTarget_JPH_SkeletonMapper_Destroy(const JPH_RefTarget_JPH_SkeletonMapper *_this)
+{
+    delete ((const JPH::RefTarget<JPH::SkeletonMapper> *)_this);
+}
+
+void JPH_RefTarget_JPH_SkeletonMapper_DestroyArray(const JPH_RefTarget_JPH_SkeletonMapper *_this)
+{
+    delete[] ((const JPH::RefTarget<JPH::SkeletonMapper> *)_this);
+}
+
+JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_AssignFromAnother(JPH_RefTarget_JPH_SkeletonMapper *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_SkeletonMapper *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::SkeletonMapper>);
+    return (JPH_RefTarget_JPH_SkeletonMapper *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RefTarget<JPH::SkeletonMapper> *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::SkeletonMapper>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::SkeletonMapper>), JPH::RefTarget<JPH::SkeletonMapper>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::SkeletonMapper>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::SkeletonMapper>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::SkeletonMapper>)))
+    ));
+}
+
+void JPH_RefTarget_JPH_SkeletonMapper_SetEmbedded(const JPH_RefTarget_JPH_SkeletonMapper *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::SkeletonMapper> *)(_this)).SetEmbedded();
+}
+
+unsigned int JPH_RefTarget_JPH_SkeletonMapper_GetRefCount(const JPH_RefTarget_JPH_SkeletonMapper *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::SkeletonMapper> *)(_this)).GetRefCount();
+}
+
+void JPH_RefTarget_JPH_SkeletonMapper_AddRef(const JPH_RefTarget_JPH_SkeletonMapper *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::SkeletonMapper> *)(_this)).AddRef();
+}
+
+void JPH_RefTarget_JPH_SkeletonMapper_Release(const JPH_RefTarget_JPH_SkeletonMapper *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::SkeletonMapper> *)(_this)).Release();
+}
+
+int JPH_RefTarget_JPH_SkeletonMapper_sInternalGetRefCountOffset(void)
+{
+    return JPH::RefTarget<JPH::SkeletonMapper>::sInternalGetRefCountOffset();
 }
 

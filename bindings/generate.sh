@@ -183,6 +183,10 @@ echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodyMotionProperties.h\"" >>"$B
 echo "#include \"$ROOT/Jolt/Physics/Collision/EstimateCollisionResponse.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Renderer/DebugRendererSimple.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Core/Color.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Skeleton/Skeleton.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Skeleton/SkeletalAnimation.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Skeleton/SkeletonPose.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Skeleton/SkeletonMapper.h\"" >>"$BINDINGS/tmp/combined_input.h"
 
 
 # Parse the input header.
@@ -195,6 +199,9 @@ echo "#include \"$ROOT/Jolt/Core/Color.h\"" >>"$BINDINGS/tmp/combined_input.h"
     --skip-mentions-of JPH::StaticArray \
     --skip-mentions-of JPH::PhysicsStepListenerContext \
     --skip-mentions-of JPH::string_view \
+    --skip-mentions-of JPH::StreamIn \
+    --skip-mentions-of JPH::StreamOut \
+    --ignore JPH::SkeletonMapper::Initialize \
     --allow JoltHelpers \
     --allow CountingPhysicsStepListener \
     --allow SimpleContactEventListener \
@@ -393,6 +400,19 @@ echo "#include \"$ROOT/Jolt/Core/Color.h\"" >>"$BINDINGS/tmp/combined_input.h"
     --allow JPH::VehicleCollisionTesterRay \
     --allow JPH::VehicleCollisionTesterCastSphere \
     --allow JPH::VehicleCollisionTesterCastCylinder \
+    --allow JPH::Skeleton \
+    --allow JPH::Skeleton::Joint \
+    --allow JPH::SkeletalAnimation \
+    --allow JPH::SkeletalAnimation::JointState \
+    --allow JPH::SkeletalAnimation::Keyframe \
+    --allow JPH::SkeletalAnimation::AnimatedJoint \
+    --allow JPH::SkeletonPose \
+    --allow JPH::SkeletonPose::DrawSettings \
+    --allow JPH::SkeletonMapper \
+    --allow JPH::SkeletonMapper::Mapping \
+    --allow JPH::SkeletonMapper::Chain \
+    --allow JPH::SkeletonMapper::Unmapped \
+    --allow JPH::SkeletonMapper::Locked \
     --canonicalize-64-to-fixed-size-typedefs \
     "${EXTRA_PARSER_FLAGS[@]+"${EXTRA_PARSER_FLAGS[@]}"}" \
     -- \
