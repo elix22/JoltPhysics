@@ -6,8 +6,10 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <iostream>
 #include <memory>
+#include <new>
 #include <stdexcept>
 #include <type_traits>
 
@@ -29,7 +31,11 @@ size_t JPH_Vector_2_GetSize_mF32(void)
 
 JPH_Vector_2 *JPH_Vector_2_DefaultConstruct(void)
 {
-    return (JPH_Vector_2 *)new JPH::Vector<2>(JPH::Vector<2>());
+    using _mrbind_T = JPH::Vector<2>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_Vector_2*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_Vector_2 *JPH_Vector_2_DefaultConstructArray(size_t num_elems)

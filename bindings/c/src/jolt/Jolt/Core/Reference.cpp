@@ -13,13 +13,19 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
 JPH_RefTarget_JPH_ShapeSettings *JPH_RefTarget_JPH_ShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_RefTarget_JPH_ShapeSettings *)new JPH::RefTarget<JPH::ShapeSettings>(JPH::RefTarget<JPH::ShapeSettings>());
+    using _mrbind_T = JPH::RefTarget<JPH::ShapeSettings>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_ShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RefTarget_JPH_ShapeSettings *JPH_RefTarget_JPH_ShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -90,7 +96,11 @@ int JPH_RefTarget_JPH_ShapeSettings_sInternalGetRefCountOffset(void)
 
 JPH_RefTarget_JPH_Shape *JPH_RefTarget_JPH_Shape_DefaultConstruct(void)
 {
-    return (JPH_RefTarget_JPH_Shape *)new JPH::RefTarget<JPH::Shape>(JPH::RefTarget<JPH::Shape>());
+    using _mrbind_T = JPH::RefTarget<JPH::Shape>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_Shape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RefTarget_JPH_Shape *JPH_RefTarget_JPH_Shape_DefaultConstructArray(size_t num_elems)
@@ -161,7 +171,11 @@ int JPH_RefTarget_JPH_Shape_sInternalGetRefCountOffset(void)
 
 JPH_RefTarget_JPH_GroupFilter *JPH_RefTarget_JPH_GroupFilter_DefaultConstruct(void)
 {
-    return (JPH_RefTarget_JPH_GroupFilter *)new JPH::RefTarget<JPH::GroupFilter>(JPH::RefTarget<JPH::GroupFilter>());
+    using _mrbind_T = JPH::RefTarget<JPH::GroupFilter>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_GroupFilter*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RefTarget_JPH_GroupFilter *JPH_RefTarget_JPH_GroupFilter_DefaultConstructArray(size_t num_elems)
@@ -232,7 +246,11 @@ int JPH_RefTarget_JPH_GroupFilter_sInternalGetRefCountOffset(void)
 
 JPH_RefTarget_JPH_PhysicsMaterial *JPH_RefTarget_JPH_PhysicsMaterial_DefaultConstruct(void)
 {
-    return (JPH_RefTarget_JPH_PhysicsMaterial *)new JPH::RefTarget<JPH::PhysicsMaterial>(JPH::RefTarget<JPH::PhysicsMaterial>());
+    using _mrbind_T = JPH::RefTarget<JPH::PhysicsMaterial>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_PhysicsMaterial*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RefTarget_JPH_PhysicsMaterial *JPH_RefTarget_JPH_PhysicsMaterial_DefaultConstructArray(size_t num_elems)
@@ -303,7 +321,11 @@ int JPH_RefTarget_JPH_PhysicsMaterial_sInternalGetRefCountOffset(void)
 
 JPH_RefTarget_JPH_ConstraintSettings *JPH_RefTarget_JPH_ConstraintSettings_DefaultConstruct(void)
 {
-    return (JPH_RefTarget_JPH_ConstraintSettings *)new JPH::RefTarget<JPH::ConstraintSettings>(JPH::RefTarget<JPH::ConstraintSettings>());
+    using _mrbind_T = JPH::RefTarget<JPH::ConstraintSettings>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_ConstraintSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RefTarget_JPH_ConstraintSettings *JPH_RefTarget_JPH_ConstraintSettings_DefaultConstructArray(size_t num_elems)
@@ -374,7 +396,11 @@ int JPH_RefTarget_JPH_ConstraintSettings_sInternalGetRefCountOffset(void)
 
 JPH_RefTarget_JPH_Constraint *JPH_RefTarget_JPH_Constraint_DefaultConstruct(void)
 {
-    return (JPH_RefTarget_JPH_Constraint *)new JPH::RefTarget<JPH::Constraint>(JPH::RefTarget<JPH::Constraint>());
+    using _mrbind_T = JPH::RefTarget<JPH::Constraint>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_Constraint*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RefTarget_JPH_Constraint *JPH_RefTarget_JPH_Constraint_DefaultConstructArray(size_t num_elems)
@@ -445,7 +471,11 @@ int JPH_RefTarget_JPH_Constraint_sInternalGetRefCountOffset(void)
 
 JPH_RefTarget_JPH_SoftBodySharedSettings *JPH_RefTarget_JPH_SoftBodySharedSettings_DefaultConstruct(void)
 {
-    return (JPH_RefTarget_JPH_SoftBodySharedSettings *)new JPH::RefTarget<JPH::SoftBodySharedSettings>(JPH::RefTarget<JPH::SoftBodySharedSettings>());
+    using _mrbind_T = JPH::RefTarget<JPH::SoftBodySharedSettings>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_SoftBodySharedSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RefTarget_JPH_SoftBodySharedSettings *JPH_RefTarget_JPH_SoftBodySharedSettings_DefaultConstructArray(size_t num_elems)
@@ -516,7 +546,11 @@ int JPH_RefTarget_JPH_SoftBodySharedSettings_sInternalGetRefCountOffset(void)
 
 JPH_RefTarget_JPH_CharacterBaseSettings *JPH_RefTarget_JPH_CharacterBaseSettings_DefaultConstruct(void)
 {
-    return (JPH_RefTarget_JPH_CharacterBaseSettings *)new JPH::RefTarget<JPH::CharacterBaseSettings>(JPH::RefTarget<JPH::CharacterBaseSettings>());
+    using _mrbind_T = JPH::RefTarget<JPH::CharacterBaseSettings>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_CharacterBaseSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RefTarget_JPH_CharacterBaseSettings *JPH_RefTarget_JPH_CharacterBaseSettings_DefaultConstructArray(size_t num_elems)
@@ -587,7 +621,11 @@ int JPH_RefTarget_JPH_CharacterBaseSettings_sInternalGetRefCountOffset(void)
 
 JPH_RefTarget_JPH_CharacterBase *JPH_RefTarget_JPH_CharacterBase_DefaultConstruct(void)
 {
-    return (JPH_RefTarget_JPH_CharacterBase *)new JPH::RefTarget<JPH::CharacterBase>(JPH::RefTarget<JPH::CharacterBase>());
+    using _mrbind_T = JPH::RefTarget<JPH::CharacterBase>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_CharacterBase*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RefTarget_JPH_CharacterBase *JPH_RefTarget_JPH_CharacterBase_DefaultConstructArray(size_t num_elems)
@@ -658,7 +696,11 @@ int JPH_RefTarget_JPH_CharacterBase_sInternalGetRefCountOffset(void)
 
 JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_DefaultConstruct(void)
 {
-    return (JPH_RefTarget_JPH_PathConstraintPath *)new JPH::RefTarget<JPH::PathConstraintPath>(JPH::RefTarget<JPH::PathConstraintPath>());
+    using _mrbind_T = JPH::RefTarget<JPH::PathConstraintPath>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_PathConstraintPath*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_DefaultConstructArray(size_t num_elems)

@@ -22,7 +22,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 #include <type_traits>
 
@@ -715,7 +717,11 @@ size_t JPH_ConvexShape_SupportBuffer_GetSize_mData(void)
 
 JPH_ConvexShape_SupportBuffer *JPH_ConvexShape_SupportBuffer_DefaultConstruct(void)
 {
-    return (JPH_ConvexShape_SupportBuffer *)new JPH::ConvexShape::SupportBuffer(JPH::ConvexShape::SupportBuffer());
+    using _mrbind_T = JPH::ConvexShape::SupportBuffer;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ConvexShape_SupportBuffer*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ConvexShape_SupportBuffer *JPH_ConvexShape_SupportBuffer_DefaultConstructArray(size_t num_elems)

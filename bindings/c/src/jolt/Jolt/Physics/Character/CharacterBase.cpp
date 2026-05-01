@@ -16,7 +16,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -77,7 +79,11 @@ bool *JPH_CharacterBaseSettings_GetMutable_mEnhancedInternalEdgeRemoval(JPH_Char
 
 JPH_CharacterBaseSettings *JPH_CharacterBaseSettings_DefaultConstruct(void)
 {
-    return (JPH_CharacterBaseSettings *)new JPH::CharacterBaseSettings(JPH::CharacterBaseSettings());
+    using _mrbind_T = JPH::CharacterBaseSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CharacterBaseSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CharacterBaseSettings *JPH_CharacterBaseSettings_DefaultConstructArray(size_t num_elems)

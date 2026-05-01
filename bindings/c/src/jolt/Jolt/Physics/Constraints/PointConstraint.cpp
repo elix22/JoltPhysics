@@ -16,7 +16,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -132,7 +134,11 @@ uint64_t *JPH_PointConstraintSettings_GetMutable_mUserData(JPH_PointConstraintSe
 
 JPH_PointConstraintSettings *JPH_PointConstraintSettings_DefaultConstruct(void)
 {
-    return (JPH_PointConstraintSettings *)new JPH::PointConstraintSettings(JPH::PointConstraintSettings());
+    using _mrbind_T = JPH::PointConstraintSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_PointConstraintSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_PointConstraintSettings *JPH_PointConstraintSettings_DefaultConstructArray(size_t num_elems)

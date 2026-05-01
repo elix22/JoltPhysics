@@ -6,7 +6,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -17,7 +19,11 @@ const unsigned int *JPH_SubShapeID_Get_MaxBits(void)
 
 JPH_SubShapeID *JPH_SubShapeID_DefaultConstruct(void)
 {
-    return (JPH_SubShapeID *)new JPH::SubShapeID(JPH::SubShapeID());
+    using _mrbind_T = JPH::SubShapeID;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SubShapeID*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SubShapeID *JPH_SubShapeID_DefaultConstructArray(size_t num_elems)
@@ -176,7 +182,11 @@ bool Jolt_not_equal_JPH_SubShapeID(const JPH_SubShapeID *_this, const JPH_SubSha
 
 JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_DefaultConstruct(void)
 {
-    return (JPH_SubShapeIDCreator *)new JPH::SubShapeIDCreator(JPH::SubShapeIDCreator());
+    using _mrbind_T = JPH::SubShapeIDCreator;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SubShapeIDCreator*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_DefaultConstructArray(size_t num_elems)

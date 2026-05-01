@@ -6,7 +6,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -57,7 +59,11 @@ double *JPH_Double3_GetMutable_z(JPH_Double3 *_this)
 
 JPH_Double3 *JPH_Double3_DefaultConstruct(void)
 {
-    return (JPH_Double3 *)new JPH::Double3(JPH::Double3());
+    using _mrbind_T = JPH::Double3;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_Double3*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_Double3 *JPH_Double3_DefaultConstructArray(size_t num_elems)

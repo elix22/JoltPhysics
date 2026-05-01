@@ -24,7 +24,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -90,7 +92,11 @@ uint64_t *JPH_CapsuleShapeSettings_GetMutable_mUserData(JPH_CapsuleShapeSettings
 
 JPH_CapsuleShapeSettings *JPH_CapsuleShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_CapsuleShapeSettings *)new JPH::CapsuleShapeSettings(JPH::CapsuleShapeSettings());
+    using _mrbind_T = JPH::CapsuleShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CapsuleShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CapsuleShapeSettings *JPH_CapsuleShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -385,7 +391,11 @@ const int *JPH_CapsuleShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_CapsuleShape *JPH_CapsuleShape_DefaultConstruct(void)
 {
-    return (JPH_CapsuleShape *)new JPH::CapsuleShape(JPH::CapsuleShape());
+    using _mrbind_T = JPH::CapsuleShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CapsuleShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CapsuleShape *JPH_CapsuleShape_DefaultConstructArray(size_t num_elems)

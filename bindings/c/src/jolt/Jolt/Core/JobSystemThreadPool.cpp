@@ -9,13 +9,19 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <functional>
+#include <new>
 #include <stdexcept>
 
 
 JPH_JobSystemThreadPool *JPH_JobSystemThreadPool_DefaultConstruct(void)
 {
-    return (JPH_JobSystemThreadPool *)new JPH::JobSystemThreadPool(JPH::JobSystemThreadPool());
+    using _mrbind_T = JPH::JobSystemThreadPool;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_JobSystemThreadPool*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_JobSystemThreadPool *JPH_JobSystemThreadPool_DefaultConstructArray(size_t num_elems)

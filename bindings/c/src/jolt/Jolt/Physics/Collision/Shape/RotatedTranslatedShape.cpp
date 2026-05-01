@@ -24,7 +24,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -65,7 +67,11 @@ uint64_t *JPH_RotatedTranslatedShapeSettings_GetMutable_mUserData(JPH_RotatedTra
 
 JPH_RotatedTranslatedShapeSettings *JPH_RotatedTranslatedShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_RotatedTranslatedShapeSettings *)new JPH::RotatedTranslatedShapeSettings(JPH::RotatedTranslatedShapeSettings());
+    using _mrbind_T = JPH::RotatedTranslatedShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RotatedTranslatedShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RotatedTranslatedShapeSettings *JPH_RotatedTranslatedShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -352,7 +358,11 @@ const int *JPH_RotatedTranslatedShape_Get_cGetTrianglesMinTrianglesRequested(voi
 
 JPH_RotatedTranslatedShape *JPH_RotatedTranslatedShape_DefaultConstruct(void)
 {
-    return (JPH_RotatedTranslatedShape *)new JPH::RotatedTranslatedShape(JPH::RotatedTranslatedShape());
+    using _mrbind_T = JPH::RotatedTranslatedShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RotatedTranslatedShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RotatedTranslatedShape *JPH_RotatedTranslatedShape_DefaultConstructArray(size_t num_elems)

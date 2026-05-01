@@ -24,7 +24,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -55,7 +57,11 @@ uint64_t *JPH_OffsetCenterOfMassShapeSettings_GetMutable_mUserData(JPH_OffsetCen
 
 JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_OffsetCenterOfMassShapeSettings *)new JPH::OffsetCenterOfMassShapeSettings(JPH::OffsetCenterOfMassShapeSettings());
+    using _mrbind_T = JPH::OffsetCenterOfMassShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_OffsetCenterOfMassShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -340,7 +346,11 @@ const int *JPH_OffsetCenterOfMassShape_Get_cGetTrianglesMinTrianglesRequested(vo
 
 JPH_OffsetCenterOfMassShape *JPH_OffsetCenterOfMassShape_DefaultConstruct(void)
 {
-    return (JPH_OffsetCenterOfMassShape *)new JPH::OffsetCenterOfMassShape(JPH::OffsetCenterOfMassShape());
+    using _mrbind_T = JPH::OffsetCenterOfMassShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_OffsetCenterOfMassShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_OffsetCenterOfMassShape *JPH_OffsetCenterOfMassShape_DefaultConstructArray(size_t num_elems)

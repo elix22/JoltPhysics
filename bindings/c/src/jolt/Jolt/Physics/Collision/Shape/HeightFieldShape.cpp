@@ -22,7 +22,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -168,7 +170,11 @@ uint64_t *JPH_HeightFieldShapeSettings_GetMutable_mUserData(JPH_HeightFieldShape
 
 JPH_HeightFieldShapeSettings *JPH_HeightFieldShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_HeightFieldShapeSettings *)new JPH::HeightFieldShapeSettings(JPH::HeightFieldShapeSettings());
+    using _mrbind_T = JPH::HeightFieldShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_HeightFieldShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_HeightFieldShapeSettings *JPH_HeightFieldShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -425,7 +431,11 @@ const int *JPH_HeightFieldShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_HeightFieldShape *JPH_HeightFieldShape_DefaultConstruct(void)
 {
-    return (JPH_HeightFieldShape *)new JPH::HeightFieldShape(JPH::HeightFieldShape());
+    using _mrbind_T = JPH::HeightFieldShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_HeightFieldShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_HeightFieldShape *JPH_HeightFieldShape_DefaultConstructArray(size_t num_elems)

@@ -12,7 +12,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -108,7 +110,11 @@ JPH_BodyID *JPH_CollideShapeResult_GetMutable_mBodyID2(JPH_CollideShapeResult *_
 
 JPH_CollideShapeResult *JPH_CollideShapeResult_DefaultConstruct(void)
 {
-    return (JPH_CollideShapeResult *)new JPH::CollideShapeResult(JPH::CollideShapeResult());
+    using _mrbind_T = JPH::CollideShapeResult;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CollideShapeResult*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CollideShapeResult *JPH_CollideShapeResult_DefaultConstructArray(size_t num_elems)
@@ -323,7 +329,11 @@ JPH_Vec3 *JPH_CollideSettingsBase_GetMutable_mActiveEdgeMovementDirection(JPH_Co
 
 JPH_CollideSettingsBase *JPH_CollideSettingsBase_DefaultConstruct(void)
 {
-    return (JPH_CollideSettingsBase *)new JPH::CollideSettingsBase(JPH::CollideSettingsBase());
+    using _mrbind_T = JPH::CollideSettingsBase;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CollideSettingsBase*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CollideSettingsBase *JPH_CollideSettingsBase_DefaultConstructArray(size_t num_elems)
@@ -554,7 +564,11 @@ JPH_Vec3 *JPH_CollideShapeSettings_GetMutable_mActiveEdgeMovementDirection(JPH_C
 
 JPH_CollideShapeSettings *JPH_CollideShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_CollideShapeSettings *)new JPH::CollideShapeSettings(JPH::CollideShapeSettings());
+    using _mrbind_T = JPH::CollideShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CollideShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CollideShapeSettings *JPH_CollideShapeSettings_DefaultConstructArray(size_t num_elems)

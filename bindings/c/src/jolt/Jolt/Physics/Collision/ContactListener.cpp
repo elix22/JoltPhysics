@@ -11,7 +11,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -82,7 +84,11 @@ JPH_SubShapeID *JPH_ContactManifold_GetMutable_mSubShapeID2(JPH_ContactManifold 
 
 JPH_ContactManifold *JPH_ContactManifold_DefaultConstruct(void)
 {
-    return (JPH_ContactManifold *)new JPH::ContactManifold(JPH::ContactManifold());
+    using _mrbind_T = JPH::ContactManifold;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ContactManifold*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ContactManifold *JPH_ContactManifold_DefaultConstructArray(size_t num_elems)
@@ -262,7 +268,11 @@ JPH_Vec3 *JPH_ContactSettings_GetMutable_mRelativeAngularSurfaceVelocity(JPH_Con
 
 JPH_ContactSettings *JPH_ContactSettings_DefaultConstruct(void)
 {
-    return (JPH_ContactSettings *)new JPH::ContactSettings(JPH::ContactSettings());
+    using _mrbind_T = JPH::ContactSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ContactSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ContactSettings *JPH_ContactSettings_DefaultConstructArray(size_t num_elems)
@@ -321,7 +331,11 @@ JPH_ContactSettings *JPH_ContactSettings_AssignFromAnother(JPH_ContactSettings *
 
 JPH_ContactListener *JPH_ContactListener_DefaultConstruct(void)
 {
-    return (JPH_ContactListener *)new JPH::ContactListener(JPH::ContactListener());
+    using _mrbind_T = JPH::ContactListener;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ContactListener*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ContactListener *JPH_ContactListener_DefaultConstructArray(size_t num_elems)

@@ -10,13 +10,19 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
 JPH_PathConstraintPathHermite *JPH_PathConstraintPathHermite_DefaultConstruct(void)
 {
-    return (JPH_PathConstraintPathHermite *)new JPH::PathConstraintPathHermite(JPH::PathConstraintPathHermite());
+    using _mrbind_T = JPH::PathConstraintPathHermite;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_PathConstraintPathHermite*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_PathConstraintPathHermite *JPH_PathConstraintPathHermite_DefaultConstructArray(size_t num_elems)
@@ -322,7 +328,11 @@ JPH_Vec3 *JPH_PathConstraintPathHermite_Point_GetMutable_mNormal(JPH_PathConstra
 
 JPH_PathConstraintPathHermite_Point *JPH_PathConstraintPathHermite_Point_DefaultConstruct(void)
 {
-    return (JPH_PathConstraintPathHermite_Point *)new JPH::PathConstraintPathHermite::Point(JPH::PathConstraintPathHermite::Point());
+    using _mrbind_T = JPH::PathConstraintPathHermite::Point;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_PathConstraintPathHermite_Point*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_PathConstraintPathHermite_Point *JPH_PathConstraintPathHermite_Point_DefaultConstructArray(size_t num_elems)

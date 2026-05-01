@@ -24,7 +24,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -75,7 +77,11 @@ uint64_t *JPH_SphereShapeSettings_GetMutable_mUserData(JPH_SphereShapeSettings *
 
 JPH_SphereShapeSettings *JPH_SphereShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_SphereShapeSettings *)new JPH::SphereShapeSettings(JPH::SphereShapeSettings());
+    using _mrbind_T = JPH::SphereShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SphereShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SphereShapeSettings *JPH_SphereShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -359,7 +365,11 @@ const int *JPH_SphereShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_SphereShape *JPH_SphereShape_DefaultConstruct(void)
 {
-    return (JPH_SphereShape *)new JPH::SphereShape(JPH::SphereShape());
+    using _mrbind_T = JPH::SphereShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SphereShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SphereShape *JPH_SphereShape_DefaultConstructArray(size_t num_elems)

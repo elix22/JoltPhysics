@@ -17,7 +17,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -233,7 +235,11 @@ uint64_t *JPH_SliderConstraintSettings_GetMutable_mUserData(JPH_SliderConstraint
 
 JPH_SliderConstraintSettings *JPH_SliderConstraintSettings_DefaultConstruct(void)
 {
-    return (JPH_SliderConstraintSettings *)new JPH::SliderConstraintSettings(JPH::SliderConstraintSettings());
+    using _mrbind_T = JPH::SliderConstraintSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SliderConstraintSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SliderConstraintSettings *JPH_SliderConstraintSettings_DefaultConstructArray(size_t num_elems)

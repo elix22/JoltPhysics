@@ -8,7 +8,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -24,7 +26,11 @@ const unsigned int *JPH_ObjectLayerPairFilterMask_Get_cMask(void)
 
 JPH_ObjectLayerPairFilterMask *JPH_ObjectLayerPairFilterMask_DefaultConstruct(void)
 {
-    return (JPH_ObjectLayerPairFilterMask *)new JPH::ObjectLayerPairFilterMask(JPH::ObjectLayerPairFilterMask());
+    using _mrbind_T = JPH::ObjectLayerPairFilterMask;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ObjectLayerPairFilterMask*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ObjectLayerPairFilterMask *JPH_ObjectLayerPairFilterMask_DefaultConstructArray(size_t num_elems)

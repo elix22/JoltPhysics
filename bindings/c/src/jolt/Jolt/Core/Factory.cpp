@@ -6,7 +6,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -27,7 +29,11 @@ JPH_Factory **JPH_Factory_GetMutable_sInstance(void)
 
 JPH_Factory *JPH_Factory_DefaultConstruct(void)
 {
-    return (JPH_Factory *)new JPH::Factory(JPH::Factory());
+    using _mrbind_T = JPH::Factory;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_Factory*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_Factory *JPH_Factory_DefaultConstructArray(size_t num_elems)

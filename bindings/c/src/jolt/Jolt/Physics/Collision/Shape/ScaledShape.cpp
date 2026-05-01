@@ -24,7 +24,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -55,7 +57,11 @@ uint64_t *JPH_ScaledShapeSettings_GetMutable_mUserData(JPH_ScaledShapeSettings *
 
 JPH_ScaledShapeSettings *JPH_ScaledShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_ScaledShapeSettings *)new JPH::ScaledShapeSettings(JPH::ScaledShapeSettings());
+    using _mrbind_T = JPH::ScaledShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ScaledShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ScaledShapeSettings *JPH_ScaledShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -340,7 +346,11 @@ const int *JPH_ScaledShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_ScaledShape *JPH_ScaledShape_DefaultConstruct(void)
 {
-    return (JPH_ScaledShape *)new JPH::ScaledShape(JPH::ScaledShape());
+    using _mrbind_T = JPH::ScaledShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ScaledShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ScaledShape *JPH_ScaledShape_DefaultConstructArray(size_t num_elems)

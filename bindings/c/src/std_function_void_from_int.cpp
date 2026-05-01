@@ -5,13 +5,19 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <functional>
+#include <new>
 #include <stdexcept>
 
 
 Jolt_std_function_void_from_int *Jolt_std_function_void_from_int_DefaultConstruct(void)
 {
-    return (Jolt_std_function_void_from_int *)new std::function<void(int)>(std::function<void(int)>());
+    using _mrbind_T = std::function<void(int)>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (Jolt_std_function_void_from_int*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 Jolt_std_function_void_from_int *Jolt_std_function_void_from_int_DefaultConstructArray(size_t num_elems)

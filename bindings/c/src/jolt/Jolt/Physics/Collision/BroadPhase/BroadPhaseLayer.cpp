@@ -7,13 +7,19 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
 JPH_BroadPhaseLayer *JPH_BroadPhaseLayer_DefaultConstruct(void)
 {
-    return (JPH_BroadPhaseLayer *)new JPH::BroadPhaseLayer(JPH::BroadPhaseLayer());
+    using _mrbind_T = JPH::BroadPhaseLayer;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_BroadPhaseLayer*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_BroadPhaseLayer *JPH_BroadPhaseLayer_DefaultConstructArray(size_t num_elems)
@@ -155,7 +161,11 @@ JPH_BroadPhaseLayerInterface *JPH_BroadPhaseLayerInterface_MutableStaticDowncast
 
 JPH_ObjectVsBroadPhaseLayerFilter *JPH_ObjectVsBroadPhaseLayerFilter_DefaultConstruct(void)
 {
-    return (JPH_ObjectVsBroadPhaseLayerFilter *)new JPH::ObjectVsBroadPhaseLayerFilter(JPH::ObjectVsBroadPhaseLayerFilter());
+    using _mrbind_T = JPH::ObjectVsBroadPhaseLayerFilter;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ObjectVsBroadPhaseLayerFilter*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ObjectVsBroadPhaseLayerFilter *JPH_ObjectVsBroadPhaseLayerFilter_DefaultConstructArray(size_t num_elems)
@@ -221,7 +231,11 @@ bool JPH_ObjectVsBroadPhaseLayerFilter_ShouldCollide(const JPH_ObjectVsBroadPhas
 
 JPH_BroadPhaseLayerFilter *JPH_BroadPhaseLayerFilter_DefaultConstruct(void)
 {
-    return (JPH_BroadPhaseLayerFilter *)new JPH::BroadPhaseLayerFilter(JPH::BroadPhaseLayerFilter());
+    using _mrbind_T = JPH::BroadPhaseLayerFilter;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_BroadPhaseLayerFilter*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_BroadPhaseLayerFilter *JPH_BroadPhaseLayerFilter_DefaultConstructArray(size_t num_elems)

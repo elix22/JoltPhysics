@@ -22,7 +22,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -78,7 +80,11 @@ uint64_t *JPH_PlaneShapeSettings_GetMutable_mUserData(JPH_PlaneShapeSettings *_t
 
 JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_PlaneShapeSettings *)new JPH::PlaneShapeSettings(JPH::PlaneShapeSettings());
+    using _mrbind_T = JPH::PlaneShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_PlaneShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -329,7 +335,11 @@ const int *JPH_PlaneShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_PlaneShape *JPH_PlaneShape_DefaultConstruct(void)
 {
-    return (JPH_PlaneShape *)new JPH::PlaneShape(JPH::PlaneShape());
+    using _mrbind_T = JPH::PlaneShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_PlaneShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_PlaneShape *JPH_PlaneShape_DefaultConstructArray(size_t num_elems)

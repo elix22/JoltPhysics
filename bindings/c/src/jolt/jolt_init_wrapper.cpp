@@ -8,13 +8,19 @@
 #include <jolt_init_wrapper.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
 JoltHelpers *JoltHelpers_DefaultConstruct(void)
 {
-    return (JoltHelpers *)new JoltHelpers(JoltHelpers());
+    using _mrbind_T = JoltHelpers;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JoltHelpers*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JoltHelpers *JoltHelpers_DefaultConstructArray(size_t num_elems)

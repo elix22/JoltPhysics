@@ -7,7 +7,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -161,7 +163,11 @@ JPH_JobSystem *JPH_JobSystem_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCo
 
 JPH_JobSystem_JobHandle *JPH_JobSystem_JobHandle_DefaultConstruct(void)
 {
-    return (JPH_JobSystem_JobHandle *)new JPH::JobSystem::JobHandle(JPH::JobSystem::JobHandle());
+    using _mrbind_T = JPH::JobSystem::JobHandle;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_JobSystem_JobHandle*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_JobSystem_JobHandle *JPH_JobSystem_JobHandle_DefaultConstructArray(size_t num_elems)

@@ -10,7 +10,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -31,7 +33,11 @@ JPH_BodyID *JPH_ShapeFilter_GetMutable_mBodyID2(JPH_ShapeFilter *_this)
 
 JPH_ShapeFilter *JPH_ShapeFilter_DefaultConstruct(void)
 {
-    return (JPH_ShapeFilter *)new JPH::ShapeFilter(JPH::ShapeFilter());
+    using _mrbind_T = JPH::ShapeFilter;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ShapeFilter*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ShapeFilter *JPH_ShapeFilter_DefaultConstructArray(size_t num_elems)

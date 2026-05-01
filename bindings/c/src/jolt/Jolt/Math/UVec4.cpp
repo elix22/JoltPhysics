@@ -7,14 +7,20 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <iostream>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
 JPH_UVec4 *JPH_UVec4_DefaultConstruct(void)
 {
-    return (JPH_UVec4 *)new JPH::UVec4(JPH::UVec4());
+    using _mrbind_T = JPH::UVec4;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_UVec4*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_UVec4 *JPH_UVec4_DefaultConstructArray(size_t num_elems)

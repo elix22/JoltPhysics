@@ -10,14 +10,20 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <iostream>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
 JPH_Mat44 *JPH_Mat44_DefaultConstruct(void)
 {
-    return (JPH_Mat44 *)new JPH::Mat44(JPH::Mat44());
+    using _mrbind_T = JPH::Mat44;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_Mat44*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_Mat44 *JPH_Mat44_DefaultConstructArray(size_t num_elems)

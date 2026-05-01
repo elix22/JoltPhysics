@@ -16,7 +16,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -828,7 +830,11 @@ JPH_Vec3 *JPH_ShapeCastSettings_GetMutable_mActiveEdgeMovementDirection(JPH_Shap
 
 JPH_ShapeCastSettings *JPH_ShapeCastSettings_DefaultConstruct(void)
 {
-    return (JPH_ShapeCastSettings *)new JPH::ShapeCastSettings(JPH::ShapeCastSettings());
+    using _mrbind_T = JPH::ShapeCastSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ShapeCastSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ShapeCastSettings *JPH_ShapeCastSettings_DefaultConstructArray(size_t num_elems)
@@ -1103,7 +1109,11 @@ JPH_BodyID *JPH_ShapeCastResult_GetMutable_mBodyID2(JPH_ShapeCastResult *_this)
 
 JPH_ShapeCastResult *JPH_ShapeCastResult_DefaultConstruct(void)
 {
-    return (JPH_ShapeCastResult *)new JPH::ShapeCastResult(JPH::ShapeCastResult());
+    using _mrbind_T = JPH::ShapeCastResult;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ShapeCastResult*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ShapeCastResult *JPH_ShapeCastResult_DefaultConstructArray(size_t num_elems)

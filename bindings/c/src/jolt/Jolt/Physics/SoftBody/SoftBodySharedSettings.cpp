@@ -10,14 +10,20 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 #include <type_traits>
 
 
 JPH_SoftBodySharedSettings *JPH_SoftBodySharedSettings_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings *)new JPH::SoftBodySharedSettings(JPH::SoftBodySharedSettings());
+    using _mrbind_T = JPH::SoftBodySharedSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings *JPH_SoftBodySharedSettings_DefaultConstructArray(size_t num_elems)
@@ -330,7 +336,11 @@ float *JPH_SoftBodySharedSettings_VertexAttributes_GetMutable_mLRAMaxDistanceMul
 
 JPH_SoftBodySharedSettings_VertexAttributes *JPH_SoftBodySharedSettings_VertexAttributes_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_VertexAttributes *)new JPH::SoftBodySharedSettings::VertexAttributes(JPH::SoftBodySharedSettings::VertexAttributes());
+    using _mrbind_T = JPH::SoftBodySharedSettings::VertexAttributes;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_VertexAttributes*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_VertexAttributes *JPH_SoftBodySharedSettings_VertexAttributes_DefaultConstructArray(size_t num_elems)
@@ -386,7 +396,11 @@ JPH_SoftBodySharedSettings_VertexAttributes *JPH_SoftBodySharedSettings_VertexAt
 
 JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_OptimizationResults *)new JPH::SoftBodySharedSettings::OptimizationResults(JPH::SoftBodySharedSettings::OptimizationResults());
+    using _mrbind_T = JPH::SoftBodySharedSettings::OptimizationResults;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_OptimizationResults*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstructArray(size_t num_elems)
@@ -457,7 +471,11 @@ float *JPH_SoftBodySharedSettings_Vertex_GetMutable_mInvMass(JPH_SoftBodySharedS
 
 JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_Vertex *)new JPH::SoftBodySharedSettings::Vertex(JPH::SoftBodySharedSettings::Vertex());
+    using _mrbind_T = JPH::SoftBodySharedSettings::Vertex;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_Vertex*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_DefaultConstructArray(size_t num_elems)
@@ -617,7 +635,11 @@ unsigned int *JPH_SoftBodySharedSettings_Face_GetMutable_mMaterialIndex(JPH_Soft
 
 JPH_SoftBodySharedSettings_Face *JPH_SoftBodySharedSettings_Face_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_Face *)new JPH::SoftBodySharedSettings::Face(JPH::SoftBodySharedSettings::Face());
+    using _mrbind_T = JPH::SoftBodySharedSettings::Face;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_Face*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_Face *JPH_SoftBodySharedSettings_Face_DefaultConstructArray(size_t num_elems)
@@ -798,7 +820,11 @@ float *JPH_SoftBodySharedSettings_Edge_GetMutable_mCompliance(JPH_SoftBodyShared
 
 JPH_SoftBodySharedSettings_Edge *JPH_SoftBodySharedSettings_Edge_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_Edge *)new JPH::SoftBodySharedSettings::Edge(JPH::SoftBodySharedSettings::Edge());
+    using _mrbind_T = JPH::SoftBodySharedSettings::Edge;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_Edge*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_Edge *JPH_SoftBodySharedSettings_Edge_DefaultConstructArray(size_t num_elems)
@@ -978,7 +1004,11 @@ float *JPH_SoftBodySharedSettings_DihedralBend_GetMutable_mInitialAngle(JPH_Soft
 
 JPH_SoftBodySharedSettings_DihedralBend *JPH_SoftBodySharedSettings_DihedralBend_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_DihedralBend *)new JPH::SoftBodySharedSettings::DihedralBend(JPH::SoftBodySharedSettings::DihedralBend());
+    using _mrbind_T = JPH::SoftBodySharedSettings::DihedralBend;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_DihedralBend*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_DihedralBend *JPH_SoftBodySharedSettings_DihedralBend_DefaultConstructArray(size_t num_elems)
@@ -1160,7 +1190,11 @@ float *JPH_SoftBodySharedSettings_Volume_GetMutable_mCompliance(JPH_SoftBodyShar
 
 JPH_SoftBodySharedSettings_Volume *JPH_SoftBodySharedSettings_Volume_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_Volume *)new JPH::SoftBodySharedSettings::Volume(JPH::SoftBodySharedSettings::Volume());
+    using _mrbind_T = JPH::SoftBodySharedSettings::Volume;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_Volume*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_Volume *JPH_SoftBodySharedSettings_Volume_DefaultConstructArray(size_t num_elems)
@@ -1322,7 +1356,11 @@ JPH_Mat44 *JPH_SoftBodySharedSettings_InvBind_GetMutable_mInvBind(JPH_SoftBodySh
 
 JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_InvBind *)new JPH::SoftBodySharedSettings::InvBind(JPH::SoftBodySharedSettings::InvBind());
+    using _mrbind_T = JPH::SoftBodySharedSettings::InvBind;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_InvBind*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_DefaultConstructArray(size_t num_elems)
@@ -1480,7 +1518,11 @@ float *JPH_SoftBodySharedSettings_SkinWeight_GetMutable_mWeight(JPH_SoftBodyShar
 
 JPH_SoftBodySharedSettings_SkinWeight *JPH_SoftBodySharedSettings_SkinWeight_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_SkinWeight *)new JPH::SoftBodySharedSettings::SkinWeight(JPH::SoftBodySharedSettings::SkinWeight());
+    using _mrbind_T = JPH::SoftBodySharedSettings::SkinWeight;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_SkinWeight*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_SkinWeight *JPH_SoftBodySharedSettings_SkinWeight_DefaultConstructArray(size_t num_elems)
@@ -1703,7 +1745,11 @@ unsigned int *JPH_SoftBodySharedSettings_Skinned_GetMutable_mNormalInfo(JPH_Soft
 
 JPH_SoftBodySharedSettings_Skinned *JPH_SoftBodySharedSettings_Skinned_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_Skinned *)new JPH::SoftBodySharedSettings::Skinned(JPH::SoftBodySharedSettings::Skinned());
+    using _mrbind_T = JPH::SoftBodySharedSettings::Skinned;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_Skinned*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_Skinned *JPH_SoftBodySharedSettings_Skinned_DefaultConstructArray(size_t num_elems)
@@ -1868,7 +1914,11 @@ float *JPH_SoftBodySharedSettings_LRA_GetMutable_mMaxDistance(JPH_SoftBodyShared
 
 JPH_SoftBodySharedSettings_LRA *JPH_SoftBodySharedSettings_LRA_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_LRA *)new JPH::SoftBodySharedSettings::LRA(JPH::SoftBodySharedSettings::LRA());
+    using _mrbind_T = JPH::SoftBodySharedSettings::LRA;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_LRA*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_LRA *JPH_SoftBodySharedSettings_LRA_DefaultConstructArray(size_t num_elems)
@@ -2072,7 +2122,11 @@ JPH_Quat *JPH_SoftBodySharedSettings_RodStretchShear_GetMutable_mBishop(JPH_Soft
 
 JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_RodStretchShear_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_RodStretchShear *)new JPH::SoftBodySharedSettings::RodStretchShear(JPH::SoftBodySharedSettings::RodStretchShear());
+    using _mrbind_T = JPH::SoftBodySharedSettings::RodStretchShear;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_RodStretchShear*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_RodStretchShear_DefaultConstructArray(size_t num_elems)
@@ -2247,7 +2301,11 @@ JPH_Quat *JPH_SoftBodySharedSettings_RodBendTwist_GetMutable_mOmega0(JPH_SoftBod
 
 JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_RodBendTwist_DefaultConstruct(void)
 {
-    return (JPH_SoftBodySharedSettings_RodBendTwist *)new JPH::SoftBodySharedSettings::RodBendTwist(JPH::SoftBodySharedSettings::RodBendTwist());
+    using _mrbind_T = JPH::SoftBodySharedSettings::RodBendTwist;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodySharedSettings_RodBendTwist*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_RodBendTwist_DefaultConstructArray(size_t num_elems)

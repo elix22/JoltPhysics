@@ -7,14 +7,20 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <iostream>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
 JPH_BVec16 *JPH_BVec16_DefaultConstruct(void)
 {
-    return (JPH_BVec16 *)new JPH::BVec16(JPH::BVec16());
+    using _mrbind_T = JPH::BVec16;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_BVec16*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_BVec16 *JPH_BVec16_DefaultConstructArray(size_t num_elems)

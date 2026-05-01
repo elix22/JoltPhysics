@@ -8,12 +8,18 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
+#include <new>
 #include <stdexcept>
 
 
 JPH_PhysicsMaterial *JPH_PhysicsMaterial_DefaultConstruct(void)
 {
-    return (JPH_PhysicsMaterial *)new JPH::PhysicsMaterial(JPH::PhysicsMaterial());
+    using _mrbind_T = JPH::PhysicsMaterial;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_PhysicsMaterial*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_PhysicsMaterial *JPH_PhysicsMaterial_DefaultConstructArray(size_t num_elems)

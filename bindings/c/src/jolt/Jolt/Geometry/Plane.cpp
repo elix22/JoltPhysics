@@ -11,13 +11,19 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
 JPH_Plane *JPH_Plane_DefaultConstruct(void)
 {
-    return (JPH_Plane *)new JPH::Plane(JPH::Plane());
+    using _mrbind_T = JPH::Plane;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_Plane*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_Plane *JPH_Plane_DefaultConstructArray(size_t num_elems)

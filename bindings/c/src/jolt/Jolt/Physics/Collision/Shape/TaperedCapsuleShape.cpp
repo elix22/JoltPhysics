@@ -22,7 +22,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -103,7 +105,11 @@ uint64_t *JPH_TaperedCapsuleShapeSettings_GetMutable_mUserData(JPH_TaperedCapsul
 
 JPH_TaperedCapsuleShapeSettings *JPH_TaperedCapsuleShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_TaperedCapsuleShapeSettings *)new JPH::TaperedCapsuleShapeSettings(JPH::TaperedCapsuleShapeSettings());
+    using _mrbind_T = JPH::TaperedCapsuleShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_TaperedCapsuleShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_TaperedCapsuleShapeSettings *JPH_TaperedCapsuleShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -399,7 +405,11 @@ const int *JPH_TaperedCapsuleShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_TaperedCapsuleShape *JPH_TaperedCapsuleShape_DefaultConstruct(void)
 {
-    return (JPH_TaperedCapsuleShape *)new JPH::TaperedCapsuleShape(JPH::TaperedCapsuleShape());
+    using _mrbind_T = JPH::TaperedCapsuleShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_TaperedCapsuleShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_TaperedCapsuleShape *JPH_TaperedCapsuleShape_DefaultConstructArray(size_t num_elems)

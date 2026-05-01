@@ -24,7 +24,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -105,7 +107,11 @@ uint64_t *JPH_TriangleShapeSettings_GetMutable_mUserData(JPH_TriangleShapeSettin
 
 JPH_TriangleShapeSettings *JPH_TriangleShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_TriangleShapeSettings *)new JPH::TriangleShapeSettings(JPH::TriangleShapeSettings());
+    using _mrbind_T = JPH::TriangleShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_TriangleShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_TriangleShapeSettings *JPH_TriangleShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -393,7 +399,11 @@ const int *JPH_TriangleShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_TriangleShape *JPH_TriangleShape_DefaultConstruct(void)
 {
-    return (JPH_TriangleShape *)new JPH::TriangleShape(JPH::TriangleShape());
+    using _mrbind_T = JPH::TriangleShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_TriangleShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_TriangleShape *JPH_TriangleShape_DefaultConstructArray(size_t num_elems)

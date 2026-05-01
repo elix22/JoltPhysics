@@ -21,7 +21,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -117,7 +119,11 @@ uint64_t *JPH_TaperedCylinderShapeSettings_GetMutable_mUserData(JPH_TaperedCylin
 
 JPH_TaperedCylinderShapeSettings *JPH_TaperedCylinderShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_TaperedCylinderShapeSettings *)new JPH::TaperedCylinderShapeSettings(JPH::TaperedCylinderShapeSettings());
+    using _mrbind_T = JPH::TaperedCylinderShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_TaperedCylinderShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_TaperedCylinderShapeSettings *JPH_TaperedCylinderShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -405,7 +411,11 @@ const int *JPH_TaperedCylinderShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_TaperedCylinderShape *JPH_TaperedCylinderShape_DefaultConstruct(void)
 {
-    return (JPH_TaperedCylinderShape *)new JPH::TaperedCylinderShape(JPH::TaperedCylinderShape());
+    using _mrbind_T = JPH::TaperedCylinderShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_TaperedCylinderShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_TaperedCylinderShape *JPH_TaperedCylinderShape_DefaultConstructArray(size_t num_elems)

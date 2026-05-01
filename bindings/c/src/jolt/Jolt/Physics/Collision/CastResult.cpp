@@ -8,7 +8,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -44,7 +46,11 @@ float *JPH_BroadPhaseCastResult_GetMutable_mFraction(JPH_BroadPhaseCastResult *_
 
 JPH_BroadPhaseCastResult *JPH_BroadPhaseCastResult_DefaultConstruct(void)
 {
-    return (JPH_BroadPhaseCastResult *)new JPH::BroadPhaseCastResult(JPH::BroadPhaseCastResult());
+    using _mrbind_T = JPH::BroadPhaseCastResult;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_BroadPhaseCastResult*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_BroadPhaseCastResult *JPH_BroadPhaseCastResult_DefaultConstructArray(size_t num_elems)
@@ -227,7 +233,11 @@ float *JPH_RayCastResult_GetMutable_mFraction(JPH_RayCastResult *_this)
 
 JPH_RayCastResult *JPH_RayCastResult_DefaultConstruct(void)
 {
-    return (JPH_RayCastResult *)new JPH::RayCastResult(JPH::RayCastResult());
+    using _mrbind_T = JPH::RayCastResult;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RayCastResult*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RayCastResult *JPH_RayCastResult_DefaultConstructArray(size_t num_elems)

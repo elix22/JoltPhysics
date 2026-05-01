@@ -9,14 +9,20 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <iostream>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
 JPH_Vec3 *JPH_Vec3_DefaultConstruct(void)
 {
-    return (JPH_Vec3 *)new JPH::Vec3(JPH::Vec3());
+    using _mrbind_T = JPH::Vec3;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_Vec3*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_Vec3 *JPH_Vec3_DefaultConstructArray(size_t num_elems)

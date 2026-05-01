@@ -31,7 +31,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -327,7 +329,11 @@ bool *JPH_CharacterVirtualSettings_GetMutable_mEnhancedInternalEdgeRemoval(JPH_C
 
 JPH_CharacterVirtualSettings *JPH_CharacterVirtualSettings_DefaultConstruct(void)
 {
-    return (JPH_CharacterVirtualSettings *)new JPH::CharacterVirtualSettings(JPH::CharacterVirtualSettings());
+    using _mrbind_T = JPH::CharacterVirtualSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CharacterVirtualSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CharacterVirtualSettings *JPH_CharacterVirtualSettings_DefaultConstructArray(size_t num_elems)
@@ -560,7 +566,11 @@ bool *JPH_CharacterContactSettings_GetMutable_mCanReceiveImpulses(JPH_CharacterC
 
 JPH_CharacterContactSettings *JPH_CharacterContactSettings_DefaultConstruct(void)
 {
-    return (JPH_CharacterContactSettings *)new JPH::CharacterContactSettings(JPH::CharacterContactSettings());
+    using _mrbind_T = JPH::CharacterContactSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CharacterContactSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CharacterContactSettings *JPH_CharacterContactSettings_DefaultConstructArray(size_t num_elems)
@@ -612,7 +622,11 @@ JPH_CharacterContactSettings *JPH_CharacterContactSettings_AssignFromAnother(JPH
 
 JPH_CharacterContactListener *JPH_CharacterContactListener_DefaultConstruct(void)
 {
-    return (JPH_CharacterContactListener *)new JPH::CharacterContactListener(JPH::CharacterContactListener());
+    using _mrbind_T = JPH::CharacterContactListener;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CharacterContactListener*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CharacterContactListener *JPH_CharacterContactListener_DefaultConstructArray(size_t num_elems)
@@ -830,7 +844,11 @@ JPH_CharacterVsCharacterCollision *JPH_CharacterVsCharacterCollision_MutableStat
 
 JPH_CharacterVsCharacterCollisionSimple *JPH_CharacterVsCharacterCollisionSimple_DefaultConstruct(void)
 {
-    return (JPH_CharacterVsCharacterCollisionSimple *)new JPH::CharacterVsCharacterCollisionSimple(JPH::CharacterVsCharacterCollisionSimple());
+    using _mrbind_T = JPH::CharacterVsCharacterCollisionSimple;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CharacterVsCharacterCollisionSimple*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CharacterVsCharacterCollisionSimple *JPH_CharacterVsCharacterCollisionSimple_DefaultConstructArray(size_t num_elems)
@@ -1651,7 +1669,11 @@ JPH_Vec3 *JPH_CharacterVirtual_ExtendedUpdateSettings_GetMutable_mWalkStairsStep
 
 JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_DefaultConstruct(void)
 {
-    return (JPH_CharacterVirtual_ExtendedUpdateSettings *)new JPH::CharacterVirtual::ExtendedUpdateSettings(JPH::CharacterVirtual::ExtendedUpdateSettings());
+    using _mrbind_T = JPH::CharacterVirtual::ExtendedUpdateSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CharacterVirtual_ExtendedUpdateSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_DefaultConstructArray(size_t num_elems)
@@ -1752,7 +1774,11 @@ JPH_SubShapeID *JPH_CharacterVirtual_ContactKey_GetMutable_mSubShapeIDB(JPH_Char
 
 JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_DefaultConstruct(void)
 {
-    return (JPH_CharacterVirtual_ContactKey *)new JPH::CharacterVirtual::ContactKey(JPH::CharacterVirtual::ContactKey());
+    using _mrbind_T = JPH::CharacterVirtual::ContactKey;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CharacterVirtual_ContactKey*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_DefaultConstructArray(size_t num_elems)
@@ -2073,7 +2099,11 @@ JPH_SubShapeID *JPH_CharacterVirtual_Contact_GetMutable_mSubShapeIDB(JPH_Charact
 
 JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_DefaultConstruct(void)
 {
-    return (JPH_CharacterVirtual_Contact *)new JPH::CharacterVirtual::Contact(JPH::CharacterVirtual::Contact());
+    using _mrbind_T = JPH::CharacterVirtual::Contact;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CharacterVirtual_Contact*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_DefaultConstructArray(size_t num_elems)

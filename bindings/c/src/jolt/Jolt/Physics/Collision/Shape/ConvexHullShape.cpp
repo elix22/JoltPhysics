@@ -23,7 +23,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -104,7 +106,11 @@ uint64_t *JPH_ConvexHullShapeSettings_GetMutable_mUserData(JPH_ConvexHullShapeSe
 
 JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_ConvexHullShapeSettings *)new JPH::ConvexHullShapeSettings(JPH::ConvexHullShapeSettings());
+    using _mrbind_T = JPH::ConvexHullShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ConvexHullShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -396,7 +402,11 @@ const int *JPH_ConvexHullShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_ConvexHullShape *JPH_ConvexHullShape_DefaultConstruct(void)
 {
-    return (JPH_ConvexHullShape *)new JPH::ConvexHullShape(JPH::ConvexHullShape());
+    using _mrbind_T = JPH::ConvexHullShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ConvexHullShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ConvexHullShape *JPH_ConvexHullShape_DefaultConstructArray(size_t num_elems)

@@ -17,7 +17,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 #include <type_traits>
 
@@ -219,7 +221,11 @@ uint64_t *JPH_SixDOFConstraintSettings_GetMutable_mUserData(JPH_SixDOFConstraint
 
 JPH_SixDOFConstraintSettings *JPH_SixDOFConstraintSettings_DefaultConstruct(void)
 {
-    return (JPH_SixDOFConstraintSettings *)new JPH::SixDOFConstraintSettings(JPH::SixDOFConstraintSettings());
+    using _mrbind_T = JPH::SixDOFConstraintSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SixDOFConstraintSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SixDOFConstraintSettings *JPH_SixDOFConstraintSettings_DefaultConstructArray(size_t num_elems)

@@ -7,8 +7,10 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <iostream>
 #include <memory>
+#include <new>
 #include <stdexcept>
 #include <type_traits>
 
@@ -30,7 +32,11 @@ size_t JPH_Matrix_2_2_GetSize_mCol(void)
 
 JPH_Matrix_2_2 *JPH_Matrix_2_2_DefaultConstruct(void)
 {
-    return (JPH_Matrix_2_2 *)new JPH::Matrix<2, 2>(JPH::Matrix<2, 2>());
+    using _mrbind_T = JPH::Matrix<2, 2>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_Matrix_2_2*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_Matrix_2_2 *JPH_Matrix_2_2_DefaultConstructArray(size_t num_elems)

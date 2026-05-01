@@ -11,7 +11,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -263,7 +265,11 @@ bool *JPH_SoftBodyCreationSettings_GetMutable_mFacesDoubleSided(JPH_SoftBodyCrea
 
 JPH_SoftBodyCreationSettings *JPH_SoftBodyCreationSettings_DefaultConstruct(void)
 {
-    return (JPH_SoftBodyCreationSettings *)new JPH::SoftBodyCreationSettings(JPH::SoftBodyCreationSettings());
+    using _mrbind_T = JPH::SoftBodyCreationSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_SoftBodyCreationSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_SoftBodyCreationSettings *JPH_SoftBodyCreationSettings_DefaultConstructArray(size_t num_elems)

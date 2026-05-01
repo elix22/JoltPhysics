@@ -18,7 +18,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -219,7 +221,11 @@ uint64_t *JPH_HingeConstraintSettings_GetMutable_mUserData(JPH_HingeConstraintSe
 
 JPH_HingeConstraintSettings *JPH_HingeConstraintSettings_DefaultConstruct(void)
 {
-    return (JPH_HingeConstraintSettings *)new JPH::HingeConstraintSettings(JPH::HingeConstraintSettings());
+    using _mrbind_T = JPH::HingeConstraintSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_HingeConstraintSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_HingeConstraintSettings *JPH_HingeConstraintSettings_DefaultConstructArray(size_t num_elems)

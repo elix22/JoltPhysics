@@ -20,7 +20,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -86,7 +88,11 @@ JPH_SubShapeIDCreator *JPH_TransformedShape_GetMutable_mSubShapeIDCreator(JPH_Tr
 
 JPH_TransformedShape *JPH_TransformedShape_DefaultConstruct(void)
 {
-    return (JPH_TransformedShape *)new JPH::TransformedShape(JPH::TransformedShape());
+    using _mrbind_T = JPH::TransformedShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_TransformedShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_TransformedShape *JPH_TransformedShape_DefaultConstructArray(size_t num_elems)

@@ -5,11 +5,17 @@
 #include <Jolt/Core/NonCopyable.h>
 
 #include <cstddef>
+#include <cstring>
+#include <new>
 
 
 JPH_NonCopyable *JPH_NonCopyable_DefaultConstruct(void)
 {
-    return (JPH_NonCopyable *)new JPH::NonCopyable(JPH::NonCopyable());
+    using _mrbind_T = JPH::NonCopyable;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_NonCopyable*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_NonCopyable *JPH_NonCopyable_DefaultConstructArray(size_t num_elems)

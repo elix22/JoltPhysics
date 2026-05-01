@@ -23,7 +23,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -44,7 +46,11 @@ uint64_t *JPH_MutableCompoundShapeSettings_GetMutable_mUserData(JPH_MutableCompo
 
 JPH_MutableCompoundShapeSettings *JPH_MutableCompoundShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_MutableCompoundShapeSettings *)new JPH::MutableCompoundShapeSettings(JPH::MutableCompoundShapeSettings());
+    using _mrbind_T = JPH::MutableCompoundShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_MutableCompoundShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_MutableCompoundShapeSettings *JPH_MutableCompoundShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -313,7 +319,11 @@ const int *JPH_MutableCompoundShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_MutableCompoundShape *JPH_MutableCompoundShape_DefaultConstruct(void)
 {
-    return (JPH_MutableCompoundShape *)new JPH::MutableCompoundShape(JPH::MutableCompoundShape());
+    using _mrbind_T = JPH::MutableCompoundShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_MutableCompoundShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_MutableCompoundShape *JPH_MutableCompoundShape_DefaultConstructArray(size_t num_elems)

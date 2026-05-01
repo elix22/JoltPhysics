@@ -23,7 +23,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -104,7 +106,11 @@ uint64_t *JPH_CylinderShapeSettings_GetMutable_mUserData(JPH_CylinderShapeSettin
 
 JPH_CylinderShapeSettings *JPH_CylinderShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_CylinderShapeSettings *)new JPH::CylinderShapeSettings(JPH::CylinderShapeSettings());
+    using _mrbind_T = JPH::CylinderShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CylinderShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CylinderShapeSettings *JPH_CylinderShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -391,7 +397,11 @@ const int *JPH_CylinderShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_CylinderShape *JPH_CylinderShape_DefaultConstruct(void)
 {
-    return (JPH_CylinderShape *)new JPH::CylinderShape(JPH::CylinderShape());
+    using _mrbind_T = JPH::CylinderShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CylinderShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CylinderShape *JPH_CylinderShape_DefaultConstructArray(size_t num_elems)

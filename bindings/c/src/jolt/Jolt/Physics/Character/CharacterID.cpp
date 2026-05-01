@@ -7,7 +7,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -18,7 +20,11 @@ const unsigned int *JPH_CharacterID_Get_cInvalidCharacterID(void)
 
 JPH_CharacterID *JPH_CharacterID_DefaultConstruct(void)
 {
-    return (JPH_CharacterID *)new JPH::CharacterID(JPH::CharacterID());
+    using _mrbind_T = JPH::CharacterID;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CharacterID*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CharacterID *JPH_CharacterID_DefaultConstructArray(size_t num_elems)

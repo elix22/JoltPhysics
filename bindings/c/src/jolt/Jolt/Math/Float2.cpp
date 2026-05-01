@@ -6,8 +6,10 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <iostream>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -43,7 +45,11 @@ float *JPH_Float2_GetMutable_y(JPH_Float2 *_this)
 
 JPH_Float2 *JPH_Float2_DefaultConstruct(void)
 {
-    return (JPH_Float2 *)new JPH::Float2(JPH::Float2());
+    using _mrbind_T = JPH::Float2;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_Float2*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_Float2 *JPH_Float2_DefaultConstructArray(size_t num_elems)

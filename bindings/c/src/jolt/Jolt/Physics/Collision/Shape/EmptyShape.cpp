@@ -22,7 +22,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -53,7 +55,11 @@ uint64_t *JPH_EmptyShapeSettings_GetMutable_mUserData(JPH_EmptyShapeSettings *_t
 
 JPH_EmptyShapeSettings *JPH_EmptyShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_EmptyShapeSettings *)new JPH::EmptyShapeSettings(JPH::EmptyShapeSettings());
+    using _mrbind_T = JPH::EmptyShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_EmptyShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_EmptyShapeSettings *JPH_EmptyShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -301,7 +307,11 @@ const int *JPH_EmptyShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_EmptyShape *JPH_EmptyShape_DefaultConstruct(void)
 {
-    return (JPH_EmptyShape *)new JPH::EmptyShape(JPH::EmptyShape());
+    using _mrbind_T = JPH::EmptyShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_EmptyShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_EmptyShape *JPH_EmptyShape_DefaultConstructArray(size_t num_elems)

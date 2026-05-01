@@ -16,7 +16,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -162,7 +164,11 @@ uint64_t *JPH_DistanceConstraintSettings_GetMutable_mUserData(JPH_DistanceConstr
 
 JPH_DistanceConstraintSettings *JPH_DistanceConstraintSettings_DefaultConstruct(void)
 {
-    return (JPH_DistanceConstraintSettings *)new JPH::DistanceConstraintSettings(JPH::DistanceConstraintSettings());
+    using _mrbind_T = JPH::DistanceConstraintSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_DistanceConstraintSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_DistanceConstraintSettings *JPH_DistanceConstraintSettings_DefaultConstructArray(size_t num_elems)

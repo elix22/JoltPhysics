@@ -22,7 +22,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -103,7 +105,11 @@ uint64_t *JPH_MeshShapeSettings_GetMutable_mUserData(JPH_MeshShapeSettings *_thi
 
 JPH_MeshShapeSettings *JPH_MeshShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_MeshShapeSettings *)new JPH::MeshShapeSettings(JPH::MeshShapeSettings());
+    using _mrbind_T = JPH::MeshShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_MeshShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_MeshShapeSettings *JPH_MeshShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -349,7 +355,11 @@ const int *JPH_MeshShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_MeshShape *JPH_MeshShape_DefaultConstruct(void)
 {
-    return (JPH_MeshShape *)new JPH::MeshShape(JPH::MeshShape());
+    using _mrbind_T = JPH::MeshShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_MeshShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_MeshShape *JPH_MeshShape_DefaultConstructArray(size_t num_elems)

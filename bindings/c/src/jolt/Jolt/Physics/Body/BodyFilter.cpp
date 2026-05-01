@@ -9,12 +9,18 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
+#include <new>
 #include <stdexcept>
 
 
 JPH_BodyFilter *JPH_BodyFilter_DefaultConstruct(void)
 {
-    return (JPH_BodyFilter *)new JPH::BodyFilter(JPH::BodyFilter());
+    using _mrbind_T = JPH::BodyFilter;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_BodyFilter*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_BodyFilter *JPH_BodyFilter_DefaultConstructArray(size_t num_elems)
@@ -183,7 +189,11 @@ bool JPH_IgnoreSingleBodyFilter_ShouldCollideLocked(const JPH_IgnoreSingleBodyFi
 
 JPH_IgnoreMultipleBodiesFilter *JPH_IgnoreMultipleBodiesFilter_DefaultConstruct(void)
 {
-    return (JPH_IgnoreMultipleBodiesFilter *)new JPH::IgnoreMultipleBodiesFilter(JPH::IgnoreMultipleBodiesFilter());
+    using _mrbind_T = JPH::IgnoreMultipleBodiesFilter;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_IgnoreMultipleBodiesFilter*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_IgnoreMultipleBodiesFilter *JPH_IgnoreMultipleBodiesFilter_DefaultConstructArray(size_t num_elems)

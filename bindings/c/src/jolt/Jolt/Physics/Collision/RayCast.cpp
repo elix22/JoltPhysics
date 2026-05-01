@@ -9,7 +9,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -35,7 +37,11 @@ JPH_Vec3 *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast_GetMutable_mDirection(JPH_
 
 JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast_DefaultConstruct(void)
 {
-    return (JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast *)new JPH::RayCastT<JPH::Vec3, JPH::Mat44, JPH::RayCast>(JPH::RayCastT<JPH::Vec3, JPH::Mat44, JPH::RayCast>());
+    using _mrbind_T = JPH::RayCastT<JPH::Vec3, JPH::Mat44, JPH::RayCast>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast_DefaultConstructArray(size_t num_elems)
@@ -204,7 +210,11 @@ JPH_Vec3 *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast_GetMutable_mDirection(JPH
 
 JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast_DefaultConstruct(void)
 {
-    return (JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast *)new JPH::RayCastT<JPH::Vec3, JPH::Mat44, JPH::RRayCast>(JPH::RayCastT<JPH::Vec3, JPH::Mat44, JPH::RRayCast>());
+    using _mrbind_T = JPH::RayCastT<JPH::Vec3, JPH::Mat44, JPH::RRayCast>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast_DefaultConstructArray(size_t num_elems)
@@ -373,7 +383,11 @@ JPH_Vec3 *JPH_RayCast_GetMutable_mDirection(JPH_RayCast *_this)
 
 JPH_RayCast *JPH_RayCast_DefaultConstruct(void)
 {
-    return (JPH_RayCast *)new JPH::RayCast(JPH::RayCast());
+    using _mrbind_T = JPH::RayCast;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RayCast*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RayCast *JPH_RayCast_DefaultConstructArray(size_t num_elems)
@@ -494,7 +508,11 @@ JPH_Vec3 *JPH_RRayCast_GetMutable_mDirection(JPH_RRayCast *_this)
 
 JPH_RRayCast *JPH_RRayCast_DefaultConstruct(void)
 {
-    return (JPH_RRayCast *)new JPH::RRayCast(JPH::RRayCast());
+    using _mrbind_T = JPH::RRayCast;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RRayCast*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RRayCast *JPH_RRayCast_DefaultConstructArray(size_t num_elems)
@@ -652,7 +670,11 @@ bool *JPH_RayCastSettings_GetMutable_mTreatConvexAsSolid(JPH_RayCastSettings *_t
 
 JPH_RayCastSettings *JPH_RayCastSettings_DefaultConstruct(void)
 {
-    return (JPH_RayCastSettings *)new JPH::RayCastSettings(JPH::RayCastSettings());
+    using _mrbind_T = JPH::RayCastSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RayCastSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RayCastSettings *JPH_RayCastSettings_DefaultConstructArray(size_t num_elems)

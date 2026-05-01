@@ -8,7 +8,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -34,7 +36,11 @@ JPH_UVec4 *JPH_RayInvDirection_GetMutable_mIsParallel(JPH_RayInvDirection *_this
 
 JPH_RayInvDirection *JPH_RayInvDirection_DefaultConstruct(void)
 {
-    return (JPH_RayInvDirection *)new JPH::RayInvDirection(JPH::RayInvDirection());
+    using _mrbind_T = JPH::RayInvDirection;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RayInvDirection*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_RayInvDirection *JPH_RayInvDirection_DefaultConstructArray(size_t num_elems)

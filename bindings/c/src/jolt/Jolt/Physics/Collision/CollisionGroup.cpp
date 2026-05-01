@@ -6,7 +6,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -27,7 +29,11 @@ const JPH_CollisionGroup *JPH_CollisionGroup_Get_sInvalid(void)
 
 JPH_CollisionGroup *JPH_CollisionGroup_DefaultConstruct(void)
 {
-    return (JPH_CollisionGroup *)new JPH::CollisionGroup(JPH::CollisionGroup());
+    using _mrbind_T = JPH::CollisionGroup;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CollisionGroup*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CollisionGroup *JPH_CollisionGroup_DefaultConstructArray(size_t num_elems)

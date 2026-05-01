@@ -9,8 +9,10 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <iostream>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -26,7 +28,11 @@ const double *JPH_DVec3_Get_cFalse(void)
 
 JPH_DVec3 *JPH_DVec3_DefaultConstruct(void)
 {
-    return (JPH_DVec3 *)new JPH::DVec3(JPH::DVec3());
+    using _mrbind_T = JPH::DVec3;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_DVec3*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_DVec3 *JPH_DVec3_DefaultConstructArray(size_t num_elems)

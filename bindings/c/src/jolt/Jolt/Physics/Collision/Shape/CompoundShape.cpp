@@ -21,7 +21,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -309,7 +311,11 @@ unsigned int *JPH_CompoundShapeSettings_SubShapeSettings_GetMutable_mUserData(JP
 
 JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_CompoundShapeSettings_SubShapeSettings *)new JPH::CompoundShapeSettings::SubShapeSettings(JPH::CompoundShapeSettings::SubShapeSettings());
+    using _mrbind_T = JPH::CompoundShapeSettings::SubShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CompoundShapeSettings_SubShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -896,7 +902,11 @@ bool *JPH_CompoundShape_SubShape_GetMutable_mIsRotationIdentity(JPH_CompoundShap
 
 JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_DefaultConstruct(void)
 {
-    return (JPH_CompoundShape_SubShape *)new JPH::CompoundShape::SubShape(JPH::CompoundShape::SubShape());
+    using _mrbind_T = JPH::CompoundShape::SubShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_CompoundShape_SubShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_DefaultConstructArray(size_t num_elems)

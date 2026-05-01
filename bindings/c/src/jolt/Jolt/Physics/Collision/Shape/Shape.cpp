@@ -22,7 +22,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 #include <type_traits>
 
@@ -583,7 +585,11 @@ size_t JPH_Shape_GetTrianglesContext_GetSize_mData(void)
 
 JPH_Shape_GetTrianglesContext *JPH_Shape_GetTrianglesContext_DefaultConstruct(void)
 {
-    return (JPH_Shape_GetTrianglesContext *)new JPH::Shape::GetTrianglesContext(JPH::Shape::GetTrianglesContext());
+    using _mrbind_T = JPH::Shape::GetTrianglesContext;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_Shape_GetTrianglesContext*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_Shape_GetTrianglesContext *JPH_Shape_GetTrianglesContext_DefaultConstructArray(size_t num_elems)

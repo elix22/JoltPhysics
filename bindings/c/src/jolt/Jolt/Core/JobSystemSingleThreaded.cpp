@@ -8,12 +8,18 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
+#include <new>
 #include <stdexcept>
 
 
 JPH_JobSystemSingleThreaded *JPH_JobSystemSingleThreaded_DefaultConstruct(void)
 {
-    return (JPH_JobSystemSingleThreaded *)new JPH::JobSystemSingleThreaded(JPH::JobSystemSingleThreaded());
+    using _mrbind_T = JPH::JobSystemSingleThreaded;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_JobSystemSingleThreaded*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_JobSystemSingleThreaded *JPH_JobSystemSingleThreaded_DefaultConstructArray(size_t num_elems)

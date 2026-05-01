@@ -13,7 +13,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -390,7 +392,11 @@ float *JPH_BodyCreationSettings_GetMutable_mInertiaMultiplier(JPH_BodyCreationSe
 
 JPH_BodyCreationSettings *JPH_BodyCreationSettings_DefaultConstruct(void)
 {
-    return (JPH_BodyCreationSettings *)new JPH::BodyCreationSettings(JPH::BodyCreationSettings());
+    using _mrbind_T = JPH::BodyCreationSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_BodyCreationSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_BodyCreationSettings *JPH_BodyCreationSettings_DefaultConstructArray(size_t num_elems)

@@ -27,13 +27,19 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
 JPH_BodyInterface *JPH_BodyInterface_DefaultConstruct(void)
 {
-    return (JPH_BodyInterface *)new JPH::BodyInterface(JPH::BodyInterface());
+    using _mrbind_T = JPH::BodyInterface;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_BodyInterface*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_BodyInterface *JPH_BodyInterface_DefaultConstructArray(size_t num_elems)

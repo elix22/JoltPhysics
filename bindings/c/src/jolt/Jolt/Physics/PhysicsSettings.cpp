@@ -6,7 +6,9 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -402,7 +404,11 @@ bool *JPH_PhysicsSettings_GetMutable_mCheckActiveEdges(JPH_PhysicsSettings *_thi
 
 JPH_PhysicsSettings *JPH_PhysicsSettings_DefaultConstruct(void)
 {
-    return (JPH_PhysicsSettings *)new JPH::PhysicsSettings(JPH::PhysicsSettings());
+    using _mrbind_T = JPH::PhysicsSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_PhysicsSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_PhysicsSettings *JPH_PhysicsSettings_DefaultConstructArray(size_t num_elems)

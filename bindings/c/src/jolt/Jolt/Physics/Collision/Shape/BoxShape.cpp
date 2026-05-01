@@ -23,7 +23,9 @@
 
 #include <cstddef>
 #include <cstdint>
+#include <cstring>
 #include <memory>
+#include <new>
 #include <stdexcept>
 
 
@@ -84,7 +86,11 @@ uint64_t *JPH_BoxShapeSettings_GetMutable_mUserData(JPH_BoxShapeSettings *_this)
 
 JPH_BoxShapeSettings *JPH_BoxShapeSettings_DefaultConstruct(void)
 {
-    return (JPH_BoxShapeSettings *)new JPH::BoxShapeSettings(JPH::BoxShapeSettings());
+    using _mrbind_T = JPH::BoxShapeSettings;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_BoxShapeSettings*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_BoxShapeSettings *JPH_BoxShapeSettings_DefaultConstructArray(size_t num_elems)
@@ -370,7 +376,11 @@ const int *JPH_BoxShape_Get_cGetTrianglesMinTrianglesRequested(void)
 
 JPH_BoxShape *JPH_BoxShape_DefaultConstruct(void)
 {
-    return (JPH_BoxShape *)new JPH::BoxShape(JPH::BoxShape());
+    using _mrbind_T = JPH::BoxShape;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_BoxShape*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_BoxShape *JPH_BoxShape_DefaultConstructArray(size_t num_elems)

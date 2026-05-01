@@ -7,12 +7,18 @@
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
+#include <cstring>
+#include <new>
 #include <stdexcept>
 
 
 JPH_ObjectLayerFilter *JPH_ObjectLayerFilter_DefaultConstruct(void)
 {
-    return (JPH_ObjectLayerFilter *)new JPH::ObjectLayerFilter(JPH::ObjectLayerFilter());
+    using _mrbind_T = JPH::ObjectLayerFilter;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ObjectLayerFilter*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ObjectLayerFilter *JPH_ObjectLayerFilter_DefaultConstructArray(size_t num_elems)
@@ -77,7 +83,11 @@ bool JPH_ObjectLayerFilter_ShouldCollide(const JPH_ObjectLayerFilter *_this, uns
 
 JPH_ObjectLayerPairFilter *JPH_ObjectLayerPairFilter_DefaultConstruct(void)
 {
-    return (JPH_ObjectLayerPairFilter *)new JPH::ObjectLayerPairFilter(JPH::ObjectLayerPairFilter());
+    using _mrbind_T = JPH::ObjectLayerPairFilter;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_ObjectLayerPairFilter*)(::new(_mrbind_ptr) _mrbind_T());
 }
 
 JPH_ObjectLayerPairFilter *JPH_ObjectLayerPairFilter_DefaultConstructArray(size_t num_elems)
