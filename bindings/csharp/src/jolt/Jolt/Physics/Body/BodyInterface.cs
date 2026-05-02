@@ -738,6 +738,20 @@ public static partial class JPH
             __JPH_BodyInterface_UnassignBodyIDs(_UnderlyingPtr, inBodyIDs.HasValue ? &__deref_inBodyIDs : null, inNumber, outBodies);
         }
 
+        public unsafe void UnassignBodyIDs(JPH.BodyID[] inBodyIDs, void **outBodies)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_UnassignBodyIDs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_UnassignBodyIDs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_BodyInterface_UnassignBodyIDs(_Underlying *_this, JPH.BodyID *inBodyIDs, int inNumber, void **outBodies);
+            fixed (JPH.BodyID* __p_inBodyIDs = inBodyIDs)
+            {
+                __JPH_BodyInterface_UnassignBodyIDs(_UnderlyingPtr, __p_inBodyIDs, inBodyIDs.Length, outBodies);
+            }
+        }
+
         /// Destroy a body.
         /// Make sure that you remove the body from the physics system using BodyInterface::RemoveBody before calling this function.
         /// Generated from method `JPH::BodyInterface::DestroyBody`.
@@ -768,6 +782,20 @@ public static partial class JPH
             extern static void __JPH_BodyInterface_DestroyBodies(_Underlying *_this, JPH.BodyID *inBodyIDs, int inNumber);
             JPH.BodyID __deref_inBodyIDs = inBodyIDs.GetValueOrDefault();
             __JPH_BodyInterface_DestroyBodies(_UnderlyingPtr, inBodyIDs.HasValue ? &__deref_inBodyIDs : null, inNumber);
+        }
+
+        public unsafe void DestroyBodies(JPH.BodyID[] inBodyIDs)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_DestroyBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_DestroyBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_BodyInterface_DestroyBodies(_Underlying *_this, JPH.BodyID *inBodyIDs, int inNumber);
+            fixed (JPH.BodyID* __p_inBodyIDs = inBodyIDs)
+            {
+                __JPH_BodyInterface_DestroyBodies(_UnderlyingPtr, __p_inBodyIDs, inBodyIDs.Length);
+            }
         }
 
         /// Add body to the physics system.
@@ -852,6 +880,20 @@ public static partial class JPH
             return __c_ret;
         }
 
+        public unsafe void *AddBodiesPrepare(JPH.BodyID[] ioBodies)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddBodiesPrepare", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddBodiesPrepare", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_BodyInterface_AddBodiesPrepare(_Underlying *_this, JPH.BodyID *ioBodies, int inNumber);
+            fixed (JPH.BodyID* __p_ioBodies = ioBodies)
+            {
+                return __JPH_BodyInterface_AddBodiesPrepare(_UnderlyingPtr, __p_ioBodies, ioBodies.Length);
+            }
+        }
+
         /// Finalize adding bodies to the PhysicsSystem, supply the return value of AddBodiesPrepare in inAddState.
         /// Please ensure that the ioBodies array passed to AddBodiesPrepare is unmodified and passed again to this function.
         /// Generated from method `JPH::BodyInterface::AddBodiesFinalize`.
@@ -867,6 +909,20 @@ public static partial class JPH
             JPH.BodyID __value_ioBodies = ioBodies is not null ? ioBodies.Value : default(JPH.BodyID);
             if (ioBodies is not null) ioBodies.Value = __value_ioBodies;
             __JPH_BodyInterface_AddBodiesFinalize(_UnderlyingPtr, ioBodies is not null ? &__value_ioBodies : null, inNumber, inAddState, inActivationMode);
+        }
+
+        public unsafe void AddBodiesFinalize(JPH.BodyID[] ioBodies, void *inAddState, JPH.EActivation inActivationMode)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddBodiesFinalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddBodiesFinalize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_BodyInterface_AddBodiesFinalize(_Underlying *_this, JPH.BodyID *ioBodies, int inNumber, void *inAddState, JPH.EActivation inActivationMode);
+            fixed (JPH.BodyID* __p_ioBodies = ioBodies)
+            {
+                __JPH_BodyInterface_AddBodiesFinalize(_UnderlyingPtr, __p_ioBodies, ioBodies.Length, inAddState, inActivationMode);
+            }
         }
 
         /// Abort adding bodies to the PhysicsSystem, supply the return value of AddBodiesPrepare in inAddState.
@@ -887,6 +943,20 @@ public static partial class JPH
             __JPH_BodyInterface_AddBodiesAbort(_UnderlyingPtr, ioBodies is not null ? &__value_ioBodies : null, inNumber, inAddState);
         }
 
+        public unsafe void AddBodiesAbort(JPH.BodyID[] ioBodies, void *inAddState)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_AddBodiesAbort", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_AddBodiesAbort", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_BodyInterface_AddBodiesAbort(_Underlying *_this, JPH.BodyID *ioBodies, int inNumber, void *inAddState);
+            fixed (JPH.BodyID* __p_ioBodies = ioBodies)
+            {
+                __JPH_BodyInterface_AddBodiesAbort(_UnderlyingPtr, __p_ioBodies, ioBodies.Length, inAddState);
+            }
+        }
+
         /// Remove inNumber bodies in ioBodies from the PhysicsSystem. Note that bodies need to be added to the physics system before they can be removed.
         /// ioBodies may be shuffled around by this function.
         /// Generated from method `JPH::BodyInterface::RemoveBodies`.
@@ -901,6 +971,20 @@ public static partial class JPH
             JPH.BodyID __value_ioBodies = ioBodies is not null ? ioBodies.Value : default(JPH.BodyID);
             if (ioBodies is not null) ioBodies.Value = __value_ioBodies;
             __JPH_BodyInterface_RemoveBodies(_UnderlyingPtr, ioBodies is not null ? &__value_ioBodies : null, inNumber);
+        }
+
+        public unsafe void RemoveBodies(JPH.BodyID[] ioBodies)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BodyInterface_RemoveBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyInterface_RemoveBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_BodyInterface_RemoveBodies(_Underlying *_this, JPH.BodyID *ioBodies, int inNumber);
+            fixed (JPH.BodyID* __p_ioBodies = ioBodies)
+            {
+                __JPH_BodyInterface_RemoveBodies(_UnderlyingPtr, __p_ioBodies, ioBodies.Length);
+            }
         }
 
         ///@name Activate / deactivate a body. Note that you need to add a body to the physics system before you can activate it.

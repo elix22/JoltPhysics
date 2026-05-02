@@ -457,4 +457,11 @@ EOF
     --helpers-namespace JPH \
     --force-namespace JPH \
     --intrinsic-ref-counted-base "JPH::RefTarget" \
+    --array-overload-param JPH_BodyInterface_AddBodiesPrepare ioBodies inNumber \
+    --array-overload-param JPH_BodyInterface_AddBodiesFinalize ioBodies inNumber \
+    --array-overload-param JPH_BodyInterface_AddBodiesAbort ioBodies inNumber \
+    --array-overload-param JPH_BodyInterface_RemoveBodies ioBodies inNumber \
+    --array-overload-param JPH_BodyInterface_DestroyBodies inBodyIDs inNumber \
+    --array-overload-param JPH_BodyInterface_UnassignBodyIDs inBodyIDs inNumber \
     "${EXTRA_GEN_FLAGS[@]}"
+
