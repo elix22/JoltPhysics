@@ -12,7 +12,38 @@
 #include <memory>
 #include <new>
 #include <stdexcept>
+#include <type_traits>
 
+
+const unsigned char *JPH_BVec16_Get_mU8(const JPH_BVec16 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BVec16 *)(_this)).mU8[0]);
+}
+
+unsigned char *JPH_BVec16_GetMutable_mU8(JPH_BVec16 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BVec16 *)(_this)).mU8[0]);
+}
+
+size_t JPH_BVec16_GetSize_mU8(void)
+{
+    return std::extent_v<decltype(JPH::BVec16::mU8)>;
+}
+
+const uint64_t *JPH_BVec16_Get_mU64(const JPH_BVec16 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BVec16 *)(_this)).mU64[0]);
+}
+
+uint64_t *JPH_BVec16_GetMutable_mU64(JPH_BVec16 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::BVec16 *)(_this)).mU64[0]);
+}
+
+size_t JPH_BVec16_GetSize_mU64(void)
+{
+    return std::extent_v<decltype(JPH::BVec16::mU64)>;
+}
 
 JPH_BVec16 *JPH_BVec16_DefaultConstruct(void)
 {

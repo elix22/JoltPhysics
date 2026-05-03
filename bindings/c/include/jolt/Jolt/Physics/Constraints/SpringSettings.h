@@ -50,6 +50,70 @@ JOLT_API void JPH_SpringSettings_Set_mMode(JPH_SpringSettings *_this, JPH_ESprin
 /// The reference to this object might be preserved as the return value.
 JOLT_API JPH_ESpringMode *JPH_SpringSettings_GetMutable_mMode(JPH_SpringSettings *_this);
 
+/// Valid when mSpringMode = ESpringMode::FrequencyAndDamping.
+/// If mFrequency > 0 the constraint will be soft and mFrequency specifies the oscillation frequency in Hz.
+/// If mFrequency <= 0, mDamping is ignored and the constraint will have hard limits (as hard as the time step / the number of velocity / position solver steps allows).
+/// Returns a pointer to a member variable of class `JPH::SpringSettings` named `mFrequency`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JPH_SpringSettings_Get_mFrequency(const JPH_SpringSettings *_this);
+
+/// Valid when mSpringMode = ESpringMode::FrequencyAndDamping.
+/// If mFrequency > 0 the constraint will be soft and mFrequency specifies the oscillation frequency in Hz.
+/// If mFrequency <= 0, mDamping is ignored and the constraint will have hard limits (as hard as the time step / the number of velocity / position solver steps allows).
+/// Modifies a member variable of class `JPH::SpringSettings` named `mFrequency`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `mFrequency`.
+JOLT_API void JPH_SpringSettings_Set_mFrequency(JPH_SpringSettings *_this, float value);
+
+/// Valid when mSpringMode = ESpringMode::FrequencyAndDamping.
+/// If mFrequency > 0 the constraint will be soft and mFrequency specifies the oscillation frequency in Hz.
+/// If mFrequency <= 0, mDamping is ignored and the constraint will have hard limits (as hard as the time step / the number of velocity / position solver steps allows).
+/// Returns a mutable pointer to a member variable of class `JPH::SpringSettings` named `mFrequency`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JPH_SpringSettings_GetMutable_mFrequency(JPH_SpringSettings *_this);
+
+/// Valid when mSpringMode = ESpringMode::StiffnessAndDamping.
+/// If mStiffness > 0 the constraint will be soft and mStiffness specifies the stiffness (k) in the spring equation F = -k * x - c * v for a linear or T = -k * theta - c * w for an angular spring.
+/// If mStiffness <= 0, mDamping is ignored and the constraint will have hard limits (as hard as the time step / the number of velocity / position solver steps allows).
+///
+/// Note that stiffness values are large numbers. To calculate a ballpark value for the needed stiffness you can use:
+/// force = stiffness * delta_spring_length = mass * gravity <=> stiffness = mass * gravity / delta_spring_length.
+/// So if your object weighs 1500 kg and the spring compresses by 2 meters, you need a stiffness in the order of 1500 * 9.81 / 2 ~ 7500 N/m.
+/// Returns a pointer to a member variable of class `JPH::SpringSettings` named `mStiffness`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JPH_SpringSettings_Get_mStiffness(const JPH_SpringSettings *_this);
+
+/// Valid when mSpringMode = ESpringMode::StiffnessAndDamping.
+/// If mStiffness > 0 the constraint will be soft and mStiffness specifies the stiffness (k) in the spring equation F = -k * x - c * v for a linear or T = -k * theta - c * w for an angular spring.
+/// If mStiffness <= 0, mDamping is ignored and the constraint will have hard limits (as hard as the time step / the number of velocity / position solver steps allows).
+///
+/// Note that stiffness values are large numbers. To calculate a ballpark value for the needed stiffness you can use:
+/// force = stiffness * delta_spring_length = mass * gravity <=> stiffness = mass * gravity / delta_spring_length.
+/// So if your object weighs 1500 kg and the spring compresses by 2 meters, you need a stiffness in the order of 1500 * 9.81 / 2 ~ 7500 N/m.
+/// Modifies a member variable of class `JPH::SpringSettings` named `mStiffness`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `mStiffness`.
+JOLT_API void JPH_SpringSettings_Set_mStiffness(JPH_SpringSettings *_this, float value);
+
+/// Valid when mSpringMode = ESpringMode::StiffnessAndDamping.
+/// If mStiffness > 0 the constraint will be soft and mStiffness specifies the stiffness (k) in the spring equation F = -k * x - c * v for a linear or T = -k * theta - c * w for an angular spring.
+/// If mStiffness <= 0, mDamping is ignored and the constraint will have hard limits (as hard as the time step / the number of velocity / position solver steps allows).
+///
+/// Note that stiffness values are large numbers. To calculate a ballpark value for the needed stiffness you can use:
+/// force = stiffness * delta_spring_length = mass * gravity <=> stiffness = mass * gravity / delta_spring_length.
+/// So if your object weighs 1500 kg and the spring compresses by 2 meters, you need a stiffness in the order of 1500 * 9.81 / 2 ~ 7500 N/m.
+/// Returns a mutable pointer to a member variable of class `JPH::SpringSettings` named `mStiffness`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JPH_SpringSettings_GetMutable_mStiffness(JPH_SpringSettings *_this);
+
 /// When mSpringMode = ESpringMode::FrequencyAndDamping mDamping is the damping ratio (0 = no damping, 1 = critical damping).
 /// When mSpringMode = ESpringMode::StiffnessAndDamping mDamping is the damping (c) in the spring equation F = -k * x - c * v for a linear or T = -k * theta - c * w for an angular spring.
 /// Note that if you set mDamping = 0, you will not get an infinite oscillation. Because we integrate physics using an explicit Euler scheme, there is always energy loss.

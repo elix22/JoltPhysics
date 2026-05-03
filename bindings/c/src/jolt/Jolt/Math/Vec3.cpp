@@ -14,7 +14,23 @@
 #include <memory>
 #include <new>
 #include <stdexcept>
+#include <type_traits>
 
+
+const float *JPH_Vec3_Get_mF32(const JPH_Vec3 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).mF32[0]);
+}
+
+float *JPH_Vec3_GetMutable_mF32(JPH_Vec3 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Vec3 *)(_this)).mF32[0]);
+}
+
+size_t JPH_Vec3_GetSize_mF32(void)
+{
+    return std::extent_v<decltype(JPH::Vec3::mF32)>;
+}
 
 JPH_Vec3 *JPH_Vec3_DefaultConstruct(void)
 {

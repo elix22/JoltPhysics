@@ -31,6 +31,21 @@ JOLT_API const double *JPH_DVec3_Get_cTrue(void);
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const double *JPH_DVec3_Get_cFalse(void);
 
+/// Returns a pointer to a member variable of class `JPH::DVec3` named `mF64`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const double *JPH_DVec3_Get_mF64(const JPH_DVec3 *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::DVec3` named `mF64`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API double *JPH_DVec3_GetMutable_mF64(JPH_DVec3 *_this);
+
+/// Returns the size of the array member of class `JPH::DVec3` named `mF64`. The size is `4`.
+JOLT_API size_t JPH_DVec3_GetSize_mF64(void);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_DVec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_DVec3 *JPH_DVec3_DefaultConstruct(void);

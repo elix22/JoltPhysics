@@ -51,6 +51,44 @@ public static partial class JPH
             }
         }
 
+        /// Valid when mSpringMode = ESpringMode::FrequencyAndDamping.
+        /// If mFrequency > 0 the constraint will be soft and mFrequency specifies the oscillation frequency in Hz.
+        /// If mFrequency <= 0, mDamping is ignored and the constraint will have hard limits (as hard as the time step / the number of velocity / position solver steps allows).
+        public unsafe float mFrequency
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SpringSettings_Get_mFrequency", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SpringSettings_Get_mFrequency", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JPH_SpringSettings_Get_mFrequency(_Underlying *_this);
+                return *__JPH_SpringSettings_Get_mFrequency(_UnderlyingPtr);
+            }
+        }
+
+        /// Valid when mSpringMode = ESpringMode::StiffnessAndDamping.
+        /// If mStiffness > 0 the constraint will be soft and mStiffness specifies the stiffness (k) in the spring equation F = -k * x - c * v for a linear or T = -k * theta - c * w for an angular spring.
+        /// If mStiffness <= 0, mDamping is ignored and the constraint will have hard limits (as hard as the time step / the number of velocity / position solver steps allows).
+        ///
+        /// Note that stiffness values are large numbers. To calculate a ballpark value for the needed stiffness you can use:
+        /// force = stiffness * delta_spring_length = mass * gravity <=> stiffness = mass * gravity / delta_spring_length.
+        /// So if your object weighs 1500 kg and the spring compresses by 2 meters, you need a stiffness in the order of 1500 * 9.81 / 2 ~ 7500 N/m.
+        public unsafe float mStiffness
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SpringSettings_Get_mStiffness", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SpringSettings_Get_mStiffness", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JPH_SpringSettings_Get_mStiffness(_Underlying *_this);
+                return *__JPH_SpringSettings_Get_mStiffness(_UnderlyingPtr);
+            }
+        }
+
         /// When mSpringMode = ESpringMode::FrequencyAndDamping mDamping is the damping ratio (0 = no damping, 1 = critical damping).
         /// When mSpringMode = ESpringMode::StiffnessAndDamping mDamping is the damping (c) in the spring equation F = -k * x - c * v for a linear or T = -k * theta - c * w for an angular spring.
         /// Note that if you set mDamping = 0, you will not get an infinite oscillation. Because we integrate physics using an explicit Euler scheme, there is always energy loss.
@@ -277,6 +315,44 @@ public static partial class JPH
                 #endif
                 extern static JPH.ESpringMode *__JPH_SpringSettings_GetMutable_mMode(_Underlying *_this);
                 return ref *__JPH_SpringSettings_GetMutable_mMode(_UnderlyingPtr);
+            }
+        }
+
+        /// Valid when mSpringMode = ESpringMode::FrequencyAndDamping.
+        /// If mFrequency > 0 the constraint will be soft and mFrequency specifies the oscillation frequency in Hz.
+        /// If mFrequency <= 0, mDamping is ignored and the constraint will have hard limits (as hard as the time step / the number of velocity / position solver steps allows).
+        public new unsafe ref float mFrequency
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SpringSettings_GetMutable_mFrequency", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SpringSettings_GetMutable_mFrequency", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JPH_SpringSettings_GetMutable_mFrequency(_Underlying *_this);
+                return ref *__JPH_SpringSettings_GetMutable_mFrequency(_UnderlyingPtr);
+            }
+        }
+
+        /// Valid when mSpringMode = ESpringMode::StiffnessAndDamping.
+        /// If mStiffness > 0 the constraint will be soft and mStiffness specifies the stiffness (k) in the spring equation F = -k * x - c * v for a linear or T = -k * theta - c * w for an angular spring.
+        /// If mStiffness <= 0, mDamping is ignored and the constraint will have hard limits (as hard as the time step / the number of velocity / position solver steps allows).
+        ///
+        /// Note that stiffness values are large numbers. To calculate a ballpark value for the needed stiffness you can use:
+        /// force = stiffness * delta_spring_length = mass * gravity <=> stiffness = mass * gravity / delta_spring_length.
+        /// So if your object weighs 1500 kg and the spring compresses by 2 meters, you need a stiffness in the order of 1500 * 9.81 / 2 ~ 7500 N/m.
+        public new unsafe ref float mStiffness
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SpringSettings_GetMutable_mStiffness", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SpringSettings_GetMutable_mStiffness", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JPH_SpringSettings_GetMutable_mStiffness(_Underlying *_this);
+                return ref *__JPH_SpringSettings_GetMutable_mStiffness(_UnderlyingPtr);
             }
         }
 

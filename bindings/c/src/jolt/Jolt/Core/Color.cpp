@@ -88,6 +88,21 @@ const JPH_Color *JPH_Color_Get_sWhite(void)
     return (const JPH_Color *)std::addressof(JPH::Color::sWhite);
 }
 
+const unsigned int *JPH_Color_Get_mU32(const JPH_Color *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Color *)(_this)).mU32);
+}
+
+void JPH_Color_Set_mU32(JPH_Color *_this, unsigned int value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Color *)(_this)).mU32 = value;
+}
+
+unsigned int *JPH_Color_GetMutable_mU32(JPH_Color *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Color *)(_this)).mU32);
+}
+
 JPH_Color *JPH_Color_DefaultConstruct(void)
 {
     using _mrbind_T = JPH::Color;

@@ -14,6 +14,7 @@
 #include <memory>
 #include <new>
 #include <stdexcept>
+#include <type_traits>
 
 
 const double *JPH_DVec3_Get_cTrue(void)
@@ -24,6 +25,21 @@ const double *JPH_DVec3_Get_cTrue(void)
 const double *JPH_DVec3_Get_cFalse(void)
 {
     return std::addressof(JPH::DVec3::cFalse);
+}
+
+const double *JPH_DVec3_Get_mF64(const JPH_DVec3 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DVec3 *)(_this)).mF64[0]);
+}
+
+double *JPH_DVec3_GetMutable_mF64(JPH_DVec3 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DVec3 *)(_this)).mF64[0]);
+}
+
+size_t JPH_DVec3_GetSize_mF64(void)
+{
+    return std::extent_v<decltype(JPH::DVec3::mF64)>;
 }
 
 JPH_DVec3 *JPH_DVec3_DefaultConstruct(void)

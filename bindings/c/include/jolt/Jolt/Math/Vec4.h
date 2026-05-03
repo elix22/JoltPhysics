@@ -20,6 +20,21 @@ typedef struct Jolt_std_ostream Jolt_std_ostream; // Defined in `#include <iostr
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_Vec4 JPH_Vec4;
 
+/// Returns a pointer to a member variable of class `JPH::Vec4` named `mF32`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JPH_Vec4_Get_mF32(const JPH_Vec4 *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::Vec4` named `mF32`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JPH_Vec4_GetMutable_mF32(JPH_Vec4 *_this);
+
+/// Returns the size of the array member of class `JPH::Vec4` named `mF32`. The size is `4`.
+JOLT_API size_t JPH_Vec4_GetSize_mF32(void);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec4_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec4 *JPH_Vec4_DefaultConstruct(void);

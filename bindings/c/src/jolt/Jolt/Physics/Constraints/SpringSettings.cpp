@@ -27,6 +27,36 @@ JPH_ESpringMode *JPH_SpringSettings_GetMutable_mMode(JPH_SpringSettings *_this)
     return (JPH_ESpringMode *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SpringSettings *)(_this)).mMode);
 }
 
+const float *JPH_SpringSettings_Get_mFrequency(const JPH_SpringSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SpringSettings *)(_this)).mFrequency);
+}
+
+void JPH_SpringSettings_Set_mFrequency(JPH_SpringSettings *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SpringSettings *)(_this)).mFrequency = value;
+}
+
+float *JPH_SpringSettings_GetMutable_mFrequency(JPH_SpringSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SpringSettings *)(_this)).mFrequency);
+}
+
+const float *JPH_SpringSettings_Get_mStiffness(const JPH_SpringSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SpringSettings *)(_this)).mStiffness);
+}
+
+void JPH_SpringSettings_Set_mStiffness(JPH_SpringSettings *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SpringSettings *)(_this)).mStiffness = value;
+}
+
+float *JPH_SpringSettings_GetMutable_mStiffness(JPH_SpringSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SpringSettings *)(_this)).mStiffness);
+}
+
 const float *JPH_SpringSettings_Get_mDamping(const JPH_SpringSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SpringSettings *)(_this)).mDamping);

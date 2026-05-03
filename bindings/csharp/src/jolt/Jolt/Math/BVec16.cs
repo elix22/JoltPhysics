@@ -26,6 +26,34 @@ public static partial class JPH
         public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
         ~Const_BVec16() {Dispose(false);}
 
+        public unsafe ref JPH.ArrayUnsignedChar16 mu8
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BVec16_Get_mU8", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BVec16_Get_mU8", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.ArrayUnsignedChar16 *__JPH_BVec16_Get_mU8(_Underlying *_this);
+                return ref *(__JPH_BVec16_Get_mU8(_UnderlyingPtr));
+            }
+        }
+
+        public unsafe ref JPH.ArrayUint64T2 mu64
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BVec16_Get_mU64", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BVec16_Get_mU64", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.ArrayUint64T2 *__JPH_BVec16_Get_mU64(_Underlying *_this);
+                return ref *(__JPH_BVec16_Get_mU64(_UnderlyingPtr));
+            }
+        }
+
         internal unsafe Const_BVec16(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -418,6 +446,34 @@ public static partial class JPH
     /// This is the non-const half of the class.
     public class BVec16 : Const_BVec16
     {
+        new public unsafe ref JPH.ArrayUnsignedChar16 mu8
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BVec16_GetMutable_mU8", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BVec16_GetMutable_mU8", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.ArrayUnsignedChar16 *__JPH_BVec16_GetMutable_mU8(_Underlying *_this);
+                return ref *(__JPH_BVec16_GetMutable_mU8(_UnderlyingPtr));
+            }
+        }
+
+        new public unsafe ref JPH.ArrayUint64T2 mu64
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BVec16_GetMutable_mU64", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BVec16_GetMutable_mU64", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.ArrayUint64T2 *__JPH_BVec16_GetMutable_mU64(_Underlying *_this);
+                return ref *(__JPH_BVec16_GetMutable_mU64(_UnderlyingPtr));
+            }
+        }
+
         internal unsafe BVec16(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructs an empty (default-constructed) instance.

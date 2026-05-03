@@ -79,6 +79,27 @@ JOLT_API const JPH_Color *JPH_Color_Get_sLightGrey(void);
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const JPH_Color *JPH_Color_Get_sWhite(void);
 
+///< Combined value for red, green, blue and alpha
+/// Returns a pointer to a member variable of class `JPH::Color` named `mU32`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const unsigned int *JPH_Color_Get_mU32(const JPH_Color *_this);
+
+///< Combined value for red, green, blue and alpha
+/// Modifies a member variable of class `JPH::Color` named `mU32`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mU32`.
+/// When this function is called, this object will drop object references it held previously in `mU32`.
+JOLT_API void JPH_Color_Set_mU32(JPH_Color *_this, unsigned int value);
+
+///< Combined value for red, green, blue and alpha
+/// Returns a mutable pointer to a member variable of class `JPH::Color` named `mU32`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API unsigned int *JPH_Color_GetMutable_mU32(JPH_Color *_this);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Color_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Color *JPH_Color_DefaultConstruct(void);

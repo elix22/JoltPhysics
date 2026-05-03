@@ -187,9 +187,21 @@ public static partial class JPH
     }
 
 
+    public struct ArrayDouble4
+    {
+        public unsafe fixed double _elem[4];
+        public unsafe ref double this[nint i] => ref _elem[i];
+    }
+
     public struct ArrayFloat2
     {
         public unsafe fixed float _elem[2];
+        public unsafe ref float this[nint i] => ref _elem[i];
+    }
+
+    public struct ArrayFloat4
+    {
+        public unsafe fixed float _elem[4];
         public unsafe ref float this[nint i] => ref _elem[i];
     }
 
@@ -197,6 +209,29 @@ public static partial class JPH
     {
         public unsafe fixed float _elem[6];
         public unsafe ref float this[nint i] => ref _elem[i];
+    }
+
+    public struct ArrayUint64T2
+    {
+        public UIntPtr _0;
+        public UIntPtr _1;
+
+        public unsafe ref UIntPtr this[nint i]
+        {
+            get
+            {
+                fixed (UIntPtr *ptr = &_0)
+                {
+                    return ref *(ptr + i);
+                }
+            }
+        }
+    }
+
+    public struct ArrayUnsignedChar16
+    {
+        public unsafe fixed byte _elem[16];
+        public unsafe ref byte this[nint i] => ref _elem[i];
     }
 
     public struct ArrayUnsignedChar4

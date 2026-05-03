@@ -56,6 +56,20 @@ public static partial class JPH
             }
         }
 
+        public unsafe ref JPH.ArrayDouble4 mf64
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DVec3_Get_mF64", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DVec3_Get_mF64", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.ArrayDouble4 *__JPH_DVec3_Get_mF64(_Underlying *_this);
+                return ref *(__JPH_DVec3_Get_mF64(_UnderlyingPtr));
+            }
+        }
+
         internal unsafe Const_DVec3(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -1072,6 +1086,20 @@ public static partial class JPH
     /// This is the non-const half of the class.
     public class DVec3 : Const_DVec3
     {
+        new public unsafe ref JPH.ArrayDouble4 mf64
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DVec3_GetMutable_mF64", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DVec3_GetMutable_mF64", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.ArrayDouble4 *__JPH_DVec3_GetMutable_mF64(_Underlying *_this);
+                return ref *(__JPH_DVec3_GetMutable_mF64(_UnderlyingPtr));
+            }
+        }
+
         internal unsafe DVec3(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructs an empty (default-constructed) instance.

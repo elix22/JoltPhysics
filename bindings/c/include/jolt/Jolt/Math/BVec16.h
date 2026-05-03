@@ -19,6 +19,36 @@ typedef struct Jolt_std_ostream Jolt_std_ostream; // Defined in `#include <iostr
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_BVec16 JPH_BVec16;
 
+/// Returns a pointer to a member variable of class `JPH::BVec16` named `mU8`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const unsigned char *JPH_BVec16_Get_mU8(const JPH_BVec16 *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::BVec16` named `mU8`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API unsigned char *JPH_BVec16_GetMutable_mU8(JPH_BVec16 *_this);
+
+/// Returns the size of the array member of class `JPH::BVec16` named `mU8`. The size is `16`.
+JOLT_API size_t JPH_BVec16_GetSize_mU8(void);
+
+/// Returns a pointer to a member variable of class `JPH::BVec16` named `mU64`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const uint64_t *JPH_BVec16_Get_mU64(const JPH_BVec16 *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::BVec16` named `mU64`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API uint64_t *JPH_BVec16_GetMutable_mU64(JPH_BVec16 *_this);
+
+/// Returns the size of the array member of class `JPH::BVec16` named `mU64`. The size is `2`.
+JOLT_API size_t JPH_BVec16_GetSize_mU64(void);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_BVec16_Destroy()` to free it when you're done using it.
 JOLT_API JPH_BVec16 *JPH_BVec16_DefaultConstruct(void);

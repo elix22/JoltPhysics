@@ -237,6 +237,21 @@ public static partial class JPH
             }
         }
 
+        ///< Combined value for red, green, blue and alpha
+        public unsafe uint mu32
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Color_Get_mU32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Color_Get_mU32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint *__JPH_Color_Get_mU32(_Underlying *_this);
+                return *__JPH_Color_Get_mU32(_UnderlyingPtr);
+            }
+        }
+
         internal unsafe Const_Color(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -452,6 +467,21 @@ public static partial class JPH
     /// This is the non-const half of the class.
     public class Color : Const_Color
     {
+        ///< Combined value for red, green, blue and alpha
+        public new unsafe ref uint mu32
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Color_GetMutable_mU32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Color_GetMutable_mU32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static uint *__JPH_Color_GetMutable_mU32(_Underlying *_this);
+                return ref *__JPH_Color_GetMutable_mU32(_UnderlyingPtr);
+            }
+        }
+
         internal unsafe Color(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructs an empty (default-constructed) instance.

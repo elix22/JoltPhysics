@@ -12,7 +12,23 @@
 #include <memory>
 #include <new>
 #include <stdexcept>
+#include <type_traits>
 
+
+const unsigned int *JPH_UVec4_Get_mU32(const JPH_UVec4 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::UVec4 *)(_this)).mU32[0]);
+}
+
+unsigned int *JPH_UVec4_GetMutable_mU32(JPH_UVec4 *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::UVec4 *)(_this)).mU32[0]);
+}
+
+size_t JPH_UVec4_GetSize_mU32(void)
+{
+    return std::extent_v<decltype(JPH::UVec4::mU32)>;
+}
 
 JPH_UVec4 *JPH_UVec4_DefaultConstruct(void)
 {

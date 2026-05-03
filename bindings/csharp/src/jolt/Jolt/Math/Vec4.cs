@@ -25,6 +25,20 @@ public static partial class JPH
         public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
         ~Const_Vec4() {Dispose(false);}
 
+        public unsafe ref JPH.ArrayFloat4 mf32
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vec4_Get_mF32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vec4_Get_mF32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.ArrayFloat4 *__JPH_Vec4_Get_mF32(_Underlying *_this);
+                return ref *(__JPH_Vec4_Get_mF32(_UnderlyingPtr));
+            }
+        }
+
         internal unsafe Const_Vec4(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -1525,6 +1539,20 @@ public static partial class JPH
     /// This is the non-const half of the class.
     public class Vec4 : Const_Vec4
     {
+        new public unsafe ref JPH.ArrayFloat4 mf32
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vec4_GetMutable_mF32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vec4_GetMutable_mF32", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.ArrayFloat4 *__JPH_Vec4_GetMutable_mF32(_Underlying *_this);
+                return ref *(__JPH_Vec4_GetMutable_mF32(_UnderlyingPtr));
+            }
+        }
+
         internal unsafe Vec4(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructs an empty (default-constructed) instance.

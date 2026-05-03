@@ -18,6 +18,21 @@ typedef struct Jolt_std_ostream Jolt_std_ostream; // Defined in `#include <iostr
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_UVec4 JPH_UVec4;
 
+/// Returns a pointer to a member variable of class `JPH::UVec4` named `mU32`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const unsigned int *JPH_UVec4_Get_mU32(const JPH_UVec4 *_this);
+
+/// Returns a mutable pointer to a member variable of class `JPH::UVec4` named `mU32`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API unsigned int *JPH_UVec4_GetMutable_mU32(JPH_UVec4 *_this);
+
+/// Returns the size of the array member of class `JPH::UVec4` named `mU32`. The size is `4`.
+JOLT_API size_t JPH_UVec4_GetSize_mU32(void);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_UVec4_Destroy()` to free it when you're done using it.
 JOLT_API JPH_UVec4 *JPH_UVec4_DefaultConstruct(void);
