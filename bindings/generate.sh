@@ -199,6 +199,7 @@ echo "#include \"$ROOT/Jolt/Skeleton/Skeleton.h\"" >>"$BINDINGS/tmp/combined_inp
 echo "#include \"$ROOT/Jolt/Skeleton/SkeletalAnimation.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Skeleton/SkeletonPose.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Skeleton/SkeletonMapper.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Ragdoll/Ragdoll.h\"" >>"$BINDINGS/tmp/combined_input.h"
 
 
 # Parse the input header.
@@ -218,6 +219,7 @@ echo "#include \"$ROOT/Jolt/Skeleton/SkeletonMapper.h\"" >>"$BINDINGS/tmp/combin
     --allow CountingPhysicsStepListener \
     --allow SimpleContactEventListener \
     --allow EstimateResponseContactListener \
+    --allow ContactListenerTrampoline \
     --allow DebugLineRecord \
     --allow DebugTriangleRecord \
     --allow RecordingDebugRenderer \
@@ -441,6 +443,10 @@ echo "#include \"$ROOT/Jolt/Skeleton/SkeletonMapper.h\"" >>"$BINDINGS/tmp/combin
     --allow JPH::SkeletonMapper::Chain \
     --allow JPH::SkeletonMapper::Unmapped \
     --allow JPH::SkeletonMapper::Locked \
+    --allow JPH::RagdollSettings \
+    --allow JPH::RagdollSettings::Part \
+    --allow JPH::RagdollSettings::AdditionalConstraint \
+    --allow JPH::Ragdoll \
     --canonicalize-64-to-fixed-size-typedefs \
     "${EXTRA_PARSER_FLAGS[@]+"${EXTRA_PARSER_FLAGS[@]}"}" \
     -- \

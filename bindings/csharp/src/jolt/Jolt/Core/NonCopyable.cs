@@ -22,6 +22,7 @@ public static partial class JPH
     ///     `JPH::ObjectLayerPairFilter`
     ///     `JPH::ObjectVsBroadPhaseLayerFilter`
     ///     `JPH::PhysicsSystem`
+    ///     `JPH::Ragdoll`
     ///     `JPH::Shape`
     ///     `JPH::ShapeFilter`
     ///     `JPH::TempAllocator`
@@ -148,6 +149,7 @@ public static partial class JPH
     ///     `JPH::ObjectLayerPairFilter`
     ///     `JPH::ObjectVsBroadPhaseLayerFilter`
     ///     `JPH::PhysicsSystem`
+    ///     `JPH::Ragdoll`
     ///     `JPH::Shape`
     ///     `JPH::ShapeFilter`
     ///     `JPH::TempAllocator`

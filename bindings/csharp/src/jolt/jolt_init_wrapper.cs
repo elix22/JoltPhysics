@@ -408,6 +408,72 @@ public static partial class JPH
             extern static void __JoltHelpers_CharacterBaseSettingsSetShape(JPH.CharacterBaseSettings._Underlying *inSettings, JPH.Const_Shape._Underlying *inShape);
             __JoltHelpers_CharacterBaseSettingsSetShape(inSettings._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
         }
+
+        /// Set the skeleton on a RagdollSettings (mSkeleton is Ref<Skeleton>).
+        /// Generated from method `JoltHelpers::RagdollSettingsSetSkeleton`.
+        public static unsafe void RagdollSettingsSetSkeleton(JPH.RagdollSettings inSettings, JPH.Skeleton? inSkeleton)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_RagdollSettingsSetSkeleton", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_RagdollSettingsSetSkeleton", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_RagdollSettingsSetSkeleton(JPH.RagdollSettings._Underlying *inSettings, JPH.Skeleton._Underlying *inSkeleton);
+            __JoltHelpers_RagdollSettingsSetSkeleton(inSettings._UnderlyingPtr, inSkeleton is not null ? inSkeleton._UnderlyingPtr : null);
+        }
+
+        /// Get the skeleton from a RagdollSettings (returns raw pointer, not Ref).
+        /// Generated from method `JoltHelpers::RagdollSettingsGetSkeleton`.
+        public static unsafe JPH.Skeleton? RagdollSettingsGetSkeleton(JPH.Const_RagdollSettings inSettings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_RagdollSettingsGetSkeleton", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_RagdollSettingsGetSkeleton", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Skeleton._Underlying *__JoltHelpers_RagdollSettingsGetSkeleton(JPH.Const_RagdollSettings._Underlying *inSettings);
+            var __c_ret = __JoltHelpers_RagdollSettingsGetSkeleton(inSettings._UnderlyingPtr);
+            return __c_ret is not null ? new JPH.Skeleton(__c_ret, is_owning: false) : null;
+        }
+
+        /// Append a Part to RagdollSettings::mParts.
+        /// Generated from method `JoltHelpers::RagdollSettingsAddPart`.
+        public static unsafe void RagdollSettingsAddPart(JPH.RagdollSettings inSettings, JPH.RagdollSettings.Const_Part inPart)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_RagdollSettingsAddPart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_RagdollSettingsAddPart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_RagdollSettingsAddPart(JPH.RagdollSettings._Underlying *inSettings, JPH.RagdollSettings.Const_Part._Underlying *inPart);
+            __JoltHelpers_RagdollSettingsAddPart(inSettings._UnderlyingPtr, inPart._UnderlyingPtr);
+        }
+
+        /// Return the number of parts in RagdollSettings::mParts.
+        /// Generated from method `JoltHelpers::RagdollSettingsGetPartCount`.
+        public static unsafe uint RagdollSettingsGetPartCount(JPH.Const_RagdollSettings inSettings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_RagdollSettingsGetPartCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_RagdollSettingsGetPartCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JoltHelpers_RagdollSettingsGetPartCount(JPH.Const_RagdollSettings._Underlying *inSettings);
+            return __JoltHelpers_RagdollSettingsGetPartCount(inSettings._UnderlyingPtr);
+        }
+
+        /// Return a reference to a Part by index.
+        /// Generated from method `JoltHelpers::RagdollSettingsGetPart`.
+        public static unsafe JPH.RagdollSettings.Const_Part RagdollSettingsGetPart(JPH.Const_RagdollSettings inSettings, uint inIndex)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_RagdollSettingsGetPart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_RagdollSettingsGetPart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RagdollSettings.Const_Part._Underlying *__JoltHelpers_RagdollSettingsGetPart(JPH.Const_RagdollSettings._Underlying *inSettings, uint inIndex);
+            return new(__JoltHelpers_RagdollSettingsGetPart(inSettings._UnderlyingPtr, inIndex), is_owning: false);
+        }
     }
 
     /// Minimal helpers for Jolt global lifecycle.
@@ -1365,6 +1431,414 @@ public static partial class JPH
         public _InOptConst_SimpleContactEventListener() {}
         public _InOptConst_SimpleContactEventListener(Const_SimpleContactEventListener value) {Opt = value;}
         public static implicit operator _InOptConst_SimpleContactEventListener(Const_SimpleContactEventListener value) {return new(value);}
+    }
+
+    // ---------------------------------------------------------------------------
+    // ContactListenerTrampoline — concrete ContactListener that dispatches to
+    // C# function pointers.  Set mContext and the four mXxxFn fields; leave any
+    // field null to get the default (AcceptAll for Validate, no-op for the rest).
+    //
+    // Function pointer signatures (all __cdecl / C calling convention):
+    //   OnContactValidate : int  (*)(void* ctx,
+    //                                const JPH::Body* body1, const JPH::Body* body2,
+    //                                const JPH::Vec3* baseOffset,
+    //                                const JPH::CollideShapeResult* result)
+    //                       Return value maps to JPH::ValidateResult (0 = AcceptAll, etc.)
+    //   OnContactAdded    : void (*)(void* ctx,
+    //                                const JPH::Body* body1, const JPH::Body* body2,
+    //                                const JPH::ContactManifold* manifold,
+    //                                JPH::ContactSettings* settings)
+    //   OnContactPersisted: same signature as OnContactAdded
+    //   OnContactRemoved  : void (*)(void* ctx, const JPH::SubShapeIDPair* pair)
+    // ---------------------------------------------------------------------------
+    /// Generated from class `ContactListenerTrampoline`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::ContactListener`
+    /// This is the const half of the class.
+    public class Const_ContactListenerTrampoline : JPH.Object<Const_ContactListenerTrampoline>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __ContactListenerTrampoline_Destroy(_Underlying *_this);
+            __ContactListenerTrampoline_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_ContactListenerTrampoline() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator JPH.Const_ContactListener(Const_ContactListenerTrampoline self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_UpcastTo_JPH_ContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_UpcastTo_JPH_ContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_ContactListener._Underlying *__ContactListenerTrampoline_UpcastTo_JPH_ContactListener(_Underlying *_this);
+            JPH.Const_ContactListener ret = new(__ContactListenerTrampoline_UpcastTo_JPH_ContactListener(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        internal unsafe Const_ContactListenerTrampoline(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_ContactListenerTrampoline() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.ContactListenerTrampoline._Underlying *__ContactListenerTrampoline_DefaultConstruct();
+            _UnderlyingPtr = __ContactListenerTrampoline_DefaultConstruct();
+        }
+
+        /// Generated from constructor `ContactListenerTrampoline::ContactListenerTrampoline`.
+        public unsafe Const_ContactListenerTrampoline(JPH._ByValue_ContactListenerTrampoline _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.ContactListenerTrampoline._Underlying *__ContactListenerTrampoline_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.ContactListenerTrampoline._Underlying *_other);
+            _UnderlyingPtr = __ContactListenerTrampoline_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `ContactListenerTrampoline::ContactListenerTrampoline`.
+        public Const_ContactListenerTrampoline(Const_ContactListenerTrampoline _other) : this(new _ByValue_ContactListenerTrampoline(_other)) {}
+
+        /// Generated from constructor `ContactListenerTrampoline::ContactListenerTrampoline`.
+        public Const_ContactListenerTrampoline(ContactListenerTrampoline _other) : this((Const_ContactListenerTrampoline)_other) {}
+
+        /// Generated from method `ContactListenerTrampoline::GetContext`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetContext()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_GetContext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_GetContext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__ContactListenerTrampoline_GetContext(_Underlying *_this);
+            return __ContactListenerTrampoline_GetContext(_UnderlyingPtr);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::GetOnContactValidateFn`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetOnContactValidateFn()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_GetOnContactValidateFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_GetOnContactValidateFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__ContactListenerTrampoline_GetOnContactValidateFn(_Underlying *_this);
+            return __ContactListenerTrampoline_GetOnContactValidateFn(_UnderlyingPtr);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::GetOnContactAddedFn`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetOnContactAddedFn()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_GetOnContactAddedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_GetOnContactAddedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__ContactListenerTrampoline_GetOnContactAddedFn(_Underlying *_this);
+            return __ContactListenerTrampoline_GetOnContactAddedFn(_UnderlyingPtr);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::GetOnContactPersistedFn`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetOnContactPersistedFn()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_GetOnContactPersistedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_GetOnContactPersistedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__ContactListenerTrampoline_GetOnContactPersistedFn(_Underlying *_this);
+            return __ContactListenerTrampoline_GetOnContactPersistedFn(_UnderlyingPtr);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::GetOnContactRemovedFn`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetOnContactRemovedFn()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_GetOnContactRemovedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_GetOnContactRemovedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__ContactListenerTrampoline_GetOnContactRemovedFn(_Underlying *_this);
+            return __ContactListenerTrampoline_GetOnContactRemovedFn(_UnderlyingPtr);
+        }
+    }
+
+    // ---------------------------------------------------------------------------
+    // ContactListenerTrampoline — concrete ContactListener that dispatches to
+    // C# function pointers.  Set mContext and the four mXxxFn fields; leave any
+    // field null to get the default (AcceptAll for Validate, no-op for the rest).
+    //
+    // Function pointer signatures (all __cdecl / C calling convention):
+    //   OnContactValidate : int  (*)(void* ctx,
+    //                                const JPH::Body* body1, const JPH::Body* body2,
+    //                                const JPH::Vec3* baseOffset,
+    //                                const JPH::CollideShapeResult* result)
+    //                       Return value maps to JPH::ValidateResult (0 = AcceptAll, etc.)
+    //   OnContactAdded    : void (*)(void* ctx,
+    //                                const JPH::Body* body1, const JPH::Body* body2,
+    //                                const JPH::ContactManifold* manifold,
+    //                                JPH::ContactSettings* settings)
+    //   OnContactPersisted: same signature as OnContactAdded
+    //   OnContactRemoved  : void (*)(void* ctx, const JPH::SubShapeIDPair* pair)
+    // ---------------------------------------------------------------------------
+    /// Generated from class `ContactListenerTrampoline`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::ContactListener`
+    /// This is the non-const half of the class.
+    public class ContactListenerTrampoline : Const_ContactListenerTrampoline
+    {
+        // Upcasts:
+        public static unsafe implicit operator JPH.ContactListener(ContactListenerTrampoline self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_UpcastTo_JPH_ContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_UpcastTo_JPH_ContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.ContactListener._Underlying *__ContactListenerTrampoline_UpcastTo_JPH_ContactListener(_Underlying *_this);
+            JPH.ContactListener ret = new(__ContactListenerTrampoline_UpcastTo_JPH_ContactListener(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        internal unsafe ContactListenerTrampoline(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe ContactListenerTrampoline() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.ContactListenerTrampoline._Underlying *__ContactListenerTrampoline_DefaultConstruct();
+            _UnderlyingPtr = __ContactListenerTrampoline_DefaultConstruct();
+        }
+
+        /// Generated from constructor `ContactListenerTrampoline::ContactListenerTrampoline`.
+        public unsafe ContactListenerTrampoline(JPH._ByValue_ContactListenerTrampoline _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.ContactListenerTrampoline._Underlying *__ContactListenerTrampoline_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.ContactListenerTrampoline._Underlying *_other);
+            _UnderlyingPtr = __ContactListenerTrampoline_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `ContactListenerTrampoline::ContactListenerTrampoline`.
+        public ContactListenerTrampoline(Const_ContactListenerTrampoline _other) : this(new _ByValue_ContactListenerTrampoline(_other)) {}
+
+        /// Generated from constructor `ContactListenerTrampoline::ContactListenerTrampoline`.
+        public ContactListenerTrampoline(ContactListenerTrampoline _other) : this((Const_ContactListenerTrampoline)_other) {}
+
+        /// Generated from method `ContactListenerTrampoline::operator=`.
+        public unsafe JPH.ContactListenerTrampoline Assign(JPH._ByValue_ContactListenerTrampoline _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.ContactListenerTrampoline._Underlying *__ContactListenerTrampoline_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.ContactListenerTrampoline._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__ContactListenerTrampoline_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::SetContext`.
+        /// Parameter `v` is a mutable pointer.
+        public unsafe void SetContext(void *v)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_SetContext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_SetContext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __ContactListenerTrampoline_SetContext(_Underlying *_this, void *v);
+            __ContactListenerTrampoline_SetContext(_UnderlyingPtr, v);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::SetOnContactValidateFn`.
+        /// Parameter `v` is a mutable pointer.
+        public unsafe void SetOnContactValidateFn(void *v)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_SetOnContactValidateFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_SetOnContactValidateFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __ContactListenerTrampoline_SetOnContactValidateFn(_Underlying *_this, void *v);
+            __ContactListenerTrampoline_SetOnContactValidateFn(_UnderlyingPtr, v);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::SetOnContactAddedFn`.
+        /// Parameter `v` is a mutable pointer.
+        public unsafe void SetOnContactAddedFn(void *v)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_SetOnContactAddedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_SetOnContactAddedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __ContactListenerTrampoline_SetOnContactAddedFn(_Underlying *_this, void *v);
+            __ContactListenerTrampoline_SetOnContactAddedFn(_UnderlyingPtr, v);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::SetOnContactPersistedFn`.
+        /// Parameter `v` is a mutable pointer.
+        public unsafe void SetOnContactPersistedFn(void *v)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_SetOnContactPersistedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_SetOnContactPersistedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __ContactListenerTrampoline_SetOnContactPersistedFn(_Underlying *_this, void *v);
+            __ContactListenerTrampoline_SetOnContactPersistedFn(_UnderlyingPtr, v);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::SetOnContactRemovedFn`.
+        /// Parameter `v` is a mutable pointer.
+        public unsafe void SetOnContactRemovedFn(void *v)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_SetOnContactRemovedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_SetOnContactRemovedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __ContactListenerTrampoline_SetOnContactRemovedFn(_Underlying *_this, void *v);
+            __ContactListenerTrampoline_SetOnContactRemovedFn(_UnderlyingPtr, v);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::OnContactValidate`.
+        public unsafe JPH.ValidateResult OnContactValidate(JPH.Const_Body inBody1, JPH.Const_Body inBody2, JPH.Const_Vec3 inBaseOffset, JPH.Const_CollideShapeResult inCollisionResult)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_OnContactValidate", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_OnContactValidate", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.ValidateResult __ContactListenerTrampoline_OnContactValidate(_Underlying *_this, JPH.Const_Body._Underlying *inBody1, JPH.Const_Body._Underlying *inBody2, JPH.Vec3._Underlying *inBaseOffset, JPH.Const_CollideShapeResult._Underlying *inCollisionResult);
+            return __ContactListenerTrampoline_OnContactValidate(_UnderlyingPtr, inBody1._UnderlyingPtr, inBody2._UnderlyingPtr, inBaseOffset._UnderlyingPtr, inCollisionResult._UnderlyingPtr);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::OnContactAdded`.
+        public unsafe void OnContactAdded(JPH.Const_Body inBody1, JPH.Const_Body inBody2, JPH.Const_ContactManifold inManifold, JPH.ContactSettings ioSettings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_OnContactAdded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_OnContactAdded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __ContactListenerTrampoline_OnContactAdded(_Underlying *_this, JPH.Const_Body._Underlying *inBody1, JPH.Const_Body._Underlying *inBody2, JPH.Const_ContactManifold._Underlying *inManifold, JPH.ContactSettings._Underlying *ioSettings);
+            __ContactListenerTrampoline_OnContactAdded(_UnderlyingPtr, inBody1._UnderlyingPtr, inBody2._UnderlyingPtr, inManifold._UnderlyingPtr, ioSettings._UnderlyingPtr);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::OnContactPersisted`.
+        public unsafe void OnContactPersisted(JPH.Const_Body inBody1, JPH.Const_Body inBody2, JPH.Const_ContactManifold inManifold, JPH.ContactSettings ioSettings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_OnContactPersisted", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_OnContactPersisted", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __ContactListenerTrampoline_OnContactPersisted(_Underlying *_this, JPH.Const_Body._Underlying *inBody1, JPH.Const_Body._Underlying *inBody2, JPH.Const_ContactManifold._Underlying *inManifold, JPH.ContactSettings._Underlying *ioSettings);
+            __ContactListenerTrampoline_OnContactPersisted(_UnderlyingPtr, inBody1._UnderlyingPtr, inBody2._UnderlyingPtr, inManifold._UnderlyingPtr, ioSettings._UnderlyingPtr);
+        }
+
+        /// Generated from method `ContactListenerTrampoline::OnContactRemoved`.
+        public unsafe void OnContactRemoved(JPH.Const_SubShapeIDPair inSubShapePair)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "ContactListenerTrampoline_OnContactRemoved", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "ContactListenerTrampoline_OnContactRemoved", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __ContactListenerTrampoline_OnContactRemoved(_Underlying *_this, JPH.Const_SubShapeIDPair._Underlying *inSubShapePair);
+            __ContactListenerTrampoline_OnContactRemoved(_UnderlyingPtr, inSubShapePair._UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `ContactListenerTrampoline` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `ContactListenerTrampoline`/`Const_ContactListenerTrampoline` to copy it into the function.
+    /// * Pass `Move(instance)` to move it into the function. This is a more efficient form of copying that might invalidate the input object.
+    ///   Be careful if your input isn't a unique reference to this object.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_ContactListenerTrampoline
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_ContactListenerTrampoline? Value;
+        #pragma warning restore CS0649
+        internal readonly JPH._PassBy PassByMode;
+        public _ByValue_ContactListenerTrampoline() {PassByMode = JPH._PassBy.default_construct;}
+        public _ByValue_ContactListenerTrampoline(Const_ContactListenerTrampoline new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
+        public static implicit operator _ByValue_ContactListenerTrampoline(Const_ContactListenerTrampoline arg) {return new(arg);}
+        public _ByValue_ContactListenerTrampoline(JPH._Moved<ContactListenerTrampoline> moved) {Value = moved.Value; PassByMode = JPH._PassBy.move;}
+        public static implicit operator _ByValue_ContactListenerTrampoline(JPH._Moved<ContactListenerTrampoline> arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `ContactListenerTrampoline` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_ContactListenerTrampoline`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `ContactListenerTrampoline`/`Const_ContactListenerTrampoline` directly.
+    public class _InOptMut_ContactListenerTrampoline
+    {
+        public ContactListenerTrampoline? Opt;
+
+        public _InOptMut_ContactListenerTrampoline() {}
+        public _InOptMut_ContactListenerTrampoline(ContactListenerTrampoline value) {Opt = value;}
+        public static implicit operator _InOptMut_ContactListenerTrampoline(ContactListenerTrampoline value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `ContactListenerTrampoline` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_ContactListenerTrampoline`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `ContactListenerTrampoline`/`Const_ContactListenerTrampoline` to pass it to the function.
+    public class _InOptConst_ContactListenerTrampoline
+    {
+        public Const_ContactListenerTrampoline? Opt;
+
+        public _InOptConst_ContactListenerTrampoline() {}
+        public _InOptConst_ContactListenerTrampoline(Const_ContactListenerTrampoline value) {Opt = value;}
+        public static implicit operator _InOptConst_ContactListenerTrampoline(Const_ContactListenerTrampoline value) {return new(value);}
     }
 
     // ---------------------------------------------------------------------------

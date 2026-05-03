@@ -852,6 +852,7 @@ public static partial class JPH
     /// Generated from class `JPH::ContactListener`.
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `ContactListenerTrampoline`
     ///     `EstimateResponseContactListener`
     ///     `SimpleContactEventListener`
     /// This is the const half of the class.
@@ -928,6 +929,7 @@ public static partial class JPH
     /// Generated from class `JPH::ContactListener`.
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `ContactListenerTrampoline`
     ///     `EstimateResponseContactListener`
     ///     `SimpleContactEventListener`
     /// This is the non-const half of the class.

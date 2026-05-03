@@ -18,6 +18,7 @@
 #include <Jolt/Physics/Collision/Shape/SubShapeIDPair.h>
 #include <Jolt/Physics/PhysicsStepListener.h>
 #include <Jolt/Physics/PhysicsSystem.h>
+#include <Jolt/Physics/Ragdoll/Ragdoll.h>
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
 #include <Jolt/Physics/Vehicle/VehicleAntiRollBar.h>
 #include <Jolt/Physics/Vehicle/VehicleConstraint.h>
@@ -25,6 +26,7 @@
 #include <Jolt/Physics/Vehicle/WheeledVehicleController.h>
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <Jolt/Renderer/DebugRendererSimple.h>
+#include <Jolt/Skeleton/Skeleton.h>
 #include <__mrbind_c_details.h>
 #include <jolt_init_wrapper.h>
 
@@ -285,6 +287,44 @@ void JoltHelpers_CharacterBaseSettingsSetShape(JPH_CharacterBaseSettings *inSett
         ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::CharacterBaseSettings *)(inSettings)),
         ((const JPH::Shape *)inShape)
     );
+}
+
+void JoltHelpers_RagdollSettingsSetSkeleton(JPH_RagdollSettings *inSettings, JPH_Skeleton *inSkeleton)
+{
+    JoltHelpers::RagdollSettingsSetSkeleton(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::RagdollSettings *)(inSettings)),
+        ((JPH::Skeleton *)inSkeleton)
+    );
+}
+
+JPH_Skeleton *JoltHelpers_RagdollSettingsGetSkeleton(const JPH_RagdollSettings *inSettings)
+{
+    return (JPH_Skeleton *)(JoltHelpers::RagdollSettingsGetSkeleton(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::RagdollSettings *)(inSettings))
+    ));
+}
+
+void JoltHelpers_RagdollSettingsAddPart(JPH_RagdollSettings *inSettings, const JPH_RagdollSettings_Part *inPart)
+{
+    JoltHelpers::RagdollSettingsAddPart(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::RagdollSettings *)(inSettings)),
+        ((inPart ? void() : MRBINDC_THROW("Parameter `inPart` can not be null.", void)), *(const JPH::RagdollSettings::Part *)(inPart))
+    );
+}
+
+unsigned int JoltHelpers_RagdollSettingsGetPartCount(const JPH_RagdollSettings *inSettings)
+{
+    return JoltHelpers::RagdollSettingsGetPartCount(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::RagdollSettings *)(inSettings))
+    );
+}
+
+const JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetPart(const JPH_RagdollSettings *inSettings, unsigned int inIndex)
+{
+    return (const JPH_RagdollSettings_Part *)std::addressof(JoltHelpers::RagdollSettingsGetPart(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::RagdollSettings *)(inSettings)),
+        inIndex
+    ));
 }
 
 const int *CountingPhysicsStepListener_Get_mCount(const CountingPhysicsStepListener *_this)
@@ -686,6 +726,256 @@ void SimpleContactEventListener_OnContactPersisted(SimpleContactEventListener *_
 void SimpleContactEventListener_OnContactRemoved(SimpleContactEventListener *_this, const JPH_SubShapeIDPair *inSubShapePair)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SimpleContactEventListener *)(_this)).OnContactRemoved(
+        ((inSubShapePair ? void() : MRBINDC_THROW("Parameter `inSubShapePair` can not be null.", void)), *(const JPH::SubShapeIDPair *)(inSubShapePair))
+    );
+}
+
+void *const *ContactListenerTrampoline_Get_mContext(const ContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const ContactListenerTrampoline *)(_this)).mContext);
+}
+
+void ContactListenerTrampoline_Set_mContext(ContactListenerTrampoline *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).mContext = value;
+}
+
+void **ContactListenerTrampoline_GetMutable_mContext(ContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).mContext);
+}
+
+void *const *ContactListenerTrampoline_Get_mOnContactValidateFn(const ContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const ContactListenerTrampoline *)(_this)).mOnContactValidateFn);
+}
+
+void ContactListenerTrampoline_Set_mOnContactValidateFn(ContactListenerTrampoline *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).mOnContactValidateFn = value;
+}
+
+void **ContactListenerTrampoline_GetMutable_mOnContactValidateFn(ContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).mOnContactValidateFn);
+}
+
+void *const *ContactListenerTrampoline_Get_mOnContactAddedFn(const ContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const ContactListenerTrampoline *)(_this)).mOnContactAddedFn);
+}
+
+void ContactListenerTrampoline_Set_mOnContactAddedFn(ContactListenerTrampoline *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).mOnContactAddedFn = value;
+}
+
+void **ContactListenerTrampoline_GetMutable_mOnContactAddedFn(ContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).mOnContactAddedFn);
+}
+
+void *const *ContactListenerTrampoline_Get_mOnContactPersistedFn(const ContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const ContactListenerTrampoline *)(_this)).mOnContactPersistedFn);
+}
+
+void ContactListenerTrampoline_Set_mOnContactPersistedFn(ContactListenerTrampoline *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).mOnContactPersistedFn = value;
+}
+
+void **ContactListenerTrampoline_GetMutable_mOnContactPersistedFn(ContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).mOnContactPersistedFn);
+}
+
+void *const *ContactListenerTrampoline_Get_mOnContactRemovedFn(const ContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const ContactListenerTrampoline *)(_this)).mOnContactRemovedFn);
+}
+
+void ContactListenerTrampoline_Set_mOnContactRemovedFn(ContactListenerTrampoline *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).mOnContactRemovedFn = value;
+}
+
+void **ContactListenerTrampoline_GetMutable_mOnContactRemovedFn(ContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).mOnContactRemovedFn);
+}
+
+ContactListenerTrampoline *ContactListenerTrampoline_DefaultConstruct(void)
+{
+    using _mrbind_T = ContactListenerTrampoline;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (ContactListenerTrampoline*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+ContactListenerTrampoline *ContactListenerTrampoline_DefaultConstructArray(size_t num_elems)
+{
+    return (ContactListenerTrampoline *)(new ContactListenerTrampoline[num_elems]{});
+}
+
+const ContactListenerTrampoline *ContactListenerTrampoline_OffsetPtr(const ContactListenerTrampoline *ptr, ptrdiff_t i)
+{
+    return (const ContactListenerTrampoline *)(((const ContactListenerTrampoline *)ptr) + i);
+}
+
+ContactListenerTrampoline *ContactListenerTrampoline_OffsetMutablePtr(ContactListenerTrampoline *ptr, ptrdiff_t i)
+{
+    return (ContactListenerTrampoline *)(((ContactListenerTrampoline *)ptr) + i);
+}
+
+const JPH_ContactListener *ContactListenerTrampoline_UpcastTo_JPH_ContactListener(const ContactListenerTrampoline *object)
+{
+    return (const JPH_ContactListener *)(static_cast<const JPH::ContactListener *>(
+        ((const ContactListenerTrampoline *)object)
+    ));
+}
+
+JPH_ContactListener *ContactListenerTrampoline_MutableUpcastTo_JPH_ContactListener(ContactListenerTrampoline *object)
+{
+    return (JPH_ContactListener *)(static_cast<JPH::ContactListener *>(
+        ((ContactListenerTrampoline *)object)
+    ));
+}
+
+const ContactListenerTrampoline *ContactListenerTrampoline_StaticDowncastFrom_JPH_ContactListener(const JPH_ContactListener *object)
+{
+    return (const ContactListenerTrampoline *)(static_cast<const ContactListenerTrampoline *>(
+        ((const JPH::ContactListener *)object)
+    ));
+}
+
+ContactListenerTrampoline *ContactListenerTrampoline_MutableStaticDowncastFrom_JPH_ContactListener(JPH_ContactListener *object)
+{
+    return (ContactListenerTrampoline *)(static_cast<ContactListenerTrampoline *>(
+        ((JPH::ContactListener *)object)
+    ));
+}
+
+ContactListenerTrampoline *ContactListenerTrampoline_ConstructFromAnother(Jolt_PassBy _other_pass_by, ContactListenerTrampoline *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, ContactListenerTrampoline);
+    return (ContactListenerTrampoline *)new ContactListenerTrampoline(ContactListenerTrampoline(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, ContactListenerTrampoline) MRBINDC_CLASSARG_COPY(_other, (ContactListenerTrampoline), ContactListenerTrampoline) MRBINDC_CLASSARG_MOVE(_other, (ContactListenerTrampoline), ContactListenerTrampoline) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, ContactListenerTrampoline) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, ContactListenerTrampoline) MRBINDC_CLASSARG_END(_other, ContactListenerTrampoline))
+    ));
+}
+
+void ContactListenerTrampoline_Destroy(const ContactListenerTrampoline *_this)
+{
+    delete ((const ContactListenerTrampoline *)_this);
+}
+
+void ContactListenerTrampoline_DestroyArray(const ContactListenerTrampoline *_this)
+{
+    delete[] ((const ContactListenerTrampoline *)_this);
+}
+
+ContactListenerTrampoline *ContactListenerTrampoline_AssignFromAnother(ContactListenerTrampoline *_this, Jolt_PassBy _other_pass_by, ContactListenerTrampoline *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, ContactListenerTrampoline);
+    return (ContactListenerTrampoline *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).operator=(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, ContactListenerTrampoline) MRBINDC_CLASSARG_COPY(_other, (ContactListenerTrampoline), ContactListenerTrampoline) MRBINDC_CLASSARG_MOVE(_other, (ContactListenerTrampoline), ContactListenerTrampoline) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, ContactListenerTrampoline) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, ContactListenerTrampoline) MRBINDC_CLASSARG_END(_other, ContactListenerTrampoline))
+    ));
+}
+
+void *ContactListenerTrampoline_GetContext(const ContactListenerTrampoline *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const ContactListenerTrampoline *)(_this)).GetContext();
+}
+
+void ContactListenerTrampoline_SetContext(ContactListenerTrampoline *_this, void *v)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).SetContext(
+        v
+    );
+}
+
+void *ContactListenerTrampoline_GetOnContactValidateFn(const ContactListenerTrampoline *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const ContactListenerTrampoline *)(_this)).GetOnContactValidateFn();
+}
+
+void ContactListenerTrampoline_SetOnContactValidateFn(ContactListenerTrampoline *_this, void *v)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).SetOnContactValidateFn(
+        v
+    );
+}
+
+void *ContactListenerTrampoline_GetOnContactAddedFn(const ContactListenerTrampoline *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const ContactListenerTrampoline *)(_this)).GetOnContactAddedFn();
+}
+
+void ContactListenerTrampoline_SetOnContactAddedFn(ContactListenerTrampoline *_this, void *v)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).SetOnContactAddedFn(
+        v
+    );
+}
+
+void *ContactListenerTrampoline_GetOnContactPersistedFn(const ContactListenerTrampoline *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const ContactListenerTrampoline *)(_this)).GetOnContactPersistedFn();
+}
+
+void ContactListenerTrampoline_SetOnContactPersistedFn(ContactListenerTrampoline *_this, void *v)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).SetOnContactPersistedFn(
+        v
+    );
+}
+
+void *ContactListenerTrampoline_GetOnContactRemovedFn(const ContactListenerTrampoline *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const ContactListenerTrampoline *)(_this)).GetOnContactRemovedFn();
+}
+
+void ContactListenerTrampoline_SetOnContactRemovedFn(ContactListenerTrampoline *_this, void *v)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).SetOnContactRemovedFn(
+        v
+    );
+}
+
+JPH_ValidateResult ContactListenerTrampoline_OnContactValidate(ContactListenerTrampoline *_this, const JPH_Body *inBody1, const JPH_Body *inBody2, const JPH_Vec3 *inBaseOffset, const JPH_CollideShapeResult *inCollisionResult)
+{
+    return (JPH_ValidateResult)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).OnContactValidate(
+        ((inBody1 ? void() : MRBINDC_THROW("Parameter `inBody1` can not be null.", void)), *(const JPH::Body *)(inBody1)),
+        ((inBody2 ? void() : MRBINDC_THROW("Parameter `inBody2` can not be null.", void)), *(const JPH::Body *)(inBody2)),
+        ((inBaseOffset ? void() : MRBINDC_THROW("Parameter `inBaseOffset` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inBaseOffset)),
+        ((inCollisionResult ? void() : MRBINDC_THROW("Parameter `inCollisionResult` can not be null.", void)), *(const JPH::CollideShapeResult *)(inCollisionResult))
+    ));
+}
+
+void ContactListenerTrampoline_OnContactAdded(ContactListenerTrampoline *_this, const JPH_Body *inBody1, const JPH_Body *inBody2, const JPH_ContactManifold *inManifold, JPH_ContactSettings *ioSettings)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).OnContactAdded(
+        ((inBody1 ? void() : MRBINDC_THROW("Parameter `inBody1` can not be null.", void)), *(const JPH::Body *)(inBody1)),
+        ((inBody2 ? void() : MRBINDC_THROW("Parameter `inBody2` can not be null.", void)), *(const JPH::Body *)(inBody2)),
+        ((inManifold ? void() : MRBINDC_THROW("Parameter `inManifold` can not be null.", void)), *(const JPH::ContactManifold *)(inManifold)),
+        ((ioSettings ? void() : MRBINDC_THROW("Parameter `ioSettings` can not be null.", void)), *(JPH::ContactSettings *)(ioSettings))
+    );
+}
+
+void ContactListenerTrampoline_OnContactPersisted(ContactListenerTrampoline *_this, const JPH_Body *inBody1, const JPH_Body *inBody2, const JPH_ContactManifold *inManifold, JPH_ContactSettings *ioSettings)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).OnContactPersisted(
+        ((inBody1 ? void() : MRBINDC_THROW("Parameter `inBody1` can not be null.", void)), *(const JPH::Body *)(inBody1)),
+        ((inBody2 ? void() : MRBINDC_THROW("Parameter `inBody2` can not be null.", void)), *(const JPH::Body *)(inBody2)),
+        ((inManifold ? void() : MRBINDC_THROW("Parameter `inManifold` can not be null.", void)), *(const JPH::ContactManifold *)(inManifold)),
+        ((ioSettings ? void() : MRBINDC_THROW("Parameter `ioSettings` can not be null.", void)), *(JPH::ContactSettings *)(ioSettings))
+    );
+}
+
+void ContactListenerTrampoline_OnContactRemoved(ContactListenerTrampoline *_this, const JPH_SubShapeIDPair *inSubShapePair)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(ContactListenerTrampoline *)(_this)).OnContactRemoved(
         ((inSubShapePair ? void() : MRBINDC_THROW("Parameter `inSubShapePair` can not be null.", void)), *(const JPH::SubShapeIDPair *)(inSubShapePair))
     );
 }

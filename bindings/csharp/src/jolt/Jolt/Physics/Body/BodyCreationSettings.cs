@@ -3,6 +3,9 @@ public static partial class JPH
 {
     /// Settings for constructing a rigid body
     /// Generated from class `JPH::BodyCreationSettings`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::RagdollSettings::Part`
     /// This is the const half of the class.
     public class Const_BodyCreationSettings : JPH.Object<Const_BodyCreationSettings>, System.IDisposable
     {
@@ -666,6 +669,9 @@ public static partial class JPH
 
     /// Settings for constructing a rigid body
     /// Generated from class `JPH::BodyCreationSettings`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::RagdollSettings::Part`
     /// This is the non-const half of the class.
     public class BodyCreationSettings : Const_BodyCreationSettings
     {

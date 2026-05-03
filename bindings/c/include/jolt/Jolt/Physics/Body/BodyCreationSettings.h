@@ -23,6 +23,9 @@ typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h
 
 /// Settings for constructing a rigid body
 /// Generated from class `JPH::BodyCreationSettings`.
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::RagdollSettings::Part`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_BodyCreationSettings JPH_BodyCreationSettings;
 

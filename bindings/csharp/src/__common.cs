@@ -211,6 +211,12 @@ public static partial class JPH
         public unsafe ref float this[nint i] => ref _elem[i];
     }
 
+    public struct ArrayInt2
+    {
+        public unsafe fixed int _elem[2];
+        public unsafe ref int this[nint i] => ref _elem[i];
+    }
+
     public struct ArrayUint64T2
     {
         public UIntPtr _0;

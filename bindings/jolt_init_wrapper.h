@@ -16,6 +16,7 @@
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
 #include <Jolt/Physics/SoftBody/SoftBodyMotionProperties.h>
 #include <Jolt/Physics/PhysicsSystem.h>
+#include <Jolt/Physics/Ragdoll/Ragdoll.h>
 #ifdef JPH_DEBUG_RENDERER
 #include <Jolt/Renderer/DebugRendererSimple.h>
 #endif
@@ -104,6 +105,22 @@ struct JoltHelpers
 
     /// Set the shape on a CharacterBaseSettings (mShape is a RefConst<Shape> not directly bindable).
     static void CharacterBaseSettingsSetShape(JPH::CharacterBaseSettings& inSettings, const JPH::Shape* inShape);
+
+    // -----------------------------------------------------------------------
+    // Ragdoll helpers — expose mSkeleton and mParts array to C#
+    // (mSkeleton is Ref<Skeleton>, mParts is Array<Part>; mrbind skips both).
+    // -----------------------------------------------------------------------
+
+    /// Set the skeleton on a RagdollSettings (mSkeleton is Ref<Skeleton>).
+    static void RagdollSettingsSetSkeleton(JPH::RagdollSettings& inSettings, JPH::Skeleton* inSkeleton);
+    /// Get the skeleton from a RagdollSettings (returns raw pointer, not Ref).
+    static JPH::Skeleton* RagdollSettingsGetSkeleton(const JPH::RagdollSettings& inSettings);
+    /// Append a Part to RagdollSettings::mParts.
+    static void RagdollSettingsAddPart(JPH::RagdollSettings& inSettings, const JPH::RagdollSettings::Part& inPart);
+    /// Return the number of parts in RagdollSettings::mParts.
+    static unsigned int RagdollSettingsGetPartCount(const JPH::RagdollSettings& inSettings);
+    /// Return a reference to a Part by index.
+    static const JPH::RagdollSettings::Part& RagdollSettingsGetPart(const JPH::RagdollSettings& inSettings, unsigned int inIndex);
 };
 
 // ---------------------------------------------------------------------------
@@ -146,6 +163,49 @@ struct SimpleContactEventListener : public JPH::ContactListener
     int  GetRemovedCount()   const { return mRemovedCount; }
     const JPH::BodyID& GetLastAddedBody1() const { return mLastAddedBody1; }
     const JPH::BodyID& GetLastAddedBody2() const { return mLastAddedBody2; }
+
+    virtual JPH::ValidateResult OnContactValidate(const JPH::Body& inBody1, const JPH::Body& inBody2, JPH::RVec3Arg inBaseOffset, const JPH::CollideShapeResult& inCollisionResult) override;
+    virtual void OnContactAdded(const JPH::Body& inBody1, const JPH::Body& inBody2, const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings) override;
+    virtual void OnContactPersisted(const JPH::Body& inBody1, const JPH::Body& inBody2, const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings) override;
+    virtual void OnContactRemoved(const JPH::SubShapeIDPair& inSubShapePair) override;
+};
+
+// ---------------------------------------------------------------------------
+// ContactListenerTrampoline — concrete ContactListener that dispatches to
+// C# function pointers.  Set mContext and the four mXxxFn fields; leave any
+// field null to get the default (AcceptAll for Validate, no-op for the rest).
+//
+// Function pointer signatures (all __cdecl / C calling convention):
+//   OnContactValidate : int  (*)(void* ctx,
+//                                const JPH::Body* body1, const JPH::Body* body2,
+//                                const JPH::Vec3* baseOffset,
+//                                const JPH::CollideShapeResult* result)
+//                       Return value maps to JPH::ValidateResult (0 = AcceptAll, etc.)
+//   OnContactAdded    : void (*)(void* ctx,
+//                                const JPH::Body* body1, const JPH::Body* body2,
+//                                const JPH::ContactManifold* manifold,
+//                                JPH::ContactSettings* settings)
+//   OnContactPersisted: same signature as OnContactAdded
+//   OnContactRemoved  : void (*)(void* ctx, const JPH::SubShapeIDPair* pair)
+// ---------------------------------------------------------------------------
+struct ContactListenerTrampoline : public JPH::ContactListener
+{
+    void* mContext              = nullptr;
+    void* mOnContactValidateFn  = nullptr;
+    void* mOnContactAddedFn     = nullptr;
+    void* mOnContactPersistedFn = nullptr;
+    void* mOnContactRemovedFn   = nullptr;
+
+    void* GetContext()              const { return mContext; }
+    void  SetContext(void* v)             { mContext = v; }
+    void* GetOnContactValidateFn()  const { return mOnContactValidateFn; }
+    void  SetOnContactValidateFn(void* v)  { mOnContactValidateFn  = v; }
+    void* GetOnContactAddedFn()     const { return mOnContactAddedFn; }
+    void  SetOnContactAddedFn(void* v)     { mOnContactAddedFn     = v; }
+    void* GetOnContactPersistedFn() const { return mOnContactPersistedFn; }
+    void  SetOnContactPersistedFn(void* v) { mOnContactPersistedFn = v; }
+    void* GetOnContactRemovedFn()   const { return mOnContactRemovedFn; }
+    void  SetOnContactRemovedFn(void* v)   { mOnContactRemovedFn   = v; }
 
     virtual JPH::ValidateResult OnContactValidate(const JPH::Body& inBody1, const JPH::Body& inBody2, JPH::RVec3Arg inBaseOffset, const JPH::CollideShapeResult& inCollisionResult) override;
     virtual void OnContactAdded(const JPH::Body& inBody1, const JPH::Body& inBody2, const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings) override;

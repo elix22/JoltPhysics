@@ -195,6 +195,76 @@ void JoltHelpers::CharacterBaseSettingsSetShape(JPH::CharacterBaseSettings& inSe
 }
 
 // ---------------------------------------------------------------------------
+// Ragdoll helpers
+// ---------------------------------------------------------------------------
+
+void JoltHelpers::RagdollSettingsSetSkeleton(JPH::RagdollSettings& inSettings, JPH::Skeleton* inSkeleton)
+{
+    inSettings.mSkeleton = inSkeleton;
+}
+
+JPH::Skeleton* JoltHelpers::RagdollSettingsGetSkeleton(const JPH::RagdollSettings& inSettings)
+{
+    return inSettings.mSkeleton;
+}
+
+void JoltHelpers::RagdollSettingsAddPart(JPH::RagdollSettings& inSettings, const JPH::RagdollSettings::Part& inPart)
+{
+    inSettings.mParts.push_back(inPart);
+}
+
+unsigned int JoltHelpers::RagdollSettingsGetPartCount(const JPH::RagdollSettings& inSettings)
+{
+    return static_cast<unsigned int>(inSettings.mParts.size());
+}
+
+const JPH::RagdollSettings::Part& JoltHelpers::RagdollSettingsGetPart(const JPH::RagdollSettings& inSettings, unsigned int inIndex)
+{
+    return inSettings.mParts[inIndex];
+}
+
+// ---------------------------------------------------------------------------
+// ContactListenerTrampoline
+// ---------------------------------------------------------------------------
+
+JPH::ValidateResult ContactListenerTrampoline::OnContactValidate(
+    const JPH::Body& inBody1, const JPH::Body& inBody2,
+    JPH::RVec3Arg inBaseOffset, const JPH::CollideShapeResult& inCollisionResult)
+{
+    if (mOnContactValidateFn == nullptr)
+        return JPH::ValidateResult::AcceptAllContactsForThisBodyPair;
+    using Fn = int(*)(void*, const JPH::Body*, const JPH::Body*, const JPH::Vec3*, const JPH::CollideShapeResult*);
+    JPH::Vec3 base(inBaseOffset);
+    return static_cast<JPH::ValidateResult>(reinterpret_cast<Fn>(mOnContactValidateFn)(
+        mContext, &inBody1, &inBody2, &base, &inCollisionResult));
+}
+
+void ContactListenerTrampoline::OnContactAdded(
+    const JPH::Body& inBody1, const JPH::Body& inBody2,
+    const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings)
+{
+    if (mOnContactAddedFn == nullptr) return;
+    using Fn = void(*)(void*, const JPH::Body*, const JPH::Body*, const JPH::ContactManifold*, JPH::ContactSettings*);
+    reinterpret_cast<Fn>(mOnContactAddedFn)(mContext, &inBody1, &inBody2, &inManifold, &ioSettings);
+}
+
+void ContactListenerTrampoline::OnContactPersisted(
+    const JPH::Body& inBody1, const JPH::Body& inBody2,
+    const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings)
+{
+    if (mOnContactPersistedFn == nullptr) return;
+    using Fn = void(*)(void*, const JPH::Body*, const JPH::Body*, const JPH::ContactManifold*, JPH::ContactSettings*);
+    reinterpret_cast<Fn>(mOnContactPersistedFn)(mContext, &inBody1, &inBody2, &inManifold, &ioSettings);
+}
+
+void ContactListenerTrampoline::OnContactRemoved(const JPH::SubShapeIDPair& inSubShapePair)
+{
+    if (mOnContactRemovedFn == nullptr) return;
+    using Fn = void(*)(void*, const JPH::SubShapeIDPair*);
+    reinterpret_cast<Fn>(mOnContactRemovedFn)(mContext, &inSubShapePair);
+}
+
+// ---------------------------------------------------------------------------
 // CountingPhysicsStepListener
 // ---------------------------------------------------------------------------
 

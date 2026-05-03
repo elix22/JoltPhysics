@@ -31,6 +31,7 @@ extern "C" {
 ///     `JPH::ObjectLayerPairFilter`
 ///     `JPH::ObjectVsBroadPhaseLayerFilter`
 ///     `JPH::PhysicsSystem`
+///     `JPH::Ragdoll`
 ///     `JPH::Shape`
 ///     `JPH::ShapeFilter`
 ///     `JPH::TempAllocator`

@@ -30,8 +30,11 @@ typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat4
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsStepListener JPH_PhysicsStepListener; // Defined in `#include <jolt/Jolt/Physics/PhysicsStepListener.h>`.
 typedef struct JPH_PhysicsSystem JPH_PhysicsSystem; // Defined in `#include <jolt/Jolt/Physics/PhysicsSystem.h>`.
+typedef struct JPH_RagdollSettings JPH_RagdollSettings; // Defined in `#include <jolt/Jolt/Physics/Ragdoll/Ragdoll.h>`.
+typedef struct JPH_RagdollSettings_Part JPH_RagdollSettings_Part; // Defined in `#include <jolt/Jolt/Physics/Ragdoll/Ragdoll.h>`.
 typedef struct JPH_RayInvDirection JPH_RayInvDirection; // Defined in `#include <jolt/Jolt/Geometry/RayAABox.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
+typedef struct JPH_Skeleton JPH_Skeleton; // Defined in `#include <jolt/Jolt/Skeleton/Skeleton.h>`.
 typedef struct JPH_SoftBodySharedSettings JPH_SoftBodySharedSettings; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodySharedSettings.h>`.
 typedef struct JPH_SoftBodySharedSettings_Vertex JPH_SoftBodySharedSettings_Vertex; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodySharedSettings.h>`.
 typedef struct JPH_SubShapeIDPair JPH_SubShapeIDPair; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeIDPair.h>`.
@@ -73,6 +76,31 @@ typedef struct CountingPhysicsStepListener CountingPhysicsStepListener;
 ///     `JPH::ContactListener`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct SimpleContactEventListener SimpleContactEventListener;
+
+// ---------------------------------------------------------------------------
+// ContactListenerTrampoline — concrete ContactListener that dispatches to
+// C# function pointers.  Set mContext and the four mXxxFn fields; leave any
+// field null to get the default (AcceptAll for Validate, no-op for the rest).
+//
+// Function pointer signatures (all __cdecl / C calling convention):
+//   OnContactValidate : int  (*)(void* ctx,
+//                                const JPH::Body* body1, const JPH::Body* body2,
+//                                const JPH::Vec3* baseOffset,
+//                                const JPH::CollideShapeResult* result)
+//                       Return value maps to JPH::ValidateResult (0 = AcceptAll, etc.)
+//   OnContactAdded    : void (*)(void* ctx,
+//                                const JPH::Body* body1, const JPH::Body* body2,
+//                                const JPH::ContactManifold* manifold,
+//                                JPH::ContactSettings* settings)
+//   OnContactPersisted: same signature as OnContactAdded
+//   OnContactRemoved  : void (*)(void* ctx, const JPH::SubShapeIDPair* pair)
+// ---------------------------------------------------------------------------
+/// Generated from class `ContactListenerTrampoline`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JPH::ContactListener`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct ContactListenerTrampoline ContactListenerTrampoline;
 
 // ---------------------------------------------------------------------------
 // EstimateResponseContactListener — concrete ContactListener that runs
@@ -290,6 +318,33 @@ JOLT_API JPH_Vec3 *JoltHelpers_PhysicsSystemGetSoftBodyVertexPosition(const JPH_
 /// Generated from method `JoltHelpers::CharacterBaseSettingsSetShape`.
 /// Parameter `inSettings` can not be null. It is a single object.
 JOLT_API void JoltHelpers_CharacterBaseSettingsSetShape(JPH_CharacterBaseSettings *inSettings, const JPH_Shape *inShape);
+
+/// Set the skeleton on a RagdollSettings (mSkeleton is Ref<Skeleton>).
+/// Generated from method `JoltHelpers::RagdollSettingsSetSkeleton`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_RagdollSettingsSetSkeleton(JPH_RagdollSettings *inSettings, JPH_Skeleton *inSkeleton);
+
+/// Get the skeleton from a RagdollSettings (returns raw pointer, not Ref).
+/// Generated from method `JoltHelpers::RagdollSettingsGetSkeleton`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API JPH_Skeleton *JoltHelpers_RagdollSettingsGetSkeleton(const JPH_RagdollSettings *inSettings);
+
+/// Append a Part to RagdollSettings::mParts.
+/// Generated from method `JoltHelpers::RagdollSettingsAddPart`.
+/// Parameter `inSettings` can not be null. It is a single object.
+/// Parameter `inPart` can not be null. It is a single object.
+JOLT_API void JoltHelpers_RagdollSettingsAddPart(JPH_RagdollSettings *inSettings, const JPH_RagdollSettings_Part *inPart);
+
+/// Return the number of parts in RagdollSettings::mParts.
+/// Generated from method `JoltHelpers::RagdollSettingsGetPartCount`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API unsigned int JoltHelpers_RagdollSettingsGetPartCount(const JPH_RagdollSettings *inSettings);
+
+/// Return a reference to a Part by index.
+/// Generated from method `JoltHelpers::RagdollSettingsGetPart`.
+/// Parameter `inSettings` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetPart(const JPH_RagdollSettings *inSettings, unsigned int inIndex);
 
 /// Returns a pointer to a member variable of class `CountingPhysicsStepListener` named `mCount`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -651,6 +706,220 @@ JOLT_API void SimpleContactEventListener_OnContactPersisted(SimpleContactEventLi
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inSubShapePair` can not be null. It is a single object.
 JOLT_API void SimpleContactEventListener_OnContactRemoved(SimpleContactEventListener *_this, const JPH_SubShapeIDPair *inSubShapePair);
+
+/// Returns a pointer to a member variable of class `ContactListenerTrampoline` named `mContext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *ContactListenerTrampoline_Get_mContext(const ContactListenerTrampoline *_this);
+
+/// Modifies a member variable of class `ContactListenerTrampoline` named `mContext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mContext`.
+/// When this function is called, this object will drop object references it held previously in `mContext`.
+JOLT_API void ContactListenerTrampoline_Set_mContext(ContactListenerTrampoline *_this, void *value);
+
+/// Returns a mutable pointer to a member variable of class `ContactListenerTrampoline` named `mContext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **ContactListenerTrampoline_GetMutable_mContext(ContactListenerTrampoline *_this);
+
+/// Returns a pointer to a member variable of class `ContactListenerTrampoline` named `mOnContactValidateFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *ContactListenerTrampoline_Get_mOnContactValidateFn(const ContactListenerTrampoline *_this);
+
+/// Modifies a member variable of class `ContactListenerTrampoline` named `mOnContactValidateFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mOnContactValidateFn`.
+/// When this function is called, this object will drop object references it held previously in `mOnContactValidateFn`.
+JOLT_API void ContactListenerTrampoline_Set_mOnContactValidateFn(ContactListenerTrampoline *_this, void *value);
+
+/// Returns a mutable pointer to a member variable of class `ContactListenerTrampoline` named `mOnContactValidateFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **ContactListenerTrampoline_GetMutable_mOnContactValidateFn(ContactListenerTrampoline *_this);
+
+/// Returns a pointer to a member variable of class `ContactListenerTrampoline` named `mOnContactAddedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *ContactListenerTrampoline_Get_mOnContactAddedFn(const ContactListenerTrampoline *_this);
+
+/// Modifies a member variable of class `ContactListenerTrampoline` named `mOnContactAddedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mOnContactAddedFn`.
+/// When this function is called, this object will drop object references it held previously in `mOnContactAddedFn`.
+JOLT_API void ContactListenerTrampoline_Set_mOnContactAddedFn(ContactListenerTrampoline *_this, void *value);
+
+/// Returns a mutable pointer to a member variable of class `ContactListenerTrampoline` named `mOnContactAddedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **ContactListenerTrampoline_GetMutable_mOnContactAddedFn(ContactListenerTrampoline *_this);
+
+/// Returns a pointer to a member variable of class `ContactListenerTrampoline` named `mOnContactPersistedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *ContactListenerTrampoline_Get_mOnContactPersistedFn(const ContactListenerTrampoline *_this);
+
+/// Modifies a member variable of class `ContactListenerTrampoline` named `mOnContactPersistedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mOnContactPersistedFn`.
+/// When this function is called, this object will drop object references it held previously in `mOnContactPersistedFn`.
+JOLT_API void ContactListenerTrampoline_Set_mOnContactPersistedFn(ContactListenerTrampoline *_this, void *value);
+
+/// Returns a mutable pointer to a member variable of class `ContactListenerTrampoline` named `mOnContactPersistedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **ContactListenerTrampoline_GetMutable_mOnContactPersistedFn(ContactListenerTrampoline *_this);
+
+/// Returns a pointer to a member variable of class `ContactListenerTrampoline` named `mOnContactRemovedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *ContactListenerTrampoline_Get_mOnContactRemovedFn(const ContactListenerTrampoline *_this);
+
+/// Modifies a member variable of class `ContactListenerTrampoline` named `mOnContactRemovedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mOnContactRemovedFn`.
+/// When this function is called, this object will drop object references it held previously in `mOnContactRemovedFn`.
+JOLT_API void ContactListenerTrampoline_Set_mOnContactRemovedFn(ContactListenerTrampoline *_this, void *value);
+
+/// Returns a mutable pointer to a member variable of class `ContactListenerTrampoline` named `mOnContactRemovedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **ContactListenerTrampoline_GetMutable_mOnContactRemovedFn(ContactListenerTrampoline *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `ContactListenerTrampoline_Destroy()` to free it when you're done using it.
+JOLT_API ContactListenerTrampoline *ContactListenerTrampoline_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `ContactListenerTrampoline_DestroyArray()`.
+/// Use `ContactListenerTrampoline_OffsetMutablePtr()` and `ContactListenerTrampoline_OffsetPtr()` to access the array elements.
+JOLT_API ContactListenerTrampoline *ContactListenerTrampoline_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const ContactListenerTrampoline *ContactListenerTrampoline_OffsetPtr(const ContactListenerTrampoline *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API ContactListenerTrampoline *ContactListenerTrampoline_OffsetMutablePtr(ContactListenerTrampoline *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `ContactListenerTrampoline` to its base class `JPH::ContactListener`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_ContactListener *ContactListenerTrampoline_UpcastTo_JPH_ContactListener(const ContactListenerTrampoline *object);
+
+/// Upcasts an instance of `ContactListenerTrampoline` to its base class `JPH::ContactListener`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_ContactListener *ContactListenerTrampoline_MutableUpcastTo_JPH_ContactListener(ContactListenerTrampoline *object);
+
+/// Downcasts an instance of `JPH::ContactListener` to a derived class `ContactListenerTrampoline`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const ContactListenerTrampoline *ContactListenerTrampoline_StaticDowncastFrom_JPH_ContactListener(const JPH_ContactListener *object);
+
+/// Downcasts an instance of `JPH::ContactListener` to a derived class `ContactListenerTrampoline`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API ContactListenerTrampoline *ContactListenerTrampoline_MutableStaticDowncastFrom_JPH_ContactListener(JPH_ContactListener *object);
+
+/// Generated from constructor `ContactListenerTrampoline::ContactListenerTrampoline`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `ContactListenerTrampoline_Destroy()` to free it when you're done using it.
+JOLT_API ContactListenerTrampoline *ContactListenerTrampoline_ConstructFromAnother(Jolt_PassBy _other_pass_by, ContactListenerTrampoline *_other);
+
+/// Destroys a heap-allocated instance of `ContactListenerTrampoline`. Does nothing if the pointer is null.
+JOLT_API void ContactListenerTrampoline_Destroy(const ContactListenerTrampoline *_this);
+
+/// Destroys a heap-allocated array of `ContactListenerTrampoline`. Does nothing if the pointer is null.
+JOLT_API void ContactListenerTrampoline_DestroyArray(const ContactListenerTrampoline *_this);
+
+/// Generated from method `ContactListenerTrampoline::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API ContactListenerTrampoline *ContactListenerTrampoline_AssignFromAnother(ContactListenerTrampoline *_this, Jolt_PassBy _other_pass_by, ContactListenerTrampoline *_other);
+
+/// Generated from method `ContactListenerTrampoline::GetContext`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *ContactListenerTrampoline_GetContext(const ContactListenerTrampoline *_this);
+
+/// Generated from method `ContactListenerTrampoline::SetContext`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void ContactListenerTrampoline_SetContext(ContactListenerTrampoline *_this, void *v);
+
+/// Generated from method `ContactListenerTrampoline::GetOnContactValidateFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *ContactListenerTrampoline_GetOnContactValidateFn(const ContactListenerTrampoline *_this);
+
+/// Generated from method `ContactListenerTrampoline::SetOnContactValidateFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void ContactListenerTrampoline_SetOnContactValidateFn(ContactListenerTrampoline *_this, void *v);
+
+/// Generated from method `ContactListenerTrampoline::GetOnContactAddedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *ContactListenerTrampoline_GetOnContactAddedFn(const ContactListenerTrampoline *_this);
+
+/// Generated from method `ContactListenerTrampoline::SetOnContactAddedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void ContactListenerTrampoline_SetOnContactAddedFn(ContactListenerTrampoline *_this, void *v);
+
+/// Generated from method `ContactListenerTrampoline::GetOnContactPersistedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *ContactListenerTrampoline_GetOnContactPersistedFn(const ContactListenerTrampoline *_this);
+
+/// Generated from method `ContactListenerTrampoline::SetOnContactPersistedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void ContactListenerTrampoline_SetOnContactPersistedFn(ContactListenerTrampoline *_this, void *v);
+
+/// Generated from method `ContactListenerTrampoline::GetOnContactRemovedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *ContactListenerTrampoline_GetOnContactRemovedFn(const ContactListenerTrampoline *_this);
+
+/// Generated from method `ContactListenerTrampoline::SetOnContactRemovedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void ContactListenerTrampoline_SetOnContactRemovedFn(ContactListenerTrampoline *_this, void *v);
+
+/// Generated from method `ContactListenerTrampoline::OnContactValidate`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBody1` can not be null. It is a single object.
+/// Parameter `inBody2` can not be null. It is a single object.
+/// Parameter `inBaseOffset` can not be null. It is a single object.
+/// Parameter `inCollisionResult` can not be null. It is a single object.
+JOLT_API JPH_ValidateResult ContactListenerTrampoline_OnContactValidate(ContactListenerTrampoline *_this, const JPH_Body *inBody1, const JPH_Body *inBody2, const JPH_Vec3 *inBaseOffset, const JPH_CollideShapeResult *inCollisionResult);
+
+/// Generated from method `ContactListenerTrampoline::OnContactAdded`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBody1` can not be null. It is a single object.
+/// Parameter `inBody2` can not be null. It is a single object.
+/// Parameter `inManifold` can not be null. It is a single object.
+/// Parameter `ioSettings` can not be null. It is a single object.
+JOLT_API void ContactListenerTrampoline_OnContactAdded(ContactListenerTrampoline *_this, const JPH_Body *inBody1, const JPH_Body *inBody2, const JPH_ContactManifold *inManifold, JPH_ContactSettings *ioSettings);
+
+/// Generated from method `ContactListenerTrampoline::OnContactPersisted`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBody1` can not be null. It is a single object.
+/// Parameter `inBody2` can not be null. It is a single object.
+/// Parameter `inManifold` can not be null. It is a single object.
+/// Parameter `ioSettings` can not be null. It is a single object.
+JOLT_API void ContactListenerTrampoline_OnContactPersisted(ContactListenerTrampoline *_this, const JPH_Body *inBody1, const JPH_Body *inBody2, const JPH_ContactManifold *inManifold, JPH_ContactSettings *ioSettings);
+
+/// Generated from method `ContactListenerTrampoline::OnContactRemoved`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapePair` can not be null. It is a single object.
+JOLT_API void ContactListenerTrampoline_OnContactRemoved(ContactListenerTrampoline *_this, const JPH_SubShapeIDPair *inSubShapePair);
 
 /// Returns a pointer to a member variable of class `EstimateResponseContactListener` named `mWasCalled`.
 /// Parameter `_this` can not be null. It is a single object.

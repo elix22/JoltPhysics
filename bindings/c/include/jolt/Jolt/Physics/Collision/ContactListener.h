@@ -60,6 +60,7 @@ typedef enum JPH_ValidateResult
 /// Generated from class `JPH::ContactListener`.
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `ContactListenerTrampoline`
 ///     `EstimateResponseContactListener`
 ///     `SimpleContactEventListener`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).

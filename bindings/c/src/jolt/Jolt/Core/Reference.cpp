@@ -9,6 +9,7 @@
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/Constraints/PathConstraintPath.h>
+#include <Jolt/Physics/Ragdoll/Ragdoll.h>
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
 #include <Jolt/Physics/Vehicle/VehicleCollisionTester.h>
 #include <Jolt/Physics/Vehicle/VehicleController.h>
@@ -1001,81 +1002,6 @@ int JPH_RefTarget_JPH_SoftBodySharedSettings_sInternalGetRefCountOffset(void)
     return JPH::RefTarget<JPH::SoftBodySharedSettings>::sInternalGetRefCountOffset();
 }
 
-JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_DefaultConstruct(void)
-{
-    using _mrbind_T = JPH::RefTarget<JPH::PathConstraintPath>;
-    _mrbind_T* _mrbind_ptr = new _mrbind_T();
-    _mrbind_ptr->~_mrbind_T();
-    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
-    return (JPH_RefTarget_JPH_PathConstraintPath*)(::new(_mrbind_ptr) _mrbind_T());
-}
-
-JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_DefaultConstructArray(size_t num_elems)
-{
-    return (JPH_RefTarget_JPH_PathConstraintPath *)(new JPH::RefTarget<JPH::PathConstraintPath>[num_elems]{});
-}
-
-const JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_OffsetPtr(const JPH_RefTarget_JPH_PathConstraintPath *ptr, ptrdiff_t i)
-{
-    return (const JPH_RefTarget_JPH_PathConstraintPath *)(((const JPH::RefTarget<JPH::PathConstraintPath> *)ptr) + i);
-}
-
-JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_OffsetMutablePtr(JPH_RefTarget_JPH_PathConstraintPath *ptr, ptrdiff_t i)
-{
-    return (JPH_RefTarget_JPH_PathConstraintPath *)(((JPH::RefTarget<JPH::PathConstraintPath> *)ptr) + i);
-}
-
-JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_PathConstraintPath *_other)
-{
-    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::PathConstraintPath>);
-    return (JPH_RefTarget_JPH_PathConstraintPath *)new JPH::RefTarget<JPH::PathConstraintPath>(JPH::RefTarget<JPH::PathConstraintPath>(
-        (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::PathConstraintPath>), JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::PathConstraintPath>))
-    ));
-}
-
-void JPH_RefTarget_JPH_PathConstraintPath_Destroy(const JPH_RefTarget_JPH_PathConstraintPath *_this)
-{
-    delete ((const JPH::RefTarget<JPH::PathConstraintPath> *)_this);
-}
-
-void JPH_RefTarget_JPH_PathConstraintPath_DestroyArray(const JPH_RefTarget_JPH_PathConstraintPath *_this)
-{
-    delete[] ((const JPH::RefTarget<JPH::PathConstraintPath> *)_this);
-}
-
-JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_AssignFromAnother(JPH_RefTarget_JPH_PathConstraintPath *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_PathConstraintPath *_other)
-{
-    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::PathConstraintPath>);
-    return (JPH_RefTarget_JPH_PathConstraintPath *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RefTarget<JPH::PathConstraintPath> *)(_this)).operator=(
-        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::PathConstraintPath>), JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::PathConstraintPath>)))
-    ));
-}
-
-void JPH_RefTarget_JPH_PathConstraintPath_SetEmbedded(const JPH_RefTarget_JPH_PathConstraintPath *_this)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::PathConstraintPath> *)(_this)).SetEmbedded();
-}
-
-unsigned int JPH_RefTarget_JPH_PathConstraintPath_GetRefCount(const JPH_RefTarget_JPH_PathConstraintPath *_this)
-{
-    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::PathConstraintPath> *)(_this)).GetRefCount();
-}
-
-void JPH_RefTarget_JPH_PathConstraintPath_AddRef(const JPH_RefTarget_JPH_PathConstraintPath *_this)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::PathConstraintPath> *)(_this)).AddRef();
-}
-
-void JPH_RefTarget_JPH_PathConstraintPath_Release(const JPH_RefTarget_JPH_PathConstraintPath *_this)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::PathConstraintPath> *)(_this)).Release();
-}
-
-int JPH_RefTarget_JPH_PathConstraintPath_sInternalGetRefCountOffset(void)
-{
-    return JPH::RefTarget<JPH::PathConstraintPath>::sInternalGetRefCountOffset();
-}
-
 JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_DefaultConstruct(void)
 {
     using _mrbind_T = JPH::RefTarget<JPH::Skeleton>;
@@ -1224,6 +1150,231 @@ void JPH_RefTarget_JPH_SkeletalAnimation_Release(const JPH_RefTarget_JPH_Skeleta
 int JPH_RefTarget_JPH_SkeletalAnimation_sInternalGetRefCountOffset(void)
 {
     return JPH::RefTarget<JPH::SkeletalAnimation>::sInternalGetRefCountOffset();
+}
+
+JPH_RefTarget_JPH_RagdollSettings *JPH_RefTarget_JPH_RagdollSettings_DefaultConstruct(void)
+{
+    using _mrbind_T = JPH::RefTarget<JPH::RagdollSettings>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_RagdollSettings*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+JPH_RefTarget_JPH_RagdollSettings *JPH_RefTarget_JPH_RagdollSettings_DefaultConstructArray(size_t num_elems)
+{
+    return (JPH_RefTarget_JPH_RagdollSettings *)(new JPH::RefTarget<JPH::RagdollSettings>[num_elems]{});
+}
+
+const JPH_RefTarget_JPH_RagdollSettings *JPH_RefTarget_JPH_RagdollSettings_OffsetPtr(const JPH_RefTarget_JPH_RagdollSettings *ptr, ptrdiff_t i)
+{
+    return (const JPH_RefTarget_JPH_RagdollSettings *)(((const JPH::RefTarget<JPH::RagdollSettings> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_RagdollSettings *JPH_RefTarget_JPH_RagdollSettings_OffsetMutablePtr(JPH_RefTarget_JPH_RagdollSettings *ptr, ptrdiff_t i)
+{
+    return (JPH_RefTarget_JPH_RagdollSettings *)(((JPH::RefTarget<JPH::RagdollSettings> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_RagdollSettings *JPH_RefTarget_JPH_RagdollSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_RagdollSettings *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::RagdollSettings>);
+    return (JPH_RefTarget_JPH_RagdollSettings *)new JPH::RefTarget<JPH::RagdollSettings>(JPH::RefTarget<JPH::RagdollSettings>(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::RagdollSettings>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::RagdollSettings>), JPH::RefTarget<JPH::RagdollSettings>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::RagdollSettings>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::RagdollSettings>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::RagdollSettings>))
+    ));
+}
+
+void JPH_RefTarget_JPH_RagdollSettings_Destroy(const JPH_RefTarget_JPH_RagdollSettings *_this)
+{
+    delete ((const JPH::RefTarget<JPH::RagdollSettings> *)_this);
+}
+
+void JPH_RefTarget_JPH_RagdollSettings_DestroyArray(const JPH_RefTarget_JPH_RagdollSettings *_this)
+{
+    delete[] ((const JPH::RefTarget<JPH::RagdollSettings> *)_this);
+}
+
+JPH_RefTarget_JPH_RagdollSettings *JPH_RefTarget_JPH_RagdollSettings_AssignFromAnother(JPH_RefTarget_JPH_RagdollSettings *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_RagdollSettings *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::RagdollSettings>);
+    return (JPH_RefTarget_JPH_RagdollSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RefTarget<JPH::RagdollSettings> *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::RagdollSettings>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::RagdollSettings>), JPH::RefTarget<JPH::RagdollSettings>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::RagdollSettings>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::RagdollSettings>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::RagdollSettings>)))
+    ));
+}
+
+void JPH_RefTarget_JPH_RagdollSettings_SetEmbedded(const JPH_RefTarget_JPH_RagdollSettings *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::RagdollSettings> *)(_this)).SetEmbedded();
+}
+
+unsigned int JPH_RefTarget_JPH_RagdollSettings_GetRefCount(const JPH_RefTarget_JPH_RagdollSettings *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::RagdollSettings> *)(_this)).GetRefCount();
+}
+
+void JPH_RefTarget_JPH_RagdollSettings_AddRef(const JPH_RefTarget_JPH_RagdollSettings *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::RagdollSettings> *)(_this)).AddRef();
+}
+
+void JPH_RefTarget_JPH_RagdollSettings_Release(const JPH_RefTarget_JPH_RagdollSettings *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::RagdollSettings> *)(_this)).Release();
+}
+
+int JPH_RefTarget_JPH_RagdollSettings_sInternalGetRefCountOffset(void)
+{
+    return JPH::RefTarget<JPH::RagdollSettings>::sInternalGetRefCountOffset();
+}
+
+JPH_RefTarget_JPH_Ragdoll *JPH_RefTarget_JPH_Ragdoll_DefaultConstruct(void)
+{
+    using _mrbind_T = JPH::RefTarget<JPH::Ragdoll>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_Ragdoll*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+JPH_RefTarget_JPH_Ragdoll *JPH_RefTarget_JPH_Ragdoll_DefaultConstructArray(size_t num_elems)
+{
+    return (JPH_RefTarget_JPH_Ragdoll *)(new JPH::RefTarget<JPH::Ragdoll>[num_elems]{});
+}
+
+const JPH_RefTarget_JPH_Ragdoll *JPH_RefTarget_JPH_Ragdoll_OffsetPtr(const JPH_RefTarget_JPH_Ragdoll *ptr, ptrdiff_t i)
+{
+    return (const JPH_RefTarget_JPH_Ragdoll *)(((const JPH::RefTarget<JPH::Ragdoll> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_Ragdoll *JPH_RefTarget_JPH_Ragdoll_OffsetMutablePtr(JPH_RefTarget_JPH_Ragdoll *ptr, ptrdiff_t i)
+{
+    return (JPH_RefTarget_JPH_Ragdoll *)(((JPH::RefTarget<JPH::Ragdoll> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_Ragdoll *JPH_RefTarget_JPH_Ragdoll_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_Ragdoll *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::Ragdoll>);
+    return (JPH_RefTarget_JPH_Ragdoll *)new JPH::RefTarget<JPH::Ragdoll>(JPH::RefTarget<JPH::Ragdoll>(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::Ragdoll>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::Ragdoll>), JPH::RefTarget<JPH::Ragdoll>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::Ragdoll>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::Ragdoll>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::Ragdoll>))
+    ));
+}
+
+void JPH_RefTarget_JPH_Ragdoll_Destroy(const JPH_RefTarget_JPH_Ragdoll *_this)
+{
+    delete ((const JPH::RefTarget<JPH::Ragdoll> *)_this);
+}
+
+void JPH_RefTarget_JPH_Ragdoll_DestroyArray(const JPH_RefTarget_JPH_Ragdoll *_this)
+{
+    delete[] ((const JPH::RefTarget<JPH::Ragdoll> *)_this);
+}
+
+JPH_RefTarget_JPH_Ragdoll *JPH_RefTarget_JPH_Ragdoll_AssignFromAnother(JPH_RefTarget_JPH_Ragdoll *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_Ragdoll *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::Ragdoll>);
+    return (JPH_RefTarget_JPH_Ragdoll *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RefTarget<JPH::Ragdoll> *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::Ragdoll>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::Ragdoll>), JPH::RefTarget<JPH::Ragdoll>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::Ragdoll>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::Ragdoll>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::Ragdoll>)))
+    ));
+}
+
+void JPH_RefTarget_JPH_Ragdoll_SetEmbedded(const JPH_RefTarget_JPH_Ragdoll *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::Ragdoll> *)(_this)).SetEmbedded();
+}
+
+unsigned int JPH_RefTarget_JPH_Ragdoll_GetRefCount(const JPH_RefTarget_JPH_Ragdoll *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::Ragdoll> *)(_this)).GetRefCount();
+}
+
+void JPH_RefTarget_JPH_Ragdoll_AddRef(const JPH_RefTarget_JPH_Ragdoll *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::Ragdoll> *)(_this)).AddRef();
+}
+
+void JPH_RefTarget_JPH_Ragdoll_Release(const JPH_RefTarget_JPH_Ragdoll *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::Ragdoll> *)(_this)).Release();
+}
+
+int JPH_RefTarget_JPH_Ragdoll_sInternalGetRefCountOffset(void)
+{
+    return JPH::RefTarget<JPH::Ragdoll>::sInternalGetRefCountOffset();
+}
+
+JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_DefaultConstruct(void)
+{
+    using _mrbind_T = JPH::RefTarget<JPH::PathConstraintPath>;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (JPH_RefTarget_JPH_PathConstraintPath*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_DefaultConstructArray(size_t num_elems)
+{
+    return (JPH_RefTarget_JPH_PathConstraintPath *)(new JPH::RefTarget<JPH::PathConstraintPath>[num_elems]{});
+}
+
+const JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_OffsetPtr(const JPH_RefTarget_JPH_PathConstraintPath *ptr, ptrdiff_t i)
+{
+    return (const JPH_RefTarget_JPH_PathConstraintPath *)(((const JPH::RefTarget<JPH::PathConstraintPath> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_OffsetMutablePtr(JPH_RefTarget_JPH_PathConstraintPath *ptr, ptrdiff_t i)
+{
+    return (JPH_RefTarget_JPH_PathConstraintPath *)(((JPH::RefTarget<JPH::PathConstraintPath> *)ptr) + i);
+}
+
+JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_PathConstraintPath *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::PathConstraintPath>);
+    return (JPH_RefTarget_JPH_PathConstraintPath *)new JPH::RefTarget<JPH::PathConstraintPath>(JPH::RefTarget<JPH::PathConstraintPath>(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::PathConstraintPath>), JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::PathConstraintPath>))
+    ));
+}
+
+void JPH_RefTarget_JPH_PathConstraintPath_Destroy(const JPH_RefTarget_JPH_PathConstraintPath *_this)
+{
+    delete ((const JPH::RefTarget<JPH::PathConstraintPath> *)_this);
+}
+
+void JPH_RefTarget_JPH_PathConstraintPath_DestroyArray(const JPH_RefTarget_JPH_PathConstraintPath *_this)
+{
+    delete[] ((const JPH::RefTarget<JPH::PathConstraintPath> *)_this);
+}
+
+JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_AssignFromAnother(JPH_RefTarget_JPH_PathConstraintPath *_this, Jolt_PassBy _other_pass_by, JPH_RefTarget_JPH_PathConstraintPath *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, JPH::RefTarget<JPH::PathConstraintPath>);
+    return (JPH_RefTarget_JPH_PathConstraintPath *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RefTarget<JPH::PathConstraintPath> *)(_this)).operator=(
+        mrbindc_details::unmove((MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_COPY(_other, (JPH::RefTarget<JPH::PathConstraintPath>), JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::RefTarget<JPH::PathConstraintPath>) MRBINDC_CLASSARG_END(_other, JPH::RefTarget<JPH::PathConstraintPath>)))
+    ));
+}
+
+void JPH_RefTarget_JPH_PathConstraintPath_SetEmbedded(const JPH_RefTarget_JPH_PathConstraintPath *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::PathConstraintPath> *)(_this)).SetEmbedded();
+}
+
+unsigned int JPH_RefTarget_JPH_PathConstraintPath_GetRefCount(const JPH_RefTarget_JPH_PathConstraintPath *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::PathConstraintPath> *)(_this)).GetRefCount();
+}
+
+void JPH_RefTarget_JPH_PathConstraintPath_AddRef(const JPH_RefTarget_JPH_PathConstraintPath *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::PathConstraintPath> *)(_this)).AddRef();
+}
+
+void JPH_RefTarget_JPH_PathConstraintPath_Release(const JPH_RefTarget_JPH_PathConstraintPath *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RefTarget<JPH::PathConstraintPath> *)(_this)).Release();
+}
+
+int JPH_RefTarget_JPH_PathConstraintPath_sInternalGetRefCountOffset(void)
+{
+    return JPH::RefTarget<JPH::PathConstraintPath>::sInternalGetRefCountOffset();
 }
 
 JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct(void)
