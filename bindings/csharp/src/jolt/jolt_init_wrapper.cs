@@ -474,6 +474,63 @@ public static partial class JPH
             extern static JPH.RagdollSettings.Const_Part._Underlying *__JoltHelpers_RagdollSettingsGetPart(JPH.Const_RagdollSettings._Underlying *inSettings, uint inIndex);
             return new(__JoltHelpers_RagdollSettingsGetPart(inSettings._UnderlyingPtr, inIndex), is_owning: false);
         }
+
+        /// Add a root joint (no parent) to a Skeleton. Returns the joint index.
+        /// Generated from method `JoltHelpers::SkeletonAddJoint`.
+        public static unsafe uint SkeletonAddJoint(JPH.Skeleton inSkeleton, byte? inName)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SkeletonAddJoint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SkeletonAddJoint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JoltHelpers_SkeletonAddJoint(JPH.Skeleton._Underlying *inSkeleton, byte *inName);
+            byte __deref_inName = inName.GetValueOrDefault();
+            return __JoltHelpers_SkeletonAddJoint(inSkeleton._UnderlyingPtr, inName.HasValue ? &__deref_inName : null);
+        }
+
+        /// Add a joint with a named parent. Returns the joint index.
+        /// Generated from method `JoltHelpers::SkeletonAddJointWithParentName`.
+        public static unsafe uint SkeletonAddJointWithParentName(JPH.Skeleton inSkeleton, byte? inName, byte? inParentName)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SkeletonAddJointWithParentName", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SkeletonAddJointWithParentName", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JoltHelpers_SkeletonAddJointWithParentName(JPH.Skeleton._Underlying *inSkeleton, byte *inName, byte *inParentName);
+            byte __deref_inName = inName.GetValueOrDefault();
+            byte __deref_inParentName = inParentName.GetValueOrDefault();
+            return __JoltHelpers_SkeletonAddJointWithParentName(inSkeleton._UnderlyingPtr, inName.HasValue ? &__deref_inName : null, inParentName.HasValue ? &__deref_inParentName : null);
+        }
+
+        /// Add a joint with a parent index. Returns the joint index.
+        /// Generated from method `JoltHelpers::SkeletonAddJointWithParentIndex`.
+        public static unsafe uint SkeletonAddJointWithParentIndex(JPH.Skeleton inSkeleton, byte? inName, int inParentIndex)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SkeletonAddJointWithParentIndex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SkeletonAddJointWithParentIndex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JoltHelpers_SkeletonAddJointWithParentIndex(JPH.Skeleton._Underlying *inSkeleton, byte *inName, int inParentIndex);
+            byte __deref_inName = inName.GetValueOrDefault();
+            return __JoltHelpers_SkeletonAddJointWithParentIndex(inSkeleton._UnderlyingPtr, inName.HasValue ? &__deref_inName : null, inParentIndex);
+        }
+
+        /// Create a ConvexHullShapeSettings from an array of Float3 points.
+        /// Generated from method `JoltHelpers::ConvexHullShapeSettingsFromFloat3Array`.
+        public static unsafe JPH.ConvexHullShapeSettings? ConvexHullShapeSettingsFromFloat3Array(JPH.Const_Float3? inPoints, int inNumPoints, float inMaxConvexRadius, JPH.Const_PhysicsMaterial? inMaterial)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_ConvexHullShapeSettingsFromFloat3Array", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_ConvexHullShapeSettingsFromFloat3Array", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.ConvexHullShapeSettings._Underlying *__JoltHelpers_ConvexHullShapeSettingsFromFloat3Array(JPH.Const_Float3._Underlying *inPoints, int inNumPoints, float inMaxConvexRadius, JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+            var __c_ret = __JoltHelpers_ConvexHullShapeSettingsFromFloat3Array(inPoints is not null ? inPoints._UnderlyingPtr : null, inNumPoints, inMaxConvexRadius, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            return __c_ret is not null ? new JPH.ConvexHullShapeSettings(__c_ret, is_owning: false) : null;
+        }
     }
 
     /// Minimal helpers for Jolt global lifecycle.

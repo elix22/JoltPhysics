@@ -22,12 +22,15 @@ typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Colo
 typedef struct JPH_ContactListener JPH_ContactListener; // Defined in `#include <jolt/Jolt/Physics/Collision/ContactListener.h>`.
 typedef struct JPH_ContactManifold JPH_ContactManifold; // Defined in `#include <jolt/Jolt/Physics/Collision/ContactListener.h>`.
 typedef struct JPH_ContactSettings JPH_ContactSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/ContactListener.h>`.
+typedef struct JPH_ConvexHullShapeSettings JPH_ConvexHullShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/ConvexHullShape.h>`.
 typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_DebugRendererSimple JPH_DebugRendererSimple; // Defined in `#include <jolt/Jolt/Renderer/DebugRendererSimple.h>`.
 typedef struct JPH_DebugRenderer_Vertex JPH_DebugRenderer_Vertex; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
 typedef struct JPH_HeightFieldShapeSettings JPH_HeightFieldShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/HeightFieldShape.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
+typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
 typedef struct JPH_PhysicsStepListener JPH_PhysicsStepListener; // Defined in `#include <jolt/Jolt/Physics/PhysicsStepListener.h>`.
 typedef struct JPH_PhysicsSystem JPH_PhysicsSystem; // Defined in `#include <jolt/Jolt/Physics/PhysicsSystem.h>`.
 typedef struct JPH_RagdollSettings JPH_RagdollSettings; // Defined in `#include <jolt/Jolt/Physics/Ragdoll/Ragdoll.h>`.
@@ -345,6 +348,25 @@ JOLT_API unsigned int JoltHelpers_RagdollSettingsGetPartCount(const JPH_RagdollS
 /// Parameter `inSettings` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetPart(const JPH_RagdollSettings *inSettings, unsigned int inIndex);
+
+/// Add a root joint (no parent) to a Skeleton. Returns the joint index.
+/// Generated from method `JoltHelpers::SkeletonAddJoint`.
+/// Parameter `inSkeleton` can not be null. It is a single object.
+JOLT_API unsigned int JoltHelpers_SkeletonAddJoint(JPH_Skeleton *inSkeleton, const char *inName);
+
+/// Add a joint with a named parent. Returns the joint index.
+/// Generated from method `JoltHelpers::SkeletonAddJointWithParentName`.
+/// Parameter `inSkeleton` can not be null. It is a single object.
+JOLT_API unsigned int JoltHelpers_SkeletonAddJointWithParentName(JPH_Skeleton *inSkeleton, const char *inName, const char *inParentName);
+
+/// Add a joint with a parent index. Returns the joint index.
+/// Generated from method `JoltHelpers::SkeletonAddJointWithParentIndex`.
+/// Parameter `inSkeleton` can not be null. It is a single object.
+JOLT_API unsigned int JoltHelpers_SkeletonAddJointWithParentIndex(JPH_Skeleton *inSkeleton, const char *inName, int inParentIndex);
+
+/// Create a ConvexHullShapeSettings from an array of Float3 points.
+/// Generated from method `JoltHelpers::ConvexHullShapeSettingsFromFloat3Array`.
+JOLT_API JPH_ConvexHullShapeSettings *JoltHelpers_ConvexHullShapeSettingsFromFloat3Array(const JPH_Float3 *inPoints, int inNumPoints, float inMaxConvexRadius, const JPH_PhysicsMaterial *inMaterial);
 
 /// Returns a pointer to a member variable of class `CountingPhysicsStepListener` named `mCount`.
 /// Parameter `_this` can not be null. It is a single object.

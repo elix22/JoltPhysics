@@ -224,6 +224,40 @@ const JPH::RagdollSettings::Part& JoltHelpers::RagdollSettingsGetPart(const JPH:
 }
 
 // ---------------------------------------------------------------------------
+// Skeleton helpers
+// ---------------------------------------------------------------------------
+
+unsigned int JoltHelpers::SkeletonAddJoint(JPH::Skeleton& inSkeleton, const char* inName)
+{
+    return inSkeleton.AddJoint(inName);
+}
+
+unsigned int JoltHelpers::SkeletonAddJointWithParentName(JPH::Skeleton& inSkeleton, const char* inName, const char* inParentName)
+{
+    return inSkeleton.AddJoint(inName, inParentName);
+}
+
+unsigned int JoltHelpers::SkeletonAddJointWithParentIndex(JPH::Skeleton& inSkeleton, const char* inName, int inParentIndex)
+{
+    return inSkeleton.AddJoint(inName, inParentIndex);
+}
+
+// ---------------------------------------------------------------------------
+// ConvexHullShapeSettings from Float3 array
+// ---------------------------------------------------------------------------
+
+JPH::ConvexHullShapeSettings* JoltHelpers::ConvexHullShapeSettingsFromFloat3Array(
+    const JPH::Float3* inPoints, int inNumPoints,
+    float inMaxConvexRadius, const JPH::PhysicsMaterial* inMaterial)
+{
+    JPH::Array<JPH::Vec3> pts;
+    pts.reserve(inNumPoints);
+    for (int i = 0; i < inNumPoints; ++i)
+        pts.emplace_back(inPoints[i].x, inPoints[i].y, inPoints[i].z);
+    return new JPH::ConvexHullShapeSettings(pts, inMaxConvexRadius, inMaterial);
+}
+
+// ---------------------------------------------------------------------------
 // ContactListenerTrampoline
 // ---------------------------------------------------------------------------
 

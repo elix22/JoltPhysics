@@ -6,6 +6,7 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Geometry/AABox.h>
 #include <Jolt/Geometry/RayAABox.h>
+#include <Jolt/Math/Float3.h>
 #include <Jolt/Math/Mat44.h>
 #include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/Body.h>
@@ -13,6 +14,8 @@
 #include <Jolt/Physics/Character/CharacterBase.h>
 #include <Jolt/Physics/Collision/CollideShape.h>
 #include <Jolt/Physics/Collision/ContactListener.h>
+#include <Jolt/Physics/Collision/PhysicsMaterial.h>
+#include <Jolt/Physics/Collision/Shape/ConvexHullShape.h>
 #include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeIDPair.h>
@@ -324,6 +327,42 @@ const JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetPart(const JPH_Rag
     return (const JPH_RagdollSettings_Part *)std::addressof(JoltHelpers::RagdollSettingsGetPart(
         ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::RagdollSettings *)(inSettings)),
         inIndex
+    ));
+}
+
+unsigned int JoltHelpers_SkeletonAddJoint(JPH_Skeleton *inSkeleton, const char *inName)
+{
+    return JoltHelpers::SkeletonAddJoint(
+        ((inSkeleton ? void() : MRBINDC_THROW("Parameter `inSkeleton` can not be null.", void)), *(JPH::Skeleton *)(inSkeleton)),
+        inName
+    );
+}
+
+unsigned int JoltHelpers_SkeletonAddJointWithParentName(JPH_Skeleton *inSkeleton, const char *inName, const char *inParentName)
+{
+    return JoltHelpers::SkeletonAddJointWithParentName(
+        ((inSkeleton ? void() : MRBINDC_THROW("Parameter `inSkeleton` can not be null.", void)), *(JPH::Skeleton *)(inSkeleton)),
+        inName,
+        inParentName
+    );
+}
+
+unsigned int JoltHelpers_SkeletonAddJointWithParentIndex(JPH_Skeleton *inSkeleton, const char *inName, int inParentIndex)
+{
+    return JoltHelpers::SkeletonAddJointWithParentIndex(
+        ((inSkeleton ? void() : MRBINDC_THROW("Parameter `inSkeleton` can not be null.", void)), *(JPH::Skeleton *)(inSkeleton)),
+        inName,
+        inParentIndex
+    );
+}
+
+JPH_ConvexHullShapeSettings *JoltHelpers_ConvexHullShapeSettingsFromFloat3Array(const JPH_Float3 *inPoints, int inNumPoints, float inMaxConvexRadius, const JPH_PhysicsMaterial *inMaterial)
+{
+    return (JPH_ConvexHullShapeSettings *)(JoltHelpers::ConvexHullShapeSettingsFromFloat3Array(
+        ((const JPH::Float3 *)inPoints),
+        inNumPoints,
+        inMaxConvexRadius,
+        ((const JPH::PhysicsMaterial *)inMaterial)
     ));
 }
 

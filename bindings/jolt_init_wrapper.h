@@ -13,6 +13,7 @@
 #include <Jolt/Physics/Collision/ContactListener.h>
 #include <Jolt/Physics/Collision/EstimateCollisionResponse.h>
 #include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
+#include <Jolt/Physics/Collision/Shape/ConvexHullShape.h>
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
 #include <Jolt/Physics/SoftBody/SoftBodyMotionProperties.h>
 #include <Jolt/Physics/PhysicsSystem.h>
@@ -121,6 +122,29 @@ struct JoltHelpers
     static unsigned int RagdollSettingsGetPartCount(const JPH::RagdollSettings& inSettings);
     /// Return a reference to a Part by index.
     static const JPH::RagdollSettings::Part& RagdollSettingsGetPart(const JPH::RagdollSettings& inSettings, unsigned int inIndex);
+
+    // -----------------------------------------------------------------------
+    // Skeleton helpers — AddJoint wrappers (mrbind cannot bind AddJoint because
+    // JPH::Array<T> mutation is not supported by the generator).
+    // -----------------------------------------------------------------------
+
+    /// Add a root joint (no parent) to a Skeleton. Returns the joint index.
+    static unsigned int SkeletonAddJoint(JPH::Skeleton& inSkeleton, const char* inName);
+    /// Add a joint with a named parent. Returns the joint index.
+    static unsigned int SkeletonAddJointWithParentName(JPH::Skeleton& inSkeleton, const char* inName, const char* inParentName);
+    /// Add a joint with a parent index. Returns the joint index.
+    static unsigned int SkeletonAddJointWithParentIndex(JPH::Skeleton& inSkeleton, const char* inName, int inParentIndex);
+
+    // -----------------------------------------------------------------------
+    // ConvexHullShapeSettings Float3-array constructor
+    // (Vec3 is SIMD-aligned and cannot form a contiguous C array from managed code;
+    //  Float3 is a plain {float x,y,z} struct with the same layout as System.Numerics.Vector3).
+    // -----------------------------------------------------------------------
+
+    /// Create a ConvexHullShapeSettings from an array of Float3 points.
+    static JPH::ConvexHullShapeSettings* ConvexHullShapeSettingsFromFloat3Array(
+        const JPH::Float3* inPoints, int inNumPoints,
+        float inMaxConvexRadius, const JPH::PhysicsMaterial* inMaterial);
 };
 
 // ---------------------------------------------------------------------------
