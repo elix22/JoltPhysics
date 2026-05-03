@@ -94,6 +94,12 @@ set -x
 
 # Assemble the combined input header.
 echo "#pragma once" >"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Jolt.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/Shape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/ConvexShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/DecoratedShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/Shape/CompoundShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Character/CharacterBase.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/bindings/jolt_init_wrapper.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Jolt.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/RegisterTypes.h\"" >>"$BINDINGS/tmp/combined_input.h"
@@ -152,6 +158,7 @@ echo "#include \"$ROOT/Jolt/Physics/Body/BodyFilter.h\"" >>"$BINDINGS/tmp/combin
 echo "#include \"$ROOT/Jolt/Physics/Collision/ShapeFilter.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Collision/ContactListener.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Collision/NarrowPhaseQuery.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Character/Character.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Character/CharacterBase.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Character/CharacterVirtual.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayerInterfaceTable.h\"" >>"$BINDINGS/tmp/combined_input.h"
@@ -362,6 +369,8 @@ echo "#include \"$ROOT/Jolt/Skeleton/SkeletonMapper.h\"" >>"$BINDINGS/tmp/combin
     --allow JPH::ValidateResult \
     --allow JPH::BroadPhaseQuery \
     --allow JPH::NarrowPhaseQuery \
+    --allow JPH::CharacterSettings \
+    --allow JPH::Character \
     --allow JPH::CharacterBaseSettings \
     --allow JPH::CharacterBase \
     --allow JPH::CharacterVirtualSettings \

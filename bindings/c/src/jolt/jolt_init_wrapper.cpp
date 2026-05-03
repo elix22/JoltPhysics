@@ -10,6 +10,7 @@
 #include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyID.h>
+#include <Jolt/Physics/Character/CharacterBase.h>
 #include <Jolt/Physics/Collision/CollideShape.h>
 #include <Jolt/Physics/Collision/ContactListener.h>
 #include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
@@ -276,6 +277,14 @@ JPH_Vec3 *JoltHelpers_PhysicsSystemGetSoftBodyVertexPosition(const JPH_PhysicsSy
         ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID)),
         inIndex
     ));
+}
+
+void JoltHelpers_CharacterBaseSettingsSetShape(JPH_CharacterBaseSettings *inSettings, const JPH_Shape *inShape)
+{
+    JoltHelpers::CharacterBaseSettingsSetShape(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::CharacterBaseSettings *)(inSettings)),
+        ((const JPH::Shape *)inShape)
+    );
 }
 
 const int *CountingPhysicsStepListener_Get_mCount(const CountingPhysicsStepListener *_this)

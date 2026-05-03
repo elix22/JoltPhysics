@@ -451,16 +451,16 @@ JOLT_API JPH_Vec3 *JPH_Vec3_Swizzle_0_2_1(const JPH_Vec3 *_this);
 JOLT_API JPH_Vec3 *JPH_Vec3_Swizzle_1_2_0(const JPH_Vec3 *_this);
 
 /// Swizzle the elements in inV
-/// Generated from method `JPH::Vec3::Swizzle<0, 1, 0>`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
-JOLT_API JPH_Vec3 *JPH_Vec3_Swizzle_0_1_0(const JPH_Vec3 *_this);
-
-/// Swizzle the elements in inV
 /// Generated from method `JPH::Vec3::Swizzle<2, 1, 0>`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_Vec3_Swizzle_2_1_0(const JPH_Vec3 *_this);
+
+/// Swizzle the elements in inV
+/// Generated from method `JPH::Vec3::Swizzle<0, 1, 0>`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Vec3_Swizzle_0_1_0(const JPH_Vec3 *_this);
 
 /// Replicate the X component to all components
 /// Generated from method `JPH::Vec3::SplatX`.

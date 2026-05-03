@@ -8,6 +8,7 @@ public static partial class JPH
     ///     `JPH::RefTarget<JPH::CharacterBaseSettings>`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::CharacterSettings`
     ///     `JPH::CharacterVirtualSettings`
     /// This is the const half of the class.
     public class Const_CharacterBaseSettings : JPH.Object<Const_CharacterBaseSettings>, System.IDisposable
@@ -387,6 +388,7 @@ public static partial class JPH
     ///     `JPH::RefTarget<JPH::CharacterBaseSettings>`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::CharacterSettings`
     ///     `JPH::CharacterVirtualSettings`
     /// This is the non-const half of the class.
     public class CharacterBaseSettings : Const_CharacterBaseSettings
@@ -604,6 +606,7 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::Character`
     ///     `JPH::CharacterVirtual`
     /// This is the const half of the class.
     public class Const_CharacterBase : JPH.Object<Const_CharacterBase>, System.IDisposable
@@ -1092,6 +1095,7 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::Character`
     ///     `JPH::CharacterVirtual`
     /// This is the non-const half of the class.
     public class CharacterBase : Const_CharacterBase

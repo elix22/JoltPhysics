@@ -41,6 +41,7 @@ extern "C" {
 ///     `JPH::BoxShape`
 ///     `JPH::BroadPhaseLayerInterfaceTable`
 ///     `JPH::CapsuleShape`
+///     `JPH::Character`
 ///     `JPH::CharacterVirtual`
 ///     `JPH::CharacterVsCharacterCollisionSimple`
 ///     `JPH::CompoundShape`

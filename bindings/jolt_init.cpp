@@ -7,6 +7,7 @@
 #include <Jolt/RegisterTypes.h>
 #include <Jolt/Physics/PhysicsSystem.h>
 #include <Jolt/Physics/Body/BodyLock.h>
+#include <Jolt/Physics/Character/CharacterBase.h>
 
 #include <cstdarg>
 #include <cstdio>
@@ -186,6 +187,11 @@ JPH::Vec3 JoltHelpers::PhysicsSystemGetSoftBodyVertexPosition(const JPH::Physics
     const auto& verts = static_cast<const JPH::SoftBodyMotionProperties*>(body.GetMotionProperties())->GetVertices();
     if (inIndex >= verts.size()) return JPH::Vec3::sZero();
     return verts[inIndex].mPosition;
+}
+
+void JoltHelpers::CharacterBaseSettingsSetShape(JPH::CharacterBaseSettings& inSettings, const JPH::Shape* inShape)
+{
+    inSettings.mShape = inShape;
 }
 
 // ---------------------------------------------------------------------------

@@ -395,6 +395,19 @@ public static partial class JPH
                 return new(__JoltHelpers_PhysicsSystemGetSoftBodyVertexPosition(inSystem._UnderlyingPtr, __ptr_inBodyID, inIndex), is_owning: true);
             }
         }
+
+        /// Set the shape on a CharacterBaseSettings (mShape is a RefConst<Shape> not directly bindable).
+        /// Generated from method `JoltHelpers::CharacterBaseSettingsSetShape`.
+        public static unsafe void CharacterBaseSettingsSetShape(JPH.CharacterBaseSettings inSettings, JPH.Const_Shape? inShape)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_CharacterBaseSettingsSetShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_CharacterBaseSettingsSetShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_CharacterBaseSettingsSetShape(JPH.CharacterBaseSettings._Underlying *inSettings, JPH.Const_Shape._Underlying *inShape);
+            __JoltHelpers_CharacterBaseSettingsSetShape(inSettings._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+        }
     }
 
     /// Minimal helpers for Jolt global lifecycle.

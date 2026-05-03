@@ -32,6 +32,7 @@ public static partial class JPH
     ///     `JPH::BoxShape`
     ///     `JPH::BroadPhaseLayerInterfaceTable`
     ///     `JPH::CapsuleShape`
+    ///     `JPH::Character`
     ///     `JPH::CharacterVirtual`
     ///     `JPH::CharacterVsCharacterCollisionSimple`
     ///     `JPH::CompoundShape`
@@ -157,6 +158,7 @@ public static partial class JPH
     ///     `JPH::BoxShape`
     ///     `JPH::BroadPhaseLayerInterfaceTable`
     ///     `JPH::CapsuleShape`
+    ///     `JPH::Character`
     ///     `JPH::CharacterVirtual`
     ///     `JPH::CharacterVsCharacterCollisionSimple`
     ///     `JPH::CompoundShape`

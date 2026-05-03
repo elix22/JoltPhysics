@@ -31,6 +31,7 @@ typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h
 ///     `JPH::RefTarget<JPH::CharacterBaseSettings>`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::CharacterSettings`
 ///     `JPH::CharacterVirtualSettings`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_CharacterBaseSettings JPH_CharacterBaseSettings;
@@ -55,6 +56,7 @@ typedef enum JPH_CharacterBase_EGroundState
 ///     `JPH::NonCopyable`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::Character`
 ///     `JPH::CharacterVirtual`
 typedef struct JPH_CharacterBase JPH_CharacterBase;
 

@@ -101,6 +101,9 @@ struct JoltHelpers
     /// Get the position of a soft-body vertex by body ID and vertex index.
     /// Must be called with the physics system locked (outside of simulation step).
     static JPH::Vec3 PhysicsSystemGetSoftBodyVertexPosition(const JPH::PhysicsSystem& inSystem, const JPH::BodyID& inBodyID, JPH::uint inIndex);
+
+    /// Set the shape on a CharacterBaseSettings (mShape is a RefConst<Shape> not directly bindable).
+    static void CharacterBaseSettingsSetShape(JPH::CharacterBaseSettings& inSettings, const JPH::Shape* inShape);
 };
 
 // ---------------------------------------------------------------------------
