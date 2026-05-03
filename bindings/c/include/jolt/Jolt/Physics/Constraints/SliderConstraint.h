@@ -3,6 +3,7 @@
 
 #include <common.h>
 #include <exports.h>
+#include <jolt/Jolt/Physics/Constraints/MotorSettings.h>
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -18,10 +19,12 @@ typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
+typedef struct JPH_MotorSettings JPH_MotorSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/MotorSettings.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
+typedef struct JPH_SpringSettings JPH_SpringSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/SpringSettings.h>`.
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
@@ -186,6 +189,20 @@ JOLT_API void JPH_SliderConstraintSettings_Set_mLimitsMax(JPH_SliderConstraintSe
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_SliderConstraintSettings_GetMutable_mLimitsMax(JPH_SliderConstraintSettings *_this);
 
+/// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+/// Returns a pointer to a member variable of class `JPH::SliderConstraintSettings` named `mLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_SpringSettings *JPH_SliderConstraintSettings_Get_mLimitsSpringSettings(const JPH_SliderConstraintSettings *_this);
+
+/// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+/// Returns a mutable pointer to a member variable of class `JPH::SliderConstraintSettings` named `mLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_SpringSettings *JPH_SliderConstraintSettings_GetMutable_mLimitsSpringSettings(JPH_SliderConstraintSettings *_this);
+
 /// Maximum amount of friction force to apply (N) when not driven by a motor.
 /// Returns a pointer to a member variable of class `JPH::SliderConstraintSettings` named `mMaxFrictionForce`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -205,6 +222,20 @@ JOLT_API void JPH_SliderConstraintSettings_Set_mMaxFrictionForce(JPH_SliderConst
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_SliderConstraintSettings_GetMutable_mMaxFrictionForce(JPH_SliderConstraintSettings *_this);
+
+/// In case the constraint is powered, this determines the motor settings around the sliding axis
+/// Returns a pointer to a member variable of class `JPH::SliderConstraintSettings` named `mMotorSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_MotorSettings *JPH_SliderConstraintSettings_Get_mMotorSettings(const JPH_SliderConstraintSettings *_this);
+
+/// In case the constraint is powered, this determines the motor settings around the sliding axis
+/// Returns a mutable pointer to a member variable of class `JPH::SliderConstraintSettings` named `mMotorSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_MotorSettings *JPH_SliderConstraintSettings_GetMutable_mMotorSettings(JPH_SliderConstraintSettings *_this);
 
 /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
 /// Returns a pointer to a member variable of class `JPH::SliderConstraintSettings` named `mEnabled`.
@@ -708,6 +739,26 @@ JOLT_API void JPH_SliderConstraint_SetMaxFrictionForce(JPH_SliderConstraint *_th
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_SliderConstraint_GetMaxFrictionForce(const JPH_SliderConstraint *_this);
 
+/// Motor settings
+/// Generated from method `JPH::SliderConstraint::GetMotorSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JPH_MotorSettings *JPH_SliderConstraint_GetMotorSettings_mut(JPH_SliderConstraint *_this);
+
+/// Generated from method `JPH::SliderConstraint::GetMotorSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_MotorSettings *JPH_SliderConstraint_GetMotorSettings(const JPH_SliderConstraint *_this);
+
+// Motor controls
+/// Generated from method `JPH::SliderConstraint::SetMotorState`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_SliderConstraint_SetMotorState(JPH_SliderConstraint *_this, JPH_EMotorState inState);
+
+/// Generated from method `JPH::SliderConstraint::GetMotorState`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API JPH_EMotorState JPH_SliderConstraint_GetMotorState(const JPH_SliderConstraint *_this);
+
 /// Generated from method `JPH::SliderConstraint::SetTargetVelocity`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_SliderConstraint_SetTargetVelocity(JPH_SliderConstraint *_this, float inVelocity);
@@ -740,6 +791,22 @@ JOLT_API float JPH_SliderConstraint_GetLimitsMax(const JPH_SliderConstraint *_th
 /// Generated from method `JPH::SliderConstraint::HasLimits`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_SliderConstraint_HasLimits(const JPH_SliderConstraint *_this);
+
+/// Update the limits spring settings
+/// Generated from method `JPH::SliderConstraint::GetLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_SpringSettings *JPH_SliderConstraint_GetLimitsSpringSettings(const JPH_SliderConstraint *_this);
+
+/// Generated from method `JPH::SliderConstraint::GetLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JPH_SpringSettings *JPH_SliderConstraint_GetLimitsSpringSettings_mut(JPH_SliderConstraint *_this);
+
+/// Generated from method `JPH::SliderConstraint::SetLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLimitsSpringSettings` can not be null. It is a single object.
+JOLT_API void JPH_SliderConstraint_SetLimitsSpringSettings(JPH_SliderConstraint *_this, const JPH_SpringSettings *inLimitsSpringSettings);
 
 ///@name Get Lagrange multiplier from last physics update (the linear/angular impulse applied to satisfy the constraint)
 /// Generated from method `JPH::SliderConstraint::GetTotalLambdaPosition`.

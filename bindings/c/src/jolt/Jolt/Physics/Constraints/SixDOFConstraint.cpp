@@ -11,7 +11,9 @@
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Constraints/Constraint.h>
+#include <Jolt/Physics/Constraints/MotorSettings.h>
 #include <Jolt/Physics/Constraints/SixDOFConstraint.h>
+#include <Jolt/Physics/Constraints/SpringSettings.h>
 #include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
@@ -128,6 +130,36 @@ float *JPH_SixDOFConstraintSettings_GetMutable_mLimitMax(JPH_SixDOFConstraintSet
 size_t JPH_SixDOFConstraintSettings_GetSize_mLimitMax(void)
 {
     return std::extent_v<decltype(JPH::SixDOFConstraintSettings::mLimitMax)>;
+}
+
+const JPH_SpringSettings *JPH_SixDOFConstraintSettings_Get_mLimitsSpringSettings(const JPH_SixDOFConstraintSettings *_this)
+{
+    return (const JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraintSettings *)(_this)).mLimitsSpringSettings[0]);
+}
+
+JPH_SpringSettings *JPH_SixDOFConstraintSettings_GetMutable_mLimitsSpringSettings(JPH_SixDOFConstraintSettings *_this)
+{
+    return (JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SixDOFConstraintSettings *)(_this)).mLimitsSpringSettings[0]);
+}
+
+size_t JPH_SixDOFConstraintSettings_GetSize_mLimitsSpringSettings(void)
+{
+    return std::extent_v<decltype(JPH::SixDOFConstraintSettings::mLimitsSpringSettings)>;
+}
+
+const JPH_MotorSettings *JPH_SixDOFConstraintSettings_Get_mMotorSettings(const JPH_SixDOFConstraintSettings *_this)
+{
+    return (const JPH_MotorSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraintSettings *)(_this)).mMotorSettings[0]);
+}
+
+JPH_MotorSettings *JPH_SixDOFConstraintSettings_GetMutable_mMotorSettings(JPH_SixDOFConstraintSettings *_this)
+{
+    return (JPH_MotorSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SixDOFConstraintSettings *)(_this)).mMotorSettings[0]);
+}
+
+size_t JPH_SixDOFConstraintSettings_GetSize_mMotorSettings(void)
+{
+    return std::extent_v<decltype(JPH::SixDOFConstraintSettings::mMotorSettings)>;
 }
 
 const bool *JPH_SixDOFConstraintSettings_Get_mEnabled(const JPH_SixDOFConstraintSettings *_this)
@@ -875,6 +907,21 @@ bool JPH_SixDOFConstraint_IsFreeAxis(const JPH_SixDOFConstraint *_this, JPH_SixD
     );
 }
 
+const JPH_SpringSettings *JPH_SixDOFConstraint_GetLimitsSpringSettings(const JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis)
+{
+    return (const JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraint *)(_this)).GetLimitsSpringSettings(
+        ((JPH::SixDOFConstraintSettings::EAxis)inAxis)
+    ));
+}
+
+void JPH_SixDOFConstraint_SetLimitsSpringSettings(JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis, const JPH_SpringSettings *inLimitsSpringSettings)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SixDOFConstraint *)(_this)).SetLimitsSpringSettings(
+        ((JPH::SixDOFConstraintSettings::EAxis)inAxis),
+        ((inLimitsSpringSettings ? void() : MRBINDC_THROW("Parameter `inLimitsSpringSettings` can not be null.", void)), *(const JPH::SpringSettings *)(inLimitsSpringSettings))
+    );
+}
+
 void JPH_SixDOFConstraint_SetMaxFriction(JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis, float inFriction)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SixDOFConstraint *)(_this)).SetMaxFriction(
@@ -893,6 +940,35 @@ float JPH_SixDOFConstraint_GetMaxFriction(const JPH_SixDOFConstraint *_this, JPH
 JPH_Quat *JPH_SixDOFConstraint_GetRotationInConstraintSpace(const JPH_SixDOFConstraint *_this)
 {
     return (JPH_Quat *)new JPH::Quat(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraint *)(_this)).GetRotationInConstraintSpace());
+}
+
+JPH_MotorSettings *JPH_SixDOFConstraint_GetMotorSettings_mut(JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis)
+{
+    return (JPH_MotorSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SixDOFConstraint *)(_this)).GetMotorSettings(
+        ((JPH::SixDOFConstraintSettings::EAxis)inAxis)
+    ));
+}
+
+const JPH_MotorSettings *JPH_SixDOFConstraint_GetMotorSettings(const JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis)
+{
+    return (const JPH_MotorSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraint *)(_this)).GetMotorSettings(
+        ((JPH::SixDOFConstraintSettings::EAxis)inAxis)
+    ));
+}
+
+void JPH_SixDOFConstraint_SetMotorState(JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis, JPH_EMotorState inState)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SixDOFConstraint *)(_this)).SetMotorState(
+        ((JPH::SixDOFConstraintSettings::EAxis)inAxis),
+        ((JPH::EMotorState)inState)
+    );
+}
+
+JPH_EMotorState JPH_SixDOFConstraint_GetMotorState(const JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis)
+{
+    return (JPH_EMotorState)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SixDOFConstraint *)(_this)).GetMotorState(
+        ((JPH::SixDOFConstraintSettings::EAxis)inAxis)
+    ));
 }
 
 JPH_Vec3 *JPH_SixDOFConstraint_GetTargetVelocityCS(const JPH_SixDOFConstraint *_this)

@@ -31,12 +31,17 @@ typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h
 ///     `JPH::TwoBodyConstraintSettings`
 ///     `JPH::VehicleConstraintSettings`
 ///   Indirect: (non-virtual)
+///     `JPH::ConeConstraintSettings`
 ///     `JPH::DistanceConstraintSettings`
 ///     `JPH::FixedConstraintSettings`
+///     `JPH::GearConstraintSettings`
 ///     `JPH::HingeConstraintSettings`
 ///     `JPH::PointConstraintSettings`
+///     `JPH::PulleyConstraintSettings`
+///     `JPH::RackAndPinionConstraintSettings`
 ///     `JPH::SixDOFConstraintSettings`
 ///     `JPH::SliderConstraintSettings`
+///     `JPH::SwingTwistConstraintSettings`
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings;
 
 /// Base class for all physics constraints. A constraint removes one or more degrees of freedom for a rigid body.
@@ -50,12 +55,17 @@ typedef struct JPH_ConstraintSettings JPH_ConstraintSettings;
 ///     `JPH::TwoBodyConstraint`
 ///     `JPH::VehicleConstraint`
 ///   Indirect: (non-virtual)
+///     `JPH::ConeConstraint`
 ///     `JPH::DistanceConstraint`
 ///     `JPH::FixedConstraint`
+///     `JPH::GearConstraint`
 ///     `JPH::HingeConstraint`
 ///     `JPH::PointConstraint`
+///     `JPH::PulleyConstraint`
+///     `JPH::RackAndPinionConstraint`
 ///     `JPH::SixDOFConstraint`
 ///     `JPH::SliderConstraint`
+///     `JPH::SwingTwistConstraint`
 typedef struct JPH_Constraint JPH_Constraint;
 
 /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.

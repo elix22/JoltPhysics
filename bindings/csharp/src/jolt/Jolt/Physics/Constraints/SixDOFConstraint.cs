@@ -251,6 +251,37 @@ public static partial class JPH
             }
         }
 
+        /// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+        /// Only soft translation limits are supported, soft rotation limits are not currently supported.
+        public unsafe JPH.ArraySpringSettings3 mLimitsSpringSettings
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraintSettings_Get_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraintSettings_Get_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.SpringSettings._Underlying *__JPH_SixDOFConstraintSettings_Get_mLimitsSpringSettings(_Underlying *_this);
+                return new(__JPH_SixDOFConstraintSettings_Get_mLimitsSpringSettings(_UnderlyingPtr));
+            }
+        }
+
+        /// Motor settings for each axis
+        public unsafe JPH.ArrayMotorSettings6 mMotorSettings
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraintSettings_Get_mMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraintSettings_Get_mMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.MotorSettings._Underlying *__JPH_SixDOFConstraintSettings_Get_mMotorSettings(_Underlying *_this);
+                return new(__JPH_SixDOFConstraintSettings_Get_mMotorSettings(_UnderlyingPtr));
+            }
+        }
+
         /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
         public unsafe bool mEnabled
         {
@@ -874,6 +905,37 @@ public static partial class JPH
                 #endif
                 extern static JPH.ArrayFloat6 *__JPH_SixDOFConstraintSettings_GetMutable_mLimitMax(_Underlying *_this);
                 return ref *(__JPH_SixDOFConstraintSettings_GetMutable_mLimitMax(_UnderlyingPtr));
+            }
+        }
+
+        /// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+        /// Only soft translation limits are supported, soft rotation limits are not currently supported.
+        new public unsafe JPH.ArraySpringSettings3 mLimitsSpringSettings
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraintSettings_GetMutable_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraintSettings_GetMutable_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.SpringSettings._Underlying *__JPH_SixDOFConstraintSettings_GetMutable_mLimitsSpringSettings(_Underlying *_this);
+                return new(__JPH_SixDOFConstraintSettings_GetMutable_mLimitsSpringSettings(_UnderlyingPtr));
+            }
+        }
+
+        /// Motor settings for each axis
+        new public unsafe JPH.ArrayMotorSettings6 mMotorSettings
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraintSettings_GetMutable_mMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraintSettings_GetMutable_mMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.MotorSettings._Underlying *__JPH_SixDOFConstraintSettings_GetMutable_mMotorSettings(_Underlying *_this);
+                return new(__JPH_SixDOFConstraintSettings_GetMutable_mMotorSettings(_UnderlyingPtr));
             }
         }
 
@@ -1528,6 +1590,19 @@ public static partial class JPH
             return __JPH_SixDOFConstraint_IsFreeAxis(_UnderlyingPtr, inAxis) != 0;
         }
 
+        /// Update the limits spring settings
+        /// Generated from method `JPH::SixDOFConstraint::GetLimitsSpringSettings`.
+        public unsafe JPH.Const_SpringSettings GetLimitsSpringSettings(JPH.SixDOFConstraintSettings.EAxis inAxis)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraint_GetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraint_GetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_SpringSettings._Underlying *__JPH_SixDOFConstraint_GetLimitsSpringSettings(_Underlying *_this, JPH.SixDOFConstraintSettings.EAxis inAxis);
+            return new(__JPH_SixDOFConstraint_GetLimitsSpringSettings(_UnderlyingPtr, inAxis), is_owning: false);
+        }
+
         /// Generated from method `JPH::SixDOFConstraint::GetMaxFriction`.
         public unsafe float GetMaxFriction(JPH.SixDOFConstraintSettings.EAxis inAxis)
         {
@@ -1551,6 +1626,30 @@ public static partial class JPH
             #endif
             extern static JPH.Quat._Underlying *__JPH_SixDOFConstraint_GetRotationInConstraintSpace(_Underlying *_this);
             return new(__JPH_SixDOFConstraint_GetRotationInConstraintSpace(_UnderlyingPtr), is_owning: true);
+        }
+
+        /// Generated from method `JPH::SixDOFConstraint::GetMotorSettings`.
+        public unsafe JPH.Const_MotorSettings GetMotorSettings(JPH.SixDOFConstraintSettings.EAxis inAxis)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraint_GetMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraint_GetMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_MotorSettings._Underlying *__JPH_SixDOFConstraint_GetMotorSettings(_Underlying *_this, JPH.SixDOFConstraintSettings.EAxis inAxis);
+            return new(__JPH_SixDOFConstraint_GetMotorSettings(_UnderlyingPtr, inAxis), is_owning: false);
+        }
+
+        /// Generated from method `JPH::SixDOFConstraint::GetMotorState`.
+        public unsafe JPH.EMotorState GetMotorState(JPH.SixDOFConstraintSettings.EAxis inAxis)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraint_GetMotorState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraint_GetMotorState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.EMotorState __JPH_SixDOFConstraint_GetMotorState(_Underlying *_this, JPH.SixDOFConstraintSettings.EAxis inAxis);
+            return __JPH_SixDOFConstraint_GetMotorState(_UnderlyingPtr, inAxis);
         }
 
         /// Set the target velocity in body 1 constraint space
@@ -2039,6 +2138,18 @@ public static partial class JPH
             __JPH_SixDOFConstraint_SetRotationLimits(_UnderlyingPtr, inLimitMin._UnderlyingPtr, inLimitMax._UnderlyingPtr);
         }
 
+        /// Generated from method `JPH::SixDOFConstraint::SetLimitsSpringSettings`.
+        public unsafe void SetLimitsSpringSettings(JPH.SixDOFConstraintSettings.EAxis inAxis, JPH.Const_SpringSettings inLimitsSpringSettings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraint_SetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraint_SetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SixDOFConstraint_SetLimitsSpringSettings(_Underlying *_this, JPH.SixDOFConstraintSettings.EAxis inAxis, JPH.Const_SpringSettings._Underlying *inLimitsSpringSettings);
+            __JPH_SixDOFConstraint_SetLimitsSpringSettings(_UnderlyingPtr, inAxis, inLimitsSpringSettings._UnderlyingPtr);
+        }
+
         /// Set the max friction for each axis
         /// Generated from method `JPH::SixDOFConstraint::SetMaxFriction`.
         public unsafe void SetMaxFriction(JPH.SixDOFConstraintSettings.EAxis inAxis, float inFriction)
@@ -2050,6 +2161,34 @@ public static partial class JPH
             #endif
             extern static void __JPH_SixDOFConstraint_SetMaxFriction(_Underlying *_this, JPH.SixDOFConstraintSettings.EAxis inAxis, float inFriction);
             __JPH_SixDOFConstraint_SetMaxFriction(_UnderlyingPtr, inAxis, inFriction);
+        }
+
+        /// Motor settings
+        /// Generated from method `JPH::SixDOFConstraint::GetMotorSettings`.
+        public unsafe new JPH.MotorSettings GetMotorSettings(JPH.SixDOFConstraintSettings.EAxis inAxis)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraint_GetMotorSettings_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraint_GetMotorSettings_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.MotorSettings._Underlying *__JPH_SixDOFConstraint_GetMotorSettings_mut(_Underlying *_this, JPH.SixDOFConstraintSettings.EAxis inAxis);
+            return new(__JPH_SixDOFConstraint_GetMotorSettings_mut(_UnderlyingPtr, inAxis), is_owning: false);
+        }
+
+        /// Motor controls.
+        /// Translation motors work in constraint space of body 1.
+        /// Rotation motors work in constraint space of body 2 (!).
+        /// Generated from method `JPH::SixDOFConstraint::SetMotorState`.
+        public unsafe void SetMotorState(JPH.SixDOFConstraintSettings.EAxis inAxis, JPH.EMotorState inState)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SixDOFConstraint_SetMotorState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SixDOFConstraint_SetMotorState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SixDOFConstraint_SetMotorState(_Underlying *_this, JPH.SixDOFConstraintSettings.EAxis inAxis, JPH.EMotorState inState);
+            __JPH_SixDOFConstraint_SetMotorState(_UnderlyingPtr, inAxis, inState);
         }
 
         /// Generated from method `JPH::SixDOFConstraint::SetTargetVelocityCS`.

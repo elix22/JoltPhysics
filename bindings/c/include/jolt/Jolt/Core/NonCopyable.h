@@ -44,6 +44,7 @@ extern "C" {
 ///     `JPH::CharacterVirtual`
 ///     `JPH::CharacterVsCharacterCollisionSimple`
 ///     `JPH::CompoundShape`
+///     `JPH::ConeConstraint`
 ///     `JPH::ConvexHullShape`
 ///     `JPH::ConvexShape`
 ///     `JPH::CylinderShape`
@@ -54,6 +55,7 @@ extern "C" {
 ///     `JPH::DistanceConstraint`
 ///     `JPH::EmptyShape`
 ///     `JPH::FixedConstraint`
+///     `JPH::GearConstraint`
 ///     `JPH::HeightFieldShape`
 ///     `JPH::HingeConstraint`
 ///     `JPH::IgnoreMultipleBodiesFilter`
@@ -69,6 +71,8 @@ extern "C" {
 ///     `JPH::OffsetCenterOfMassShape`
 ///     `JPH::PlaneShape`
 ///     `JPH::PointConstraint`
+///     `JPH::PulleyConstraint`
+///     `JPH::RackAndPinionConstraint`
 ///     `JPH::ReversedShapeFilter`
 ///     `JPH::RotatedTranslatedShape`
 ///     `JPH::ScaledShape`
@@ -78,6 +82,7 @@ extern "C" {
 ///     `JPH::SpecifiedObjectLayerFilter`
 ///     `JPH::SphereShape`
 ///     `JPH::StaticCompoundShape`
+///     `JPH::SwingTwistConstraint`
 ///     `JPH::TaperedCapsuleShape`
 ///     `JPH::TaperedCylinderShape`
 ///     `JPH::TempAllocatorImpl`

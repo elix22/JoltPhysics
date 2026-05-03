@@ -8,6 +8,7 @@
 #include <Jolt/ObjectStream/SerializableObject.h>
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
+#include <Jolt/Physics/Constraints/SpringSettings.h>
 #include <Jolt/Physics/Vehicle/VehicleConstraint.h>
 #include <Jolt/Physics/Vehicle/VehicleController.h>
 #include <Jolt/Physics/Vehicle/VehicleEngine.h>
@@ -202,6 +203,16 @@ void JPH_WheelSettingsWV_Set_mSuspensionPreloadLength(JPH_WheelSettingsWV *_this
 float *JPH_WheelSettingsWV_GetMutable_mSuspensionPreloadLength(JPH_WheelSettingsWV *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::WheelSettingsWV *)(_this)).mSuspensionPreloadLength);
+}
+
+const JPH_SpringSettings *JPH_WheelSettingsWV_Get_mSuspensionSpring(const JPH_WheelSettingsWV *_this)
+{
+    return (const JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::WheelSettingsWV *)(_this)).mSuspensionSpring);
+}
+
+JPH_SpringSettings *JPH_WheelSettingsWV_GetMutable_mSuspensionSpring(JPH_WheelSettingsWV *_this)
+{
+    return (JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::WheelSettingsWV *)(_this)).mSuspensionSpring);
 }
 
 const float *JPH_WheelSettingsWV_Get_mRadius(const JPH_WheelSettingsWV *_this)

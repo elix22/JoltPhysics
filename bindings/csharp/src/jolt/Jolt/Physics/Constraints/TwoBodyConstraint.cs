@@ -11,12 +11,17 @@ public static partial class JPH
     ///     `JPH::RefTarget<JPH::ConstraintSettings>`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::ConeConstraintSettings`
     ///     `JPH::DistanceConstraintSettings`
     ///     `JPH::FixedConstraintSettings`
+    ///     `JPH::GearConstraintSettings`
     ///     `JPH::HingeConstraintSettings`
     ///     `JPH::PointConstraintSettings`
+    ///     `JPH::PulleyConstraintSettings`
+    ///     `JPH::RackAndPinionConstraintSettings`
     ///     `JPH::SixDOFConstraintSettings`
     ///     `JPH::SliderConstraintSettings`
+    ///     `JPH::SwingTwistConstraintSettings`
     /// This is the const half of the class.
     public class Const_TwoBodyConstraintSettings : JPH.Object<Const_TwoBodyConstraintSettings>, System.IDisposable
     {
@@ -403,12 +408,17 @@ public static partial class JPH
     ///     `JPH::RefTarget<JPH::ConstraintSettings>`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::ConeConstraintSettings`
     ///     `JPH::DistanceConstraintSettings`
     ///     `JPH::FixedConstraintSettings`
+    ///     `JPH::GearConstraintSettings`
     ///     `JPH::HingeConstraintSettings`
     ///     `JPH::PointConstraintSettings`
+    ///     `JPH::PulleyConstraintSettings`
+    ///     `JPH::RackAndPinionConstraintSettings`
     ///     `JPH::SixDOFConstraintSettings`
     ///     `JPH::SliderConstraintSettings`
+    ///     `JPH::SwingTwistConstraintSettings`
     /// This is the non-const half of the class.
     public class TwoBodyConstraintSettings : Const_TwoBodyConstraintSettings
     {
@@ -584,12 +594,17 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::ConeConstraint`
     ///     `JPH::DistanceConstraint`
     ///     `JPH::FixedConstraint`
+    ///     `JPH::GearConstraint`
     ///     `JPH::HingeConstraint`
     ///     `JPH::PointConstraint`
+    ///     `JPH::PulleyConstraint`
+    ///     `JPH::RackAndPinionConstraint`
     ///     `JPH::SixDOFConstraint`
     ///     `JPH::SliderConstraint`
+    ///     `JPH::SwingTwistConstraint`
     /// This is the const half of the class.
     public class Const_TwoBodyConstraint : JPH.Object<Const_TwoBodyConstraint>, System.IDisposable
     {
@@ -1050,12 +1065,17 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::ConeConstraint`
     ///     `JPH::DistanceConstraint`
     ///     `JPH::FixedConstraint`
+    ///     `JPH::GearConstraint`
     ///     `JPH::HingeConstraint`
     ///     `JPH::PointConstraint`
+    ///     `JPH::PulleyConstraint`
+    ///     `JPH::RackAndPinionConstraint`
     ///     `JPH::SixDOFConstraint`
     ///     `JPH::SliderConstraint`
+    ///     `JPH::SwingTwistConstraint`
     /// This is the non-const half of the class.
     public class TwoBodyConstraint : Const_TwoBodyConstraint
     {

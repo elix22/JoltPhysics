@@ -17,6 +17,7 @@ public static partial class JPH
     ///     `JPH::BoxShapeSettings`
     ///     `JPH::CapsuleShapeSettings`
     ///     `JPH::CompoundShapeSettings`
+    ///     `JPH::ConeConstraintSettings`
     ///     `JPH::ConvexHullShapeSettings`
     ///     `JPH::ConvexShapeSettings`
     ///     `JPH::CylinderShapeSettings`
@@ -24,6 +25,7 @@ public static partial class JPH
     ///     `JPH::DistanceConstraintSettings`
     ///     `JPH::EmptyShapeSettings`
     ///     `JPH::FixedConstraintSettings`
+    ///     `JPH::GearConstraintSettings`
     ///     `JPH::HeightFieldShapeSettings`
     ///     `JPH::HingeConstraintSettings`
     ///     `JPH::MeshShapeSettings`
@@ -32,12 +34,15 @@ public static partial class JPH
     ///     `JPH::PathConstraintPathHermite`
     ///     `JPH::PlaneShapeSettings`
     ///     `JPH::PointConstraintSettings`
+    ///     `JPH::PulleyConstraintSettings`
+    ///     `JPH::RackAndPinionConstraintSettings`
     ///     `JPH::RotatedTranslatedShapeSettings`
     ///     `JPH::ScaledShapeSettings`
     ///     `JPH::SixDOFConstraintSettings`
     ///     `JPH::SliderConstraintSettings`
     ///     `JPH::SphereShapeSettings`
     ///     `JPH::StaticCompoundShapeSettings`
+    ///     `JPH::SwingTwistConstraintSettings`
     ///     `JPH::TaperedCapsuleShapeSettings`
     ///     `JPH::TaperedCylinderShapeSettings`
     ///     `JPH::TriangleShapeSettings`
@@ -221,6 +226,7 @@ public static partial class JPH
     ///     `JPH::BoxShapeSettings`
     ///     `JPH::CapsuleShapeSettings`
     ///     `JPH::CompoundShapeSettings`
+    ///     `JPH::ConeConstraintSettings`
     ///     `JPH::ConvexHullShapeSettings`
     ///     `JPH::ConvexShapeSettings`
     ///     `JPH::CylinderShapeSettings`
@@ -228,6 +234,7 @@ public static partial class JPH
     ///     `JPH::DistanceConstraintSettings`
     ///     `JPH::EmptyShapeSettings`
     ///     `JPH::FixedConstraintSettings`
+    ///     `JPH::GearConstraintSettings`
     ///     `JPH::HeightFieldShapeSettings`
     ///     `JPH::HingeConstraintSettings`
     ///     `JPH::MeshShapeSettings`
@@ -236,12 +243,15 @@ public static partial class JPH
     ///     `JPH::PathConstraintPathHermite`
     ///     `JPH::PlaneShapeSettings`
     ///     `JPH::PointConstraintSettings`
+    ///     `JPH::PulleyConstraintSettings`
+    ///     `JPH::RackAndPinionConstraintSettings`
     ///     `JPH::RotatedTranslatedShapeSettings`
     ///     `JPH::ScaledShapeSettings`
     ///     `JPH::SixDOFConstraintSettings`
     ///     `JPH::SliderConstraintSettings`
     ///     `JPH::SphereShapeSettings`
     ///     `JPH::StaticCompoundShapeSettings`
+    ///     `JPH::SwingTwistConstraintSettings`
     ///     `JPH::TaperedCapsuleShapeSettings`
     ///     `JPH::TaperedCylinderShapeSettings`
     ///     `JPH::TriangleShapeSettings`

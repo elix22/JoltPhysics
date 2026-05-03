@@ -156,6 +156,24 @@ public static partial class JPH
             }
         }
 
+        /// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+        public unsafe JPH.Const_SpringSettings mLimitsSpringSettings
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraintSettings_Get_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraintSettings_Get_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_SpringSettings._Underlying *__JPH_DistanceConstraintSettings_Get_mLimitsSpringSettings(_Underlying *_this);
+                JPH.Const_SpringSettings __ret;
+                __ret = new(__JPH_DistanceConstraintSettings_Get_mLimitsSpringSettings(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
         public unsafe bool mEnabled
         {
@@ -647,6 +665,24 @@ public static partial class JPH
                 #endif
                 extern static float *__JPH_DistanceConstraintSettings_GetMutable_mMaxDistance(_Underlying *_this);
                 return ref *__JPH_DistanceConstraintSettings_GetMutable_mMaxDistance(_UnderlyingPtr);
+            }
+        }
+
+        /// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+        public new unsafe JPH.SpringSettings mLimitsSpringSettings
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraintSettings_GetMutable_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraintSettings_GetMutable_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.SpringSettings._Underlying *__JPH_DistanceConstraintSettings_GetMutable_mLimitsSpringSettings(_Underlying *_this);
+                JPH.SpringSettings __ret;
+                __ret = new(__JPH_DistanceConstraintSettings_GetMutable_mLimitsSpringSettings(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
             }
         }
 
@@ -1176,6 +1212,19 @@ public static partial class JPH
             return __JPH_DistanceConstraint_GetMaxDistance(_UnderlyingPtr);
         }
 
+        /// Update the limits spring settings
+        /// Generated from method `JPH::DistanceConstraint::GetLimitsSpringSettings`.
+        public unsafe JPH.Const_SpringSettings GetLimitsSpringSettings()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraint_GetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraint_GetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_SpringSettings._Underlying *__JPH_DistanceConstraint_GetLimitsSpringSettings(_Underlying *_this);
+            return new(__JPH_DistanceConstraint_GetLimitsSpringSettings(_UnderlyingPtr), is_owning: false);
+        }
+
         ///@name Get Lagrange multiplier from last physics update (the linear impulse applied to satisfy the constraint)
         /// Generated from method `JPH::DistanceConstraint::GetTotalLambdaPosition`.
         public unsafe float GetTotalLambdaPosition()
@@ -1573,6 +1622,30 @@ public static partial class JPH
             #endif
             extern static void __JPH_DistanceConstraint_SetDistance(_Underlying *_this, float inMinDistance, float inMaxDistance);
             __JPH_DistanceConstraint_SetDistance(_UnderlyingPtr, inMinDistance, inMaxDistance);
+        }
+
+        /// Generated from method `JPH::DistanceConstraint::GetLimitsSpringSettings`.
+        public unsafe new JPH.SpringSettings GetLimitsSpringSettings()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraint_GetLimitsSpringSettings_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraint_GetLimitsSpringSettings_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SpringSettings._Underlying *__JPH_DistanceConstraint_GetLimitsSpringSettings_mut(_Underlying *_this);
+            return new(__JPH_DistanceConstraint_GetLimitsSpringSettings_mut(_UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JPH::DistanceConstraint::SetLimitsSpringSettings`.
+        public unsafe void SetLimitsSpringSettings(JPH.Const_SpringSettings inLimitsSpringSettings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DistanceConstraint_SetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DistanceConstraint_SetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_DistanceConstraint_SetLimitsSpringSettings(_Underlying *_this, JPH.Const_SpringSettings._Underlying *inLimitsSpringSettings);
+            __JPH_DistanceConstraint_SetLimitsSpringSettings(_UnderlyingPtr, inLimitsSpringSettings._UnderlyingPtr);
         }
 
         /// Generated from method `JPH::DistanceConstraint::SetConstraintPriority`.

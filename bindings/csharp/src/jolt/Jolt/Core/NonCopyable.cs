@@ -35,6 +35,7 @@ public static partial class JPH
     ///     `JPH::CharacterVirtual`
     ///     `JPH::CharacterVsCharacterCollisionSimple`
     ///     `JPH::CompoundShape`
+    ///     `JPH::ConeConstraint`
     ///     `JPH::ConvexHullShape`
     ///     `JPH::ConvexShape`
     ///     `JPH::CylinderShape`
@@ -45,6 +46,7 @@ public static partial class JPH
     ///     `JPH::DistanceConstraint`
     ///     `JPH::EmptyShape`
     ///     `JPH::FixedConstraint`
+    ///     `JPH::GearConstraint`
     ///     `JPH::HeightFieldShape`
     ///     `JPH::HingeConstraint`
     ///     `JPH::IgnoreMultipleBodiesFilter`
@@ -60,6 +62,8 @@ public static partial class JPH
     ///     `JPH::OffsetCenterOfMassShape`
     ///     `JPH::PlaneShape`
     ///     `JPH::PointConstraint`
+    ///     `JPH::PulleyConstraint`
+    ///     `JPH::RackAndPinionConstraint`
     ///     `JPH::ReversedShapeFilter`
     ///     `JPH::RotatedTranslatedShape`
     ///     `JPH::ScaledShape`
@@ -69,6 +73,7 @@ public static partial class JPH
     ///     `JPH::SpecifiedObjectLayerFilter`
     ///     `JPH::SphereShape`
     ///     `JPH::StaticCompoundShape`
+    ///     `JPH::SwingTwistConstraint`
     ///     `JPH::TaperedCapsuleShape`
     ///     `JPH::TaperedCylinderShape`
     ///     `JPH::TempAllocatorImpl`
@@ -155,6 +160,7 @@ public static partial class JPH
     ///     `JPH::CharacterVirtual`
     ///     `JPH::CharacterVsCharacterCollisionSimple`
     ///     `JPH::CompoundShape`
+    ///     `JPH::ConeConstraint`
     ///     `JPH::ConvexHullShape`
     ///     `JPH::ConvexShape`
     ///     `JPH::CylinderShape`
@@ -165,6 +171,7 @@ public static partial class JPH
     ///     `JPH::DistanceConstraint`
     ///     `JPH::EmptyShape`
     ///     `JPH::FixedConstraint`
+    ///     `JPH::GearConstraint`
     ///     `JPH::HeightFieldShape`
     ///     `JPH::HingeConstraint`
     ///     `JPH::IgnoreMultipleBodiesFilter`
@@ -180,6 +187,8 @@ public static partial class JPH
     ///     `JPH::OffsetCenterOfMassShape`
     ///     `JPH::PlaneShape`
     ///     `JPH::PointConstraint`
+    ///     `JPH::PulleyConstraint`
+    ///     `JPH::RackAndPinionConstraint`
     ///     `JPH::ReversedShapeFilter`
     ///     `JPH::RotatedTranslatedShape`
     ///     `JPH::ScaledShape`
@@ -189,6 +198,7 @@ public static partial class JPH
     ///     `JPH::SpecifiedObjectLayerFilter`
     ///     `JPH::SphereShape`
     ///     `JPH::StaticCompoundShape`
+    ///     `JPH::SwingTwistConstraint`
     ///     `JPH::TaperedCapsuleShape`
     ///     `JPH::TaperedCylinderShape`
     ///     `JPH::TempAllocatorImpl`

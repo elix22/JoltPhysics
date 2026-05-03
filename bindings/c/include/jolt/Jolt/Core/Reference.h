@@ -34,12 +34,17 @@ extern "C" {
 ///   Direct: (non-virtual)
 ///     `JPH::ConstraintSettings`
 ///   Indirect: (non-virtual)
+///     `JPH::ConeConstraintSettings`
 ///     `JPH::DistanceConstraintSettings`
 ///     `JPH::FixedConstraintSettings`
+///     `JPH::GearConstraintSettings`
 ///     `JPH::HingeConstraintSettings`
 ///     `JPH::PointConstraintSettings`
+///     `JPH::PulleyConstraintSettings`
+///     `JPH::RackAndPinionConstraintSettings`
 ///     `JPH::SixDOFConstraintSettings`
 ///     `JPH::SliderConstraintSettings`
+///     `JPH::SwingTwistConstraintSettings`
 ///     `JPH::TwoBodyConstraintSettings`
 ///     `JPH::VehicleConstraintSettings`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
@@ -68,12 +73,17 @@ typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_Constraint
 ///   Direct: (non-virtual)
 ///     `JPH::Constraint`
 ///   Indirect: (non-virtual)
+///     `JPH::ConeConstraint`
 ///     `JPH::DistanceConstraint`
 ///     `JPH::FixedConstraint`
+///     `JPH::GearConstraint`
 ///     `JPH::HingeConstraint`
 ///     `JPH::PointConstraint`
+///     `JPH::PulleyConstraint`
+///     `JPH::RackAndPinionConstraint`
 ///     `JPH::SixDOFConstraint`
 ///     `JPH::SliderConstraint`
+///     `JPH::SwingTwistConstraint`
 ///     `JPH::TwoBodyConstraint`
 ///     `JPH::VehicleConstraint`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).

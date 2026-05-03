@@ -26,6 +26,7 @@ extern "C" {
 ///     `JPH::BoxShapeSettings`
 ///     `JPH::CapsuleShapeSettings`
 ///     `JPH::CompoundShapeSettings`
+///     `JPH::ConeConstraintSettings`
 ///     `JPH::ConvexHullShapeSettings`
 ///     `JPH::ConvexShapeSettings`
 ///     `JPH::CylinderShapeSettings`
@@ -33,6 +34,7 @@ extern "C" {
 ///     `JPH::DistanceConstraintSettings`
 ///     `JPH::EmptyShapeSettings`
 ///     `JPH::FixedConstraintSettings`
+///     `JPH::GearConstraintSettings`
 ///     `JPH::HeightFieldShapeSettings`
 ///     `JPH::HingeConstraintSettings`
 ///     `JPH::MeshShapeSettings`
@@ -41,12 +43,15 @@ extern "C" {
 ///     `JPH::PathConstraintPathHermite`
 ///     `JPH::PlaneShapeSettings`
 ///     `JPH::PointConstraintSettings`
+///     `JPH::PulleyConstraintSettings`
+///     `JPH::RackAndPinionConstraintSettings`
 ///     `JPH::RotatedTranslatedShapeSettings`
 ///     `JPH::ScaledShapeSettings`
 ///     `JPH::SixDOFConstraintSettings`
 ///     `JPH::SliderConstraintSettings`
 ///     `JPH::SphereShapeSettings`
 ///     `JPH::StaticCompoundShapeSettings`
+///     `JPH::SwingTwistConstraintSettings`
 ///     `JPH::TaperedCapsuleShapeSettings`
 ///     `JPH::TaperedCylinderShapeSettings`
 ///     `JPH::TriangleShapeSettings`

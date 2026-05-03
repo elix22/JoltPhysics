@@ -22,6 +22,7 @@ typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jo
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
+typedef struct JPH_SpringSettings JPH_SpringSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/SpringSettings.h>`.
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
@@ -118,6 +119,20 @@ JOLT_API void JPH_DistanceConstraintSettings_Set_mMaxDistance(JPH_DistanceConstr
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_DistanceConstraintSettings_GetMutable_mMaxDistance(JPH_DistanceConstraintSettings *_this);
+
+/// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+/// Returns a pointer to a member variable of class `JPH::DistanceConstraintSettings` named `mLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_SpringSettings *JPH_DistanceConstraintSettings_Get_mLimitsSpringSettings(const JPH_DistanceConstraintSettings *_this);
+
+/// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+/// Returns a mutable pointer to a member variable of class `JPH::DistanceConstraintSettings` named `mLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_SpringSettings *JPH_DistanceConstraintSettings_GetMutable_mLimitsSpringSettings(JPH_DistanceConstraintSettings *_this);
 
 /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
 /// Returns a pointer to a member variable of class `JPH::DistanceConstraintSettings` named `mEnabled`.
@@ -608,6 +623,22 @@ JOLT_API float JPH_DistanceConstraint_GetMinDistance(const JPH_DistanceConstrain
 /// Generated from method `JPH::DistanceConstraint::GetMaxDistance`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_DistanceConstraint_GetMaxDistance(const JPH_DistanceConstraint *_this);
+
+/// Update the limits spring settings
+/// Generated from method `JPH::DistanceConstraint::GetLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_SpringSettings *JPH_DistanceConstraint_GetLimitsSpringSettings(const JPH_DistanceConstraint *_this);
+
+/// Generated from method `JPH::DistanceConstraint::GetLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JPH_SpringSettings *JPH_DistanceConstraint_GetLimitsSpringSettings_mut(JPH_DistanceConstraint *_this);
+
+/// Generated from method `JPH::DistanceConstraint::SetLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLimitsSpringSettings` can not be null. It is a single object.
+JOLT_API void JPH_DistanceConstraint_SetLimitsSpringSettings(JPH_DistanceConstraint *_this, const JPH_SpringSettings *inLimitsSpringSettings);
 
 ///@name Get Lagrange multiplier from last physics update (the linear impulse applied to satisfy the constraint)
 /// Generated from method `JPH::DistanceConstraint::GetTotalLambdaPosition`.

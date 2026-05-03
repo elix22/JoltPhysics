@@ -3,6 +3,7 @@
 
 #include <common.h>
 #include <exports.h>
+#include <jolt/Jolt/Physics/Constraints/MotorSettings.h>
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -18,11 +19,13 @@ typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
+typedef struct JPH_MotorSettings JPH_MotorSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/MotorSettings.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
+typedef struct JPH_SpringSettings JPH_SpringSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/SpringSettings.h>`.
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
@@ -216,6 +219,42 @@ JOLT_API float *JPH_SixDOFConstraintSettings_GetMutable_mLimitMax(JPH_SixDOFCons
 
 /// Returns the size of the array member of class `JPH::SixDOFConstraintSettings` named `mLimitMax`. The size is `6`.
 JOLT_API size_t JPH_SixDOFConstraintSettings_GetSize_mLimitMax(void);
+
+/// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+/// Only soft translation limits are supported, soft rotation limits are not currently supported.
+/// Returns a pointer to a member variable of class `JPH::SixDOFConstraintSettings` named `mLimitsSpringSettings`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_SpringSettings *JPH_SixDOFConstraintSettings_Get_mLimitsSpringSettings(const JPH_SixDOFConstraintSettings *_this);
+
+/// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+/// Only soft translation limits are supported, soft rotation limits are not currently supported.
+/// Returns a mutable pointer to a member variable of class `JPH::SixDOFConstraintSettings` named `mLimitsSpringSettings`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_SpringSettings *JPH_SixDOFConstraintSettings_GetMutable_mLimitsSpringSettings(JPH_SixDOFConstraintSettings *_this);
+
+/// Returns the size of the array member of class `JPH::SixDOFConstraintSettings` named `mLimitsSpringSettings`. The size is `3`.
+JOLT_API size_t JPH_SixDOFConstraintSettings_GetSize_mLimitsSpringSettings(void);
+
+/// Motor settings for each axis
+/// Returns a pointer to a member variable of class `JPH::SixDOFConstraintSettings` named `mMotorSettings`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_MotorSettings *JPH_SixDOFConstraintSettings_Get_mMotorSettings(const JPH_SixDOFConstraintSettings *_this);
+
+/// Motor settings for each axis
+/// Returns a mutable pointer to a member variable of class `JPH::SixDOFConstraintSettings` named `mMotorSettings`. This is a pointer to the first element of an array.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_MotorSettings *JPH_SixDOFConstraintSettings_GetMutable_mMotorSettings(JPH_SixDOFConstraintSettings *_this);
+
+/// Returns the size of the array member of class `JPH::SixDOFConstraintSettings` named `mMotorSettings`. The size is `6`.
+JOLT_API size_t JPH_SixDOFConstraintSettings_GetSize_mMotorSettings(void);
 
 /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
 /// Returns a pointer to a member variable of class `JPH::SixDOFConstraintSettings` named `mEnabled`.
@@ -773,6 +812,17 @@ JOLT_API bool JPH_SixDOFConstraint_IsFixedAxis(const JPH_SixDOFConstraint *_this
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_SixDOFConstraint_IsFreeAxis(const JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis);
 
+/// Update the limits spring settings
+/// Generated from method `JPH::SixDOFConstraint::GetLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_SpringSettings *JPH_SixDOFConstraint_GetLimitsSpringSettings(const JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis);
+
+/// Generated from method `JPH::SixDOFConstraint::SetLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLimitsSpringSettings` can not be null. It is a single object.
+JOLT_API void JPH_SixDOFConstraint_SetLimitsSpringSettings(JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis, const JPH_SpringSettings *inLimitsSpringSettings);
+
 /// Set the max friction for each axis
 /// Generated from method `JPH::SixDOFConstraint::SetMaxFriction`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -787,6 +837,28 @@ JOLT_API float JPH_SixDOFConstraint_GetMaxFriction(const JPH_SixDOFConstraint *_
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Quat_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Quat *JPH_SixDOFConstraint_GetRotationInConstraintSpace(const JPH_SixDOFConstraint *_this);
+
+/// Motor settings
+/// Generated from method `JPH::SixDOFConstraint::GetMotorSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JPH_MotorSettings *JPH_SixDOFConstraint_GetMotorSettings_mut(JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis);
+
+/// Generated from method `JPH::SixDOFConstraint::GetMotorSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_MotorSettings *JPH_SixDOFConstraint_GetMotorSettings(const JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis);
+
+/// Motor controls.
+/// Translation motors work in constraint space of body 1.
+/// Rotation motors work in constraint space of body 2 (!).
+/// Generated from method `JPH::SixDOFConstraint::SetMotorState`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_SixDOFConstraint_SetMotorState(JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis, JPH_EMotorState inState);
+
+/// Generated from method `JPH::SixDOFConstraint::GetMotorState`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API JPH_EMotorState JPH_SixDOFConstraint_GetMotorState(const JPH_SixDOFConstraint *_this, JPH_SixDOFConstraintSettings_EAxis inAxis);
 
 /// Set the target velocity in body 1 constraint space
 /// Generated from method `JPH::SixDOFConstraint::GetTargetVelocityCS`.

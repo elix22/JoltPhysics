@@ -11,6 +11,7 @@
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/Constraints/DistanceConstraint.h>
+#include <Jolt/Physics/Constraints/SpringSettings.h>
 #include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
@@ -71,6 +72,16 @@ void JPH_DistanceConstraintSettings_Set_mMaxDistance(JPH_DistanceConstraintSetti
 float *JPH_DistanceConstraintSettings_GetMutable_mMaxDistance(JPH_DistanceConstraintSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DistanceConstraintSettings *)(_this)).mMaxDistance);
+}
+
+const JPH_SpringSettings *JPH_DistanceConstraintSettings_Get_mLimitsSpringSettings(const JPH_DistanceConstraintSettings *_this)
+{
+    return (const JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraintSettings *)(_this)).mLimitsSpringSettings);
+}
+
+JPH_SpringSettings *JPH_DistanceConstraintSettings_GetMutable_mLimitsSpringSettings(JPH_DistanceConstraintSettings *_this)
+{
+    return (JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DistanceConstraintSettings *)(_this)).mLimitsSpringSettings);
 }
 
 const bool *JPH_DistanceConstraintSettings_Get_mEnabled(const JPH_DistanceConstraintSettings *_this)
@@ -726,6 +737,23 @@ float JPH_DistanceConstraint_GetMinDistance(const JPH_DistanceConstraint *_this)
 float JPH_DistanceConstraint_GetMaxDistance(const JPH_DistanceConstraint *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraint *)(_this)).GetMaxDistance();
+}
+
+const JPH_SpringSettings *JPH_DistanceConstraint_GetLimitsSpringSettings(const JPH_DistanceConstraint *_this)
+{
+    return (const JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DistanceConstraint *)(_this)).GetLimitsSpringSettings());
+}
+
+JPH_SpringSettings *JPH_DistanceConstraint_GetLimitsSpringSettings_mut(JPH_DistanceConstraint *_this)
+{
+    return (JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DistanceConstraint *)(_this)).GetLimitsSpringSettings());
+}
+
+void JPH_DistanceConstraint_SetLimitsSpringSettings(JPH_DistanceConstraint *_this, const JPH_SpringSettings *inLimitsSpringSettings)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DistanceConstraint *)(_this)).SetLimitsSpringSettings(
+        ((inLimitsSpringSettings ? void() : MRBINDC_THROW("Parameter `inLimitsSpringSettings` can not be null.", void)), *(const JPH::SpringSettings *)(inLimitsSpringSettings))
+    );
 }
 
 float JPH_DistanceConstraint_GetTotalLambdaPosition(const JPH_DistanceConstraint *_this)

@@ -130,6 +130,11 @@ echo "#include \"$ROOT/Jolt/Physics/Constraints/PointConstraint.h\"" >>"$BINDING
 echo "#include \"$ROOT/Jolt/Physics/Constraints/HingeConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Constraints/SliderConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Constraints/SixDOFConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/ConeConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/GearConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/PulleyConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/RackAndPinionConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Constraints/SwingTwistConstraint.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Collision/ObjectLayerPairFilterMask.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Body/MotionQuality.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodySharedSettings.h\"" >>"$BINDINGS/tmp/combined_input.h"
@@ -299,6 +304,20 @@ echo "#include \"$ROOT/Jolt/Skeleton/SkeletonMapper.h\"" >>"$BINDINGS/tmp/combin
     --allow JPH::HingeConstraint \
     --allow JPH::SliderConstraint \
     --allow JPH::SixDOFConstraint \
+    --allow JPH::ESpringMode \
+    --allow JPH::SpringSettings \
+    --allow JPH::EMotorState \
+    --allow JPH::MotorSettings \
+    --allow JPH::ConeConstraintSettings \
+    --allow JPH::ConeConstraint \
+    --allow JPH::GearConstraintSettings \
+    --allow JPH::GearConstraint \
+    --allow JPH::PulleyConstraintSettings \
+    --allow JPH::PulleyConstraint \
+    --allow JPH::RackAndPinionConstraintSettings \
+    --allow JPH::RackAndPinionConstraint \
+    --allow JPH::SwingTwistConstraintSettings \
+    --allow JPH::SwingTwistConstraint \
     --allow JPH::SoftBodySharedSettings \
     --allow JPH::SoftBodyCreationSettings \
     --allow JPH::SoftBodyVertex \

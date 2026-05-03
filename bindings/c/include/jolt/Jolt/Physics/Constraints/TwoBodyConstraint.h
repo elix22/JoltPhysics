@@ -34,12 +34,17 @@ typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h
 ///     `JPH::RefTarget<JPH::ConstraintSettings>`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::ConeConstraintSettings`
 ///     `JPH::DistanceConstraintSettings`
 ///     `JPH::FixedConstraintSettings`
+///     `JPH::GearConstraintSettings`
 ///     `JPH::HingeConstraintSettings`
 ///     `JPH::PointConstraintSettings`
+///     `JPH::PulleyConstraintSettings`
+///     `JPH::RackAndPinionConstraintSettings`
 ///     `JPH::SixDOFConstraintSettings`
 ///     `JPH::SliderConstraintSettings`
+///     `JPH::SwingTwistConstraintSettings`
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings;
 
 /// Base class for all constraints that involve 2 bodies. Body1 is usually considered the parent, Body2 the child.
@@ -52,12 +57,17 @@ typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings;
 ///     `JPH::NonCopyable`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::ConeConstraint`
 ///     `JPH::DistanceConstraint`
 ///     `JPH::FixedConstraint`
+///     `JPH::GearConstraint`
 ///     `JPH::HingeConstraint`
 ///     `JPH::PointConstraint`
+///     `JPH::PulleyConstraint`
+///     `JPH::RackAndPinionConstraint`
 ///     `JPH::SixDOFConstraint`
 ///     `JPH::SliderConstraint`
+///     `JPH::SwingTwistConstraint`
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint;
 
 /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.

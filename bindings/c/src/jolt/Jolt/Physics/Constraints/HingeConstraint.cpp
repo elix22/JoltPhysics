@@ -13,6 +13,8 @@
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/Constraints/HingeConstraint.h>
+#include <Jolt/Physics/Constraints/MotorSettings.h>
+#include <Jolt/Physics/Constraints/SpringSettings.h>
 #include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
@@ -115,6 +117,16 @@ float *JPH_HingeConstraintSettings_GetMutable_mLimitsMax(JPH_HingeConstraintSett
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraintSettings *)(_this)).mLimitsMax);
 }
 
+const JPH_SpringSettings *JPH_HingeConstraintSettings_Get_mLimitsSpringSettings(const JPH_HingeConstraintSettings *_this)
+{
+    return (const JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraintSettings *)(_this)).mLimitsSpringSettings);
+}
+
+JPH_SpringSettings *JPH_HingeConstraintSettings_GetMutable_mLimitsSpringSettings(JPH_HingeConstraintSettings *_this)
+{
+    return (JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraintSettings *)(_this)).mLimitsSpringSettings);
+}
+
 const float *JPH_HingeConstraintSettings_Get_mMaxFrictionTorque(const JPH_HingeConstraintSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraintSettings *)(_this)).mMaxFrictionTorque);
@@ -128,6 +140,16 @@ void JPH_HingeConstraintSettings_Set_mMaxFrictionTorque(JPH_HingeConstraintSetti
 float *JPH_HingeConstraintSettings_GetMutable_mMaxFrictionTorque(JPH_HingeConstraintSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraintSettings *)(_this)).mMaxFrictionTorque);
+}
+
+const JPH_MotorSettings *JPH_HingeConstraintSettings_Get_mMotorSettings(const JPH_HingeConstraintSettings *_this)
+{
+    return (const JPH_MotorSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraintSettings *)(_this)).mMotorSettings);
+}
+
+JPH_MotorSettings *JPH_HingeConstraintSettings_GetMutable_mMotorSettings(JPH_HingeConstraintSettings *_this)
+{
+    return (JPH_MotorSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraintSettings *)(_this)).mMotorSettings);
 }
 
 const bool *JPH_HingeConstraintSettings_Get_mEnabled(const JPH_HingeConstraintSettings *_this)
@@ -821,6 +843,28 @@ float JPH_HingeConstraint_GetMaxFrictionTorque(const JPH_HingeConstraint *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetMaxFrictionTorque();
 }
 
+JPH_MotorSettings *JPH_HingeConstraint_GetMotorSettings_mut(JPH_HingeConstraint *_this)
+{
+    return (JPH_MotorSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraint *)(_this)).GetMotorSettings());
+}
+
+const JPH_MotorSettings *JPH_HingeConstraint_GetMotorSettings(const JPH_HingeConstraint *_this)
+{
+    return (const JPH_MotorSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetMotorSettings());
+}
+
+void JPH_HingeConstraint_SetMotorState(JPH_HingeConstraint *_this, JPH_EMotorState inState)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraint *)(_this)).SetMotorState(
+        ((JPH::EMotorState)inState)
+    );
+}
+
+JPH_EMotorState JPH_HingeConstraint_GetMotorState(const JPH_HingeConstraint *_this)
+{
+    return (JPH_EMotorState)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetMotorState());
+}
+
 void JPH_HingeConstraint_SetTargetAngularVelocity(JPH_HingeConstraint *_this, float inAngularVelocity)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraint *)(_this)).SetTargetAngularVelocity(
@@ -873,6 +917,23 @@ float JPH_HingeConstraint_GetLimitsMax(const JPH_HingeConstraint *_this)
 bool JPH_HingeConstraint_HasLimits(const JPH_HingeConstraint *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).HasLimits();
+}
+
+const JPH_SpringSettings *JPH_HingeConstraint_GetLimitsSpringSettings(const JPH_HingeConstraint *_this)
+{
+    return (const JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HingeConstraint *)(_this)).GetLimitsSpringSettings());
+}
+
+JPH_SpringSettings *JPH_HingeConstraint_GetLimitsSpringSettings_mut(JPH_HingeConstraint *_this)
+{
+    return (JPH_SpringSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraint *)(_this)).GetLimitsSpringSettings());
+}
+
+void JPH_HingeConstraint_SetLimitsSpringSettings(JPH_HingeConstraint *_this, const JPH_SpringSettings *inLimitsSpringSettings)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HingeConstraint *)(_this)).SetLimitsSpringSettings(
+        ((inLimitsSpringSettings ? void() : MRBINDC_THROW("Parameter `inLimitsSpringSettings` can not be null.", void)), *(const JPH::SpringSettings *)(inLimitsSpringSettings))
+    );
 }
 
 JPH_Vec3 *JPH_HingeConstraint_GetTotalLambdaPosition(const JPH_HingeConstraint *_this)

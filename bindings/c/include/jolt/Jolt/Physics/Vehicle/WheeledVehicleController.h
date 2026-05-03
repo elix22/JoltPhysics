@@ -16,6 +16,7 @@ typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jo
 typedef struct JPH_RefTarget_JPH_VehicleControllerSettings JPH_RefTarget_JPH_VehicleControllerSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_WheelSettings JPH_RefTarget_JPH_WheelSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
+typedef struct JPH_SpringSettings JPH_SpringSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/SpringSettings.h>`.
 typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 typedef struct JPH_VehicleConstraint JPH_VehicleConstraint; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleConstraint.h>`.
@@ -316,6 +317,20 @@ JOLT_API void JPH_WheelSettingsWV_Set_mSuspensionPreloadLength(JPH_WheelSettings
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_WheelSettingsWV_GetMutable_mSuspensionPreloadLength(JPH_WheelSettingsWV *_this);
+
+///< Settings for the suspension spring
+/// Returns a pointer to a member variable of class `JPH::WheelSettingsWV` named `mSuspensionSpring`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_SpringSettings *JPH_WheelSettingsWV_Get_mSuspensionSpring(const JPH_WheelSettingsWV *_this);
+
+///< Settings for the suspension spring
+/// Returns a mutable pointer to a member variable of class `JPH::WheelSettingsWV` named `mSuspensionSpring`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_SpringSettings *JPH_WheelSettingsWV_GetMutable_mSuspensionSpring(JPH_WheelSettingsWV *_this);
 
 ///< Radius of the wheel (m)
 /// Returns a pointer to a member variable of class `JPH::WheelSettingsWV` named `mRadius`.

@@ -3,6 +3,7 @@
 
 #include <common.h>
 #include <exports.h>
+#include <jolt/Jolt/Physics/Constraints/MotorSettings.h>
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -18,11 +19,13 @@ typedef struct JPH_Constraint JPH_Constraint; // Defined in `#include <jolt/Jolt
 typedef struct JPH_ConstraintSettings JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/Constraint.h>`.
 typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
+typedef struct JPH_MotorSettings JPH_MotorSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/MotorSettings.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_RefTarget_JPH_ConstraintSettings JPH_RefTarget_JPH_ConstraintSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
+typedef struct JPH_SpringSettings JPH_SpringSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/SpringSettings.h>`.
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
@@ -178,6 +181,20 @@ JOLT_API void JPH_HingeConstraintSettings_Set_mLimitsMax(JPH_HingeConstraintSett
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_HingeConstraintSettings_GetMutable_mLimitsMax(JPH_HingeConstraintSettings *_this);
 
+/// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+/// Returns a pointer to a member variable of class `JPH::HingeConstraintSettings` named `mLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_SpringSettings *JPH_HingeConstraintSettings_Get_mLimitsSpringSettings(const JPH_HingeConstraintSettings *_this);
+
+/// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+/// Returns a mutable pointer to a member variable of class `JPH::HingeConstraintSettings` named `mLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_SpringSettings *JPH_HingeConstraintSettings_GetMutable_mLimitsSpringSettings(JPH_HingeConstraintSettings *_this);
+
 /// Maximum amount of torque (N m) to apply as friction when the constraint is not powered by a motor
 /// Returns a pointer to a member variable of class `JPH::HingeConstraintSettings` named `mMaxFrictionTorque`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -197,6 +214,20 @@ JOLT_API void JPH_HingeConstraintSettings_Set_mMaxFrictionTorque(JPH_HingeConstr
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_HingeConstraintSettings_GetMutable_mMaxFrictionTorque(JPH_HingeConstraintSettings *_this);
+
+/// In case the constraint is powered, this determines the motor settings around the hinge axis
+/// Returns a pointer to a member variable of class `JPH::HingeConstraintSettings` named `mMotorSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const JPH_MotorSettings *JPH_HingeConstraintSettings_Get_mMotorSettings(const JPH_HingeConstraintSettings *_this);
+
+/// In case the constraint is powered, this determines the motor settings around the hinge axis
+/// Returns a mutable pointer to a member variable of class `JPH::HingeConstraintSettings` named `mMotorSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API JPH_MotorSettings *JPH_HingeConstraintSettings_GetMutable_mMotorSettings(JPH_HingeConstraintSettings *_this);
 
 /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
 /// Returns a pointer to a member variable of class `JPH::HingeConstraintSettings` named `mEnabled`.
@@ -727,6 +758,26 @@ JOLT_API void JPH_HingeConstraint_SetMaxFrictionTorque(JPH_HingeConstraint *_thi
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_HingeConstraint_GetMaxFrictionTorque(const JPH_HingeConstraint *_this);
 
+// Motor settings
+/// Generated from method `JPH::HingeConstraint::GetMotorSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JPH_MotorSettings *JPH_HingeConstraint_GetMotorSettings_mut(JPH_HingeConstraint *_this);
+
+/// Generated from method `JPH::HingeConstraint::GetMotorSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_MotorSettings *JPH_HingeConstraint_GetMotorSettings(const JPH_HingeConstraint *_this);
+
+// Motor controls
+/// Generated from method `JPH::HingeConstraint::SetMotorState`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_HingeConstraint_SetMotorState(JPH_HingeConstraint *_this, JPH_EMotorState inState);
+
+/// Generated from method `JPH::HingeConstraint::GetMotorState`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API JPH_EMotorState JPH_HingeConstraint_GetMotorState(const JPH_HingeConstraint *_this);
+
 /// Generated from method `JPH::HingeConstraint::SetTargetAngularVelocity`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_HingeConstraint_SetTargetAngularVelocity(JPH_HingeConstraint *_this, float inAngularVelocity);
@@ -767,6 +818,22 @@ JOLT_API float JPH_HingeConstraint_GetLimitsMax(const JPH_HingeConstraint *_this
 /// Generated from method `JPH::HingeConstraint::HasLimits`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_HingeConstraint_HasLimits(const JPH_HingeConstraint *_this);
+
+/// Update the limits spring settings
+/// Generated from method `JPH::HingeConstraint::GetLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_SpringSettings *JPH_HingeConstraint_GetLimitsSpringSettings(const JPH_HingeConstraint *_this);
+
+/// Generated from method `JPH::HingeConstraint::GetLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JPH_SpringSettings *JPH_HingeConstraint_GetLimitsSpringSettings_mut(JPH_HingeConstraint *_this);
+
+/// Generated from method `JPH::HingeConstraint::SetLimitsSpringSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLimitsSpringSettings` can not be null. It is a single object.
+JOLT_API void JPH_HingeConstraint_SetLimitsSpringSettings(JPH_HingeConstraint *_this, const JPH_SpringSettings *inLimitsSpringSettings);
 
 ///@name Get Lagrange multiplier from last physics update (the linear/angular impulse applied to satisfy the constraint)
 /// Generated from method `JPH::HingeConstraint::GetTotalLambdaPosition`.

@@ -304,6 +304,24 @@ public static partial class JPH
             }
         }
 
+        ///< Settings for the suspension spring
+        public unsafe JPH.Const_SpringSettings mSuspensionSpring
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelSettingsWV_Get_mSuspensionSpring", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelSettingsWV_Get_mSuspensionSpring", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_SpringSettings._Underlying *__JPH_WheelSettingsWV_Get_mSuspensionSpring(_Underlying *_this);
+                JPH.Const_SpringSettings __ret;
+                __ret = new(__JPH_WheelSettingsWV_Get_mSuspensionSpring(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< Radius of the wheel (m)
         public unsafe float mRadius
         {
@@ -883,6 +901,24 @@ public static partial class JPH
                 #endif
                 extern static float *__JPH_WheelSettingsWV_GetMutable_mSuspensionPreloadLength(_Underlying *_this);
                 return ref *__JPH_WheelSettingsWV_GetMutable_mSuspensionPreloadLength(_UnderlyingPtr);
+            }
+        }
+
+        ///< Settings for the suspension spring
+        public new unsafe JPH.SpringSettings mSuspensionSpring
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelSettingsWV_GetMutable_mSuspensionSpring", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelSettingsWV_GetMutable_mSuspensionSpring", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.SpringSettings._Underlying *__JPH_WheelSettingsWV_GetMutable_mSuspensionSpring(_Underlying *_this);
+                JPH.SpringSettings __ret;
+                __ret = new(__JPH_WheelSettingsWV_GetMutable_mSuspensionSpring(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
             }
         }
 

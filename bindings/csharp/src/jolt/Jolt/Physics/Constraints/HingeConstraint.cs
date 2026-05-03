@@ -228,6 +228,24 @@ public static partial class JPH
             }
         }
 
+        /// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+        public unsafe JPH.Const_SpringSettings mLimitsSpringSettings
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_SpringSettings._Underlying *__JPH_HingeConstraintSettings_Get_mLimitsSpringSettings(_Underlying *_this);
+                JPH.Const_SpringSettings __ret;
+                __ret = new(__JPH_HingeConstraintSettings_Get_mLimitsSpringSettings(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         /// Maximum amount of torque (N m) to apply as friction when the constraint is not powered by a motor
         public unsafe float mMaxFrictionTorque
         {
@@ -240,6 +258,24 @@ public static partial class JPH
                 #endif
                 extern static float *__JPH_HingeConstraintSettings_Get_mMaxFrictionTorque(_Underlying *_this);
                 return *__JPH_HingeConstraintSettings_Get_mMaxFrictionTorque(_UnderlyingPtr);
+            }
+        }
+
+        /// In case the constraint is powered, this determines the motor settings around the hinge axis
+        public unsafe JPH.Const_MotorSettings mMotorSettings
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_Get_mMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_MotorSettings._Underlying *__JPH_HingeConstraintSettings_Get_mMotorSettings(_Underlying *_this);
+                JPH.Const_MotorSettings __ret;
+                __ret = new(__JPH_HingeConstraintSettings_Get_mMotorSettings(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
             }
         }
 
@@ -809,6 +845,24 @@ public static partial class JPH
             }
         }
 
+        /// When enabled, this makes the limits soft. When the constraint exceeds the limits, a spring force will pull it back.
+        public new unsafe JPH.SpringSettings mLimitsSpringSettings
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.SpringSettings._Underlying *__JPH_HingeConstraintSettings_GetMutable_mLimitsSpringSettings(_Underlying *_this);
+                JPH.SpringSettings __ret;
+                __ret = new(__JPH_HingeConstraintSettings_GetMutable_mLimitsSpringSettings(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         /// Maximum amount of torque (N m) to apply as friction when the constraint is not powered by a motor
         public new unsafe ref float mMaxFrictionTorque
         {
@@ -821,6 +875,24 @@ public static partial class JPH
                 #endif
                 extern static float *__JPH_HingeConstraintSettings_GetMutable_mMaxFrictionTorque(_Underlying *_this);
                 return ref *__JPH_HingeConstraintSettings_GetMutable_mMaxFrictionTorque(_UnderlyingPtr);
+            }
+        }
+
+        /// In case the constraint is powered, this determines the motor settings around the hinge axis
+        public new unsafe JPH.MotorSettings mMotorSettings
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraintSettings_GetMutable_mMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.MotorSettings._Underlying *__JPH_HingeConstraintSettings_GetMutable_mMotorSettings(_Underlying *_this);
+                JPH.MotorSettings __ret;
+                __ret = new(__JPH_HingeConstraintSettings_GetMutable_mMotorSettings(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
             }
         }
 
@@ -1439,6 +1511,30 @@ public static partial class JPH
             return __JPH_HingeConstraint_GetMaxFrictionTorque(_UnderlyingPtr);
         }
 
+        /// Generated from method `JPH::HingeConstraint::GetMotorSettings`.
+        public unsafe JPH.Const_MotorSettings GetMotorSettings()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetMotorSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_MotorSettings._Underlying *__JPH_HingeConstraint_GetMotorSettings(_Underlying *_this);
+            return new(__JPH_HingeConstraint_GetMotorSettings(_UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JPH::HingeConstraint::GetMotorState`.
+        public unsafe JPH.EMotorState GetMotorState()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetMotorState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetMotorState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.EMotorState __JPH_HingeConstraint_GetMotorState(_Underlying *_this);
+            return __JPH_HingeConstraint_GetMotorState(_UnderlyingPtr);
+        }
+
         /// Generated from method `JPH::HingeConstraint::GetTargetAngularVelocity`.
         public unsafe float GetTargetAngularVelocity()
         {
@@ -1497,6 +1593,19 @@ public static partial class JPH
             #endif
             extern static byte __JPH_HingeConstraint_HasLimits(_Underlying *_this);
             return __JPH_HingeConstraint_HasLimits(_UnderlyingPtr) != 0;
+        }
+
+        /// Update the limits spring settings
+        /// Generated from method `JPH::HingeConstraint::GetLimitsSpringSettings`.
+        public unsafe JPH.Const_SpringSettings GetLimitsSpringSettings()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_SpringSettings._Underlying *__JPH_HingeConstraint_GetLimitsSpringSettings(_Underlying *_this);
+            return new(__JPH_HingeConstraint_GetLimitsSpringSettings(_UnderlyingPtr), is_owning: false);
         }
 
         ///@name Get Lagrange multiplier from last physics update (the linear/angular impulse applied to satisfy the constraint)
@@ -1922,6 +2031,32 @@ public static partial class JPH
             __JPH_HingeConstraint_SetMaxFrictionTorque(_UnderlyingPtr, inFrictionTorque);
         }
 
+        // Motor settings
+        /// Generated from method `JPH::HingeConstraint::GetMotorSettings`.
+        public unsafe new JPH.MotorSettings GetMotorSettings()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetMotorSettings_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetMotorSettings_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.MotorSettings._Underlying *__JPH_HingeConstraint_GetMotorSettings_mut(_Underlying *_this);
+            return new(__JPH_HingeConstraint_GetMotorSettings_mut(_UnderlyingPtr), is_owning: false);
+        }
+
+        // Motor controls
+        /// Generated from method `JPH::HingeConstraint::SetMotorState`.
+        public unsafe void SetMotorState(JPH.EMotorState inState)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_SetMotorState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_SetMotorState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_HingeConstraint_SetMotorState(_Underlying *_this, JPH.EMotorState inState);
+            __JPH_HingeConstraint_SetMotorState(_UnderlyingPtr, inState);
+        }
+
         /// Generated from method `JPH::HingeConstraint::SetTargetAngularVelocity`.
         public unsafe void SetTargetAngularVelocity(float inAngularVelocity)
         {
@@ -1972,6 +2107,30 @@ public static partial class JPH
             #endif
             extern static void __JPH_HingeConstraint_SetLimits(_Underlying *_this, float inLimitsMin, float inLimitsMax);
             __JPH_HingeConstraint_SetLimits(_UnderlyingPtr, inLimitsMin, inLimitsMax);
+        }
+
+        /// Generated from method `JPH::HingeConstraint::GetLimitsSpringSettings`.
+        public unsafe new JPH.SpringSettings GetLimitsSpringSettings()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_GetLimitsSpringSettings_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_GetLimitsSpringSettings_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SpringSettings._Underlying *__JPH_HingeConstraint_GetLimitsSpringSettings_mut(_Underlying *_this);
+            return new(__JPH_HingeConstraint_GetLimitsSpringSettings_mut(_UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JPH::HingeConstraint::SetLimitsSpringSettings`.
+        public unsafe void SetLimitsSpringSettings(JPH.Const_SpringSettings inLimitsSpringSettings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HingeConstraint_SetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HingeConstraint_SetLimitsSpringSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_HingeConstraint_SetLimitsSpringSettings(_Underlying *_this, JPH.Const_SpringSettings._Underlying *inLimitsSpringSettings);
+            __JPH_HingeConstraint_SetLimitsSpringSettings(_UnderlyingPtr, inLimitsSpringSettings._UnderlyingPtr);
         }
 
         /// Generated from method `JPH::HingeConstraint::SetConstraintPriority`.

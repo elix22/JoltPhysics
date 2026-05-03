@@ -257,6 +257,28 @@ public static partial class JPH
         }
     }
 
+    public unsafe struct ArrayMotorSettings6
+    {
+        internal JPH.MotorSettings._Underlying *Ptr;
+
+        internal ArrayMotorSettings6(JPH.MotorSettings._Underlying *new_ptr) {Ptr = new_ptr;}
+
+        public JPH.MotorSettings this[nint i]
+        {
+            get
+            {
+                System.Diagnostics.Trace.Assert(i >= 0 && i < 6);
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MotorSettings_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MotorSettings_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.MotorSettings._Underlying *__JPH_MotorSettings_OffsetPtr(JPH.MotorSettings._Underlying *ptr, nint i);
+                return new(__JPH_MotorSettings_OffsetPtr(Ptr, i), is_owning: false);
+            }
+        }
+    }
+
     public unsafe struct ArraySoftBodySharedSettingsSkinWeight4
     {
         internal JPH.SoftBodySharedSettings.SkinWeight._Underlying *Ptr;
@@ -275,6 +297,28 @@ public static partial class JPH
                 #endif
                 extern static JPH.SoftBodySharedSettings.SkinWeight._Underlying *__JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr(JPH.SoftBodySharedSettings.SkinWeight._Underlying *ptr, nint i);
                 return new(__JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr(Ptr, i), is_owning: false);
+            }
+        }
+    }
+
+    public unsafe struct ArraySpringSettings3
+    {
+        internal JPH.SpringSettings._Underlying *Ptr;
+
+        internal ArraySpringSettings3(JPH.SpringSettings._Underlying *new_ptr) {Ptr = new_ptr;}
+
+        public JPH.SpringSettings this[nint i]
+        {
+            get
+            {
+                System.Diagnostics.Trace.Assert(i >= 0 && i < 3);
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SpringSettings_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SpringSettings_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.SpringSettings._Underlying *__JPH_SpringSettings_OffsetPtr(JPH.SpringSettings._Underlying *ptr, nint i);
+                return new(__JPH_SpringSettings_OffsetPtr(Ptr, i), is_owning: false);
             }
         }
     }

@@ -24,12 +24,17 @@ public static partial class JPH
     ///   Direct: (non-virtual)
     ///     `JPH::ConstraintSettings`
     ///   Indirect: (non-virtual)
+    ///     `JPH::ConeConstraintSettings`
     ///     `JPH::DistanceConstraintSettings`
     ///     `JPH::FixedConstraintSettings`
+    ///     `JPH::GearConstraintSettings`
     ///     `JPH::HingeConstraintSettings`
     ///     `JPH::PointConstraintSettings`
+    ///     `JPH::PulleyConstraintSettings`
+    ///     `JPH::RackAndPinionConstraintSettings`
     ///     `JPH::SixDOFConstraintSettings`
     ///     `JPH::SliderConstraintSettings`
+    ///     `JPH::SwingTwistConstraintSettings`
     ///     `JPH::TwoBodyConstraintSettings`
     ///     `JPH::VehicleConstraintSettings`
     /// This is the const half of the class.
@@ -178,12 +183,17 @@ public static partial class JPH
     ///   Direct: (non-virtual)
     ///     `JPH::ConstraintSettings`
     ///   Indirect: (non-virtual)
+    ///     `JPH::ConeConstraintSettings`
     ///     `JPH::DistanceConstraintSettings`
     ///     `JPH::FixedConstraintSettings`
+    ///     `JPH::GearConstraintSettings`
     ///     `JPH::HingeConstraintSettings`
     ///     `JPH::PointConstraintSettings`
+    ///     `JPH::PulleyConstraintSettings`
+    ///     `JPH::RackAndPinionConstraintSettings`
     ///     `JPH::SixDOFConstraintSettings`
     ///     `JPH::SliderConstraintSettings`
+    ///     `JPH::SwingTwistConstraintSettings`
     ///     `JPH::TwoBodyConstraintSettings`
     ///     `JPH::VehicleConstraintSettings`
     /// This is the non-const half of the class.
@@ -310,12 +320,17 @@ public static partial class JPH
     ///   Direct: (non-virtual)
     ///     `JPH::Constraint`
     ///   Indirect: (non-virtual)
+    ///     `JPH::ConeConstraint`
     ///     `JPH::DistanceConstraint`
     ///     `JPH::FixedConstraint`
+    ///     `JPH::GearConstraint`
     ///     `JPH::HingeConstraint`
     ///     `JPH::PointConstraint`
+    ///     `JPH::PulleyConstraint`
+    ///     `JPH::RackAndPinionConstraint`
     ///     `JPH::SixDOFConstraint`
     ///     `JPH::SliderConstraint`
+    ///     `JPH::SwingTwistConstraint`
     ///     `JPH::TwoBodyConstraint`
     ///     `JPH::VehicleConstraint`
     /// This is the const half of the class.
@@ -464,12 +479,17 @@ public static partial class JPH
     ///   Direct: (non-virtual)
     ///     `JPH::Constraint`
     ///   Indirect: (non-virtual)
+    ///     `JPH::ConeConstraint`
     ///     `JPH::DistanceConstraint`
     ///     `JPH::FixedConstraint`
+    ///     `JPH::GearConstraint`
     ///     `JPH::HingeConstraint`
     ///     `JPH::PointConstraint`
+    ///     `JPH::PulleyConstraint`
+    ///     `JPH::RackAndPinionConstraint`
     ///     `JPH::SixDOFConstraint`
     ///     `JPH::SliderConstraint`
+    ///     `JPH::SwingTwistConstraint`
     ///     `JPH::TwoBodyConstraint`
     ///     `JPH::VehicleConstraint`
     /// This is the non-const half of the class.
