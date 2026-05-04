@@ -6,6 +6,7 @@
 // the internal constructors used to wrap raw C pointers into managed objects.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -136,11 +137,11 @@ public static partial class JPH
 
     // ---- ContactListenerTrampolineManaged -------------------------------------
     //
-    // Wraps ContactListenerTrampoline and provides:
-    //   - GCHandle management: pinned delegate references stay alive while the
-    //     C side holds raw function pointers into them.
-    //   - Managed-typed callbacks: raw C pointers are wrapped in non-owning
-    //     JPH managed objects before the user delegate is invoked.
+    // Wraps ContactListenerTrampoline and provides managed-typed callbacks.
+    //
+    // WASM/NativeAOT compatibility: uses [UnmanagedCallersOnly] static methods
+    // and SetContext(GCHandle) instead of Marshal.GetFunctionPointerForDelegate,
+    // which requires a JIT thunk and is unsupported on WebAssembly.
     //
     // Usage:
     //   using var listener = new JPH.ContactListenerTrampolineManaged();
@@ -163,84 +164,109 @@ public static partial class JPH
 
         public delegate void RemovedCallback(Const_SubShapeIDPair pair);
 
-        // Raw C-compatible delegate types using void* to avoid exposing internal
-        // _Underlying types in delegate signatures (which C# forbids in public/internal
-        // delegates due to accessibility rules).
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate ValidateResult RawValidate(void* ctx, void* b1, void* b2, void* off, void* res);
-
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void RawAdded(void* ctx, void* b1, void* b2, void* m, void* s);
-
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void RawPersisted(void* ctx, void* b1, void* b2, void* m, void* s);
-
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        private unsafe delegate void RawRemoved(void* ctx, void* pair);
+        // Holds all user callbacks; passed to the static trampolines via SetContext.
+        private sealed class Callbacks
+        {
+            public ValidateCallback?  OnValidate;
+            public AddedCallback?     OnAdded;
+            public PersistedCallback? OnPersisted;
+            public RemovedCallback?   OnRemoved;
+        }
 
         public readonly ContactListenerTrampoline Inner;
+        private GCHandle _callbacksHandle;
 
-        private GCHandle _validateHandle;
-        private GCHandle _addedHandle;
-        private GCHandle _persistedHandle;
-        private GCHandle _removedHandle;
+        public unsafe ContactListenerTrampolineManaged()
+        {
+            Inner = new ContactListenerTrampoline();
+            var cbs = new Callbacks();
+            _callbacksHandle = GCHandle.Alloc(cbs);
+            Inner.SetContext((void*)GCHandle.ToIntPtr(_callbacksHandle));
+        }
 
-        public ContactListenerTrampolineManaged() { Inner = new ContactListenerTrampoline(); }
+        private Callbacks GetCallbacks() => (Callbacks)_callbacksHandle.Target!;
 
         public unsafe void SetOnContactValidate(ValidateCallback callback)
         {
-            RawValidate raw = (ctx, b1, b2, off, res) =>
-                callback(
-                    new Const_Body((Const_Body._Underlying*)b1, false),
-                    new Const_Body((Const_Body._Underlying*)b2, false),
-                    new Const_Vec3((Vec3._Underlying*)off, false),
-                    new Const_CollideShapeResult((Const_CollideShapeResult._Underlying*)res, false));
-            if (_validateHandle.IsAllocated) _validateHandle.Free();
-            _validateHandle = GCHandle.Alloc(raw);
-            Inner.SetOnContactValidateFn((void*)Marshal.GetFunctionPointerForDelegate(raw));
+            GetCallbacks().OnValidate = callback;
+            Inner.SetOnContactValidateFn(
+                (void*)(delegate* unmanaged[Cdecl]<void*, void*, void*, void*, void*, int>)
+                    &OnContactValidateStatic);
         }
 
         public unsafe void SetOnContactAdded(AddedCallback callback)
         {
-            RawAdded raw = (ctx, b1, b2, m, s) =>
-                callback(
-                    new Const_Body((Const_Body._Underlying*)b1, false),
-                    new Const_Body((Const_Body._Underlying*)b2, false),
-                    new Const_ContactManifold((Const_ContactManifold._Underlying*)m, false),
-                    new ContactSettings((ContactSettings._Underlying*)s, false));
-            if (_addedHandle.IsAllocated) _addedHandle.Free();
-            _addedHandle = GCHandle.Alloc(raw);
-            Inner.SetOnContactAddedFn((void*)Marshal.GetFunctionPointerForDelegate(raw));
+            GetCallbacks().OnAdded = callback;
+            Inner.SetOnContactAddedFn(
+                (void*)(delegate* unmanaged[Cdecl]<void*, void*, void*, void*, void*, void>)
+                    &OnContactAddedStatic);
         }
 
         public unsafe void SetOnContactPersisted(PersistedCallback callback)
         {
-            RawPersisted raw = (ctx, b1, b2, m, s) =>
-                callback(
-                    new Const_Body((Const_Body._Underlying*)b1, false),
-                    new Const_Body((Const_Body._Underlying*)b2, false),
-                    new Const_ContactManifold((Const_ContactManifold._Underlying*)m, false),
-                    new ContactSettings((ContactSettings._Underlying*)s, false));
-            if (_persistedHandle.IsAllocated) _persistedHandle.Free();
-            _persistedHandle = GCHandle.Alloc(raw);
-            Inner.SetOnContactPersistedFn((void*)Marshal.GetFunctionPointerForDelegate(raw));
+            GetCallbacks().OnPersisted = callback;
+            Inner.SetOnContactPersistedFn(
+                (void*)(delegate* unmanaged[Cdecl]<void*, void*, void*, void*, void*, void>)
+                    &OnContactPersistedStatic);
         }
 
         public unsafe void SetOnContactRemoved(RemovedCallback callback)
         {
-            RawRemoved raw = (ctx, pair) =>
-                callback(new Const_SubShapeIDPair((Const_SubShapeIDPair._Underlying*)pair, false));
-            if (_removedHandle.IsAllocated) _removedHandle.Free();
-            _removedHandle = GCHandle.Alloc(raw);
-            Inner.SetOnContactRemovedFn((void*)Marshal.GetFunctionPointerForDelegate(raw));
+            GetCallbacks().OnRemoved = callback;
+            Inner.SetOnContactRemovedFn(
+                (void*)(delegate* unmanaged[Cdecl]<void*, void*, void>)
+                    &OnContactRemovedStatic);
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+        private static unsafe int OnContactValidateStatic(
+            void* ctx, void* b1, void* b2, void* off, void* res)
+        {
+            var cbs = (Callbacks)GCHandle.FromIntPtr((IntPtr)ctx).Target!;
+            if (cbs.OnValidate == null)
+                return (int)ValidateResult.AcceptAllContactsForThisBodyPair;
+            return (int)cbs.OnValidate(
+                new Const_Body((Const_Body._Underlying*)b1, false),
+                new Const_Body((Const_Body._Underlying*)b2, false),
+                new Const_Vec3((Vec3._Underlying*)off, false),
+                new Const_CollideShapeResult((Const_CollideShapeResult._Underlying*)res, false));
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+        private static unsafe void OnContactAddedStatic(
+            void* ctx, void* b1, void* b2, void* m, void* s)
+        {
+            var cbs = (Callbacks)GCHandle.FromIntPtr((IntPtr)ctx).Target!;
+            cbs.OnAdded?.Invoke(
+                new Const_Body((Const_Body._Underlying*)b1, false),
+                new Const_Body((Const_Body._Underlying*)b2, false),
+                new Const_ContactManifold((Const_ContactManifold._Underlying*)m, false),
+                new ContactSettings((ContactSettings._Underlying*)s, false));
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+        private static unsafe void OnContactPersistedStatic(
+            void* ctx, void* b1, void* b2, void* m, void* s)
+        {
+            var cbs = (Callbacks)GCHandle.FromIntPtr((IntPtr)ctx).Target!;
+            cbs.OnPersisted?.Invoke(
+                new Const_Body((Const_Body._Underlying*)b1, false),
+                new Const_Body((Const_Body._Underlying*)b2, false),
+                new Const_ContactManifold((Const_ContactManifold._Underlying*)m, false),
+                new ContactSettings((ContactSettings._Underlying*)s, false));
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+        private static unsafe void OnContactRemovedStatic(void* ctx, void* pair)
+        {
+            var cbs = (Callbacks)GCHandle.FromIntPtr((IntPtr)ctx).Target!;
+            cbs.OnRemoved?.Invoke(
+                new Const_SubShapeIDPair((Const_SubShapeIDPair._Underlying*)pair, false));
         }
 
         public void Dispose()
         {
-            if (_validateHandle.IsAllocated)  _validateHandle.Free();
-            if (_addedHandle.IsAllocated)     _addedHandle.Free();
-            if (_persistedHandle.IsAllocated) _persistedHandle.Free();
-            if (_removedHandle.IsAllocated)   _removedHandle.Free();
+            if (_callbacksHandle.IsAllocated) _callbacksHandle.Free();
             Inner.Dispose();
         }
     }
