@@ -81,6 +81,32 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_DebugRendererSimple(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DebugRendererSimple_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DebugRendererSimple_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_DebugRendererSimple_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_DebugRendererSimple ret = new(__JPH_DebugRendererSimple_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_DebugRendererSimple(JPH.Const_DebugRenderer parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DebugRendererSimple_StaticDowncastFrom_JPH_DebugRenderer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DebugRendererSimple_StaticDowncastFrom_JPH_DebugRenderer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_DebugRendererSimple_StaticDowncastFrom_JPH_DebugRenderer(JPH.Const_DebugRenderer._Underlying *_this);
+            Const_DebugRendererSimple ret = new(__JPH_DebugRendererSimple_StaticDowncastFrom_JPH_DebugRenderer(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         /// Singleton instance
         public static unsafe JPH.DebugRenderer? SInstance
         {
@@ -307,6 +333,32 @@ public static partial class JPH
             extern static JPH.DebugRenderer._Underlying *__JPH_DebugRendererSimple_UpcastTo_JPH_DebugRenderer(_Underlying *_this);
             JPH.DebugRenderer ret = new(__JPH_DebugRendererSimple_UpcastTo_JPH_DebugRenderer(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator DebugRendererSimple(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DebugRendererSimple_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DebugRendererSimple_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_DebugRendererSimple_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            DebugRendererSimple ret = new(__JPH_DebugRendererSimple_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator DebugRendererSimple(JPH.DebugRenderer parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DebugRendererSimple_StaticDowncastFrom_JPH_DebugRenderer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DebugRendererSimple_StaticDowncastFrom_JPH_DebugRenderer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_DebugRendererSimple_StaticDowncastFrom_JPH_DebugRenderer(JPH.DebugRenderer._Underlying *_this);
+            DebugRendererSimple ret = new(__JPH_DebugRendererSimple_StaticDowncastFrom_JPH_DebugRenderer(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

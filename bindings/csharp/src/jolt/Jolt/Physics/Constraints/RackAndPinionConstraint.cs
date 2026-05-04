@@ -89,6 +89,56 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_RackAndPinionConstraintSettings(JPH.Const_SerializableObject parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_SerializableObject(JPH.Const_SerializableObject._Underlying *_this);
+            Const_RackAndPinionConstraintSettings ret = new(__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_RackAndPinionConstraintSettings(JPH.Const_RefTarget_JPHConstraintSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_RefTarget_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_RefTarget_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_RefTarget_JPH_ConstraintSettings(JPH.Const_RefTarget_JPHConstraintSettings._Underlying *_this);
+            Const_RackAndPinionConstraintSettings ret = new(__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_RefTarget_JPH_ConstraintSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_RackAndPinionConstraintSettings(JPH.Const_ConstraintSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_ConstraintSettings(JPH.Const_ConstraintSettings._Underlying *_this);
+            Const_RackAndPinionConstraintSettings ret = new(__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_ConstraintSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_RackAndPinionConstraintSettings(JPH.Const_TwoBodyConstraintSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_TwoBodyConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_TwoBodyConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_TwoBodyConstraintSettings(JPH.Const_TwoBodyConstraintSettings._Underlying *_this);
+            Const_RackAndPinionConstraintSettings ret = new(__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_TwoBodyConstraintSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         /// Body 1 (pinion) constraint reference frame (space determined by mSpace).
         public unsafe JPH.Const_Vec3 mHingeAxis
         {
@@ -568,6 +618,56 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator RackAndPinionConstraintSettings(JPH.SerializableObject parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_SerializableObject(JPH.SerializableObject._Underlying *_this);
+            RackAndPinionConstraintSettings ret = new(__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator RackAndPinionConstraintSettings(JPH.RefTarget_JPHConstraintSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_RefTarget_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_RefTarget_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_RefTarget_JPH_ConstraintSettings(JPH.RefTarget_JPHConstraintSettings._Underlying *_this);
+            RackAndPinionConstraintSettings ret = new(__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_RefTarget_JPH_ConstraintSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator RackAndPinionConstraintSettings(JPH.ConstraintSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_ConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_ConstraintSettings(JPH.ConstraintSettings._Underlying *_this);
+            RackAndPinionConstraintSettings ret = new(__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_ConstraintSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator RackAndPinionConstraintSettings(JPH.TwoBodyConstraintSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_TwoBodyConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_TwoBodyConstraintSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_TwoBodyConstraintSettings(JPH.TwoBodyConstraintSettings._Underlying *_this);
+            RackAndPinionConstraintSettings ret = new(__JPH_RackAndPinionConstraintSettings_StaticDowncastFrom_JPH_TwoBodyConstraintSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         /// Body 1 (pinion) constraint reference frame (space determined by mSpace).
         public new unsafe JPH.Vec3 mHingeAxis
         {
@@ -937,6 +1037,56 @@ public static partial class JPH
             extern static JPH.Const_TwoBodyConstraint._Underlying *__JPH_RackAndPinionConstraint_UpcastTo_JPH_TwoBodyConstraint(_Underlying *_this);
             JPH.Const_TwoBodyConstraint ret = new(__JPH_RackAndPinionConstraint_UpcastTo_JPH_TwoBodyConstraint(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_RackAndPinionConstraint(JPH.Const_RefTarget_JPHConstraint parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_RefTarget_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_RefTarget_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_RefTarget_JPH_Constraint(JPH.Const_RefTarget_JPHConstraint._Underlying *_this);
+            Const_RackAndPinionConstraint ret = new(__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_RefTarget_JPH_Constraint(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_RackAndPinionConstraint(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_RackAndPinionConstraint ret = new(__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_RackAndPinionConstraint(JPH.Const_Constraint parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_Constraint(JPH.Const_Constraint._Underlying *_this);
+            Const_RackAndPinionConstraint ret = new(__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_Constraint(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_RackAndPinionConstraint(JPH.Const_TwoBodyConstraint parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_TwoBodyConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_TwoBodyConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_TwoBodyConstraint(JPH.Const_TwoBodyConstraint._Underlying *_this);
+            Const_RackAndPinionConstraint ret = new(__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_TwoBodyConstraint(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -1420,6 +1570,56 @@ public static partial class JPH
             extern static JPH.TwoBodyConstraint._Underlying *__JPH_RackAndPinionConstraint_UpcastTo_JPH_TwoBodyConstraint(_Underlying *_this);
             JPH.TwoBodyConstraint ret = new(__JPH_RackAndPinionConstraint_UpcastTo_JPH_TwoBodyConstraint(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator RackAndPinionConstraint(JPH.RefTarget_JPHConstraint parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_RefTarget_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_RefTarget_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_RefTarget_JPH_Constraint(JPH.RefTarget_JPHConstraint._Underlying *_this);
+            RackAndPinionConstraint ret = new(__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_RefTarget_JPH_Constraint(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator RackAndPinionConstraint(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            RackAndPinionConstraint ret = new(__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator RackAndPinionConstraint(JPH.Constraint parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_Constraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_Constraint(JPH.Constraint._Underlying *_this);
+            RackAndPinionConstraint ret = new(__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_Constraint(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator RackAndPinionConstraint(JPH.TwoBodyConstraint parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_TwoBodyConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_TwoBodyConstraint", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_TwoBodyConstraint(JPH.TwoBodyConstraint._Underlying *_this);
+            RackAndPinionConstraint ret = new(__JPH_RackAndPinionConstraint_StaticDowncastFrom_JPH_TwoBodyConstraint(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

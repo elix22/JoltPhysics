@@ -49,6 +49,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_RagdollSettings(JPH.Const_RefTarget_JPHRagdollSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RagdollSettings_StaticDowncastFrom_JPH_RefTarget_JPH_RagdollSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_StaticDowncastFrom_JPH_RefTarget_JPH_RagdollSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RagdollSettings_StaticDowncastFrom_JPH_RefTarget_JPH_RagdollSettings(JPH.Const_RefTarget_JPHRagdollSettings._Underlying *_this);
+            Const_RagdollSettings ret = new(__JPH_RagdollSettings_StaticDowncastFrom_JPH_RefTarget_JPH_RagdollSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe Const_RagdollSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -755,6 +769,20 @@ public static partial class JPH
                 return ret;
             }
 
+            // Downcasts:
+            public static unsafe explicit operator Const_Part(JPH.Const_BodyCreationSettings parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RagdollSettings_Part_StaticDowncastFrom_JPH_BodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_Part_StaticDowncastFrom_JPH_BodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_RagdollSettings_Part_StaticDowncastFrom_JPH_BodyCreationSettings(JPH.Const_BodyCreationSettings._Underlying *_this);
+                Const_Part ret = new(__JPH_RagdollSettings_Part_StaticDowncastFrom_JPH_BodyCreationSettings(parent._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+
             ///< Position of the body (not of the center of mass)
             public unsafe JPH.Const_Vec3 mPosition
             {
@@ -1391,6 +1419,20 @@ public static partial class JPH
                 return ret;
             }
 
+            // Downcasts:
+            public static unsafe explicit operator Part(JPH.BodyCreationSettings parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RagdollSettings_Part_StaticDowncastFrom_JPH_BodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_Part_StaticDowncastFrom_JPH_BodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_RagdollSettings_Part_StaticDowncastFrom_JPH_BodyCreationSettings(JPH.BodyCreationSettings._Underlying *_this);
+                Part ret = new(__JPH_RagdollSettings_Part_StaticDowncastFrom_JPH_BodyCreationSettings(parent._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+
             ///< Position of the body (not of the center of mass)
             public new unsafe JPH.Vec3 mPosition
             {
@@ -1941,6 +1983,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator RagdollSettings(JPH.RefTarget_JPHRagdollSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RagdollSettings_StaticDowncastFrom_JPH_RefTarget_JPH_RagdollSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_StaticDowncastFrom_JPH_RefTarget_JPH_RagdollSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RagdollSettings_StaticDowncastFrom_JPH_RefTarget_JPH_RagdollSettings(JPH.RefTarget_JPHRagdollSettings._Underlying *_this);
+            RagdollSettings ret = new(__JPH_RagdollSettings_StaticDowncastFrom_JPH_RefTarget_JPH_RagdollSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe RagdollSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructs an empty (default-constructed) instance.
@@ -2219,6 +2275,32 @@ public static partial class JPH
             extern static JPH.Const_NonCopyable._Underlying *__JPH_Ragdoll_UpcastTo_JPH_NonCopyable(_Underlying *_this);
             JPH.Const_NonCopyable ret = new(__JPH_Ragdoll_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_Ragdoll(JPH.Const_RefTarget_JPHRagdoll parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Ragdoll_StaticDowncastFrom_JPH_RefTarget_JPH_Ragdoll", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Ragdoll_StaticDowncastFrom_JPH_RefTarget_JPH_Ragdoll", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_Ragdoll_StaticDowncastFrom_JPH_RefTarget_JPH_Ragdoll(JPH.Const_RefTarget_JPHRagdoll._Underlying *_this);
+            Const_Ragdoll ret = new(__JPH_Ragdoll_StaticDowncastFrom_JPH_RefTarget_JPH_Ragdoll(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_Ragdoll(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Ragdoll_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Ragdoll_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_Ragdoll_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_Ragdoll ret = new(__JPH_Ragdoll_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -2598,6 +2680,32 @@ public static partial class JPH
             extern static JPH.NonCopyable._Underlying *__JPH_Ragdoll_UpcastTo_JPH_NonCopyable(_Underlying *_this);
             JPH.NonCopyable ret = new(__JPH_Ragdoll_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Ragdoll(JPH.RefTarget_JPHRagdoll parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Ragdoll_StaticDowncastFrom_JPH_RefTarget_JPH_Ragdoll", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Ragdoll_StaticDowncastFrom_JPH_RefTarget_JPH_Ragdoll", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_Ragdoll_StaticDowncastFrom_JPH_RefTarget_JPH_Ragdoll(JPH.RefTarget_JPHRagdoll._Underlying *_this);
+            Ragdoll ret = new(__JPH_Ragdoll_StaticDowncastFrom_JPH_RefTarget_JPH_Ragdoll(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Ragdoll(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Ragdoll_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Ragdoll_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_Ragdoll_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            Ragdoll ret = new(__JPH_Ragdoll_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

@@ -67,6 +67,32 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_VehicleCollisionTester(JPH.Const_RefTarget_JPHVehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(JPH.Const_RefTarget_JPHVehicleCollisionTester._Underlying *_this);
+            Const_VehicleCollisionTester ret = new(__JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_VehicleCollisionTester(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_VehicleCollisionTester ret = new(__JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe Const_VehicleCollisionTester(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Generated from method `JPH::VehicleCollisionTester::operator new`.
@@ -429,6 +455,32 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator VehicleCollisionTester(JPH.RefTarget_JPHVehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(JPH.RefTarget_JPHVehicleCollisionTester._Underlying *_this);
+            VehicleCollisionTester ret = new(__JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator VehicleCollisionTester(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            VehicleCollisionTester ret = new(__JPH_VehicleCollisionTester_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe VehicleCollisionTester(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Generated from method `JPH::VehicleCollisionTester::SetObjectLayer`.
@@ -585,6 +637,44 @@ public static partial class JPH
             extern static JPH.Const_VehicleCollisionTester._Underlying *__JPH_VehicleCollisionTesterRay_UpcastTo_JPH_VehicleCollisionTester(_Underlying *_this);
             JPH.Const_VehicleCollisionTester ret = new(__JPH_VehicleCollisionTesterRay_UpcastTo_JPH_VehicleCollisionTester(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_VehicleCollisionTesterRay(JPH.Const_RefTarget_JPHVehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(JPH.Const_RefTarget_JPHVehicleCollisionTester._Underlying *_this);
+            Const_VehicleCollisionTesterRay ret = new(__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_VehicleCollisionTesterRay(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_VehicleCollisionTesterRay ret = new(__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_VehicleCollisionTesterRay(JPH.Const_VehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_VehicleCollisionTester(JPH.Const_VehicleCollisionTester._Underlying *_this);
+            Const_VehicleCollisionTesterRay ret = new(__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -967,6 +1057,44 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator VehicleCollisionTesterRay(JPH.RefTarget_JPHVehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(JPH.RefTarget_JPHVehicleCollisionTester._Underlying *_this);
+            VehicleCollisionTesterRay ret = new(__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator VehicleCollisionTesterRay(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            VehicleCollisionTesterRay ret = new(__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator VehicleCollisionTesterRay(JPH.VehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_VehicleCollisionTester(JPH.VehicleCollisionTester._Underlying *_this);
+            VehicleCollisionTesterRay ret = new(__JPH_VehicleCollisionTesterRay_StaticDowncastFrom_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe VehicleCollisionTesterRay(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructor
@@ -1155,6 +1283,44 @@ public static partial class JPH
             extern static JPH.Const_VehicleCollisionTester._Underlying *__JPH_VehicleCollisionTesterCastSphere_UpcastTo_JPH_VehicleCollisionTester(_Underlying *_this);
             JPH.Const_VehicleCollisionTester ret = new(__JPH_VehicleCollisionTesterCastSphere_UpcastTo_JPH_VehicleCollisionTester(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_VehicleCollisionTesterCastSphere(JPH.Const_RefTarget_JPHVehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(JPH.Const_RefTarget_JPHVehicleCollisionTester._Underlying *_this);
+            Const_VehicleCollisionTesterCastSphere ret = new(__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_VehicleCollisionTesterCastSphere(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_VehicleCollisionTesterCastSphere ret = new(__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_VehicleCollisionTesterCastSphere(JPH.Const_VehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_VehicleCollisionTester(JPH.Const_VehicleCollisionTester._Underlying *_this);
+            Const_VehicleCollisionTesterCastSphere ret = new(__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -1538,6 +1704,44 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator VehicleCollisionTesterCastSphere(JPH.RefTarget_JPHVehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(JPH.RefTarget_JPHVehicleCollisionTester._Underlying *_this);
+            VehicleCollisionTesterCastSphere ret = new(__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator VehicleCollisionTesterCastSphere(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            VehicleCollisionTesterCastSphere ret = new(__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator VehicleCollisionTesterCastSphere(JPH.VehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_VehicleCollisionTester(JPH.VehicleCollisionTester._Underlying *_this);
+            VehicleCollisionTesterCastSphere ret = new(__JPH_VehicleCollisionTesterCastSphere_StaticDowncastFrom_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe VehicleCollisionTesterCastSphere(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructor
@@ -1727,6 +1931,44 @@ public static partial class JPH
             extern static JPH.Const_VehicleCollisionTester._Underlying *__JPH_VehicleCollisionTesterCastCylinder_UpcastTo_JPH_VehicleCollisionTester(_Underlying *_this);
             JPH.Const_VehicleCollisionTester ret = new(__JPH_VehicleCollisionTesterCastCylinder_UpcastTo_JPH_VehicleCollisionTester(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_VehicleCollisionTesterCastCylinder(JPH.Const_RefTarget_JPHVehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(JPH.Const_RefTarget_JPHVehicleCollisionTester._Underlying *_this);
+            Const_VehicleCollisionTesterCastCylinder ret = new(__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_VehicleCollisionTesterCastCylinder(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_VehicleCollisionTesterCastCylinder ret = new(__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_VehicleCollisionTesterCastCylinder(JPH.Const_VehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_VehicleCollisionTester(JPH.Const_VehicleCollisionTester._Underlying *_this);
+            Const_VehicleCollisionTesterCastCylinder ret = new(__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -2104,6 +2346,44 @@ public static partial class JPH
             extern static JPH.VehicleCollisionTester._Underlying *__JPH_VehicleCollisionTesterCastCylinder_UpcastTo_JPH_VehicleCollisionTester(_Underlying *_this);
             JPH.VehicleCollisionTester ret = new(__JPH_VehicleCollisionTesterCastCylinder_UpcastTo_JPH_VehicleCollisionTester(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator VehicleCollisionTesterCastCylinder(JPH.RefTarget_JPHVehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(JPH.RefTarget_JPHVehicleCollisionTester._Underlying *_this);
+            VehicleCollisionTesterCastCylinder ret = new(__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator VehicleCollisionTesterCastCylinder(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            VehicleCollisionTesterCastCylinder ret = new(__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator VehicleCollisionTesterCastCylinder(JPH.VehicleCollisionTester parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_VehicleCollisionTester", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_VehicleCollisionTester(JPH.VehicleCollisionTester._Underlying *_this);
+            VehicleCollisionTesterCastCylinder ret = new(__JPH_VehicleCollisionTesterCastCylinder_StaticDowncastFrom_JPH_VehicleCollisionTester(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

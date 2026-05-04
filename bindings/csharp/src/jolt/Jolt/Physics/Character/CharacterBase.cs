@@ -53,6 +53,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_CharacterBaseSettings(JPH.Const_RefTarget_JPHCharacterBaseSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBaseSettings_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBaseSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBaseSettings_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBaseSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_CharacterBaseSettings_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBaseSettings(JPH.Const_RefTarget_JPHCharacterBaseSettings._Underlying *_this);
+            Const_CharacterBaseSettings ret = new(__JPH_CharacterBaseSettings_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBaseSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         /// Vector indicating the up direction of the character
         public unsafe JPH.Const_Vec3 mUp
         {
@@ -407,6 +421,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator CharacterBaseSettings(JPH.RefTarget_JPHCharacterBaseSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBaseSettings_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBaseSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBaseSettings_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBaseSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_CharacterBaseSettings_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBaseSettings(JPH.RefTarget_JPHCharacterBaseSettings._Underlying *_this);
+            CharacterBaseSettings ret = new(__JPH_CharacterBaseSettings_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBaseSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         /// Vector indicating the up direction of the character
         public new unsafe JPH.Vec3 mUp
         {
@@ -660,6 +688,32 @@ public static partial class JPH
             extern static JPH.Const_NonCopyable._Underlying *__JPH_CharacterBase_UpcastTo_JPH_NonCopyable(_Underlying *_this);
             JPH.Const_NonCopyable ret = new(__JPH_CharacterBase_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_CharacterBase(JPH.Const_RefTarget_JPHCharacterBase parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_CharacterBase_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(JPH.Const_RefTarget_JPHCharacterBase._Underlying *_this);
+            Const_CharacterBase ret = new(__JPH_CharacterBase_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_CharacterBase(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_CharacterBase_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_CharacterBase ret = new(__JPH_CharacterBase_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -1123,6 +1177,32 @@ public static partial class JPH
             extern static JPH.NonCopyable._Underlying *__JPH_CharacterBase_UpcastTo_JPH_NonCopyable(_Underlying *_this);
             JPH.NonCopyable ret = new(__JPH_CharacterBase_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator CharacterBase(JPH.RefTarget_JPHCharacterBase parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_CharacterBase_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(JPH.RefTarget_JPHCharacterBase._Underlying *_this);
+            CharacterBase ret = new(__JPH_CharacterBase_StaticDowncastFrom_JPH_RefTarget_JPH_CharacterBase(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator CharacterBase(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_CharacterBase_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            CharacterBase ret = new(__JPH_CharacterBase_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

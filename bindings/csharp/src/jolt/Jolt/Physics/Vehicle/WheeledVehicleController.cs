@@ -76,6 +76,44 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_WheelSettingsWV(JPH.Const_SerializableObject parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_SerializableObject(JPH.Const_SerializableObject._Underlying *_this);
+            Const_WheelSettingsWV ret = new(__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_WheelSettingsWV(JPH.Const_RefTarget_JPHWheelSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_RefTarget_JPH_WheelSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_RefTarget_JPH_WheelSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_RefTarget_JPH_WheelSettings(JPH.Const_RefTarget_JPHWheelSettings._Underlying *_this);
+            Const_WheelSettingsWV ret = new(__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_RefTarget_JPH_WheelSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_WheelSettingsWV(JPH.Const_WheelSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_WheelSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_WheelSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_WheelSettings(JPH.Const_WheelSettings._Underlying *_this);
+            Const_WheelSettingsWV ret = new(__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_WheelSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         ///< Moment of inertia (kg m^2), for a cylinder this would be 0.5 * M * R^2 which is 0.9 for a wheel with a mass of 20 kg and radius 0.3 m
         public unsafe float mInertia
         {
@@ -676,6 +714,44 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator WheelSettingsWV(JPH.SerializableObject parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_SerializableObject(JPH.SerializableObject._Underlying *_this);
+            WheelSettingsWV ret = new(__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator WheelSettingsWV(JPH.RefTarget_JPHWheelSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_RefTarget_JPH_WheelSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_RefTarget_JPH_WheelSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_RefTarget_JPH_WheelSettings(JPH.RefTarget_JPHWheelSettings._Underlying *_this);
+            WheelSettingsWV ret = new(__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_RefTarget_JPH_WheelSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator WheelSettingsWV(JPH.WheelSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_WheelSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelSettingsWV_StaticDowncastFrom_JPH_WheelSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_WheelSettings(JPH.WheelSettings._Underlying *_this);
+            WheelSettingsWV ret = new(__JPH_WheelSettingsWV_StaticDowncastFrom_JPH_WheelSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         ///< Moment of inertia (kg m^2), for a cylinder this would be 0.5 * M * R^2 which is 0.9 for a wheel with a mass of 20 kg and radius 0.3 m
         public new unsafe ref float mInertia
         {
@@ -1144,6 +1220,32 @@ public static partial class JPH
             extern static JPH.Const_Wheel._Underlying *__JPH_WheelWV_UpcastTo_JPH_Wheel(_Underlying *_this);
             JPH.Const_Wheel ret = new(__JPH_WheelWV_UpcastTo_JPH_Wheel(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_WheelWV(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelWV_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelWV_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheelWV_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_WheelWV ret = new(__JPH_WheelWV_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_WheelWV(JPH.Const_Wheel parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelWV_StaticDowncastFrom_JPH_Wheel", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelWV_StaticDowncastFrom_JPH_Wheel", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheelWV_StaticDowncastFrom_JPH_Wheel(JPH.Const_Wheel._Underlying *_this);
+            Const_WheelWV ret = new(__JPH_WheelWV_StaticDowncastFrom_JPH_Wheel(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -1630,6 +1732,32 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator WheelWV(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelWV_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelWV_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheelWV_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            WheelWV ret = new(__JPH_WheelWV_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator WheelWV(JPH.Wheel parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheelWV_StaticDowncastFrom_JPH_Wheel", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheelWV_StaticDowncastFrom_JPH_Wheel", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheelWV_StaticDowncastFrom_JPH_Wheel(JPH.Wheel._Underlying *_this);
+            WheelWV ret = new(__JPH_WheelWV_StaticDowncastFrom_JPH_Wheel(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         ///< Velocity difference between ground and wheel relative to ground velocity
         public new unsafe ref float mLongitudinalSlip
         {
@@ -1917,6 +2045,44 @@ public static partial class JPH
             extern static JPH.Const_VehicleControllerSettings._Underlying *__JPH_WheeledVehicleControllerSettings_UpcastTo_JPH_VehicleControllerSettings(_Underlying *_this);
             JPH.Const_VehicleControllerSettings ret = new(__JPH_WheeledVehicleControllerSettings_UpcastTo_JPH_VehicleControllerSettings(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_WheeledVehicleControllerSettings(JPH.Const_SerializableObject parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_SerializableObject(JPH.Const_SerializableObject._Underlying *_this);
+            Const_WheeledVehicleControllerSettings ret = new(__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_WheeledVehicleControllerSettings(JPH.Const_RefTarget_JPHVehicleControllerSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleControllerSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleControllerSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleControllerSettings(JPH.Const_RefTarget_JPHVehicleControllerSettings._Underlying *_this);
+            Const_WheeledVehicleControllerSettings ret = new(__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleControllerSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_WheeledVehicleControllerSettings(JPH.Const_VehicleControllerSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_VehicleControllerSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_VehicleControllerSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_VehicleControllerSettings(JPH.Const_VehicleControllerSettings._Underlying *_this);
+            Const_WheeledVehicleControllerSettings ret = new(__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_VehicleControllerSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -2297,6 +2463,44 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator WheeledVehicleControllerSettings(JPH.SerializableObject parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_SerializableObject(JPH.SerializableObject._Underlying *_this);
+            WheeledVehicleControllerSettings ret = new(__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator WheeledVehicleControllerSettings(JPH.RefTarget_JPHVehicleControllerSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleControllerSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleControllerSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleControllerSettings(JPH.RefTarget_JPHVehicleControllerSettings._Underlying *_this);
+            WheeledVehicleControllerSettings ret = new(__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_RefTarget_JPH_VehicleControllerSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator WheeledVehicleControllerSettings(JPH.VehicleControllerSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_VehicleControllerSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_VehicleControllerSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_VehicleControllerSettings(JPH.VehicleControllerSettings._Underlying *_this);
+            WheeledVehicleControllerSettings ret = new(__JPH_WheeledVehicleControllerSettings_StaticDowncastFrom_JPH_VehicleControllerSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         ///< The properties of the engine
         public new unsafe JPH.VehicleEngineSettings mEngine
         {
@@ -2525,6 +2729,32 @@ public static partial class JPH
             extern static JPH.Const_VehicleController._Underlying *__JPH_WheeledVehicleController_UpcastTo_JPH_VehicleController(_Underlying *_this);
             JPH.Const_VehicleController ret = new(__JPH_WheeledVehicleController_UpcastTo_JPH_VehicleController(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_WheeledVehicleController(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleController_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleController_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheeledVehicleController_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_WheeledVehicleController ret = new(__JPH_WheeledVehicleController_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_WheeledVehicleController(JPH.Const_VehicleController parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleController_StaticDowncastFrom_JPH_VehicleController", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleController_StaticDowncastFrom_JPH_VehicleController", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheeledVehicleController_StaticDowncastFrom_JPH_VehicleController(JPH.Const_VehicleController._Underlying *_this);
+            Const_WheeledVehicleController ret = new(__JPH_WheeledVehicleController_StaticDowncastFrom_JPH_VehicleController(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -2823,6 +3053,32 @@ public static partial class JPH
             extern static JPH.VehicleController._Underlying *__JPH_WheeledVehicleController_UpcastTo_JPH_VehicleController(_Underlying *_this);
             JPH.VehicleController ret = new(__JPH_WheeledVehicleController_UpcastTo_JPH_VehicleController(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator WheeledVehicleController(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleController_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleController_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheeledVehicleController_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            WheeledVehicleController ret = new(__JPH_WheeledVehicleController_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator WheeledVehicleController(JPH.VehicleController parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleController_StaticDowncastFrom_JPH_VehicleController", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleController_StaticDowncastFrom_JPH_VehicleController", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_WheeledVehicleController_StaticDowncastFrom_JPH_VehicleController(JPH.VehicleController._Underlying *_this);
+            WheeledVehicleController ret = new(__JPH_WheeledVehicleController_StaticDowncastFrom_JPH_VehicleController(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

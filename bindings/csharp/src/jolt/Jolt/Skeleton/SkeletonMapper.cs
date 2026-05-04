@@ -49,6 +49,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_SkeletonMapper(JPH.Const_RefTarget_JPHSkeletonMapper parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletonMapper", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletonMapper", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_SkeletonMapper_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletonMapper(JPH.Const_RefTarget_JPHSkeletonMapper._Underlying *_this);
+            Const_SkeletonMapper ret = new(__JPH_SkeletonMapper_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletonMapper(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe Const_SkeletonMapper(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -1199,6 +1213,20 @@ public static partial class JPH
             extern static JPH.RefTarget_JPHSkeletonMapper._Underlying *__JPH_SkeletonMapper_UpcastTo_JPH_RefTarget_JPH_SkeletonMapper(_Underlying *_this);
             JPH.RefTarget_JPHSkeletonMapper ret = new(__JPH_SkeletonMapper_UpcastTo_JPH_RefTarget_JPH_SkeletonMapper(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator SkeletonMapper(JPH.RefTarget_JPHSkeletonMapper parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletonMapper", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletonMapper", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_SkeletonMapper_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletonMapper(JPH.RefTarget_JPHSkeletonMapper._Underlying *_this);
+            SkeletonMapper ret = new(__JPH_SkeletonMapper_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletonMapper(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

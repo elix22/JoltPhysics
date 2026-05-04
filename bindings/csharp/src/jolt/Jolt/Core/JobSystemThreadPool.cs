@@ -74,6 +74,44 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_JobSystemThreadPool(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_JobSystemThreadPool ret = new(__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_JobSystemThreadPool(JPH.Const_JobSystem parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystem", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystem", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystem(JPH.Const_JobSystem._Underlying *_this);
+            Const_JobSystemThreadPool ret = new(__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystem(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_JobSystemThreadPool(JPH.Const_JobSystemWithBarrier parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystemWithBarrier", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystemWithBarrier", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystemWithBarrier(JPH.Const_JobSystemWithBarrier._Underlying *_this);
+            Const_JobSystemThreadPool ret = new(__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystemWithBarrier(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe Const_JobSystemThreadPool(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -302,6 +340,44 @@ public static partial class JPH
             extern static JPH.JobSystemWithBarrier._Underlying *__JPH_JobSystemThreadPool_UpcastTo_JPH_JobSystemWithBarrier(_Underlying *_this);
             JPH.JobSystemWithBarrier ret = new(__JPH_JobSystemThreadPool_UpcastTo_JPH_JobSystemWithBarrier(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JobSystemThreadPool(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            JobSystemThreadPool ret = new(__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator JobSystemThreadPool(JPH.JobSystem parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystem", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystem", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystem(JPH.JobSystem._Underlying *_this);
+            JobSystemThreadPool ret = new(__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystem(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator JobSystemThreadPool(JPH.JobSystemWithBarrier parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystemWithBarrier", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystemWithBarrier", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystemWithBarrier(JPH.JobSystemWithBarrier._Underlying *_this);
+            JobSystemThreadPool ret = new(__JPH_JobSystemThreadPool_StaticDowncastFrom_JPH_JobSystemWithBarrier(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

@@ -495,6 +495,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_VehicleEngine(JPH.Const_VehicleEngineSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleEngine_StaticDowncastFrom_JPH_VehicleEngineSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleEngine_StaticDowncastFrom_JPH_VehicleEngineSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleEngine_StaticDowncastFrom_JPH_VehicleEngineSettings(JPH.Const_VehicleEngineSettings._Underlying *_this);
+            Const_VehicleEngine ret = new(__JPH_VehicleEngine_StaticDowncastFrom_JPH_VehicleEngineSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         /// Multiply an angular velocity (rad/s) with this value to get rounds per minute (RPM)
         public static unsafe float CAngularVelocityToRPM
         {
@@ -717,6 +731,20 @@ public static partial class JPH
             extern static JPH.VehicleEngineSettings._Underlying *__JPH_VehicleEngine_UpcastTo_JPH_VehicleEngineSettings(_Underlying *_this);
             JPH.VehicleEngineSettings ret = new(__JPH_VehicleEngine_UpcastTo_JPH_VehicleEngineSettings(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator VehicleEngine(JPH.VehicleEngineSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleEngine_StaticDowncastFrom_JPH_VehicleEngineSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleEngine_StaticDowncastFrom_JPH_VehicleEngineSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleEngine_StaticDowncastFrom_JPH_VehicleEngineSettings(JPH.VehicleEngineSettings._Underlying *_this);
+            VehicleEngine ret = new(__JPH_VehicleEngine_StaticDowncastFrom_JPH_VehicleEngineSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

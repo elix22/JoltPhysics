@@ -864,6 +864,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_RayCast(JPH.Const_RayCastT_JPHVec3_JPHMat44_JPHRayCast parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast(JPH.Const_RayCastT_JPHVec3_JPHMat44_JPHRayCast._Underlying *_this);
+            Const_RayCast ret = new(__JPH_RayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         ///< Origin of the ray
         public unsafe JPH.Const_Vec3 mOrigin
         {
@@ -1000,6 +1014,20 @@ public static partial class JPH
             extern static JPH.RayCastT_JPHVec3_JPHMat44_JPHRayCast._Underlying *__JPH_RayCast_UpcastTo_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast(_Underlying *_this);
             JPH.RayCastT_JPHVec3_JPHMat44_JPHRayCast ret = new(__JPH_RayCast_UpcastTo_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator RayCast(JPH.RayCastT_JPHVec3_JPHMat44_JPHRayCast parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast(JPH.RayCastT_JPHVec3_JPHMat44_JPHRayCast._Underlying *_this);
+            RayCast ret = new(__JPH_RayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -1167,6 +1195,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_RRayCast(JPH.Const_RayCastT_JPHVec3_JPHMat44_JPHRRayCast parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RRayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RRayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RRayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast(JPH.Const_RayCastT_JPHVec3_JPHMat44_JPHRRayCast._Underlying *_this);
+            Const_RRayCast ret = new(__JPH_RRayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         ///< Origin of the ray
         public unsafe JPH.Const_Vec3 mOrigin
         {
@@ -1329,6 +1371,20 @@ public static partial class JPH
             extern static JPH.RayCastT_JPHVec3_JPHMat44_JPHRRayCast._Underlying *__JPH_RRayCast_UpcastTo_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast(_Underlying *_this);
             JPH.RayCastT_JPHVec3_JPHMat44_JPHRRayCast ret = new(__JPH_RRayCast_UpcastTo_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator RRayCast(JPH.RayCastT_JPHVec3_JPHMat44_JPHRRayCast parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RRayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RRayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RRayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast(JPH.RayCastT_JPHVec3_JPHMat44_JPHRRayCast._Underlying *_this);
+            RRayCast ret = new(__JPH_RRayCast_StaticDowncastFrom_JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

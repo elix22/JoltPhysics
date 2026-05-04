@@ -429,6 +429,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_RayCastResult(JPH.Const_BroadPhaseCastResult parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RayCastResult_StaticDowncastFrom_JPH_BroadPhaseCastResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RayCastResult_StaticDowncastFrom_JPH_BroadPhaseCastResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RayCastResult_StaticDowncastFrom_JPH_BroadPhaseCastResult(JPH.Const_BroadPhaseCastResult._Underlying *_this);
+            Const_RayCastResult ret = new(__JPH_RayCastResult_StaticDowncastFrom_JPH_BroadPhaseCastResult(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         ///< Sub shape ID of shape that we collided against
         public unsafe JPH.Const_SubShapeID mSubShapeID2
         {
@@ -674,6 +688,20 @@ public static partial class JPH
             extern static JPH.BroadPhaseCastResult._Underlying *__JPH_RayCastResult_UpcastTo_JPH_BroadPhaseCastResult(_Underlying *_this);
             JPH.BroadPhaseCastResult ret = new(__JPH_RayCastResult_UpcastTo_JPH_BroadPhaseCastResult(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator RayCastResult(JPH.BroadPhaseCastResult parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RayCastResult_StaticDowncastFrom_JPH_BroadPhaseCastResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RayCastResult_StaticDowncastFrom_JPH_BroadPhaseCastResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RayCastResult_StaticDowncastFrom_JPH_BroadPhaseCastResult(JPH.BroadPhaseCastResult._Underlying *_this);
+            RayCastResult ret = new(__JPH_RayCastResult_StaticDowncastFrom_JPH_BroadPhaseCastResult(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

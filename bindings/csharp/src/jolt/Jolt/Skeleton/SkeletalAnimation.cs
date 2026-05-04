@@ -49,6 +49,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_SkeletalAnimation(JPH.Const_RefTarget_JPHSkeletalAnimation parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletalAnimation_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletalAnimation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletalAnimation_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletalAnimation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_SkeletalAnimation_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletalAnimation(JPH.Const_RefTarget_JPHSkeletalAnimation._Underlying *_this);
+            Const_SkeletalAnimation ret = new(__JPH_SkeletalAnimation_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletalAnimation(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe Const_SkeletalAnimation(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -1086,6 +1100,20 @@ public static partial class JPH
                 return ret;
             }
 
+            // Downcasts:
+            public static unsafe explicit operator Const_Keyframe(JPH.SkeletalAnimation.Const_JointState parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletalAnimation_Keyframe_StaticDowncastFrom_JPH_SkeletalAnimation_JointState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletalAnimation_Keyframe_StaticDowncastFrom_JPH_SkeletalAnimation_JointState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_SkeletalAnimation_Keyframe_StaticDowncastFrom_JPH_SkeletalAnimation_JointState(JPH.SkeletalAnimation.Const_JointState._Underlying *_this);
+                Const_Keyframe ret = new(__JPH_SkeletalAnimation_Keyframe_StaticDowncastFrom_JPH_SkeletalAnimation_JointState(parent._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+
             ///< Time of keyframe in seconds
             public unsafe float mTime
             {
@@ -1337,6 +1365,20 @@ public static partial class JPH
                 return ret;
             }
 
+            // Downcasts:
+            public static unsafe explicit operator Keyframe(JPH.SkeletalAnimation.JointState parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletalAnimation_Keyframe_StaticDowncastFrom_JPH_SkeletalAnimation_JointState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletalAnimation_Keyframe_StaticDowncastFrom_JPH_SkeletalAnimation_JointState", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_SkeletalAnimation_Keyframe_StaticDowncastFrom_JPH_SkeletalAnimation_JointState(JPH.SkeletalAnimation.JointState._Underlying *_this);
+                Keyframe ret = new(__JPH_SkeletalAnimation_Keyframe_StaticDowncastFrom_JPH_SkeletalAnimation_JointState(parent._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+
             ///< Time of keyframe in seconds
             public new unsafe ref float mTime
             {
@@ -1496,6 +1538,20 @@ public static partial class JPH
             extern static JPH.RefTarget_JPHSkeletalAnimation._Underlying *__JPH_SkeletalAnimation_UpcastTo_JPH_RefTarget_JPH_SkeletalAnimation(_Underlying *_this);
             JPH.RefTarget_JPHSkeletalAnimation ret = new(__JPH_SkeletalAnimation_UpcastTo_JPH_RefTarget_JPH_SkeletalAnimation(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator SkeletalAnimation(JPH.RefTarget_JPHSkeletalAnimation parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletalAnimation_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletalAnimation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletalAnimation_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletalAnimation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_SkeletalAnimation_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletalAnimation(JPH.RefTarget_JPHSkeletalAnimation._Underlying *_this);
+            SkeletalAnimation ret = new(__JPH_SkeletalAnimation_StaticDowncastFrom_JPH_RefTarget_JPH_SkeletalAnimation(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

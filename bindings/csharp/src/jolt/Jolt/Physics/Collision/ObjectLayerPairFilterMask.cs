@@ -60,6 +60,32 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_ObjectLayerPairFilterMask(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_ObjectLayerPairFilterMask ret = new(__JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_ObjectLayerPairFilterMask(JPH.Const_ObjectLayerPairFilter parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_ObjectLayerPairFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_ObjectLayerPairFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_ObjectLayerPairFilter(JPH.Const_ObjectLayerPairFilter._Underlying *_this);
+            Const_ObjectLayerPairFilterMask ret = new(__JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_ObjectLayerPairFilter(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         /// Number of bits for the group and mask bits
         public static unsafe uint CNumBits
         {
@@ -328,6 +354,32 @@ public static partial class JPH
             extern static JPH.ObjectLayerPairFilter._Underlying *__JPH_ObjectLayerPairFilterMask_UpcastTo_JPH_ObjectLayerPairFilter(_Underlying *_this);
             JPH.ObjectLayerPairFilter ret = new(__JPH_ObjectLayerPairFilterMask_UpcastTo_JPH_ObjectLayerPairFilter(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator ObjectLayerPairFilterMask(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            ObjectLayerPairFilterMask ret = new(__JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator ObjectLayerPairFilterMask(JPH.ObjectLayerPairFilter parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_ObjectLayerPairFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_ObjectLayerPairFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_ObjectLayerPairFilter(JPH.ObjectLayerPairFilter._Underlying *_this);
+            ObjectLayerPairFilterMask ret = new(__JPH_ObjectLayerPairFilterMask_StaticDowncastFrom_JPH_ObjectLayerPairFilter(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

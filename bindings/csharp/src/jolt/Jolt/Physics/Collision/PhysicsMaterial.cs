@@ -66,6 +66,32 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_PhysicsMaterial(JPH.Const_SerializableObject parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsMaterial_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsMaterial_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_PhysicsMaterial_StaticDowncastFrom_JPH_SerializableObject(JPH.Const_SerializableObject._Underlying *_this);
+            Const_PhysicsMaterial ret = new(__JPH_PhysicsMaterial_StaticDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_PhysicsMaterial(JPH.Const_RefTarget_JPHPhysicsMaterial parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsMaterial_StaticDowncastFrom_JPH_RefTarget_JPH_PhysicsMaterial", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsMaterial_StaticDowncastFrom_JPH_RefTarget_JPH_PhysicsMaterial", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_PhysicsMaterial_StaticDowncastFrom_JPH_RefTarget_JPH_PhysicsMaterial(JPH.Const_RefTarget_JPHPhysicsMaterial._Underlying *_this);
+            Const_PhysicsMaterial ret = new(__JPH_PhysicsMaterial_StaticDowncastFrom_JPH_RefTarget_JPH_PhysicsMaterial(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe Const_PhysicsMaterial(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -356,6 +382,32 @@ public static partial class JPH
             extern static JPH.RefTarget_JPHPhysicsMaterial._Underlying *__JPH_PhysicsMaterial_UpcastTo_JPH_RefTarget_JPH_PhysicsMaterial(_Underlying *_this);
             JPH.RefTarget_JPHPhysicsMaterial ret = new(__JPH_PhysicsMaterial_UpcastTo_JPH_RefTarget_JPH_PhysicsMaterial(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator PhysicsMaterial(JPH.SerializableObject parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsMaterial_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsMaterial_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_PhysicsMaterial_StaticDowncastFrom_JPH_SerializableObject(JPH.SerializableObject._Underlying *_this);
+            PhysicsMaterial ret = new(__JPH_PhysicsMaterial_StaticDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator PhysicsMaterial(JPH.RefTarget_JPHPhysicsMaterial parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsMaterial_StaticDowncastFrom_JPH_RefTarget_JPH_PhysicsMaterial", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsMaterial_StaticDowncastFrom_JPH_RefTarget_JPH_PhysicsMaterial", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_PhysicsMaterial_StaticDowncastFrom_JPH_RefTarget_JPH_PhysicsMaterial(JPH.RefTarget_JPHPhysicsMaterial._Underlying *_this);
+            PhysicsMaterial ret = new(__JPH_PhysicsMaterial_StaticDowncastFrom_JPH_RefTarget_JPH_PhysicsMaterial(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

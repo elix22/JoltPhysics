@@ -65,6 +65,32 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_PathConstraintPath(JPH.Const_SerializableObject parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PathConstraintPath_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PathConstraintPath_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_PathConstraintPath_StaticDowncastFrom_JPH_SerializableObject(JPH.Const_SerializableObject._Underlying *_this);
+            Const_PathConstraintPath ret = new(__JPH_PathConstraintPath_StaticDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator Const_PathConstraintPath(JPH.Const_RefTarget_JPHPathConstraintPath parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PathConstraintPath_StaticDowncastFrom_JPH_RefTarget_JPH_PathConstraintPath", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PathConstraintPath_StaticDowncastFrom_JPH_RefTarget_JPH_PathConstraintPath", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_PathConstraintPath_StaticDowncastFrom_JPH_RefTarget_JPH_PathConstraintPath(JPH.Const_RefTarget_JPHPathConstraintPath._Underlying *_this);
+            Const_PathConstraintPath ret = new(__JPH_PathConstraintPath_StaticDowncastFrom_JPH_RefTarget_JPH_PathConstraintPath(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe Const_PathConstraintPath(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Generated from method `JPH::PathConstraintPath::operator new`.
@@ -375,6 +401,32 @@ public static partial class JPH
             extern static JPH.RefTarget_JPHPathConstraintPath._Underlying *__JPH_PathConstraintPath_UpcastTo_JPH_RefTarget_JPH_PathConstraintPath(_Underlying *_this);
             JPH.RefTarget_JPHPathConstraintPath ret = new(__JPH_PathConstraintPath_UpcastTo_JPH_RefTarget_JPH_PathConstraintPath(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator PathConstraintPath(JPH.SerializableObject parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PathConstraintPath_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PathConstraintPath_StaticDowncastFrom_JPH_SerializableObject", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_PathConstraintPath_StaticDowncastFrom_JPH_SerializableObject(JPH.SerializableObject._Underlying *_this);
+            PathConstraintPath ret = new(__JPH_PathConstraintPath_StaticDowncastFrom_JPH_SerializableObject(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+        public static unsafe explicit operator PathConstraintPath(JPH.RefTarget_JPHPathConstraintPath parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PathConstraintPath_StaticDowncastFrom_JPH_RefTarget_JPH_PathConstraintPath", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PathConstraintPath_StaticDowncastFrom_JPH_RefTarget_JPH_PathConstraintPath", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_PathConstraintPath_StaticDowncastFrom_JPH_RefTarget_JPH_PathConstraintPath(JPH.RefTarget_JPHPathConstraintPath._Underlying *_this);
+            PathConstraintPath ret = new(__JPH_PathConstraintPath_StaticDowncastFrom_JPH_RefTarget_JPH_PathConstraintPath(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

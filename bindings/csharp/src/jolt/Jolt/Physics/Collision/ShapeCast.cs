@@ -954,6 +954,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_ShapeCast(JPH.Const_ShapeCastT_JPHVec3_JPHMat44_JPHShapeCast parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_ShapeCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_ShapeCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_ShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_ShapeCast(JPH.Const_ShapeCastT_JPHVec3_JPHMat44_JPHShapeCast._Underlying *_this);
+            Const_ShapeCast ret = new(__JPH_ShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_ShapeCast(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         ///< Shape that's being cast (cannot be mesh shape). Note that this structure does not assume ownership over the shape for performance reasons.
         public unsafe JPH.Const_Shape? mShape
         {
@@ -1166,6 +1180,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator ShapeCast(JPH.ShapeCastT_JPHVec3_JPHMat44_JPHShapeCast parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_ShapeCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_ShapeCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_ShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_ShapeCast(JPH.ShapeCastT_JPHVec3_JPHMat44_JPHShapeCast._Underlying *_this);
+            ShapeCast ret = new(__JPH_ShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_ShapeCast(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         ///< Shape that's being cast (cannot be mesh shape). Note that this structure does not assume ownership over the shape for performance reasons.
         public new unsafe JPH.Const_Shape? mShape
         {
@@ -1299,6 +1327,20 @@ public static partial class JPH
             extern static JPH.Const_ShapeCastT_JPHVec3_JPHMat44_JPHRShapeCast._Underlying *__JPH_RShapeCast_UpcastTo_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_RShapeCast(_Underlying *_this);
             JPH.Const_ShapeCastT_JPHVec3_JPHMat44_JPHRShapeCast ret = new(__JPH_RShapeCast_UpcastTo_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_RShapeCast(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_RShapeCast(JPH.Const_ShapeCastT_JPHVec3_JPHMat44_JPHRShapeCast parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_RShapeCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_RShapeCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_RShapeCast(JPH.Const_ShapeCastT_JPHVec3_JPHMat44_JPHRShapeCast._Underlying *_this);
+            Const_RShapeCast ret = new(__JPH_RShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_RShapeCast(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -1540,6 +1582,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator RShapeCast(JPH.ShapeCastT_JPHVec3_JPHMat44_JPHRShapeCast parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_RShapeCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_RShapeCast", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_RShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_RShapeCast(JPH.ShapeCastT_JPHVec3_JPHMat44_JPHRShapeCast._Underlying *_this);
+            RShapeCast ret = new(__JPH_RShapeCast_StaticDowncastFrom_JPH_ShapeCastT_JPH_Vec3_JPH_Mat44_JPH_RShapeCast(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         ///< Shape that's being cast (cannot be mesh shape). Note that this structure does not assume ownership over the shape for performance reasons.
         public new unsafe JPH.Const_Shape? mShape
         {
@@ -1687,6 +1743,20 @@ public static partial class JPH
             extern static JPH.Const_CollideSettingsBase._Underlying *__JPH_ShapeCastSettings_UpcastTo_JPH_CollideSettingsBase(_Underlying *_this);
             JPH.Const_CollideSettingsBase ret = new(__JPH_ShapeCastSettings_UpcastTo_JPH_CollideSettingsBase(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_ShapeCastSettings(JPH.Const_CollideSettingsBase parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeCastSettings_StaticDowncastFrom_JPH_CollideSettingsBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeCastSettings_StaticDowncastFrom_JPH_CollideSettingsBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_ShapeCastSettings_StaticDowncastFrom_JPH_CollideSettingsBase(JPH.Const_CollideSettingsBase._Underlying *_this);
+            Const_ShapeCastSettings ret = new(__JPH_ShapeCastSettings_StaticDowncastFrom_JPH_CollideSettingsBase(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -2015,6 +2085,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator ShapeCastSettings(JPH.CollideSettingsBase parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeCastSettings_StaticDowncastFrom_JPH_CollideSettingsBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeCastSettings_StaticDowncastFrom_JPH_CollideSettingsBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_ShapeCastSettings_StaticDowncastFrom_JPH_CollideSettingsBase(JPH.CollideSettingsBase._Underlying *_this);
+            ShapeCastSettings ret = new(__JPH_ShapeCastSettings_StaticDowncastFrom_JPH_CollideSettingsBase(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         /// How backfacing triangles should be treated (should we report moving from back to front for triangle based shapes, e.g. for MeshShape/HeightFieldShape?)
         public new unsafe ref JPH.EBackFaceMode mBackFaceModeTriangles
         {
@@ -2280,6 +2364,20 @@ public static partial class JPH
             extern static JPH.Const_CollideShapeResult._Underlying *__JPH_ShapeCastResult_UpcastTo_JPH_CollideShapeResult(_Underlying *_this);
             JPH.Const_CollideShapeResult ret = new(__JPH_ShapeCastResult_UpcastTo_JPH_CollideShapeResult(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_ShapeCastResult(JPH.Const_CollideShapeResult parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeCastResult_StaticDowncastFrom_JPH_CollideShapeResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeCastResult_StaticDowncastFrom_JPH_CollideShapeResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_ShapeCastResult_StaticDowncastFrom_JPH_CollideShapeResult(JPH.Const_CollideShapeResult._Underlying *_this);
+            Const_ShapeCastResult ret = new(__JPH_ShapeCastResult_StaticDowncastFrom_JPH_CollideShapeResult(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
@@ -2671,6 +2769,20 @@ public static partial class JPH
             extern static JPH.CollideShapeResult._Underlying *__JPH_ShapeCastResult_UpcastTo_JPH_CollideShapeResult(_Underlying *_this);
             JPH.CollideShapeResult ret = new(__JPH_ShapeCastResult_UpcastTo_JPH_CollideShapeResult(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator ShapeCastResult(JPH.CollideShapeResult parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeCastResult_StaticDowncastFrom_JPH_CollideShapeResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeCastResult_StaticDowncastFrom_JPH_CollideShapeResult", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_ShapeCastResult_StaticDowncastFrom_JPH_CollideShapeResult(JPH.CollideShapeResult._Underlying *_this);
+            ShapeCastResult ret = new(__JPH_ShapeCastResult_StaticDowncastFrom_JPH_CollideShapeResult(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

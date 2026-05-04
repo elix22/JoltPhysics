@@ -564,6 +564,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_VehicleTransmission(JPH.Const_VehicleTransmissionSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmission_StaticDowncastFrom_JPH_VehicleTransmissionSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmission_StaticDowncastFrom_JPH_VehicleTransmissionSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleTransmission_StaticDowncastFrom_JPH_VehicleTransmissionSettings(JPH.Const_VehicleTransmissionSettings._Underlying *_this);
+            Const_VehicleTransmission ret = new(__JPH_VehicleTransmission_StaticDowncastFrom_JPH_VehicleTransmissionSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         ///< How to switch gears
         public unsafe JPH.ETransmissionMode mMode
         {
@@ -787,6 +801,20 @@ public static partial class JPH
             extern static JPH.VehicleTransmissionSettings._Underlying *__JPH_VehicleTransmission_UpcastTo_JPH_VehicleTransmissionSettings(_Underlying *_this);
             JPH.VehicleTransmissionSettings ret = new(__JPH_VehicleTransmission_UpcastTo_JPH_VehicleTransmissionSettings(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator VehicleTransmission(JPH.VehicleTransmissionSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmission_StaticDowncastFrom_JPH_VehicleTransmissionSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmission_StaticDowncastFrom_JPH_VehicleTransmissionSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_VehicleTransmission_StaticDowncastFrom_JPH_VehicleTransmissionSettings(JPH.VehicleTransmissionSettings._Underlying *_this);
+            VehicleTransmission ret = new(__JPH_VehicleTransmission_StaticDowncastFrom_JPH_VehicleTransmissionSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

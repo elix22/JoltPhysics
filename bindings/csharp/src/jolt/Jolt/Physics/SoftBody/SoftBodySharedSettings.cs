@@ -50,6 +50,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_SoftBodySharedSettings(JPH.Const_RefTarget_JPHSoftBodySharedSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_StaticDowncastFrom_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_StaticDowncastFrom_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_SoftBodySharedSettings_StaticDowncastFrom_JPH_RefTarget_JPH_SoftBodySharedSettings(JPH.Const_RefTarget_JPHSoftBodySharedSettings._Underlying *_this);
+            Const_SoftBodySharedSettings ret = new(__JPH_SoftBodySharedSettings_StaticDowncastFrom_JPH_RefTarget_JPH_SoftBodySharedSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe Const_SoftBodySharedSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -5304,6 +5318,20 @@ public static partial class JPH
             extern static JPH.RefTarget_JPHSoftBodySharedSettings._Underlying *__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(_Underlying *_this);
             JPH.RefTarget_JPHSoftBodySharedSettings ret = new(__JPH_SoftBodySharedSettings_UpcastTo_JPH_RefTarget_JPH_SoftBodySharedSettings(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator SoftBodySharedSettings(JPH.RefTarget_JPHSoftBodySharedSettings parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_StaticDowncastFrom_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_StaticDowncastFrom_JPH_RefTarget_JPH_SoftBodySharedSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_SoftBodySharedSettings_StaticDowncastFrom_JPH_RefTarget_JPH_SoftBodySharedSettings(JPH.RefTarget_JPHSoftBodySharedSettings._Underlying *_this);
+            SoftBodySharedSettings ret = new(__JPH_SoftBodySharedSettings_StaticDowncastFrom_JPH_RefTarget_JPH_SoftBodySharedSettings(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

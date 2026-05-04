@@ -1103,6 +1103,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_CollideShapeSettings(JPH.Const_CollideSettingsBase parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CollideShapeSettings_StaticDowncastFrom_JPH_CollideSettingsBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CollideShapeSettings_StaticDowncastFrom_JPH_CollideSettingsBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_CollideShapeSettings_StaticDowncastFrom_JPH_CollideSettingsBase(JPH.Const_CollideSettingsBase._Underlying *_this);
+            Const_CollideShapeSettings ret = new(__JPH_CollideShapeSettings_StaticDowncastFrom_JPH_CollideSettingsBase(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         /// When > 0 contacts in the vicinity of the query shape can be found. All nearest contacts that are not further away than this distance will be found.
         /// Note that in this case CollideShapeResult::mPenetrationDepth can become negative to indicate that objects are not overlapping. (unit: meter)
         public unsafe float mMaxSeparationDistance
@@ -1396,6 +1410,20 @@ public static partial class JPH
             extern static JPH.CollideSettingsBase._Underlying *__JPH_CollideShapeSettings_UpcastTo_JPH_CollideSettingsBase(_Underlying *_this);
             JPH.CollideSettingsBase ret = new(__JPH_CollideShapeSettings_UpcastTo_JPH_CollideSettingsBase(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator CollideShapeSettings(JPH.CollideSettingsBase parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CollideShapeSettings_StaticDowncastFrom_JPH_CollideSettingsBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CollideShapeSettings_StaticDowncastFrom_JPH_CollideSettingsBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_CollideShapeSettings_StaticDowncastFrom_JPH_CollideSettingsBase(JPH.CollideSettingsBase._Underlying *_this);
+            CollideShapeSettings ret = new(__JPH_CollideShapeSettings_StaticDowncastFrom_JPH_CollideSettingsBase(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 

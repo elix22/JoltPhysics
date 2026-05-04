@@ -101,6 +101,20 @@ public static partial class JPH
             return ret;
         }
 
+        // Downcasts:
+        public static unsafe explicit operator Const_JobSystem(JPH.Const_NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystem_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystem_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_JobSystem_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+            Const_JobSystem ret = new(__JPH_JobSystem_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
         internal unsafe Const_JobSystem(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Generated from method `JPH::JobSystem::operator new`.
@@ -276,6 +290,20 @@ public static partial class JPH
                 return ret;
             }
 
+            // Downcasts:
+            public static unsafe explicit operator Const_Barrier(JPH.Const_NonCopyable parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystem_Barrier_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystem_Barrier_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_JobSystem_Barrier_StaticDowncastFrom_JPH_NonCopyable(JPH.Const_NonCopyable._Underlying *_this);
+                Const_Barrier ret = new(__JPH_JobSystem_Barrier_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
+                return ret;
+            }
+
             internal unsafe Const_Barrier(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
             /// Generated from method `JPH::JobSystem::Barrier::operator new`.
@@ -432,6 +460,20 @@ public static partial class JPH
                 extern static JPH.NonCopyable._Underlying *__JPH_JobSystem_Barrier_UpcastTo_JPH_NonCopyable(_Underlying *_this);
                 JPH.NonCopyable ret = new(__JPH_JobSystem_Barrier_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
                 ret._KeepAliveEnclosingObject = self;
+                return ret;
+            }
+
+            // Downcasts:
+            public static unsafe explicit operator Barrier(JPH.NonCopyable parent)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystem_Barrier_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystem_Barrier_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static _Underlying *__JPH_JobSystem_Barrier_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+                Barrier ret = new(__JPH_JobSystem_Barrier_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+                ret._KeepAliveEnclosingObject = parent;
                 return ret;
             }
 
@@ -814,6 +856,20 @@ public static partial class JPH
             extern static JPH.NonCopyable._Underlying *__JPH_JobSystem_UpcastTo_JPH_NonCopyable(_Underlying *_this);
             JPH.NonCopyable ret = new(__JPH_JobSystem_UpcastTo_JPH_NonCopyable(self._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator JobSystem(JPH.NonCopyable parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystem_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystem_StaticDowncastFrom_JPH_NonCopyable", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__JPH_JobSystem_StaticDowncastFrom_JPH_NonCopyable(JPH.NonCopyable._Underlying *_this);
+            JobSystem ret = new(__JPH_JobSystem_StaticDowncastFrom_JPH_NonCopyable(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
             return ret;
         }
 
