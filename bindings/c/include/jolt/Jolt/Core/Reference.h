@@ -125,6 +125,8 @@ typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape;
 /// Derived classes:
 ///   Direct: (non-virtual)
 ///     `JPH::PhysicsMaterial`
+///   Indirect: (non-virtual)
+///     `JPH::PhysicsMaterialSimple`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_RefTarget_JPH_PhysicsMaterial JPH_RefTarget_JPH_PhysicsMaterial;
 
@@ -281,6 +283,11 @@ typedef struct JPH_RefTarget_JPH_Constraint JPH_RefTarget_JPH_Constraint;
 /// (and particularly identifying who owns who in the class hierarchy) you can avoid
 /// these problems.
 /// Generated from class `JPH::RefTarget<JPH::GroupFilter>`.
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::GroupFilter`
+///   Indirect: (non-virtual)
+///     `JPH::GroupFilterTable`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_RefTarget_JPH_GroupFilter JPH_RefTarget_JPH_GroupFilter;
 

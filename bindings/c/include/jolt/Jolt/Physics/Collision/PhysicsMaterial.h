@@ -24,6 +24,9 @@ typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#in
 ///   Direct: (non-virtual)
 ///     `JPH::SerializableObject`
 ///     `JPH::RefTarget<JPH::PhysicsMaterial>`
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::PhysicsMaterialSimple`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial;
 

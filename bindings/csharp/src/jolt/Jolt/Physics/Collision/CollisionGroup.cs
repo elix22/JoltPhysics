@@ -105,6 +105,19 @@ public static partial class JPH
         /// Generated from constructor `JPH::CollisionGroup::CollisionGroup`.
         public Const_CollisionGroup(CollisionGroup _other) : this((Const_CollisionGroup)_other) {}
 
+        /// Construct with all properties
+        /// Generated from constructor `JPH::CollisionGroup::CollisionGroup`.
+        public unsafe Const_CollisionGroup(JPH.Const_GroupFilter? inFilter, uint inGroupID, uint inSubGroupID) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CollisionGroup_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CollisionGroup_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.CollisionGroup._Underlying *__JPH_CollisionGroup_Construct(JPH.Const_GroupFilter._Underlying *inFilter, uint inGroupID, uint inSubGroupID);
+            _UnderlyingPtr = __JPH_CollisionGroup_Construct(inFilter is not null ? inFilter._UnderlyingPtr : null, inGroupID, inSubGroupID);
+        }
+
         /// Generated from method `JPH::CollisionGroup::operator new`.
         /// Returns a mutable pointer.
         public static unsafe void *New(UIntPtr inCount)
@@ -239,6 +252,20 @@ public static partial class JPH
             __Jolt_delete_array_JPH_CollisionGroup_void_ptr_void_ptr(inPointer, inPlace);
         }
 
+        /// Get the collision group filter
+        /// Generated from method `JPH::CollisionGroup::GetGroupFilter`.
+        public unsafe JPH.Const_GroupFilter? GetGroupFilter()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CollisionGroup_GetGroupFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CollisionGroup_GetGroupFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_GroupFilter._Underlying *__JPH_CollisionGroup_GetGroupFilter(_Underlying *_this);
+            var __c_ret = __JPH_CollisionGroup_GetGroupFilter(_UnderlyingPtr);
+            return __c_ret is not null ? new JPH.Const_GroupFilter(__c_ret, is_owning: false) : null;
+        }
+
         /// Generated from method `JPH::CollisionGroup::GetGroupID`.
         public unsafe uint GetGroupID()
         {
@@ -318,6 +345,19 @@ public static partial class JPH
         /// Generated from constructor `JPH::CollisionGroup::CollisionGroup`.
         public CollisionGroup(CollisionGroup _other) : this((Const_CollisionGroup)_other) {}
 
+        /// Construct with all properties
+        /// Generated from constructor `JPH::CollisionGroup::CollisionGroup`.
+        public unsafe CollisionGroup(JPH.Const_GroupFilter? inFilter, uint inGroupID, uint inSubGroupID) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CollisionGroup_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CollisionGroup_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.CollisionGroup._Underlying *__JPH_CollisionGroup_Construct(JPH.Const_GroupFilter._Underlying *inFilter, uint inGroupID, uint inSubGroupID);
+            _UnderlyingPtr = __JPH_CollisionGroup_Construct(inFilter is not null ? inFilter._UnderlyingPtr : null, inGroupID, inSubGroupID);
+        }
+
         /// Generated from method `JPH::CollisionGroup::operator=`.
         public unsafe JPH.CollisionGroup Assign(JPH._ByValue_CollisionGroup _other)
         {
@@ -330,6 +370,19 @@ public static partial class JPH
             _DiscardKeepAlive();
             if (_other.Value is not null) _KeepAlive(_other.Value);
             return new(__JPH_CollisionGroup_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Set the collision group filter
+        /// Generated from method `JPH::CollisionGroup::SetGroupFilter`.
+        public unsafe void SetGroupFilter(JPH.Const_GroupFilter? inFilter)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CollisionGroup_SetGroupFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CollisionGroup_SetGroupFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_CollisionGroup_SetGroupFilter(_Underlying *_this, JPH.Const_GroupFilter._Underlying *inFilter);
+            __JPH_CollisionGroup_SetGroupFilter(_UnderlyingPtr, inFilter is not null ? inFilter._UnderlyingPtr : null);
         }
 
         /// Set the main group id for this object

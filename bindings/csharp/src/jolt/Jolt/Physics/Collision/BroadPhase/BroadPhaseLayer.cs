@@ -265,6 +265,7 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::BroadPhaseLayerInterfaceMask`
     ///     `JPH::BroadPhaseLayerInterfaceTable`
     /// This is the const half of the class.
     public class Const_BroadPhaseLayerInterface : JPH.Object<Const_BroadPhaseLayerInterface>, System.IDisposable
@@ -353,6 +354,7 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::BroadPhaseLayerInterfaceMask`
     ///     `JPH::BroadPhaseLayerInterfaceTable`
     /// This is the non-const half of the class.
     public class BroadPhaseLayerInterface : Const_BroadPhaseLayerInterface
@@ -425,6 +427,7 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::ObjectVsBroadPhaseLayerFilterMask`
     ///     `JPH::ObjectVsBroadPhaseLayerFilterTable`
     /// This is the const half of the class.
     public class Const_ObjectVsBroadPhaseLayerFilter : JPH.Object<Const_ObjectVsBroadPhaseLayerFilter>, System.IDisposable
@@ -512,6 +515,7 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::ObjectVsBroadPhaseLayerFilterMask`
     ///     `JPH::ObjectVsBroadPhaseLayerFilterTable`
     /// This is the non-const half of the class.
     public class ObjectVsBroadPhaseLayerFilter : Const_ObjectVsBroadPhaseLayerFilter

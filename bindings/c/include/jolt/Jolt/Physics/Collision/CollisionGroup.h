@@ -11,6 +11,8 @@
 extern "C" {
 #endif
 
+typedef struct JPH_GroupFilter JPH_GroupFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/GroupFilter.h>`.
+
 
 /// Two objects collide with each other if:
 /// - Both don't have a group filter
@@ -55,6 +57,11 @@ JOLT_API JPH_CollisionGroup *JPH_CollisionGroup_OffsetMutablePtr(JPH_CollisionGr
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CollisionGroup_Destroy()` to free it when you're done using it.
 JOLT_API JPH_CollisionGroup *JPH_CollisionGroup_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_CollisionGroup *_other);
 
+/// Construct with all properties
+/// Generated from constructor `JPH::CollisionGroup::CollisionGroup`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CollisionGroup_Destroy()` to free it when you're done using it.
+JOLT_API JPH_CollisionGroup *JPH_CollisionGroup_Construct(const JPH_GroupFilter *inFilter, unsigned int inGroupID, unsigned int inSubGroupID);
+
 /// Destroys a heap-allocated instance of `JPH_CollisionGroup`. Does nothing if the pointer is null.
 JOLT_API void JPH_CollisionGroup_Destroy(const JPH_CollisionGroup *_this);
 
@@ -97,6 +104,16 @@ JOLT_API void *Jolt_new_array_JPH_CollisionGroup_size_t_void_ptr(size_t inCount,
 
 /// Generated from method `JPH::CollisionGroup::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CollisionGroup_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Set the collision group filter
+/// Generated from method `JPH::CollisionGroup::SetGroupFilter`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_CollisionGroup_SetGroupFilter(JPH_CollisionGroup *_this, const JPH_GroupFilter *inFilter);
+
+/// Get the collision group filter
+/// Generated from method `JPH::CollisionGroup::GetGroupFilter`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API const JPH_GroupFilter *JPH_CollisionGroup_GetGroupFilter(const JPH_CollisionGroup *_this);
 
 /// Set the main group id for this object
 /// Generated from method `JPH::CollisionGroup::SetGroupID`.

@@ -34,12 +34,14 @@ extern "C" {
 ///     `JPH::Ragdoll`
 ///     `JPH::Shape`
 ///     `JPH::ShapeFilter`
+///     `JPH::SimShapeFilter`
 ///     `JPH::TempAllocator`
 ///     `JPH::VehicleCollisionTester`
 ///     `JPH::VehicleController`
 ///     `JPH::Wheel`
 ///   Indirect: (non-virtual)
 ///     `JPH::BoxShape`
+///     `JPH::BroadPhaseLayerInterfaceMask`
 ///     `JPH::BroadPhaseLayerInterfaceTable`
 ///     `JPH::CapsuleShape`
 ///     `JPH::Character`
@@ -69,6 +71,7 @@ extern "C" {
 ///     `JPH::MutableCompoundShape`
 ///     `JPH::ObjectLayerPairFilterMask`
 ///     `JPH::ObjectLayerPairFilterTable`
+///     `JPH::ObjectVsBroadPhaseLayerFilterMask`
 ///     `JPH::ObjectVsBroadPhaseLayerFilterTable`
 ///     `JPH::OffsetCenterOfMassShape`
 ///     `JPH::PlaneShape`

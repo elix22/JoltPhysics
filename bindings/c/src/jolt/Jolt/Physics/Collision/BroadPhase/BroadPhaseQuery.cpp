@@ -5,6 +5,7 @@
 #include <Jolt/Core/NonCopyable.h>
 #include <Jolt/Geometry/AABox.h>
 #include <Jolt/Math/Vec3.h>
+#include <Jolt/Physics/Collision/AABoxCast.h>
 #include <Jolt/Physics/Collision/BroadPhase/BroadPhaseQuery.h>
 #include <Jolt/Physics/Collision/RayCast.h>
 #include <__mrbind_c_details.h>

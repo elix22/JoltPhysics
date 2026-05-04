@@ -643,6 +643,8 @@ public static partial class JPH
     /// Derived classes:
     ///   Direct: (non-virtual)
     ///     `JPH::PhysicsMaterial`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::PhysicsMaterialSimple`
     /// This is the const half of the class.
     public class Const_RefTarget_JPHPhysicsMaterial : JPH.Object<Const_RefTarget_JPHPhysicsMaterial>, System.IDisposable
     {
@@ -788,6 +790,8 @@ public static partial class JPH
     /// Derived classes:
     ///   Direct: (non-virtual)
     ///     `JPH::PhysicsMaterial`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::PhysicsMaterialSimple`
     /// This is the non-const half of the class.
     public class RefTarget_JPHPhysicsMaterial : Const_RefTarget_JPHPhysicsMaterial
     {
@@ -2048,6 +2052,11 @@ public static partial class JPH
     /// (and particularly identifying who owns who in the class hierarchy) you can avoid
     /// these problems.
     /// Generated from class `JPH::RefTarget<JPH::GroupFilter>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::GroupFilter`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::GroupFilterTable`
     /// This is the const half of the class.
     public class Const_RefTarget_JPHGroupFilter : JPH.Object<Const_RefTarget_JPHGroupFilter>, System.IDisposable
     {
@@ -2190,6 +2199,11 @@ public static partial class JPH
     /// (and particularly identifying who owns who in the class hierarchy) you can avoid
     /// these problems.
     /// Generated from class `JPH::RefTarget<JPH::GroupFilter>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::GroupFilter`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::GroupFilterTable`
     /// This is the non-const half of the class.
     public class RefTarget_JPHGroupFilter : Const_RefTarget_JPHGroupFilter
     {

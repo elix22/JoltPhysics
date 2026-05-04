@@ -297,6 +297,19 @@ public static partial class JPH
             return __c_ret is not null ? new JPH.ContactListener(__c_ret, is_owning: false) : null;
         }
 
+        /// Generated from method `JPH::PhysicsSystem::GetSimShapeFilter`.
+        public unsafe JPH.Const_SimShapeFilter? GetSimShapeFilter()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_GetSimShapeFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_GetSimShapeFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_SimShapeFilter._Underlying *__JPH_PhysicsSystem_GetSimShapeFilter(_Underlying *_this);
+            var __c_ret = __JPH_PhysicsSystem_GetSimShapeFilter(_UnderlyingPtr);
+            return __c_ret is not null ? new JPH.Const_SimShapeFilter(__c_ret, is_owning: false) : null;
+        }
+
         /// Generated from method `JPH::PhysicsSystem::GetPhysicsSettings`.
         public unsafe JPH.Const_PhysicsSettings GetPhysicsSettings()
         {
@@ -597,6 +610,23 @@ public static partial class JPH
             #endif
             extern static void __JPH_PhysicsSystem_SetContactListener(_Underlying *_this, JPH.ContactListener._Underlying *inListener);
             __JPH_PhysicsSystem_SetContactListener(_UnderlyingPtr, inListener is not null ? inListener._UnderlyingPtr : null);
+        }
+
+        /// Set/get the shape filter that will be used during simulation. This can be used to exclude shapes within a body from colliding with each other.
+        /// E.g. if you have a high detail and a low detail collision model, you can attach them to the same body in a StaticCompoundShape and use the ShapeFilter
+        /// to exclude the high detail collision model when simulating and exclude the low detail collision model when casting rays. Note that in this case
+        /// you would need to pass the inverse of inShapeFilter to the CastRay function. Pass a nullptr to disable the shape filter.
+        /// The PhysicsSystem does not own the ShapeFilter, make sure it stays alive during the lifetime of the PhysicsSystem.
+        /// Generated from method `JPH::PhysicsSystem::SetSimShapeFilter`.
+        public unsafe void SetSimShapeFilter(JPH.Const_SimShapeFilter? inShapeFilter)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_SetSimShapeFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_SetSimShapeFilter", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PhysicsSystem_SetSimShapeFilter(_Underlying *_this, JPH.Const_SimShapeFilter._Underlying *inShapeFilter);
+            __JPH_PhysicsSystem_SetSimShapeFilter(_UnderlyingPtr, inShapeFilter is not null ? inShapeFilter._UnderlyingPtr : null);
         }
 
         /// Control the main constants of the physics simulation

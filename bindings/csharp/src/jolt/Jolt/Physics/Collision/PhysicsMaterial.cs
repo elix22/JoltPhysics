@@ -11,6 +11,9 @@ public static partial class JPH
     ///   Direct: (non-virtual)
     ///     `JPH::SerializableObject`
     ///     `JPH::RefTarget<JPH::PhysicsMaterial>`
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::PhysicsMaterialSimple`
     /// This is the const half of the class.
     public class Const_PhysicsMaterial : JPH.Object<Const_PhysicsMaterial>, System.IDisposable
     {
@@ -356,6 +359,9 @@ public static partial class JPH
     ///   Direct: (non-virtual)
     ///     `JPH::SerializableObject`
     ///     `JPH::RefTarget<JPH::PhysicsMaterial>`
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::PhysicsMaterialSimple`
     /// This is the non-const half of the class.
     public class PhysicsMaterial : Const_PhysicsMaterial
     {

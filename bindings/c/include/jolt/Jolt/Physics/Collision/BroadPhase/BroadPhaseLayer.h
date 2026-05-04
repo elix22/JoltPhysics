@@ -29,6 +29,7 @@ typedef struct JPH_BroadPhaseLayer JPH_BroadPhaseLayer;
 ///     `JPH::NonCopyable`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::BroadPhaseLayerInterfaceMask`
 ///     `JPH::BroadPhaseLayerInterfaceTable`
 typedef struct JPH_BroadPhaseLayerInterface JPH_BroadPhaseLayerInterface;
 
@@ -39,6 +40,7 @@ typedef struct JPH_BroadPhaseLayerInterface JPH_BroadPhaseLayerInterface;
 ///     `JPH::NonCopyable`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::ObjectVsBroadPhaseLayerFilterMask`
 ///     `JPH::ObjectVsBroadPhaseLayerFilterTable`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_ObjectVsBroadPhaseLayerFilter JPH_ObjectVsBroadPhaseLayerFilter;

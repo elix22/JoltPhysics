@@ -25,12 +25,14 @@ public static partial class JPH
     ///     `JPH::Ragdoll`
     ///     `JPH::Shape`
     ///     `JPH::ShapeFilter`
+    ///     `JPH::SimShapeFilter`
     ///     `JPH::TempAllocator`
     ///     `JPH::VehicleCollisionTester`
     ///     `JPH::VehicleController`
     ///     `JPH::Wheel`
     ///   Indirect: (non-virtual)
     ///     `JPH::BoxShape`
+    ///     `JPH::BroadPhaseLayerInterfaceMask`
     ///     `JPH::BroadPhaseLayerInterfaceTable`
     ///     `JPH::CapsuleShape`
     ///     `JPH::Character`
@@ -60,6 +62,7 @@ public static partial class JPH
     ///     `JPH::MutableCompoundShape`
     ///     `JPH::ObjectLayerPairFilterMask`
     ///     `JPH::ObjectLayerPairFilterTable`
+    ///     `JPH::ObjectVsBroadPhaseLayerFilterMask`
     ///     `JPH::ObjectVsBroadPhaseLayerFilterTable`
     ///     `JPH::OffsetCenterOfMassShape`
     ///     `JPH::PlaneShape`
@@ -152,12 +155,14 @@ public static partial class JPH
     ///     `JPH::Ragdoll`
     ///     `JPH::Shape`
     ///     `JPH::ShapeFilter`
+    ///     `JPH::SimShapeFilter`
     ///     `JPH::TempAllocator`
     ///     `JPH::VehicleCollisionTester`
     ///     `JPH::VehicleController`
     ///     `JPH::Wheel`
     ///   Indirect: (non-virtual)
     ///     `JPH::BoxShape`
+    ///     `JPH::BroadPhaseLayerInterfaceMask`
     ///     `JPH::BroadPhaseLayerInterfaceTable`
     ///     `JPH::CapsuleShape`
     ///     `JPH::Character`
@@ -187,6 +192,7 @@ public static partial class JPH
     ///     `JPH::MutableCompoundShape`
     ///     `JPH::ObjectLayerPairFilterMask`
     ///     `JPH::ObjectLayerPairFilterTable`
+    ///     `JPH::ObjectVsBroadPhaseLayerFilterMask`
     ///     `JPH::ObjectVsBroadPhaseLayerFilterTable`
     ///     `JPH::OffsetCenterOfMassShape`
     ///     `JPH::PlaneShape`

@@ -32,6 +32,7 @@ typedef struct JPH_ObjectLayerPairFilter JPH_ObjectLayerPairFilter; // Defined i
 typedef struct JPH_ObjectVsBroadPhaseLayerFilter JPH_ObjectVsBroadPhaseLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
 typedef struct JPH_PhysicsSettings JPH_PhysicsSettings; // Defined in `#include <jolt/Jolt/Physics/PhysicsSettings.h>`.
 typedef struct JPH_PhysicsStepListener JPH_PhysicsStepListener; // Defined in `#include <jolt/Jolt/Physics/PhysicsStepListener.h>`.
+typedef struct JPH_SimShapeFilter JPH_SimShapeFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/SimShapeFilter.h>`.
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
@@ -186,6 +187,19 @@ JOLT_API void JPH_PhysicsSystem_SetContactListener(JPH_PhysicsSystem *_this, JPH
 /// Generated from method `JPH::PhysicsSystem::GetContactListener`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API JPH_ContactListener *JPH_PhysicsSystem_GetContactListener(const JPH_PhysicsSystem *_this);
+
+/// Set/get the shape filter that will be used during simulation. This can be used to exclude shapes within a body from colliding with each other.
+/// E.g. if you have a high detail and a low detail collision model, you can attach them to the same body in a StaticCompoundShape and use the ShapeFilter
+/// to exclude the high detail collision model when simulating and exclude the low detail collision model when casting rays. Note that in this case
+/// you would need to pass the inverse of inShapeFilter to the CastRay function. Pass a nullptr to disable the shape filter.
+/// The PhysicsSystem does not own the ShapeFilter, make sure it stays alive during the lifetime of the PhysicsSystem.
+/// Generated from method `JPH::PhysicsSystem::SetSimShapeFilter`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_PhysicsSystem_SetSimShapeFilter(JPH_PhysicsSystem *_this, const JPH_SimShapeFilter *inShapeFilter);
+
+/// Generated from method `JPH::PhysicsSystem::GetSimShapeFilter`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API const JPH_SimShapeFilter *JPH_PhysicsSystem_GetSimShapeFilter(const JPH_PhysicsSystem *_this);
 
 /// Control the main constants of the physics simulation
 /// Generated from method `JPH::PhysicsSystem::SetPhysicsSettings`.

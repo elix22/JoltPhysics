@@ -3,6 +3,7 @@
 #include "jolt/Jolt/Physics/Collision/CollisionGroup.h"
 
 #include <Jolt/Physics/Collision/CollisionGroup.h>
+#include <Jolt/Physics/Collision/GroupFilter.h>
 #include <__mrbind_c_details.h>
 
 #include <cstddef>
@@ -56,6 +57,15 @@ JPH_CollisionGroup *JPH_CollisionGroup_ConstructFromAnother(Jolt_PassBy _other_p
     MRBINDC_CLASSARG_GUARD(_other, JPH::CollisionGroup);
     return (JPH_CollisionGroup *)new JPH::CollisionGroup(JPH::CollisionGroup(
         (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::CollisionGroup) MRBINDC_CLASSARG_COPY(_other, (JPH::CollisionGroup), JPH::CollisionGroup) MRBINDC_CLASSARG_MOVE(_other, (JPH::CollisionGroup), JPH::CollisionGroup) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::CollisionGroup) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::CollisionGroup) MRBINDC_CLASSARG_END(_other, JPH::CollisionGroup))
+    ));
+}
+
+JPH_CollisionGroup *JPH_CollisionGroup_Construct(const JPH_GroupFilter *inFilter, unsigned int inGroupID, unsigned int inSubGroupID)
+{
+    return (JPH_CollisionGroup *)new JPH::CollisionGroup(JPH::CollisionGroup(
+        ((const JPH::GroupFilter *)inFilter),
+        inGroupID,
+        inSubGroupID
     ));
 }
 
@@ -151,6 +161,18 @@ void Jolt_delete_array_JPH_CollisionGroup_void_ptr_void_ptr(void *inPointer, voi
         inPointer,
         inPlace
     );
+}
+
+void JPH_CollisionGroup_SetGroupFilter(JPH_CollisionGroup *_this, const JPH_GroupFilter *inFilter)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CollisionGroup *)(_this)).SetGroupFilter(
+        ((const JPH::GroupFilter *)inFilter)
+    );
+}
+
+const JPH_GroupFilter *JPH_CollisionGroup_GetGroupFilter(const JPH_CollisionGroup *_this)
+{
+    return (const JPH_GroupFilter *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CollisionGroup *)(_this)).GetGroupFilter());
 }
 
 void JPH_CollisionGroup_SetGroupID(JPH_CollisionGroup *_this, unsigned int inID)

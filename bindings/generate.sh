@@ -200,6 +200,14 @@ echo "#include \"$ROOT/Jolt/Skeleton/SkeletalAnimation.h\"" >>"$BINDINGS/tmp/com
 echo "#include \"$ROOT/Jolt/Skeleton/SkeletonPose.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Skeleton/SkeletonMapper.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Ragdoll/Ragdoll.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/AABoxCast.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/CollidePointResult.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/GroupFilter.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/GroupFilterTable.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/PhysicsMaterialSimple.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/SimShapeFilter.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayerInterfaceMask.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/ObjectVsBroadPhaseLayerFilterMask.h\"" >>"$BINDINGS/tmp/combined_input.h"
 
 
 # Parse the input header.
@@ -447,6 +455,14 @@ echo "#include \"$ROOT/Jolt/Physics/Ragdoll/Ragdoll.h\"" >>"$BINDINGS/tmp/combin
     --allow JPH::RagdollSettings::Part \
     --allow JPH::RagdollSettings::AdditionalConstraint \
     --allow JPH::Ragdoll \
+    --allow JPH::AABoxCast \
+    --allow JPH::CollidePointResult \
+    --allow JPH::GroupFilter \
+    --allow JPH::GroupFilterTable \
+    --allow JPH::PhysicsMaterialSimple \
+    --allow JPH::SimShapeFilter \
+    --allow JPH::BroadPhaseLayerInterfaceMask \
+    --allow JPH::ObjectVsBroadPhaseLayerFilterMask \
     --canonicalize-64-to-fixed-size-typedefs \
     "${EXTRA_PARSER_FLAGS[@]+"${EXTRA_PARSER_FLAGS[@]}"}" \
     -- \

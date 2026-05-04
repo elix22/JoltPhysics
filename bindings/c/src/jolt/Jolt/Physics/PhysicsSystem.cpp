@@ -18,6 +18,7 @@
 #include <Jolt/Physics/Collision/ContactListener.h>
 #include <Jolt/Physics/Collision/NarrowPhaseQuery.h>
 #include <Jolt/Physics/Collision/ObjectLayer.h>
+#include <Jolt/Physics/Collision/SimShapeFilter.h>
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/EPhysicsUpdateError.h>
 #include <Jolt/Physics/PhysicsSettings.h>
@@ -236,6 +237,18 @@ void JPH_PhysicsSystem_SetContactListener(JPH_PhysicsSystem *_this, JPH_ContactL
 JPH_ContactListener *JPH_PhysicsSystem_GetContactListener(const JPH_PhysicsSystem *_this)
 {
     return (JPH_ContactListener *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSystem *)(_this)).GetContactListener());
+}
+
+void JPH_PhysicsSystem_SetSimShapeFilter(JPH_PhysicsSystem *_this, const JPH_SimShapeFilter *inShapeFilter)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).SetSimShapeFilter(
+        ((const JPH::SimShapeFilter *)inShapeFilter)
+    );
+}
+
+const JPH_SimShapeFilter *JPH_PhysicsSystem_GetSimShapeFilter(const JPH_PhysicsSystem *_this)
+{
+    return (const JPH_SimShapeFilter *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSystem *)(_this)).GetSimShapeFilter());
 }
 
 void JPH_PhysicsSystem_SetPhysicsSettings(JPH_PhysicsSystem *_this, const JPH_PhysicsSettings *inSettings)

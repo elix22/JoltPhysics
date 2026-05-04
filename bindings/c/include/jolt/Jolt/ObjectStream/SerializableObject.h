@@ -17,6 +17,7 @@ extern "C" {
 /// Derived classes:
 ///   Direct: (non-virtual)
 ///     `JPH::ConstraintSettings`
+///     `JPH::GroupFilter`
 ///     `JPH::PathConstraintPath`
 ///     `JPH::PhysicsMaterial`
 ///     `JPH::ShapeSettings`
@@ -35,12 +36,14 @@ extern "C" {
 ///     `JPH::EmptyShapeSettings`
 ///     `JPH::FixedConstraintSettings`
 ///     `JPH::GearConstraintSettings`
+///     `JPH::GroupFilterTable`
 ///     `JPH::HeightFieldShapeSettings`
 ///     `JPH::HingeConstraintSettings`
 ///     `JPH::MeshShapeSettings`
 ///     `JPH::MutableCompoundShapeSettings`
 ///     `JPH::OffsetCenterOfMassShapeSettings`
 ///     `JPH::PathConstraintPathHermite`
+///     `JPH::PhysicsMaterialSimple`
 ///     `JPH::PlaneShapeSettings`
 ///     `JPH::PointConstraintSettings`
 ///     `JPH::PulleyConstraintSettings`
