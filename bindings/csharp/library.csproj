@@ -1,7 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <!-- netstandard2.0 for broad compatibility; net10.0 to include extras/ which
+         requires [UnmanagedCallersOnly] and delegate* unmanaged (net5+ only). -->
+    <TargetFrameworks>netstandard2.0;net10.0</TargetFrameworks>
     <LangVersion>12</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -10,8 +12,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Exclude the tests subfolder so it does not get compiled into the library. -->
+    <!-- Exclude the tests subfolder from all targets. -->
     <Compile Remove="tests/**/*.cs" />
+    <!-- extras/ uses [UnmanagedCallersOnly] and delegate* unmanaged (net5+ only).
+         Exclude from netstandard2.0; the net10.0 target includes them. -->
+    <Compile Remove="extras/**/*.cs" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
   </ItemGroup>
 
 </Project>
