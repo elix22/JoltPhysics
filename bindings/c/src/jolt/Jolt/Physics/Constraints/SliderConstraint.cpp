@@ -267,7 +267,7 @@ JPH_SliderConstraintSettings *JPH_SliderConstraintSettings_DefaultConstruct(void
 
 JPH_SliderConstraintSettings *JPH_SliderConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SliderConstraintSettings *)(new JPH::SliderConstraintSettings[num_elems]{});
+    return (JPH_SliderConstraintSettings *)(new JPH::SliderConstraintSettings[num_elems]);
 }
 
 const JPH_SliderConstraintSettings *JPH_SliderConstraintSettings_OffsetPtr(const JPH_SliderConstraintSettings *ptr, ptrdiff_t i)

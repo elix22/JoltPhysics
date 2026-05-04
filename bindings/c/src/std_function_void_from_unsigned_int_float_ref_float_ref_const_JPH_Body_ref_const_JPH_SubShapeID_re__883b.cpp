@@ -25,7 +25,7 @@ Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_const_JPH_Body_ref_
 
 Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_const_JPH_Body_ref_const_JPH_SubShapeID_ref *Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_const_JPH_Body_ref_const_JPH_SubShapeID_ref_DefaultConstructArray(size_t num_elems)
 {
-    return (Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_const_JPH_Body_ref_const_JPH_SubShapeID_ref *)(new std::function<void(unsigned int, float &, float &, const JPH::Body &, const JPH::SubShapeID &)>[num_elems]{});
+    return (Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_const_JPH_Body_ref_const_JPH_SubShapeID_ref *)(new std::function<void(unsigned int, float &, float &, const JPH::Body &, const JPH::SubShapeID &)>[num_elems]);
 }
 
 Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_const_JPH_Body_ref_const_JPH_SubShapeID_ref *Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_const_JPH_Body_ref_const_JPH_SubShapeID_ref_ConstructFromAnother(Jolt_PassBy other_pass_by, Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_const_JPH_Body_ref_const_JPH_SubShapeID_ref *other)

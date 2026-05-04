@@ -118,7 +118,7 @@ JPH_TriangleShapeSettings *JPH_TriangleShapeSettings_DefaultConstruct(void)
 
 JPH_TriangleShapeSettings *JPH_TriangleShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_TriangleShapeSettings *)(new JPH::TriangleShapeSettings[num_elems]{});
+    return (JPH_TriangleShapeSettings *)(new JPH::TriangleShapeSettings[num_elems]);
 }
 
 const JPH_TriangleShapeSettings *JPH_TriangleShapeSettings_OffsetPtr(const JPH_TriangleShapeSettings *ptr, ptrdiff_t i)
@@ -425,7 +425,7 @@ JPH_TriangleShape *JPH_TriangleShape_DefaultConstruct(void)
 
 JPH_TriangleShape *JPH_TriangleShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_TriangleShape *)(new JPH::TriangleShape[num_elems]{});
+    return (JPH_TriangleShape *)(new JPH::TriangleShape[num_elems]);
 }
 
 const JPH_TriangleShape *JPH_TriangleShape_OffsetPtr(const JPH_TriangleShape *ptr, ptrdiff_t i)

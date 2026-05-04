@@ -48,7 +48,7 @@ JPH_AABox *JPH_AABox_DefaultConstruct(void)
 
 JPH_AABox *JPH_AABox_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_AABox *)(new JPH::AABox[num_elems]{});
+    return (JPH_AABox *)(new JPH::AABox[num_elems]);
 }
 
 const JPH_AABox *JPH_AABox_OffsetPtr(const JPH_AABox *ptr, ptrdiff_t i)

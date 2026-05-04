@@ -38,7 +38,7 @@ JPH_Quat *JPH_Quat_DefaultConstruct(void)
 
 JPH_Quat *JPH_Quat_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Quat *)(new JPH::Quat[num_elems]{});
+    return (JPH_Quat *)(new JPH::Quat[num_elems]);
 }
 
 const JPH_Quat *JPH_Quat_OffsetPtr(const JPH_Quat *ptr, ptrdiff_t i)

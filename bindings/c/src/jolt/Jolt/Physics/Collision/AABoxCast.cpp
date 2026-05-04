@@ -50,7 +50,7 @@ JPH_AABoxCast *JPH_AABoxCast_DefaultConstruct(void)
 
 JPH_AABoxCast *JPH_AABoxCast_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_AABoxCast *)(new JPH::AABoxCast[num_elems]{});
+    return (JPH_AABoxCast *)(new JPH::AABoxCast[num_elems]);
 }
 
 JPH_AABoxCast *JPH_AABoxCast_ConstructFrom(const JPH_AABox *mBox, const JPH_Vec3 *mDirection)

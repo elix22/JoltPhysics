@@ -29,7 +29,7 @@ JPH_DMat44 *JPH_DMat44_DefaultConstruct(void)
 
 JPH_DMat44 *JPH_DMat44_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_DMat44 *)(new JPH::DMat44[num_elems]{});
+    return (JPH_DMat44 *)(new JPH::DMat44[num_elems]);
 }
 
 const JPH_DMat44 *JPH_DMat44_OffsetPtr(const JPH_DMat44 *ptr, ptrdiff_t i)

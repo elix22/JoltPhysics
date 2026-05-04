@@ -34,7 +34,7 @@ JPH_NarrowPhaseQuery *JPH_NarrowPhaseQuery_DefaultConstruct(void)
 
 JPH_NarrowPhaseQuery *JPH_NarrowPhaseQuery_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_NarrowPhaseQuery *)(new JPH::NarrowPhaseQuery[num_elems]{});
+    return (JPH_NarrowPhaseQuery *)(new JPH::NarrowPhaseQuery[num_elems]);
 }
 
 const JPH_NarrowPhaseQuery *JPH_NarrowPhaseQuery_OffsetPtr(const JPH_NarrowPhaseQuery *ptr, ptrdiff_t i)

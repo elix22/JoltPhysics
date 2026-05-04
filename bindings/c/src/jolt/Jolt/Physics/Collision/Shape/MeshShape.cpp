@@ -116,7 +116,7 @@ JPH_MeshShapeSettings *JPH_MeshShapeSettings_DefaultConstruct(void)
 
 JPH_MeshShapeSettings *JPH_MeshShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_MeshShapeSettings *)(new JPH::MeshShapeSettings[num_elems]{});
+    return (JPH_MeshShapeSettings *)(new JPH::MeshShapeSettings[num_elems]);
 }
 
 const JPH_MeshShapeSettings *JPH_MeshShapeSettings_OffsetPtr(const JPH_MeshShapeSettings *ptr, ptrdiff_t i)
@@ -411,7 +411,7 @@ JPH_MeshShape *JPH_MeshShape_DefaultConstruct(void)
 
 JPH_MeshShape *JPH_MeshShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_MeshShape *)(new JPH::MeshShape[num_elems]{});
+    return (JPH_MeshShape *)(new JPH::MeshShape[num_elems]);
 }
 
 const JPH_MeshShape *JPH_MeshShape_OffsetPtr(const JPH_MeshShape *ptr, ptrdiff_t i)

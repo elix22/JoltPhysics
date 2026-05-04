@@ -209,7 +209,7 @@ JPH_PulleyConstraintSettings *JPH_PulleyConstraintSettings_DefaultConstruct(void
 
 JPH_PulleyConstraintSettings *JPH_PulleyConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_PulleyConstraintSettings *)(new JPH::PulleyConstraintSettings[num_elems]{});
+    return (JPH_PulleyConstraintSettings *)(new JPH::PulleyConstraintSettings[num_elems]);
 }
 
 const JPH_PulleyConstraintSettings *JPH_PulleyConstraintSettings_OffsetPtr(const JPH_PulleyConstraintSettings *ptr, ptrdiff_t i)

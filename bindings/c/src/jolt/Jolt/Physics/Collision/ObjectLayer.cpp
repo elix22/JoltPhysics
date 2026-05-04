@@ -23,7 +23,7 @@ JPH_ObjectLayerFilter *JPH_ObjectLayerFilter_DefaultConstruct(void)
 
 JPH_ObjectLayerFilter *JPH_ObjectLayerFilter_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ObjectLayerFilter *)(new JPH::ObjectLayerFilter[num_elems]{});
+    return (JPH_ObjectLayerFilter *)(new JPH::ObjectLayerFilter[num_elems]);
 }
 
 const JPH_ObjectLayerFilter *JPH_ObjectLayerFilter_OffsetPtr(const JPH_ObjectLayerFilter *ptr, ptrdiff_t i)
@@ -92,7 +92,7 @@ JPH_ObjectLayerPairFilter *JPH_ObjectLayerPairFilter_DefaultConstruct(void)
 
 JPH_ObjectLayerPairFilter *JPH_ObjectLayerPairFilter_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ObjectLayerPairFilter *)(new JPH::ObjectLayerPairFilter[num_elems]{});
+    return (JPH_ObjectLayerPairFilter *)(new JPH::ObjectLayerPairFilter[num_elems]);
 }
 
 const JPH_ObjectLayerPairFilter *JPH_ObjectLayerPairFilter_OffsetPtr(const JPH_ObjectLayerPairFilter *ptr, ptrdiff_t i)

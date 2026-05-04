@@ -22,7 +22,7 @@ Jolt_std_function_void *Jolt_std_function_void_DefaultConstruct(void)
 
 Jolt_std_function_void *Jolt_std_function_void_DefaultConstructArray(size_t num_elems)
 {
-    return (Jolt_std_function_void *)(new std::function<void(void)>[num_elems]{});
+    return (Jolt_std_function_void *)(new std::function<void(void)>[num_elems]);
 }
 
 Jolt_std_function_void *Jolt_std_function_void_ConstructFromAnother(Jolt_PassBy other_pass_by, Jolt_std_function_void *other)

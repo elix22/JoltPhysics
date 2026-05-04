@@ -24,7 +24,7 @@ JPH_Skeleton *JPH_Skeleton_DefaultConstruct(void)
 
 JPH_Skeleton *JPH_Skeleton_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Skeleton *)(new JPH::Skeleton[num_elems]{});
+    return (JPH_Skeleton *)(new JPH::Skeleton[num_elems]);
 }
 
 const JPH_Skeleton *JPH_Skeleton_OffsetPtr(const JPH_Skeleton *ptr, ptrdiff_t i)
@@ -247,7 +247,7 @@ JPH_Skeleton_Joint *JPH_Skeleton_Joint_DefaultConstruct(void)
 
 JPH_Skeleton_Joint *JPH_Skeleton_Joint_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Skeleton_Joint *)(new JPH::Skeleton::Joint[num_elems]{});
+    return (JPH_Skeleton_Joint *)(new JPH::Skeleton::Joint[num_elems]);
 }
 
 const JPH_Skeleton_Joint *JPH_Skeleton_Joint_OffsetPtr(const JPH_Skeleton_Joint *ptr, ptrdiff_t i)

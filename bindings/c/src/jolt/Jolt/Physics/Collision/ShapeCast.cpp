@@ -839,7 +839,7 @@ JPH_ShapeCastSettings *JPH_ShapeCastSettings_DefaultConstruct(void)
 
 JPH_ShapeCastSettings *JPH_ShapeCastSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ShapeCastSettings *)(new JPH::ShapeCastSettings[num_elems]{});
+    return (JPH_ShapeCastSettings *)(new JPH::ShapeCastSettings[num_elems]);
 }
 
 const JPH_ShapeCastSettings *JPH_ShapeCastSettings_OffsetPtr(const JPH_ShapeCastSettings *ptr, ptrdiff_t i)
@@ -1118,7 +1118,7 @@ JPH_ShapeCastResult *JPH_ShapeCastResult_DefaultConstruct(void)
 
 JPH_ShapeCastResult *JPH_ShapeCastResult_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ShapeCastResult *)(new JPH::ShapeCastResult[num_elems]{});
+    return (JPH_ShapeCastResult *)(new JPH::ShapeCastResult[num_elems]);
 }
 
 const JPH_ShapeCastResult *JPH_ShapeCastResult_OffsetPtr(const JPH_ShapeCastResult *ptr, ptrdiff_t i)

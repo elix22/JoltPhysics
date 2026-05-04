@@ -52,7 +52,7 @@ JoltHelpers *JoltHelpers_DefaultConstruct(void)
 
 JoltHelpers *JoltHelpers_DefaultConstructArray(size_t num_elems)
 {
-    return (JoltHelpers *)(new JoltHelpers[num_elems]{});
+    return (JoltHelpers *)(new JoltHelpers[num_elems]);
 }
 
 const JoltHelpers *JoltHelpers_OffsetPtr(const JoltHelpers *ptr, ptrdiff_t i)
@@ -437,7 +437,7 @@ CountingPhysicsStepListener *CountingPhysicsStepListener_DefaultConstruct(void)
 
 CountingPhysicsStepListener *CountingPhysicsStepListener_DefaultConstructArray(size_t num_elems)
 {
-    return (CountingPhysicsStepListener *)(new CountingPhysicsStepListener[num_elems]{});
+    return (CountingPhysicsStepListener *)(new CountingPhysicsStepListener[num_elems]);
 }
 
 const CountingPhysicsStepListener *CountingPhysicsStepListener_OffsetPtr(const CountingPhysicsStepListener *ptr, ptrdiff_t i)
@@ -630,7 +630,7 @@ SimpleContactEventListener *SimpleContactEventListener_DefaultConstruct(void)
 
 SimpleContactEventListener *SimpleContactEventListener_DefaultConstructArray(size_t num_elems)
 {
-    return (SimpleContactEventListener *)(new SimpleContactEventListener[num_elems]{});
+    return (SimpleContactEventListener *)(new SimpleContactEventListener[num_elems]);
 }
 
 const SimpleContactEventListener *SimpleContactEventListener_OffsetPtr(const SimpleContactEventListener *ptr, ptrdiff_t i)
@@ -855,7 +855,7 @@ ContactListenerTrampoline *ContactListenerTrampoline_DefaultConstruct(void)
 
 ContactListenerTrampoline *ContactListenerTrampoline_DefaultConstructArray(size_t num_elems)
 {
-    return (ContactListenerTrampoline *)(new ContactListenerTrampoline[num_elems]{});
+    return (ContactListenerTrampoline *)(new ContactListenerTrampoline[num_elems]);
 }
 
 const ContactListenerTrampoline *ContactListenerTrampoline_OffsetPtr(const ContactListenerTrampoline *ptr, ptrdiff_t i)
@@ -1085,7 +1085,7 @@ EstimateResponseContactListener *EstimateResponseContactListener_DefaultConstruc
 
 EstimateResponseContactListener *EstimateResponseContactListener_DefaultConstructArray(size_t num_elems)
 {
-    return (EstimateResponseContactListener *)(new EstimateResponseContactListener[num_elems]{});
+    return (EstimateResponseContactListener *)(new EstimateResponseContactListener[num_elems]);
 }
 
 const EstimateResponseContactListener *EstimateResponseContactListener_OffsetPtr(const EstimateResponseContactListener *ptr, ptrdiff_t i)
@@ -1260,7 +1260,7 @@ DebugLineRecord *DebugLineRecord_DefaultConstruct(void)
 
 DebugLineRecord *DebugLineRecord_DefaultConstructArray(size_t num_elems)
 {
-    return (DebugLineRecord *)(new DebugLineRecord[num_elems]{});
+    return (DebugLineRecord *)(new DebugLineRecord[num_elems]);
 }
 
 DebugLineRecord *DebugLineRecord_ConstructFrom(const JPH_Vec3 *mFrom, const JPH_Vec3 *mTo, const JPH_Color *mColor)
@@ -1357,7 +1357,7 @@ DebugTriangleRecord *DebugTriangleRecord_DefaultConstruct(void)
 
 DebugTriangleRecord *DebugTriangleRecord_DefaultConstructArray(size_t num_elems)
 {
-    return (DebugTriangleRecord *)(new DebugTriangleRecord[num_elems]{});
+    return (DebugTriangleRecord *)(new DebugTriangleRecord[num_elems]);
 }
 
 DebugTriangleRecord *DebugTriangleRecord_ConstructFrom(const JPH_Vec3 *mV1, const JPH_Vec3 *mV2, const JPH_Vec3 *mV3, const JPH_Color *mColor)
@@ -1430,7 +1430,7 @@ RecordingDebugRenderer *RecordingDebugRenderer_DefaultConstruct(void)
 
 RecordingDebugRenderer *RecordingDebugRenderer_DefaultConstructArray(size_t num_elems)
 {
-    return (RecordingDebugRenderer *)(new RecordingDebugRenderer[num_elems]{});
+    return (RecordingDebugRenderer *)(new RecordingDebugRenderer[num_elems]);
 }
 
 const RecordingDebugRenderer *RecordingDebugRenderer_OffsetPtr(const RecordingDebugRenderer *ptr, ptrdiff_t i)

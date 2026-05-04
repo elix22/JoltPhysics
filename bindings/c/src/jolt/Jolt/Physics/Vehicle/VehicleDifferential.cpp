@@ -113,7 +113,7 @@ JPH_VehicleDifferentialSettings *JPH_VehicleDifferentialSettings_DefaultConstruc
 
 JPH_VehicleDifferentialSettings *JPH_VehicleDifferentialSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_VehicleDifferentialSettings *)(new JPH::VehicleDifferentialSettings[num_elems]{});
+    return (JPH_VehicleDifferentialSettings *)(new JPH::VehicleDifferentialSettings[num_elems]);
 }
 
 JPH_VehicleDifferentialSettings *JPH_VehicleDifferentialSettings_ConstructFrom(int mLeftWheel, int mRightWheel, float mDifferentialRatio, float mLeftRightSplit, float mLimitedSlipRatio, float mEngineTorqueRatio)

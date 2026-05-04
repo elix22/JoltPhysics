@@ -191,7 +191,7 @@ JPH_WheelSettings *JPH_WheelSettings_DefaultConstruct(void)
 
 JPH_WheelSettings *JPH_WheelSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_WheelSettings *)(new JPH::WheelSettings[num_elems]{});
+    return (JPH_WheelSettings *)(new JPH::WheelSettings[num_elems]);
 }
 
 const JPH_WheelSettings *JPH_WheelSettings_OffsetPtr(const JPH_WheelSettings *ptr, ptrdiff_t i)

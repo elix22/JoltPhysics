@@ -28,7 +28,7 @@ JPH_SoftBodySharedSettings *JPH_SoftBodySharedSettings_DefaultConstruct(void)
 
 JPH_SoftBodySharedSettings *JPH_SoftBodySharedSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings *)(new JPH::SoftBodySharedSettings[num_elems]{});
+    return (JPH_SoftBodySharedSettings *)(new JPH::SoftBodySharedSettings[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings *JPH_SoftBodySharedSettings_OffsetPtr(const JPH_SoftBodySharedSettings *ptr, ptrdiff_t i)
@@ -345,7 +345,7 @@ JPH_SoftBodySharedSettings_VertexAttributes *JPH_SoftBodySharedSettings_VertexAt
 
 JPH_SoftBodySharedSettings_VertexAttributes *JPH_SoftBodySharedSettings_VertexAttributes_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_VertexAttributes *)(new JPH::SoftBodySharedSettings::VertexAttributes[num_elems]{});
+    return (JPH_SoftBodySharedSettings_VertexAttributes *)(new JPH::SoftBodySharedSettings::VertexAttributes[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_VertexAttributes *JPH_SoftBodySharedSettings_VertexAttributes_OffsetPtr(const JPH_SoftBodySharedSettings_VertexAttributes *ptr, ptrdiff_t i)
@@ -405,7 +405,7 @@ JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_Optim
 
 JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_OptimizationResults *)(new JPH::SoftBodySharedSettings::OptimizationResults[num_elems]{});
+    return (JPH_SoftBodySharedSettings_OptimizationResults *)(new JPH::SoftBodySharedSettings::OptimizationResults[num_elems]);
 }
 
 JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_SoftBodySharedSettings_OptimizationResults *_other)
@@ -480,7 +480,7 @@ JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_DefaultCons
 
 JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_Vertex *)(new JPH::SoftBodySharedSettings::Vertex[num_elems]{});
+    return (JPH_SoftBodySharedSettings_Vertex *)(new JPH::SoftBodySharedSettings::Vertex[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Vertex_OffsetPtr(const JPH_SoftBodySharedSettings_Vertex *ptr, ptrdiff_t i)
@@ -644,7 +644,7 @@ JPH_SoftBodySharedSettings_Face *JPH_SoftBodySharedSettings_Face_DefaultConstruc
 
 JPH_SoftBodySharedSettings_Face *JPH_SoftBodySharedSettings_Face_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_Face *)(new JPH::SoftBodySharedSettings::Face[num_elems]{});
+    return (JPH_SoftBodySharedSettings_Face *)(new JPH::SoftBodySharedSettings::Face[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_Face *JPH_SoftBodySharedSettings_Face_OffsetPtr(const JPH_SoftBodySharedSettings_Face *ptr, ptrdiff_t i)
@@ -829,7 +829,7 @@ JPH_SoftBodySharedSettings_Edge *JPH_SoftBodySharedSettings_Edge_DefaultConstruc
 
 JPH_SoftBodySharedSettings_Edge *JPH_SoftBodySharedSettings_Edge_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_Edge *)(new JPH::SoftBodySharedSettings::Edge[num_elems]{});
+    return (JPH_SoftBodySharedSettings_Edge *)(new JPH::SoftBodySharedSettings::Edge[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_Edge *JPH_SoftBodySharedSettings_Edge_OffsetPtr(const JPH_SoftBodySharedSettings_Edge *ptr, ptrdiff_t i)
@@ -1013,7 +1013,7 @@ JPH_SoftBodySharedSettings_DihedralBend *JPH_SoftBodySharedSettings_DihedralBend
 
 JPH_SoftBodySharedSettings_DihedralBend *JPH_SoftBodySharedSettings_DihedralBend_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_DihedralBend *)(new JPH::SoftBodySharedSettings::DihedralBend[num_elems]{});
+    return (JPH_SoftBodySharedSettings_DihedralBend *)(new JPH::SoftBodySharedSettings::DihedralBend[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_DihedralBend *JPH_SoftBodySharedSettings_DihedralBend_OffsetPtr(const JPH_SoftBodySharedSettings_DihedralBend *ptr, ptrdiff_t i)
@@ -1199,7 +1199,7 @@ JPH_SoftBodySharedSettings_Volume *JPH_SoftBodySharedSettings_Volume_DefaultCons
 
 JPH_SoftBodySharedSettings_Volume *JPH_SoftBodySharedSettings_Volume_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_Volume *)(new JPH::SoftBodySharedSettings::Volume[num_elems]{});
+    return (JPH_SoftBodySharedSettings_Volume *)(new JPH::SoftBodySharedSettings::Volume[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_Volume *JPH_SoftBodySharedSettings_Volume_OffsetPtr(const JPH_SoftBodySharedSettings_Volume *ptr, ptrdiff_t i)
@@ -1365,7 +1365,7 @@ JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_DefaultCo
 
 JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_InvBind *)(new JPH::SoftBodySharedSettings::InvBind[num_elems]{});
+    return (JPH_SoftBodySharedSettings_InvBind *)(new JPH::SoftBodySharedSettings::InvBind[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_InvBind_OffsetPtr(const JPH_SoftBodySharedSettings_InvBind *ptr, ptrdiff_t i)
@@ -1527,7 +1527,7 @@ JPH_SoftBodySharedSettings_SkinWeight *JPH_SoftBodySharedSettings_SkinWeight_Def
 
 JPH_SoftBodySharedSettings_SkinWeight *JPH_SoftBodySharedSettings_SkinWeight_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_SkinWeight *)(new JPH::SoftBodySharedSettings::SkinWeight[num_elems]{});
+    return (JPH_SoftBodySharedSettings_SkinWeight *)(new JPH::SoftBodySharedSettings::SkinWeight[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_SkinWeight *JPH_SoftBodySharedSettings_SkinWeight_OffsetPtr(const JPH_SoftBodySharedSettings_SkinWeight *ptr, ptrdiff_t i)
@@ -1754,7 +1754,7 @@ JPH_SoftBodySharedSettings_Skinned *JPH_SoftBodySharedSettings_Skinned_DefaultCo
 
 JPH_SoftBodySharedSettings_Skinned *JPH_SoftBodySharedSettings_Skinned_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_Skinned *)(new JPH::SoftBodySharedSettings::Skinned[num_elems]{});
+    return (JPH_SoftBodySharedSettings_Skinned *)(new JPH::SoftBodySharedSettings::Skinned[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_Skinned *JPH_SoftBodySharedSettings_Skinned_OffsetPtr(const JPH_SoftBodySharedSettings_Skinned *ptr, ptrdiff_t i)
@@ -1923,7 +1923,7 @@ JPH_SoftBodySharedSettings_LRA *JPH_SoftBodySharedSettings_LRA_DefaultConstruct(
 
 JPH_SoftBodySharedSettings_LRA *JPH_SoftBodySharedSettings_LRA_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_LRA *)(new JPH::SoftBodySharedSettings::LRA[num_elems]{});
+    return (JPH_SoftBodySharedSettings_LRA *)(new JPH::SoftBodySharedSettings::LRA[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_LRA *JPH_SoftBodySharedSettings_LRA_OffsetPtr(const JPH_SoftBodySharedSettings_LRA *ptr, ptrdiff_t i)
@@ -2131,7 +2131,7 @@ JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_RodStretc
 
 JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_RodStretchShear_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_RodStretchShear *)(new JPH::SoftBodySharedSettings::RodStretchShear[num_elems]{});
+    return (JPH_SoftBodySharedSettings_RodStretchShear *)(new JPH::SoftBodySharedSettings::RodStretchShear[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_RodStretchShear_OffsetPtr(const JPH_SoftBodySharedSettings_RodStretchShear *ptr, ptrdiff_t i)
@@ -2310,7 +2310,7 @@ JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_RodBendTwist
 
 JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_RodBendTwist_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodySharedSettings_RodBendTwist *)(new JPH::SoftBodySharedSettings::RodBendTwist[num_elems]{});
+    return (JPH_SoftBodySharedSettings_RodBendTwist *)(new JPH::SoftBodySharedSettings::RodBendTwist[num_elems]);
 }
 
 const JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_RodBendTwist_OffsetPtr(const JPH_SoftBodySharedSettings_RodBendTwist *ptr, ptrdiff_t i)

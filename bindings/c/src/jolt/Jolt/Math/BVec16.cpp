@@ -56,7 +56,7 @@ JPH_BVec16 *JPH_BVec16_DefaultConstruct(void)
 
 JPH_BVec16 *JPH_BVec16_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_BVec16 *)(new JPH::BVec16[num_elems]{});
+    return (JPH_BVec16 *)(new JPH::BVec16[num_elems]);
 }
 
 const JPH_BVec16 *JPH_BVec16_OffsetPtr(const JPH_BVec16 *ptr, ptrdiff_t i)

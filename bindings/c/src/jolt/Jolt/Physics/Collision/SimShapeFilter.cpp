@@ -26,7 +26,7 @@ JPH_SimShapeFilter *JPH_SimShapeFilter_DefaultConstruct(void)
 
 JPH_SimShapeFilter *JPH_SimShapeFilter_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SimShapeFilter *)(new JPH::SimShapeFilter[num_elems]{});
+    return (JPH_SimShapeFilter *)(new JPH::SimShapeFilter[num_elems]);
 }
 
 const JPH_SimShapeFilter *JPH_SimShapeFilter_OffsetPtr(const JPH_SimShapeFilter *ptr, ptrdiff_t i)

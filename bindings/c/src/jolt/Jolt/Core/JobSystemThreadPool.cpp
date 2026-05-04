@@ -27,7 +27,7 @@ JPH_JobSystemThreadPool *JPH_JobSystemThreadPool_DefaultConstruct(void)
 
 JPH_JobSystemThreadPool *JPH_JobSystemThreadPool_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_JobSystemThreadPool *)(new JPH::JobSystemThreadPool[num_elems]{});
+    return (JPH_JobSystemThreadPool *)(new JPH::JobSystemThreadPool[num_elems]);
 }
 
 const JPH_JobSystemThreadPool *JPH_JobSystemThreadPool_OffsetPtr(const JPH_JobSystemThreadPool *ptr, ptrdiff_t i)

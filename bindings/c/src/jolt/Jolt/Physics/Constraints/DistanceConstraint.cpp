@@ -185,7 +185,7 @@ JPH_DistanceConstraintSettings *JPH_DistanceConstraintSettings_DefaultConstruct(
 
 JPH_DistanceConstraintSettings *JPH_DistanceConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_DistanceConstraintSettings *)(new JPH::DistanceConstraintSettings[num_elems]{});
+    return (JPH_DistanceConstraintSettings *)(new JPH::DistanceConstraintSettings[num_elems]);
 }
 
 const JPH_DistanceConstraintSettings *JPH_DistanceConstraintSettings_OffsetPtr(const JPH_DistanceConstraintSettings *ptr, ptrdiff_t i)

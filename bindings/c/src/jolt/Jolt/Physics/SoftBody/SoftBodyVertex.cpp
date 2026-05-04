@@ -130,7 +130,7 @@ JPH_SoftBodyVertex *JPH_SoftBodyVertex_DefaultConstruct(void)
 
 JPH_SoftBodyVertex *JPH_SoftBodyVertex_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodyVertex *)(new JPH::SoftBodyVertex[num_elems]{});
+    return (JPH_SoftBodyVertex *)(new JPH::SoftBodyVertex[num_elems]);
 }
 
 JPH_SoftBodyVertex *JPH_SoftBodyVertex_ConstructFrom(const JPH_Vec3 *mPreviousPosition, const JPH_Vec3 *mPosition, const JPH_Vec3 *mVelocity, const JPH_Plane *mCollisionPlane, int mCollidingShapeIndex, bool mHasContact, float mLargestPenetration, float mInvMass)

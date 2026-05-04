@@ -253,7 +253,7 @@ JPH_HingeConstraintSettings *JPH_HingeConstraintSettings_DefaultConstruct(void)
 
 JPH_HingeConstraintSettings *JPH_HingeConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_HingeConstraintSettings *)(new JPH::HingeConstraintSettings[num_elems]{});
+    return (JPH_HingeConstraintSettings *)(new JPH::HingeConstraintSettings[num_elems]);
 }
 
 const JPH_HingeConstraintSettings *JPH_HingeConstraintSettings_OffsetPtr(const JPH_HingeConstraintSettings *ptr, ptrdiff_t i)

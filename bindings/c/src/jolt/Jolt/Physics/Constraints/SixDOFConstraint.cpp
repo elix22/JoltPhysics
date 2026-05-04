@@ -263,7 +263,7 @@ JPH_SixDOFConstraintSettings *JPH_SixDOFConstraintSettings_DefaultConstruct(void
 
 JPH_SixDOFConstraintSettings *JPH_SixDOFConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SixDOFConstraintSettings *)(new JPH::SixDOFConstraintSettings[num_elems]{});
+    return (JPH_SixDOFConstraintSettings *)(new JPH::SixDOFConstraintSettings[num_elems]);
 }
 
 const JPH_SixDOFConstraintSettings *JPH_SixDOFConstraintSettings_OffsetPtr(const JPH_SixDOFConstraintSettings *ptr, ptrdiff_t i)

@@ -413,7 +413,7 @@ JPH_PhysicsSettings *JPH_PhysicsSettings_DefaultConstruct(void)
 
 JPH_PhysicsSettings *JPH_PhysicsSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_PhysicsSettings *)(new JPH::PhysicsSettings[num_elems]{});
+    return (JPH_PhysicsSettings *)(new JPH::PhysicsSettings[num_elems]);
 }
 
 JPH_PhysicsSettings *JPH_PhysicsSettings_ConstructFrom(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, unsigned int mNumVelocitySteps, unsigned int mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, bool mDeterministicSimulation, bool mConstraintWarmStart, bool mUseBodyPairContactCache, bool mUseManifoldReduction, bool mUseLargeIslandSplitter, bool mAllowSleeping, bool mCheckActiveEdges)

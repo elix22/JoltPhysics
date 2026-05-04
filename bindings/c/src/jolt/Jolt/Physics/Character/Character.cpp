@@ -153,7 +153,7 @@ JPH_CharacterSettings *JPH_CharacterSettings_DefaultConstruct(void)
 
 JPH_CharacterSettings *JPH_CharacterSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CharacterSettings *)(new JPH::CharacterSettings[num_elems]{});
+    return (JPH_CharacterSettings *)(new JPH::CharacterSettings[num_elems]);
 }
 
 const JPH_CharacterSettings *JPH_CharacterSettings_OffsetPtr(const JPH_CharacterSettings *ptr, ptrdiff_t i)

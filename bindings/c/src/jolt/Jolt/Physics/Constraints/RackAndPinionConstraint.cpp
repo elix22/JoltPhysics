@@ -159,7 +159,7 @@ JPH_RackAndPinionConstraintSettings *JPH_RackAndPinionConstraintSettings_Default
 
 JPH_RackAndPinionConstraintSettings *JPH_RackAndPinionConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RackAndPinionConstraintSettings *)(new JPH::RackAndPinionConstraintSettings[num_elems]{});
+    return (JPH_RackAndPinionConstraintSettings *)(new JPH::RackAndPinionConstraintSettings[num_elems]);
 }
 
 const JPH_RackAndPinionConstraintSettings *JPH_RackAndPinionConstraintSettings_OffsetPtr(const JPH_RackAndPinionConstraintSettings *ptr, ptrdiff_t i)

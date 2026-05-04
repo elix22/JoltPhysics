@@ -26,7 +26,7 @@ JPH_JobSystemSingleThreaded *JPH_JobSystemSingleThreaded_DefaultConstruct(void)
 
 JPH_JobSystemSingleThreaded *JPH_JobSystemSingleThreaded_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_JobSystemSingleThreaded *)(new JPH::JobSystemSingleThreaded[num_elems]{});
+    return (JPH_JobSystemSingleThreaded *)(new JPH::JobSystemSingleThreaded[num_elems]);
 }
 
 const JPH_JobSystemSingleThreaded *JPH_JobSystemSingleThreaded_OffsetPtr(const JPH_JobSystemSingleThreaded *ptr, ptrdiff_t i)

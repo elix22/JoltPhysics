@@ -159,7 +159,7 @@ JPH_GearConstraintSettings *JPH_GearConstraintSettings_DefaultConstruct(void)
 
 JPH_GearConstraintSettings *JPH_GearConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_GearConstraintSettings *)(new JPH::GearConstraintSettings[num_elems]{});
+    return (JPH_GearConstraintSettings *)(new JPH::GearConstraintSettings[num_elems]);
 }
 
 const JPH_GearConstraintSettings *JPH_GearConstraintSettings_OffsetPtr(const JPH_GearConstraintSettings *ptr, ptrdiff_t i)

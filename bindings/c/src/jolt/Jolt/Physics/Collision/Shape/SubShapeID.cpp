@@ -28,7 +28,7 @@ JPH_SubShapeID *JPH_SubShapeID_DefaultConstruct(void)
 
 JPH_SubShapeID *JPH_SubShapeID_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SubShapeID *)(new JPH::SubShapeID[num_elems]{});
+    return (JPH_SubShapeID *)(new JPH::SubShapeID[num_elems]);
 }
 
 const JPH_SubShapeID *JPH_SubShapeID_OffsetPtr(const JPH_SubShapeID *ptr, ptrdiff_t i)
@@ -191,7 +191,7 @@ JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_DefaultConstruct(void)
 
 JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SubShapeIDCreator *)(new JPH::SubShapeIDCreator[num_elems]{});
+    return (JPH_SubShapeIDCreator *)(new JPH::SubShapeIDCreator[num_elems]);
 }
 
 const JPH_SubShapeIDCreator *JPH_SubShapeIDCreator_OffsetPtr(const JPH_SubShapeIDCreator *ptr, ptrdiff_t i)

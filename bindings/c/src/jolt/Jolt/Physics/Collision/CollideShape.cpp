@@ -119,7 +119,7 @@ JPH_CollideShapeResult *JPH_CollideShapeResult_DefaultConstruct(void)
 
 JPH_CollideShapeResult *JPH_CollideShapeResult_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CollideShapeResult *)(new JPH::CollideShapeResult[num_elems]{});
+    return (JPH_CollideShapeResult *)(new JPH::CollideShapeResult[num_elems]);
 }
 
 const JPH_CollideShapeResult *JPH_CollideShapeResult_OffsetPtr(const JPH_CollideShapeResult *ptr, ptrdiff_t i)
@@ -338,7 +338,7 @@ JPH_CollideSettingsBase *JPH_CollideSettingsBase_DefaultConstruct(void)
 
 JPH_CollideSettingsBase *JPH_CollideSettingsBase_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CollideSettingsBase *)(new JPH::CollideSettingsBase[num_elems]{});
+    return (JPH_CollideSettingsBase *)(new JPH::CollideSettingsBase[num_elems]);
 }
 
 JPH_CollideSettingsBase *JPH_CollideSettingsBase_ConstructFrom(JPH_EActiveEdgeMode mActiveEdgeMode, JPH_ECollectFacesMode mCollectFacesMode, float mCollisionTolerance, float mPenetrationTolerance, const JPH_Vec3 *mActiveEdgeMovementDirection)
@@ -573,7 +573,7 @@ JPH_CollideShapeSettings *JPH_CollideShapeSettings_DefaultConstruct(void)
 
 JPH_CollideShapeSettings *JPH_CollideShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CollideShapeSettings *)(new JPH::CollideShapeSettings[num_elems]{});
+    return (JPH_CollideShapeSettings *)(new JPH::CollideShapeSettings[num_elems]);
 }
 
 const JPH_CollideShapeSettings *JPH_CollideShapeSettings_OffsetPtr(const JPH_CollideShapeSettings *ptr, ptrdiff_t i)

@@ -114,7 +114,7 @@ JPH_Color *JPH_Color_DefaultConstruct(void)
 
 JPH_Color *JPH_Color_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Color *)(new JPH::Color[num_elems]{});
+    return (JPH_Color *)(new JPH::Color[num_elems]);
 }
 
 const JPH_Color *JPH_Color_OffsetPtr(const JPH_Color *ptr, ptrdiff_t i)

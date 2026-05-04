@@ -24,7 +24,7 @@ JPH_BroadPhaseLayer *JPH_BroadPhaseLayer_DefaultConstruct(void)
 
 JPH_BroadPhaseLayer *JPH_BroadPhaseLayer_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_BroadPhaseLayer *)(new JPH::BroadPhaseLayer[num_elems]{});
+    return (JPH_BroadPhaseLayer *)(new JPH::BroadPhaseLayer[num_elems]);
 }
 
 const JPH_BroadPhaseLayer *JPH_BroadPhaseLayer_OffsetPtr(const JPH_BroadPhaseLayer *ptr, ptrdiff_t i)
@@ -170,7 +170,7 @@ JPH_ObjectVsBroadPhaseLayerFilter *JPH_ObjectVsBroadPhaseLayerFilter_DefaultCons
 
 JPH_ObjectVsBroadPhaseLayerFilter *JPH_ObjectVsBroadPhaseLayerFilter_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ObjectVsBroadPhaseLayerFilter *)(new JPH::ObjectVsBroadPhaseLayerFilter[num_elems]{});
+    return (JPH_ObjectVsBroadPhaseLayerFilter *)(new JPH::ObjectVsBroadPhaseLayerFilter[num_elems]);
 }
 
 const JPH_ObjectVsBroadPhaseLayerFilter *JPH_ObjectVsBroadPhaseLayerFilter_OffsetPtr(const JPH_ObjectVsBroadPhaseLayerFilter *ptr, ptrdiff_t i)
@@ -240,7 +240,7 @@ JPH_BroadPhaseLayerFilter *JPH_BroadPhaseLayerFilter_DefaultConstruct(void)
 
 JPH_BroadPhaseLayerFilter *JPH_BroadPhaseLayerFilter_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_BroadPhaseLayerFilter *)(new JPH::BroadPhaseLayerFilter[num_elems]{});
+    return (JPH_BroadPhaseLayerFilter *)(new JPH::BroadPhaseLayerFilter[num_elems]);
 }
 
 const JPH_BroadPhaseLayerFilter *JPH_BroadPhaseLayerFilter_OffsetPtr(const JPH_BroadPhaseLayerFilter *ptr, ptrdiff_t i)

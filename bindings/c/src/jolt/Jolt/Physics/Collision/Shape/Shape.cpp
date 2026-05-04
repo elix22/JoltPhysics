@@ -644,7 +644,7 @@ JPH_Shape_GetTrianglesContext *JPH_Shape_GetTrianglesContext_DefaultConstruct(vo
 
 JPH_Shape_GetTrianglesContext *JPH_Shape_GetTrianglesContext_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Shape_GetTrianglesContext *)(new JPH::Shape::GetTrianglesContext[num_elems]{});
+    return (JPH_Shape_GetTrianglesContext *)(new JPH::Shape::GetTrianglesContext[num_elems]);
 }
 
 const JPH_Shape_GetTrianglesContext *JPH_Shape_GetTrianglesContext_OffsetPtr(const JPH_Shape_GetTrianglesContext *ptr, ptrdiff_t i)

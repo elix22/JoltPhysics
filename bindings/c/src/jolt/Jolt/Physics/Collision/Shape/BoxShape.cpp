@@ -97,7 +97,7 @@ JPH_BoxShapeSettings *JPH_BoxShapeSettings_DefaultConstruct(void)
 
 JPH_BoxShapeSettings *JPH_BoxShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_BoxShapeSettings *)(new JPH::BoxShapeSettings[num_elems]{});
+    return (JPH_BoxShapeSettings *)(new JPH::BoxShapeSettings[num_elems]);
 }
 
 const JPH_BoxShapeSettings *JPH_BoxShapeSettings_OffsetPtr(const JPH_BoxShapeSettings *ptr, ptrdiff_t i)
@@ -402,7 +402,7 @@ JPH_BoxShape *JPH_BoxShape_DefaultConstruct(void)
 
 JPH_BoxShape *JPH_BoxShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_BoxShape *)(new JPH::BoxShape[num_elems]{});
+    return (JPH_BoxShape *)(new JPH::BoxShape[num_elems]);
 }
 
 const JPH_BoxShape *JPH_BoxShape_OffsetPtr(const JPH_BoxShape *ptr, ptrdiff_t i)

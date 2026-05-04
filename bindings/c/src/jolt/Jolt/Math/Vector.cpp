@@ -40,7 +40,7 @@ JPH_Vector_2 *JPH_Vector_2_DefaultConstruct(void)
 
 JPH_Vector_2 *JPH_Vector_2_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Vector_2 *)(new JPH::Vector<2>[num_elems]{});
+    return (JPH_Vector_2 *)(new JPH::Vector<2>[num_elems]);
 }
 
 const JPH_Vector_2 *JPH_Vector_2_OffsetPtr(const JPH_Vector_2 *ptr, ptrdiff_t i)

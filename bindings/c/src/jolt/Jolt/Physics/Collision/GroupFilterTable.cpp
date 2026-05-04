@@ -24,7 +24,7 @@ JPH_GroupFilterTable *JPH_GroupFilterTable_Construct(const unsigned int *inNumSu
 
 JPH_GroupFilterTable *JPH_GroupFilterTable_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_GroupFilterTable *)(new JPH::GroupFilterTable[num_elems]{});
+    return (JPH_GroupFilterTable *)(new JPH::GroupFilterTable[num_elems]);
 }
 
 const JPH_GroupFilterTable *JPH_GroupFilterTable_OffsetPtr(const JPH_GroupFilterTable *ptr, ptrdiff_t i)

@@ -322,7 +322,7 @@ JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSe
 
 JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CompoundShapeSettings_SubShapeSettings *)(new JPH::CompoundShapeSettings::SubShapeSettings[num_elems]{});
+    return (JPH_CompoundShapeSettings_SubShapeSettings *)(new JPH::CompoundShapeSettings::SubShapeSettings[num_elems]);
 }
 
 JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_CompoundShapeSettings_SubShapeSettings *_other)
@@ -961,7 +961,7 @@ JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_DefaultConstruct(void)
 
 JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CompoundShape_SubShape *)(new JPH::CompoundShape::SubShape[num_elems]{});
+    return (JPH_CompoundShape_SubShape *)(new JPH::CompoundShape::SubShape[num_elems]);
 }
 
 JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_CompoundShape_SubShape *_other)

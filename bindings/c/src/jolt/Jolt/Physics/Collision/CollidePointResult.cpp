@@ -55,7 +55,7 @@ JPH_CollidePointResult *JPH_CollidePointResult_DefaultConstruct(void)
 
 JPH_CollidePointResult *JPH_CollidePointResult_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CollidePointResult *)(new JPH::CollidePointResult[num_elems]{});
+    return (JPH_CollidePointResult *)(new JPH::CollidePointResult[num_elems]);
 }
 
 JPH_CollidePointResult *JPH_CollidePointResult_ConstructFrom(JPH_BodyID mBodyID, const JPH_SubShapeID *mSubShapeID2)

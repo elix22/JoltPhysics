@@ -68,7 +68,7 @@ JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_Default
 
 JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_OffsetCenterOfMassShapeSettings *)(new JPH::OffsetCenterOfMassShapeSettings[num_elems]{});
+    return (JPH_OffsetCenterOfMassShapeSettings *)(new JPH::OffsetCenterOfMassShapeSettings[num_elems]);
 }
 
 const JPH_OffsetCenterOfMassShapeSettings *JPH_OffsetCenterOfMassShapeSettings_OffsetPtr(const JPH_OffsetCenterOfMassShapeSettings *ptr, ptrdiff_t i)
@@ -372,7 +372,7 @@ JPH_OffsetCenterOfMassShape *JPH_OffsetCenterOfMassShape_DefaultConstruct(void)
 
 JPH_OffsetCenterOfMassShape *JPH_OffsetCenterOfMassShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_OffsetCenterOfMassShape *)(new JPH::OffsetCenterOfMassShape[num_elems]{});
+    return (JPH_OffsetCenterOfMassShape *)(new JPH::OffsetCenterOfMassShape[num_elems]);
 }
 
 const JPH_OffsetCenterOfMassShape *JPH_OffsetCenterOfMassShape_OffsetPtr(const JPH_OffsetCenterOfMassShape *ptr, ptrdiff_t i)

@@ -42,7 +42,7 @@ JPH_BodyID JPH_BodyID_DefaultConstruct(void)
 
 JPH_BodyID *JPH_BodyID_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_BodyID *)(new JPH::BodyID[num_elems]{});
+    return (JPH_BodyID *)(new JPH::BodyID[num_elems]);
 }
 
 JPH_BodyID JPH_BodyID_Construct_1(unsigned int inID)

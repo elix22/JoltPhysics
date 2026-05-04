@@ -20,7 +20,7 @@ JPH_NonCopyable *JPH_NonCopyable_DefaultConstruct(void)
 
 JPH_NonCopyable *JPH_NonCopyable_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_NonCopyable *)(new JPH::NonCopyable[num_elems]{});
+    return (JPH_NonCopyable *)(new JPH::NonCopyable[num_elems]);
 }
 
 const JPH_NonCopyable *JPH_NonCopyable_OffsetPtr(const JPH_NonCopyable *ptr, ptrdiff_t i)

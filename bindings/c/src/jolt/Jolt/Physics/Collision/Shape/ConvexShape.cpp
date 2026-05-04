@@ -776,7 +776,7 @@ JPH_ConvexShape_SupportBuffer *JPH_ConvexShape_SupportBuffer_DefaultConstruct(vo
 
 JPH_ConvexShape_SupportBuffer *JPH_ConvexShape_SupportBuffer_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ConvexShape_SupportBuffer *)(new JPH::ConvexShape::SupportBuffer[num_elems]{});
+    return (JPH_ConvexShape_SupportBuffer *)(new JPH::ConvexShape::SupportBuffer[num_elems]);
 }
 
 const JPH_ConvexShape_SupportBuffer *JPH_ConvexShape_SupportBuffer_OffsetPtr(const JPH_ConvexShape_SupportBuffer *ptr, ptrdiff_t i)

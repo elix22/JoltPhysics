@@ -401,7 +401,7 @@ JPH_BodyCreationSettings *JPH_BodyCreationSettings_DefaultConstruct(void)
 
 JPH_BodyCreationSettings *JPH_BodyCreationSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_BodyCreationSettings *)(new JPH::BodyCreationSettings[num_elems]{});
+    return (JPH_BodyCreationSettings *)(new JPH::BodyCreationSettings[num_elems]);
 }
 
 const JPH_BodyCreationSettings *JPH_BodyCreationSettings_OffsetPtr(const JPH_BodyCreationSettings *ptr, ptrdiff_t i)

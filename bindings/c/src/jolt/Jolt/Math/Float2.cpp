@@ -54,7 +54,7 @@ JPH_Float2 *JPH_Float2_DefaultConstruct(void)
 
 JPH_Float2 *JPH_Float2_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Float2 *)(new JPH::Float2[num_elems]{});
+    return (JPH_Float2 *)(new JPH::Float2[num_elems]);
 }
 
 const JPH_Float2 *JPH_Float2_OffsetPtr(const JPH_Float2 *ptr, ptrdiff_t i)

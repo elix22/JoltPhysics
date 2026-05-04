@@ -93,7 +93,7 @@ JPH_ContactManifold *JPH_ContactManifold_DefaultConstruct(void)
 
 JPH_ContactManifold *JPH_ContactManifold_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ContactManifold *)(new JPH::ContactManifold[num_elems]{});
+    return (JPH_ContactManifold *)(new JPH::ContactManifold[num_elems]);
 }
 
 JPH_ContactManifold *JPH_ContactManifold_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_ContactManifold *_other)
@@ -277,7 +277,7 @@ JPH_ContactSettings *JPH_ContactSettings_DefaultConstruct(void)
 
 JPH_ContactSettings *JPH_ContactSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ContactSettings *)(new JPH::ContactSettings[num_elems]{});
+    return (JPH_ContactSettings *)(new JPH::ContactSettings[num_elems]);
 }
 
 JPH_ContactSettings *JPH_ContactSettings_ConstructFrom(float mCombinedFriction, float mCombinedRestitution, float mInvMassScale1, float mInvInertiaScale1, float mInvMassScale2, float mInvInertiaScale2, bool mIsSensor, const JPH_Vec3 *mRelativeLinearSurfaceVelocity, const JPH_Vec3 *mRelativeAngularSurfaceVelocity)
@@ -340,7 +340,7 @@ JPH_ContactListener *JPH_ContactListener_DefaultConstruct(void)
 
 JPH_ContactListener *JPH_ContactListener_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ContactListener *)(new JPH::ContactListener[num_elems]{});
+    return (JPH_ContactListener *)(new JPH::ContactListener[num_elems]);
 }
 
 const JPH_ContactListener *JPH_ContactListener_OffsetPtr(const JPH_ContactListener *ptr, ptrdiff_t i)

@@ -24,7 +24,7 @@ Jolt_std_function_JPH_Vec3_from_JPH_Vec3 *Jolt_std_function_JPH_Vec3_from_JPH_Ve
 
 Jolt_std_function_JPH_Vec3_from_JPH_Vec3 *Jolt_std_function_JPH_Vec3_from_JPH_Vec3_DefaultConstructArray(size_t num_elems)
 {
-    return (Jolt_std_function_JPH_Vec3_from_JPH_Vec3 *)(new std::function<JPH::Vec3(JPH::Vec3)>[num_elems]{});
+    return (Jolt_std_function_JPH_Vec3_from_JPH_Vec3 *)(new std::function<JPH::Vec3(JPH::Vec3)>[num_elems]);
 }
 
 Jolt_std_function_JPH_Vec3_from_JPH_Vec3 *Jolt_std_function_JPH_Vec3_from_JPH_Vec3_ConstructFromAnother(Jolt_PassBy other_pass_by, Jolt_std_function_JPH_Vec3_from_JPH_Vec3 *other)

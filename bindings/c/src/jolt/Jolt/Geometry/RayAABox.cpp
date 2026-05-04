@@ -45,7 +45,7 @@ JPH_RayInvDirection *JPH_RayInvDirection_DefaultConstruct(void)
 
 JPH_RayInvDirection *JPH_RayInvDirection_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RayInvDirection *)(new JPH::RayInvDirection[num_elems]{});
+    return (JPH_RayInvDirection *)(new JPH::RayInvDirection[num_elems]);
 }
 
 const JPH_RayInvDirection *JPH_RayInvDirection_OffsetPtr(const JPH_RayInvDirection *ptr, ptrdiff_t i)

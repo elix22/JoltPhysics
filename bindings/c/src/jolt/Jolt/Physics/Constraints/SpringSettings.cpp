@@ -83,7 +83,7 @@ JPH_SpringSettings *JPH_SpringSettings_DefaultConstruct(void)
 
 JPH_SpringSettings *JPH_SpringSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SpringSettings *)(new JPH::SpringSettings[num_elems]{});
+    return (JPH_SpringSettings *)(new JPH::SpringSettings[num_elems]);
 }
 
 const JPH_SpringSettings *JPH_SpringSettings_OffsetPtr(const JPH_SpringSettings *ptr, ptrdiff_t i)

@@ -117,7 +117,7 @@ JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_DefaultConstruct(void)
 
 JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ConvexHullShapeSettings *)(new JPH::ConvexHullShapeSettings[num_elems]{});
+    return (JPH_ConvexHullShapeSettings *)(new JPH::ConvexHullShapeSettings[num_elems]);
 }
 
 const JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_OffsetPtr(const JPH_ConvexHullShapeSettings *ptr, ptrdiff_t i)
@@ -443,7 +443,7 @@ JPH_ConvexHullShape *JPH_ConvexHullShape_DefaultConstruct(void)
 
 JPH_ConvexHullShape *JPH_ConvexHullShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ConvexHullShape *)(new JPH::ConvexHullShape[num_elems]{});
+    return (JPH_ConvexHullShape *)(new JPH::ConvexHullShape[num_elems]);
 }
 
 const JPH_ConvexHullShape *JPH_ConvexHullShape_OffsetPtr(const JPH_ConvexHullShape *ptr, ptrdiff_t i)

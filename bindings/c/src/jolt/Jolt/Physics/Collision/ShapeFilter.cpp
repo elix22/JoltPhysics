@@ -42,7 +42,7 @@ JPH_ShapeFilter *JPH_ShapeFilter_DefaultConstruct(void)
 
 JPH_ShapeFilter *JPH_ShapeFilter_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ShapeFilter *)(new JPH::ShapeFilter[num_elems]{});
+    return (JPH_ShapeFilter *)(new JPH::ShapeFilter[num_elems]);
 }
 
 const JPH_ShapeFilter *JPH_ShapeFilter_OffsetPtr(const JPH_ShapeFilter *ptr, ptrdiff_t i)

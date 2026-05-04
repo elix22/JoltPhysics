@@ -91,7 +91,7 @@ JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_DefaultConstruct(void)
 
 JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_PlaneShapeSettings *)(new JPH::PlaneShapeSettings[num_elems]{});
+    return (JPH_PlaneShapeSettings *)(new JPH::PlaneShapeSettings[num_elems]);
 }
 
 const JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_OffsetPtr(const JPH_PlaneShapeSettings *ptr, ptrdiff_t i)
@@ -361,7 +361,7 @@ JPH_PlaneShape *JPH_PlaneShape_DefaultConstruct(void)
 
 JPH_PlaneShape *JPH_PlaneShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_PlaneShape *)(new JPH::PlaneShape[num_elems]{});
+    return (JPH_PlaneShape *)(new JPH::PlaneShape[num_elems]);
 }
 
 const JPH_PlaneShape *JPH_PlaneShape_OffsetPtr(const JPH_PlaneShape *ptr, ptrdiff_t i)

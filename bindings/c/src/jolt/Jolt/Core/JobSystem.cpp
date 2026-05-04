@@ -185,7 +185,7 @@ JPH_JobSystem_JobHandle *JPH_JobSystem_JobHandle_DefaultConstruct(void)
 
 JPH_JobSystem_JobHandle *JPH_JobSystem_JobHandle_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_JobSystem_JobHandle *)(new JPH::JobSystem::JobHandle[num_elems]{});
+    return (JPH_JobSystem_JobHandle *)(new JPH::JobSystem::JobHandle[num_elems]);
 }
 
 const JPH_JobSystem_JobHandle *JPH_JobSystem_JobHandle_OffsetPtr(const JPH_JobSystem_JobHandle *ptr, ptrdiff_t i)

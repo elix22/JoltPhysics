@@ -75,7 +75,7 @@ JPH_PhysicsSystem *JPH_PhysicsSystem_DefaultConstruct(void)
 
 JPH_PhysicsSystem *JPH_PhysicsSystem_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_PhysicsSystem *)(new JPH::PhysicsSystem[num_elems]{});
+    return (JPH_PhysicsSystem *)(new JPH::PhysicsSystem[num_elems]);
 }
 
 const JPH_PhysicsSystem *JPH_PhysicsSystem_OffsetPtr(const JPH_PhysicsSystem *ptr, ptrdiff_t i)

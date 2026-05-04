@@ -181,7 +181,7 @@ JPH_HeightFieldShapeSettings *JPH_HeightFieldShapeSettings_DefaultConstruct(void
 
 JPH_HeightFieldShapeSettings *JPH_HeightFieldShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_HeightFieldShapeSettings *)(new JPH::HeightFieldShapeSettings[num_elems]{});
+    return (JPH_HeightFieldShapeSettings *)(new JPH::HeightFieldShapeSettings[num_elems]);
 }
 
 const JPH_HeightFieldShapeSettings *JPH_HeightFieldShapeSettings_OffsetPtr(const JPH_HeightFieldShapeSettings *ptr, ptrdiff_t i)
@@ -472,7 +472,7 @@ JPH_HeightFieldShape *JPH_HeightFieldShape_DefaultConstruct(void)
 
 JPH_HeightFieldShape *JPH_HeightFieldShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_HeightFieldShape *)(new JPH::HeightFieldShape[num_elems]{});
+    return (JPH_HeightFieldShape *)(new JPH::HeightFieldShape[num_elems]);
 }
 
 const JPH_HeightFieldShape *JPH_HeightFieldShape_OffsetPtr(const JPH_HeightFieldShape *ptr, ptrdiff_t i)

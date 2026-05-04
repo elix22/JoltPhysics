@@ -44,7 +44,7 @@ JPH_BodyInterface *JPH_BodyInterface_DefaultConstruct(void)
 
 JPH_BodyInterface *JPH_BodyInterface_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_BodyInterface *)(new JPH::BodyInterface[num_elems]{});
+    return (JPH_BodyInterface *)(new JPH::BodyInterface[num_elems]);
 }
 
 const JPH_BodyInterface *JPH_BodyInterface_OffsetPtr(const JPH_BodyInterface *ptr, ptrdiff_t i)

@@ -35,7 +35,7 @@ JPH_ObjectLayerPairFilterMask *JPH_ObjectLayerPairFilterMask_DefaultConstruct(vo
 
 JPH_ObjectLayerPairFilterMask *JPH_ObjectLayerPairFilterMask_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ObjectLayerPairFilterMask *)(new JPH::ObjectLayerPairFilterMask[num_elems]{});
+    return (JPH_ObjectLayerPairFilterMask *)(new JPH::ObjectLayerPairFilterMask[num_elems]);
 }
 
 const JPH_ObjectLayerPairFilterMask *JPH_ObjectLayerPairFilterMask_OffsetPtr(const JPH_ObjectLayerPairFilterMask *ptr, ptrdiff_t i)

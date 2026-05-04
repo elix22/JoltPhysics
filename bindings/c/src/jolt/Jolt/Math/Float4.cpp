@@ -83,7 +83,7 @@ JPH_Float4 *JPH_Float4_DefaultConstruct(void)
 
 JPH_Float4 *JPH_Float4_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Float4 *)(new JPH::Float4[num_elems]{});
+    return (JPH_Float4 *)(new JPH::Float4[num_elems]);
 }
 
 const JPH_Float4 *JPH_Float4_OffsetPtr(const JPH_Float4 *ptr, ptrdiff_t i)

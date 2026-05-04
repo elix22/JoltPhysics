@@ -97,7 +97,7 @@ JPH_TransformedShape *JPH_TransformedShape_DefaultConstruct(void)
 
 JPH_TransformedShape *JPH_TransformedShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_TransformedShape *)(new JPH::TransformedShape[num_elems]{});
+    return (JPH_TransformedShape *)(new JPH::TransformedShape[num_elems]);
 }
 
 const JPH_TransformedShape *JPH_TransformedShape_OffsetPtr(const JPH_TransformedShape *ptr, ptrdiff_t i)

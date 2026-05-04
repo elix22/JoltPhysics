@@ -29,7 +29,7 @@ JPH_CharacterID *JPH_CharacterID_DefaultConstruct(void)
 
 JPH_CharacterID *JPH_CharacterID_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CharacterID *)(new JPH::CharacterID[num_elems]{});
+    return (JPH_CharacterID *)(new JPH::CharacterID[num_elems]);
 }
 
 const JPH_CharacterID *JPH_CharacterID_OffsetPtr(const JPH_CharacterID *ptr, ptrdiff_t i)

@@ -88,7 +88,7 @@ JPH_SphereShapeSettings *JPH_SphereShapeSettings_DefaultConstruct(void)
 
 JPH_SphereShapeSettings *JPH_SphereShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SphereShapeSettings *)(new JPH::SphereShapeSettings[num_elems]{});
+    return (JPH_SphereShapeSettings *)(new JPH::SphereShapeSettings[num_elems]);
 }
 
 const JPH_SphereShapeSettings *JPH_SphereShapeSettings_OffsetPtr(const JPH_SphereShapeSettings *ptr, ptrdiff_t i)
@@ -391,7 +391,7 @@ JPH_SphereShape *JPH_SphereShape_DefaultConstruct(void)
 
 JPH_SphereShape *JPH_SphereShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SphereShape *)(new JPH::SphereShape[num_elems]{});
+    return (JPH_SphereShape *)(new JPH::SphereShape[num_elems]);
 }
 
 const JPH_SphereShape *JPH_SphereShape_OffsetPtr(const JPH_SphereShape *ptr, ptrdiff_t i)

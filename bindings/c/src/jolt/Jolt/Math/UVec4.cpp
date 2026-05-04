@@ -41,7 +41,7 @@ JPH_UVec4 *JPH_UVec4_DefaultConstruct(void)
 
 JPH_UVec4 *JPH_UVec4_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_UVec4 *)(new JPH::UVec4[num_elems]{});
+    return (JPH_UVec4 *)(new JPH::UVec4[num_elems]);
 }
 
 const JPH_UVec4 *JPH_UVec4_OffsetPtr(const JPH_UVec4 *ptr, ptrdiff_t i)

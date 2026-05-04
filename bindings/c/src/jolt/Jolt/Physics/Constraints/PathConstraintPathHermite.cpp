@@ -29,7 +29,7 @@ JPH_PathConstraintPathHermite *JPH_PathConstraintPathHermite_DefaultConstruct(vo
 
 JPH_PathConstraintPathHermite *JPH_PathConstraintPathHermite_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_PathConstraintPathHermite *)(new JPH::PathConstraintPathHermite[num_elems]{});
+    return (JPH_PathConstraintPathHermite *)(new JPH::PathConstraintPathHermite[num_elems]);
 }
 
 const JPH_PathConstraintPathHermite *JPH_PathConstraintPathHermite_OffsetPtr(const JPH_PathConstraintPathHermite *ptr, ptrdiff_t i)
@@ -347,7 +347,7 @@ JPH_PathConstraintPathHermite_Point *JPH_PathConstraintPathHermite_Point_Default
 
 JPH_PathConstraintPathHermite_Point *JPH_PathConstraintPathHermite_Point_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_PathConstraintPathHermite_Point *)(new JPH::PathConstraintPathHermite::Point[num_elems]{});
+    return (JPH_PathConstraintPathHermite_Point *)(new JPH::PathConstraintPathHermite::Point[num_elems]);
 }
 
 JPH_PathConstraintPathHermite_Point *JPH_PathConstraintPathHermite_Point_ConstructFrom(const JPH_Vec3 *mPosition, const JPH_Vec3 *mTangent, const JPH_Vec3 *mNormal)

@@ -144,7 +144,7 @@ JPH_PointConstraintSettings *JPH_PointConstraintSettings_DefaultConstruct(void)
 
 JPH_PointConstraintSettings *JPH_PointConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_PointConstraintSettings *)(new JPH::PointConstraintSettings[num_elems]{});
+    return (JPH_PointConstraintSettings *)(new JPH::PointConstraintSettings[num_elems]);
 }
 
 const JPH_PointConstraintSettings *JPH_PointConstraintSettings_OffsetPtr(const JPH_PointConstraintSettings *ptr, ptrdiff_t i)

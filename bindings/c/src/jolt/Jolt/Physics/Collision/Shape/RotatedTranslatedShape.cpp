@@ -78,7 +78,7 @@ JPH_RotatedTranslatedShapeSettings *JPH_RotatedTranslatedShapeSettings_DefaultCo
 
 JPH_RotatedTranslatedShapeSettings *JPH_RotatedTranslatedShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RotatedTranslatedShapeSettings *)(new JPH::RotatedTranslatedShapeSettings[num_elems]{});
+    return (JPH_RotatedTranslatedShapeSettings *)(new JPH::RotatedTranslatedShapeSettings[num_elems]);
 }
 
 const JPH_RotatedTranslatedShapeSettings *JPH_RotatedTranslatedShapeSettings_OffsetPtr(const JPH_RotatedTranslatedShapeSettings *ptr, ptrdiff_t i)
@@ -384,7 +384,7 @@ JPH_RotatedTranslatedShape *JPH_RotatedTranslatedShape_DefaultConstruct(void)
 
 JPH_RotatedTranslatedShape *JPH_RotatedTranslatedShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RotatedTranslatedShape *)(new JPH::RotatedTranslatedShape[num_elems]{});
+    return (JPH_RotatedTranslatedShape *)(new JPH::RotatedTranslatedShape[num_elems]);
 }
 
 const JPH_RotatedTranslatedShape *JPH_RotatedTranslatedShape_OffsetPtr(const JPH_RotatedTranslatedShape *ptr, ptrdiff_t i)

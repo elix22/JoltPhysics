@@ -27,7 +27,7 @@ JPH_SkeletonMapper *JPH_SkeletonMapper_DefaultConstruct(void)
 
 JPH_SkeletonMapper *JPH_SkeletonMapper_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SkeletonMapper *)(new JPH::SkeletonMapper[num_elems]{});
+    return (JPH_SkeletonMapper *)(new JPH::SkeletonMapper[num_elems]);
 }
 
 const JPH_SkeletonMapper *JPH_SkeletonMapper_OffsetPtr(const JPH_SkeletonMapper *ptr, ptrdiff_t i)
@@ -238,7 +238,7 @@ JPH_SkeletonMapper_Mapping *JPH_SkeletonMapper_Mapping_DefaultConstruct(void)
 
 JPH_SkeletonMapper_Mapping *JPH_SkeletonMapper_Mapping_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SkeletonMapper_Mapping *)(new JPH::SkeletonMapper::Mapping[num_elems]{});
+    return (JPH_SkeletonMapper_Mapping *)(new JPH::SkeletonMapper::Mapping[num_elems]);
 }
 
 const JPH_SkeletonMapper_Mapping *JPH_SkeletonMapper_Mapping_OffsetPtr(const JPH_SkeletonMapper_Mapping *ptr, ptrdiff_t i)
@@ -295,7 +295,7 @@ JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_Chain_DefaultConstruct(void)
 
 JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_Chain_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SkeletonMapper_Chain *)(new JPH::SkeletonMapper::Chain[num_elems]{});
+    return (JPH_SkeletonMapper_Chain *)(new JPH::SkeletonMapper::Chain[num_elems]);
 }
 
 const JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_Chain_OffsetPtr(const JPH_SkeletonMapper_Chain *ptr, ptrdiff_t i)
@@ -375,7 +375,7 @@ JPH_SkeletonMapper_Unmapped *JPH_SkeletonMapper_Unmapped_DefaultConstruct(void)
 
 JPH_SkeletonMapper_Unmapped *JPH_SkeletonMapper_Unmapped_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SkeletonMapper_Unmapped *)(new JPH::SkeletonMapper::Unmapped[num_elems]{});
+    return (JPH_SkeletonMapper_Unmapped *)(new JPH::SkeletonMapper::Unmapped[num_elems]);
 }
 
 const JPH_SkeletonMapper_Unmapped *JPH_SkeletonMapper_Unmapped_OffsetPtr(const JPH_SkeletonMapper_Unmapped *ptr, ptrdiff_t i)
@@ -471,7 +471,7 @@ JPH_SkeletonMapper_Locked *JPH_SkeletonMapper_Locked_DefaultConstruct(void)
 
 JPH_SkeletonMapper_Locked *JPH_SkeletonMapper_Locked_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SkeletonMapper_Locked *)(new JPH::SkeletonMapper::Locked[num_elems]{});
+    return (JPH_SkeletonMapper_Locked *)(new JPH::SkeletonMapper::Locked[num_elems]);
 }
 
 JPH_SkeletonMapper_Locked *JPH_SkeletonMapper_Locked_ConstructFrom(int mJointIdx, int mParentJointIdx, const JPH_Vec3 *mTranslation)

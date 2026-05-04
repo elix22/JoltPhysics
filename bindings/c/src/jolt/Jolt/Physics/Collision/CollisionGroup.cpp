@@ -39,7 +39,7 @@ JPH_CollisionGroup *JPH_CollisionGroup_DefaultConstruct(void)
 
 JPH_CollisionGroup *JPH_CollisionGroup_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CollisionGroup *)(new JPH::CollisionGroup[num_elems]{});
+    return (JPH_CollisionGroup *)(new JPH::CollisionGroup[num_elems]);
 }
 
 const JPH_CollisionGroup *JPH_CollisionGroup_OffsetPtr(const JPH_CollisionGroup *ptr, ptrdiff_t i)

@@ -116,7 +116,7 @@ JPH_TaperedCapsuleShapeSettings *JPH_TaperedCapsuleShapeSettings_DefaultConstruc
 
 JPH_TaperedCapsuleShapeSettings *JPH_TaperedCapsuleShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_TaperedCapsuleShapeSettings *)(new JPH::TaperedCapsuleShapeSettings[num_elems]{});
+    return (JPH_TaperedCapsuleShapeSettings *)(new JPH::TaperedCapsuleShapeSettings[num_elems]);
 }
 
 const JPH_TaperedCapsuleShapeSettings *JPH_TaperedCapsuleShapeSettings_OffsetPtr(const JPH_TaperedCapsuleShapeSettings *ptr, ptrdiff_t i)
@@ -431,7 +431,7 @@ JPH_TaperedCapsuleShape *JPH_TaperedCapsuleShape_DefaultConstruct(void)
 
 JPH_TaperedCapsuleShape *JPH_TaperedCapsuleShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_TaperedCapsuleShape *)(new JPH::TaperedCapsuleShape[num_elems]{});
+    return (JPH_TaperedCapsuleShape *)(new JPH::TaperedCapsuleShape[num_elems]);
 }
 
 const JPH_TaperedCapsuleShape *JPH_TaperedCapsuleShape_OffsetPtr(const JPH_TaperedCapsuleShape *ptr, ptrdiff_t i)

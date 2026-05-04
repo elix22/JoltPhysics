@@ -28,7 +28,7 @@ JPH_SkeletonPose *JPH_SkeletonPose_DefaultConstruct(void)
 
 JPH_SkeletonPose *JPH_SkeletonPose_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SkeletonPose *)(new JPH::SkeletonPose[num_elems]{});
+    return (JPH_SkeletonPose *)(new JPH::SkeletonPose[num_elems]);
 }
 
 const JPH_SkeletonPose *JPH_SkeletonPose_OffsetPtr(const JPH_SkeletonPose *ptr, ptrdiff_t i)
@@ -283,7 +283,7 @@ JPH_SkeletonPose_DrawSettings *JPH_SkeletonPose_DrawSettings_DefaultConstruct(vo
 
 JPH_SkeletonPose_DrawSettings *JPH_SkeletonPose_DrawSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SkeletonPose_DrawSettings *)(new JPH::SkeletonPose::DrawSettings[num_elems]{});
+    return (JPH_SkeletonPose_DrawSettings *)(new JPH::SkeletonPose::DrawSettings[num_elems]);
 }
 
 JPH_SkeletonPose_DrawSettings *JPH_SkeletonPose_DrawSettings_ConstructFrom(bool mDrawJoints, bool mDrawJointOrientations, bool mDrawJointNames)

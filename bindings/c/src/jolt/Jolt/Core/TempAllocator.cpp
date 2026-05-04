@@ -381,7 +381,7 @@ JPH_TempAllocatorMalloc *JPH_TempAllocatorMalloc_DefaultConstruct(void)
 
 JPH_TempAllocatorMalloc *JPH_TempAllocatorMalloc_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_TempAllocatorMalloc *)(new JPH::TempAllocatorMalloc[num_elems]{});
+    return (JPH_TempAllocatorMalloc *)(new JPH::TempAllocatorMalloc[num_elems]);
 }
 
 const JPH_TempAllocatorMalloc *JPH_TempAllocatorMalloc_OffsetPtr(const JPH_TempAllocatorMalloc *ptr, ptrdiff_t i)

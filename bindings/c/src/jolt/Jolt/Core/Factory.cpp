@@ -38,7 +38,7 @@ JPH_Factory *JPH_Factory_DefaultConstruct(void)
 
 JPH_Factory *JPH_Factory_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Factory *)(new JPH::Factory[num_elems]{});
+    return (JPH_Factory *)(new JPH::Factory[num_elems]);
 }
 
 const JPH_Factory *JPH_Factory_OffsetPtr(const JPH_Factory *ptr, ptrdiff_t i)

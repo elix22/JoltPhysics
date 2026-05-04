@@ -199,7 +199,7 @@ JPH_FixedConstraintSettings *JPH_FixedConstraintSettings_DefaultConstruct(void)
 
 JPH_FixedConstraintSettings *JPH_FixedConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_FixedConstraintSettings *)(new JPH::FixedConstraintSettings[num_elems]{});
+    return (JPH_FixedConstraintSettings *)(new JPH::FixedConstraintSettings[num_elems]);
 }
 
 const JPH_FixedConstraintSettings *JPH_FixedConstraintSettings_OffsetPtr(const JPH_FixedConstraintSettings *ptr, ptrdiff_t i)

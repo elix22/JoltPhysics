@@ -179,7 +179,7 @@ JPH_ConeConstraintSettings *JPH_ConeConstraintSettings_DefaultConstruct(void)
 
 JPH_ConeConstraintSettings *JPH_ConeConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ConeConstraintSettings *)(new JPH::ConeConstraintSettings[num_elems]{});
+    return (JPH_ConeConstraintSettings *)(new JPH::ConeConstraintSettings[num_elems]);
 }
 
 const JPH_ConeConstraintSettings *JPH_ConeConstraintSettings_OffsetPtr(const JPH_ConeConstraintSettings *ptr, ptrdiff_t i)

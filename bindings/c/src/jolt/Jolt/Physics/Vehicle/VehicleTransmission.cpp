@@ -128,7 +128,7 @@ JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_DefaultConstruc
 
 JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_VehicleTransmissionSettings *)(new JPH::VehicleTransmissionSettings[num_elems]{});
+    return (JPH_VehicleTransmissionSettings *)(new JPH::VehicleTransmissionSettings[num_elems]);
 }
 
 JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_VehicleTransmissionSettings *_other)
@@ -349,7 +349,7 @@ JPH_VehicleTransmission *JPH_VehicleTransmission_DefaultConstruct(void)
 
 JPH_VehicleTransmission *JPH_VehicleTransmission_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_VehicleTransmission *)(new JPH::VehicleTransmission[num_elems]{});
+    return (JPH_VehicleTransmission *)(new JPH::VehicleTransmission[num_elems]);
 }
 
 const JPH_VehicleTransmission *JPH_VehicleTransmission_OffsetPtr(const JPH_VehicleTransmission *ptr, ptrdiff_t i)

@@ -43,7 +43,7 @@ JPH_RagdollSettings *JPH_RagdollSettings_DefaultConstruct(void)
 
 JPH_RagdollSettings *JPH_RagdollSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RagdollSettings *)(new JPH::RagdollSettings[num_elems]{});
+    return (JPH_RagdollSettings *)(new JPH::RagdollSettings[num_elems]);
 }
 
 const JPH_RagdollSettings *JPH_RagdollSettings_OffsetPtr(const JPH_RagdollSettings *ptr, ptrdiff_t i)
@@ -658,7 +658,7 @@ JPH_RagdollSettings_Part *JPH_RagdollSettings_Part_DefaultConstruct(void)
 
 JPH_RagdollSettings_Part *JPH_RagdollSettings_Part_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RagdollSettings_Part *)(new JPH::RagdollSettings::Part[num_elems]{});
+    return (JPH_RagdollSettings_Part *)(new JPH::RagdollSettings::Part[num_elems]);
 }
 
 const JPH_RagdollSettings_Part *JPH_RagdollSettings_Part_OffsetPtr(const JPH_RagdollSettings_Part *ptr, ptrdiff_t i)
@@ -856,7 +856,7 @@ JPH_RagdollSettings_AdditionalConstraint *JPH_RagdollSettings_AdditionalConstrai
 
 JPH_RagdollSettings_AdditionalConstraint *JPH_RagdollSettings_AdditionalConstraint_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RagdollSettings_AdditionalConstraint *)(new JPH::RagdollSettings::AdditionalConstraint[num_elems]{});
+    return (JPH_RagdollSettings_AdditionalConstraint *)(new JPH::RagdollSettings::AdditionalConstraint[num_elems]);
 }
 
 const JPH_RagdollSettings_AdditionalConstraint *JPH_RagdollSettings_AdditionalConstraint_OffsetPtr(const JPH_RagdollSettings_AdditionalConstraint *ptr, ptrdiff_t i)

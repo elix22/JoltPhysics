@@ -26,7 +26,7 @@ JPH_SubShapeIDPair *JPH_SubShapeIDPair_DefaultConstruct(void)
 
 JPH_SubShapeIDPair *JPH_SubShapeIDPair_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SubShapeIDPair *)(new JPH::SubShapeIDPair[num_elems]{});
+    return (JPH_SubShapeIDPair *)(new JPH::SubShapeIDPair[num_elems]);
 }
 
 const JPH_SubShapeIDPair *JPH_SubShapeIDPair_OffsetPtr(const JPH_SubShapeIDPair *ptr, ptrdiff_t i)

@@ -100,7 +100,7 @@ JPH_VehicleEngineSettings *JPH_VehicleEngineSettings_DefaultConstruct(void)
 
 JPH_VehicleEngineSettings *JPH_VehicleEngineSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_VehicleEngineSettings *)(new JPH::VehicleEngineSettings[num_elems]{});
+    return (JPH_VehicleEngineSettings *)(new JPH::VehicleEngineSettings[num_elems]);
 }
 
 const JPH_VehicleEngineSettings *JPH_VehicleEngineSettings_OffsetPtr(const JPH_VehicleEngineSettings *ptr, ptrdiff_t i)
@@ -306,7 +306,7 @@ JPH_VehicleEngine *JPH_VehicleEngine_DefaultConstruct(void)
 
 JPH_VehicleEngine *JPH_VehicleEngine_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_VehicleEngine *)(new JPH::VehicleEngine[num_elems]{});
+    return (JPH_VehicleEngine *)(new JPH::VehicleEngine[num_elems]);
 }
 
 const JPH_VehicleEngine *JPH_VehicleEngine_OffsetPtr(const JPH_VehicleEngine *ptr, ptrdiff_t i)

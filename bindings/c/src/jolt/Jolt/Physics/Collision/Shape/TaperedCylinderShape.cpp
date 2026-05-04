@@ -130,7 +130,7 @@ JPH_TaperedCylinderShapeSettings *JPH_TaperedCylinderShapeSettings_DefaultConstr
 
 JPH_TaperedCylinderShapeSettings *JPH_TaperedCylinderShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_TaperedCylinderShapeSettings *)(new JPH::TaperedCylinderShapeSettings[num_elems]{});
+    return (JPH_TaperedCylinderShapeSettings *)(new JPH::TaperedCylinderShapeSettings[num_elems]);
 }
 
 const JPH_TaperedCylinderShapeSettings *JPH_TaperedCylinderShapeSettings_OffsetPtr(const JPH_TaperedCylinderShapeSettings *ptr, ptrdiff_t i)
@@ -437,7 +437,7 @@ JPH_TaperedCylinderShape *JPH_TaperedCylinderShape_DefaultConstruct(void)
 
 JPH_TaperedCylinderShape *JPH_TaperedCylinderShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_TaperedCylinderShape *)(new JPH::TaperedCylinderShape[num_elems]{});
+    return (JPH_TaperedCylinderShape *)(new JPH::TaperedCylinderShape[num_elems]);
 }
 
 const JPH_TaperedCylinderShape *JPH_TaperedCylinderShape_OffsetPtr(const JPH_TaperedCylinderShape *ptr, ptrdiff_t i)

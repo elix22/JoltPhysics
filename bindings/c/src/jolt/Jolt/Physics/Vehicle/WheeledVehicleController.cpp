@@ -271,7 +271,7 @@ JPH_WheelSettingsWV *JPH_WheelSettingsWV_DefaultConstruct(void)
 
 JPH_WheelSettingsWV *JPH_WheelSettingsWV_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_WheelSettingsWV *)(new JPH::WheelSettingsWV[num_elems]{});
+    return (JPH_WheelSettingsWV *)(new JPH::WheelSettingsWV[num_elems]);
 }
 
 const JPH_WheelSettingsWV *JPH_WheelSettingsWV_OffsetPtr(const JPH_WheelSettingsWV *ptr, ptrdiff_t i)
@@ -928,7 +928,7 @@ JPH_WheeledVehicleControllerSettings *JPH_WheeledVehicleControllerSettings_Defau
 
 JPH_WheeledVehicleControllerSettings *JPH_WheeledVehicleControllerSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_WheeledVehicleControllerSettings *)(new JPH::WheeledVehicleControllerSettings[num_elems]{});
+    return (JPH_WheeledVehicleControllerSettings *)(new JPH::WheeledVehicleControllerSettings[num_elems]);
 }
 
 const JPH_WheeledVehicleControllerSettings *JPH_WheeledVehicleControllerSettings_OffsetPtr(const JPH_WheeledVehicleControllerSettings *ptr, ptrdiff_t i)

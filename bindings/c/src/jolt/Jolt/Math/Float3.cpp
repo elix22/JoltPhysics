@@ -68,7 +68,7 @@ JPH_Float3 *JPH_Float3_DefaultConstruct(void)
 
 JPH_Float3 *JPH_Float3_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Float3 *)(new JPH::Float3[num_elems]{});
+    return (JPH_Float3 *)(new JPH::Float3[num_elems]);
 }
 
 const JPH_Float3 *JPH_Float3_OffsetPtr(const JPH_Float3 *ptr, ptrdiff_t i)

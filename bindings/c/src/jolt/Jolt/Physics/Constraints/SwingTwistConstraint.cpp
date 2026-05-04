@@ -281,7 +281,7 @@ JPH_SwingTwistConstraintSettings *JPH_SwingTwistConstraintSettings_DefaultConstr
 
 JPH_SwingTwistConstraintSettings *JPH_SwingTwistConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SwingTwistConstraintSettings *)(new JPH::SwingTwistConstraintSettings[num_elems]{});
+    return (JPH_SwingTwistConstraintSettings *)(new JPH::SwingTwistConstraintSettings[num_elems]);
 }
 
 const JPH_SwingTwistConstraintSettings *JPH_SwingTwistConstraintSettings_OffsetPtr(const JPH_SwingTwistConstraintSettings *ptr, ptrdiff_t i)

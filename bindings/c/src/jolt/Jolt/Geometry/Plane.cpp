@@ -28,7 +28,7 @@ JPH_Plane *JPH_Plane_DefaultConstruct(void)
 
 JPH_Plane *JPH_Plane_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Plane *)(new JPH::Plane[num_elems]{});
+    return (JPH_Plane *)(new JPH::Plane[num_elems]);
 }
 
 const JPH_Plane *JPH_Plane_OffsetPtr(const JPH_Plane *ptr, ptrdiff_t i)

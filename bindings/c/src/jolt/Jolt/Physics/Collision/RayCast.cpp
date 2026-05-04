@@ -46,7 +46,7 @@ JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH
 
 JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast *)(new JPH::RayCastT<JPH::Vec3, JPH::Mat44, JPH::RayCast>[num_elems]{});
+    return (JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast *)(new JPH::RayCastT<JPH::Vec3, JPH::Mat44, JPH::RayCast>[num_elems]);
 }
 
 const JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast_OffsetPtr(const JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RayCast *ptr, ptrdiff_t i)
@@ -219,7 +219,7 @@ JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JP
 
 JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast *)(new JPH::RayCastT<JPH::Vec3, JPH::Mat44, JPH::RRayCast>[num_elems]{});
+    return (JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast *)(new JPH::RayCastT<JPH::Vec3, JPH::Mat44, JPH::RRayCast>[num_elems]);
 }
 
 const JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast *JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast_OffsetPtr(const JPH_RayCastT_JPH_Vec3_JPH_Mat44_JPH_RRayCast *ptr, ptrdiff_t i)
@@ -392,7 +392,7 @@ JPH_RayCast *JPH_RayCast_DefaultConstruct(void)
 
 JPH_RayCast *JPH_RayCast_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RayCast *)(new JPH::RayCast[num_elems]{});
+    return (JPH_RayCast *)(new JPH::RayCast[num_elems]);
 }
 
 const JPH_RayCast *JPH_RayCast_OffsetPtr(const JPH_RayCast *ptr, ptrdiff_t i)
@@ -517,7 +517,7 @@ JPH_RRayCast *JPH_RRayCast_DefaultConstruct(void)
 
 JPH_RRayCast *JPH_RRayCast_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RRayCast *)(new JPH::RRayCast[num_elems]{});
+    return (JPH_RRayCast *)(new JPH::RRayCast[num_elems]);
 }
 
 const JPH_RRayCast *JPH_RRayCast_OffsetPtr(const JPH_RRayCast *ptr, ptrdiff_t i)
@@ -679,7 +679,7 @@ JPH_RayCastSettings *JPH_RayCastSettings_DefaultConstruct(void)
 
 JPH_RayCastSettings *JPH_RayCastSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RayCastSettings *)(new JPH::RayCastSettings[num_elems]{});
+    return (JPH_RayCastSettings *)(new JPH::RayCastSettings[num_elems]);
 }
 
 JPH_RayCastSettings *JPH_RayCastSettings_ConstructFrom(JPH_EBackFaceMode mBackFaceModeTriangles, JPH_EBackFaceMode mBackFaceModeConvex, bool mTreatConvexAsSolid)

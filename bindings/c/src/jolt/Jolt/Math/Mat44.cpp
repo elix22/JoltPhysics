@@ -28,7 +28,7 @@ JPH_Mat44 *JPH_Mat44_DefaultConstruct(void)
 
 JPH_Mat44 *JPH_Mat44_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Mat44 *)(new JPH::Mat44[num_elems]{});
+    return (JPH_Mat44 *)(new JPH::Mat44[num_elems]);
 }
 
 const JPH_Mat44 *JPH_Mat44_OffsetPtr(const JPH_Mat44 *ptr, ptrdiff_t i)

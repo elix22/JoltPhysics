@@ -338,7 +338,7 @@ JPH_CharacterVirtualSettings *JPH_CharacterVirtualSettings_DefaultConstruct(void
 
 JPH_CharacterVirtualSettings *JPH_CharacterVirtualSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CharacterVirtualSettings *)(new JPH::CharacterVirtualSettings[num_elems]{});
+    return (JPH_CharacterVirtualSettings *)(new JPH::CharacterVirtualSettings[num_elems]);
 }
 
 const JPH_CharacterVirtualSettings *JPH_CharacterVirtualSettings_OffsetPtr(const JPH_CharacterVirtualSettings *ptr, ptrdiff_t i)
@@ -575,7 +575,7 @@ JPH_CharacterContactSettings *JPH_CharacterContactSettings_DefaultConstruct(void
 
 JPH_CharacterContactSettings *JPH_CharacterContactSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CharacterContactSettings *)(new JPH::CharacterContactSettings[num_elems]{});
+    return (JPH_CharacterContactSettings *)(new JPH::CharacterContactSettings[num_elems]);
 }
 
 JPH_CharacterContactSettings *JPH_CharacterContactSettings_ConstructFrom(bool mCanPushCharacter, bool mCanReceiveImpulses)
@@ -631,7 +631,7 @@ JPH_CharacterContactListener *JPH_CharacterContactListener_DefaultConstruct(void
 
 JPH_CharacterContactListener *JPH_CharacterContactListener_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CharacterContactListener *)(new JPH::CharacterContactListener[num_elems]{});
+    return (JPH_CharacterContactListener *)(new JPH::CharacterContactListener[num_elems]);
 }
 
 const JPH_CharacterContactListener *JPH_CharacterContactListener_OffsetPtr(const JPH_CharacterContactListener *ptr, ptrdiff_t i)
@@ -853,7 +853,7 @@ JPH_CharacterVsCharacterCollisionSimple *JPH_CharacterVsCharacterCollisionSimple
 
 JPH_CharacterVsCharacterCollisionSimple *JPH_CharacterVsCharacterCollisionSimple_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CharacterVsCharacterCollisionSimple *)(new JPH::CharacterVsCharacterCollisionSimple[num_elems]{});
+    return (JPH_CharacterVsCharacterCollisionSimple *)(new JPH::CharacterVsCharacterCollisionSimple[num_elems]);
 }
 
 const JPH_CharacterVsCharacterCollisionSimple *JPH_CharacterVsCharacterCollisionSimple_OffsetPtr(const JPH_CharacterVsCharacterCollisionSimple *ptr, ptrdiff_t i)
@@ -1723,7 +1723,7 @@ JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdate
 
 JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CharacterVirtual_ExtendedUpdateSettings *)(new JPH::CharacterVirtual::ExtendedUpdateSettings[num_elems]{});
+    return (JPH_CharacterVirtual_ExtendedUpdateSettings *)(new JPH::CharacterVirtual::ExtendedUpdateSettings[num_elems]);
 }
 
 JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_ConstructFrom(const JPH_Vec3 *mStickToFloorStepDown, const JPH_Vec3 *mWalkStairsStepUp, float mWalkStairsMinStepForward, float mWalkStairsStepForwardTest, float mWalkStairsCosAngleForwardContact, const JPH_Vec3 *mWalkStairsStepDownExtra)
@@ -1828,7 +1828,7 @@ JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_DefaultConstruc
 
 JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CharacterVirtual_ContactKey *)(new JPH::CharacterVirtual::ContactKey[num_elems]{});
+    return (JPH_CharacterVirtual_ContactKey *)(new JPH::CharacterVirtual::ContactKey[num_elems]);
 }
 
 const JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_OffsetPtr(const JPH_CharacterVirtual_ContactKey *ptr, ptrdiff_t i)
@@ -2153,7 +2153,7 @@ JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_DefaultConstruct(void
 
 JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CharacterVirtual_Contact *)(new JPH::CharacterVirtual::Contact[num_elems]{});
+    return (JPH_CharacterVirtual_Contact *)(new JPH::CharacterVirtual::Contact[num_elems]);
 }
 
 const JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_OffsetPtr(const JPH_CharacterVirtual_Contact *ptr, ptrdiff_t i)

@@ -23,7 +23,7 @@ Jolt_std_pair_int_int *Jolt_std_pair_int_int_DefaultConstruct(void)
 
 Jolt_std_pair_int_int *Jolt_std_pair_int_int_DefaultConstructArray(size_t num_elems)
 {
-    return (Jolt_std_pair_int_int *)(new std::pair<int, int>[num_elems]{});
+    return (Jolt_std_pair_int_int *)(new std::pair<int, int>[num_elems]);
 }
 
 Jolt_std_pair_int_int *Jolt_std_pair_int_int_ConstructFromAnother(const Jolt_std_pair_int_int *other)

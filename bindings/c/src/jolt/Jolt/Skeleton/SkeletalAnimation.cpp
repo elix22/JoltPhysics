@@ -28,7 +28,7 @@ JPH_SkeletalAnimation *JPH_SkeletalAnimation_DefaultConstruct(void)
 
 JPH_SkeletalAnimation *JPH_SkeletalAnimation_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SkeletalAnimation *)(new JPH::SkeletalAnimation[num_elems]{});
+    return (JPH_SkeletalAnimation *)(new JPH::SkeletalAnimation[num_elems]);
 }
 
 const JPH_SkeletalAnimation *JPH_SkeletalAnimation_OffsetPtr(const JPH_SkeletalAnimation *ptr, ptrdiff_t i)
@@ -259,7 +259,7 @@ JPH_SkeletalAnimation_JointState *JPH_SkeletalAnimation_JointState_DefaultConstr
 
 JPH_SkeletalAnimation_JointState *JPH_SkeletalAnimation_JointState_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SkeletalAnimation_JointState *)(new JPH::SkeletalAnimation::JointState[num_elems]{});
+    return (JPH_SkeletalAnimation_JointState *)(new JPH::SkeletalAnimation::JointState[num_elems]);
 }
 
 JPH_SkeletalAnimation_JointState *JPH_SkeletalAnimation_JointState_ConstructFrom(const JPH_Quat *mRotation, const JPH_Vec3 *mTranslation)
@@ -438,7 +438,7 @@ JPH_SkeletalAnimation_Keyframe *JPH_SkeletalAnimation_Keyframe_DefaultConstruct(
 
 JPH_SkeletalAnimation_Keyframe *JPH_SkeletalAnimation_Keyframe_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SkeletalAnimation_Keyframe *)(new JPH::SkeletalAnimation::Keyframe[num_elems]{});
+    return (JPH_SkeletalAnimation_Keyframe *)(new JPH::SkeletalAnimation::Keyframe[num_elems]);
 }
 
 const JPH_SkeletalAnimation_Keyframe *JPH_SkeletalAnimation_Keyframe_OffsetPtr(const JPH_SkeletalAnimation_Keyframe *ptr, ptrdiff_t i)
@@ -602,7 +602,7 @@ JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_AnimatedJoint_Default
 
 JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_AnimatedJoint_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SkeletalAnimation_AnimatedJoint *)(new JPH::SkeletalAnimation::AnimatedJoint[num_elems]{});
+    return (JPH_SkeletalAnimation_AnimatedJoint *)(new JPH::SkeletalAnimation::AnimatedJoint[num_elems]);
 }
 
 JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_AnimatedJoint_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_SkeletalAnimation_AnimatedJoint *_other)

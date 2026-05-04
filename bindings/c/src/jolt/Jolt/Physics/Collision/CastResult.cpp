@@ -55,7 +55,7 @@ JPH_BroadPhaseCastResult *JPH_BroadPhaseCastResult_DefaultConstruct(void)
 
 JPH_BroadPhaseCastResult *JPH_BroadPhaseCastResult_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_BroadPhaseCastResult *)(new JPH::BroadPhaseCastResult[num_elems]{});
+    return (JPH_BroadPhaseCastResult *)(new JPH::BroadPhaseCastResult[num_elems]);
 }
 
 JPH_BroadPhaseCastResult *JPH_BroadPhaseCastResult_ConstructFrom(JPH_BodyID mBodyID, float mFraction)
@@ -242,7 +242,7 @@ JPH_RayCastResult *JPH_RayCastResult_DefaultConstruct(void)
 
 JPH_RayCastResult *JPH_RayCastResult_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RayCastResult *)(new JPH::RayCastResult[num_elems]{});
+    return (JPH_RayCastResult *)(new JPH::RayCastResult[num_elems]);
 }
 
 const JPH_RayCastResult *JPH_RayCastResult_OffsetPtr(const JPH_RayCastResult *ptr, ptrdiff_t i)

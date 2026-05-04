@@ -68,7 +68,7 @@ JPH_VehicleAntiRollBar *JPH_VehicleAntiRollBar_DefaultConstruct(void)
 
 JPH_VehicleAntiRollBar *JPH_VehicleAntiRollBar_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_VehicleAntiRollBar *)(new JPH::VehicleAntiRollBar[num_elems]{});
+    return (JPH_VehicleAntiRollBar *)(new JPH::VehicleAntiRollBar[num_elems]);
 }
 
 JPH_VehicleAntiRollBar *JPH_VehicleAntiRollBar_ConstructFrom(int mLeftWheel, int mRightWheel, float mStiffness)

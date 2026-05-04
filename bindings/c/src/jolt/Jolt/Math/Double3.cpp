@@ -68,7 +68,7 @@ JPH_Double3 *JPH_Double3_DefaultConstruct(void)
 
 JPH_Double3 *JPH_Double3_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Double3 *)(new JPH::Double3[num_elems]{});
+    return (JPH_Double3 *)(new JPH::Double3[num_elems]);
 }
 
 const JPH_Double3 *JPH_Double3_OffsetPtr(const JPH_Double3 *ptr, ptrdiff_t i)

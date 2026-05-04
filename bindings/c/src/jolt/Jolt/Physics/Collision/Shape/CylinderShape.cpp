@@ -117,7 +117,7 @@ JPH_CylinderShapeSettings *JPH_CylinderShapeSettings_DefaultConstruct(void)
 
 JPH_CylinderShapeSettings *JPH_CylinderShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CylinderShapeSettings *)(new JPH::CylinderShapeSettings[num_elems]{});
+    return (JPH_CylinderShapeSettings *)(new JPH::CylinderShapeSettings[num_elems]);
 }
 
 const JPH_CylinderShapeSettings *JPH_CylinderShapeSettings_OffsetPtr(const JPH_CylinderShapeSettings *ptr, ptrdiff_t i)
@@ -423,7 +423,7 @@ JPH_CylinderShape *JPH_CylinderShape_DefaultConstruct(void)
 
 JPH_CylinderShape *JPH_CylinderShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CylinderShape *)(new JPH::CylinderShape[num_elems]{});
+    return (JPH_CylinderShape *)(new JPH::CylinderShape[num_elems]);
 }
 
 const JPH_CylinderShape *JPH_CylinderShape_OffsetPtr(const JPH_CylinderShape *ptr, ptrdiff_t i)

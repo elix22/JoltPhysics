@@ -41,7 +41,7 @@ JPH_Matrix_2_2 *JPH_Matrix_2_2_DefaultConstruct(void)
 
 JPH_Matrix_2_2 *JPH_Matrix_2_2_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_Matrix_2_2 *)(new JPH::Matrix<2, 2>[num_elems]{});
+    return (JPH_Matrix_2_2 *)(new JPH::Matrix<2, 2>[num_elems]);
 }
 
 const JPH_Matrix_2_2 *JPH_Matrix_2_2_OffsetPtr(const JPH_Matrix_2_2 *ptr, ptrdiff_t i)

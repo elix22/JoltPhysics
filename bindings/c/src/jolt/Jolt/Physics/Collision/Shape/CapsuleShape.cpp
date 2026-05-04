@@ -103,7 +103,7 @@ JPH_CapsuleShapeSettings *JPH_CapsuleShapeSettings_DefaultConstruct(void)
 
 JPH_CapsuleShapeSettings *JPH_CapsuleShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CapsuleShapeSettings *)(new JPH::CapsuleShapeSettings[num_elems]{});
+    return (JPH_CapsuleShapeSettings *)(new JPH::CapsuleShapeSettings[num_elems]);
 }
 
 const JPH_CapsuleShapeSettings *JPH_CapsuleShapeSettings_OffsetPtr(const JPH_CapsuleShapeSettings *ptr, ptrdiff_t i)
@@ -417,7 +417,7 @@ JPH_CapsuleShape *JPH_CapsuleShape_DefaultConstruct(void)
 
 JPH_CapsuleShape *JPH_CapsuleShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_CapsuleShape *)(new JPH::CapsuleShape[num_elems]{});
+    return (JPH_CapsuleShape *)(new JPH::CapsuleShape[num_elems]);
 }
 
 const JPH_CapsuleShape *JPH_CapsuleShape_OffsetPtr(const JPH_CapsuleShape *ptr, ptrdiff_t i)

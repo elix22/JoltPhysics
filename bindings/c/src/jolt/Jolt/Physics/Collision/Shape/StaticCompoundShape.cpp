@@ -58,7 +58,7 @@ JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_DefaultConstruc
 
 JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_StaticCompoundShapeSettings *)(new JPH::StaticCompoundShapeSettings[num_elems]{});
+    return (JPH_StaticCompoundShapeSettings *)(new JPH::StaticCompoundShapeSettings[num_elems]);
 }
 
 const JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_OffsetPtr(const JPH_StaticCompoundShapeSettings *ptr, ptrdiff_t i)
@@ -346,7 +346,7 @@ JPH_StaticCompoundShape *JPH_StaticCompoundShape_DefaultConstruct(void)
 
 JPH_StaticCompoundShape *JPH_StaticCompoundShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_StaticCompoundShape *)(new JPH::StaticCompoundShape[num_elems]{});
+    return (JPH_StaticCompoundShape *)(new JPH::StaticCompoundShape[num_elems]);
 }
 
 const JPH_StaticCompoundShape *JPH_StaticCompoundShape_OffsetPtr(const JPH_StaticCompoundShape *ptr, ptrdiff_t i)

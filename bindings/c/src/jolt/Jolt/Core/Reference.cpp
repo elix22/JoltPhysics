@@ -38,7 +38,7 @@ JPH_RefTarget_JPH_ShapeSettings *JPH_RefTarget_JPH_ShapeSettings_DefaultConstruc
 
 JPH_RefTarget_JPH_ShapeSettings *JPH_RefTarget_JPH_ShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_ShapeSettings *)(new JPH::RefTarget<JPH::ShapeSettings>[num_elems]{});
+    return (JPH_RefTarget_JPH_ShapeSettings *)(new JPH::RefTarget<JPH::ShapeSettings>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_ShapeSettings *JPH_RefTarget_JPH_ShapeSettings_OffsetPtr(const JPH_RefTarget_JPH_ShapeSettings *ptr, ptrdiff_t i)
@@ -113,7 +113,7 @@ JPH_RefTarget_JPH_Shape *JPH_RefTarget_JPH_Shape_DefaultConstruct(void)
 
 JPH_RefTarget_JPH_Shape *JPH_RefTarget_JPH_Shape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_Shape *)(new JPH::RefTarget<JPH::Shape>[num_elems]{});
+    return (JPH_RefTarget_JPH_Shape *)(new JPH::RefTarget<JPH::Shape>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_Shape *JPH_RefTarget_JPH_Shape_OffsetPtr(const JPH_RefTarget_JPH_Shape *ptr, ptrdiff_t i)
@@ -188,7 +188,7 @@ JPH_RefTarget_JPH_PhysicsMaterial *JPH_RefTarget_JPH_PhysicsMaterial_DefaultCons
 
 JPH_RefTarget_JPH_PhysicsMaterial *JPH_RefTarget_JPH_PhysicsMaterial_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_PhysicsMaterial *)(new JPH::RefTarget<JPH::PhysicsMaterial>[num_elems]{});
+    return (JPH_RefTarget_JPH_PhysicsMaterial *)(new JPH::RefTarget<JPH::PhysicsMaterial>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_PhysicsMaterial *JPH_RefTarget_JPH_PhysicsMaterial_OffsetPtr(const JPH_RefTarget_JPH_PhysicsMaterial *ptr, ptrdiff_t i)
@@ -263,7 +263,7 @@ JPH_RefTarget_JPH_CharacterBaseSettings *JPH_RefTarget_JPH_CharacterBaseSettings
 
 JPH_RefTarget_JPH_CharacterBaseSettings *JPH_RefTarget_JPH_CharacterBaseSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_CharacterBaseSettings *)(new JPH::RefTarget<JPH::CharacterBaseSettings>[num_elems]{});
+    return (JPH_RefTarget_JPH_CharacterBaseSettings *)(new JPH::RefTarget<JPH::CharacterBaseSettings>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_CharacterBaseSettings *JPH_RefTarget_JPH_CharacterBaseSettings_OffsetPtr(const JPH_RefTarget_JPH_CharacterBaseSettings *ptr, ptrdiff_t i)
@@ -338,7 +338,7 @@ JPH_RefTarget_JPH_CharacterBase *JPH_RefTarget_JPH_CharacterBase_DefaultConstruc
 
 JPH_RefTarget_JPH_CharacterBase *JPH_RefTarget_JPH_CharacterBase_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_CharacterBase *)(new JPH::RefTarget<JPH::CharacterBase>[num_elems]{});
+    return (JPH_RefTarget_JPH_CharacterBase *)(new JPH::RefTarget<JPH::CharacterBase>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_CharacterBase *JPH_RefTarget_JPH_CharacterBase_OffsetPtr(const JPH_RefTarget_JPH_CharacterBase *ptr, ptrdiff_t i)
@@ -413,7 +413,7 @@ JPH_RefTarget_JPH_ConstraintSettings *JPH_RefTarget_JPH_ConstraintSettings_Defau
 
 JPH_RefTarget_JPH_ConstraintSettings *JPH_RefTarget_JPH_ConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_ConstraintSettings *)(new JPH::RefTarget<JPH::ConstraintSettings>[num_elems]{});
+    return (JPH_RefTarget_JPH_ConstraintSettings *)(new JPH::RefTarget<JPH::ConstraintSettings>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_ConstraintSettings *JPH_RefTarget_JPH_ConstraintSettings_OffsetPtr(const JPH_RefTarget_JPH_ConstraintSettings *ptr, ptrdiff_t i)
@@ -488,7 +488,7 @@ JPH_RefTarget_JPH_Constraint *JPH_RefTarget_JPH_Constraint_DefaultConstruct(void
 
 JPH_RefTarget_JPH_Constraint *JPH_RefTarget_JPH_Constraint_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_Constraint *)(new JPH::RefTarget<JPH::Constraint>[num_elems]{});
+    return (JPH_RefTarget_JPH_Constraint *)(new JPH::RefTarget<JPH::Constraint>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_Constraint *JPH_RefTarget_JPH_Constraint_OffsetPtr(const JPH_RefTarget_JPH_Constraint *ptr, ptrdiff_t i)
@@ -563,7 +563,7 @@ JPH_RefTarget_JPH_GroupFilter *JPH_RefTarget_JPH_GroupFilter_DefaultConstruct(vo
 
 JPH_RefTarget_JPH_GroupFilter *JPH_RefTarget_JPH_GroupFilter_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_GroupFilter *)(new JPH::RefTarget<JPH::GroupFilter>[num_elems]{});
+    return (JPH_RefTarget_JPH_GroupFilter *)(new JPH::RefTarget<JPH::GroupFilter>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_GroupFilter *JPH_RefTarget_JPH_GroupFilter_OffsetPtr(const JPH_RefTarget_JPH_GroupFilter *ptr, ptrdiff_t i)
@@ -638,7 +638,7 @@ JPH_RefTarget_JPH_VehicleCollisionTester *JPH_RefTarget_JPH_VehicleCollisionTest
 
 JPH_RefTarget_JPH_VehicleCollisionTester *JPH_RefTarget_JPH_VehicleCollisionTester_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_VehicleCollisionTester *)(new JPH::RefTarget<JPH::VehicleCollisionTester>[num_elems]{});
+    return (JPH_RefTarget_JPH_VehicleCollisionTester *)(new JPH::RefTarget<JPH::VehicleCollisionTester>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_VehicleCollisionTester *JPH_RefTarget_JPH_VehicleCollisionTester_OffsetPtr(const JPH_RefTarget_JPH_VehicleCollisionTester *ptr, ptrdiff_t i)
@@ -713,7 +713,7 @@ JPH_RefTarget_JPH_WheelSettings *JPH_RefTarget_JPH_WheelSettings_DefaultConstruc
 
 JPH_RefTarget_JPH_WheelSettings *JPH_RefTarget_JPH_WheelSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_WheelSettings *)(new JPH::RefTarget<JPH::WheelSettings>[num_elems]{});
+    return (JPH_RefTarget_JPH_WheelSettings *)(new JPH::RefTarget<JPH::WheelSettings>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_WheelSettings *JPH_RefTarget_JPH_WheelSettings_OffsetPtr(const JPH_RefTarget_JPH_WheelSettings *ptr, ptrdiff_t i)
@@ -788,7 +788,7 @@ JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geomet
 
 JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_DebugRenderer_Geometry *)(new JPH::RefTarget<JPH::DebugRenderer::Geometry>[num_elems]{});
+    return (JPH_RefTarget_JPH_DebugRenderer_Geometry *)(new JPH::RefTarget<JPH::DebugRenderer::Geometry>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_DebugRenderer_Geometry *JPH_RefTarget_JPH_DebugRenderer_Geometry_OffsetPtr(const JPH_RefTarget_JPH_DebugRenderer_Geometry *ptr, ptrdiff_t i)
@@ -863,7 +863,7 @@ JPH_RefTarget_JPH_VehicleControllerSettings *JPH_RefTarget_JPH_VehicleController
 
 JPH_RefTarget_JPH_VehicleControllerSettings *JPH_RefTarget_JPH_VehicleControllerSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_VehicleControllerSettings *)(new JPH::RefTarget<JPH::VehicleControllerSettings>[num_elems]{});
+    return (JPH_RefTarget_JPH_VehicleControllerSettings *)(new JPH::RefTarget<JPH::VehicleControllerSettings>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_VehicleControllerSettings *JPH_RefTarget_JPH_VehicleControllerSettings_OffsetPtr(const JPH_RefTarget_JPH_VehicleControllerSettings *ptr, ptrdiff_t i)
@@ -938,7 +938,7 @@ JPH_RefTarget_JPH_SoftBodySharedSettings *JPH_RefTarget_JPH_SoftBodySharedSettin
 
 JPH_RefTarget_JPH_SoftBodySharedSettings *JPH_RefTarget_JPH_SoftBodySharedSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_SoftBodySharedSettings *)(new JPH::RefTarget<JPH::SoftBodySharedSettings>[num_elems]{});
+    return (JPH_RefTarget_JPH_SoftBodySharedSettings *)(new JPH::RefTarget<JPH::SoftBodySharedSettings>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_SoftBodySharedSettings *JPH_RefTarget_JPH_SoftBodySharedSettings_OffsetPtr(const JPH_RefTarget_JPH_SoftBodySharedSettings *ptr, ptrdiff_t i)
@@ -1013,7 +1013,7 @@ JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_DefaultConstruct(void)
 
 JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_Skeleton *)(new JPH::RefTarget<JPH::Skeleton>[num_elems]{});
+    return (JPH_RefTarget_JPH_Skeleton *)(new JPH::RefTarget<JPH::Skeleton>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_Skeleton *JPH_RefTarget_JPH_Skeleton_OffsetPtr(const JPH_RefTarget_JPH_Skeleton *ptr, ptrdiff_t i)
@@ -1088,7 +1088,7 @@ JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_Default
 
 JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_SkeletalAnimation *)(new JPH::RefTarget<JPH::SkeletalAnimation>[num_elems]{});
+    return (JPH_RefTarget_JPH_SkeletalAnimation *)(new JPH::RefTarget<JPH::SkeletalAnimation>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_SkeletalAnimation *JPH_RefTarget_JPH_SkeletalAnimation_OffsetPtr(const JPH_RefTarget_JPH_SkeletalAnimation *ptr, ptrdiff_t i)
@@ -1163,7 +1163,7 @@ JPH_RefTarget_JPH_RagdollSettings *JPH_RefTarget_JPH_RagdollSettings_DefaultCons
 
 JPH_RefTarget_JPH_RagdollSettings *JPH_RefTarget_JPH_RagdollSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_RagdollSettings *)(new JPH::RefTarget<JPH::RagdollSettings>[num_elems]{});
+    return (JPH_RefTarget_JPH_RagdollSettings *)(new JPH::RefTarget<JPH::RagdollSettings>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_RagdollSettings *JPH_RefTarget_JPH_RagdollSettings_OffsetPtr(const JPH_RefTarget_JPH_RagdollSettings *ptr, ptrdiff_t i)
@@ -1238,7 +1238,7 @@ JPH_RefTarget_JPH_Ragdoll *JPH_RefTarget_JPH_Ragdoll_DefaultConstruct(void)
 
 JPH_RefTarget_JPH_Ragdoll *JPH_RefTarget_JPH_Ragdoll_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_Ragdoll *)(new JPH::RefTarget<JPH::Ragdoll>[num_elems]{});
+    return (JPH_RefTarget_JPH_Ragdoll *)(new JPH::RefTarget<JPH::Ragdoll>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_Ragdoll *JPH_RefTarget_JPH_Ragdoll_OffsetPtr(const JPH_RefTarget_JPH_Ragdoll *ptr, ptrdiff_t i)
@@ -1313,7 +1313,7 @@ JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_Defau
 
 JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_PathConstraintPath *)(new JPH::RefTarget<JPH::PathConstraintPath>[num_elems]{});
+    return (JPH_RefTarget_JPH_PathConstraintPath *)(new JPH::RefTarget<JPH::PathConstraintPath>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_PathConstraintPath *JPH_RefTarget_JPH_PathConstraintPath_OffsetPtr(const JPH_RefTarget_JPH_PathConstraintPath *ptr, ptrdiff_t i)
@@ -1388,7 +1388,7 @@ JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_DefaultConstr
 
 JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_RefTarget_JPH_SkeletonMapper *)(new JPH::RefTarget<JPH::SkeletonMapper>[num_elems]{});
+    return (JPH_RefTarget_JPH_SkeletonMapper *)(new JPH::RefTarget<JPH::SkeletonMapper>[num_elems]);
 }
 
 const JPH_RefTarget_JPH_SkeletonMapper *JPH_RefTarget_JPH_SkeletonMapper_OffsetPtr(const JPH_RefTarget_JPH_SkeletonMapper *ptr, ptrdiff_t i)

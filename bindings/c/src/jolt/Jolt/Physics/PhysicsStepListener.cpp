@@ -84,7 +84,7 @@ JPH_PhysicsStepListenerContext *JPH_PhysicsStepListenerContext_DefaultConstruct(
 
 JPH_PhysicsStepListenerContext *JPH_PhysicsStepListenerContext_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_PhysicsStepListenerContext *)(new JPH::PhysicsStepListenerContext[num_elems]{});
+    return (JPH_PhysicsStepListenerContext *)(new JPH::PhysicsStepListenerContext[num_elems]);
 }
 
 JPH_PhysicsStepListenerContext *JPH_PhysicsStepListenerContext_ConstructFrom(float mDeltaTime, bool mIsFirstStep, bool mIsLastStep, JPH_PhysicsSystem *mPhysicsSystem)

@@ -66,7 +66,7 @@ JPH_EmptyShapeSettings *JPH_EmptyShapeSettings_DefaultConstruct(void)
 
 JPH_EmptyShapeSettings *JPH_EmptyShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_EmptyShapeSettings *)(new JPH::EmptyShapeSettings[num_elems]{});
+    return (JPH_EmptyShapeSettings *)(new JPH::EmptyShapeSettings[num_elems]);
 }
 
 const JPH_EmptyShapeSettings *JPH_EmptyShapeSettings_OffsetPtr(const JPH_EmptyShapeSettings *ptr, ptrdiff_t i)
@@ -333,7 +333,7 @@ JPH_EmptyShape *JPH_EmptyShape_DefaultConstruct(void)
 
 JPH_EmptyShape *JPH_EmptyShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_EmptyShape *)(new JPH::EmptyShape[num_elems]{});
+    return (JPH_EmptyShape *)(new JPH::EmptyShape[num_elems]);
 }
 
 const JPH_EmptyShape *JPH_EmptyShape_OffsetPtr(const JPH_EmptyShape *ptr, ptrdiff_t i)

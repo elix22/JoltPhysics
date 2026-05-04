@@ -94,7 +94,7 @@ JPH_MotorSettings *JPH_MotorSettings_DefaultConstruct(void)
 
 JPH_MotorSettings *JPH_MotorSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_MotorSettings *)(new JPH::MotorSettings[num_elems]{});
+    return (JPH_MotorSettings *)(new JPH::MotorSettings[num_elems]);
 }
 
 const JPH_MotorSettings *JPH_MotorSettings_OffsetPtr(const JPH_MotorSettings *ptr, ptrdiff_t i)

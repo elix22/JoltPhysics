@@ -274,7 +274,7 @@ JPH_SoftBodyCreationSettings *JPH_SoftBodyCreationSettings_DefaultConstruct(void
 
 JPH_SoftBodyCreationSettings *JPH_SoftBodyCreationSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_SoftBodyCreationSettings *)(new JPH::SoftBodyCreationSettings[num_elems]{});
+    return (JPH_SoftBodyCreationSettings *)(new JPH::SoftBodyCreationSettings[num_elems]);
 }
 
 const JPH_SoftBodyCreationSettings *JPH_SoftBodyCreationSettings_OffsetPtr(const JPH_SoftBodyCreationSettings *ptr, ptrdiff_t i)

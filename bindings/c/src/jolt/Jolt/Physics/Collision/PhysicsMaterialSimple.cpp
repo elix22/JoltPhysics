@@ -27,7 +27,7 @@ JPH_PhysicsMaterialSimple *JPH_PhysicsMaterialSimple_DefaultConstruct(void)
 
 JPH_PhysicsMaterialSimple *JPH_PhysicsMaterialSimple_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_PhysicsMaterialSimple *)(new JPH::PhysicsMaterialSimple[num_elems]{});
+    return (JPH_PhysicsMaterialSimple *)(new JPH::PhysicsMaterialSimple[num_elems]);
 }
 
 const JPH_PhysicsMaterialSimple *JPH_PhysicsMaterialSimple_OffsetPtr(const JPH_PhysicsMaterialSimple *ptr, ptrdiff_t i)

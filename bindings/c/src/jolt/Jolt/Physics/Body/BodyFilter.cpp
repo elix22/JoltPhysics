@@ -25,7 +25,7 @@ JPH_BodyFilter *JPH_BodyFilter_DefaultConstruct(void)
 
 JPH_BodyFilter *JPH_BodyFilter_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_BodyFilter *)(new JPH::BodyFilter[num_elems]{});
+    return (JPH_BodyFilter *)(new JPH::BodyFilter[num_elems]);
 }
 
 const JPH_BodyFilter *JPH_BodyFilter_OffsetPtr(const JPH_BodyFilter *ptr, ptrdiff_t i)
@@ -198,7 +198,7 @@ JPH_IgnoreMultipleBodiesFilter *JPH_IgnoreMultipleBodiesFilter_DefaultConstruct(
 
 JPH_IgnoreMultipleBodiesFilter *JPH_IgnoreMultipleBodiesFilter_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_IgnoreMultipleBodiesFilter *)(new JPH::IgnoreMultipleBodiesFilter[num_elems]{});
+    return (JPH_IgnoreMultipleBodiesFilter *)(new JPH::IgnoreMultipleBodiesFilter[num_elems]);
 }
 
 const JPH_IgnoreMultipleBodiesFilter *JPH_IgnoreMultipleBodiesFilter_OffsetPtr(const JPH_IgnoreMultipleBodiesFilter *ptr, ptrdiff_t i)

@@ -480,7 +480,7 @@ JPH_DebugRenderer_Vertex *JPH_DebugRenderer_Vertex_DefaultConstruct(void)
 
 JPH_DebugRenderer_Vertex *JPH_DebugRenderer_Vertex_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_DebugRenderer_Vertex *)(new JPH::DebugRenderer::Vertex[num_elems]{});
+    return (JPH_DebugRenderer_Vertex *)(new JPH::DebugRenderer::Vertex[num_elems]);
 }
 
 JPH_DebugRenderer_Vertex *JPH_DebugRenderer_Vertex_ConstructFrom(const JPH_Float3 *mPosition, const JPH_Float3 *mNormal, const JPH_Float2 *mUV, const JPH_Color *mColor)
@@ -553,7 +553,7 @@ JPH_DebugRenderer_Triangle *JPH_DebugRenderer_Triangle_DefaultConstruct(void)
 
 JPH_DebugRenderer_Triangle *JPH_DebugRenderer_Triangle_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_DebugRenderer_Triangle *)(new JPH::DebugRenderer::Triangle[num_elems]{});
+    return (JPH_DebugRenderer_Triangle *)(new JPH::DebugRenderer::Triangle[num_elems]);
 }
 
 const JPH_DebugRenderer_Triangle *JPH_DebugRenderer_Triangle_OffsetPtr(const JPH_DebugRenderer_Triangle *ptr, ptrdiff_t i)
@@ -638,7 +638,7 @@ JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_DefaultConstruct(void)
 
 JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_DebugRenderer_LOD *)(new JPH::DebugRenderer::LOD[num_elems]{});
+    return (JPH_DebugRenderer_LOD *)(new JPH::DebugRenderer::LOD[num_elems]);
 }
 
 JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_DebugRenderer_LOD *_other)

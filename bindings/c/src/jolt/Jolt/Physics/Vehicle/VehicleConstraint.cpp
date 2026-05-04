@@ -164,7 +164,7 @@ JPH_VehicleConstraintSettings *JPH_VehicleConstraintSettings_DefaultConstruct(vo
 
 JPH_VehicleConstraintSettings *JPH_VehicleConstraintSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_VehicleConstraintSettings *)(new JPH::VehicleConstraintSettings[num_elems]{});
+    return (JPH_VehicleConstraintSettings *)(new JPH::VehicleConstraintSettings[num_elems]);
 }
 
 const JPH_VehicleConstraintSettings *JPH_VehicleConstraintSettings_OffsetPtr(const JPH_VehicleConstraintSettings *ptr, ptrdiff_t i)

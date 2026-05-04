@@ -23,7 +23,7 @@ Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_f
 
 Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_float_float_float *Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_float_float_float_DefaultConstructArray(size_t num_elems)
 {
-    return (Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_float_float_float *)(new std::function<void(unsigned int, float &, float &, float, float, float, float, float, float)>[num_elems]{});
+    return (Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_float_float_float *)(new std::function<void(unsigned int, float &, float &, float, float, float, float, float, float)>[num_elems]);
 }
 
 Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_float_float_float *Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_float_float_float_ConstructFromAnother(Jolt_PassBy other_pass_by, Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_float_float_float *other)

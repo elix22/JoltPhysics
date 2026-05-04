@@ -68,7 +68,7 @@ JPH_ScaledShapeSettings *JPH_ScaledShapeSettings_DefaultConstruct(void)
 
 JPH_ScaledShapeSettings *JPH_ScaledShapeSettings_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ScaledShapeSettings *)(new JPH::ScaledShapeSettings[num_elems]{});
+    return (JPH_ScaledShapeSettings *)(new JPH::ScaledShapeSettings[num_elems]);
 }
 
 const JPH_ScaledShapeSettings *JPH_ScaledShapeSettings_OffsetPtr(const JPH_ScaledShapeSettings *ptr, ptrdiff_t i)
@@ -372,7 +372,7 @@ JPH_ScaledShape *JPH_ScaledShape_DefaultConstruct(void)
 
 JPH_ScaledShape *JPH_ScaledShape_DefaultConstructArray(size_t num_elems)
 {
-    return (JPH_ScaledShape *)(new JPH::ScaledShape[num_elems]{});
+    return (JPH_ScaledShape *)(new JPH::ScaledShape[num_elems]);
 }
 
 const JPH_ScaledShape *JPH_ScaledShape_OffsetPtr(const JPH_ScaledShape *ptr, ptrdiff_t i)
