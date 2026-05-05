@@ -463,6 +463,14 @@ JOLT_API JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSetti
 /// Use `JPH_SoftBodySharedSettings_OptimizationResults_OffsetMutablePtr()` and `JPH_SoftBodySharedSettings_OptimizationResults_OffsetPtr()` to access the array elements.
 JOLT_API JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstructArray(size_t num_elems);
 
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_OffsetPtr(const JPH_SoftBodySharedSettings_OptimizationResults *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_OffsetMutablePtr(JPH_SoftBodySharedSettings_OptimizationResults *ptr, ptrdiff_t i);
+
 /// Generated from constructor `JPH::SoftBodySharedSettings::OptimizationResults::OptimizationResults`.
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_OptimizationResults_Destroy()` to free it when you're done using it.

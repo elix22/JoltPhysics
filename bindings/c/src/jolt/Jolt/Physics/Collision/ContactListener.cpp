@@ -96,6 +96,16 @@ JPH_ContactManifold *JPH_ContactManifold_DefaultConstructArray(size_t num_elems)
     return (JPH_ContactManifold *)(new JPH::ContactManifold[num_elems]);
 }
 
+const JPH_ContactManifold *JPH_ContactManifold_OffsetPtr(const JPH_ContactManifold *ptr, ptrdiff_t i)
+{
+    return (const JPH_ContactManifold *)(((const JPH::ContactManifold *)ptr) + i);
+}
+
+JPH_ContactManifold *JPH_ContactManifold_OffsetMutablePtr(JPH_ContactManifold *ptr, ptrdiff_t i)
+{
+    return (JPH_ContactManifold *)(((JPH::ContactManifold *)ptr) + i);
+}
+
 JPH_ContactManifold *JPH_ContactManifold_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_ContactManifold *_other)
 {
     MRBINDC_CLASSARG_GUARD(_other, JPH::ContactManifold);

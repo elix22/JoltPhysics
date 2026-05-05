@@ -408,6 +408,16 @@ JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_Optim
     return (JPH_SoftBodySharedSettings_OptimizationResults *)(new JPH::SoftBodySharedSettings::OptimizationResults[num_elems]);
 }
 
+const JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_OffsetPtr(const JPH_SoftBodySharedSettings_OptimizationResults *ptr, ptrdiff_t i)
+{
+    return (const JPH_SoftBodySharedSettings_OptimizationResults *)(((const JPH::SoftBodySharedSettings::OptimizationResults *)ptr) + i);
+}
+
+JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_OffsetMutablePtr(JPH_SoftBodySharedSettings_OptimizationResults *ptr, ptrdiff_t i)
+{
+    return (JPH_SoftBodySharedSettings_OptimizationResults *)(((JPH::SoftBodySharedSettings::OptimizationResults *)ptr) + i);
+}
+
 JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_SoftBodySharedSettings_OptimizationResults *_other)
 {
     MRBINDC_CLASSARG_GUARD(_other, JPH::SoftBodySharedSettings::OptimizationResults);

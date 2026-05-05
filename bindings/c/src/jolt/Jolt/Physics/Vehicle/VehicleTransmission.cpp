@@ -131,6 +131,16 @@ JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_DefaultConstruc
     return (JPH_VehicleTransmissionSettings *)(new JPH::VehicleTransmissionSettings[num_elems]);
 }
 
+const JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_OffsetPtr(const JPH_VehicleTransmissionSettings *ptr, ptrdiff_t i)
+{
+    return (const JPH_VehicleTransmissionSettings *)(((const JPH::VehicleTransmissionSettings *)ptr) + i);
+}
+
+JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_OffsetMutablePtr(JPH_VehicleTransmissionSettings *ptr, ptrdiff_t i)
+{
+    return (JPH_VehicleTransmissionSettings *)(((JPH::VehicleTransmissionSettings *)ptr) + i);
+}
+
 JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_VehicleTransmissionSettings *_other)
 {
     MRBINDC_CLASSARG_GUARD(_other, JPH::VehicleTransmissionSettings);

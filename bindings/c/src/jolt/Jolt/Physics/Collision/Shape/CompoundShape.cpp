@@ -325,6 +325,16 @@ JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSe
     return (JPH_CompoundShapeSettings_SubShapeSettings *)(new JPH::CompoundShapeSettings::SubShapeSettings[num_elems]);
 }
 
+const JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSettings_OffsetPtr(const JPH_CompoundShapeSettings_SubShapeSettings *ptr, ptrdiff_t i)
+{
+    return (const JPH_CompoundShapeSettings_SubShapeSettings *)(((const JPH::CompoundShapeSettings::SubShapeSettings *)ptr) + i);
+}
+
+JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSettings_OffsetMutablePtr(JPH_CompoundShapeSettings_SubShapeSettings *ptr, ptrdiff_t i)
+{
+    return (JPH_CompoundShapeSettings_SubShapeSettings *)(((JPH::CompoundShapeSettings::SubShapeSettings *)ptr) + i);
+}
+
 JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_CompoundShapeSettings_SubShapeSettings *_other)
 {
     MRBINDC_CLASSARG_GUARD(_other, JPH::CompoundShapeSettings::SubShapeSettings);
@@ -962,6 +972,16 @@ JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_DefaultConstruct(void)
 JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_DefaultConstructArray(size_t num_elems)
 {
     return (JPH_CompoundShape_SubShape *)(new JPH::CompoundShape::SubShape[num_elems]);
+}
+
+const JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_OffsetPtr(const JPH_CompoundShape_SubShape *ptr, ptrdiff_t i)
+{
+    return (const JPH_CompoundShape_SubShape *)(((const JPH::CompoundShape::SubShape *)ptr) + i);
+}
+
+JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_OffsetMutablePtr(JPH_CompoundShape_SubShape *ptr, ptrdiff_t i)
+{
+    return (JPH_CompoundShape_SubShape *)(((JPH::CompoundShape::SubShape *)ptr) + i);
 }
 
 JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_CompoundShape_SubShape *_other)

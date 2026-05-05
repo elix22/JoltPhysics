@@ -616,6 +616,14 @@ JOLT_API JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_DefaultConstruct(void);
 /// Use `JPH_DebugRenderer_LOD_OffsetMutablePtr()` and `JPH_DebugRenderer_LOD_OffsetPtr()` to access the array elements.
 JOLT_API JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_DefaultConstructArray(size_t num_elems);
 
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_OffsetPtr(const JPH_DebugRenderer_LOD *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_OffsetMutablePtr(JPH_DebugRenderer_LOD *ptr, ptrdiff_t i);
+
 /// Generated from constructor `JPH::DebugRenderer::LOD::LOD`.
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_DebugRenderer_LOD_Destroy()` to free it when you're done using it.

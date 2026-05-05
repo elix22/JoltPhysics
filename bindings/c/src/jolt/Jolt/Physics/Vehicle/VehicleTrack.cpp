@@ -101,6 +101,16 @@ JPH_VehicleTrackSettings *JPH_VehicleTrackSettings_DefaultConstructArray(size_t 
     return (JPH_VehicleTrackSettings *)(new JPH::VehicleTrackSettings[num_elems]);
 }
 
+const JPH_VehicleTrackSettings *JPH_VehicleTrackSettings_OffsetPtr(const JPH_VehicleTrackSettings *ptr, ptrdiff_t i)
+{
+    return (const JPH_VehicleTrackSettings *)(((const JPH::VehicleTrackSettings *)ptr) + i);
+}
+
+JPH_VehicleTrackSettings *JPH_VehicleTrackSettings_OffsetMutablePtr(JPH_VehicleTrackSettings *ptr, ptrdiff_t i)
+{
+    return (JPH_VehicleTrackSettings *)(((JPH::VehicleTrackSettings *)ptr) + i);
+}
+
 JPH_VehicleTrackSettings *JPH_VehicleTrackSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_VehicleTrackSettings *_other)
 {
     MRBINDC_CLASSARG_GUARD(_other, JPH::VehicleTrackSettings);

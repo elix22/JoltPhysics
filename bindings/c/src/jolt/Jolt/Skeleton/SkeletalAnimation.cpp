@@ -605,6 +605,16 @@ JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_AnimatedJoint_Default
     return (JPH_SkeletalAnimation_AnimatedJoint *)(new JPH::SkeletalAnimation::AnimatedJoint[num_elems]);
 }
 
+const JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_AnimatedJoint_OffsetPtr(const JPH_SkeletalAnimation_AnimatedJoint *ptr, ptrdiff_t i)
+{
+    return (const JPH_SkeletalAnimation_AnimatedJoint *)(((const JPH::SkeletalAnimation::AnimatedJoint *)ptr) + i);
+}
+
+JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_AnimatedJoint_OffsetMutablePtr(JPH_SkeletalAnimation_AnimatedJoint *ptr, ptrdiff_t i)
+{
+    return (JPH_SkeletalAnimation_AnimatedJoint *)(((JPH::SkeletalAnimation::AnimatedJoint *)ptr) + i);
+}
+
 JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_AnimatedJoint_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_SkeletalAnimation_AnimatedJoint *_other)
 {
     MRBINDC_CLASSARG_GUARD(_other, JPH::SkeletalAnimation::AnimatedJoint);

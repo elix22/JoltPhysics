@@ -641,6 +641,16 @@ JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_DefaultConstructArray(size_t num_el
     return (JPH_DebugRenderer_LOD *)(new JPH::DebugRenderer::LOD[num_elems]);
 }
 
+const JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_OffsetPtr(const JPH_DebugRenderer_LOD *ptr, ptrdiff_t i)
+{
+    return (const JPH_DebugRenderer_LOD *)(((const JPH::DebugRenderer::LOD *)ptr) + i);
+}
+
+JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_OffsetMutablePtr(JPH_DebugRenderer_LOD *ptr, ptrdiff_t i)
+{
+    return (JPH_DebugRenderer_LOD *)(((JPH::DebugRenderer::LOD *)ptr) + i);
+}
+
 JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_DebugRenderer_LOD *_other)
 {
     MRBINDC_CLASSARG_GUARD(_other, JPH::DebugRenderer::LOD);

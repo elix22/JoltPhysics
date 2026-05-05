@@ -307,6 +307,14 @@ JOLT_API JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_S
 /// Use `JPH_CompoundShapeSettings_SubShapeSettings_OffsetMutablePtr()` and `JPH_CompoundShapeSettings_SubShapeSettings_OffsetPtr()` to access the array elements.
 JOLT_API JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSettings_DefaultConstructArray(size_t num_elems);
 
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSettings_OffsetPtr(const JPH_CompoundShapeSettings_SubShapeSettings *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_SubShapeSettings_OffsetMutablePtr(JPH_CompoundShapeSettings_SubShapeSettings *ptr, ptrdiff_t i);
+
 /// Generated from constructor `JPH::CompoundShapeSettings::SubShapeSettings::SubShapeSettings`.
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CompoundShapeSettings_SubShapeSettings_Destroy()` to free it when you're done using it.
@@ -810,6 +818,14 @@ JOLT_API JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_DefaultConstruct
 /// The array must be destroyed using `JPH_CompoundShape_SubShape_DestroyArray()`.
 /// Use `JPH_CompoundShape_SubShape_OffsetMutablePtr()` and `JPH_CompoundShape_SubShape_OffsetPtr()` to access the array elements.
 JOLT_API JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_OffsetPtr(const JPH_CompoundShape_SubShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_CompoundShape_SubShape *JPH_CompoundShape_SubShape_OffsetMutablePtr(JPH_CompoundShape_SubShape *ptr, ptrdiff_t i);
 
 /// Generated from constructor `JPH::CompoundShape::SubShape::SubShape`.
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
