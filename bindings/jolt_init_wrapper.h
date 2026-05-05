@@ -56,6 +56,43 @@ struct JoltHelpers
     /// Returns nullptr if the controller is not a WheeledVehicleController.
     static JPH::WheeledVehicleController* VehicleConstraintGetWheeledController(JPH::VehicleConstraint& constraint);
 
+    /// Replace VehicleTransmissionSettings::mGearRatios with the supplied array.
+    /// inRatios[0] = 1st gear, inRatios[1] = 2nd gear, etc.
+    /// All values are positive (engine-to-gearbox ratio).
+    static void VehicleTransmissionSettingsSetGearRatios(
+        JPH::VehicleTransmissionSettings& inSettings,
+        const float* inRatios,
+        unsigned int inCount);
+
+    /// Replace VehicleTransmissionSettings::mReverseGearRatios.
+    /// Values must be negative.
+    static void VehicleTransmissionSettingsSetReverseGearRatios(
+        JPH::VehicleTransmissionSettings& inSettings,
+        const float* inRatios,
+        unsigned int inCount);
+
+    // -----------------------------------------------------------------------
+    // BodyCreationSettings helpers — expose mOverrideMassProperties and
+    // mMassPropertiesOverride.mMass (mrbind skips embedded non-primitive fields).
+    // -----------------------------------------------------------------------
+
+    /// Set BodyCreationSettings::mOverrideMassProperties.
+    /// Pass: 0 = CalculateMassAndInertia (default)
+    ///       1 = CalculateInertia        (supply mass; Jolt scales inertia)
+    ///       2 = MassAndInertiaProvided  (full manual override)
+    static void BodyCreationSettingsSetOverrideMassProperties(
+        JPH::BodyCreationSettings& inSettings,
+        int inMode);
+
+    /// Set the override mass in BodyCreationSettings::mMassPropertiesOverride.mMass.
+    static void BodyCreationSettingsSetMassOverride(
+        JPH::BodyCreationSettings& inSettings,
+        float inMass);
+
+    /// Read back the override mass.
+    static float BodyCreationSettingsGetMassOverride(
+        const JPH::BodyCreationSettings& inSettings);
+
     // -----------------------------------------------------------------------
     // HeightFieldShape helpers — expose mHeightSamples array to C#
     // (mHeightSamples is std::vector<float>, mrbind cannot bind STL containers).

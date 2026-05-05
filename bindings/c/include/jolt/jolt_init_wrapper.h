@@ -16,6 +16,7 @@ extern "C" {
 
 typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
 typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Body/Body.h>`.
+typedef struct JPH_BodyCreationSettings JPH_BodyCreationSettings; // Defined in `#include <jolt/Jolt/Physics/Body/BodyCreationSettings.h>`.
 typedef struct JPH_CharacterBaseSettings JPH_CharacterBaseSettings; // Defined in `#include <jolt/Jolt/Physics/Character/CharacterBase.h>`.
 typedef struct JPH_CollideShapeResult JPH_CollideShapeResult; // Defined in `#include <jolt/Jolt/Physics/Collision/CollideShape.h>`.
 typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
@@ -46,6 +47,7 @@ typedef struct JPH_VehicleAntiRollBar JPH_VehicleAntiRollBar; // Defined in `#in
 typedef struct JPH_VehicleConstraint JPH_VehicleConstraint; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleConstraint.h>`.
 typedef struct JPH_VehicleConstraintSettings JPH_VehicleConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleConstraint.h>`.
 typedef struct JPH_VehicleDifferentialSettings JPH_VehicleDifferentialSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleDifferential.h>`.
+typedef struct JPH_VehicleTransmissionSettings JPH_VehicleTransmissionSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleTransmission.h>`.
 typedef struct JPH_WheelSettingsWV JPH_WheelSettingsWV; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
 typedef struct JPH_WheeledVehicleController JPH_WheeledVehicleController; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
 typedef struct JPH_WheeledVehicleControllerSettings JPH_WheeledVehicleControllerSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
@@ -223,6 +225,37 @@ JOLT_API void JoltHelpers_WheeledControllerSettingsAddDifferential(JPH_WheeledVe
 /// Generated from method `JoltHelpers::VehicleConstraintGetWheeledController`.
 /// Parameter `constraint` can not be null. It is a single object.
 JOLT_API JPH_WheeledVehicleController *JoltHelpers_VehicleConstraintGetWheeledController(JPH_VehicleConstraint *constraint);
+
+/// Replace VehicleTransmissionSettings::mGearRatios with the supplied array.
+/// inRatios[0] = 1st gear, inRatios[1] = 2nd gear, etc.
+/// All values are positive (engine-to-gearbox ratio).
+/// Generated from method `JoltHelpers::VehicleTransmissionSettingsSetGearRatios`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_VehicleTransmissionSettingsSetGearRatios(JPH_VehicleTransmissionSettings *inSettings, const float *inRatios, unsigned int inCount);
+
+/// Replace VehicleTransmissionSettings::mReverseGearRatios.
+/// Values must be negative.
+/// Generated from method `JoltHelpers::VehicleTransmissionSettingsSetReverseGearRatios`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_VehicleTransmissionSettingsSetReverseGearRatios(JPH_VehicleTransmissionSettings *inSettings, const float *inRatios, unsigned int inCount);
+
+/// Set BodyCreationSettings::mOverrideMassProperties.
+/// Pass: 0 = CalculateMassAndInertia (default)
+///       1 = CalculateInertia        (supply mass; Jolt scales inertia)
+///       2 = MassAndInertiaProvided  (full manual override)
+/// Generated from method `JoltHelpers::BodyCreationSettingsSetOverrideMassProperties`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_BodyCreationSettingsSetOverrideMassProperties(JPH_BodyCreationSettings *inSettings, int inMode);
+
+/// Set the override mass in BodyCreationSettings::mMassPropertiesOverride.mMass.
+/// Generated from method `JoltHelpers::BodyCreationSettingsSetMassOverride`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_BodyCreationSettingsSetMassOverride(JPH_BodyCreationSettings *inSettings, float inMass);
+
+/// Read back the override mass.
+/// Generated from method `JoltHelpers::BodyCreationSettingsGetMassOverride`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API float JoltHelpers_BodyCreationSettingsGetMassOverride(const JPH_BodyCreationSettings *inSettings);
 
 /// Assign the height samples array (replaces existing content).
 /// Generated from method `JoltHelpers::HeightFieldSettingsSetHeightSamples`.

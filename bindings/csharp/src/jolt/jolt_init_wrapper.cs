@@ -164,6 +164,79 @@ public static partial class JPH
             return __c_ret is not null ? new JPH.WheeledVehicleController(__c_ret, is_owning: false) : null;
         }
 
+        /// Replace VehicleTransmissionSettings::mGearRatios with the supplied array.
+        /// inRatios[0] = 1st gear, inRatios[1] = 2nd gear, etc.
+        /// All values are positive (engine-to-gearbox ratio).
+        /// Generated from method `JoltHelpers::VehicleTransmissionSettingsSetGearRatios`.
+        public static unsafe void VehicleTransmissionSettingsSetGearRatios(JPH.VehicleTransmissionSettings inSettings, float? inRatios, uint inCount)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_VehicleTransmissionSettingsSetGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_VehicleTransmissionSettingsSetGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_VehicleTransmissionSettingsSetGearRatios(JPH.VehicleTransmissionSettings._Underlying *inSettings, float *inRatios, uint inCount);
+            float __deref_inRatios = inRatios.GetValueOrDefault();
+            __JoltHelpers_VehicleTransmissionSettingsSetGearRatios(inSettings._UnderlyingPtr, inRatios.HasValue ? &__deref_inRatios : null, inCount);
+        }
+
+        /// Replace VehicleTransmissionSettings::mReverseGearRatios.
+        /// Values must be negative.
+        /// Generated from method `JoltHelpers::VehicleTransmissionSettingsSetReverseGearRatios`.
+        public static unsafe void VehicleTransmissionSettingsSetReverseGearRatios(JPH.VehicleTransmissionSettings inSettings, float? inRatios, uint inCount)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_VehicleTransmissionSettingsSetReverseGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_VehicleTransmissionSettingsSetReverseGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_VehicleTransmissionSettingsSetReverseGearRatios(JPH.VehicleTransmissionSettings._Underlying *inSettings, float *inRatios, uint inCount);
+            float __deref_inRatios = inRatios.GetValueOrDefault();
+            __JoltHelpers_VehicleTransmissionSettingsSetReverseGearRatios(inSettings._UnderlyingPtr, inRatios.HasValue ? &__deref_inRatios : null, inCount);
+        }
+
+        /// Set BodyCreationSettings::mOverrideMassProperties.
+        /// Pass: 0 = CalculateMassAndInertia (default)
+        ///       1 = CalculateInertia        (supply mass; Jolt scales inertia)
+        ///       2 = MassAndInertiaProvided  (full manual override)
+        /// Generated from method `JoltHelpers::BodyCreationSettingsSetOverrideMassProperties`.
+        public static unsafe void BodyCreationSettingsSetOverrideMassProperties(JPH.BodyCreationSettings inSettings, int inMode)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_BodyCreationSettingsSetOverrideMassProperties", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_BodyCreationSettingsSetOverrideMassProperties", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_BodyCreationSettingsSetOverrideMassProperties(JPH.BodyCreationSettings._Underlying *inSettings, int inMode);
+            __JoltHelpers_BodyCreationSettingsSetOverrideMassProperties(inSettings._UnderlyingPtr, inMode);
+        }
+
+        /// Set the override mass in BodyCreationSettings::mMassPropertiesOverride.mMass.
+        /// Generated from method `JoltHelpers::BodyCreationSettingsSetMassOverride`.
+        public static unsafe void BodyCreationSettingsSetMassOverride(JPH.BodyCreationSettings inSettings, float inMass)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_BodyCreationSettingsSetMassOverride", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_BodyCreationSettingsSetMassOverride", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_BodyCreationSettingsSetMassOverride(JPH.BodyCreationSettings._Underlying *inSettings, float inMass);
+            __JoltHelpers_BodyCreationSettingsSetMassOverride(inSettings._UnderlyingPtr, inMass);
+        }
+
+        /// Read back the override mass.
+        /// Generated from method `JoltHelpers::BodyCreationSettingsGetMassOverride`.
+        public static unsafe float BodyCreationSettingsGetMassOverride(JPH.Const_BodyCreationSettings inSettings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_BodyCreationSettingsGetMassOverride", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_BodyCreationSettingsGetMassOverride", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JoltHelpers_BodyCreationSettingsGetMassOverride(JPH.Const_BodyCreationSettings._Underlying *inSettings);
+            return __JoltHelpers_BodyCreationSettingsGetMassOverride(inSettings._UnderlyingPtr);
+        }
+
         /// Assign the height samples array (replaces existing content).
         /// Generated from method `JoltHelpers::HeightFieldSettingsSetHeightSamples`.
         public static unsafe void HeightFieldSettingsSetHeightSamples(JPH.HeightFieldShapeSettings inSettings, float? inSamples, uint inCount)

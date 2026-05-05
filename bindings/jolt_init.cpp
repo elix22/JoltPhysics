@@ -82,6 +82,47 @@ JPH::WheeledVehicleController* JoltHelpers::VehicleConstraintGetWheeledControlle
     return static_cast<JPH::WheeledVehicleController*>(constraint.GetController());
 }
 
+void JoltHelpers::VehicleTransmissionSettingsSetGearRatios(
+    JPH::VehicleTransmissionSettings& inSettings,
+    const float* inRatios,
+    unsigned int inCount)
+{
+    inSettings.mGearRatios.assign(inRatios, inRatios + inCount);
+}
+
+void JoltHelpers::VehicleTransmissionSettingsSetReverseGearRatios(
+    JPH::VehicleTransmissionSettings& inSettings,
+    const float* inRatios,
+    unsigned int inCount)
+{
+    inSettings.mReverseGearRatios.assign(inRatios, inRatios + inCount);
+}
+
+// ---------------------------------------------------------------------------
+// BodyCreationSettings helpers
+// ---------------------------------------------------------------------------
+
+void JoltHelpers::BodyCreationSettingsSetOverrideMassProperties(
+    JPH::BodyCreationSettings& inSettings,
+    int inMode)
+{
+    inSettings.mOverrideMassProperties =
+        static_cast<JPH::EOverrideMassProperties>(inMode);
+}
+
+void JoltHelpers::BodyCreationSettingsSetMassOverride(
+    JPH::BodyCreationSettings& inSettings,
+    float inMass)
+{
+    inSettings.mMassPropertiesOverride.mMass = inMass;
+}
+
+float JoltHelpers::BodyCreationSettingsGetMassOverride(
+    const JPH::BodyCreationSettings& inSettings)
+{
+    return inSettings.mMassPropertiesOverride.mMass;
+}
+
 // ---------------------------------------------------------------------------
 // HeightFieldShape helpers
 // ---------------------------------------------------------------------------

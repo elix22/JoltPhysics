@@ -10,6 +10,7 @@
 #include <Jolt/Math/Mat44.h>
 #include <Jolt/Math/Vec3.h>
 #include <Jolt/Physics/Body/Body.h>
+#include <Jolt/Physics/Body/BodyCreationSettings.h>
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Character/CharacterBase.h>
 #include <Jolt/Physics/Collision/CollideShape.h>
@@ -26,6 +27,7 @@
 #include <Jolt/Physics/Vehicle/VehicleAntiRollBar.h>
 #include <Jolt/Physics/Vehicle/VehicleConstraint.h>
 #include <Jolt/Physics/Vehicle/VehicleDifferential.h>
+#include <Jolt/Physics/Vehicle/VehicleTransmission.h>
 #include <Jolt/Physics/Vehicle/WheeledVehicleController.h>
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <Jolt/Renderer/DebugRendererSimple.h>
@@ -146,6 +148,47 @@ JPH_WheeledVehicleController *JoltHelpers_VehicleConstraintGetWheeledController(
     return (JPH_WheeledVehicleController *)(JoltHelpers::VehicleConstraintGetWheeledController(
         ((constraint ? void() : MRBINDC_THROW("Parameter `constraint` can not be null.", void)), *(JPH::VehicleConstraint *)(constraint))
     ));
+}
+
+void JoltHelpers_VehicleTransmissionSettingsSetGearRatios(JPH_VehicleTransmissionSettings *inSettings, const float *inRatios, unsigned int inCount)
+{
+    JoltHelpers::VehicleTransmissionSettingsSetGearRatios(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::VehicleTransmissionSettings *)(inSettings)),
+        inRatios,
+        inCount
+    );
+}
+
+void JoltHelpers_VehicleTransmissionSettingsSetReverseGearRatios(JPH_VehicleTransmissionSettings *inSettings, const float *inRatios, unsigned int inCount)
+{
+    JoltHelpers::VehicleTransmissionSettingsSetReverseGearRatios(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::VehicleTransmissionSettings *)(inSettings)),
+        inRatios,
+        inCount
+    );
+}
+
+void JoltHelpers_BodyCreationSettingsSetOverrideMassProperties(JPH_BodyCreationSettings *inSettings, int inMode)
+{
+    JoltHelpers::BodyCreationSettingsSetOverrideMassProperties(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::BodyCreationSettings *)(inSettings)),
+        inMode
+    );
+}
+
+void JoltHelpers_BodyCreationSettingsSetMassOverride(JPH_BodyCreationSettings *inSettings, float inMass)
+{
+    JoltHelpers::BodyCreationSettingsSetMassOverride(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::BodyCreationSettings *)(inSettings)),
+        inMass
+    );
+}
+
+float JoltHelpers_BodyCreationSettingsGetMassOverride(const JPH_BodyCreationSettings *inSettings)
+{
+    return JoltHelpers::BodyCreationSettingsGetMassOverride(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::BodyCreationSettings *)(inSettings))
+    );
 }
 
 void JoltHelpers_HeightFieldSettingsSetHeightSamples(JPH_HeightFieldShapeSettings *inSettings, const float *inSamples, unsigned int inCount)
