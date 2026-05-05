@@ -110,6 +110,19 @@ public static partial class JPH
             __JoltHelpers_VehicleSettingsAddWheel(settings._UnderlyingPtr, wheel is not null ? wheel._UnderlyingPtr : null);
         }
 
+        /// Append a WheelSettingsTV to VehicleConstraintSettings::mWheels.
+        /// Generated from method `JoltHelpers::VehicleSettingsAddWheelTV`.
+        public static unsafe void VehicleSettingsAddWheelTV(JPH.VehicleConstraintSettings settings, JPH.WheelSettingsTV? wheel)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_VehicleSettingsAddWheelTV", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_VehicleSettingsAddWheelTV", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_VehicleSettingsAddWheelTV(JPH.VehicleConstraintSettings._Underlying *settings, JPH.WheelSettingsTV._Underlying *wheel);
+            __JoltHelpers_VehicleSettingsAddWheelTV(settings._UnderlyingPtr, wheel is not null ? wheel._UnderlyingPtr : null);
+        }
+
         /// Set VehicleConstraintSettings::mController to a WheeledVehicleControllerSettings.
         /// Generated from method `JoltHelpers::VehicleSettingsSetController`.
         public static unsafe void VehicleSettingsSetController(JPH.VehicleConstraintSettings settings, JPH.WheeledVehicleControllerSettings? ctrl)
@@ -121,6 +134,32 @@ public static partial class JPH
             #endif
             extern static void __JoltHelpers_VehicleSettingsSetController(JPH.VehicleConstraintSettings._Underlying *settings, JPH.WheeledVehicleControllerSettings._Underlying *ctrl);
             __JoltHelpers_VehicleSettingsSetController(settings._UnderlyingPtr, ctrl is not null ? ctrl._UnderlyingPtr : null);
+        }
+
+        /// Set VehicleConstraintSettings::mController to a TrackedVehicleControllerSettings.
+        /// Generated from method `JoltHelpers::VehicleSettingsSetTrackedController`.
+        public static unsafe void VehicleSettingsSetTrackedController(JPH.VehicleConstraintSettings settings, JPH.TrackedVehicleControllerSettings? ctrl)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_VehicleSettingsSetTrackedController", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_VehicleSettingsSetTrackedController", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_VehicleSettingsSetTrackedController(JPH.VehicleConstraintSettings._Underlying *settings, JPH.TrackedVehicleControllerSettings._Underlying *ctrl);
+            __JoltHelpers_VehicleSettingsSetTrackedController(settings._UnderlyingPtr, ctrl is not null ? ctrl._UnderlyingPtr : null);
+        }
+
+        /// Append a wheel index to VehicleTrackSettings::mWheels.
+        /// Generated from method `JoltHelpers::VehicleTrackSettingsAddWheelIndex`.
+        public static unsafe void VehicleTrackSettingsAddWheelIndex(JPH.VehicleTrackSettings track, uint wheelIndex)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_VehicleTrackSettingsAddWheelIndex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_VehicleTrackSettingsAddWheelIndex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_VehicleTrackSettingsAddWheelIndex(JPH.VehicleTrackSettings._Underlying *track, uint wheelIndex);
+            __JoltHelpers_VehicleTrackSettingsAddWheelIndex(track._UnderlyingPtr, wheelIndex);
         }
 
         /// Append a VehicleAntiRollBar to VehicleConstraintSettings::mAntiRollBars.

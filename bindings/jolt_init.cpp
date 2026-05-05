@@ -82,6 +82,21 @@ JPH::WheeledVehicleController* JoltHelpers::VehicleConstraintGetWheeledControlle
     return static_cast<JPH::WheeledVehicleController*>(constraint.GetController());
 }
 
+void JoltHelpers::VehicleSettingsAddWheelTV(JPH::VehicleConstraintSettings& settings, JPH::WheelSettingsTV* wheel)
+{
+    settings.mWheels.push_back(wheel);
+}
+
+void JoltHelpers::VehicleSettingsSetTrackedController(JPH::VehicleConstraintSettings& settings, JPH::TrackedVehicleControllerSettings* ctrl)
+{
+    settings.mController = ctrl;
+}
+
+void JoltHelpers::VehicleTrackSettingsAddWheelIndex(JPH::VehicleTrackSettings& track, JPH::uint32 wheelIndex)
+{
+    track.mWheels.push_back(wheelIndex);
+}
+
 void JoltHelpers::VehicleTransmissionSettingsSetGearRatios(
     JPH::VehicleTransmissionSettings& inSettings,
     const float* inRatios,

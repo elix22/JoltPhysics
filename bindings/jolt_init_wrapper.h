@@ -9,6 +9,7 @@
 #include <Jolt/Jolt.h>
 #include <Jolt/Geometry/RayAABox.h>
 #include <Jolt/Physics/Vehicle/WheeledVehicleController.h>
+#include <Jolt/Physics/Vehicle/TrackedVehicleController.h>
 #include <Jolt/Physics/PhysicsStepListener.h>
 #include <Jolt/Physics/Collision/ContactListener.h>
 #include <Jolt/Physics/Collision/EstimateCollisionResponse.h>
@@ -43,8 +44,17 @@ struct JoltHelpers
     /// Append a WheelSettingsWV to VehicleConstraintSettings::mWheels.
     static void VehicleSettingsAddWheel(JPH::VehicleConstraintSettings& settings, JPH::WheelSettingsWV* wheel);
 
+    /// Append a WheelSettingsTV to VehicleConstraintSettings::mWheels.
+    static void VehicleSettingsAddWheelTV(JPH::VehicleConstraintSettings& settings, JPH::WheelSettingsTV* wheel);
+
     /// Set VehicleConstraintSettings::mController to a WheeledVehicleControllerSettings.
     static void VehicleSettingsSetController(JPH::VehicleConstraintSettings& settings, JPH::WheeledVehicleControllerSettings* ctrl);
+
+    /// Set VehicleConstraintSettings::mController to a TrackedVehicleControllerSettings.
+    static void VehicleSettingsSetTrackedController(JPH::VehicleConstraintSettings& settings, JPH::TrackedVehicleControllerSettings* ctrl);
+
+    /// Append a wheel index to VehicleTrackSettings::mWheels.
+    static void VehicleTrackSettingsAddWheelIndex(JPH::VehicleTrackSettings& track, JPH::uint32 wheelIndex);
 
     /// Append a VehicleAntiRollBar to VehicleConstraintSettings::mAntiRollBars.
     static void VehicleSettingsAddAntiRollBar(JPH::VehicleConstraintSettings& settings, const JPH::VehicleAntiRollBar& bar);

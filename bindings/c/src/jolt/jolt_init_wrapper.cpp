@@ -24,9 +24,11 @@
 #include <Jolt/Physics/PhysicsSystem.h>
 #include <Jolt/Physics/Ragdoll/Ragdoll.h>
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
+#include <Jolt/Physics/Vehicle/TrackedVehicleController.h>
 #include <Jolt/Physics/Vehicle/VehicleAntiRollBar.h>
 #include <Jolt/Physics/Vehicle/VehicleConstraint.h>
 #include <Jolt/Physics/Vehicle/VehicleDifferential.h>
+#include <Jolt/Physics/Vehicle/VehicleTrack.h>
 #include <Jolt/Physics/Vehicle/VehicleTransmission.h>
 #include <Jolt/Physics/Vehicle/WheeledVehicleController.h>
 #include <Jolt/Renderer/DebugRenderer.h>
@@ -119,11 +121,35 @@ void JoltHelpers_VehicleSettingsAddWheel(JPH_VehicleConstraintSettings *settings
     );
 }
 
+void JoltHelpers_VehicleSettingsAddWheelTV(JPH_VehicleConstraintSettings *settings, JPH_WheelSettingsTV *wheel)
+{
+    JoltHelpers::VehicleSettingsAddWheelTV(
+        ((settings ? void() : MRBINDC_THROW("Parameter `settings` can not be null.", void)), *(JPH::VehicleConstraintSettings *)(settings)),
+        ((JPH::WheelSettingsTV *)wheel)
+    );
+}
+
 void JoltHelpers_VehicleSettingsSetController(JPH_VehicleConstraintSettings *settings, JPH_WheeledVehicleControllerSettings *ctrl)
 {
     JoltHelpers::VehicleSettingsSetController(
         ((settings ? void() : MRBINDC_THROW("Parameter `settings` can not be null.", void)), *(JPH::VehicleConstraintSettings *)(settings)),
         ((JPH::WheeledVehicleControllerSettings *)ctrl)
+    );
+}
+
+void JoltHelpers_VehicleSettingsSetTrackedController(JPH_VehicleConstraintSettings *settings, JPH_TrackedVehicleControllerSettings *ctrl)
+{
+    JoltHelpers::VehicleSettingsSetTrackedController(
+        ((settings ? void() : MRBINDC_THROW("Parameter `settings` can not be null.", void)), *(JPH::VehicleConstraintSettings *)(settings)),
+        ((JPH::TrackedVehicleControllerSettings *)ctrl)
+    );
+}
+
+void JoltHelpers_VehicleTrackSettingsAddWheelIndex(JPH_VehicleTrackSettings *track, unsigned int wheelIndex)
+{
+    JoltHelpers::VehicleTrackSettingsAddWheelIndex(
+        ((track ? void() : MRBINDC_THROW("Parameter `track` can not be null.", void)), *(JPH::VehicleTrackSettings *)(track)),
+        wheelIndex
     );
 }
 

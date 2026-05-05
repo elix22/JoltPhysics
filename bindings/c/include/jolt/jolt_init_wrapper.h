@@ -42,12 +42,15 @@ typedef struct JPH_Skeleton JPH_Skeleton; // Defined in `#include <jolt/Jolt/Ske
 typedef struct JPH_SoftBodySharedSettings JPH_SoftBodySharedSettings; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodySharedSettings.h>`.
 typedef struct JPH_SoftBodySharedSettings_Vertex JPH_SoftBodySharedSettings_Vertex; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodySharedSettings.h>`.
 typedef struct JPH_SubShapeIDPair JPH_SubShapeIDPair; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeIDPair.h>`.
+typedef struct JPH_TrackedVehicleControllerSettings JPH_TrackedVehicleControllerSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/TrackedVehicleController.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 typedef struct JPH_VehicleAntiRollBar JPH_VehicleAntiRollBar; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleAntiRollBar.h>`.
 typedef struct JPH_VehicleConstraint JPH_VehicleConstraint; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleConstraint.h>`.
 typedef struct JPH_VehicleConstraintSettings JPH_VehicleConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleConstraint.h>`.
 typedef struct JPH_VehicleDifferentialSettings JPH_VehicleDifferentialSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleDifferential.h>`.
+typedef struct JPH_VehicleTrackSettings JPH_VehicleTrackSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleTrack.h>`.
 typedef struct JPH_VehicleTransmissionSettings JPH_VehicleTransmissionSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleTransmission.h>`.
+typedef struct JPH_WheelSettingsTV JPH_WheelSettingsTV; // Defined in `#include <jolt/Jolt/Physics/Vehicle/TrackedVehicleController.h>`.
 typedef struct JPH_WheelSettingsWV JPH_WheelSettingsWV; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
 typedef struct JPH_WheeledVehicleController JPH_WheeledVehicleController; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
 typedef struct JPH_WheeledVehicleControllerSettings JPH_WheeledVehicleControllerSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
@@ -203,10 +206,25 @@ JOLT_API float JoltHelpers_RayAABox(const JPH_Vec3 *inOrigin, const JPH_RayInvDi
 /// Parameter `settings` can not be null. It is a single object.
 JOLT_API void JoltHelpers_VehicleSettingsAddWheel(JPH_VehicleConstraintSettings *settings, JPH_WheelSettingsWV *wheel);
 
+/// Append a WheelSettingsTV to VehicleConstraintSettings::mWheels.
+/// Generated from method `JoltHelpers::VehicleSettingsAddWheelTV`.
+/// Parameter `settings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_VehicleSettingsAddWheelTV(JPH_VehicleConstraintSettings *settings, JPH_WheelSettingsTV *wheel);
+
 /// Set VehicleConstraintSettings::mController to a WheeledVehicleControllerSettings.
 /// Generated from method `JoltHelpers::VehicleSettingsSetController`.
 /// Parameter `settings` can not be null. It is a single object.
 JOLT_API void JoltHelpers_VehicleSettingsSetController(JPH_VehicleConstraintSettings *settings, JPH_WheeledVehicleControllerSettings *ctrl);
+
+/// Set VehicleConstraintSettings::mController to a TrackedVehicleControllerSettings.
+/// Generated from method `JoltHelpers::VehicleSettingsSetTrackedController`.
+/// Parameter `settings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_VehicleSettingsSetTrackedController(JPH_VehicleConstraintSettings *settings, JPH_TrackedVehicleControllerSettings *ctrl);
+
+/// Append a wheel index to VehicleTrackSettings::mWheels.
+/// Generated from method `JoltHelpers::VehicleTrackSettingsAddWheelIndex`.
+/// Parameter `track` can not be null. It is a single object.
+JOLT_API void JoltHelpers_VehicleTrackSettingsAddWheelIndex(JPH_VehicleTrackSettings *track, unsigned int wheelIndex);
 
 /// Append a VehicleAntiRollBar to VehicleConstraintSettings::mAntiRollBars.
 /// Generated from method `JoltHelpers::VehicleSettingsAddAntiRollBar`.
