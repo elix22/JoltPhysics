@@ -740,6 +740,34 @@ public static partial class JPH
             return new(__JPH_Body_GetWorldSpaceBounds(_UnderlyingPtr), is_owning: false);
         }
 
+        /// Access to the motion properties
+        /// Generated from method `JPH::Body::GetMotionProperties`.
+        public unsafe JPH.Const_MotionProperties? GetMotionProperties()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetMotionProperties", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetMotionProperties", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_MotionProperties._Underlying *__JPH_Body_GetMotionProperties(_Underlying *_this);
+            var __c_ret = __JPH_Body_GetMotionProperties(_UnderlyingPtr);
+            return __c_ret is not null ? new JPH.Const_MotionProperties(__c_ret, is_owning: false) : null;
+        }
+
+        /// Access to the motion properties (version that does not check if the object is kinematic or dynamic)
+        /// Generated from method `JPH::Body::GetMotionPropertiesUnchecked`.
+        public unsafe JPH.Const_MotionProperties? GetMotionPropertiesUnchecked()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetMotionPropertiesUnchecked", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetMotionPropertiesUnchecked", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_MotionProperties._Underlying *__JPH_Body_GetMotionPropertiesUnchecked(_Underlying *_this);
+            var __c_ret = __JPH_Body_GetMotionPropertiesUnchecked(_UnderlyingPtr);
+            return __c_ret is not null ? new JPH.Const_MotionProperties(__c_ret, is_owning: false) : null;
+        }
+
         /// Access to the user data, can be used for anything by the application
         /// Generated from method `JPH::Body::GetUserData`.
         public unsafe UIntPtr GetUserData()
@@ -1268,6 +1296,32 @@ public static partial class JPH
             #endif
             extern static byte __JPH_Body_ApplyBuoyancyImpulse_9(_Underlying *_this, float inTotalVolume, float inSubmergedVolume, JPH.Vec3._Underlying *inRelativeCenterOfBuoyancy, float inBuoyancy, float inLinearDrag, float inAngularDrag, JPH.Vec3._Underlying *inFluidVelocity, JPH.Vec3._Underlying *inGravity, float inDeltaTime);
             return __JPH_Body_ApplyBuoyancyImpulse_9(_UnderlyingPtr, inTotalVolume, inSubmergedVolume, inRelativeCenterOfBuoyancy._UnderlyingPtr, inBuoyancy, inLinearDrag, inAngularDrag, inFluidVelocity._UnderlyingPtr, inGravity._UnderlyingPtr, inDeltaTime) != 0;
+        }
+
+        /// Generated from method `JPH::Body::GetMotionProperties`.
+        public unsafe new JPH.MotionProperties? GetMotionProperties()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetMotionProperties_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetMotionProperties_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.MotionProperties._Underlying *__JPH_Body_GetMotionProperties_mut(_Underlying *_this);
+            var __c_ret = __JPH_Body_GetMotionProperties_mut(_UnderlyingPtr);
+            return __c_ret is not null ? new JPH.MotionProperties(__c_ret, is_owning: false) : null;
+        }
+
+        /// Generated from method `JPH::Body::GetMotionPropertiesUnchecked`.
+        public unsafe new JPH.MotionProperties? GetMotionPropertiesUnchecked()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_GetMotionPropertiesUnchecked_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_GetMotionPropertiesUnchecked_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.MotionProperties._Underlying *__JPH_Body_GetMotionPropertiesUnchecked_mut(_Underlying *_this);
+            var __c_ret = __JPH_Body_GetMotionPropertiesUnchecked_mut(_UnderlyingPtr);
+            return __c_ret is not null ? new JPH.MotionProperties(__c_ret, is_owning: false) : null;
         }
 
         /// Generated from method `JPH::Body::SetUserData`.

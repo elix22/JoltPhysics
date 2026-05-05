@@ -195,6 +195,9 @@ echo "#include \"$ROOT/Jolt/Physics/Vehicle/MotorcycleController.h\"" >>"$BINDIN
 echo "#include \"$ROOT/Jolt/Physics/Vehicle/TrackedVehicleController.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Vehicle/VehicleTrack.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodyMotionProperties.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodyContactListener.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodyManifold.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodyShape.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Collision/EstimateCollisionResponse.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Renderer/DebugRendererSimple.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Core/Color.h\"" >>"$BINDINGS/tmp/combined_input.h"
@@ -341,6 +344,13 @@ echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/ObjectVsBroadPhaseLayer
     --allow JPH::SoftBodySharedSettings \
     --allow JPH::SoftBodyCreationSettings \
     --allow JPH::SoftBodyVertex \
+    --allow JPH::MotionProperties \
+    --allow JPH::SoftBodyMotionProperties \
+    --allow JPH::SoftBodyValidateResult \
+    --allow JPH::SoftBodyContactSettings \
+    --allow JPH::SoftBodyContactListener \
+    --allow JPH::SoftBodyManifold \
+    --allow JPH::SoftBodyShape \
     --allow JPH::SubShapeID \
     --allow JPH::AABox \
     --allow JPH::BodyID \

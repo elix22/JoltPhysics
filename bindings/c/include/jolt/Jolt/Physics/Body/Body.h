@@ -18,6 +18,7 @@ typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics
 typedef struct JPH_BroadPhaseLayer JPH_BroadPhaseLayer; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
 typedef struct JPH_CollisionGroup JPH_CollisionGroup; // Defined in `#include <jolt/Jolt/Physics/Collision/CollisionGroup.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
+typedef struct JPH_MotionProperties JPH_MotionProperties; // Defined in `#include <jolt/Jolt/Physics/Body/MotionProperties.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
@@ -507,6 +508,24 @@ JOLT_API JPH_Mat44 *JPH_Body_GetInverseCenterOfMassTransform(const JPH_Body *_th
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const JPH_AABox *JPH_Body_GetWorldSpaceBounds(const JPH_Body *_this);
+
+/// Access to the motion properties
+/// Generated from method `JPH::Body::GetMotionProperties`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API const JPH_MotionProperties *JPH_Body_GetMotionProperties(const JPH_Body *_this);
+
+/// Generated from method `JPH::Body::GetMotionProperties`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API JPH_MotionProperties *JPH_Body_GetMotionProperties_mut(JPH_Body *_this);
+
+/// Access to the motion properties (version that does not check if the object is kinematic or dynamic)
+/// Generated from method `JPH::Body::GetMotionPropertiesUnchecked`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API const JPH_MotionProperties *JPH_Body_GetMotionPropertiesUnchecked(const JPH_Body *_this);
+
+/// Generated from method `JPH::Body::GetMotionPropertiesUnchecked`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API JPH_MotionProperties *JPH_Body_GetMotionPropertiesUnchecked_mut(JPH_Body *_this);
 
 /// Access to the user data, can be used for anything by the application
 /// Generated from method `JPH::Body::GetUserData`.

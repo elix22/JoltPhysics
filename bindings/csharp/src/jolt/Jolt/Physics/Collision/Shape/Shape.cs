@@ -500,6 +500,7 @@ public static partial class JPH
     ///     `JPH::HeightFieldShape`
     ///     `JPH::MeshShape`
     ///     `JPH::PlaneShape`
+    ///     `JPH::SoftBodyShape`
     ///   Indirect: (non-virtual)
     ///     `JPH::BoxShape`
     ///     `JPH::CapsuleShape`
@@ -1561,6 +1562,7 @@ public static partial class JPH
     ///     `JPH::HeightFieldShape`
     ///     `JPH::MeshShape`
     ///     `JPH::PlaneShape`
+    ///     `JPH::SoftBodyShape`
     ///   Indirect: (non-virtual)
     ///     `JPH::BoxShape`
     ///     `JPH::CapsuleShape`

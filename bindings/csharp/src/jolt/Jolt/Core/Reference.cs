@@ -349,6 +349,7 @@ public static partial class JPH
     ///     `JPH::PlaneShape`
     ///     `JPH::RotatedTranslatedShape`
     ///     `JPH::ScaledShape`
+    ///     `JPH::SoftBodyShape`
     ///     `JPH::SphereShape`
     ///     `JPH::StaticCompoundShape`
     ///     `JPH::TaperedCapsuleShape`
@@ -515,6 +516,7 @@ public static partial class JPH
     ///     `JPH::PlaneShape`
     ///     `JPH::RotatedTranslatedShape`
     ///     `JPH::ScaledShape`
+    ///     `JPH::SoftBodyShape`
     ///     `JPH::SphereShape`
     ///     `JPH::StaticCompoundShape`
     ///     `JPH::TaperedCapsuleShape`

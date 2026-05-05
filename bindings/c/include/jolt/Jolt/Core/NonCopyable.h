@@ -84,6 +84,7 @@ extern "C" {
 ///     `JPH::ScaledShape`
 ///     `JPH::SixDOFConstraint`
 ///     `JPH::SliderConstraint`
+///     `JPH::SoftBodyShape`
 ///     `JPH::SpecifiedBroadPhaseLayerFilter`
 ///     `JPH::SpecifiedObjectLayerFilter`
 ///     `JPH::SphereShape`

@@ -24,6 +24,7 @@
 #include <Jolt/Physics/PhysicsSettings.h>
 #include <Jolt/Physics/PhysicsStepListener.h>
 #include <Jolt/Physics/PhysicsSystem.h>
+#include <Jolt/Physics/SoftBody/SoftBodyContactListener.h>
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
@@ -237,6 +238,18 @@ void JPH_PhysicsSystem_SetContactListener(JPH_PhysicsSystem *_this, JPH_ContactL
 JPH_ContactListener *JPH_PhysicsSystem_GetContactListener(const JPH_PhysicsSystem *_this)
 {
     return (JPH_ContactListener *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSystem *)(_this)).GetContactListener());
+}
+
+void JPH_PhysicsSystem_SetSoftBodyContactListener(JPH_PhysicsSystem *_this, JPH_SoftBodyContactListener *inListener)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSystem *)(_this)).SetSoftBodyContactListener(
+        ((JPH::SoftBodyContactListener *)inListener)
+    );
+}
+
+JPH_SoftBodyContactListener *JPH_PhysicsSystem_GetSoftBodyContactListener(const JPH_PhysicsSystem *_this)
+{
+    return (JPH_SoftBodyContactListener *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSystem *)(_this)).GetSoftBodyContactListener());
 }
 
 void JPH_PhysicsSystem_SetSimShapeFilter(JPH_PhysicsSystem *_this, const JPH_SimShapeFilter *inShapeFilter)

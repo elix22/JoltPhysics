@@ -94,6 +94,7 @@ typedef struct JPH_Shape_Stats JPH_Shape_Stats;
 ///     `JPH::HeightFieldShape`
 ///     `JPH::MeshShape`
 ///     `JPH::PlaneShape`
+///     `JPH::SoftBodyShape`
 ///   Indirect: (non-virtual)
 ///     `JPH::BoxShape`
 ///     `JPH::CapsuleShape`

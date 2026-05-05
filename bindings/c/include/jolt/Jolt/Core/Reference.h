@@ -95,6 +95,7 @@ typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings;
 ///     `JPH::PlaneShape`
 ///     `JPH::RotatedTranslatedShape`
 ///     `JPH::ScaledShape`
+///     `JPH::SoftBodyShape`
 ///     `JPH::SphereShape`
 ///     `JPH::StaticCompoundShape`
 ///     `JPH::TaperedCapsuleShape`

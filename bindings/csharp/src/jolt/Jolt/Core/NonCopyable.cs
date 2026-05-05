@@ -75,6 +75,7 @@ public static partial class JPH
     ///     `JPH::ScaledShape`
     ///     `JPH::SixDOFConstraint`
     ///     `JPH::SliderConstraint`
+    ///     `JPH::SoftBodyShape`
     ///     `JPH::SpecifiedBroadPhaseLayerFilter`
     ///     `JPH::SpecifiedObjectLayerFilter`
     ///     `JPH::SphereShape`
@@ -208,6 +209,7 @@ public static partial class JPH
     ///     `JPH::ScaledShape`
     ///     `JPH::SixDOFConstraint`
     ///     `JPH::SliderConstraint`
+    ///     `JPH::SoftBodyShape`
     ///     `JPH::SpecifiedBroadPhaseLayerFilter`
     ///     `JPH::SpecifiedObjectLayerFilter`
     ///     `JPH::SphereShape`

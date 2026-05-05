@@ -297,6 +297,19 @@ public static partial class JPH
             return __c_ret is not null ? new JPH.ContactListener(__c_ret, is_owning: false) : null;
         }
 
+        /// Generated from method `JPH::PhysicsSystem::GetSoftBodyContactListener`.
+        public unsafe JPH.SoftBodyContactListener? GetSoftBodyContactListener()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_GetSoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_GetSoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SoftBodyContactListener._Underlying *__JPH_PhysicsSystem_GetSoftBodyContactListener(_Underlying *_this);
+            var __c_ret = __JPH_PhysicsSystem_GetSoftBodyContactListener(_UnderlyingPtr);
+            return __c_ret is not null ? new JPH.SoftBodyContactListener(__c_ret, is_owning: false) : null;
+        }
+
         /// Generated from method `JPH::PhysicsSystem::GetSimShapeFilter`.
         public unsafe JPH.Const_SimShapeFilter? GetSimShapeFilter()
         {
@@ -610,6 +623,19 @@ public static partial class JPH
             #endif
             extern static void __JPH_PhysicsSystem_SetContactListener(_Underlying *_this, JPH.ContactListener._Underlying *inListener);
             __JPH_PhysicsSystem_SetContactListener(_UnderlyingPtr, inListener is not null ? inListener._UnderlyingPtr : null);
+        }
+
+        /// Listener that is notified whenever a contact point between a soft body and another body
+        /// Generated from method `JPH::PhysicsSystem::SetSoftBodyContactListener`.
+        public unsafe void SetSoftBodyContactListener(JPH.SoftBodyContactListener? inListener)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_SetSoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_SetSoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PhysicsSystem_SetSoftBodyContactListener(_Underlying *_this, JPH.SoftBodyContactListener._Underlying *inListener);
+            __JPH_PhysicsSystem_SetSoftBodyContactListener(_UnderlyingPtr, inListener is not null ? inListener._UnderlyingPtr : null);
         }
 
         /// Set/get the shape filter that will be used during simulation. This can be used to exclude shapes within a body from colliding with each other.

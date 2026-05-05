@@ -10,6 +10,7 @@
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyCreationSettings.h>
 #include <Jolt/Physics/Body/BodyID.h>
+#include <Jolt/Physics/Body/MotionProperties.h>
 #include <Jolt/Physics/Body/MotionType.h>
 #include <Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>
 #include <Jolt/Physics/Collision/CollisionGroup.h>
@@ -533,6 +534,26 @@ JPH_Mat44 *JPH_Body_GetInverseCenterOfMassTransform(const JPH_Body *_this)
 const JPH_AABox *JPH_Body_GetWorldSpaceBounds(const JPH_Body *_this)
 {
     return (const JPH_AABox *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetWorldSpaceBounds());
+}
+
+const JPH_MotionProperties *JPH_Body_GetMotionProperties(const JPH_Body *_this)
+{
+    return (const JPH_MotionProperties *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetMotionProperties());
+}
+
+JPH_MotionProperties *JPH_Body_GetMotionProperties_mut(JPH_Body *_this)
+{
+    return (JPH_MotionProperties *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).GetMotionProperties());
+}
+
+const JPH_MotionProperties *JPH_Body_GetMotionPropertiesUnchecked(const JPH_Body *_this)
+{
+    return (const JPH_MotionProperties *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetMotionPropertiesUnchecked());
+}
+
+JPH_MotionProperties *JPH_Body_GetMotionPropertiesUnchecked_mut(JPH_Body *_this)
+{
+    return (JPH_MotionProperties *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).GetMotionPropertiesUnchecked());
 }
 
 uint64_t JPH_Body_GetUserData(const JPH_Body *_this)
