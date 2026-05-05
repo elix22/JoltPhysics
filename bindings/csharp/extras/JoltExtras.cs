@@ -66,6 +66,41 @@ public static unsafe class JoltExtensions
         finally { Marshal.FreeCoTaskMem(p); }
     }
 
+    // ---- VehicleTransmissionSettings gear ratio setters ----------------------
+    //
+    // The generated JoltHelpers.VehicleTransmissionSettingsSetGearRatios takes
+    // float? (mrbind treats const float* as an optional-pointer-to-scalar), so
+    // it cannot pass a float array.  These overloads pin a managed float[] and
+    // call the native function directly.
+
+    public static unsafe void SetGearRatios(
+        this JPH.VehicleTransmissionSettings trans, float[] ratios)
+    {
+        #if __IOS__
+        [DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_VehicleTransmissionSettingsSetGearRatios", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #else
+        [DllImport("cjolt", EntryPoint = "JoltHelpers_VehicleTransmissionSettingsSetGearRatios", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #endif
+        extern static void __impl(JPH.VehicleTransmissionSettings._Underlying* s, float* r, uint n);
+
+        fixed (float* p = ratios)
+            __impl(trans._UnderlyingPtr, p, (uint)ratios.Length);
+    }
+
+    public static unsafe void SetReverseGearRatios(
+        this JPH.VehicleTransmissionSettings trans, float[] ratios)
+    {
+        #if __IOS__
+        [DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_VehicleTransmissionSettingsSetReverseGearRatios", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #else
+        [DllImport("cjolt", EntryPoint = "JoltHelpers_VehicleTransmissionSettingsSetReverseGearRatios", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #endif
+        extern static void __impl(JPH.VehicleTransmissionSettings._Underlying* s, float* r, uint n);
+
+        fixed (float* p = ratios)
+            __impl(trans._UnderlyingPtr, p, (uint)ratios.Length);
+    }
+
     // Allocate a null-terminated UTF-8 copy of s on the CoTaskMem heap.
     // Caller must free with Marshal.FreeCoTaskMem.
     // Avoids Marshal.StringToCoTaskMemUTF8 which is only in .NET 5+.
