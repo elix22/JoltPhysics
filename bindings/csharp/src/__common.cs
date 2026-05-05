@@ -385,4 +385,26 @@ public static partial class JPH
             }
         }
     }
+
+    public unsafe struct ArrayVehicleTrackSettings2
+    {
+        internal JPH.VehicleTrackSettings._Underlying *Ptr;
+
+        internal ArrayVehicleTrackSettings2(JPH.VehicleTrackSettings._Underlying *new_ptr) {Ptr = new_ptr;}
+
+        public JPH.VehicleTrackSettings this[nint i]
+        {
+            get
+            {
+                System.Diagnostics.Trace.Assert(i >= 0 && i < 2);
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTrackSettings_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTrackSettings_OffsetPtr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.VehicleTrackSettings._Underlying *__JPH_VehicleTrackSettings_OffsetPtr(JPH.VehicleTrackSettings._Underlying *ptr, nint i);
+                return new(__JPH_VehicleTrackSettings_OffsetPtr(Ptr, i), is_owning: false);
+            }
+        }
+    }
 }

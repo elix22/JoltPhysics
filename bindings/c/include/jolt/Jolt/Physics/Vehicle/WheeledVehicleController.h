@@ -62,6 +62,9 @@ typedef struct JPH_WheelWV JPH_WheelWV;
 ///   Indirect: (non-virtual)
 ///     `JPH::SerializableObject`
 ///     `JPH::RefTarget<JPH::VehicleControllerSettings>`
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::MotorcycleControllerSettings`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_WheeledVehicleControllerSettings JPH_WheeledVehicleControllerSettings;
 
@@ -72,6 +75,9 @@ typedef struct JPH_WheeledVehicleControllerSettings JPH_WheeledVehicleController
 ///     `JPH::VehicleController`
 ///   Indirect: (non-virtual)
 ///     `JPH::NonCopyable`
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `JPH::MotorcycleController`
 typedef struct JPH_WheeledVehicleController JPH_WheeledVehicleController;
 
 ///< Moment of inertia (kg m^2), for a cylinder this would be 0.5 * M * R^2 which is 0.9 for a wheel with a mass of 20 kg and radius 0.3 m

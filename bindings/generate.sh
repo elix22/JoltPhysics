@@ -191,6 +191,9 @@ echo "#include \"$ROOT/Jolt/Geometry/RayAABox.h\"" >>"$BINDINGS/tmp/combined_inp
 echo "#include \"$ROOT/Jolt/Physics/Constraints/PathConstraintPath.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Constraints/PathConstraintPathHermite.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Vehicle/WheeledVehicleController.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Vehicle/MotorcycleController.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Vehicle/TrackedVehicleController.h\"" >>"$BINDINGS/tmp/combined_input.h"
+echo "#include \"$ROOT/Jolt/Physics/Vehicle/VehicleTrack.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/SoftBody/SoftBodyMotionProperties.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Physics/Collision/EstimateCollisionResponse.h\"" >>"$BINDINGS/tmp/combined_input.h"
 echo "#include \"$ROOT/Jolt/Renderer/DebugRendererSimple.h\"" >>"$BINDINGS/tmp/combined_input.h"
@@ -434,6 +437,15 @@ echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/ObjectVsBroadPhaseLayer
     --allow JPH::VehicleDifferentialSettings \
     --allow JPH::WheeledVehicleControllerSettings \
     --allow JPH::WheeledVehicleController \
+    --allow JPH::MotorcycleControllerSettings \
+    --allow JPH::MotorcycleController \
+    --allow JPH::WheelSettingsTV \
+    --allow JPH::WheelTV \
+    --allow JPH::TrackedVehicleControllerSettings \
+    --allow JPH::TrackedVehicleController \
+    --allow JPH::ETrackSide \
+    --allow JPH::VehicleTrackSettings \
+    --allow JPH::VehicleTrack \
     --allow JPH::VehicleCollisionTester \
     --allow JPH::VehicleCollisionTesterRay \
     --allow JPH::VehicleCollisionTesterCastSphere \

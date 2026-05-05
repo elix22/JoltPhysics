@@ -31,6 +31,7 @@ public static partial class JPH
     ///     `JPH::HeightFieldShapeSettings`
     ///     `JPH::HingeConstraintSettings`
     ///     `JPH::MeshShapeSettings`
+    ///     `JPH::MotorcycleControllerSettings`
     ///     `JPH::MutableCompoundShapeSettings`
     ///     `JPH::OffsetCenterOfMassShapeSettings`
     ///     `JPH::PathConstraintPathHermite`
@@ -48,9 +49,11 @@ public static partial class JPH
     ///     `JPH::SwingTwistConstraintSettings`
     ///     `JPH::TaperedCapsuleShapeSettings`
     ///     `JPH::TaperedCylinderShapeSettings`
+    ///     `JPH::TrackedVehicleControllerSettings`
     ///     `JPH::TriangleShapeSettings`
     ///     `JPH::TwoBodyConstraintSettings`
     ///     `JPH::VehicleConstraintSettings`
+    ///     `JPH::WheelSettingsTV`
     ///     `JPH::WheelSettingsWV`
     ///     `JPH::WheeledVehicleControllerSettings`
     /// This is the const half of the class.
@@ -243,6 +246,7 @@ public static partial class JPH
     ///     `JPH::HeightFieldShapeSettings`
     ///     `JPH::HingeConstraintSettings`
     ///     `JPH::MeshShapeSettings`
+    ///     `JPH::MotorcycleControllerSettings`
     ///     `JPH::MutableCompoundShapeSettings`
     ///     `JPH::OffsetCenterOfMassShapeSettings`
     ///     `JPH::PathConstraintPathHermite`
@@ -260,9 +264,11 @@ public static partial class JPH
     ///     `JPH::SwingTwistConstraintSettings`
     ///     `JPH::TaperedCapsuleShapeSettings`
     ///     `JPH::TaperedCylinderShapeSettings`
+    ///     `JPH::TrackedVehicleControllerSettings`
     ///     `JPH::TriangleShapeSettings`
     ///     `JPH::TwoBodyConstraintSettings`
     ///     `JPH::VehicleConstraintSettings`
+    ///     `JPH::WheelSettingsTV`
     ///     `JPH::WheelSettingsWV`
     ///     `JPH::WheeledVehicleControllerSettings`
     /// This is the non-const half of the class.

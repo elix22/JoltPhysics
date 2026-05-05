@@ -343,6 +343,7 @@ typedef struct JPH_RefTarget_JPH_VehicleCollisionTester JPH_RefTarget_JPH_Vehicl
 ///   Direct: (non-virtual)
 ///     `JPH::WheelSettings`
 ///   Indirect: (non-virtual)
+///     `JPH::WheelSettingsTV`
 ///     `JPH::WheelSettingsWV`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_RefTarget_JPH_WheelSettings JPH_RefTarget_JPH_WheelSettings;
@@ -395,6 +396,8 @@ typedef struct JPH_RefTarget_JPH_DebugRenderer_Geometry JPH_RefTarget_JPH_DebugR
 ///   Direct: (non-virtual)
 ///     `JPH::VehicleControllerSettings`
 ///   Indirect: (non-virtual)
+///     `JPH::MotorcycleControllerSettings`
+///     `JPH::TrackedVehicleControllerSettings`
 ///     `JPH::WheeledVehicleControllerSettings`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_RefTarget_JPH_VehicleControllerSettings JPH_RefTarget_JPH_VehicleControllerSettings;

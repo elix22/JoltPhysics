@@ -29,6 +29,7 @@ typedef struct JPH_VehicleConstraint JPH_VehicleConstraint; // Defined in `#incl
 ///     `JPH::RefTarget<JPH::WheelSettings>`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::WheelSettingsTV`
 ///     `JPH::WheelSettingsWV`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_WheelSettings JPH_WheelSettings;
@@ -40,6 +41,7 @@ typedef struct JPH_WheelSettings JPH_WheelSettings;
 ///     `JPH::NonCopyable`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::WheelTV`
 ///     `JPH::WheelWV`
 typedef struct JPH_Wheel JPH_Wheel;
 

@@ -59,6 +59,7 @@ public static partial class JPH
     ///     `JPH::JobSystemThreadPool`
     ///     `JPH::JobSystemWithBarrier`
     ///     `JPH::MeshShape`
+    ///     `JPH::MotorcycleController`
     ///     `JPH::MutableCompoundShape`
     ///     `JPH::ObjectLayerPairFilterMask`
     ///     `JPH::ObjectLayerPairFilterTable`
@@ -84,12 +85,14 @@ public static partial class JPH
     ///     `JPH::TempAllocatorImpl`
     ///     `JPH::TempAllocatorImplWithMallocFallback`
     ///     `JPH::TempAllocatorMalloc`
+    ///     `JPH::TrackedVehicleController`
     ///     `JPH::TriangleShape`
     ///     `JPH::TwoBodyConstraint`
     ///     `JPH::VehicleCollisionTesterCastCylinder`
     ///     `JPH::VehicleCollisionTesterCastSphere`
     ///     `JPH::VehicleCollisionTesterRay`
     ///     `JPH::VehicleConstraint`
+    ///     `JPH::WheelTV`
     ///     `JPH::WheelWV`
     ///     `JPH::WheeledVehicleController`
     ///     `RecordingDebugRenderer`
@@ -189,6 +192,7 @@ public static partial class JPH
     ///     `JPH::JobSystemThreadPool`
     ///     `JPH::JobSystemWithBarrier`
     ///     `JPH::MeshShape`
+    ///     `JPH::MotorcycleController`
     ///     `JPH::MutableCompoundShape`
     ///     `JPH::ObjectLayerPairFilterMask`
     ///     `JPH::ObjectLayerPairFilterTable`
@@ -214,12 +218,14 @@ public static partial class JPH
     ///     `JPH::TempAllocatorImpl`
     ///     `JPH::TempAllocatorImplWithMallocFallback`
     ///     `JPH::TempAllocatorMalloc`
+    ///     `JPH::TrackedVehicleController`
     ///     `JPH::TriangleShape`
     ///     `JPH::TwoBodyConstraint`
     ///     `JPH::VehicleCollisionTesterCastCylinder`
     ///     `JPH::VehicleCollisionTesterCastSphere`
     ///     `JPH::VehicleCollisionTesterRay`
     ///     `JPH::VehicleConstraint`
+    ///     `JPH::WheelTV`
     ///     `JPH::WheelWV`
     ///     `JPH::WheeledVehicleController`
     ///     `RecordingDebugRenderer`

@@ -40,6 +40,7 @@ extern "C" {
 ///     `JPH::HeightFieldShapeSettings`
 ///     `JPH::HingeConstraintSettings`
 ///     `JPH::MeshShapeSettings`
+///     `JPH::MotorcycleControllerSettings`
 ///     `JPH::MutableCompoundShapeSettings`
 ///     `JPH::OffsetCenterOfMassShapeSettings`
 ///     `JPH::PathConstraintPathHermite`
@@ -57,9 +58,11 @@ extern "C" {
 ///     `JPH::SwingTwistConstraintSettings`
 ///     `JPH::TaperedCapsuleShapeSettings`
 ///     `JPH::TaperedCylinderShapeSettings`
+///     `JPH::TrackedVehicleControllerSettings`
 ///     `JPH::TriangleShapeSettings`
 ///     `JPH::TwoBodyConstraintSettings`
 ///     `JPH::VehicleConstraintSettings`
+///     `JPH::WheelSettingsTV`
 ///     `JPH::WheelSettingsWV`
 ///     `JPH::WheeledVehicleControllerSettings`
 typedef struct JPH_SerializableObject JPH_SerializableObject;

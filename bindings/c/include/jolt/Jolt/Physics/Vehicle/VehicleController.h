@@ -23,7 +23,10 @@ typedef struct JPH_VehicleConstraint JPH_VehicleConstraint; // Defined in `#incl
 ///     `JPH::RefTarget<JPH::VehicleControllerSettings>`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::TrackedVehicleControllerSettings`
 ///     `JPH::WheeledVehicleControllerSettings`
+///   Indirect: (non-virtual)
+///     `JPH::MotorcycleControllerSettings`
 typedef struct JPH_VehicleControllerSettings JPH_VehicleControllerSettings;
 
 /// Runtime data for interface that controls acceleration / deceleration of the vehicle
@@ -33,7 +36,10 @@ typedef struct JPH_VehicleControllerSettings JPH_VehicleControllerSettings;
 ///     `JPH::NonCopyable`
 /// Derived classes:
 ///   Direct: (non-virtual)
+///     `JPH::TrackedVehicleController`
 ///     `JPH::WheeledVehicleController`
+///   Indirect: (non-virtual)
+///     `JPH::MotorcycleController`
 typedef struct JPH_VehicleController JPH_VehicleController;
 
 /// Destroys a heap-allocated instance of `JPH_VehicleControllerSettings`. Does nothing if the pointer is null.

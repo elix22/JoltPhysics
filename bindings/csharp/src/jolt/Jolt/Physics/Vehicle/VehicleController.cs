@@ -9,7 +9,10 @@ public static partial class JPH
     ///     `JPH::RefTarget<JPH::VehicleControllerSettings>`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::TrackedVehicleControllerSettings`
     ///     `JPH::WheeledVehicleControllerSettings`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::MotorcycleControllerSettings`
     /// This is the const half of the class.
     public class Const_VehicleControllerSettings : JPH.Object<Const_VehicleControllerSettings>, System.IDisposable
     {
@@ -316,7 +319,10 @@ public static partial class JPH
     ///     `JPH::RefTarget<JPH::VehicleControllerSettings>`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::TrackedVehicleControllerSettings`
     ///     `JPH::WheeledVehicleControllerSettings`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::MotorcycleControllerSettings`
     /// This is the non-const half of the class.
     public class VehicleControllerSettings : Const_VehicleControllerSettings
     {
@@ -412,7 +418,10 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::TrackedVehicleController`
     ///     `JPH::WheeledVehicleController`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::MotorcycleController`
     /// This is the const half of the class.
     public class Const_VehicleController : JPH.Object<Const_VehicleController>, System.IDisposable
     {
@@ -620,7 +629,10 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::TrackedVehicleController`
     ///     `JPH::WheeledVehicleController`
+    ///   Indirect: (non-virtual)
+    ///     `JPH::MotorcycleController`
     /// This is the non-const half of the class.
     public class VehicleController : Const_VehicleController
     {

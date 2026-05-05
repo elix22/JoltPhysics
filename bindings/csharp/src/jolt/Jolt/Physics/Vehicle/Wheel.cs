@@ -9,6 +9,7 @@ public static partial class JPH
     ///     `JPH::RefTarget<JPH::WheelSettings>`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::WheelSettingsTV`
     ///     `JPH::WheelSettingsWV`
     /// This is the const half of the class.
     public class Const_WheelSettings : JPH.Object<Const_WheelSettings>, System.IDisposable
@@ -575,6 +576,7 @@ public static partial class JPH
     ///     `JPH::RefTarget<JPH::WheelSettings>`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::WheelSettingsTV`
     ///     `JPH::WheelSettingsWV`
     /// This is the non-const half of the class.
     public class WheelSettings : Const_WheelSettings
@@ -978,6 +980,7 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::WheelTV`
     ///     `JPH::WheelWV`
     /// This is the const half of the class.
     public class Const_Wheel : JPH.Object<Const_Wheel>, System.IDisposable
@@ -1409,6 +1412,7 @@ public static partial class JPH
     ///     `JPH::NonCopyable`
     /// Derived classes:
     ///   Direct: (non-virtual)
+    ///     `JPH::WheelTV`
     ///     `JPH::WheelWV`
     /// This is the non-const half of the class.
     public class Wheel : Const_Wheel
