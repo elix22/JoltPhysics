@@ -355,6 +355,31 @@ unsigned int JoltHelpers_SoftBodySettingsGetRodStretchShearVertex(const JPH_Soft
     );
 }
 
+unsigned int JoltHelpers_SoftBodySettingsGetRodBendTwistCount(const JPH_SoftBodySharedSettings *inSettings)
+{
+    return JoltHelpers::SoftBodySettingsGetRodBendTwistCount(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(inSettings))
+    );
+}
+
+void JoltHelpers_SoftBodySettingsSetRodStretchShearCompliance(JPH_SoftBodySharedSettings *inSettings, unsigned int inIndex, float inCompliance)
+{
+    JoltHelpers::SoftBodySettingsSetRodStretchShearCompliance(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(inSettings)),
+        inIndex,
+        inCompliance
+    );
+}
+
+void JoltHelpers_SoftBodySettingsSetRodBendTwistCompliance(JPH_SoftBodySharedSettings *inSettings, unsigned int inIndex, float inCompliance)
+{
+    JoltHelpers::SoftBodySettingsSetRodBendTwistCompliance(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(inSettings)),
+        inIndex,
+        inCompliance
+    );
+}
+
 void JoltHelpers_SoftBodySettingsAddSkinned(JPH_SoftBodySharedSettings *inSettings, unsigned int inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius)
 {
     JoltHelpers::SoftBodySettingsAddSkinned(

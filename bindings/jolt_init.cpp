@@ -233,6 +233,21 @@ JPH::uint32 JoltHelpers::SoftBodySettingsGetRodStretchShearVertex(const JPH::Sof
     return inSettings.mRodStretchShearConstraints[inIndex].mVertex[inSlot];
 }
 
+unsigned int JoltHelpers::SoftBodySettingsGetRodBendTwistCount(const JPH::SoftBodySharedSettings& inSettings)
+{
+    return static_cast<unsigned int>(inSettings.mRodBendTwistConstraints.size());
+}
+
+void JoltHelpers::SoftBodySettingsSetRodStretchShearCompliance(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inIndex, float inCompliance)
+{
+    inSettings.mRodStretchShearConstraints[inIndex].mCompliance = inCompliance;
+}
+
+void JoltHelpers::SoftBodySettingsSetRodBendTwistCompliance(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inIndex, float inCompliance)
+{
+    inSettings.mRodBendTwistConstraints[inIndex].mCompliance = inCompliance;
+}
+
 void JoltHelpers::SoftBodySettingsAddSkinned(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius)
 {
     inSettings.mSkinnedConstraints.push_back(JPH::SoftBodySharedSettings::Skinned(inVertex, inMaxDistance, inBackStopDistance, inBackStopRadius));

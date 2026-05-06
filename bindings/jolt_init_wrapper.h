@@ -148,6 +148,12 @@ struct JoltHelpers
     static unsigned int SoftBodySettingsGetRodStretchShearCount(const JPH::SoftBodySharedSettings& inSettings);
     /// Return the vertex index (slot 0 or 1) of a RodStretchShear constraint.
     static JPH::uint32 SoftBodySettingsGetRodStretchShearVertex(const JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inIndex, JPH::uint32 inSlot);
+    /// Return the number of RodBendTwist constraints.
+    static unsigned int SoftBodySettingsGetRodBendTwistCount(const JPH::SoftBodySharedSettings& inSettings);
+    /// Set compliance on a single RodStretchShear constraint by index.
+    static void SoftBodySettingsSetRodStretchShearCompliance(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inIndex, float inCompliance);
+    /// Set compliance on a single RodBendTwist constraint by index.
+    static void SoftBodySettingsSetRodBendTwistCompliance(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inIndex, float inCompliance);
     /// Append a Skinned constraint to SoftBodySharedSettings::mSkinnedConstraints.
     static void SoftBodySettingsAddSkinned(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius);
     /// Append an InvBind matrix to SoftBodySharedSettings::mInvBindMatrices.

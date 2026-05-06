@@ -361,6 +361,21 @@ JOLT_API unsigned int JoltHelpers_SoftBodySettingsGetRodStretchShearCount(const 
 /// Parameter `inSettings` can not be null. It is a single object.
 JOLT_API unsigned int JoltHelpers_SoftBodySettingsGetRodStretchShearVertex(const JPH_SoftBodySharedSettings *inSettings, unsigned int inIndex, unsigned int inSlot);
 
+/// Return the number of RodBendTwist constraints.
+/// Generated from method `JoltHelpers::SoftBodySettingsGetRodBendTwistCount`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API unsigned int JoltHelpers_SoftBodySettingsGetRodBendTwistCount(const JPH_SoftBodySharedSettings *inSettings);
+
+/// Set compliance on a single RodStretchShear constraint by index.
+/// Generated from method `JoltHelpers::SoftBodySettingsSetRodStretchShearCompliance`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_SoftBodySettingsSetRodStretchShearCompliance(JPH_SoftBodySharedSettings *inSettings, unsigned int inIndex, float inCompliance);
+
+/// Set compliance on a single RodBendTwist constraint by index.
+/// Generated from method `JoltHelpers::SoftBodySettingsSetRodBendTwistCompliance`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_SoftBodySettingsSetRodBendTwistCompliance(JPH_SoftBodySharedSettings *inSettings, unsigned int inIndex, float inCompliance);
+
 /// Append a Skinned constraint to SoftBodySharedSettings::mSkinnedConstraints.
 /// Generated from method `JoltHelpers::SoftBodySettingsAddSkinned`.
 /// Parameter `inSettings` can not be null. It is a single object.

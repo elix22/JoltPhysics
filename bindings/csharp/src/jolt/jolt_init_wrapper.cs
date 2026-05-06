@@ -500,6 +500,45 @@ public static partial class JPH
             return __JoltHelpers_SoftBodySettingsGetRodStretchShearVertex(inSettings._UnderlyingPtr, inIndex, inSlot);
         }
 
+        /// Return the number of RodBendTwist constraints.
+        /// Generated from method `JoltHelpers::SoftBodySettingsGetRodBendTwistCount`.
+        public static unsafe uint SoftBodySettingsGetRodBendTwistCount(JPH.Const_SoftBodySharedSettings inSettings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsGetRodBendTwistCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsGetRodBendTwistCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JoltHelpers_SoftBodySettingsGetRodBendTwistCount(JPH.Const_SoftBodySharedSettings._Underlying *inSettings);
+            return __JoltHelpers_SoftBodySettingsGetRodBendTwistCount(inSettings._UnderlyingPtr);
+        }
+
+        /// Set compliance on a single RodStretchShear constraint by index.
+        /// Generated from method `JoltHelpers::SoftBodySettingsSetRodStretchShearCompliance`.
+        public static unsafe void SoftBodySettingsSetRodStretchShearCompliance(JPH.SoftBodySharedSettings inSettings, uint inIndex, float inCompliance)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsSetRodStretchShearCompliance", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsSetRodStretchShearCompliance", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_SoftBodySettingsSetRodStretchShearCompliance(JPH.SoftBodySharedSettings._Underlying *inSettings, uint inIndex, float inCompliance);
+            __JoltHelpers_SoftBodySettingsSetRodStretchShearCompliance(inSettings._UnderlyingPtr, inIndex, inCompliance);
+        }
+
+        /// Set compliance on a single RodBendTwist constraint by index.
+        /// Generated from method `JoltHelpers::SoftBodySettingsSetRodBendTwistCompliance`.
+        public static unsafe void SoftBodySettingsSetRodBendTwistCompliance(JPH.SoftBodySharedSettings inSettings, uint inIndex, float inCompliance)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsSetRodBendTwistCompliance", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsSetRodBendTwistCompliance", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_SoftBodySettingsSetRodBendTwistCompliance(JPH.SoftBodySharedSettings._Underlying *inSettings, uint inIndex, float inCompliance);
+            __JoltHelpers_SoftBodySettingsSetRodBendTwistCompliance(inSettings._UnderlyingPtr, inIndex, inCompliance);
+        }
+
         /// Append a Skinned constraint to SoftBodySharedSettings::mSkinnedConstraints.
         /// Generated from method `JoltHelpers::SoftBodySettingsAddSkinned`.
         public static unsafe void SoftBodySettingsAddSkinned(JPH.SoftBodySharedSettings inSettings, uint inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius)
