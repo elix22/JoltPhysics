@@ -196,6 +196,16 @@ unsigned int JoltHelpers::SoftBodySettingsGetVertexCount(const JPH::SoftBodyShar
     return static_cast<unsigned int>(inSettings.mVertices.size());
 }
 
+unsigned int JoltHelpers::SoftBodySettingsGetFaceCount(const JPH::SoftBodySharedSettings& inSettings)
+{
+    return static_cast<unsigned int>(inSettings.mFaces.size());
+}
+
+JPH::uint32 JoltHelpers::SoftBodySettingsGetFaceVertex(const JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inFaceIndex, JPH::uint32 inVertexSlot)
+{
+    return inSettings.mFaces[inFaceIndex].mVertex[inVertexSlot];
+}
+
 JPH::SoftBodySharedSettings* JoltHelpers::SoftBodySettingsCreateCube(JPH::uint inGridSize, float inGridSpacing)
 {
     JPH::Ref<JPH::SoftBodySharedSettings> ref = JPH::SoftBodySharedSettings::sCreateCube(inGridSize, inGridSpacing);

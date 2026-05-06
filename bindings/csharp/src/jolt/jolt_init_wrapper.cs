@@ -408,6 +408,32 @@ public static partial class JPH
             return __JoltHelpers_SoftBodySettingsGetVertexCount(inSettings._UnderlyingPtr);
         }
 
+        /// Return the number of faces in SoftBodySharedSettings::mFaces (valid after Optimize()).
+        /// Generated from method `JoltHelpers::SoftBodySettingsGetFaceCount`.
+        public static unsafe uint SoftBodySettingsGetFaceCount(JPH.Const_SoftBodySharedSettings inSettings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsGetFaceCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsGetFaceCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JoltHelpers_SoftBodySettingsGetFaceCount(JPH.Const_SoftBodySharedSettings._Underlying *inSettings);
+            return __JoltHelpers_SoftBodySettingsGetFaceCount(inSettings._UnderlyingPtr);
+        }
+
+        /// Return the vertex index at slot inVertexSlot (0, 1, or 2) of face inFaceIndex in SoftBodySharedSettings::mFaces.
+        /// Generated from method `JoltHelpers::SoftBodySettingsGetFaceVertex`.
+        public static unsafe uint SoftBodySettingsGetFaceVertex(JPH.Const_SoftBodySharedSettings inSettings, uint inFaceIndex, uint inVertexSlot)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsGetFaceVertex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsGetFaceVertex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JoltHelpers_SoftBodySettingsGetFaceVertex(JPH.Const_SoftBodySharedSettings._Underlying *inSettings, uint inFaceIndex, uint inVertexSlot);
+            return __JoltHelpers_SoftBodySettingsGetFaceVertex(inSettings._UnderlyingPtr, inFaceIndex, inVertexSlot);
+        }
+
         /// Create a cube soft body and return an owning pointer (caller must eventually Release() it).
         /// Generated from method `JoltHelpers::SoftBodySettingsCreateCube`.
         public static unsafe JPH.SoftBodySharedSettings? SoftBodySettingsCreateCube(uint inGridSize, float inGridSpacing)

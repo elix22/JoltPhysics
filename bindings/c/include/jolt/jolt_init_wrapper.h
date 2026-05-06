@@ -327,6 +327,16 @@ JOLT_API void JoltHelpers_SoftBodySettingsAddVertex(JPH_SoftBodySharedSettings *
 /// Parameter `inSettings` can not be null. It is a single object.
 JOLT_API unsigned int JoltHelpers_SoftBodySettingsGetVertexCount(const JPH_SoftBodySharedSettings *inSettings);
 
+/// Return the number of faces in SoftBodySharedSettings::mFaces (valid after Optimize()).
+/// Generated from method `JoltHelpers::SoftBodySettingsGetFaceCount`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API unsigned int JoltHelpers_SoftBodySettingsGetFaceCount(const JPH_SoftBodySharedSettings *inSettings);
+
+/// Return the vertex index at slot inVertexSlot (0, 1, or 2) of face inFaceIndex in SoftBodySharedSettings::mFaces.
+/// Generated from method `JoltHelpers::SoftBodySettingsGetFaceVertex`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API unsigned int JoltHelpers_SoftBodySettingsGetFaceVertex(const JPH_SoftBodySharedSettings *inSettings, unsigned int inFaceIndex, unsigned int inVertexSlot);
+
 /// Create a cube soft body and return an owning pointer (caller must eventually Release() it).
 /// Generated from method `JoltHelpers::SoftBodySettingsCreateCube`.
 JOLT_API JPH_SoftBodySharedSettings *JoltHelpers_SoftBodySettingsCreateCube(unsigned int inGridSize, float inGridSpacing);

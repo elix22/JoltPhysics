@@ -134,6 +134,10 @@ struct JoltHelpers
     static void SoftBodySettingsAddVertex(JPH::SoftBodySharedSettings& inSettings, const JPH::SoftBodySharedSettings::Vertex& inVertex);
     /// Return the number of vertices in SoftBodySharedSettings::mVertices.
     static unsigned int SoftBodySettingsGetVertexCount(const JPH::SoftBodySharedSettings& inSettings);
+    /// Return the number of faces in SoftBodySharedSettings::mFaces (valid after Optimize()).
+    static unsigned int SoftBodySettingsGetFaceCount(const JPH::SoftBodySharedSettings& inSettings);
+    /// Return the vertex index at slot inVertexSlot (0, 1, or 2) of face inFaceIndex in SoftBodySharedSettings::mFaces.
+    static JPH::uint32 SoftBodySettingsGetFaceVertex(const JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inFaceIndex, JPH::uint32 inVertexSlot);
     /// Create a cube soft body and return an owning pointer (caller must eventually Release() it).
     static JPH::SoftBodySharedSettings* SoftBodySettingsCreateCube(JPH::uint inGridSize, float inGridSpacing);
     /// Return the number of runtime vertices in a soft body (via SoftBodyMotionProperties).

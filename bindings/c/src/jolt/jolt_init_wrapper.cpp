@@ -297,6 +297,22 @@ unsigned int JoltHelpers_SoftBodySettingsGetVertexCount(const JPH_SoftBodyShared
     );
 }
 
+unsigned int JoltHelpers_SoftBodySettingsGetFaceCount(const JPH_SoftBodySharedSettings *inSettings)
+{
+    return JoltHelpers::SoftBodySettingsGetFaceCount(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(inSettings))
+    );
+}
+
+unsigned int JoltHelpers_SoftBodySettingsGetFaceVertex(const JPH_SoftBodySharedSettings *inSettings, unsigned int inFaceIndex, unsigned int inVertexSlot)
+{
+    return JoltHelpers::SoftBodySettingsGetFaceVertex(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(inSettings)),
+        inFaceIndex,
+        inVertexSlot
+    );
+}
+
 JPH_SoftBodySharedSettings *JoltHelpers_SoftBodySettingsCreateCube(unsigned int inGridSize, float inGridSpacing)
 {
     return (JPH_SoftBodySharedSettings *)(JoltHelpers::SoftBodySettingsCreateCube(
