@@ -140,6 +140,18 @@ struct JoltHelpers
     static JPH::uint32 SoftBodySettingsGetFaceVertex(const JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inFaceIndex, JPH::uint32 inVertexSlot);
     /// Create a cube soft body and return an owning pointer (caller must eventually Release() it).
     static JPH::SoftBodySharedSettings* SoftBodySettingsCreateCube(JPH::uint inGridSize, float inGridSpacing);
+    /// Append a RodStretchShear constraint to SoftBodySharedSettings::mRodStretchShearConstraints.
+    static void SoftBodySettingsAddRodStretchShear(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inVertex1, JPH::uint32 inVertex2);
+    /// Append a RodBendTwist constraint to SoftBodySharedSettings::mRodBendTwistConstraints.
+    static void SoftBodySettingsAddRodBendTwist(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inRod1, JPH::uint32 inRod2);
+    /// Return the number of RodStretchShear constraints.
+    static unsigned int SoftBodySettingsGetRodStretchShearCount(const JPH::SoftBodySharedSettings& inSettings);
+    /// Return the vertex index (slot 0 or 1) of a RodStretchShear constraint.
+    static JPH::uint32 SoftBodySettingsGetRodStretchShearVertex(const JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inIndex, JPH::uint32 inSlot);
+    /// Append a Skinned constraint to SoftBodySharedSettings::mSkinnedConstraints.
+    static void SoftBodySettingsAddSkinned(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius);
+    /// Append an InvBind matrix to SoftBodySharedSettings::mInvBindMatrices.
+    static void SoftBodySettingsAddInvBind(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inJointIndex, JPH::Mat44Arg inInvBind);
     /// Return the number of runtime vertices in a soft body (via SoftBodyMotionProperties).
     static unsigned int BodyGetSoftBodyVertexCount(const JPH::Body& inBody);
     /// Return the position of a runtime soft body vertex.

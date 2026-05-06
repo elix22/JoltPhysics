@@ -321,6 +321,60 @@ JPH_SoftBodySharedSettings *JoltHelpers_SoftBodySettingsCreateCube(unsigned int 
     ));
 }
 
+void JoltHelpers_SoftBodySettingsAddRodStretchShear(JPH_SoftBodySharedSettings *inSettings, unsigned int inVertex1, unsigned int inVertex2)
+{
+    JoltHelpers::SoftBodySettingsAddRodStretchShear(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(inSettings)),
+        inVertex1,
+        inVertex2
+    );
+}
+
+void JoltHelpers_SoftBodySettingsAddRodBendTwist(JPH_SoftBodySharedSettings *inSettings, unsigned int inRod1, unsigned int inRod2)
+{
+    JoltHelpers::SoftBodySettingsAddRodBendTwist(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(inSettings)),
+        inRod1,
+        inRod2
+    );
+}
+
+unsigned int JoltHelpers_SoftBodySettingsGetRodStretchShearCount(const JPH_SoftBodySharedSettings *inSettings)
+{
+    return JoltHelpers::SoftBodySettingsGetRodStretchShearCount(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(inSettings))
+    );
+}
+
+unsigned int JoltHelpers_SoftBodySettingsGetRodStretchShearVertex(const JPH_SoftBodySharedSettings *inSettings, unsigned int inIndex, unsigned int inSlot)
+{
+    return JoltHelpers::SoftBodySettingsGetRodStretchShearVertex(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(inSettings)),
+        inIndex,
+        inSlot
+    );
+}
+
+void JoltHelpers_SoftBodySettingsAddSkinned(JPH_SoftBodySharedSettings *inSettings, unsigned int inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius)
+{
+    JoltHelpers::SoftBodySettingsAddSkinned(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(inSettings)),
+        inVertex,
+        inMaxDistance,
+        inBackStopDistance,
+        inBackStopRadius
+    );
+}
+
+void JoltHelpers_SoftBodySettingsAddInvBind(JPH_SoftBodySharedSettings *inSettings, unsigned int inJointIndex, const JPH_Mat44 *inInvBind)
+{
+    JoltHelpers::SoftBodySettingsAddInvBind(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(inSettings)),
+        inJointIndex,
+        ((inInvBind ? void() : MRBINDC_THROW("Parameter `inInvBind` can not be null.", void)), *(const JPH::Mat44 *)(inInvBind))
+    );
+}
+
 unsigned int JoltHelpers_BodyGetSoftBodyVertexCount(const JPH_Body *inBody)
 {
     return JoltHelpers::BodyGetSoftBodyVertexCount(

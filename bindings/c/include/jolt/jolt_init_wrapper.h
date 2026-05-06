@@ -341,6 +341,37 @@ JOLT_API unsigned int JoltHelpers_SoftBodySettingsGetFaceVertex(const JPH_SoftBo
 /// Generated from method `JoltHelpers::SoftBodySettingsCreateCube`.
 JOLT_API JPH_SoftBodySharedSettings *JoltHelpers_SoftBodySettingsCreateCube(unsigned int inGridSize, float inGridSpacing);
 
+/// Append a RodStretchShear constraint to SoftBodySharedSettings::mRodStretchShearConstraints.
+/// Generated from method `JoltHelpers::SoftBodySettingsAddRodStretchShear`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_SoftBodySettingsAddRodStretchShear(JPH_SoftBodySharedSettings *inSettings, unsigned int inVertex1, unsigned int inVertex2);
+
+/// Append a RodBendTwist constraint to SoftBodySharedSettings::mRodBendTwistConstraints.
+/// Generated from method `JoltHelpers::SoftBodySettingsAddRodBendTwist`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_SoftBodySettingsAddRodBendTwist(JPH_SoftBodySharedSettings *inSettings, unsigned int inRod1, unsigned int inRod2);
+
+/// Return the number of RodStretchShear constraints.
+/// Generated from method `JoltHelpers::SoftBodySettingsGetRodStretchShearCount`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API unsigned int JoltHelpers_SoftBodySettingsGetRodStretchShearCount(const JPH_SoftBodySharedSettings *inSettings);
+
+/// Return the vertex index (slot 0 or 1) of a RodStretchShear constraint.
+/// Generated from method `JoltHelpers::SoftBodySettingsGetRodStretchShearVertex`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API unsigned int JoltHelpers_SoftBodySettingsGetRodStretchShearVertex(const JPH_SoftBodySharedSettings *inSettings, unsigned int inIndex, unsigned int inSlot);
+
+/// Append a Skinned constraint to SoftBodySharedSettings::mSkinnedConstraints.
+/// Generated from method `JoltHelpers::SoftBodySettingsAddSkinned`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_SoftBodySettingsAddSkinned(JPH_SoftBodySharedSettings *inSettings, unsigned int inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius);
+
+/// Append an InvBind matrix to SoftBodySharedSettings::mInvBindMatrices.
+/// Generated from method `JoltHelpers::SoftBodySettingsAddInvBind`.
+/// Parameter `inSettings` can not be null. It is a single object.
+/// Parameter `inInvBind` can not be null. It is a single object.
+JOLT_API void JoltHelpers_SoftBodySettingsAddInvBind(JPH_SoftBodySharedSettings *inSettings, unsigned int inJointIndex, const JPH_Mat44 *inInvBind);
+
 /// Return the number of runtime vertices in a soft body (via SoftBodyMotionProperties).
 /// Generated from method `JoltHelpers::BodyGetSoftBodyVertexCount`.
 /// Parameter `inBody` can not be null. It is a single object.

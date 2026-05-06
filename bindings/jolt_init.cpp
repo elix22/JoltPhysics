@@ -213,6 +213,36 @@ JPH::SoftBodySharedSettings* JoltHelpers::SoftBodySettingsCreateCube(JPH::uint i
     return ref.GetPtr();
 }
 
+void JoltHelpers::SoftBodySettingsAddRodStretchShear(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inVertex1, JPH::uint32 inVertex2)
+{
+    inSettings.mRodStretchShearConstraints.push_back(JPH::SoftBodySharedSettings::RodStretchShear(inVertex1, inVertex2));
+}
+
+void JoltHelpers::SoftBodySettingsAddRodBendTwist(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inRod1, JPH::uint32 inRod2)
+{
+    inSettings.mRodBendTwistConstraints.push_back(JPH::SoftBodySharedSettings::RodBendTwist(inRod1, inRod2));
+}
+
+unsigned int JoltHelpers::SoftBodySettingsGetRodStretchShearCount(const JPH::SoftBodySharedSettings& inSettings)
+{
+    return static_cast<unsigned int>(inSettings.mRodStretchShearConstraints.size());
+}
+
+JPH::uint32 JoltHelpers::SoftBodySettingsGetRodStretchShearVertex(const JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inIndex, JPH::uint32 inSlot)
+{
+    return inSettings.mRodStretchShearConstraints[inIndex].mVertex[inSlot];
+}
+
+void JoltHelpers::SoftBodySettingsAddSkinned(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius)
+{
+    inSettings.mSkinnedConstraints.push_back(JPH::SoftBodySharedSettings::Skinned(inVertex, inMaxDistance, inBackStopDistance, inBackStopRadius));
+}
+
+void JoltHelpers::SoftBodySettingsAddInvBind(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inJointIndex, JPH::Mat44Arg inInvBind)
+{
+    inSettings.mInvBindMatrices.push_back(JPH::SoftBodySharedSettings::InvBind(inJointIndex, inInvBind));
+}
+
 unsigned int JoltHelpers::BodyGetSoftBodyVertexCount(const JPH::Body& inBody)
 {
     const auto* mp = static_cast<const JPH::SoftBodyMotionProperties*>(inBody.GetMotionProperties());
