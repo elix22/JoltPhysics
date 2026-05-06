@@ -17,6 +17,8 @@
 #include <Jolt/Physics/Collision/Shape/ConvexHullShape.h>
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
 #include <Jolt/Physics/SoftBody/SoftBodyMotionProperties.h>
+#include <Jolt/Physics/SoftBody/SoftBodyContactListener.h>
+#include <Jolt/Physics/SoftBody/SoftBodyManifold.h>
 #include <Jolt/Physics/PhysicsSystem.h>
 #include <Jolt/Physics/Ragdoll/Ragdoll.h>
 #ifdef JPH_DEBUG_RENDERER
@@ -158,6 +160,10 @@ struct JoltHelpers
     static void SoftBodySettingsAddSkinned(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius);
     /// Append an InvBind matrix to SoftBodySharedSettings::mInvBindMatrices.
     static void SoftBodySettingsAddInvBind(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inJointIndex, JPH::Mat44Arg inInvBind);
+    /// Returns the number of vertices in a SoftBodyManifold.
+    static JPH::uint32 SoftBodyManifoldGetVertexCount(const JPH::SoftBodyManifold& inManifold);
+    /// Returns the vertex at the given index (non-owning reference into the manifold).
+    static const JPH::SoftBodyVertex& SoftBodyManifoldGetVertex(const JPH::SoftBodyManifold& inManifold, JPH::uint32 inIndex);
     /// Return the number of runtime vertices in a soft body (via SoftBodyMotionProperties).
     static unsigned int BodyGetSoftBodyVertexCount(const JPH::Body& inBody);
     /// Return the position of a runtime soft body vertex.
@@ -326,6 +332,33 @@ struct EstimateResponseContactListener : public JPH::ContactListener
     const JPH::Vec3& GetAngularVelocity2() const { return mAngularVelocity2; }
 
     virtual void OnContactAdded(const JPH::Body& inBody1, const JPH::Body& inBody2, const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings) override;
+};
+
+// ---------------------------------------------------------------------------
+// SoftBodyContactListenerTrampoline — concrete SoftBodyContactListener that
+// dispatches to C function pointers set from C#.
+// ---------------------------------------------------------------------------
+struct SoftBodyContactListenerTrampoline : public JPH::SoftBodyContactListener
+{
+    void* mContext      = nullptr;
+    void* mOnValidateFn = nullptr;
+    void* mOnAddedFn    = nullptr;
+
+    void* GetContext()        const { return mContext; }
+    void  SetContext(void* v)       { mContext      = v; }
+    void* GetOnValidateFn()   const { return mOnValidateFn; }
+    void  SetOnValidateFn(void* v)  { mOnValidateFn = v; }
+    void* GetOnAddedFn()      const { return mOnAddedFn; }
+    void  SetOnAddedFn(void* v)     { mOnAddedFn    = v; }
+
+    virtual JPH::SoftBodyValidateResult OnSoftBodyContactValidate(
+        const JPH::Body& inSoftBody,
+        const JPH::Body& inOtherBody,
+        JPH::SoftBodyContactSettings& ioSettings) override;
+
+    virtual void OnSoftBodyContactAdded(
+        const JPH::Body& inSoftBody,
+        const JPH::SoftBodyManifold& inManifold) override;
 };
 
 // ---------------------------------------------------------------------------

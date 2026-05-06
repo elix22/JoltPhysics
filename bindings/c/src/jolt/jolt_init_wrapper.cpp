@@ -23,7 +23,10 @@
 #include <Jolt/Physics/PhysicsStepListener.h>
 #include <Jolt/Physics/PhysicsSystem.h>
 #include <Jolt/Physics/Ragdoll/Ragdoll.h>
+#include <Jolt/Physics/SoftBody/SoftBodyContactListener.h>
+#include <Jolt/Physics/SoftBody/SoftBodyManifold.h>
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
+#include <Jolt/Physics/SoftBody/SoftBodyVertex.h>
 #include <Jolt/Physics/Vehicle/TrackedVehicleController.h>
 #include <Jolt/Physics/Vehicle/VehicleAntiRollBar.h>
 #include <Jolt/Physics/Vehicle/VehicleConstraint.h>
@@ -398,6 +401,21 @@ void JoltHelpers_SoftBodySettingsAddInvBind(JPH_SoftBodySharedSettings *inSettin
         inJointIndex,
         ((inInvBind ? void() : MRBINDC_THROW("Parameter `inInvBind` can not be null.", void)), *(const JPH::Mat44 *)(inInvBind))
     );
+}
+
+unsigned int JoltHelpers_SoftBodyManifoldGetVertexCount(const JPH_SoftBodyManifold *inManifold)
+{
+    return JoltHelpers::SoftBodyManifoldGetVertexCount(
+        ((inManifold ? void() : MRBINDC_THROW("Parameter `inManifold` can not be null.", void)), *(const JPH::SoftBodyManifold *)(inManifold))
+    );
+}
+
+const JPH_SoftBodyVertex *JoltHelpers_SoftBodyManifoldGetVertex(const JPH_SoftBodyManifold *inManifold, unsigned int inIndex)
+{
+    return (const JPH_SoftBodyVertex *)std::addressof(JoltHelpers::SoftBodyManifoldGetVertex(
+        ((inManifold ? void() : MRBINDC_THROW("Parameter `inManifold` can not be null.", void)), *(const JPH::SoftBodyManifold *)(inManifold)),
+        inIndex
+    ));
 }
 
 unsigned int JoltHelpers_BodyGetSoftBodyVertexCount(const JPH_Body *inBody)
@@ -1380,6 +1398,182 @@ void EstimateResponseContactListener_OnContactRemoved(EstimateResponseContactLis
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(EstimateResponseContactListener *)(_this)).OnContactRemoved(
         ((inSubShapePair ? void() : MRBINDC_THROW("Parameter `inSubShapePair` can not be null.", void)), *(const JPH::SubShapeIDPair *)(inSubShapePair))
+    );
+}
+
+void *const *SoftBodyContactListenerTrampoline_Get_mContext(const SoftBodyContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const SoftBodyContactListenerTrampoline *)(_this)).mContext);
+}
+
+void SoftBodyContactListenerTrampoline_Set_mContext(SoftBodyContactListenerTrampoline *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).mContext = value;
+}
+
+void **SoftBodyContactListenerTrampoline_GetMutable_mContext(SoftBodyContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).mContext);
+}
+
+void *const *SoftBodyContactListenerTrampoline_Get_mOnValidateFn(const SoftBodyContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const SoftBodyContactListenerTrampoline *)(_this)).mOnValidateFn);
+}
+
+void SoftBodyContactListenerTrampoline_Set_mOnValidateFn(SoftBodyContactListenerTrampoline *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).mOnValidateFn = value;
+}
+
+void **SoftBodyContactListenerTrampoline_GetMutable_mOnValidateFn(SoftBodyContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).mOnValidateFn);
+}
+
+void *const *SoftBodyContactListenerTrampoline_Get_mOnAddedFn(const SoftBodyContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const SoftBodyContactListenerTrampoline *)(_this)).mOnAddedFn);
+}
+
+void SoftBodyContactListenerTrampoline_Set_mOnAddedFn(SoftBodyContactListenerTrampoline *_this, void *value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).mOnAddedFn = value;
+}
+
+void **SoftBodyContactListenerTrampoline_GetMutable_mOnAddedFn(SoftBodyContactListenerTrampoline *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).mOnAddedFn);
+}
+
+SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_DefaultConstruct(void)
+{
+    using _mrbind_T = SoftBodyContactListenerTrampoline;
+    _mrbind_T* _mrbind_ptr = new _mrbind_T();
+    _mrbind_ptr->~_mrbind_T();
+    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
+    return (SoftBodyContactListenerTrampoline*)(::new(_mrbind_ptr) _mrbind_T());
+}
+
+SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_DefaultConstructArray(size_t num_elems)
+{
+    return (SoftBodyContactListenerTrampoline *)(new SoftBodyContactListenerTrampoline[num_elems]);
+}
+
+const SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_OffsetPtr(const SoftBodyContactListenerTrampoline *ptr, ptrdiff_t i)
+{
+    return (const SoftBodyContactListenerTrampoline *)(((const SoftBodyContactListenerTrampoline *)ptr) + i);
+}
+
+SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_OffsetMutablePtr(SoftBodyContactListenerTrampoline *ptr, ptrdiff_t i)
+{
+    return (SoftBodyContactListenerTrampoline *)(((SoftBodyContactListenerTrampoline *)ptr) + i);
+}
+
+const JPH_SoftBodyContactListener *SoftBodyContactListenerTrampoline_UpcastTo_JPH_SoftBodyContactListener(const SoftBodyContactListenerTrampoline *object)
+{
+    return (const JPH_SoftBodyContactListener *)(static_cast<const JPH::SoftBodyContactListener *>(
+        ((const SoftBodyContactListenerTrampoline *)object)
+    ));
+}
+
+JPH_SoftBodyContactListener *SoftBodyContactListenerTrampoline_MutableUpcastTo_JPH_SoftBodyContactListener(SoftBodyContactListenerTrampoline *object)
+{
+    return (JPH_SoftBodyContactListener *)(static_cast<JPH::SoftBodyContactListener *>(
+        ((SoftBodyContactListenerTrampoline *)object)
+    ));
+}
+
+const SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_StaticDowncastFrom_JPH_SoftBodyContactListener(const JPH_SoftBodyContactListener *object)
+{
+    return (const SoftBodyContactListenerTrampoline *)(static_cast<const SoftBodyContactListenerTrampoline *>(
+        ((const JPH::SoftBodyContactListener *)object)
+    ));
+}
+
+SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_MutableStaticDowncastFrom_JPH_SoftBodyContactListener(JPH_SoftBodyContactListener *object)
+{
+    return (SoftBodyContactListenerTrampoline *)(static_cast<SoftBodyContactListenerTrampoline *>(
+        ((JPH::SoftBodyContactListener *)object)
+    ));
+}
+
+SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_ConstructFromAnother(Jolt_PassBy _other_pass_by, SoftBodyContactListenerTrampoline *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, SoftBodyContactListenerTrampoline);
+    return (SoftBodyContactListenerTrampoline *)new SoftBodyContactListenerTrampoline(SoftBodyContactListenerTrampoline(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, SoftBodyContactListenerTrampoline) MRBINDC_CLASSARG_COPY(_other, (SoftBodyContactListenerTrampoline), SoftBodyContactListenerTrampoline) MRBINDC_CLASSARG_MOVE(_other, (SoftBodyContactListenerTrampoline), SoftBodyContactListenerTrampoline) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, SoftBodyContactListenerTrampoline) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, SoftBodyContactListenerTrampoline) MRBINDC_CLASSARG_END(_other, SoftBodyContactListenerTrampoline))
+    ));
+}
+
+void SoftBodyContactListenerTrampoline_Destroy(const SoftBodyContactListenerTrampoline *_this)
+{
+    delete ((const SoftBodyContactListenerTrampoline *)_this);
+}
+
+void SoftBodyContactListenerTrampoline_DestroyArray(const SoftBodyContactListenerTrampoline *_this)
+{
+    delete[] ((const SoftBodyContactListenerTrampoline *)_this);
+}
+
+SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_AssignFromAnother(SoftBodyContactListenerTrampoline *_this, Jolt_PassBy _other_pass_by, SoftBodyContactListenerTrampoline *_other)
+{
+    MRBINDC_CLASSARG_GUARD(_other, SoftBodyContactListenerTrampoline);
+    return (SoftBodyContactListenerTrampoline *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).operator=(
+        (MRBINDC_CLASSARG_DEF_CTOR(_other, SoftBodyContactListenerTrampoline) MRBINDC_CLASSARG_COPY(_other, (SoftBodyContactListenerTrampoline), SoftBodyContactListenerTrampoline) MRBINDC_CLASSARG_MOVE(_other, (SoftBodyContactListenerTrampoline), SoftBodyContactListenerTrampoline) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, SoftBodyContactListenerTrampoline) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, SoftBodyContactListenerTrampoline) MRBINDC_CLASSARG_END(_other, SoftBodyContactListenerTrampoline))
+    ));
+}
+
+void *SoftBodyContactListenerTrampoline_GetContext(const SoftBodyContactListenerTrampoline *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const SoftBodyContactListenerTrampoline *)(_this)).GetContext();
+}
+
+void SoftBodyContactListenerTrampoline_SetContext(SoftBodyContactListenerTrampoline *_this, void *v)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).SetContext(
+        v
+    );
+}
+
+void *SoftBodyContactListenerTrampoline_GetOnValidateFn(const SoftBodyContactListenerTrampoline *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const SoftBodyContactListenerTrampoline *)(_this)).GetOnValidateFn();
+}
+
+void SoftBodyContactListenerTrampoline_SetOnValidateFn(SoftBodyContactListenerTrampoline *_this, void *v)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).SetOnValidateFn(
+        v
+    );
+}
+
+void *SoftBodyContactListenerTrampoline_GetOnAddedFn(const SoftBodyContactListenerTrampoline *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const SoftBodyContactListenerTrampoline *)(_this)).GetOnAddedFn();
+}
+
+void SoftBodyContactListenerTrampoline_SetOnAddedFn(SoftBodyContactListenerTrampoline *_this, void *v)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).SetOnAddedFn(
+        v
+    );
+}
+
+JPH_SoftBodyValidateResult SoftBodyContactListenerTrampoline_OnSoftBodyContactValidate(SoftBodyContactListenerTrampoline *_this, const JPH_Body *inSoftBody, const JPH_Body *inOtherBody, JPH_SoftBodyContactSettings *ioSettings)
+{
+    return (JPH_SoftBodyValidateResult)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).OnSoftBodyContactValidate(
+        ((inSoftBody ? void() : MRBINDC_THROW("Parameter `inSoftBody` can not be null.", void)), *(const JPH::Body *)(inSoftBody)),
+        ((inOtherBody ? void() : MRBINDC_THROW("Parameter `inOtherBody` can not be null.", void)), *(const JPH::Body *)(inOtherBody)),
+        ((ioSettings ? void() : MRBINDC_THROW("Parameter `ioSettings` can not be null.", void)), *(JPH::SoftBodyContactSettings *)(ioSettings))
+    ));
+}
+
+void SoftBodyContactListenerTrampoline_OnSoftBodyContactAdded(SoftBodyContactListenerTrampoline *_this, const JPH_Body *inSoftBody, const JPH_SoftBodyManifold *inManifold)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(SoftBodyContactListenerTrampoline *)(_this)).OnSoftBodyContactAdded(
+        ((inSoftBody ? void() : MRBINDC_THROW("Parameter `inSoftBody` can not be null.", void)), *(const JPH::Body *)(inSoftBody)),
+        ((inManifold ? void() : MRBINDC_THROW("Parameter `inManifold` can not be null.", void)), *(const JPH::SoftBodyManifold *)(inManifold))
     );
 }
 

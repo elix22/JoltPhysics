@@ -565,6 +565,32 @@ public static partial class JPH
             __JoltHelpers_SoftBodySettingsAddInvBind(inSettings._UnderlyingPtr, inJointIndex, inInvBind._UnderlyingPtr);
         }
 
+        /// Returns the number of vertices in a SoftBodyManifold.
+        /// Generated from method `JoltHelpers::SoftBodyManifoldGetVertexCount`.
+        public static unsafe uint SoftBodyManifoldGetVertexCount(JPH.Const_SoftBodyManifold inManifold)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SoftBodyManifoldGetVertexCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SoftBodyManifoldGetVertexCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JoltHelpers_SoftBodyManifoldGetVertexCount(JPH.Const_SoftBodyManifold._Underlying *inManifold);
+            return __JoltHelpers_SoftBodyManifoldGetVertexCount(inManifold._UnderlyingPtr);
+        }
+
+        /// Returns the vertex at the given index (non-owning reference into the manifold).
+        /// Generated from method `JoltHelpers::SoftBodyManifoldGetVertex`.
+        public static unsafe JPH.Const_SoftBodyVertex SoftBodyManifoldGetVertex(JPH.Const_SoftBodyManifold inManifold, uint inIndex)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SoftBodyManifoldGetVertex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SoftBodyManifoldGetVertex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_SoftBodyVertex._Underlying *__JoltHelpers_SoftBodyManifoldGetVertex(JPH.Const_SoftBodyManifold._Underlying *inManifold, uint inIndex);
+            return new(__JoltHelpers_SoftBodyManifoldGetVertex(inManifold._UnderlyingPtr, inIndex), is_owning: false);
+        }
+
         /// Return the number of runtime vertices in a soft body (via SoftBodyMotionProperties).
         /// Generated from method `JoltHelpers::BodyGetSoftBodyVertexCount`.
         public static unsafe uint BodyGetSoftBodyVertexCount(JPH.Const_Body inBody)
@@ -2787,6 +2813,338 @@ public static partial class JPH
         public _InOptConst_EstimateResponseContactListener() {}
         public _InOptConst_EstimateResponseContactListener(Const_EstimateResponseContactListener value) {Opt = value;}
         public static implicit operator _InOptConst_EstimateResponseContactListener(Const_EstimateResponseContactListener value) {return new(value);}
+    }
+
+    // ---------------------------------------------------------------------------
+    // SoftBodyContactListenerTrampoline — concrete SoftBodyContactListener that
+    // dispatches to C function pointers set from C#.
+    // ---------------------------------------------------------------------------
+    /// Generated from class `SoftBodyContactListenerTrampoline`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::SoftBodyContactListener`
+    /// This is the const half of the class.
+    public class Const_SoftBodyContactListenerTrampoline : JPH.Object<Const_SoftBodyContactListenerTrampoline>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __SoftBodyContactListenerTrampoline_Destroy(_Underlying *_this);
+            __SoftBodyContactListenerTrampoline_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_SoftBodyContactListenerTrampoline() {Dispose(false);}
+
+        // Upcasts:
+        public static unsafe implicit operator JPH.Const_SoftBodyContactListener(Const_SoftBodyContactListenerTrampoline self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_UpcastTo_JPH_SoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_UpcastTo_JPH_SoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_SoftBodyContactListener._Underlying *__SoftBodyContactListenerTrampoline_UpcastTo_JPH_SoftBodyContactListener(_Underlying *_this);
+            JPH.Const_SoftBodyContactListener ret = new(__SoftBodyContactListenerTrampoline_UpcastTo_JPH_SoftBodyContactListener(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator Const_SoftBodyContactListenerTrampoline(JPH.Const_SoftBodyContactListener parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_StaticDowncastFrom_JPH_SoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_StaticDowncastFrom_JPH_SoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__SoftBodyContactListenerTrampoline_StaticDowncastFrom_JPH_SoftBodyContactListener(JPH.Const_SoftBodyContactListener._Underlying *_this);
+            Const_SoftBodyContactListenerTrampoline ret = new(__SoftBodyContactListenerTrampoline_StaticDowncastFrom_JPH_SoftBodyContactListener(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe Const_SoftBodyContactListenerTrampoline(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_SoftBodyContactListenerTrampoline() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SoftBodyContactListenerTrampoline._Underlying *__SoftBodyContactListenerTrampoline_DefaultConstruct();
+            _UnderlyingPtr = __SoftBodyContactListenerTrampoline_DefaultConstruct();
+        }
+
+        /// Generated from constructor `SoftBodyContactListenerTrampoline::SoftBodyContactListenerTrampoline`.
+        public unsafe Const_SoftBodyContactListenerTrampoline(JPH._ByValue_SoftBodyContactListenerTrampoline _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SoftBodyContactListenerTrampoline._Underlying *__SoftBodyContactListenerTrampoline_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.SoftBodyContactListenerTrampoline._Underlying *_other);
+            _UnderlyingPtr = __SoftBodyContactListenerTrampoline_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `SoftBodyContactListenerTrampoline::SoftBodyContactListenerTrampoline`.
+        public Const_SoftBodyContactListenerTrampoline(Const_SoftBodyContactListenerTrampoline _other) : this(new _ByValue_SoftBodyContactListenerTrampoline(_other)) {}
+
+        /// Generated from constructor `SoftBodyContactListenerTrampoline::SoftBodyContactListenerTrampoline`.
+        public Const_SoftBodyContactListenerTrampoline(SoftBodyContactListenerTrampoline _other) : this((Const_SoftBodyContactListenerTrampoline)_other) {}
+
+        /// Generated from method `SoftBodyContactListenerTrampoline::GetContext`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetContext()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_GetContext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_GetContext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__SoftBodyContactListenerTrampoline_GetContext(_Underlying *_this);
+            return __SoftBodyContactListenerTrampoline_GetContext(_UnderlyingPtr);
+        }
+
+        /// Generated from method `SoftBodyContactListenerTrampoline::GetOnValidateFn`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetOnValidateFn()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_GetOnValidateFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_GetOnValidateFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__SoftBodyContactListenerTrampoline_GetOnValidateFn(_Underlying *_this);
+            return __SoftBodyContactListenerTrampoline_GetOnValidateFn(_UnderlyingPtr);
+        }
+
+        /// Generated from method `SoftBodyContactListenerTrampoline::GetOnAddedFn`.
+        /// Returns a mutable pointer.
+        public unsafe void *GetOnAddedFn()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_GetOnAddedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_GetOnAddedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__SoftBodyContactListenerTrampoline_GetOnAddedFn(_Underlying *_this);
+            return __SoftBodyContactListenerTrampoline_GetOnAddedFn(_UnderlyingPtr);
+        }
+    }
+
+    // ---------------------------------------------------------------------------
+    // SoftBodyContactListenerTrampoline — concrete SoftBodyContactListener that
+    // dispatches to C function pointers set from C#.
+    // ---------------------------------------------------------------------------
+    /// Generated from class `SoftBodyContactListenerTrampoline`.
+    /// Base classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::SoftBodyContactListener`
+    /// This is the non-const half of the class.
+    public class SoftBodyContactListenerTrampoline : Const_SoftBodyContactListenerTrampoline
+    {
+        // Upcasts:
+        public static unsafe implicit operator JPH.SoftBodyContactListener(SoftBodyContactListenerTrampoline self)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_UpcastTo_JPH_SoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_UpcastTo_JPH_SoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SoftBodyContactListener._Underlying *__SoftBodyContactListenerTrampoline_UpcastTo_JPH_SoftBodyContactListener(_Underlying *_this);
+            JPH.SoftBodyContactListener ret = new(__SoftBodyContactListenerTrampoline_UpcastTo_JPH_SoftBodyContactListener(self._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = self;
+            return ret;
+        }
+
+        // Downcasts:
+        public static unsafe explicit operator SoftBodyContactListenerTrampoline(JPH.SoftBodyContactListener parent)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_StaticDowncastFrom_JPH_SoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_StaticDowncastFrom_JPH_SoftBodyContactListener", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static _Underlying *__SoftBodyContactListenerTrampoline_StaticDowncastFrom_JPH_SoftBodyContactListener(JPH.SoftBodyContactListener._Underlying *_this);
+            SoftBodyContactListenerTrampoline ret = new(__SoftBodyContactListenerTrampoline_StaticDowncastFrom_JPH_SoftBodyContactListener(parent._UnderlyingPtr), is_owning: false);
+            ret._KeepAliveEnclosingObject = parent;
+            return ret;
+        }
+
+        internal unsafe SoftBodyContactListenerTrampoline(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe SoftBodyContactListenerTrampoline() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SoftBodyContactListenerTrampoline._Underlying *__SoftBodyContactListenerTrampoline_DefaultConstruct();
+            _UnderlyingPtr = __SoftBodyContactListenerTrampoline_DefaultConstruct();
+        }
+
+        /// Generated from constructor `SoftBodyContactListenerTrampoline::SoftBodyContactListenerTrampoline`.
+        public unsafe SoftBodyContactListenerTrampoline(JPH._ByValue_SoftBodyContactListenerTrampoline _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SoftBodyContactListenerTrampoline._Underlying *__SoftBodyContactListenerTrampoline_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.SoftBodyContactListenerTrampoline._Underlying *_other);
+            _UnderlyingPtr = __SoftBodyContactListenerTrampoline_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `SoftBodyContactListenerTrampoline::SoftBodyContactListenerTrampoline`.
+        public SoftBodyContactListenerTrampoline(Const_SoftBodyContactListenerTrampoline _other) : this(new _ByValue_SoftBodyContactListenerTrampoline(_other)) {}
+
+        /// Generated from constructor `SoftBodyContactListenerTrampoline::SoftBodyContactListenerTrampoline`.
+        public SoftBodyContactListenerTrampoline(SoftBodyContactListenerTrampoline _other) : this((Const_SoftBodyContactListenerTrampoline)_other) {}
+
+        /// Generated from method `SoftBodyContactListenerTrampoline::operator=`.
+        public unsafe JPH.SoftBodyContactListenerTrampoline Assign(JPH._ByValue_SoftBodyContactListenerTrampoline _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SoftBodyContactListenerTrampoline._Underlying *__SoftBodyContactListenerTrampoline_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.SoftBodyContactListenerTrampoline._Underlying *_other);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            return new(__SoftBodyContactListenerTrampoline_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `SoftBodyContactListenerTrampoline::SetContext`.
+        /// Parameter `v` is a mutable pointer.
+        public unsafe void SetContext(void *v)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_SetContext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_SetContext", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __SoftBodyContactListenerTrampoline_SetContext(_Underlying *_this, void *v);
+            __SoftBodyContactListenerTrampoline_SetContext(_UnderlyingPtr, v);
+        }
+
+        /// Generated from method `SoftBodyContactListenerTrampoline::SetOnValidateFn`.
+        /// Parameter `v` is a mutable pointer.
+        public unsafe void SetOnValidateFn(void *v)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_SetOnValidateFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_SetOnValidateFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __SoftBodyContactListenerTrampoline_SetOnValidateFn(_Underlying *_this, void *v);
+            __SoftBodyContactListenerTrampoline_SetOnValidateFn(_UnderlyingPtr, v);
+        }
+
+        /// Generated from method `SoftBodyContactListenerTrampoline::SetOnAddedFn`.
+        /// Parameter `v` is a mutable pointer.
+        public unsafe void SetOnAddedFn(void *v)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_SetOnAddedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_SetOnAddedFn", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __SoftBodyContactListenerTrampoline_SetOnAddedFn(_Underlying *_this, void *v);
+            __SoftBodyContactListenerTrampoline_SetOnAddedFn(_UnderlyingPtr, v);
+        }
+
+        /// Generated from method `SoftBodyContactListenerTrampoline::OnSoftBodyContactValidate`.
+        public unsafe JPH.SoftBodyValidateResult OnSoftBodyContactValidate(JPH.Const_Body inSoftBody, JPH.Const_Body inOtherBody, JPH.SoftBodyContactSettings ioSettings)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_OnSoftBodyContactValidate", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_OnSoftBodyContactValidate", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.SoftBodyValidateResult __SoftBodyContactListenerTrampoline_OnSoftBodyContactValidate(_Underlying *_this, JPH.Const_Body._Underlying *inSoftBody, JPH.Const_Body._Underlying *inOtherBody, JPH.SoftBodyContactSettings._Underlying *ioSettings);
+            return __SoftBodyContactListenerTrampoline_OnSoftBodyContactValidate(_UnderlyingPtr, inSoftBody._UnderlyingPtr, inOtherBody._UnderlyingPtr, ioSettings._UnderlyingPtr);
+        }
+
+        /// Generated from method `SoftBodyContactListenerTrampoline::OnSoftBodyContactAdded`.
+        public unsafe void OnSoftBodyContactAdded(JPH.Const_Body inSoftBody, JPH.Const_SoftBodyManifold inManifold)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_OnSoftBodyContactAdded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "SoftBodyContactListenerTrampoline_OnSoftBodyContactAdded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __SoftBodyContactListenerTrampoline_OnSoftBodyContactAdded(_Underlying *_this, JPH.Const_Body._Underlying *inSoftBody, JPH.Const_SoftBodyManifold._Underlying *inManifold);
+            __SoftBodyContactListenerTrampoline_OnSoftBodyContactAdded(_UnderlyingPtr, inSoftBody._UnderlyingPtr, inManifold._UnderlyingPtr);
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `SoftBodyContactListenerTrampoline` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `SoftBodyContactListenerTrampoline`/`Const_SoftBodyContactListenerTrampoline` to copy it into the function.
+    /// * Pass `Move(instance)` to move it into the function. This is a more efficient form of copying that might invalidate the input object.
+    ///   Be careful if your input isn't a unique reference to this object.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_SoftBodyContactListenerTrampoline
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_SoftBodyContactListenerTrampoline? Value;
+        #pragma warning restore CS0649
+        internal readonly JPH._PassBy PassByMode;
+        public _ByValue_SoftBodyContactListenerTrampoline() {PassByMode = JPH._PassBy.default_construct;}
+        public _ByValue_SoftBodyContactListenerTrampoline(Const_SoftBodyContactListenerTrampoline new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
+        public static implicit operator _ByValue_SoftBodyContactListenerTrampoline(Const_SoftBodyContactListenerTrampoline arg) {return new(arg);}
+        public _ByValue_SoftBodyContactListenerTrampoline(JPH._Moved<SoftBodyContactListenerTrampoline> moved) {Value = moved.Value; PassByMode = JPH._PassBy.move;}
+        public static implicit operator _ByValue_SoftBodyContactListenerTrampoline(JPH._Moved<SoftBodyContactListenerTrampoline> arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `SoftBodyContactListenerTrampoline` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_SoftBodyContactListenerTrampoline`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `SoftBodyContactListenerTrampoline`/`Const_SoftBodyContactListenerTrampoline` directly.
+    public class _InOptMut_SoftBodyContactListenerTrampoline
+    {
+        public SoftBodyContactListenerTrampoline? Opt;
+
+        public _InOptMut_SoftBodyContactListenerTrampoline() {}
+        public _InOptMut_SoftBodyContactListenerTrampoline(SoftBodyContactListenerTrampoline value) {Opt = value;}
+        public static implicit operator _InOptMut_SoftBodyContactListenerTrampoline(SoftBodyContactListenerTrampoline value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `SoftBodyContactListenerTrampoline` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_SoftBodyContactListenerTrampoline`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `SoftBodyContactListenerTrampoline`/`Const_SoftBodyContactListenerTrampoline` to pass it to the function.
+    public class _InOptConst_SoftBodyContactListenerTrampoline
+    {
+        public Const_SoftBodyContactListenerTrampoline? Opt;
+
+        public _InOptConst_SoftBodyContactListenerTrampoline() {}
+        public _InOptConst_SoftBodyContactListenerTrampoline(Const_SoftBodyContactListenerTrampoline value) {Opt = value;}
+        public static implicit operator _InOptConst_SoftBodyContactListenerTrampoline(Const_SoftBodyContactListenerTrampoline value) {return new(value);}
     }
 
     /// Plain record of a single DrawLine call captured by RecordingDebugRenderer.

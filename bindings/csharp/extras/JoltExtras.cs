@@ -305,4 +305,94 @@ public static partial class JPH
             Inner.Dispose();
         }
     }
+
+    // ---- SoftBodyContactListenerTrampolineManaged ----------------------------
+    //
+    // Wraps SoftBodyContactListenerTrampoline and provides managed-typed callbacks.
+    //
+    // Usage:
+    //   using var listener = new JPH.SoftBodyContactListenerTrampolineManaged();
+    //   listener.SetOnValidate((softBody, otherBody, settings) =>
+    //   {
+    //       settings.mInvMassScale2 = 0.1f;
+    //       return SoftBodyValidateResult.AcceptContact;
+    //   });
+    //   listener.SetOnAdded((softBody, manifold) =>
+    //   {
+    //       uint count = JoltHelpers.SoftBodyManifoldGetVertexCount(manifold);
+    //       for (uint i = 0; i < count; i++) { … }
+    //   });
+    //   physicsSystem.SetSoftBodyContactListener(listener.Inner);
+
+    public sealed class SoftBodyContactListenerTrampolineManaged : IDisposable
+    {
+        public delegate SoftBodyValidateResult ValidateCallback(
+            Const_Body softBody, Const_Body otherBody, SoftBodyContactSettings ioSettings);
+
+        public delegate void AddedCallback(
+            Const_Body softBody, Const_SoftBodyManifold manifold);
+
+        private sealed class Callbacks
+        {
+            public ValidateCallback? OnValidate;
+            public AddedCallback?    OnAdded;
+        }
+
+        public readonly SoftBodyContactListenerTrampoline Inner;
+        private GCHandle _callbacksHandle;
+
+        public unsafe SoftBodyContactListenerTrampolineManaged()
+        {
+            Inner = new SoftBodyContactListenerTrampoline();
+            var cbs = new Callbacks();
+            _callbacksHandle = GCHandle.Alloc(cbs);
+            Inner.SetContext((void*)GCHandle.ToIntPtr(_callbacksHandle));
+        }
+
+        private Callbacks GetCallbacks() => (Callbacks)_callbacksHandle.Target!;
+
+        public unsafe void SetOnValidate(ValidateCallback callback)
+        {
+            GetCallbacks().OnValidate = callback;
+            Inner.SetOnValidateFn(
+                (void*)(delegate* unmanaged[Cdecl]<void*, void*, void*, void*, int>)
+                    &OnValidateStatic);
+        }
+
+        public unsafe void SetOnAdded(AddedCallback callback)
+        {
+            GetCallbacks().OnAdded = callback;
+            Inner.SetOnAddedFn(
+                (void*)(delegate* unmanaged[Cdecl]<void*, void*, void*, void>)
+                    &OnAddedStatic);
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+        private static unsafe int OnValidateStatic(
+            void* ctx, void* softBody, void* otherBody, void* settings)
+        {
+            var cbs = (Callbacks)GCHandle.FromIntPtr((IntPtr)ctx).Target!;
+            if (cbs.OnValidate == null)
+                return (int)SoftBodyValidateResult.AcceptContact;
+            return (int)cbs.OnValidate(
+                new Const_Body((Const_Body._Underlying*)softBody, false),
+                new Const_Body((Const_Body._Underlying*)otherBody, false),
+                new SoftBodyContactSettings((SoftBodyContactSettings._Underlying*)settings, false));
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+        private static unsafe void OnAddedStatic(void* ctx, void* softBody, void* manifold)
+        {
+            var cbs = (Callbacks)GCHandle.FromIntPtr((IntPtr)ctx).Target!;
+            cbs.OnAdded?.Invoke(
+                new Const_Body((Const_Body._Underlying*)softBody, false),
+                new Const_SoftBodyManifold((Const_SoftBodyManifold._Underlying*)manifold, false));
+        }
+
+        public void Dispose()
+        {
+            if (_callbacksHandle.IsAllocated) _callbacksHandle.Free();
+            Inner.Dispose();
+        }
+    }
 }

@@ -234,6 +234,7 @@ echo "#include \"$ROOT/Jolt/Physics/Collision/BroadPhase/ObjectVsBroadPhaseLayer
     --allow SimpleContactEventListener \
     --allow EstimateResponseContactListener \
     --allow ContactListenerTrampoline \
+    --allow SoftBodyContactListenerTrampoline \
     --allow DebugLineRecord \
     --allow DebugTriangleRecord \
     --allow RecordingDebugRenderer \

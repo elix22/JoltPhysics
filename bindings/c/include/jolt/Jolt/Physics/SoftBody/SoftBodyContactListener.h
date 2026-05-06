@@ -33,6 +33,9 @@ typedef struct JPH_SoftBodyContactSettings JPH_SoftBodyContactSettings;
 /// A listener class that receives collision contact events for soft bodies against rigid bodies.
 /// It can be registered with the PhysicsSystem.
 /// Generated from class `JPH::SoftBodyContactListener`.
+/// Derived classes:
+///   Direct: (non-virtual)
+///     `SoftBodyContactListenerTrampoline`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_SoftBodyContactListener JPH_SoftBodyContactListener;
 

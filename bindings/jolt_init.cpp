@@ -258,6 +258,16 @@ void JoltHelpers::SoftBodySettingsAddInvBind(JPH::SoftBodySharedSettings& inSett
     inSettings.mInvBindMatrices.push_back(JPH::SoftBodySharedSettings::InvBind(inJointIndex, inInvBind));
 }
 
+JPH::uint32 JoltHelpers::SoftBodyManifoldGetVertexCount(const JPH::SoftBodyManifold& inManifold)
+{
+    return static_cast<JPH::uint32>(inManifold.GetVertices().size());
+}
+
+const JPH::SoftBodyVertex& JoltHelpers::SoftBodyManifoldGetVertex(const JPH::SoftBodyManifold& inManifold, JPH::uint32 inIndex)
+{
+    return inManifold.GetVertices()[inIndex];
+}
+
 unsigned int JoltHelpers::BodyGetSoftBodyVertexCount(const JPH::Body& inBody)
 {
     const auto* mp = static_cast<const JPH::SoftBodyMotionProperties*>(inBody.GetMotionProperties());
@@ -458,6 +468,31 @@ void SimpleContactEventListener::OnContactPersisted(
 void SimpleContactEventListener::OnContactRemoved(const JPH::SubShapeIDPair& /*inSubShapePair*/)
 {
     mRemovedCount++;
+}
+
+// ---------------------------------------------------------------------------
+// SoftBodyContactListenerTrampoline
+// ---------------------------------------------------------------------------
+
+JPH::SoftBodyValidateResult SoftBodyContactListenerTrampoline::OnSoftBodyContactValidate(
+    const JPH::Body& inSoftBody,
+    const JPH::Body& inOtherBody,
+    JPH::SoftBodyContactSettings& ioSettings)
+{
+    if (!mOnValidateFn)
+        return JPH::SoftBodyValidateResult::AcceptContact;
+    using Fn = int(*)(void*, const JPH::Body*, const JPH::Body*, JPH::SoftBodyContactSettings*);
+    return static_cast<JPH::SoftBodyValidateResult>(
+        reinterpret_cast<Fn>(mOnValidateFn)(mContext, &inSoftBody, &inOtherBody, &ioSettings));
+}
+
+void SoftBodyContactListenerTrampoline::OnSoftBodyContactAdded(
+    const JPH::Body& inSoftBody,
+    const JPH::SoftBodyManifold& inManifold)
+{
+    if (!mOnAddedFn) return;
+    using Fn = void(*)(void*, const JPH::Body*, const JPH::SoftBodyManifold*);
+    reinterpret_cast<Fn>(mOnAddedFn)(mContext, &inSoftBody, &inManifold);
 }
 
 // ---------------------------------------------------------------------------

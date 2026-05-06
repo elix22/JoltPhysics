@@ -295,6 +295,9 @@ public static partial class JPH
     /// A listener class that receives collision contact events for soft bodies against rigid bodies.
     /// It can be registered with the PhysicsSystem.
     /// Generated from class `JPH::SoftBodyContactListener`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `SoftBodyContactListenerTrampoline`
     /// This is the const half of the class.
     public class Const_SoftBodyContactListener : JPH.Object<Const_SoftBodyContactListener>, System.IDisposable
     {
@@ -355,6 +358,9 @@ public static partial class JPH
     /// A listener class that receives collision contact events for soft bodies against rigid bodies.
     /// It can be registered with the PhysicsSystem.
     /// Generated from class `JPH::SoftBodyContactListener`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `SoftBodyContactListenerTrampoline`
     /// This is the non-const half of the class.
     public class SoftBodyContactListener : Const_SoftBodyContactListener
     {

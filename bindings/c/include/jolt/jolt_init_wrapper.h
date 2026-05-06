@@ -5,6 +5,7 @@
 #include <exports.h>
 #include <jolt/Jolt/Physics/Body/BodyID.h>
 #include <jolt/Jolt/Physics/Collision/ContactListener.h>
+#include <jolt/Jolt/Physics/SoftBody/SoftBodyContactListener.h>
 #include <jolt/Jolt/Renderer/DebugRenderer.h>
 
 #include <stdbool.h>
@@ -39,8 +40,12 @@ typedef struct JPH_RagdollSettings_Part JPH_RagdollSettings_Part; // Defined in 
 typedef struct JPH_RayInvDirection JPH_RayInvDirection; // Defined in `#include <jolt/Jolt/Geometry/RayAABox.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_Skeleton JPH_Skeleton; // Defined in `#include <jolt/Jolt/Skeleton/Skeleton.h>`.
+typedef struct JPH_SoftBodyContactListener JPH_SoftBodyContactListener; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyContactListener.h>`.
+typedef struct JPH_SoftBodyContactSettings JPH_SoftBodyContactSettings; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyContactListener.h>`.
+typedef struct JPH_SoftBodyManifold JPH_SoftBodyManifold; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyManifold.h>`.
 typedef struct JPH_SoftBodySharedSettings JPH_SoftBodySharedSettings; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodySharedSettings.h>`.
 typedef struct JPH_SoftBodySharedSettings_Vertex JPH_SoftBodySharedSettings_Vertex; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodySharedSettings.h>`.
+typedef struct JPH_SoftBodyVertex JPH_SoftBodyVertex; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyVertex.h>`.
 typedef struct JPH_SubShapeIDPair JPH_SubShapeIDPair; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeIDPair.h>`.
 typedef struct JPH_TrackedVehicleControllerSettings JPH_TrackedVehicleControllerSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/TrackedVehicleController.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
@@ -120,6 +125,17 @@ typedef struct ContactListenerTrampoline ContactListenerTrampoline;
 ///     `JPH::ContactListener`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct EstimateResponseContactListener EstimateResponseContactListener;
+
+// ---------------------------------------------------------------------------
+// SoftBodyContactListenerTrampoline — concrete SoftBodyContactListener that
+// dispatches to C function pointers set from C#.
+// ---------------------------------------------------------------------------
+/// Generated from class `SoftBodyContactListenerTrampoline`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JPH::SoftBodyContactListener`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct SoftBodyContactListenerTrampoline SoftBodyContactListenerTrampoline;
 
 /// Plain record of a single DrawLine call captured by RecordingDebugRenderer.
 /// Generated from class `DebugLineRecord`.
@@ -386,6 +402,17 @@ JOLT_API void JoltHelpers_SoftBodySettingsAddSkinned(JPH_SoftBodySharedSettings 
 /// Parameter `inSettings` can not be null. It is a single object.
 /// Parameter `inInvBind` can not be null. It is a single object.
 JOLT_API void JoltHelpers_SoftBodySettingsAddInvBind(JPH_SoftBodySharedSettings *inSettings, unsigned int inJointIndex, const JPH_Mat44 *inInvBind);
+
+/// Returns the number of vertices in a SoftBodyManifold.
+/// Generated from method `JoltHelpers::SoftBodyManifoldGetVertexCount`.
+/// Parameter `inManifold` can not be null. It is a single object.
+JOLT_API unsigned int JoltHelpers_SoftBodyManifoldGetVertexCount(const JPH_SoftBodyManifold *inManifold);
+
+/// Returns the vertex at the given index (non-owning reference into the manifold).
+/// Generated from method `JoltHelpers::SoftBodyManifoldGetVertex`.
+/// Parameter `inManifold` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_SoftBodyVertex *JoltHelpers_SoftBodyManifoldGetVertex(const JPH_SoftBodyManifold *inManifold, unsigned int inIndex);
 
 /// Return the number of runtime vertices in a soft body (via SoftBodyMotionProperties).
 /// Generated from method `JoltHelpers::BodyGetSoftBodyVertexCount`.
@@ -1264,6 +1291,152 @@ JOLT_API void EstimateResponseContactListener_OnContactPersisted(EstimateRespons
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inSubShapePair` can not be null. It is a single object.
 JOLT_API void EstimateResponseContactListener_OnContactRemoved(EstimateResponseContactListener *_this, const JPH_SubShapeIDPair *inSubShapePair);
+
+/// Returns a pointer to a member variable of class `SoftBodyContactListenerTrampoline` named `mContext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *SoftBodyContactListenerTrampoline_Get_mContext(const SoftBodyContactListenerTrampoline *_this);
+
+/// Modifies a member variable of class `SoftBodyContactListenerTrampoline` named `mContext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mContext`.
+/// When this function is called, this object will drop object references it held previously in `mContext`.
+JOLT_API void SoftBodyContactListenerTrampoline_Set_mContext(SoftBodyContactListenerTrampoline *_this, void *value);
+
+/// Returns a mutable pointer to a member variable of class `SoftBodyContactListenerTrampoline` named `mContext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **SoftBodyContactListenerTrampoline_GetMutable_mContext(SoftBodyContactListenerTrampoline *_this);
+
+/// Returns a pointer to a member variable of class `SoftBodyContactListenerTrampoline` named `mOnValidateFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *SoftBodyContactListenerTrampoline_Get_mOnValidateFn(const SoftBodyContactListenerTrampoline *_this);
+
+/// Modifies a member variable of class `SoftBodyContactListenerTrampoline` named `mOnValidateFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mOnValidateFn`.
+/// When this function is called, this object will drop object references it held previously in `mOnValidateFn`.
+JOLT_API void SoftBodyContactListenerTrampoline_Set_mOnValidateFn(SoftBodyContactListenerTrampoline *_this, void *value);
+
+/// Returns a mutable pointer to a member variable of class `SoftBodyContactListenerTrampoline` named `mOnValidateFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **SoftBodyContactListenerTrampoline_GetMutable_mOnValidateFn(SoftBodyContactListenerTrampoline *_this);
+
+/// Returns a pointer to a member variable of class `SoftBodyContactListenerTrampoline` named `mOnAddedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void *const *SoftBodyContactListenerTrampoline_Get_mOnAddedFn(const SoftBodyContactListenerTrampoline *_this);
+
+/// Modifies a member variable of class `SoftBodyContactListenerTrampoline` named `mOnAddedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mOnAddedFn`.
+/// When this function is called, this object will drop object references it held previously in `mOnAddedFn`.
+JOLT_API void SoftBodyContactListenerTrampoline_Set_mOnAddedFn(SoftBodyContactListenerTrampoline *_this, void *value);
+
+/// Returns a mutable pointer to a member variable of class `SoftBodyContactListenerTrampoline` named `mOnAddedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API void **SoftBodyContactListenerTrampoline_GetMutable_mOnAddedFn(SoftBodyContactListenerTrampoline *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `SoftBodyContactListenerTrampoline_Destroy()` to free it when you're done using it.
+JOLT_API SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `SoftBodyContactListenerTrampoline_DestroyArray()`.
+/// Use `SoftBodyContactListenerTrampoline_OffsetMutablePtr()` and `SoftBodyContactListenerTrampoline_OffsetPtr()` to access the array elements.
+JOLT_API SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_OffsetPtr(const SoftBodyContactListenerTrampoline *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_OffsetMutablePtr(SoftBodyContactListenerTrampoline *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `SoftBodyContactListenerTrampoline` to its base class `JPH::SoftBodyContactListener`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_SoftBodyContactListener *SoftBodyContactListenerTrampoline_UpcastTo_JPH_SoftBodyContactListener(const SoftBodyContactListenerTrampoline *object);
+
+/// Upcasts an instance of `SoftBodyContactListenerTrampoline` to its base class `JPH::SoftBodyContactListener`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_SoftBodyContactListener *SoftBodyContactListenerTrampoline_MutableUpcastTo_JPH_SoftBodyContactListener(SoftBodyContactListenerTrampoline *object);
+
+/// Downcasts an instance of `JPH::SoftBodyContactListener` to a derived class `SoftBodyContactListenerTrampoline`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_StaticDowncastFrom_JPH_SoftBodyContactListener(const JPH_SoftBodyContactListener *object);
+
+/// Downcasts an instance of `JPH::SoftBodyContactListener` to a derived class `SoftBodyContactListenerTrampoline`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_MutableStaticDowncastFrom_JPH_SoftBodyContactListener(JPH_SoftBodyContactListener *object);
+
+/// Generated from constructor `SoftBodyContactListenerTrampoline::SoftBodyContactListenerTrampoline`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `SoftBodyContactListenerTrampoline_Destroy()` to free it when you're done using it.
+JOLT_API SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_ConstructFromAnother(Jolt_PassBy _other_pass_by, SoftBodyContactListenerTrampoline *_other);
+
+/// Destroys a heap-allocated instance of `SoftBodyContactListenerTrampoline`. Does nothing if the pointer is null.
+JOLT_API void SoftBodyContactListenerTrampoline_Destroy(const SoftBodyContactListenerTrampoline *_this);
+
+/// Destroys a heap-allocated array of `SoftBodyContactListenerTrampoline`. Does nothing if the pointer is null.
+JOLT_API void SoftBodyContactListenerTrampoline_DestroyArray(const SoftBodyContactListenerTrampoline *_this);
+
+/// Generated from method `SoftBodyContactListenerTrampoline::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API SoftBodyContactListenerTrampoline *SoftBodyContactListenerTrampoline_AssignFromAnother(SoftBodyContactListenerTrampoline *_this, Jolt_PassBy _other_pass_by, SoftBodyContactListenerTrampoline *_other);
+
+/// Generated from method `SoftBodyContactListenerTrampoline::GetContext`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *SoftBodyContactListenerTrampoline_GetContext(const SoftBodyContactListenerTrampoline *_this);
+
+/// Generated from method `SoftBodyContactListenerTrampoline::SetContext`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void SoftBodyContactListenerTrampoline_SetContext(SoftBodyContactListenerTrampoline *_this, void *v);
+
+/// Generated from method `SoftBodyContactListenerTrampoline::GetOnValidateFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *SoftBodyContactListenerTrampoline_GetOnValidateFn(const SoftBodyContactListenerTrampoline *_this);
+
+/// Generated from method `SoftBodyContactListenerTrampoline::SetOnValidateFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void SoftBodyContactListenerTrampoline_SetOnValidateFn(SoftBodyContactListenerTrampoline *_this, void *v);
+
+/// Generated from method `SoftBodyContactListenerTrampoline::GetOnAddedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void *SoftBodyContactListenerTrampoline_GetOnAddedFn(const SoftBodyContactListenerTrampoline *_this);
+
+/// Generated from method `SoftBodyContactListenerTrampoline::SetOnAddedFn`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void SoftBodyContactListenerTrampoline_SetOnAddedFn(SoftBodyContactListenerTrampoline *_this, void *v);
+
+/// Generated from method `SoftBodyContactListenerTrampoline::OnSoftBodyContactValidate`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSoftBody` can not be null. It is a single object.
+/// Parameter `inOtherBody` can not be null. It is a single object.
+/// Parameter `ioSettings` can not be null. It is a single object.
+JOLT_API JPH_SoftBodyValidateResult SoftBodyContactListenerTrampoline_OnSoftBodyContactValidate(SoftBodyContactListenerTrampoline *_this, const JPH_Body *inSoftBody, const JPH_Body *inOtherBody, JPH_SoftBodyContactSettings *ioSettings);
+
+/// Generated from method `SoftBodyContactListenerTrampoline::OnSoftBodyContactAdded`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSoftBody` can not be null. It is a single object.
+/// Parameter `inManifold` can not be null. It is a single object.
+JOLT_API void SoftBodyContactListenerTrampoline_OnSoftBodyContactAdded(SoftBodyContactListenerTrampoline *_this, const JPH_Body *inSoftBody, const JPH_SoftBodyManifold *inManifold);
 
 /// Returns a pointer to a member variable of class `DebugLineRecord` named `mFrom`.
 /// Parameter `_this` can not be null. It is a single object.
