@@ -13,6 +13,7 @@
 #include <Jolt/Physics/Body/BodyCreationSettings.h>
 #include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/Character/CharacterBase.h>
+#include <Jolt/Physics/Character/CharacterVirtual.h>
 #include <Jolt/Physics/Collision/CollideShape.h>
 #include <Jolt/Physics/Collision/ContactListener.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
@@ -494,6 +495,14 @@ void JoltHelpers_CharacterBaseSettingsSetShape(JPH_CharacterBaseSettings *inSett
 {
     JoltHelpers::CharacterBaseSettingsSetShape(
         ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::CharacterBaseSettings *)(inSettings)),
+        ((const JPH::Shape *)inShape)
+    );
+}
+
+void JoltHelpers_CharacterVirtualSettingsSetInnerBodyShape(JPH_CharacterVirtualSettings *inSettings, const JPH_Shape *inShape)
+{
+    JoltHelpers::CharacterVirtualSettingsSetInnerBodyShape(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::CharacterVirtualSettings *)(inSettings)),
         ((const JPH::Shape *)inShape)
     );
 }

@@ -19,6 +19,7 @@ typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/
 typedef struct JPH_Body JPH_Body; // Defined in `#include <jolt/Jolt/Physics/Body/Body.h>`.
 typedef struct JPH_BodyCreationSettings JPH_BodyCreationSettings; // Defined in `#include <jolt/Jolt/Physics/Body/BodyCreationSettings.h>`.
 typedef struct JPH_CharacterBaseSettings JPH_CharacterBaseSettings; // Defined in `#include <jolt/Jolt/Physics/Character/CharacterBase.h>`.
+typedef struct JPH_CharacterVirtualSettings JPH_CharacterVirtualSettings; // Defined in `#include <jolt/Jolt/Physics/Character/CharacterVirtual.h>`.
 typedef struct JPH_CollideShapeResult JPH_CollideShapeResult; // Defined in `#include <jolt/Jolt/Physics/Collision/CollideShape.h>`.
 typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
 typedef struct JPH_ContactListener JPH_ContactListener; // Defined in `#include <jolt/Jolt/Physics/Collision/ContactListener.h>`.
@@ -467,6 +468,10 @@ JOLT_API JPH_Vec3 *JoltHelpers_PhysicsSystemGetSoftBodyVertexPosition(const JPH_
 /// Generated from method `JoltHelpers::CharacterBaseSettingsSetShape`.
 /// Parameter `inSettings` can not be null. It is a single object.
 JOLT_API void JoltHelpers_CharacterBaseSettingsSetShape(JPH_CharacterBaseSettings *inSettings, const JPH_Shape *inShape);
+
+/// Generated from method `JoltHelpers::CharacterVirtualSettingsSetInnerBodyShape`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_CharacterVirtualSettingsSetInnerBodyShape(JPH_CharacterVirtualSettings *inSettings, const JPH_Shape *inShape);
 
 /// Set the skeleton on a RagdollSettings (mSkeleton is Ref<Skeleton>).
 /// Generated from method `JoltHelpers::RagdollSettingsSetSkeleton`.

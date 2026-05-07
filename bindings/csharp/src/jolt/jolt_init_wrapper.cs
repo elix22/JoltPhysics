@@ -716,6 +716,18 @@ public static partial class JPH
             __JoltHelpers_CharacterBaseSettingsSetShape(inSettings._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
         }
 
+        /// Generated from method `JoltHelpers::CharacterVirtualSettingsSetInnerBodyShape`.
+        public static unsafe void CharacterVirtualSettingsSetInnerBodyShape(JPH.CharacterVirtualSettings inSettings, JPH.Const_Shape? inShape)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_CharacterVirtualSettingsSetInnerBodyShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_CharacterVirtualSettingsSetInnerBodyShape", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_CharacterVirtualSettingsSetInnerBodyShape(JPH.CharacterVirtualSettings._Underlying *inSettings, JPH.Const_Shape._Underlying *inShape);
+            __JoltHelpers_CharacterVirtualSettingsSetInnerBodyShape(inSettings._UnderlyingPtr, inShape is not null ? inShape._UnderlyingPtr : null);
+        }
+
         /// Set the skeleton on a RagdollSettings (mSkeleton is Ref<Skeleton>).
         /// Generated from method `JoltHelpers::RagdollSettingsSetSkeleton`.
         public static unsafe void RagdollSettingsSetSkeleton(JPH.RagdollSettings inSettings, JPH.Skeleton? inSkeleton)

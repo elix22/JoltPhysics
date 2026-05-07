@@ -330,6 +330,11 @@ void JoltHelpers::CharacterBaseSettingsSetShape(JPH::CharacterBaseSettings& inSe
     inSettings.mShape = inShape;
 }
 
+void JoltHelpers::CharacterVirtualSettingsSetInnerBodyShape(JPH::CharacterVirtualSettings& inSettings, const JPH::Shape* inShape)
+{
+    inSettings.mInnerBodyShape = inShape;
+}
+
 // ---------------------------------------------------------------------------
 // Ragdoll helpers
 // ---------------------------------------------------------------------------

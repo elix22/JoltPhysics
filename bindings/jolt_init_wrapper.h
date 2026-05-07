@@ -22,6 +22,7 @@
 #include <Jolt/Physics/Character/CharacterBase.h>
 #include <Jolt/Physics/PhysicsSystem.h>
 #include <Jolt/Physics/Ragdoll/Ragdoll.h>
+#include <Jolt/Physics/Character/CharacterVirtual.h>
 #ifdef JPH_DEBUG_RENDERER
 #include <Jolt/Renderer/DebugRendererSimple.h>
 #endif
@@ -186,6 +187,9 @@ struct JoltHelpers
 
     /// Set the shape on a CharacterBaseSettings (mShape is a RefConst<Shape> not directly bindable).
     static void CharacterBaseSettingsSetShape(JPH::CharacterBaseSettings& inSettings, const JPH::Shape* inShape);
+
+
+    static void CharacterVirtualSettingsSetInnerBodyShape(JPH::CharacterVirtualSettings& inSettings, const JPH::Shape* inShape);
 
     // -----------------------------------------------------------------------
     // Ragdoll helpers — expose mSkeleton and mParts array to C#
