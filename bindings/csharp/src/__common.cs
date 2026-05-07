@@ -219,19 +219,8 @@ public static partial class JPH
 
     public struct ArrayUint64T2
     {
-        public UIntPtr _0;
-        public UIntPtr _1;
-
-        public unsafe ref UIntPtr this[nint i]
-        {
-            get
-            {
-                fixed (UIntPtr *ptr = &_0)
-                {
-                    return ref *(ptr + i);
-                }
-            }
-        }
+        public unsafe fixed ulong _elem[2];
+        public unsafe ref ulong this[nint i] => ref _elem[i];
     }
 
     public struct ArrayUnsignedChar16

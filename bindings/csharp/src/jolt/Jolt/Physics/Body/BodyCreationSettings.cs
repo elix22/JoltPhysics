@@ -102,7 +102,7 @@ public static partial class JPH
         }
 
         /// User data value (can be used by application)
-        public unsafe UIntPtr mUserData
+        public unsafe ulong mUserData
         {
             get
             {
@@ -111,7 +111,7 @@ public static partial class JPH
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_Get_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static UIntPtr *__JPH_BodyCreationSettings_Get_mUserData(_Underlying *_this);
+                extern static ulong *__JPH_BodyCreationSettings_Get_mUserData(_Underlying *_this);
                 return *__JPH_BodyCreationSettings_Get_mUserData(_UnderlyingPtr);
             }
         }
@@ -748,7 +748,7 @@ public static partial class JPH
         }
 
         /// User data value (can be used by application)
-        public new unsafe ref UIntPtr mUserData
+        public new unsafe ref ulong mUserData
         {
             get
             {
@@ -757,7 +757,7 @@ public static partial class JPH
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BodyCreationSettings_GetMutable_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static UIntPtr *__JPH_BodyCreationSettings_GetMutable_mUserData(_Underlying *_this);
+                extern static ulong *__JPH_BodyCreationSettings_GetMutable_mUserData(_Underlying *_this);
                 return ref *__JPH_BodyCreationSettings_GetMutable_mUserData(_UnderlyingPtr);
             }
         }

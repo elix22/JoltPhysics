@@ -295,14 +295,14 @@ public static partial class JPH
         /// Create ragdoll instance from these settings
         /// @return Newly created ragdoll or null when out of bodies
         /// Generated from method `JPH::RagdollSettings::CreateRagdoll`.
-        public unsafe JPH.Ragdoll? CreateRagdoll(uint inCollisionGroup, UIntPtr inUserData, JPH.PhysicsSystem? inSystem)
+        public unsafe JPH.Ragdoll? CreateRagdoll(uint inCollisionGroup, ulong inUserData, JPH.PhysicsSystem? inSystem)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RagdollSettings_CreateRagdoll", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_CreateRagdoll", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static JPH.Ragdoll._Underlying *__JPH_RagdollSettings_CreateRagdoll(_Underlying *_this, uint inCollisionGroup, UIntPtr inUserData, JPH.PhysicsSystem._Underlying *inSystem);
+            extern static JPH.Ragdoll._Underlying *__JPH_RagdollSettings_CreateRagdoll(_Underlying *_this, uint inCollisionGroup, ulong inUserData, JPH.PhysicsSystem._Underlying *inSystem);
             var __c_ret = __JPH_RagdollSettings_CreateRagdoll(_UnderlyingPtr, inCollisionGroup, inUserData, inSystem is not null ? inSystem._UnderlyingPtr : null);
             return __c_ret is not null ? new JPH.Ragdoll(__c_ret, is_owning: false) : null;
         }
@@ -919,7 +919,7 @@ public static partial class JPH
             }
 
             /// User data value (can be used by application)
-            public unsafe UIntPtr mUserData
+            public unsafe ulong mUserData
             {
                 get
                 {
@@ -928,7 +928,7 @@ public static partial class JPH
                     #else
                     [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_Part_Get_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static UIntPtr *__JPH_RagdollSettings_Part_Get_mUserData(_Underlying *_this);
+                    extern static ulong *__JPH_RagdollSettings_Part_Get_mUserData(_Underlying *_this);
                     return *__JPH_RagdollSettings_Part_Get_mUserData(_UnderlyingPtr);
                 }
             }
@@ -1569,7 +1569,7 @@ public static partial class JPH
             }
 
             /// User data value (can be used by application)
-            public new unsafe ref UIntPtr mUserData
+            public new unsafe ref ulong mUserData
             {
                 get
                 {
@@ -1578,7 +1578,7 @@ public static partial class JPH
                     #else
                     [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_Part_GetMutable_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                     #endif
-                    extern static UIntPtr *__JPH_RagdollSettings_Part_GetMutable_mUserData(_Underlying *_this);
+                    extern static ulong *__JPH_RagdollSettings_Part_GetMutable_mUserData(_Underlying *_this);
                     return ref *__JPH_RagdollSettings_Part_GetMutable_mUserData(_UnderlyingPtr);
                 }
             }

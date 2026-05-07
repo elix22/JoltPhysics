@@ -99,14 +99,14 @@ public static partial class JPH
 
         /// Create a vector from two uint64's
         /// Generated from constructor `JPH::BVec16::BVec16`.
-        public unsafe Const_BVec16(UIntPtr inV0, UIntPtr inV1) : this(null, is_owning: true)
+        public unsafe Const_BVec16(ulong inV0, ulong inV1) : this(null, is_owning: true)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BVec16_Construct_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BVec16_Construct_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static JPH.BVec16._Underlying *__JPH_BVec16_Construct_2(UIntPtr inV0, UIntPtr inV1);
+            extern static JPH.BVec16._Underlying *__JPH_BVec16_Construct_2(ulong inV0, ulong inV1);
             _UnderlyingPtr = __JPH_BVec16_Construct_2(inV0, inV1);
         }
 
@@ -519,14 +519,14 @@ public static partial class JPH
 
         /// Create a vector from two uint64's
         /// Generated from constructor `JPH::BVec16::BVec16`.
-        public unsafe BVec16(UIntPtr inV0, UIntPtr inV1) : this(null, is_owning: true)
+        public unsafe BVec16(ulong inV0, ulong inV1) : this(null, is_owning: true)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_BVec16_Construct_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_BVec16_Construct_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static JPH.BVec16._Underlying *__JPH_BVec16_Construct_2(UIntPtr inV0, UIntPtr inV1);
+            extern static JPH.BVec16._Underlying *__JPH_BVec16_Construct_2(ulong inV0, ulong inV1);
             _UnderlyingPtr = __JPH_BVec16_Construct_2(inV0, inV1);
         }
 

@@ -522,14 +522,14 @@ public static partial class JPH
 
         /// User data (to be used freely by the application)
         /// Generated from method `JPH::SoftBodyShape::GetUserData`.
-        public unsafe UIntPtr GetUserData()
+        public unsafe ulong GetUserData()
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyShape_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyShape_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static UIntPtr __JPH_SoftBodyShape_GetUserData(_Underlying *_this);
+            extern static ulong __JPH_SoftBodyShape_GetUserData(_Underlying *_this);
             return __JPH_SoftBodyShape_GetUserData(_UnderlyingPtr);
         }
 
@@ -552,14 +552,14 @@ public static partial class JPH
 
         /// Get the user data of a particular sub shape ID. Corresponds with the value stored in Shape::GetUserData of the leaf shape pointed to by inSubShapeID.
         /// Generated from method `JPH::SoftBodyShape::GetSubShapeUserData`.
-        public unsafe UIntPtr GetSubShapeUserData(JPH.Const_SubShapeID inSubShapeID)
+        public unsafe ulong GetSubShapeUserData(JPH.Const_SubShapeID inSubShapeID)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyShape_GetSubShapeUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyShape_GetSubShapeUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static UIntPtr __JPH_SoftBodyShape_GetSubShapeUserData(_Underlying *_this, JPH.Const_SubShapeID._Underlying *inSubShapeID);
+            extern static ulong __JPH_SoftBodyShape_GetSubShapeUserData(_Underlying *_this, JPH.Const_SubShapeID._Underlying *inSubShapeID);
             return __JPH_SoftBodyShape_GetSubShapeUserData(_UnderlyingPtr, inSubShapeID._UnderlyingPtr);
         }
 
@@ -831,14 +831,14 @@ public static partial class JPH
         }
 
         /// Generated from method `JPH::SoftBodyShape::SetUserData`.
-        public unsafe void SetUserData(UIntPtr inUserData)
+        public unsafe void SetUserData(ulong inUserData)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyShape_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyShape_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_SoftBodyShape_SetUserData(_Underlying *_this, UIntPtr inUserData);
+            extern static void __JPH_SoftBodyShape_SetUserData(_Underlying *_this, ulong inUserData);
             __JPH_SoftBodyShape_SetUserData(_UnderlyingPtr, inUserData);
         }
     }

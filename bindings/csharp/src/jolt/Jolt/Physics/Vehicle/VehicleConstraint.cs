@@ -263,7 +263,7 @@ public static partial class JPH
         }
 
         /// User data value (can be used by application)
-        public unsafe UIntPtr mUserData
+        public unsafe ulong mUserData
         {
             get
             {
@@ -272,7 +272,7 @@ public static partial class JPH
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleConstraintSettings_Get_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static UIntPtr *__JPH_VehicleConstraintSettings_Get_mUserData(_Underlying *_this);
+                extern static ulong *__JPH_VehicleConstraintSettings_Get_mUserData(_Underlying *_this);
                 return *__JPH_VehicleConstraintSettings_Get_mUserData(_UnderlyingPtr);
             }
         }
@@ -773,7 +773,7 @@ public static partial class JPH
         }
 
         /// User data value (can be used by application)
-        public new unsafe ref UIntPtr mUserData
+        public new unsafe ref ulong mUserData
         {
             get
             {
@@ -782,7 +782,7 @@ public static partial class JPH
                 #else
                 [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleConstraintSettings_GetMutable_mUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
                 #endif
-                extern static UIntPtr *__JPH_VehicleConstraintSettings_GetMutable_mUserData(_Underlying *_this);
+                extern static ulong *__JPH_VehicleConstraintSettings_GetMutable_mUserData(_Underlying *_this);
                 return ref *__JPH_VehicleConstraintSettings_GetMutable_mUserData(_UnderlyingPtr);
             }
         }
@@ -1473,14 +1473,14 @@ public static partial class JPH
 
         /// Access to the user data, can be used for anything by the application
         /// Generated from method `JPH::VehicleConstraint::GetUserData`.
-        public unsafe UIntPtr GetUserData()
+        public unsafe ulong GetUserData()
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleConstraint_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleConstraint_GetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static UIntPtr __JPH_VehicleConstraint_GetUserData(_Underlying *_this);
+            extern static ulong __JPH_VehicleConstraint_GetUserData(_Underlying *_this);
             return __JPH_VehicleConstraint_GetUserData(_UnderlyingPtr);
         }
 
@@ -2054,14 +2054,14 @@ public static partial class JPH
         }
 
         /// Generated from method `JPH::VehicleConstraint::SetUserData`.
-        public unsafe void SetUserData(UIntPtr inUserData)
+        public unsafe void SetUserData(ulong inUserData)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleConstraint_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleConstraint_SetUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_VehicleConstraint_SetUserData(_Underlying *_this, UIntPtr inUserData);
+            extern static void __JPH_VehicleConstraint_SetUserData(_Underlying *_this, ulong inUserData);
             __JPH_VehicleConstraint_SetUserData(_UnderlyingPtr, inUserData);
         }
 

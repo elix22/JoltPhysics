@@ -915,14 +915,14 @@ public static partial class JPH
         /// @param inUserData Application specific value
         /// @param inSystem Physics system that this character will be added to later
         /// Generated from constructor `JPH::Character::Character`.
-        public unsafe Const_Character(JPH.Const_CharacterSettings? inSettings, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, UIntPtr inUserData, JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
+        public unsafe Const_Character(JPH.Const_CharacterSettings? inSettings, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, ulong inUserData, JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Character_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Character_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static JPH.Character._Underlying *__JPH_Character_Construct(JPH.Const_CharacterSettings._Underlying *inSettings, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, UIntPtr inUserData, JPH.PhysicsSystem._Underlying *inSystem);
+            extern static JPH.Character._Underlying *__JPH_Character_Construct(JPH.Const_CharacterSettings._Underlying *inSettings, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, ulong inUserData, JPH.PhysicsSystem._Underlying *inSystem);
             _UnderlyingPtr = __JPH_Character_Construct(inSettings is not null ? inSettings._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inUserData, inSystem is not null ? inSystem._UnderlyingPtr : null);
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Character_UpcastTo_JPH_RefTarget_JPH_CharacterBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
@@ -1408,14 +1408,14 @@ public static partial class JPH
 
         /// User data value of the body that we're standing on
         /// Generated from method `JPH::Character::GetGroundUserData`.
-        public unsafe UIntPtr GetGroundUserData()
+        public unsafe ulong GetGroundUserData()
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Character_GetGroundUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Character_GetGroundUserData", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static UIntPtr __JPH_Character_GetGroundUserData(_Underlying *_this);
+            extern static ulong __JPH_Character_GetGroundUserData(_Underlying *_this);
             return __JPH_Character_GetGroundUserData(_UnderlyingPtr);
         }
 
@@ -1585,14 +1585,14 @@ public static partial class JPH
         /// @param inUserData Application specific value
         /// @param inSystem Physics system that this character will be added to later
         /// Generated from constructor `JPH::Character::Character`.
-        public unsafe Character(JPH.Const_CharacterSettings? inSettings, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, UIntPtr inUserData, JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
+        public unsafe Character(JPH.Const_CharacterSettings? inSettings, JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, ulong inUserData, JPH.PhysicsSystem? inSystem) : this(null, is_owning: true)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Character_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Character_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static JPH.Character._Underlying *__JPH_Character_Construct(JPH.Const_CharacterSettings._Underlying *inSettings, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, UIntPtr inUserData, JPH.PhysicsSystem._Underlying *inSystem);
+            extern static JPH.Character._Underlying *__JPH_Character_Construct(JPH.Const_CharacterSettings._Underlying *inSettings, JPH.Vec3._Underlying *inPosition, JPH.Quat._Underlying *inRotation, ulong inUserData, JPH.PhysicsSystem._Underlying *inSystem);
             _UnderlyingPtr = __JPH_Character_Construct(inSettings is not null ? inSettings._UnderlyingPtr : null, inPosition._UnderlyingPtr, inRotation._UnderlyingPtr, inUserData, inSystem is not null ? inSystem._UnderlyingPtr : null);
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Character_UpcastTo_JPH_RefTarget_JPH_CharacterBase", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
