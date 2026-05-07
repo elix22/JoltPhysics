@@ -150,13 +150,14 @@ public sealed class Tests_Array_Float
 
     // ── Resize ───────────────────────────────────────────────────────────────
 
-    [Fact] public void Resize_GrowsAndZeroFills()
+    [Fact] public void Resize_GrowsTheContainer()
     {
+        // JPH::Array<float>::resize(n) does NOT value-initialize new elements for
+        // trivially-constructible types (unlike std::vector). Only the size is guaranteed.
         using var a = new JPH.Array_Float();
         a.Resize((UIntPtr)3);
         Assert.Equal((UIntPtr)3, a.Size());
-        Assert.Equal(0.0f, a[(UIntPtr)0]);
-        Assert.Equal(0.0f, a[(UIntPtr)2]);
+        Assert.False(a.Empty());
     }
 
     [Fact] public void ResizeWithDefaultValue_FillsWithValue()
