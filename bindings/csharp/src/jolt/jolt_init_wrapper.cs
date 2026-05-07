@@ -565,6 +565,32 @@ public static partial class JPH
             __JoltHelpers_SoftBodySettingsAddInvBind(inSettings._UnderlyingPtr, inJointIndex, inInvBind._UnderlyingPtr);
         }
 
+        /// Append a Skinned constraint with two joint weights (normalized automatically).
+        /// Generated from method `JoltHelpers::SoftBodySettingsAddSkinnedWithWeights`.
+        public static unsafe void SoftBodySettingsAddSkinnedWithWeights(JPH.SoftBodySharedSettings inSettings, uint inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius, uint inJoint0, float inWeight0, uint inJoint1, float inWeight1)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsAddSkinnedWithWeights", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsAddSkinnedWithWeights", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_SoftBodySettingsAddSkinnedWithWeights(JPH.SoftBodySharedSettings._Underlying *inSettings, uint inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius, uint inJoint0, float inWeight0, uint inJoint1, float inWeight1);
+            __JoltHelpers_SoftBodySettingsAddSkinnedWithWeights(inSettings._UnderlyingPtr, inVertex, inMaxDistance, inBackStopDistance, inBackStopRadius, inJoint0, inWeight0, inJoint1, inWeight1);
+        }
+
+        /// Set compliance on all edge constraints in SoftBodySharedSettings::mEdgeConstraints.
+        /// Generated from method `JoltHelpers::SoftBodySettingsSetAllEdgeCompliance`.
+        public static unsafe void SoftBodySettingsSetAllEdgeCompliance(JPH.SoftBodySharedSettings inSettings, float inCompliance)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsSetAllEdgeCompliance", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SoftBodySettingsSetAllEdgeCompliance", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_SoftBodySettingsSetAllEdgeCompliance(JPH.SoftBodySharedSettings._Underlying *inSettings, float inCompliance);
+            __JoltHelpers_SoftBodySettingsSetAllEdgeCompliance(inSettings._UnderlyingPtr, inCompliance);
+        }
+
         /// Returns the number of vertices in a SoftBodyManifold.
         /// Generated from method `JoltHelpers::SoftBodyManifoldGetVertexCount`.
         public static unsafe uint SoftBodyManifoldGetVertexCount(JPH.Const_SoftBodyManifold inManifold)

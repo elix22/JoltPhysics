@@ -403,6 +403,16 @@ JOLT_API void JoltHelpers_SoftBodySettingsAddSkinned(JPH_SoftBodySharedSettings 
 /// Parameter `inInvBind` can not be null. It is a single object.
 JOLT_API void JoltHelpers_SoftBodySettingsAddInvBind(JPH_SoftBodySharedSettings *inSettings, unsigned int inJointIndex, const JPH_Mat44 *inInvBind);
 
+/// Append a Skinned constraint with two joint weights (normalized automatically).
+/// Generated from method `JoltHelpers::SoftBodySettingsAddSkinnedWithWeights`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_SoftBodySettingsAddSkinnedWithWeights(JPH_SoftBodySharedSettings *inSettings, unsigned int inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius, unsigned int inJoint0, float inWeight0, unsigned int inJoint1, float inWeight1);
+
+/// Set compliance on all edge constraints in SoftBodySharedSettings::mEdgeConstraints.
+/// Generated from method `JoltHelpers::SoftBodySettingsSetAllEdgeCompliance`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_SoftBodySettingsSetAllEdgeCompliance(JPH_SoftBodySharedSettings *inSettings, float inCompliance);
+
 /// Returns the number of vertices in a SoftBodyManifold.
 /// Generated from method `JoltHelpers::SoftBodyManifoldGetVertexCount`.
 /// Parameter `inManifold` can not be null. It is a single object.

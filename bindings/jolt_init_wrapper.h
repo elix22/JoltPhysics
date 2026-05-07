@@ -160,6 +160,10 @@ struct JoltHelpers
     static void SoftBodySettingsAddSkinned(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius);
     /// Append an InvBind matrix to SoftBodySharedSettings::mInvBindMatrices.
     static void SoftBodySettingsAddInvBind(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inJointIndex, JPH::Mat44Arg inInvBind);
+    /// Append a Skinned constraint with two joint weights (normalized automatically).
+    static void SoftBodySettingsAddSkinnedWithWeights(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius, JPH::uint32 inJoint0, float inWeight0, JPH::uint32 inJoint1, float inWeight1);
+    /// Set compliance on all edge constraints in SoftBodySharedSettings::mEdgeConstraints.
+    static void SoftBodySettingsSetAllEdgeCompliance(JPH::SoftBodySharedSettings& inSettings, float inCompliance);
     /// Returns the number of vertices in a SoftBodyManifold.
     static JPH::uint32 SoftBodyManifoldGetVertexCount(const JPH::SoftBodyManifold& inManifold);
     /// Returns the vertex at the given index (non-owning reference into the manifold).

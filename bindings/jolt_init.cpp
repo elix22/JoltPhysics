@@ -258,6 +258,21 @@ void JoltHelpers::SoftBodySettingsAddInvBind(JPH::SoftBodySharedSettings& inSett
     inSettings.mInvBindMatrices.push_back(JPH::SoftBodySharedSettings::InvBind(inJointIndex, inInvBind));
 }
 
+void JoltHelpers::SoftBodySettingsAddSkinnedWithWeights(JPH::SoftBodySharedSettings& inSettings, JPH::uint32 inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius, JPH::uint32 inJoint0, float inWeight0, JPH::uint32 inJoint1, float inWeight1)
+{
+    JPH::SoftBodySharedSettings::Skinned skinned(inVertex, inMaxDistance, inBackStopDistance, inBackStopRadius);
+    skinned.mWeights[0] = JPH::SoftBodySharedSettings::SkinWeight(inJoint0, inWeight0);
+    skinned.mWeights[1] = JPH::SoftBodySharedSettings::SkinWeight(inJoint1, inWeight1);
+    skinned.NormalizeWeights();
+    inSettings.mSkinnedConstraints.push_back(skinned);
+}
+
+void JoltHelpers::SoftBodySettingsSetAllEdgeCompliance(JPH::SoftBodySharedSettings& inSettings, float inCompliance)
+{
+    for (auto& e : inSettings.mEdgeConstraints)
+        e.mCompliance = inCompliance;
+}
+
 JPH::uint32 JoltHelpers::SoftBodyManifoldGetVertexCount(const JPH::SoftBodyManifold& inManifold)
 {
     return static_cast<JPH::uint32>(inManifold.GetVertices().size());

@@ -403,6 +403,29 @@ void JoltHelpers_SoftBodySettingsAddInvBind(JPH_SoftBodySharedSettings *inSettin
     );
 }
 
+void JoltHelpers_SoftBodySettingsAddSkinnedWithWeights(JPH_SoftBodySharedSettings *inSettings, unsigned int inVertex, float inMaxDistance, float inBackStopDistance, float inBackStopRadius, unsigned int inJoint0, float inWeight0, unsigned int inJoint1, float inWeight1)
+{
+    JoltHelpers::SoftBodySettingsAddSkinnedWithWeights(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(inSettings)),
+        inVertex,
+        inMaxDistance,
+        inBackStopDistance,
+        inBackStopRadius,
+        inJoint0,
+        inWeight0,
+        inJoint1,
+        inWeight1
+    );
+}
+
+void JoltHelpers_SoftBodySettingsSetAllEdgeCompliance(JPH_SoftBodySharedSettings *inSettings, float inCompliance)
+{
+    JoltHelpers::SoftBodySettingsSetAllEdgeCompliance(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(inSettings)),
+        inCompliance
+    );
+}
+
 unsigned int JoltHelpers_SoftBodyManifoldGetVertexCount(const JPH_SoftBodyManifold *inManifold)
 {
     return JoltHelpers::SoftBodyManifoldGetVertexCount(
