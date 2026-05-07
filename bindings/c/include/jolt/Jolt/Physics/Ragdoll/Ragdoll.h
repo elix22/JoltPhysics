@@ -32,6 +32,11 @@ typedef struct JPH_SkeletonPose JPH_SkeletonPose; // Defined in `#include <jolt/
 typedef struct JPH_TwoBodyConstraint JPH_TwoBodyConstraint; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_BodyID Jolt_JPH_Array_JPH_BodyID; // Defined in `#include <JPH_Array_JPH_BodyID.h>`.
+typedef struct Jolt_JPH_Array_JPH_RagdollSettings_AdditionalConstraint Jolt_JPH_Array_JPH_RagdollSettings_AdditionalConstraint; // Defined in `#include <JPH_Array_JPH_RagdollSettings_AdditionalConstraint.h>`.
+typedef struct Jolt_JPH_Array_JPH_RagdollSettings_Part Jolt_JPH_Array_JPH_RagdollSettings_Part; // Defined in `#include <JPH_Array_JPH_RagdollSettings_Part.h>`.
+typedef struct Jolt_JPH_Array_int Jolt_JPH_Array_int; // Defined in `#include <JPH_Array_int.h>`.
+typedef struct Jolt_JPH_Array_std_pair_int_int Jolt_JPH_Array_std_pair_int_int; // Defined in `#include <JPH_Array_std_pair_int_int.h>`.
 typedef struct Jolt_std_pair_int_int Jolt_std_pair_int_int; // Defined in `#include <std_pair_int_int.h>`.
 
 
@@ -63,6 +68,48 @@ typedef struct JPH_RagdollSettings JPH_RagdollSettings;
 ///     `JPH::RefTarget<JPH::Ragdoll>`
 ///     `JPH::NonCopyable`
 typedef struct JPH_Ragdoll JPH_Ragdoll;
+
+/// For each of the joints, the body and constraint attaching it to its parent body (1-on-1 with mSkeleton.GetJoints())
+/// Returns a pointer to a member variable of class `JPH::RagdollSettings` named `mParts`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_RagdollSettings_Part *JPH_RagdollSettings_Get_mParts(const JPH_RagdollSettings *_this);
+
+/// For each of the joints, the body and constraint attaching it to its parent body (1-on-1 with mSkeleton.GetJoints())
+/// Modifies a member variable of class `JPH::RagdollSettings` named `mParts`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mParts`.
+/// When this function is called, this object will drop object references it held previously in `mParts`.
+JOLT_API void JPH_RagdollSettings_Set_mParts(JPH_RagdollSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_RagdollSettings_Part *value);
+
+/// For each of the joints, the body and constraint attaching it to its parent body (1-on-1 with mSkeleton.GetJoints())
+/// Returns a mutable pointer to a member variable of class `JPH::RagdollSettings` named `mParts`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_RagdollSettings_Part *JPH_RagdollSettings_GetMutable_mParts(JPH_RagdollSettings *_this);
+
+/// A list of constraints that connects two bodies in a ragdoll (for non parent child related constraints)
+/// Returns a pointer to a member variable of class `JPH::RagdollSettings` named `mAdditionalConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_RagdollSettings_AdditionalConstraint *JPH_RagdollSettings_Get_mAdditionalConstraints(const JPH_RagdollSettings *_this);
+
+/// A list of constraints that connects two bodies in a ragdoll (for non parent child related constraints)
+/// Modifies a member variable of class `JPH::RagdollSettings` named `mAdditionalConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mAdditionalConstraints`.
+/// When this function is called, this object will drop object references it held previously in `mAdditionalConstraints`.
+JOLT_API void JPH_RagdollSettings_Set_mAdditionalConstraints(JPH_RagdollSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_RagdollSettings_AdditionalConstraint *value);
+
+/// A list of constraints that connects two bodies in a ragdoll (for non parent child related constraints)
+/// Returns a mutable pointer to a member variable of class `JPH::RagdollSettings` named `mAdditionalConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_RagdollSettings_AdditionalConstraint *JPH_RagdollSettings_GetMutable_mAdditionalConstraints(JPH_RagdollSettings *_this);
 
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_RagdollSettings_Destroy()` to free it when you're done using it.
@@ -201,6 +248,13 @@ JOLT_API JPH_Skeleton *JPH_RagdollSettings_GetSkeleton_mut(JPH_RagdollSettings *
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_RagdollSettings_CalculateBodyIndexToConstraintIndex(JPH_RagdollSettings *_this);
 
+/// Get table that maps a body index to the constraint index with which it is connected to its parent. -1 if there is no constraint associated with the body.
+/// Note that this will only tell you which constraint connects the body to its parent, it will not look in the additional constraint list.
+/// Generated from method `JPH::RagdollSettings::GetBodyIndexToConstraintIndex`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_int *JPH_RagdollSettings_GetBodyIndexToConstraintIndex(const JPH_RagdollSettings *_this);
+
 /// Map a single body index to a constraint index
 /// Generated from method `JPH::RagdollSettings::GetConstraintIndexForBodyIndex`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -210,6 +264,12 @@ JOLT_API int JPH_RagdollSettings_GetConstraintIndexForBodyIndex(const JPH_Ragdol
 /// Generated from method `JPH::RagdollSettings::CalculateConstraintIndexToBodyIdxPair`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_RagdollSettings_CalculateConstraintIndexToBodyIdxPair(JPH_RagdollSettings *_this);
+
+/// Table that maps a constraint index (index in mConstraints) to the indices of the bodies that the constraint is connected to (index in mBodyIDs)
+/// Generated from method `JPH::RagdollSettings::GetConstraintIndexToBodyIdxPair`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_std_pair_int_int *JPH_RagdollSettings_GetConstraintIndexToBodyIdxPair(const JPH_RagdollSettings *_this);
 
 /// Map a single constraint index (index in mConstraints) to the indices of the bodies that the constraint is connected to (index in mBodyIDs)
 /// Generated from method `JPH::RagdollSettings::GetBodyIndicesForConstraintIndex`.
@@ -1160,6 +1220,12 @@ JOLT_API size_t JPH_Ragdoll_GetBodyCount(const JPH_Ragdoll *_this);
 /// Generated from method `JPH::Ragdoll::GetBodyID`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API JPH_BodyID JPH_Ragdoll_GetBodyID(const JPH_Ragdoll *_this, int inBodyIndex);
+
+/// Access to the array of body IDs
+/// Generated from method `JPH::Ragdoll::GetBodyIDs`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_BodyID *JPH_Ragdoll_GetBodyIDs(const JPH_Ragdoll *_this);
 
 /// Get number of constraints in the ragdoll
 /// Generated from method `JPH::Ragdoll::GetConstraintCount`.

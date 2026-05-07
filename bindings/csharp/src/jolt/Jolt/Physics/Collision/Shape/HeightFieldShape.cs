@@ -244,6 +244,42 @@ public static partial class JPH
             }
         }
 
+        /// An array of mSampleCount^2 height samples. Samples are stored in row major order, so the sample at (x, y) is at index y * mSampleCount + x.
+        public unsafe JPH.Const_Array_Float mHeightSamples
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_Get_mHeightSamples", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_Get_mHeightSamples", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_Float._Underlying *__JPH_HeightFieldShapeSettings_Get_mHeightSamples(_Underlying *_this);
+                JPH.Const_Array_Float __ret;
+                __ret = new(__JPH_HeightFieldShapeSettings_Get_mHeightSamples(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        /// An array of (mSampleCount - 1)^2 material indices.
+        public unsafe JPH.Const_Array_UnsignedChar mMaterialIndices
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_Get_mMaterialIndices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_Get_mMaterialIndices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_UnsignedChar._Underlying *__JPH_HeightFieldShapeSettings_Get_mMaterialIndices(_Underlying *_this);
+                JPH.Const_Array_UnsignedChar __ret;
+                __ret = new(__JPH_HeightFieldShapeSettings_Get_mMaterialIndices(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         // cos(5 degrees)
         public unsafe float mActiveEdgeCosThresholdAngle
         {
@@ -788,6 +824,42 @@ public static partial class JPH
                 #endif
                 extern static uint *__JPH_HeightFieldShapeSettings_GetMutable_mBitsPerSample(_Underlying *_this);
                 return ref *__JPH_HeightFieldShapeSettings_GetMutable_mBitsPerSample(_UnderlyingPtr);
+            }
+        }
+
+        /// An array of mSampleCount^2 height samples. Samples are stored in row major order, so the sample at (x, y) is at index y * mSampleCount + x.
+        public new unsafe JPH.Array_Float mHeightSamples
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_GetMutable_mHeightSamples", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_GetMutable_mHeightSamples", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_Float._Underlying *__JPH_HeightFieldShapeSettings_GetMutable_mHeightSamples(_Underlying *_this);
+                JPH.Array_Float __ret;
+                __ret = new(__JPH_HeightFieldShapeSettings_GetMutable_mHeightSamples(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        /// An array of (mSampleCount - 1)^2 material indices.
+        public new unsafe JPH.Array_UnsignedChar mMaterialIndices
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_GetMutable_mMaterialIndices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_HeightFieldShapeSettings_GetMutable_mMaterialIndices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_UnsignedChar._Underlying *__JPH_HeightFieldShapeSettings_GetMutable_mMaterialIndices(_Underlying *_this);
+                JPH.Array_UnsignedChar __ret;
+                __ret = new(__JPH_HeightFieldShapeSettings_GetMutable_mMaterialIndices(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
             }
         }
 

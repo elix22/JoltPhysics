@@ -488,6 +488,20 @@ public static partial class JPH
             return __JPH_PhysicsSystem_GetMaxBodies(_UnderlyingPtr);
         }
 
+        /// Get copy of the list of all bodies under protection of a lock.
+        /// @param outBodyIDs On return, this will contain the list of BodyIDs
+        /// Generated from method `JPH::PhysicsSystem::GetBodies`.
+        public unsafe void GetBodies(JPH.Array_JPHBodyID outBodyIDs)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_GetBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_GetBodies", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_PhysicsSystem_GetBodies(_Underlying *_this, JPH.Array_JPHBodyID._Underlying *outBodyIDs);
+            __JPH_PhysicsSystem_GetBodies(_UnderlyingPtr, outBodyIDs._UnderlyingPtr);
+        }
+
         /// Check if 2 bodies were in contact during the last simulation step. Since contacts are only detected between active bodies, so at least one of the bodies must be active in order for this function to work.
         /// It queries the state at the time of the last PhysicsSystem::Update and will return true if the bodies were in contact, even if one of the bodies was moved / removed afterwards.
         /// This function can be called from any thread when the PhysicsSystem::Update is not running. During PhysicsSystem::Update this function is only valid during contact callbacks:

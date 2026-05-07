@@ -23,6 +23,7 @@
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
@@ -30,6 +31,22 @@
 #include <new>
 #include <stdexcept>
 
+
+const Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings *JPH_MutableCompoundShapeSettings_Get_mSubShapes(const JPH_MutableCompoundShapeSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MutableCompoundShapeSettings *)(_this)).mSubShapes);
+}
+
+void JPH_MutableCompoundShapeSettings_Set_mSubShapes(JPH_MutableCompoundShapeSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::CompoundShapeSettings::SubShapeSettings>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MutableCompoundShapeSettings *)(_this)).mSubShapes = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::CompoundShapeSettings::SubShapeSettings>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::CompoundShapeSettings::SubShapeSettings>), JPH::Array<JPH::CompoundShapeSettings::SubShapeSettings>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::CompoundShapeSettings::SubShapeSettings>), JPH::Array<JPH::CompoundShapeSettings::SubShapeSettings>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::CompoundShapeSettings::SubShapeSettings>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::CompoundShapeSettings::SubShapeSettings>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::CompoundShapeSettings::SubShapeSettings>));
+}
+
+Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings *JPH_MutableCompoundShapeSettings_GetMutable_mSubShapes(JPH_MutableCompoundShapeSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MutableCompoundShapeSettings *)(_this)).mSubShapes);
+}
 
 const uint64_t *JPH_MutableCompoundShapeSettings_Get_mUserData(const JPH_MutableCompoundShapeSettings *_this)
 {
@@ -770,6 +787,11 @@ int JPH_MutableCompoundShape_GetTrianglesNext(const JPH_MutableCompoundShape *_t
         ((JPH::Float3 *)outTriangleVertices),
         ((const JPH::PhysicsMaterial **)outMaterials)
     );
+}
+
+const Jolt_JPH_Array_JPH_CompoundShape_SubShape *JPH_MutableCompoundShape_GetSubShapes(const JPH_MutableCompoundShape *_this)
+{
+    return (const Jolt_JPH_Array_JPH_CompoundShape_SubShape *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MutableCompoundShape *)(_this)).GetSubShapes());
 }
 
 unsigned int JPH_MutableCompoundShape_GetNumSubShapes(const JPH_MutableCompoundShape *_this)

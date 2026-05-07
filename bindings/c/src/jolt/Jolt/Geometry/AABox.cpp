@@ -6,10 +6,12 @@
 #include <Jolt/Geometry/Plane.h>
 #include <Jolt/Math/DMat44.h>
 #include <Jolt/Math/DVec3.h>
+#include <Jolt/Math/Float3.h>
 #include <Jolt/Math/Mat44.h>
 #include <Jolt/Math/Vec3.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <memory>

@@ -15,6 +15,17 @@ typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Fl
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
 typedef struct JPH_RefTarget_JPH_SoftBodySharedSettings JPH_RefTarget_JPH_SoftBodySharedSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodySharedSettings_DihedralBend Jolt_JPH_Array_JPH_SoftBodySharedSettings_DihedralBend; // Defined in `#include <JPH_Array_JPH_SoftBodySharedSettings_DihedralBend.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodySharedSettings_Edge Jolt_JPH_Array_JPH_SoftBodySharedSettings_Edge; // Defined in `#include <JPH_Array_JPH_SoftBodySharedSettings_Edge.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face; // Defined in `#include <JPH_Array_JPH_SoftBodySharedSettings_Face.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodySharedSettings_InvBind Jolt_JPH_Array_JPH_SoftBodySharedSettings_InvBind; // Defined in `#include <JPH_Array_JPH_SoftBodySharedSettings_InvBind.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodySharedSettings_LRA Jolt_JPH_Array_JPH_SoftBodySharedSettings_LRA; // Defined in `#include <JPH_Array_JPH_SoftBodySharedSettings_LRA.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodBendTwist Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodBendTwist; // Defined in `#include <JPH_Array_JPH_SoftBodySharedSettings_RodBendTwist.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodStretchShear Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodStretchShear; // Defined in `#include <JPH_Array_JPH_SoftBodySharedSettings_RodStretchShear.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodySharedSettings_Skinned Jolt_JPH_Array_JPH_SoftBodySharedSettings_Skinned; // Defined in `#include <JPH_Array_JPH_SoftBodySharedSettings_Skinned.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodySharedSettings_Vertex Jolt_JPH_Array_JPH_SoftBodySharedSettings_Vertex; // Defined in `#include <JPH_Array_JPH_SoftBodySharedSettings_Vertex.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodySharedSettings_Volume Jolt_JPH_Array_JPH_SoftBodySharedSettings_Volume; // Defined in `#include <JPH_Array_JPH_SoftBodySharedSettings_Volume.h>`.
+typedef struct Jolt_JPH_Array_unsigned_int Jolt_JPH_Array_unsigned_int; // Defined in `#include <JPH_Array_unsigned_int.h>`.
 
 
 /// Which type of bend constraint should be created
@@ -138,6 +149,216 @@ typedef struct JPH_SoftBodySharedSettings_RodBendTwist JPH_SoftBodySharedSetting
 ///     `JPH::RefTarget<JPH::SoftBodySharedSettings>`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_SoftBodySharedSettings JPH_SoftBodySharedSettings;
+
+///< The list of vertices or particles of the body
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mVertices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Get_mVertices(const JPH_SoftBodySharedSettings *_this);
+
+///< The list of vertices or particles of the body
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings` named `mVertices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mVertices`.
+/// When this function is called, this object will drop object references it held previously in `mVertices`.
+JOLT_API void JPH_SoftBodySharedSettings_Set_mVertices(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_Vertex *value);
+
+///< The list of vertices or particles of the body
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mVertices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_GetMutable_mVertices(JPH_SoftBodySharedSettings *_this);
+
+///< The list of faces of the body
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mFaces`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face *JPH_SoftBodySharedSettings_Get_mFaces(const JPH_SoftBodySharedSettings *_this);
+
+///< The list of faces of the body
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings` named `mFaces`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mFaces`.
+/// When this function is called, this object will drop object references it held previously in `mFaces`.
+JOLT_API void JPH_SoftBodySharedSettings_Set_mFaces(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face *value);
+
+///< The list of faces of the body
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mFaces`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face *JPH_SoftBodySharedSettings_GetMutable_mFaces(JPH_SoftBodySharedSettings *_this);
+
+///< The list of edges or springs of the body
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mEdgeConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Edge *JPH_SoftBodySharedSettings_Get_mEdgeConstraints(const JPH_SoftBodySharedSettings *_this);
+
+///< The list of edges or springs of the body
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings` named `mEdgeConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mEdgeConstraints`.
+/// When this function is called, this object will drop object references it held previously in `mEdgeConstraints`.
+JOLT_API void JPH_SoftBodySharedSettings_Set_mEdgeConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_Edge *value);
+
+///< The list of edges or springs of the body
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mEdgeConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_SoftBodySharedSettings_Edge *JPH_SoftBodySharedSettings_GetMutable_mEdgeConstraints(JPH_SoftBodySharedSettings *_this);
+
+///< The list of dihedral bend constraints of the body
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mDihedralBendConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodySharedSettings_DihedralBend *JPH_SoftBodySharedSettings_Get_mDihedralBendConstraints(const JPH_SoftBodySharedSettings *_this);
+
+///< The list of dihedral bend constraints of the body
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings` named `mDihedralBendConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mDihedralBendConstraints`.
+/// When this function is called, this object will drop object references it held previously in `mDihedralBendConstraints`.
+JOLT_API void JPH_SoftBodySharedSettings_Set_mDihedralBendConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_DihedralBend *value);
+
+///< The list of dihedral bend constraints of the body
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mDihedralBendConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_SoftBodySharedSettings_DihedralBend *JPH_SoftBodySharedSettings_GetMutable_mDihedralBendConstraints(JPH_SoftBodySharedSettings *_this);
+
+///< The list of volume constraints of the body that keep the volume of tetrahedra in the soft body constant
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mVolumeConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Volume *JPH_SoftBodySharedSettings_Get_mVolumeConstraints(const JPH_SoftBodySharedSettings *_this);
+
+///< The list of volume constraints of the body that keep the volume of tetrahedra in the soft body constant
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings` named `mVolumeConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mVolumeConstraints`.
+/// When this function is called, this object will drop object references it held previously in `mVolumeConstraints`.
+JOLT_API void JPH_SoftBodySharedSettings_Set_mVolumeConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_Volume *value);
+
+///< The list of volume constraints of the body that keep the volume of tetrahedra in the soft body constant
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mVolumeConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_SoftBodySharedSettings_Volume *JPH_SoftBodySharedSettings_GetMutable_mVolumeConstraints(JPH_SoftBodySharedSettings *_this);
+
+///< The list of vertices that are constrained to a skinned vertex
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mSkinnedConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Skinned *JPH_SoftBodySharedSettings_Get_mSkinnedConstraints(const JPH_SoftBodySharedSettings *_this);
+
+///< The list of vertices that are constrained to a skinned vertex
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings` named `mSkinnedConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mSkinnedConstraints`.
+/// When this function is called, this object will drop object references it held previously in `mSkinnedConstraints`.
+JOLT_API void JPH_SoftBodySharedSettings_Set_mSkinnedConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_Skinned *value);
+
+///< The list of vertices that are constrained to a skinned vertex
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mSkinnedConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_SoftBodySharedSettings_Skinned *JPH_SoftBodySharedSettings_GetMutable_mSkinnedConstraints(JPH_SoftBodySharedSettings *_this);
+
+///< The list of inverse bind matrices for skinning vertices
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mInvBindMatrices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_Get_mInvBindMatrices(const JPH_SoftBodySharedSettings *_this);
+
+///< The list of inverse bind matrices for skinning vertices
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings` named `mInvBindMatrices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mInvBindMatrices`.
+/// When this function is called, this object will drop object references it held previously in `mInvBindMatrices`.
+JOLT_API void JPH_SoftBodySharedSettings_Set_mInvBindMatrices(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_InvBind *value);
+
+///< The list of inverse bind matrices for skinning vertices
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mInvBindMatrices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_GetMutable_mInvBindMatrices(JPH_SoftBodySharedSettings *_this);
+
+///< The list of long range attachment constraints
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mLRAConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodySharedSettings_LRA *JPH_SoftBodySharedSettings_Get_mLRAConstraints(const JPH_SoftBodySharedSettings *_this);
+
+///< The list of long range attachment constraints
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings` named `mLRAConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mLRAConstraints`.
+/// When this function is called, this object will drop object references it held previously in `mLRAConstraints`.
+JOLT_API void JPH_SoftBodySharedSettings_Set_mLRAConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_LRA *value);
+
+///< The list of long range attachment constraints
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mLRAConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_SoftBodySharedSettings_LRA *JPH_SoftBodySharedSettings_GetMutable_mLRAConstraints(JPH_SoftBodySharedSettings *_this);
+
+///< The list of Cosserat rod constraints that connect two vertices and that limit stretch and shear
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mRodStretchShearConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_Get_mRodStretchShearConstraints(const JPH_SoftBodySharedSettings *_this);
+
+///< The list of Cosserat rod constraints that connect two vertices and that limit stretch and shear
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings` named `mRodStretchShearConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mRodStretchShearConstraints`.
+/// When this function is called, this object will drop object references it held previously in `mRodStretchShearConstraints`.
+JOLT_API void JPH_SoftBodySharedSettings_Set_mRodStretchShearConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodStretchShear *value);
+
+///< The list of Cosserat rod constraints that connect two vertices and that limit stretch and shear
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mRodStretchShearConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_GetMutable_mRodStretchShearConstraints(JPH_SoftBodySharedSettings *_this);
+
+///< The list of Cosserat rod constraints that connect two rods and limit the bend and twist
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mRodBendTwistConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_Get_mRodBendTwistConstraints(const JPH_SoftBodySharedSettings *_this);
+
+///< The list of Cosserat rod constraints that connect two rods and limit the bend and twist
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings` named `mRodBendTwistConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mRodBendTwistConstraints`.
+/// When this function is called, this object will drop object references it held previously in `mRodBendTwistConstraints`.
+JOLT_API void JPH_SoftBodySharedSettings_Set_mRodBendTwistConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodBendTwist *value);
+
+///< The list of Cosserat rod constraints that connect two rods and limit the bend and twist
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings` named `mRodBendTwistConstraints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_GetMutable_mRodBendTwistConstraints(JPH_SoftBodySharedSettings *_this);
 
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_Destroy()` to free it when you're done using it.
@@ -454,6 +675,153 @@ JOLT_API void JPH_SoftBodySharedSettings_VertexAttributes_DestroyArray(const JPH
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API JPH_SoftBodySharedSettings_VertexAttributes *JPH_SoftBodySharedSettings_VertexAttributes_AssignFromAnother(JPH_SoftBodySharedSettings_VertexAttributes *_this, const JPH_SoftBodySharedSettings_VertexAttributes *_other);
 
+///< Maps old edge index to new edge index
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mEdgeRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mEdgeRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old edge index to new edge index
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mEdgeRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mEdgeRemap`.
+/// When this function is called, this object will drop object references it held previously in `mEdgeRemap`.
+JOLT_API void JPH_SoftBodySharedSettings_OptimizationResults_Set_mEdgeRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value);
+
+///< Maps old edge index to new edge index
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mEdgeRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mEdgeRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old LRA index to new LRA index
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mLRARemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mLRARemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old LRA index to new LRA index
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mLRARemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mLRARemap`.
+/// When this function is called, this object will drop object references it held previously in `mLRARemap`.
+JOLT_API void JPH_SoftBodySharedSettings_OptimizationResults_Set_mLRARemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value);
+
+///< Maps old LRA index to new LRA index
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mLRARemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mLRARemap(JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old rod stretch shear constraint index to new stretch shear rod constraint index
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mRodStretchShearConstraintRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodStretchShearConstraintRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old rod stretch shear constraint index to new stretch shear rod constraint index
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mRodStretchShearConstraintRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mRodStretchShearConstraintRemap`.
+/// When this function is called, this object will drop object references it held previously in `mRodStretchShearConstraintRemap`.
+JOLT_API void JPH_SoftBodySharedSettings_OptimizationResults_Set_mRodStretchShearConstraintRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value);
+
+///< Maps old rod stretch shear constraint index to new stretch shear rod constraint index
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mRodStretchShearConstraintRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodStretchShearConstraintRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old rod bend twist constraint index to new bend twist rod constraint index
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mRodBendTwistConstraintRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodBendTwistConstraintRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old rod bend twist constraint index to new bend twist rod constraint index
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mRodBendTwistConstraintRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mRodBendTwistConstraintRemap`.
+/// When this function is called, this object will drop object references it held previously in `mRodBendTwistConstraintRemap`.
+JOLT_API void JPH_SoftBodySharedSettings_OptimizationResults_Set_mRodBendTwistConstraintRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value);
+
+///< Maps old rod bend twist constraint index to new bend twist rod constraint index
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mRodBendTwistConstraintRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodBendTwistConstraintRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old dihedral bend index to new dihedral bend index
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mDihedralBendRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mDihedralBendRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old dihedral bend index to new dihedral bend index
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mDihedralBendRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mDihedralBendRemap`.
+/// When this function is called, this object will drop object references it held previously in `mDihedralBendRemap`.
+JOLT_API void JPH_SoftBodySharedSettings_OptimizationResults_Set_mDihedralBendRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value);
+
+///< Maps old dihedral bend index to new dihedral bend index
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mDihedralBendRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mDihedralBendRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old volume constraint index to new volume constraint index
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mVolumeRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mVolumeRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old volume constraint index to new volume constraint index
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mVolumeRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mVolumeRemap`.
+/// When this function is called, this object will drop object references it held previously in `mVolumeRemap`.
+JOLT_API void JPH_SoftBodySharedSettings_OptimizationResults_Set_mVolumeRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value);
+
+///< Maps old volume constraint index to new volume constraint index
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mVolumeRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mVolumeRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old skinned constraint index to new skinned constraint index
+/// Returns a pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mSkinnedRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mSkinnedRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
+///< Maps old skinned constraint index to new skinned constraint index
+/// Modifies a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mSkinnedRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mSkinnedRemap`.
+/// When this function is called, this object will drop object references it held previously in `mSkinnedRemap`.
+JOLT_API void JPH_SoftBodySharedSettings_OptimizationResults_Set_mSkinnedRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value);
+
+///< Maps old skinned constraint index to new skinned constraint index
+/// Returns a mutable pointer to a member variable of class `JPH::SoftBodySharedSettings::OptimizationResults` named `mSkinnedRemap`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mSkinnedRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_OptimizationResults_Destroy()` to free it when you're done using it.
 JOLT_API JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstruct(void);
@@ -462,6 +830,18 @@ JOLT_API JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSetti
 /// The array must be destroyed using `JPH_SoftBodySharedSettings_OptimizationResults_DestroyArray()`.
 /// Use `JPH_SoftBodySharedSettings_OptimizationResults_OffsetMutablePtr()` and `JPH_SoftBodySharedSettings_OptimizationResults_OffsetPtr()` to access the array elements.
 JOLT_API JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstructArray(size_t num_elems);
+
+/// Constructs `JPH::SoftBodySharedSettings::OptimizationResults` elementwise.
+/// The reference to the parameter `mEdgeRemap` might be preserved in the constructed object.
+/// The reference to the parameter `mLRARemap` might be preserved in the constructed object.
+/// The reference to the parameter `mRodStretchShearConstraintRemap` might be preserved in the constructed object.
+/// The reference to the parameter `mRodBendTwistConstraintRemap` might be preserved in the constructed object.
+/// The reference to the parameter `mDihedralBendRemap` might be preserved in the constructed object.
+/// The reference to the parameter `mVolumeRemap` might be preserved in the constructed object.
+/// The reference to the parameter `mSkinnedRemap` might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_OptimizationResults_Destroy()` to free it when you're done using it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_ConstructFrom(Jolt_PassBy mEdgeRemap_pass_by, Jolt_JPH_Array_unsigned_int *mEdgeRemap, Jolt_PassBy mLRARemap_pass_by, Jolt_JPH_Array_unsigned_int *mLRARemap, Jolt_PassBy mRodStretchShearConstraintRemap_pass_by, Jolt_JPH_Array_unsigned_int *mRodStretchShearConstraintRemap, Jolt_PassBy mRodBendTwistConstraintRemap_pass_by, Jolt_JPH_Array_unsigned_int *mRodBendTwistConstraintRemap, Jolt_PassBy mDihedralBendRemap_pass_by, Jolt_JPH_Array_unsigned_int *mDihedralBendRemap, Jolt_PassBy mVolumeRemap_pass_by, Jolt_JPH_Array_unsigned_int *mVolumeRemap, Jolt_PassBy mSkinnedRemap_pass_by, Jolt_JPH_Array_unsigned_int *mSkinnedRemap);
 
 /// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
 /// The reference to the parameter `ptr` might be preserved in the return value.

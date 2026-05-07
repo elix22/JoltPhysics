@@ -44,6 +44,19 @@ public static partial class JPH
         /// Generated from constructor `JPH::SoftBodyManifold::SoftBodyManifold`.
         public Const_SoftBodyManifold(SoftBodyManifold _other) : this((Const_SoftBodyManifold)_other) {}
 
+        /// Get the vertices of the soft body for iterating
+        /// Generated from method `JPH::SoftBodyManifold::GetVertices`.
+        public unsafe JPH.Const_Array_JPHSoftBodyVertex GetVertices()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyManifold_GetVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyManifold_GetVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHSoftBodyVertex._Underlying *__JPH_SoftBodyManifold_GetVertices(_Underlying *_this);
+            return new(__JPH_SoftBodyManifold_GetVertices(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Check if a vertex has collided with something in this update
         /// Generated from method `JPH::SoftBodyManifold::HasContact`.
         public unsafe bool HasContact(JPH.Const_SoftBodyVertex inVertex)

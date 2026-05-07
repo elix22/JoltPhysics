@@ -27,6 +27,8 @@ typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h
 typedef struct JPH_VehicleCollisionTester JPH_VehicleCollisionTester; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleCollisionTester.h>`.
 typedef struct JPH_VehicleController JPH_VehicleController; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleController.h>`.
 typedef struct JPH_Wheel JPH_Wheel; // Defined in `#include <jolt/Jolt/Physics/Vehicle/Wheel.h>`.
+typedef struct Jolt_JPH_Array_JPH_VehicleAntiRollBar Jolt_JPH_Array_JPH_VehicleAntiRollBar; // Defined in `#include <JPH_Array_JPH_VehicleAntiRollBar.h>`.
+typedef struct Jolt_JPH_Array_JPH_Wheel_ptr Jolt_JPH_Array_JPH_Wheel_ptr; // Defined in `#include <JPH_Array_JPH_Wheel_ptr.h>`.
 typedef struct Jolt_std_function_void_from_JPH_VehicleConstraint_ref_const_JPH_PhysicsStepListenerContext_ref Jolt_std_function_void_from_JPH_VehicleConstraint_ref_const_JPH_PhysicsStepListenerContext_ref; // Defined in `#include <std_function_void_from_JPH_VehicleConstraint_ref_const_JPH_PhysicsStepListenerContext_ref.h>`.
 typedef struct Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_const_JPH_Body_ref_const_JPH_SubShapeID_ref Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_const_JPH_Body_ref_const_JPH_SubShapeID_ref; // Defined in `#include <std_function_void_from_unsigned_int_float_ref_float_ref_const_JPH_Body_ref_const_JPH_SubShapeID_re__883b.h>`.
 
@@ -124,6 +126,27 @@ JOLT_API void JPH_VehicleConstraintSettings_Set_mMaxPitchRollAngle(JPH_VehicleCo
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_VehicleConstraintSettings_GetMutable_mMaxPitchRollAngle(JPH_VehicleConstraintSettings *_this);
+
+///< List of anti rollbars and their properties
+/// Returns a pointer to a member variable of class `JPH::VehicleConstraintSettings` named `mAntiRollBars`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_VehicleAntiRollBar *JPH_VehicleConstraintSettings_Get_mAntiRollBars(const JPH_VehicleConstraintSettings *_this);
+
+///< List of anti rollbars and their properties
+/// Modifies a member variable of class `JPH::VehicleConstraintSettings` named `mAntiRollBars`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mAntiRollBars`.
+/// When this function is called, this object will drop object references it held previously in `mAntiRollBars`.
+JOLT_API void JPH_VehicleConstraintSettings_Set_mAntiRollBars(JPH_VehicleConstraintSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_VehicleAntiRollBar *value);
+
+///< List of anti rollbars and their properties
+/// Returns a mutable pointer to a member variable of class `JPH::VehicleConstraintSettings` named `mAntiRollBars`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_VehicleAntiRollBar *JPH_VehicleConstraintSettings_GetMutable_mAntiRollBars(JPH_VehicleConstraintSettings *_this);
 
 /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
 /// Returns a pointer to a member variable of class `JPH::VehicleConstraintSettings` named `mEnabled`.
@@ -624,6 +647,18 @@ JOLT_API const JPH_VehicleController *JPH_VehicleConstraint_GetController(const 
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API JPH_VehicleController *JPH_VehicleConstraint_GetController_mut(JPH_VehicleConstraint *_this);
 
+/// Get the state of the wheels
+/// Generated from method `JPH::VehicleConstraint::GetWheels`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_Wheel_ptr *JPH_VehicleConstraint_GetWheels(const JPH_VehicleConstraint *_this);
+
+/// Get the state of a wheels (writable interface, allows you to make changes to the configuration which will take effect the next time step)
+/// Generated from method `JPH::VehicleConstraint::GetWheels`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API Jolt_JPH_Array_JPH_Wheel_ptr *JPH_VehicleConstraint_GetWheels_mut(JPH_VehicleConstraint *_this);
+
 /// Get the state of a wheel
 /// Generated from method `JPH::VehicleConstraint::GetWheel`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -666,6 +701,17 @@ JOLT_API JPH_Mat44 *JPH_VehicleConstraint_GetWheelLocalTransform(const JPH_Vehic
 /// Parameter `inWheelUp` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Mat44 *JPH_VehicleConstraint_GetWheelWorldTransform(const JPH_VehicleConstraint *_this, unsigned int inWheelIndex, const JPH_Vec3 *inWheelRight, const JPH_Vec3 *inWheelUp);
+
+/// Access to the vehicle's anti roll bars
+/// Generated from method `JPH::VehicleConstraint::GetAntiRollBars`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_VehicleAntiRollBar *JPH_VehicleConstraint_GetAntiRollBars(const JPH_VehicleConstraint *_this);
+
+/// Generated from method `JPH::VehicleConstraint::GetAntiRollBars`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API Jolt_JPH_Array_JPH_VehicleAntiRollBar *JPH_VehicleConstraint_GetAntiRollBars_mut(JPH_VehicleConstraint *_this);
 
 /// Number of simulation steps between wheel collision tests when the vehicle is active. Default is 1. 0 = never, 1 = every step, 2 = every other step, etc.
 /// Note that if a vehicle has multiple wheels and the number of steps > 1, the wheels will be tested in a round robin fashion.

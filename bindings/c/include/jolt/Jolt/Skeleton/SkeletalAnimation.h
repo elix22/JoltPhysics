@@ -16,6 +16,8 @@ typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h
 typedef struct JPH_RefTarget_JPH_SkeletalAnimation JPH_RefTarget_JPH_SkeletalAnimation; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_SkeletonPose JPH_SkeletonPose; // Defined in `#include <jolt/Jolt/Skeleton/SkeletonPose.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_SkeletalAnimation_AnimatedJoint Jolt_JPH_Array_JPH_SkeletalAnimation_AnimatedJoint; // Defined in `#include <JPH_Array_JPH_SkeletalAnimation_AnimatedJoint.h>`.
+typedef struct Jolt_JPH_Array_JPH_SkeletalAnimation_Keyframe Jolt_JPH_Array_JPH_SkeletalAnimation_Keyframe; // Defined in `#include <JPH_Array_JPH_SkeletalAnimation_Keyframe.h>`.
 
 
 /// Contains the current state of a joint, a local space transformation relative to its parent joint
@@ -156,6 +158,17 @@ JOLT_API bool JPH_SkeletalAnimation_IsLooping(const JPH_SkeletalAnimation *_this
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `ioPose` can not be null. It is a single object.
 JOLT_API void JPH_SkeletalAnimation_Sample(const JPH_SkeletalAnimation *_this, float inTime, JPH_SkeletonPose *ioPose);
+
+/// Get joint samples
+/// Generated from method `JPH::SkeletalAnimation::GetAnimatedJoints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_GetAnimatedJoints(const JPH_SkeletalAnimation *_this);
+
+/// Generated from method `JPH::SkeletalAnimation::GetAnimatedJoints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API Jolt_JPH_Array_JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_GetAnimatedJoints_mut(JPH_SkeletalAnimation *_this);
 
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
@@ -444,6 +457,27 @@ JOLT_API void JPH_SkeletalAnimation_Keyframe_FromMatrix(JPH_SkeletalAnimation_Ke
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Mat44 *JPH_SkeletalAnimation_Keyframe_ToMatrix(const JPH_SkeletalAnimation_Keyframe *_this);
+
+///< List of keyframes over time
+/// Returns a pointer to a member variable of class `JPH::SkeletalAnimation::AnimatedJoint` named `mKeyframes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_SkeletalAnimation_Keyframe *JPH_SkeletalAnimation_AnimatedJoint_Get_mKeyframes(const JPH_SkeletalAnimation_AnimatedJoint *_this);
+
+///< List of keyframes over time
+/// Modifies a member variable of class `JPH::SkeletalAnimation::AnimatedJoint` named `mKeyframes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mKeyframes`.
+/// When this function is called, this object will drop object references it held previously in `mKeyframes`.
+JOLT_API void JPH_SkeletalAnimation_AnimatedJoint_Set_mKeyframes(JPH_SkeletalAnimation_AnimatedJoint *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SkeletalAnimation_Keyframe *value);
+
+///< List of keyframes over time
+/// Returns a mutable pointer to a member variable of class `JPH::SkeletalAnimation::AnimatedJoint` named `mKeyframes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_SkeletalAnimation_Keyframe *JPH_SkeletalAnimation_AnimatedJoint_GetMutable_mKeyframes(JPH_SkeletalAnimation_AnimatedJoint *_this);
 
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SkeletalAnimation_AnimatedJoint_Destroy()` to free it when you're done using it.

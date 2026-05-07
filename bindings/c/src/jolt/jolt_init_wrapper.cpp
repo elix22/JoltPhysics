@@ -40,6 +40,7 @@
 #include <__mrbind_c_details.h>
 #include <jolt_init_wrapper.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <functional>
@@ -1783,6 +1784,38 @@ DebugTriangleRecord *DebugTriangleRecord_AssignFromAnother(DebugTriangleRecord *
     return (DebugTriangleRecord *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(DebugTriangleRecord *)(_this)).operator=(
         ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), DebugTriangleRecord(*(DebugTriangleRecord *)_other))
     ));
+}
+
+const Jolt_JPH_Array_DebugLineRecord *RecordingDebugRenderer_Get_mLines(const RecordingDebugRenderer *_this)
+{
+    return (const Jolt_JPH_Array_DebugLineRecord *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const RecordingDebugRenderer *)(_this)).mLines);
+}
+
+void RecordingDebugRenderer_Set_mLines(RecordingDebugRenderer *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_DebugLineRecord *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<DebugLineRecord>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).mLines = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<DebugLineRecord>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<DebugLineRecord>), JPH::Array<DebugLineRecord>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<DebugLineRecord>), JPH::Array<DebugLineRecord>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<DebugLineRecord>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<DebugLineRecord>) MRBINDC_CLASSARG_END(value, JPH::Array<DebugLineRecord>));
+}
+
+Jolt_JPH_Array_DebugLineRecord *RecordingDebugRenderer_GetMutable_mLines(RecordingDebugRenderer *_this)
+{
+    return (Jolt_JPH_Array_DebugLineRecord *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).mLines);
+}
+
+const Jolt_JPH_Array_DebugTriangleRecord *RecordingDebugRenderer_Get_mTriangles(const RecordingDebugRenderer *_this)
+{
+    return (const Jolt_JPH_Array_DebugTriangleRecord *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const RecordingDebugRenderer *)(_this)).mTriangles);
+}
+
+void RecordingDebugRenderer_Set_mTriangles(RecordingDebugRenderer *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_DebugTriangleRecord *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<DebugTriangleRecord>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).mTriangles = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<DebugTriangleRecord>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<DebugTriangleRecord>), JPH::Array<DebugTriangleRecord>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<DebugTriangleRecord>), JPH::Array<DebugTriangleRecord>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<DebugTriangleRecord>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<DebugTriangleRecord>) MRBINDC_CLASSARG_END(value, JPH::Array<DebugTriangleRecord>));
+}
+
+Jolt_JPH_Array_DebugTriangleRecord *RecordingDebugRenderer_GetMutable_mTriangles(RecordingDebugRenderer *_this)
+{
+    return (Jolt_JPH_Array_DebugTriangleRecord *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(RecordingDebugRenderer *)(_this)).mTriangles);
 }
 
 JPH_DebugRenderer *const *RecordingDebugRenderer_Get_sInstance(void)

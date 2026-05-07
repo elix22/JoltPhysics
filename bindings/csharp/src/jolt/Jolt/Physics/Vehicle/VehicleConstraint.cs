@@ -168,6 +168,24 @@ public static partial class JPH
             }
         }
 
+        ///< List of anti rollbars and their properties
+        public unsafe JPH.Const_Array_JPHVehicleAntiRollBar mAntiRollBars
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleConstraintSettings_Get_mAntiRollBars", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleConstraintSettings_Get_mAntiRollBars", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHVehicleAntiRollBar._Underlying *__JPH_VehicleConstraintSettings_Get_mAntiRollBars(_Underlying *_this);
+                JPH.Const_Array_JPHVehicleAntiRollBar __ret;
+                __ret = new(__JPH_VehicleConstraintSettings_Get_mAntiRollBars(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         /// If this constraint is enabled initially. Use Constraint::SetEnabled to toggle after creation.
         public unsafe bool mEnabled
         {
@@ -657,6 +675,24 @@ public static partial class JPH
                 #endif
                 extern static float *__JPH_VehicleConstraintSettings_GetMutable_mMaxPitchRollAngle(_Underlying *_this);
                 return ref *__JPH_VehicleConstraintSettings_GetMutable_mMaxPitchRollAngle(_UnderlyingPtr);
+            }
+        }
+
+        ///< List of anti rollbars and their properties
+        public new unsafe JPH.Array_JPHVehicleAntiRollBar mAntiRollBars
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleConstraintSettings_GetMutable_mAntiRollBars", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleConstraintSettings_GetMutable_mAntiRollBars", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHVehicleAntiRollBar._Underlying *__JPH_VehicleConstraintSettings_GetMutable_mAntiRollBars(_Underlying *_this);
+                JPH.Array_JPHVehicleAntiRollBar __ret;
+                __ret = new(__JPH_VehicleConstraintSettings_GetMutable_mAntiRollBars(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
             }
         }
 
@@ -1235,6 +1271,19 @@ public static partial class JPH
             return __c_ret is not null ? new JPH.Const_VehicleController(__c_ret, is_owning: false) : null;
         }
 
+        /// Get the state of the wheels
+        /// Generated from method `JPH::VehicleConstraint::GetWheels`.
+        public unsafe JPH.Const_Array_JPHWheelPtr GetWheels()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleConstraint_GetWheels", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleConstraint_GetWheels", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHWheelPtr._Underlying *__JPH_VehicleConstraint_GetWheels(_Underlying *_this);
+            return new(__JPH_VehicleConstraint_GetWheels(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Generated from method `JPH::VehicleConstraint::GetWheel`.
         public unsafe JPH.Const_Wheel? GetWheel(uint inIdx)
         {
@@ -1295,6 +1344,19 @@ public static partial class JPH
             #endif
             extern static JPH.Mat44._Underlying *__JPH_VehicleConstraint_GetWheelWorldTransform(_Underlying *_this, uint inWheelIndex, JPH.Vec3._Underlying *inWheelRight, JPH.Vec3._Underlying *inWheelUp);
             return new(__JPH_VehicleConstraint_GetWheelWorldTransform(_UnderlyingPtr, inWheelIndex, inWheelRight._UnderlyingPtr, inWheelUp._UnderlyingPtr), is_owning: true);
+        }
+
+        /// Access to the vehicle's anti roll bars
+        /// Generated from method `JPH::VehicleConstraint::GetAntiRollBars`.
+        public unsafe JPH.Const_Array_JPHVehicleAntiRollBar GetAntiRollBars()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleConstraint_GetAntiRollBars", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleConstraint_GetAntiRollBars", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHVehicleAntiRollBar._Underlying *__JPH_VehicleConstraint_GetAntiRollBars(_Underlying *_this);
+            return new(__JPH_VehicleConstraint_GetAntiRollBars(_UnderlyingPtr), is_owning: false);
         }
 
         /// Generated from method `JPH::VehicleConstraint::GetNumStepsBetweenCollisionTestActive`.
@@ -1790,6 +1852,19 @@ public static partial class JPH
             return __c_ret is not null ? new JPH.VehicleController(__c_ret, is_owning: false) : null;
         }
 
+        /// Get the state of a wheels (writable interface, allows you to make changes to the configuration which will take effect the next time step)
+        /// Generated from method `JPH::VehicleConstraint::GetWheels`.
+        public unsafe new JPH.Array_JPHWheelPtr GetWheels()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleConstraint_GetWheels_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleConstraint_GetWheels_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHWheelPtr._Underlying *__JPH_VehicleConstraint_GetWheels_mut(_Underlying *_this);
+            return new(__JPH_VehicleConstraint_GetWheels_mut(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Get the state of a wheel
         /// Generated from method `JPH::VehicleConstraint::GetWheel`.
         public unsafe new JPH.Wheel? GetWheel(uint inIdx)
@@ -1802,6 +1877,18 @@ public static partial class JPH
             extern static JPH.Wheel._Underlying *__JPH_VehicleConstraint_GetWheel_mut(_Underlying *_this, uint inIdx);
             var __c_ret = __JPH_VehicleConstraint_GetWheel_mut(_UnderlyingPtr, inIdx);
             return __c_ret is not null ? new JPH.Wheel(__c_ret, is_owning: false) : null;
+        }
+
+        /// Generated from method `JPH::VehicleConstraint::GetAntiRollBars`.
+        public unsafe new JPH.Array_JPHVehicleAntiRollBar GetAntiRollBars()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleConstraint_GetAntiRollBars_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleConstraint_GetAntiRollBars_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHVehicleAntiRollBar._Underlying *__JPH_VehicleConstraint_GetAntiRollBars_mut(_Underlying *_this);
+            return new(__JPH_VehicleConstraint_GetAntiRollBars_mut(_UnderlyingPtr), is_owning: false);
         }
 
         /// Number of simulation steps between wheel collision tests when the vehicle is active. Default is 1. 0 = never, 1 = every step, 2 = every other step, etc.

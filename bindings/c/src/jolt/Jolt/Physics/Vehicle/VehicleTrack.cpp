@@ -5,6 +5,7 @@
 #include <Jolt/Physics/Vehicle/VehicleTrack.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <memory>
@@ -25,6 +26,22 @@ void JPH_VehicleTrackSettings_Set_mDrivenWheel(JPH_VehicleTrackSettings *_this, 
 unsigned int *JPH_VehicleTrackSettings_GetMutable_mDrivenWheel(JPH_VehicleTrackSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTrackSettings *)(_this)).mDrivenWheel);
+}
+
+const Jolt_JPH_Array_unsigned_int *JPH_VehicleTrackSettings_Get_mWheels(const JPH_VehicleTrackSettings *_this)
+{
+    return (const Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleTrackSettings *)(_this)).mWheels);
+}
+
+void JPH_VehicleTrackSettings_Set_mWheels(JPH_VehicleTrackSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<unsigned int>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTrackSettings *)(_this)).mWheels = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(value, JPH::Array<unsigned int>));
+}
+
+Jolt_JPH_Array_unsigned_int *JPH_VehicleTrackSettings_GetMutable_mWheels(JPH_VehicleTrackSettings *_this)
+{
+    return (Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTrackSettings *)(_this)).mWheels);
 }
 
 const float *JPH_VehicleTrackSettings_Get_mInertia(const JPH_VehicleTrackSettings *_this)
@@ -99,6 +116,19 @@ JPH_VehicleTrackSettings *JPH_VehicleTrackSettings_DefaultConstruct(void)
 JPH_VehicleTrackSettings *JPH_VehicleTrackSettings_DefaultConstructArray(size_t num_elems)
 {
     return (JPH_VehicleTrackSettings *)(new JPH::VehicleTrackSettings[num_elems]);
+}
+
+JPH_VehicleTrackSettings *JPH_VehicleTrackSettings_ConstructFrom(unsigned int mDrivenWheel, Jolt_PassBy mWheels_pass_by, Jolt_JPH_Array_unsigned_int *mWheels, float mInertia, float mAngularDamping, float mMaxBrakeTorque, float mDifferentialRatio)
+{
+    MRBINDC_CLASSARG_GUARD(mWheels, JPH::Array<unsigned int>);
+    return (JPH_VehicleTrackSettings *)new JPH::VehicleTrackSettings(JPH::VehicleTrackSettings{
+        mDrivenWheel,
+        (MRBINDC_CLASSARG_DEF_CTOR(mWheels, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(mWheels, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(mWheels, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mWheels, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mWheels, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(mWheels, JPH::Array<unsigned int>)),
+        mInertia,
+        mAngularDamping,
+        mMaxBrakeTorque,
+        mDifferentialRatio
+    });
 }
 
 const JPH_VehicleTrackSettings *JPH_VehicleTrackSettings_OffsetPtr(const JPH_VehicleTrackSettings *ptr, ptrdiff_t i)
@@ -241,6 +271,22 @@ void JPH_VehicleTrack_Set_mDrivenWheel(JPH_VehicleTrack *_this, unsigned int val
 unsigned int *JPH_VehicleTrack_GetMutable_mDrivenWheel(JPH_VehicleTrack *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTrack *)(_this)).mDrivenWheel);
+}
+
+const Jolt_JPH_Array_unsigned_int *JPH_VehicleTrack_Get_mWheels(const JPH_VehicleTrack *_this)
+{
+    return (const Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleTrack *)(_this)).mWheels);
+}
+
+void JPH_VehicleTrack_Set_mWheels(JPH_VehicleTrack *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<unsigned int>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTrack *)(_this)).mWheels = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(value, JPH::Array<unsigned int>));
+}
+
+Jolt_JPH_Array_unsigned_int *JPH_VehicleTrack_GetMutable_mWheels(JPH_VehicleTrack *_this)
+{
+    return (Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTrack *)(_this)).mWheels);
 }
 
 const float *JPH_VehicleTrack_Get_mInertia(const JPH_VehicleTrack *_this)

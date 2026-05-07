@@ -25,6 +25,8 @@ typedef struct JPH_SoftBodyVertex JPH_SoftBodyVertex; // Defined in `#include <j
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
 typedef struct JPH_UVec4 JPH_UVec4; // Defined in `#include <jolt/Jolt/Math/UVec4.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face; // Defined in `#include <JPH_Array_JPH_SoftBodySharedSettings_Face.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodyVertex Jolt_JPH_Array_JPH_SoftBodyVertex; // Defined in `#include <JPH_Array_JPH_SoftBodyVertex.h>`.
 
 
 /// Return code for ParallelUpdate
@@ -108,6 +110,17 @@ JOLT_API void JPH_SoftBodyMotionProperties_Initialize(JPH_SoftBodyMotionProperti
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API const JPH_SoftBodySharedSettings *JPH_SoftBodyMotionProperties_GetSettings(const JPH_SoftBodyMotionProperties *_this);
 
+/// Get the vertices of the soft body
+/// Generated from method `JPH::SoftBodyMotionProperties::GetVertices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodyVertex *JPH_SoftBodyMotionProperties_GetVertices(const JPH_SoftBodyMotionProperties *_this);
+
+/// Generated from method `JPH::SoftBodyMotionProperties::GetVertices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API Jolt_JPH_Array_JPH_SoftBodyVertex *JPH_SoftBodyMotionProperties_GetVertices_mut(JPH_SoftBodyMotionProperties *_this);
+
 /// Access an individual vertex
 /// Generated from method `JPH::SoftBodyMotionProperties::GetVertex`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -129,6 +142,12 @@ JOLT_API JPH_Quat *JPH_SoftBodyMotionProperties_GetRodRotation(const JPH_SoftBod
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_SoftBodyMotionProperties_GetRodAngularVelocity(const JPH_SoftBodyMotionProperties *_this, unsigned int inIndex);
+
+/// Get the faces of the soft body
+/// Generated from method `JPH::SoftBodyMotionProperties::GetFaces`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face *JPH_SoftBodyMotionProperties_GetFaces(const JPH_SoftBodyMotionProperties *_this);
 
 /// Access to an individual face
 /// Generated from method `JPH::SoftBodyMotionProperties::GetFace`.

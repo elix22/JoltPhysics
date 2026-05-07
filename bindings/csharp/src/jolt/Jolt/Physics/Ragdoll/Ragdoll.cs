@@ -63,6 +63,42 @@ public static partial class JPH
             return ret;
         }
 
+        /// For each of the joints, the body and constraint attaching it to its parent body (1-on-1 with mSkeleton.GetJoints())
+        public unsafe JPH.Const_Array_JPHRagdollSettingsPart mParts
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RagdollSettings_Get_mParts", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_Get_mParts", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHRagdollSettingsPart._Underlying *__JPH_RagdollSettings_Get_mParts(_Underlying *_this);
+                JPH.Const_Array_JPHRagdollSettingsPart __ret;
+                __ret = new(__JPH_RagdollSettings_Get_mParts(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        /// A list of constraints that connects two bodies in a ragdoll (for non parent child related constraints)
+        public unsafe JPH.Const_Array_JPHRagdollSettingsAdditionalConstraint mAdditionalConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RagdollSettings_Get_mAdditionalConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_Get_mAdditionalConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHRagdollSettingsAdditionalConstraint._Underlying *__JPH_RagdollSettings_Get_mAdditionalConstraints(_Underlying *_this);
+                JPH.Const_Array_JPHRagdollSettingsAdditionalConstraint __ret;
+                __ret = new(__JPH_RagdollSettings_Get_mAdditionalConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         internal unsafe Const_RagdollSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -285,6 +321,20 @@ public static partial class JPH
             return __c_ret is not null ? new JPH.Const_Skeleton(__c_ret, is_owning: false) : null;
         }
 
+        /// Get table that maps a body index to the constraint index with which it is connected to its parent. -1 if there is no constraint associated with the body.
+        /// Note that this will only tell you which constraint connects the body to its parent, it will not look in the additional constraint list.
+        /// Generated from method `JPH::RagdollSettings::GetBodyIndexToConstraintIndex`.
+        public unsafe JPH.Const_Array_Int GetBodyIndexToConstraintIndex()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RagdollSettings_GetBodyIndexToConstraintIndex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_GetBodyIndexToConstraintIndex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_Int._Underlying *__JPH_RagdollSettings_GetBodyIndexToConstraintIndex(_Underlying *_this);
+            return new(__JPH_RagdollSettings_GetBodyIndexToConstraintIndex(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Map a single body index to a constraint index
         /// Generated from method `JPH::RagdollSettings::GetConstraintIndexForBodyIndex`.
         public unsafe int GetConstraintIndexForBodyIndex(int inBodyIndex)
@@ -296,6 +346,19 @@ public static partial class JPH
             #endif
             extern static int __JPH_RagdollSettings_GetConstraintIndexForBodyIndex(_Underlying *_this, int inBodyIndex);
             return __JPH_RagdollSettings_GetConstraintIndexForBodyIndex(_UnderlyingPtr, inBodyIndex);
+        }
+
+        /// Table that maps a constraint index (index in mConstraints) to the indices of the bodies that the constraint is connected to (index in mBodyIDs)
+        /// Generated from method `JPH::RagdollSettings::GetConstraintIndexToBodyIdxPair`.
+        public unsafe JPH.Const_Array_StdPairIntInt GetConstraintIndexToBodyIdxPair()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RagdollSettings_GetConstraintIndexToBodyIdxPair", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_GetConstraintIndexToBodyIdxPair", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_StdPairIntInt._Underlying *__JPH_RagdollSettings_GetConstraintIndexToBodyIdxPair(_Underlying *_this);
+            return new(__JPH_RagdollSettings_GetConstraintIndexToBodyIdxPair(_UnderlyingPtr), is_owning: false);
         }
 
         /// Map a single constraint index (index in mConstraints) to the indices of the bodies that the constraint is connected to (index in mBodyIDs)
@@ -1997,6 +2060,42 @@ public static partial class JPH
             return ret;
         }
 
+        /// For each of the joints, the body and constraint attaching it to its parent body (1-on-1 with mSkeleton.GetJoints())
+        public new unsafe JPH.Array_JPHRagdollSettingsPart mParts
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RagdollSettings_GetMutable_mParts", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_GetMutable_mParts", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHRagdollSettingsPart._Underlying *__JPH_RagdollSettings_GetMutable_mParts(_Underlying *_this);
+                JPH.Array_JPHRagdollSettingsPart __ret;
+                __ret = new(__JPH_RagdollSettings_GetMutable_mParts(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        /// A list of constraints that connects two bodies in a ragdoll (for non parent child related constraints)
+        public new unsafe JPH.Array_JPHRagdollSettingsAdditionalConstraint mAdditionalConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RagdollSettings_GetMutable_mAdditionalConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RagdollSettings_GetMutable_mAdditionalConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHRagdollSettingsAdditionalConstraint._Underlying *__JPH_RagdollSettings_GetMutable_mAdditionalConstraints(_Underlying *_this);
+                JPH.Array_JPHRagdollSettingsAdditionalConstraint __ret;
+                __ret = new(__JPH_RagdollSettings_GetMutable_mAdditionalConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         internal unsafe RagdollSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructs an empty (default-constructed) instance.
@@ -2523,6 +2622,19 @@ public static partial class JPH
             #endif
             extern static JPH.BodyID __JPH_Ragdoll_GetBodyID(_Underlying *_this, int inBodyIndex);
             return __JPH_Ragdoll_GetBodyID(_UnderlyingPtr, inBodyIndex);
+        }
+
+        /// Access to the array of body IDs
+        /// Generated from method `JPH::Ragdoll::GetBodyIDs`.
+        public unsafe JPH.Const_Array_JPHBodyID GetBodyIDs()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Ragdoll_GetBodyIDs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Ragdoll_GetBodyIDs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHBodyID._Underlying *__JPH_Ragdoll_GetBodyIDs(_Underlying *_this);
+            return new(__JPH_Ragdoll_GetBodyIDs(_UnderlyingPtr), is_owning: false);
         }
 
         /// Get number of constraints in the ragdoll

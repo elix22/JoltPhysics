@@ -9,11 +9,13 @@
 #include <Jolt/Skeleton/SkeletonMapper.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <memory>
 #include <new>
 #include <stdexcept>
+#include <utility>
 
 
 JPH_SkeletonMapper *JPH_SkeletonMapper_DefaultConstruct(void)
@@ -152,6 +154,46 @@ bool JPH_SkeletonMapper_IsJointTranslationLocked(const JPH_SkeletonMapper *_this
     );
 }
 
+const Jolt_JPH_Array_JPH_SkeletonMapper_Mapping *JPH_SkeletonMapper_GetMappings(const JPH_SkeletonMapper *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SkeletonMapper_Mapping *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonMapper *)(_this)).GetMappings());
+}
+
+Jolt_JPH_Array_JPH_SkeletonMapper_Mapping *JPH_SkeletonMapper_GetMappings_mut(JPH_SkeletonMapper *_this)
+{
+    return (Jolt_JPH_Array_JPH_SkeletonMapper_Mapping *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletonMapper *)(_this)).GetMappings());
+}
+
+const Jolt_JPH_Array_JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_GetChains(const JPH_SkeletonMapper *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SkeletonMapper_Chain *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonMapper *)(_this)).GetChains());
+}
+
+Jolt_JPH_Array_JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_GetChains_mut(JPH_SkeletonMapper *_this)
+{
+    return (Jolt_JPH_Array_JPH_SkeletonMapper_Chain *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletonMapper *)(_this)).GetChains());
+}
+
+const Jolt_JPH_Array_JPH_SkeletonMapper_Unmapped *JPH_SkeletonMapper_GetUnmapped(const JPH_SkeletonMapper *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SkeletonMapper_Unmapped *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonMapper *)(_this)).GetUnmapped());
+}
+
+Jolt_JPH_Array_JPH_SkeletonMapper_Unmapped *JPH_SkeletonMapper_GetUnmapped_mut(JPH_SkeletonMapper *_this)
+{
+    return (Jolt_JPH_Array_JPH_SkeletonMapper_Unmapped *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletonMapper *)(_this)).GetUnmapped());
+}
+
+const Jolt_JPH_Array_JPH_SkeletonMapper_Locked *JPH_SkeletonMapper_GetLockedTranslations(const JPH_SkeletonMapper *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SkeletonMapper_Locked *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonMapper *)(_this)).GetLockedTranslations());
+}
+
+Jolt_JPH_Array_JPH_SkeletonMapper_Locked *JPH_SkeletonMapper_GetLockedTranslations_mut(JPH_SkeletonMapper *_this)
+{
+    return (Jolt_JPH_Array_JPH_SkeletonMapper_Locked *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletonMapper *)(_this)).GetLockedTranslations());
+}
+
 void JPH_SkeletonMapper_SetEmbedded(const JPH_SkeletonMapper *_this)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonMapper *)(_this)).SetEmbedded();
@@ -284,6 +326,38 @@ JPH_SkeletonMapper_Mapping *JPH_SkeletonMapper_Mapping_AssignFromAnother(JPH_Ske
     ));
 }
 
+const Jolt_JPH_Array_int *JPH_SkeletonMapper_Chain_Get_mJointIndices1(const JPH_SkeletonMapper_Chain *_this)
+{
+    return (const Jolt_JPH_Array_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonMapper::Chain *)(_this)).mJointIndices1);
+}
+
+void JPH_SkeletonMapper_Chain_Set_mJointIndices1(JPH_SkeletonMapper_Chain *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_int *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<int>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletonMapper::Chain *)(_this)).mJointIndices1 = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<int>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<int>), JPH::Array<int>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<int>), JPH::Array<int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<int>) MRBINDC_CLASSARG_END(value, JPH::Array<int>));
+}
+
+Jolt_JPH_Array_int *JPH_SkeletonMapper_Chain_GetMutable_mJointIndices1(JPH_SkeletonMapper_Chain *_this)
+{
+    return (Jolt_JPH_Array_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletonMapper::Chain *)(_this)).mJointIndices1);
+}
+
+const Jolt_JPH_Array_int *JPH_SkeletonMapper_Chain_Get_mJointIndices2(const JPH_SkeletonMapper_Chain *_this)
+{
+    return (const Jolt_JPH_Array_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonMapper::Chain *)(_this)).mJointIndices2);
+}
+
+void JPH_SkeletonMapper_Chain_Set_mJointIndices2(JPH_SkeletonMapper_Chain *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_int *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<int>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletonMapper::Chain *)(_this)).mJointIndices2 = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<int>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<int>), JPH::Array<int>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<int>), JPH::Array<int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<int>) MRBINDC_CLASSARG_END(value, JPH::Array<int>));
+}
+
+Jolt_JPH_Array_int *JPH_SkeletonMapper_Chain_GetMutable_mJointIndices2(JPH_SkeletonMapper_Chain *_this)
+{
+    return (Jolt_JPH_Array_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletonMapper::Chain *)(_this)).mJointIndices2);
+}
+
 JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_Chain_DefaultConstruct(void)
 {
     using _mrbind_T = JPH::SkeletonMapper::Chain;
@@ -313,6 +387,14 @@ JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_Chain_ConstructFromAnother(Jolt_Pas
     MRBINDC_CLASSARG_GUARD(_other, JPH::SkeletonMapper::Chain);
     return (JPH_SkeletonMapper_Chain *)new JPH::SkeletonMapper::Chain(JPH::SkeletonMapper::Chain(
         (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::SkeletonMapper::Chain) MRBINDC_CLASSARG_COPY(_other, (JPH::SkeletonMapper::Chain), JPH::SkeletonMapper::Chain) MRBINDC_CLASSARG_MOVE(_other, (JPH::SkeletonMapper::Chain), JPH::SkeletonMapper::Chain) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::SkeletonMapper::Chain) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::SkeletonMapper::Chain) MRBINDC_CLASSARG_END(_other, JPH::SkeletonMapper::Chain))
+    ));
+}
+
+JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_Chain_Construct(Jolt_JPH_Array_int *inJointIndices1, Jolt_JPH_Array_int *inJointIndices2)
+{
+    return (JPH_SkeletonMapper_Chain *)new JPH::SkeletonMapper::Chain(JPH::SkeletonMapper::Chain(
+        ((inJointIndices1 ? void() : MRBINDC_THROW("Parameter `inJointIndices1` can not be null.", void)), std::move(*(JPH::Array<int> *)(inJointIndices1))),
+        ((inJointIndices2 ? void() : MRBINDC_THROW("Parameter `inJointIndices2` can not be null.", void)), std::move(*(JPH::Array<int> *)(inJointIndices2)))
     ));
 }
 

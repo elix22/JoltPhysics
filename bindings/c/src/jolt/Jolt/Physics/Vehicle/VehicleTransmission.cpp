@@ -5,6 +5,7 @@
 #include <Jolt/Physics/Vehicle/VehicleTransmission.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <memory>
@@ -25,6 +26,38 @@ void JPH_VehicleTransmissionSettings_Set_mMode(JPH_VehicleTransmissionSettings *
 JPH_ETransmissionMode *JPH_VehicleTransmissionSettings_GetMutable_mMode(JPH_VehicleTransmissionSettings *_this)
 {
     return (JPH_ETransmissionMode *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTransmissionSettings *)(_this)).mMode);
+}
+
+const Jolt_JPH_Array_float *JPH_VehicleTransmissionSettings_Get_mGearRatios(const JPH_VehicleTransmissionSettings *_this)
+{
+    return (const Jolt_JPH_Array_float *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleTransmissionSettings *)(_this)).mGearRatios);
+}
+
+void JPH_VehicleTransmissionSettings_Set_mGearRatios(JPH_VehicleTransmissionSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_float *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<float>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTransmissionSettings *)(_this)).mGearRatios = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<float>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<float>) MRBINDC_CLASSARG_END(value, JPH::Array<float>));
+}
+
+Jolt_JPH_Array_float *JPH_VehicleTransmissionSettings_GetMutable_mGearRatios(JPH_VehicleTransmissionSettings *_this)
+{
+    return (Jolt_JPH_Array_float *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTransmissionSettings *)(_this)).mGearRatios);
+}
+
+const Jolt_JPH_Array_float *JPH_VehicleTransmissionSettings_Get_mReverseGearRatios(const JPH_VehicleTransmissionSettings *_this)
+{
+    return (const Jolt_JPH_Array_float *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleTransmissionSettings *)(_this)).mReverseGearRatios);
+}
+
+void JPH_VehicleTransmissionSettings_Set_mReverseGearRatios(JPH_VehicleTransmissionSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_float *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<float>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTransmissionSettings *)(_this)).mReverseGearRatios = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<float>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<float>) MRBINDC_CLASSARG_END(value, JPH::Array<float>));
+}
+
+Jolt_JPH_Array_float *JPH_VehicleTransmissionSettings_GetMutable_mReverseGearRatios(JPH_VehicleTransmissionSettings *_this)
+{
+    return (Jolt_JPH_Array_float *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTransmissionSettings *)(_this)).mReverseGearRatios);
 }
 
 const float *JPH_VehicleTransmissionSettings_Get_mSwitchTime(const JPH_VehicleTransmissionSettings *_this)
@@ -129,6 +162,23 @@ JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_DefaultConstruc
 JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_DefaultConstructArray(size_t num_elems)
 {
     return (JPH_VehicleTransmissionSettings *)(new JPH::VehicleTransmissionSettings[num_elems]);
+}
+
+JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_ConstructFrom(JPH_ETransmissionMode mMode, Jolt_PassBy mGearRatios_pass_by, Jolt_JPH_Array_float *mGearRatios, Jolt_PassBy mReverseGearRatios_pass_by, Jolt_JPH_Array_float *mReverseGearRatios, float mSwitchTime, float mClutchReleaseTime, float mSwitchLatency, float mShiftUpRPM, float mShiftDownRPM, float mClutchStrength)
+{
+    MRBINDC_CLASSARG_GUARD(mGearRatios, JPH::Array<float>);
+    MRBINDC_CLASSARG_GUARD(mReverseGearRatios, JPH::Array<float>);
+    return (JPH_VehicleTransmissionSettings *)new JPH::VehicleTransmissionSettings(JPH::VehicleTransmissionSettings{
+        ((JPH::ETransmissionMode)mMode),
+        (MRBINDC_CLASSARG_DEF_CTOR(mGearRatios, JPH::Array<float>) MRBINDC_CLASSARG_COPY(mGearRatios, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_MOVE(mGearRatios, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(mGearRatios, Jolt_PassBy_DefaultArgument, JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(mGearRatios, Jolt_PassBy_NoObject, JPH::Array<float>) MRBINDC_CLASSARG_END(mGearRatios, JPH::Array<float>)),
+        (MRBINDC_CLASSARG_DEF_CTOR(mReverseGearRatios, JPH::Array<float>) MRBINDC_CLASSARG_COPY(mReverseGearRatios, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_MOVE(mReverseGearRatios, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(mReverseGearRatios, Jolt_PassBy_DefaultArgument, JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(mReverseGearRatios, Jolt_PassBy_NoObject, JPH::Array<float>) MRBINDC_CLASSARG_END(mReverseGearRatios, JPH::Array<float>)),
+        mSwitchTime,
+        mClutchReleaseTime,
+        mSwitchLatency,
+        mShiftUpRPM,
+        mShiftDownRPM,
+        mClutchStrength
+    });
 }
 
 const JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_OffsetPtr(const JPH_VehicleTransmissionSettings *ptr, ptrdiff_t i)
@@ -256,6 +306,38 @@ void JPH_VehicleTransmission_Set_mMode(JPH_VehicleTransmission *_this, JPH_ETran
 JPH_ETransmissionMode *JPH_VehicleTransmission_GetMutable_mMode(JPH_VehicleTransmission *_this)
 {
     return (JPH_ETransmissionMode *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTransmission *)(_this)).mMode);
+}
+
+const Jolt_JPH_Array_float *JPH_VehicleTransmission_Get_mGearRatios(const JPH_VehicleTransmission *_this)
+{
+    return (const Jolt_JPH_Array_float *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleTransmission *)(_this)).mGearRatios);
+}
+
+void JPH_VehicleTransmission_Set_mGearRatios(JPH_VehicleTransmission *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_float *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<float>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTransmission *)(_this)).mGearRatios = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<float>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<float>) MRBINDC_CLASSARG_END(value, JPH::Array<float>));
+}
+
+Jolt_JPH_Array_float *JPH_VehicleTransmission_GetMutable_mGearRatios(JPH_VehicleTransmission *_this)
+{
+    return (Jolt_JPH_Array_float *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTransmission *)(_this)).mGearRatios);
+}
+
+const Jolt_JPH_Array_float *JPH_VehicleTransmission_Get_mReverseGearRatios(const JPH_VehicleTransmission *_this)
+{
+    return (const Jolt_JPH_Array_float *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleTransmission *)(_this)).mReverseGearRatios);
+}
+
+void JPH_VehicleTransmission_Set_mReverseGearRatios(JPH_VehicleTransmission *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_float *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<float>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTransmission *)(_this)).mReverseGearRatios = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<float>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<float>) MRBINDC_CLASSARG_END(value, JPH::Array<float>));
+}
+
+Jolt_JPH_Array_float *JPH_VehicleTransmission_GetMutable_mReverseGearRatios(JPH_VehicleTransmission *_this)
+{
+    return (Jolt_JPH_Array_float *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleTransmission *)(_this)).mReverseGearRatios);
 }
 
 const float *JPH_VehicleTransmission_Get_mSwitchTime(const JPH_VehicleTransmission *_this)

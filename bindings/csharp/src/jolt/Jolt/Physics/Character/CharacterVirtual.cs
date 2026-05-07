@@ -1956,6 +1956,24 @@ public static partial class JPH
             return ret;
         }
 
+        ///< The list of characters to check collision against
+        public unsafe JPH.Const_Array_JPHCharacterVirtualPtr mCharacters
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVsCharacterCollisionSimple_Get_mCharacters", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVsCharacterCollisionSimple_Get_mCharacters", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHCharacterVirtualPtr._Underlying *__JPH_CharacterVsCharacterCollisionSimple_Get_mCharacters(_Underlying *_this);
+                JPH.Const_Array_JPHCharacterVirtualPtr __ret;
+                __ret = new(__JPH_CharacterVsCharacterCollisionSimple_Get_mCharacters(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         internal unsafe Const_CharacterVsCharacterCollisionSimple(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -2034,6 +2052,24 @@ public static partial class JPH
             CharacterVsCharacterCollisionSimple ret = new(__JPH_CharacterVsCharacterCollisionSimple_StaticDowncastFrom_JPH_CharacterVsCharacterCollision(parent._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = parent;
             return ret;
+        }
+
+        ///< The list of characters to check collision against
+        public new unsafe JPH.Array_JPHCharacterVirtualPtr mCharacters
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVsCharacterCollisionSimple_GetMutable_mCharacters", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVsCharacterCollisionSimple_GetMutable_mCharacters", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHCharacterVirtualPtr._Underlying *__JPH_CharacterVsCharacterCollisionSimple_GetMutable_mCharacters(_Underlying *_this);
+                JPH.Array_JPHCharacterVirtualPtr __ret;
+                __ret = new(__JPH_CharacterVsCharacterCollisionSimple_GetMutable_mCharacters(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
         }
 
         internal unsafe CharacterVsCharacterCollisionSimple(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
@@ -2782,6 +2818,20 @@ public static partial class JPH
             #endif
             extern static JPH.CharacterVirtualSettings._Underlying *__JPH_CharacterVirtual_GetCharacterVirtualSettings(_Underlying *_this);
             return new(__JPH_CharacterVirtual_GetCharacterVirtualSettings(_UnderlyingPtr), is_owning: true);
+        }
+
+        /// Access to the internal list of contacts that the character has found.
+        /// Note that only contacts that have their mHadCollision flag set are actual contacts.
+        /// Generated from method `JPH::CharacterVirtual::GetActiveContacts`.
+        public unsafe JPH.Const_Array_JPHCharacterVirtualContact GetActiveContacts()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterVirtual_GetActiveContacts", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterVirtual_GetActiveContacts", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHCharacterVirtualContact._Underlying *__JPH_CharacterVirtual_GetActiveContacts(_Underlying *_this);
+            return new(__JPH_CharacterVirtual_GetActiveContacts(_UnderlyingPtr), is_owning: false);
         }
 
         /// Check if the character is currently in contact with or has collided with another body in the last operation (e.g. Update or WalkStairs)

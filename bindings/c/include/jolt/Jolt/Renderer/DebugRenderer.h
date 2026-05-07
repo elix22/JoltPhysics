@@ -18,6 +18,11 @@ typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat4
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_RefTarget_JPH_DebugRenderer_Geometry JPH_RefTarget_JPH_DebugRenderer_Geometry; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_DebugRenderer_LOD Jolt_JPH_Array_JPH_DebugRenderer_LOD; // Defined in `#include <JPH_Array_JPH_DebugRenderer_LOD.h>`.
+typedef struct Jolt_JPH_Array_JPH_DebugRenderer_Triangle Jolt_JPH_Array_JPH_DebugRenderer_Triangle; // Defined in `#include <JPH_Array_JPH_DebugRenderer_Triangle.h>`.
+typedef struct Jolt_JPH_Array_JPH_DebugRenderer_Vertex Jolt_JPH_Array_JPH_DebugRenderer_Vertex; // Defined in `#include <JPH_Array_JPH_DebugRenderer_Vertex.h>`.
+typedef struct Jolt_JPH_Array_JPH_Float3 Jolt_JPH_Array_JPH_Float3; // Defined in `#include <JPH_Array_JPH_Float3.h>`.
+typedef struct Jolt_JPH_Array_unsigned_int Jolt_JPH_Array_unsigned_int; // Defined in `#include <JPH_Array_unsigned_int.h>`.
 typedef struct Jolt_std_function_JPH_Vec3_from_JPH_Vec3 Jolt_std_function_JPH_Vec3_from_JPH_Vec3; // Defined in `#include <std_function_JPH_Vec3_from_JPH_Vec3.h>`.
 
 
@@ -641,6 +646,27 @@ JOLT_API void JPH_DebugRenderer_LOD_DestroyArray(const JPH_DebugRenderer_LOD *_t
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_AssignFromAnother(JPH_DebugRenderer_LOD *_this, Jolt_PassBy _other_pass_by, JPH_DebugRenderer_LOD *_other);
+
+/// All level of details for this mesh
+/// Returns a pointer to a member variable of class `JPH::DebugRenderer::Geometry` named `mLODs`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_DebugRenderer_LOD *JPH_DebugRenderer_Geometry_Get_mLODs(const JPH_DebugRenderer_Geometry *_this);
+
+/// All level of details for this mesh
+/// Modifies a member variable of class `JPH::DebugRenderer::Geometry` named `mLODs`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mLODs`.
+/// When this function is called, this object will drop object references it held previously in `mLODs`.
+JOLT_API void JPH_DebugRenderer_Geometry_Set_mLODs(JPH_DebugRenderer_Geometry *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_DebugRenderer_LOD *value);
+
+/// All level of details for this mesh
+/// Returns a mutable pointer to a member variable of class `JPH::DebugRenderer::Geometry` named `mLODs`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_DebugRenderer_LOD *JPH_DebugRenderer_Geometry_GetMutable_mLODs(JPH_DebugRenderer_Geometry *_this);
 
 /// Bounding box that encapsulates all LODs
 /// Returns a pointer to a member variable of class `JPH::DebugRenderer::Geometry` named `mBounds`.

@@ -59,6 +59,8 @@ typedef struct JPH_WheelSettingsTV JPH_WheelSettingsTV; // Defined in `#include 
 typedef struct JPH_WheelSettingsWV JPH_WheelSettingsWV; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
 typedef struct JPH_WheeledVehicleController JPH_WheeledVehicleController; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
 typedef struct JPH_WheeledVehicleControllerSettings JPH_WheeledVehicleControllerSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
+typedef struct Jolt_JPH_Array_DebugLineRecord Jolt_JPH_Array_DebugLineRecord; // Defined in `#include <JPH_Array_DebugLineRecord.h>`.
+typedef struct Jolt_JPH_Array_DebugTriangleRecord Jolt_JPH_Array_DebugTriangleRecord; // Defined in `#include <JPH_Array_DebugTriangleRecord.h>`.
 typedef struct Jolt_std_function_JPH_Vec3_from_JPH_Vec3 Jolt_std_function_JPH_Vec3_from_JPH_Vec3; // Defined in `#include <std_function_JPH_Vec3_from_JPH_Vec3.h>`.
 
 
@@ -1629,6 +1631,42 @@ JOLT_API void DebugTriangleRecord_DestroyArray(const DebugTriangleRecord *_this)
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API DebugTriangleRecord *DebugTriangleRecord_AssignFromAnother(DebugTriangleRecord *_this, const DebugTriangleRecord *_other);
+
+/// Returns a pointer to a member variable of class `RecordingDebugRenderer` named `mLines`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_DebugLineRecord *RecordingDebugRenderer_Get_mLines(const RecordingDebugRenderer *_this);
+
+/// Modifies a member variable of class `RecordingDebugRenderer` named `mLines`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mLines`.
+/// When this function is called, this object will drop object references it held previously in `mLines`.
+JOLT_API void RecordingDebugRenderer_Set_mLines(RecordingDebugRenderer *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_DebugLineRecord *value);
+
+/// Returns a mutable pointer to a member variable of class `RecordingDebugRenderer` named `mLines`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_DebugLineRecord *RecordingDebugRenderer_GetMutable_mLines(RecordingDebugRenderer *_this);
+
+/// Returns a pointer to a member variable of class `RecordingDebugRenderer` named `mTriangles`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_DebugTriangleRecord *RecordingDebugRenderer_Get_mTriangles(const RecordingDebugRenderer *_this);
+
+/// Modifies a member variable of class `RecordingDebugRenderer` named `mTriangles`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mTriangles`.
+/// When this function is called, this object will drop object references it held previously in `mTriangles`.
+JOLT_API void RecordingDebugRenderer_Set_mTriangles(RecordingDebugRenderer *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_DebugTriangleRecord *value);
+
+/// Returns a mutable pointer to a member variable of class `RecordingDebugRenderer` named `mTriangles`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_DebugTriangleRecord *RecordingDebugRenderer_GetMutable_mTriangles(RecordingDebugRenderer *_this);
 
 /// Singleton instance
 /// Returns a pointer to a member variable of class `RecordingDebugRenderer` named `sInstance`.

@@ -16,6 +16,8 @@ typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat4
 typedef struct JPH_SkeletalAnimation_JointState JPH_SkeletalAnimation_JointState; // Defined in `#include <jolt/Jolt/Skeleton/SkeletalAnimation.h>`.
 typedef struct JPH_Skeleton JPH_Skeleton; // Defined in `#include <jolt/Jolt/Skeleton/Skeleton.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_Mat44 Jolt_JPH_Array_JPH_Mat44; // Defined in `#include <JPH_Array_JPH_Mat44.h>`.
+typedef struct Jolt_JPH_Array_JPH_SkeletalAnimation_JointState Jolt_JPH_Array_JPH_SkeletalAnimation_JointState; // Defined in `#include <JPH_Array_JPH_SkeletalAnimation_JointState.h>`.
 
 
 /// Draw settings
@@ -120,6 +122,16 @@ JOLT_API JPH_Vec3 *JPH_SkeletonPose_GetRootOffset(const JPH_SkeletonPose *_this)
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API unsigned int JPH_SkeletonPose_GetJointCount(const JPH_SkeletonPose *_this);
 
+/// Generated from method `JPH::SkeletonPose::GetJoints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_SkeletalAnimation_JointState *JPH_SkeletonPose_GetJoints(const JPH_SkeletonPose *_this);
+
+/// Generated from method `JPH::SkeletonPose::GetJoints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API Jolt_JPH_Array_JPH_SkeletalAnimation_JointState *JPH_SkeletonPose_GetJoints_mut(JPH_SkeletonPose *_this);
+
 /// Generated from method `JPH::SkeletonPose::GetJoint`.
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
@@ -129,6 +141,18 @@ JOLT_API const JPH_SkeletalAnimation_JointState *JPH_SkeletonPose_GetJoint(const
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API JPH_SkeletalAnimation_JointState *JPH_SkeletonPose_GetJoint_mut(JPH_SkeletonPose *_this, int inJoint);
+
+///@name Joint matrices
+///@{
+/// Generated from method `JPH::SkeletonPose::GetJointMatrices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_Mat44 *JPH_SkeletonPose_GetJointMatrices(const JPH_SkeletonPose *_this);
+
+/// Generated from method `JPH::SkeletonPose::GetJointMatrices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API Jolt_JPH_Array_JPH_Mat44 *JPH_SkeletonPose_GetJointMatrices_mut(JPH_SkeletonPose *_this);
 
 /// Generated from method `JPH::SkeletonPose::GetJointMatrix`.
 /// Parameter `_this` can not be null. It is a single object.

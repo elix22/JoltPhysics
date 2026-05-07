@@ -267,6 +267,24 @@ public static partial class JPH
             }
         }
 
+        ///< List of differentials and their properties
+        public unsafe JPH.Const_Array_JPHVehicleDifferentialSettings mDifferentials
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MotorcycleControllerSettings_Get_mDifferentials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MotorcycleControllerSettings_Get_mDifferentials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHVehicleDifferentialSettings._Underlying *__JPH_MotorcycleControllerSettings_Get_mDifferentials(_Underlying *_this);
+                JPH.Const_Array_JPHVehicleDifferentialSettings __ret;
+                __ret = new(__JPH_MotorcycleControllerSettings_Get_mDifferentials(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< Ratio max / min average wheel speed of each differential (measured at the clutch). When the ratio is exceeded all torque gets distributed to the differential with the minimal average velocity. This allows implementing a limited slip differential between differentials. Set to FLT_MAX for an open differential. Value should be > 1.
         public unsafe float mDifferentialLimitedSlipRatio
         {
@@ -791,6 +809,24 @@ public static partial class JPH
                 extern static JPH.VehicleTransmissionSettings._Underlying *__JPH_MotorcycleControllerSettings_GetMutable_mTransmission(_Underlying *_this);
                 JPH.VehicleTransmissionSettings __ret;
                 __ret = new(__JPH_MotorcycleControllerSettings_GetMutable_mTransmission(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< List of differentials and their properties
+        public new unsafe JPH.Array_JPHVehicleDifferentialSettings mDifferentials
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MotorcycleControllerSettings_GetMutable_mDifferentials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MotorcycleControllerSettings_GetMutable_mDifferentials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHVehicleDifferentialSettings._Underlying *__JPH_MotorcycleControllerSettings_GetMutable_mDifferentials(_Underlying *_this);
+                JPH.Array_JPHVehicleDifferentialSettings __ret;
+                __ret = new(__JPH_MotorcycleControllerSettings_GetMutable_mDifferentials(_UnderlyingPtr), is_owning: false);
                 __ret._KeepAliveEnclosingObject = this;
                 return __ret;
             }

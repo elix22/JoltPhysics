@@ -36,6 +36,7 @@ typedef struct JPH_SimShapeFilter JPH_SimShapeFilter; // Defined in `#include <j
 typedef struct JPH_SoftBodyContactListener JPH_SoftBodyContactListener; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyContactListener.h>`.
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_BodyID Jolt_JPH_Array_JPH_BodyID; // Defined in `#include <JPH_Array_JPH_BodyID.h>`.
 
 
 /// The main class for the physics system. It contains all rigid bodies and simulates them.
@@ -369,6 +370,13 @@ JOLT_API unsigned int JPH_PhysicsSystem_GetNumBodies(const JPH_PhysicsSystem *_t
 /// Generated from method `JPH::PhysicsSystem::GetMaxBodies`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API unsigned int JPH_PhysicsSystem_GetMaxBodies(const JPH_PhysicsSystem *_this);
+
+/// Get copy of the list of all bodies under protection of a lock.
+/// @param outBodyIDs On return, this will contain the list of BodyIDs
+/// Generated from method `JPH::PhysicsSystem::GetBodies`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `outBodyIDs` can not be null. It is a single object.
+JOLT_API void JPH_PhysicsSystem_GetBodies(const JPH_PhysicsSystem *_this, Jolt_JPH_Array_JPH_BodyID *outBodyIDs);
 
 /// Check if 2 bodies were in contact during the last simulation step. Since contacts are only detected between active bodies, so at least one of the bodies must be active in order for this function to work.
 /// It queries the state at the time of the last PhysicsSystem::Update and will return true if the bodies were in contact, even if one of the bodies was moved / removed afterwards.

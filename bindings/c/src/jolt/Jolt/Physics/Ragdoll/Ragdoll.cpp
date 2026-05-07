@@ -22,6 +22,7 @@
 #include <Jolt/Skeleton/SkeletonPose.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
@@ -31,6 +32,38 @@
 #include <type_traits>
 #include <utility>
 
+
+const Jolt_JPH_Array_JPH_RagdollSettings_Part *JPH_RagdollSettings_Get_mParts(const JPH_RagdollSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_RagdollSettings_Part *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RagdollSettings *)(_this)).mParts);
+}
+
+void JPH_RagdollSettings_Set_mParts(JPH_RagdollSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_RagdollSettings_Part *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::RagdollSettings::Part>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RagdollSettings *)(_this)).mParts = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::RagdollSettings::Part>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::RagdollSettings::Part>), JPH::Array<JPH::RagdollSettings::Part>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::RagdollSettings::Part>), JPH::Array<JPH::RagdollSettings::Part>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::RagdollSettings::Part>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::RagdollSettings::Part>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::RagdollSettings::Part>));
+}
+
+Jolt_JPH_Array_JPH_RagdollSettings_Part *JPH_RagdollSettings_GetMutable_mParts(JPH_RagdollSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_RagdollSettings_Part *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RagdollSettings *)(_this)).mParts);
+}
+
+const Jolt_JPH_Array_JPH_RagdollSettings_AdditionalConstraint *JPH_RagdollSettings_Get_mAdditionalConstraints(const JPH_RagdollSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_RagdollSettings_AdditionalConstraint *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RagdollSettings *)(_this)).mAdditionalConstraints);
+}
+
+void JPH_RagdollSettings_Set_mAdditionalConstraints(JPH_RagdollSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_RagdollSettings_AdditionalConstraint *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::RagdollSettings::AdditionalConstraint>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RagdollSettings *)(_this)).mAdditionalConstraints = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::RagdollSettings::AdditionalConstraint>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::RagdollSettings::AdditionalConstraint>), JPH::Array<JPH::RagdollSettings::AdditionalConstraint>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::RagdollSettings::AdditionalConstraint>), JPH::Array<JPH::RagdollSettings::AdditionalConstraint>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::RagdollSettings::AdditionalConstraint>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::RagdollSettings::AdditionalConstraint>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::RagdollSettings::AdditionalConstraint>));
+}
+
+Jolt_JPH_Array_JPH_RagdollSettings_AdditionalConstraint *JPH_RagdollSettings_GetMutable_mAdditionalConstraints(JPH_RagdollSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_RagdollSettings_AdditionalConstraint *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RagdollSettings *)(_this)).mAdditionalConstraints);
+}
 
 JPH_RagdollSettings *JPH_RagdollSettings_DefaultConstruct(void)
 {
@@ -232,6 +265,11 @@ void JPH_RagdollSettings_CalculateBodyIndexToConstraintIndex(JPH_RagdollSettings
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RagdollSettings *)(_this)).CalculateBodyIndexToConstraintIndex();
 }
 
+const Jolt_JPH_Array_int *JPH_RagdollSettings_GetBodyIndexToConstraintIndex(const JPH_RagdollSettings *_this)
+{
+    return (const Jolt_JPH_Array_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RagdollSettings *)(_this)).GetBodyIndexToConstraintIndex());
+}
+
 int JPH_RagdollSettings_GetConstraintIndexForBodyIndex(const JPH_RagdollSettings *_this, int inBodyIndex)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RagdollSettings *)(_this)).GetConstraintIndexForBodyIndex(
@@ -242,6 +280,11 @@ int JPH_RagdollSettings_GetConstraintIndexForBodyIndex(const JPH_RagdollSettings
 void JPH_RagdollSettings_CalculateConstraintIndexToBodyIdxPair(JPH_RagdollSettings *_this)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::RagdollSettings *)(_this)).CalculateConstraintIndexToBodyIdxPair();
+}
+
+const Jolt_JPH_Array_std_pair_int_int *JPH_RagdollSettings_GetConstraintIndexToBodyIdxPair(const JPH_RagdollSettings *_this)
+{
+    return (const Jolt_JPH_Array_std_pair_int_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RagdollSettings *)(_this)).GetConstraintIndexToBodyIdxPair());
 }
 
 Jolt_std_pair_int_int *JPH_RagdollSettings_GetBodyIndicesForConstraintIndex(const JPH_RagdollSettings *_this, int inConstraintIndex)
@@ -1309,6 +1352,11 @@ JPH_BodyID JPH_Ragdoll_GetBodyID(const JPH_Ragdoll *_this, int inBodyIndex)
     return MRBINDC_BIT_CAST((JPH_BodyID), ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Ragdoll *)(_this)).GetBodyID(
         inBodyIndex
     ));
+}
+
+const Jolt_JPH_Array_JPH_BodyID *JPH_Ragdoll_GetBodyIDs(const JPH_Ragdoll *_this)
+{
+    return (const Jolt_JPH_Array_JPH_BodyID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Ragdoll *)(_this)).GetBodyIDs());
 }
 
 size_t JPH_Ragdoll_GetConstraintCount(const JPH_Ragdoll *_this)

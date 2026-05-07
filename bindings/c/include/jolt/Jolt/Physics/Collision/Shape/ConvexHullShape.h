@@ -40,6 +40,8 @@ typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt
 typedef struct JPH_SubShapeIDCreator JPH_SubShapeIDCreator; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_Plane Jolt_JPH_Array_JPH_Plane; // Defined in `#include <JPH_Array_JPH_Plane.h>`.
+typedef struct Jolt_JPH_Array_JPH_Vec3 Jolt_JPH_Array_JPH_Vec3; // Defined in `#include <JPH_Array_JPH_Vec3.h>`.
 
 
 /// Class that constructs a ConvexHullShape
@@ -65,6 +67,27 @@ typedef struct JPH_ConvexHullShapeSettings JPH_ConvexHullShapeSettings;
 ///     `JPH::Shape`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_ConvexHullShape JPH_ConvexHullShape;
+
+///< Points to create the hull from. Note that these points don't need to be the vertices of the convex hull, they can contain interior points or points on faces/edges.
+/// Returns a pointer to a member variable of class `JPH::ConvexHullShapeSettings` named `mPoints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_Vec3 *JPH_ConvexHullShapeSettings_Get_mPoints(const JPH_ConvexHullShapeSettings *_this);
+
+///< Points to create the hull from. Note that these points don't need to be the vertices of the convex hull, they can contain interior points or points on faces/edges.
+/// Modifies a member variable of class `JPH::ConvexHullShapeSettings` named `mPoints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mPoints`.
+/// When this function is called, this object will drop object references it held previously in `mPoints`.
+JOLT_API void JPH_ConvexHullShapeSettings_Set_mPoints(JPH_ConvexHullShapeSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_Vec3 *value);
+
+///< Points to create the hull from. Note that these points don't need to be the vertices of the convex hull, they can contain interior points or points on faces/edges.
+/// Returns a mutable pointer to a member variable of class `JPH::ConvexHullShapeSettings` named `mPoints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_Vec3 *JPH_ConvexHullShapeSettings_GetMutable_mPoints(JPH_ConvexHullShapeSettings *_this);
 
 ///< Convex radius as supplied by the constructor. Note that during hull creation the convex radius can be made smaller if the value is too big for the hull.
 /// Returns a pointer to a member variable of class `JPH::ConvexHullShapeSettings` named `mMaxConvexRadius`.
@@ -276,6 +299,13 @@ JOLT_API JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_ConstructFromA
 /// Parameter `inMaterial` defaults to a null pointer in C++.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_ConvexHullShapeSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_Construct_4(const JPH_Vec3 *inPoints, int inNumPoints, const float *inMaxConvexRadius, const JPH_PhysicsMaterial *inMaterial);
+
+/// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
+/// Parameter `inPoints` can not be null. It is a single object.
+/// Parameter `inConvexRadius` has a default argument: `cDefaultConvexRadius`, pass a null pointer to use it.
+/// Parameter `inMaterial` defaults to a null pointer in C++.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_ConvexHullShapeSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_Construct_3(const Jolt_JPH_Array_JPH_Vec3 *inPoints, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial);
 
 /// Destroys a heap-allocated instance of `JPH_ConvexHullShapeSettings`. Does nothing if the pointer is null.
 JOLT_API void JPH_ConvexHullShapeSettings_Destroy(const JPH_ConvexHullShapeSettings *_this);
@@ -629,6 +659,12 @@ JOLT_API float JPH_ConvexHullShape_GetVolume(const JPH_ConvexHullShape *_this);
 /// Generated from method `JPH::ConvexHullShape::GetConvexRadius`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_ConvexHullShape_GetConvexRadius(const JPH_ConvexHullShape *_this);
+
+/// Get the planes of this convex hull
+/// Generated from method `JPH::ConvexHullShape::GetPlanes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_Plane *JPH_ConvexHullShape_GetPlanes(const JPH_ConvexHullShape *_this);
 
 /// Get the number of vertices in this convex hull
 /// Generated from method `JPH::ConvexHullShape::GetNumPoints`.

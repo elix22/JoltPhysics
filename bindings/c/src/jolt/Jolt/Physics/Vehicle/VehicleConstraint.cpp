@@ -12,6 +12,7 @@
 #include <Jolt/Physics/Collision/Shape/SubShapeID.h>
 #include <Jolt/Physics/Constraints/Constraint.h>
 #include <Jolt/Physics/PhysicsStepListener.h>
+#include <Jolt/Physics/Vehicle/VehicleAntiRollBar.h>
 #include <Jolt/Physics/Vehicle/VehicleCollisionTester.h>
 #include <Jolt/Physics/Vehicle/VehicleConstraint.h>
 #include <Jolt/Physics/Vehicle/VehicleController.h>
@@ -19,6 +20,7 @@
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
@@ -61,6 +63,22 @@ void JPH_VehicleConstraintSettings_Set_mMaxPitchRollAngle(JPH_VehicleConstraintS
 float *JPH_VehicleConstraintSettings_GetMutable_mMaxPitchRollAngle(JPH_VehicleConstraintSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleConstraintSettings *)(_this)).mMaxPitchRollAngle);
+}
+
+const Jolt_JPH_Array_JPH_VehicleAntiRollBar *JPH_VehicleConstraintSettings_Get_mAntiRollBars(const JPH_VehicleConstraintSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_VehicleAntiRollBar *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleConstraintSettings *)(_this)).mAntiRollBars);
+}
+
+void JPH_VehicleConstraintSettings_Set_mAntiRollBars(JPH_VehicleConstraintSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_VehicleAntiRollBar *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::VehicleAntiRollBar>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleConstraintSettings *)(_this)).mAntiRollBars = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::VehicleAntiRollBar>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::VehicleAntiRollBar>), JPH::Array<JPH::VehicleAntiRollBar>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::VehicleAntiRollBar>), JPH::Array<JPH::VehicleAntiRollBar>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::VehicleAntiRollBar>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::VehicleAntiRollBar>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::VehicleAntiRollBar>));
+}
+
+Jolt_JPH_Array_JPH_VehicleAntiRollBar *JPH_VehicleConstraintSettings_GetMutable_mAntiRollBars(JPH_VehicleConstraintSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_VehicleAntiRollBar *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleConstraintSettings *)(_this)).mAntiRollBars);
 }
 
 const bool *JPH_VehicleConstraintSettings_Get_mEnabled(const JPH_VehicleConstraintSettings *_this)
@@ -652,6 +670,16 @@ JPH_VehicleController *JPH_VehicleConstraint_GetController_mut(JPH_VehicleConstr
     return (JPH_VehicleController *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleConstraint *)(_this)).GetController());
 }
 
+const Jolt_JPH_Array_JPH_Wheel_ptr *JPH_VehicleConstraint_GetWheels(const JPH_VehicleConstraint *_this)
+{
+    return (const Jolt_JPH_Array_JPH_Wheel_ptr *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleConstraint *)(_this)).GetWheels());
+}
+
+Jolt_JPH_Array_JPH_Wheel_ptr *JPH_VehicleConstraint_GetWheels_mut(JPH_VehicleConstraint *_this)
+{
+    return (Jolt_JPH_Array_JPH_Wheel_ptr *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleConstraint *)(_this)).GetWheels());
+}
+
 JPH_Wheel *JPH_VehicleConstraint_GetWheel_mut(JPH_VehicleConstraint *_this, unsigned int inIdx)
 {
     return (JPH_Wheel *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleConstraint *)(_this)).GetWheel(
@@ -692,6 +720,16 @@ JPH_Mat44 *JPH_VehicleConstraint_GetWheelWorldTransform(const JPH_VehicleConstra
         ((inWheelRight ? void() : MRBINDC_THROW("Parameter `inWheelRight` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inWheelRight)),
         ((inWheelUp ? void() : MRBINDC_THROW("Parameter `inWheelUp` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inWheelUp))
     ));
+}
+
+const Jolt_JPH_Array_JPH_VehicleAntiRollBar *JPH_VehicleConstraint_GetAntiRollBars(const JPH_VehicleConstraint *_this)
+{
+    return (const Jolt_JPH_Array_JPH_VehicleAntiRollBar *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::VehicleConstraint *)(_this)).GetAntiRollBars());
+}
+
+Jolt_JPH_Array_JPH_VehicleAntiRollBar *JPH_VehicleConstraint_GetAntiRollBars_mut(JPH_VehicleConstraint *_this)
+{
+    return (Jolt_JPH_Array_JPH_VehicleAntiRollBar *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::VehicleConstraint *)(_this)).GetAntiRollBars());
 }
 
 void JPH_VehicleConstraint_SetNumStepsBetweenCollisionTestActive(JPH_VehicleConstraint *_this, unsigned int inSteps)

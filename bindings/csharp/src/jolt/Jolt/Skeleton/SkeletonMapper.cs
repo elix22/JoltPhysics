@@ -195,6 +195,56 @@ public static partial class JPH
             return __JPH_SkeletonMapper_IsJointTranslationLocked(_UnderlyingPtr, inJoint2Idx) != 0;
         }
 
+        ///@name Access to the mapped joints
+        ///@{
+        /// Generated from method `JPH::SkeletonMapper::GetMappings`.
+        public unsafe JPH.Const_Array_JPHSkeletonMapperMapping GetMappings()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_GetMappings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_GetMappings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHSkeletonMapperMapping._Underlying *__JPH_SkeletonMapper_GetMappings(_Underlying *_this);
+            return new(__JPH_SkeletonMapper_GetMappings(_UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JPH::SkeletonMapper::GetChains`.
+        public unsafe JPH.Const_Array_JPHSkeletonMapperChain GetChains()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_GetChains", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_GetChains", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHSkeletonMapperChain._Underlying *__JPH_SkeletonMapper_GetChains(_Underlying *_this);
+            return new(__JPH_SkeletonMapper_GetChains(_UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JPH::SkeletonMapper::GetUnmapped`.
+        public unsafe JPH.Const_Array_JPHSkeletonMapperUnmapped GetUnmapped()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_GetUnmapped", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_GetUnmapped", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHSkeletonMapperUnmapped._Underlying *__JPH_SkeletonMapper_GetUnmapped(_Underlying *_this);
+            return new(__JPH_SkeletonMapper_GetUnmapped(_UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JPH::SkeletonMapper::GetLockedTranslations`.
+        public unsafe JPH.Const_Array_JPHSkeletonMapperLocked GetLockedTranslations()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_GetLockedTranslations", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_GetLockedTranslations", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHSkeletonMapperLocked._Underlying *__JPH_SkeletonMapper_GetLockedTranslations(_Underlying *_this);
+            return new(__JPH_SkeletonMapper_GetLockedTranslations(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
         /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
         /// the object and at that point in time it is checked that no references are left to the structure.
@@ -286,6 +336,42 @@ public static partial class JPH
             public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
             ~Const_Chain() {Dispose(false);}
 
+            ///< Joint chain from skeleton 1
+            public unsafe JPH.Const_Array_Int mJointIndices1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_Get_mJointIndices1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_Get_mJointIndices1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Const_Array_Int._Underlying *__JPH_SkeletonMapper_Chain_Get_mJointIndices1(_Underlying *_this);
+                    JPH.Const_Array_Int __ret;
+                    __ret = new(__JPH_SkeletonMapper_Chain_Get_mJointIndices1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Corresponding joint chain from skeleton 2
+            public unsafe JPH.Const_Array_Int mJointIndices2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_Get_mJointIndices2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_Get_mJointIndices2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Const_Array_Int._Underlying *__JPH_SkeletonMapper_Chain_Get_mJointIndices2(_Underlying *_this);
+                    JPH.Const_Array_Int __ret;
+                    __ret = new(__JPH_SkeletonMapper_Chain_Get_mJointIndices2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             internal unsafe Const_Chain(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
             /// Constructs an empty (default-constructed) instance.
@@ -318,6 +404,18 @@ public static partial class JPH
 
             /// Generated from constructor `JPH::SkeletonMapper::Chain::Chain`.
             public Const_Chain(Chain _other) : this((Const_Chain)_other) {}
+
+            /// Generated from constructor `JPH::SkeletonMapper::Chain::Chain`.
+            public unsafe Const_Chain(JPH._Moved<JPH.Array_Int> inJointIndices1, JPH._Moved<JPH.Array_Int> inJointIndices2) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.SkeletonMapper.Chain._Underlying *__JPH_SkeletonMapper_Chain_Construct(JPH.Array_Int._Underlying *inJointIndices1, JPH.Array_Int._Underlying *inJointIndices2);
+                _UnderlyingPtr = __JPH_SkeletonMapper_Chain_Construct(inJointIndices1.Value._UnderlyingPtr, inJointIndices2.Value._UnderlyingPtr);
+            }
         }
 
         /// A joint chain that starts with a 1-on-1 mapped joint and ends with a 1-on-1 mapped joint with intermediate joints that cannot be mapped
@@ -325,6 +423,42 @@ public static partial class JPH
         /// This is the non-const half of the class.
         public class Chain : Const_Chain
         {
+            ///< Joint chain from skeleton 1
+            public new unsafe JPH.Array_Int mJointIndices1
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_GetMutable_mJointIndices1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_GetMutable_mJointIndices1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Array_Int._Underlying *__JPH_SkeletonMapper_Chain_GetMutable_mJointIndices1(_Underlying *_this);
+                    JPH.Array_Int __ret;
+                    __ret = new(__JPH_SkeletonMapper_Chain_GetMutable_mJointIndices1(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Corresponding joint chain from skeleton 2
+            public new unsafe JPH.Array_Int mJointIndices2
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_GetMutable_mJointIndices2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_GetMutable_mJointIndices2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Array_Int._Underlying *__JPH_SkeletonMapper_Chain_GetMutable_mJointIndices2(_Underlying *_this);
+                    JPH.Array_Int __ret;
+                    __ret = new(__JPH_SkeletonMapper_Chain_GetMutable_mJointIndices2(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             internal unsafe Chain(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
             /// Constructs an empty (default-constructed) instance.
@@ -357,6 +491,18 @@ public static partial class JPH
 
             /// Generated from constructor `JPH::SkeletonMapper::Chain::Chain`.
             public Chain(Chain _other) : this((Const_Chain)_other) {}
+
+            /// Generated from constructor `JPH::SkeletonMapper::Chain::Chain`.
+            public unsafe Chain(JPH._Moved<JPH.Array_Int> inJointIndices1, JPH._Moved<JPH.Array_Int> inJointIndices2) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_Chain_Construct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.SkeletonMapper.Chain._Underlying *__JPH_SkeletonMapper_Chain_Construct(JPH.Array_Int._Underlying *inJointIndices1, JPH.Array_Int._Underlying *inJointIndices2);
+                _UnderlyingPtr = __JPH_SkeletonMapper_Chain_Construct(inJointIndices1.Value._UnderlyingPtr, inJointIndices2.Value._UnderlyingPtr);
+            }
 
             /// Generated from method `JPH::SkeletonMapper::Chain::operator=`.
             public unsafe JPH.SkeletonMapper.Chain Assign(JPH.SkeletonMapper._ByValue_Chain _other)
@@ -1339,6 +1485,54 @@ public static partial class JPH
             #endif
             extern static void __JPH_SkeletonMapper_LockAllTranslations(_Underlying *_this, JPH.Const_Skeleton._Underlying *inSkeleton2, JPH.Const_Mat44._Underlying *inNeutralPose2);
             __JPH_SkeletonMapper_LockAllTranslations(_UnderlyingPtr, inSkeleton2 is not null ? inSkeleton2._UnderlyingPtr : null, inNeutralPose2 is not null ? inNeutralPose2._UnderlyingPtr : null);
+        }
+
+        /// Generated from method `JPH::SkeletonMapper::GetMappings`.
+        public unsafe new JPH.Array_JPHSkeletonMapperMapping GetMappings()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_GetMappings_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_GetMappings_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHSkeletonMapperMapping._Underlying *__JPH_SkeletonMapper_GetMappings_mut(_Underlying *_this);
+            return new(__JPH_SkeletonMapper_GetMappings_mut(_UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JPH::SkeletonMapper::GetChains`.
+        public unsafe new JPH.Array_JPHSkeletonMapperChain GetChains()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_GetChains_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_GetChains_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHSkeletonMapperChain._Underlying *__JPH_SkeletonMapper_GetChains_mut(_Underlying *_this);
+            return new(__JPH_SkeletonMapper_GetChains_mut(_UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JPH::SkeletonMapper::GetUnmapped`.
+        public unsafe new JPH.Array_JPHSkeletonMapperUnmapped GetUnmapped()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_GetUnmapped_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_GetUnmapped_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHSkeletonMapperUnmapped._Underlying *__JPH_SkeletonMapper_GetUnmapped_mut(_Underlying *_this);
+            return new(__JPH_SkeletonMapper_GetUnmapped_mut(_UnderlyingPtr), is_owning: false);
+        }
+
+        /// Generated from method `JPH::SkeletonMapper::GetLockedTranslations`.
+        public unsafe new JPH.Array_JPHSkeletonMapperLocked GetLockedTranslations()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonMapper_GetLockedTranslations_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonMapper_GetLockedTranslations_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHSkeletonMapperLocked._Underlying *__JPH_SkeletonMapper_GetLockedTranslations_mut(_Underlying *_this);
+            return new(__JPH_SkeletonMapper_GetLockedTranslations_mut(_UnderlyingPtr), is_owning: false);
         }
     }
 

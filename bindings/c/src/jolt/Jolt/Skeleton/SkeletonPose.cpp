@@ -10,6 +10,7 @@
 #include <Jolt/Skeleton/SkeletonPose.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <memory>
@@ -172,6 +173,16 @@ unsigned int JPH_SkeletonPose_GetJointCount(const JPH_SkeletonPose *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonPose *)(_this)).GetJointCount();
 }
 
+const Jolt_JPH_Array_JPH_SkeletalAnimation_JointState *JPH_SkeletonPose_GetJoints(const JPH_SkeletonPose *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SkeletalAnimation_JointState *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonPose *)(_this)).GetJoints());
+}
+
+Jolt_JPH_Array_JPH_SkeletalAnimation_JointState *JPH_SkeletonPose_GetJoints_mut(JPH_SkeletonPose *_this)
+{
+    return (Jolt_JPH_Array_JPH_SkeletalAnimation_JointState *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletonPose *)(_this)).GetJoints());
+}
+
 const JPH_SkeletalAnimation_JointState *JPH_SkeletonPose_GetJoint(const JPH_SkeletonPose *_this, int inJoint)
 {
     return (const JPH_SkeletalAnimation_JointState *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonPose *)(_this)).GetJoint(
@@ -184,6 +195,16 @@ JPH_SkeletalAnimation_JointState *JPH_SkeletonPose_GetJoint_mut(JPH_SkeletonPose
     return (JPH_SkeletalAnimation_JointState *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletonPose *)(_this)).GetJoint(
         inJoint
     ));
+}
+
+const Jolt_JPH_Array_JPH_Mat44 *JPH_SkeletonPose_GetJointMatrices(const JPH_SkeletonPose *_this)
+{
+    return (const Jolt_JPH_Array_JPH_Mat44 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonPose *)(_this)).GetJointMatrices());
+}
+
+Jolt_JPH_Array_JPH_Mat44 *JPH_SkeletonPose_GetJointMatrices_mut(JPH_SkeletonPose *_this)
+{
+    return (Jolt_JPH_Array_JPH_Mat44 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletonPose *)(_this)).GetJointMatrices());
 }
 
 const JPH_Mat44 *JPH_SkeletonPose_GetJointMatrix(const JPH_SkeletonPose *_this, int inJoint)

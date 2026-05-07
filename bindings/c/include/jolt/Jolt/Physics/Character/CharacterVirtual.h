@@ -39,6 +39,8 @@ typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
 typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_CharacterVirtual_Contact Jolt_JPH_Array_JPH_CharacterVirtual_Contact; // Defined in `#include <JPH_Array_JPH_CharacterVirtual_Contact.h>`.
+typedef struct Jolt_JPH_Array_JPH_CharacterVirtual_ptr Jolt_JPH_Array_JPH_CharacterVirtual_ptr; // Defined in `#include <JPH_Array_JPH_CharacterVirtual_ptr.h>`.
 
 
 /// Contains the configuration of a character
@@ -941,6 +943,27 @@ JOLT_API const JPH_CharacterVsCharacterCollision *JPH_CharacterVsCharacterCollis
 /// The reference to the parameter `object` might be preserved in the return value.
 JOLT_API JPH_CharacterVsCharacterCollision *JPH_CharacterVsCharacterCollision_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCopyable *object);
 
+///< The list of characters to check collision against
+/// Returns a pointer to a member variable of class `JPH::CharacterVsCharacterCollisionSimple` named `mCharacters`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_CharacterVirtual_ptr *JPH_CharacterVsCharacterCollisionSimple_Get_mCharacters(const JPH_CharacterVsCharacterCollisionSimple *_this);
+
+///< The list of characters to check collision against
+/// Modifies a member variable of class `JPH::CharacterVsCharacterCollisionSimple` named `mCharacters`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mCharacters`.
+/// When this function is called, this object will drop object references it held previously in `mCharacters`.
+JOLT_API void JPH_CharacterVsCharacterCollisionSimple_Set_mCharacters(JPH_CharacterVsCharacterCollisionSimple *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_CharacterVirtual_ptr *value);
+
+///< The list of characters to check collision against
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVsCharacterCollisionSimple` named `mCharacters`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_CharacterVirtual_ptr *JPH_CharacterVsCharacterCollisionSimple_GetMutable_mCharacters(JPH_CharacterVsCharacterCollisionSimple *_this);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVsCharacterCollisionSimple_Destroy()` to free it when you're done using it.
 JOLT_API JPH_CharacterVsCharacterCollisionSimple *JPH_CharacterVsCharacterCollisionSimple_DefaultConstruct(void);
@@ -1518,6 +1541,13 @@ JOLT_API JPH_TransformedShape *JPH_CharacterVirtual_GetTransformedShape(const JP
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtualSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_CharacterVirtualSettings *JPH_CharacterVirtual_GetCharacterVirtualSettings(const JPH_CharacterVirtual *_this);
+
+/// Access to the internal list of contacts that the character has found.
+/// Note that only contacts that have their mHadCollision flag set are actual contacts.
+/// Generated from method `JPH::CharacterVirtual::GetActiveContacts`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_GetActiveContacts(const JPH_CharacterVirtual *_this);
 
 /// Check if the character is currently in contact with or has collided with another body in the last operation (e.g. Update or WalkStairs)
 /// Generated from method `JPH::CharacterVirtual::HasCollidedWith`.

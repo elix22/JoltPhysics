@@ -29,6 +29,7 @@
 #include <Jolt/Physics/PhysicsSystem.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
@@ -842,6 +843,22 @@ JPH_CharacterVsCharacterCollision *JPH_CharacterVsCharacterCollision_MutableStat
     ));
 }
 
+const Jolt_JPH_Array_JPH_CharacterVirtual_ptr *JPH_CharacterVsCharacterCollisionSimple_Get_mCharacters(const JPH_CharacterVsCharacterCollisionSimple *_this)
+{
+    return (const Jolt_JPH_Array_JPH_CharacterVirtual_ptr *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVsCharacterCollisionSimple *)(_this)).mCharacters);
+}
+
+void JPH_CharacterVsCharacterCollisionSimple_Set_mCharacters(JPH_CharacterVsCharacterCollisionSimple *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_CharacterVirtual_ptr *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::CharacterVirtual *>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVsCharacterCollisionSimple *)(_this)).mCharacters = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::CharacterVirtual *>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::CharacterVirtual *>), JPH::Array<JPH::CharacterVirtual *>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::CharacterVirtual *>), JPH::Array<JPH::CharacterVirtual *>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::CharacterVirtual *>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::CharacterVirtual *>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::CharacterVirtual *>));
+}
+
+Jolt_JPH_Array_JPH_CharacterVirtual_ptr *JPH_CharacterVsCharacterCollisionSimple_GetMutable_mCharacters(JPH_CharacterVsCharacterCollisionSimple *_this)
+{
+    return (Jolt_JPH_Array_JPH_CharacterVirtual_ptr *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVsCharacterCollisionSimple *)(_this)).mCharacters);
+}
+
 JPH_CharacterVsCharacterCollisionSimple *JPH_CharacterVsCharacterCollisionSimple_DefaultConstruct(void)
 {
     using _mrbind_T = JPH::CharacterVsCharacterCollisionSimple;
@@ -1501,6 +1518,11 @@ JPH_TransformedShape *JPH_CharacterVirtual_GetTransformedShape(const JPH_Charact
 JPH_CharacterVirtualSettings *JPH_CharacterVirtual_GetCharacterVirtualSettings(const JPH_CharacterVirtual *_this)
 {
     return (JPH_CharacterVirtualSettings *)new JPH::CharacterVirtualSettings(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetCharacterVirtualSettings());
+}
+
+const Jolt_JPH_Array_JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_GetActiveContacts(const JPH_CharacterVirtual *_this)
+{
+    return (const Jolt_JPH_Array_JPH_CharacterVirtual_Contact *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetActiveContacts());
 }
 
 bool JPH_CharacterVirtual_HasCollidedWith_JPH_BodyID(const JPH_CharacterVirtual *_this, const JPH_BodyID *inBody)

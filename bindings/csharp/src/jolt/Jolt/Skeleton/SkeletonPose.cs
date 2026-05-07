@@ -232,6 +232,18 @@ public static partial class JPH
             return __JPH_SkeletonPose_GetJointCount(_UnderlyingPtr);
         }
 
+        /// Generated from method `JPH::SkeletonPose::GetJoints`.
+        public unsafe JPH.Const_Array_JPHSkeletalAnimationJointState GetJoints()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonPose_GetJoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonPose_GetJoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHSkeletalAnimationJointState._Underlying *__JPH_SkeletonPose_GetJoints(_Underlying *_this);
+            return new(__JPH_SkeletonPose_GetJoints(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Generated from method `JPH::SkeletonPose::GetJoint`.
         public unsafe JPH.SkeletalAnimation.Const_JointState GetJoint(int inJoint)
         {
@@ -242,6 +254,20 @@ public static partial class JPH
             #endif
             extern static JPH.SkeletalAnimation.Const_JointState._Underlying *__JPH_SkeletonPose_GetJoint(_Underlying *_this, int inJoint);
             return new(__JPH_SkeletonPose_GetJoint(_UnderlyingPtr, inJoint), is_owning: false);
+        }
+
+        ///@name Joint matrices
+        ///@{
+        /// Generated from method `JPH::SkeletonPose::GetJointMatrices`.
+        public unsafe JPH.Const_Array_JPHMat44 GetJointMatrices()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonPose_GetJointMatrices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonPose_GetJointMatrices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHMat44._Underlying *__JPH_SkeletonPose_GetJointMatrices(_Underlying *_this);
+            return new(__JPH_SkeletonPose_GetJointMatrices(_UnderlyingPtr), is_owning: false);
         }
 
         /// Generated from method `JPH::SkeletonPose::GetJointMatrix`.
@@ -607,6 +633,18 @@ public static partial class JPH
             __JPH_SkeletonPose_SetRootOffset(_UnderlyingPtr, inOffset._UnderlyingPtr);
         }
 
+        /// Generated from method `JPH::SkeletonPose::GetJoints`.
+        public unsafe new JPH.Array_JPHSkeletalAnimationJointState GetJoints()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonPose_GetJoints_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonPose_GetJoints_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHSkeletalAnimationJointState._Underlying *__JPH_SkeletonPose_GetJoints_mut(_Underlying *_this);
+            return new(__JPH_SkeletonPose_GetJoints_mut(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Generated from method `JPH::SkeletonPose::GetJoint`.
         public unsafe new JPH.SkeletalAnimation.JointState GetJoint(int inJoint)
         {
@@ -617,6 +655,18 @@ public static partial class JPH
             #endif
             extern static JPH.SkeletalAnimation.JointState._Underlying *__JPH_SkeletonPose_GetJoint_mut(_Underlying *_this, int inJoint);
             return new(__JPH_SkeletonPose_GetJoint_mut(_UnderlyingPtr, inJoint), is_owning: false);
+        }
+
+        /// Generated from method `JPH::SkeletonPose::GetJointMatrices`.
+        public unsafe new JPH.Array_JPHMat44 GetJointMatrices()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletonPose_GetJointMatrices_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletonPose_GetJointMatrices_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHMat44._Underlying *__JPH_SkeletonPose_GetJointMatrices_mut(_Underlying *_this);
+            return new(__JPH_SkeletonPose_GetJointMatrices_mut(_UnderlyingPtr), is_owning: false);
         }
 
         /// Generated from method `JPH::SkeletonPose::GetJointMatrix`.

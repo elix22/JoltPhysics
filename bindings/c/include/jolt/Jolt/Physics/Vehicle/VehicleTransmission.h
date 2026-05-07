@@ -11,6 +11,8 @@
 extern "C" {
 #endif
 
+typedef struct Jolt_JPH_Array_float Jolt_JPH_Array_float; // Defined in `#include <JPH_Array_float.h>`.
+
 
 /// How gears are shifted
 typedef unsigned char JPH_ETransmissionMode;
@@ -58,6 +60,48 @@ JOLT_API void JPH_VehicleTransmissionSettings_Set_mMode(JPH_VehicleTransmissionS
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API JPH_ETransmissionMode *JPH_VehicleTransmissionSettings_GetMutable_mMode(JPH_VehicleTransmissionSettings *_this);
+
+///< Ratio in rotation rate between engine and gear box, first element is 1st gear, 2nd element 2nd gear etc.
+/// Returns a pointer to a member variable of class `JPH::VehicleTransmissionSettings` named `mGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_float *JPH_VehicleTransmissionSettings_Get_mGearRatios(const JPH_VehicleTransmissionSettings *_this);
+
+///< Ratio in rotation rate between engine and gear box, first element is 1st gear, 2nd element 2nd gear etc.
+/// Modifies a member variable of class `JPH::VehicleTransmissionSettings` named `mGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mGearRatios`.
+/// When this function is called, this object will drop object references it held previously in `mGearRatios`.
+JOLT_API void JPH_VehicleTransmissionSettings_Set_mGearRatios(JPH_VehicleTransmissionSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_float *value);
+
+///< Ratio in rotation rate between engine and gear box, first element is 1st gear, 2nd element 2nd gear etc.
+/// Returns a mutable pointer to a member variable of class `JPH::VehicleTransmissionSettings` named `mGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_float *JPH_VehicleTransmissionSettings_GetMutable_mGearRatios(JPH_VehicleTransmissionSettings *_this);
+
+///< Ratio in rotation rate between engine and gear box when driving in reverse
+/// Returns a pointer to a member variable of class `JPH::VehicleTransmissionSettings` named `mReverseGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_float *JPH_VehicleTransmissionSettings_Get_mReverseGearRatios(const JPH_VehicleTransmissionSettings *_this);
+
+///< Ratio in rotation rate between engine and gear box when driving in reverse
+/// Modifies a member variable of class `JPH::VehicleTransmissionSettings` named `mReverseGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mReverseGearRatios`.
+/// When this function is called, this object will drop object references it held previously in `mReverseGearRatios`.
+JOLT_API void JPH_VehicleTransmissionSettings_Set_mReverseGearRatios(JPH_VehicleTransmissionSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_float *value);
+
+///< Ratio in rotation rate between engine and gear box when driving in reverse
+/// Returns a mutable pointer to a member variable of class `JPH::VehicleTransmissionSettings` named `mReverseGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_float *JPH_VehicleTransmissionSettings_GetMutable_mReverseGearRatios(JPH_VehicleTransmissionSettings *_this);
 
 ///< How long it takes to switch gears (s), only used in auto mode
 /// Returns a pointer to a member variable of class `JPH::VehicleTransmissionSettings` named `mSwitchTime`.
@@ -188,6 +232,14 @@ JOLT_API JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_Defaul
 /// Use `JPH_VehicleTransmissionSettings_OffsetMutablePtr()` and `JPH_VehicleTransmissionSettings_OffsetPtr()` to access the array elements.
 JOLT_API JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_DefaultConstructArray(size_t num_elems);
 
+/// Constructs `JPH::VehicleTransmissionSettings` elementwise.
+/// The reference to the parameter `mMode` might be preserved in the constructed object.
+/// The reference to the parameter `mGearRatios` might be preserved in the constructed object.
+/// The reference to the parameter `mReverseGearRatios` might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_VehicleTransmissionSettings_Destroy()` to free it when you're done using it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_ConstructFrom(JPH_ETransmissionMode mMode, Jolt_PassBy mGearRatios_pass_by, Jolt_JPH_Array_float *mGearRatios, Jolt_PassBy mReverseGearRatios_pass_by, Jolt_JPH_Array_float *mReverseGearRatios, float mSwitchTime, float mClutchReleaseTime, float mSwitchLatency, float mShiftUpRPM, float mShiftDownRPM, float mClutchStrength);
+
 /// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
 /// The reference to the parameter `ptr` might be preserved in the return value.
 JOLT_API const JPH_VehicleTransmissionSettings *JPH_VehicleTransmissionSettings_OffsetPtr(const JPH_VehicleTransmissionSettings *ptr, ptrdiff_t i);
@@ -264,6 +316,48 @@ JOLT_API void JPH_VehicleTransmission_Set_mMode(JPH_VehicleTransmission *_this, 
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API JPH_ETransmissionMode *JPH_VehicleTransmission_GetMutable_mMode(JPH_VehicleTransmission *_this);
+
+///< Ratio in rotation rate between engine and gear box, first element is 1st gear, 2nd element 2nd gear etc.
+/// Returns a pointer to a member variable of class `JPH::VehicleTransmission` named `mGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_float *JPH_VehicleTransmission_Get_mGearRatios(const JPH_VehicleTransmission *_this);
+
+///< Ratio in rotation rate between engine and gear box, first element is 1st gear, 2nd element 2nd gear etc.
+/// Modifies a member variable of class `JPH::VehicleTransmission` named `mGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mGearRatios`.
+/// When this function is called, this object will drop object references it held previously in `mGearRatios`.
+JOLT_API void JPH_VehicleTransmission_Set_mGearRatios(JPH_VehicleTransmission *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_float *value);
+
+///< Ratio in rotation rate between engine and gear box, first element is 1st gear, 2nd element 2nd gear etc.
+/// Returns a mutable pointer to a member variable of class `JPH::VehicleTransmission` named `mGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_float *JPH_VehicleTransmission_GetMutable_mGearRatios(JPH_VehicleTransmission *_this);
+
+///< Ratio in rotation rate between engine and gear box when driving in reverse
+/// Returns a pointer to a member variable of class `JPH::VehicleTransmission` named `mReverseGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_float *JPH_VehicleTransmission_Get_mReverseGearRatios(const JPH_VehicleTransmission *_this);
+
+///< Ratio in rotation rate between engine and gear box when driving in reverse
+/// Modifies a member variable of class `JPH::VehicleTransmission` named `mReverseGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mReverseGearRatios`.
+/// When this function is called, this object will drop object references it held previously in `mReverseGearRatios`.
+JOLT_API void JPH_VehicleTransmission_Set_mReverseGearRatios(JPH_VehicleTransmission *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_float *value);
+
+///< Ratio in rotation rate between engine and gear box when driving in reverse
+/// Returns a mutable pointer to a member variable of class `JPH::VehicleTransmission` named `mReverseGearRatios`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_float *JPH_VehicleTransmission_GetMutable_mReverseGearRatios(JPH_VehicleTransmission *_this);
 
 ///< How long it takes to switch gears (s), only used in auto mode
 /// Returns a pointer to a member variable of class `JPH::VehicleTransmission` named `mSwitchTime`.

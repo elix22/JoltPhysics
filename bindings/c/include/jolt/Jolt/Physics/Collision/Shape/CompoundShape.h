@@ -33,6 +33,8 @@ typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt
 typedef struct JPH_SubShapeIDCreator JPH_SubShapeIDCreator; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings; // Defined in `#include <JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings.h>`.
+typedef struct Jolt_JPH_Array_JPH_CompoundShape_SubShape Jolt_JPH_Array_JPH_CompoundShape_SubShape; // Defined in `#include <JPH_Array_JPH_CompoundShape_SubShape.h>`.
 
 
 /// Generated from class `JPH::CompoundShapeSettings::SubShapeSettings`.
@@ -70,6 +72,24 @@ typedef struct JPH_CompoundShape_SubShape JPH_CompoundShape_SubShape;
 ///     `JPH::MutableCompoundShape`
 ///     `JPH::StaticCompoundShape`
 typedef struct JPH_CompoundShape JPH_CompoundShape;
+
+/// Returns a pointer to a member variable of class `JPH::CompoundShapeSettings` named `mSubShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_Get_mSubShapes(const JPH_CompoundShapeSettings *_this);
+
+/// Modifies a member variable of class `JPH::CompoundShapeSettings` named `mSubShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mSubShapes`.
+/// When this function is called, this object will drop object references it held previously in `mSubShapes`.
+JOLT_API void JPH_CompoundShapeSettings_Set_mSubShapes(JPH_CompoundShapeSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings *value);
+
+/// Returns a mutable pointer to a member variable of class `JPH::CompoundShapeSettings` named `mSubShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings *JPH_CompoundShapeSettings_GetMutable_mSubShapes(JPH_CompoundShapeSettings *_this);
 
 /// User data (to be used freely by the application)
 /// Returns a pointer to a member variable of class `JPH::CompoundShapeSettings` named `mUserData`.
@@ -561,6 +581,12 @@ JOLT_API int JPH_CompoundShape_GetTrianglesNext(const JPH_CompoundShape *_this, 
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inBox` can not be null. It is a single object.
 JOLT_API int JPH_CompoundShape_GetIntersectingSubShapes_JPH_AABox(const JPH_CompoundShape *_this, const JPH_AABox *inBox, unsigned int *outSubShapeIndices, int inMaxSubShapeIndices);
+
+/// Access to the sub shapes of this compound
+/// Generated from method `JPH::CompoundShape::GetSubShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_CompoundShape_SubShape *JPH_CompoundShape_GetSubShapes(const JPH_CompoundShape *_this);
 
 /// Get the total number of sub shapes
 /// Generated from method `JPH::CompoundShape::GetNumSubShapes`.

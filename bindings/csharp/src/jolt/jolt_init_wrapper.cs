@@ -3857,6 +3857,40 @@ public static partial class JPH
             return ret;
         }
 
+        public unsafe JPH.Const_Array_DebugLineRecord mLines
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_Get_mLines", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_Get_mLines", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_DebugLineRecord._Underlying *__RecordingDebugRenderer_Get_mLines(_Underlying *_this);
+                JPH.Const_Array_DebugLineRecord __ret;
+                __ret = new(__RecordingDebugRenderer_Get_mLines(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public unsafe JPH.Const_Array_DebugTriangleRecord mTriangles
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_Get_mTriangles", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_Get_mTriangles", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_DebugTriangleRecord._Underlying *__RecordingDebugRenderer_Get_mTriangles(_Underlying *_this);
+                JPH.Const_Array_DebugTriangleRecord __ret;
+                __ret = new(__RecordingDebugRenderer_Get_mTriangles(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         /// Singleton instance
         public static unsafe JPH.DebugRenderer? SInstance
         {
@@ -4042,6 +4076,40 @@ public static partial class JPH
             RecordingDebugRenderer ret = new(__RecordingDebugRenderer_StaticDowncastFrom_JPH_DebugRendererSimple(parent._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = parent;
             return ret;
+        }
+
+        public new unsafe JPH.Array_DebugLineRecord mLines
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_GetMutable_mLines", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_GetMutable_mLines", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_DebugLineRecord._Underlying *__RecordingDebugRenderer_GetMutable_mLines(_Underlying *_this);
+                JPH.Array_DebugLineRecord __ret;
+                __ret = new(__RecordingDebugRenderer_GetMutable_mLines(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        public new unsafe JPH.Array_DebugTriangleRecord mTriangles
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "RecordingDebugRenderer_GetMutable_mTriangles", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "RecordingDebugRenderer_GetMutable_mTriangles", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_DebugTriangleRecord._Underlying *__RecordingDebugRenderer_GetMutable_mTriangles(_Underlying *_this);
+                JPH.Array_DebugTriangleRecord __ret;
+                __ret = new(__RecordingDebugRenderer_GetMutable_mTriangles(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
         }
 
         internal unsafe RecordingDebugRenderer(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}

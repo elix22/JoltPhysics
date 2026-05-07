@@ -10,6 +10,8 @@
 extern "C" {
 #endif
 
+typedef struct Jolt_JPH_Array_unsigned_int Jolt_JPH_Array_unsigned_int; // Defined in `#include <JPH_Array_unsigned_int.h>`.
+
 
 /// On which side of the vehicle the track is located (for steering)
 typedef enum JPH_ETrackSide
@@ -55,6 +57,27 @@ JOLT_API void JPH_VehicleTrackSettings_Set_mDrivenWheel(JPH_VehicleTrackSettings
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API unsigned int *JPH_VehicleTrackSettings_GetMutable_mDrivenWheel(JPH_VehicleTrackSettings *_this);
+
+///< Indices of wheels that are inside this track, should include the driven wheel too
+/// Returns a pointer to a member variable of class `JPH::VehicleTrackSettings` named `mWheels`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_unsigned_int *JPH_VehicleTrackSettings_Get_mWheels(const JPH_VehicleTrackSettings *_this);
+
+///< Indices of wheels that are inside this track, should include the driven wheel too
+/// Modifies a member variable of class `JPH::VehicleTrackSettings` named `mWheels`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mWheels`.
+/// When this function is called, this object will drop object references it held previously in `mWheels`.
+JOLT_API void JPH_VehicleTrackSettings_Set_mWheels(JPH_VehicleTrackSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value);
+
+///< Indices of wheels that are inside this track, should include the driven wheel too
+/// Returns a mutable pointer to a member variable of class `JPH::VehicleTrackSettings` named `mWheels`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_unsigned_int *JPH_VehicleTrackSettings_GetMutable_mWheels(JPH_VehicleTrackSettings *_this);
 
 ///< Moment of inertia (kg m^2) of the track and its wheels as seen on the driven wheel
 /// Returns a pointer to a member variable of class `JPH::VehicleTrackSettings` named `mInertia`.
@@ -144,6 +167,13 @@ JOLT_API JPH_VehicleTrackSettings *JPH_VehicleTrackSettings_DefaultConstruct(voi
 /// The array must be destroyed using `JPH_VehicleTrackSettings_DestroyArray()`.
 /// Use `JPH_VehicleTrackSettings_OffsetMutablePtr()` and `JPH_VehicleTrackSettings_OffsetPtr()` to access the array elements.
 JOLT_API JPH_VehicleTrackSettings *JPH_VehicleTrackSettings_DefaultConstructArray(size_t num_elems);
+
+/// Constructs `JPH::VehicleTrackSettings` elementwise.
+/// The reference to the parameter `mDrivenWheel` might be preserved in the constructed object.
+/// The reference to the parameter `mWheels` might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_VehicleTrackSettings_Destroy()` to free it when you're done using it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JPH_VehicleTrackSettings *JPH_VehicleTrackSettings_ConstructFrom(unsigned int mDrivenWheel, Jolt_PassBy mWheels_pass_by, Jolt_JPH_Array_unsigned_int *mWheels, float mInertia, float mAngularDamping, float mMaxBrakeTorque, float mDifferentialRatio);
 
 /// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
 /// The reference to the parameter `ptr` might be preserved in the return value.
@@ -241,6 +271,27 @@ JOLT_API void JPH_VehicleTrack_Set_mDrivenWheel(JPH_VehicleTrack *_this, unsigne
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API unsigned int *JPH_VehicleTrack_GetMutable_mDrivenWheel(JPH_VehicleTrack *_this);
+
+///< Indices of wheels that are inside this track, should include the driven wheel too
+/// Returns a pointer to a member variable of class `JPH::VehicleTrack` named `mWheels`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_unsigned_int *JPH_VehicleTrack_Get_mWheels(const JPH_VehicleTrack *_this);
+
+///< Indices of wheels that are inside this track, should include the driven wheel too
+/// Modifies a member variable of class `JPH::VehicleTrack` named `mWheels`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mWheels`.
+/// When this function is called, this object will drop object references it held previously in `mWheels`.
+JOLT_API void JPH_VehicleTrack_Set_mWheels(JPH_VehicleTrack *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value);
+
+///< Indices of wheels that are inside this track, should include the driven wheel too
+/// Returns a mutable pointer to a member variable of class `JPH::VehicleTrack` named `mWheels`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_unsigned_int *JPH_VehicleTrack_GetMutable_mWheels(JPH_VehicleTrack *_this);
 
 ///< Moment of inertia (kg m^2) of the track and its wheels as seen on the driven wheel
 /// Returns a pointer to a member variable of class `JPH::VehicleTrack` named `mInertia`.

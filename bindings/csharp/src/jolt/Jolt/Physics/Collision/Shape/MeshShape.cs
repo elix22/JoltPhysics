@@ -114,6 +114,24 @@ public static partial class JPH
             return ret;
         }
 
+        /// Vertices belonging to mIndexedTriangles
+        public unsafe JPH.Const_Array_JPHFloat3 mTriangleVertices
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MeshShapeSettings_Get_mTriangleVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MeshShapeSettings_Get_mTriangleVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHFloat3._Underlying *__JPH_MeshShapeSettings_Get_mTriangleVertices(_Underlying *_this);
+                JPH.Const_Array_JPHFloat3 __ret;
+                __ret = new(__JPH_MeshShapeSettings_Get_mTriangleVertices(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         /// Maximum number of triangles in each leaf of the axis aligned box tree. This is a balance between memory and performance. Can be in the range [1, MeshShape::MaxTrianglesPerLeaf].
         /// Sensible values are between 4 (for better performance) and 8 (for less memory usage).
         public unsafe uint mMaxTrianglesPerLeaf
@@ -546,6 +564,24 @@ public static partial class JPH
             MeshShapeSettings ret = new(__JPH_MeshShapeSettings_StaticDowncastFrom_JPH_ShapeSettings(parent._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = parent;
             return ret;
+        }
+
+        /// Vertices belonging to mIndexedTriangles
+        public new unsafe JPH.Array_JPHFloat3 mTriangleVertices
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MeshShapeSettings_GetMutable_mTriangleVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MeshShapeSettings_GetMutable_mTriangleVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHFloat3._Underlying *__JPH_MeshShapeSettings_GetMutable_mTriangleVertices(_Underlying *_this);
+                JPH.Array_JPHFloat3 __ret;
+                __ret = new(__JPH_MeshShapeSettings_GetMutable_mTriangleVertices(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
         }
 
         /// Maximum number of triangles in each leaf of the axis aligned box tree. This is a balance between memory and performance. Can be in the range [1, MeshShape::MaxTrianglesPerLeaf].

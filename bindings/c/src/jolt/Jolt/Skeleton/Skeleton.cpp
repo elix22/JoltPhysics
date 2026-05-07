@@ -6,6 +6,7 @@
 #include <Jolt/Skeleton/Skeleton.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <memory>
@@ -165,6 +166,16 @@ void Jolt_delete_array_JPH_Skeleton_void_ptr_void_ptr(void *inPointer, void *inP
         inPointer,
         inPlace
     );
+}
+
+const Jolt_JPH_Array_JPH_Skeleton_Joint *JPH_Skeleton_GetJoints(const JPH_Skeleton *_this)
+{
+    return (const Jolt_JPH_Array_JPH_Skeleton_Joint *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Skeleton *)(_this)).GetJoints());
+}
+
+Jolt_JPH_Array_JPH_Skeleton_Joint *JPH_Skeleton_GetJoints_mut(JPH_Skeleton *_this)
+{
+    return (Jolt_JPH_Array_JPH_Skeleton_Joint *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Skeleton *)(_this)).GetJoints());
 }
 
 int JPH_Skeleton_GetJointCount(const JPH_Skeleton *_this)

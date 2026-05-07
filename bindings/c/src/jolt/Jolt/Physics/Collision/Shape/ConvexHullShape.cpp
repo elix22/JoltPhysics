@@ -23,6 +23,7 @@
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
@@ -30,6 +31,22 @@
 #include <new>
 #include <stdexcept>
 
+
+const Jolt_JPH_Array_JPH_Vec3 *JPH_ConvexHullShapeSettings_Get_mPoints(const JPH_ConvexHullShapeSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexHullShapeSettings *)(_this)).mPoints);
+}
+
+void JPH_ConvexHullShapeSettings_Set_mPoints(JPH_ConvexHullShapeSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_Vec3 *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::Vec3>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ConvexHullShapeSettings *)(_this)).mPoints = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::Vec3>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::Vec3>), JPH::Array<JPH::Vec3>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::Vec3>), JPH::Array<JPH::Vec3>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::Vec3>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::Vec3>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::Vec3>));
+}
+
+Jolt_JPH_Array_JPH_Vec3 *JPH_ConvexHullShapeSettings_GetMutable_mPoints(JPH_ConvexHullShapeSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ConvexHullShapeSettings *)(_this)).mPoints);
+}
 
 const float *JPH_ConvexHullShapeSettings_Get_mMaxConvexRadius(const JPH_ConvexHullShapeSettings *_this)
 {
@@ -257,6 +274,16 @@ JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_Construct_4(const JPH_V
         ((const JPH::Vec3 *)inPoints),
         inNumPoints,
         (inMaxConvexRadius ? *inMaxConvexRadius : static_cast<float>(cDefaultConvexRadius)),
+        ((const JPH::PhysicsMaterial *)inMaterial)
+    ));
+}
+
+JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_Construct_3(const Jolt_JPH_Array_JPH_Vec3 *inPoints, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial)
+{
+    using namespace JPH;
+    return (JPH_ConvexHullShapeSettings *)new JPH::ConvexHullShapeSettings(JPH::ConvexHullShapeSettings(
+        ((inPoints ? void() : MRBINDC_THROW("Parameter `inPoints` can not be null.", void)), *(const JPH::Array<JPH::Vec3> *)(inPoints)),
+        (inConvexRadius ? *inConvexRadius : static_cast<float>(cDefaultConvexRadius)),
         ((const JPH::PhysicsMaterial *)inMaterial)
     ));
 }
@@ -763,6 +790,11 @@ float JPH_ConvexHullShape_GetVolume(const JPH_ConvexHullShape *_this)
 float JPH_ConvexHullShape_GetConvexRadius(const JPH_ConvexHullShape *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexHullShape *)(_this)).GetConvexRadius();
+}
+
+const Jolt_JPH_Array_JPH_Plane *JPH_ConvexHullShape_GetPlanes(const JPH_ConvexHullShape *_this)
+{
+    return (const Jolt_JPH_Array_JPH_Plane *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ConvexHullShape *)(_this)).GetPlanes());
 }
 
 unsigned int JPH_ConvexHullShape_GetNumPoints(const JPH_ConvexHullShape *_this)

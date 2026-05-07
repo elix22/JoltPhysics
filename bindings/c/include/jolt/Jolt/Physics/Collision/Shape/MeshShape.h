@@ -35,6 +35,7 @@ typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt
 typedef struct JPH_SubShapeIDCreator JPH_SubShapeIDCreator; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_Float3 Jolt_JPH_Array_JPH_Float3; // Defined in `#include <JPH_Array_JPH_Float3.h>`.
 
 
 typedef enum JPH_MeshShapeSettings_EBuildQuality
@@ -68,6 +69,27 @@ typedef struct JPH_MeshShapeSettings JPH_MeshShapeSettings;
 ///     `JPH::NonCopyable`
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_MeshShape JPH_MeshShape;
+
+/// Vertices belonging to mIndexedTriangles
+/// Returns a pointer to a member variable of class `JPH::MeshShapeSettings` named `mTriangleVertices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_Float3 *JPH_MeshShapeSettings_Get_mTriangleVertices(const JPH_MeshShapeSettings *_this);
+
+/// Vertices belonging to mIndexedTriangles
+/// Modifies a member variable of class `JPH::MeshShapeSettings` named `mTriangleVertices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mTriangleVertices`.
+/// When this function is called, this object will drop object references it held previously in `mTriangleVertices`.
+JOLT_API void JPH_MeshShapeSettings_Set_mTriangleVertices(JPH_MeshShapeSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_Float3 *value);
+
+/// Vertices belonging to mIndexedTriangles
+/// Returns a mutable pointer to a member variable of class `JPH::MeshShapeSettings` named `mTriangleVertices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_Float3 *JPH_MeshShapeSettings_GetMutable_mTriangleVertices(JPH_MeshShapeSettings *_this);
 
 /// Maximum number of triangles in each leaf of the axis aligned box tree. This is a balance between memory and performance. Can be in the range [1, MeshShape::MaxTrianglesPerLeaf].
 /// Sensible values are between 4 (for better performance) and 8 (for less memory usage).

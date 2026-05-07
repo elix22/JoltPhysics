@@ -10,6 +10,7 @@
 #include <Jolt/Skeleton/SkeletonPose.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <memory>
@@ -201,6 +202,16 @@ void JPH_SkeletalAnimation_Sample(const JPH_SkeletalAnimation *_this, float inTi
         inTime,
         ((ioPose ? void() : MRBINDC_THROW("Parameter `ioPose` can not be null.", void)), *(JPH::SkeletonPose *)(ioPose))
     );
+}
+
+const Jolt_JPH_Array_JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_GetAnimatedJoints(const JPH_SkeletalAnimation *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SkeletalAnimation_AnimatedJoint *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletalAnimation *)(_this)).GetAnimatedJoints());
+}
+
+Jolt_JPH_Array_JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_GetAnimatedJoints_mut(JPH_SkeletalAnimation *_this)
+{
+    return (Jolt_JPH_Array_JPH_SkeletalAnimation_AnimatedJoint *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletalAnimation *)(_this)).GetAnimatedJoints());
 }
 
 void JPH_SkeletalAnimation_SetEmbedded(const JPH_SkeletalAnimation *_this)
@@ -589,6 +600,22 @@ void JPH_SkeletalAnimation_Keyframe_FromMatrix(JPH_SkeletalAnimation_Keyframe *_
 JPH_Mat44 *JPH_SkeletalAnimation_Keyframe_ToMatrix(const JPH_SkeletalAnimation_Keyframe *_this)
 {
     return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletalAnimation::Keyframe *)(_this)).ToMatrix());
+}
+
+const Jolt_JPH_Array_JPH_SkeletalAnimation_Keyframe *JPH_SkeletalAnimation_AnimatedJoint_Get_mKeyframes(const JPH_SkeletalAnimation_AnimatedJoint *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SkeletalAnimation_Keyframe *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletalAnimation::AnimatedJoint *)(_this)).mKeyframes);
+}
+
+void JPH_SkeletalAnimation_AnimatedJoint_Set_mKeyframes(JPH_SkeletalAnimation_AnimatedJoint *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SkeletalAnimation_Keyframe *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::SkeletalAnimation::Keyframe>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletalAnimation::AnimatedJoint *)(_this)).mKeyframes = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::SkeletalAnimation::Keyframe>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::SkeletalAnimation::Keyframe>), JPH::Array<JPH::SkeletalAnimation::Keyframe>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::SkeletalAnimation::Keyframe>), JPH::Array<JPH::SkeletalAnimation::Keyframe>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::SkeletalAnimation::Keyframe>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::SkeletalAnimation::Keyframe>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::SkeletalAnimation::Keyframe>));
+}
+
+Jolt_JPH_Array_JPH_SkeletalAnimation_Keyframe *JPH_SkeletalAnimation_AnimatedJoint_GetMutable_mKeyframes(JPH_SkeletalAnimation_AnimatedJoint *_this)
+{
+    return (Jolt_JPH_Array_JPH_SkeletalAnimation_Keyframe *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SkeletalAnimation::AnimatedJoint *)(_this)).mKeyframes);
 }
 
 JPH_SkeletalAnimation_AnimatedJoint *JPH_SkeletalAnimation_AnimatedJoint_DefaultConstruct(void)

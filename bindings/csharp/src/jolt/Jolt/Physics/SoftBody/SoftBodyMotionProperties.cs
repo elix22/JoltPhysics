@@ -103,6 +103,19 @@ public static partial class JPH
             return __c_ret is not null ? new JPH.Const_SoftBodySharedSettings(__c_ret, is_owning: false) : null;
         }
 
+        /// Get the vertices of the soft body
+        /// Generated from method `JPH::SoftBodyMotionProperties::GetVertices`.
+        public unsafe JPH.Const_Array_JPHSoftBodyVertex GetVertices()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_GetVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_GetVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHSoftBodyVertex._Underlying *__JPH_SoftBodyMotionProperties_GetVertices(_Underlying *_this);
+            return new(__JPH_SoftBodyMotionProperties_GetVertices(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Access an individual vertex
         /// Generated from method `JPH::SoftBodyMotionProperties::GetVertex`.
         public unsafe JPH.Const_SoftBodyVertex GetVertex(uint inIndex)
@@ -139,6 +152,19 @@ public static partial class JPH
             #endif
             extern static JPH.Vec3._Underlying *__JPH_SoftBodyMotionProperties_GetRodAngularVelocity(_Underlying *_this, uint inIndex);
             return new(__JPH_SoftBodyMotionProperties_GetRodAngularVelocity(_UnderlyingPtr, inIndex), is_owning: true);
+        }
+
+        /// Get the faces of the soft body
+        /// Generated from method `JPH::SoftBodyMotionProperties::GetFaces`.
+        public unsafe JPH.Const_Array_JPHSoftBodySharedSettingsFace GetFaces()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_GetFaces", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_GetFaces", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHSoftBodySharedSettingsFace._Underlying *__JPH_SoftBodyMotionProperties_GetFaces(_Underlying *_this);
+            return new(__JPH_SoftBodyMotionProperties_GetFaces(_UnderlyingPtr), is_owning: false);
         }
 
         /// Access to an individual face
@@ -745,6 +771,18 @@ public static partial class JPH
             #endif
             extern static void __JPH_SoftBodyMotionProperties_Initialize(_Underlying *_this, JPH.Const_SoftBodyCreationSettings._Underlying *inSettings);
             __JPH_SoftBodyMotionProperties_Initialize(_UnderlyingPtr, inSettings._UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::SoftBodyMotionProperties::GetVertices`.
+        public unsafe new JPH.Array_JPHSoftBodyVertex GetVertices()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_GetVertices_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_GetVertices_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHSoftBodyVertex._Underlying *__JPH_SoftBodyMotionProperties_GetVertices_mut(_Underlying *_this);
+            return new(__JPH_SoftBodyMotionProperties_GetVertices_mut(_UnderlyingPtr), is_owning: false);
         }
 
         /// Generated from method `JPH::SoftBodyMotionProperties::GetVertex`.

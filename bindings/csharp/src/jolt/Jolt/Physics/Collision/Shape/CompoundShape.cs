@@ -118,6 +118,23 @@ public static partial class JPH
             return ret;
         }
 
+        public unsafe JPH.Const_Array_JPHCompoundShapeSettingsSubShapeSettings mSubShapes
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CompoundShapeSettings_Get_mSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CompoundShapeSettings_Get_mSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHCompoundShapeSettingsSubShapeSettings._Underlying *__JPH_CompoundShapeSettings_Get_mSubShapes(_Underlying *_this);
+                JPH.Const_Array_JPHCompoundShapeSettingsSubShapeSettings __ret;
+                __ret = new(__JPH_CompoundShapeSettings_Get_mSubShapes(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         /// User data (to be used freely by the application)
         public unsafe UIntPtr mUserData
         {
@@ -827,6 +844,23 @@ public static partial class JPH
             return ret;
         }
 
+        public new unsafe JPH.Array_JPHCompoundShapeSettingsSubShapeSettings mSubShapes
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CompoundShapeSettings_GetMutable_mSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CompoundShapeSettings_GetMutable_mSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHCompoundShapeSettingsSubShapeSettings._Underlying *__JPH_CompoundShapeSettings_GetMutable_mSubShapes(_Underlying *_this);
+                JPH.Array_JPHCompoundShapeSettingsSubShapeSettings __ret;
+                __ret = new(__JPH_CompoundShapeSettings_GetMutable_mSubShapes(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         /// User data (to be used freely by the application)
         public new unsafe ref UIntPtr mUserData
         {
@@ -1462,6 +1496,19 @@ public static partial class JPH
             var __c_ret = __JPH_CompoundShape_GetIntersectingSubShapes_JPH_AABox(_UnderlyingPtr, inBox._UnderlyingPtr, outSubShapeIndices is not null ? &__value_outSubShapeIndices : null, inMaxSubShapeIndices);
             if (outSubShapeIndices is not null) outSubShapeIndices.Value = __value_outSubShapeIndices;
             return __c_ret;
+        }
+
+        /// Access to the sub shapes of this compound
+        /// Generated from method `JPH::CompoundShape::GetSubShapes`.
+        public unsafe JPH.Const_Array_JPHCompoundShapeSubShape GetSubShapes()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CompoundShape_GetSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CompoundShape_GetSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHCompoundShapeSubShape._Underlying *__JPH_CompoundShape_GetSubShapes(_Underlying *_this);
+            return new(__JPH_CompoundShape_GetSubShapes(_UnderlyingPtr), is_owning: false);
         }
 
         /// Get the total number of sub shapes

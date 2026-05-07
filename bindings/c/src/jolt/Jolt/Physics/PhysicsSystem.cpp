@@ -28,6 +28,7 @@
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <memory>
@@ -435,6 +436,13 @@ unsigned int JPH_PhysicsSystem_GetNumBodies(const JPH_PhysicsSystem *_this)
 unsigned int JPH_PhysicsSystem_GetMaxBodies(const JPH_PhysicsSystem *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSystem *)(_this)).GetMaxBodies();
+}
+
+void JPH_PhysicsSystem_GetBodies(const JPH_PhysicsSystem *_this, Jolt_JPH_Array_JPH_BodyID *outBodyIDs)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSystem *)(_this)).GetBodies(
+        ((outBodyIDs ? void() : MRBINDC_THROW("Parameter `outBodyIDs` can not be null.", void)), *(JPH::Array<JPH::BodyID> *)(outBodyIDs))
+    );
 }
 
 bool JPH_PhysicsSystem_WereBodiesInContact(const JPH_PhysicsSystem *_this, const JPH_BodyID *inBody1ID, const JPH_BodyID *inBody2ID)

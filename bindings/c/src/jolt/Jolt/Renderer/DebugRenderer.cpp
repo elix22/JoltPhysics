@@ -13,6 +13,7 @@
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <functional>
@@ -675,6 +676,22 @@ JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_AssignFromAnother(JPH_DebugRenderer
     return (JPH_DebugRenderer_LOD *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DebugRenderer::LOD *)(_this)).operator=(
         (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::DebugRenderer::LOD) MRBINDC_CLASSARG_COPY(_other, (JPH::DebugRenderer::LOD), JPH::DebugRenderer::LOD) MRBINDC_CLASSARG_MOVE(_other, (JPH::DebugRenderer::LOD), JPH::DebugRenderer::LOD) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::DebugRenderer::LOD) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::DebugRenderer::LOD) MRBINDC_CLASSARG_END(_other, JPH::DebugRenderer::LOD))
     ));
+}
+
+const Jolt_JPH_Array_JPH_DebugRenderer_LOD *JPH_DebugRenderer_Geometry_Get_mLODs(const JPH_DebugRenderer_Geometry *_this)
+{
+    return (const Jolt_JPH_Array_JPH_DebugRenderer_LOD *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DebugRenderer::Geometry *)(_this)).mLODs);
+}
+
+void JPH_DebugRenderer_Geometry_Set_mLODs(JPH_DebugRenderer_Geometry *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_DebugRenderer_LOD *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::DebugRenderer::LOD>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DebugRenderer::Geometry *)(_this)).mLODs = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::DebugRenderer::LOD>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::DebugRenderer::LOD>), JPH::Array<JPH::DebugRenderer::LOD>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::DebugRenderer::LOD>), JPH::Array<JPH::DebugRenderer::LOD>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::DebugRenderer::LOD>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::DebugRenderer::LOD>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::DebugRenderer::LOD>));
+}
+
+Jolt_JPH_Array_JPH_DebugRenderer_LOD *JPH_DebugRenderer_Geometry_GetMutable_mLODs(JPH_DebugRenderer_Geometry *_this)
+{
+    return (Jolt_JPH_Array_JPH_DebugRenderer_LOD *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DebugRenderer::Geometry *)(_this)).mLODs);
 }
 
 const JPH_AABox *JPH_DebugRenderer_Geometry_Get_mBounds(const JPH_DebugRenderer_Geometry *_this)

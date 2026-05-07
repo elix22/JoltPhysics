@@ -139,6 +139,24 @@ public static partial class JPH
             return ret;
         }
 
+        ///< Points to create the hull from. Note that these points don't need to be the vertices of the convex hull, they can contain interior points or points on faces/edges.
+        public unsafe JPH.Const_Array_JPHVec3 mPoints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_Get_mPoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_Get_mPoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHVec3._Underlying *__JPH_ConvexHullShapeSettings_Get_mPoints(_Underlying *_this);
+                JPH.Const_Array_JPHVec3 __ret;
+                __ret = new(__JPH_ConvexHullShapeSettings_Get_mPoints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< Convex radius as supplied by the constructor. Note that during hull creation the convex radius can be made smaller if the value is too big for the hull.
         public unsafe float mMaxConvexRadius
         {
@@ -287,6 +305,33 @@ public static partial class JPH
             extern static JPH.ConvexHullShapeSettings._Underlying *__JPH_ConvexHullShapeSettings_Construct_4(JPH.Const_Vec3._Underlying *inPoints, int inNumPoints, float *inMaxConvexRadius, JPH.Const_PhysicsMaterial._Underlying *inMaterial);
             float __deref_inMaxConvexRadius = inMaxConvexRadius.GetValueOrDefault();
             _UnderlyingPtr = __JPH_ConvexHullShapeSettings_Construct_4(inPoints is not null ? inPoints._UnderlyingPtr : null, inNumPoints, inMaxConvexRadius.HasValue ? &__deref_inMaxConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_ConvexHullShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ShapeSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_ShapeSettings_AddRef(__JPH_ConvexHullShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_UnderlyingPtr));
+        }
+
+        /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
+        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        public unsafe Const_ConvexHullShapeSettings(JPH.Const_Array_JPHVec3 inPoints, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.ConvexHullShapeSettings._Underlying *__JPH_ConvexHullShapeSettings_Construct_3(JPH.Const_Array_JPHVec3._Underlying *inPoints, float *inConvexRadius, JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+            float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
+            _UnderlyingPtr = __JPH_ConvexHullShapeSettings_Construct_3(inPoints._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
@@ -615,6 +660,24 @@ public static partial class JPH
             return ret;
         }
 
+        ///< Points to create the hull from. Note that these points don't need to be the vertices of the convex hull, they can contain interior points or points on faces/edges.
+        public new unsafe JPH.Array_JPHVec3 mPoints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_GetMutable_mPoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_GetMutable_mPoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHVec3._Underlying *__JPH_ConvexHullShapeSettings_GetMutable_mPoints(_Underlying *_this);
+                JPH.Array_JPHVec3 __ret;
+                __ret = new(__JPH_ConvexHullShapeSettings_GetMutable_mPoints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< Convex radius as supplied by the constructor. Note that during hull creation the convex radius can be made smaller if the value is too big for the hull.
         public new unsafe ref float mMaxConvexRadius
         {
@@ -763,6 +826,33 @@ public static partial class JPH
             extern static JPH.ConvexHullShapeSettings._Underlying *__JPH_ConvexHullShapeSettings_Construct_4(JPH.Const_Vec3._Underlying *inPoints, int inNumPoints, float *inMaxConvexRadius, JPH.Const_PhysicsMaterial._Underlying *inMaterial);
             float __deref_inMaxConvexRadius = inMaxConvexRadius.GetValueOrDefault();
             _UnderlyingPtr = __JPH_ConvexHullShapeSettings_Construct_4(inPoints is not null ? inPoints._UnderlyingPtr : null, inNumPoints, inMaxConvexRadius.HasValue ? &__deref_inMaxConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__JPH_ConvexHullShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_Underlying *_this);
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_ShapeSettings_AddRef(void *_this);
+            __JPH_RefTarget_JPH_ShapeSettings_AddRef(__JPH_ConvexHullShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(_UnderlyingPtr));
+        }
+
+        /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
+        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        public unsafe ConvexHullShapeSettings(JPH.Const_Array_JPHVec3 inPoints, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.ConvexHullShapeSettings._Underlying *__JPH_ConvexHullShapeSettings_Construct_3(JPH.Const_Array_JPHVec3._Underlying *inPoints, float *inConvexRadius, JPH.Const_PhysicsMaterial._Underlying *inMaterial);
+            float __deref_inConvexRadius = inConvexRadius.GetValueOrDefault();
+            _UnderlyingPtr = __JPH_ConvexHullShapeSettings_Construct_3(inPoints._UnderlyingPtr, inConvexRadius.HasValue ? &__deref_inConvexRadius : null, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
@@ -1417,6 +1507,19 @@ public static partial class JPH
             #endif
             extern static float __JPH_ConvexHullShape_GetConvexRadius(_Underlying *_this);
             return __JPH_ConvexHullShape_GetConvexRadius(_UnderlyingPtr);
+        }
+
+        /// Get the planes of this convex hull
+        /// Generated from method `JPH::ConvexHullShape::GetPlanes`.
+        public unsafe JPH.Const_Array_JPHPlane GetPlanes()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ConvexHullShape_GetPlanes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ConvexHullShape_GetPlanes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHPlane._Underlying *__JPH_ConvexHullShape_GetPlanes(_Underlying *_this);
+            return new(__JPH_ConvexHullShape_GetPlanes(_UnderlyingPtr), is_owning: false);
         }
 
         /// Get the number of vertices in this convex hull

@@ -11,12 +11,14 @@
 #include <Jolt/Physics/Constraints/SpringSettings.h>
 #include <Jolt/Physics/Vehicle/VehicleConstraint.h>
 #include <Jolt/Physics/Vehicle/VehicleController.h>
+#include <Jolt/Physics/Vehicle/VehicleDifferential.h>
 #include <Jolt/Physics/Vehicle/VehicleEngine.h>
 #include <Jolt/Physics/Vehicle/VehicleTransmission.h>
 #include <Jolt/Physics/Vehicle/Wheel.h>
 #include <Jolt/Physics/Vehicle/WheeledVehicleController.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <functional>
@@ -902,6 +904,22 @@ JPH_VehicleTransmissionSettings *JPH_WheeledVehicleControllerSettings_GetMutable
     return (JPH_VehicleTransmissionSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::WheeledVehicleControllerSettings *)(_this)).mTransmission);
 }
 
+const Jolt_JPH_Array_JPH_VehicleDifferentialSettings *JPH_WheeledVehicleControllerSettings_Get_mDifferentials(const JPH_WheeledVehicleControllerSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_VehicleDifferentialSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::WheeledVehicleControllerSettings *)(_this)).mDifferentials);
+}
+
+void JPH_WheeledVehicleControllerSettings_Set_mDifferentials(JPH_WheeledVehicleControllerSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_VehicleDifferentialSettings *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::VehicleDifferentialSettings>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::WheeledVehicleControllerSettings *)(_this)).mDifferentials = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::VehicleDifferentialSettings>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::VehicleDifferentialSettings>), JPH::Array<JPH::VehicleDifferentialSettings>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::VehicleDifferentialSettings>), JPH::Array<JPH::VehicleDifferentialSettings>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::VehicleDifferentialSettings>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::VehicleDifferentialSettings>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::VehicleDifferentialSettings>));
+}
+
+Jolt_JPH_Array_JPH_VehicleDifferentialSettings *JPH_WheeledVehicleControllerSettings_GetMutable_mDifferentials(JPH_WheeledVehicleControllerSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_VehicleDifferentialSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::WheeledVehicleControllerSettings *)(_this)).mDifferentials);
+}
+
 const float *JPH_WheeledVehicleControllerSettings_Get_mDifferentialLimitedSlipRatio(const JPH_WheeledVehicleControllerSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::WheeledVehicleControllerSettings *)(_this)).mDifferentialLimitedSlipRatio);
@@ -1395,6 +1413,16 @@ const JPH_VehicleTransmission *JPH_WheeledVehicleController_GetTransmission(cons
 JPH_VehicleTransmission *JPH_WheeledVehicleController_GetTransmission_mut(JPH_WheeledVehicleController *_this)
 {
     return (JPH_VehicleTransmission *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::WheeledVehicleController *)(_this)).GetTransmission());
+}
+
+const Jolt_JPH_Array_JPH_VehicleDifferentialSettings *JPH_WheeledVehicleController_GetDifferentials(const JPH_WheeledVehicleController *_this)
+{
+    return (const Jolt_JPH_Array_JPH_VehicleDifferentialSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::WheeledVehicleController *)(_this)).GetDifferentials());
+}
+
+Jolt_JPH_Array_JPH_VehicleDifferentialSettings *JPH_WheeledVehicleController_GetDifferentials_mut(JPH_WheeledVehicleController *_this)
+{
+    return (Jolt_JPH_Array_JPH_VehicleDifferentialSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::WheeledVehicleController *)(_this)).GetDifferentials());
 }
 
 float JPH_WheeledVehicleController_GetDifferentialLimitedSlipRatio(const JPH_WheeledVehicleController *_this)

@@ -337,6 +337,24 @@ public static partial class JPH
                 return ret;
             }
 
+            /// All level of details for this mesh
+            public unsafe JPH.Const_Array_JPHDebugRendererLOD mLODs
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DebugRenderer_Geometry_Get_mLODs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DebugRenderer_Geometry_Get_mLODs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Const_Array_JPHDebugRendererLOD._Underlying *__JPH_DebugRenderer_Geometry_Get_mLODs(_Underlying *_this);
+                    JPH.Const_Array_JPHDebugRendererLOD __ret;
+                    __ret = new(__JPH_DebugRenderer_Geometry_Get_mLODs(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             /// Bounding box that encapsulates all LODs
             public unsafe JPH.Const_AABox mBounds
             {
@@ -671,6 +689,24 @@ public static partial class JPH
                 Geometry ret = new(__JPH_DebugRenderer_Geometry_StaticDowncastFrom_JPH_RefTarget_JPH_DebugRenderer_Geometry(parent._UnderlyingPtr), is_owning: false);
                 ret._KeepAliveEnclosingObject = parent;
                 return ret;
+            }
+
+            /// All level of details for this mesh
+            public new unsafe JPH.Array_JPHDebugRendererLOD mLODs
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_DebugRenderer_Geometry_GetMutable_mLODs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_DebugRenderer_Geometry_GetMutable_mLODs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Array_JPHDebugRendererLOD._Underlying *__JPH_DebugRenderer_Geometry_GetMutable_mLODs(_Underlying *_this);
+                    JPH.Array_JPHDebugRendererLOD __ret;
+                    __ret = new(__JPH_DebugRenderer_Geometry_GetMutable_mLODs(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
             }
 
             /// Bounding box that encapsulates all LODs

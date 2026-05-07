@@ -19,6 +19,7 @@
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <memory>
@@ -105,6 +106,16 @@ const JPH_SoftBodySharedSettings *JPH_SoftBodyMotionProperties_GetSettings(const
     return (const JPH_SoftBodySharedSettings *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodyMotionProperties *)(_this)).GetSettings());
 }
 
+const Jolt_JPH_Array_JPH_SoftBodyVertex *JPH_SoftBodyMotionProperties_GetVertices(const JPH_SoftBodyMotionProperties *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodyVertex *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodyMotionProperties *)(_this)).GetVertices());
+}
+
+Jolt_JPH_Array_JPH_SoftBodyVertex *JPH_SoftBodyMotionProperties_GetVertices_mut(JPH_SoftBodyMotionProperties *_this)
+{
+    return (Jolt_JPH_Array_JPH_SoftBodyVertex *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodyMotionProperties *)(_this)).GetVertices());
+}
+
 const JPH_SoftBodyVertex *JPH_SoftBodyMotionProperties_GetVertex(const JPH_SoftBodyMotionProperties *_this, unsigned int inIndex)
 {
     return (const JPH_SoftBodyVertex *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodyMotionProperties *)(_this)).GetVertex(
@@ -131,6 +142,11 @@ JPH_Vec3 *JPH_SoftBodyMotionProperties_GetRodAngularVelocity(const JPH_SoftBodyM
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodyMotionProperties *)(_this)).GetRodAngularVelocity(
         inIndex
     ));
+}
+
+const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face *JPH_SoftBodyMotionProperties_GetFaces(const JPH_SoftBodyMotionProperties *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodyMotionProperties *)(_this)).GetFaces());
 }
 
 const JPH_SoftBodySharedSettings_Face *JPH_SoftBodyMotionProperties_GetFace(const JPH_SoftBodyMotionProperties *_this, unsigned int inIndex)

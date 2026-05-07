@@ -52,6 +52,24 @@ public static partial class JPH
             }
         }
 
+        ///< Indices of wheels that are inside this track, should include the driven wheel too
+        public unsafe JPH.Const_Array_UnsignedInt mWheels
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTrackSettings_Get_mWheels", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTrackSettings_Get_mWheels", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_UnsignedInt._Underlying *__JPH_VehicleTrackSettings_Get_mWheels(_Underlying *_this);
+                JPH.Const_Array_UnsignedInt __ret;
+                __ret = new(__JPH_VehicleTrackSettings_Get_mWheels(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< Moment of inertia (kg m^2) of the track and its wheels as seen on the driven wheel
         public unsafe float mInertia
         {
@@ -124,6 +142,19 @@ public static partial class JPH
             #endif
             extern static JPH.VehicleTrackSettings._Underlying *__JPH_VehicleTrackSettings_DefaultConstruct();
             _UnderlyingPtr = __JPH_VehicleTrackSettings_DefaultConstruct();
+        }
+
+        /// Constructs `JPH::VehicleTrackSettings` elementwise.
+        public unsafe Const_VehicleTrackSettings(uint mDrivenWheel, JPH._ByValue_Array_UnsignedInt mWheels, float mInertia, float mAngularDamping, float mMaxBrakeTorque, float mDifferentialRatio) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTrackSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTrackSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.VehicleTrackSettings._Underlying *__JPH_VehicleTrackSettings_ConstructFrom(uint mDrivenWheel, JPH._PassBy mWheels_pass_by, JPH.Array_UnsignedInt._Underlying *mWheels, float mInertia, float mAngularDamping, float mMaxBrakeTorque, float mDifferentialRatio);
+            _UnderlyingPtr = __JPH_VehicleTrackSettings_ConstructFrom(mDrivenWheel, mWheels.PassByMode, mWheels.Value is not null ? mWheels.Value._UnderlyingPtr : null, mInertia, mAngularDamping, mMaxBrakeTorque, mDifferentialRatio);
+            if (mWheels.Value is not null) _KeepAlive(mWheels.Value);
         }
 
         /// Generated from constructor `JPH::VehicleTrackSettings::VehicleTrackSettings`.
@@ -303,6 +334,24 @@ public static partial class JPH
             }
         }
 
+        ///< Indices of wheels that are inside this track, should include the driven wheel too
+        public new unsafe JPH.Array_UnsignedInt mWheels
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTrackSettings_GetMutable_mWheels", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTrackSettings_GetMutable_mWheels", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_UnsignedInt._Underlying *__JPH_VehicleTrackSettings_GetMutable_mWheels(_Underlying *_this);
+                JPH.Array_UnsignedInt __ret;
+                __ret = new(__JPH_VehicleTrackSettings_GetMutable_mWheels(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< Moment of inertia (kg m^2) of the track and its wheels as seen on the driven wheel
         public new unsafe ref float mInertia
         {
@@ -375,6 +424,19 @@ public static partial class JPH
             #endif
             extern static JPH.VehicleTrackSettings._Underlying *__JPH_VehicleTrackSettings_DefaultConstruct();
             _UnderlyingPtr = __JPH_VehicleTrackSettings_DefaultConstruct();
+        }
+
+        /// Constructs `JPH::VehicleTrackSettings` elementwise.
+        public unsafe VehicleTrackSettings(uint mDrivenWheel, JPH._ByValue_Array_UnsignedInt mWheels, float mInertia, float mAngularDamping, float mMaxBrakeTorque, float mDifferentialRatio) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTrackSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTrackSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.VehicleTrackSettings._Underlying *__JPH_VehicleTrackSettings_ConstructFrom(uint mDrivenWheel, JPH._PassBy mWheels_pass_by, JPH.Array_UnsignedInt._Underlying *mWheels, float mInertia, float mAngularDamping, float mMaxBrakeTorque, float mDifferentialRatio);
+            _UnderlyingPtr = __JPH_VehicleTrackSettings_ConstructFrom(mDrivenWheel, mWheels.PassByMode, mWheels.Value is not null ? mWheels.Value._UnderlyingPtr : null, mInertia, mAngularDamping, mMaxBrakeTorque, mDifferentialRatio);
+            if (mWheels.Value is not null) _KeepAlive(mWheels.Value);
         }
 
         /// Generated from constructor `JPH::VehicleTrackSettings::VehicleTrackSettings`.
@@ -547,6 +609,24 @@ public static partial class JPH
             }
         }
 
+        ///< Indices of wheels that are inside this track, should include the driven wheel too
+        public unsafe JPH.Const_Array_UnsignedInt mWheels
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTrack_Get_mWheels", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTrack_Get_mWheels", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_UnsignedInt._Underlying *__JPH_VehicleTrack_Get_mWheels(_Underlying *_this);
+                JPH.Const_Array_UnsignedInt __ret;
+                __ret = new(__JPH_VehicleTrack_Get_mWheels(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< Moment of inertia (kg m^2) of the track and its wheels as seen on the driven wheel
         public unsafe float mInertia
         {
@@ -704,6 +784,24 @@ public static partial class JPH
                 #endif
                 extern static uint *__JPH_VehicleTrack_GetMutable_mDrivenWheel(_Underlying *_this);
                 return ref *__JPH_VehicleTrack_GetMutable_mDrivenWheel(_UnderlyingPtr);
+            }
+        }
+
+        ///< Indices of wheels that are inside this track, should include the driven wheel too
+        public new unsafe JPH.Array_UnsignedInt mWheels
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTrack_GetMutable_mWheels", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTrack_GetMutable_mWheels", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_UnsignedInt._Underlying *__JPH_VehicleTrack_GetMutable_mWheels(_Underlying *_this);
+                JPH.Array_UnsignedInt __ret;
+                __ret = new(__JPH_VehicleTrack_GetMutable_mWheels(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
             }
         }
 

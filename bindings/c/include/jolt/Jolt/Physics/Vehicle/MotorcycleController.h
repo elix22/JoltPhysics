@@ -22,6 +22,7 @@ typedef struct JPH_VehicleEngineSettings JPH_VehicleEngineSettings; // Defined i
 typedef struct JPH_VehicleTransmissionSettings JPH_VehicleTransmissionSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleTransmission.h>`.
 typedef struct JPH_WheeledVehicleController JPH_WheeledVehicleController; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
 typedef struct JPH_WheeledVehicleControllerSettings JPH_WheeledVehicleControllerSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/WheeledVehicleController.h>`.
+typedef struct Jolt_JPH_Array_JPH_VehicleDifferentialSettings Jolt_JPH_Array_JPH_VehicleDifferentialSettings; // Defined in `#include <JPH_Array_JPH_VehicleDifferentialSettings.h>`.
 typedef struct Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_float_float_float Jolt_std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_float_float_float; // Defined in `#include <std_function_void_from_unsigned_int_float_ref_float_ref_float_float_float_float_float_float.h>`.
 
 
@@ -212,6 +213,27 @@ JOLT_API void JPH_MotorcycleControllerSettings_Set_mTransmission(JPH_MotorcycleC
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API JPH_VehicleTransmissionSettings *JPH_MotorcycleControllerSettings_GetMutable_mTransmission(JPH_MotorcycleControllerSettings *_this);
+
+///< List of differentials and their properties
+/// Returns a pointer to a member variable of class `JPH::MotorcycleControllerSettings` named `mDifferentials`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_VehicleDifferentialSettings *JPH_MotorcycleControllerSettings_Get_mDifferentials(const JPH_MotorcycleControllerSettings *_this);
+
+///< List of differentials and their properties
+/// Modifies a member variable of class `JPH::MotorcycleControllerSettings` named `mDifferentials`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mDifferentials`.
+/// When this function is called, this object will drop object references it held previously in `mDifferentials`.
+JOLT_API void JPH_MotorcycleControllerSettings_Set_mDifferentials(JPH_MotorcycleControllerSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_VehicleDifferentialSettings *value);
+
+///< List of differentials and their properties
+/// Returns a mutable pointer to a member variable of class `JPH::MotorcycleControllerSettings` named `mDifferentials`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_VehicleDifferentialSettings *JPH_MotorcycleControllerSettings_GetMutable_mDifferentials(JPH_MotorcycleControllerSettings *_this);
 
 ///< Ratio max / min average wheel speed of each differential (measured at the clutch). When the ratio is exceeded all torque gets distributed to the differential with the minimal average velocity. This allows implementing a limited slip differential between differentials. Set to FLT_MAX for an open differential. Value should be > 1.
 /// Returns a pointer to a member variable of class `JPH::MotorcycleControllerSettings` named `mDifferentialLimitedSlipRatio`.

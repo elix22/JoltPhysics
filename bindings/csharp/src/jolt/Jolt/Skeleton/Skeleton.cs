@@ -256,6 +256,20 @@ public static partial class JPH
             __Jolt_delete_array_JPH_Skeleton_void_ptr_void_ptr(inPointer, inPlace);
         }
 
+        ///@name Access to the joints
+        ///@{
+        /// Generated from method `JPH::Skeleton::GetJoints`.
+        public unsafe JPH.Const_Array_JPHSkeletonJoint GetJoints()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Skeleton_GetJoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Skeleton_GetJoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHSkeletonJoint._Underlying *__JPH_Skeleton_GetJoints(_Underlying *_this);
+            return new(__JPH_Skeleton_GetJoints(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Generated from method `JPH::Skeleton::GetJointCount`.
         public unsafe int GetJointCount()
         {
@@ -794,6 +808,18 @@ public static partial class JPH
             _DiscardKeepAlive();
             if (_other.Value is not null) _KeepAlive(_other.Value);
             return new(__JPH_Skeleton_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+        }
+
+        /// Generated from method `JPH::Skeleton::GetJoints`.
+        public unsafe new JPH.Array_JPHSkeletonJoint GetJoints()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Skeleton_GetJoints_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Skeleton_GetJoints_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHSkeletonJoint._Underlying *__JPH_Skeleton_GetJoints_mut(_Underlying *_this);
+            return new(__JPH_Skeleton_GetJoints_mut(_UnderlyingPtr), is_owning: false);
         }
 
         /// Generated from method `JPH::Skeleton::GetJoint`.

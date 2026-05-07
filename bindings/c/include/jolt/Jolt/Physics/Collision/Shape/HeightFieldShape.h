@@ -35,6 +35,8 @@ typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt
 typedef struct JPH_SubShapeIDCreator JPH_SubShapeIDCreator; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
 typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_float Jolt_JPH_Array_float; // Defined in `#include <JPH_Array_float.h>`.
+typedef struct Jolt_JPH_Array_unsigned_char Jolt_JPH_Array_unsigned_char; // Defined in `#include <JPH_Array_unsigned_char.h>`.
 
 
 /// Class that constructs a HeightFieldShape
@@ -226,6 +228,48 @@ JOLT_API void JPH_HeightFieldShapeSettings_Set_mBitsPerSample(JPH_HeightFieldSha
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API unsigned int *JPH_HeightFieldShapeSettings_GetMutable_mBitsPerSample(JPH_HeightFieldShapeSettings *_this);
+
+/// An array of mSampleCount^2 height samples. Samples are stored in row major order, so the sample at (x, y) is at index y * mSampleCount + x.
+/// Returns a pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mHeightSamples`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_float *JPH_HeightFieldShapeSettings_Get_mHeightSamples(const JPH_HeightFieldShapeSettings *_this);
+
+/// An array of mSampleCount^2 height samples. Samples are stored in row major order, so the sample at (x, y) is at index y * mSampleCount + x.
+/// Modifies a member variable of class `JPH::HeightFieldShapeSettings` named `mHeightSamples`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mHeightSamples`.
+/// When this function is called, this object will drop object references it held previously in `mHeightSamples`.
+JOLT_API void JPH_HeightFieldShapeSettings_Set_mHeightSamples(JPH_HeightFieldShapeSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_float *value);
+
+/// An array of mSampleCount^2 height samples. Samples are stored in row major order, so the sample at (x, y) is at index y * mSampleCount + x.
+/// Returns a mutable pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mHeightSamples`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_float *JPH_HeightFieldShapeSettings_GetMutable_mHeightSamples(JPH_HeightFieldShapeSettings *_this);
+
+/// An array of (mSampleCount - 1)^2 material indices.
+/// Returns a pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mMaterialIndices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_unsigned_char *JPH_HeightFieldShapeSettings_Get_mMaterialIndices(const JPH_HeightFieldShapeSettings *_this);
+
+/// An array of (mSampleCount - 1)^2 material indices.
+/// Modifies a member variable of class `JPH::HeightFieldShapeSettings` named `mMaterialIndices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mMaterialIndices`.
+/// When this function is called, this object will drop object references it held previously in `mMaterialIndices`.
+JOLT_API void JPH_HeightFieldShapeSettings_Set_mMaterialIndices(JPH_HeightFieldShapeSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_char *value);
+
+/// An array of (mSampleCount - 1)^2 material indices.
+/// Returns a mutable pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mMaterialIndices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_unsigned_char *JPH_HeightFieldShapeSettings_GetMutable_mMaterialIndices(JPH_HeightFieldShapeSettings *_this);
 
 // cos(5 degrees)
 /// Returns a pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mActiveEdgeCosThresholdAngle`.

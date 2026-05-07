@@ -15,6 +15,11 @@ typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat4
 typedef struct JPH_RefTarget_JPH_SkeletonMapper JPH_RefTarget_JPH_SkeletonMapper; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
 typedef struct JPH_Skeleton JPH_Skeleton; // Defined in `#include <jolt/Jolt/Skeleton/Skeleton.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_SkeletonMapper_Chain Jolt_JPH_Array_JPH_SkeletonMapper_Chain; // Defined in `#include <JPH_Array_JPH_SkeletonMapper_Chain.h>`.
+typedef struct Jolt_JPH_Array_JPH_SkeletonMapper_Locked Jolt_JPH_Array_JPH_SkeletonMapper_Locked; // Defined in `#include <JPH_Array_JPH_SkeletonMapper_Locked.h>`.
+typedef struct Jolt_JPH_Array_JPH_SkeletonMapper_Mapping Jolt_JPH_Array_JPH_SkeletonMapper_Mapping; // Defined in `#include <JPH_Array_JPH_SkeletonMapper_Mapping.h>`.
+typedef struct Jolt_JPH_Array_JPH_SkeletonMapper_Unmapped Jolt_JPH_Array_JPH_SkeletonMapper_Unmapped; // Defined in `#include <JPH_Array_JPH_SkeletonMapper_Unmapped.h>`.
+typedef struct Jolt_JPH_Array_int Jolt_JPH_Array_int; // Defined in `#include <JPH_Array_int.h>`.
 
 
 /// A joint that maps 1-on-1 to a joint in the other skeleton
@@ -153,6 +158,48 @@ JOLT_API int JPH_SkeletonMapper_GetMappedJointIdx(const JPH_SkeletonMapper *_thi
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_SkeletonMapper_IsJointTranslationLocked(const JPH_SkeletonMapper *_this, int inJoint2Idx);
 
+///@name Access to the mapped joints
+///@{
+/// Generated from method `JPH::SkeletonMapper::GetMappings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_SkeletonMapper_Mapping *JPH_SkeletonMapper_GetMappings(const JPH_SkeletonMapper *_this);
+
+/// Generated from method `JPH::SkeletonMapper::GetMappings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API Jolt_JPH_Array_JPH_SkeletonMapper_Mapping *JPH_SkeletonMapper_GetMappings_mut(JPH_SkeletonMapper *_this);
+
+/// Generated from method `JPH::SkeletonMapper::GetChains`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_GetChains(const JPH_SkeletonMapper *_this);
+
+/// Generated from method `JPH::SkeletonMapper::GetChains`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API Jolt_JPH_Array_JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_GetChains_mut(JPH_SkeletonMapper *_this);
+
+/// Generated from method `JPH::SkeletonMapper::GetUnmapped`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_SkeletonMapper_Unmapped *JPH_SkeletonMapper_GetUnmapped(const JPH_SkeletonMapper *_this);
+
+/// Generated from method `JPH::SkeletonMapper::GetUnmapped`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API Jolt_JPH_Array_JPH_SkeletonMapper_Unmapped *JPH_SkeletonMapper_GetUnmapped_mut(JPH_SkeletonMapper *_this);
+
+/// Generated from method `JPH::SkeletonMapper::GetLockedTranslations`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_SkeletonMapper_Locked *JPH_SkeletonMapper_GetLockedTranslations(const JPH_SkeletonMapper *_this);
+
+/// Generated from method `JPH::SkeletonMapper::GetLockedTranslations`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API Jolt_JPH_Array_JPH_SkeletonMapper_Locked *JPH_SkeletonMapper_GetLockedTranslations_mut(JPH_SkeletonMapper *_this);
+
 /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
 /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
 /// the object and at that point in time it is checked that no references are left to the structure.
@@ -288,6 +335,48 @@ JOLT_API void JPH_SkeletonMapper_Mapping_DestroyArray(const JPH_SkeletonMapper_M
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API JPH_SkeletonMapper_Mapping *JPH_SkeletonMapper_Mapping_AssignFromAnother(JPH_SkeletonMapper_Mapping *_this, const JPH_SkeletonMapper_Mapping *_other);
 
+///< Joint chain from skeleton 1
+/// Returns a pointer to a member variable of class `JPH::SkeletonMapper::Chain` named `mJointIndices1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_int *JPH_SkeletonMapper_Chain_Get_mJointIndices1(const JPH_SkeletonMapper_Chain *_this);
+
+///< Joint chain from skeleton 1
+/// Modifies a member variable of class `JPH::SkeletonMapper::Chain` named `mJointIndices1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mJointIndices1`.
+/// When this function is called, this object will drop object references it held previously in `mJointIndices1`.
+JOLT_API void JPH_SkeletonMapper_Chain_Set_mJointIndices1(JPH_SkeletonMapper_Chain *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_int *value);
+
+///< Joint chain from skeleton 1
+/// Returns a mutable pointer to a member variable of class `JPH::SkeletonMapper::Chain` named `mJointIndices1`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_int *JPH_SkeletonMapper_Chain_GetMutable_mJointIndices1(JPH_SkeletonMapper_Chain *_this);
+
+///< Corresponding joint chain from skeleton 2
+/// Returns a pointer to a member variable of class `JPH::SkeletonMapper::Chain` named `mJointIndices2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_int *JPH_SkeletonMapper_Chain_Get_mJointIndices2(const JPH_SkeletonMapper_Chain *_this);
+
+///< Corresponding joint chain from skeleton 2
+/// Modifies a member variable of class `JPH::SkeletonMapper::Chain` named `mJointIndices2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mJointIndices2`.
+/// When this function is called, this object will drop object references it held previously in `mJointIndices2`.
+JOLT_API void JPH_SkeletonMapper_Chain_Set_mJointIndices2(JPH_SkeletonMapper_Chain *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_int *value);
+
+///< Corresponding joint chain from skeleton 2
+/// Returns a mutable pointer to a member variable of class `JPH::SkeletonMapper::Chain` named `mJointIndices2`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_int *JPH_SkeletonMapper_Chain_GetMutable_mJointIndices2(JPH_SkeletonMapper_Chain *_this);
+
 /// Constructs an empty (default-constructed) instance.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SkeletonMapper_Chain_Destroy()` to free it when you're done using it.
 JOLT_API JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_Chain_DefaultConstruct(void);
@@ -309,6 +398,16 @@ JOLT_API JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_Chain_OffsetMutablePtr(JPH
 /// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SkeletonMapper_Chain_Destroy()` to free it when you're done using it.
 JOLT_API JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_Chain_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_SkeletonMapper_Chain *_other);
+
+/// Generated from constructor `JPH::SkeletonMapper::Chain::Chain`.
+/// Parameter `inJointIndices1` can not be null. It is a single object.
+/// In C++ this parameter takes an rvalue reference: it might invalidate the passed object,
+///   but if your pointer is owning, you must still destroy it manually later.
+/// Parameter `inJointIndices2` can not be null. It is a single object.
+/// In C++ this parameter takes an rvalue reference: it might invalidate the passed object,
+///   but if your pointer is owning, you must still destroy it manually later.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SkeletonMapper_Chain_Destroy()` to free it when you're done using it.
+JOLT_API JPH_SkeletonMapper_Chain *JPH_SkeletonMapper_Chain_Construct(Jolt_JPH_Array_int *inJointIndices1, Jolt_JPH_Array_int *inJointIndices2);
 
 /// Destroys a heap-allocated instance of `JPH_SkeletonMapper_Chain`. Does nothing if the pointer is null.
 JOLT_API void JPH_SkeletonMapper_Chain_Destroy(const JPH_SkeletonMapper_Chain *_this);

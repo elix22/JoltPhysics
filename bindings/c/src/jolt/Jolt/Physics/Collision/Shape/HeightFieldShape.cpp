@@ -22,6 +22,7 @@
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
@@ -138,6 +139,38 @@ void JPH_HeightFieldShapeSettings_Set_mBitsPerSample(JPH_HeightFieldShapeSetting
 unsigned int *JPH_HeightFieldShapeSettings_GetMutable_mBitsPerSample(JPH_HeightFieldShapeSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HeightFieldShapeSettings *)(_this)).mBitsPerSample);
+}
+
+const Jolt_JPH_Array_float *JPH_HeightFieldShapeSettings_Get_mHeightSamples(const JPH_HeightFieldShapeSettings *_this)
+{
+    return (const Jolt_JPH_Array_float *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShapeSettings *)(_this)).mHeightSamples);
+}
+
+void JPH_HeightFieldShapeSettings_Set_mHeightSamples(JPH_HeightFieldShapeSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_float *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<float>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HeightFieldShapeSettings *)(_this)).mHeightSamples = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<float>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<float>), JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<float>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<float>) MRBINDC_CLASSARG_END(value, JPH::Array<float>));
+}
+
+Jolt_JPH_Array_float *JPH_HeightFieldShapeSettings_GetMutable_mHeightSamples(JPH_HeightFieldShapeSettings *_this)
+{
+    return (Jolt_JPH_Array_float *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HeightFieldShapeSettings *)(_this)).mHeightSamples);
+}
+
+const Jolt_JPH_Array_unsigned_char *JPH_HeightFieldShapeSettings_Get_mMaterialIndices(const JPH_HeightFieldShapeSettings *_this)
+{
+    return (const Jolt_JPH_Array_unsigned_char *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::HeightFieldShapeSettings *)(_this)).mMaterialIndices);
+}
+
+void JPH_HeightFieldShapeSettings_Set_mMaterialIndices(JPH_HeightFieldShapeSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_char *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<unsigned char>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HeightFieldShapeSettings *)(_this)).mMaterialIndices = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<unsigned char>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<unsigned char>), JPH::Array<unsigned char>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<unsigned char>), JPH::Array<unsigned char>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned char>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<unsigned char>) MRBINDC_CLASSARG_END(value, JPH::Array<unsigned char>));
+}
+
+Jolt_JPH_Array_unsigned_char *JPH_HeightFieldShapeSettings_GetMutable_mMaterialIndices(JPH_HeightFieldShapeSettings *_this)
+{
+    return (Jolt_JPH_Array_unsigned_char *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::HeightFieldShapeSettings *)(_this)).mMaterialIndices);
 }
 
 const float *JPH_HeightFieldShapeSettings_Get_mActiveEdgeCosThresholdAngle(const JPH_HeightFieldShapeSettings *_this)

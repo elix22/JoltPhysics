@@ -139,6 +139,23 @@ public static partial class JPH
             return ret;
         }
 
+        public unsafe JPH.Const_Array_JPHCompoundShapeSettingsSubShapeSettings mSubShapes
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_Get_mSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_Get_mSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHCompoundShapeSettingsSubShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_Get_mSubShapes(_Underlying *_this);
+                JPH.Const_Array_JPHCompoundShapeSettingsSubShapeSettings __ret;
+                __ret = new(__JPH_MutableCompoundShapeSettings_Get_mSubShapes(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         /// User data (to be used freely by the application)
         public unsafe UIntPtr mUserData
         {
@@ -524,6 +541,23 @@ public static partial class JPH
             MutableCompoundShapeSettings ret = new(__JPH_MutableCompoundShapeSettings_StaticDowncastFrom_JPH_CompoundShapeSettings(parent._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = parent;
             return ret;
+        }
+
+        public new unsafe JPH.Array_JPHCompoundShapeSettingsSubShapeSettings mSubShapes
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_GetMutable_mSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShapeSettings_GetMutable_mSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHCompoundShapeSettingsSubShapeSettings._Underlying *__JPH_MutableCompoundShapeSettings_GetMutable_mSubShapes(_Underlying *_this);
+                JPH.Array_JPHCompoundShapeSettingsSubShapeSettings __ret;
+                __ret = new(__JPH_MutableCompoundShapeSettings_GetMutable_mSubShapes(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
         }
 
         /// User data (to be used freely by the application)
@@ -1285,6 +1319,19 @@ public static partial class JPH
             #endif
             extern static int __JPH_MutableCompoundShape_GetTrianglesNext(_Underlying *_this, JPH.Shape.GetTrianglesContext._Underlying *ioContext, int inMaxTrianglesRequested, JPH.Float3._Underlying *outTriangleVertices, void **outMaterials);
             return __JPH_MutableCompoundShape_GetTrianglesNext(_UnderlyingPtr, ioContext._UnderlyingPtr, inMaxTrianglesRequested, outTriangleVertices is not null ? outTriangleVertices._UnderlyingPtr : null, outMaterials);
+        }
+
+        /// Access to the sub shapes of this compound
+        /// Generated from method `JPH::MutableCompoundShape::GetSubShapes`.
+        public unsafe JPH.Const_Array_JPHCompoundShapeSubShape GetSubShapes()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_GetSubShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHCompoundShapeSubShape._Underlying *__JPH_MutableCompoundShape_GetSubShapes(_Underlying *_this);
+            return new(__JPH_MutableCompoundShape_GetSubShapes(_UnderlyingPtr), is_owning: false);
         }
 
         /// Get the total number of sub shapes

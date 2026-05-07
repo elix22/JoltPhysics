@@ -22,6 +22,7 @@
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
@@ -29,6 +30,22 @@
 #include <new>
 #include <stdexcept>
 
+
+const Jolt_JPH_Array_JPH_Float3 *JPH_MeshShapeSettings_Get_mTriangleVertices(const JPH_MeshShapeSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_Float3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MeshShapeSettings *)(_this)).mTriangleVertices);
+}
+
+void JPH_MeshShapeSettings_Set_mTriangleVertices(JPH_MeshShapeSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_Float3 *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::Float3>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MeshShapeSettings *)(_this)).mTriangleVertices = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::Float3>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::Float3>), JPH::Array<JPH::Float3>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::Float3>), JPH::Array<JPH::Float3>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::Float3>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::Float3>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::Float3>));
+}
+
+Jolt_JPH_Array_JPH_Float3 *JPH_MeshShapeSettings_GetMutable_mTriangleVertices(JPH_MeshShapeSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_Float3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MeshShapeSettings *)(_this)).mTriangleVertices);
+}
 
 const unsigned int *JPH_MeshShapeSettings_Get_mMaxTrianglesPerLeaf(const JPH_MeshShapeSettings *_this)
 {

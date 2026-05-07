@@ -9,6 +9,7 @@
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
 #include <cstring>
 #include <memory>
@@ -16,6 +17,166 @@
 #include <stdexcept>
 #include <type_traits>
 
+
+const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_Get_mVertices(const JPH_SoftBodySharedSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Vertex *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(_this)).mVertices);
+}
+
+void JPH_SoftBodySharedSettings_Set_mVertices(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_Vertex *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::SoftBodySharedSettings::Vertex>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mVertices = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::SoftBodySharedSettings::Vertex>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::SoftBodySharedSettings::Vertex>), JPH::Array<JPH::SoftBodySharedSettings::Vertex>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::SoftBodySharedSettings::Vertex>), JPH::Array<JPH::SoftBodySharedSettings::Vertex>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::SoftBodySharedSettings::Vertex>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::SoftBodySharedSettings::Vertex>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::SoftBodySharedSettings::Vertex>));
+}
+
+Jolt_JPH_Array_JPH_SoftBodySharedSettings_Vertex *JPH_SoftBodySharedSettings_GetMutable_mVertices(JPH_SoftBodySharedSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_SoftBodySharedSettings_Vertex *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mVertices);
+}
+
+const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face *JPH_SoftBodySharedSettings_Get_mFaces(const JPH_SoftBodySharedSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(_this)).mFaces);
+}
+
+void JPH_SoftBodySharedSettings_Set_mFaces(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::SoftBodySharedSettings::Face>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mFaces = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::SoftBodySharedSettings::Face>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::SoftBodySharedSettings::Face>), JPH::Array<JPH::SoftBodySharedSettings::Face>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::SoftBodySharedSettings::Face>), JPH::Array<JPH::SoftBodySharedSettings::Face>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::SoftBodySharedSettings::Face>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::SoftBodySharedSettings::Face>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::SoftBodySharedSettings::Face>));
+}
+
+Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face *JPH_SoftBodySharedSettings_GetMutable_mFaces(JPH_SoftBodySharedSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_SoftBodySharedSettings_Face *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mFaces);
+}
+
+const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Edge *JPH_SoftBodySharedSettings_Get_mEdgeConstraints(const JPH_SoftBodySharedSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Edge *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(_this)).mEdgeConstraints);
+}
+
+void JPH_SoftBodySharedSettings_Set_mEdgeConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_Edge *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::SoftBodySharedSettings::Edge>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mEdgeConstraints = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::SoftBodySharedSettings::Edge>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::SoftBodySharedSettings::Edge>), JPH::Array<JPH::SoftBodySharedSettings::Edge>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::SoftBodySharedSettings::Edge>), JPH::Array<JPH::SoftBodySharedSettings::Edge>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::SoftBodySharedSettings::Edge>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::SoftBodySharedSettings::Edge>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::SoftBodySharedSettings::Edge>));
+}
+
+Jolt_JPH_Array_JPH_SoftBodySharedSettings_Edge *JPH_SoftBodySharedSettings_GetMutable_mEdgeConstraints(JPH_SoftBodySharedSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_SoftBodySharedSettings_Edge *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mEdgeConstraints);
+}
+
+const Jolt_JPH_Array_JPH_SoftBodySharedSettings_DihedralBend *JPH_SoftBodySharedSettings_Get_mDihedralBendConstraints(const JPH_SoftBodySharedSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodySharedSettings_DihedralBend *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(_this)).mDihedralBendConstraints);
+}
+
+void JPH_SoftBodySharedSettings_Set_mDihedralBendConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_DihedralBend *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::SoftBodySharedSettings::DihedralBend>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mDihedralBendConstraints = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::SoftBodySharedSettings::DihedralBend>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::SoftBodySharedSettings::DihedralBend>), JPH::Array<JPH::SoftBodySharedSettings::DihedralBend>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::SoftBodySharedSettings::DihedralBend>), JPH::Array<JPH::SoftBodySharedSettings::DihedralBend>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::SoftBodySharedSettings::DihedralBend>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::SoftBodySharedSettings::DihedralBend>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::SoftBodySharedSettings::DihedralBend>));
+}
+
+Jolt_JPH_Array_JPH_SoftBodySharedSettings_DihedralBend *JPH_SoftBodySharedSettings_GetMutable_mDihedralBendConstraints(JPH_SoftBodySharedSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_SoftBodySharedSettings_DihedralBend *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mDihedralBendConstraints);
+}
+
+const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Volume *JPH_SoftBodySharedSettings_Get_mVolumeConstraints(const JPH_SoftBodySharedSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Volume *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(_this)).mVolumeConstraints);
+}
+
+void JPH_SoftBodySharedSettings_Set_mVolumeConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_Volume *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::SoftBodySharedSettings::Volume>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mVolumeConstraints = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::SoftBodySharedSettings::Volume>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::SoftBodySharedSettings::Volume>), JPH::Array<JPH::SoftBodySharedSettings::Volume>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::SoftBodySharedSettings::Volume>), JPH::Array<JPH::SoftBodySharedSettings::Volume>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::SoftBodySharedSettings::Volume>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::SoftBodySharedSettings::Volume>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::SoftBodySharedSettings::Volume>));
+}
+
+Jolt_JPH_Array_JPH_SoftBodySharedSettings_Volume *JPH_SoftBodySharedSettings_GetMutable_mVolumeConstraints(JPH_SoftBodySharedSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_SoftBodySharedSettings_Volume *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mVolumeConstraints);
+}
+
+const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Skinned *JPH_SoftBodySharedSettings_Get_mSkinnedConstraints(const JPH_SoftBodySharedSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodySharedSettings_Skinned *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(_this)).mSkinnedConstraints);
+}
+
+void JPH_SoftBodySharedSettings_Set_mSkinnedConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_Skinned *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::SoftBodySharedSettings::Skinned>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mSkinnedConstraints = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::SoftBodySharedSettings::Skinned>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::SoftBodySharedSettings::Skinned>), JPH::Array<JPH::SoftBodySharedSettings::Skinned>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::SoftBodySharedSettings::Skinned>), JPH::Array<JPH::SoftBodySharedSettings::Skinned>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::SoftBodySharedSettings::Skinned>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::SoftBodySharedSettings::Skinned>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::SoftBodySharedSettings::Skinned>));
+}
+
+Jolt_JPH_Array_JPH_SoftBodySharedSettings_Skinned *JPH_SoftBodySharedSettings_GetMutable_mSkinnedConstraints(JPH_SoftBodySharedSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_SoftBodySharedSettings_Skinned *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mSkinnedConstraints);
+}
+
+const Jolt_JPH_Array_JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_Get_mInvBindMatrices(const JPH_SoftBodySharedSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodySharedSettings_InvBind *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(_this)).mInvBindMatrices);
+}
+
+void JPH_SoftBodySharedSettings_Set_mInvBindMatrices(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_InvBind *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::SoftBodySharedSettings::InvBind>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mInvBindMatrices = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::SoftBodySharedSettings::InvBind>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::SoftBodySharedSettings::InvBind>), JPH::Array<JPH::SoftBodySharedSettings::InvBind>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::SoftBodySharedSettings::InvBind>), JPH::Array<JPH::SoftBodySharedSettings::InvBind>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::SoftBodySharedSettings::InvBind>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::SoftBodySharedSettings::InvBind>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::SoftBodySharedSettings::InvBind>));
+}
+
+Jolt_JPH_Array_JPH_SoftBodySharedSettings_InvBind *JPH_SoftBodySharedSettings_GetMutable_mInvBindMatrices(JPH_SoftBodySharedSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_SoftBodySharedSettings_InvBind *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mInvBindMatrices);
+}
+
+const Jolt_JPH_Array_JPH_SoftBodySharedSettings_LRA *JPH_SoftBodySharedSettings_Get_mLRAConstraints(const JPH_SoftBodySharedSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodySharedSettings_LRA *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(_this)).mLRAConstraints);
+}
+
+void JPH_SoftBodySharedSettings_Set_mLRAConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_LRA *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::SoftBodySharedSettings::LRA>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mLRAConstraints = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::SoftBodySharedSettings::LRA>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::SoftBodySharedSettings::LRA>), JPH::Array<JPH::SoftBodySharedSettings::LRA>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::SoftBodySharedSettings::LRA>), JPH::Array<JPH::SoftBodySharedSettings::LRA>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::SoftBodySharedSettings::LRA>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::SoftBodySharedSettings::LRA>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::SoftBodySharedSettings::LRA>));
+}
+
+Jolt_JPH_Array_JPH_SoftBodySharedSettings_LRA *JPH_SoftBodySharedSettings_GetMutable_mLRAConstraints(JPH_SoftBodySharedSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_SoftBodySharedSettings_LRA *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mLRAConstraints);
+}
+
+const Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_Get_mRodStretchShearConstraints(const JPH_SoftBodySharedSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodStretchShear *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(_this)).mRodStretchShearConstraints);
+}
+
+void JPH_SoftBodySharedSettings_Set_mRodStretchShearConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodStretchShear *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::SoftBodySharedSettings::RodStretchShear>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mRodStretchShearConstraints = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::SoftBodySharedSettings::RodStretchShear>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::SoftBodySharedSettings::RodStretchShear>), JPH::Array<JPH::SoftBodySharedSettings::RodStretchShear>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::SoftBodySharedSettings::RodStretchShear>), JPH::Array<JPH::SoftBodySharedSettings::RodStretchShear>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::SoftBodySharedSettings::RodStretchShear>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::SoftBodySharedSettings::RodStretchShear>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::SoftBodySharedSettings::RodStretchShear>));
+}
+
+Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodStretchShear *JPH_SoftBodySharedSettings_GetMutable_mRodStretchShearConstraints(JPH_SoftBodySharedSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodStretchShear *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mRodStretchShearConstraints);
+}
+
+const Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_Get_mRodBendTwistConstraints(const JPH_SoftBodySharedSettings *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodBendTwist *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings *)(_this)).mRodBendTwistConstraints);
+}
+
+void JPH_SoftBodySharedSettings_Set_mRodBendTwistConstraints(JPH_SoftBodySharedSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodBendTwist *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<JPH::SoftBodySharedSettings::RodBendTwist>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mRodBendTwistConstraints = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<JPH::SoftBodySharedSettings::RodBendTwist>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<JPH::SoftBodySharedSettings::RodBendTwist>), JPH::Array<JPH::SoftBodySharedSettings::RodBendTwist>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<JPH::SoftBodySharedSettings::RodBendTwist>), JPH::Array<JPH::SoftBodySharedSettings::RodBendTwist>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<JPH::SoftBodySharedSettings::RodBendTwist>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<JPH::SoftBodySharedSettings::RodBendTwist>) MRBINDC_CLASSARG_END(value, JPH::Array<JPH::SoftBodySharedSettings::RodBendTwist>));
+}
+
+Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodBendTwist *JPH_SoftBodySharedSettings_GetMutable_mRodBendTwistConstraints(JPH_SoftBodySharedSettings *_this)
+{
+    return (Jolt_JPH_Array_JPH_SoftBodySharedSettings_RodBendTwist *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings *)(_this)).mRodBendTwistConstraints);
+}
 
 JPH_SoftBodySharedSettings *JPH_SoftBodySharedSettings_DefaultConstruct(void)
 {
@@ -394,6 +555,118 @@ JPH_SoftBodySharedSettings_VertexAttributes *JPH_SoftBodySharedSettings_VertexAt
     ));
 }
 
+const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mEdgeRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (const Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mEdgeRemap);
+}
+
+void JPH_SoftBodySharedSettings_OptimizationResults_Set_mEdgeRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<unsigned int>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mEdgeRemap = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(value, JPH::Array<unsigned int>));
+}
+
+Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mEdgeRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mEdgeRemap);
+}
+
+const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mLRARemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (const Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mLRARemap);
+}
+
+void JPH_SoftBodySharedSettings_OptimizationResults_Set_mLRARemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<unsigned int>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mLRARemap = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(value, JPH::Array<unsigned int>));
+}
+
+Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mLRARemap(JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mLRARemap);
+}
+
+const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodStretchShearConstraintRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (const Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mRodStretchShearConstraintRemap);
+}
+
+void JPH_SoftBodySharedSettings_OptimizationResults_Set_mRodStretchShearConstraintRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<unsigned int>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mRodStretchShearConstraintRemap = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(value, JPH::Array<unsigned int>));
+}
+
+Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodStretchShearConstraintRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mRodStretchShearConstraintRemap);
+}
+
+const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodBendTwistConstraintRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (const Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mRodBendTwistConstraintRemap);
+}
+
+void JPH_SoftBodySharedSettings_OptimizationResults_Set_mRodBendTwistConstraintRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<unsigned int>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mRodBendTwistConstraintRemap = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(value, JPH::Array<unsigned int>));
+}
+
+Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodBendTwistConstraintRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mRodBendTwistConstraintRemap);
+}
+
+const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mDihedralBendRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (const Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mDihedralBendRemap);
+}
+
+void JPH_SoftBodySharedSettings_OptimizationResults_Set_mDihedralBendRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<unsigned int>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mDihedralBendRemap = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(value, JPH::Array<unsigned int>));
+}
+
+Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mDihedralBendRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mDihedralBendRemap);
+}
+
+const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mVolumeRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (const Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mVolumeRemap);
+}
+
+void JPH_SoftBodySharedSettings_OptimizationResults_Set_mVolumeRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<unsigned int>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mVolumeRemap = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(value, JPH::Array<unsigned int>));
+}
+
+Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mVolumeRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mVolumeRemap);
+}
+
+const Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_Get_mSkinnedRemap(const JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (const Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mSkinnedRemap);
+}
+
+void JPH_SoftBodySharedSettings_OptimizationResults_Set_mSkinnedRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_unsigned_int *value)
+{
+    MRBINDC_CLASSARG_GUARD(value, JPH::Array<unsigned int>);
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mSkinnedRemap = (MRBINDC_CLASSARG_DEF_CTOR(value, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(value, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(value, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(value, JPH::Array<unsigned int>));
+}
+
+Jolt_JPH_Array_unsigned_int *JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mSkinnedRemap(JPH_SoftBodySharedSettings_OptimizationResults *_this)
+{
+    return (Jolt_JPH_Array_unsigned_int *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodySharedSettings::OptimizationResults *)(_this)).mSkinnedRemap);
+}
+
 JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstruct(void)
 {
     using _mrbind_T = JPH::SoftBodySharedSettings::OptimizationResults;
@@ -406,6 +679,26 @@ JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_Optim
 JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstructArray(size_t num_elems)
 {
     return (JPH_SoftBodySharedSettings_OptimizationResults *)(new JPH::SoftBodySharedSettings::OptimizationResults[num_elems]);
+}
+
+JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_ConstructFrom(Jolt_PassBy mEdgeRemap_pass_by, Jolt_JPH_Array_unsigned_int *mEdgeRemap, Jolt_PassBy mLRARemap_pass_by, Jolt_JPH_Array_unsigned_int *mLRARemap, Jolt_PassBy mRodStretchShearConstraintRemap_pass_by, Jolt_JPH_Array_unsigned_int *mRodStretchShearConstraintRemap, Jolt_PassBy mRodBendTwistConstraintRemap_pass_by, Jolt_JPH_Array_unsigned_int *mRodBendTwistConstraintRemap, Jolt_PassBy mDihedralBendRemap_pass_by, Jolt_JPH_Array_unsigned_int *mDihedralBendRemap, Jolt_PassBy mVolumeRemap_pass_by, Jolt_JPH_Array_unsigned_int *mVolumeRemap, Jolt_PassBy mSkinnedRemap_pass_by, Jolt_JPH_Array_unsigned_int *mSkinnedRemap)
+{
+    MRBINDC_CLASSARG_GUARD(mEdgeRemap, JPH::Array<unsigned int>);
+    MRBINDC_CLASSARG_GUARD(mLRARemap, JPH::Array<unsigned int>);
+    MRBINDC_CLASSARG_GUARD(mRodStretchShearConstraintRemap, JPH::Array<unsigned int>);
+    MRBINDC_CLASSARG_GUARD(mRodBendTwistConstraintRemap, JPH::Array<unsigned int>);
+    MRBINDC_CLASSARG_GUARD(mDihedralBendRemap, JPH::Array<unsigned int>);
+    MRBINDC_CLASSARG_GUARD(mVolumeRemap, JPH::Array<unsigned int>);
+    MRBINDC_CLASSARG_GUARD(mSkinnedRemap, JPH::Array<unsigned int>);
+    return (JPH_SoftBodySharedSettings_OptimizationResults *)new JPH::SoftBodySharedSettings::OptimizationResults(JPH::SoftBodySharedSettings::OptimizationResults{
+        (MRBINDC_CLASSARG_DEF_CTOR(mEdgeRemap, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(mEdgeRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(mEdgeRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mEdgeRemap, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mEdgeRemap, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(mEdgeRemap, JPH::Array<unsigned int>)),
+        (MRBINDC_CLASSARG_DEF_CTOR(mLRARemap, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(mLRARemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(mLRARemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mLRARemap, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mLRARemap, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(mLRARemap, JPH::Array<unsigned int>)),
+        (MRBINDC_CLASSARG_DEF_CTOR(mRodStretchShearConstraintRemap, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(mRodStretchShearConstraintRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(mRodStretchShearConstraintRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mRodStretchShearConstraintRemap, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mRodStretchShearConstraintRemap, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(mRodStretchShearConstraintRemap, JPH::Array<unsigned int>)),
+        (MRBINDC_CLASSARG_DEF_CTOR(mRodBendTwistConstraintRemap, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(mRodBendTwistConstraintRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(mRodBendTwistConstraintRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mRodBendTwistConstraintRemap, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mRodBendTwistConstraintRemap, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(mRodBendTwistConstraintRemap, JPH::Array<unsigned int>)),
+        (MRBINDC_CLASSARG_DEF_CTOR(mDihedralBendRemap, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(mDihedralBendRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(mDihedralBendRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mDihedralBendRemap, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mDihedralBendRemap, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(mDihedralBendRemap, JPH::Array<unsigned int>)),
+        (MRBINDC_CLASSARG_DEF_CTOR(mVolumeRemap, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(mVolumeRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(mVolumeRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mVolumeRemap, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mVolumeRemap, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(mVolumeRemap, JPH::Array<unsigned int>)),
+        (MRBINDC_CLASSARG_DEF_CTOR(mSkinnedRemap, JPH::Array<unsigned int>) MRBINDC_CLASSARG_COPY(mSkinnedRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_MOVE(mSkinnedRemap, (JPH::Array<unsigned int>), JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mSkinnedRemap, Jolt_PassBy_DefaultArgument, JPH::Array<unsigned int>) MRBINDC_CLASSARG_NO_DEF_ARG(mSkinnedRemap, Jolt_PassBy_NoObject, JPH::Array<unsigned int>) MRBINDC_CLASSARG_END(mSkinnedRemap, JPH::Array<unsigned int>))
+    });
 }
 
 const JPH_SoftBodySharedSettings_OptimizationResults *JPH_SoftBodySharedSettings_OptimizationResults_OffsetPtr(const JPH_SoftBodySharedSettings_OptimizationResults *ptr, ptrdiff_t i)

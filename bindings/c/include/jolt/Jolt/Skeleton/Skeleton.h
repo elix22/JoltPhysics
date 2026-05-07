@@ -12,6 +12,7 @@ extern "C" {
 #endif
 
 typedef struct JPH_RefTarget_JPH_Skeleton JPH_RefTarget_JPH_Skeleton; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
+typedef struct Jolt_JPH_Array_JPH_Skeleton_Joint Jolt_JPH_Array_JPH_Skeleton_Joint; // Defined in `#include <JPH_Array_JPH_Skeleton_Joint.h>`.
 
 
 /// Declare internal structure for a joint
@@ -111,6 +112,18 @@ JOLT_API void *Jolt_new_array_JPH_Skeleton_size_t_void_ptr(size_t inCount, void 
 
 /// Generated from method `JPH::Skeleton::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_Skeleton_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+///@name Access to the joints
+///@{
+/// Generated from method `JPH::Skeleton::GetJoints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_Skeleton_Joint *JPH_Skeleton_GetJoints(const JPH_Skeleton *_this);
+
+/// Generated from method `JPH::Skeleton::GetJoints`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API Jolt_JPH_Array_JPH_Skeleton_Joint *JPH_Skeleton_GetJoints_mut(JPH_Skeleton *_this);
 
 /// Generated from method `JPH::Skeleton::GetJointCount`.
 /// Parameter `_this` can not be null. It is a single object.

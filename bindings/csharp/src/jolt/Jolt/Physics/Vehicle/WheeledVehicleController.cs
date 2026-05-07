@@ -2125,6 +2125,24 @@ public static partial class JPH
             }
         }
 
+        ///< List of differentials and their properties
+        public unsafe JPH.Const_Array_JPHVehicleDifferentialSettings mDifferentials
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_Get_mDifferentials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_Get_mDifferentials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHVehicleDifferentialSettings._Underlying *__JPH_WheeledVehicleControllerSettings_Get_mDifferentials(_Underlying *_this);
+                JPH.Const_Array_JPHVehicleDifferentialSettings __ret;
+                __ret = new(__JPH_WheeledVehicleControllerSettings_Get_mDifferentials(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< Ratio max / min average wheel speed of each differential (measured at the clutch). When the ratio is exceeded all torque gets distributed to the differential with the minimal average velocity. This allows implementing a limited slip differential between differentials. Set to FLT_MAX for an open differential. Value should be > 1.
         public unsafe float mDifferentialLimitedSlipRatio
         {
@@ -2538,6 +2556,24 @@ public static partial class JPH
                 extern static JPH.VehicleTransmissionSettings._Underlying *__JPH_WheeledVehicleControllerSettings_GetMutable_mTransmission(_Underlying *_this);
                 JPH.VehicleTransmissionSettings __ret;
                 __ret = new(__JPH_WheeledVehicleControllerSettings_GetMutable_mTransmission(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< List of differentials and their properties
+        public new unsafe JPH.Array_JPHVehicleDifferentialSettings mDifferentials
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_GetMutable_mDifferentials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleControllerSettings_GetMutable_mDifferentials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHVehicleDifferentialSettings._Underlying *__JPH_WheeledVehicleControllerSettings_GetMutable_mDifferentials(_Underlying *_this);
+                JPH.Array_JPHVehicleDifferentialSettings __ret;
+                __ret = new(__JPH_WheeledVehicleControllerSettings_GetMutable_mDifferentials(_UnderlyingPtr), is_owning: false);
                 __ret._KeepAliveEnclosingObject = this;
                 return __ret;
             }
@@ -2990,6 +3026,19 @@ public static partial class JPH
             return new(__JPH_WheeledVehicleController_GetTransmission(_UnderlyingPtr), is_owning: false);
         }
 
+        /// Get the differentials this vehicle has
+        /// Generated from method `JPH::WheeledVehicleController::GetDifferentials`.
+        public unsafe JPH.Const_Array_JPHVehicleDifferentialSettings GetDifferentials()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleController_GetDifferentials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleController_GetDifferentials", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHVehicleDifferentialSettings._Underlying *__JPH_WheeledVehicleController_GetDifferentials(_Underlying *_this);
+            return new(__JPH_WheeledVehicleController_GetDifferentials(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Ratio max / min average wheel speed of each differential (measured at the clutch).
         /// Generated from method `JPH::WheeledVehicleController::GetDifferentialLimitedSlipRatio`.
         public unsafe float GetDifferentialLimitedSlipRatio()
@@ -3202,6 +3251,19 @@ public static partial class JPH
             #endif
             extern static JPH.VehicleTransmission._Underlying *__JPH_WheeledVehicleController_GetTransmission_mut(_Underlying *_this);
             return new(__JPH_WheeledVehicleController_GetTransmission_mut(_UnderlyingPtr), is_owning: false);
+        }
+
+        /// Get the differentials this vehicle has (writable interface, allows you to make changes to the configuration which will take effect the next time step)
+        /// Generated from method `JPH::WheeledVehicleController::GetDifferentials`.
+        public unsafe new JPH.Array_JPHVehicleDifferentialSettings GetDifferentials()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_WheeledVehicleController_GetDifferentials_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_WheeledVehicleController_GetDifferentials_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHVehicleDifferentialSettings._Underlying *__JPH_WheeledVehicleController_GetDifferentials_mut(_Underlying *_this);
+            return new(__JPH_WheeledVehicleController_GetDifferentials_mut(_UnderlyingPtr), is_owning: false);
         }
 
         /// Generated from method `JPH::WheeledVehicleController::SetDifferentialLimitedSlipRatio`.

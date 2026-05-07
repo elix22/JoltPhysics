@@ -53,6 +53,42 @@ public static partial class JPH
             }
         }
 
+        ///< Ratio in rotation rate between engine and gear box, first element is 1st gear, 2nd element 2nd gear etc.
+        public unsafe JPH.Const_Array_Float mGearRatios
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_Get_mGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_Get_mGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_Float._Underlying *__JPH_VehicleTransmissionSettings_Get_mGearRatios(_Underlying *_this);
+                JPH.Const_Array_Float __ret;
+                __ret = new(__JPH_VehicleTransmissionSettings_Get_mGearRatios(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< Ratio in rotation rate between engine and gear box when driving in reverse
+        public unsafe JPH.Const_Array_Float mReverseGearRatios
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_Get_mReverseGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_Get_mReverseGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_Float._Underlying *__JPH_VehicleTransmissionSettings_Get_mReverseGearRatios(_Underlying *_this);
+                JPH.Const_Array_Float __ret;
+                __ret = new(__JPH_VehicleTransmissionSettings_Get_mReverseGearRatios(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< How long it takes to switch gears (s), only used in auto mode
         public unsafe float mSwitchTime
         {
@@ -155,6 +191,20 @@ public static partial class JPH
             #endif
             extern static JPH.VehicleTransmissionSettings._Underlying *__JPH_VehicleTransmissionSettings_DefaultConstruct();
             _UnderlyingPtr = __JPH_VehicleTransmissionSettings_DefaultConstruct();
+        }
+
+        /// Constructs `JPH::VehicleTransmissionSettings` elementwise.
+        public unsafe Const_VehicleTransmissionSettings(JPH.ETransmissionMode mMode, JPH._ByValue_Array_Float mGearRatios, JPH._ByValue_Array_Float mReverseGearRatios, float mSwitchTime, float mClutchReleaseTime, float mSwitchLatency, float mShiftUpRPM, float mShiftDownRPM, float mClutchStrength) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.VehicleTransmissionSettings._Underlying *__JPH_VehicleTransmissionSettings_ConstructFrom(JPH.ETransmissionMode mMode, JPH._PassBy mGearRatios_pass_by, JPH.Array_Float._Underlying *mGearRatios, JPH._PassBy mReverseGearRatios_pass_by, JPH.Array_Float._Underlying *mReverseGearRatios, float mSwitchTime, float mClutchReleaseTime, float mSwitchLatency, float mShiftUpRPM, float mShiftDownRPM, float mClutchStrength);
+            _UnderlyingPtr = __JPH_VehicleTransmissionSettings_ConstructFrom(mMode, mGearRatios.PassByMode, mGearRatios.Value is not null ? mGearRatios.Value._UnderlyingPtr : null, mReverseGearRatios.PassByMode, mReverseGearRatios.Value is not null ? mReverseGearRatios.Value._UnderlyingPtr : null, mSwitchTime, mClutchReleaseTime, mSwitchLatency, mShiftUpRPM, mShiftDownRPM, mClutchStrength);
+            if (mGearRatios.Value is not null) _KeepAlive(mGearRatios.Value);
+            if (mReverseGearRatios.Value is not null) _KeepAlive(mReverseGearRatios.Value);
         }
 
         /// Generated from constructor `JPH::VehicleTransmissionSettings::VehicleTransmissionSettings`.
@@ -334,6 +384,42 @@ public static partial class JPH
             }
         }
 
+        ///< Ratio in rotation rate between engine and gear box, first element is 1st gear, 2nd element 2nd gear etc.
+        public new unsafe JPH.Array_Float mGearRatios
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_GetMutable_mGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_GetMutable_mGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_Float._Underlying *__JPH_VehicleTransmissionSettings_GetMutable_mGearRatios(_Underlying *_this);
+                JPH.Array_Float __ret;
+                __ret = new(__JPH_VehicleTransmissionSettings_GetMutable_mGearRatios(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< Ratio in rotation rate between engine and gear box when driving in reverse
+        public new unsafe JPH.Array_Float mReverseGearRatios
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_GetMutable_mReverseGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_GetMutable_mReverseGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_Float._Underlying *__JPH_VehicleTransmissionSettings_GetMutable_mReverseGearRatios(_Underlying *_this);
+                JPH.Array_Float __ret;
+                __ret = new(__JPH_VehicleTransmissionSettings_GetMutable_mReverseGearRatios(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         ///< How long it takes to switch gears (s), only used in auto mode
         public new unsafe ref float mSwitchTime
         {
@@ -436,6 +522,20 @@ public static partial class JPH
             #endif
             extern static JPH.VehicleTransmissionSettings._Underlying *__JPH_VehicleTransmissionSettings_DefaultConstruct();
             _UnderlyingPtr = __JPH_VehicleTransmissionSettings_DefaultConstruct();
+        }
+
+        /// Constructs `JPH::VehicleTransmissionSettings` elementwise.
+        public unsafe VehicleTransmissionSettings(JPH.ETransmissionMode mMode, JPH._ByValue_Array_Float mGearRatios, JPH._ByValue_Array_Float mReverseGearRatios, float mSwitchTime, float mClutchReleaseTime, float mSwitchLatency, float mShiftUpRPM, float mShiftDownRPM, float mClutchStrength) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmissionSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.VehicleTransmissionSettings._Underlying *__JPH_VehicleTransmissionSettings_ConstructFrom(JPH.ETransmissionMode mMode, JPH._PassBy mGearRatios_pass_by, JPH.Array_Float._Underlying *mGearRatios, JPH._PassBy mReverseGearRatios_pass_by, JPH.Array_Float._Underlying *mReverseGearRatios, float mSwitchTime, float mClutchReleaseTime, float mSwitchLatency, float mShiftUpRPM, float mShiftDownRPM, float mClutchStrength);
+            _UnderlyingPtr = __JPH_VehicleTransmissionSettings_ConstructFrom(mMode, mGearRatios.PassByMode, mGearRatios.Value is not null ? mGearRatios.Value._UnderlyingPtr : null, mReverseGearRatios.PassByMode, mReverseGearRatios.Value is not null ? mReverseGearRatios.Value._UnderlyingPtr : null, mSwitchTime, mClutchReleaseTime, mSwitchLatency, mShiftUpRPM, mShiftDownRPM, mClutchStrength);
+            if (mGearRatios.Value is not null) _KeepAlive(mGearRatios.Value);
+            if (mReverseGearRatios.Value is not null) _KeepAlive(mReverseGearRatios.Value);
         }
 
         /// Generated from constructor `JPH::VehicleTransmissionSettings::VehicleTransmissionSettings`.
@@ -590,6 +690,42 @@ public static partial class JPH
                 #endif
                 extern static JPH.ETransmissionMode *__JPH_VehicleTransmission_Get_mMode(_Underlying *_this);
                 return *__JPH_VehicleTransmission_Get_mMode(_UnderlyingPtr);
+            }
+        }
+
+        ///< Ratio in rotation rate between engine and gear box, first element is 1st gear, 2nd element 2nd gear etc.
+        public unsafe JPH.Const_Array_Float mGearRatios
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmission_Get_mGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmission_Get_mGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_Float._Underlying *__JPH_VehicleTransmission_Get_mGearRatios(_Underlying *_this);
+                JPH.Const_Array_Float __ret;
+                __ret = new(__JPH_VehicleTransmission_Get_mGearRatios(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< Ratio in rotation rate between engine and gear box when driving in reverse
+        public unsafe JPH.Const_Array_Float mReverseGearRatios
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmission_Get_mReverseGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmission_Get_mReverseGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_Float._Underlying *__JPH_VehicleTransmission_Get_mReverseGearRatios(_Underlying *_this);
+                JPH.Const_Array_Float __ret;
+                __ret = new(__JPH_VehicleTransmission_Get_mReverseGearRatios(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
             }
         }
 
@@ -830,6 +966,42 @@ public static partial class JPH
                 #endif
                 extern static JPH.ETransmissionMode *__JPH_VehicleTransmission_GetMutable_mMode(_Underlying *_this);
                 return ref *__JPH_VehicleTransmission_GetMutable_mMode(_UnderlyingPtr);
+            }
+        }
+
+        ///< Ratio in rotation rate between engine and gear box, first element is 1st gear, 2nd element 2nd gear etc.
+        public new unsafe JPH.Array_Float mGearRatios
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmission_GetMutable_mGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmission_GetMutable_mGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_Float._Underlying *__JPH_VehicleTransmission_GetMutable_mGearRatios(_Underlying *_this);
+                JPH.Array_Float __ret;
+                __ret = new(__JPH_VehicleTransmission_GetMutable_mGearRatios(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< Ratio in rotation rate between engine and gear box when driving in reverse
+        public new unsafe JPH.Array_Float mReverseGearRatios
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_VehicleTransmission_GetMutable_mReverseGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_VehicleTransmission_GetMutable_mReverseGearRatios", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_Float._Underlying *__JPH_VehicleTransmission_GetMutable_mReverseGearRatios(_Underlying *_this);
+                JPH.Array_Float __ret;
+                __ret = new(__JPH_VehicleTransmission_GetMutable_mReverseGearRatios(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
             }
         }
 

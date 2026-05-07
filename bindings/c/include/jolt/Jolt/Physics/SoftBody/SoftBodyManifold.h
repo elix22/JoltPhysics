@@ -13,6 +13,7 @@ extern "C" {
 
 typedef struct JPH_SoftBodyVertex JPH_SoftBodyVertex; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyVertex.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_SoftBodyVertex Jolt_JPH_Array_JPH_SoftBodyVertex; // Defined in `#include <JPH_Array_JPH_SoftBodyVertex.h>`.
 
 
 /// An interface to query which vertices of a soft body are colliding with other bodies
@@ -39,6 +40,12 @@ JOLT_API void JPH_SoftBodyManifold_Destroy(const JPH_SoftBodyManifold *_this);
 
 /// Destroys a heap-allocated array of `JPH_SoftBodyManifold`. Does nothing if the pointer is null.
 JOLT_API void JPH_SoftBodyManifold_DestroyArray(const JPH_SoftBodyManifold *_this);
+
+/// Get the vertices of the soft body for iterating
+/// Generated from method `JPH::SoftBodyManifold::GetVertices`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_SoftBodyVertex *JPH_SoftBodyManifold_GetVertices(const JPH_SoftBodyManifold *_this);
 
 /// Check if a vertex has collided with something in this update
 /// Generated from method `JPH::SoftBodyManifold::HasContact`.

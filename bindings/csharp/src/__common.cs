@@ -407,4 +407,354 @@ public static partial class JPH
             }
         }
     }
+
+    public unsafe struct ConstPtrBodyID : IEquatable<ConstPtrBodyID>
+    {
+        public readonly ref readonly JPH.BodyID Deref()
+        {
+            return ref *(Ptr);
+        }
+        public unsafe void Incr()
+        {
+            Ptr = Ptr + 4;
+        }
+        public unsafe void Decr()
+        {
+            Ptr = Ptr + -4;
+        }
+
+        internal JPH.BodyID *Ptr;
+
+        internal ConstPtrBodyID(JPH.BodyID *new_ptr) {Ptr = new_ptr;}
+
+        public ref readonly JPH.BodyID this[nint i]
+        {
+            get
+            {
+                return ref *(Ptr + i * 4);
+            }
+        }
+
+        public unsafe JPH.BodyID *GetPointer() => Ptr;
+
+        public static unsafe bool operator==(ConstPtrBodyID a, ConstPtrBodyID b) {return a.Equals(b);}
+        public static bool operator!=(ConstPtrBodyID a, ConstPtrBodyID b) {return !a.Equals(b);}
+        public readonly bool Equals(ConstPtrBodyID other) {return base.Equals(other);}
+        public override bool Equals(object? other) {return base.Equals(other);}
+    }
+
+    public unsafe struct ConstPtrFloat : IEquatable<ConstPtrFloat>
+    {
+        public readonly ref readonly float Deref()
+        {
+            return ref *(Ptr);
+        }
+        public unsafe void Incr()
+        {
+            Ptr = Ptr + 4;
+        }
+        public unsafe void Decr()
+        {
+            Ptr = Ptr + -4;
+        }
+
+        internal float *Ptr;
+
+        internal ConstPtrFloat(float *new_ptr) {Ptr = new_ptr;}
+
+        public ref readonly float this[nint i]
+        {
+            get
+            {
+                return ref *(Ptr + i * 4);
+            }
+        }
+
+        public unsafe float *GetPointer() => Ptr;
+
+        public static unsafe bool operator==(ConstPtrFloat a, ConstPtrFloat b) {return a.Equals(b);}
+        public static bool operator!=(ConstPtrFloat a, ConstPtrFloat b) {return !a.Equals(b);}
+        public readonly bool Equals(ConstPtrFloat other) {return base.Equals(other);}
+        public override bool Equals(object? other) {return base.Equals(other);}
+    }
+
+    public unsafe struct ConstPtrInt : IEquatable<ConstPtrInt>
+    {
+        public readonly ref readonly int Deref()
+        {
+            return ref *(Ptr);
+        }
+        public unsafe void Incr()
+        {
+            Ptr = Ptr + 4;
+        }
+        public unsafe void Decr()
+        {
+            Ptr = Ptr + -4;
+        }
+
+        internal int *Ptr;
+
+        internal ConstPtrInt(int *new_ptr) {Ptr = new_ptr;}
+
+        public ref readonly int this[nint i]
+        {
+            get
+            {
+                return ref *(Ptr + i * 4);
+            }
+        }
+
+        public unsafe int *GetPointer() => Ptr;
+
+        public static unsafe bool operator==(ConstPtrInt a, ConstPtrInt b) {return a.Equals(b);}
+        public static bool operator!=(ConstPtrInt a, ConstPtrInt b) {return !a.Equals(b);}
+        public readonly bool Equals(ConstPtrInt other) {return base.Equals(other);}
+        public override bool Equals(object? other) {return base.Equals(other);}
+    }
+
+    public unsafe struct ConstPtrUnsignedChar : IEquatable<ConstPtrUnsignedChar>
+    {
+        public readonly ref readonly byte Deref()
+        {
+            return ref *(Ptr);
+        }
+        public unsafe void Incr()
+        {
+            Ptr = Ptr + 1;
+        }
+        public unsafe void Decr()
+        {
+            Ptr = Ptr + -1;
+        }
+
+        internal byte *Ptr;
+
+        internal ConstPtrUnsignedChar(byte *new_ptr) {Ptr = new_ptr;}
+
+        public ref readonly byte this[nint i]
+        {
+            get
+            {
+                return ref *(Ptr + i);
+            }
+        }
+
+        public unsafe byte *GetPointer() => Ptr;
+
+        public static unsafe bool operator==(ConstPtrUnsignedChar a, ConstPtrUnsignedChar b) {return a.Equals(b);}
+        public static bool operator!=(ConstPtrUnsignedChar a, ConstPtrUnsignedChar b) {return !a.Equals(b);}
+        public readonly bool Equals(ConstPtrUnsignedChar other) {return base.Equals(other);}
+        public override bool Equals(object? other) {return base.Equals(other);}
+    }
+
+    public unsafe struct ConstPtrUnsignedInt : IEquatable<ConstPtrUnsignedInt>
+    {
+        public readonly ref readonly uint Deref()
+        {
+            return ref *(Ptr);
+        }
+        public unsafe void Incr()
+        {
+            Ptr = Ptr + 4;
+        }
+        public unsafe void Decr()
+        {
+            Ptr = Ptr + -4;
+        }
+
+        internal uint *Ptr;
+
+        internal ConstPtrUnsignedInt(uint *new_ptr) {Ptr = new_ptr;}
+
+        public ref readonly uint this[nint i]
+        {
+            get
+            {
+                return ref *(Ptr + i * 4);
+            }
+        }
+
+        public unsafe uint *GetPointer() => Ptr;
+
+        public static unsafe bool operator==(ConstPtrUnsignedInt a, ConstPtrUnsignedInt b) {return a.Equals(b);}
+        public static bool operator!=(ConstPtrUnsignedInt a, ConstPtrUnsignedInt b) {return !a.Equals(b);}
+        public readonly bool Equals(ConstPtrUnsignedInt other) {return base.Equals(other);}
+        public override bool Equals(object? other) {return base.Equals(other);}
+    }
+
+    public unsafe struct PtrBodyID : IEquatable<PtrBodyID>
+    {
+        public readonly ref JPH.BodyID Deref()
+        {
+            return ref *(Ptr);
+        }
+        public unsafe void Incr()
+        {
+            Ptr = Ptr + 4;
+        }
+        public unsafe void Decr()
+        {
+            Ptr = Ptr + -4;
+        }
+
+        internal JPH.BodyID *Ptr;
+
+        internal PtrBodyID(JPH.BodyID *new_ptr) {Ptr = new_ptr;}
+
+        public ref JPH.BodyID this[nint i]
+        {
+            get
+            {
+                return ref *(Ptr + i * 4);
+            }
+        }
+
+        public unsafe JPH.BodyID *GetPointer() => Ptr;
+
+        public static unsafe bool operator==(PtrBodyID a, PtrBodyID b) {return a.Equals(b);}
+        public static bool operator!=(PtrBodyID a, PtrBodyID b) {return !a.Equals(b);}
+        public readonly bool Equals(PtrBodyID other) {return base.Equals(other);}
+        public override bool Equals(object? other) {return base.Equals(other);}
+    }
+
+    public unsafe struct PtrFloat : IEquatable<PtrFloat>
+    {
+        public readonly ref float Deref()
+        {
+            return ref *(Ptr);
+        }
+        public unsafe void Incr()
+        {
+            Ptr = Ptr + 4;
+        }
+        public unsafe void Decr()
+        {
+            Ptr = Ptr + -4;
+        }
+
+        internal float *Ptr;
+
+        internal PtrFloat(float *new_ptr) {Ptr = new_ptr;}
+
+        public ref float this[nint i]
+        {
+            get
+            {
+                return ref *(Ptr + i * 4);
+            }
+        }
+
+        public unsafe float *GetPointer() => Ptr;
+
+        public static unsafe bool operator==(PtrFloat a, PtrFloat b) {return a.Equals(b);}
+        public static bool operator!=(PtrFloat a, PtrFloat b) {return !a.Equals(b);}
+        public readonly bool Equals(PtrFloat other) {return base.Equals(other);}
+        public override bool Equals(object? other) {return base.Equals(other);}
+    }
+
+    public unsafe struct PtrInt : IEquatable<PtrInt>
+    {
+        public readonly ref int Deref()
+        {
+            return ref *(Ptr);
+        }
+        public unsafe void Incr()
+        {
+            Ptr = Ptr + 4;
+        }
+        public unsafe void Decr()
+        {
+            Ptr = Ptr + -4;
+        }
+
+        internal int *Ptr;
+
+        internal PtrInt(int *new_ptr) {Ptr = new_ptr;}
+
+        public ref int this[nint i]
+        {
+            get
+            {
+                return ref *(Ptr + i * 4);
+            }
+        }
+
+        public unsafe int *GetPointer() => Ptr;
+
+        public static unsafe bool operator==(PtrInt a, PtrInt b) {return a.Equals(b);}
+        public static bool operator!=(PtrInt a, PtrInt b) {return !a.Equals(b);}
+        public readonly bool Equals(PtrInt other) {return base.Equals(other);}
+        public override bool Equals(object? other) {return base.Equals(other);}
+    }
+
+    public unsafe struct PtrUnsignedChar : IEquatable<PtrUnsignedChar>
+    {
+        public readonly ref byte Deref()
+        {
+            return ref *(Ptr);
+        }
+        public unsafe void Incr()
+        {
+            Ptr = Ptr + 1;
+        }
+        public unsafe void Decr()
+        {
+            Ptr = Ptr + -1;
+        }
+
+        internal byte *Ptr;
+
+        internal PtrUnsignedChar(byte *new_ptr) {Ptr = new_ptr;}
+
+        public ref byte this[nint i]
+        {
+            get
+            {
+                return ref *(Ptr + i);
+            }
+        }
+
+        public unsafe byte *GetPointer() => Ptr;
+
+        public static unsafe bool operator==(PtrUnsignedChar a, PtrUnsignedChar b) {return a.Equals(b);}
+        public static bool operator!=(PtrUnsignedChar a, PtrUnsignedChar b) {return !a.Equals(b);}
+        public readonly bool Equals(PtrUnsignedChar other) {return base.Equals(other);}
+        public override bool Equals(object? other) {return base.Equals(other);}
+    }
+
+    public unsafe struct PtrUnsignedInt : IEquatable<PtrUnsignedInt>
+    {
+        public readonly ref uint Deref()
+        {
+            return ref *(Ptr);
+        }
+        public unsafe void Incr()
+        {
+            Ptr = Ptr + 4;
+        }
+        public unsafe void Decr()
+        {
+            Ptr = Ptr + -4;
+        }
+
+        internal uint *Ptr;
+
+        internal PtrUnsignedInt(uint *new_ptr) {Ptr = new_ptr;}
+
+        public ref uint this[nint i]
+        {
+            get
+            {
+                return ref *(Ptr + i * 4);
+            }
+        }
+
+        public unsafe uint *GetPointer() => Ptr;
+
+        public static unsafe bool operator==(PtrUnsignedInt a, PtrUnsignedInt b) {return a.Equals(b);}
+        public static bool operator!=(PtrUnsignedInt a, PtrUnsignedInt b) {return !a.Equals(b);}
+        public readonly bool Equals(PtrUnsignedInt other) {return base.Equals(other);}
+        public override bool Equals(object? other) {return base.Equals(other);}
+    }
 }

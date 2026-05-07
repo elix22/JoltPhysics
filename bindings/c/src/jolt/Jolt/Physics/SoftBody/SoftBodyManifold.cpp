@@ -8,7 +8,9 @@
 #include <Jolt/Physics/SoftBody/SoftBodyVertex.h>
 #include <__mrbind_c_details.h>
 
+#include <Jolt/Core/Array.h>
 #include <cstddef>
+#include <memory>
 #include <stdexcept>
 
 
@@ -37,6 +39,11 @@ void JPH_SoftBodyManifold_Destroy(const JPH_SoftBodyManifold *_this)
 void JPH_SoftBodyManifold_DestroyArray(const JPH_SoftBodyManifold *_this)
 {
     delete[] ((const JPH::SoftBodyManifold *)_this);
+}
+
+const Jolt_JPH_Array_JPH_SoftBodyVertex *JPH_SoftBodyManifold_GetVertices(const JPH_SoftBodyManifold *_this)
+{
+    return (const Jolt_JPH_Array_JPH_SoftBodyVertex *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodyManifold *)(_this)).GetVertices());
 }
 
 bool JPH_SoftBodyManifold_HasContact(const JPH_SoftBodyManifold *_this, const JPH_SoftBodyVertex *inVertex)

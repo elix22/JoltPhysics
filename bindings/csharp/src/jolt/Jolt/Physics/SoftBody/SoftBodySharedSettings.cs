@@ -64,6 +64,186 @@ public static partial class JPH
             return ret;
         }
 
+        ///< The list of vertices or particles of the body
+        public unsafe JPH.Const_Array_JPHSoftBodySharedSettingsVertex mVertices
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHSoftBodySharedSettingsVertex._Underlying *__JPH_SoftBodySharedSettings_Get_mVertices(_Underlying *_this);
+                JPH.Const_Array_JPHSoftBodySharedSettingsVertex __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_Get_mVertices(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of faces of the body
+        public unsafe JPH.Const_Array_JPHSoftBodySharedSettingsFace mFaces
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mFaces", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mFaces", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHSoftBodySharedSettingsFace._Underlying *__JPH_SoftBodySharedSettings_Get_mFaces(_Underlying *_this);
+                JPH.Const_Array_JPHSoftBodySharedSettingsFace __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_Get_mFaces(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of edges or springs of the body
+        public unsafe JPH.Const_Array_JPHSoftBodySharedSettingsEdge mEdgeConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mEdgeConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mEdgeConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHSoftBodySharedSettingsEdge._Underlying *__JPH_SoftBodySharedSettings_Get_mEdgeConstraints(_Underlying *_this);
+                JPH.Const_Array_JPHSoftBodySharedSettingsEdge __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_Get_mEdgeConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of dihedral bend constraints of the body
+        public unsafe JPH.Const_Array_JPHSoftBodySharedSettingsDihedralBend mDihedralBendConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mDihedralBendConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mDihedralBendConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHSoftBodySharedSettingsDihedralBend._Underlying *__JPH_SoftBodySharedSettings_Get_mDihedralBendConstraints(_Underlying *_this);
+                JPH.Const_Array_JPHSoftBodySharedSettingsDihedralBend __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_Get_mDihedralBendConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of volume constraints of the body that keep the volume of tetrahedra in the soft body constant
+        public unsafe JPH.Const_Array_JPHSoftBodySharedSettingsVolume mVolumeConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mVolumeConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mVolumeConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHSoftBodySharedSettingsVolume._Underlying *__JPH_SoftBodySharedSettings_Get_mVolumeConstraints(_Underlying *_this);
+                JPH.Const_Array_JPHSoftBodySharedSettingsVolume __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_Get_mVolumeConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of vertices that are constrained to a skinned vertex
+        public unsafe JPH.Const_Array_JPHSoftBodySharedSettingsSkinned mSkinnedConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mSkinnedConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mSkinnedConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHSoftBodySharedSettingsSkinned._Underlying *__JPH_SoftBodySharedSettings_Get_mSkinnedConstraints(_Underlying *_this);
+                JPH.Const_Array_JPHSoftBodySharedSettingsSkinned __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_Get_mSkinnedConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of inverse bind matrices for skinning vertices
+        public unsafe JPH.Const_Array_JPHSoftBodySharedSettingsInvBind mInvBindMatrices
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mInvBindMatrices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mInvBindMatrices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHSoftBodySharedSettingsInvBind._Underlying *__JPH_SoftBodySharedSettings_Get_mInvBindMatrices(_Underlying *_this);
+                JPH.Const_Array_JPHSoftBodySharedSettingsInvBind __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_Get_mInvBindMatrices(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of long range attachment constraints
+        public unsafe JPH.Const_Array_JPHSoftBodySharedSettingsLRA mLRAConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mLRAConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mLRAConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHSoftBodySharedSettingsLRA._Underlying *__JPH_SoftBodySharedSettings_Get_mLRAConstraints(_Underlying *_this);
+                JPH.Const_Array_JPHSoftBodySharedSettingsLRA __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_Get_mLRAConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of Cosserat rod constraints that connect two vertices and that limit stretch and shear
+        public unsafe JPH.Const_Array_JPHSoftBodySharedSettingsRodStretchShear mRodStretchShearConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mRodStretchShearConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mRodStretchShearConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHSoftBodySharedSettingsRodStretchShear._Underlying *__JPH_SoftBodySharedSettings_Get_mRodStretchShearConstraints(_Underlying *_this);
+                JPH.Const_Array_JPHSoftBodySharedSettingsRodStretchShear __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_Get_mRodStretchShearConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of Cosserat rod constraints that connect two rods and limit the bend and twist
+        public unsafe JPH.Const_Array_JPHSoftBodySharedSettingsRodBendTwist mRodBendTwistConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mRodBendTwistConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_Get_mRodBendTwistConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Const_Array_JPHSoftBodySharedSettingsRodBendTwist._Underlying *__JPH_SoftBodySharedSettings_Get_mRodBendTwistConstraints(_Underlying *_this);
+                JPH.Const_Array_JPHSoftBodySharedSettingsRodBendTwist __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_Get_mRodBendTwistConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
         internal unsafe Const_SoftBodySharedSettings(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructs an empty (default-constructed) instance.
@@ -2306,6 +2486,132 @@ public static partial class JPH
             public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
             ~Const_OptimizationResults() {Dispose(false);}
 
+            ///< Maps old edge index to new edge index
+            public unsafe JPH.Const_Array_UnsignedInt mEdgeRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mEdgeRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mEdgeRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Const_Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_Get_mEdgeRemap(_Underlying *_this);
+                    JPH.Const_Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_Get_mEdgeRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old LRA index to new LRA index
+            public unsafe JPH.Const_Array_UnsignedInt mLRARemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mLRARemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mLRARemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Const_Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_Get_mLRARemap(_Underlying *_this);
+                    JPH.Const_Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_Get_mLRARemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old rod stretch shear constraint index to new stretch shear rod constraint index
+            public unsafe JPH.Const_Array_UnsignedInt mRodStretchShearConstraintRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodStretchShearConstraintRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodStretchShearConstraintRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Const_Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodStretchShearConstraintRemap(_Underlying *_this);
+                    JPH.Const_Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodStretchShearConstraintRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old rod bend twist constraint index to new bend twist rod constraint index
+            public unsafe JPH.Const_Array_UnsignedInt mRodBendTwistConstraintRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodBendTwistConstraintRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodBendTwistConstraintRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Const_Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodBendTwistConstraintRemap(_Underlying *_this);
+                    JPH.Const_Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_Get_mRodBendTwistConstraintRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old dihedral bend index to new dihedral bend index
+            public unsafe JPH.Const_Array_UnsignedInt mDihedralBendRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mDihedralBendRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mDihedralBendRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Const_Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_Get_mDihedralBendRemap(_Underlying *_this);
+                    JPH.Const_Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_Get_mDihedralBendRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old volume constraint index to new volume constraint index
+            public unsafe JPH.Const_Array_UnsignedInt mVolumeRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mVolumeRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mVolumeRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Const_Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_Get_mVolumeRemap(_Underlying *_this);
+                    JPH.Const_Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_Get_mVolumeRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old skinned constraint index to new skinned constraint index
+            public unsafe JPH.Const_Array_UnsignedInt mSkinnedRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mSkinnedRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_Get_mSkinnedRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Const_Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_Get_mSkinnedRemap(_Underlying *_this);
+                    JPH.Const_Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_Get_mSkinnedRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             internal unsafe Const_OptimizationResults(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
             /// Constructs an empty (default-constructed) instance.
@@ -2318,6 +2624,25 @@ public static partial class JPH
                 #endif
                 extern static JPH.SoftBodySharedSettings.OptimizationResults._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstruct();
                 _UnderlyingPtr = __JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstruct();
+            }
+
+            /// Constructs `JPH::SoftBodySharedSettings::OptimizationResults` elementwise.
+            public unsafe Const_OptimizationResults(JPH._ByValue_Array_UnsignedInt mEdgeRemap, JPH._ByValue_Array_UnsignedInt mLRARemap, JPH._ByValue_Array_UnsignedInt mRodStretchShearConstraintRemap, JPH._ByValue_Array_UnsignedInt mRodBendTwistConstraintRemap, JPH._ByValue_Array_UnsignedInt mDihedralBendRemap, JPH._ByValue_Array_UnsignedInt mVolumeRemap, JPH._ByValue_Array_UnsignedInt mSkinnedRemap) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.SoftBodySharedSettings.OptimizationResults._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_ConstructFrom(JPH._PassBy mEdgeRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mEdgeRemap, JPH._PassBy mLRARemap_pass_by, JPH.Array_UnsignedInt._Underlying *mLRARemap, JPH._PassBy mRodStretchShearConstraintRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mRodStretchShearConstraintRemap, JPH._PassBy mRodBendTwistConstraintRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mRodBendTwistConstraintRemap, JPH._PassBy mDihedralBendRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mDihedralBendRemap, JPH._PassBy mVolumeRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mVolumeRemap, JPH._PassBy mSkinnedRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mSkinnedRemap);
+                _UnderlyingPtr = __JPH_SoftBodySharedSettings_OptimizationResults_ConstructFrom(mEdgeRemap.PassByMode, mEdgeRemap.Value is not null ? mEdgeRemap.Value._UnderlyingPtr : null, mLRARemap.PassByMode, mLRARemap.Value is not null ? mLRARemap.Value._UnderlyingPtr : null, mRodStretchShearConstraintRemap.PassByMode, mRodStretchShearConstraintRemap.Value is not null ? mRodStretchShearConstraintRemap.Value._UnderlyingPtr : null, mRodBendTwistConstraintRemap.PassByMode, mRodBendTwistConstraintRemap.Value is not null ? mRodBendTwistConstraintRemap.Value._UnderlyingPtr : null, mDihedralBendRemap.PassByMode, mDihedralBendRemap.Value is not null ? mDihedralBendRemap.Value._UnderlyingPtr : null, mVolumeRemap.PassByMode, mVolumeRemap.Value is not null ? mVolumeRemap.Value._UnderlyingPtr : null, mSkinnedRemap.PassByMode, mSkinnedRemap.Value is not null ? mSkinnedRemap.Value._UnderlyingPtr : null);
+                if (mEdgeRemap.Value is not null) _KeepAlive(mEdgeRemap.Value);
+                if (mLRARemap.Value is not null) _KeepAlive(mLRARemap.Value);
+                if (mRodStretchShearConstraintRemap.Value is not null) _KeepAlive(mRodStretchShearConstraintRemap.Value);
+                if (mRodBendTwistConstraintRemap.Value is not null) _KeepAlive(mRodBendTwistConstraintRemap.Value);
+                if (mDihedralBendRemap.Value is not null) _KeepAlive(mDihedralBendRemap.Value);
+                if (mVolumeRemap.Value is not null) _KeepAlive(mVolumeRemap.Value);
+                if (mSkinnedRemap.Value is not null) _KeepAlive(mSkinnedRemap.Value);
             }
 
             /// Generated from constructor `JPH::SoftBodySharedSettings::OptimizationResults::OptimizationResults`.
@@ -2345,6 +2670,132 @@ public static partial class JPH
         /// This is the non-const half of the class.
         public class OptimizationResults : Const_OptimizationResults
         {
+            ///< Maps old edge index to new edge index
+            public new unsafe JPH.Array_UnsignedInt mEdgeRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mEdgeRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mEdgeRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mEdgeRemap(_Underlying *_this);
+                    JPH.Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mEdgeRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old LRA index to new LRA index
+            public new unsafe JPH.Array_UnsignedInt mLRARemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mLRARemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mLRARemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mLRARemap(_Underlying *_this);
+                    JPH.Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mLRARemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old rod stretch shear constraint index to new stretch shear rod constraint index
+            public new unsafe JPH.Array_UnsignedInt mRodStretchShearConstraintRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodStretchShearConstraintRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodStretchShearConstraintRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodStretchShearConstraintRemap(_Underlying *_this);
+                    JPH.Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodStretchShearConstraintRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old rod bend twist constraint index to new bend twist rod constraint index
+            public new unsafe JPH.Array_UnsignedInt mRodBendTwistConstraintRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodBendTwistConstraintRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodBendTwistConstraintRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodBendTwistConstraintRemap(_Underlying *_this);
+                    JPH.Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mRodBendTwistConstraintRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old dihedral bend index to new dihedral bend index
+            public new unsafe JPH.Array_UnsignedInt mDihedralBendRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mDihedralBendRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mDihedralBendRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mDihedralBendRemap(_Underlying *_this);
+                    JPH.Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mDihedralBendRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old volume constraint index to new volume constraint index
+            public new unsafe JPH.Array_UnsignedInt mVolumeRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mVolumeRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mVolumeRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mVolumeRemap(_Underlying *_this);
+                    JPH.Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mVolumeRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
+            ///< Maps old skinned constraint index to new skinned constraint index
+            public new unsafe JPH.Array_UnsignedInt mSkinnedRemap
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mSkinnedRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mSkinnedRemap", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Array_UnsignedInt._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mSkinnedRemap(_Underlying *_this);
+                    JPH.Array_UnsignedInt __ret;
+                    __ret = new(__JPH_SoftBodySharedSettings_OptimizationResults_GetMutable_mSkinnedRemap(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             internal unsafe OptimizationResults(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
             /// Constructs an empty (default-constructed) instance.
@@ -2357,6 +2808,25 @@ public static partial class JPH
                 #endif
                 extern static JPH.SoftBodySharedSettings.OptimizationResults._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstruct();
                 _UnderlyingPtr = __JPH_SoftBodySharedSettings_OptimizationResults_DefaultConstruct();
+            }
+
+            /// Constructs `JPH::SoftBodySharedSettings::OptimizationResults` elementwise.
+            public unsafe OptimizationResults(JPH._ByValue_Array_UnsignedInt mEdgeRemap, JPH._ByValue_Array_UnsignedInt mLRARemap, JPH._ByValue_Array_UnsignedInt mRodStretchShearConstraintRemap, JPH._ByValue_Array_UnsignedInt mRodBendTwistConstraintRemap, JPH._ByValue_Array_UnsignedInt mDihedralBendRemap, JPH._ByValue_Array_UnsignedInt mVolumeRemap, JPH._ByValue_Array_UnsignedInt mSkinnedRemap) : this(null, is_owning: true)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_OptimizationResults_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.SoftBodySharedSettings.OptimizationResults._Underlying *__JPH_SoftBodySharedSettings_OptimizationResults_ConstructFrom(JPH._PassBy mEdgeRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mEdgeRemap, JPH._PassBy mLRARemap_pass_by, JPH.Array_UnsignedInt._Underlying *mLRARemap, JPH._PassBy mRodStretchShearConstraintRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mRodStretchShearConstraintRemap, JPH._PassBy mRodBendTwistConstraintRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mRodBendTwistConstraintRemap, JPH._PassBy mDihedralBendRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mDihedralBendRemap, JPH._PassBy mVolumeRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mVolumeRemap, JPH._PassBy mSkinnedRemap_pass_by, JPH.Array_UnsignedInt._Underlying *mSkinnedRemap);
+                _UnderlyingPtr = __JPH_SoftBodySharedSettings_OptimizationResults_ConstructFrom(mEdgeRemap.PassByMode, mEdgeRemap.Value is not null ? mEdgeRemap.Value._UnderlyingPtr : null, mLRARemap.PassByMode, mLRARemap.Value is not null ? mLRARemap.Value._UnderlyingPtr : null, mRodStretchShearConstraintRemap.PassByMode, mRodStretchShearConstraintRemap.Value is not null ? mRodStretchShearConstraintRemap.Value._UnderlyingPtr : null, mRodBendTwistConstraintRemap.PassByMode, mRodBendTwistConstraintRemap.Value is not null ? mRodBendTwistConstraintRemap.Value._UnderlyingPtr : null, mDihedralBendRemap.PassByMode, mDihedralBendRemap.Value is not null ? mDihedralBendRemap.Value._UnderlyingPtr : null, mVolumeRemap.PassByMode, mVolumeRemap.Value is not null ? mVolumeRemap.Value._UnderlyingPtr : null, mSkinnedRemap.PassByMode, mSkinnedRemap.Value is not null ? mSkinnedRemap.Value._UnderlyingPtr : null);
+                if (mEdgeRemap.Value is not null) _KeepAlive(mEdgeRemap.Value);
+                if (mLRARemap.Value is not null) _KeepAlive(mLRARemap.Value);
+                if (mRodStretchShearConstraintRemap.Value is not null) _KeepAlive(mRodStretchShearConstraintRemap.Value);
+                if (mRodBendTwistConstraintRemap.Value is not null) _KeepAlive(mRodBendTwistConstraintRemap.Value);
+                if (mDihedralBendRemap.Value is not null) _KeepAlive(mDihedralBendRemap.Value);
+                if (mVolumeRemap.Value is not null) _KeepAlive(mVolumeRemap.Value);
+                if (mSkinnedRemap.Value is not null) _KeepAlive(mSkinnedRemap.Value);
             }
 
             /// Generated from constructor `JPH::SoftBodySharedSettings::OptimizationResults::OptimizationResults`.
@@ -5333,6 +5803,186 @@ public static partial class JPH
             SoftBodySharedSettings ret = new(__JPH_SoftBodySharedSettings_StaticDowncastFrom_JPH_RefTarget_JPH_SoftBodySharedSettings(parent._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = parent;
             return ret;
+        }
+
+        ///< The list of vertices or particles of the body
+        public new unsafe JPH.Array_JPHSoftBodySharedSettingsVertex mVertices
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mVertices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHSoftBodySharedSettingsVertex._Underlying *__JPH_SoftBodySharedSettings_GetMutable_mVertices(_Underlying *_this);
+                JPH.Array_JPHSoftBodySharedSettingsVertex __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_GetMutable_mVertices(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of faces of the body
+        public new unsafe JPH.Array_JPHSoftBodySharedSettingsFace mFaces
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mFaces", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mFaces", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHSoftBodySharedSettingsFace._Underlying *__JPH_SoftBodySharedSettings_GetMutable_mFaces(_Underlying *_this);
+                JPH.Array_JPHSoftBodySharedSettingsFace __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_GetMutable_mFaces(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of edges or springs of the body
+        public new unsafe JPH.Array_JPHSoftBodySharedSettingsEdge mEdgeConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mEdgeConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mEdgeConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHSoftBodySharedSettingsEdge._Underlying *__JPH_SoftBodySharedSettings_GetMutable_mEdgeConstraints(_Underlying *_this);
+                JPH.Array_JPHSoftBodySharedSettingsEdge __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_GetMutable_mEdgeConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of dihedral bend constraints of the body
+        public new unsafe JPH.Array_JPHSoftBodySharedSettingsDihedralBend mDihedralBendConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mDihedralBendConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mDihedralBendConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHSoftBodySharedSettingsDihedralBend._Underlying *__JPH_SoftBodySharedSettings_GetMutable_mDihedralBendConstraints(_Underlying *_this);
+                JPH.Array_JPHSoftBodySharedSettingsDihedralBend __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_GetMutable_mDihedralBendConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of volume constraints of the body that keep the volume of tetrahedra in the soft body constant
+        public new unsafe JPH.Array_JPHSoftBodySharedSettingsVolume mVolumeConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mVolumeConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mVolumeConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHSoftBodySharedSettingsVolume._Underlying *__JPH_SoftBodySharedSettings_GetMutable_mVolumeConstraints(_Underlying *_this);
+                JPH.Array_JPHSoftBodySharedSettingsVolume __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_GetMutable_mVolumeConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of vertices that are constrained to a skinned vertex
+        public new unsafe JPH.Array_JPHSoftBodySharedSettingsSkinned mSkinnedConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mSkinnedConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mSkinnedConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHSoftBodySharedSettingsSkinned._Underlying *__JPH_SoftBodySharedSettings_GetMutable_mSkinnedConstraints(_Underlying *_this);
+                JPH.Array_JPHSoftBodySharedSettingsSkinned __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_GetMutable_mSkinnedConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of inverse bind matrices for skinning vertices
+        public new unsafe JPH.Array_JPHSoftBodySharedSettingsInvBind mInvBindMatrices
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mInvBindMatrices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mInvBindMatrices", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHSoftBodySharedSettingsInvBind._Underlying *__JPH_SoftBodySharedSettings_GetMutable_mInvBindMatrices(_Underlying *_this);
+                JPH.Array_JPHSoftBodySharedSettingsInvBind __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_GetMutable_mInvBindMatrices(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of long range attachment constraints
+        public new unsafe JPH.Array_JPHSoftBodySharedSettingsLRA mLRAConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mLRAConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mLRAConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHSoftBodySharedSettingsLRA._Underlying *__JPH_SoftBodySharedSettings_GetMutable_mLRAConstraints(_Underlying *_this);
+                JPH.Array_JPHSoftBodySharedSettingsLRA __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_GetMutable_mLRAConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of Cosserat rod constraints that connect two vertices and that limit stretch and shear
+        public new unsafe JPH.Array_JPHSoftBodySharedSettingsRodStretchShear mRodStretchShearConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mRodStretchShearConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mRodStretchShearConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHSoftBodySharedSettingsRodStretchShear._Underlying *__JPH_SoftBodySharedSettings_GetMutable_mRodStretchShearConstraints(_Underlying *_this);
+                JPH.Array_JPHSoftBodySharedSettingsRodStretchShear __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_GetMutable_mRodStretchShearConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
+        }
+
+        ///< The list of Cosserat rod constraints that connect two rods and limit the bend and twist
+        public new unsafe JPH.Array_JPHSoftBodySharedSettingsRodBendTwist mRodBendTwistConstraints
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mRodBendTwistConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodySharedSettings_GetMutable_mRodBendTwistConstraints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static JPH.Array_JPHSoftBodySharedSettingsRodBendTwist._Underlying *__JPH_SoftBodySharedSettings_GetMutable_mRodBendTwistConstraints(_Underlying *_this);
+                JPH.Array_JPHSoftBodySharedSettingsRodBendTwist __ret;
+                __ret = new(__JPH_SoftBodySharedSettings_GetMutable_mRodBendTwistConstraints(_UnderlyingPtr), is_owning: false);
+                __ret._KeepAliveEnclosingObject = this;
+                return __ret;
+            }
         }
 
         internal unsafe SoftBodySharedSettings(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}

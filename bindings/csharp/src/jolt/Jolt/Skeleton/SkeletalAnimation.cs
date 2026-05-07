@@ -294,6 +294,19 @@ public static partial class JPH
             __JPH_SkeletalAnimation_Sample(_UnderlyingPtr, inTime, ioPose._UnderlyingPtr);
         }
 
+        /// Get joint samples
+        /// Generated from method `JPH::SkeletalAnimation::GetAnimatedJoints`.
+        public unsafe JPH.Const_Array_JPHSkeletalAnimationAnimatedJoint GetAnimatedJoints()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletalAnimation_GetAnimatedJoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletalAnimation_GetAnimatedJoints", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Array_JPHSkeletalAnimationAnimatedJoint._Underlying *__JPH_SkeletalAnimation_GetAnimatedJoints(_Underlying *_this);
+            return new(__JPH_SkeletalAnimation_GetAnimatedJoints(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
         /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
         /// the object and at that point in time it is checked that no references are left to the structure.
@@ -384,6 +397,24 @@ public static partial class JPH
             }
             public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
             ~Const_AnimatedJoint() {Dispose(false);}
+
+            ///< List of keyframes over time
+            public unsafe JPH.Const_Array_JPHSkeletalAnimationKeyframe mKeyframes
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletalAnimation_AnimatedJoint_Get_mKeyframes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletalAnimation_AnimatedJoint_Get_mKeyframes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Const_Array_JPHSkeletalAnimationKeyframe._Underlying *__JPH_SkeletalAnimation_AnimatedJoint_Get_mKeyframes(_Underlying *_this);
+                    JPH.Const_Array_JPHSkeletalAnimationKeyframe __ret;
+                    __ret = new(__JPH_SkeletalAnimation_AnimatedJoint_Get_mKeyframes(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
 
             internal unsafe Const_AnimatedJoint(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
@@ -558,6 +589,24 @@ public static partial class JPH
         /// This is the non-const half of the class.
         public class AnimatedJoint : Const_AnimatedJoint
         {
+            ///< List of keyframes over time
+            public new unsafe JPH.Array_JPHSkeletalAnimationKeyframe mKeyframes
+            {
+                get
+                {
+                    #if __IOS__
+                    [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletalAnimation_AnimatedJoint_GetMutable_mKeyframes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #else
+                    [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletalAnimation_AnimatedJoint_GetMutable_mKeyframes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                    #endif
+                    extern static JPH.Array_JPHSkeletalAnimationKeyframe._Underlying *__JPH_SkeletalAnimation_AnimatedJoint_GetMutable_mKeyframes(_Underlying *_this);
+                    JPH.Array_JPHSkeletalAnimationKeyframe __ret;
+                    __ret = new(__JPH_SkeletalAnimation_AnimatedJoint_GetMutable_mKeyframes(_UnderlyingPtr), is_owning: false);
+                    __ret._KeepAliveEnclosingObject = this;
+                    return __ret;
+                }
+            }
+
             internal unsafe AnimatedJoint(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
             /// Constructs an empty (default-constructed) instance.
@@ -1652,6 +1701,18 @@ public static partial class JPH
             #endif
             extern static void __JPH_SkeletalAnimation_SetIsLooping(_Underlying *_this, byte inIsLooping);
             __JPH_SkeletalAnimation_SetIsLooping(_UnderlyingPtr, inIsLooping ? (byte)1 : (byte)0);
+        }
+
+        /// Generated from method `JPH::SkeletalAnimation::GetAnimatedJoints`.
+        public unsafe new JPH.Array_JPHSkeletalAnimationAnimatedJoint GetAnimatedJoints()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SkeletalAnimation_GetAnimatedJoints_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SkeletalAnimation_GetAnimatedJoints_mut", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Array_JPHSkeletalAnimationAnimatedJoint._Underlying *__JPH_SkeletalAnimation_GetAnimatedJoints_mut(_Underlying *_this);
+            return new(__JPH_SkeletalAnimation_GetAnimatedJoints_mut(_UnderlyingPtr), is_owning: false);
         }
     }
 

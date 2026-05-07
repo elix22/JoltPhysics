@@ -56,6 +56,7 @@ EXTRA_GEN_C_FLAGS=(
     --no-handle-exceptions
     --expose-as-struct JPH::BodyID
     --no-dynamic-cast
+    --vector-like-container "JPH::Array" "Jolt/Core/Array.h" --vector-like-container-raw-pointer-iterators
 )
 
 # Optional tunable flags for the C# generator.
