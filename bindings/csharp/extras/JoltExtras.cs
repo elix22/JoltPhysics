@@ -66,6 +66,19 @@ public static unsafe class JoltExtensions
         finally { Marshal.FreeCoTaskMem(p); }
     }
 
+    public static int GetJointIndex(this JPH.Const_Skeleton skeleton, string name)
+    {
+        #if __IOS__
+        [DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SkeletonGetJointIndex", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #else
+        [DllImport("cjolt", EntryPoint = "JoltHelpers_SkeletonGetJointIndex", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #endif
+        extern static int __impl(JPH.Const_Skeleton._Underlying* s, byte* n);
+        var p = Utf8Alloc(name);
+        try { return __impl(skeleton._UnderlyingPtr, (byte*)p); }
+        finally { Marshal.FreeCoTaskMem(p); }
+    }
+
     // ---- VehicleTransmissionSettings gear ratio setters ----------------------
     //
     // The generated JoltHelpers.VehicleTransmissionSettingsSetGearRatios takes

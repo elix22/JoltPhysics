@@ -27,6 +27,8 @@
 #include <Jolt/Renderer/DebugRendererSimple.h>
 #endif
 
+#include <Jolt/Skeleton/SkeletonMapper.h>
+
 /// Minimal helpers for Jolt global lifecycle.
 /// These are the only hand-implemented methods; their C/C# bindings are machine-generated.
 struct JoltHelpers
@@ -209,7 +211,11 @@ struct JoltHelpers
     /// Set the mToParent constraint on a Part (mToParent is Ref<TwoBodyConstraintSettings>).
     static void RagdollSettingsPartSetToParent(JPH::RagdollSettings::Part& inPart, JPH::TwoBodyConstraintSettings* inConstraint);
 
-
+    /// Initialize a SkeletonMapper from two neutral SkeletonPoses.
+    /// inPose1 = ragdoll (low-detail) neutral pose; inPose2 = animation (high-detail) neutral pose.
+    static void SkeletonMapperInitialize(JPH::SkeletonMapper& ioMapper,
+                                        const JPH::SkeletonPose& inPose1,
+                                        const JPH::SkeletonPose& inPose2);
 #ifdef JPH_OBJECT_STREAM
     /// Deserialize a RagdollSettings from an in-memory buffer (loaded externally).
     /// Returns nullptr on failure. Caller owns the returned pointer.

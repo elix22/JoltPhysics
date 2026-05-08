@@ -40,6 +40,8 @@
 #include <Jolt/Renderer/DebugRendererSimple.h>
 #include <Jolt/Skeleton/SkeletalAnimation.h>
 #include <Jolt/Skeleton/Skeleton.h>
+#include <Jolt/Skeleton/SkeletonMapper.h>
+#include <Jolt/Skeleton/SkeletonPose.h>
 #include <__mrbind_c_details.h>
 #include <jolt_init_wrapper.h>
 
@@ -552,6 +554,15 @@ void JoltHelpers_RagdollSettingsPartSetToParent(JPH_RagdollSettings_Part *inPart
     JoltHelpers::RagdollSettingsPartSetToParent(
         ((inPart ? void() : MRBINDC_THROW("Parameter `inPart` can not be null.", void)), *(JPH::RagdollSettings::Part *)(inPart)),
         ((JPH::TwoBodyConstraintSettings *)inConstraint)
+    );
+}
+
+void JoltHelpers_SkeletonMapperInitialize(JPH_SkeletonMapper *ioMapper, const JPH_SkeletonPose *inPose1, const JPH_SkeletonPose *inPose2)
+{
+    JoltHelpers::SkeletonMapperInitialize(
+        ((ioMapper ? void() : MRBINDC_THROW("Parameter `ioMapper` can not be null.", void)), *(JPH::SkeletonMapper *)(ioMapper)),
+        ((inPose1 ? void() : MRBINDC_THROW("Parameter `inPose1` can not be null.", void)), *(const JPH::SkeletonPose *)(inPose1)),
+        ((inPose2 ? void() : MRBINDC_THROW("Parameter `inPose2` can not be null.", void)), *(const JPH::SkeletonPose *)(inPose2))
     );
 }
 

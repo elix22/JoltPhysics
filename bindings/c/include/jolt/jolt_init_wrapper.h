@@ -42,6 +42,8 @@ typedef struct JPH_RayInvDirection JPH_RayInvDirection; // Defined in `#include 
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
 typedef struct JPH_SkeletalAnimation JPH_SkeletalAnimation; // Defined in `#include <jolt/Jolt/Skeleton/SkeletalAnimation.h>`.
 typedef struct JPH_Skeleton JPH_Skeleton; // Defined in `#include <jolt/Jolt/Skeleton/Skeleton.h>`.
+typedef struct JPH_SkeletonMapper JPH_SkeletonMapper; // Defined in `#include <jolt/Jolt/Skeleton/SkeletonMapper.h>`.
+typedef struct JPH_SkeletonPose JPH_SkeletonPose; // Defined in `#include <jolt/Jolt/Skeleton/SkeletonPose.h>`.
 typedef struct JPH_SoftBodyContactListener JPH_SoftBodyContactListener; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyContactListener.h>`.
 typedef struct JPH_SoftBodyContactSettings JPH_SoftBodyContactSettings; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyContactListener.h>`.
 typedef struct JPH_SoftBodyManifold JPH_SoftBodyManifold; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyManifold.h>`.
@@ -506,6 +508,14 @@ JOLT_API const JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetPart(cons
 /// Generated from method `JoltHelpers::RagdollSettingsPartSetToParent`.
 /// Parameter `inPart` can not be null. It is a single object.
 JOLT_API void JoltHelpers_RagdollSettingsPartSetToParent(JPH_RagdollSettings_Part *inPart, JPH_TwoBodyConstraintSettings *inConstraint);
+
+/// Initialize a SkeletonMapper from two neutral SkeletonPoses.
+/// inPose1 = ragdoll (low-detail) neutral pose; inPose2 = animation (high-detail) neutral pose.
+/// Generated from method `JoltHelpers::SkeletonMapperInitialize`.
+/// Parameter `ioMapper` can not be null. It is a single object.
+/// Parameter `inPose1` can not be null. It is a single object.
+/// Parameter `inPose2` can not be null. It is a single object.
+JOLT_API void JoltHelpers_SkeletonMapperInitialize(JPH_SkeletonMapper *ioMapper, const JPH_SkeletonPose *inPose1, const JPH_SkeletonPose *inPose2);
 
 /// Deserialize a RagdollSettings from an in-memory buffer (loaded externally).
 /// Returns nullptr on failure. Caller owns the returned pointer.

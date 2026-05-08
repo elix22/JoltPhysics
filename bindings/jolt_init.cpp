@@ -23,6 +23,7 @@
 
 
 
+
 using namespace JPH;
 
 static void sTrace(const char *fmt, ...)
@@ -420,6 +421,15 @@ unsigned int JoltHelpers::SkeletonAddJointWithParentIndex(JPH::Skeleton& inSkele
 int JoltHelpers::SkeletonGetJointIndex(const JPH::Skeleton& inSkeleton, const char* inName)
 {
     return inSkeleton.GetJointIndex(JPH::string_view(inName));
+}
+
+void JoltHelpers::SkeletonMapperInitialize(JPH::SkeletonMapper& ioMapper,
+                                           const JPH::SkeletonPose& inPose1,
+                                           const JPH::SkeletonPose& inPose2)
+{
+    ioMapper.Initialize(
+        inPose1.GetSkeleton(), inPose1.GetJointMatrices().data(),
+        inPose2.GetSkeleton(), inPose2.GetJointMatrices().data());
 }
 // ---------------------------------------------------------------------------
 // ConvexHullShapeSettings from Float3 array

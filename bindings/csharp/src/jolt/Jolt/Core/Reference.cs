@@ -4759,6 +4759,274 @@ public static partial class JPH
     /// lower than 1, resulting in a memory leak. By carefully designing your classes
     /// (and particularly identifying who owns who in the class hierarchy) you can avoid
     /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::SkeletonMapper>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::SkeletonMapper`
+    /// This is the const half of the class.
+    public class Const_RefTarget_JPHSkeletonMapper : JPH.Object<Const_RefTarget_JPHSkeletonMapper>, System.IDisposable
+    {
+        internal struct _Underlying {} // Represents the underlying C++ type.
+
+        internal unsafe _Underlying *_UnderlyingPtr;
+
+        protected virtual unsafe void Dispose(bool disposing)
+        {
+            if (_UnderlyingPtr is null || !_IsOwningVal)
+                return;
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_SkeletonMapper_Destroy(_Underlying *_this);
+            __JPH_RefTarget_JPH_SkeletonMapper_Destroy(_UnderlyingPtr);
+            _UnderlyingPtr = null;
+        }
+        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
+        ~Const_RefTarget_JPHSkeletonMapper() {Dispose(false);}
+
+        internal unsafe Const_RefTarget_JPHSkeletonMapper(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe Const_RefTarget_JPHSkeletonMapper() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHSkeletonMapper._Underlying *__JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
+        public unsafe Const_RefTarget_JPHSkeletonMapper(JPH._ByValue_RefTarget_JPHSkeletonMapper _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHSkeletonMapper._Underlying *__JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHSkeletonMapper._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
+        public Const_RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper _other) : this(new _ByValue_RefTarget_JPHSkeletonMapper(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
+        public Const_RefTarget_JPHSkeletonMapper(RefTarget_JPHSkeletonMapper _other) : this((Const_RefTarget_JPHSkeletonMapper)_other) {}
+
+        /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+        /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+        /// the object and at that point in time it is checked that no references are left to the structure.
+        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::SetEmbedded`.
+        public unsafe void SetEmbedded()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_SkeletonMapper_SetEmbedded(_Underlying *_this);
+            __JPH_RefTarget_JPH_SkeletonMapper_SetEmbedded(_UnderlyingPtr);
+        }
+
+        /// Get current refcount of this object
+        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::GetRefCount`.
+        public unsafe uint GetRefCount()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JPH_RefTarget_JPH_SkeletonMapper_GetRefCount(_Underlying *_this);
+            return __JPH_RefTarget_JPH_SkeletonMapper_GetRefCount(_UnderlyingPtr);
+        }
+
+        /// Add or release a reference to this object
+        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::AddRef`.
+        public unsafe void AddRef()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_SkeletonMapper_AddRef(_Underlying *_this);
+            __JPH_RefTarget_JPH_SkeletonMapper_AddRef(_UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::Release`.
+        public unsafe void Release()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_RefTarget_JPH_SkeletonMapper_Release(_Underlying *_this);
+            __JPH_RefTarget_JPH_SkeletonMapper_Release(_UnderlyingPtr);
+        }
+
+        /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::sInternalGetRefCountOffset`.
+        public static int SInternalGetRefCountOffset()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JPH_RefTarget_JPH_SkeletonMapper_sInternalGetRefCountOffset();
+            return __JPH_RefTarget_JPH_SkeletonMapper_sInternalGetRefCountOffset();
+        }
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
+    /// Generated from class `JPH::RefTarget<JPH::SkeletonMapper>`.
+    /// Derived classes:
+    ///   Direct: (non-virtual)
+    ///     `JPH::SkeletonMapper`
+    /// This is the non-const half of the class.
+    public class RefTarget_JPHSkeletonMapper : Const_RefTarget_JPHSkeletonMapper
+    {
+        internal unsafe RefTarget_JPHSkeletonMapper(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
+
+        /// Constructs an empty (default-constructed) instance.
+        public unsafe RefTarget_JPHSkeletonMapper() : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHSkeletonMapper._Underlying *__JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct();
+            _UnderlyingPtr = __JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct();
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
+        public unsafe RefTarget_JPHSkeletonMapper(JPH._ByValue_RefTarget_JPHSkeletonMapper _other) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHSkeletonMapper._Underlying *__JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHSkeletonMapper._Underlying *_other);
+            _UnderlyingPtr = __JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+        }
+
+        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
+        public RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper _other) : this(new _ByValue_RefTarget_JPHSkeletonMapper(_other)) {}
+
+        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
+        public RefTarget_JPHSkeletonMapper(RefTarget_JPHSkeletonMapper _other) : this((Const_RefTarget_JPHSkeletonMapper)_other) {}
+
+        /// Assignment operator
+        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::operator=`.
+        public unsafe JPH.RefTarget_JPHSkeletonMapper Assign(JPH._ByValue_RefTarget_JPHSkeletonMapper _other)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RefTarget_JPHSkeletonMapper._Underlying *__JPH_RefTarget_JPH_SkeletonMapper_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.RefTarget_JPHSkeletonMapper._Underlying *_other);
+            JPH.RefTarget_JPHSkeletonMapper __ret;
+            __ret = new(__JPH_RefTarget_JPH_SkeletonMapper_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
+            _DiscardKeepAlive();
+            if (_other.Value is not null) _KeepAlive(_other.Value);
+            __ret._KeepAlive(this);
+            return __ret;
+        }
+    }
+
+    /// This is used as a function parameter when the underlying function receives `RefTarget_JPHSkeletonMapper` by value.
+    /// Usage:
+    /// * Pass `new()` to default-construct the instance.
+    /// * Pass an instance of `RefTarget_JPHSkeletonMapper`/`Const_RefTarget_JPHSkeletonMapper` to copy it into the function.
+    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
+    public class _ByValue_RefTarget_JPHSkeletonMapper
+    {
+        #pragma warning disable CS0649
+        internal readonly Const_RefTarget_JPHSkeletonMapper? Value;
+        #pragma warning restore CS0649
+        internal readonly JPH._PassBy PassByMode;
+        public _ByValue_RefTarget_JPHSkeletonMapper() {PassByMode = JPH._PassBy.default_construct;}
+        public _ByValue_RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
+        public static implicit operator _ByValue_RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper arg) {return new(arg);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHSkeletonMapper` with default arguments.
+    /// This is only used mutable parameters. For const ones we have `_InOptConst_RefTarget_JPHSkeletonMapper`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHSkeletonMapper`/`Const_RefTarget_JPHSkeletonMapper` directly.
+    public class _InOptMut_RefTarget_JPHSkeletonMapper
+    {
+        public RefTarget_JPHSkeletonMapper? Opt;
+
+        public _InOptMut_RefTarget_JPHSkeletonMapper() {}
+        public _InOptMut_RefTarget_JPHSkeletonMapper(RefTarget_JPHSkeletonMapper value) {Opt = value;}
+        public static implicit operator _InOptMut_RefTarget_JPHSkeletonMapper(RefTarget_JPHSkeletonMapper value) {return new(value);}
+    }
+
+    /// This is used for optional parameters of class `RefTarget_JPHSkeletonMapper` with default arguments.
+    /// This is only used const parameters. For non-const ones we have `_InOptMut_RefTarget_JPHSkeletonMapper`.
+    /// Usage:
+    /// * Pass `null` to use the default argument.
+    /// * Pass `new()` to pass no object.
+    /// * Pass an instance of `RefTarget_JPHSkeletonMapper`/`Const_RefTarget_JPHSkeletonMapper` to pass it to the function.
+    public class _InOptConst_RefTarget_JPHSkeletonMapper
+    {
+        public Const_RefTarget_JPHSkeletonMapper? Opt;
+
+        public _InOptConst_RefTarget_JPHSkeletonMapper() {}
+        public _InOptConst_RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper value) {Opt = value;}
+        public static implicit operator _InOptConst_RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper value) {return new(value);}
+    }
+
+    /// Simple class to facilitate reference counting / releasing
+    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
+    ///
+    /// Reference counting classes keep an integer which indicates how many references
+    /// to the object are active. Reference counting objects are derived from RefTarget
+    /// and staT & their life with a reference count of zero. They can then be assigned
+    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
+    /// If the destructor of Ref is called or another object is assigned to the reference
+    /// counting pointer it will decrease the reference count of the object again. If this
+    /// reference count becomes zero, the object is destroyed.
+    ///
+    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
+    /// some responsibility to the programmer. The most notable point is that you cannot
+    /// have one object reference another and have the other reference the first one
+    /// back, because this way the reference count of both objects will never become
+    /// lower than 1, resulting in a memory leak. By carefully designing your classes
+    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
+    /// these problems.
     /// Generated from class `JPH::RefTarget<JPH::PathConstraintPath>`.
     /// Derived classes:
     ///   Direct: (non-virtual)
@@ -5011,273 +5279,5 @@ public static partial class JPH
         public _InOptConst_RefTarget_JPHPathConstraintPath() {}
         public _InOptConst_RefTarget_JPHPathConstraintPath(Const_RefTarget_JPHPathConstraintPath value) {Opt = value;}
         public static implicit operator _InOptConst_RefTarget_JPHPathConstraintPath(Const_RefTarget_JPHPathConstraintPath value) {return new(value);}
-    }
-
-    /// Simple class to facilitate reference counting / releasing
-    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
-    ///
-    /// Reference counting classes keep an integer which indicates how many references
-    /// to the object are active. Reference counting objects are derived from RefTarget
-    /// and staT & their life with a reference count of zero. They can then be assigned
-    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
-    /// If the destructor of Ref is called or another object is assigned to the reference
-    /// counting pointer it will decrease the reference count of the object again. If this
-    /// reference count becomes zero, the object is destroyed.
-    ///
-    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
-    /// some responsibility to the programmer. The most notable point is that you cannot
-    /// have one object reference another and have the other reference the first one
-    /// back, because this way the reference count of both objects will never become
-    /// lower than 1, resulting in a memory leak. By carefully designing your classes
-    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
-    /// these problems.
-    /// Generated from class `JPH::RefTarget<JPH::SkeletonMapper>`.
-    /// Derived classes:
-    ///   Direct: (non-virtual)
-    ///     `JPH::SkeletonMapper`
-    /// This is the const half of the class.
-    public class Const_RefTarget_JPHSkeletonMapper : JPH.Object<Const_RefTarget_JPHSkeletonMapper>, System.IDisposable
-    {
-        internal struct _Underlying {} // Represents the underlying C++ type.
-
-        internal unsafe _Underlying *_UnderlyingPtr;
-
-        protected virtual unsafe void Dispose(bool disposing)
-        {
-            if (_UnderlyingPtr is null || !_IsOwningVal)
-                return;
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_Destroy", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_SkeletonMapper_Destroy(_Underlying *_this);
-            __JPH_RefTarget_JPH_SkeletonMapper_Destroy(_UnderlyingPtr);
-            _UnderlyingPtr = null;
-        }
-        public virtual void Dispose() {Dispose(true); GC.SuppressFinalize(this);}
-        ~Const_RefTarget_JPHSkeletonMapper() {Dispose(false);}
-
-        internal unsafe Const_RefTarget_JPHSkeletonMapper(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
-
-        /// Constructs an empty (default-constructed) instance.
-        public unsafe Const_RefTarget_JPHSkeletonMapper() : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHSkeletonMapper._Underlying *__JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct();
-            _UnderlyingPtr = __JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct();
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
-        public unsafe Const_RefTarget_JPHSkeletonMapper(JPH._ByValue_RefTarget_JPHSkeletonMapper _other) : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHSkeletonMapper._Underlying *__JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHSkeletonMapper._Underlying *_other);
-            _UnderlyingPtr = __JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
-            if (_other.Value is not null) _KeepAlive(_other.Value);
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
-        public Const_RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper _other) : this(new _ByValue_RefTarget_JPHSkeletonMapper(_other)) {}
-
-        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
-        public Const_RefTarget_JPHSkeletonMapper(RefTarget_JPHSkeletonMapper _other) : this((Const_RefTarget_JPHSkeletonMapper)_other) {}
-
-        /// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
-        /// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
-        /// the object and at that point in time it is checked that no references are left to the structure.
-        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::SetEmbedded`.
-        public unsafe void SetEmbedded()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_SetEmbedded", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_SkeletonMapper_SetEmbedded(_Underlying *_this);
-            __JPH_RefTarget_JPH_SkeletonMapper_SetEmbedded(_UnderlyingPtr);
-        }
-
-        /// Get current refcount of this object
-        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::GetRefCount`.
-        public unsafe uint GetRefCount()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_GetRefCount", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static uint __JPH_RefTarget_JPH_SkeletonMapper_GetRefCount(_Underlying *_this);
-            return __JPH_RefTarget_JPH_SkeletonMapper_GetRefCount(_UnderlyingPtr);
-        }
-
-        /// Add or release a reference to this object
-        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::AddRef`.
-        public unsafe void AddRef()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_AddRef", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_SkeletonMapper_AddRef(_Underlying *_this);
-            __JPH_RefTarget_JPH_SkeletonMapper_AddRef(_UnderlyingPtr);
-        }
-
-        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::Release`.
-        public unsafe void Release()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_Release", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static void __JPH_RefTarget_JPH_SkeletonMapper_Release(_Underlying *_this);
-            __JPH_RefTarget_JPH_SkeletonMapper_Release(_UnderlyingPtr);
-        }
-
-        /// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
-        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::sInternalGetRefCountOffset`.
-        public static int SInternalGetRefCountOffset()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_sInternalGetRefCountOffset", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static int __JPH_RefTarget_JPH_SkeletonMapper_sInternalGetRefCountOffset();
-            return __JPH_RefTarget_JPH_SkeletonMapper_sInternalGetRefCountOffset();
-        }
-    }
-
-    /// Simple class to facilitate reference counting / releasing
-    /// Derive your class from RefTarget and you can reference it by using Ref<classname> or RefConst<classname>
-    ///
-    /// Reference counting classes keep an integer which indicates how many references
-    /// to the object are active. Reference counting objects are derived from RefTarget
-    /// and staT & their life with a reference count of zero. They can then be assigned
-    /// to equivalents of pointers (Ref) which will increase the reference count immediately.
-    /// If the destructor of Ref is called or another object is assigned to the reference
-    /// counting pointer it will decrease the reference count of the object again. If this
-    /// reference count becomes zero, the object is destroyed.
-    ///
-    /// This provides a very powerful mechanism to prevent memory leaks, but also gives
-    /// some responsibility to the programmer. The most notable point is that you cannot
-    /// have one object reference another and have the other reference the first one
-    /// back, because this way the reference count of both objects will never become
-    /// lower than 1, resulting in a memory leak. By carefully designing your classes
-    /// (and particularly identifying who owns who in the class hierarchy) you can avoid
-    /// these problems.
-    /// Generated from class `JPH::RefTarget<JPH::SkeletonMapper>`.
-    /// Derived classes:
-    ///   Direct: (non-virtual)
-    ///     `JPH::SkeletonMapper`
-    /// This is the non-const half of the class.
-    public class RefTarget_JPHSkeletonMapper : Const_RefTarget_JPHSkeletonMapper
-    {
-        internal unsafe RefTarget_JPHSkeletonMapper(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
-
-        /// Constructs an empty (default-constructed) instance.
-        public unsafe RefTarget_JPHSkeletonMapper() : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHSkeletonMapper._Underlying *__JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct();
-            _UnderlyingPtr = __JPH_RefTarget_JPH_SkeletonMapper_DefaultConstruct();
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
-        public unsafe RefTarget_JPHSkeletonMapper(JPH._ByValue_RefTarget_JPHSkeletonMapper _other) : this(null, is_owning: true)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHSkeletonMapper._Underlying *__JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother(JPH._PassBy _other_pass_by, JPH.RefTarget_JPHSkeletonMapper._Underlying *_other);
-            _UnderlyingPtr = __JPH_RefTarget_JPH_SkeletonMapper_ConstructFromAnother(_other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null);
-            if (_other.Value is not null) _KeepAlive(_other.Value);
-        }
-
-        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
-        public RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper _other) : this(new _ByValue_RefTarget_JPHSkeletonMapper(_other)) {}
-
-        /// Generated from constructor `JPH::RefTarget<JPH::SkeletonMapper>::RefTarget`.
-        public RefTarget_JPHSkeletonMapper(RefTarget_JPHSkeletonMapper _other) : this((Const_RefTarget_JPHSkeletonMapper)_other) {}
-
-        /// Assignment operator
-        /// Generated from method `JPH::RefTarget<JPH::SkeletonMapper>::operator=`.
-        public unsafe JPH.RefTarget_JPHSkeletonMapper Assign(JPH._ByValue_RefTarget_JPHSkeletonMapper _other)
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_SkeletonMapper_AssignFromAnother", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.RefTarget_JPHSkeletonMapper._Underlying *__JPH_RefTarget_JPH_SkeletonMapper_AssignFromAnother(_Underlying *_this, JPH._PassBy _other_pass_by, JPH.RefTarget_JPHSkeletonMapper._Underlying *_other);
-            JPH.RefTarget_JPHSkeletonMapper __ret;
-            __ret = new(__JPH_RefTarget_JPH_SkeletonMapper_AssignFromAnother(_UnderlyingPtr, _other.PassByMode, _other.Value is not null ? _other.Value._UnderlyingPtr : null), is_owning: false);
-            _DiscardKeepAlive();
-            if (_other.Value is not null) _KeepAlive(_other.Value);
-            __ret._KeepAlive(this);
-            return __ret;
-        }
-    }
-
-    /// This is used as a function parameter when the underlying function receives `RefTarget_JPHSkeletonMapper` by value.
-    /// Usage:
-    /// * Pass `new()` to default-construct the instance.
-    /// * Pass an instance of `RefTarget_JPHSkeletonMapper`/`Const_RefTarget_JPHSkeletonMapper` to copy it into the function.
-    /// * Pass `null` to use the default argument, assuming the parameter has a default argument (has `?` in the type).
-    public class _ByValue_RefTarget_JPHSkeletonMapper
-    {
-        #pragma warning disable CS0649
-        internal readonly Const_RefTarget_JPHSkeletonMapper? Value;
-        #pragma warning restore CS0649
-        internal readonly JPH._PassBy PassByMode;
-        public _ByValue_RefTarget_JPHSkeletonMapper() {PassByMode = JPH._PassBy.default_construct;}
-        public _ByValue_RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper new_value) {Value = new_value; PassByMode = JPH._PassBy.copy;}
-        public static implicit operator _ByValue_RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper arg) {return new(arg);}
-    }
-
-    /// This is used for optional parameters of class `RefTarget_JPHSkeletonMapper` with default arguments.
-    /// This is only used mutable parameters. For const ones we have `_InOptConst_RefTarget_JPHSkeletonMapper`.
-    /// Usage:
-    /// * Pass `null` to use the default argument.
-    /// * Pass `new()` to pass no object.
-    /// * Pass an instance of `RefTarget_JPHSkeletonMapper`/`Const_RefTarget_JPHSkeletonMapper` directly.
-    public class _InOptMut_RefTarget_JPHSkeletonMapper
-    {
-        public RefTarget_JPHSkeletonMapper? Opt;
-
-        public _InOptMut_RefTarget_JPHSkeletonMapper() {}
-        public _InOptMut_RefTarget_JPHSkeletonMapper(RefTarget_JPHSkeletonMapper value) {Opt = value;}
-        public static implicit operator _InOptMut_RefTarget_JPHSkeletonMapper(RefTarget_JPHSkeletonMapper value) {return new(value);}
-    }
-
-    /// This is used for optional parameters of class `RefTarget_JPHSkeletonMapper` with default arguments.
-    /// This is only used const parameters. For non-const ones we have `_InOptMut_RefTarget_JPHSkeletonMapper`.
-    /// Usage:
-    /// * Pass `null` to use the default argument.
-    /// * Pass `new()` to pass no object.
-    /// * Pass an instance of `RefTarget_JPHSkeletonMapper`/`Const_RefTarget_JPHSkeletonMapper` to pass it to the function.
-    public class _InOptConst_RefTarget_JPHSkeletonMapper
-    {
-        public Const_RefTarget_JPHSkeletonMapper? Opt;
-
-        public _InOptConst_RefTarget_JPHSkeletonMapper() {}
-        public _InOptConst_RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper value) {Opt = value;}
-        public static implicit operator _InOptConst_RefTarget_JPHSkeletonMapper(Const_RefTarget_JPHSkeletonMapper value) {return new(value);}
     }
 }

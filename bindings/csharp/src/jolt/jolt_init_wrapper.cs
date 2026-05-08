@@ -807,6 +807,20 @@ public static partial class JPH
             __JoltHelpers_RagdollSettingsPartSetToParent(inPart._UnderlyingPtr, inConstraint is not null ? inConstraint._UnderlyingPtr : null);
         }
 
+        /// Initialize a SkeletonMapper from two neutral SkeletonPoses.
+        /// inPose1 = ragdoll (low-detail) neutral pose; inPose2 = animation (high-detail) neutral pose.
+        /// Generated from method `JoltHelpers::SkeletonMapperInitialize`.
+        public static unsafe void SkeletonMapperInitialize(JPH.SkeletonMapper ioMapper, JPH.Const_SkeletonPose inPose1, JPH.Const_SkeletonPose inPose2)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SkeletonMapperInitialize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SkeletonMapperInitialize", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_SkeletonMapperInitialize(JPH.SkeletonMapper._Underlying *ioMapper, JPH.Const_SkeletonPose._Underlying *inPose1, JPH.Const_SkeletonPose._Underlying *inPose2);
+            __JoltHelpers_SkeletonMapperInitialize(ioMapper._UnderlyingPtr, inPose1._UnderlyingPtr, inPose2._UnderlyingPtr);
+        }
+
         /// Deserialize a RagdollSettings from an in-memory buffer (loaded externally).
         /// Returns nullptr on failure. Caller owns the returned pointer.
         /// Generated from method `JoltHelpers::RagdollSettingsLoadFromBuffer`.
