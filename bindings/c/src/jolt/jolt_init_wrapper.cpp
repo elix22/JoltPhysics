@@ -597,6 +597,14 @@ unsigned int JoltHelpers_SkeletonAddJointWithParentIndex(JPH_Skeleton *inSkeleto
     );
 }
 
+int JoltHelpers_SkeletonGetJointIndex(const JPH_Skeleton *inSkeleton, const char *inName)
+{
+    return JoltHelpers::SkeletonGetJointIndex(
+        ((inSkeleton ? void() : MRBINDC_THROW("Parameter `inSkeleton` can not be null.", void)), *(const JPH::Skeleton *)(inSkeleton)),
+        inName
+    );
+}
+
 JPH_ConvexHullShapeSettings *JoltHelpers_ConvexHullShapeSettingsFromFloat3Array(const JPH_Float3 *inPoints, int inNumPoints, float inMaxConvexRadius, const JPH_PhysicsMaterial *inMaterial)
 {
     return (JPH_ConvexHullShapeSettings *)(JoltHelpers::ConvexHullShapeSettingsFromFloat3Array(

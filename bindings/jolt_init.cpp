@@ -417,6 +417,10 @@ unsigned int JoltHelpers::SkeletonAddJointWithParentIndex(JPH::Skeleton& inSkele
     return inSkeleton.AddJoint(inName, inParentIndex);
 }
 
+int JoltHelpers::SkeletonGetJointIndex(const JPH::Skeleton& inSkeleton, const char* inName)
+{
+    return inSkeleton.GetJointIndex(JPH::string_view(inName));
+}
 // ---------------------------------------------------------------------------
 // ConvexHullShapeSettings from Float3 array
 // ---------------------------------------------------------------------------

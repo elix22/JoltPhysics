@@ -532,6 +532,11 @@ JOLT_API unsigned int JoltHelpers_SkeletonAddJointWithParentName(JPH_Skeleton *i
 /// Parameter `inSkeleton` can not be null. It is a single object.
 JOLT_API unsigned int JoltHelpers_SkeletonAddJointWithParentIndex(JPH_Skeleton *inSkeleton, const char *inName, int inParentIndex);
 
+/// Get the index of a joint by name. Returns -1 if not found.
+/// Generated from method `JoltHelpers::SkeletonGetJointIndex`.
+/// Parameter `inSkeleton` can not be null. It is a single object.
+JOLT_API int JoltHelpers_SkeletonGetJointIndex(const JPH_Skeleton *inSkeleton, const char *inName);
+
 /// Create a ConvexHullShapeSettings from an array of Float3 points.
 /// Generated from method `JoltHelpers::ConvexHullShapeSettingsFromFloat3Array`.
 JOLT_API JPH_ConvexHullShapeSettings *JoltHelpers_ConvexHullShapeSettingsFromFloat3Array(const JPH_Float3 *inPoints, int inNumPoints, float inMaxConvexRadius, const JPH_PhysicsMaterial *inMaterial);

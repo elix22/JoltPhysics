@@ -882,6 +882,20 @@ public static partial class JPH
             return __JoltHelpers_SkeletonAddJointWithParentIndex(inSkeleton._UnderlyingPtr, inName.HasValue ? &__deref_inName : null, inParentIndex);
         }
 
+        /// Get the index of a joint by name. Returns -1 if not found.
+        /// Generated from method `JoltHelpers::SkeletonGetJointIndex`.
+        public static unsafe int SkeletonGetJointIndex(JPH.Const_Skeleton inSkeleton, byte? inName)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SkeletonGetJointIndex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SkeletonGetJointIndex", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static int __JoltHelpers_SkeletonGetJointIndex(JPH.Const_Skeleton._Underlying *inSkeleton, byte *inName);
+            byte __deref_inName = inName.GetValueOrDefault();
+            return __JoltHelpers_SkeletonGetJointIndex(inSkeleton._UnderlyingPtr, inName.HasValue ? &__deref_inName : null);
+        }
+
         /// Create a ConvexHullShapeSettings from an array of Float3 points.
         /// Generated from method `JoltHelpers::ConvexHullShapeSettingsFromFloat3Array`.
         public static unsafe JPH.ConvexHullShapeSettings? ConvexHullShapeSettingsFromFloat3Array(JPH.Const_Float3? inPoints, int inNumPoints, float inMaxConvexRadius, JPH.Const_PhysicsMaterial? inMaterial)

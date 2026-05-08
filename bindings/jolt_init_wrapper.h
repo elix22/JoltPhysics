@@ -230,7 +230,8 @@ struct JoltHelpers
     static unsigned int SkeletonAddJointWithParentName(JPH::Skeleton& inSkeleton, const char* inName, const char* inParentName);
     /// Add a joint with a parent index. Returns the joint index.
     static unsigned int SkeletonAddJointWithParentIndex(JPH::Skeleton& inSkeleton, const char* inName, int inParentIndex);
-
+    /// Get the index of a joint by name. Returns -1 if not found.
+    static int SkeletonGetJointIndex(const JPH::Skeleton& inSkeleton, const char* inName);
     // -----------------------------------------------------------------------
     // ConvexHullShapeSettings Float3-array constructor
     // (Vec3 is SIMD-aligned and cannot form a contiguous C array from managed code;
