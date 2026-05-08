@@ -28,6 +28,7 @@
 #endif
 
 #include <Jolt/Skeleton/SkeletonMapper.h>
+#include <Jolt/Physics/Constraints/DistanceConstraint.h>
 
 /// Minimal helpers for Jolt global lifecycle.
 /// These are the only hand-implemented methods; their C/C# bindings are machine-generated.
@@ -218,6 +219,10 @@ struct JoltHelpers
     static void SkeletonMapperInitialize(JPH::SkeletonMapper& ioMapper,
                                         const JPH::SkeletonPose& inPose1,
                                         const JPH::SkeletonPose& inPose2);
+
+    /// inSpace: 0 = LocalToBodyCOM, 1 = WorldSpace.
+    static void DistanceConstraintSettingsSetSpace(JPH::DistanceConstraintSettings& inSettings, uint8_t inSpace);
+
 #ifdef JPH_OBJECT_STREAM
     /// Deserialize a RagdollSettings from an in-memory buffer (loaded externally).
     /// Returns nullptr on failure. Caller owns the returned pointer.
@@ -393,6 +398,7 @@ struct SoftBodyContactListenerTrampoline : public JPH::SoftBodyContactListener
         const JPH::Body& inSoftBody,
         const JPH::SoftBodyManifold& inManifold) override;
 };
+
 
 // ---------------------------------------------------------------------------
 // DebugRenderer support — only compiled when JPH_DEBUG_RENDERER is defined

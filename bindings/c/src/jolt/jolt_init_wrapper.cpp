@@ -21,6 +21,7 @@
 #include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeIDPair.h>
+#include <Jolt/Physics/Constraints/DistanceConstraint.h>
 #include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
 #include <Jolt/Physics/PhysicsStepListener.h>
 #include <Jolt/Physics/PhysicsSystem.h>
@@ -47,6 +48,7 @@
 
 #include <Jolt/Core/Array.h>
 #include <cstddef>
+#include <cstdint>
 #include <cstring>
 #include <functional>
 #include <memory>
@@ -571,6 +573,14 @@ void JoltHelpers_SkeletonMapperInitialize(JPH_SkeletonMapper *ioMapper, const JP
         ((ioMapper ? void() : MRBINDC_THROW("Parameter `ioMapper` can not be null.", void)), *(JPH::SkeletonMapper *)(ioMapper)),
         ((inPose1 ? void() : MRBINDC_THROW("Parameter `inPose1` can not be null.", void)), *(const JPH::SkeletonPose *)(inPose1)),
         ((inPose2 ? void() : MRBINDC_THROW("Parameter `inPose2` can not be null.", void)), *(const JPH::SkeletonPose *)(inPose2))
+    );
+}
+
+void JoltHelpers_DistanceConstraintSettingsSetSpace(JPH_DistanceConstraintSettings *inSettings, uint8_t inSpace)
+{
+    JoltHelpers::DistanceConstraintSettingsSetSpace(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::DistanceConstraintSettings *)(inSettings)),
+        inSpace
     );
 }
 

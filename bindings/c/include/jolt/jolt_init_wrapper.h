@@ -10,6 +10,7 @@
 
 #include <stdbool.h>
 #include <stddef.h>
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -29,6 +30,7 @@ typedef struct JPH_ConvexHullShapeSettings JPH_ConvexHullShapeSettings; // Defin
 typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_DebugRendererSimple JPH_DebugRendererSimple; // Defined in `#include <jolt/Jolt/Renderer/DebugRendererSimple.h>`.
 typedef struct JPH_DebugRenderer_Vertex JPH_DebugRenderer_Vertex; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
+typedef struct JPH_DistanceConstraintSettings JPH_DistanceConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/DistanceConstraint.h>`.
 typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
 typedef struct JPH_HeightFieldShapeSettings JPH_HeightFieldShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/HeightFieldShape.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
@@ -522,6 +524,11 @@ JOLT_API void JoltHelpers_RagdollSettingsPartSetToParent(JPH_RagdollSettings_Par
 /// Parameter `inPose1` can not be null. It is a single object.
 /// Parameter `inPose2` can not be null. It is a single object.
 JOLT_API void JoltHelpers_SkeletonMapperInitialize(JPH_SkeletonMapper *ioMapper, const JPH_SkeletonPose *inPose1, const JPH_SkeletonPose *inPose2);
+
+/// inSpace: 0 = LocalToBodyCOM, 1 = WorldSpace.
+/// Generated from method `JoltHelpers::DistanceConstraintSettingsSetSpace`.
+/// Parameter `inSettings` can not be null. It is a single object.
+JOLT_API void JoltHelpers_DistanceConstraintSettingsSetSpace(JPH_DistanceConstraintSettings *inSettings, uint8_t inSpace);
 
 /// Deserialize a RagdollSettings from an in-memory buffer (loaded externally).
 /// Returns nullptr on failure. Caller owns the returned pointer.

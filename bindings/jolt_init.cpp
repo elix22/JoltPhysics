@@ -384,6 +384,10 @@ void JoltHelpers::RagdollSettingsPartSetToParent(JPH::RagdollSettings::Part& inP
     inPart.mToParent = inConstraint;
 }
 
+void JoltHelpers::DistanceConstraintSettingsSetSpace(JPH::DistanceConstraintSettings& inSettings, uint8_t inSpace)
+{
+    inSettings.mSpace = (JPH::EConstraintSpace)inSpace;
+}
 
 #ifdef JPH_OBJECT_STREAM
 JPH::RagdollSettings* JoltHelpers::RagdollSettingsLoadFromBuffer(const void* inData, size_t inSize)
@@ -594,6 +598,7 @@ void EstimateResponseContactListener::OnContactAdded(
     mAngularVelocity2 = result.mAngularVelocity2;
     mWasCalled = true;
 }
+
 
 // ---------------------------------------------------------------------------
 // RecordingDebugRenderer

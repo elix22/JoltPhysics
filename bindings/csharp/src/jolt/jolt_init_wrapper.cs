@@ -834,6 +834,19 @@ public static partial class JPH
             __JoltHelpers_SkeletonMapperInitialize(ioMapper._UnderlyingPtr, inPose1._UnderlyingPtr, inPose2._UnderlyingPtr);
         }
 
+        /// inSpace: 0 = LocalToBodyCOM, 1 = WorldSpace.
+        /// Generated from method `JoltHelpers::DistanceConstraintSettingsSetSpace`.
+        public static unsafe void DistanceConstraintSettingsSetSpace(JPH.DistanceConstraintSettings inSettings, byte inSpace)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_DistanceConstraintSettingsSetSpace", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_DistanceConstraintSettingsSetSpace", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_DistanceConstraintSettingsSetSpace(JPH.DistanceConstraintSettings._Underlying *inSettings, byte inSpace);
+            __JoltHelpers_DistanceConstraintSettingsSetSpace(inSettings._UnderlyingPtr, inSpace);
+        }
+
         /// Deserialize a RagdollSettings from an in-memory buffer (loaded externally).
         /// Returns nullptr on failure. Caller owns the returned pointer.
         /// Generated from method `JoltHelpers::RagdollSettingsLoadFromBuffer`.
