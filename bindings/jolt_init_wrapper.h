@@ -206,6 +206,8 @@ struct JoltHelpers
     static unsigned int RagdollSettingsGetPartCount(const JPH::RagdollSettings& inSettings);
     /// Return a reference to a Part by index.
     static const JPH::RagdollSettings::Part& RagdollSettingsGetPart(const JPH::RagdollSettings& inSettings, unsigned int inIndex);
+    /// Set the mToParent constraint on a Part (mToParent is Ref<TwoBodyConstraintSettings>).
+    static void RagdollSettingsPartSetToParent(JPH::RagdollSettings::Part& inPart, JPH::TwoBodyConstraintSettings* inConstraint);
 
     // -----------------------------------------------------------------------
     // Skeleton helpers — AddJoint wrappers (mrbind cannot bind AddJoint because

@@ -794,6 +794,19 @@ public static partial class JPH
             return new(__JoltHelpers_RagdollSettingsGetPart(inSettings._UnderlyingPtr, inIndex), is_owning: false);
         }
 
+        /// Set the mToParent constraint on a Part (mToParent is Ref<TwoBodyConstraintSettings>).
+        /// Generated from method `JoltHelpers::RagdollSettingsPartSetToParent`.
+        public static unsafe void RagdollSettingsPartSetToParent(JPH.RagdollSettings.Part inPart, JPH.TwoBodyConstraintSettings? inConstraint)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_RagdollSettingsPartSetToParent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_RagdollSettingsPartSetToParent", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_RagdollSettingsPartSetToParent(JPH.RagdollSettings.Part._Underlying *inPart, JPH.TwoBodyConstraintSettings._Underlying *inConstraint);
+            __JoltHelpers_RagdollSettingsPartSetToParent(inPart._UnderlyingPtr, inConstraint is not null ? inConstraint._UnderlyingPtr : null);
+        }
+
         /// Add a root joint (no parent) to a Skeleton. Returns the joint index.
         /// Generated from method `JoltHelpers::SkeletonAddJoint`.
         public static unsafe uint SkeletonAddJoint(JPH.Skeleton inSkeleton, byte? inName)

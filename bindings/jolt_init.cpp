@@ -364,6 +364,11 @@ const JPH::RagdollSettings::Part& JoltHelpers::RagdollSettingsGetPart(const JPH:
     return inSettings.mParts[inIndex];
 }
 
+void JoltHelpers::RagdollSettingsPartSetToParent(JPH::RagdollSettings::Part& inPart, JPH::TwoBodyConstraintSettings* inConstraint)
+{
+    inPart.mToParent = inConstraint;
+}
+
 // ---------------------------------------------------------------------------
 // Skeleton helpers
 // ---------------------------------------------------------------------------
