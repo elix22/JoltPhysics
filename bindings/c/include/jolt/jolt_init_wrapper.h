@@ -40,6 +40,7 @@ typedef struct JPH_RagdollSettings JPH_RagdollSettings; // Defined in `#include 
 typedef struct JPH_RagdollSettings_Part JPH_RagdollSettings_Part; // Defined in `#include <jolt/Jolt/Physics/Ragdoll/Ragdoll.h>`.
 typedef struct JPH_RayInvDirection JPH_RayInvDirection; // Defined in `#include <jolt/Jolt/Geometry/RayAABox.h>`.
 typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
+typedef struct JPH_SkeletalAnimation JPH_SkeletalAnimation; // Defined in `#include <jolt/Jolt/Skeleton/SkeletalAnimation.h>`.
 typedef struct JPH_Skeleton JPH_Skeleton; // Defined in `#include <jolt/Jolt/Skeleton/Skeleton.h>`.
 typedef struct JPH_SoftBodyContactListener JPH_SoftBodyContactListener; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyContactListener.h>`.
 typedef struct JPH_SoftBodyContactSettings JPH_SoftBodyContactSettings; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyContactListener.h>`.
@@ -505,6 +506,16 @@ JOLT_API const JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetPart(cons
 /// Generated from method `JoltHelpers::RagdollSettingsPartSetToParent`.
 /// Parameter `inPart` can not be null. It is a single object.
 JOLT_API void JoltHelpers_RagdollSettingsPartSetToParent(JPH_RagdollSettings_Part *inPart, JPH_TwoBodyConstraintSettings *inConstraint);
+
+/// Deserialize a RagdollSettings from an in-memory buffer (loaded externally).
+/// Returns nullptr on failure. Caller owns the returned pointer.
+/// Generated from method `JoltHelpers::RagdollSettingsLoadFromBuffer`.
+JOLT_API JPH_RagdollSettings *JoltHelpers_RagdollSettingsLoadFromBuffer(const void *inData, size_t inSize);
+
+/// Deserialize a SkeletalAnimation from an in-memory buffer.
+/// Returns nullptr on failure. Caller owns the returned pointer.
+/// Generated from method `JoltHelpers::SkeletalAnimationLoadFromBuffer`.
+JOLT_API JPH_SkeletalAnimation *JoltHelpers_SkeletalAnimationLoadFromBuffer(const void *inData, size_t inSize);
 
 /// Add a root joint (no parent) to a Skeleton. Returns the joint index.
 /// Generated from method `JoltHelpers::SkeletonAddJoint`.

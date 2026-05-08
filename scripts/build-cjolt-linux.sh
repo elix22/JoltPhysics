@@ -39,7 +39,8 @@ cmake "$BINDINGS_C_DIR" \
     -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
     -DCMAKE_C_COMPILER="$C_COMPILER" \
     -DCMAKE_CXX_COMPILER="$CXX_COMPILER" \
-    -DINTERPROCEDURAL_OPTIMIZATION=OFF  # Clang LTO bitcode objects are incompatible with ld --whole-archive
+    -DINTERPROCEDURAL_OPTIMIZATION=OFF \
+    -DENABLE_OBJECT_STREAM=ON  # Clang LTO bitcode objects are incompatible with ld --whole-archive
 
 # Build
 cmake --build . --config "$BUILD_TYPE" -- -j$(nproc)

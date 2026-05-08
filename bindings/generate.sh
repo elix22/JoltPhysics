@@ -42,6 +42,7 @@ EXTRA_PARSER_CXX_FLAGS=(
     -fparse-all-comments
     -DNDEBUG
     -DJPH_DEBUG_RENDERER
+    -DJPH_OBJECT_STREAM
     -I"$HELPER_DIR"
 )
 

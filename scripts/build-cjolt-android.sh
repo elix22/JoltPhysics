@@ -54,7 +54,8 @@ cmake "$BINDINGS_C_DIR" \
     -DANDROID_NATIVE_API_LEVEL="$ANDROID_NATIVE_API_LEVEL" \
     -DANDROID_STL=c++_shared \
     -DANDROID_ARM_NEON=TRUE \
-    -DCMAKE_BUILD_TYPE="$BUILD_TYPE"
+    -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
+    -DENABLE_OBJECT_STREAM=ON
 
 # Build
 cmake --build . --config "$BUILD_TYPE" -- -j$(nproc)

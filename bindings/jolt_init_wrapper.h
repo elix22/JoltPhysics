@@ -209,6 +209,16 @@ struct JoltHelpers
     /// Set the mToParent constraint on a Part (mToParent is Ref<TwoBodyConstraintSettings>).
     static void RagdollSettingsPartSetToParent(JPH::RagdollSettings::Part& inPart, JPH::TwoBodyConstraintSettings* inConstraint);
 
+
+#ifdef JPH_OBJECT_STREAM
+    /// Deserialize a RagdollSettings from an in-memory buffer (loaded externally).
+    /// Returns nullptr on failure. Caller owns the returned pointer.
+    static JPH::RagdollSettings* RagdollSettingsLoadFromBuffer(const void* inData, size_t inSize);
+
+    /// Deserialize a SkeletalAnimation from an in-memory buffer.
+    /// Returns nullptr on failure. Caller owns the returned pointer.
+    static JPH::SkeletalAnimation* SkeletalAnimationLoadFromBuffer(const void* inData, size_t inSize);
+#endif
     // -----------------------------------------------------------------------
     // Skeleton helpers — AddJoint wrappers (mrbind cannot bind AddJoint because
     // JPH::Array<T> mutation is not supported by the generator).

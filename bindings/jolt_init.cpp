@@ -14,6 +14,15 @@
 
 #include "jolt_init_wrapper.h"
 
+
+#ifdef JPH_OBJECT_STREAM
+#include <Jolt/ObjectStream/ObjectStreamIn.h>
+#include <Jolt/Skeleton/SkeletalAnimation.h>
+#include <sstream>
+#endif
+
+
+
 using namespace JPH;
 
 static void sTrace(const char *fmt, ...)
@@ -369,6 +378,26 @@ void JoltHelpers::RagdollSettingsPartSetToParent(JPH::RagdollSettings::Part& inP
     inPart.mToParent = inConstraint;
 }
 
+
+#ifdef JPH_OBJECT_STREAM
+JPH::RagdollSettings* JoltHelpers::RagdollSettingsLoadFromBuffer(const void* inData, size_t inSize)
+{
+    std::istringstream stream(std::string(static_cast<const char*>(inData), inSize),
+                              std::ios::in | std::ios::binary);
+    JPH::RagdollSettings* out = nullptr;
+    JPH::ObjectStreamIn::sReadObject(stream, out);
+    return out;  // nullptr on failure
+}
+
+JPH::SkeletalAnimation* JoltHelpers::SkeletalAnimationLoadFromBuffer(const void* inData, size_t inSize)
+{
+    std::istringstream stream(std::string(static_cast<const char*>(inData), inSize),
+                              std::ios::in | std::ios::binary);
+    JPH::SkeletalAnimation* out = nullptr;
+    JPH::ObjectStreamIn::sReadObject(stream, out);
+    return out;
+}
+#endif
 // ---------------------------------------------------------------------------
 // Skeleton helpers
 // ---------------------------------------------------------------------------

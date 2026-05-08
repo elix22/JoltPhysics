@@ -50,7 +50,8 @@ cd "$BUILD_DIR"
 echo "Configuring CMake..."
 emcmake cmake "$BINDINGS_C_DIR" \
     -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
-    -DUSE_WASM_SIMD=ON  # All major browsers support WASM SIMD since 2023
+    -DUSE_WASM_SIMD=ON \
+    -DENABLE_OBJECT_STREAM=ON  # All major browsers support WASM SIMD since 2023
 
 # Build
 echo "Building..."

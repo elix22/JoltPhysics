@@ -38,6 +38,7 @@
 #include <Jolt/Physics/Vehicle/WheeledVehicleController.h>
 #include <Jolt/Renderer/DebugRenderer.h>
 #include <Jolt/Renderer/DebugRendererSimple.h>
+#include <Jolt/Skeleton/SkeletalAnimation.h>
 #include <Jolt/Skeleton/Skeleton.h>
 #include <__mrbind_c_details.h>
 #include <jolt_init_wrapper.h>
@@ -552,6 +553,22 @@ void JoltHelpers_RagdollSettingsPartSetToParent(JPH_RagdollSettings_Part *inPart
         ((inPart ? void() : MRBINDC_THROW("Parameter `inPart` can not be null.", void)), *(JPH::RagdollSettings::Part *)(inPart)),
         ((JPH::TwoBodyConstraintSettings *)inConstraint)
     );
+}
+
+JPH_RagdollSettings *JoltHelpers_RagdollSettingsLoadFromBuffer(const void *inData, size_t inSize)
+{
+    return (JPH_RagdollSettings *)(JoltHelpers::RagdollSettingsLoadFromBuffer(
+        inData,
+        inSize
+    ));
+}
+
+JPH_SkeletalAnimation *JoltHelpers_SkeletalAnimationLoadFromBuffer(const void *inData, size_t inSize)
+{
+    return (JPH_SkeletalAnimation *)(JoltHelpers::SkeletalAnimationLoadFromBuffer(
+        inData,
+        inSize
+    ));
 }
 
 unsigned int JoltHelpers_SkeletonAddJoint(JPH_Skeleton *inSkeleton, const char *inName)
