@@ -504,6 +504,12 @@ JOLT_API unsigned int JoltHelpers_RagdollSettingsGetPartCount(const JPH_RagdollS
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetPart(const JPH_RagdollSettings *inSettings, unsigned int inIndex);
 
+/// Returns a mutable reference to RagdollSettings::mParts[inIndex].
+/// Generated from method `JoltHelpers::RagdollSettingsGetMutablePart`.
+/// Parameter `inSettings` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetMutablePart(JPH_RagdollSettings *inSettings, unsigned int inIndex);
+
 /// Set the mToParent constraint on a Part (mToParent is Ref<TwoBodyConstraintSettings>).
 /// Generated from method `JoltHelpers::RagdollSettingsPartSetToParent`.
 /// Parameter `inPart` can not be null. It is a single object.
@@ -526,6 +532,11 @@ JOLT_API JPH_RagdollSettings *JoltHelpers_RagdollSettingsLoadFromBuffer(const vo
 /// Returns nullptr on failure. Caller owns the returned pointer.
 /// Generated from method `JoltHelpers::SkeletalAnimationLoadFromBuffer`.
 JOLT_API JPH_SkeletalAnimation *JoltHelpers_SkeletalAnimationLoadFromBuffer(const void *inData, size_t inSize);
+
+/// Deserialize a Skeleton from an in-memory buffer (ObjectStream binary/text).
+/// Returns nullptr on failure. Caller owns the returned pointer.
+/// Generated from method `JoltHelpers::SkeletonLoadFromBuffer`.
+JOLT_API JPH_Skeleton *JoltHelpers_SkeletonLoadFromBuffer(const void *inData, size_t inSize);
 
 /// Add a root joint (no parent) to a Skeleton. Returns the joint index.
 /// Generated from method `JoltHelpers::SkeletonAddJoint`.

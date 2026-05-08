@@ -549,6 +549,14 @@ const JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetPart(const JPH_Rag
     ));
 }
 
+JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetMutablePart(JPH_RagdollSettings *inSettings, unsigned int inIndex)
+{
+    return (JPH_RagdollSettings_Part *)std::addressof(JoltHelpers::RagdollSettingsGetMutablePart(
+        ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(JPH::RagdollSettings *)(inSettings)),
+        inIndex
+    ));
+}
+
 void JoltHelpers_RagdollSettingsPartSetToParent(JPH_RagdollSettings_Part *inPart, JPH_TwoBodyConstraintSettings *inConstraint)
 {
     JoltHelpers::RagdollSettingsPartSetToParent(
@@ -577,6 +585,14 @@ JPH_RagdollSettings *JoltHelpers_RagdollSettingsLoadFromBuffer(const void *inDat
 JPH_SkeletalAnimation *JoltHelpers_SkeletalAnimationLoadFromBuffer(const void *inData, size_t inSize)
 {
     return (JPH_SkeletalAnimation *)(JoltHelpers::SkeletalAnimationLoadFromBuffer(
+        inData,
+        inSize
+    ));
+}
+
+JPH_Skeleton *JoltHelpers_SkeletonLoadFromBuffer(const void *inData, size_t inSize)
+{
+    return (JPH_Skeleton *)(JoltHelpers::SkeletonLoadFromBuffer(
         inData,
         inSize
     ));

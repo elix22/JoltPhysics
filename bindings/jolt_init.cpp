@@ -374,6 +374,11 @@ const JPH::RagdollSettings::Part& JoltHelpers::RagdollSettingsGetPart(const JPH:
     return inSettings.mParts[inIndex];
 }
 
+JPH::RagdollSettings::Part& JoltHelpers::RagdollSettingsGetMutablePart(JPH::RagdollSettings& inSettings, JPH::uint32 inIndex)
+{
+    return inSettings.mParts[inIndex];
+}
+
 void JoltHelpers::RagdollSettingsPartSetToParent(JPH::RagdollSettings::Part& inPart, JPH::TwoBodyConstraintSettings* inConstraint)
 {
     inPart.mToParent = inConstraint;
@@ -395,6 +400,15 @@ JPH::SkeletalAnimation* JoltHelpers::SkeletalAnimationLoadFromBuffer(const void*
     std::istringstream stream(std::string(static_cast<const char*>(inData), inSize),
                               std::ios::in | std::ios::binary);
     JPH::SkeletalAnimation* out = nullptr;
+    JPH::ObjectStreamIn::sReadObject(stream, out);
+    return out;
+}
+
+JPH::Skeleton* JoltHelpers::SkeletonLoadFromBuffer(const void* inData, size_t inSize)
+{
+    std::istringstream stream(std::string(static_cast<const char*>(inData), inSize),
+                              std::ios::in | std::ios::binary);
+    JPH::Skeleton* out = nullptr;
     JPH::ObjectStreamIn::sReadObject(stream, out);
     return out;
 }

@@ -794,6 +794,19 @@ public static partial class JPH
             return new(__JoltHelpers_RagdollSettingsGetPart(inSettings._UnderlyingPtr, inIndex), is_owning: false);
         }
 
+        /// Returns a mutable reference to RagdollSettings::mParts[inIndex].
+        /// Generated from method `JoltHelpers::RagdollSettingsGetMutablePart`.
+        public static unsafe JPH.RagdollSettings.Part RagdollSettingsGetMutablePart(JPH.RagdollSettings inSettings, uint inIndex)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_RagdollSettingsGetMutablePart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_RagdollSettingsGetMutablePart", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.RagdollSettings.Part._Underlying *__JoltHelpers_RagdollSettingsGetMutablePart(JPH.RagdollSettings._Underlying *inSettings, uint inIndex);
+            return new(__JoltHelpers_RagdollSettingsGetMutablePart(inSettings._UnderlyingPtr, inIndex), is_owning: false);
+        }
+
         /// Set the mToParent constraint on a Part (mToParent is Ref<TwoBodyConstraintSettings>).
         /// Generated from method `JoltHelpers::RagdollSettingsPartSetToParent`.
         public static unsafe void RagdollSettingsPartSetToParent(JPH.RagdollSettings.Part inPart, JPH.TwoBodyConstraintSettings? inConstraint)
@@ -851,6 +864,22 @@ public static partial class JPH
             extern static JPH.SkeletalAnimation._Underlying *__JoltHelpers_SkeletalAnimationLoadFromBuffer(void *inData, UIntPtr inSize);
             var __c_ret = __JoltHelpers_SkeletalAnimationLoadFromBuffer(inData, inSize);
             return __c_ret is not null ? new JPH.SkeletalAnimation(__c_ret, is_owning: false) : null;
+        }
+
+        /// Deserialize a Skeleton from an in-memory buffer (ObjectStream binary/text).
+        /// Returns nullptr on failure. Caller owns the returned pointer.
+        /// Generated from method `JoltHelpers::SkeletonLoadFromBuffer`.
+        /// Parameter `inData` is a read-only pointer.
+        public static unsafe JPH.Skeleton? SkeletonLoadFromBuffer(void *inData, UIntPtr inSize)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_SkeletonLoadFromBuffer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_SkeletonLoadFromBuffer", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Skeleton._Underlying *__JoltHelpers_SkeletonLoadFromBuffer(void *inData, UIntPtr inSize);
+            var __c_ret = __JoltHelpers_SkeletonLoadFromBuffer(inData, inSize);
+            return __c_ret is not null ? new JPH.Skeleton(__c_ret, is_owning: false) : null;
         }
 
         /// Add a root joint (no parent) to a Skeleton. Returns the joint index.

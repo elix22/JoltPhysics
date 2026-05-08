@@ -208,6 +208,8 @@ struct JoltHelpers
     static unsigned int RagdollSettingsGetPartCount(const JPH::RagdollSettings& inSettings);
     /// Return a reference to a Part by index.
     static const JPH::RagdollSettings::Part& RagdollSettingsGetPart(const JPH::RagdollSettings& inSettings, unsigned int inIndex);
+    /// Returns a mutable reference to RagdollSettings::mParts[inIndex].
+    static JPH::RagdollSettings::Part& RagdollSettingsGetMutablePart(JPH::RagdollSettings& inSettings, JPH::uint32 inIndex);
     /// Set the mToParent constraint on a Part (mToParent is Ref<TwoBodyConstraintSettings>).
     static void RagdollSettingsPartSetToParent(JPH::RagdollSettings::Part& inPart, JPH::TwoBodyConstraintSettings* inConstraint);
 
@@ -224,6 +226,9 @@ struct JoltHelpers
     /// Deserialize a SkeletalAnimation from an in-memory buffer.
     /// Returns nullptr on failure. Caller owns the returned pointer.
     static JPH::SkeletalAnimation* SkeletalAnimationLoadFromBuffer(const void* inData, size_t inSize);
+    /// Deserialize a Skeleton from an in-memory buffer (ObjectStream binary/text).
+    /// Returns nullptr on failure. Caller owns the returned pointer.
+    static JPH::Skeleton* SkeletonLoadFromBuffer(const void* inData, size_t inSize);
 #endif
     // -----------------------------------------------------------------------
     // Skeleton helpers — AddJoint wrappers (mrbind cannot bind AddJoint because
