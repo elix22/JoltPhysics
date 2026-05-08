@@ -49,6 +49,7 @@ typedef struct JPH_SoftBodySharedSettings_Vertex JPH_SoftBodySharedSettings_Vert
 typedef struct JPH_SoftBodyVertex JPH_SoftBodyVertex; // Defined in `#include <jolt/Jolt/Physics/SoftBody/SoftBodyVertex.h>`.
 typedef struct JPH_SubShapeIDPair JPH_SubShapeIDPair; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeIDPair.h>`.
 typedef struct JPH_TrackedVehicleControllerSettings JPH_TrackedVehicleControllerSettings; // Defined in `#include <jolt/Jolt/Physics/Vehicle/TrackedVehicleController.h>`.
+typedef struct JPH_TwoBodyConstraintSettings JPH_TwoBodyConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/TwoBodyConstraint.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 typedef struct JPH_VehicleAntiRollBar JPH_VehicleAntiRollBar; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleAntiRollBar.h>`.
 typedef struct JPH_VehicleConstraint JPH_VehicleConstraint; // Defined in `#include <jolt/Jolt/Physics/Vehicle/VehicleConstraint.h>`.
@@ -499,6 +500,11 @@ JOLT_API unsigned int JoltHelpers_RagdollSettingsGetPartCount(const JPH_RagdollS
 /// Parameter `inSettings` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API const JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetPart(const JPH_RagdollSettings *inSettings, unsigned int inIndex);
+
+/// Set the mToParent constraint on a Part (mToParent is Ref<TwoBodyConstraintSettings>).
+/// Generated from method `JoltHelpers::RagdollSettingsPartSetToParent`.
+/// Parameter `inPart` can not be null. It is a single object.
+JOLT_API void JoltHelpers_RagdollSettingsPartSetToParent(JPH_RagdollSettings_Part *inPart, JPH_TwoBodyConstraintSettings *inConstraint);
 
 /// Add a root joint (no parent) to a Skeleton. Returns the joint index.
 /// Generated from method `JoltHelpers::SkeletonAddJoint`.

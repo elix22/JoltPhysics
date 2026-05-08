@@ -21,6 +21,7 @@
 #include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeIDPair.h>
+#include <Jolt/Physics/Constraints/TwoBodyConstraint.h>
 #include <Jolt/Physics/PhysicsStepListener.h>
 #include <Jolt/Physics/PhysicsSystem.h>
 #include <Jolt/Physics/Ragdoll/Ragdoll.h>
@@ -543,6 +544,14 @@ const JPH_RagdollSettings_Part *JoltHelpers_RagdollSettingsGetPart(const JPH_Rag
         ((inSettings ? void() : MRBINDC_THROW("Parameter `inSettings` can not be null.", void)), *(const JPH::RagdollSettings *)(inSettings)),
         inIndex
     ));
+}
+
+void JoltHelpers_RagdollSettingsPartSetToParent(JPH_RagdollSettings_Part *inPart, JPH_TwoBodyConstraintSettings *inConstraint)
+{
+    JoltHelpers::RagdollSettingsPartSetToParent(
+        ((inPart ? void() : MRBINDC_THROW("Parameter `inPart` can not be null.", void)), *(JPH::RagdollSettings::Part *)(inPart)),
+        ((JPH::TwoBodyConstraintSettings *)inConstraint)
+    );
 }
 
 unsigned int JoltHelpers_SkeletonAddJoint(JPH_Skeleton *inSkeleton, const char *inName)
