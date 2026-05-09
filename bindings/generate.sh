@@ -538,5 +538,6 @@ EOF
     --array-overload-param JPH_BodyInterface_RemoveBodies ioBodies inNumber \
     --array-overload-param JPH_BodyInterface_DestroyBodies inBodyIDs inNumber \
     --array-overload-param JPH_BodyInterface_UnassignBodyIDs inBodyIDs inNumber \
+    --emit-extension-class JoltHelpers \
     "${EXTRA_GEN_FLAGS[@]}"
 

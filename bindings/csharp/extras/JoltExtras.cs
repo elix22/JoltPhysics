@@ -14,7 +14,7 @@ using System.Text;
 // Extension methods on generated JPH inner classes.
 // Must live in a non-nested static class to qualify as extension methods.
 // ---------------------------------------------------------------------------
-public static unsafe class JoltExtensions
+public static unsafe partial class JoltExtensions
 {
     // ---- Skeleton.AddJoint(string) overloads ----------------------------------
     //
