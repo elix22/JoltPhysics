@@ -153,6 +153,14 @@ public static unsafe partial class JoltExtensions
 
 }
 
+public static unsafe partial class SoftBodySharedSettings
+{
+    public static unsafe JPH.SoftBodySharedSettings? CreateCube(uint inGridSize, float inGridSpacing)
+    {
+        return JPH.JoltHelpers.SoftBodySettingsCreateCube(inGridSize, inGridSpacing);
+    }
+}
+
 // ---------------------------------------------------------------------------
 // Additions to the JPH partial class.
 // ---------------------------------------------------------------------------
