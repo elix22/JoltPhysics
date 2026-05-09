@@ -125,6 +125,32 @@ public static unsafe partial class JoltExtensions
         Marshal.WriteByte(ptr, bytes.Length, 0);
         return ptr;
     }
+
+    public static unsafe JPH.RagdollSettings? RagdollSettingsLoadFromBuffer(this byte[] inData)
+    {
+        fixed (byte* p = inData)
+        {
+            return JPH.JoltHelpers.RagdollSettingsLoadFromBuffer(p, (UIntPtr)inData.Length);
+        }
+
+    }
+
+    public static unsafe JPH.SkeletalAnimation? SkeletalAnimationLoadFromBuffer(this byte[] inData)
+    {
+        fixed (byte* p = inData)
+        {
+            return JPH.JoltHelpers.SkeletalAnimationLoadFromBuffer(p, (UIntPtr)inData.Length);
+        }
+    }
+
+    public static unsafe JPH.Skeleton? SkeletonLoadFromBuffer(this byte[] inData)
+    {
+        fixed (byte* p = inData)
+        {
+            return JPH.JoltHelpers.SkeletonLoadFromBuffer(p, (UIntPtr)inData.Length);
+        }
+    }
+
 }
 
 // ---------------------------------------------------------------------------

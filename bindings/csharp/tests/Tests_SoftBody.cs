@@ -323,10 +323,10 @@ public sealed class Tests_SoftBodySimulation(JoltFixture fx)
     public void SoftBodySettings_AddVertex_IncreasesCount()
     {
         using var settings = new JPH.SoftBodySharedSettings();
-        Assert.Equal(0u, JPH.Const_JoltHelpers.SoftBodySettingsGetVertexCount(settings));
+        Assert.Equal(0u, ((JPH.Const_SoftBodySharedSettings)settings).SoftBodySettingsGetVertexCount());
         using var v = new JPH.SoftBodySharedSettings.Vertex();
-        JPH.JoltHelpers.SoftBodySettingsAddVertex(settings, v);
-        Assert.Equal(1u, JPH.Const_JoltHelpers.SoftBodySettingsGetVertexCount(settings));
+        settings.SoftBodySettingsAddVertex(v);
+        Assert.Equal(1u, ((JPH.Const_SoftBodySharedSettings)settings).SoftBodySettingsGetVertexCount());
     }
 
     [Fact]
@@ -334,7 +334,7 @@ public sealed class Tests_SoftBodySimulation(JoltFixture fx)
     {
         using var sbSettings = JPH.Const_JoltHelpers.SoftBodySettingsCreateCube(3u, 0.5f);
         Assert.NotNull(sbSettings);
-        uint count = JPH.Const_JoltHelpers.SoftBodySettingsGetVertexCount(sbSettings);
+        uint count = ((JPH.Const_SoftBodySharedSettings)sbSettings).SoftBodySettingsGetVertexCount();
         Assert.True(count > 0);
     }
 

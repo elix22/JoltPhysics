@@ -136,8 +136,8 @@ public sealed class Tests_HeightFieldShape(JoltFixture fx)
     public void HeightFieldSettings_ResizeHeightSamples_SetsCount()
     {
         using var s = new JPH.HeightFieldShapeSettings();
-        JPH.JoltHelpers.HeightFieldSettingsResizeHeightSamples(s, 16u, 0f);
-        uint count = JPH.Const_JoltHelpers.HeightFieldSettingsGetHeightSamplesCount(s);
+        s.HeightFieldSettingsResizeHeightSamples(16u, 0f);
+        uint count = ((JPH.Const_HeightFieldShapeSettings)s).HeightFieldSettingsGetHeightSamplesCount();
         Assert.Equal(16u, count);
     }
 
@@ -145,9 +145,9 @@ public sealed class Tests_HeightFieldShape(JoltFixture fx)
     public void HeightFieldSettings_SetHeightSampleAt_RoundTrips()
     {
         using var s = new JPH.HeightFieldShapeSettings();
-        JPH.JoltHelpers.HeightFieldSettingsResizeHeightSamples(s, 4u, 0f);
-        JPH.JoltHelpers.HeightFieldSettingsSetHeightSampleAt(s, 2u, 3.14f);
-        float v = JPH.Const_JoltHelpers.HeightFieldSettingsGetHeightSample(s, 2u);
+        s.HeightFieldSettingsResizeHeightSamples(4u, 0f);
+        s.HeightFieldSettingsSetHeightSampleAt(2u, 3.14f);
+        float v = ((JPH.Const_HeightFieldShapeSettings)s).HeightFieldSettingsGetHeightSample(2u);
         Assert.Equal(3.14f, v, 1e-4f);
     }
 
@@ -171,7 +171,7 @@ public sealed class Tests_HeightFieldShape(JoltFixture fx)
         using var settings = new JPH.HeightFieldShapeSettings();
         settings.mSampleCount = 4u;
         const float height = 5f;
-        JPH.JoltHelpers.HeightFieldSettingsResizeHeightSamples(settings, 4u * 4u, height);
+        settings.HeightFieldSettingsResizeHeightSamples(4u * 4u, height);
 
         var bi = sys.GetBodyInterface();
         using var bcs = new JPH.BodyCreationSettings(
@@ -203,9 +203,9 @@ public sealed class Tests_HeightFieldShape(JoltFixture fx)
     {
         using var s = new JPH.HeightFieldShapeSettings();
         float noCol = JPH.Const_JoltHelpers.HeightFieldShapeConstantsNoCollisionValue();
-        JPH.JoltHelpers.HeightFieldSettingsResizeHeightSamples(s, 4u, noCol);
+        s.HeightFieldSettingsResizeHeightSamples(4u, noCol);
         // All samples set to no-collision value — verify they were stored
-        float sample = JPH.Const_JoltHelpers.HeightFieldSettingsGetHeightSample(s, 0u);
+        float sample = ((JPH.Const_HeightFieldShapeSettings)s).HeightFieldSettingsGetHeightSample(0u);
         Assert.Equal(noCol, sample, 1e-3f);
     }
 

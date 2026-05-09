@@ -35,15 +35,15 @@ public sealed class Tests_WheeledVehicle(JoltFixture fx)
             wheel.mPosition.Set(x, y, z);
             wheel.mMaxSteerAngle = DegreesToRadians(30f);
             wheel.mMaxBrakeTorque = 1500f;
-            JPH.JoltHelpers.VehicleSettingsAddWheel(settings, wheel);
+            settings.VehicleSettingsAddWheel(wheel);
         }
 
         var ctrl = new JPH.WheeledVehicleControllerSettings();
-        JPH.JoltHelpers.WheeledControllerSettingsAddDifferential(ctrl,
+        ctrl.WheeledControllerSettingsAddDifferential(
             new JPH.VehicleDifferentialSettings(0, 1, 3.42f, 0f, 1.4f, 1.0f));
-        JPH.JoltHelpers.WheeledControllerSettingsAddDifferential(ctrl,
+        ctrl.WheeledControllerSettingsAddDifferential(
             new JPH.VehicleDifferentialSettings(2, 3, 3.42f, 0f, 1.4f, 1.0f));
-        JPH.JoltHelpers.VehicleSettingsSetController(settings, ctrl);
+        settings.VehicleSettingsSetController(ctrl);
 
         return settings;
     }
@@ -282,7 +282,7 @@ public sealed class Tests_WheeledVehicle(JoltFixture fx)
         using var settings = new JPH.VehicleConstraintSettings();
         using var wheel = new JPH.WheelSettingsWV();
         wheel.mPosition.Set(0.9f, -0.9f, 1.8f);
-        JPH.JoltHelpers.VehicleSettingsAddWheel(settings, wheel);
+        settings.VehicleSettingsAddWheel(wheel);
         // No crash = pass
     }
 
@@ -291,7 +291,7 @@ public sealed class Tests_WheeledVehicle(JoltFixture fx)
     {
         using var settings = new JPH.VehicleConstraintSettings();
         using var ctrl = new JPH.WheeledVehicleControllerSettings();
-        JPH.JoltHelpers.VehicleSettingsSetController(settings, ctrl);
+        settings.VehicleSettingsSetController(ctrl);
     }
 
     [Fact]
@@ -299,7 +299,7 @@ public sealed class Tests_WheeledVehicle(JoltFixture fx)
     {
         using var settings = new JPH.VehicleConstraintSettings();
         using var bar = new JPH.VehicleAntiRollBar(0, 1, 1000f);
-        JPH.JoltHelpers.VehicleSettingsAddAntiRollBar(settings, bar);
+        settings.VehicleSettingsAddAntiRollBar(bar);
     }
 
     // ── VehicleConstraint — construction ──────────────────────────────────────
@@ -448,7 +448,7 @@ public sealed class Tests_WheeledVehicle(JoltFixture fx)
         sys.AddStepListener(constraint);
 
         // Set full throttle
-        var controller = JPH.JoltHelpers.VehicleConstraintGetWheeledController(constraint)!;
+        var controller = constraint.GetWheeledController()!;
         controller.SetDriverInput(1.0f, 0.0f, 0.0f, 0.0f);
 
         Assert.Equal(1.0f, controller.GetForwardInput(), 1e-5f);
@@ -484,9 +484,8 @@ public sealed class Tests_WheeledVehicle(JoltFixture fx)
         using var vSettings = MakeVehicleSettings();
         using var constraint = new JPH.VehicleConstraint(body, vSettings);
 
-        var controller = JPH.JoltHelpers.VehicleConstraintGetWheeledController(constraint);
+        var controller = constraint.GetWheeledController();
         Assert.NotNull(controller);
-
         bi.RemoveBody(body.GetID());
         bi.DestroyBody(body.GetID());
     }
@@ -528,7 +527,7 @@ public sealed class Tests_WheeledVehicle(JoltFixture fx)
         sys.AddConstraint(constraint);
         sys.AddStepListener(constraint);
 
-        var controller = JPH.JoltHelpers.VehicleConstraintGetWheeledController(constraint)!;
+        var controller = constraint.GetWheeledController()!;
         controller.SetDriverInput(1.0f, 0.0f, 0.0f, 0.0f);
 
         // Simulate 1 second at 60 Hz

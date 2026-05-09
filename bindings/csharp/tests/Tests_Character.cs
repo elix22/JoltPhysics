@@ -34,7 +34,7 @@ public sealed class Tests_Character(JoltFixture fx)
         using var cs      = new JPH.CharacterSettings();
         cs.mLayer         = JoltFixture.LayerMoving;
         using var capsule = new JPH.CapsuleShape(0.9f, 0.3f);
-        JPH.JoltHelpers.CharacterBaseSettingsSetShape(cs, (JPH.Shape)capsule);
+        cs.SetShape((JPH.Const_Shape)capsule);
         using var pos = new JPH.Vec3(x, y, z);
         using var rot = JPH.Quat.SIdentity();
         return new JPH.Character(cs, pos, rot, UIntPtr.Zero, sys);
