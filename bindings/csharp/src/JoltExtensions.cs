@@ -13,21 +13,35 @@ public static unsafe partial class JoltExtensions
 
     public static void AddWheelIndex(this JPH.VehicleTrackSettings track, uint wheelIndex) => JPH.Const_JoltHelpers.VehicleTrackSettingsAddWheelIndex(track, wheelIndex);
 
+    public static void AddWheelIndex(this JPH.VehicleTrack track, uint wheelIndex) => JPH.Const_JoltHelpers.VehicleTrackSettingsAddWheelIndex(track, wheelIndex);
+
     public static void VehicleSettingsAddAntiRollBar(this JPH.VehicleConstraintSettings settings, JPH.Const_VehicleAntiRollBar bar) => JPH.Const_JoltHelpers.VehicleSettingsAddAntiRollBar(settings, bar);
 
     public static void WheeledControllerSettingsAddDifferential(this JPH.WheeledVehicleControllerSettings settings, JPH.Const_VehicleDifferentialSettings diff) => JPH.Const_JoltHelpers.WheeledControllerSettingsAddDifferential(settings, diff);
+
+    public static void WheeledControllerSettingsAddDifferential(this JPH.MotorcycleControllerSettings settings, JPH.Const_VehicleDifferentialSettings diff) => JPH.Const_JoltHelpers.WheeledControllerSettingsAddDifferential(settings, diff);
 
     public static JPH.WheeledVehicleController? GetWheeledController(this JPH.VehicleConstraint constraint) => JPH.Const_JoltHelpers.VehicleConstraintGetWheeledController(constraint);
 
     public static void SetGearRatios(this JPH.VehicleTransmissionSettings inSettings, float? inRatios, uint inCount) => JPH.Const_JoltHelpers.VehicleTransmissionSettingsSetGearRatios(inSettings, inRatios, inCount);
 
+    public static void SetGearRatios(this JPH.VehicleTransmission inSettings, float? inRatios, uint inCount) => JPH.Const_JoltHelpers.VehicleTransmissionSettingsSetGearRatios(inSettings, inRatios, inCount);
+
     public static void SetReverseGearRatios(this JPH.VehicleTransmissionSettings inSettings, float? inRatios, uint inCount) => JPH.Const_JoltHelpers.VehicleTransmissionSettingsSetReverseGearRatios(inSettings, inRatios, inCount);
+
+    public static void SetReverseGearRatios(this JPH.VehicleTransmission inSettings, float? inRatios, uint inCount) => JPH.Const_JoltHelpers.VehicleTransmissionSettingsSetReverseGearRatios(inSettings, inRatios, inCount);
 
     public static void SetOverrideMassProperties(this JPH.BodyCreationSettings inSettings, int inMode) => JPH.Const_JoltHelpers.BodyCreationSettingsSetOverrideMassProperties(inSettings, inMode);
 
+    public static void SetOverrideMassProperties(this JPH.RagdollSettings.Part inSettings, int inMode) => JPH.Const_JoltHelpers.BodyCreationSettingsSetOverrideMassProperties(inSettings, inMode);
+
     public static void SetMassOverride(this JPH.BodyCreationSettings inSettings, float inMass) => JPH.Const_JoltHelpers.BodyCreationSettingsSetMassOverride(inSettings, inMass);
 
+    public static void SetMassOverride(this JPH.RagdollSettings.Part inSettings, float inMass) => JPH.Const_JoltHelpers.BodyCreationSettingsSetMassOverride(inSettings, inMass);
+
     public static float GetMassOverride(this JPH.Const_BodyCreationSettings inSettings) => JPH.Const_JoltHelpers.BodyCreationSettingsGetMassOverride(inSettings);
+
+    public static float GetMassOverride(this JPH.RagdollSettings.Const_Part inSettings) => JPH.Const_JoltHelpers.BodyCreationSettingsGetMassOverride(inSettings);
 
     public static void HeightFieldSettingsSetHeightSamples(this JPH.HeightFieldShapeSettings inSettings, float? inSamples, uint inCount) => JPH.Const_JoltHelpers.HeightFieldSettingsSetHeightSamples(inSettings, inSamples, inCount);
 
@@ -41,7 +55,91 @@ public static unsafe partial class JoltExtensions
 
     public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_Shape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
 
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_BoxShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_CapsuleShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_CompoundShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_ConvexHullShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_ConvexShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_CylinderShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_DecoratedShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_EmptyShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_HeightFieldShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_MeshShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_MutableCompoundShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_OffsetCenterOfMassShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_PlaneShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_RotatedTranslatedShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_ScaledShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_SoftBodyShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_SphereShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_StaticCompoundShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_TaperedCapsuleShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_TaperedCylinderShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
+    public static JPH.Vec3 HeightFieldShapeGetPosition(this JPH.Const_TriangleShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeGetPosition(inShape, inX, inY);
+
     public static bool HeightFieldShapeIsNoCollision(this JPH.Const_Shape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_BoxShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_CapsuleShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_CompoundShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_ConvexHullShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_ConvexShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_CylinderShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_DecoratedShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_EmptyShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_HeightFieldShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_MeshShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_MutableCompoundShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_OffsetCenterOfMassShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_PlaneShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_RotatedTranslatedShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_ScaledShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_SoftBodyShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_SphereShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_StaticCompoundShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_TaperedCapsuleShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_TaperedCylinderShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
+
+    public static bool HeightFieldShapeIsNoCollision(this JPH.Const_TriangleShape inShape, uint inX, uint inY) => JPH.Const_JoltHelpers.HeightFieldShapeIsNoCollision(inShape, inX, inY);
 
     public static void SoftBodySettingsAddVertex(this JPH.SoftBodySharedSettings inSettings, JPH.SoftBodySharedSettings.Const_Vertex inVertex) => JPH.Const_JoltHelpers.SoftBodySettingsAddVertex(inSettings, inVertex);
 
@@ -90,6 +188,10 @@ public static unsafe partial class JoltExtensions
     public static JPH.Vec3 GetSoftBodyVertexPosition(this JPH.Const_PhysicsSystem inSystem, in JPH.BodyID inBodyID, uint inIndex) => JPH.Const_JoltHelpers.PhysicsSystemGetSoftBodyVertexPosition(inSystem, inBodyID, inIndex);
 
     public static void SetShape(this JPH.CharacterBaseSettings inSettings, JPH.Const_Shape? inShape) => JPH.Const_JoltHelpers.CharacterBaseSettingsSetShape(inSettings, inShape);
+
+    public static void SetShape(this JPH.CharacterSettings inSettings, JPH.Const_Shape? inShape) => JPH.Const_JoltHelpers.CharacterBaseSettingsSetShape(inSettings, inShape);
+
+    public static void SetShape(this JPH.CharacterVirtualSettings inSettings, JPH.Const_Shape? inShape) => JPH.Const_JoltHelpers.CharacterBaseSettingsSetShape(inSettings, inShape);
 
     public static void SetInnerBodyShape(this JPH.CharacterVirtualSettings inSettings, JPH.Const_Shape? inShape) => JPH.Const_JoltHelpers.CharacterVirtualSettingsSetInnerBodyShape(inSettings, inShape);
 
