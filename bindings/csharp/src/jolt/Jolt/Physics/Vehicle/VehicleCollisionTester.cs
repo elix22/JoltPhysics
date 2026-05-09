@@ -442,6 +442,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHVehicleCollisionTester(VehicleCollisionTester self)
+            => (JPH.Const_RefTarget_JPHVehicleCollisionTester)(JPH.Const_VehicleCollisionTester)self;
         public static unsafe implicit operator JPH.NonCopyable(VehicleCollisionTester self)
         {
             #if __IOS__
@@ -454,6 +456,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(VehicleCollisionTester self)
+            => (JPH.Const_NonCopyable)(JPH.Const_VehicleCollisionTester)self;
 
         // Downcasts:
         public static unsafe explicit operator VehicleCollisionTester(JPH.RefTarget_JPHVehicleCollisionTester parent)
@@ -1032,6 +1036,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHVehicleCollisionTester(VehicleCollisionTesterRay self)
+            => (JPH.Const_RefTarget_JPHVehicleCollisionTester)(JPH.Const_VehicleCollisionTesterRay)self;
         public static unsafe implicit operator JPH.NonCopyable(VehicleCollisionTesterRay self)
         {
             #if __IOS__
@@ -1044,6 +1050,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(VehicleCollisionTesterRay self)
+            => (JPH.Const_NonCopyable)(JPH.Const_VehicleCollisionTesterRay)self;
         public static unsafe implicit operator JPH.VehicleCollisionTester(VehicleCollisionTesterRay self)
         {
             #if __IOS__
@@ -1056,6 +1064,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_VehicleCollisionTester(VehicleCollisionTesterRay self)
+            => (JPH.Const_VehicleCollisionTester)(JPH.Const_VehicleCollisionTesterRay)self;
 
         // Downcasts:
         public static unsafe explicit operator VehicleCollisionTesterRay(JPH.RefTarget_JPHVehicleCollisionTester parent)
@@ -1679,6 +1689,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHVehicleCollisionTester(VehicleCollisionTesterCastSphere self)
+            => (JPH.Const_RefTarget_JPHVehicleCollisionTester)(JPH.Const_VehicleCollisionTesterCastSphere)self;
         public static unsafe implicit operator JPH.NonCopyable(VehicleCollisionTesterCastSphere self)
         {
             #if __IOS__
@@ -1691,6 +1703,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(VehicleCollisionTesterCastSphere self)
+            => (JPH.Const_NonCopyable)(JPH.Const_VehicleCollisionTesterCastSphere)self;
         public static unsafe implicit operator JPH.VehicleCollisionTester(VehicleCollisionTesterCastSphere self)
         {
             #if __IOS__
@@ -1703,6 +1717,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_VehicleCollisionTester(VehicleCollisionTesterCastSphere self)
+            => (JPH.Const_VehicleCollisionTester)(JPH.Const_VehicleCollisionTesterCastSphere)self;
 
         // Downcasts:
         public static unsafe explicit operator VehicleCollisionTesterCastSphere(JPH.RefTarget_JPHVehicleCollisionTester parent)
@@ -2324,6 +2340,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHVehicleCollisionTester(VehicleCollisionTesterCastCylinder self)
+            => (JPH.Const_RefTarget_JPHVehicleCollisionTester)(JPH.Const_VehicleCollisionTesterCastCylinder)self;
         public static unsafe implicit operator JPH.NonCopyable(VehicleCollisionTesterCastCylinder self)
         {
             #if __IOS__
@@ -2336,6 +2354,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(VehicleCollisionTesterCastCylinder self)
+            => (JPH.Const_NonCopyable)(JPH.Const_VehicleCollisionTesterCastCylinder)self;
         public static unsafe implicit operator JPH.VehicleCollisionTester(VehicleCollisionTesterCastCylinder self)
         {
             #if __IOS__
@@ -2348,6 +2368,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_VehicleCollisionTester(VehicleCollisionTesterCastCylinder self)
+            => (JPH.Const_VehicleCollisionTester)(JPH.Const_VehicleCollisionTesterCastCylinder)self;
 
         // Downcasts:
         public static unsafe explicit operator VehicleCollisionTesterCastCylinder(JPH.RefTarget_JPHVehicleCollisionTester parent)

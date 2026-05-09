@@ -689,6 +689,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(WheelSettingsWV self)
+            => (JPH.Const_SerializableObject)(JPH.Const_WheelSettingsWV)self;
         public static unsafe implicit operator JPH.RefTarget_JPHWheelSettings(WheelSettingsWV self)
         {
             #if __IOS__
@@ -701,6 +703,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHWheelSettings(WheelSettingsWV self)
+            => (JPH.Const_RefTarget_JPHWheelSettings)(JPH.Const_WheelSettingsWV)self;
         public static unsafe implicit operator JPH.WheelSettings(WheelSettingsWV self)
         {
             #if __IOS__
@@ -713,6 +717,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_WheelSettings(WheelSettingsWV self)
+            => (JPH.Const_WheelSettings)(JPH.Const_WheelSettingsWV)self;
 
         // Downcasts:
         public static unsafe explicit operator WheelSettingsWV(JPH.SerializableObject parent)
@@ -1719,6 +1725,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(WheelWV self)
+            => (JPH.Const_NonCopyable)(JPH.Const_WheelWV)self;
         public static unsafe implicit operator JPH.Wheel(WheelWV self)
         {
             #if __IOS__
@@ -1731,6 +1739,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Wheel(WheelWV self)
+            => (JPH.Const_Wheel)(JPH.Const_WheelWV)self;
 
         // Downcasts:
         public static unsafe explicit operator WheelWV(JPH.NonCopyable parent)
@@ -2462,6 +2472,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(WheeledVehicleControllerSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_WheeledVehicleControllerSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHVehicleControllerSettings(WheeledVehicleControllerSettings self)
         {
             #if __IOS__
@@ -2474,6 +2486,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHVehicleControllerSettings(WheeledVehicleControllerSettings self)
+            => (JPH.Const_RefTarget_JPHVehicleControllerSettings)(JPH.Const_WheeledVehicleControllerSettings)self;
         public static unsafe implicit operator JPH.VehicleControllerSettings(WheeledVehicleControllerSettings self)
         {
             #if __IOS__
@@ -2486,6 +2500,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_VehicleControllerSettings(WheeledVehicleControllerSettings self)
+            => (JPH.Const_VehicleControllerSettings)(JPH.Const_WheeledVehicleControllerSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator WheeledVehicleControllerSettings(JPH.SerializableObject parent)
@@ -3104,6 +3120,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(WheeledVehicleController self)
+            => (JPH.Const_NonCopyable)(JPH.Const_WheeledVehicleController)self;
         public static unsafe implicit operator JPH.VehicleController(WheeledVehicleController self)
         {
             #if __IOS__
@@ -3116,6 +3134,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_VehicleController(WheeledVehicleController self)
+            => (JPH.Const_VehicleController)(JPH.Const_WheeledVehicleController)self;
 
         // Downcasts:
         public static unsafe explicit operator WheeledVehicleController(JPH.NonCopyable parent)

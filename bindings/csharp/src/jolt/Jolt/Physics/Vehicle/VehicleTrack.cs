@@ -742,6 +742,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_VehicleTrackSettings(VehicleTrack self)
+            => (JPH.Const_VehicleTrackSettings)(JPH.Const_VehicleTrack)self;
 
         // Downcasts:
         public static unsafe explicit operator VehicleTrack(JPH.VehicleTrackSettings parent)

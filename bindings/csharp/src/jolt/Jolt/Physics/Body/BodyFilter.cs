@@ -130,6 +130,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(BodyFilter self)
+            => (JPH.Const_NonCopyable)(JPH.Const_BodyFilter)self;
 
         // Downcasts:
         public static unsafe explicit operator BodyFilter(JPH.NonCopyable parent)
@@ -356,6 +358,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(IgnoreSingleBodyFilter self)
+            => (JPH.Const_NonCopyable)(JPH.Const_IgnoreSingleBodyFilter)self;
         public static unsafe implicit operator JPH.BodyFilter(IgnoreSingleBodyFilter self)
         {
             #if __IOS__
@@ -368,6 +372,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_BodyFilter(IgnoreSingleBodyFilter self)
+            => (JPH.Const_BodyFilter)(JPH.Const_IgnoreSingleBodyFilter)self;
 
         // Downcasts:
         public static unsafe explicit operator IgnoreSingleBodyFilter(JPH.NonCopyable parent)
@@ -593,6 +599,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(IgnoreMultipleBodiesFilter self)
+            => (JPH.Const_NonCopyable)(JPH.Const_IgnoreMultipleBodiesFilter)self;
         public static unsafe implicit operator JPH.BodyFilter(IgnoreMultipleBodiesFilter self)
         {
             #if __IOS__
@@ -605,6 +613,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_BodyFilter(IgnoreMultipleBodiesFilter self)
+            => (JPH.Const_BodyFilter)(JPH.Const_IgnoreMultipleBodiesFilter)self;
 
         // Downcasts:
         public static unsafe explicit operator IgnoreMultipleBodiesFilter(JPH.NonCopyable parent)

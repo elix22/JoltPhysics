@@ -1269,6 +1269,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_PhysicsStepListener(CountingPhysicsStepListener self)
+            => (JPH.Const_PhysicsStepListener)(JPH.Const_CountingPhysicsStepListener)self;
 
         // Downcasts:
         public static unsafe explicit operator CountingPhysicsStepListener(JPH.PhysicsStepListener parent)
@@ -1723,6 +1725,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ContactListener(SimpleContactEventListener self)
+            => (JPH.Const_ContactListener)(JPH.Const_SimpleContactEventListener)self;
 
         // Downcasts:
         public static unsafe explicit operator SimpleContactEventListener(JPH.ContactListener parent)
@@ -2190,6 +2194,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ContactListener(ContactListenerTrampoline self)
+            => (JPH.Const_ContactListener)(JPH.Const_ContactListenerTrampoline)self;
 
         // Downcasts:
         public static unsafe explicit operator ContactListenerTrampoline(JPH.ContactListener parent)
@@ -2675,6 +2681,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ContactListener(EstimateResponseContactListener self)
+            => (JPH.Const_ContactListener)(JPH.Const_EstimateResponseContactListener)self;
 
         // Downcasts:
         public static unsafe explicit operator EstimateResponseContactListener(JPH.ContactListener parent)
@@ -3124,6 +3132,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SoftBodyContactListener(SoftBodyContactListenerTrampoline self)
+            => (JPH.Const_SoftBodyContactListener)(JPH.Const_SoftBodyContactListenerTrampoline)self;
 
         // Downcasts:
         public static unsafe explicit operator SoftBodyContactListenerTrampoline(JPH.SoftBodyContactListener parent)
@@ -4142,6 +4152,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(RecordingDebugRenderer self)
+            => (JPH.Const_NonCopyable)(JPH.Const_RecordingDebugRenderer)self;
         public static unsafe implicit operator JPH.DebugRenderer(RecordingDebugRenderer self)
         {
             #if __IOS__
@@ -4154,6 +4166,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_DebugRenderer(RecordingDebugRenderer self)
+            => (JPH.Const_DebugRenderer)(JPH.Const_RecordingDebugRenderer)self;
         public static unsafe implicit operator JPH.DebugRendererSimple(RecordingDebugRenderer self)
         {
             #if __IOS__
@@ -4166,6 +4180,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_DebugRendererSimple(RecordingDebugRenderer self)
+            => (JPH.Const_DebugRendererSimple)(JPH.Const_RecordingDebugRenderer)self;
 
         // Downcasts:
         public static unsafe explicit operator RecordingDebugRenderer(JPH.NonCopyable parent)

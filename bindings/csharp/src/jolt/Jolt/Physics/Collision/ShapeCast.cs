@@ -1179,6 +1179,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ShapeCastT_JPHVec3_JPHMat44_JPHShapeCast(ShapeCast self)
+            => (JPH.Const_ShapeCastT_JPHVec3_JPHMat44_JPHShapeCast)(JPH.Const_ShapeCast)self;
 
         // Downcasts:
         public static unsafe explicit operator ShapeCast(JPH.ShapeCastT_JPHVec3_JPHMat44_JPHShapeCast parent)
@@ -1581,6 +1583,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ShapeCastT_JPHVec3_JPHMat44_JPHRShapeCast(RShapeCast self)
+            => (JPH.Const_ShapeCastT_JPHVec3_JPHMat44_JPHRShapeCast)(JPH.Const_RShapeCast)self;
 
         // Downcasts:
         public static unsafe explicit operator RShapeCast(JPH.ShapeCastT_JPHVec3_JPHMat44_JPHRShapeCast parent)
@@ -2084,6 +2088,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_CollideSettingsBase(ShapeCastSettings self)
+            => (JPH.Const_CollideSettingsBase)(JPH.Const_ShapeCastSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator ShapeCastSettings(JPH.CollideSettingsBase parent)
@@ -2771,6 +2777,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_CollideShapeResult(ShapeCastResult self)
+            => (JPH.Const_CollideShapeResult)(JPH.Const_ShapeCastResult)self;
 
         // Downcasts:
         public static unsafe explicit operator ShapeCastResult(JPH.CollideShapeResult parent)

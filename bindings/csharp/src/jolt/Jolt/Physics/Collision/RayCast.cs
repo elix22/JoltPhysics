@@ -1016,6 +1016,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RayCastT_JPHVec3_JPHMat44_JPHRayCast(RayCast self)
+            => (JPH.Const_RayCastT_JPHVec3_JPHMat44_JPHRayCast)(JPH.Const_RayCast)self;
 
         // Downcasts:
         public static unsafe explicit operator RayCast(JPH.RayCastT_JPHVec3_JPHMat44_JPHRayCast parent)
@@ -1373,6 +1375,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RayCastT_JPHVec3_JPHMat44_JPHRRayCast(RRayCast self)
+            => (JPH.Const_RayCastT_JPHVec3_JPHMat44_JPHRRayCast)(JPH.Const_RRayCast)self;
 
         // Downcasts:
         public static unsafe explicit operator RRayCast(JPH.RayCastT_JPHVec3_JPHMat44_JPHRRayCast parent)

@@ -527,6 +527,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(RotatedTranslatedShapeSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_RotatedTranslatedShapeSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHShapeSettings(RotatedTranslatedShapeSettings self)
         {
             #if __IOS__
@@ -539,6 +541,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShapeSettings(RotatedTranslatedShapeSettings self)
+            => (JPH.Const_RefTarget_JPHShapeSettings)(JPH.Const_RotatedTranslatedShapeSettings)self;
         public static unsafe implicit operator JPH.ShapeSettings(RotatedTranslatedShapeSettings self)
         {
             #if __IOS__
@@ -551,6 +555,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ShapeSettings(RotatedTranslatedShapeSettings self)
+            => (JPH.Const_ShapeSettings)(JPH.Const_RotatedTranslatedShapeSettings)self;
         public static unsafe implicit operator JPH.DecoratedShapeSettings(RotatedTranslatedShapeSettings self)
         {
             #if __IOS__
@@ -563,6 +569,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_DecoratedShapeSettings(RotatedTranslatedShapeSettings self)
+            => (JPH.Const_DecoratedShapeSettings)(JPH.Const_RotatedTranslatedShapeSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator RotatedTranslatedShapeSettings(JPH.SerializableObject parent)
@@ -1689,6 +1697,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShape(RotatedTranslatedShape self)
+            => (JPH.Const_RefTarget_JPHShape)(JPH.Const_RotatedTranslatedShape)self;
         public static unsafe implicit operator JPH.NonCopyable(RotatedTranslatedShape self)
         {
             #if __IOS__
@@ -1701,6 +1711,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(RotatedTranslatedShape self)
+            => (JPH.Const_NonCopyable)(JPH.Const_RotatedTranslatedShape)self;
         public static unsafe implicit operator JPH.Shape(RotatedTranslatedShape self)
         {
             #if __IOS__
@@ -1713,6 +1725,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Shape(RotatedTranslatedShape self)
+            => (JPH.Const_Shape)(JPH.Const_RotatedTranslatedShape)self;
         public static unsafe implicit operator JPH.DecoratedShape(RotatedTranslatedShape self)
         {
             #if __IOS__
@@ -1725,6 +1739,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_DecoratedShape(RotatedTranslatedShape self)
+            => (JPH.Const_DecoratedShape)(JPH.Const_RotatedTranslatedShape)self;
 
         // Downcasts:
         public static unsafe explicit operator RotatedTranslatedShape(JPH.RefTarget_JPHShape parent)

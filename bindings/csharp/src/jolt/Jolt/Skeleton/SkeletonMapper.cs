@@ -1361,6 +1361,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHSkeletonMapper(SkeletonMapper self)
+            => (JPH.Const_RefTarget_JPHSkeletonMapper)(JPH.Const_SkeletonMapper)self;
 
         // Downcasts:
         public static unsafe explicit operator SkeletonMapper(JPH.RefTarget_JPHSkeletonMapper parent)

@@ -420,6 +420,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHCharacterBaseSettings(CharacterBaseSettings self)
+            => (JPH.Const_RefTarget_JPHCharacterBaseSettings)(JPH.Const_CharacterBaseSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator CharacterBaseSettings(JPH.RefTarget_JPHCharacterBaseSettings parent)
@@ -1167,6 +1169,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHCharacterBase(CharacterBase self)
+            => (JPH.Const_RefTarget_JPHCharacterBase)(JPH.Const_CharacterBase)self;
         public static unsafe implicit operator JPH.NonCopyable(CharacterBase self)
         {
             #if __IOS__
@@ -1179,6 +1183,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(CharacterBase self)
+            => (JPH.Const_NonCopyable)(JPH.Const_CharacterBase)self;
 
         // Downcasts:
         public static unsafe explicit operator CharacterBase(JPH.RefTarget_JPHCharacterBase parent)

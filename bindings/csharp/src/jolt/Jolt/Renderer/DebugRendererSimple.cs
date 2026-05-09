@@ -323,6 +323,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(DebugRendererSimple self)
+            => (JPH.Const_NonCopyable)(JPH.Const_DebugRendererSimple)self;
         public static unsafe implicit operator JPH.DebugRenderer(DebugRendererSimple self)
         {
             #if __IOS__
@@ -335,6 +337,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_DebugRenderer(DebugRendererSimple self)
+            => (JPH.Const_DebugRenderer)(JPH.Const_DebugRendererSimple)self;
 
         // Downcasts:
         public static unsafe explicit operator DebugRendererSimple(JPH.NonCopyable parent)

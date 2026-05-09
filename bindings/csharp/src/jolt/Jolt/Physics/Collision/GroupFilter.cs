@@ -332,6 +332,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(GroupFilter self)
+            => (JPH.Const_SerializableObject)(JPH.Const_GroupFilter)self;
         public static unsafe implicit operator JPH.RefTarget_JPHGroupFilter(GroupFilter self)
         {
             #if __IOS__
@@ -344,6 +346,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHGroupFilter(GroupFilter self)
+            => (JPH.Const_RefTarget_JPHGroupFilter)(JPH.Const_GroupFilter)self;
 
         // Downcasts:
         public static unsafe explicit operator GroupFilter(JPH.SerializableObject parent)

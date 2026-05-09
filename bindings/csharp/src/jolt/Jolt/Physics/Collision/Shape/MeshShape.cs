@@ -503,6 +503,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(MeshShapeSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_MeshShapeSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHShapeSettings(MeshShapeSettings self)
         {
             #if __IOS__
@@ -515,6 +517,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShapeSettings(MeshShapeSettings self)
+            => (JPH.Const_RefTarget_JPHShapeSettings)(JPH.Const_MeshShapeSettings)self;
         public static unsafe implicit operator JPH.ShapeSettings(MeshShapeSettings self)
         {
             #if __IOS__
@@ -527,6 +531,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ShapeSettings(MeshShapeSettings self)
+            => (JPH.Const_ShapeSettings)(JPH.Const_MeshShapeSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator MeshShapeSettings(JPH.SerializableObject parent)
@@ -1600,6 +1606,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShape(MeshShape self)
+            => (JPH.Const_RefTarget_JPHShape)(JPH.Const_MeshShape)self;
         public static unsafe implicit operator JPH.NonCopyable(MeshShape self)
         {
             #if __IOS__
@@ -1612,6 +1620,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(MeshShape self)
+            => (JPH.Const_NonCopyable)(JPH.Const_MeshShape)self;
         public static unsafe implicit operator JPH.Shape(MeshShape self)
         {
             #if __IOS__
@@ -1624,6 +1634,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Shape(MeshShape self)
+            => (JPH.Const_Shape)(JPH.Const_MeshShape)self;
 
         // Downcasts:
         public static unsafe explicit operator MeshShape(JPH.RefTarget_JPHShape parent)

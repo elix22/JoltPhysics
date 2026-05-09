@@ -1413,6 +1413,8 @@ public static partial class JPH
                 ret._KeepAliveEnclosingObject = self;
                 return ret;
             }
+            public static unsafe implicit operator JPH.SkeletalAnimation.Const_JointState(Keyframe self)
+                => (JPH.SkeletalAnimation.Const_JointState)(JPH.SkeletalAnimation.Const_Keyframe)self;
 
             // Downcasts:
             public static unsafe explicit operator Keyframe(JPH.SkeletalAnimation.JointState parent)
@@ -1589,6 +1591,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHSkeletalAnimation(SkeletalAnimation self)
+            => (JPH.Const_RefTarget_JPHSkeletalAnimation)(JPH.Const_SkeletalAnimation)self;
 
         // Downcasts:
         public static unsafe explicit operator SkeletalAnimation(JPH.RefTarget_JPHSkeletalAnimation parent)

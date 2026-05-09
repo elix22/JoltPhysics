@@ -462,6 +462,8 @@ public static partial class JPH
                 ret._KeepAliveEnclosingObject = self;
                 return ret;
             }
+            public static unsafe implicit operator JPH.Const_NonCopyable(Barrier self)
+                => (JPH.Const_NonCopyable)(JPH.JobSystem.Const_Barrier)self;
 
             // Downcasts:
             public static unsafe explicit operator Barrier(JPH.NonCopyable parent)
@@ -858,6 +860,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(JobSystem self)
+            => (JPH.Const_NonCopyable)(JPH.Const_JobSystem)self;
 
         // Downcasts:
         public static unsafe explicit operator JobSystem(JPH.NonCopyable parent)

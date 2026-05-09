@@ -759,6 +759,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(SixDOFConstraintSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_SixDOFConstraintSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHConstraintSettings(SixDOFConstraintSettings self)
         {
             #if __IOS__
@@ -771,6 +773,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraintSettings(SixDOFConstraintSettings self)
+            => (JPH.Const_RefTarget_JPHConstraintSettings)(JPH.Const_SixDOFConstraintSettings)self;
         public static unsafe implicit operator JPH.ConstraintSettings(SixDOFConstraintSettings self)
         {
             #if __IOS__
@@ -783,6 +787,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConstraintSettings(SixDOFConstraintSettings self)
+            => (JPH.Const_ConstraintSettings)(JPH.Const_SixDOFConstraintSettings)self;
         public static unsafe implicit operator JPH.TwoBodyConstraintSettings(SixDOFConstraintSettings self)
         {
             #if __IOS__
@@ -795,6 +801,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraintSettings(SixDOFConstraintSettings self)
+            => (JPH.Const_TwoBodyConstraintSettings)(JPH.Const_SixDOFConstraintSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator SixDOFConstraintSettings(JPH.SerializableObject parent)
@@ -2122,6 +2130,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraint(SixDOFConstraint self)
+            => (JPH.Const_RefTarget_JPHConstraint)(JPH.Const_SixDOFConstraint)self;
         public static unsafe implicit operator JPH.NonCopyable(SixDOFConstraint self)
         {
             #if __IOS__
@@ -2134,6 +2144,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(SixDOFConstraint self)
+            => (JPH.Const_NonCopyable)(JPH.Const_SixDOFConstraint)self;
         public static unsafe implicit operator JPH.Constraint(SixDOFConstraint self)
         {
             #if __IOS__
@@ -2146,6 +2158,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Constraint(SixDOFConstraint self)
+            => (JPH.Const_Constraint)(JPH.Const_SixDOFConstraint)self;
         public static unsafe implicit operator JPH.TwoBodyConstraint(SixDOFConstraint self)
         {
             #if __IOS__
@@ -2158,6 +2172,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraint(SixDOFConstraint self)
+            => (JPH.Const_TwoBodyConstraint)(JPH.Const_SixDOFConstraint)self;
 
         // Downcasts:
         public static unsafe explicit operator SixDOFConstraint(JPH.RefTarget_JPHConstraint parent)

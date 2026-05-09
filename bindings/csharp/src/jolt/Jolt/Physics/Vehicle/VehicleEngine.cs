@@ -733,6 +733,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_VehicleEngineSettings(VehicleEngine self)
+            => (JPH.Const_VehicleEngineSettings)(JPH.Const_VehicleEngine)self;
 
         // Downcasts:
         public static unsafe explicit operator VehicleEngine(JPH.VehicleEngineSettings parent)

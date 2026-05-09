@@ -1412,6 +1412,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_CollideSettingsBase(CollideShapeSettings self)
+            => (JPH.Const_CollideSettingsBase)(JPH.Const_CollideShapeSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator CollideShapeSettings(JPH.CollideSettingsBase parent)

@@ -751,6 +751,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(SwingTwistConstraintSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_SwingTwistConstraintSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHConstraintSettings(SwingTwistConstraintSettings self)
         {
             #if __IOS__
@@ -763,6 +765,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraintSettings(SwingTwistConstraintSettings self)
+            => (JPH.Const_RefTarget_JPHConstraintSettings)(JPH.Const_SwingTwistConstraintSettings)self;
         public static unsafe implicit operator JPH.ConstraintSettings(SwingTwistConstraintSettings self)
         {
             #if __IOS__
@@ -775,6 +779,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConstraintSettings(SwingTwistConstraintSettings self)
+            => (JPH.Const_ConstraintSettings)(JPH.Const_SwingTwistConstraintSettings)self;
         public static unsafe implicit operator JPH.TwoBodyConstraintSettings(SwingTwistConstraintSettings self)
         {
             #if __IOS__
@@ -787,6 +793,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraintSettings(SwingTwistConstraintSettings self)
+            => (JPH.Const_TwoBodyConstraintSettings)(JPH.Const_SwingTwistConstraintSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator SwingTwistConstraintSettings(JPH.SerializableObject parent)
@@ -2099,6 +2107,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraint(SwingTwistConstraint self)
+            => (JPH.Const_RefTarget_JPHConstraint)(JPH.Const_SwingTwistConstraint)self;
         public static unsafe implicit operator JPH.NonCopyable(SwingTwistConstraint self)
         {
             #if __IOS__
@@ -2111,6 +2121,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(SwingTwistConstraint self)
+            => (JPH.Const_NonCopyable)(JPH.Const_SwingTwistConstraint)self;
         public static unsafe implicit operator JPH.Constraint(SwingTwistConstraint self)
         {
             #if __IOS__
@@ -2123,6 +2135,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Constraint(SwingTwistConstraint self)
+            => (JPH.Const_Constraint)(JPH.Const_SwingTwistConstraint)self;
         public static unsafe implicit operator JPH.TwoBodyConstraint(SwingTwistConstraint self)
         {
             #if __IOS__
@@ -2135,6 +2149,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraint(SwingTwistConstraint self)
+            => (JPH.Const_TwoBodyConstraint)(JPH.Const_SwingTwistConstraint)self;
 
         // Downcasts:
         public static unsafe explicit operator SwingTwistConstraint(JPH.RefTarget_JPHConstraint parent)

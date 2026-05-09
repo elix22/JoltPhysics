@@ -548,6 +548,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(TriangleShapeSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_TriangleShapeSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHShapeSettings(TriangleShapeSettings self)
         {
             #if __IOS__
@@ -560,6 +562,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShapeSettings(TriangleShapeSettings self)
+            => (JPH.Const_RefTarget_JPHShapeSettings)(JPH.Const_TriangleShapeSettings)self;
         public static unsafe implicit operator JPH.ShapeSettings(TriangleShapeSettings self)
         {
             #if __IOS__
@@ -572,6 +576,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ShapeSettings(TriangleShapeSettings self)
+            => (JPH.Const_ShapeSettings)(JPH.Const_TriangleShapeSettings)self;
         public static unsafe implicit operator JPH.ConvexShapeSettings(TriangleShapeSettings self)
         {
             #if __IOS__
@@ -584,6 +590,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConvexShapeSettings(TriangleShapeSettings self)
+            => (JPH.Const_ConvexShapeSettings)(JPH.Const_TriangleShapeSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator TriangleShapeSettings(JPH.SerializableObject parent)
@@ -1765,6 +1773,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShape(TriangleShape self)
+            => (JPH.Const_RefTarget_JPHShape)(JPH.Const_TriangleShape)self;
         public static unsafe implicit operator JPH.NonCopyable(TriangleShape self)
         {
             #if __IOS__
@@ -1777,6 +1787,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(TriangleShape self)
+            => (JPH.Const_NonCopyable)(JPH.Const_TriangleShape)self;
         public static unsafe implicit operator JPH.Shape(TriangleShape self)
         {
             #if __IOS__
@@ -1789,6 +1801,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Shape(TriangleShape self)
+            => (JPH.Const_Shape)(JPH.Const_TriangleShape)self;
         public static unsafe implicit operator JPH.ConvexShape(TriangleShape self)
         {
             #if __IOS__
@@ -1801,6 +1815,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConvexShape(TriangleShape self)
+            => (JPH.Const_ConvexShape)(JPH.Const_TriangleShape)self;
 
         // Downcasts:
         public static unsafe explicit operator TriangleShape(JPH.RefTarget_JPHShape parent)

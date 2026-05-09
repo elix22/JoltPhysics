@@ -378,6 +378,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(PhysicsMaterial self)
+            => (JPH.Const_SerializableObject)(JPH.Const_PhysicsMaterial)self;
         public static unsafe implicit operator JPH.RefTarget_JPHPhysicsMaterial(PhysicsMaterial self)
         {
             #if __IOS__
@@ -390,6 +392,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHPhysicsMaterial(PhysicsMaterial self)
+            => (JPH.Const_RefTarget_JPHPhysicsMaterial)(JPH.Const_PhysicsMaterial)self;
 
         // Downcasts:
         public static unsafe explicit operator PhysicsMaterial(JPH.SerializableObject parent)

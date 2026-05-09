@@ -151,6 +151,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(ShapeFilter self)
+            => (JPH.Const_NonCopyable)(JPH.Const_ShapeFilter)self;
 
         // Downcasts:
         public static unsafe explicit operator ShapeFilter(JPH.NonCopyable parent)
@@ -401,6 +403,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(ReversedShapeFilter self)
+            => (JPH.Const_NonCopyable)(JPH.Const_ReversedShapeFilter)self;
         public static unsafe implicit operator JPH.ShapeFilter(ReversedShapeFilter self)
         {
             #if __IOS__
@@ -413,6 +417,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ShapeFilter(ReversedShapeFilter self)
+            => (JPH.Const_ShapeFilter)(JPH.Const_ReversedShapeFilter)self;
 
         // Downcasts:
         public static unsafe explicit operator ReversedShapeFilter(JPH.NonCopyable parent)

@@ -473,6 +473,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(TwoBodyConstraintSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_TwoBodyConstraintSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHConstraintSettings(TwoBodyConstraintSettings self)
         {
             #if __IOS__
@@ -485,6 +487,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraintSettings(TwoBodyConstraintSettings self)
+            => (JPH.Const_RefTarget_JPHConstraintSettings)(JPH.Const_TwoBodyConstraintSettings)self;
         public static unsafe implicit operator JPH.ConstraintSettings(TwoBodyConstraintSettings self)
         {
             #if __IOS__
@@ -497,6 +501,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConstraintSettings(TwoBodyConstraintSettings self)
+            => (JPH.Const_ConstraintSettings)(JPH.Const_TwoBodyConstraintSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator TwoBodyConstraintSettings(JPH.SerializableObject parent)
@@ -1206,6 +1212,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraint(TwoBodyConstraint self)
+            => (JPH.Const_RefTarget_JPHConstraint)(JPH.Const_TwoBodyConstraint)self;
         public static unsafe implicit operator JPH.NonCopyable(TwoBodyConstraint self)
         {
             #if __IOS__
@@ -1218,6 +1226,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(TwoBodyConstraint self)
+            => (JPH.Const_NonCopyable)(JPH.Const_TwoBodyConstraint)self;
         public static unsafe implicit operator JPH.Constraint(TwoBodyConstraint self)
         {
             #if __IOS__
@@ -1230,6 +1240,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Constraint(TwoBodyConstraint self)
+            => (JPH.Const_Constraint)(JPH.Const_TwoBodyConstraint)self;
 
         // Downcasts:
         public static unsafe explicit operator TwoBodyConstraint(JPH.RefTarget_JPHConstraint parent)

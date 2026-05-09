@@ -614,6 +614,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(ConeConstraintSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_ConeConstraintSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHConstraintSettings(ConeConstraintSettings self)
         {
             #if __IOS__
@@ -626,6 +628,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraintSettings(ConeConstraintSettings self)
+            => (JPH.Const_RefTarget_JPHConstraintSettings)(JPH.Const_ConeConstraintSettings)self;
         public static unsafe implicit operator JPH.ConstraintSettings(ConeConstraintSettings self)
         {
             #if __IOS__
@@ -638,6 +642,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConstraintSettings(ConeConstraintSettings self)
+            => (JPH.Const_ConstraintSettings)(JPH.Const_ConeConstraintSettings)self;
         public static unsafe implicit operator JPH.TwoBodyConstraintSettings(ConeConstraintSettings self)
         {
             #if __IOS__
@@ -650,6 +656,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraintSettings(ConeConstraintSettings self)
+            => (JPH.Const_TwoBodyConstraintSettings)(JPH.Const_ConeConstraintSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator ConeConstraintSettings(JPH.SerializableObject parent)
@@ -1656,6 +1664,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraint(ConeConstraint self)
+            => (JPH.Const_RefTarget_JPHConstraint)(JPH.Const_ConeConstraint)self;
         public static unsafe implicit operator JPH.NonCopyable(ConeConstraint self)
         {
             #if __IOS__
@@ -1668,6 +1678,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(ConeConstraint self)
+            => (JPH.Const_NonCopyable)(JPH.Const_ConeConstraint)self;
         public static unsafe implicit operator JPH.Constraint(ConeConstraint self)
         {
             #if __IOS__
@@ -1680,6 +1692,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Constraint(ConeConstraint self)
+            => (JPH.Const_Constraint)(JPH.Const_ConeConstraint)self;
         public static unsafe implicit operator JPH.TwoBodyConstraint(ConeConstraint self)
         {
             #if __IOS__
@@ -1692,6 +1706,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraint(ConeConstraint self)
+            => (JPH.Const_TwoBodyConstraint)(JPH.Const_ConeConstraint)self;
 
         // Downcasts:
         public static unsafe explicit operator ConeConstraint(JPH.RefTarget_JPHConstraint parent)

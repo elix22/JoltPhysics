@@ -594,6 +594,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(WheelSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_WheelSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHWheelSettings(WheelSettings self)
         {
             #if __IOS__
@@ -606,6 +608,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHWheelSettings(WheelSettings self)
+            => (JPH.Const_RefTarget_JPHWheelSettings)(JPH.Const_WheelSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator WheelSettings(JPH.SerializableObject parent)
@@ -1430,6 +1434,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(Wheel self)
+            => (JPH.Const_NonCopyable)(JPH.Const_Wheel)self;
 
         // Downcasts:
         public static unsafe explicit operator Wheel(JPH.NonCopyable parent)

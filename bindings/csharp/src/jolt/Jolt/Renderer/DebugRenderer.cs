@@ -676,6 +676,8 @@ public static partial class JPH
                 ret._KeepAliveEnclosingObject = self;
                 return ret;
             }
+            public static unsafe implicit operator JPH.Const_RefTarget_JPHDebugRendererGeometry(Geometry self)
+                => (JPH.Const_RefTarget_JPHDebugRendererGeometry)(JPH.DebugRenderer.Const_Geometry)self;
 
             // Downcasts:
             public static unsafe explicit operator Geometry(JPH.RefTarget_JPHDebugRendererGeometry parent)
@@ -1611,6 +1613,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(DebugRenderer self)
+            => (JPH.Const_NonCopyable)(JPH.Const_DebugRenderer)self;
 
         // Downcasts:
         public static unsafe explicit operator DebugRenderer(JPH.NonCopyable parent)

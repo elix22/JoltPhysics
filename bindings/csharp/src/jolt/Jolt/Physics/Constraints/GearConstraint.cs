@@ -580,6 +580,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(GearConstraintSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_GearConstraintSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHConstraintSettings(GearConstraintSettings self)
         {
             #if __IOS__
@@ -592,6 +594,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraintSettings(GearConstraintSettings self)
+            => (JPH.Const_RefTarget_JPHConstraintSettings)(JPH.Const_GearConstraintSettings)self;
         public static unsafe implicit operator JPH.ConstraintSettings(GearConstraintSettings self)
         {
             #if __IOS__
@@ -604,6 +608,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConstraintSettings(GearConstraintSettings self)
+            => (JPH.Const_ConstraintSettings)(JPH.Const_GearConstraintSettings)self;
         public static unsafe implicit operator JPH.TwoBodyConstraintSettings(GearConstraintSettings self)
         {
             #if __IOS__
@@ -616,6 +622,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraintSettings(GearConstraintSettings self)
+            => (JPH.Const_TwoBodyConstraintSettings)(JPH.Const_GearConstraintSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator GearConstraintSettings(JPH.SerializableObject parent)
@@ -1534,6 +1542,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraint(GearConstraint self)
+            => (JPH.Const_RefTarget_JPHConstraint)(JPH.Const_GearConstraint)self;
         public static unsafe implicit operator JPH.NonCopyable(GearConstraint self)
         {
             #if __IOS__
@@ -1546,6 +1556,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(GearConstraint self)
+            => (JPH.Const_NonCopyable)(JPH.Const_GearConstraint)self;
         public static unsafe implicit operator JPH.Constraint(GearConstraint self)
         {
             #if __IOS__
@@ -1558,6 +1570,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Constraint(GearConstraint self)
+            => (JPH.Const_Constraint)(JPH.Const_GearConstraint)self;
         public static unsafe implicit operator JPH.TwoBodyConstraint(GearConstraint self)
         {
             #if __IOS__
@@ -1570,6 +1584,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraint(GearConstraint self)
+            => (JPH.Const_TwoBodyConstraint)(JPH.Const_GearConstraint)self;
 
         // Downcasts:
         public static unsafe explicit operator GearConstraint(JPH.RefTarget_JPHConstraint parent)

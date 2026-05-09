@@ -275,6 +275,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(ObjectVsBroadPhaseLayerFilterTable self)
+            => (JPH.Const_NonCopyable)(JPH.Const_ObjectVsBroadPhaseLayerFilterTable)self;
         public static unsafe implicit operator JPH.ObjectVsBroadPhaseLayerFilter(ObjectVsBroadPhaseLayerFilterTable self)
         {
             #if __IOS__
@@ -287,6 +289,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ObjectVsBroadPhaseLayerFilter(ObjectVsBroadPhaseLayerFilterTable self)
+            => (JPH.Const_ObjectVsBroadPhaseLayerFilter)(JPH.Const_ObjectVsBroadPhaseLayerFilterTable)self;
 
         // Downcasts:
         public static unsafe explicit operator ObjectVsBroadPhaseLayerFilterTable(JPH.NonCopyable parent)

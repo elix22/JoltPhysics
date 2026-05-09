@@ -656,6 +656,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(PulleyConstraintSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_PulleyConstraintSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHConstraintSettings(PulleyConstraintSettings self)
         {
             #if __IOS__
@@ -668,6 +670,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraintSettings(PulleyConstraintSettings self)
+            => (JPH.Const_RefTarget_JPHConstraintSettings)(JPH.Const_PulleyConstraintSettings)self;
         public static unsafe implicit operator JPH.ConstraintSettings(PulleyConstraintSettings self)
         {
             #if __IOS__
@@ -680,6 +684,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConstraintSettings(PulleyConstraintSettings self)
+            => (JPH.Const_ConstraintSettings)(JPH.Const_PulleyConstraintSettings)self;
         public static unsafe implicit operator JPH.TwoBodyConstraintSettings(PulleyConstraintSettings self)
         {
             #if __IOS__
@@ -692,6 +698,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraintSettings(PulleyConstraintSettings self)
+            => (JPH.Const_TwoBodyConstraintSettings)(JPH.Const_PulleyConstraintSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator PulleyConstraintSettings(JPH.SerializableObject parent)
@@ -1695,6 +1703,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraint(PulleyConstraint self)
+            => (JPH.Const_RefTarget_JPHConstraint)(JPH.Const_PulleyConstraint)self;
         public static unsafe implicit operator JPH.NonCopyable(PulleyConstraint self)
         {
             #if __IOS__
@@ -1707,6 +1717,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(PulleyConstraint self)
+            => (JPH.Const_NonCopyable)(JPH.Const_PulleyConstraint)self;
         public static unsafe implicit operator JPH.Constraint(PulleyConstraint self)
         {
             #if __IOS__
@@ -1719,6 +1731,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Constraint(PulleyConstraint self)
+            => (JPH.Const_Constraint)(JPH.Const_PulleyConstraint)self;
         public static unsafe implicit operator JPH.TwoBodyConstraint(PulleyConstraint self)
         {
             #if __IOS__
@@ -1731,6 +1745,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraint(PulleyConstraint self)
+            => (JPH.Const_TwoBodyConstraint)(JPH.Const_PulleyConstraint)self;
 
         // Downcasts:
         public static unsafe explicit operator PulleyConstraint(JPH.RefTarget_JPHConstraint parent)

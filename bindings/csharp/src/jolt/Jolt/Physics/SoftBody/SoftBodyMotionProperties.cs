@@ -731,6 +731,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_MotionProperties(SoftBodyMotionProperties self)
+            => (JPH.Const_MotionProperties)(JPH.Const_SoftBodyMotionProperties)self;
 
         // Downcasts:
         public static unsafe explicit operator SoftBodyMotionProperties(JPH.MotionProperties parent)

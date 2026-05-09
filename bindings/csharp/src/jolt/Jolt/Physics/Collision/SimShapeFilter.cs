@@ -116,6 +116,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(SimShapeFilter self)
+            => (JPH.Const_NonCopyable)(JPH.Const_SimShapeFilter)self;
 
         // Downcasts:
         public static unsafe explicit operator SimShapeFilter(JPH.NonCopyable parent)

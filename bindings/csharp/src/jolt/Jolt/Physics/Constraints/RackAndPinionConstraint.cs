@@ -581,6 +581,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(RackAndPinionConstraintSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_RackAndPinionConstraintSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHConstraintSettings(RackAndPinionConstraintSettings self)
         {
             #if __IOS__
@@ -593,6 +595,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraintSettings(RackAndPinionConstraintSettings self)
+            => (JPH.Const_RefTarget_JPHConstraintSettings)(JPH.Const_RackAndPinionConstraintSettings)self;
         public static unsafe implicit operator JPH.ConstraintSettings(RackAndPinionConstraintSettings self)
         {
             #if __IOS__
@@ -605,6 +609,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConstraintSettings(RackAndPinionConstraintSettings self)
+            => (JPH.Const_ConstraintSettings)(JPH.Const_RackAndPinionConstraintSettings)self;
         public static unsafe implicit operator JPH.TwoBodyConstraintSettings(RackAndPinionConstraintSettings self)
         {
             #if __IOS__
@@ -617,6 +623,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraintSettings(RackAndPinionConstraintSettings self)
+            => (JPH.Const_TwoBodyConstraintSettings)(JPH.Const_RackAndPinionConstraintSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator RackAndPinionConstraintSettings(JPH.SerializableObject parent)
@@ -1536,6 +1544,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraint(RackAndPinionConstraint self)
+            => (JPH.Const_RefTarget_JPHConstraint)(JPH.Const_RackAndPinionConstraint)self;
         public static unsafe implicit operator JPH.NonCopyable(RackAndPinionConstraint self)
         {
             #if __IOS__
@@ -1548,6 +1558,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(RackAndPinionConstraint self)
+            => (JPH.Const_NonCopyable)(JPH.Const_RackAndPinionConstraint)self;
         public static unsafe implicit operator JPH.Constraint(RackAndPinionConstraint self)
         {
             #if __IOS__
@@ -1560,6 +1572,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Constraint(RackAndPinionConstraint self)
+            => (JPH.Const_Constraint)(JPH.Const_RackAndPinionConstraint)self;
         public static unsafe implicit operator JPH.TwoBodyConstraint(RackAndPinionConstraint self)
         {
             #if __IOS__
@@ -1572,6 +1586,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraint(RackAndPinionConstraint self)
+            => (JPH.Const_TwoBodyConstraint)(JPH.Const_RackAndPinionConstraint)self;
 
         // Downcasts:
         public static unsafe explicit operator RackAndPinionConstraint(JPH.RefTarget_JPHConstraint parent)

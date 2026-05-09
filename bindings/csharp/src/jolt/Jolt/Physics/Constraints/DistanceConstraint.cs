@@ -614,6 +614,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(DistanceConstraintSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_DistanceConstraintSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHConstraintSettings(DistanceConstraintSettings self)
         {
             #if __IOS__
@@ -626,6 +628,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraintSettings(DistanceConstraintSettings self)
+            => (JPH.Const_RefTarget_JPHConstraintSettings)(JPH.Const_DistanceConstraintSettings)self;
         public static unsafe implicit operator JPH.ConstraintSettings(DistanceConstraintSettings self)
         {
             #if __IOS__
@@ -638,6 +642,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConstraintSettings(DistanceConstraintSettings self)
+            => (JPH.Const_ConstraintSettings)(JPH.Const_DistanceConstraintSettings)self;
         public static unsafe implicit operator JPH.TwoBodyConstraintSettings(DistanceConstraintSettings self)
         {
             #if __IOS__
@@ -650,6 +656,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraintSettings(DistanceConstraintSettings self)
+            => (JPH.Const_TwoBodyConstraintSettings)(JPH.Const_DistanceConstraintSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator DistanceConstraintSettings(JPH.SerializableObject parent)
@@ -1621,6 +1629,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraint(DistanceConstraint self)
+            => (JPH.Const_RefTarget_JPHConstraint)(JPH.Const_DistanceConstraint)self;
         public static unsafe implicit operator JPH.NonCopyable(DistanceConstraint self)
         {
             #if __IOS__
@@ -1633,6 +1643,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(DistanceConstraint self)
+            => (JPH.Const_NonCopyable)(JPH.Const_DistanceConstraint)self;
         public static unsafe implicit operator JPH.Constraint(DistanceConstraint self)
         {
             #if __IOS__
@@ -1645,6 +1657,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Constraint(DistanceConstraint self)
+            => (JPH.Const_Constraint)(JPH.Const_DistanceConstraint)self;
         public static unsafe implicit operator JPH.TwoBodyConstraint(DistanceConstraint self)
         {
             #if __IOS__
@@ -1657,6 +1671,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraint(DistanceConstraint self)
+            => (JPH.Const_TwoBodyConstraint)(JPH.Const_DistanceConstraint)self;
 
         // Downcasts:
         public static unsafe explicit operator DistanceConstraint(JPH.RefTarget_JPHConstraint parent)

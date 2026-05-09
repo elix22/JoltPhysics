@@ -868,6 +868,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(PathConstraintPathHermite self)
+            => (JPH.Const_SerializableObject)(JPH.Const_PathConstraintPathHermite)self;
         public static unsafe implicit operator JPH.RefTarget_JPHPathConstraintPath(PathConstraintPathHermite self)
         {
             #if __IOS__
@@ -880,6 +882,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHPathConstraintPath(PathConstraintPathHermite self)
+            => (JPH.Const_RefTarget_JPHPathConstraintPath)(JPH.Const_PathConstraintPathHermite)self;
         public static unsafe implicit operator JPH.PathConstraintPath(PathConstraintPathHermite self)
         {
             #if __IOS__
@@ -892,6 +896,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_PathConstraintPath(PathConstraintPathHermite self)
+            => (JPH.Const_PathConstraintPath)(JPH.Const_PathConstraintPathHermite)self;
 
         // Downcasts:
         public static unsafe explicit operator PathConstraintPathHermite(JPH.SerializableObject parent)

@@ -690,6 +690,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_BroadPhaseCastResult(RayCastResult self)
+            => (JPH.Const_BroadPhaseCastResult)(JPH.Const_RayCastResult)self;
 
         // Downcasts:
         public static unsafe explicit operator RayCastResult(JPH.BroadPhaseCastResult parent)

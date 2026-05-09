@@ -605,6 +605,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(BodyInterface self)
+            => (JPH.Const_NonCopyable)(JPH.Const_BodyInterface)self;
 
         // Downcasts:
         public static unsafe explicit operator BodyInterface(JPH.NonCopyable parent)

@@ -280,6 +280,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(JobSystemSingleThreaded self)
+            => (JPH.Const_NonCopyable)(JPH.Const_JobSystemSingleThreaded)self;
         public static unsafe implicit operator JPH.JobSystem(JobSystemSingleThreaded self)
         {
             #if __IOS__
@@ -292,6 +294,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_JobSystem(JobSystemSingleThreaded self)
+            => (JPH.Const_JobSystem)(JPH.Const_JobSystemSingleThreaded)self;
 
         // Downcasts:
         public static unsafe explicit operator JobSystemSingleThreaded(JPH.NonCopyable parent)

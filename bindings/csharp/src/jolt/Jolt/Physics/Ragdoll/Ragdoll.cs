@@ -1481,6 +1481,8 @@ public static partial class JPH
                 ret._KeepAliveEnclosingObject = self;
                 return ret;
             }
+            public static unsafe implicit operator JPH.Const_BodyCreationSettings(Part self)
+                => (JPH.Const_BodyCreationSettings)(JPH.RagdollSettings.Const_Part)self;
 
             // Downcasts:
             public static unsafe explicit operator Part(JPH.BodyCreationSettings parent)
@@ -2045,6 +2047,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHRagdollSettings(RagdollSettings self)
+            => (JPH.Const_RefTarget_JPHRagdollSettings)(JPH.Const_RagdollSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator RagdollSettings(JPH.RefTarget_JPHRagdollSettings parent)
@@ -2782,6 +2786,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHRagdoll(Ragdoll self)
+            => (JPH.Const_RefTarget_JPHRagdoll)(JPH.Const_Ragdoll)self;
         public static unsafe implicit operator JPH.NonCopyable(Ragdoll self)
         {
             #if __IOS__
@@ -2794,6 +2800,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(Ragdoll self)
+            => (JPH.Const_NonCopyable)(JPH.Const_Ragdoll)self;
 
         // Downcasts:
         public static unsafe explicit operator Ragdoll(JPH.RefTarget_JPHRagdoll parent)

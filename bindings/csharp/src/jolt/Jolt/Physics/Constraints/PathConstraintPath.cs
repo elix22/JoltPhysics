@@ -391,6 +391,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(PathConstraintPath self)
+            => (JPH.Const_SerializableObject)(JPH.Const_PathConstraintPath)self;
         public static unsafe implicit operator JPH.RefTarget_JPHPathConstraintPath(PathConstraintPath self)
         {
             #if __IOS__
@@ -403,6 +405,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHPathConstraintPath(PathConstraintPath self)
+            => (JPH.Const_RefTarget_JPHPathConstraintPath)(JPH.Const_PathConstraintPath)self;
 
         // Downcasts:
         public static unsafe explicit operator PathConstraintPath(JPH.SerializableObject parent)

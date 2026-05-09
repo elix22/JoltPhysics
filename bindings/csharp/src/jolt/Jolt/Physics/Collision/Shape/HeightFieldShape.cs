@@ -634,6 +634,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(HeightFieldShapeSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_HeightFieldShapeSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHShapeSettings(HeightFieldShapeSettings self)
         {
             #if __IOS__
@@ -646,6 +648,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShapeSettings(HeightFieldShapeSettings self)
+            => (JPH.Const_RefTarget_JPHShapeSettings)(JPH.Const_HeightFieldShapeSettings)self;
         public static unsafe implicit operator JPH.ShapeSettings(HeightFieldShapeSettings self)
         {
             #if __IOS__
@@ -658,6 +662,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ShapeSettings(HeightFieldShapeSettings self)
+            => (JPH.Const_ShapeSettings)(JPH.Const_HeightFieldShapeSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator HeightFieldShapeSettings(JPH.SerializableObject parent)
@@ -1912,6 +1918,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShape(HeightFieldShape self)
+            => (JPH.Const_RefTarget_JPHShape)(JPH.Const_HeightFieldShape)self;
         public static unsafe implicit operator JPH.NonCopyable(HeightFieldShape self)
         {
             #if __IOS__
@@ -1924,6 +1932,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(HeightFieldShape self)
+            => (JPH.Const_NonCopyable)(JPH.Const_HeightFieldShape)self;
         public static unsafe implicit operator JPH.Shape(HeightFieldShape self)
         {
             #if __IOS__
@@ -1936,6 +1946,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Shape(HeightFieldShape self)
+            => (JPH.Const_Shape)(JPH.Const_HeightFieldShape)self;
 
         // Downcasts:
         public static unsafe explicit operator HeightFieldShape(JPH.RefTarget_JPHShape parent)

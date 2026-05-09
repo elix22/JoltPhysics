@@ -96,6 +96,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(BroadPhaseQuery self)
+            => (JPH.Const_NonCopyable)(JPH.Const_BroadPhaseQuery)self;
 
         // Downcasts:
         public static unsafe explicit operator BroadPhaseQuery(JPH.NonCopyable parent)

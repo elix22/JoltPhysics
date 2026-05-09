@@ -687,6 +687,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHCharacterBaseSettings(CharacterVirtualSettings self)
+            => (JPH.Const_RefTarget_JPHCharacterBaseSettings)(JPH.Const_CharacterVirtualSettings)self;
         public static unsafe implicit operator JPH.CharacterBaseSettings(CharacterVirtualSettings self)
         {
             #if __IOS__
@@ -699,6 +701,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_CharacterBaseSettings(CharacterVirtualSettings self)
+            => (JPH.Const_CharacterBaseSettings)(JPH.Const_CharacterVirtualSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator CharacterVirtualSettings(JPH.RefTarget_JPHCharacterBaseSettings parent)
@@ -1823,6 +1827,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(CharacterVsCharacterCollision self)
+            => (JPH.Const_NonCopyable)(JPH.Const_CharacterVsCharacterCollision)self;
 
         // Downcasts:
         public static unsafe explicit operator CharacterVsCharacterCollision(JPH.NonCopyable parent)
@@ -2015,6 +2021,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(CharacterVsCharacterCollisionSimple self)
+            => (JPH.Const_NonCopyable)(JPH.Const_CharacterVsCharacterCollisionSimple)self;
         public static unsafe implicit operator JPH.CharacterVsCharacterCollision(CharacterVsCharacterCollisionSimple self)
         {
             #if __IOS__
@@ -2027,6 +2035,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_CharacterVsCharacterCollision(CharacterVsCharacterCollisionSimple self)
+            => (JPH.Const_CharacterVsCharacterCollision)(JPH.Const_CharacterVsCharacterCollisionSimple)self;
 
         // Downcasts:
         public static unsafe explicit operator CharacterVsCharacterCollisionSimple(JPH.NonCopyable parent)
@@ -3582,6 +3592,8 @@ public static partial class JPH
                 ret._KeepAliveEnclosingObject = self;
                 return ret;
             }
+            public static unsafe implicit operator JPH.CharacterVirtual.Const_ContactKey(Contact self)
+                => (JPH.CharacterVirtual.Const_ContactKey)(JPH.CharacterVirtual.Const_Contact)self;
 
             // Downcasts:
             public static unsafe explicit operator Contact(JPH.CharacterVirtual.ContactKey parent)
@@ -4712,6 +4724,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHCharacterBase(CharacterVirtual self)
+            => (JPH.Const_RefTarget_JPHCharacterBase)(JPH.Const_CharacterVirtual)self;
         public static unsafe implicit operator JPH.NonCopyable(CharacterVirtual self)
         {
             #if __IOS__
@@ -4724,6 +4738,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(CharacterVirtual self)
+            => (JPH.Const_NonCopyable)(JPH.Const_CharacterVirtual)self;
         public static unsafe implicit operator JPH.CharacterBase(CharacterVirtual self)
         {
             #if __IOS__
@@ -4736,6 +4752,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_CharacterBase(CharacterVirtual self)
+            => (JPH.Const_CharacterBase)(JPH.Const_CharacterVirtual)self;
 
         // Downcasts:
         public static unsafe explicit operator CharacterVirtual(JPH.RefTarget_JPHCharacterBase parent)

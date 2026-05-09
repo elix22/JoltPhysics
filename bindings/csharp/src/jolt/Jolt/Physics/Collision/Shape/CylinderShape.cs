@@ -525,6 +525,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(CylinderShapeSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_CylinderShapeSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHShapeSettings(CylinderShapeSettings self)
         {
             #if __IOS__
@@ -537,6 +539,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShapeSettings(CylinderShapeSettings self)
+            => (JPH.Const_RefTarget_JPHShapeSettings)(JPH.Const_CylinderShapeSettings)self;
         public static unsafe implicit operator JPH.ShapeSettings(CylinderShapeSettings self)
         {
             #if __IOS__
@@ -549,6 +553,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ShapeSettings(CylinderShapeSettings self)
+            => (JPH.Const_ShapeSettings)(JPH.Const_CylinderShapeSettings)self;
         public static unsafe implicit operator JPH.ConvexShapeSettings(CylinderShapeSettings self)
         {
             #if __IOS__
@@ -561,6 +567,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConvexShapeSettings(CylinderShapeSettings self)
+            => (JPH.Const_ConvexShapeSettings)(JPH.Const_CylinderShapeSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator CylinderShapeSettings(JPH.SerializableObject parent)
@@ -1681,6 +1689,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShape(CylinderShape self)
+            => (JPH.Const_RefTarget_JPHShape)(JPH.Const_CylinderShape)self;
         public static unsafe implicit operator JPH.NonCopyable(CylinderShape self)
         {
             #if __IOS__
@@ -1693,6 +1703,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(CylinderShape self)
+            => (JPH.Const_NonCopyable)(JPH.Const_CylinderShape)self;
         public static unsafe implicit operator JPH.Shape(CylinderShape self)
         {
             #if __IOS__
@@ -1705,6 +1717,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Shape(CylinderShape self)
+            => (JPH.Const_Shape)(JPH.Const_CylinderShape)self;
         public static unsafe implicit operator JPH.ConvexShape(CylinderShape self)
         {
             #if __IOS__
@@ -1717,6 +1731,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConvexShape(CylinderShape self)
+            => (JPH.Const_ConvexShape)(JPH.Const_CylinderShape)self;
 
         // Downcasts:
         public static unsafe explicit operator CylinderShape(JPH.RefTarget_JPHShape parent)

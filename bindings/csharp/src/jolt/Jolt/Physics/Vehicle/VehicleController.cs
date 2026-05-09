@@ -339,6 +339,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(VehicleControllerSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_VehicleControllerSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHVehicleControllerSettings(VehicleControllerSettings self)
         {
             #if __IOS__
@@ -351,6 +353,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHVehicleControllerSettings(VehicleControllerSettings self)
+            => (JPH.Const_RefTarget_JPHVehicleControllerSettings)(JPH.Const_VehicleControllerSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator VehicleControllerSettings(JPH.SerializableObject parent)
@@ -649,6 +653,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(VehicleController self)
+            => (JPH.Const_NonCopyable)(JPH.Const_VehicleController)self;
 
         // Downcasts:
         public static unsafe explicit operator VehicleController(JPH.NonCopyable parent)

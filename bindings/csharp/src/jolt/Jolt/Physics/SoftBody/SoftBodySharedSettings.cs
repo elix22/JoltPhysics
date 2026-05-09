@@ -5790,6 +5790,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHSoftBodySharedSettings(SoftBodySharedSettings self)
+            => (JPH.Const_RefTarget_JPHSoftBodySharedSettings)(JPH.Const_SoftBodySharedSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator SoftBodySharedSettings(JPH.RefTarget_JPHSoftBodySharedSettings parent)

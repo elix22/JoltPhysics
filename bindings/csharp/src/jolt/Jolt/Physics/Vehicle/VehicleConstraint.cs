@@ -564,6 +564,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(VehicleConstraintSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_VehicleConstraintSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHConstraintSettings(VehicleConstraintSettings self)
         {
             #if __IOS__
@@ -576,6 +578,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraintSettings(VehicleConstraintSettings self)
+            => (JPH.Const_RefTarget_JPHConstraintSettings)(JPH.Const_VehicleConstraintSettings)self;
         public static unsafe implicit operator JPH.ConstraintSettings(VehicleConstraintSettings self)
         {
             #if __IOS__
@@ -588,6 +592,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConstraintSettings(VehicleConstraintSettings self)
+            => (JPH.Const_ConstraintSettings)(JPH.Const_VehicleConstraintSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator VehicleConstraintSettings(JPH.SerializableObject parent)
@@ -1622,6 +1628,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraint(VehicleConstraint self)
+            => (JPH.Const_RefTarget_JPHConstraint)(JPH.Const_VehicleConstraint)self;
         public static unsafe implicit operator JPH.NonCopyable(VehicleConstraint self)
         {
             #if __IOS__
@@ -1634,6 +1642,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(VehicleConstraint self)
+            => (JPH.Const_NonCopyable)(JPH.Const_VehicleConstraint)self;
         public static unsafe implicit operator JPH.Constraint(VehicleConstraint self)
         {
             #if __IOS__
@@ -1646,6 +1656,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Constraint(VehicleConstraint self)
+            => (JPH.Const_Constraint)(JPH.Const_VehicleConstraint)self;
         public static unsafe implicit operator JPH.PhysicsStepListener(VehicleConstraint self)
         {
             #if __IOS__
@@ -1658,6 +1670,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_PhysicsStepListener(VehicleConstraint self)
+            => (JPH.Const_PhysicsStepListener)(JPH.Const_VehicleConstraint)self;
 
         // Downcasts:
         public static unsafe explicit operator VehicleConstraint(JPH.RefTarget_JPHConstraint parent)

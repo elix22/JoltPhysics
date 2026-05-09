@@ -566,6 +566,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(PointConstraintSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_PointConstraintSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHConstraintSettings(PointConstraintSettings self)
         {
             #if __IOS__
@@ -578,6 +580,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraintSettings(PointConstraintSettings self)
+            => (JPH.Const_RefTarget_JPHConstraintSettings)(JPH.Const_PointConstraintSettings)self;
         public static unsafe implicit operator JPH.ConstraintSettings(PointConstraintSettings self)
         {
             #if __IOS__
@@ -590,6 +594,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConstraintSettings(PointConstraintSettings self)
+            => (JPH.Const_ConstraintSettings)(JPH.Const_PointConstraintSettings)self;
         public static unsafe implicit operator JPH.TwoBodyConstraintSettings(PointConstraintSettings self)
         {
             #if __IOS__
@@ -602,6 +608,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraintSettings(PointConstraintSettings self)
+            => (JPH.Const_TwoBodyConstraintSettings)(JPH.Const_PointConstraintSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator PointConstraintSettings(JPH.SerializableObject parent)
@@ -1514,6 +1522,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraint(PointConstraint self)
+            => (JPH.Const_RefTarget_JPHConstraint)(JPH.Const_PointConstraint)self;
         public static unsafe implicit operator JPH.NonCopyable(PointConstraint self)
         {
             #if __IOS__
@@ -1526,6 +1536,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(PointConstraint self)
+            => (JPH.Const_NonCopyable)(JPH.Const_PointConstraint)self;
         public static unsafe implicit operator JPH.Constraint(PointConstraint self)
         {
             #if __IOS__
@@ -1538,6 +1550,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Constraint(PointConstraint self)
+            => (JPH.Const_Constraint)(JPH.Const_PointConstraint)self;
         public static unsafe implicit operator JPH.TwoBodyConstraint(PointConstraint self)
         {
             #if __IOS__
@@ -1550,6 +1564,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraint(PointConstraint self)
+            => (JPH.Const_TwoBodyConstraint)(JPH.Const_PointConstraint)self;
 
         // Downcasts:
         public static unsafe explicit operator PointConstraint(JPH.RefTarget_JPHConstraint parent)

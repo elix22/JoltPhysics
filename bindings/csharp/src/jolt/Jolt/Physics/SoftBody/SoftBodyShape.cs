@@ -740,6 +740,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShape(SoftBodyShape self)
+            => (JPH.Const_RefTarget_JPHShape)(JPH.Const_SoftBodyShape)self;
         public static unsafe implicit operator JPH.NonCopyable(SoftBodyShape self)
         {
             #if __IOS__
@@ -752,6 +754,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(SoftBodyShape self)
+            => (JPH.Const_NonCopyable)(JPH.Const_SoftBodyShape)self;
         public static unsafe implicit operator JPH.Shape(SoftBodyShape self)
         {
             #if __IOS__
@@ -764,6 +768,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Shape(SoftBodyShape self)
+            => (JPH.Const_Shape)(JPH.Const_SoftBodyShape)self;
 
         // Downcasts:
         public static unsafe explicit operator SoftBodyShape(JPH.RefTarget_JPHShape parent)

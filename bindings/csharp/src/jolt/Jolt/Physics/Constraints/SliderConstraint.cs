@@ -730,6 +730,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(SliderConstraintSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_SliderConstraintSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHConstraintSettings(SliderConstraintSettings self)
         {
             #if __IOS__
@@ -742,6 +744,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraintSettings(SliderConstraintSettings self)
+            => (JPH.Const_RefTarget_JPHConstraintSettings)(JPH.Const_SliderConstraintSettings)self;
         public static unsafe implicit operator JPH.ConstraintSettings(SliderConstraintSettings self)
         {
             #if __IOS__
@@ -754,6 +758,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ConstraintSettings(SliderConstraintSettings self)
+            => (JPH.Const_ConstraintSettings)(JPH.Const_SliderConstraintSettings)self;
         public static unsafe implicit operator JPH.TwoBodyConstraintSettings(SliderConstraintSettings self)
         {
             #if __IOS__
@@ -766,6 +772,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraintSettings(SliderConstraintSettings self)
+            => (JPH.Const_TwoBodyConstraintSettings)(JPH.Const_SliderConstraintSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator SliderConstraintSettings(JPH.SerializableObject parent)
@@ -1986,6 +1994,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHConstraint(SliderConstraint self)
+            => (JPH.Const_RefTarget_JPHConstraint)(JPH.Const_SliderConstraint)self;
         public static unsafe implicit operator JPH.NonCopyable(SliderConstraint self)
         {
             #if __IOS__
@@ -1998,6 +2008,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(SliderConstraint self)
+            => (JPH.Const_NonCopyable)(JPH.Const_SliderConstraint)self;
         public static unsafe implicit operator JPH.Constraint(SliderConstraint self)
         {
             #if __IOS__
@@ -2010,6 +2022,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Constraint(SliderConstraint self)
+            => (JPH.Const_Constraint)(JPH.Const_SliderConstraint)self;
         public static unsafe implicit operator JPH.TwoBodyConstraint(SliderConstraint self)
         {
             #if __IOS__
@@ -2022,6 +2036,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TwoBodyConstraint(SliderConstraint self)
+            => (JPH.Const_TwoBodyConstraint)(JPH.Const_SliderConstraint)self;
 
         // Downcasts:
         public static unsafe explicit operator SliderConstraint(JPH.RefTarget_JPHConstraint parent)

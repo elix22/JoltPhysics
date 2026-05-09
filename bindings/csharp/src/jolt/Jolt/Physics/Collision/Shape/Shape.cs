@@ -384,6 +384,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(ShapeSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_ShapeSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHShapeSettings(ShapeSettings self)
         {
             #if __IOS__
@@ -396,6 +398,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShapeSettings(ShapeSettings self)
+            => (JPH.Const_RefTarget_JPHShapeSettings)(JPH.Const_ShapeSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator ShapeSettings(JPH.SerializableObject parent)
@@ -1593,6 +1597,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShape(Shape self)
+            => (JPH.Const_RefTarget_JPHShape)(JPH.Const_Shape)self;
         public static unsafe implicit operator JPH.NonCopyable(Shape self)
         {
             #if __IOS__
@@ -1605,6 +1611,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(Shape self)
+            => (JPH.Const_NonCopyable)(JPH.Const_Shape)self;
 
         // Downcasts:
         public static unsafe explicit operator Shape(JPH.RefTarget_JPHShape parent)

@@ -600,6 +600,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(MotorcycleControllerSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_MotorcycleControllerSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHVehicleControllerSettings(MotorcycleControllerSettings self)
         {
             #if __IOS__
@@ -612,6 +614,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHVehicleControllerSettings(MotorcycleControllerSettings self)
+            => (JPH.Const_RefTarget_JPHVehicleControllerSettings)(JPH.Const_MotorcycleControllerSettings)self;
         public static unsafe implicit operator JPH.VehicleControllerSettings(MotorcycleControllerSettings self)
         {
             #if __IOS__
@@ -624,6 +628,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_VehicleControllerSettings(MotorcycleControllerSettings self)
+            => (JPH.Const_VehicleControllerSettings)(JPH.Const_MotorcycleControllerSettings)self;
         public static unsafe implicit operator JPH.WheeledVehicleControllerSettings(MotorcycleControllerSettings self)
         {
             #if __IOS__
@@ -636,6 +642,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_WheeledVehicleControllerSettings(MotorcycleControllerSettings self)
+            => (JPH.Const_WheeledVehicleControllerSettings)(JPH.Const_MotorcycleControllerSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator MotorcycleControllerSettings(JPH.SerializableObject parent)
@@ -1436,6 +1444,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(MotorcycleController self)
+            => (JPH.Const_NonCopyable)(JPH.Const_MotorcycleController)self;
         public static unsafe implicit operator JPH.VehicleController(MotorcycleController self)
         {
             #if __IOS__
@@ -1448,6 +1458,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_VehicleController(MotorcycleController self)
+            => (JPH.Const_VehicleController)(JPH.Const_MotorcycleController)self;
         public static unsafe implicit operator JPH.WheeledVehicleController(MotorcycleController self)
         {
             #if __IOS__
@@ -1460,6 +1472,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_WheeledVehicleController(MotorcycleController self)
+            => (JPH.Const_WheeledVehicleController)(JPH.Const_MotorcycleController)self;
 
         // Downcasts:
         public static unsafe explicit operator MotorcycleController(JPH.NonCopyable parent)

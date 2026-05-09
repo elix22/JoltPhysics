@@ -246,6 +246,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(TempAllocator self)
+            => (JPH.Const_NonCopyable)(JPH.Const_TempAllocator)self;
 
         // Downcasts:
         public static unsafe explicit operator TempAllocator(JPH.NonCopyable parent)
@@ -658,6 +660,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(TempAllocatorImpl self)
+            => (JPH.Const_NonCopyable)(JPH.Const_TempAllocatorImpl)self;
         public static unsafe implicit operator JPH.TempAllocator(TempAllocatorImpl self)
         {
             #if __IOS__
@@ -670,6 +674,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TempAllocator(TempAllocatorImpl self)
+            => (JPH.Const_TempAllocator)(JPH.Const_TempAllocatorImpl)self;
 
         // Downcasts:
         public static unsafe explicit operator TempAllocatorImpl(JPH.NonCopyable parent)
@@ -1042,6 +1048,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(TempAllocatorMalloc self)
+            => (JPH.Const_NonCopyable)(JPH.Const_TempAllocatorMalloc)self;
         public static unsafe implicit operator JPH.TempAllocator(TempAllocatorMalloc self)
         {
             #if __IOS__
@@ -1054,6 +1062,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TempAllocator(TempAllocatorMalloc self)
+            => (JPH.Const_TempAllocator)(JPH.Const_TempAllocatorMalloc)self;
 
         // Downcasts:
         public static unsafe explicit operator TempAllocatorMalloc(JPH.NonCopyable parent)
@@ -1437,6 +1447,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(TempAllocatorImplWithMallocFallback self)
+            => (JPH.Const_NonCopyable)(JPH.Const_TempAllocatorImplWithMallocFallback)self;
         public static unsafe implicit operator JPH.TempAllocator(TempAllocatorImplWithMallocFallback self)
         {
             #if __IOS__
@@ -1449,6 +1461,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_TempAllocator(TempAllocatorImplWithMallocFallback self)
+            => (JPH.Const_TempAllocator)(JPH.Const_TempAllocatorImplWithMallocFallback)self;
 
         // Downcasts:
         public static unsafe explicit operator TempAllocatorImplWithMallocFallback(JPH.NonCopyable parent)

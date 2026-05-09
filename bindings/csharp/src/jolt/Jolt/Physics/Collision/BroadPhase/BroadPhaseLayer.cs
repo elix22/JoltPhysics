@@ -372,6 +372,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(BroadPhaseLayerInterface self)
+            => (JPH.Const_NonCopyable)(JPH.Const_BroadPhaseLayerInterface)self;
 
         // Downcasts:
         public static unsafe explicit operator BroadPhaseLayerInterface(JPH.NonCopyable parent)
@@ -533,6 +535,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(ObjectVsBroadPhaseLayerFilter self)
+            => (JPH.Const_NonCopyable)(JPH.Const_ObjectVsBroadPhaseLayerFilter)self;
 
         // Downcasts:
         public static unsafe explicit operator ObjectVsBroadPhaseLayerFilter(JPH.NonCopyable parent)
@@ -719,6 +723,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(BroadPhaseLayerFilter self)
+            => (JPH.Const_NonCopyable)(JPH.Const_BroadPhaseLayerFilter)self;
 
         // Downcasts:
         public static unsafe explicit operator BroadPhaseLayerFilter(JPH.NonCopyable parent)
@@ -926,6 +932,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(DefaultBroadPhaseLayerFilter self)
+            => (JPH.Const_NonCopyable)(JPH.Const_DefaultBroadPhaseLayerFilter)self;
         public static unsafe implicit operator JPH.BroadPhaseLayerFilter(DefaultBroadPhaseLayerFilter self)
         {
             #if __IOS__
@@ -938,6 +946,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_BroadPhaseLayerFilter(DefaultBroadPhaseLayerFilter self)
+            => (JPH.Const_BroadPhaseLayerFilter)(JPH.Const_DefaultBroadPhaseLayerFilter)self;
 
         // Downcasts:
         public static unsafe explicit operator DefaultBroadPhaseLayerFilter(JPH.NonCopyable parent)
@@ -1145,6 +1155,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(SpecifiedBroadPhaseLayerFilter self)
+            => (JPH.Const_NonCopyable)(JPH.Const_SpecifiedBroadPhaseLayerFilter)self;
         public static unsafe implicit operator JPH.BroadPhaseLayerFilter(SpecifiedBroadPhaseLayerFilter self)
         {
             #if __IOS__
@@ -1157,6 +1169,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_BroadPhaseLayerFilter(SpecifiedBroadPhaseLayerFilter self)
+            => (JPH.Const_BroadPhaseLayerFilter)(JPH.Const_SpecifiedBroadPhaseLayerFilter)self;
 
         // Downcasts:
         public static unsafe explicit operator SpecifiedBroadPhaseLayerFilter(JPH.NonCopyable parent)

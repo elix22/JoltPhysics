@@ -456,6 +456,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(EmptyShapeSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_EmptyShapeSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHShapeSettings(EmptyShapeSettings self)
         {
             #if __IOS__
@@ -468,6 +470,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShapeSettings(EmptyShapeSettings self)
+            => (JPH.Const_RefTarget_JPHShapeSettings)(JPH.Const_EmptyShapeSettings)self;
         public static unsafe implicit operator JPH.ShapeSettings(EmptyShapeSettings self)
         {
             #if __IOS__
@@ -480,6 +484,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ShapeSettings(EmptyShapeSettings self)
+            => (JPH.Const_ShapeSettings)(JPH.Const_EmptyShapeSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator EmptyShapeSettings(JPH.SerializableObject parent)
@@ -1322,6 +1328,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShape(EmptyShape self)
+            => (JPH.Const_RefTarget_JPHShape)(JPH.Const_EmptyShape)self;
         public static unsafe implicit operator JPH.NonCopyable(EmptyShape self)
         {
             #if __IOS__
@@ -1334,6 +1342,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(EmptyShape self)
+            => (JPH.Const_NonCopyable)(JPH.Const_EmptyShape)self;
         public static unsafe implicit operator JPH.Shape(EmptyShape self)
         {
             #if __IOS__
@@ -1346,6 +1356,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Shape(EmptyShape self)
+            => (JPH.Const_Shape)(JPH.Const_EmptyShape)self;
 
         // Downcasts:
         public static unsafe explicit operator EmptyShape(JPH.RefTarget_JPHShape parent)

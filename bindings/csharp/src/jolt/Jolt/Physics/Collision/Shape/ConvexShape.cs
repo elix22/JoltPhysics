@@ -391,6 +391,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_SerializableObject(ConvexShapeSettings self)
+            => (JPH.Const_SerializableObject)(JPH.Const_ConvexShapeSettings)self;
         public static unsafe implicit operator JPH.RefTarget_JPHShapeSettings(ConvexShapeSettings self)
         {
             #if __IOS__
@@ -403,6 +405,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShapeSettings(ConvexShapeSettings self)
+            => (JPH.Const_RefTarget_JPHShapeSettings)(JPH.Const_ConvexShapeSettings)self;
         public static unsafe implicit operator JPH.ShapeSettings(ConvexShapeSettings self)
         {
             #if __IOS__
@@ -415,6 +419,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ShapeSettings(ConvexShapeSettings self)
+            => (JPH.Const_ShapeSettings)(JPH.Const_ConvexShapeSettings)self;
 
         // Downcasts:
         public static unsafe explicit operator ConvexShapeSettings(JPH.SerializableObject parent)
@@ -1578,6 +1584,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_RefTarget_JPHShape(ConvexShape self)
+            => (JPH.Const_RefTarget_JPHShape)(JPH.Const_ConvexShape)self;
         public static unsafe implicit operator JPH.NonCopyable(ConvexShape self)
         {
             #if __IOS__
@@ -1590,6 +1598,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(ConvexShape self)
+            => (JPH.Const_NonCopyable)(JPH.Const_ConvexShape)self;
         public static unsafe implicit operator JPH.Shape(ConvexShape self)
         {
             #if __IOS__
@@ -1602,6 +1612,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_Shape(ConvexShape self)
+            => (JPH.Const_Shape)(JPH.Const_ConvexShape)self;
 
         // Downcasts:
         public static unsafe explicit operator ConvexShape(JPH.RefTarget_JPHShape parent)

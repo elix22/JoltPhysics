@@ -344,6 +344,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_NonCopyable(ObjectLayerPairFilterMask self)
+            => (JPH.Const_NonCopyable)(JPH.Const_ObjectLayerPairFilterMask)self;
         public static unsafe implicit operator JPH.ObjectLayerPairFilter(ObjectLayerPairFilterMask self)
         {
             #if __IOS__
@@ -356,6 +358,8 @@ public static partial class JPH
             ret._KeepAliveEnclosingObject = self;
             return ret;
         }
+        public static unsafe implicit operator JPH.Const_ObjectLayerPairFilter(ObjectLayerPairFilterMask self)
+            => (JPH.Const_ObjectLayerPairFilter)(JPH.Const_ObjectLayerPairFilterMask)self;
 
         // Downcasts:
         public static unsafe explicit operator ObjectLayerPairFilterMask(JPH.NonCopyable parent)
