@@ -965,6 +965,45 @@ public static partial class JPH
             var __c_ret = __JoltHelpers_ConvexHullShapeSettingsFromFloat3Array(inPoints is not null ? inPoints._UnderlyingPtr : null, inNumPoints, inMaxConvexRadius, inMaterial is not null ? inMaterial._UnderlyingPtr : null);
             return __c_ret is not null ? new JPH.ConvexHullShapeSettings(__c_ret, is_owning: false) : null;
         }
+
+        /// Disable collision between two sub groups in a GroupFilterTable.
+        /// Generated from method `JoltHelpers::GroupFilterTableDisableCollision`.
+        public static unsafe void GroupFilterTableDisableCollision(JPH.GroupFilterTable inTable, uint inSubGroup1, uint inSubGroup2)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_GroupFilterTableDisableCollision", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_GroupFilterTableDisableCollision", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_GroupFilterTableDisableCollision(JPH.GroupFilterTable._Underlying *inTable, uint inSubGroup1, uint inSubGroup2);
+            __JoltHelpers_GroupFilterTableDisableCollision(inTable._UnderlyingPtr, inSubGroup1, inSubGroup2);
+        }
+
+        /// Enable collision between two sub groups in a GroupFilterTable.
+        /// Generated from method `JoltHelpers::GroupFilterTableEnableCollision`.
+        public static unsafe void GroupFilterTableEnableCollision(JPH.GroupFilterTable inTable, uint inSubGroup1, uint inSubGroup2)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_GroupFilterTableEnableCollision", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_GroupFilterTableEnableCollision", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JoltHelpers_GroupFilterTableEnableCollision(JPH.GroupFilterTable._Underlying *inTable, uint inSubGroup1, uint inSubGroup2);
+            __JoltHelpers_GroupFilterTableEnableCollision(inTable._UnderlyingPtr, inSubGroup1, inSubGroup2);
+        }
+
+        /// Check if collision is enabled between two sub groups in a GroupFilterTable.
+        /// Generated from method `JoltHelpers::GroupFilterTableIsCollisionEnabled`.
+        public static unsafe bool GroupFilterTableIsCollisionEnabled(JPH.Const_GroupFilterTable inTable, uint inSubGroup1, uint inSubGroup2)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_GroupFilterTableIsCollisionEnabled", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_GroupFilterTableIsCollisionEnabled", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JoltHelpers_GroupFilterTableIsCollisionEnabled(JPH.Const_GroupFilterTable._Underlying *inTable, uint inSubGroup1, uint inSubGroup2);
+            return __JoltHelpers_GroupFilterTableIsCollisionEnabled(inTable._UnderlyingPtr, inSubGroup1, inSubGroup2) != 0;
+        }
     }
 
     /// Minimal helpers for Jolt global lifecycle.

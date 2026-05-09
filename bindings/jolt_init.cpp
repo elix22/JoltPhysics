@@ -8,6 +8,7 @@
 #include <Jolt/Physics/PhysicsSystem.h>
 #include <Jolt/Physics/Body/BodyLock.h>
 #include <Jolt/Physics/Character/CharacterBase.h>
+#include <Jolt/Physics/Collision/GroupFilterTable.h>
 
 #include <cstdarg>
 #include <cstdio>
@@ -462,6 +463,25 @@ JPH::ConvexHullShapeSettings* JoltHelpers::ConvexHullShapeSettingsFromFloat3Arra
     for (int i = 0; i < inNumPoints; ++i)
         pts.emplace_back(inPoints[i].x, inPoints[i].y, inPoints[i].z);
     return new JPH::ConvexHullShapeSettings(pts, inMaxConvexRadius, inMaterial);
+}
+
+// ---------------------------------------------------------------------------
+// GroupFilterTable helpers — SubGroupID = CollisionGroup::SubGroupID = uint32_t
+// ---------------------------------------------------------------------------
+
+void JoltHelpers::GroupFilterTableDisableCollision(JPH::GroupFilterTable& inTable, JPH::uint32 inSubGroup1, JPH::uint32 inSubGroup2)
+{
+    inTable.DisableCollision(inSubGroup1, inSubGroup2);
+}
+
+void JoltHelpers::GroupFilterTableEnableCollision(JPH::GroupFilterTable& inTable, JPH::uint32 inSubGroup1, JPH::uint32 inSubGroup2)
+{
+    inTable.EnableCollision(inSubGroup1, inSubGroup2);
+}
+
+bool JoltHelpers::GroupFilterTableIsCollisionEnabled(const JPH::GroupFilterTable& inTable, JPH::uint32 inSubGroup1, JPH::uint32 inSubGroup2)
+{
+    return inTable.IsCollisionEnabled(inSubGroup1, inSubGroup2);
 }
 
 // ---------------------------------------------------------------------------

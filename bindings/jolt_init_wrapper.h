@@ -13,6 +13,7 @@
 #include <Jolt/Physics/PhysicsStepListener.h>
 #include <Jolt/Physics/Collision/ContactListener.h>
 #include <Jolt/Physics/Collision/EstimateCollisionResponse.h>
+#include <Jolt/Physics/Collision/GroupFilterTable.h>
 #include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
 #include <Jolt/Physics/Collision/Shape/ConvexHullShape.h>
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
@@ -258,6 +259,18 @@ struct JoltHelpers
     static JPH::ConvexHullShapeSettings* ConvexHullShapeSettingsFromFloat3Array(
         const JPH::Float3* inPoints, int inNumPoints,
         float inMaxConvexRadius, const JPH::PhysicsMaterial* inMaterial);
+
+    // -----------------------------------------------------------------------
+    // GroupFilterTable helpers — mrbind cannot resolve the nested
+    // CollisionGroup::SubGroupID type alias, so these wrappers use uint32_t.
+    // -----------------------------------------------------------------------
+
+    /// Disable collision between two sub groups in a GroupFilterTable.
+    static void GroupFilterTableDisableCollision(JPH::GroupFilterTable& inTable, JPH::uint32 inSubGroup1, JPH::uint32 inSubGroup2);
+    /// Enable collision between two sub groups in a GroupFilterTable.
+    static void GroupFilterTableEnableCollision(JPH::GroupFilterTable& inTable, JPH::uint32 inSubGroup1, JPH::uint32 inSubGroup2);
+    /// Check if collision is enabled between two sub groups in a GroupFilterTable.
+    static bool GroupFilterTableIsCollisionEnabled(const JPH::GroupFilterTable& inTable, JPH::uint32 inSubGroup1, JPH::uint32 inSubGroup2);
 };
 
 // ---------------------------------------------------------------------------

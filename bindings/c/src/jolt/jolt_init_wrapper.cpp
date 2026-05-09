@@ -16,6 +16,7 @@
 #include <Jolt/Physics/Character/CharacterVirtual.h>
 #include <Jolt/Physics/Collision/CollideShape.h>
 #include <Jolt/Physics/Collision/ContactListener.h>
+#include <Jolt/Physics/Collision/GroupFilterTable.h>
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/ConvexHullShape.h>
 #include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
@@ -650,6 +651,33 @@ JPH_ConvexHullShapeSettings *JoltHelpers_ConvexHullShapeSettingsFromFloat3Array(
         inMaxConvexRadius,
         ((const JPH::PhysicsMaterial *)inMaterial)
     ));
+}
+
+void JoltHelpers_GroupFilterTableDisableCollision(JPH_GroupFilterTable *inTable, unsigned int inSubGroup1, unsigned int inSubGroup2)
+{
+    JoltHelpers::GroupFilterTableDisableCollision(
+        ((inTable ? void() : MRBINDC_THROW("Parameter `inTable` can not be null.", void)), *(JPH::GroupFilterTable *)(inTable)),
+        inSubGroup1,
+        inSubGroup2
+    );
+}
+
+void JoltHelpers_GroupFilterTableEnableCollision(JPH_GroupFilterTable *inTable, unsigned int inSubGroup1, unsigned int inSubGroup2)
+{
+    JoltHelpers::GroupFilterTableEnableCollision(
+        ((inTable ? void() : MRBINDC_THROW("Parameter `inTable` can not be null.", void)), *(JPH::GroupFilterTable *)(inTable)),
+        inSubGroup1,
+        inSubGroup2
+    );
+}
+
+bool JoltHelpers_GroupFilterTableIsCollisionEnabled(const JPH_GroupFilterTable *inTable, unsigned int inSubGroup1, unsigned int inSubGroup2)
+{
+    return JoltHelpers::GroupFilterTableIsCollisionEnabled(
+        ((inTable ? void() : MRBINDC_THROW("Parameter `inTable` can not be null.", void)), *(const JPH::GroupFilterTable *)(inTable)),
+        inSubGroup1,
+        inSubGroup2
+    );
 }
 
 const int *CountingPhysicsStepListener_Get_mCount(const CountingPhysicsStepListener *_this)

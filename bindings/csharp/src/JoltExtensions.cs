@@ -220,4 +220,10 @@ public static unsafe partial class JoltExtensions
     public static uint AddJointWithParentIndex(this JPH.Skeleton inSkeleton, byte? inName, int inParentIndex) => JPH.Const_JoltHelpers.SkeletonAddJointWithParentIndex(inSkeleton, inName, inParentIndex);
 
     public static int GetJointIndex(this JPH.Const_Skeleton inSkeleton, byte? inName) => JPH.Const_JoltHelpers.SkeletonGetJointIndex(inSkeleton, inName);
+
+    public static void DisableCollision(this JPH.GroupFilterTable inTable, uint inSubGroup1, uint inSubGroup2) => JPH.Const_JoltHelpers.GroupFilterTableDisableCollision(inTable, inSubGroup1, inSubGroup2);
+
+    public static void EnableCollision(this JPH.GroupFilterTable inTable, uint inSubGroup1, uint inSubGroup2) => JPH.Const_JoltHelpers.GroupFilterTableEnableCollision(inTable, inSubGroup1, inSubGroup2);
+
+    public static bool IsCollisionEnabled(this JPH.Const_GroupFilterTable inTable, uint inSubGroup1, uint inSubGroup2) => JPH.Const_JoltHelpers.GroupFilterTableIsCollisionEnabled(inTable, inSubGroup1, inSubGroup2);
 }

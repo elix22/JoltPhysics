@@ -32,6 +32,7 @@ typedef struct JPH_DebugRendererSimple JPH_DebugRendererSimple; // Defined in `#
 typedef struct JPH_DebugRenderer_Vertex JPH_DebugRenderer_Vertex; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
 typedef struct JPH_DistanceConstraintSettings JPH_DistanceConstraintSettings; // Defined in `#include <jolt/Jolt/Physics/Constraints/DistanceConstraint.h>`.
 typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_GroupFilterTable JPH_GroupFilterTable; // Defined in `#include <jolt/Jolt/Physics/Collision/GroupFilterTable.h>`.
 typedef struct JPH_HeightFieldShapeSettings JPH_HeightFieldShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/HeightFieldShape.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
@@ -568,6 +569,21 @@ JOLT_API int JoltHelpers_SkeletonGetJointIndex(const JPH_Skeleton *inSkeleton, c
 /// Create a ConvexHullShapeSettings from an array of Float3 points.
 /// Generated from method `JoltHelpers::ConvexHullShapeSettingsFromFloat3Array`.
 JOLT_API JPH_ConvexHullShapeSettings *JoltHelpers_ConvexHullShapeSettingsFromFloat3Array(const JPH_Float3 *inPoints, int inNumPoints, float inMaxConvexRadius, const JPH_PhysicsMaterial *inMaterial);
+
+/// Disable collision between two sub groups in a GroupFilterTable.
+/// Generated from method `JoltHelpers::GroupFilterTableDisableCollision`.
+/// Parameter `inTable` can not be null. It is a single object.
+JOLT_API void JoltHelpers_GroupFilterTableDisableCollision(JPH_GroupFilterTable *inTable, unsigned int inSubGroup1, unsigned int inSubGroup2);
+
+/// Enable collision between two sub groups in a GroupFilterTable.
+/// Generated from method `JoltHelpers::GroupFilterTableEnableCollision`.
+/// Parameter `inTable` can not be null. It is a single object.
+JOLT_API void JoltHelpers_GroupFilterTableEnableCollision(JPH_GroupFilterTable *inTable, unsigned int inSubGroup1, unsigned int inSubGroup2);
+
+/// Check if collision is enabled between two sub groups in a GroupFilterTable.
+/// Generated from method `JoltHelpers::GroupFilterTableIsCollisionEnabled`.
+/// Parameter `inTable` can not be null. It is a single object.
+JOLT_API bool JoltHelpers_GroupFilterTableIsCollisionEnabled(const JPH_GroupFilterTable *inTable, unsigned int inSubGroup1, unsigned int inSubGroup2);
 
 /// Returns a pointer to a member variable of class `CountingPhysicsStepListener` named `mCount`.
 /// Parameter `_this` can not be null. It is a single object.
