@@ -129,3 +129,8 @@ if(APPLE AND CMAKE_SYSTEM_NAME STREQUAL "iOS")
         MACOSX_FRAMEWORK_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/Info.plist"
     )
 endif()
+
+# Required for Android 15+ devices with 16 KB memory page size support.
+if(ANDROID AND (ANDROID_ABI STREQUAL "arm64-v8a" OR ANDROID_ABI STREQUAL "x86_64"))
+    target_link_options(cjolt PRIVATE "-Wl,-z,max-page-size=16384")
+endif()
