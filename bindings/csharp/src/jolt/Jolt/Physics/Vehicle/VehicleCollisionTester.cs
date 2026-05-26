@@ -689,7 +689,7 @@ public static partial class JPH
         /// @param inUp World space up vector, used to avoid colliding with vertical walls.
         /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
         /// Generated from constructor `JPH::VehicleCollisionTesterRay::VehicleCollisionTesterRay`.
-        /// Parameter `inUp` defaults to `Vec3::sAxisY()`.
+        /// Parameter `inUp` defaults to `JPH::Vec3::sAxisY()`.
         /// Parameter `inMaxSlopeAngle` defaults to `DegreesToRadians(80.0f)`.
         public unsafe Const_VehicleCollisionTesterRay(ushort inObjectLayer, JPH.Const_Vec3? inUp = null, float? inMaxSlopeAngle = null) : this(null, is_owning: true)
         {
@@ -1112,7 +1112,7 @@ public static partial class JPH
         /// @param inUp World space up vector, used to avoid colliding with vertical walls.
         /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
         /// Generated from constructor `JPH::VehicleCollisionTesterRay::VehicleCollisionTesterRay`.
-        /// Parameter `inUp` defaults to `Vec3::sAxisY()`.
+        /// Parameter `inUp` defaults to `JPH::Vec3::sAxisY()`.
         /// Parameter `inMaxSlopeAngle` defaults to `DegreesToRadians(80.0f)`.
         public unsafe VehicleCollisionTesterRay(ushort inObjectLayer, JPH.Const_Vec3? inUp = null, float? inMaxSlopeAngle = null) : this(null, is_owning: true)
         {
@@ -1342,7 +1342,7 @@ public static partial class JPH
         /// @param inRadius Radius of sphere
         /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
         /// Generated from constructor `JPH::VehicleCollisionTesterCastSphere::VehicleCollisionTesterCastSphere`.
-        /// Parameter `inUp` defaults to `Vec3::sAxisY()`.
+        /// Parameter `inUp` defaults to `JPH::Vec3::sAxisY()`.
         /// Parameter `inMaxSlopeAngle` defaults to `DegreesToRadians(80.0f)`.
         public unsafe Const_VehicleCollisionTesterCastSphere(ushort inObjectLayer, float inRadius, JPH.Const_Vec3? inUp = null, float? inMaxSlopeAngle = null) : this(null, is_owning: true)
         {
@@ -1766,7 +1766,7 @@ public static partial class JPH
         /// @param inRadius Radius of sphere
         /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
         /// Generated from constructor `JPH::VehicleCollisionTesterCastSphere::VehicleCollisionTesterCastSphere`.
-        /// Parameter `inUp` defaults to `Vec3::sAxisY()`.
+        /// Parameter `inUp` defaults to `JPH::Vec3::sAxisY()`.
         /// Parameter `inMaxSlopeAngle` defaults to `DegreesToRadians(80.0f)`.
         public unsafe VehicleCollisionTesterCastSphere(ushort inObjectLayer, float inRadius, JPH.Const_Vec3? inUp = null, float? inMaxSlopeAngle = null) : this(null, is_owning: true)
         {

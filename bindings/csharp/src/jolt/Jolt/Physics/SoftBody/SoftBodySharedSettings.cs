@@ -5177,7 +5177,7 @@ public static partial class JPH
             public Const_VertexAttributes(VertexAttributes _other) : this((Const_VertexAttributes)_other) {}
 
             /// Generated from constructor `JPH::SoftBodySharedSettings::VertexAttributes::VertexAttributes`.
-            /// Parameter `inLRAType` defaults to `ELRAType::None`.
+            /// Parameter `inLRAType` defaults to `JPH::SoftBodySharedSettings::ELRAType::None`.
             /// Parameter `inLRAMaxDistanceMultiplier` defaults to `1.0f`.
             public unsafe Const_VertexAttributes(float inCompliance, float inShearCompliance, float inBendCompliance, JPH.SoftBodySharedSettings.ELRAType? inLRAType = null, float? inLRAMaxDistanceMultiplier = null) : this(null, is_owning: true)
             {
@@ -5306,7 +5306,7 @@ public static partial class JPH
             public VertexAttributes(VertexAttributes _other) : this((Const_VertexAttributes)_other) {}
 
             /// Generated from constructor `JPH::SoftBodySharedSettings::VertexAttributes::VertexAttributes`.
-            /// Parameter `inLRAType` defaults to `ELRAType::None`.
+            /// Parameter `inLRAType` defaults to `JPH::SoftBodySharedSettings::ELRAType::None`.
             /// Parameter `inLRAMaxDistanceMultiplier` defaults to `1.0f`.
             public unsafe VertexAttributes(float inCompliance, float inShearCompliance, float inBendCompliance, JPH.SoftBodySharedSettings.ELRAType? inLRAType = null, float? inLRAMaxDistanceMultiplier = null) : this(null, is_owning: true)
             {
@@ -6066,7 +6066,7 @@ public static partial class JPH
         /// @param inBendType The type of bend constraint to create
         /// @param inAngleTolerance Shear edges are created when two connected triangles form a quad (are roughly in the same plane and form a square with roughly 90 degree angles). This defines the tolerance (in radians).
         /// Generated from method `JPH::SoftBodySharedSettings::CreateConstraints`.
-        /// Parameter `inBendType` defaults to `EBendType::Distance`.
+        /// Parameter `inBendType` defaults to `JPH::SoftBodySharedSettings::EBendType::Distance`.
         /// Parameter `inAngleTolerance` defaults to `DegreesToRadians(8.0f)`.
         public unsafe void CreateConstraints(JPH.SoftBodySharedSettings.Const_VertexAttributes? inVertexAttributes, uint inVertexAttributesLength, JPH.SoftBodySharedSettings.EBendType? inBendType = null, float? inAngleTolerance = null)
         {

@@ -945,7 +945,7 @@ public static partial class JPH
         }
 
         /// Generated from constructor `JPH::PlaneShape::PlaneShape`.
-        /// Parameter `inHalfExtent` defaults to `PlaneShapeSettings::cDefaultHalfExtent`.
+        /// Parameter `inHalfExtent` defaults to `JPH::PlaneShapeSettings::cDefaultHalfExtent`.
         public unsafe Const_PlaneShape(JPH.Const_Plane inPlane, JPH.Const_PhysicsMaterial? inMaterial = null, float? inHalfExtent = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -1665,7 +1665,7 @@ public static partial class JPH
         }
 
         /// Generated from constructor `JPH::PlaneShape::PlaneShape`.
-        /// Parameter `inHalfExtent` defaults to `PlaneShapeSettings::cDefaultHalfExtent`.
+        /// Parameter `inHalfExtent` defaults to `JPH::PlaneShapeSettings::cDefaultHalfExtent`.
         public unsafe PlaneShape(JPH.Const_Plane inPlane, JPH.Const_PhysicsMaterial? inMaterial = null, float? inHalfExtent = null) : this(null, is_owning: true)
         {
             #if __IOS__

@@ -297,7 +297,7 @@ public static partial class JPH
 
         /// Draw current pose
         /// Generated from method `JPH::SkeletonPose::Draw`.
-        /// Parameter `inOffset` defaults to `RMat44::sIdentity()`.
+        /// Parameter `inOffset` defaults to `JPH::RMat44::sIdentity()`.
         public unsafe void Draw(JPH.SkeletonPose.Const_DrawSettings inDrawSettings, JPH.DebugRenderer? inRenderer, JPH.Const_Mat44? inOffset = null)
         {
             #if __IOS__

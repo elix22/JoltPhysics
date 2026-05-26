@@ -467,7 +467,7 @@ JOLT_API void Jolt_delete_array_JPH_Character_void_ptr_void_ptr(void *inPointer,
 /// Add bodies and constraints to the system and optionally activate the bodies
 /// Generated from method `JPH::Character::AddToPhysicsSystem`.
 /// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+/// Parameter `inActivationMode` has a default argument: `JPH::EActivation::Activate`, pass a null pointer to use it.
 /// Parameter `inLockBodies` has a default argument: `true`, pass a null pointer to use it.
 JOLT_API void JPH_Character_AddToPhysicsSystem(JPH_Character *_this, const JPH_EActivation *inActivationMode, const bool *inLockBodies);
 
@@ -545,7 +545,7 @@ JOLT_API void JPH_Character_GetPositionAndRotation(const JPH_Character *_this, J
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inPosition` can not be null. It is a single object.
 /// Parameter `inRotation` can not be null. It is a single object.
-/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+/// Parameter `inActivationMode` has a default argument: `JPH::EActivation::Activate`, pass a null pointer to use it.
 /// Parameter `inLockBodies` has a default argument: `true`, pass a null pointer to use it.
 JOLT_API void JPH_Character_SetPositionAndRotation(const JPH_Character *_this, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, const JPH_EActivation *inActivationMode, const bool *inLockBodies);
 
@@ -560,7 +560,7 @@ JOLT_API JPH_Vec3 *JPH_Character_GetPosition(const JPH_Character *_this, const b
 /// Generated from method `JPH::Character::SetPosition`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inPosition` can not be null. It is a single object.
-/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+/// Parameter `inActivationMode` has a default argument: `JPH::EActivation::Activate`, pass a null pointer to use it.
 /// Parameter `inLockBodies` has a default argument: `true`, pass a null pointer to use it.
 JOLT_API void JPH_Character_SetPosition(JPH_Character *_this, const JPH_Vec3 *inPosition, const JPH_EActivation *inActivationMode, const bool *inLockBodies);
 
@@ -575,7 +575,7 @@ JOLT_API JPH_Quat *JPH_Character_GetRotation(const JPH_Character *_this, const b
 /// Generated from method `JPH::Character::SetRotation`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inRotation` can not be null. It is a single object.
-/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+/// Parameter `inActivationMode` has a default argument: `JPH::EActivation::Activate`, pass a null pointer to use it.
 /// Parameter `inLockBodies` has a default argument: `true`, pass a null pointer to use it.
 JOLT_API void JPH_Character_SetRotation(JPH_Character *_this, const JPH_Quat *inRotation, const JPH_EActivation *inActivationMode, const bool *inLockBodies);
 

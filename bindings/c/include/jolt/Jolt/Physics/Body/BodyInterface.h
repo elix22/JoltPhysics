@@ -471,7 +471,7 @@ JOLT_API void JPH_BodyInterface_SetPositionRotationAndVelocity(JPH_BodyInterface
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inBodyID` can not be null. It is a single object.
 /// Parameter `inForce` can not be null. It is a single object.
-/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+/// Parameter `inActivationMode` has a default argument: `JPH::EActivation::Activate`, pass a null pointer to use it.
 JOLT_API void JPH_BodyInterface_AddForce_3(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inForce, const JPH_EActivation *inActivationMode);
 
 /// Generated from method `JPH::BodyInterface::AddForce`.
@@ -479,14 +479,14 @@ JOLT_API void JPH_BodyInterface_AddForce_3(JPH_BodyInterface *_this, const JPH_B
 /// Parameter `inBodyID` can not be null. It is a single object.
 /// Parameter `inForce` can not be null. It is a single object.
 /// Parameter `inPoint` can not be null. It is a single object.
-/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+/// Parameter `inActivationMode` has a default argument: `JPH::EActivation::Activate`, pass a null pointer to use it.
 JOLT_API void JPH_BodyInterface_AddForce_4(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inForce, const JPH_Vec3 *inPoint, const JPH_EActivation *inActivationMode);
 
 /// Generated from method `JPH::BodyInterface::AddTorque`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inBodyID` can not be null. It is a single object.
 /// Parameter `inTorque` can not be null. It is a single object.
-/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+/// Parameter `inActivationMode` has a default argument: `JPH::EActivation::Activate`, pass a null pointer to use it.
 JOLT_API void JPH_BodyInterface_AddTorque(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inTorque, const JPH_EActivation *inActivationMode);
 
 /// Generated from method `JPH::BodyInterface::AddForceAndTorque`.
@@ -494,7 +494,7 @@ JOLT_API void JPH_BodyInterface_AddTorque(JPH_BodyInterface *_this, const JPH_Bo
 /// Parameter `inBodyID` can not be null. It is a single object.
 /// Parameter `inForce` can not be null. It is a single object.
 /// Parameter `inTorque` can not be null. It is a single object.
-/// Parameter `inActivationMode` has a default argument: `EActivation::Activate`, pass a null pointer to use it.
+/// Parameter `inActivationMode` has a default argument: `JPH::EActivation::Activate`, pass a null pointer to use it.
 JOLT_API void JPH_BodyInterface_AddForceAndTorque(JPH_BodyInterface *_this, const JPH_BodyID *inBodyID, const JPH_Vec3 *inForce, const JPH_Vec3 *inTorque, const JPH_EActivation *inActivationMode);
 
 ///@name Add an impulse to the body. Note that you should add a body to the physics system before applying impulses.

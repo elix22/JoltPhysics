@@ -184,7 +184,7 @@ JOLT_API void JPH_SkeletonPose_CalculateLocalSpaceJointMatrices(const JPH_Skelet
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inDrawSettings` can not be null. It is a single object.
 /// Parameter `inOffset` is a single object.
-/// Parameter `inOffset` has a default argument: `RMat44::sIdentity()`, pass a null pointer to use it.
+/// Parameter `inOffset` has a default argument: `JPH::RMat44::sIdentity()`, pass a null pointer to use it.
 JOLT_API void JPH_SkeletonPose_Draw(const JPH_SkeletonPose *_this, const JPH_SkeletonPose_DrawSettings *inDrawSettings, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inOffset);
 
 /// Returns a pointer to a member variable of class `JPH::SkeletonPose::DrawSettings` named `mDrawJoints`.

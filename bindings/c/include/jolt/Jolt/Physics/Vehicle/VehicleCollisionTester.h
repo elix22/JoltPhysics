@@ -270,7 +270,7 @@ JOLT_API JPH_VehicleCollisionTester *JPH_VehicleCollisionTester_MutableStaticDow
 /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
 /// Generated from constructor `JPH::VehicleCollisionTesterRay::VehicleCollisionTesterRay`.
 /// Parameter `inUp` is a single object.
-/// Parameter `inUp` has a default argument: `Vec3::sAxisY()`, pass a null pointer to use it.
+/// Parameter `inUp` has a default argument: `JPH::Vec3::sAxisY()`, pass a null pointer to use it.
 /// Parameter `inMaxSlopeAngle` has a default argument: `DegreesToRadians(80.0f)`, pass a null pointer to use it.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_VehicleCollisionTesterRay_Destroy()` to free it when you're done using it.
 JOLT_API JPH_VehicleCollisionTesterRay *JPH_VehicleCollisionTesterRay_Construct(unsigned short inObjectLayer, const JPH_Vec3 *inUp, const float *inMaxSlopeAngle);
@@ -476,7 +476,7 @@ JOLT_API int JPH_VehicleCollisionTesterRay_sInternalGetRefCountOffset(void);
 /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
 /// Generated from constructor `JPH::VehicleCollisionTesterCastSphere::VehicleCollisionTesterCastSphere`.
 /// Parameter `inUp` is a single object.
-/// Parameter `inUp` has a default argument: `Vec3::sAxisY()`, pass a null pointer to use it.
+/// Parameter `inUp` has a default argument: `JPH::Vec3::sAxisY()`, pass a null pointer to use it.
 /// Parameter `inMaxSlopeAngle` has a default argument: `DegreesToRadians(80.0f)`, pass a null pointer to use it.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_VehicleCollisionTesterCastSphere_Destroy()` to free it when you're done using it.
 JOLT_API JPH_VehicleCollisionTesterCastSphere *JPH_VehicleCollisionTesterCastSphere_Construct(unsigned short inObjectLayer, float inRadius, const JPH_Vec3 *inUp, const float *inMaxSlopeAngle);

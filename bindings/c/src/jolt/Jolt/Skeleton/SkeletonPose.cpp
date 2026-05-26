@@ -244,7 +244,7 @@ void JPH_SkeletonPose_Draw(const JPH_SkeletonPose *_this, const JPH_SkeletonPose
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SkeletonPose *)(_this)).Draw(
         ((inDrawSettings ? void() : MRBINDC_THROW("Parameter `inDrawSettings` can not be null.", void)), *(const JPH::SkeletonPose::DrawSettings *)(inDrawSettings)),
         ((JPH::DebugRenderer *)inRenderer),
-        (inOffset ? *(const JPH::Mat44 *)(inOffset) : static_cast<const JPH::Mat44 &>(RMat44::sIdentity()))
+        (inOffset ? *(const JPH::Mat44 *)(inOffset) : static_cast<const JPH::Mat44 &>(JPH::RMat44::sIdentity()))
     );
 }
 

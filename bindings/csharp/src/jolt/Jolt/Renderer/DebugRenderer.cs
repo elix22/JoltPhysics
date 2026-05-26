@@ -1781,7 +1781,7 @@ public static partial class JPH
 
         /// Draw a single back face culled triangle
         /// Generated from method `JPH::DebugRenderer::DrawTriangle`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::Off`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::Off`.
         public unsafe void DrawTriangle(JPH.Const_Vec3 inV1, JPH.Const_Vec3 inV2, JPH.Const_Vec3 inV3, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null)
         {
             #if __IOS__
@@ -1796,8 +1796,8 @@ public static partial class JPH
 
         /// Draw a box
         /// Generated from method `JPH::DebugRenderer::DrawBox`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
-        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `JPH::DebugRenderer::EDrawMode::Solid`.
         public unsafe void DrawBox(JPH.Const_AABox inBox, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
         {
             #if __IOS__
@@ -1812,8 +1812,8 @@ public static partial class JPH
         }
 
         /// Generated from method `JPH::DebugRenderer::DrawBox`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
-        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `JPH::DebugRenderer::EDrawMode::Solid`.
         public unsafe void DrawBox(JPH.Const_Mat44 inMatrix, JPH.Const_AABox inBox, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
         {
             #if __IOS__
@@ -1829,8 +1829,8 @@ public static partial class JPH
 
         /// Draw a sphere
         /// Generated from method `JPH::DebugRenderer::DrawSphere`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
-        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `JPH::DebugRenderer::EDrawMode::Solid`.
         public unsafe void DrawSphere(JPH.Const_Vec3 inCenter, float inRadius, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
         {
             #if __IOS__
@@ -1845,8 +1845,8 @@ public static partial class JPH
         }
 
         /// Generated from method `JPH::DebugRenderer::DrawUnitSphere`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
-        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `JPH::DebugRenderer::EDrawMode::Solid`.
         public unsafe void DrawUnitSphere(JPH.Const_Mat44 inMatrix, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
         {
             #if __IOS__
@@ -1863,8 +1863,8 @@ public static partial class JPH
         /// Draw a capsule with one half sphere at (0, -inHalfHeightOfCylinder, 0) and the other half sphere at (0, inHalfHeightOfCylinder, 0) and radius inRadius.
         /// The capsule will be transformed by inMatrix.
         /// Generated from method `JPH::DebugRenderer::DrawCapsule`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
-        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `JPH::DebugRenderer::EDrawMode::Solid`.
         public unsafe void DrawCapsule(JPH.Const_Mat44 inMatrix, float inHalfHeightOfCylinder, float inRadius, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
         {
             #if __IOS__
@@ -1881,8 +1881,8 @@ public static partial class JPH
         /// Draw a cylinder with top (0, inHalfHeight, 0) and bottom (0, -inHalfHeight, 0) and radius inRadius.
         /// The cylinder will be transformed by inMatrix
         /// Generated from method `JPH::DebugRenderer::DrawCylinder`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
-        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `JPH::DebugRenderer::EDrawMode::Solid`.
         public unsafe void DrawCylinder(JPH.Const_Mat44 inMatrix, float inHalfHeight, float inRadius, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
         {
             #if __IOS__
@@ -1906,8 +1906,8 @@ public static partial class JPH
         /// @param inCastShadow determines if this geometry should cast a shadow or not.
         /// @param inDrawMode determines if we draw the geometry solid or in wireframe.
         /// Generated from method `JPH::DebugRenderer::DrawOpenCone`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
-        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `JPH::DebugRenderer::EDrawMode::Solid`.
         public unsafe void DrawOpenCone(JPH.Const_Vec3 inTop, JPH.Const_Vec3 inAxis, JPH.Const_Vec3 inPerpendicular, float inHalfAngle, float inLength, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
         {
             #if __IOS__
@@ -1930,8 +1930,8 @@ public static partial class JPH
         /// @param inCastShadow determines if this geometry should cast a shadow or not.
         /// @param inDrawMode determines if we draw the geometry solid or in wireframe.
         /// Generated from method `JPH::DebugRenderer::DrawSwingConeLimits`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
-        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `JPH::DebugRenderer::EDrawMode::Solid`.
         public unsafe void DrawSwingConeLimits(JPH.Const_Mat44 inMatrix, float inSwingYHalfAngle, float inSwingZHalfAngle, float inEdgeLength, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
         {
             #if __IOS__
@@ -1956,8 +1956,8 @@ public static partial class JPH
         /// @param inCastShadow determines if this geometry should cast a shadow or not.
         /// @param inDrawMode determines if we draw the geometry solid or in wireframe.
         /// Generated from method `JPH::DebugRenderer::DrawSwingPyramidLimits`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
-        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `JPH::DebugRenderer::EDrawMode::Solid`.
         public unsafe void DrawSwingPyramidLimits(JPH.Const_Mat44 inMatrix, float inMinSwingYAngle, float inMaxSwingYAngle, float inMinSwingZAngle, float inMaxSwingZAngle, float inEdgeLength, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
         {
             #if __IOS__
@@ -1982,8 +1982,8 @@ public static partial class JPH
         /// @param inCastShadow determines if this geometry should cast a shadow or not.
         /// @param inDrawMode determines if we draw the geometry solid or in wireframe.
         /// Generated from method `JPH::DebugRenderer::DrawPie`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
-        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `JPH::DebugRenderer::EDrawMode::Solid`.
         public unsafe void DrawPie(JPH.Const_Vec3 inCenter, float inRadius, JPH.Const_Vec3 inNormal, JPH.Const_Vec3 inAxis, float inMinAngle, float inMaxAngle, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
         {
             #if __IOS__
@@ -2007,8 +2007,8 @@ public static partial class JPH
         /// @param inCastShadow determines if this geometry should cast a shadow or not.
         /// @param inDrawMode determines if we draw the geometry solid or in wireframe.
         /// Generated from method `JPH::DebugRenderer::DrawTaperedCylinder`.
-        /// Parameter `inCastShadow` defaults to `ECastShadow::On`.
-        /// Parameter `inDrawMode` defaults to `EDrawMode::Solid`.
+        /// Parameter `inCastShadow` defaults to `JPH::DebugRenderer::ECastShadow::On`.
+        /// Parameter `inDrawMode` defaults to `JPH::DebugRenderer::EDrawMode::Solid`.
         public unsafe void DrawTaperedCylinder(JPH.Const_Mat44 inMatrix, float inTop, float inBottom, float inTopRadius, float inBottomRadius, JPH.Const_Color inColor, JPH.DebugRenderer.ECastShadow? inCastShadow = null, JPH.DebugRenderer.EDrawMode? inDrawMode = null)
         {
             #if __IOS__

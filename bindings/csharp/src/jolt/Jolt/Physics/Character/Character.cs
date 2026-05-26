@@ -1122,7 +1122,7 @@ public static partial class JPH
 
         /// Set the position / rotation of the body, optionally activating it.
         /// Generated from method `JPH::Character::SetPositionAndRotation`.
-        /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+        /// Parameter `inActivationMode` defaults to `JPH::EActivation::Activate`.
         /// Parameter `inLockBodies` defaults to `true`.
         public unsafe void SetPositionAndRotation(JPH.Const_Vec3 inPosition, JPH.Const_Quat inRotation, JPH.EActivation? inActivationMode = null, bool? inLockBodies = null)
         {
@@ -1621,7 +1621,7 @@ public static partial class JPH
 
         /// Add bodies and constraints to the system and optionally activate the bodies
         /// Generated from method `JPH::Character::AddToPhysicsSystem`.
-        /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+        /// Parameter `inActivationMode` defaults to `JPH::EActivation::Activate`.
         /// Parameter `inLockBodies` defaults to `true`.
         public unsafe void AddToPhysicsSystem(JPH.EActivation? inActivationMode = null, bool? inLockBodies = null)
         {
@@ -1745,7 +1745,7 @@ public static partial class JPH
 
         /// Set the position of the character, optionally activating it.
         /// Generated from method `JPH::Character::SetPosition`.
-        /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+        /// Parameter `inActivationMode` defaults to `JPH::EActivation::Activate`.
         /// Parameter `inLockBodies` defaults to `true`.
         public unsafe void SetPosition(JPH.Const_Vec3 inPosition, JPH.EActivation? inActivationMode = null, bool? inLockBodies = null)
         {
@@ -1762,7 +1762,7 @@ public static partial class JPH
 
         /// Set the rotation of the character, optionally activating it.
         /// Generated from method `JPH::Character::SetRotation`.
-        /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+        /// Parameter `inActivationMode` defaults to `JPH::EActivation::Activate`.
         /// Parameter `inLockBodies` defaults to `true`.
         public unsafe void SetRotation(JPH.Const_Quat inRotation, JPH.EActivation? inActivationMode = null, bool? inLockBodies = null)
         {

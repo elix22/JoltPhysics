@@ -35,6 +35,7 @@ typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Fl
 typedef struct JPH_GroupFilterTable JPH_GroupFilterTable; // Defined in `#include <jolt/Jolt/Physics/Collision/GroupFilterTable.h>`.
 typedef struct JPH_HeightFieldShapeSettings JPH_HeightFieldShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/HeightFieldShape.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
+typedef struct JPH_MeshShapeSettings JPH_MeshShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/MeshShape.h>`.
 typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
 typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
 typedef struct JPH_PhysicsStepListener JPH_PhysicsStepListener; // Defined in `#include <jolt/Jolt/Physics/PhysicsStepListener.h>`.
@@ -569,6 +570,11 @@ JOLT_API int JoltHelpers_SkeletonGetJointIndex(const JPH_Skeleton *inSkeleton, c
 /// Create a ConvexHullShapeSettings from an array of Float3 points.
 /// Generated from method `JoltHelpers::ConvexHullShapeSettingsFromFloat3Array`.
 JOLT_API JPH_ConvexHullShapeSettings *JoltHelpers_ConvexHullShapeSettingsFromFloat3Array(const JPH_Float3 *inPoints, int inNumPoints, float inMaxConvexRadius, const JPH_PhysicsMaterial *inMaterial);
+
+/// Create a MeshShapeSettings from flat Float3 vertices and flat uint32 indices.
+/// inNumTriangles = inNumIndices / 3.  Each consecutive triple of indices forms one triangle.
+/// Generated from method `JoltHelpers::MeshShapeSettingsFromIndexedMesh`.
+JOLT_API JPH_MeshShapeSettings *JoltHelpers_MeshShapeSettingsFromIndexedMesh(const JPH_Float3 *inVertices, int inNumVertices, const unsigned int *inIndices, int inNumTriangles);
 
 /// Disable collision between two sub groups in a GroupFilterTable.
 /// Generated from method `JoltHelpers::GroupFilterTableDisableCollision`.
@@ -1946,16 +1952,16 @@ JOLT_API void RecordingDebugRenderer_DrawWireUnitSphere(RecordingDebugRenderer *
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inCenter` can not be null. It is a single object.
 /// Parameter `inColor` can not be null. It is a single object.
-/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
-/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+/// Parameter `inCastShadow` has a default argument: `JPH::DebugRenderer::ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `JPH::DebugRenderer::EDrawMode::Solid`, pass a null pointer to use it.
 JOLT_API void RecordingDebugRenderer_DrawSphere(RecordingDebugRenderer *_this, const JPH_Vec3 *inCenter, float inRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
 
 /// Generated from method `RecordingDebugRenderer::DrawUnitSphere`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inMatrix` can not be null. It is a single object.
 /// Parameter `inColor` can not be null. It is a single object.
-/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
-/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+/// Parameter `inCastShadow` has a default argument: `JPH::DebugRenderer::ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `JPH::DebugRenderer::EDrawMode::Solid`, pass a null pointer to use it.
 JOLT_API void RecordingDebugRenderer_DrawUnitSphere(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
 
 /// Draw a capsule with one half sphere at (0, -inHalfHeightOfCylinder, 0) and the other half sphere at (0, inHalfHeightOfCylinder, 0) and radius inRadius.
@@ -1964,8 +1970,8 @@ JOLT_API void RecordingDebugRenderer_DrawUnitSphere(RecordingDebugRenderer *_thi
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inMatrix` can not be null. It is a single object.
 /// Parameter `inColor` can not be null. It is a single object.
-/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
-/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+/// Parameter `inCastShadow` has a default argument: `JPH::DebugRenderer::ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `JPH::DebugRenderer::EDrawMode::Solid`, pass a null pointer to use it.
 JOLT_API void RecordingDebugRenderer_DrawCapsule(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inHalfHeightOfCylinder, float inRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
 
 /// Draw a cylinder with top (0, inHalfHeight, 0) and bottom (0, -inHalfHeight, 0) and radius inRadius.
@@ -1974,8 +1980,8 @@ JOLT_API void RecordingDebugRenderer_DrawCapsule(RecordingDebugRenderer *_this, 
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inMatrix` can not be null. It is a single object.
 /// Parameter `inColor` can not be null. It is a single object.
-/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
-/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+/// Parameter `inCastShadow` has a default argument: `JPH::DebugRenderer::ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `JPH::DebugRenderer::EDrawMode::Solid`, pass a null pointer to use it.
 JOLT_API void RecordingDebugRenderer_DrawCylinder(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inHalfHeight, float inRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
 
 /// Draw a bottomless cone.
@@ -1993,8 +1999,8 @@ JOLT_API void RecordingDebugRenderer_DrawCylinder(RecordingDebugRenderer *_this,
 /// Parameter `inAxis` can not be null. It is a single object.
 /// Parameter `inPerpendicular` can not be null. It is a single object.
 /// Parameter `inColor` can not be null. It is a single object.
-/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
-/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+/// Parameter `inCastShadow` has a default argument: `JPH::DebugRenderer::ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `JPH::DebugRenderer::EDrawMode::Solid`, pass a null pointer to use it.
 JOLT_API void RecordingDebugRenderer_DrawOpenCone(RecordingDebugRenderer *_this, const JPH_Vec3 *inTop, const JPH_Vec3 *inAxis, const JPH_Vec3 *inPerpendicular, float inHalfAngle, float inLength, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
 
 /// Draws cone rotation limits as used by the SwingTwistConstraintPart.
@@ -2009,8 +2015,8 @@ JOLT_API void RecordingDebugRenderer_DrawOpenCone(RecordingDebugRenderer *_this,
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inMatrix` can not be null. It is a single object.
 /// Parameter `inColor` can not be null. It is a single object.
-/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
-/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+/// Parameter `inCastShadow` has a default argument: `JPH::DebugRenderer::ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `JPH::DebugRenderer::EDrawMode::Solid`, pass a null pointer to use it.
 JOLT_API void RecordingDebugRenderer_DrawSwingConeLimits(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inSwingYHalfAngle, float inSwingZHalfAngle, float inEdgeLength, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
 
 /// Draws rotation limits as used by the SwingTwistConstraintPart.
@@ -2027,8 +2033,8 @@ JOLT_API void RecordingDebugRenderer_DrawSwingConeLimits(RecordingDebugRenderer 
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inMatrix` can not be null. It is a single object.
 /// Parameter `inColor` can not be null. It is a single object.
-/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
-/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+/// Parameter `inCastShadow` has a default argument: `JPH::DebugRenderer::ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `JPH::DebugRenderer::EDrawMode::Solid`, pass a null pointer to use it.
 JOLT_API void RecordingDebugRenderer_DrawSwingPyramidLimits(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inMinSwingYAngle, float inMaxSwingYAngle, float inMinSwingZAngle, float inMaxSwingZAngle, float inEdgeLength, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
 
 /// Draw a pie (part of a circle).
@@ -2047,8 +2053,8 @@ JOLT_API void RecordingDebugRenderer_DrawSwingPyramidLimits(RecordingDebugRender
 /// Parameter `inNormal` can not be null. It is a single object.
 /// Parameter `inAxis` can not be null. It is a single object.
 /// Parameter `inColor` can not be null. It is a single object.
-/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
-/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+/// Parameter `inCastShadow` has a default argument: `JPH::DebugRenderer::ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `JPH::DebugRenderer::EDrawMode::Solid`, pass a null pointer to use it.
 JOLT_API void RecordingDebugRenderer_DrawPie(RecordingDebugRenderer *_this, const JPH_Vec3 *inCenter, float inRadius, const JPH_Vec3 *inNormal, const JPH_Vec3 *inAxis, float inMinAngle, float inMaxAngle, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
 
 /// Draw a tapered cylinder
@@ -2064,8 +2070,8 @@ JOLT_API void RecordingDebugRenderer_DrawPie(RecordingDebugRenderer *_this, cons
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inMatrix` can not be null. It is a single object.
 /// Parameter `inColor` can not be null. It is a single object.
-/// Parameter `inCastShadow` has a default argument: `ECastShadow::On`, pass a null pointer to use it.
-/// Parameter `inDrawMode` has a default argument: `EDrawMode::Solid`, pass a null pointer to use it.
+/// Parameter `inCastShadow` has a default argument: `JPH::DebugRenderer::ECastShadow::On`, pass a null pointer to use it.
+/// Parameter `inDrawMode` has a default argument: `JPH::DebugRenderer::EDrawMode::Solid`, pass a null pointer to use it.
 JOLT_API void RecordingDebugRenderer_DrawTaperedCylinder(RecordingDebugRenderer *_this, const JPH_Mat44 *inMatrix, float inTop, float inBottom, float inTopRadius, float inBottomRadius, const JPH_Color *inColor, const JPH_DebugRenderer_ECastShadow *inCastShadow, const JPH_DebugRenderer_EDrawMode *inDrawMode);
 
 /// Calculate bounding box for a batch of triangles

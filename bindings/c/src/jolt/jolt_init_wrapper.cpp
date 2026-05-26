@@ -20,6 +20,7 @@
 #include <Jolt/Physics/Collision/PhysicsMaterial.h>
 #include <Jolt/Physics/Collision/Shape/ConvexHullShape.h>
 #include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
+#include <Jolt/Physics/Collision/Shape/MeshShape.h>
 #include <Jolt/Physics/Collision/Shape/Shape.h>
 #include <Jolt/Physics/Collision/Shape/SubShapeIDPair.h>
 #include <Jolt/Physics/Constraints/DistanceConstraint.h>
@@ -650,6 +651,16 @@ JPH_ConvexHullShapeSettings *JoltHelpers_ConvexHullShapeSettingsFromFloat3Array(
         inNumPoints,
         inMaxConvexRadius,
         ((const JPH::PhysicsMaterial *)inMaterial)
+    ));
+}
+
+JPH_MeshShapeSettings *JoltHelpers_MeshShapeSettingsFromIndexedMesh(const JPH_Float3 *inVertices, int inNumVertices, const unsigned int *inIndices, int inNumTriangles)
+{
+    return (JPH_MeshShapeSettings *)(JoltHelpers::MeshShapeSettingsFromIndexedMesh(
+        ((const JPH::Float3 *)inVertices),
+        inNumVertices,
+        inIndices,
+        inNumTriangles
     ));
 }
 

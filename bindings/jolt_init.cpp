@@ -9,6 +9,7 @@
 #include <Jolt/Physics/Body/BodyLock.h>
 #include <Jolt/Physics/Character/CharacterBase.h>
 #include <Jolt/Physics/Collision/GroupFilterTable.h>
+#include <Jolt/Physics/Collision/Shape/MeshShape.h>
 
 #include <cstdarg>
 #include <cstdio>
@@ -463,6 +464,20 @@ JPH::ConvexHullShapeSettings* JoltHelpers::ConvexHullShapeSettingsFromFloat3Arra
     for (int i = 0; i < inNumPoints; ++i)
         pts.emplace_back(inPoints[i].x, inPoints[i].y, inPoints[i].z);
     return new JPH::ConvexHullShapeSettings(pts, inMaxConvexRadius, inMaterial);
+}
+
+JPH::MeshShapeSettings* JoltHelpers::MeshShapeSettingsFromIndexedMesh(
+    const JPH::Float3* inVertices, int inNumVertices,
+    const JPH::uint32* inIndices, int inNumTriangles)
+{
+    JPH::VertexList verts(inNumVertices);
+    for (int i = 0; i < inNumVertices; ++i)
+        verts[i] = inVertices[i];
+    JPH::IndexedTriangleList tris;
+    tris.reserve(inNumTriangles);
+    for (int i = 0; i < inNumTriangles; ++i)
+        tris.emplace_back(inIndices[i * 3], inIndices[i * 3 + 1], inIndices[i * 3 + 2], 0);
+    return new JPH::MeshShapeSettings(std::move(verts), std::move(tris));
 }
 
 // ---------------------------------------------------------------------------

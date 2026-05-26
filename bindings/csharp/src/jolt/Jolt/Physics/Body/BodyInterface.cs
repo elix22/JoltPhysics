@@ -1328,7 +1328,7 @@ public static partial class JPH
         ///@name Add forces to the body. Note that you should add a body to the physics system before applying forces or torques.
         ///@{
         /// Generated from method `JPH::BodyInterface::AddForce`.
-        /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+        /// Parameter `inActivationMode` defaults to `JPH::EActivation::Activate`.
         public unsafe void AddForce(in JPH.BodyID inBodyID, JPH.Const_Vec3 inForce, JPH.EActivation? inActivationMode = null)
         {
             #if __IOS__
@@ -1345,7 +1345,7 @@ public static partial class JPH
         }
 
         /// Generated from method `JPH::BodyInterface::AddForce`.
-        /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+        /// Parameter `inActivationMode` defaults to `JPH::EActivation::Activate`.
         public unsafe void AddForce(in JPH.BodyID inBodyID, JPH.Const_Vec3 inForce, JPH.Const_Vec3 inPoint, JPH.EActivation? inActivationMode = null)
         {
             #if __IOS__
@@ -1362,7 +1362,7 @@ public static partial class JPH
         }
 
         /// Generated from method `JPH::BodyInterface::AddTorque`.
-        /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+        /// Parameter `inActivationMode` defaults to `JPH::EActivation::Activate`.
         public unsafe void AddTorque(in JPH.BodyID inBodyID, JPH.Const_Vec3 inTorque, JPH.EActivation? inActivationMode = null)
         {
             #if __IOS__
@@ -1379,7 +1379,7 @@ public static partial class JPH
         }
 
         /// Generated from method `JPH::BodyInterface::AddForceAndTorque`.
-        /// Parameter `inActivationMode` defaults to `EActivation::Activate`.
+        /// Parameter `inActivationMode` defaults to `JPH::EActivation::Activate`.
         public unsafe void AddForceAndTorque(in JPH.BodyID inBodyID, JPH.Const_Vec3 inForce, JPH.Const_Vec3 inTorque, JPH.EActivation? inActivationMode = null)
         {
             #if __IOS__

@@ -452,7 +452,7 @@ JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_void_ptr(voi
 /// @param inAngleTolerance Shear edges are created when two connected triangles form a quad (are roughly in the same plane and form a square with roughly 90 degree angles). This defines the tolerance (in radians).
 /// Generated from method `JPH::SoftBodySharedSettings::CreateConstraints`.
 /// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inBendType` has a default argument: `EBendType::Distance`, pass a null pointer to use it.
+/// Parameter `inBendType` has a default argument: `JPH::SoftBodySharedSettings::EBendType::Distance`, pass a null pointer to use it.
 /// Parameter `inAngleTolerance` has a default argument: `DegreesToRadians(8.0f)`, pass a null pointer to use it.
 JOLT_API void JPH_SoftBodySharedSettings_CreateConstraints(JPH_SoftBodySharedSettings *_this, const JPH_SoftBodySharedSettings_VertexAttributes *inVertexAttributes, unsigned int inVertexAttributesLength, const JPH_SoftBodySharedSettings_EBendType *inBendType, const float *inAngleTolerance);
 
@@ -656,7 +656,7 @@ JOLT_API JPH_SoftBodySharedSettings_VertexAttributes *JPH_SoftBodySharedSettings
 JOLT_API JPH_SoftBodySharedSettings_VertexAttributes *JPH_SoftBodySharedSettings_VertexAttributes_ConstructFromAnother(const JPH_SoftBodySharedSettings_VertexAttributes *_other);
 
 /// Generated from constructor `JPH::SoftBodySharedSettings::VertexAttributes::VertexAttributes`.
-/// Parameter `inLRAType` has a default argument: `ELRAType::None`, pass a null pointer to use it.
+/// Parameter `inLRAType` has a default argument: `JPH::SoftBodySharedSettings::ELRAType::None`, pass a null pointer to use it.
 /// Parameter `inLRAMaxDistanceMultiplier` has a default argument: `1.0f`, pass a null pointer to use it.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodySharedSettings_VertexAttributes_Destroy()` to free it when you're done using it.
 JOLT_API JPH_SoftBodySharedSettings_VertexAttributes *JPH_SoftBodySharedSettings_VertexAttributes_Construct(float inCompliance, float inShearCompliance, float inBendCompliance, const JPH_SoftBodySharedSettings_ELRAType *inLRAType, const float *inLRAMaxDistanceMultiplier);

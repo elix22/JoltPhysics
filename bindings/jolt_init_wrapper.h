@@ -14,8 +14,9 @@
 #include <Jolt/Physics/Collision/ContactListener.h>
 #include <Jolt/Physics/Collision/EstimateCollisionResponse.h>
 #include <Jolt/Physics/Collision/GroupFilterTable.h>
-#include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
 #include <Jolt/Physics/Collision/Shape/ConvexHullShape.h>
+#include <Jolt/Physics/Collision/Shape/HeightFieldShape.h>
+#include <Jolt/Physics/Collision/Shape/MeshShape.h>
 #include <Jolt/Physics/SoftBody/SoftBodySharedSettings.h>
 #include <Jolt/Physics/SoftBody/SoftBodyMotionProperties.h>
 #include <Jolt/Physics/SoftBody/SoftBodyContactListener.h>
@@ -259,6 +260,19 @@ struct JoltHelpers
     static JPH::ConvexHullShapeSettings* ConvexHullShapeSettingsFromFloat3Array(
         const JPH::Float3* inPoints, int inNumPoints,
         float inMaxConvexRadius, const JPH::PhysicsMaterial* inMaterial);
+
+    // -----------------------------------------------------------------------
+    // MeshShapeSettings indexed-mesh constructor
+    // (VertexList/IndexedTriangleList use JPH::Array<T> which can't be formed
+    //  from a contiguous C array in managed code; this wrapper accepts flat
+    //  Float3 vertices and flat uint32 indices (3 per triangle)).
+    // -----------------------------------------------------------------------
+
+    /// Create a MeshShapeSettings from flat Float3 vertices and flat uint32 indices.
+    /// inNumTriangles = inNumIndices / 3.  Each consecutive triple of indices forms one triangle.
+    static JPH::MeshShapeSettings* MeshShapeSettingsFromIndexedMesh(
+        const JPH::Float3* inVertices, int inNumVertices,
+        const JPH::uint32* inIndices, int inNumTriangles);
 
     // -----------------------------------------------------------------------
     // GroupFilterTable helpers — mrbind cannot resolve the nested

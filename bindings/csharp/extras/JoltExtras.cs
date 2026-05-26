@@ -217,6 +217,44 @@ public static partial class JPH
         return new ConvexHullShapeSettings(ptr, is_owning: true);
     }
 
+    // ---- MeshShapeSettings from Vec3f[] vertices + uint[] indices -------------
+    //
+    // Indices are flat (3 per triangle): [i0, i1, i2,  i3, i4, i5, ...].
+    // The C wrapper builds VertexList + IndexedTriangleList (materialIndex = 0).
+
+    public static unsafe MeshShapeSettings MeshShapeSettingsFromIndexedMesh(
+        Vec3f[] vertices,
+        uint[] indices)
+    {
+        #if __IOS__
+        [DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_MeshShapeSettingsFromIndexedMesh", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #else
+        [DllImport("cjolt", EntryPoint = "JoltHelpers_MeshShapeSettingsFromIndexedMesh", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #endif
+        extern static MeshShapeSettings._Underlying* __create(Vec3f* verts, int numVerts, uint* idxs, int numTris);
+
+        #if __IOS__
+        [DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MeshShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #else
+        [DllImport("cjolt", EntryPoint = "JPH_MeshShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #endif
+        extern static void* __upcast(MeshShapeSettings._Underlying* p);
+
+        #if __IOS__
+        [DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #else
+        [DllImport("cjolt", EntryPoint = "JPH_RefTarget_JPH_ShapeSettings_AddRef", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        #endif
+        extern static void __addref(void* p);
+
+        MeshShapeSettings._Underlying* ptr;
+        fixed (Vec3f* v = vertices)
+        fixed (uint* ix = indices)
+            ptr = __create(v, vertices.Length, ix, indices.Length / 3);
+        __addref(__upcast(ptr));
+        return new MeshShapeSettings(ptr, is_owning: true);
+    }
+
     // ---- ContactListenerTrampolineManaged -------------------------------------
     //
     // Wraps ContactListenerTrampoline and provides managed-typed callbacks.
