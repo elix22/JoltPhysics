@@ -7,7 +7,7 @@ public static partial class JPH
     ///   Direct: (non-virtual)
     ///     `JPH::RagdollSettings::Part`
     /// This is the const half of the class.
-    public class Const_BodyCreationSettings : JPH.Object<Const_BodyCreationSettings>, System.IDisposable
+    public class Const_BodyCreationSettings : JPH.Object<Const_BodyCreationSettings>, System.IDisposable, System.IEquatable<JPH.Const_BodyCreationSettings>
     {
         internal struct _Underlying {} // Represents the underlying C++ type.
 
@@ -625,6 +625,24 @@ public static partial class JPH
             __Jolt_delete_array_JPH_BodyCreationSettings_void_ptr_void_ptr(inPointer, inPlace);
         }
 
+        /// Test if two BodyCreationSettings are equal
+        /// Generated from method `JPH::BodyCreationSettings::operator==`.
+        public static unsafe bool operator==(JPH.Const_BodyCreationSettings _this, JPH.Const_BodyCreationSettings inRHS)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_equal_JPH_BodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_equal_JPH_BodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __Jolt_equal_JPH_BodyCreationSettings(JPH.Const_BodyCreationSettings._Underlying *_this, JPH.Const_BodyCreationSettings._Underlying *inRHS);
+            return __Jolt_equal_JPH_BodyCreationSettings(_this._UnderlyingPtr, inRHS._UnderlyingPtr) != 0;
+        }
+
+        public static unsafe bool operator!=(JPH.Const_BodyCreationSettings _this, JPH.Const_BodyCreationSettings inRHS)
+        {
+            return !(_this == inRHS);
+        }
+
         /// Access to the shape settings object. This contains serializable (non-runtime optimized) information about the Shape.
         /// Generated from method `JPH::BodyCreationSettings::GetShapeSettings`.
         public unsafe JPH.Const_ShapeSettings? GetShapeSettings()
@@ -664,6 +682,24 @@ public static partial class JPH
             #endif
             extern static byte __JPH_BodyCreationSettings_HasMassProperties(_Underlying *_this);
             return __JPH_BodyCreationSettings_HasMassProperties(_UnderlyingPtr) != 0;
+        }
+
+        // IEquatable:
+
+        public bool Equals(JPH.Const_BodyCreationSettings? inRHS)
+        {
+            if (inRHS is null)
+                return false;
+            return this == inRHS;
+        }
+
+        public override bool Equals(object? other)
+        {
+            if (other is null)
+                return false;
+            if (other is JPH.Const_BodyCreationSettings)
+                return this == (JPH.Const_BodyCreationSettings)other;
+            return false;
         }
     }
 

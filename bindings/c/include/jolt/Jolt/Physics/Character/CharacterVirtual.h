@@ -4,7 +4,6 @@
 #include <common.h>
 #include <exports.h>
 #include <jolt/Jolt/Physics/Body/BodyID.h>
-#include <jolt/Jolt/Physics/Body/MotionType.h>
 #include <jolt/Jolt/Physics/Character/CharacterBase.h>
 #include <jolt/Jolt/Physics/Collision/BackFaceMode.h>
 
@@ -39,7 +38,6 @@ typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt
 typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
 typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
-typedef struct Jolt_JPH_Array_JPH_CharacterVirtual_Contact Jolt_JPH_Array_JPH_CharacterVirtual_Contact; // Defined in `#include <JPH_Array_JPH_CharacterVirtual_Contact.h>`.
 typedef struct Jolt_JPH_Array_JPH_CharacterVirtual_ptr Jolt_JPH_Array_JPH_CharacterVirtual_ptr; // Defined in `#include <JPH_Array_JPH_CharacterVirtual_ptr.h>`.
 
 
@@ -93,22 +91,6 @@ typedef struct JPH_CharacterVsCharacterCollisionSimple JPH_CharacterVsCharacterC
 /// Generated from class `JPH::CharacterVirtual::ExtendedUpdateSettings`.
 /// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
 typedef struct JPH_CharacterVirtual_ExtendedUpdateSettings JPH_CharacterVirtual_ExtendedUpdateSettings;
-
-/// Uniquely identifies a contact between a character and another body or character
-/// Generated from class `JPH::CharacterVirtual::ContactKey`.
-/// Derived classes:
-///   Direct: (non-virtual)
-///     `JPH::CharacterVirtual::Contact`
-/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
-typedef struct JPH_CharacterVirtual_ContactKey JPH_CharacterVirtual_ContactKey;
-
-/// Encapsulates a collision contact
-/// Generated from class `JPH::CharacterVirtual::Contact`.
-/// Base classes:
-///   Direct: (non-virtual)
-///     `JPH::CharacterVirtual::ContactKey`
-/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
-typedef struct JPH_CharacterVirtual_Contact JPH_CharacterVirtual_Contact;
 
 /// Runtime character object.
 /// This object usually represents the player. Contrary to the Character class it doesn't use a rigid body but moves doing collision checks only (hence the name virtual).
@@ -795,51 +777,6 @@ JOLT_API JPH_CharacterContactListener *JPH_CharacterContactListener_AssignFromAn
 /// Parameter `ioAngularVelocity` can not be null. It is a single object.
 JOLT_API void JPH_CharacterContactListener_OnAdjustBodyVelocity(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_Body *inBody2, JPH_Vec3 *ioLinearVelocity, JPH_Vec3 *ioAngularVelocity);
 
-/// Checks if a character can collide with specified body. Return true if the contact is valid.
-/// Generated from method `JPH::CharacterContactListener::OnContactValidate`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inBodyID2` can not be null. It is a single object.
-/// Parameter `inSubShapeID2` can not be null. It is a single object.
-JOLT_API bool JPH_CharacterContactListener_OnContactValidate(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2);
-
-/// Same as OnContactValidate but when colliding with a CharacterVirtual
-/// Generated from method `JPH::CharacterContactListener::OnCharacterContactValidate`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inSubShapeID2` can not be null. It is a single object.
-JOLT_API bool JPH_CharacterContactListener_OnCharacterContactValidate(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2);
-
-/// Called whenever the character collides with a body for the first time.
-/// @param inCharacter Character that is being solved
-/// @param inBodyID2 Body ID of body that is being hit
-/// @param inSubShapeID2 Sub shape ID of shape that is being hit
-/// @param inContactPosition World space contact position
-/// @param inContactNormal World space contact normal
-/// @param ioSettings Settings returned by the contact callback to indicate how the character should behave
-/// Generated from method `JPH::CharacterContactListener::OnContactAdded`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inBodyID2` can not be null. It is a single object.
-/// Parameter `inSubShapeID2` can not be null. It is a single object.
-/// Parameter `inContactPosition` can not be null. It is a single object.
-/// Parameter `inContactNormal` can not be null. It is a single object.
-/// Parameter `ioSettings` can not be null. It is a single object.
-JOLT_API void JPH_CharacterContactListener_OnContactAdded(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings);
-
-/// Called whenever the character persists colliding with a body.
-/// @param inCharacter Character that is being solved
-/// @param inBodyID2 Body ID of body that is being hit
-/// @param inSubShapeID2 Sub shape ID of shape that is being hit
-/// @param inContactPosition World space contact position
-/// @param inContactNormal World space contact normal
-/// @param ioSettings Settings returned by the contact callback to indicate how the character should behave
-/// Generated from method `JPH::CharacterContactListener::OnContactPersisted`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inBodyID2` can not be null. It is a single object.
-/// Parameter `inSubShapeID2` can not be null. It is a single object.
-/// Parameter `inContactPosition` can not be null. It is a single object.
-/// Parameter `inContactNormal` can not be null. It is a single object.
-/// Parameter `ioSettings` can not be null. It is a single object.
-JOLT_API void JPH_CharacterContactListener_OnContactPersisted(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings);
-
 /// Called whenever the character loses contact with a body.
 /// Note that there is no guarantee that the body or its sub shape still exists at this point. The body may have been deleted since the last update.
 /// @param inCharacter Character that is being solved
@@ -850,24 +787,6 @@ JOLT_API void JPH_CharacterContactListener_OnContactPersisted(JPH_CharacterConta
 /// Parameter `inBodyID2` can not be null. It is a single object.
 /// Parameter `inSubShapeID2` can not be null. It is a single object.
 JOLT_API void JPH_CharacterContactListener_OnContactRemoved(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2);
-
-/// Same as OnContactAdded but when colliding with a CharacterVirtual
-/// Generated from method `JPH::CharacterContactListener::OnCharacterContactAdded`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inSubShapeID2` can not be null. It is a single object.
-/// Parameter `inContactPosition` can not be null. It is a single object.
-/// Parameter `inContactNormal` can not be null. It is a single object.
-/// Parameter `ioSettings` can not be null. It is a single object.
-JOLT_API void JPH_CharacterContactListener_OnCharacterContactAdded(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings);
-
-/// Same as OnContactPersisted but when colliding with a CharacterVirtual
-/// Generated from method `JPH::CharacterContactListener::OnCharacterContactPersisted`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inSubShapeID2` can not be null. It is a single object.
-/// Parameter `inContactPosition` can not be null. It is a single object.
-/// Parameter `inContactNormal` can not be null. It is a single object.
-/// Parameter `ioSettings` can not be null. It is a single object.
-JOLT_API void JPH_CharacterContactListener_OnCharacterContactPersisted(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings);
 
 /// Same as OnContactRemoved but when colliding with a CharacterVirtual
 /// Note that inOtherCharacterID can be the ID of a character that has been deleted. This happens if the character was in contact with this character during the last update, but has been deleted since.
@@ -1081,6 +1000,21 @@ JOLT_API void JPH_CharacterVirtual_Set_sDrawStickToFloor(bool value);
 /// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual` named `sDrawStickToFloor`.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 JOLT_API bool *JPH_CharacterVirtual_GetMutable_sDrawStickToFloor(void);
+
+///< Draw the supporting volume plane
+/// Returns a pointer to a member variable of class `JPH::CharacterVirtual` named `sDrawSupportingVolume`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_CharacterVirtual_Get_sDrawSupportingVolume(void);
+
+///< Draw the supporting volume plane
+/// Modifies a member variable of class `JPH::CharacterVirtual` named `sDrawSupportingVolume`.
+/// When this function is called, this object will drop object references it held previously in `sDrawSupportingVolume`.
+JOLT_API void JPH_CharacterVirtual_Set_sDrawSupportingVolume(bool value);
+
+///< Draw the supporting volume plane
+/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual` named `sDrawSupportingVolume`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_CharacterVirtual_GetMutable_sDrawSupportingVolume(void);
 
 /// Constructor
 /// @param inSettings The settings for the character
@@ -1542,13 +1476,6 @@ JOLT_API JPH_TransformedShape *JPH_CharacterVirtual_GetTransformedShape(const JP
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtualSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_CharacterVirtualSettings *JPH_CharacterVirtual_GetCharacterVirtualSettings(const JPH_CharacterVirtual *_this);
 
-/// Access to the internal list of contacts that the character has found.
-/// Note that only contacts that have their mHadCollision flag set are actual contacts.
-/// Generated from method `JPH::CharacterVirtual::GetActiveContacts`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-JOLT_API const Jolt_JPH_Array_JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_GetActiveContacts(const JPH_CharacterVirtual *_this);
-
 /// Check if the character is currently in contact with or has collided with another body in the last operation (e.g. Update or WalkStairs)
 /// Generated from method `JPH::CharacterVirtual::HasCollidedWith`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -1585,6 +1512,17 @@ JOLT_API void JPH_CharacterVirtual_SetUp(JPH_CharacterVirtual *_this, const JPH_
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_CharacterVirtual_GetUp(const JPH_CharacterVirtual *_this);
+
+// Every contact behind this plane can support the character
+/// Generated from method `JPH::CharacterVirtual::GetSupportingVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_Plane *JPH_CharacterVirtual_GetSupportingVolume(const JPH_CharacterVirtual *_this);
+
+/// Generated from method `JPH::CharacterVirtual::SetSupportingVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPlane` can not be null. It is a single object.
+JOLT_API void JPH_CharacterVirtual_SetSupportingVolume(JPH_CharacterVirtual *_this, const JPH_Plane *inPlane);
 
 /// Check if the normal of the ground surface is too steep to walk on
 /// Generated from method `JPH::CharacterVirtual::IsSlopeTooSteep`.
@@ -1824,547 +1762,6 @@ JOLT_API void JPH_CharacterVirtual_ExtendedUpdateSettings_DestroyArray(const JPH
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdateSettings_AssignFromAnother(JPH_CharacterVirtual_ExtendedUpdateSettings *_this, const JPH_CharacterVirtual_ExtendedUpdateSettings *_other);
-
-///< ID of body we're colliding with (if not invalid)
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::ContactKey` named `mBodyB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_BodyID *JPH_CharacterVirtual_ContactKey_Get_mBodyB(const JPH_CharacterVirtual_ContactKey *_this);
-
-///< ID of body we're colliding with (if not invalid)
-/// Modifies a member variable of class `JPH::CharacterVirtual::ContactKey` named `mBodyB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The reference to the parameter `value` might be preserved in this object in element `mBodyB`.
-/// When this function is called, this object will drop object references it held previously in `mBodyB`.
-JOLT_API void JPH_CharacterVirtual_ContactKey_Set_mBodyB(JPH_CharacterVirtual_ContactKey *_this, JPH_BodyID value);
-
-///< ID of body we're colliding with (if not invalid)
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::ContactKey` named `mBodyB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API JPH_BodyID *JPH_CharacterVirtual_ContactKey_GetMutable_mBodyB(JPH_CharacterVirtual_ContactKey *_this);
-
-///< Character we're colliding with (if not invalid)
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::ContactKey` named `mCharacterIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_CharacterID *JPH_CharacterVirtual_ContactKey_Get_mCharacterIDB(const JPH_CharacterVirtual_ContactKey *_this);
-
-///< Character we're colliding with (if not invalid)
-/// Modifies a member variable of class `JPH::CharacterVirtual::ContactKey` named `mCharacterIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `value` can not be null. It is a single object.
-/// The reference to the parameter `value` might be preserved in this object in element `mCharacterIDB`.
-/// When this function is called, this object will drop object references it held previously in `mCharacterIDB`.
-JOLT_API void JPH_CharacterVirtual_ContactKey_Set_mCharacterIDB(JPH_CharacterVirtual_ContactKey *_this, const JPH_CharacterID *value);
-
-///< Character we're colliding with (if not invalid)
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::ContactKey` named `mCharacterIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API JPH_CharacterID *JPH_CharacterVirtual_ContactKey_GetMutable_mCharacterIDB(JPH_CharacterVirtual_ContactKey *_this);
-
-///< Sub shape ID of body or character we're colliding with
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::ContactKey` named `mSubShapeIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_SubShapeID *JPH_CharacterVirtual_ContactKey_Get_mSubShapeIDB(const JPH_CharacterVirtual_ContactKey *_this);
-
-///< Sub shape ID of body or character we're colliding with
-/// Modifies a member variable of class `JPH::CharacterVirtual::ContactKey` named `mSubShapeIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `value` can not be null. It is a single object.
-/// The reference to the parameter `value` might be preserved in this object in element `mSubShapeIDB`.
-/// When this function is called, this object will drop object references it held previously in `mSubShapeIDB`.
-JOLT_API void JPH_CharacterVirtual_ContactKey_Set_mSubShapeIDB(JPH_CharacterVirtual_ContactKey *_this, const JPH_SubShapeID *value);
-
-///< Sub shape ID of body or character we're colliding with
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::ContactKey` named `mSubShapeIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API JPH_SubShapeID *JPH_CharacterVirtual_ContactKey_GetMutable_mSubShapeIDB(JPH_CharacterVirtual_ContactKey *_this);
-
-/// Constructs an empty (default-constructed) instance.
-/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtual_ContactKey_Destroy()` to free it when you're done using it.
-JOLT_API JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_DefaultConstruct(void);
-
-/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
-/// The array must be destroyed using `JPH_CharacterVirtual_ContactKey_DestroyArray()`.
-/// Use `JPH_CharacterVirtual_ContactKey_OffsetMutablePtr()` and `JPH_CharacterVirtual_ContactKey_OffsetPtr()` to access the array elements.
-JOLT_API JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_DefaultConstructArray(size_t num_elems);
-
-/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
-/// The reference to the parameter `ptr` might be preserved in the return value.
-JOLT_API const JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_OffsetPtr(const JPH_CharacterVirtual_ContactKey *ptr, ptrdiff_t i);
-
-/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
-/// The reference to the parameter `ptr` might be preserved in the return value.
-JOLT_API JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_OffsetMutablePtr(JPH_CharacterVirtual_ContactKey *ptr, ptrdiff_t i);
-
-/// Generated from constructor `JPH::CharacterVirtual::ContactKey::ContactKey`.
-/// Parameter `inContact` can not be null. It is a single object.
-/// The reference to things referred to by the parameter `inContact` (if any) might be preserved in the constructed object.
-/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtual_ContactKey_Destroy()` to free it when you're done using it.
-JOLT_API JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_ConstructFromAnother(const JPH_CharacterVirtual_ContactKey *inContact);
-
-/// Generated from constructor `JPH::CharacterVirtual::ContactKey::ContactKey`.
-/// Parameter `inBodyB` can not be null. It is a single object.
-/// Parameter `inSubShapeID` can not be null. It is a single object.
-/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtual_ContactKey_Destroy()` to free it when you're done using it.
-JOLT_API JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_Construct_JPH_BodyID(const JPH_BodyID *inBodyB, const JPH_SubShapeID *inSubShapeID);
-
-/// Generated from constructor `JPH::CharacterVirtual::ContactKey::ContactKey`.
-/// Parameter `inCharacterIDB` can not be null. It is a single object.
-/// Parameter `inSubShapeID` can not be null. It is a single object.
-/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtual_ContactKey_Destroy()` to free it when you're done using it.
-JOLT_API JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_Construct_JPH_CharacterID(const JPH_CharacterID *inCharacterIDB, const JPH_SubShapeID *inSubShapeID);
-
-/// Destroys a heap-allocated instance of `JPH_CharacterVirtual_ContactKey`. Does nothing if the pointer is null.
-JOLT_API void JPH_CharacterVirtual_ContactKey_Destroy(const JPH_CharacterVirtual_ContactKey *_this);
-
-/// Destroys a heap-allocated array of `JPH_CharacterVirtual_ContactKey`. Does nothing if the pointer is null.
-JOLT_API void JPH_CharacterVirtual_ContactKey_DestroyArray(const JPH_CharacterVirtual_ContactKey *_this);
-
-/// Generated from method `JPH::CharacterVirtual::ContactKey::operator=`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inContact` can not be null. It is a single object.
-/// The reference to things referred to by the parameter `inContact` (if any) might be preserved in this object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved in the return value.
-/// When this function is called, this object will drop any object references it held previously.
-JOLT_API JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_AssignFromAnother(JPH_CharacterVirtual_ContactKey *_this, const JPH_CharacterVirtual_ContactKey *inContact);
-
-/// Checks if two contacts refer to the same body (or virtual character)
-/// Generated from method `JPH::CharacterVirtual::ContactKey::IsSameBody`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inOther` can not be null. It is a single object.
-JOLT_API bool JPH_CharacterVirtual_ContactKey_IsSameBody(const JPH_CharacterVirtual_ContactKey *_this, const JPH_CharacterVirtual_ContactKey *inOther);
-
-/// Equality operator
-/// Generated from method `JPH::CharacterVirtual::ContactKey::operator==`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inRHS` can not be null. It is a single object.
-JOLT_API bool Jolt_equal_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_ContactKey *_this, const JPH_CharacterVirtual_ContactKey *inRHS);
-
-/// Generated from method `JPH::CharacterVirtual::ContactKey::operator!=`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inRHS` can not be null. It is a single object.
-JOLT_API bool Jolt_not_equal_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_ContactKey *_this, const JPH_CharacterVirtual_ContactKey *inRHS);
-
-/// Hash of this structure
-/// Generated from method `JPH::CharacterVirtual::ContactKey::GetHash`.
-/// Parameter `_this` can not be null. It is a single object.
-JOLT_API uint64_t JPH_CharacterVirtual_ContactKey_GetHash(const JPH_CharacterVirtual_ContactKey *_this);
-
-///< Position where the character makes contact
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mPosition`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mPosition(const JPH_CharacterVirtual_Contact *_this);
-
-///< Position where the character makes contact
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mPosition`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mPosition(JPH_CharacterVirtual_Contact *_this);
-
-///< Velocity of the contact point
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mLinearVelocity`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mLinearVelocity(const JPH_CharacterVirtual_Contact *_this);
-
-///< Velocity of the contact point
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mLinearVelocity`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mLinearVelocity(JPH_CharacterVirtual_Contact *_this);
-
-///< Contact normal, pointing towards the character
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mContactNormal`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mContactNormal(const JPH_CharacterVirtual_Contact *_this);
-
-///< Contact normal, pointing towards the character
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mContactNormal`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mContactNormal(JPH_CharacterVirtual_Contact *_this);
-
-///< Surface normal of the contact
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mSurfaceNormal`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mSurfaceNormal(const JPH_CharacterVirtual_Contact *_this);
-
-///< Surface normal of the contact
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mSurfaceNormal`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mSurfaceNormal(JPH_CharacterVirtual_Contact *_this);
-
-///< Distance to the contact <= 0 means that it is an actual contact, > 0 means predictive
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mDistance`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const float *JPH_CharacterVirtual_Contact_Get_mDistance(const JPH_CharacterVirtual_Contact *_this);
-
-///< Distance to the contact <= 0 means that it is an actual contact, > 0 means predictive
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mDistance`.
-/// Parameter `_this` can not be null. It is a single object.
-/// When this function is called, this object will drop object references it held previously in `mDistance`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mDistance(JPH_CharacterVirtual_Contact *_this, float value);
-
-///< Distance to the contact <= 0 means that it is an actual contact, > 0 means predictive
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mDistance`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API float *JPH_CharacterVirtual_Contact_GetMutable_mDistance(JPH_CharacterVirtual_Contact *_this);
-
-///< Fraction along the path where this contact takes place
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mFraction`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const float *JPH_CharacterVirtual_Contact_Get_mFraction(const JPH_CharacterVirtual_Contact *_this);
-
-///< Fraction along the path where this contact takes place
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mFraction`.
-/// Parameter `_this` can not be null. It is a single object.
-/// When this function is called, this object will drop object references it held previously in `mFraction`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mFraction(JPH_CharacterVirtual_Contact *_this, float value);
-
-///< Fraction along the path where this contact takes place
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mFraction`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API float *JPH_CharacterVirtual_Contact_GetMutable_mFraction(JPH_CharacterVirtual_Contact *_this);
-
-///< Motion type of B, used to determine the priority of the contact
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mMotionTypeB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_EMotionType *JPH_CharacterVirtual_Contact_Get_mMotionTypeB(const JPH_CharacterVirtual_Contact *_this);
-
-///< Motion type of B, used to determine the priority of the contact
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mMotionTypeB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The reference to the parameter `value` might be preserved in this object in element `mMotionTypeB`.
-/// When this function is called, this object will drop object references it held previously in `mMotionTypeB`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mMotionTypeB(JPH_CharacterVirtual_Contact *_this, JPH_EMotionType value);
-
-///< Motion type of B, used to determine the priority of the contact
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mMotionTypeB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API JPH_EMotionType *JPH_CharacterVirtual_Contact_GetMutable_mMotionTypeB(JPH_CharacterVirtual_Contact *_this);
-
-///< If B is a sensor
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mIsSensorB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const bool *JPH_CharacterVirtual_Contact_Get_mIsSensorB(const JPH_CharacterVirtual_Contact *_this);
-
-///< If B is a sensor
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mIsSensorB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// When this function is called, this object will drop object references it held previously in `mIsSensorB`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mIsSensorB(JPH_CharacterVirtual_Contact *_this, bool value);
-
-///< If B is a sensor
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mIsSensorB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API bool *JPH_CharacterVirtual_Contact_GetMutable_mIsSensorB(JPH_CharacterVirtual_Contact *_this);
-
-///< Character we're colliding with (if not nullptr). Note that this may be a dangling pointer when accessed through GetActiveContacts(), use mCharacterIDB instead.
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mCharacterB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_CharacterVirtual *const *JPH_CharacterVirtual_Contact_Get_mCharacterB(const JPH_CharacterVirtual_Contact *_this);
-
-///< Character we're colliding with (if not nullptr). Note that this may be a dangling pointer when accessed through GetActiveContacts(), use mCharacterIDB instead.
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mCharacterB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The reference to the parameter `value` might be preserved in this object in element `mCharacterB`.
-/// When this function is called, this object will drop object references it held previously in `mCharacterB`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mCharacterB(JPH_CharacterVirtual_Contact *_this, const JPH_CharacterVirtual *value);
-
-///< Character we're colliding with (if not nullptr). Note that this may be a dangling pointer when accessed through GetActiveContacts(), use mCharacterIDB instead.
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mCharacterB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_CharacterVirtual **JPH_CharacterVirtual_Contact_GetMutable_mCharacterB(JPH_CharacterVirtual_Contact *_this);
-
-///< User data of B
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mUserData`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const uint64_t *JPH_CharacterVirtual_Contact_Get_mUserData(const JPH_CharacterVirtual_Contact *_this);
-
-///< User data of B
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mUserData`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The reference to the parameter `value` might be preserved in this object in element `mUserData`.
-/// When this function is called, this object will drop object references it held previously in `mUserData`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mUserData(JPH_CharacterVirtual_Contact *_this, uint64_t value);
-
-///< User data of B
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mUserData`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API uint64_t *JPH_CharacterVirtual_Contact_GetMutable_mUserData(JPH_CharacterVirtual_Contact *_this);
-
-///< Material of B
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mMaterial`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_PhysicsMaterial *const *JPH_CharacterVirtual_Contact_Get_mMaterial(const JPH_CharacterVirtual_Contact *_this);
-
-///< Material of B
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mMaterial`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The reference to the parameter `value` might be preserved in this object in element `mMaterial`.
-/// When this function is called, this object will drop object references it held previously in `mMaterial`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mMaterial(JPH_CharacterVirtual_Contact *_this, const JPH_PhysicsMaterial *value);
-
-///< Material of B
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mMaterial`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_PhysicsMaterial **JPH_CharacterVirtual_Contact_GetMutable_mMaterial(JPH_CharacterVirtual_Contact *_this);
-
-///< If the character actually collided with the contact (can be false if a predictive contact never becomes a real one)
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mHadCollision`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const bool *JPH_CharacterVirtual_Contact_Get_mHadCollision(const JPH_CharacterVirtual_Contact *_this);
-
-///< If the character actually collided with the contact (can be false if a predictive contact never becomes a real one)
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mHadCollision`.
-/// Parameter `_this` can not be null. It is a single object.
-/// When this function is called, this object will drop object references it held previously in `mHadCollision`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mHadCollision(JPH_CharacterVirtual_Contact *_this, bool value);
-
-///< If the character actually collided with the contact (can be false if a predictive contact never becomes a real one)
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mHadCollision`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API bool *JPH_CharacterVirtual_Contact_GetMutable_mHadCollision(JPH_CharacterVirtual_Contact *_this);
-
-///< If the contact validate callback chose to discard this contact or when the body is a sensor
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mWasDiscarded`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const bool *JPH_CharacterVirtual_Contact_Get_mWasDiscarded(const JPH_CharacterVirtual_Contact *_this);
-
-///< If the contact validate callback chose to discard this contact or when the body is a sensor
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mWasDiscarded`.
-/// Parameter `_this` can not be null. It is a single object.
-/// When this function is called, this object will drop object references it held previously in `mWasDiscarded`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mWasDiscarded(JPH_CharacterVirtual_Contact *_this, bool value);
-
-///< If the contact validate callback chose to discard this contact or when the body is a sensor
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mWasDiscarded`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API bool *JPH_CharacterVirtual_Contact_GetMutable_mWasDiscarded(JPH_CharacterVirtual_Contact *_this);
-
-///< When true, the velocity of the contact point can push the character
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mCanPushCharacter`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const bool *JPH_CharacterVirtual_Contact_Get_mCanPushCharacter(const JPH_CharacterVirtual_Contact *_this);
-
-///< When true, the velocity of the contact point can push the character
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mCanPushCharacter`.
-/// Parameter `_this` can not be null. It is a single object.
-/// When this function is called, this object will drop object references it held previously in `mCanPushCharacter`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mCanPushCharacter(JPH_CharacterVirtual_Contact *_this, bool value);
-
-///< When true, the velocity of the contact point can push the character
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mCanPushCharacter`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API bool *JPH_CharacterVirtual_Contact_GetMutable_mCanPushCharacter(JPH_CharacterVirtual_Contact *_this);
-
-///< ID of body we're colliding with (if not invalid)
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mBodyB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_BodyID *JPH_CharacterVirtual_Contact_Get_mBodyB(const JPH_CharacterVirtual_Contact *_this);
-
-///< ID of body we're colliding with (if not invalid)
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mBodyB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The reference to the parameter `value` might be preserved in this object in element `mBodyB`.
-/// When this function is called, this object will drop object references it held previously in `mBodyB`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mBodyB(JPH_CharacterVirtual_Contact *_this, JPH_BodyID value);
-
-///< ID of body we're colliding with (if not invalid)
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mBodyB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API JPH_BodyID *JPH_CharacterVirtual_Contact_GetMutable_mBodyB(JPH_CharacterVirtual_Contact *_this);
-
-///< Character we're colliding with (if not invalid)
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mCharacterIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_CharacterID *JPH_CharacterVirtual_Contact_Get_mCharacterIDB(const JPH_CharacterVirtual_Contact *_this);
-
-///< Character we're colliding with (if not invalid)
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mCharacterIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `value` can not be null. It is a single object.
-/// The reference to the parameter `value` might be preserved in this object in element `mCharacterIDB`.
-/// When this function is called, this object will drop object references it held previously in `mCharacterIDB`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mCharacterIDB(JPH_CharacterVirtual_Contact *_this, const JPH_CharacterID *value);
-
-///< Character we're colliding with (if not invalid)
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mCharacterIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API JPH_CharacterID *JPH_CharacterVirtual_Contact_GetMutable_mCharacterIDB(JPH_CharacterVirtual_Contact *_this);
-
-///< Sub shape ID of body or character we're colliding with
-/// Returns a pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mSubShapeIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const JPH_SubShapeID *JPH_CharacterVirtual_Contact_Get_mSubShapeIDB(const JPH_CharacterVirtual_Contact *_this);
-
-///< Sub shape ID of body or character we're colliding with
-/// Modifies a member variable of class `JPH::CharacterVirtual::Contact` named `mSubShapeIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `value` can not be null. It is a single object.
-/// The reference to the parameter `value` might be preserved in this object in element `mSubShapeIDB`.
-/// When this function is called, this object will drop object references it held previously in `mSubShapeIDB`.
-JOLT_API void JPH_CharacterVirtual_Contact_Set_mSubShapeIDB(JPH_CharacterVirtual_Contact *_this, const JPH_SubShapeID *value);
-
-///< Sub shape ID of body or character we're colliding with
-/// Returns a mutable pointer to a member variable of class `JPH::CharacterVirtual::Contact` named `mSubShapeIDB`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API JPH_SubShapeID *JPH_CharacterVirtual_Contact_GetMutable_mSubShapeIDB(JPH_CharacterVirtual_Contact *_this);
-
-/// Constructs an empty (default-constructed) instance.
-/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtual_Contact_Destroy()` to free it when you're done using it.
-JOLT_API JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_DefaultConstruct(void);
-
-/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
-/// The array must be destroyed using `JPH_CharacterVirtual_Contact_DestroyArray()`.
-/// Use `JPH_CharacterVirtual_Contact_OffsetMutablePtr()` and `JPH_CharacterVirtual_Contact_OffsetPtr()` to access the array elements.
-JOLT_API JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_DefaultConstructArray(size_t num_elems);
-
-/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
-/// The reference to the parameter `ptr` might be preserved in the return value.
-JOLT_API const JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_OffsetPtr(const JPH_CharacterVirtual_Contact *ptr, ptrdiff_t i);
-
-/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
-/// The reference to the parameter `ptr` might be preserved in the return value.
-JOLT_API JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_OffsetMutablePtr(JPH_CharacterVirtual_Contact *ptr, ptrdiff_t i);
-
-/// Upcasts an instance of `JPH::CharacterVirtual::Contact` to its base class `JPH::CharacterVirtual::ContactKey`.
-/// This version is acting on mutable pointers.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API const JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_Contact_UpcastTo_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_Contact *object);
-
-/// Upcasts an instance of `JPH::CharacterVirtual::Contact` to its base class `JPH::CharacterVirtual::ContactKey`.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_Contact_MutableUpcastTo_JPH_CharacterVirtual_ContactKey(JPH_CharacterVirtual_Contact *object);
-
-/// Downcasts an instance of `JPH::CharacterVirtual::ContactKey` to a derived class `JPH::CharacterVirtual::Contact`.
-/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
-/// This version is acting on mutable pointers.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API const JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_StaticDowncastFrom_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_ContactKey *object);
-
-/// Downcasts an instance of `JPH::CharacterVirtual::ContactKey` to a derived class `JPH::CharacterVirtual::Contact`.
-/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
-/// The reference to the parameter `object` might be preserved in the return value.
-JOLT_API JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_MutableStaticDowncastFrom_JPH_CharacterVirtual_ContactKey(JPH_CharacterVirtual_ContactKey *object);
-
-/// Generated from constructor `JPH::CharacterVirtual::Contact::Contact`.
-/// Parameter `_other` can not be null. It is a single object.
-/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
-/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CharacterVirtual_Contact_Destroy()` to free it when you're done using it.
-JOLT_API JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_ConstructFromAnother(const JPH_CharacterVirtual_Contact *_other);
-
-/// Destroys a heap-allocated instance of `JPH_CharacterVirtual_Contact`. Does nothing if the pointer is null.
-JOLT_API void JPH_CharacterVirtual_Contact_Destroy(const JPH_CharacterVirtual_Contact *_this);
-
-/// Destroys a heap-allocated array of `JPH_CharacterVirtual_Contact`. Does nothing if the pointer is null.
-JOLT_API void JPH_CharacterVirtual_Contact_DestroyArray(const JPH_CharacterVirtual_Contact *_this);
-
-/// Generated from method `JPH::CharacterVirtual::Contact::operator=`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `_other` can not be null. It is a single object.
-/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// When this function is called, this object will drop any object references it held previously.
-JOLT_API JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_AssignFromAnother(JPH_CharacterVirtual_Contact *_this, const JPH_CharacterVirtual_Contact *_other);
-
-/// Checks if two contacts refer to the same body (or virtual character)
-/// Generated from method `JPH::CharacterVirtual::Contact::IsSameBody`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inOther` can not be null. It is a single object.
-JOLT_API bool JPH_CharacterVirtual_Contact_IsSameBody(const JPH_CharacterVirtual_Contact *_this, const JPH_CharacterVirtual_ContactKey *inOther);
-
-/// Equality operator
-/// Generated from method `JPH::CharacterVirtual::Contact::operator==`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inRHS` can not be null. It is a single object.
-JOLT_API bool Jolt_equal_JPH_CharacterVirtual_Contact_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_Contact *_this, const JPH_CharacterVirtual_ContactKey *inRHS);
-
-/// Generated from method `JPH::CharacterVirtual::Contact::operator!=`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Parameter `inRHS` can not be null. It is a single object.
-JOLT_API bool Jolt_not_equal_JPH_CharacterVirtual_Contact_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_Contact *_this, const JPH_CharacterVirtual_ContactKey *inRHS);
-
-/// Hash of this structure
-/// Generated from method `JPH::CharacterVirtual::Contact::GetHash`.
-/// Parameter `_this` can not be null. It is a single object.
-JOLT_API uint64_t JPH_CharacterVirtual_Contact_GetHash(const JPH_CharacterVirtual_Contact *_this);
 
 #ifdef __cplusplus
 } // extern "C"

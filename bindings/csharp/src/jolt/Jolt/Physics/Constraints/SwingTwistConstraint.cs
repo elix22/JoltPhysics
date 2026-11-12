@@ -2428,6 +2428,19 @@ public static partial class JPH
             __JPH_SwingTwistConstraint_SetTargetAngularVelocityCS(_UnderlyingPtr, inAngularVelocity._UnderlyingPtr);
         }
 
+        /// Set the target angular velocity of body 2 in body 2 space
+        /// Generated from method `JPH::SwingTwistConstraint::SetTargetAngularVelocityBS`.
+        public unsafe void SetTargetAngularVelocityBS(JPH.Const_Vec3 inAngularVelocity)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SwingTwistConstraint_SetTargetAngularVelocityBS", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SwingTwistConstraint_SetTargetAngularVelocityBS", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SwingTwistConstraint_SetTargetAngularVelocityBS(_Underlying *_this, JPH.Vec3._Underlying *inAngularVelocity);
+            __JPH_SwingTwistConstraint_SetTargetAngularVelocityBS(_UnderlyingPtr, inAngularVelocity._UnderlyingPtr);
+        }
+
         /// Set the target orientation in constraint space (drives constraint to: GetRotationInConstraintSpace() == inOrientation)
         /// Generated from method `JPH::SwingTwistConstraint::SetTargetOrientationCS`.
         public unsafe void SetTargetOrientationCS(JPH.Const_Quat inOrientation)

@@ -229,7 +229,8 @@ public static partial class JPH
             __Jolt_delete_array_JPH_VehicleCollisionTester_void_ptr_void_ptr(inPointer, inPlace);
         }
 
-        /// Object layer to use for collision detection, this is used when the filters are not overridden
+        /// The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
+        /// Used only when the ObjectLayerFilter is not overridden.
         /// Generated from method `JPH::VehicleCollisionTester::GetObjectLayer`.
         public unsafe ushort GetObjectLayer()
         {
@@ -685,12 +686,12 @@ public static partial class JPH
         internal unsafe Const_VehicleCollisionTesterRay(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructor
-        /// @param inObjectLayer Object layer to test collision with
+        /// @param inObjectLayer The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
         /// @param inUp World space up vector, used to avoid colliding with vertical walls.
         /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
         /// Generated from constructor `JPH::VehicleCollisionTesterRay::VehicleCollisionTesterRay`.
         /// Parameter `inUp` defaults to `JPH::Vec3::sAxisY()`.
-        /// Parameter `inMaxSlopeAngle` defaults to `DegreesToRadians(80.0f)`.
+        /// Parameter `inMaxSlopeAngle` defaults to `JPH::DegreesToRadians(80.0f)`.
         public unsafe Const_VehicleCollisionTesterRay(ushort inObjectLayer, JPH.Const_Vec3? inUp = null, float? inMaxSlopeAngle = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -893,7 +894,8 @@ public static partial class JPH
             }
         }
 
-        /// Object layer to use for collision detection, this is used when the filters are not overridden
+        /// The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
+        /// Used only when the ObjectLayerFilter is not overridden.
         /// Generated from method `JPH::VehicleCollisionTesterRay::GetObjectLayer`.
         public unsafe ushort GetObjectLayer()
         {
@@ -1108,12 +1110,12 @@ public static partial class JPH
         internal unsafe VehicleCollisionTesterRay(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructor
-        /// @param inObjectLayer Object layer to test collision with
+        /// @param inObjectLayer The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
         /// @param inUp World space up vector, used to avoid colliding with vertical walls.
         /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
         /// Generated from constructor `JPH::VehicleCollisionTesterRay::VehicleCollisionTesterRay`.
         /// Parameter `inUp` defaults to `JPH::Vec3::sAxisY()`.
-        /// Parameter `inMaxSlopeAngle` defaults to `DegreesToRadians(80.0f)`.
+        /// Parameter `inMaxSlopeAngle` defaults to `JPH::DegreesToRadians(80.0f)`.
         public unsafe VehicleCollisionTesterRay(ushort inObjectLayer, JPH.Const_Vec3? inUp = null, float? inMaxSlopeAngle = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -1337,13 +1339,13 @@ public static partial class JPH
         internal unsafe Const_VehicleCollisionTesterCastSphere(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructor
-        /// @param inObjectLayer Object layer to test collision with
+        /// @param inObjectLayer The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
         /// @param inUp World space up vector, used to avoid colliding with vertical walls.
         /// @param inRadius Radius of sphere
         /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
         /// Generated from constructor `JPH::VehicleCollisionTesterCastSphere::VehicleCollisionTesterCastSphere`.
         /// Parameter `inUp` defaults to `JPH::Vec3::sAxisY()`.
-        /// Parameter `inMaxSlopeAngle` defaults to `DegreesToRadians(80.0f)`.
+        /// Parameter `inMaxSlopeAngle` defaults to `JPH::DegreesToRadians(80.0f)`.
         public unsafe Const_VehicleCollisionTesterCastSphere(ushort inObjectLayer, float inRadius, JPH.Const_Vec3? inUp = null, float? inMaxSlopeAngle = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -1546,7 +1548,8 @@ public static partial class JPH
             }
         }
 
-        /// Object layer to use for collision detection, this is used when the filters are not overridden
+        /// The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
+        /// Used only when the ObjectLayerFilter is not overridden.
         /// Generated from method `JPH::VehicleCollisionTesterCastSphere::GetObjectLayer`.
         public unsafe ushort GetObjectLayer()
         {
@@ -1761,13 +1764,13 @@ public static partial class JPH
         internal unsafe VehicleCollisionTesterCastSphere(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructor
-        /// @param inObjectLayer Object layer to test collision with
+        /// @param inObjectLayer The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
         /// @param inUp World space up vector, used to avoid colliding with vertical walls.
         /// @param inRadius Radius of sphere
         /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
         /// Generated from constructor `JPH::VehicleCollisionTesterCastSphere::VehicleCollisionTesterCastSphere`.
         /// Parameter `inUp` defaults to `JPH::Vec3::sAxisY()`.
-        /// Parameter `inMaxSlopeAngle` defaults to `DegreesToRadians(80.0f)`.
+        /// Parameter `inMaxSlopeAngle` defaults to `JPH::DegreesToRadians(80.0f)`.
         public unsafe VehicleCollisionTesterCastSphere(ushort inObjectLayer, float inRadius, JPH.Const_Vec3? inUp = null, float? inMaxSlopeAngle = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -1991,7 +1994,7 @@ public static partial class JPH
         internal unsafe Const_VehicleCollisionTesterCastCylinder(_Underlying *ptr, bool is_owning) : base(is_owning) {_UnderlyingPtr = ptr;}
 
         /// Constructor
-        /// @param inObjectLayer Object layer to test collision with
+        /// @param inObjectLayer The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
         /// @param inConvexRadiusFraction Fraction of half the wheel width (or wheel radius if it is smaller) that is used as the convex radius
         /// Generated from constructor `JPH::VehicleCollisionTesterCastCylinder::VehicleCollisionTesterCastCylinder`.
         /// Parameter `inConvexRadiusFraction` defaults to `0.100000001f`.
@@ -2197,7 +2200,8 @@ public static partial class JPH
             }
         }
 
-        /// Object layer to use for collision detection, this is used when the filters are not overridden
+        /// The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
+        /// Used only when the ObjectLayerFilter is not overridden.
         /// Generated from method `JPH::VehicleCollisionTesterCastCylinder::GetObjectLayer`.
         public unsafe ushort GetObjectLayer()
         {
@@ -2412,7 +2416,7 @@ public static partial class JPH
         internal unsafe VehicleCollisionTesterCastCylinder(_Underlying *ptr, bool is_owning) : base(ptr, is_owning) {}
 
         /// Constructor
-        /// @param inObjectLayer Object layer to test collision with
+        /// @param inObjectLayer The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
         /// @param inConvexRadiusFraction Fraction of half the wheel width (or wheel radius if it is smaller) that is used as the convex radius
         /// Generated from constructor `JPH::VehicleCollisionTesterCastCylinder::VehicleCollisionTesterCastCylinder`.
         /// Parameter `inConvexRadiusFraction` defaults to `0.100000001f`.

@@ -329,7 +329,7 @@ JOLT_API bool JPH_Vec4_IsClose(const JPH_Vec4 *_this, const JPH_Vec4 *inV2, cons
 /// Parameter `inMaxDistSq` has a default argument: `9.99999996e-13f`, pass a null pointer to use it.
 JOLT_API bool JPH_Vec4_IsNearZero(const JPH_Vec4 *_this, const float *inMaxDistSq);
 
-/// Test if vector is normalized
+/// Test if length^2 of this vector is within the range [1 - inTolerance, 1 + inTolerance]
 /// Generated from method `JPH::Vec4::IsNormalized`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inTolerance` has a default argument: `9.99999997e-7f`, pass a null pointer to use it.
@@ -441,18 +441,6 @@ JOLT_API JPH_Vec4 *JPH_Vec4_Swizzle_1_0_3_2(const JPH_Vec4 *_this);
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec4_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec4 *JPH_Vec4_Swizzle_0_2_1_3(const JPH_Vec4 *_this);
-
-/// Swizzle the elements in inV
-/// Generated from method `JPH::Vec4::Swizzle<1, 2, 3, 2>`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec4_Destroy()` to free it when you're done using it.
-JOLT_API JPH_Vec4 *JPH_Vec4_Swizzle_1_2_3_2(const JPH_Vec4 *_this);
-
-/// Swizzle the elements in inV
-/// Generated from method `JPH::Vec4::Swizzle<2, 2, 2, 2>`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec4_Destroy()` to free it when you're done using it.
-JOLT_API JPH_Vec4 *JPH_Vec4_Swizzle_2_2_2_2(const JPH_Vec4 *_this);
 
 /// Swizzle the elements in inV
 /// Generated from method `JPH::Vec4::Swizzle<3, 0, 1, 2>`.
@@ -602,6 +590,15 @@ JOLT_API JPH_Vec4 *JPH_Vec4_Abs(const JPH_Vec4 *_this);
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec4_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec4 *JPH_Vec4_Reciprocal(const JPH_Vec4 *_this);
 
+/// Calculates inA * inB - inC * inD with more precision when FMA instructions are available. See DifferenceOfProducts.
+/// Generated from method `JPH::Vec4::sDifferenceOfProducts`.
+/// Parameter `inA` can not be null. It is a single object.
+/// Parameter `inB` can not be null. It is a single object.
+/// Parameter `inC` can not be null. It is a single object.
+/// Parameter `inD` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec4_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec4 *JPH_Vec4_sDifferenceOfProducts(const JPH_Vec4 *inA, const JPH_Vec4 *inB, const JPH_Vec4 *inC, const JPH_Vec4 *inD);
+
 /// Dot product, returns the dot product in X, Y, Z and W components
 /// Generated from method `JPH::Vec4::DotV`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -662,6 +659,11 @@ JOLT_API float JPH_Vec4_ReduceMin(const JPH_Vec4 *_this);
 /// Generated from method `JPH::Vec4::ReduceMax`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_Vec4_ReduceMax(const JPH_Vec4 *_this);
+
+/// Sum X, Y, Z and W
+/// Generated from method `JPH::Vec4::ReduceSum`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_Vec4_ReduceSum(const JPH_Vec4 *_this);
 
 /// Component wise square root
 /// Generated from method `JPH::Vec4::Sqrt`.

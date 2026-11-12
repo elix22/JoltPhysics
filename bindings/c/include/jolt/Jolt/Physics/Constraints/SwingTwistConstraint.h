@@ -854,6 +854,12 @@ JOLT_API void JPH_SwingTwistConstraint_SetTargetAngularVelocityCS(JPH_SwingTwist
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_SwingTwistConstraint_GetTargetAngularVelocityCS(const JPH_SwingTwistConstraint *_this);
 
+/// Set the target angular velocity of body 2 in body 2 space
+/// Generated from method `JPH::SwingTwistConstraint::SetTargetAngularVelocityBS`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inAngularVelocity` can not be null. It is a single object.
+JOLT_API void JPH_SwingTwistConstraint_SetTargetAngularVelocityBS(JPH_SwingTwistConstraint *_this, const JPH_Vec3 *inAngularVelocity);
+
 /// Set the target orientation in constraint space (drives constraint to: GetRotationInConstraintSpace() == inOrientation)
 /// Generated from method `JPH::SwingTwistConstraint::SetTargetOrientationCS`.
 /// Parameter `_this` can not be null. It is a single object.

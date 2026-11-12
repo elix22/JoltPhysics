@@ -890,6 +890,17 @@ JOLT_API void *Jolt_new_array_JPH_RagdollSettings_Part_size_t_void_ptr(size_t in
 /// Generated from method `JPH::RagdollSettings::Part::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_RagdollSettings_Part_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
+/// Test if two BodyCreationSettings are equal
+/// Generated from method `JPH::RagdollSettings::Part::operator==`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRHS` can not be null. It is a single object.
+JOLT_API bool Jolt_equal_JPH_RagdollSettings_Part_JPH_BodyCreationSettings(const JPH_RagdollSettings_Part *_this, const JPH_BodyCreationSettings *inRHS);
+
+/// Generated from method `JPH::RagdollSettings::Part::operator!=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRHS` can not be null. It is a single object.
+JOLT_API bool Jolt_not_equal_JPH_RagdollSettings_Part_JPH_BodyCreationSettings(const JPH_RagdollSettings_Part *_this, const JPH_BodyCreationSettings *inRHS);
+
 /// Access to the shape settings object. This contains serializable (non-runtime optimized) information about the Shape.
 /// Generated from method `JPH::RagdollSettings::Part::GetShapeSettings`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -1168,11 +1179,21 @@ JOLT_API void JPH_Ragdoll_DriveToPoseUsingKinematics_3(JPH_Ragdoll *_this, const
 /// Parameter `inLockBodies` has a default argument: `true`, pass a null pointer to use it.
 JOLT_API void JPH_Ragdoll_DriveToPoseUsingKinematics_4(JPH_Ragdoll *_this, const JPH_Vec3 *inRootOffset, const JPH_Mat44 *inJointMatrices, float inDeltaTime, const bool *inLockBodies);
 
-/// Drive the ragdoll to a specific pose by activating the motors on each constraint
+/// Drive the ragdoll to a specific pose by activating the motors on each constraint.
 /// Generated from method `JPH::Ragdoll::DriveToPoseUsingMotors`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inPose` can not be null. It is a single object.
-JOLT_API void JPH_Ragdoll_DriveToPoseUsingMotors(JPH_Ragdoll *_this, const JPH_SkeletonPose *inPose);
+JOLT_API void JPH_Ragdoll_DriveToPoseUsingMotors_1(JPH_Ragdoll *_this, const JPH_SkeletonPose *inPose);
+
+/// Drive the ragdoll to a specific pose by activating the motors on each constraint. Drives both to target position and velocity.
+/// @param inPrevPose The previous pose of the ragdoll, used to calculate the target velocity for each motor
+/// @param inPose The target pose of the ragdoll, used to calculate the target position for each motor
+/// @param inDeltaTime The time between inPrevPose and inPose, used to calculate the target velocity for each motor
+/// Generated from method `JPH::Ragdoll::DriveToPoseUsingMotors`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPrevPose` can not be null. It is a single object.
+/// Parameter `inPose` can not be null. It is a single object.
+JOLT_API void JPH_Ragdoll_DriveToPoseUsingMotors_3(JPH_Ragdoll *_this, const JPH_SkeletonPose *inPrevPose, const JPH_SkeletonPose *inPose, float inDeltaTime);
 
 /// Control the linear and velocity of all bodies in the ragdoll
 /// Generated from method `JPH::Ragdoll::SetLinearAndAngularVelocity`.

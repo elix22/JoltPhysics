@@ -142,6 +142,21 @@ public static partial class JPH
             return __JPH_Vector_2_IsZero(_UnderlyingPtr) != 0;
         }
 
+        /// Test if vector is near zero
+        /// Generated from method `JPH::Vector<2>::IsNearZero`.
+        /// Parameter `inMaxDistSq` defaults to `9.99999996e-13f`.
+        public unsafe bool IsNearZero(float? inMaxDistSq = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vector_2_IsNearZero", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vector_2_IsNearZero", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __JPH_Vector_2_IsNearZero(_Underlying *_this, float *inMaxDistSq);
+            float __deref_inMaxDistSq = inMaxDistSq.GetValueOrDefault();
+            return __JPH_Vector_2_IsNearZero(_UnderlyingPtr, inMaxDistSq.HasValue ? &__deref_inMaxDistSq : null) != 0;
+        }
+
         /// Test if two vectors are close to each other
         /// Generated from method `JPH::Vector<2>::IsClose`.
         /// Parameter `inMaxDistSq` defaults to `9.99999996e-13f`.
@@ -461,7 +476,7 @@ public static partial class JPH
             return __ret;
         }
 
-        /// Check if vector is normalized
+        /// Test if length^2 of this vector is within the range [1 - inTolerance, 1 + inTolerance]
         /// Generated from method `JPH::Vector<2>::IsNormalized`.
         /// Parameter `inToleranceSq` defaults to `9.99999997e-7f`.
         public unsafe bool IsNormalized(float? inToleranceSq = null)

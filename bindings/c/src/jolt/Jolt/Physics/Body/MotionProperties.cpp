@@ -420,6 +420,13 @@ unsigned int JPH_MotionProperties_GetNumPositionStepsOverride(const JPH_MotionPr
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::MotionProperties *)(_this)).GetNumPositionStepsOverride();
 }
 
+void JPH_MotionProperties_ApplyLinearVelocityStep(JPH_MotionProperties *_this, const JPH_Vec3 *inLinearVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MotionProperties *)(_this)).ApplyLinearVelocityStep(
+        ((inLinearVelocity ? void() : MRBINDC_THROW("Parameter `inLinearVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLinearVelocity))
+    );
+}
+
 void JPH_MotionProperties_AddLinearVelocityStep(JPH_MotionProperties *_this, const JPH_Vec3 *inLinearVelocityChange)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MotionProperties *)(_this)).AddLinearVelocityStep(
@@ -431,6 +438,13 @@ void JPH_MotionProperties_SubLinearVelocityStep(JPH_MotionProperties *_this, con
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MotionProperties *)(_this)).SubLinearVelocityStep(
         ((inLinearVelocityChange ? void() : MRBINDC_THROW("Parameter `inLinearVelocityChange` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLinearVelocityChange))
+    );
+}
+
+void JPH_MotionProperties_ApplyAngularVelocityStep(JPH_MotionProperties *_this, const JPH_Vec3 *inAngularVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MotionProperties *)(_this)).ApplyAngularVelocityStep(
+        ((inAngularVelocity ? void() : MRBINDC_THROW("Parameter `inAngularVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inAngularVelocity))
     );
 }
 

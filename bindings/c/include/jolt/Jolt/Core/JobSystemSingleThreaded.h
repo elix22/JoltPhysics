@@ -143,6 +143,13 @@ JOLT_API int JPH_JobSystemSingleThreaded_GetMaxConcurrency(const JPH_JobSystemSi
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_JobSystem_JobHandle_Destroy()` to free it when you're done using it.
 JOLT_API JPH_JobSystem_JobHandle *JPH_JobSystemSingleThreaded_CreateJob(JPH_JobSystemSingleThreaded *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, const unsigned int *inNumDependencies);
 
+/// Generated from method `JPH::JobSystemSingleThreaded::CreateJobs`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inJobFunction` can not be null. It is a single object.
+/// Parameter `inNumDependencies` has a default argument: `0`, pass a null pointer to use it.
+JOLT_API void JPH_JobSystemSingleThreaded_CreateJobs(JPH_JobSystemSingleThreaded *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, JPH_JobSystem_JobHandle *outJobs, unsigned int inNumJobs, const unsigned int *inNumDependencies);
+
 /// Generated from method `JPH::JobSystemSingleThreaded::CreateBarrier`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API JPH_JobSystem_Barrier *JPH_JobSystemSingleThreaded_CreateBarrier(JPH_JobSystemSingleThreaded *_this);

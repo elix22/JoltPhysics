@@ -215,7 +215,7 @@ JOLT_API JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_ConstructFromAnother(Jol
 /// Generated from constructor `JPH::PlaneShapeSettings::PlaneShapeSettings`.
 /// Parameter `inPlane` can not be null. It is a single object.
 /// Parameter `inMaterial` defaults to a null pointer in C++.
-/// Parameter `inHalfExtent` has a default argument: `cDefaultHalfExtent`, pass a null pointer to use it.
+/// Parameter `inHalfExtent` has a default argument: `JPH::PlaneShapeSettings::cDefaultHalfExtent`, pass a null pointer to use it.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_PlaneShapeSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_PlaneShapeSettings *JPH_PlaneShapeSettings_Construct(const JPH_Plane *inPlane, const JPH_PhysicsMaterial *inMaterial, const float *inHalfExtent);
 

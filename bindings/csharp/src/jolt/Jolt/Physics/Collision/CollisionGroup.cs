@@ -7,7 +7,7 @@ public static partial class JPH
     /// - Or if there's no filter for the first object, the second group filter says the objects can collide
     /// Generated from class `JPH::CollisionGroup`.
     /// This is the const half of the class.
-    public class Const_CollisionGroup : JPH.Object<Const_CollisionGroup>, System.IDisposable
+    public class Const_CollisionGroup : JPH.Object<Const_CollisionGroup>, System.IDisposable, System.IEquatable<JPH.Const_CollisionGroup>
     {
         internal struct _Underlying {} // Represents the underlying C++ type.
 
@@ -252,6 +252,24 @@ public static partial class JPH
             __Jolt_delete_array_JPH_CollisionGroup_void_ptr_void_ptr(inPointer, inPlace);
         }
 
+        /// Test if two collision groups are equal
+        /// Generated from method `JPH::CollisionGroup::operator==`.
+        public static unsafe bool operator==(JPH.Const_CollisionGroup _this, JPH.Const_CollisionGroup inRHS)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_equal_JPH_CollisionGroup", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_equal_JPH_CollisionGroup", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static byte __Jolt_equal_JPH_CollisionGroup(JPH.Const_CollisionGroup._Underlying *_this, JPH.Const_CollisionGroup._Underlying *inRHS);
+            return __Jolt_equal_JPH_CollisionGroup(_this._UnderlyingPtr, inRHS._UnderlyingPtr) != 0;
+        }
+
+        public static unsafe bool operator!=(JPH.Const_CollisionGroup _this, JPH.Const_CollisionGroup inRHS)
+        {
+            return !(_this == inRHS);
+        }
+
         /// Get the collision group filter
         /// Generated from method `JPH::CollisionGroup::GetGroupFilter`.
         public unsafe JPH.Const_GroupFilter? GetGroupFilter()
@@ -301,6 +319,24 @@ public static partial class JPH
             #endif
             extern static byte __JPH_CollisionGroup_CanCollide(_Underlying *_this, JPH.Const_CollisionGroup._Underlying *inOther);
             return __JPH_CollisionGroup_CanCollide(_UnderlyingPtr, inOther._UnderlyingPtr) != 0;
+        }
+
+        // IEquatable:
+
+        public bool Equals(JPH.Const_CollisionGroup? inRHS)
+        {
+            if (inRHS is null)
+                return false;
+            return this == inRHS;
+        }
+
+        public override bool Equals(object? other)
+        {
+            if (other is null)
+                return false;
+            if (other is JPH.Const_CollisionGroup)
+                return this == (JPH.Const_CollisionGroup)other;
+            return false;
         }
     }
 

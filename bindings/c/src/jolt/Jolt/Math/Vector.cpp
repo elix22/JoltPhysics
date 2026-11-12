@@ -125,6 +125,14 @@ bool JPH_Vector_2_IsZero(const JPH_Vector_2 *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vector<2> *)(_this)).IsZero();
 }
 
+bool JPH_Vector_2_IsNearZero(const JPH_Vector_2 *_this, const float *inMaxDistSq)
+{
+    using namespace JPH;
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vector<2> *)(_this)).IsNearZero(
+        (inMaxDistSq ? *inMaxDistSq : static_cast<float>(9.99999996E-13F))
+    );
+}
+
 bool JPH_Vector_2_IsClose(const JPH_Vector_2 *_this, const JPH_Vector_2 *inV2, const float *inMaxDistSq)
 {
     using namespace JPH;

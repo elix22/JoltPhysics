@@ -844,6 +844,20 @@ void Jolt_delete_array_JPH_RagdollSettings_Part_void_ptr_void_ptr(void *inPointe
     );
 }
 
+bool Jolt_equal_JPH_RagdollSettings_Part_JPH_BodyCreationSettings(const JPH_RagdollSettings_Part *_this, const JPH_BodyCreationSettings *inRHS)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RagdollSettings::Part *)(_this)).operator==(
+        ((inRHS ? void() : MRBINDC_THROW("Parameter `inRHS` can not be null.", void)), *(const JPH::BodyCreationSettings *)(inRHS))
+    );
+}
+
+bool Jolt_not_equal_JPH_RagdollSettings_Part_JPH_BodyCreationSettings(const JPH_RagdollSettings_Part *_this, const JPH_BodyCreationSettings *inRHS)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RagdollSettings::Part *)(_this)).operator!=(
+        ((inRHS ? void() : MRBINDC_THROW("Parameter `inRHS` can not be null.", void)), *(const JPH::BodyCreationSettings *)(inRHS))
+    );
+}
+
 const JPH_ShapeSettings *JPH_RagdollSettings_Part_GetShapeSettings(const JPH_RagdollSettings_Part *_this)
 {
     return (const JPH_ShapeSettings *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::RagdollSettings::Part *)(_this)).GetShapeSettings());
@@ -1288,10 +1302,19 @@ void JPH_Ragdoll_DriveToPoseUsingKinematics_4(JPH_Ragdoll *_this, const JPH_Vec3
     );
 }
 
-void JPH_Ragdoll_DriveToPoseUsingMotors(JPH_Ragdoll *_this, const JPH_SkeletonPose *inPose)
+void JPH_Ragdoll_DriveToPoseUsingMotors_1(JPH_Ragdoll *_this, const JPH_SkeletonPose *inPose)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Ragdoll *)(_this)).DriveToPoseUsingMotors(
         ((inPose ? void() : MRBINDC_THROW("Parameter `inPose` can not be null.", void)), *(const JPH::SkeletonPose *)(inPose))
+    );
+}
+
+void JPH_Ragdoll_DriveToPoseUsingMotors_3(JPH_Ragdoll *_this, const JPH_SkeletonPose *inPrevPose, const JPH_SkeletonPose *inPose, float inDeltaTime)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Ragdoll *)(_this)).DriveToPoseUsingMotors(
+        ((inPrevPose ? void() : MRBINDC_THROW("Parameter `inPrevPose` can not be null.", void)), *(const JPH::SkeletonPose *)(inPrevPose)),
+        ((inPose ? void() : MRBINDC_THROW("Parameter `inPose` can not be null.", void)), *(const JPH::SkeletonPose *)(inPose)),
+        inDeltaTime
     );
 }
 

@@ -807,7 +807,7 @@ public static partial class JPH
             return new(__JPH_Body_GetTransformedShape(_UnderlyingPtr), is_owning: true);
         }
 
-        /// Debug function to convert a body back to a body creation settings object to be able to save/recreate the body later
+        /// Function to convert a body back to a body creation settings object to be able to save/recreate the body later. Can e.g. be used to move a body from one PhysicsSystem to another.
         /// Generated from method `JPH::Body::GetBodyCreationSettings`.
         public unsafe JPH.BodyCreationSettings GetBodyCreationSettings()
         {
@@ -820,7 +820,7 @@ public static partial class JPH
             return new(__JPH_Body_GetBodyCreationSettings(_UnderlyingPtr), is_owning: true);
         }
 
-        /// Debug function to convert a soft body back to a soft body creation settings object to be able to save/recreate the body later
+        /// Function to convert a soft body back to a body creation settings object to be able to save/recreate the body later. Can e.g. be used to move a body from one PhysicsSystem to another.
         /// Generated from method `JPH::Body::GetSoftBodyCreationSettings`.
         public unsafe JPH.SoftBodyCreationSettings GetSoftBodyCreationSettings()
         {
@@ -1061,6 +1061,7 @@ public static partial class JPH
         }
 
         /// Set world space linear velocity of the center of mass (unit: m/s).
+        /// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
         /// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
         /// Generated from method `JPH::Body::SetLinearVelocity`.
         public unsafe void SetLinearVelocity(JPH.Const_Vec3 inLinearVelocity)
@@ -1075,6 +1076,7 @@ public static partial class JPH
         }
 
         /// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity.
+        /// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
         /// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
         /// Generated from method `JPH::Body::SetLinearVelocityClamped`.
         public unsafe void SetLinearVelocityClamped(JPH.Const_Vec3 inLinearVelocity)
@@ -1089,6 +1091,7 @@ public static partial class JPH
         }
 
         /// Set world space angular velocity of the center of mass (unit: rad/s).
+        /// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
         /// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
         /// Generated from method `JPH::Body::SetAngularVelocity`.
         public unsafe void SetAngularVelocity(JPH.Const_Vec3 inAngularVelocity)
@@ -1103,6 +1106,7 @@ public static partial class JPH
         }
 
         /// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity.
+        /// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
         /// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
         /// Generated from method `JPH::Body::SetAngularVelocityClamped`.
         public unsafe void SetAngularVelocityClamped(JPH.Const_Vec3 inAngularVelocity)
@@ -1239,7 +1243,8 @@ public static partial class JPH
             __JPH_Body_AddAngularImpulse(_UnderlyingPtr, inAngularImpulse._UnderlyingPtr);
         }
 
-        /// Set velocity of body such that it will be positioned at inTargetPosition/Rotation in inDeltaTime seconds.
+        /// Set velocity of body such that it will be positioned at inTargetPosition/inTargetRotation in inDeltaTime seconds.
+        /// Note that it is illegal to provide a new position/orientation on a sleeping body without waking it up afterwards.
         /// If you want the body to wake up when it is sleeping, use BodyInterface::MoveKinematic instead.
         /// Generated from method `JPH::Body::MoveKinematic`.
         public unsafe void MoveKinematic(JPH.Const_Vec3 inTargetPosition, JPH.Const_Quat inTargetRotation, float inDeltaTime)
@@ -1338,6 +1343,33 @@ public static partial class JPH
             __JPH_Body_SetUserData(_UnderlyingPtr, inUserData);
         }
 
+        /// Function to overwrite current body state with inBodyCreationSettings. Can only be done when the body is not in the physics system and cannot add MotionProperties if the body was created without one.
+        /// Note that if you change the shape of the body and this body may have been in contact with other bodies before, you should call BodyInterface::InvalidateContactCache to invalidate any previous contacts.
+        /// Generated from method `JPH::Body::ApplyBodyCreationSettings`.
+        public unsafe void ApplyBodyCreationSettings(JPH.Const_BodyCreationSettings inBodyCreationSettings, JPH.Const_BroadPhaseLayerInterface inBPLInterface)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_ApplyBodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_ApplyBodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_Body_ApplyBodyCreationSettings(_Underlying *_this, JPH.Const_BodyCreationSettings._Underlying *inBodyCreationSettings, JPH.Const_BroadPhaseLayerInterface._Underlying *inBPLInterface);
+            __JPH_Body_ApplyBodyCreationSettings(_UnderlyingPtr, inBodyCreationSettings._UnderlyingPtr, inBPLInterface._UnderlyingPtr);
+        }
+
+        /// Function to overwrite current body state with inSoftBodyCreationSettings. Can only be done when the body is not in the physics system and cannot add MotionProperties if the body was created without one.
+        /// Generated from method `JPH::Body::ApplySoftBodyCreationSettings`.
+        public unsafe void ApplySoftBodyCreationSettings(JPH.Const_SoftBodyCreationSettings inSoftBodyCreationSettings, JPH.Const_BroadPhaseLayerInterface inBPLInterface)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_ApplySoftBodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_ApplySoftBodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_Body_ApplySoftBodyCreationSettings(_Underlying *_this, JPH.Const_SoftBodyCreationSettings._Underlying *inSoftBodyCreationSettings, JPH.Const_BroadPhaseLayerInterface._Underlying *inBPLInterface);
+            __JPH_Body_ApplySoftBodyCreationSettings(_UnderlyingPtr, inSoftBodyCreationSettings._UnderlyingPtr, inBPLInterface._UnderlyingPtr);
+        }
+
         /// Update position using an Euler step (used during position integrate & constraint solving)
         /// Generated from method `JPH::Body::AddPositionStep`.
         public unsafe void AddPositionStep(JPH.Const_Vec3 inLinearVelocityTimesDeltaTime)
@@ -1386,6 +1418,19 @@ public static partial class JPH
             #endif
             extern static void __JPH_Body_SubRotationStep(_Underlying *_this, JPH.Vec3._Underlying *inAngularVelocityTimesDeltaTime);
             __JPH_Body_SubRotationStep(_UnderlyingPtr, inAngularVelocityTimesDeltaTime._UnderlyingPtr);
+        }
+
+        /// Function to update body's layer (should only be called internally since it also requires updating the broadphase)
+        /// Generated from method `JPH::Body::SetObjectLayerInternal`.
+        public unsafe void SetObjectLayerInternal(ushort inLayer, JPH.Const_BroadPhaseLayerInterface inBPLInterface)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Body_SetObjectLayerInternal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Body_SetObjectLayerInternal", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_Body_SetObjectLayerInternal(_Underlying *_this, ushort inLayer, JPH.Const_BroadPhaseLayerInterface._Underlying *inBPLInterface);
+            __JPH_Body_SetObjectLayerInternal(_UnderlyingPtr, inLayer, inBPLInterface._UnderlyingPtr);
         }
 
         /// Flag if body is in the broadphase (should only be called by the BroadPhase)

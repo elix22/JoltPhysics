@@ -165,7 +165,7 @@ JOLT_API void JPH_JobSystemThreadPool_SetThreadInitFunction(JPH_JobSystemThreadP
 JOLT_API void JPH_JobSystemThreadPool_SetThreadExitFunction(JPH_JobSystemThreadPool *_this, const Jolt_std_function_void_from_int *inExitFunction);
 
 /// Initialize the thread pool
-/// @param inMaxJobs Max number of jobs that can be allocated at any time
+/// @param inMaxJobs Max number of jobs that can be allocated at any time (note that the actual number of jobs that can be queued is inMaxJobs - 1 because the queue always contains a dummy node)
 /// @param inMaxBarriers Max number of barriers that can be allocated at any time
 /// @param inNumThreads Number of threads to start (the number of concurrent jobs is 1 more because the main thread will also run jobs while waiting for a barrier to complete). Use -1 to auto detect the amount of CPU's.
 /// Generated from method `JPH::JobSystemThreadPool::Init`.
@@ -185,6 +185,13 @@ JOLT_API int JPH_JobSystemThreadPool_GetMaxConcurrency(const JPH_JobSystemThread
 /// Parameter `inNumDependencies` has a default argument: `0`, pass a null pointer to use it.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_JobSystem_JobHandle_Destroy()` to free it when you're done using it.
 JOLT_API JPH_JobSystem_JobHandle *JPH_JobSystemThreadPool_CreateJob(JPH_JobSystemThreadPool *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, const unsigned int *inNumDependencies);
+
+/// Generated from method `JPH::JobSystemThreadPool::CreateJobs`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inJobFunction` can not be null. It is a single object.
+/// Parameter `inNumDependencies` has a default argument: `0`, pass a null pointer to use it.
+JOLT_API void JPH_JobSystemThreadPool_CreateJobs(JPH_JobSystemThreadPool *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, JPH_JobSystem_JobHandle *outJobs, unsigned int inNumJobs, const unsigned int *inNumDependencies);
 
 /// Change the max concurrency after initialization
 /// Generated from method `JPH::JobSystemThreadPool::SetNumThreads`.

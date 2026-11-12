@@ -935,6 +935,140 @@ public static partial class JPH
 
             /// Generated from constructor `JPH::DebugRenderer::LOD::LOD`.
             public Const_LOD(LOD _other) : this((Const_LOD)_other) {}
+
+            /// Generated from method `JPH::DebugRenderer::LOD::operator new`.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(UIntPtr inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_LOD_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_LOD_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_DebugRenderer_LOD_size_t(UIntPtr inCount);
+                return __Jolt_new_JPH_DebugRenderer_LOD_size_t(inCount);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::LOD::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_LOD_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_LOD_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_DebugRenderer_LOD_void_ptr(void *inPointer);
+                __Jolt_delete_JPH_DebugRenderer_LOD_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::LOD::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, UIntPtr inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_size_t(void *inPointer, UIntPtr inSize);
+                __Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_size_t(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::LOD::operator new[]`.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(UIntPtr inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_LOD_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_LOD_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_DebugRenderer_LOD_size_t(UIntPtr inCount);
+                return __Jolt_new_array_JPH_DebugRenderer_LOD_size_t(inCount);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::LOD::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr(void *inPointer);
+                __Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::LOD::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_size_t(void *inPointer, UIntPtr inSize);
+                __Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_size_t(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::LOD::operator new`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(UIntPtr inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_LOD_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_LOD_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_DebugRenderer_LOD_size_t_void_ptr(UIntPtr inCount, void *inPointer);
+                return __Jolt_new_JPH_DebugRenderer_LOD_size_t_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::LOD::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_void_ptr(inPointer, inPlace);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::LOD::operator new[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_LOD_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_LOD_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_DebugRenderer_LOD_size_t_void_ptr(UIntPtr inCount, void *inPointer);
+                return __Jolt_new_array_JPH_DebugRenderer_LOD_size_t_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::LOD::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_void_ptr(inPointer, inPlace);
+            }
         }
 
         /// A single level of detail
@@ -1145,6 +1279,140 @@ public static partial class JPH
                 #endif
                 extern static JPH.DebugRenderer.Triangle._Underlying *__JPH_DebugRenderer_Triangle_Construct_6(JPH.Vec3._Underlying *inV1, JPH.Vec3._Underlying *inV2, JPH.Vec3._Underlying *inV3, JPH.Color._Underlying *inColor, JPH.Vec3._Underlying *inUVOrigin, JPH.Vec3._Underlying *inUVDirection);
                 _UnderlyingPtr = __JPH_DebugRenderer_Triangle_Construct_6(inV1._UnderlyingPtr, inV2._UnderlyingPtr, inV3._UnderlyingPtr, inColor._UnderlyingPtr, inUVOrigin._UnderlyingPtr, inUVDirection._UnderlyingPtr);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Triangle::operator new`.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(UIntPtr inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_Triangle_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_Triangle_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_DebugRenderer_Triangle_size_t(UIntPtr inCount);
+                return __Jolt_new_JPH_DebugRenderer_Triangle_size_t(inCount);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Triangle::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr(void *inPointer);
+                __Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Triangle::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, UIntPtr inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_size_t(void *inPointer, UIntPtr inSize);
+                __Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_size_t(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Triangle::operator new[]`.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(UIntPtr inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_Triangle_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_Triangle_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_DebugRenderer_Triangle_size_t(UIntPtr inCount);
+                return __Jolt_new_array_JPH_DebugRenderer_Triangle_size_t(inCount);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Triangle::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr(void *inPointer);
+                __Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Triangle::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_size_t(void *inPointer, UIntPtr inSize);
+                __Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_size_t(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Triangle::operator new`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(UIntPtr inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_Triangle_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_Triangle_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_DebugRenderer_Triangle_size_t_void_ptr(UIntPtr inCount, void *inPointer);
+                return __Jolt_new_JPH_DebugRenderer_Triangle_size_t_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Triangle::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_void_ptr(inPointer, inPlace);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Triangle::operator new[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_Triangle_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_Triangle_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_DebugRenderer_Triangle_size_t_void_ptr(UIntPtr inCount, void *inPointer);
+                return __Jolt_new_array_JPH_DebugRenderer_Triangle_size_t_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Triangle::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_void_ptr(inPointer, inPlace);
             }
         }
 
@@ -1404,6 +1672,140 @@ public static partial class JPH
 
             /// Generated from constructor `JPH::DebugRenderer::Vertex::Vertex`.
             public Const_Vertex(Vertex _other) : this((Const_Vertex)_other) {}
+
+            /// Generated from method `JPH::DebugRenderer::Vertex::operator new`.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(UIntPtr inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_Vertex_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_Vertex_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_DebugRenderer_Vertex_size_t(UIntPtr inCount);
+                return __Jolt_new_JPH_DebugRenderer_Vertex_size_t(inCount);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Vertex::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr(void *inPointer);
+                __Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Vertex::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, UIntPtr inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_size_t(void *inPointer, UIntPtr inSize);
+                __Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_size_t(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Vertex::operator new[]`.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(UIntPtr inCount)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_Vertex_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_Vertex_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_DebugRenderer_Vertex_size_t(UIntPtr inCount);
+                return __Jolt_new_array_JPH_DebugRenderer_Vertex_size_t(inCount);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Vertex::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr(void *inPointer);
+                __Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr(inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Vertex::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_size_t(void *inPointer, UIntPtr inSize);
+                __Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_size_t(inPointer, inSize);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Vertex::operator new`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *New(UIntPtr inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_Vertex_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_DebugRenderer_Vertex_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_JPH_DebugRenderer_Vertex_size_t_void_ptr(UIntPtr inCount, void *inPointer);
+                return __Jolt_new_JPH_DebugRenderer_Vertex_size_t_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Vertex::operator delete`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void Delete(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_void_ptr(inPointer, inPlace);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Vertex::operator new[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Returns a mutable pointer.
+            public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_Vertex_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_DebugRenderer_Vertex_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void *__Jolt_new_array_JPH_DebugRenderer_Vertex_size_t_void_ptr(UIntPtr inCount, void *inPointer);
+                return __Jolt_new_array_JPH_DebugRenderer_Vertex_size_t_void_ptr(inCount, inPointer);
+            }
+
+            /// Generated from method `JPH::DebugRenderer::Vertex::operator delete[]`.
+            /// Parameter `inPointer` is a mutable pointer.
+            /// Parameter `inPlace` is a mutable pointer.
+            public static unsafe void DeleteArray(void *inPointer, void *inPlace)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static void __Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_void_ptr(void *inPointer, void *inPlace);
+                __Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_void_ptr(inPointer, inPlace);
+            }
         }
 
         /// Vertex format used by the triangle renderer

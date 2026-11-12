@@ -410,6 +410,19 @@ public static partial class JPH
             return new(__JPH_PhysicsSystem_GetGravity(_UnderlyingPtr), is_owning: true);
         }
 
+        /// Return the BroadPhaseLayerInterface that this class has been initialized with
+        /// Generated from method `JPH::PhysicsSystem::GetBroadPhaseLayerInterface`.
+        public unsafe JPH.Const_BroadPhaseLayerInterface GetBroadPhaseLayerInterface()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSystem_GetBroadPhaseLayerInterface", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSystem_GetBroadPhaseLayerInterface", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_BroadPhaseLayerInterface._Underlying *__JPH_PhysicsSystem_GetBroadPhaseLayerInterface(_Underlying *_this);
+            return new(__JPH_PhysicsSystem_GetBroadPhaseLayerInterface(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Broadphase layer filter that decides if two objects can collide, this was passed to the Init function.
         /// Generated from method `JPH::PhysicsSystem::GetObjectVsBroadPhaseLayerFilter`.
         public unsafe JPH.Const_ObjectVsBroadPhaseLayerFilter GetObjectVsBroadPhaseLayerFilter()

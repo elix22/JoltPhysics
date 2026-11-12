@@ -211,6 +211,19 @@ JPH_JobSystem_JobHandle *JPH_JobSystemSingleThreaded_CreateJob(JPH_JobSystemSing
     ));
 }
 
+void JPH_JobSystemSingleThreaded_CreateJobs(JPH_JobSystemSingleThreaded *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, JPH_JobSystem_JobHandle *outJobs, unsigned int inNumJobs, const unsigned int *inNumDependencies)
+{
+    using namespace JPH;
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::JobSystemSingleThreaded *)(_this)).CreateJobs(
+        inName,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        ((inJobFunction ? void() : MRBINDC_THROW("Parameter `inJobFunction` can not be null.", void)), *(const std::function<void(void)> *)(inJobFunction)),
+        ((JPH::JobSystem::JobHandle *)outJobs),
+        inNumJobs,
+        (inNumDependencies ? *inNumDependencies : static_cast<unsigned int>(0))
+    );
+}
+
 JPH_JobSystem_Barrier *JPH_JobSystemSingleThreaded_CreateBarrier(JPH_JobSystemSingleThreaded *_this)
 {
     return (JPH_JobSystem_Barrier *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::JobSystemSingleThreaded *)(_this)).CreateBarrier());

@@ -420,6 +420,22 @@ public static partial class JPH
             extern static void __JPH_SoftBodyVertex_ResetCollision(_Underlying *_this);
             __JPH_SoftBodyVertex_ResetCollision(_UnderlyingPtr);
         }
+
+        /// Mark this vertex as being in contact with inBodyID
+        /// Generated from method `JPH::SoftBodyVertex::MarkCCDContact`.
+        public unsafe void MarkCCDContact(in JPH.BodyID inBodyID, JPH.Const_Plane inContactPlane)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyVertex_MarkCCDContact", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyVertex_MarkCCDContact", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SoftBodyVertex_MarkCCDContact(_Underlying *_this, JPH.BodyID *inBodyID, JPH.Const_Plane._Underlying *inContactPlane);
+            fixed (JPH.BodyID *__ptr_inBodyID = &inBodyID)
+            {
+                __JPH_SoftBodyVertex_MarkCCDContact(_UnderlyingPtr, __ptr_inBodyID, inContactPlane._UnderlyingPtr);
+            }
+        }
     }
 
     /// This is used for optional parameters of class `SoftBodyVertex` with default arguments.

@@ -404,6 +404,11 @@ JPH_Vec3 *JPH_PhysicsSystem_GetGravity(const JPH_PhysicsSystem *_this)
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSystem *)(_this)).GetGravity());
 }
 
+const JPH_BroadPhaseLayerInterface *JPH_PhysicsSystem_GetBroadPhaseLayerInterface(const JPH_PhysicsSystem *_this)
+{
+    return (const JPH_BroadPhaseLayerInterface *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSystem *)(_this)).GetBroadPhaseLayerInterface());
+}
+
 const JPH_ObjectVsBroadPhaseLayerFilter *JPH_PhysicsSystem_GetObjectVsBroadPhaseLayerFilter(const JPH_PhysicsSystem *_this)
 {
     return (const JPH_ObjectVsBroadPhaseLayerFilter *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSystem *)(_this)).GetObjectVsBroadPhaseLayerFilter());

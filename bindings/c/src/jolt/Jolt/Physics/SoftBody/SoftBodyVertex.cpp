@@ -4,6 +4,7 @@
 
 #include <Jolt/Geometry/Plane.h>
 #include <Jolt/Math/Vec3.h>
+#include <Jolt/Physics/Body/BodyID.h>
 #include <Jolt/Physics/SoftBody/SoftBodyVertex.h>
 #include <__mrbind_c_details.h>
 
@@ -184,5 +185,13 @@ JPH_SoftBodyVertex *JPH_SoftBodyVertex_AssignFromAnother(JPH_SoftBodyVertex *_th
 void JPH_SoftBodyVertex_ResetCollision(JPH_SoftBodyVertex *_this)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodyVertex *)(_this)).ResetCollision();
+}
+
+void JPH_SoftBodyVertex_MarkCCDContact(JPH_SoftBodyVertex *_this, const JPH_BodyID *inBodyID, const JPH_Plane *inContactPlane)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodyVertex *)(_this)).MarkCCDContact(
+        ((inBodyID ? void() : MRBINDC_THROW("Parameter `inBodyID` can not be null.", void)), *(const JPH::BodyID *)(inBodyID)),
+        ((inContactPlane ? void() : MRBINDC_THROW("Parameter `inContactPlane` can not be null.", void)), *(const JPH::Plane *)(inContactPlane))
+    );
 }
 

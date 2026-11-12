@@ -645,6 +645,17 @@ JOLT_API void JPH_Character_SetUp(JPH_Character *_this, const JPH_Vec3 *inUp);
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_Character_GetUp(const JPH_Character *_this);
 
+// Every contact behind this plane can support the character
+/// Generated from method `JPH::Character::GetSupportingVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_Plane *JPH_Character_GetSupportingVolume(const JPH_Character *_this);
+
+/// Generated from method `JPH::Character::SetSupportingVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPlane` can not be null. It is a single object.
+JOLT_API void JPH_Character_SetSupportingVolume(JPH_Character *_this, const JPH_Plane *inPlane);
+
 /// Check if the normal of the ground surface is too steep to walk on
 /// Generated from method `JPH::Character::IsSlopeTooSteep`.
 /// Parameter `_this` can not be null. It is a single object.

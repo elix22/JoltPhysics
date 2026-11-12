@@ -586,9 +586,25 @@ JPH_BodyCreationSettings *JPH_Body_GetBodyCreationSettings(const JPH_Body *_this
     return (JPH_BodyCreationSettings *)new JPH::BodyCreationSettings(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetBodyCreationSettings());
 }
 
+void JPH_Body_ApplyBodyCreationSettings(JPH_Body *_this, const JPH_BodyCreationSettings *inBodyCreationSettings, const JPH_BroadPhaseLayerInterface *inBPLInterface)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).ApplyBodyCreationSettings(
+        ((inBodyCreationSettings ? void() : MRBINDC_THROW("Parameter `inBodyCreationSettings` can not be null.", void)), *(const JPH::BodyCreationSettings *)(inBodyCreationSettings)),
+        ((inBPLInterface ? void() : MRBINDC_THROW("Parameter `inBPLInterface` can not be null.", void)), *(const JPH::BroadPhaseLayerInterface *)(inBPLInterface))
+    );
+}
+
 JPH_SoftBodyCreationSettings *JPH_Body_GetSoftBodyCreationSettings(const JPH_Body *_this)
 {
     return (JPH_SoftBodyCreationSettings *)new JPH::SoftBodyCreationSettings(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Body *)(_this)).GetSoftBodyCreationSettings());
+}
+
+void JPH_Body_ApplySoftBodyCreationSettings(JPH_Body *_this, const JPH_SoftBodyCreationSettings *inSoftBodyCreationSettings, const JPH_BroadPhaseLayerInterface *inBPLInterface)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).ApplySoftBodyCreationSettings(
+        ((inSoftBodyCreationSettings ? void() : MRBINDC_THROW("Parameter `inSoftBodyCreationSettings` can not be null.", void)), *(const JPH::SoftBodyCreationSettings *)(inSoftBodyCreationSettings)),
+        ((inBPLInterface ? void() : MRBINDC_THROW("Parameter `inBPLInterface` can not be null.", void)), *(const JPH::BroadPhaseLayerInterface *)(inBPLInterface))
+    );
 }
 
 bool JPH_Body_sFindCollidingPairsCanCollide(const JPH_Body *inBody1, const JPH_Body *inBody2)
@@ -624,6 +640,14 @@ void JPH_Body_SubRotationStep(JPH_Body *_this, const JPH_Vec3 *inAngularVelocity
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).SubRotationStep(
         ((inAngularVelocityTimesDeltaTime ? void() : MRBINDC_THROW("Parameter `inAngularVelocityTimesDeltaTime` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inAngularVelocityTimesDeltaTime))
+    );
+}
+
+void JPH_Body_SetObjectLayerInternal(JPH_Body *_this, unsigned short inLayer, const JPH_BroadPhaseLayerInterface *inBPLInterface)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Body *)(_this)).SetObjectLayerInternal(
+        inLayer,
+        ((inBPLInterface ? void() : MRBINDC_THROW("Parameter `inBPLInterface` can not be null.", void)), *(const JPH::BroadPhaseLayerInterface *)(inBPLInterface))
     );
 }
 

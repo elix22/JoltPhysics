@@ -286,7 +286,7 @@ public static partial class JPH
 
         /// Create a tapered cylinder centered around the origin with bottom at (0, -inHalfHeightOfTaperedCylinder, 0) with radius inBottomRadius and top at (0, inHalfHeightOfTaperedCylinder, 0) with radius inTopRadius
         /// Generated from constructor `JPH::TaperedCylinderShapeSettings::TaperedCylinderShapeSettings`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe Const_TaperedCylinderShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -780,7 +780,7 @@ public static partial class JPH
 
         /// Create a tapered cylinder centered around the origin with bottom at (0, -inHalfHeightOfTaperedCylinder, 0) with radius inBottomRadius and top at (0, inHalfHeightOfTaperedCylinder, 0) with radius inTopRadius
         /// Generated from constructor `JPH::TaperedCylinderShapeSettings::TaperedCylinderShapeSettings`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe TaperedCylinderShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__

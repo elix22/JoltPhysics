@@ -524,6 +524,11 @@ JPH_Vec3 *Jolt_div_JPH_Vec3(const JPH_Vec3 *_this, const JPH_Vec3 *inV2)
     ));
 }
 
+JPH_Vec3 *JPH_Vec3_Swizzle_1_2_0(const JPH_Vec3 *_this)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).Swizzle<1, 2, 0>());
+}
+
 JPH_Vec3 *JPH_Vec3_Swizzle_1_2_2(const JPH_Vec3 *_this)
 {
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).Swizzle<1, 2, 2>());
@@ -542,11 +547,6 @@ JPH_Vec3 *JPH_Vec3_Swizzle_2_0_1(const JPH_Vec3 *_this)
 JPH_Vec3 *JPH_Vec3_Swizzle_0_2_1(const JPH_Vec3 *_this)
 {
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).Swizzle<0, 2, 1>());
-}
-
-JPH_Vec3 *JPH_Vec3_Swizzle_1_2_0(const JPH_Vec3 *_this)
-{
-    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).Swizzle<1, 2, 0>());
 }
 
 JPH_Vec3 *JPH_Vec3_Swizzle_2_1_0(const JPH_Vec3 *_this)
@@ -594,9 +594,26 @@ JPH_Vec3 *JPH_Vec3_Reciprocal(const JPH_Vec3 *_this)
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).Reciprocal());
 }
 
+JPH_Vec3 *JPH_Vec3_sDifferenceOfProducts(const JPH_Vec3 *inA, const JPH_Vec3 *inB, const JPH_Vec3 *inC, const JPH_Vec3 *inD)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(JPH::Vec3::sDifferenceOfProducts(
+        ((inA ? void() : MRBINDC_THROW("Parameter `inA` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inA)),
+        ((inB ? void() : MRBINDC_THROW("Parameter `inB` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inB)),
+        ((inC ? void() : MRBINDC_THROW("Parameter `inC` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inC)),
+        ((inD ? void() : MRBINDC_THROW("Parameter `inD` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inD))
+    ));
+}
+
 JPH_Vec3 *JPH_Vec3_Cross(const JPH_Vec3 *_this, const JPH_Vec3 *inV2)
 {
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).Cross(
+        ((inV2 ? void() : MRBINDC_THROW("Parameter `inV2` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV2))
+    ));
+}
+
+JPH_Vec3 *JPH_Vec3_CrossPrecise(const JPH_Vec3 *_this, const JPH_Vec3 *inV2)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).CrossPrecise(
         ((inV2 ? void() : MRBINDC_THROW("Parameter `inV2` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inV2))
     ));
 }
@@ -669,6 +686,11 @@ float JPH_Vec3_ReduceMin(const JPH_Vec3 *_this)
 float JPH_Vec3_ReduceMax(const JPH_Vec3 *_this)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).ReduceMax();
+}
+
+float JPH_Vec3_ReduceSum(const JPH_Vec3 *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Vec3 *)(_this)).ReduceSum();
 }
 
 JPH_Vec3 *JPH_Vec3_Sqrt(const JPH_Vec3 *_this)

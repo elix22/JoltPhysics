@@ -337,6 +337,12 @@ JOLT_API void JPH_PhysicsSystem_SetGravity(JPH_PhysicsSystem *_this, const JPH_V
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_PhysicsSystem_GetGravity(const JPH_PhysicsSystem *_this);
 
+/// Return the BroadPhaseLayerInterface that this class has been initialized with
+/// Generated from method `JPH::PhysicsSystem::GetBroadPhaseLayerInterface`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_BroadPhaseLayerInterface *JPH_PhysicsSystem_GetBroadPhaseLayerInterface(const JPH_PhysicsSystem *_this);
+
 /// Broadphase layer filter that decides if two objects can collide, this was passed to the Init function.
 /// Generated from method `JPH::PhysicsSystem::GetObjectVsBroadPhaseLayerFilter`.
 /// Parameter `_this` can not be null. It is a single object.

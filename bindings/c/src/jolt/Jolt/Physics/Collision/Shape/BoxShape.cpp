@@ -235,7 +235,7 @@ JPH_BoxShapeSettings *JPH_BoxShapeSettings_Construct(const JPH_Vec3 *inHalfExten
     using namespace JPH;
     return (JPH_BoxShapeSettings *)new JPH::BoxShapeSettings(JPH::BoxShapeSettings(
         ((inHalfExtent ? void() : MRBINDC_THROW("Parameter `inHalfExtent` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inHalfExtent)),
-        (inConvexRadius ? *inConvexRadius : static_cast<float>(cDefaultConvexRadius)),
+        (inConvexRadius ? *inConvexRadius : static_cast<float>(JPH::cDefaultConvexRadius)),
         ((const JPH::PhysicsMaterial *)inMaterial)
     ));
 }
@@ -532,7 +532,7 @@ JPH_BoxShape *JPH_BoxShape_Construct_3(const JPH_Vec3 *inHalfExtent, const float
     using namespace JPH;
     return (JPH_BoxShape *)new JPH::BoxShape(JPH::BoxShape(
         ((inHalfExtent ? void() : MRBINDC_THROW("Parameter `inHalfExtent` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inHalfExtent)),
-        (inConvexRadius ? *inConvexRadius : static_cast<float>(cDefaultConvexRadius)),
+        (inConvexRadius ? *inConvexRadius : static_cast<float>(JPH::cDefaultConvexRadius)),
         ((const JPH::PhysicsMaterial *)inMaterial)
     ));
 }

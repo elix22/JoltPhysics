@@ -10,6 +10,7 @@
 extern "C" {
 #endif
 
+typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_Plane JPH_Plane; // Defined in `#include <jolt/Jolt/Geometry/Plane.h>`.
 typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
 
@@ -220,6 +221,13 @@ JOLT_API JPH_SoftBodyVertex *JPH_SoftBodyVertex_AssignFromAnother(JPH_SoftBodyVe
 /// Generated from method `JPH::SoftBodyVertex::ResetCollision`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API void JPH_SoftBodyVertex_ResetCollision(JPH_SoftBodyVertex *_this);
+
+/// Mark this vertex as being in contact with inBodyID
+/// Generated from method `JPH::SoftBodyVertex::MarkCCDContact`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyID` can not be null. It is a single object.
+/// Parameter `inContactPlane` can not be null. It is a single object.
+JOLT_API void JPH_SoftBodyVertex_MarkCCDContact(JPH_SoftBodyVertex *_this, const JPH_BodyID *inBodyID, const JPH_Plane *inContactPlane);
 
 #ifdef __cplusplus
 } // extern "C"

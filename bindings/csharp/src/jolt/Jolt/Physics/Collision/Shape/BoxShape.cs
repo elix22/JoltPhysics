@@ -263,7 +263,7 @@ public static partial class JPH
         /// Create a box with half edge length inHalfExtent and convex radius inConvexRadius.
         /// (internally the convex radius will be subtracted from the half extent so the total box will not grow with the convex radius).
         /// Generated from constructor `JPH::BoxShapeSettings::BoxShapeSettings`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe Const_BoxShapeSettings(JPH.Const_Vec3 inHalfExtent, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -734,7 +734,7 @@ public static partial class JPH
         /// Create a box with half edge length inHalfExtent and convex radius inConvexRadius.
         /// (internally the convex radius will be subtracted from the half extent so the total box will not grow with the convex radius).
         /// Generated from constructor `JPH::BoxShapeSettings::BoxShapeSettings`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe BoxShapeSettings(JPH.Const_Vec3 inHalfExtent, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -1050,7 +1050,7 @@ public static partial class JPH
         /// Create a box with half edge length inHalfExtent and convex radius inConvexRadius.
         /// (internally the convex radius will be subtracted from the half extent so the total box will not grow with the convex radius).
         /// Generated from constructor `JPH::BoxShape::BoxShape`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe Const_BoxShape(JPH.Const_Vec3 inHalfExtent, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -1797,7 +1797,7 @@ public static partial class JPH
         /// Create a box with half edge length inHalfExtent and convex radius inConvexRadius.
         /// (internally the convex radius will be subtracted from the half extent so the total box will not grow with the convex radius).
         /// Generated from constructor `JPH::BoxShape::BoxShape`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe BoxShape(JPH.Const_Vec3 inHalfExtent, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__

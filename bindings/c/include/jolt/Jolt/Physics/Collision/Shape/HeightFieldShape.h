@@ -176,7 +176,7 @@ JOLT_API void JPH_HeightFieldShapeSettings_Set_mMaterialsCapacity(JPH_HeightFiel
 JOLT_API unsigned int *JPH_HeightFieldShapeSettings_GetMutable_mMaterialsCapacity(JPH_HeightFieldShapeSettings *_this);
 
 /// The heightfield is divided in blocks of mBlockSize * mBlockSize * 2 triangles and the acceleration structure culls blocks only,
-/// bigger block sizes reduce memory consumption but also reduce query performance. Sensible values are [2, 8], does not need to be
+/// bigger block sizes reduce memory consumption but also reduce query performance. Valid values are [2, 8], does not need to be
 /// a power of 2. Note that at run-time we'll perform one more grid subdivision, so the effective block size is half of what is provided here.
 /// Returns a pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mBlockSize`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -185,7 +185,7 @@ JOLT_API unsigned int *JPH_HeightFieldShapeSettings_GetMutable_mMaterialsCapacit
 JOLT_API const unsigned int *JPH_HeightFieldShapeSettings_Get_mBlockSize(const JPH_HeightFieldShapeSettings *_this);
 
 /// The heightfield is divided in blocks of mBlockSize * mBlockSize * 2 triangles and the acceleration structure culls blocks only,
-/// bigger block sizes reduce memory consumption but also reduce query performance. Sensible values are [2, 8], does not need to be
+/// bigger block sizes reduce memory consumption but also reduce query performance. Valid values are [2, 8], does not need to be
 /// a power of 2. Note that at run-time we'll perform one more grid subdivision, so the effective block size is half of what is provided here.
 /// Modifies a member variable of class `JPH::HeightFieldShapeSettings` named `mBlockSize`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -194,7 +194,7 @@ JOLT_API const unsigned int *JPH_HeightFieldShapeSettings_Get_mBlockSize(const J
 JOLT_API void JPH_HeightFieldShapeSettings_Set_mBlockSize(JPH_HeightFieldShapeSettings *_this, unsigned int value);
 
 /// The heightfield is divided in blocks of mBlockSize * mBlockSize * 2 triangles and the acceleration structure culls blocks only,
-/// bigger block sizes reduce memory consumption but also reduce query performance. Sensible values are [2, 8], does not need to be
+/// bigger block sizes reduce memory consumption but also reduce query performance. Valid values are [2, 8], does not need to be
 /// a power of 2. Note that at run-time we'll perform one more grid subdivision, so the effective block size is half of what is provided here.
 /// Returns a mutable pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mBlockSize`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -202,8 +202,8 @@ JOLT_API void JPH_HeightFieldShapeSettings_Set_mBlockSize(JPH_HeightFieldShapeSe
 /// The reference to this object might be preserved as the return value.
 JOLT_API unsigned int *JPH_HeightFieldShapeSettings_GetMutable_mBlockSize(JPH_HeightFieldShapeSettings *_this);
 
-/// How many bits per sample to use to compress the height field. Can be in the range [1, 8].
-/// Note that each sample is compressed relative to the min/max value of its block of mBlockSize * mBlockSize pixels so the effective precision is higher.
+/// How many bits per sample to use to compress the height field. Can be in the range [1, 16].
+/// Note that each sample is compressed relative to the min/max value of its block of mBlockSize * mBlockSize samples so the effective precision is higher.
 /// Also note that increasing mBlockSize saves more memory than reducing the amount of bits per sample.
 /// Returns a pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mBitsPerSample`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -211,8 +211,8 @@ JOLT_API unsigned int *JPH_HeightFieldShapeSettings_GetMutable_mBlockSize(JPH_He
 /// The reference to this object might be preserved as the return value.
 JOLT_API const unsigned int *JPH_HeightFieldShapeSettings_Get_mBitsPerSample(const JPH_HeightFieldShapeSettings *_this);
 
-/// How many bits per sample to use to compress the height field. Can be in the range [1, 8].
-/// Note that each sample is compressed relative to the min/max value of its block of mBlockSize * mBlockSize pixels so the effective precision is higher.
+/// How many bits per sample to use to compress the height field. Can be in the range [1, 16].
+/// Note that each sample is compressed relative to the min/max value of its block of mBlockSize * mBlockSize samples so the effective precision is higher.
 /// Also note that increasing mBlockSize saves more memory than reducing the amount of bits per sample.
 /// Modifies a member variable of class `JPH::HeightFieldShapeSettings` named `mBitsPerSample`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -220,8 +220,8 @@ JOLT_API const unsigned int *JPH_HeightFieldShapeSettings_Get_mBitsPerSample(con
 /// When this function is called, this object will drop object references it held previously in `mBitsPerSample`.
 JOLT_API void JPH_HeightFieldShapeSettings_Set_mBitsPerSample(JPH_HeightFieldShapeSettings *_this, unsigned int value);
 
-/// How many bits per sample to use to compress the height field. Can be in the range [1, 8].
-/// Note that each sample is compressed relative to the min/max value of its block of mBlockSize * mBlockSize pixels so the effective precision is higher.
+/// How many bits per sample to use to compress the height field. Can be in the range [1, 16].
+/// Note that each sample is compressed relative to the min/max value of its block of mBlockSize * mBlockSize samples so the effective precision is higher.
 /// Also note that increasing mBlockSize saves more memory than reducing the amount of bits per sample.
 /// Returns a mutable pointer to a member variable of class `JPH::HeightFieldShapeSettings` named `mBitsPerSample`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -450,7 +450,7 @@ JOLT_API void JPH_HeightFieldShapeSettings_DetermineMinAndMaxSample(const JPH_He
 
 /// Given mBlockSize, mSampleCount and mHeightSamples, calculate the amount of bits needed to stay below absolute error inMaxError
 /// @param inMaxError Maximum allowed error in mHeightSamples after compression (note that this does not take mScale.Y into account)
-/// @return Needed bits per sample in the range [1, 8].
+/// @return Needed bits per sample in the range [1, 16].
 /// Generated from method `JPH::HeightFieldShapeSettings::CalculateBitsPerSampleForError`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API unsigned int JPH_HeightFieldShapeSettings_CalculateBitsPerSampleForError(const JPH_HeightFieldShapeSettings *_this, float inMaxError);

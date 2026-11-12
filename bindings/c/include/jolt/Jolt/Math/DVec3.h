@@ -383,7 +383,7 @@ JOLT_API bool JPH_DVec3_IsClose(const JPH_DVec3 *_this, const JPH_DVec3 *inV2, c
 /// Parameter `inMaxDistSq` has a default argument: `9.9999999999999992e-25`, pass a null pointer to use it.
 JOLT_API bool JPH_DVec3_IsNearZero(const JPH_DVec3 *_this, const double *inMaxDistSq);
 
-/// Test if vector is normalized
+/// Test if length^2 of this vector is within the range [1 - inTolerance, 1 + inTolerance]
 /// Generated from method `JPH::DVec3::IsNormalized`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inTolerance` has a default argument: `9.9999999999999998e-13`, pass a null pointer to use it.

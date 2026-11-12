@@ -211,7 +211,7 @@ public static partial class JPH
         }
 
         /// The heightfield is divided in blocks of mBlockSize * mBlockSize * 2 triangles and the acceleration structure culls blocks only,
-        /// bigger block sizes reduce memory consumption but also reduce query performance. Sensible values are [2, 8], does not need to be
+        /// bigger block sizes reduce memory consumption but also reduce query performance. Valid values are [2, 8], does not need to be
         /// a power of 2. Note that at run-time we'll perform one more grid subdivision, so the effective block size is half of what is provided here.
         public unsafe uint mBlockSize
         {
@@ -227,8 +227,8 @@ public static partial class JPH
             }
         }
 
-        /// How many bits per sample to use to compress the height field. Can be in the range [1, 8].
-        /// Note that each sample is compressed relative to the min/max value of its block of mBlockSize * mBlockSize pixels so the effective precision is higher.
+        /// How many bits per sample to use to compress the height field. Can be in the range [1, 16].
+        /// Note that each sample is compressed relative to the min/max value of its block of mBlockSize * mBlockSize samples so the effective precision is higher.
         /// Also note that increasing mBlockSize saves more memory than reducing the amount of bits per sample.
         public unsafe uint mBitsPerSample
         {
@@ -530,7 +530,7 @@ public static partial class JPH
 
         /// Given mBlockSize, mSampleCount and mHeightSamples, calculate the amount of bits needed to stay below absolute error inMaxError
         /// @param inMaxError Maximum allowed error in mHeightSamples after compression (note that this does not take mScale.Y into account)
-        /// @return Needed bits per sample in the range [1, 8].
+        /// @return Needed bits per sample in the range [1, 16].
         /// Generated from method `JPH::HeightFieldShapeSettings::CalculateBitsPerSampleForError`.
         public unsafe uint CalculateBitsPerSampleForError(float inMaxError)
         {
@@ -800,7 +800,7 @@ public static partial class JPH
         }
 
         /// The heightfield is divided in blocks of mBlockSize * mBlockSize * 2 triangles and the acceleration structure culls blocks only,
-        /// bigger block sizes reduce memory consumption but also reduce query performance. Sensible values are [2, 8], does not need to be
+        /// bigger block sizes reduce memory consumption but also reduce query performance. Valid values are [2, 8], does not need to be
         /// a power of 2. Note that at run-time we'll perform one more grid subdivision, so the effective block size is half of what is provided here.
         public new unsafe ref uint mBlockSize
         {
@@ -816,8 +816,8 @@ public static partial class JPH
             }
         }
 
-        /// How many bits per sample to use to compress the height field. Can be in the range [1, 8].
-        /// Note that each sample is compressed relative to the min/max value of its block of mBlockSize * mBlockSize pixels so the effective precision is higher.
+        /// How many bits per sample to use to compress the height field. Can be in the range [1, 16].
+        /// Note that each sample is compressed relative to the min/max value of its block of mBlockSize * mBlockSize samples so the effective precision is higher.
         /// Also note that increasing mBlockSize saves more memory than reducing the amount of bits per sample.
         public new unsafe ref uint mBitsPerSample
         {

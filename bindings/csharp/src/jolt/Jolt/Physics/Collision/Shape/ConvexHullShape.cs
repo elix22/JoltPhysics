@@ -294,7 +294,7 @@ public static partial class JPH
         /// Create a convex hull from inPoints and maximum convex radius inMaxConvexRadius, the radius is automatically lowered if the hull requires it.
         /// (internally this will be subtracted so the total size will not grow with the convex radius).
         /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
-        /// Parameter `inMaxConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inMaxConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe Const_ConvexHullShapeSettings(JPH.Const_Vec3? inPoints, int inNumPoints, float? inMaxConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -321,7 +321,7 @@ public static partial class JPH
         }
 
         /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe Const_ConvexHullShapeSettings(JPH.Const_Array_JPHVec3 inPoints, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -823,7 +823,7 @@ public static partial class JPH
         /// Create a convex hull from inPoints and maximum convex radius inMaxConvexRadius, the radius is automatically lowered if the hull requires it.
         /// (internally this will be subtracted so the total size will not grow with the convex radius).
         /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
-        /// Parameter `inMaxConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inMaxConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe ConvexHullShapeSettings(JPH.Const_Vec3? inPoints, int inNumPoints, float? inMaxConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -850,7 +850,7 @@ public static partial class JPH
         }
 
         /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe ConvexHullShapeSettings(JPH.Const_Array_JPHVec3 inPoints, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__

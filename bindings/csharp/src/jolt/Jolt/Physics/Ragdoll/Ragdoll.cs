@@ -796,7 +796,7 @@ public static partial class JPH
         ///   Direct: (non-virtual)
         ///     `JPH::BodyCreationSettings`
         /// This is the const half of the class.
-        public class Const_Part : JPH.Object<Const_Part>, System.IDisposable
+        public class Const_Part : JPH.Object<Const_Part>, System.IDisposable, System.IEquatable<JPH.Const_BodyCreationSettings>
         {
             internal struct _Underlying {} // Represents the underlying C++ type.
 
@@ -1418,6 +1418,24 @@ public static partial class JPH
                 __Jolt_delete_array_JPH_RagdollSettings_Part_void_ptr_void_ptr(inPointer, inPlace);
             }
 
+            /// Test if two BodyCreationSettings are equal
+            /// Generated from method `JPH::RagdollSettings::Part::operator==`.
+            public static unsafe bool operator==(JPH.RagdollSettings.Const_Part _this, JPH.Const_BodyCreationSettings inRHS)
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_equal_JPH_RagdollSettings_Part_JPH_BodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_equal_JPH_RagdollSettings_Part_JPH_BodyCreationSettings", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static byte __Jolt_equal_JPH_RagdollSettings_Part_JPH_BodyCreationSettings(JPH.RagdollSettings.Const_Part._Underlying *_this, JPH.Const_BodyCreationSettings._Underlying *inRHS);
+                return __Jolt_equal_JPH_RagdollSettings_Part_JPH_BodyCreationSettings(_this._UnderlyingPtr, inRHS._UnderlyingPtr) != 0;
+            }
+
+            public static unsafe bool operator!=(JPH.RagdollSettings.Const_Part _this, JPH.Const_BodyCreationSettings inRHS)
+            {
+                return !(_this == inRHS);
+            }
+
             /// Access to the shape settings object. This contains serializable (non-runtime optimized) information about the Shape.
             /// Generated from method `JPH::RagdollSettings::Part::GetShapeSettings`.
             public unsafe JPH.Const_ShapeSettings? GetShapeSettings()
@@ -1457,6 +1475,24 @@ public static partial class JPH
                 #endif
                 extern static byte __JPH_RagdollSettings_Part_HasMassProperties(_Underlying *_this);
                 return __JPH_RagdollSettings_Part_HasMassProperties(_UnderlyingPtr) != 0;
+            }
+
+            // IEquatable:
+
+            public bool Equals(JPH.Const_BodyCreationSettings? inRHS)
+            {
+                if (inRHS is null)
+                    return false;
+                return this == inRHS;
+            }
+
+            public override bool Equals(object? other)
+            {
+                if (other is null)
+                    return false;
+                if (other is JPH.Const_BodyCreationSettings)
+                    return this == (JPH.Const_BodyCreationSettings)other;
+                return false;
             }
         }
 
@@ -3020,17 +3056,33 @@ public static partial class JPH
             __JPH_Ragdoll_DriveToPoseUsingKinematics_4(_UnderlyingPtr, inRootOffset._UnderlyingPtr, inJointMatrices is not null ? inJointMatrices._UnderlyingPtr : null, inDeltaTime, inLockBodies.HasValue ? &__deref_inLockBodies : null);
         }
 
-        /// Drive the ragdoll to a specific pose by activating the motors on each constraint
+        /// Drive the ragdoll to a specific pose by activating the motors on each constraint.
         /// Generated from method `JPH::Ragdoll::DriveToPoseUsingMotors`.
         public unsafe void DriveToPoseUsingMotors(JPH.Const_SkeletonPose inPose)
         {
             #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Ragdoll_DriveToPoseUsingMotors", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Ragdoll_DriveToPoseUsingMotors_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Ragdoll_DriveToPoseUsingMotors", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Ragdoll_DriveToPoseUsingMotors_1", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_Ragdoll_DriveToPoseUsingMotors(_Underlying *_this, JPH.Const_SkeletonPose._Underlying *inPose);
-            __JPH_Ragdoll_DriveToPoseUsingMotors(_UnderlyingPtr, inPose._UnderlyingPtr);
+            extern static void __JPH_Ragdoll_DriveToPoseUsingMotors_1(_Underlying *_this, JPH.Const_SkeletonPose._Underlying *inPose);
+            __JPH_Ragdoll_DriveToPoseUsingMotors_1(_UnderlyingPtr, inPose._UnderlyingPtr);
+        }
+
+        /// Drive the ragdoll to a specific pose by activating the motors on each constraint. Drives both to target position and velocity.
+        /// @param inPrevPose The previous pose of the ragdoll, used to calculate the target velocity for each motor
+        /// @param inPose The target pose of the ragdoll, used to calculate the target position for each motor
+        /// @param inDeltaTime The time between inPrevPose and inPose, used to calculate the target velocity for each motor
+        /// Generated from method `JPH::Ragdoll::DriveToPoseUsingMotors`.
+        public unsafe void DriveToPoseUsingMotors(JPH.Const_SkeletonPose inPrevPose, JPH.Const_SkeletonPose inPose, float inDeltaTime)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Ragdoll_DriveToPoseUsingMotors_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Ragdoll_DriveToPoseUsingMotors_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_Ragdoll_DriveToPoseUsingMotors_3(_Underlying *_this, JPH.Const_SkeletonPose._Underlying *inPrevPose, JPH.Const_SkeletonPose._Underlying *inPose, float inDeltaTime);
+            __JPH_Ragdoll_DriveToPoseUsingMotors_3(_UnderlyingPtr, inPrevPose._UnderlyingPtr, inPose._UnderlyingPtr, inDeltaTime);
         }
 
         /// Control the linear and velocity of all bodies in the ragdoll

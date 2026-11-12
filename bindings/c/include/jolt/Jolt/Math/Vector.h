@@ -112,6 +112,12 @@ JOLT_API bool Jolt_not_equal_JPH_Vector_2(const JPH_Vector_2 *_this, const JPH_V
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API bool JPH_Vector_2_IsZero(const JPH_Vector_2 *_this);
 
+/// Test if vector is near zero
+/// Generated from method `JPH::Vector<2>::IsNearZero`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inMaxDistSq` has a default argument: `9.99999996e-13f`, pass a null pointer to use it.
+JOLT_API bool JPH_Vector_2_IsNearZero(const JPH_Vector_2 *_this, const float *inMaxDistSq);
+
 /// Test if two vectors are close to each other
 /// Generated from method `JPH::Vector<2>::IsClose`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -193,7 +199,7 @@ JOLT_API float JPH_Vector_2_LengthSq(const JPH_Vector_2 *_this);
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_Vector_2_Length(const JPH_Vector_2 *_this);
 
-/// Check if vector is normalized
+/// Test if length^2 of this vector is within the range [1 - inTolerance, 1 + inTolerance]
 /// Generated from method `JPH::Vector<2>::IsNormalized`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inToleranceSq` has a default argument: `9.99999997e-7f`, pass a null pointer to use it.

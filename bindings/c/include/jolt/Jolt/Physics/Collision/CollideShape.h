@@ -473,6 +473,26 @@ JOLT_API void JPH_CollideShapeSettings_Set_mBackFaceMode(JPH_CollideShapeSetting
 /// The reference to this object might be preserved as the return value.
 JOLT_API JPH_EBackFaceMode *JPH_CollideShapeSettings_GetMutable_mBackFaceMode(JPH_CollideShapeSettings *_this);
 
+/// Max squared distance to consider a vertex to be the same as another vertex, used by the internal edge removal algorithm to determine if two edges are shared. (unit: meter^2)
+/// Returns a pointer to a member variable of class `JPH::CollideShapeSettings` named `mInternalEdgeRemovalVertexToleranceSq`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JPH_CollideShapeSettings_Get_mInternalEdgeRemovalVertexToleranceSq(const JPH_CollideShapeSettings *_this);
+
+/// Max squared distance to consider a vertex to be the same as another vertex, used by the internal edge removal algorithm to determine if two edges are shared. (unit: meter^2)
+/// Modifies a member variable of class `JPH::CollideShapeSettings` named `mInternalEdgeRemovalVertexToleranceSq`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `mInternalEdgeRemovalVertexToleranceSq`.
+JOLT_API void JPH_CollideShapeSettings_Set_mInternalEdgeRemovalVertexToleranceSq(JPH_CollideShapeSettings *_this, float value);
+
+/// Max squared distance to consider a vertex to be the same as another vertex, used by the internal edge removal algorithm to determine if two edges are shared. (unit: meter^2)
+/// Returns a mutable pointer to a member variable of class `JPH::CollideShapeSettings` named `mInternalEdgeRemovalVertexToleranceSq`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JPH_CollideShapeSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq(JPH_CollideShapeSettings *_this);
+
 /// How active edges (edges that a moving object should bump into) are handled
 /// Returns a pointer to a member variable of class `JPH::CollideShapeSettings` named `mActiveEdgeMode`.
 /// Parameter `_this` can not be null. It is a single object.

@@ -538,6 +538,20 @@ void Jolt_delete_array_JPH_BodyCreationSettings_void_ptr_void_ptr(void *inPointe
     );
 }
 
+bool Jolt_equal_JPH_BodyCreationSettings(const JPH_BodyCreationSettings *_this, const JPH_BodyCreationSettings *inRHS)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyCreationSettings *)(_this)).operator==(
+        ((inRHS ? void() : MRBINDC_THROW("Parameter `inRHS` can not be null.", void)), *(const JPH::BodyCreationSettings *)(inRHS))
+    );
+}
+
+bool Jolt_not_equal_JPH_BodyCreationSettings(const JPH_BodyCreationSettings *_this, const JPH_BodyCreationSettings *inRHS)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyCreationSettings *)(_this)).operator!=(
+        ((inRHS ? void() : MRBINDC_THROW("Parameter `inRHS` can not be null.", void)), *(const JPH::BodyCreationSettings *)(inRHS))
+    );
+}
+
 const JPH_ShapeSettings *JPH_BodyCreationSettings_GetShapeSettings(const JPH_BodyCreationSettings *_this)
 {
     return (const JPH_ShapeSettings *)(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::BodyCreationSettings *)(_this)).GetShapeSettings());

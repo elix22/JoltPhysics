@@ -273,7 +273,7 @@ JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_Construct_4(const JPH_V
     return (JPH_ConvexHullShapeSettings *)new JPH::ConvexHullShapeSettings(JPH::ConvexHullShapeSettings(
         ((const JPH::Vec3 *)inPoints),
         inNumPoints,
-        (inMaxConvexRadius ? *inMaxConvexRadius : static_cast<float>(cDefaultConvexRadius)),
+        (inMaxConvexRadius ? *inMaxConvexRadius : static_cast<float>(JPH::cDefaultConvexRadius)),
         ((const JPH::PhysicsMaterial *)inMaterial)
     ));
 }
@@ -283,7 +283,7 @@ JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_Construct_3(const Jolt_
     using namespace JPH;
     return (JPH_ConvexHullShapeSettings *)new JPH::ConvexHullShapeSettings(JPH::ConvexHullShapeSettings(
         ((inPoints ? void() : MRBINDC_THROW("Parameter `inPoints` can not be null.", void)), *(const JPH::Array<JPH::Vec3> *)(inPoints)),
-        (inConvexRadius ? *inConvexRadius : static_cast<float>(cDefaultConvexRadius)),
+        (inConvexRadius ? *inConvexRadius : static_cast<float>(JPH::cDefaultConvexRadius)),
         ((const JPH::PhysicsMaterial *)inMaterial)
     ));
 }

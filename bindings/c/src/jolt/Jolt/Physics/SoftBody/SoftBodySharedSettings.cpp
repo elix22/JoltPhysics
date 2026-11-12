@@ -339,7 +339,7 @@ void JPH_SoftBodySharedSettings_CreateConstraints(JPH_SoftBodySharedSettings *_t
         ((const JPH::SoftBodySharedSettings::VertexAttributes *)inVertexAttributes),
         inVertexAttributesLength,
         (inBendType ? (JPH::SoftBodySharedSettings::EBendType)(*inBendType) : static_cast<JPH::SoftBodySharedSettings::EBendType>(JPH::SoftBodySharedSettings::EBendType::Distance)),
-        (inAngleTolerance ? *inAngleTolerance : static_cast<float>(DegreesToRadians(8.F)))
+        (inAngleTolerance ? *inAngleTolerance : static_cast<float>(JPH::DegreesToRadians(8.F)))
     );
 }
 

@@ -305,6 +305,13 @@ void JPH_Quat_GetAxisAngle(const JPH_Quat *_this, JPH_Vec3 *outAxis, float *outA
     );
 }
 
+JPH_Vec3 *JPH_Quat_GetAngularVelocity(const JPH_Quat *_this, float inDeltaTime)
+{
+    return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Quat *)(_this)).GetAngularVelocity(
+        inDeltaTime
+    ));
+}
+
 JPH_Quat *JPH_Quat_sFromTo(const JPH_Vec3 *inFrom, const JPH_Vec3 *inTo)
 {
     return (JPH_Quat *)new JPH::Quat(JPH::Quat::sFromTo(

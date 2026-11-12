@@ -182,3 +182,8 @@ bool JPH_ObjectVsBroadPhaseLayerFilterTable_ShouldCollide(const JPH_ObjectVsBroa
     );
 }
 
+unsigned int JPH_ObjectVsBroadPhaseLayerFilterTable_GetNumBroadPhaseLayers(const JPH_ObjectVsBroadPhaseLayerFilterTable *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ObjectVsBroadPhaseLayerFilterTable *)(_this)).GetNumBroadPhaseLayers();
+}
+

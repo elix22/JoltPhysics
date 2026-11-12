@@ -156,7 +156,7 @@ JOLT_API bool Jolt_not_equal_JPH_Quat(const JPH_Quat *_this, const JPH_Quat *inR
 /// Parameter `inMaxDistSq` has a default argument: `9.99999996e-13f`, pass a null pointer to use it.
 JOLT_API bool JPH_Quat_IsClose(const JPH_Quat *_this, const JPH_Quat *inRHS, const float *inMaxDistSq);
 
-/// If the length of this quaternion is 1 +/- inTolerance
+/// If the length^2 of this quaternion is within the range [1 - inTolerance, 1 + inTolerance]
 /// Generated from method `JPH::Quat::IsNormalized`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inTolerance` has a default argument: `9.99999974e-6f`, pass a null pointer to use it.
@@ -243,6 +243,12 @@ JOLT_API JPH_Quat *JPH_Quat_sRotation(const JPH_Vec3 *inAxis, float inAngle);
 /// Parameter `outAxis` can not be null. It is a single object.
 /// Parameter `outAngle` can not be null. It is a single object.
 JOLT_API void JPH_Quat_GetAxisAngle(const JPH_Quat *_this, JPH_Vec3 *outAxis, float *outAngle);
+
+/// Calculate angular velocity given that this quaternion represents the rotation that is reached after inDeltaTime when starting from identity rotation
+/// Generated from method `JPH::Quat::GetAngularVelocity`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Quat_GetAngularVelocity(const JPH_Quat *_this, float inDeltaTime);
 
 /// Create quaternion that rotates a vector from the direction of inFrom to the direction of inTo along the shortest path
 /// @see https://www.euclideanspace.com/maths/algebra/vectors/angleBetween/index.htm

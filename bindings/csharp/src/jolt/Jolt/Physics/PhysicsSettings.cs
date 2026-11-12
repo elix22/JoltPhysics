@@ -238,6 +238,21 @@ public static partial class JPH
             }
         }
 
+        /// Max squared distance to consider a vertex to be the same as another vertex, used by the internal edge removal algorithm to determine if two edges are shared. (unit: meter^2)
+        public unsafe float mInternalEdgeRemovalVertexToleranceSq
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSettings_Get_mInternalEdgeRemovalVertexToleranceSq", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSettings_Get_mInternalEdgeRemovalVertexToleranceSq", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JPH_PhysicsSettings_Get_mInternalEdgeRemovalVertexToleranceSq(_Underlying *_this);
+                return *__JPH_PhysicsSettings_Get_mInternalEdgeRemovalVertexToleranceSq(_UnderlyingPtr);
+            }
+        }
+
         /// Number of solver velocity iterations to run
         /// Note that this needs to be >= 2 in order for friction to work (friction is applied using the non-penetration impulse from the previous iteration)
         public unsafe uint mNumVelocitySteps
@@ -317,21 +332,6 @@ public static partial class JPH
                 #endif
                 extern static float *__JPH_PhysicsSettings_Get_mPointVelocitySleepThreshold(_Underlying *_this);
                 return *__JPH_PhysicsSettings_Get_mPointVelocitySleepThreshold(_UnderlyingPtr);
-            }
-        }
-
-        /// By default the simulation is deterministic, it is possible to turn this off by setting this setting to false. This will make the simulation run faster but it will no longer be deterministic.
-        public unsafe bool mDeterministicSimulation
-        {
-            get
-            {
-                #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSettings_Get_mDeterministicSimulation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-                #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSettings_Get_mDeterministicSimulation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-                #endif
-                extern static bool *__JPH_PhysicsSettings_Get_mDeterministicSimulation(_Underlying *_this);
-                return *__JPH_PhysicsSettings_Get_mDeterministicSimulation(_UnderlyingPtr);
             }
         }
 
@@ -440,15 +440,15 @@ public static partial class JPH
         }
 
         /// Constructs `JPH::PhysicsSettings` elementwise.
-        public unsafe Const_PhysicsSettings(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, uint mNumVelocitySteps, uint mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, bool mDeterministicSimulation, bool mConstraintWarmStart, bool mUseBodyPairContactCache, bool mUseManifoldReduction, bool mUseLargeIslandSplitter, bool mAllowSleeping, bool mCheckActiveEdges) : this(null, is_owning: true)
+        public unsafe Const_PhysicsSettings(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, float mInternalEdgeRemovalVertexToleranceSq, uint mNumVelocitySteps, uint mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, bool mConstraintWarmStart, bool mUseBodyPairContactCache, bool mUseManifoldReduction, bool mUseLargeIslandSplitter, bool mAllowSleeping, bool mCheckActiveEdges) : this(null, is_owning: true)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static JPH.PhysicsSettings._Underlying *__JPH_PhysicsSettings_ConstructFrom(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, uint mNumVelocitySteps, uint mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, byte mDeterministicSimulation, byte mConstraintWarmStart, byte mUseBodyPairContactCache, byte mUseManifoldReduction, byte mUseLargeIslandSplitter, byte mAllowSleeping, byte mCheckActiveEdges);
-            _UnderlyingPtr = __JPH_PhysicsSettings_ConstructFrom(mMaxInFlightBodyPairs, mStepListenersBatchSize, mStepListenerBatchesPerJob, mBaumgarte, mSpeculativeContactDistance, mPenetrationSlop, mLinearCastThreshold, mLinearCastMaxPenetration, mManifoldTolerance, mMaxPenetrationDistance, mBodyPairCacheMaxDeltaPositionSq, mBodyPairCacheCosMaxDeltaRotationDiv2, mContactNormalCosMaxDeltaRotation, mContactPointPreserveLambdaMaxDistSq, mNumVelocitySteps, mNumPositionSteps, mMinVelocityForRestitution, mTimeBeforeSleep, mPointVelocitySleepThreshold, mDeterministicSimulation ? (byte)1 : (byte)0, mConstraintWarmStart ? (byte)1 : (byte)0, mUseBodyPairContactCache ? (byte)1 : (byte)0, mUseManifoldReduction ? (byte)1 : (byte)0, mUseLargeIslandSplitter ? (byte)1 : (byte)0, mAllowSleeping ? (byte)1 : (byte)0, mCheckActiveEdges ? (byte)1 : (byte)0);
+            extern static JPH.PhysicsSettings._Underlying *__JPH_PhysicsSettings_ConstructFrom(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, float mInternalEdgeRemovalVertexToleranceSq, uint mNumVelocitySteps, uint mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, byte mConstraintWarmStart, byte mUseBodyPairContactCache, byte mUseManifoldReduction, byte mUseLargeIslandSplitter, byte mAllowSleeping, byte mCheckActiveEdges);
+            _UnderlyingPtr = __JPH_PhysicsSettings_ConstructFrom(mMaxInFlightBodyPairs, mStepListenersBatchSize, mStepListenerBatchesPerJob, mBaumgarte, mSpeculativeContactDistance, mPenetrationSlop, mLinearCastThreshold, mLinearCastMaxPenetration, mManifoldTolerance, mMaxPenetrationDistance, mBodyPairCacheMaxDeltaPositionSq, mBodyPairCacheCosMaxDeltaRotationDiv2, mContactNormalCosMaxDeltaRotation, mContactPointPreserveLambdaMaxDistSq, mInternalEdgeRemovalVertexToleranceSq, mNumVelocitySteps, mNumPositionSteps, mMinVelocityForRestitution, mTimeBeforeSleep, mPointVelocitySleepThreshold, mConstraintWarmStart ? (byte)1 : (byte)0, mUseBodyPairContactCache ? (byte)1 : (byte)0, mUseManifoldReduction ? (byte)1 : (byte)0, mUseLargeIslandSplitter ? (byte)1 : (byte)0, mAllowSleeping ? (byte)1 : (byte)0, mCheckActiveEdges ? (byte)1 : (byte)0);
         }
 
         /// Generated from constructor `JPH::PhysicsSettings::PhysicsSettings`.
@@ -819,6 +819,21 @@ public static partial class JPH
             }
         }
 
+        /// Max squared distance to consider a vertex to be the same as another vertex, used by the internal edge removal algorithm to determine if two edges are shared. (unit: meter^2)
+        public new unsafe ref float mInternalEdgeRemovalVertexToleranceSq
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JPH_PhysicsSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq(_Underlying *_this);
+                return ref *__JPH_PhysicsSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq(_UnderlyingPtr);
+            }
+        }
+
         /// Number of solver velocity iterations to run
         /// Note that this needs to be >= 2 in order for friction to work (friction is applied using the non-penetration impulse from the previous iteration)
         public new unsafe ref uint mNumVelocitySteps
@@ -898,21 +913,6 @@ public static partial class JPH
                 #endif
                 extern static float *__JPH_PhysicsSettings_GetMutable_mPointVelocitySleepThreshold(_Underlying *_this);
                 return ref *__JPH_PhysicsSettings_GetMutable_mPointVelocitySleepThreshold(_UnderlyingPtr);
-            }
-        }
-
-        /// By default the simulation is deterministic, it is possible to turn this off by setting this setting to false. This will make the simulation run faster but it will no longer be deterministic.
-        public new unsafe ref bool mDeterministicSimulation
-        {
-            get
-            {
-                #if __IOS__
-                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSettings_GetMutable_mDeterministicSimulation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-                #else
-                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSettings_GetMutable_mDeterministicSimulation", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-                #endif
-                extern static bool *__JPH_PhysicsSettings_GetMutable_mDeterministicSimulation(_Underlying *_this);
-                return ref *__JPH_PhysicsSettings_GetMutable_mDeterministicSimulation(_UnderlyingPtr);
             }
         }
 
@@ -1021,15 +1021,15 @@ public static partial class JPH
         }
 
         /// Constructs `JPH::PhysicsSettings` elementwise.
-        public unsafe PhysicsSettings(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, uint mNumVelocitySteps, uint mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, bool mDeterministicSimulation, bool mConstraintWarmStart, bool mUseBodyPairContactCache, bool mUseManifoldReduction, bool mUseLargeIslandSplitter, bool mAllowSleeping, bool mCheckActiveEdges) : this(null, is_owning: true)
+        public unsafe PhysicsSettings(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, float mInternalEdgeRemovalVertexToleranceSq, uint mNumVelocitySteps, uint mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, bool mConstraintWarmStart, bool mUseBodyPairContactCache, bool mUseManifoldReduction, bool mUseLargeIslandSplitter, bool mAllowSleeping, bool mCheckActiveEdges) : this(null, is_owning: true)
         {
             #if __IOS__
             [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_PhysicsSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
             [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_PhysicsSettings_ConstructFrom", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static JPH.PhysicsSettings._Underlying *__JPH_PhysicsSettings_ConstructFrom(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, uint mNumVelocitySteps, uint mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, byte mDeterministicSimulation, byte mConstraintWarmStart, byte mUseBodyPairContactCache, byte mUseManifoldReduction, byte mUseLargeIslandSplitter, byte mAllowSleeping, byte mCheckActiveEdges);
-            _UnderlyingPtr = __JPH_PhysicsSettings_ConstructFrom(mMaxInFlightBodyPairs, mStepListenersBatchSize, mStepListenerBatchesPerJob, mBaumgarte, mSpeculativeContactDistance, mPenetrationSlop, mLinearCastThreshold, mLinearCastMaxPenetration, mManifoldTolerance, mMaxPenetrationDistance, mBodyPairCacheMaxDeltaPositionSq, mBodyPairCacheCosMaxDeltaRotationDiv2, mContactNormalCosMaxDeltaRotation, mContactPointPreserveLambdaMaxDistSq, mNumVelocitySteps, mNumPositionSteps, mMinVelocityForRestitution, mTimeBeforeSleep, mPointVelocitySleepThreshold, mDeterministicSimulation ? (byte)1 : (byte)0, mConstraintWarmStart ? (byte)1 : (byte)0, mUseBodyPairContactCache ? (byte)1 : (byte)0, mUseManifoldReduction ? (byte)1 : (byte)0, mUseLargeIslandSplitter ? (byte)1 : (byte)0, mAllowSleeping ? (byte)1 : (byte)0, mCheckActiveEdges ? (byte)1 : (byte)0);
+            extern static JPH.PhysicsSettings._Underlying *__JPH_PhysicsSettings_ConstructFrom(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, float mInternalEdgeRemovalVertexToleranceSq, uint mNumVelocitySteps, uint mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, byte mConstraintWarmStart, byte mUseBodyPairContactCache, byte mUseManifoldReduction, byte mUseLargeIslandSplitter, byte mAllowSleeping, byte mCheckActiveEdges);
+            _UnderlyingPtr = __JPH_PhysicsSettings_ConstructFrom(mMaxInFlightBodyPairs, mStepListenersBatchSize, mStepListenerBatchesPerJob, mBaumgarte, mSpeculativeContactDistance, mPenetrationSlop, mLinearCastThreshold, mLinearCastMaxPenetration, mManifoldTolerance, mMaxPenetrationDistance, mBodyPairCacheMaxDeltaPositionSq, mBodyPairCacheCosMaxDeltaRotationDiv2, mContactNormalCosMaxDeltaRotation, mContactPointPreserveLambdaMaxDistSq, mInternalEdgeRemovalVertexToleranceSq, mNumVelocitySteps, mNumPositionSteps, mMinVelocityForRestitution, mTimeBeforeSleep, mPointVelocitySleepThreshold, mConstraintWarmStart ? (byte)1 : (byte)0, mUseBodyPairContactCache ? (byte)1 : (byte)0, mUseManifoldReduction ? (byte)1 : (byte)0, mUseLargeIslandSplitter ? (byte)1 : (byte)0, mAllowSleeping ? (byte)1 : (byte)0, mCheckActiveEdges ? (byte)1 : (byte)0);
         }
 
         /// Generated from constructor `JPH::PhysicsSettings::PhysicsSettings`.

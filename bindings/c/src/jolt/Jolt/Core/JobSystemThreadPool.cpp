@@ -260,6 +260,19 @@ JPH_JobSystem_JobHandle *JPH_JobSystemThreadPool_CreateJob(JPH_JobSystemThreadPo
     ));
 }
 
+void JPH_JobSystemThreadPool_CreateJobs(JPH_JobSystemThreadPool *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, JPH_JobSystem_JobHandle *outJobs, unsigned int inNumJobs, const unsigned int *inNumDependencies)
+{
+    using namespace JPH;
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::JobSystemThreadPool *)(_this)).CreateJobs(
+        inName,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        ((inJobFunction ? void() : MRBINDC_THROW("Parameter `inJobFunction` can not be null.", void)), *(const std::function<void(void)> *)(inJobFunction)),
+        ((JPH::JobSystem::JobHandle *)outJobs),
+        inNumJobs,
+        (inNumDependencies ? *inNumDependencies : static_cast<unsigned int>(0))
+    );
+}
+
 void JPH_JobSystemThreadPool_SetNumThreads(JPH_JobSystemThreadPool *_this, int inNumThreads)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::JobSystemThreadPool *)(_this)).SetNumThreads(

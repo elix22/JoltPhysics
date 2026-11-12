@@ -325,7 +325,7 @@ JOLT_API bool JPH_Vec3_IsClose(const JPH_Vec3 *_this, const JPH_Vec3 *inV2, cons
 /// Parameter `inMaxDistSq` has a default argument: `9.99999996e-13f`, pass a null pointer to use it.
 JOLT_API bool JPH_Vec3_IsNearZero(const JPH_Vec3 *_this, const float *inMaxDistSq);
 
-/// Test if vector is normalized
+/// Test if length^2 of this vector is within the range [1 - inTolerance, 1 + inTolerance]
 /// Generated from method `JPH::Vec3::IsNormalized`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inTolerance` has a default argument: `9.99999997e-7f`, pass a null pointer to use it.
@@ -421,6 +421,12 @@ JOLT_API JPH_Vec3 *JPH_Vec3_sub_assign(JPH_Vec3 *_this, const JPH_Vec3 *inV2);
 JOLT_API JPH_Vec3 *Jolt_div_JPH_Vec3(const JPH_Vec3 *_this, const JPH_Vec3 *inV2);
 
 /// Swizzle the elements in inV
+/// Generated from method `JPH::Vec3::Swizzle<1, 2, 0>`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Vec3_Swizzle_1_2_0(const JPH_Vec3 *_this);
+
+/// Swizzle the elements in inV
 /// Generated from method `JPH::Vec3::Swizzle<1, 2, 2>`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
@@ -443,12 +449,6 @@ JOLT_API JPH_Vec3 *JPH_Vec3_Swizzle_2_0_1(const JPH_Vec3 *_this);
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_Vec3_Swizzle_0_2_1(const JPH_Vec3 *_this);
-
-/// Swizzle the elements in inV
-/// Generated from method `JPH::Vec3::Swizzle<1, 2, 0>`.
-/// Parameter `_this` can not be null. It is a single object.
-/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
-JOLT_API JPH_Vec3 *JPH_Vec3_Swizzle_1_2_0(const JPH_Vec3 *_this);
 
 /// Swizzle the elements in inV
 /// Generated from method `JPH::Vec3::Swizzle<2, 1, 0>`.
@@ -502,12 +502,28 @@ JOLT_API JPH_Vec3 *JPH_Vec3_Abs(const JPH_Vec3 *_this);
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_Vec3_Reciprocal(const JPH_Vec3 *_this);
 
+/// Calculates inA * inB - inC * inD with more precision when FMA instructions are available. See DifferenceOfProducts.
+/// Generated from method `JPH::Vec3::sDifferenceOfProducts`.
+/// Parameter `inA` can not be null. It is a single object.
+/// Parameter `inB` can not be null. It is a single object.
+/// Parameter `inC` can not be null. It is a single object.
+/// Parameter `inD` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Vec3_sDifferenceOfProducts(const JPH_Vec3 *inA, const JPH_Vec3 *inB, const JPH_Vec3 *inC, const JPH_Vec3 *inD);
+
 /// Cross product
 /// Generated from method `JPH::Vec3::Cross`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inV2` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_Vec3_Cross(const JPH_Vec3 *_this, const JPH_Vec3 *inV2);
+
+/// Cross product (more precise version when FMA is available)
+/// Generated from method `JPH::Vec3::CrossPrecise`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inV2` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_Vec3_CrossPrecise(const JPH_Vec3 *_this, const JPH_Vec3 *inV2);
 
 /// Dot product, returns the dot product in X, Y and Z components
 /// Generated from method `JPH::Vec3::DotV`.
@@ -578,6 +594,11 @@ JOLT_API float JPH_Vec3_ReduceMin(const JPH_Vec3 *_this);
 /// Generated from method `JPH::Vec3::ReduceMax`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API float JPH_Vec3_ReduceMax(const JPH_Vec3 *_this);
+
+/// Get the sum of X, Y and Z
+/// Generated from method `JPH::Vec3::ReduceSum`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_Vec3_ReduceSum(const JPH_Vec3 *_this);
 
 /// Component wise square root
 /// Generated from method `JPH::Vec3::Sqrt`.

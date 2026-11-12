@@ -628,7 +628,7 @@ public static partial class JPH
             return __JPH_Vec4_IsNearZero(_UnderlyingPtr, inMaxDistSq.HasValue ? &__deref_inMaxDistSq : null) != 0;
         }
 
-        /// Test if vector is normalized
+        /// Test if length^2 of this vector is within the range [1 - inTolerance, 1 + inTolerance]
         /// Generated from method `JPH::Vec4::IsNormalized`.
         /// Parameter `inTolerance` defaults to `9.99999997e-7f`.
         public unsafe bool IsNormalized(float? inTolerance = null)
@@ -784,32 +784,6 @@ public static partial class JPH
             #endif
             extern static JPH.Vec4._Underlying *__JPH_Vec4_Swizzle_0_2_1_3(_Underlying *_this);
             return new(__JPH_Vec4_Swizzle_0_2_1_3(_UnderlyingPtr), is_owning: true);
-        }
-
-        /// Swizzle the elements in inV
-        /// Generated from method `JPH::Vec4::Swizzle<1, 2, 3, 2>`.
-        public unsafe JPH.Vec4 Swizzle_1_2_3_2()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vec4_Swizzle_1_2_3_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vec4_Swizzle_1_2_3_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.Vec4._Underlying *__JPH_Vec4_Swizzle_1_2_3_2(_Underlying *_this);
-            return new(__JPH_Vec4_Swizzle_1_2_3_2(_UnderlyingPtr), is_owning: true);
-        }
-
-        /// Swizzle the elements in inV
-        /// Generated from method `JPH::Vec4::Swizzle<2, 2, 2, 2>`.
-        public unsafe JPH.Vec4 Swizzle_2_2_2_2()
-        {
-            #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vec4_Swizzle_2_2_2_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vec4_Swizzle_2_2_2_2", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
-            #endif
-            extern static JPH.Vec4._Underlying *__JPH_Vec4_Swizzle_2_2_2_2(_Underlying *_this);
-            return new(__JPH_Vec4_Swizzle_2_2_2_2(_UnderlyingPtr), is_owning: true);
         }
 
         /// Swizzle the elements in inV
@@ -1137,6 +1111,19 @@ public static partial class JPH
             return new(__JPH_Vec4_Reciprocal(_UnderlyingPtr), is_owning: true);
         }
 
+        /// Calculates inA * inB - inC * inD with more precision when FMA instructions are available. See DifferenceOfProducts.
+        /// Generated from method `JPH::Vec4::sDifferenceOfProducts`.
+        public static unsafe JPH.Vec4 SDifferenceOfProducts(JPH.Const_Vec4 inA, JPH.Const_Vec4 inB, JPH.Const_Vec4 inC, JPH.Const_Vec4 inD)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vec4_sDifferenceOfProducts", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vec4_sDifferenceOfProducts", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Vec4._Underlying *__JPH_Vec4_sDifferenceOfProducts(JPH.Vec4._Underlying *inA, JPH.Vec4._Underlying *inB, JPH.Vec4._Underlying *inC, JPH.Vec4._Underlying *inD);
+            return new(__JPH_Vec4_sDifferenceOfProducts(inA._UnderlyingPtr, inB._UnderlyingPtr, inC._UnderlyingPtr, inD._UnderlyingPtr), is_owning: true);
+        }
+
         /// Dot product, returns the dot product in X, Y, Z and W components
         /// Generated from method `JPH::Vec4::DotV`.
         public unsafe JPH.Vec4 DotV(JPH.Const_Vec4 inV2)
@@ -1278,6 +1265,19 @@ public static partial class JPH
             #endif
             extern static float __JPH_Vec4_ReduceMax(_Underlying *_this);
             return __JPH_Vec4_ReduceMax(_UnderlyingPtr);
+        }
+
+        /// Sum X, Y, Z and W
+        /// Generated from method `JPH::Vec4::ReduceSum`.
+        public unsafe float ReduceSum()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Vec4_ReduceSum", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Vec4_ReduceSum", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JPH_Vec4_ReduceSum(_Underlying *_this);
+            return __JPH_Vec4_ReduceSum(_UnderlyingPtr);
         }
 
         /// Component wise square root

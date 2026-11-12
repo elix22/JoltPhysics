@@ -222,6 +222,21 @@ float *JPH_PhysicsSettings_GetMutable_mContactPointPreserveLambdaMaxDistSq(JPH_P
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSettings *)(_this)).mContactPointPreserveLambdaMaxDistSq);
 }
 
+const float *JPH_PhysicsSettings_Get_mInternalEdgeRemovalVertexToleranceSq(const JPH_PhysicsSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSettings *)(_this)).mInternalEdgeRemovalVertexToleranceSq);
+}
+
+void JPH_PhysicsSettings_Set_mInternalEdgeRemovalVertexToleranceSq(JPH_PhysicsSettings *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSettings *)(_this)).mInternalEdgeRemovalVertexToleranceSq = value;
+}
+
+float *JPH_PhysicsSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq(JPH_PhysicsSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSettings *)(_this)).mInternalEdgeRemovalVertexToleranceSq);
+}
+
 const unsigned int *JPH_PhysicsSettings_Get_mNumVelocitySteps(const JPH_PhysicsSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSettings *)(_this)).mNumVelocitySteps);
@@ -295,21 +310,6 @@ void JPH_PhysicsSettings_Set_mPointVelocitySleepThreshold(JPH_PhysicsSettings *_
 float *JPH_PhysicsSettings_GetMutable_mPointVelocitySleepThreshold(JPH_PhysicsSettings *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSettings *)(_this)).mPointVelocitySleepThreshold);
-}
-
-const bool *JPH_PhysicsSettings_Get_mDeterministicSimulation(const JPH_PhysicsSettings *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::PhysicsSettings *)(_this)).mDeterministicSimulation);
-}
-
-void JPH_PhysicsSettings_Set_mDeterministicSimulation(JPH_PhysicsSettings *_this, bool value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSettings *)(_this)).mDeterministicSimulation = value;
-}
-
-bool *JPH_PhysicsSettings_GetMutable_mDeterministicSimulation(JPH_PhysicsSettings *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::PhysicsSettings *)(_this)).mDeterministicSimulation);
 }
 
 const bool *JPH_PhysicsSettings_Get_mConstraintWarmStart(const JPH_PhysicsSettings *_this)
@@ -416,7 +416,7 @@ JPH_PhysicsSettings *JPH_PhysicsSettings_DefaultConstructArray(size_t num_elems)
     return (JPH_PhysicsSettings *)(new JPH::PhysicsSettings[num_elems]);
 }
 
-JPH_PhysicsSettings *JPH_PhysicsSettings_ConstructFrom(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, unsigned int mNumVelocitySteps, unsigned int mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, bool mDeterministicSimulation, bool mConstraintWarmStart, bool mUseBodyPairContactCache, bool mUseManifoldReduction, bool mUseLargeIslandSplitter, bool mAllowSleeping, bool mCheckActiveEdges)
+JPH_PhysicsSettings *JPH_PhysicsSettings_ConstructFrom(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, float mInternalEdgeRemovalVertexToleranceSq, unsigned int mNumVelocitySteps, unsigned int mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, bool mConstraintWarmStart, bool mUseBodyPairContactCache, bool mUseManifoldReduction, bool mUseLargeIslandSplitter, bool mAllowSleeping, bool mCheckActiveEdges)
 {
     return (JPH_PhysicsSettings *)new JPH::PhysicsSettings(JPH::PhysicsSettings{
         mMaxInFlightBodyPairs,
@@ -433,12 +433,12 @@ JPH_PhysicsSettings *JPH_PhysicsSettings_ConstructFrom(int mMaxInFlightBodyPairs
         mBodyPairCacheCosMaxDeltaRotationDiv2,
         mContactNormalCosMaxDeltaRotation,
         mContactPointPreserveLambdaMaxDistSq,
+        mInternalEdgeRemovalVertexToleranceSq,
         mNumVelocitySteps,
         mNumPositionSteps,
         mMinVelocityForRestitution,
         mTimeBeforeSleep,
         mPointVelocitySleepThreshold,
-        mDeterministicSimulation,
         mConstraintWarmStart,
         mUseBodyPairContactCache,
         mUseManifoldReduction,

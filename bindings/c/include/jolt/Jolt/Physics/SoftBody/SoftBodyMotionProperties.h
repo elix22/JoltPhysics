@@ -262,6 +262,12 @@ JOLT_API void JPH_SoftBodyMotionProperties_DrawPredictedBounds(const JPH_SoftBod
 /// Parameter `ioTempAllocator` can not be null. It is a single object.
 JOLT_API void JPH_SoftBodyMotionProperties_SkinVertices(JPH_SoftBodyMotionProperties *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Mat44 *inJointMatrices, unsigned int inNumJoints, bool inHardSkinAll, JPH_TempAllocator *ioTempAllocator);
 
+/// After calling SkinVertices, this gives access to the vertex positions and normals. This matrix takes the local space vertices to world space.
+/// Generated from method `JPH::SoftBodyMotionProperties::GetSkinnedVertexTransform`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Mat44_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Mat44 *JPH_SoftBodyMotionProperties_GetSkinnedVertexTransform(const JPH_SoftBodyMotionProperties *_this);
+
 /// This function allows you to update the soft body immediately without going through the PhysicsSystem.
 /// This is useful if the soft body is teleported and needs to 'settle' or it can be used if a the soft body
 /// is not added to the PhysicsSystem and needs to be updated manually. One reason for not adding it to the
@@ -279,6 +285,11 @@ JOLT_API void JPH_SoftBodyMotionProperties_SkinVertices(JPH_SoftBodyMotionProper
 /// Parameter `inSystem` can not be null. It is a single object.
 JOLT_API void JPH_SoftBodyMotionProperties_CustomUpdate(JPH_SoftBodyMotionProperties *_this, float inDeltaTime, JPH_Body *ioSoftBody, JPH_PhysicsSystem *inSystem);
 
+/// Set a flag to indicate that the ContactListener::OnSoftBodyContactAdded should be called
+/// Generated from method `JPH::SoftBodyMotionProperties::RequestContactCallback`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_SoftBodyMotionProperties_RequestContactCallback(JPH_SoftBodyMotionProperties *_this);
+
 /// Motion quality, or how well it detects collisions when it has a high velocity
 /// Generated from method `JPH::SoftBodyMotionProperties::GetMotionQuality`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -295,13 +306,17 @@ JOLT_API bool JPH_SoftBodyMotionProperties_GetAllowSleeping(const JPH_SoftBodyMo
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_SoftBodyMotionProperties_GetLinearVelocity(const JPH_SoftBodyMotionProperties *_this);
 
-/// Set world space linear velocity of the center of mass
+/// Set world space linear velocity of the center of mass.
+/// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
 /// Generated from method `JPH::SoftBodyMotionProperties::SetLinearVelocity`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inLinearVelocity` can not be null. It is a single object.
 JOLT_API void JPH_SoftBodyMotionProperties_SetLinearVelocity(JPH_SoftBodyMotionProperties *_this, const JPH_Vec3 *inLinearVelocity);
 
-/// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity
+/// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity.
+/// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
 /// Generated from method `JPH::SoftBodyMotionProperties::SetLinearVelocityClamped`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inLinearVelocity` can not be null. It is a single object.
@@ -313,19 +328,25 @@ JOLT_API void JPH_SoftBodyMotionProperties_SetLinearVelocityClamped(JPH_SoftBody
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_SoftBodyMotionProperties_GetAngularVelocity(const JPH_SoftBodyMotionProperties *_this);
 
-/// Set world space angular velocity of the center of mass
+/// Set world space angular velocity of the center of mass.
+/// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
 /// Generated from method `JPH::SoftBodyMotionProperties::SetAngularVelocity`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inAngularVelocity` can not be null. It is a single object.
 JOLT_API void JPH_SoftBodyMotionProperties_SetAngularVelocity(JPH_SoftBodyMotionProperties *_this, const JPH_Vec3 *inAngularVelocity);
 
-/// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity
+/// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity.
+/// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
 /// Generated from method `JPH::SoftBodyMotionProperties::SetAngularVelocityClamped`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inAngularVelocity` can not be null. It is a single object.
 JOLT_API void JPH_SoftBodyMotionProperties_SetAngularVelocityClamped(JPH_SoftBodyMotionProperties *_this, const JPH_Vec3 *inAngularVelocity);
 
 /// Set velocity of body such that it will be rotate/translate by inDeltaPosition/Rotation in inDeltaTime seconds.
+/// Note that it is illegal to provide non-zero delta position/rotation on a sleeping body without waking it up afterwards.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::MoveKinematic instead.
 /// Generated from method `JPH::SoftBodyMotionProperties::MoveKinematic`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inDeltaPosition` can not be null. It is a single object.
@@ -538,6 +559,11 @@ JOLT_API unsigned int JPH_SoftBodyMotionProperties_GetNumPositionStepsOverride(c
 
 ///@name Update linear and angular velocity (used during constraint solving)
 ///@{
+/// Generated from method `JPH::SoftBodyMotionProperties::ApplyLinearVelocityStep`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLinearVelocity` can not be null. It is a single object.
+JOLT_API void JPH_SoftBodyMotionProperties_ApplyLinearVelocityStep(JPH_SoftBodyMotionProperties *_this, const JPH_Vec3 *inLinearVelocity);
+
 /// Generated from method `JPH::SoftBodyMotionProperties::AddLinearVelocityStep`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inLinearVelocityChange` can not be null. It is a single object.
@@ -547,6 +573,11 @@ JOLT_API void JPH_SoftBodyMotionProperties_AddLinearVelocityStep(JPH_SoftBodyMot
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inLinearVelocityChange` can not be null. It is a single object.
 JOLT_API void JPH_SoftBodyMotionProperties_SubLinearVelocityStep(JPH_SoftBodyMotionProperties *_this, const JPH_Vec3 *inLinearVelocityChange);
+
+/// Generated from method `JPH::SoftBodyMotionProperties::ApplyAngularVelocityStep`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inAngularVelocity` can not be null. It is a single object.
+JOLT_API void JPH_SoftBodyMotionProperties_ApplyAngularVelocityStep(JPH_SoftBodyMotionProperties *_this, const JPH_Vec3 *inAngularVelocity);
 
 /// Generated from method `JPH::SoftBodyMotionProperties::AddAngularVelocityStep`.
 /// Parameter `_this` can not be null. It is a single object.

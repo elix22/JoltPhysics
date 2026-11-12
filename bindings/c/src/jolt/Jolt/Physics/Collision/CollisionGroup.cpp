@@ -163,6 +163,20 @@ void Jolt_delete_array_JPH_CollisionGroup_void_ptr_void_ptr(void *inPointer, voi
     );
 }
 
+bool Jolt_equal_JPH_CollisionGroup(const JPH_CollisionGroup *_this, const JPH_CollisionGroup *inRHS)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CollisionGroup *)(_this)).operator==(
+        ((inRHS ? void() : MRBINDC_THROW("Parameter `inRHS` can not be null.", void)), *(const JPH::CollisionGroup *)(inRHS))
+    );
+}
+
+bool Jolt_not_equal_JPH_CollisionGroup(const JPH_CollisionGroup *_this, const JPH_CollisionGroup *inRHS)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CollisionGroup *)(_this)).operator!=(
+        ((inRHS ? void() : MRBINDC_THROW("Parameter `inRHS` can not be null.", void)), *(const JPH::CollisionGroup *)(inRHS))
+    );
+}
+
 void JPH_CollisionGroup_SetGroupFilter(JPH_CollisionGroup *_this, const JPH_GroupFilter *inFilter)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CollisionGroup *)(_this)).SetGroupFilter(

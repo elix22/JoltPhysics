@@ -145,6 +145,15 @@ JOLT_API int JPH_JobSystem_GetMaxConcurrency(const JPH_JobSystem *_this);
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_JobSystem_JobHandle_Destroy()` to free it when you're done using it.
 JOLT_API JPH_JobSystem_JobHandle *JPH_JobSystem_CreateJob(JPH_JobSystem *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, const unsigned int *inNumDependencies);
 
+/// Create a number of similar jobs, the jobs are started immediately if inNumDependencies == 0 otherwise they start when
+/// RemoveDependency causes the dependency counter to reach 0.
+/// Generated from method `JPH::JobSystem::CreateJobs`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inJobFunction` can not be null. It is a single object.
+/// Parameter `inNumDependencies` has a default argument: `0`, pass a null pointer to use it.
+JOLT_API void JPH_JobSystem_CreateJobs(JPH_JobSystem *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, JPH_JobSystem_JobHandle *outJobs, unsigned int inNumJobs, const unsigned int *inNumDependencies);
+
 /// Create a new barrier, used to wait on jobs
 /// Generated from method `JPH::JobSystem::CreateBarrier`.
 /// Parameter `_this` can not be null. It is a single object.

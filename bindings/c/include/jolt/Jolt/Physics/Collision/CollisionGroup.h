@@ -105,6 +105,17 @@ JOLT_API void *Jolt_new_array_JPH_CollisionGroup_size_t_void_ptr(size_t inCount,
 /// Generated from method `JPH::CollisionGroup::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_CollisionGroup_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
+/// Test if two collision groups are equal
+/// Generated from method `JPH::CollisionGroup::operator==`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRHS` can not be null. It is a single object.
+JOLT_API bool Jolt_equal_JPH_CollisionGroup(const JPH_CollisionGroup *_this, const JPH_CollisionGroup *inRHS);
+
+/// Generated from method `JPH::CollisionGroup::operator!=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRHS` can not be null. It is a single object.
+JOLT_API bool Jolt_not_equal_JPH_CollisionGroup(const JPH_CollisionGroup *_this, const JPH_CollisionGroup *inRHS);
+
 /// Set the collision group filter
 /// Generated from method `JPH::CollisionGroup::SetGroupFilter`.
 /// Parameter `_this` can not be null. It is a single object.

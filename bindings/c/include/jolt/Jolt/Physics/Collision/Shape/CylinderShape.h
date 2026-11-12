@@ -263,7 +263,7 @@ JOLT_API JPH_CylinderShapeSettings *JPH_CylinderShapeSettings_ConstructFromAnoth
 /// Create a shape centered around the origin with one top at (0, -inHalfHeight, 0) and the other at (0, inHalfHeight, 0) and radius inRadius.
 /// (internally the convex radius will be subtracted from the cylinder the total cylinder will not grow with the convex radius, but the edges of the cylinder will be rounded a bit).
 /// Generated from constructor `JPH::CylinderShapeSettings::CylinderShapeSettings`.
-/// Parameter `inConvexRadius` has a default argument: `cDefaultConvexRadius`, pass a null pointer to use it.
+/// Parameter `inConvexRadius` has a default argument: `JPH::cDefaultConvexRadius`, pass a null pointer to use it.
 /// Parameter `inMaterial` defaults to a null pointer in C++.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CylinderShapeSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_CylinderShapeSettings *JPH_CylinderShapeSettings_Construct(float inHalfHeight, float inRadius, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial);
@@ -467,7 +467,7 @@ JOLT_API JPH_CylinderShape *JPH_CylinderShape_MutableStaticDowncastFrom_JPH_Conv
 /// Create a shape centered around the origin with one top at (0, -inHalfHeight, 0) and the other at (0, inHalfHeight, 0) and radius inRadius.
 /// (internally the convex radius will be subtracted from the cylinder the total cylinder will not grow with the convex radius, but the edges of the cylinder will be rounded a bit).
 /// Generated from constructor `JPH::CylinderShape::CylinderShape`.
-/// Parameter `inConvexRadius` has a default argument: `cDefaultConvexRadius`, pass a null pointer to use it.
+/// Parameter `inConvexRadius` has a default argument: `JPH::cDefaultConvexRadius`, pass a null pointer to use it.
 /// Parameter `inMaterial` defaults to a null pointer in C++.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_CylinderShape_Destroy()` to free it when you're done using it.
 JOLT_API JPH_CylinderShape *JPH_CylinderShape_Construct_4(float inHalfHeight, float inRadius, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial);

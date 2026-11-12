@@ -210,3 +210,8 @@ bool JPH_SpringSettings_HasStiffness(const JPH_SpringSettings *_this)
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SpringSettings *)(_this)).HasStiffness();
 }
 
+bool JPH_SpringSettings_HasStiffnessOrDamping(const JPH_SpringSettings *_this)
+{
+    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SpringSettings *)(_this)).HasStiffnessOrDamping();
+}
+

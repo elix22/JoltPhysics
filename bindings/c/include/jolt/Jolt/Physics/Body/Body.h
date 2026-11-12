@@ -16,6 +16,7 @@ typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/
 typedef struct JPH_BodyCreationSettings JPH_BodyCreationSettings; // Defined in `#include <jolt/Jolt/Physics/Body/BodyCreationSettings.h>`.
 typedef struct JPH_BodyID JPH_BodyID; // Defined in `#include <jolt/Jolt/Physics/Body/BodyID.h>`.
 typedef struct JPH_BroadPhaseLayer JPH_BroadPhaseLayer; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
+typedef struct JPH_BroadPhaseLayerInterface JPH_BroadPhaseLayerInterface; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
 typedef struct JPH_CollisionGroup JPH_CollisionGroup; // Defined in `#include <jolt/Jolt/Physics/Collision/CollisionGroup.h>`.
 typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
 typedef struct JPH_MotionProperties JPH_MotionProperties; // Defined in `#include <jolt/Jolt/Physics/Body/MotionProperties.h>`.
@@ -267,6 +268,7 @@ JOLT_API void JPH_Body_SetRestitution(JPH_Body *_this, float inRestitution);
 JOLT_API JPH_Vec3 *JPH_Body_GetLinearVelocity(const JPH_Body *_this);
 
 /// Set world space linear velocity of the center of mass (unit: m/s).
+/// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
 /// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
 /// Generated from method `JPH::Body::SetLinearVelocity`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -274,6 +276,7 @@ JOLT_API JPH_Vec3 *JPH_Body_GetLinearVelocity(const JPH_Body *_this);
 JOLT_API void JPH_Body_SetLinearVelocity(JPH_Body *_this, const JPH_Vec3 *inLinearVelocity);
 
 /// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity.
+/// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
 /// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
 /// Generated from method `JPH::Body::SetLinearVelocityClamped`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -287,6 +290,7 @@ JOLT_API void JPH_Body_SetLinearVelocityClamped(JPH_Body *_this, const JPH_Vec3 
 JOLT_API JPH_Vec3 *JPH_Body_GetAngularVelocity(const JPH_Body *_this);
 
 /// Set world space angular velocity of the center of mass (unit: rad/s).
+/// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
 /// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
 /// Generated from method `JPH::Body::SetAngularVelocity`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -294,6 +298,7 @@ JOLT_API JPH_Vec3 *JPH_Body_GetAngularVelocity(const JPH_Body *_this);
 JOLT_API void JPH_Body_SetAngularVelocity(JPH_Body *_this, const JPH_Vec3 *inAngularVelocity);
 
 /// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity.
+/// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
 /// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
 /// Generated from method `JPH::Body::SetAngularVelocityClamped`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -391,7 +396,8 @@ JOLT_API void JPH_Body_AddImpulse_2(JPH_Body *_this, const JPH_Vec3 *inImpulse, 
 /// Parameter `inAngularImpulse` can not be null. It is a single object.
 JOLT_API void JPH_Body_AddAngularImpulse(JPH_Body *_this, const JPH_Vec3 *inAngularImpulse);
 
-/// Set velocity of body such that it will be positioned at inTargetPosition/Rotation in inDeltaTime seconds.
+/// Set velocity of body such that it will be positioned at inTargetPosition/inTargetRotation in inDeltaTime seconds.
+/// Note that it is illegal to provide a new position/orientation on a sleeping body without waking it up afterwards.
 /// If you want the body to wake up when it is sleeping, use BodyInterface::MoveKinematic instead.
 /// Generated from method `JPH::Body::MoveKinematic`.
 /// Parameter `_this` can not be null. It is a single object.
@@ -550,17 +556,32 @@ JOLT_API JPH_Vec3 *JPH_Body_GetWorldSpaceSurfaceNormal(const JPH_Body *_this, co
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TransformedShape_Destroy()` to free it when you're done using it.
 JOLT_API JPH_TransformedShape *JPH_Body_GetTransformedShape(const JPH_Body *_this);
 
-/// Debug function to convert a body back to a body creation settings object to be able to save/recreate the body later
+/// Function to convert a body back to a body creation settings object to be able to save/recreate the body later. Can e.g. be used to move a body from one PhysicsSystem to another.
 /// Generated from method `JPH::Body::GetBodyCreationSettings`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_BodyCreationSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_BodyCreationSettings *JPH_Body_GetBodyCreationSettings(const JPH_Body *_this);
 
-/// Debug function to convert a soft body back to a soft body creation settings object to be able to save/recreate the body later
+/// Function to overwrite current body state with inBodyCreationSettings. Can only be done when the body is not in the physics system and cannot add MotionProperties if the body was created without one.
+/// Note that if you change the shape of the body and this body may have been in contact with other bodies before, you should call BodyInterface::InvalidateContactCache to invalidate any previous contacts.
+/// Generated from method `JPH::Body::ApplyBodyCreationSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBodyCreationSettings` can not be null. It is a single object.
+/// Parameter `inBPLInterface` can not be null. It is a single object.
+JOLT_API void JPH_Body_ApplyBodyCreationSettings(JPH_Body *_this, const JPH_BodyCreationSettings *inBodyCreationSettings, const JPH_BroadPhaseLayerInterface *inBPLInterface);
+
+/// Function to convert a soft body back to a body creation settings object to be able to save/recreate the body later. Can e.g. be used to move a body from one PhysicsSystem to another.
 /// Generated from method `JPH::Body::GetSoftBodyCreationSettings`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SoftBodyCreationSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_SoftBodyCreationSettings *JPH_Body_GetSoftBodyCreationSettings(const JPH_Body *_this);
+
+/// Function to overwrite current body state with inSoftBodyCreationSettings. Can only be done when the body is not in the physics system and cannot add MotionProperties if the body was created without one.
+/// Generated from method `JPH::Body::ApplySoftBodyCreationSettings`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSoftBodyCreationSettings` can not be null. It is a single object.
+/// Parameter `inBPLInterface` can not be null. It is a single object.
+JOLT_API void JPH_Body_ApplySoftBodyCreationSettings(JPH_Body *_this, const JPH_SoftBodyCreationSettings *inSoftBodyCreationSettings, const JPH_BroadPhaseLayerInterface *inBPLInterface);
 
 /// Helper function for BroadPhase::FindCollidingPairs that returns true when two bodies can collide
 /// It assumes that body 1 is dynamic and active and guarantees that it body 1 collides with body 2 that body 2 will not collide with body 1 in order to avoid finding duplicate collision pairs
@@ -590,6 +611,12 @@ JOLT_API void JPH_Body_AddRotationStep(JPH_Body *_this, const JPH_Vec3 *inAngula
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inAngularVelocityTimesDeltaTime` can not be null. It is a single object.
 JOLT_API void JPH_Body_SubRotationStep(JPH_Body *_this, const JPH_Vec3 *inAngularVelocityTimesDeltaTime);
+
+/// Function to update body's layer (should only be called internally since it also requires updating the broadphase)
+/// Generated from method `JPH::Body::SetObjectLayerInternal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBPLInterface` can not be null. It is a single object.
+JOLT_API void JPH_Body_SetObjectLayerInternal(JPH_Body *_this, unsigned short inLayer, const JPH_BroadPhaseLayerInterface *inBPLInterface);
 
 /// Flag if body is in the broadphase (should only be called by the BroadPhase)
 /// Generated from method `JPH::Body::SetInBroadPhaseInternal`.

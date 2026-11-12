@@ -285,7 +285,7 @@ JPH_VehicleCollisionTesterRay *JPH_VehicleCollisionTesterRay_Construct(unsigned 
     return (JPH_VehicleCollisionTesterRay *)new JPH::VehicleCollisionTesterRay(JPH::VehicleCollisionTesterRay(
         inObjectLayer,
         (inUp ? JPH::Vec3(*(JPH::Vec3 *)inUp) : static_cast<JPH::Vec3>(JPH::Vec3::sAxisY())),
-        (inMaxSlopeAngle ? *inMaxSlopeAngle : static_cast<float>(DegreesToRadians(80.F)))
+        (inMaxSlopeAngle ? *inMaxSlopeAngle : static_cast<float>(JPH::DegreesToRadians(80.F)))
     ));
 }
 
@@ -583,7 +583,7 @@ JPH_VehicleCollisionTesterCastSphere *JPH_VehicleCollisionTesterCastSphere_Const
         inObjectLayer,
         inRadius,
         (inUp ? JPH::Vec3(*(JPH::Vec3 *)inUp) : static_cast<JPH::Vec3>(JPH::Vec3::sAxisY())),
-        (inMaxSlopeAngle ? *inMaxSlopeAngle : static_cast<float>(DegreesToRadians(80.F)))
+        (inMaxSlopeAngle ? *inMaxSlopeAngle : static_cast<float>(JPH::DegreesToRadians(80.F)))
     ));
 }
 

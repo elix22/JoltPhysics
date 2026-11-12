@@ -960,6 +960,13 @@ JPH_Vec3 *JPH_SwingTwistConstraint_GetTargetAngularVelocityCS(const JPH_SwingTwi
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SwingTwistConstraint *)(_this)).GetTargetAngularVelocityCS());
 }
 
+void JPH_SwingTwistConstraint_SetTargetAngularVelocityBS(JPH_SwingTwistConstraint *_this, const JPH_Vec3 *inAngularVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SwingTwistConstraint *)(_this)).SetTargetAngularVelocityBS(
+        ((inAngularVelocity ? void() : MRBINDC_THROW("Parameter `inAngularVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inAngularVelocity))
+    );
+}
+
 void JPH_SwingTwistConstraint_SetTargetOrientationCS(JPH_SwingTwistConstraint *_this, const JPH_Quat *inOrientation)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SwingTwistConstraint *)(_this)).SetTargetOrientationCS(

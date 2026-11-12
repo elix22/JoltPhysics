@@ -296,7 +296,7 @@ public static partial class JPH
             return __JPH_Quat_IsClose(_UnderlyingPtr, inRHS._UnderlyingPtr, inMaxDistSq.HasValue ? &__deref_inMaxDistSq : null) != 0;
         }
 
-        /// If the length of this quaternion is 1 +/- inTolerance
+        /// If the length^2 of this quaternion is within the range [1 - inTolerance, 1 + inTolerance]
         /// Generated from method `JPH::Quat::IsNormalized`.
         /// Parameter `inTolerance` defaults to `9.99999974e-6f`.
         public unsafe bool IsNormalized(float? inTolerance = null)
@@ -455,6 +455,19 @@ public static partial class JPH
             {
                 __JPH_Quat_GetAxisAngle(_UnderlyingPtr, outAxis._UnderlyingPtr, __ptr_outAngle);
             }
+        }
+
+        /// Calculate angular velocity given that this quaternion represents the rotation that is reached after inDeltaTime when starting from identity rotation
+        /// Generated from method `JPH::Quat::GetAngularVelocity`.
+        public unsafe JPH.Vec3 GetAngularVelocity(float inDeltaTime)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_Quat_GetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_Quat_GetAngularVelocity", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Vec3._Underlying *__JPH_Quat_GetAngularVelocity(_Underlying *_this, float inDeltaTime);
+            return new(__JPH_Quat_GetAngularVelocity(_UnderlyingPtr, inDeltaTime), is_owning: true);
         }
 
         /// Create quaternion that rotates a vector from the direction of inFrom to the direction of inTo along the shortest path

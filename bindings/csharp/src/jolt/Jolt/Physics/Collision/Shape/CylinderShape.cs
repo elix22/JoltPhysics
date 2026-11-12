@@ -273,7 +273,7 @@ public static partial class JPH
         /// Create a shape centered around the origin with one top at (0, -inHalfHeight, 0) and the other at (0, inHalfHeight, 0) and radius inRadius.
         /// (internally the convex radius will be subtracted from the cylinder the total cylinder will not grow with the convex radius, but the edges of the cylinder will be rounded a bit).
         /// Generated from constructor `JPH::CylinderShapeSettings::CylinderShapeSettings`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe Const_CylinderShapeSettings(float inHalfHeight, float inRadius, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -754,7 +754,7 @@ public static partial class JPH
         /// Create a shape centered around the origin with one top at (0, -inHalfHeight, 0) and the other at (0, inHalfHeight, 0) and radius inRadius.
         /// (internally the convex radius will be subtracted from the cylinder the total cylinder will not grow with the convex radius, but the edges of the cylinder will be rounded a bit).
         /// Generated from constructor `JPH::CylinderShapeSettings::CylinderShapeSettings`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe CylinderShapeSettings(float inHalfHeight, float inRadius, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -1070,7 +1070,7 @@ public static partial class JPH
         /// Create a shape centered around the origin with one top at (0, -inHalfHeight, 0) and the other at (0, inHalfHeight, 0) and radius inRadius.
         /// (internally the convex radius will be subtracted from the cylinder the total cylinder will not grow with the convex radius, but the edges of the cylinder will be rounded a bit).
         /// Generated from constructor `JPH::CylinderShape::CylinderShape`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe Const_CylinderShape(float inHalfHeight, float inRadius, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -1814,7 +1814,7 @@ public static partial class JPH
         /// Create a shape centered around the origin with one top at (0, -inHalfHeight, 0) and the other at (0, inHalfHeight, 0) and radius inRadius.
         /// (internally the convex radius will be subtracted from the cylinder the total cylinder will not grow with the convex radius, but the edges of the cylinder will be rounded a bit).
         /// Generated from constructor `JPH::CylinderShape::CylinderShape`.
-        /// Parameter `inConvexRadius` defaults to `cDefaultConvexRadius`.
+        /// Parameter `inConvexRadius` defaults to `JPH::cDefaultConvexRadius`.
         public unsafe CylinderShape(float inHalfHeight, float inRadius, float? inConvexRadius = null, JPH.Const_PhysicsMaterial? inMaterial = null) : this(null, is_owning: true)
         {
             #if __IOS__

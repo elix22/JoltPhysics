@@ -525,6 +525,36 @@ JOLT_API void JPH_DebugRenderer_Vertex_DestroyArray(const JPH_DebugRenderer_Vert
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API JPH_DebugRenderer_Vertex *JPH_DebugRenderer_Vertex_AssignFromAnother(JPH_DebugRenderer_Vertex *_this, const JPH_DebugRenderer_Vertex *_other);
 
+/// Generated from method `JPH::DebugRenderer::Vertex::operator new`.
+JOLT_API void *Jolt_new_JPH_DebugRenderer_Vertex_size_t(size_t inCount);
+
+/// Generated from method `JPH::DebugRenderer::Vertex::operator delete`.
+JOLT_API void Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::Vertex::operator delete`.
+JOLT_API void Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::DebugRenderer::Vertex::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_DebugRenderer_Vertex_size_t(size_t inCount);
+
+/// Generated from method `JPH::DebugRenderer::Vertex::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::Vertex::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::DebugRenderer::Vertex::operator new`.
+JOLT_API void *Jolt_new_JPH_DebugRenderer_Vertex_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::Vertex::operator delete`.
+JOLT_API void Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Generated from method `JPH::DebugRenderer::Vertex::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_DebugRenderer_Vertex_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::Vertex::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
 /// Returns a pointer to a member variable of class `JPH::DebugRenderer::Triangle` named `mV`. This is a pointer to the first element of an array.
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
@@ -595,6 +625,36 @@ JOLT_API void JPH_DebugRenderer_Triangle_DestroyArray(const JPH_DebugRenderer_Tr
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API JPH_DebugRenderer_Triangle *JPH_DebugRenderer_Triangle_AssignFromAnother(JPH_DebugRenderer_Triangle *_this, const JPH_DebugRenderer_Triangle *_other);
 
+/// Generated from method `JPH::DebugRenderer::Triangle::operator new`.
+JOLT_API void *Jolt_new_JPH_DebugRenderer_Triangle_size_t(size_t inCount);
+
+/// Generated from method `JPH::DebugRenderer::Triangle::operator delete`.
+JOLT_API void Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::Triangle::operator delete`.
+JOLT_API void Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::DebugRenderer::Triangle::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_DebugRenderer_Triangle_size_t(size_t inCount);
+
+/// Generated from method `JPH::DebugRenderer::Triangle::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::Triangle::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::DebugRenderer::Triangle::operator new`.
+JOLT_API void *Jolt_new_JPH_DebugRenderer_Triangle_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::Triangle::operator delete`.
+JOLT_API void Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Generated from method `JPH::DebugRenderer::Triangle::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_DebugRenderer_Triangle_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::Triangle::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
 /// Returns a pointer to a member variable of class `JPH::DebugRenderer::LOD` named `mDistance`.
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
@@ -646,6 +706,36 @@ JOLT_API void JPH_DebugRenderer_LOD_DestroyArray(const JPH_DebugRenderer_LOD *_t
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_AssignFromAnother(JPH_DebugRenderer_LOD *_this, Jolt_PassBy _other_pass_by, JPH_DebugRenderer_LOD *_other);
+
+/// Generated from method `JPH::DebugRenderer::LOD::operator new`.
+JOLT_API void *Jolt_new_JPH_DebugRenderer_LOD_size_t(size_t inCount);
+
+/// Generated from method `JPH::DebugRenderer::LOD::operator delete`.
+JOLT_API void Jolt_delete_JPH_DebugRenderer_LOD_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::LOD::operator delete`.
+JOLT_API void Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::DebugRenderer::LOD::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_DebugRenderer_LOD_size_t(size_t inCount);
+
+/// Generated from method `JPH::DebugRenderer::LOD::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::LOD::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::DebugRenderer::LOD::operator new`.
+JOLT_API void *Jolt_new_JPH_DebugRenderer_LOD_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::LOD::operator delete`.
+JOLT_API void Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Generated from method `JPH::DebugRenderer::LOD::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_DebugRenderer_LOD_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::DebugRenderer::LOD::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
 /// All level of details for this mesh
 /// Returns a pointer to a member variable of class `JPH::DebugRenderer::Geometry` named `mLODs`.

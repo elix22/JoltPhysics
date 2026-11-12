@@ -528,6 +528,82 @@ JPH_DebugRenderer_Vertex *JPH_DebugRenderer_Vertex_AssignFromAnother(JPH_DebugRe
     ));
 }
 
+void *Jolt_new_JPH_DebugRenderer_Vertex_size_t(size_t inCount)
+{
+    return JPH::DebugRenderer::Vertex::operator new(
+        inCount
+    );
+}
+
+void Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr(void *inPointer)
+{
+    JPH::DebugRenderer::Vertex::operator delete(
+        inPointer
+    );
+}
+
+void Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_size_t(void *inPointer, size_t inSize)
+{
+    JPH::DebugRenderer::Vertex::operator delete(
+        inPointer,
+        inSize
+    );
+}
+
+void *Jolt_new_array_JPH_DebugRenderer_Vertex_size_t(size_t inCount)
+{
+    return JPH::DebugRenderer::Vertex::operator new[](
+        inCount
+    );
+}
+
+void Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr(void *inPointer)
+{
+    JPH::DebugRenderer::Vertex::operator delete[](
+        inPointer
+    );
+}
+
+void Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_size_t(void *inPointer, size_t inSize)
+{
+    JPH::DebugRenderer::Vertex::operator delete[](
+        inPointer,
+        inSize
+    );
+}
+
+void *Jolt_new_JPH_DebugRenderer_Vertex_size_t_void_ptr(size_t inCount, void *inPointer)
+{
+    return JPH::DebugRenderer::Vertex::operator new(
+        inCount,
+        inPointer
+    );
+}
+
+void Jolt_delete_JPH_DebugRenderer_Vertex_void_ptr_void_ptr(void *inPointer, void *inPlace)
+{
+    JPH::DebugRenderer::Vertex::operator delete(
+        inPointer,
+        inPlace
+    );
+}
+
+void *Jolt_new_array_JPH_DebugRenderer_Vertex_size_t_void_ptr(size_t inCount, void *inPointer)
+{
+    return JPH::DebugRenderer::Vertex::operator new[](
+        inCount,
+        inPointer
+    );
+}
+
+void Jolt_delete_array_JPH_DebugRenderer_Vertex_void_ptr_void_ptr(void *inPointer, void *inPlace)
+{
+    JPH::DebugRenderer::Vertex::operator delete[](
+        inPointer,
+        inPlace
+    );
+}
+
 const JPH_DebugRenderer_Vertex *JPH_DebugRenderer_Triangle_Get_mV(const JPH_DebugRenderer_Triangle *_this)
 {
     return (const JPH_DebugRenderer_Vertex *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DebugRenderer::Triangle *)(_this)).mV[0]);
@@ -613,6 +689,82 @@ JPH_DebugRenderer_Triangle *JPH_DebugRenderer_Triangle_AssignFromAnother(JPH_Deb
     ));
 }
 
+void *Jolt_new_JPH_DebugRenderer_Triangle_size_t(size_t inCount)
+{
+    return JPH::DebugRenderer::Triangle::operator new(
+        inCount
+    );
+}
+
+void Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr(void *inPointer)
+{
+    JPH::DebugRenderer::Triangle::operator delete(
+        inPointer
+    );
+}
+
+void Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_size_t(void *inPointer, size_t inSize)
+{
+    JPH::DebugRenderer::Triangle::operator delete(
+        inPointer,
+        inSize
+    );
+}
+
+void *Jolt_new_array_JPH_DebugRenderer_Triangle_size_t(size_t inCount)
+{
+    return JPH::DebugRenderer::Triangle::operator new[](
+        inCount
+    );
+}
+
+void Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr(void *inPointer)
+{
+    JPH::DebugRenderer::Triangle::operator delete[](
+        inPointer
+    );
+}
+
+void Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_size_t(void *inPointer, size_t inSize)
+{
+    JPH::DebugRenderer::Triangle::operator delete[](
+        inPointer,
+        inSize
+    );
+}
+
+void *Jolt_new_JPH_DebugRenderer_Triangle_size_t_void_ptr(size_t inCount, void *inPointer)
+{
+    return JPH::DebugRenderer::Triangle::operator new(
+        inCount,
+        inPointer
+    );
+}
+
+void Jolt_delete_JPH_DebugRenderer_Triangle_void_ptr_void_ptr(void *inPointer, void *inPlace)
+{
+    JPH::DebugRenderer::Triangle::operator delete(
+        inPointer,
+        inPlace
+    );
+}
+
+void *Jolt_new_array_JPH_DebugRenderer_Triangle_size_t_void_ptr(size_t inCount, void *inPointer)
+{
+    return JPH::DebugRenderer::Triangle::operator new[](
+        inCount,
+        inPointer
+    );
+}
+
+void Jolt_delete_array_JPH_DebugRenderer_Triangle_void_ptr_void_ptr(void *inPointer, void *inPlace)
+{
+    JPH::DebugRenderer::Triangle::operator delete[](
+        inPointer,
+        inPlace
+    );
+}
+
 const float *JPH_DebugRenderer_LOD_Get_mDistance(const JPH_DebugRenderer_LOD *_this)
 {
     return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::DebugRenderer::LOD *)(_this)).mDistance);
@@ -676,6 +828,82 @@ JPH_DebugRenderer_LOD *JPH_DebugRenderer_LOD_AssignFromAnother(JPH_DebugRenderer
     return (JPH_DebugRenderer_LOD *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::DebugRenderer::LOD *)(_this)).operator=(
         (MRBINDC_CLASSARG_DEF_CTOR(_other, JPH::DebugRenderer::LOD) MRBINDC_CLASSARG_COPY(_other, (JPH::DebugRenderer::LOD), JPH::DebugRenderer::LOD) MRBINDC_CLASSARG_MOVE(_other, (JPH::DebugRenderer::LOD), JPH::DebugRenderer::LOD) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_DefaultArgument, JPH::DebugRenderer::LOD) MRBINDC_CLASSARG_NO_DEF_ARG(_other, Jolt_PassBy_NoObject, JPH::DebugRenderer::LOD) MRBINDC_CLASSARG_END(_other, JPH::DebugRenderer::LOD))
     ));
+}
+
+void *Jolt_new_JPH_DebugRenderer_LOD_size_t(size_t inCount)
+{
+    return JPH::DebugRenderer::LOD::operator new(
+        inCount
+    );
+}
+
+void Jolt_delete_JPH_DebugRenderer_LOD_void_ptr(void *inPointer)
+{
+    JPH::DebugRenderer::LOD::operator delete(
+        inPointer
+    );
+}
+
+void Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_size_t(void *inPointer, size_t inSize)
+{
+    JPH::DebugRenderer::LOD::operator delete(
+        inPointer,
+        inSize
+    );
+}
+
+void *Jolt_new_array_JPH_DebugRenderer_LOD_size_t(size_t inCount)
+{
+    return JPH::DebugRenderer::LOD::operator new[](
+        inCount
+    );
+}
+
+void Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr(void *inPointer)
+{
+    JPH::DebugRenderer::LOD::operator delete[](
+        inPointer
+    );
+}
+
+void Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_size_t(void *inPointer, size_t inSize)
+{
+    JPH::DebugRenderer::LOD::operator delete[](
+        inPointer,
+        inSize
+    );
+}
+
+void *Jolt_new_JPH_DebugRenderer_LOD_size_t_void_ptr(size_t inCount, void *inPointer)
+{
+    return JPH::DebugRenderer::LOD::operator new(
+        inCount,
+        inPointer
+    );
+}
+
+void Jolt_delete_JPH_DebugRenderer_LOD_void_ptr_void_ptr(void *inPointer, void *inPlace)
+{
+    JPH::DebugRenderer::LOD::operator delete(
+        inPointer,
+        inPlace
+    );
+}
+
+void *Jolt_new_array_JPH_DebugRenderer_LOD_size_t_void_ptr(size_t inCount, void *inPointer)
+{
+    return JPH::DebugRenderer::LOD::operator new[](
+        inCount,
+        inPointer
+    );
+}
+
+void Jolt_delete_array_JPH_DebugRenderer_LOD_void_ptr_void_ptr(void *inPointer, void *inPlace)
+{
+    JPH::DebugRenderer::LOD::operator delete[](
+        inPointer,
+        inPlace
+    );
 }
 
 const Jolt_JPH_Array_JPH_DebugRenderer_LOD *JPH_DebugRenderer_Geometry_Get_mLODs(const JPH_DebugRenderer_Geometry *_this)

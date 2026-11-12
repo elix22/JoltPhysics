@@ -256,7 +256,7 @@ JPH_CylinderShapeSettings *JPH_CylinderShapeSettings_Construct(float inHalfHeigh
     return (JPH_CylinderShapeSettings *)new JPH::CylinderShapeSettings(JPH::CylinderShapeSettings(
         inHalfHeight,
         inRadius,
-        (inConvexRadius ? *inConvexRadius : static_cast<float>(cDefaultConvexRadius)),
+        (inConvexRadius ? *inConvexRadius : static_cast<float>(JPH::cDefaultConvexRadius)),
         ((const JPH::PhysicsMaterial *)inMaterial)
     ));
 }
@@ -554,7 +554,7 @@ JPH_CylinderShape *JPH_CylinderShape_Construct_4(float inHalfHeight, float inRad
     return (JPH_CylinderShape *)new JPH::CylinderShape(JPH::CylinderShape(
         inHalfHeight,
         inRadius,
-        (inConvexRadius ? *inConvexRadius : static_cast<float>(cDefaultConvexRadius)),
+        (inConvexRadius ? *inConvexRadius : static_cast<float>(JPH::cDefaultConvexRadius)),
         ((const JPH::PhysicsMaterial *)inMaterial)
     ));
 }

@@ -295,14 +295,14 @@ JOLT_API JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_ConstructFromA
 /// Create a convex hull from inPoints and maximum convex radius inMaxConvexRadius, the radius is automatically lowered if the hull requires it.
 /// (internally this will be subtracted so the total size will not grow with the convex radius).
 /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
-/// Parameter `inMaxConvexRadius` has a default argument: `cDefaultConvexRadius`, pass a null pointer to use it.
+/// Parameter `inMaxConvexRadius` has a default argument: `JPH::cDefaultConvexRadius`, pass a null pointer to use it.
 /// Parameter `inMaterial` defaults to a null pointer in C++.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_ConvexHullShapeSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_Construct_4(const JPH_Vec3 *inPoints, int inNumPoints, const float *inMaxConvexRadius, const JPH_PhysicsMaterial *inMaterial);
 
 /// Generated from constructor `JPH::ConvexHullShapeSettings::ConvexHullShapeSettings`.
 /// Parameter `inPoints` can not be null. It is a single object.
-/// Parameter `inConvexRadius` has a default argument: `cDefaultConvexRadius`, pass a null pointer to use it.
+/// Parameter `inConvexRadius` has a default argument: `JPH::cDefaultConvexRadius`, pass a null pointer to use it.
 /// Parameter `inMaterial` defaults to a null pointer in C++.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_ConvexHullShapeSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_ConvexHullShapeSettings *JPH_ConvexHullShapeSettings_Construct_3(const Jolt_JPH_Array_JPH_Vec3 *inPoints, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial);

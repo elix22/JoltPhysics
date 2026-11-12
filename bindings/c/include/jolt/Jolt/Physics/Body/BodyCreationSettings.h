@@ -609,6 +609,17 @@ JOLT_API void *Jolt_new_array_JPH_BodyCreationSettings_size_t_void_ptr(size_t in
 /// Generated from method `JPH::BodyCreationSettings::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_BodyCreationSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
+/// Test if two BodyCreationSettings are equal
+/// Generated from method `JPH::BodyCreationSettings::operator==`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRHS` can not be null. It is a single object.
+JOLT_API bool Jolt_equal_JPH_BodyCreationSettings(const JPH_BodyCreationSettings *_this, const JPH_BodyCreationSettings *inRHS);
+
+/// Generated from method `JPH::BodyCreationSettings::operator!=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRHS` can not be null. It is a single object.
+JOLT_API bool Jolt_not_equal_JPH_BodyCreationSettings(const JPH_BodyCreationSettings *_this, const JPH_BodyCreationSettings *inRHS);
+
 /// Access to the shape settings object. This contains serializable (non-runtime optimized) information about the Shape.
 /// Generated from method `JPH::BodyCreationSettings::GetShapeSettings`.
 /// Parameter `_this` can not be null. It is a single object.

@@ -492,6 +492,21 @@ JPH_EBackFaceMode *JPH_CollideShapeSettings_GetMutable_mBackFaceMode(JPH_Collide
     return (JPH_EBackFaceMode *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CollideShapeSettings *)(_this)).mBackFaceMode);
 }
 
+const float *JPH_CollideShapeSettings_Get_mInternalEdgeRemovalVertexToleranceSq(const JPH_CollideShapeSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CollideShapeSettings *)(_this)).mInternalEdgeRemovalVertexToleranceSq);
+}
+
+void JPH_CollideShapeSettings_Set_mInternalEdgeRemovalVertexToleranceSq(JPH_CollideShapeSettings *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CollideShapeSettings *)(_this)).mInternalEdgeRemovalVertexToleranceSq = value;
+}
+
+float *JPH_CollideShapeSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq(JPH_CollideShapeSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CollideShapeSettings *)(_this)).mInternalEdgeRemovalVertexToleranceSq);
+}
+
 const JPH_EActiveEdgeMode *JPH_CollideShapeSettings_Get_mActiveEdgeMode(const JPH_CollideShapeSettings *_this)
 {
     return (const JPH_EActiveEdgeMode *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CollideShapeSettings *)(_this)).mActiveEdgeMode);

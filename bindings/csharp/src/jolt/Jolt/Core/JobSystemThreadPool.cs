@@ -442,7 +442,7 @@ public static partial class JPH
         }
 
         /// Initialize the thread pool
-        /// @param inMaxJobs Max number of jobs that can be allocated at any time
+        /// @param inMaxJobs Max number of jobs that can be allocated at any time (note that the actual number of jobs that can be queued is inMaxJobs - 1 because the queue always contains a dummy node)
         /// @param inMaxBarriers Max number of barriers that can be allocated at any time
         /// @param inNumThreads Number of threads to start (the number of concurrent jobs is 1 more because the main thread will also run jobs while waiting for a barrier to complete). Use -1 to auto detect the amount of CPU's.
         /// Generated from method `JPH::JobSystemThreadPool::Init`.
@@ -472,6 +472,21 @@ public static partial class JPH
             byte __deref_inName = inName.GetValueOrDefault();
             uint __deref_inNumDependencies = inNumDependencies.GetValueOrDefault();
             return new(__JPH_JobSystemThreadPool_CreateJob(_UnderlyingPtr, inName.HasValue ? &__deref_inName : null, inColor._UnderlyingPtr, inJobFunction._UnderlyingPtr, inNumDependencies.HasValue ? &__deref_inNumDependencies : null), is_owning: true);
+        }
+
+        /// Generated from method `JPH::JobSystemThreadPool::CreateJobs`.
+        /// Parameter `inNumDependencies` defaults to `0`.
+        public unsafe void CreateJobs(byte? inName, JPH.Const_Color inColor, JPH.Std.Const_Function_Void inJobFunction, JPH.JobSystem.JobHandle? outJobs, uint inNumJobs, uint? inNumDependencies = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemThreadPool_CreateJobs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemThreadPool_CreateJobs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_JobSystemThreadPool_CreateJobs(_Underlying *_this, byte *inName, JPH.Color._Underlying *inColor, JPH.Std.Const_Function_Void._Underlying *inJobFunction, JPH.JobSystem.JobHandle._Underlying *outJobs, uint inNumJobs, uint *inNumDependencies);
+            byte __deref_inName = inName.GetValueOrDefault();
+            uint __deref_inNumDependencies = inNumDependencies.GetValueOrDefault();
+            __JPH_JobSystemThreadPool_CreateJobs(_UnderlyingPtr, inName.HasValue ? &__deref_inName : null, inColor._UnderlyingPtr, inJobFunction._UnderlyingPtr, outJobs is not null ? outJobs._UnderlyingPtr : null, inNumJobs, inNumDependencies.HasValue ? &__deref_inNumDependencies : null);
         }
 
         /// Change the max concurrency after initialization

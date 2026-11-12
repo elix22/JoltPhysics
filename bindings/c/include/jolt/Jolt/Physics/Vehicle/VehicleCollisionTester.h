@@ -102,7 +102,8 @@ JOLT_API void *Jolt_new_array_JPH_VehicleCollisionTester_size_t_void_ptr(size_t 
 /// Generated from method `JPH::VehicleCollisionTester::operator delete[]`.
 JOLT_API void Jolt_delete_array_JPH_VehicleCollisionTester_void_ptr_void_ptr(void *inPointer, void *inPlace);
 
-/// Object layer to use for collision detection, this is used when the filters are not overridden
+/// The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
+/// Used only when the ObjectLayerFilter is not overridden.
 /// Generated from method `JPH::VehicleCollisionTester::GetObjectLayer`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API unsigned short JPH_VehicleCollisionTester_GetObjectLayer(const JPH_VehicleCollisionTester *_this);
@@ -265,13 +266,13 @@ JOLT_API const JPH_VehicleCollisionTester *JPH_VehicleCollisionTester_StaticDown
 JOLT_API JPH_VehicleCollisionTester *JPH_VehicleCollisionTester_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCopyable *object);
 
 /// Constructor
-/// @param inObjectLayer Object layer to test collision with
+/// @param inObjectLayer The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
 /// @param inUp World space up vector, used to avoid colliding with vertical walls.
 /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
 /// Generated from constructor `JPH::VehicleCollisionTesterRay::VehicleCollisionTesterRay`.
 /// Parameter `inUp` is a single object.
 /// Parameter `inUp` has a default argument: `JPH::Vec3::sAxisY()`, pass a null pointer to use it.
-/// Parameter `inMaxSlopeAngle` has a default argument: `DegreesToRadians(80.0f)`, pass a null pointer to use it.
+/// Parameter `inMaxSlopeAngle` has a default argument: `JPH::DegreesToRadians(80.0f)`, pass a null pointer to use it.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_VehicleCollisionTesterRay_Destroy()` to free it when you're done using it.
 JOLT_API JPH_VehicleCollisionTesterRay *JPH_VehicleCollisionTesterRay_Construct(unsigned short inObjectLayer, const JPH_Vec3 *inUp, const float *inMaxSlopeAngle);
 
@@ -408,7 +409,8 @@ JOLT_API bool JPH_VehicleCollisionTesterRay_Collide(const JPH_VehicleCollisionTe
 /// Parameter `ioSuspensionLength` can not be null. It is a single object.
 JOLT_API void JPH_VehicleCollisionTesterRay_PredictContactProperties(const JPH_VehicleCollisionTesterRay *_this, JPH_PhysicsSystem *inPhysicsSystem, const JPH_VehicleConstraint *inVehicleConstraint, unsigned int inWheelIndex, const JPH_Vec3 *inOrigin, const JPH_Vec3 *inDirection, const JPH_BodyID *inVehicleBodyID, JPH_Body **ioBody, JPH_SubShapeID *ioSubShapeID, JPH_Vec3 *ioContactPosition, JPH_Vec3 *ioContactNormal, float *ioSuspensionLength);
 
-/// Object layer to use for collision detection, this is used when the filters are not overridden
+/// The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
+/// Used only when the ObjectLayerFilter is not overridden.
 /// Generated from method `JPH::VehicleCollisionTesterRay::GetObjectLayer`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API unsigned short JPH_VehicleCollisionTesterRay_GetObjectLayer(const JPH_VehicleCollisionTesterRay *_this);
@@ -470,14 +472,14 @@ JOLT_API void JPH_VehicleCollisionTesterRay_Release(const JPH_VehicleCollisionTe
 JOLT_API int JPH_VehicleCollisionTesterRay_sInternalGetRefCountOffset(void);
 
 /// Constructor
-/// @param inObjectLayer Object layer to test collision with
+/// @param inObjectLayer The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
 /// @param inUp World space up vector, used to avoid colliding with vertical walls.
 /// @param inRadius Radius of sphere
 /// @param inMaxSlopeAngle Max angle (rad) that is considered for colliding wheels. This is to avoid colliding with vertical walls.
 /// Generated from constructor `JPH::VehicleCollisionTesterCastSphere::VehicleCollisionTesterCastSphere`.
 /// Parameter `inUp` is a single object.
 /// Parameter `inUp` has a default argument: `JPH::Vec3::sAxisY()`, pass a null pointer to use it.
-/// Parameter `inMaxSlopeAngle` has a default argument: `DegreesToRadians(80.0f)`, pass a null pointer to use it.
+/// Parameter `inMaxSlopeAngle` has a default argument: `JPH::DegreesToRadians(80.0f)`, pass a null pointer to use it.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_VehicleCollisionTesterCastSphere_Destroy()` to free it when you're done using it.
 JOLT_API JPH_VehicleCollisionTesterCastSphere *JPH_VehicleCollisionTesterCastSphere_Construct(unsigned short inObjectLayer, float inRadius, const JPH_Vec3 *inUp, const float *inMaxSlopeAngle);
 
@@ -614,7 +616,8 @@ JOLT_API bool JPH_VehicleCollisionTesterCastSphere_Collide(const JPH_VehicleColl
 /// Parameter `ioSuspensionLength` can not be null. It is a single object.
 JOLT_API void JPH_VehicleCollisionTesterCastSphere_PredictContactProperties(const JPH_VehicleCollisionTesterCastSphere *_this, JPH_PhysicsSystem *inPhysicsSystem, const JPH_VehicleConstraint *inVehicleConstraint, unsigned int inWheelIndex, const JPH_Vec3 *inOrigin, const JPH_Vec3 *inDirection, const JPH_BodyID *inVehicleBodyID, JPH_Body **ioBody, JPH_SubShapeID *ioSubShapeID, JPH_Vec3 *ioContactPosition, JPH_Vec3 *ioContactNormal, float *ioSuspensionLength);
 
-/// Object layer to use for collision detection, this is used when the filters are not overridden
+/// The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
+/// Used only when the ObjectLayerFilter is not overridden.
 /// Generated from method `JPH::VehicleCollisionTesterCastSphere::GetObjectLayer`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API unsigned short JPH_VehicleCollisionTesterCastSphere_GetObjectLayer(const JPH_VehicleCollisionTesterCastSphere *_this);
@@ -676,7 +679,7 @@ JOLT_API void JPH_VehicleCollisionTesterCastSphere_Release(const JPH_VehicleColl
 JOLT_API int JPH_VehicleCollisionTesterCastSphere_sInternalGetRefCountOffset(void);
 
 /// Constructor
-/// @param inObjectLayer Object layer to test collision with
+/// @param inObjectLayer The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
 /// @param inConvexRadiusFraction Fraction of half the wheel width (or wheel radius if it is smaller) that is used as the convex radius
 /// Generated from constructor `JPH::VehicleCollisionTesterCastCylinder::VehicleCollisionTesterCastCylinder`.
 /// Parameter `inConvexRadiusFraction` has a default argument: `0.100000001f`, pass a null pointer to use it.
@@ -816,7 +819,8 @@ JOLT_API bool JPH_VehicleCollisionTesterCastCylinder_Collide(const JPH_VehicleCo
 /// Parameter `ioSuspensionLength` can not be null. It is a single object.
 JOLT_API void JPH_VehicleCollisionTesterCastCylinder_PredictContactProperties(const JPH_VehicleCollisionTesterCastCylinder *_this, JPH_PhysicsSystem *inPhysicsSystem, const JPH_VehicleConstraint *inVehicleConstraint, unsigned int inWheelIndex, const JPH_Vec3 *inOrigin, const JPH_Vec3 *inDirection, const JPH_BodyID *inVehicleBodyID, JPH_Body **ioBody, JPH_SubShapeID *ioSubShapeID, JPH_Vec3 *ioContactPosition, JPH_Vec3 *ioContactNormal, float *ioSuspensionLength);
 
-/// Object layer to use for collision detection, this is used when the filters are not overridden
+/// The object layer the wheel belongs to. This is used to determine which objects the wheel can collide with. Works as BodyCreationSettings::mObjectLayer.
+/// Used only when the ObjectLayerFilter is not overridden.
 /// Generated from method `JPH::VehicleCollisionTesterCastCylinder::GetObjectLayer`.
 /// Parameter `_this` can not be null. It is a single object.
 JOLT_API unsigned short JPH_VehicleCollisionTesterCastCylinder_GetObjectLayer(const JPH_VehicleCollisionTesterCastCylinder *_this);

@@ -761,6 +761,18 @@ JPH_Vec3 *JPH_Character_GetUp(const JPH_Character *_this)
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Character *)(_this)).GetUp());
 }
 
+const JPH_Plane *JPH_Character_GetSupportingVolume(const JPH_Character *_this)
+{
+    return (const JPH_Plane *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Character *)(_this)).GetSupportingVolume());
+}
+
+void JPH_Character_SetSupportingVolume(JPH_Character *_this, const JPH_Plane *inPlane)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::Character *)(_this)).SetSupportingVolume(
+        ((inPlane ? void() : MRBINDC_THROW("Parameter `inPlane` can not be null.", void)), *(const JPH::Plane *)(inPlane))
+    );
+}
+
 bool JPH_Character_IsSlopeTooSteep(const JPH_Character *_this, const JPH_Vec3 *inNormal)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Character *)(_this)).IsSlopeTooSteep(

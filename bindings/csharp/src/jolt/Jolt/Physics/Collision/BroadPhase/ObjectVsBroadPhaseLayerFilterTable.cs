@@ -249,6 +249,19 @@ public static partial class JPH
             extern static byte __JPH_ObjectVsBroadPhaseLayerFilterTable_ShouldCollide(_Underlying *_this, ushort inLayer1, JPH.BroadPhaseLayer._Underlying *inLayer2);
             return __JPH_ObjectVsBroadPhaseLayerFilterTable_ShouldCollide(_UnderlyingPtr, inLayer1, inLayer2._UnderlyingPtr) != 0;
         }
+
+        /// Get the total number of broadphase layers
+        /// Generated from method `JPH::ObjectVsBroadPhaseLayerFilterTable::GetNumBroadPhaseLayers`.
+        public unsafe uint GetNumBroadPhaseLayers()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ObjectVsBroadPhaseLayerFilterTable_GetNumBroadPhaseLayers", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ObjectVsBroadPhaseLayerFilterTable_GetNumBroadPhaseLayers", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static uint __JPH_ObjectVsBroadPhaseLayerFilterTable_GetNumBroadPhaseLayers(_Underlying *_this);
+            return __JPH_ObjectVsBroadPhaseLayerFilterTable_GetNumBroadPhaseLayers(_UnderlyingPtr);
+        }
     }
 
     /// Class that determines if an object layer can collide with a broadphase layer.

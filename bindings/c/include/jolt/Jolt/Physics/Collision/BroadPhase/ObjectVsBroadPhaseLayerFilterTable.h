@@ -128,6 +128,11 @@ JOLT_API void Jolt_delete_array_JPH_ObjectVsBroadPhaseLayerFilterTable_void_ptr_
 /// Parameter `inLayer2` can not be null. It is a single object.
 JOLT_API bool JPH_ObjectVsBroadPhaseLayerFilterTable_ShouldCollide(const JPH_ObjectVsBroadPhaseLayerFilterTable *_this, unsigned short inLayer1, const JPH_BroadPhaseLayer *inLayer2);
 
+/// Get the total number of broadphase layers
+/// Generated from method `JPH::ObjectVsBroadPhaseLayerFilterTable::GetNumBroadPhaseLayers`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_ObjectVsBroadPhaseLayerFilterTable_GetNumBroadPhaseLayers(const JPH_ObjectVsBroadPhaseLayerFilterTable *_this);
+
 #ifdef __cplusplus
 } // extern "C"
 #endif

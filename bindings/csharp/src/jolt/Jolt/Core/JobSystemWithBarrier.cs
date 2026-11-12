@@ -395,6 +395,23 @@ public static partial class JPH
             uint __deref_inNumDependencies = inNumDependencies.GetValueOrDefault();
             return new(__JPH_JobSystemWithBarrier_CreateJob(_UnderlyingPtr, inName.HasValue ? &__deref_inName : null, inColor._UnderlyingPtr, inJobFunction._UnderlyingPtr, inNumDependencies.HasValue ? &__deref_inNumDependencies : null), is_owning: true);
         }
+
+        /// Create a number of similar jobs, the jobs are started immediately if inNumDependencies == 0 otherwise they start when
+        /// RemoveDependency causes the dependency counter to reach 0.
+        /// Generated from method `JPH::JobSystemWithBarrier::CreateJobs`.
+        /// Parameter `inNumDependencies` defaults to `0`.
+        public unsafe void CreateJobs(byte? inName, JPH.Const_Color inColor, JPH.Std.Const_Function_Void inJobFunction, JPH.JobSystem.JobHandle? outJobs, uint inNumJobs, uint? inNumDependencies = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_JobSystemWithBarrier_CreateJobs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_JobSystemWithBarrier_CreateJobs", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_JobSystemWithBarrier_CreateJobs(_Underlying *_this, byte *inName, JPH.Color._Underlying *inColor, JPH.Std.Const_Function_Void._Underlying *inJobFunction, JPH.JobSystem.JobHandle._Underlying *outJobs, uint inNumJobs, uint *inNumDependencies);
+            byte __deref_inName = inName.GetValueOrDefault();
+            uint __deref_inNumDependencies = inNumDependencies.GetValueOrDefault();
+            __JPH_JobSystemWithBarrier_CreateJobs(_UnderlyingPtr, inName.HasValue ? &__deref_inName : null, inColor._UnderlyingPtr, inJobFunction._UnderlyingPtr, outJobs is not null ? outJobs._UnderlyingPtr : null, inNumJobs, inNumDependencies.HasValue ? &__deref_inNumDependencies : null);
+        }
     }
 
     /// This is used for optional parameters of class `JobSystemWithBarrier` with default arguments.

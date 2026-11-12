@@ -152,6 +152,36 @@ JOLT_API void JPH_Color_DestroyArray(const JPH_Color *_this);
 /// When this function is called, this object will drop any object references it held previously.
 JOLT_API JPH_Color *JPH_Color_AssignFromAnother(JPH_Color *_this, const JPH_Color *inRHS);
 
+/// Generated from method `JPH::Color::operator new`.
+JOLT_API void *Jolt_new_JPH_Color_size_t(size_t inCount);
+
+/// Generated from method `JPH::Color::operator delete`.
+JOLT_API void Jolt_delete_JPH_Color_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::Color::operator delete`.
+JOLT_API void Jolt_delete_JPH_Color_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::Color::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_Color_size_t(size_t inCount);
+
+/// Generated from method `JPH::Color::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_Color_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::Color::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_Color_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::Color::operator new`.
+JOLT_API void *Jolt_new_JPH_Color_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::Color::operator delete`.
+JOLT_API void Jolt_delete_JPH_Color_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Generated from method `JPH::Color::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_Color_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::Color::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_Color_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
 /// Comparison
 /// Generated from method `JPH::Color::operator==`.
 /// Parameter `_this` can not be null. It is a single object.

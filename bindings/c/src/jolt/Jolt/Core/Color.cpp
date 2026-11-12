@@ -177,6 +177,82 @@ JPH_Color *JPH_Color_AssignFromAnother(JPH_Color *_this, const JPH_Color *inRHS)
     ));
 }
 
+void *Jolt_new_JPH_Color_size_t(size_t inCount)
+{
+    return JPH::Color::operator new(
+        inCount
+    );
+}
+
+void Jolt_delete_JPH_Color_void_ptr(void *inPointer)
+{
+    JPH::Color::operator delete(
+        inPointer
+    );
+}
+
+void Jolt_delete_JPH_Color_void_ptr_size_t(void *inPointer, size_t inSize)
+{
+    JPH::Color::operator delete(
+        inPointer,
+        inSize
+    );
+}
+
+void *Jolt_new_array_JPH_Color_size_t(size_t inCount)
+{
+    return JPH::Color::operator new[](
+        inCount
+    );
+}
+
+void Jolt_delete_array_JPH_Color_void_ptr(void *inPointer)
+{
+    JPH::Color::operator delete[](
+        inPointer
+    );
+}
+
+void Jolt_delete_array_JPH_Color_void_ptr_size_t(void *inPointer, size_t inSize)
+{
+    JPH::Color::operator delete[](
+        inPointer,
+        inSize
+    );
+}
+
+void *Jolt_new_JPH_Color_size_t_void_ptr(size_t inCount, void *inPointer)
+{
+    return JPH::Color::operator new(
+        inCount,
+        inPointer
+    );
+}
+
+void Jolt_delete_JPH_Color_void_ptr_void_ptr(void *inPointer, void *inPlace)
+{
+    JPH::Color::operator delete(
+        inPointer,
+        inPlace
+    );
+}
+
+void *Jolt_new_array_JPH_Color_size_t_void_ptr(size_t inCount, void *inPointer)
+{
+    return JPH::Color::operator new[](
+        inCount,
+        inPointer
+    );
+}
+
+void Jolt_delete_array_JPH_Color_void_ptr_void_ptr(void *inPointer, void *inPlace)
+{
+    JPH::Color::operator delete[](
+        inPointer,
+        inPlace
+    );
+}
+
 bool Jolt_equal_JPH_Color(const JPH_Color *_this, const JPH_Color *inRHS)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::Color *)(_this)).operator==(

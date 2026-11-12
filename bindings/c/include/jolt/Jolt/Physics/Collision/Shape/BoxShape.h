@@ -244,7 +244,7 @@ JOLT_API JPH_BoxShapeSettings *JPH_BoxShapeSettings_ConstructFromAnother(Jolt_Pa
 /// (internally the convex radius will be subtracted from the half extent so the total box will not grow with the convex radius).
 /// Generated from constructor `JPH::BoxShapeSettings::BoxShapeSettings`.
 /// Parameter `inHalfExtent` can not be null. It is a single object.
-/// Parameter `inConvexRadius` has a default argument: `cDefaultConvexRadius`, pass a null pointer to use it.
+/// Parameter `inConvexRadius` has a default argument: `JPH::cDefaultConvexRadius`, pass a null pointer to use it.
 /// Parameter `inMaterial` defaults to a null pointer in C++.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_BoxShapeSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_BoxShapeSettings *JPH_BoxShapeSettings_Construct(const JPH_Vec3 *inHalfExtent, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial);
@@ -449,7 +449,7 @@ JOLT_API JPH_BoxShape *JPH_BoxShape_MutableStaticDowncastFrom_JPH_ConvexShape(JP
 /// (internally the convex radius will be subtracted from the half extent so the total box will not grow with the convex radius).
 /// Generated from constructor `JPH::BoxShape::BoxShape`.
 /// Parameter `inHalfExtent` can not be null. It is a single object.
-/// Parameter `inConvexRadius` has a default argument: `cDefaultConvexRadius`, pass a null pointer to use it.
+/// Parameter `inConvexRadius` has a default argument: `JPH::cDefaultConvexRadius`, pass a null pointer to use it.
 /// Parameter `inMaterial` defaults to a null pointer in C++.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_BoxShape_Destroy()` to free it when you're done using it.
 JOLT_API JPH_BoxShape *JPH_BoxShape_Construct_3(const JPH_Vec3 *inHalfExtent, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial);

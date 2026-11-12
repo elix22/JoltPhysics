@@ -270,7 +270,7 @@ JPH_TaperedCylinderShapeSettings *JPH_TaperedCylinderShapeSettings_Construct(flo
         inHalfHeightOfTaperedCylinder,
         inTopRadius,
         inBottomRadius,
-        (inConvexRadius ? *inConvexRadius : static_cast<float>(cDefaultConvexRadius)),
+        (inConvexRadius ? *inConvexRadius : static_cast<float>(JPH::cDefaultConvexRadius)),
         ((const JPH::PhysicsMaterial *)inMaterial)
     ));
 }

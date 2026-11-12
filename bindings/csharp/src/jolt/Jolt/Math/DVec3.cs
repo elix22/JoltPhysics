@@ -773,7 +773,7 @@ public static partial class JPH
             return __JPH_DVec3_IsNearZero(_UnderlyingPtr, inMaxDistSq.HasValue ? &__deref_inMaxDistSq : null) != 0;
         }
 
-        /// Test if vector is normalized
+        /// Test if length^2 of this vector is within the range [1 - inTolerance, 1 + inTolerance]
         /// Generated from method `JPH::DVec3::IsNormalized`.
         /// Parameter `inTolerance` defaults to `9.9999999999999998e-13`.
         public unsafe bool IsNormalized(double? inTolerance = null)

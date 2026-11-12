@@ -634,7 +634,7 @@ void JPH_MutableCompoundShape_ModifyShape_4(JPH_MutableCompoundShape *_this, uns
     );
 }
 
-void JPH_MutableCompoundShape_ModifyShapes(JPH_MutableCompoundShape *_this, unsigned int inStartIndex, unsigned int inNumber, const JPH_Vec3 *inPositions, const JPH_Quat *inRotations, const unsigned int *inPositionStride, const unsigned int *inRotationStride)
+void JPH_MutableCompoundShape_ModifyShapes_6(JPH_MutableCompoundShape *_this, unsigned int inStartIndex, unsigned int inNumber, const JPH_Vec3 *inPositions, const JPH_Quat *inRotations, const unsigned int *inPositionStride, const unsigned int *inRotationStride)
 {
     using namespace JPH;
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MutableCompoundShape *)(_this)).ModifyShapes(
@@ -644,6 +644,21 @@ void JPH_MutableCompoundShape_ModifyShapes(JPH_MutableCompoundShape *_this, unsi
         ((const JPH::Quat *)inRotations),
         (inPositionStride ? *inPositionStride : static_cast<unsigned int>(sizeof(JPH::Vec3))),
         (inRotationStride ? *inRotationStride : static_cast<unsigned int>(sizeof(JPH::Quat)))
+    );
+}
+
+void JPH_MutableCompoundShape_ModifyShapes_8(JPH_MutableCompoundShape *_this, unsigned int inStartIndex, unsigned int inNumber, const JPH_Vec3 *inPositions, const JPH_Quat *inRotations, const JPH_Shape *const *inShapes, const unsigned int *inPositionStride, const unsigned int *inRotationStride, const unsigned int *inShapeStride)
+{
+    using namespace JPH;
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::MutableCompoundShape *)(_this)).ModifyShapes(
+        inStartIndex,
+        inNumber,
+        ((const JPH::Vec3 *)inPositions),
+        ((const JPH::Quat *)inRotations),
+        ((const JPH::Shape *const *)inShapes),
+        (inPositionStride ? *inPositionStride : static_cast<unsigned int>(sizeof(JPH::Vec3))),
+        (inRotationStride ? *inRotationStride : static_cast<unsigned int>(sizeof(JPH::Quat))),
+        (inShapeStride ? *inShapeStride : static_cast<unsigned int>(sizeof(const JPH::Shape *)))
     );
 }
 

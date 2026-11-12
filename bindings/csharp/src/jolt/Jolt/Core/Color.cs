@@ -320,6 +320,140 @@ public static partial class JPH
             _UnderlyingPtr = __JPH_Color_Construct_2(inRHS._UnderlyingPtr, inAlpha);
         }
 
+        /// Generated from method `JPH::Color::operator new`.
+        /// Returns a mutable pointer.
+        public static unsafe void *New(UIntPtr inCount)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_Color_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_Color_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__Jolt_new_JPH_Color_size_t(UIntPtr inCount);
+            return __Jolt_new_JPH_Color_size_t(inCount);
+        }
+
+        /// Generated from method `JPH::Color::operator delete`.
+        /// Parameter `inPointer` is a mutable pointer.
+        public static unsafe void Delete(void *inPointer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_Color_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_Color_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __Jolt_delete_JPH_Color_void_ptr(void *inPointer);
+            __Jolt_delete_JPH_Color_void_ptr(inPointer);
+        }
+
+        /// Generated from method `JPH::Color::operator delete`.
+        /// Parameter `inPointer` is a mutable pointer.
+        public static unsafe void Delete(void *inPointer, UIntPtr inSize)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_Color_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_Color_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __Jolt_delete_JPH_Color_void_ptr_size_t(void *inPointer, UIntPtr inSize);
+            __Jolt_delete_JPH_Color_void_ptr_size_t(inPointer, inSize);
+        }
+
+        /// Generated from method `JPH::Color::operator new[]`.
+        /// Returns a mutable pointer.
+        public static unsafe void *NewArray(UIntPtr inCount)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_Color_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_Color_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__Jolt_new_array_JPH_Color_size_t(UIntPtr inCount);
+            return __Jolt_new_array_JPH_Color_size_t(inCount);
+        }
+
+        /// Generated from method `JPH::Color::operator delete[]`.
+        /// Parameter `inPointer` is a mutable pointer.
+        public static unsafe void DeleteArray(void *inPointer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_Color_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_Color_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __Jolt_delete_array_JPH_Color_void_ptr(void *inPointer);
+            __Jolt_delete_array_JPH_Color_void_ptr(inPointer);
+        }
+
+        /// Generated from method `JPH::Color::operator delete[]`.
+        /// Parameter `inPointer` is a mutable pointer.
+        public static unsafe void DeleteArray(void *inPointer, UIntPtr inSize)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_Color_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_Color_void_ptr_size_t", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __Jolt_delete_array_JPH_Color_void_ptr_size_t(void *inPointer, UIntPtr inSize);
+            __Jolt_delete_array_JPH_Color_void_ptr_size_t(inPointer, inSize);
+        }
+
+        /// Generated from method `JPH::Color::operator new`.
+        /// Parameter `inPointer` is a mutable pointer.
+        /// Returns a mutable pointer.
+        public static unsafe void *New(UIntPtr inCount, void *inPointer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_JPH_Color_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_JPH_Color_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__Jolt_new_JPH_Color_size_t_void_ptr(UIntPtr inCount, void *inPointer);
+            return __Jolt_new_JPH_Color_size_t_void_ptr(inCount, inPointer);
+        }
+
+        /// Generated from method `JPH::Color::operator delete`.
+        /// Parameter `inPointer` is a mutable pointer.
+        /// Parameter `inPlace` is a mutable pointer.
+        public static unsafe void Delete(void *inPointer, void *inPlace)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_JPH_Color_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_JPH_Color_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __Jolt_delete_JPH_Color_void_ptr_void_ptr(void *inPointer, void *inPlace);
+            __Jolt_delete_JPH_Color_void_ptr_void_ptr(inPointer, inPlace);
+        }
+
+        /// Generated from method `JPH::Color::operator new[]`.
+        /// Parameter `inPointer` is a mutable pointer.
+        /// Returns a mutable pointer.
+        public static unsafe void *NewArray(UIntPtr inCount, void *inPointer)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_new_array_JPH_Color_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_new_array_JPH_Color_size_t_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void *__Jolt_new_array_JPH_Color_size_t_void_ptr(UIntPtr inCount, void *inPointer);
+            return __Jolt_new_array_JPH_Color_size_t_void_ptr(inCount, inPointer);
+        }
+
+        /// Generated from method `JPH::Color::operator delete[]`.
+        /// Parameter `inPointer` is a mutable pointer.
+        /// Parameter `inPlace` is a mutable pointer.
+        public static unsafe void DeleteArray(void *inPointer, void *inPlace)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "Jolt_delete_array_JPH_Color_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "Jolt_delete_array_JPH_Color_void_ptr_void_ptr", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __Jolt_delete_array_JPH_Color_void_ptr_void_ptr(void *inPointer, void *inPlace);
+            __Jolt_delete_array_JPH_Color_void_ptr_void_ptr(inPointer, inPlace);
+        }
+
         /// Comparison
         /// Generated from method `JPH::Color::operator==`.
         public static unsafe bool operator==(JPH.Const_Color _this, JPH.Const_Color inRHS)

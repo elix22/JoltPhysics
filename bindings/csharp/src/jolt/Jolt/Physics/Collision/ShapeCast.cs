@@ -1764,6 +1764,21 @@ public static partial class JPH
             return ret;
         }
 
+        /// When > 0 the query shape is inflated by an extra convex radius, this makes it bigger in every direction by this margin. (unit: meter)
+        public unsafe float mExtraConvexRadius
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeCastSettings_Get_mExtraConvexRadius", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeCastSettings_Get_mExtraConvexRadius", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JPH_ShapeCastSettings_Get_mExtraConvexRadius(_Underlying *_this);
+                return *__JPH_ShapeCastSettings_Get_mExtraConvexRadius(_UnderlyingPtr);
+            }
+        }
+
         /// How backfacing triangles should be treated (should we report moving from back to front for triangle based shapes, e.g. for MeshShape/HeightFieldShape?)
         public unsafe JPH.EBackFaceMode mBackFaceModeTriangles
         {
@@ -2103,6 +2118,21 @@ public static partial class JPH
             ShapeCastSettings ret = new(__JPH_ShapeCastSettings_StaticDowncastFrom_JPH_CollideSettingsBase(parent._UnderlyingPtr), is_owning: false);
             ret._KeepAliveEnclosingObject = parent;
             return ret;
+        }
+
+        /// When > 0 the query shape is inflated by an extra convex radius, this makes it bigger in every direction by this margin. (unit: meter)
+        public new unsafe ref float mExtraConvexRadius
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_ShapeCastSettings_GetMutable_mExtraConvexRadius", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_ShapeCastSettings_GetMutable_mExtraConvexRadius", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JPH_ShapeCastSettings_GetMutable_mExtraConvexRadius(_Underlying *_this);
+                return ref *__JPH_ShapeCastSettings_GetMutable_mExtraConvexRadius(_UnderlyingPtr);
+            }
         }
 
         /// How backfacing triangles should be treated (should we report moving from back to front for triangle based shapes, e.g. for MeshShape/HeightFieldShape?)

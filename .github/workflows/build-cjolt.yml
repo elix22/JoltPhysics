@@ -2,7 +2,7 @@ name: Build cjolt Libraries
 
 on:
   push:
-    branches: [ v5.5.0.bindings, main, master ]
+    branches: [ v5.6.0.bindings, v5.5.0.bindings, main, master ]
     paths:
       - 'Jolt/**'
       - 'bindings/c/**'
@@ -10,7 +10,7 @@ on:
       - 'scripts/**'
       - '.github/workflows/build-cjolt.yml'
   pull_request:
-    branches: [ v5.5.0.bindings, main, master ]
+    branches: [ v5.6.0.bindings, v5.5.0.bindings, main, master ]
     paths:
       - 'Jolt/**'
       - 'bindings/c/**'

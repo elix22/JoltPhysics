@@ -453,7 +453,7 @@ JOLT_API void Jolt_delete_array_JPH_SoftBodySharedSettings_void_ptr_void_ptr(voi
 /// Generated from method `JPH::SoftBodySharedSettings::CreateConstraints`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inBendType` has a default argument: `JPH::SoftBodySharedSettings::EBendType::Distance`, pass a null pointer to use it.
-/// Parameter `inAngleTolerance` has a default argument: `DegreesToRadians(8.0f)`, pass a null pointer to use it.
+/// Parameter `inAngleTolerance` has a default argument: `JPH::DegreesToRadians(8.0f)`, pass a null pointer to use it.
 JOLT_API void JPH_SoftBodySharedSettings_CreateConstraints(JPH_SoftBodySharedSettings *_this, const JPH_SoftBodySharedSettings_VertexAttributes *inVertexAttributes, unsigned int inVertexAttributesLength, const JPH_SoftBodySharedSettings_EBendType *inBendType, const float *inAngleTolerance);
 
 /// Calculate the initial lengths of all springs of the edges of this soft body (if you use CreateConstraint, this is already done)

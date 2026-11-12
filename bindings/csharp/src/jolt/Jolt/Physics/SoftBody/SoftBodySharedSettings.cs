@@ -6067,7 +6067,7 @@ public static partial class JPH
         /// @param inAngleTolerance Shear edges are created when two connected triangles form a quad (are roughly in the same plane and form a square with roughly 90 degree angles). This defines the tolerance (in radians).
         /// Generated from method `JPH::SoftBodySharedSettings::CreateConstraints`.
         /// Parameter `inBendType` defaults to `JPH::SoftBodySharedSettings::EBendType::Distance`.
-        /// Parameter `inAngleTolerance` defaults to `DegreesToRadians(8.0f)`.
+        /// Parameter `inAngleTolerance` defaults to `JPH::DegreesToRadians(8.0f)`.
         public unsafe void CreateConstraints(JPH.SoftBodySharedSettings.Const_VertexAttributes? inVertexAttributes, uint inVertexAttributesLength, JPH.SoftBodySharedSettings.EBendType? inBendType = null, float? inAngleTolerance = null)
         {
             #if __IOS__

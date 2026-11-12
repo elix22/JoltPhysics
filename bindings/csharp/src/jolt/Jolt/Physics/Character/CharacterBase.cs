@@ -905,6 +905,19 @@ public static partial class JPH
             return new(__JPH_CharacterBase_GetUp(_UnderlyingPtr), is_owning: true);
         }
 
+        // Every contact behind this plane can support the character
+        /// Generated from method `JPH::CharacterBase::GetSupportingVolume`.
+        public unsafe JPH.Const_Plane GetSupportingVolume()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_GetSupportingVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_GetSupportingVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Const_Plane._Underlying *__JPH_CharacterBase_GetSupportingVolume(_Underlying *_this);
+            return new(__JPH_CharacterBase_GetSupportingVolume(_UnderlyingPtr), is_owning: false);
+        }
+
         /// Check if the normal of the ground surface is too steep to walk on
         /// Generated from method `JPH::CharacterBase::IsSlopeTooSteep`.
         public unsafe bool IsSlopeTooSteep(JPH.Const_Vec3 inNormal)
@@ -1264,6 +1277,18 @@ public static partial class JPH
             #endif
             extern static void __JPH_CharacterBase_SetUp(_Underlying *_this, JPH.Vec3._Underlying *inUp);
             __JPH_CharacterBase_SetUp(_UnderlyingPtr, inUp._UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::CharacterBase::SetSupportingVolume`.
+        public unsafe void SetSupportingVolume(JPH.Const_Plane inPlane)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CharacterBase_SetSupportingVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CharacterBase_SetSupportingVolume", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_CharacterBase_SetSupportingVolume(_Underlying *_this, JPH.Const_Plane._Underlying *inPlane);
+            __JPH_CharacterBase_SetSupportingVolume(_UnderlyingPtr, inPlane._UnderlyingPtr);
         }
     }
 

@@ -114,11 +114,31 @@ JPH_MotorSettings *JPH_MotorSettings_ConstructFromAnother(const JPH_MotorSetting
     ));
 }
 
+JPH_MotorSettings *JPH_MotorSettings_Construct_3(JPH_ESpringMode inMode, float inFrequency, float inDamping)
+{
+    return (JPH_MotorSettings *)new JPH::MotorSettings(JPH::MotorSettings(
+        ((JPH::ESpringMode)inMode),
+        inFrequency,
+        inDamping
+    ));
+}
+
 JPH_MotorSettings *JPH_MotorSettings_Construct_2(float inFrequency, float inDamping)
 {
     return (JPH_MotorSettings *)new JPH::MotorSettings(JPH::MotorSettings(
         inFrequency,
         inDamping
+    ));
+}
+
+JPH_MotorSettings *JPH_MotorSettings_Construct_5(JPH_ESpringMode inMode, float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit)
+{
+    return (JPH_MotorSettings *)new JPH::MotorSettings(JPH::MotorSettings(
+        ((JPH::ESpringMode)inMode),
+        inFrequency,
+        inDamping,
+        inForceLimit,
+        inTorqueLimit
     ));
 }
 

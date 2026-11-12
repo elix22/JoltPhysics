@@ -12,7 +12,6 @@
 #include <Jolt/Physics/Body/Body.h>
 #include <Jolt/Physics/Body/BodyFilter.h>
 #include <Jolt/Physics/Body/BodyID.h>
-#include <Jolt/Physics/Body/MotionType.h>
 #include <Jolt/Physics/Character/CharacterBase.h>
 #include <Jolt/Physics/Character/CharacterID.h>
 #include <Jolt/Physics/Character/CharacterVirtual.h>
@@ -681,78 +680,12 @@ void JPH_CharacterContactListener_OnAdjustBodyVelocity(JPH_CharacterContactListe
     );
 }
 
-bool JPH_CharacterContactListener_OnContactValidate(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2)
-{
-    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnContactValidate(
-        ((const JPH::CharacterVirtual *)inCharacter),
-        ((inBodyID2 ? void() : MRBINDC_THROW("Parameter `inBodyID2` can not be null.", void)), *(const JPH::BodyID *)(inBodyID2)),
-        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2))
-    );
-}
-
-bool JPH_CharacterContactListener_OnCharacterContactValidate(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2)
-{
-    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnCharacterContactValidate(
-        ((const JPH::CharacterVirtual *)inCharacter),
-        ((const JPH::CharacterVirtual *)inOtherCharacter),
-        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2))
-    );
-}
-
-void JPH_CharacterContactListener_OnContactAdded(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnContactAdded(
-        ((const JPH::CharacterVirtual *)inCharacter),
-        ((inBodyID2 ? void() : MRBINDC_THROW("Parameter `inBodyID2` can not be null.", void)), *(const JPH::BodyID *)(inBodyID2)),
-        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2)),
-        ((inContactPosition ? void() : MRBINDC_THROW("Parameter `inContactPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactPosition)),
-        ((inContactNormal ? void() : MRBINDC_THROW("Parameter `inContactNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactNormal)),
-        ((ioSettings ? void() : MRBINDC_THROW("Parameter `ioSettings` can not be null.", void)), *(JPH::CharacterContactSettings *)(ioSettings))
-    );
-}
-
-void JPH_CharacterContactListener_OnContactPersisted(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnContactPersisted(
-        ((const JPH::CharacterVirtual *)inCharacter),
-        ((inBodyID2 ? void() : MRBINDC_THROW("Parameter `inBodyID2` can not be null.", void)), *(const JPH::BodyID *)(inBodyID2)),
-        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2)),
-        ((inContactPosition ? void() : MRBINDC_THROW("Parameter `inContactPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactPosition)),
-        ((inContactNormal ? void() : MRBINDC_THROW("Parameter `inContactNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactNormal)),
-        ((ioSettings ? void() : MRBINDC_THROW("Parameter `ioSettings` can not be null.", void)), *(JPH::CharacterContactSettings *)(ioSettings))
-    );
-}
-
 void JPH_CharacterContactListener_OnContactRemoved(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_BodyID *inBodyID2, const JPH_SubShapeID *inSubShapeID2)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnContactRemoved(
         ((const JPH::CharacterVirtual *)inCharacter),
         ((inBodyID2 ? void() : MRBINDC_THROW("Parameter `inBodyID2` can not be null.", void)), *(const JPH::BodyID *)(inBodyID2)),
         ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2))
-    );
-}
-
-void JPH_CharacterContactListener_OnCharacterContactAdded(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnCharacterContactAdded(
-        ((const JPH::CharacterVirtual *)inCharacter),
-        ((const JPH::CharacterVirtual *)inOtherCharacter),
-        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2)),
-        ((inContactPosition ? void() : MRBINDC_THROW("Parameter `inContactPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactPosition)),
-        ((inContactNormal ? void() : MRBINDC_THROW("Parameter `inContactNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactNormal)),
-        ((ioSettings ? void() : MRBINDC_THROW("Parameter `ioSettings` can not be null.", void)), *(JPH::CharacterContactSettings *)(ioSettings))
-    );
-}
-
-void JPH_CharacterContactListener_OnCharacterContactPersisted(JPH_CharacterContactListener *_this, const JPH_CharacterVirtual *inCharacter, const JPH_CharacterVirtual *inOtherCharacter, const JPH_SubShapeID *inSubShapeID2, const JPH_Vec3 *inContactPosition, const JPH_Vec3 *inContactNormal, JPH_CharacterContactSettings *ioSettings)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterContactListener *)(_this)).OnCharacterContactPersisted(
-        ((const JPH::CharacterVirtual *)inCharacter),
-        ((const JPH::CharacterVirtual *)inOtherCharacter),
-        ((inSubShapeID2 ? void() : MRBINDC_THROW("Parameter `inSubShapeID2` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID2)),
-        ((inContactPosition ? void() : MRBINDC_THROW("Parameter `inContactPosition` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactPosition)),
-        ((inContactNormal ? void() : MRBINDC_THROW("Parameter `inContactNormal` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inContactNormal)),
-        ((ioSettings ? void() : MRBINDC_THROW("Parameter `ioSettings` can not be null.", void)), *(JPH::CharacterContactSettings *)(ioSettings))
     );
 }
 
@@ -1006,6 +939,21 @@ void JPH_CharacterVirtual_Set_sDrawStickToFloor(bool value)
 bool *JPH_CharacterVirtual_GetMutable_sDrawStickToFloor(void)
 {
     return std::addressof(JPH::CharacterVirtual::sDrawStickToFloor);
+}
+
+const bool *JPH_CharacterVirtual_Get_sDrawSupportingVolume(void)
+{
+    return std::addressof(JPH::CharacterVirtual::sDrawSupportingVolume);
+}
+
+void JPH_CharacterVirtual_Set_sDrawSupportingVolume(bool value)
+{
+    JPH::CharacterVirtual::sDrawSupportingVolume = value;
+}
+
+bool *JPH_CharacterVirtual_GetMutable_sDrawSupportingVolume(void)
+{
+    return std::addressof(JPH::CharacterVirtual::sDrawSupportingVolume);
 }
 
 JPH_CharacterVirtual *JPH_CharacterVirtual_Construct_5(const JPH_CharacterVirtualSettings *inSettings, const JPH_Vec3 *inPosition, const JPH_Quat *inRotation, uint64_t inUserData, JPH_PhysicsSystem *inSystem)
@@ -1520,11 +1468,6 @@ JPH_CharacterVirtualSettings *JPH_CharacterVirtual_GetCharacterVirtualSettings(c
     return (JPH_CharacterVirtualSettings *)new JPH::CharacterVirtualSettings(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetCharacterVirtualSettings());
 }
 
-const Jolt_JPH_Array_JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_GetActiveContacts(const JPH_CharacterVirtual *_this)
-{
-    return (const Jolt_JPH_Array_JPH_CharacterVirtual_Contact *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetActiveContacts());
-}
-
 bool JPH_CharacterVirtual_HasCollidedWith_JPH_BodyID(const JPH_CharacterVirtual *_this, const JPH_BodyID *inBody)
 {
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).HasCollidedWith(
@@ -1568,6 +1511,18 @@ void JPH_CharacterVirtual_SetUp(JPH_CharacterVirtual *_this, const JPH_Vec3 *inU
 JPH_Vec3 *JPH_CharacterVirtual_GetUp(const JPH_CharacterVirtual *_this)
 {
     return (JPH_Vec3 *)new JPH::Vec3(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetUp());
+}
+
+const JPH_Plane *JPH_CharacterVirtual_GetSupportingVolume(const JPH_CharacterVirtual *_this)
+{
+    return (const JPH_Plane *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual *)(_this)).GetSupportingVolume());
+}
+
+void JPH_CharacterVirtual_SetSupportingVolume(JPH_CharacterVirtual *_this, const JPH_Plane *inPlane)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual *)(_this)).SetSupportingVolume(
+        ((inPlane ? void() : MRBINDC_THROW("Parameter `inPlane` can not be null.", void)), *(const JPH::Plane *)(inPlane))
+    );
 }
 
 bool JPH_CharacterVirtual_IsSlopeTooSteep(const JPH_CharacterVirtual *_this, const JPH_Vec3 *inNormal)
@@ -1792,477 +1747,5 @@ JPH_CharacterVirtual_ExtendedUpdateSettings *JPH_CharacterVirtual_ExtendedUpdate
     return (JPH_CharacterVirtual_ExtendedUpdateSettings *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ExtendedUpdateSettings *)(_this)).operator=(
         ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JPH::CharacterVirtual::ExtendedUpdateSettings(*(JPH::CharacterVirtual::ExtendedUpdateSettings *)_other))
     ));
-}
-
-const JPH_BodyID *JPH_CharacterVirtual_ContactKey_Get_mBodyB(const JPH_CharacterVirtual_ContactKey *_this)
-{
-    return (const JPH_BodyID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(_this)).mBodyB);
-}
-
-void JPH_CharacterVirtual_ContactKey_Set_mBodyB(JPH_CharacterVirtual_ContactKey *_this, JPH_BodyID value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ContactKey *)(_this)).mBodyB = MRBINDC_BIT_CAST((JPH::BodyID), value);
-}
-
-JPH_BodyID *JPH_CharacterVirtual_ContactKey_GetMutable_mBodyB(JPH_CharacterVirtual_ContactKey *_this)
-{
-    return (JPH_BodyID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ContactKey *)(_this)).mBodyB);
-}
-
-const JPH_CharacterID *JPH_CharacterVirtual_ContactKey_Get_mCharacterIDB(const JPH_CharacterVirtual_ContactKey *_this)
-{
-    return (const JPH_CharacterID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(_this)).mCharacterIDB);
-}
-
-void JPH_CharacterVirtual_ContactKey_Set_mCharacterIDB(JPH_CharacterVirtual_ContactKey *_this, const JPH_CharacterID *value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ContactKey *)(_this)).mCharacterIDB = ((value ? void() : MRBINDC_THROW("Parameter `value` can not be null.", void)), JPH::CharacterID(*(JPH::CharacterID *)value));
-}
-
-JPH_CharacterID *JPH_CharacterVirtual_ContactKey_GetMutable_mCharacterIDB(JPH_CharacterVirtual_ContactKey *_this)
-{
-    return (JPH_CharacterID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ContactKey *)(_this)).mCharacterIDB);
-}
-
-const JPH_SubShapeID *JPH_CharacterVirtual_ContactKey_Get_mSubShapeIDB(const JPH_CharacterVirtual_ContactKey *_this)
-{
-    return (const JPH_SubShapeID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(_this)).mSubShapeIDB);
-}
-
-void JPH_CharacterVirtual_ContactKey_Set_mSubShapeIDB(JPH_CharacterVirtual_ContactKey *_this, const JPH_SubShapeID *value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ContactKey *)(_this)).mSubShapeIDB = ((value ? void() : MRBINDC_THROW("Parameter `value` can not be null.", void)), JPH::SubShapeID(*(JPH::SubShapeID *)value));
-}
-
-JPH_SubShapeID *JPH_CharacterVirtual_ContactKey_GetMutable_mSubShapeIDB(JPH_CharacterVirtual_ContactKey *_this)
-{
-    return (JPH_SubShapeID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ContactKey *)(_this)).mSubShapeIDB);
-}
-
-JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_DefaultConstruct(void)
-{
-    using _mrbind_T = JPH::CharacterVirtual::ContactKey;
-    _mrbind_T* _mrbind_ptr = new _mrbind_T();
-    _mrbind_ptr->~_mrbind_T();
-    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
-    return (JPH_CharacterVirtual_ContactKey*)(::new(_mrbind_ptr) _mrbind_T());
-}
-
-JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_DefaultConstructArray(size_t num_elems)
-{
-    return (JPH_CharacterVirtual_ContactKey *)(new JPH::CharacterVirtual::ContactKey[num_elems]);
-}
-
-const JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_OffsetPtr(const JPH_CharacterVirtual_ContactKey *ptr, ptrdiff_t i)
-{
-    return (const JPH_CharacterVirtual_ContactKey *)(((const JPH::CharacterVirtual::ContactKey *)ptr) + i);
-}
-
-JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_OffsetMutablePtr(JPH_CharacterVirtual_ContactKey *ptr, ptrdiff_t i)
-{
-    return (JPH_CharacterVirtual_ContactKey *)(((JPH::CharacterVirtual::ContactKey *)ptr) + i);
-}
-
-JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_ConstructFromAnother(const JPH_CharacterVirtual_ContactKey *inContact)
-{
-    return (JPH_CharacterVirtual_ContactKey *)new JPH::CharacterVirtual::ContactKey(JPH::CharacterVirtual::ContactKey(
-        ((inContact ? void() : MRBINDC_THROW("Parameter `inContact` can not be null.", void)), JPH::CharacterVirtual::ContactKey(*(JPH::CharacterVirtual::ContactKey *)inContact))
-    ));
-}
-
-JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_Construct_JPH_BodyID(const JPH_BodyID *inBodyB, const JPH_SubShapeID *inSubShapeID)
-{
-    return (JPH_CharacterVirtual_ContactKey *)new JPH::CharacterVirtual::ContactKey(JPH::CharacterVirtual::ContactKey(
-        ((inBodyB ? void() : MRBINDC_THROW("Parameter `inBodyB` can not be null.", void)), *(const JPH::BodyID *)(inBodyB)),
-        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID))
-    ));
-}
-
-JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_Construct_JPH_CharacterID(const JPH_CharacterID *inCharacterIDB, const JPH_SubShapeID *inSubShapeID)
-{
-    return (JPH_CharacterVirtual_ContactKey *)new JPH::CharacterVirtual::ContactKey(JPH::CharacterVirtual::ContactKey(
-        ((inCharacterIDB ? void() : MRBINDC_THROW("Parameter `inCharacterIDB` can not be null.", void)), *(const JPH::CharacterID *)(inCharacterIDB)),
-        ((inSubShapeID ? void() : MRBINDC_THROW("Parameter `inSubShapeID` can not be null.", void)), *(const JPH::SubShapeID *)(inSubShapeID))
-    ));
-}
-
-void JPH_CharacterVirtual_ContactKey_Destroy(const JPH_CharacterVirtual_ContactKey *_this)
-{
-    delete ((const JPH::CharacterVirtual::ContactKey *)_this);
-}
-
-void JPH_CharacterVirtual_ContactKey_DestroyArray(const JPH_CharacterVirtual_ContactKey *_this)
-{
-    delete[] ((const JPH::CharacterVirtual::ContactKey *)_this);
-}
-
-JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_ContactKey_AssignFromAnother(JPH_CharacterVirtual_ContactKey *_this, const JPH_CharacterVirtual_ContactKey *inContact)
-{
-    return (JPH_CharacterVirtual_ContactKey *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::ContactKey *)(_this)).operator=(
-        mrbindc_details::unmove(((inContact ? void() : MRBINDC_THROW("Parameter `inContact` can not be null.", void)), JPH::CharacterVirtual::ContactKey(*(JPH::CharacterVirtual::ContactKey *)inContact)))
-    ));
-}
-
-bool JPH_CharacterVirtual_ContactKey_IsSameBody(const JPH_CharacterVirtual_ContactKey *_this, const JPH_CharacterVirtual_ContactKey *inOther)
-{
-    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(_this)).IsSameBody(
-        ((inOther ? void() : MRBINDC_THROW("Parameter `inOther` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(inOther))
-    );
-}
-
-bool Jolt_equal_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_ContactKey *_this, const JPH_CharacterVirtual_ContactKey *inRHS)
-{
-    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(_this)).operator==(
-        ((inRHS ? void() : MRBINDC_THROW("Parameter `inRHS` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(inRHS))
-    );
-}
-
-bool Jolt_not_equal_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_ContactKey *_this, const JPH_CharacterVirtual_ContactKey *inRHS)
-{
-    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(_this)).operator!=(
-        ((inRHS ? void() : MRBINDC_THROW("Parameter `inRHS` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(inRHS))
-    );
-}
-
-uint64_t JPH_CharacterVirtual_ContactKey_GetHash(const JPH_CharacterVirtual_ContactKey *_this)
-{
-    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(_this)).GetHash();
-}
-
-const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mPosition(const JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mPosition);
-}
-
-JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mPosition(JPH_CharacterVirtual_Contact *_this)
-{
-    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mPosition);
-}
-
-const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mLinearVelocity(const JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mLinearVelocity);
-}
-
-JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mLinearVelocity(JPH_CharacterVirtual_Contact *_this)
-{
-    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mLinearVelocity);
-}
-
-const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mContactNormal(const JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mContactNormal);
-}
-
-JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mContactNormal(JPH_CharacterVirtual_Contact *_this)
-{
-    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mContactNormal);
-}
-
-const JPH_Vec3 *JPH_CharacterVirtual_Contact_Get_mSurfaceNormal(const JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mSurfaceNormal);
-}
-
-JPH_Vec3 *JPH_CharacterVirtual_Contact_GetMutable_mSurfaceNormal(JPH_CharacterVirtual_Contact *_this)
-{
-    return (JPH_Vec3 *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mSurfaceNormal);
-}
-
-const float *JPH_CharacterVirtual_Contact_Get_mDistance(const JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mDistance);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mDistance(JPH_CharacterVirtual_Contact *_this, float value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mDistance = value;
-}
-
-float *JPH_CharacterVirtual_Contact_GetMutable_mDistance(JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mDistance);
-}
-
-const float *JPH_CharacterVirtual_Contact_Get_mFraction(const JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mFraction);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mFraction(JPH_CharacterVirtual_Contact *_this, float value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mFraction = value;
-}
-
-float *JPH_CharacterVirtual_Contact_GetMutable_mFraction(JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mFraction);
-}
-
-const JPH_EMotionType *JPH_CharacterVirtual_Contact_Get_mMotionTypeB(const JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_EMotionType *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mMotionTypeB);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mMotionTypeB(JPH_CharacterVirtual_Contact *_this, JPH_EMotionType value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mMotionTypeB = ((JPH::EMotionType)value);
-}
-
-JPH_EMotionType *JPH_CharacterVirtual_Contact_GetMutable_mMotionTypeB(JPH_CharacterVirtual_Contact *_this)
-{
-    return (JPH_EMotionType *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mMotionTypeB);
-}
-
-const bool *JPH_CharacterVirtual_Contact_Get_mIsSensorB(const JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mIsSensorB);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mIsSensorB(JPH_CharacterVirtual_Contact *_this, bool value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mIsSensorB = value;
-}
-
-bool *JPH_CharacterVirtual_Contact_GetMutable_mIsSensorB(JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mIsSensorB);
-}
-
-const JPH_CharacterVirtual *const *JPH_CharacterVirtual_Contact_Get_mCharacterB(const JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_CharacterVirtual *const *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mCharacterB);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mCharacterB(JPH_CharacterVirtual_Contact *_this, const JPH_CharacterVirtual *value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mCharacterB = ((const JPH::CharacterVirtual *)value);
-}
-
-const JPH_CharacterVirtual **JPH_CharacterVirtual_Contact_GetMutable_mCharacterB(JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_CharacterVirtual **)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mCharacterB);
-}
-
-const uint64_t *JPH_CharacterVirtual_Contact_Get_mUserData(const JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mUserData);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mUserData(JPH_CharacterVirtual_Contact *_this, uint64_t value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mUserData = value;
-}
-
-uint64_t *JPH_CharacterVirtual_Contact_GetMutable_mUserData(JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mUserData);
-}
-
-const JPH_PhysicsMaterial *const *JPH_CharacterVirtual_Contact_Get_mMaterial(const JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_PhysicsMaterial *const *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mMaterial);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mMaterial(JPH_CharacterVirtual_Contact *_this, const JPH_PhysicsMaterial *value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mMaterial = ((const JPH::PhysicsMaterial *)value);
-}
-
-const JPH_PhysicsMaterial **JPH_CharacterVirtual_Contact_GetMutable_mMaterial(JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_PhysicsMaterial **)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mMaterial);
-}
-
-const bool *JPH_CharacterVirtual_Contact_Get_mHadCollision(const JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mHadCollision);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mHadCollision(JPH_CharacterVirtual_Contact *_this, bool value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mHadCollision = value;
-}
-
-bool *JPH_CharacterVirtual_Contact_GetMutable_mHadCollision(JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mHadCollision);
-}
-
-const bool *JPH_CharacterVirtual_Contact_Get_mWasDiscarded(const JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mWasDiscarded);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mWasDiscarded(JPH_CharacterVirtual_Contact *_this, bool value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mWasDiscarded = value;
-}
-
-bool *JPH_CharacterVirtual_Contact_GetMutable_mWasDiscarded(JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mWasDiscarded);
-}
-
-const bool *JPH_CharacterVirtual_Contact_Get_mCanPushCharacter(const JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mCanPushCharacter);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mCanPushCharacter(JPH_CharacterVirtual_Contact *_this, bool value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mCanPushCharacter = value;
-}
-
-bool *JPH_CharacterVirtual_Contact_GetMutable_mCanPushCharacter(JPH_CharacterVirtual_Contact *_this)
-{
-    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mCanPushCharacter);
-}
-
-const JPH_BodyID *JPH_CharacterVirtual_Contact_Get_mBodyB(const JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_BodyID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mBodyB);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mBodyB(JPH_CharacterVirtual_Contact *_this, JPH_BodyID value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mBodyB = MRBINDC_BIT_CAST((JPH::BodyID), value);
-}
-
-JPH_BodyID *JPH_CharacterVirtual_Contact_GetMutable_mBodyB(JPH_CharacterVirtual_Contact *_this)
-{
-    return (JPH_BodyID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mBodyB);
-}
-
-const JPH_CharacterID *JPH_CharacterVirtual_Contact_Get_mCharacterIDB(const JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_CharacterID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mCharacterIDB);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mCharacterIDB(JPH_CharacterVirtual_Contact *_this, const JPH_CharacterID *value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mCharacterIDB = ((value ? void() : MRBINDC_THROW("Parameter `value` can not be null.", void)), JPH::CharacterID(*(JPH::CharacterID *)value));
-}
-
-JPH_CharacterID *JPH_CharacterVirtual_Contact_GetMutable_mCharacterIDB(JPH_CharacterVirtual_Contact *_this)
-{
-    return (JPH_CharacterID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mCharacterIDB);
-}
-
-const JPH_SubShapeID *JPH_CharacterVirtual_Contact_Get_mSubShapeIDB(const JPH_CharacterVirtual_Contact *_this)
-{
-    return (const JPH_SubShapeID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).mSubShapeIDB);
-}
-
-void JPH_CharacterVirtual_Contact_Set_mSubShapeIDB(JPH_CharacterVirtual_Contact *_this, const JPH_SubShapeID *value)
-{
-    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mSubShapeIDB = ((value ? void() : MRBINDC_THROW("Parameter `value` can not be null.", void)), JPH::SubShapeID(*(JPH::SubShapeID *)value));
-}
-
-JPH_SubShapeID *JPH_CharacterVirtual_Contact_GetMutable_mSubShapeIDB(JPH_CharacterVirtual_Contact *_this)
-{
-    return (JPH_SubShapeID *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).mSubShapeIDB);
-}
-
-JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_DefaultConstruct(void)
-{
-    using _mrbind_T = JPH::CharacterVirtual::Contact;
-    _mrbind_T* _mrbind_ptr = new _mrbind_T();
-    _mrbind_ptr->~_mrbind_T();
-    std::memset(_mrbind_ptr, 0, sizeof(_mrbind_T));
-    return (JPH_CharacterVirtual_Contact*)(::new(_mrbind_ptr) _mrbind_T());
-}
-
-JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_DefaultConstructArray(size_t num_elems)
-{
-    return (JPH_CharacterVirtual_Contact *)(new JPH::CharacterVirtual::Contact[num_elems]);
-}
-
-const JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_OffsetPtr(const JPH_CharacterVirtual_Contact *ptr, ptrdiff_t i)
-{
-    return (const JPH_CharacterVirtual_Contact *)(((const JPH::CharacterVirtual::Contact *)ptr) + i);
-}
-
-JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_OffsetMutablePtr(JPH_CharacterVirtual_Contact *ptr, ptrdiff_t i)
-{
-    return (JPH_CharacterVirtual_Contact *)(((JPH::CharacterVirtual::Contact *)ptr) + i);
-}
-
-const JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_Contact_UpcastTo_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_Contact *object)
-{
-    return (const JPH_CharacterVirtual_ContactKey *)(static_cast<const JPH::CharacterVirtual::ContactKey *>(
-        ((const JPH::CharacterVirtual::Contact *)object)
-    ));
-}
-
-JPH_CharacterVirtual_ContactKey *JPH_CharacterVirtual_Contact_MutableUpcastTo_JPH_CharacterVirtual_ContactKey(JPH_CharacterVirtual_Contact *object)
-{
-    return (JPH_CharacterVirtual_ContactKey *)(static_cast<JPH::CharacterVirtual::ContactKey *>(
-        ((JPH::CharacterVirtual::Contact *)object)
-    ));
-}
-
-const JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_StaticDowncastFrom_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_ContactKey *object)
-{
-    return (const JPH_CharacterVirtual_Contact *)(static_cast<const JPH::CharacterVirtual::Contact *>(
-        ((const JPH::CharacterVirtual::ContactKey *)object)
-    ));
-}
-
-JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_MutableStaticDowncastFrom_JPH_CharacterVirtual_ContactKey(JPH_CharacterVirtual_ContactKey *object)
-{
-    return (JPH_CharacterVirtual_Contact *)(static_cast<JPH::CharacterVirtual::Contact *>(
-        ((JPH::CharacterVirtual::ContactKey *)object)
-    ));
-}
-
-JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_ConstructFromAnother(const JPH_CharacterVirtual_Contact *_other)
-{
-    return (JPH_CharacterVirtual_Contact *)new JPH::CharacterVirtual::Contact(JPH::CharacterVirtual::Contact(
-        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JPH::CharacterVirtual::Contact(*(JPH::CharacterVirtual::Contact *)_other))
-    ));
-}
-
-void JPH_CharacterVirtual_Contact_Destroy(const JPH_CharacterVirtual_Contact *_this)
-{
-    delete ((const JPH::CharacterVirtual::Contact *)_this);
-}
-
-void JPH_CharacterVirtual_Contact_DestroyArray(const JPH_CharacterVirtual_Contact *_this)
-{
-    delete[] ((const JPH::CharacterVirtual::Contact *)_this);
-}
-
-JPH_CharacterVirtual_Contact *JPH_CharacterVirtual_Contact_AssignFromAnother(JPH_CharacterVirtual_Contact *_this, const JPH_CharacterVirtual_Contact *_other)
-{
-    return (JPH_CharacterVirtual_Contact *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::CharacterVirtual::Contact *)(_this)).operator=(
-        ((_other ? void() : MRBINDC_THROW("Parameter `_other` can not be null.", void)), JPH::CharacterVirtual::Contact(*(JPH::CharacterVirtual::Contact *)_other))
-    ));
-}
-
-bool JPH_CharacterVirtual_Contact_IsSameBody(const JPH_CharacterVirtual_Contact *_this, const JPH_CharacterVirtual_ContactKey *inOther)
-{
-    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).IsSameBody(
-        ((inOther ? void() : MRBINDC_THROW("Parameter `inOther` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(inOther))
-    );
-}
-
-bool Jolt_equal_JPH_CharacterVirtual_Contact_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_Contact *_this, const JPH_CharacterVirtual_ContactKey *inRHS)
-{
-    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).operator==(
-        ((inRHS ? void() : MRBINDC_THROW("Parameter `inRHS` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(inRHS))
-    );
-}
-
-bool Jolt_not_equal_JPH_CharacterVirtual_Contact_JPH_CharacterVirtual_ContactKey(const JPH_CharacterVirtual_Contact *_this, const JPH_CharacterVirtual_ContactKey *inRHS)
-{
-    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).operator!=(
-        ((inRHS ? void() : MRBINDC_THROW("Parameter `inRHS` can not be null.", void)), *(const JPH::CharacterVirtual::ContactKey *)(inRHS))
-    );
-}
-
-uint64_t JPH_CharacterVirtual_Contact_GetHash(const JPH_CharacterVirtual_Contact *_this)
-{
-    return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::CharacterVirtual::Contact *)(_this)).GetHash();
 }
 

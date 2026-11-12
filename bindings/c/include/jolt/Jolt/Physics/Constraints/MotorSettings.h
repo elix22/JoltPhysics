@@ -2,6 +2,7 @@
 #pragma once
 
 #include <exports.h>
+#include <jolt/Jolt/Physics/Constraints/SpringSettings.h>
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -17,10 +18,12 @@ typedef enum JPH_EMotorState
 {
     ///< Motor is off
     JPH_EMotorState_Off = 0,
-    ///< Motor will drive to target velocity
+    ///< Motor will drive to target velocity limited only by max force/torque that the motor can apply
     JPH_EMotorState_Velocity = 1,
-    ///< Motor will drive to target position
+    ///< Motor will drive to target position using: force = stiffness * (target_position - current_position) - damping * current_velocity
     JPH_EMotorState_Position = 2,
+    ///< Motor will drive both to target position and velocity using: force = stiffness * (target_position - current_position) + damping * (target_velocity - current_velocity)
+    JPH_EMotorState_PositionAndVelocity = 3,
 } JPH_EMotorState;
 
 /// Class that contains the settings for a constraint motor.
@@ -83,40 +86,40 @@ JOLT_API void JPH_MotorSettings_Set_mMaxForceLimit(JPH_MotorSettings *_this, flo
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_MotorSettings_GetMutable_mMaxForceLimit(JPH_MotorSettings *_this);
 
-///< Minimum torque to apply in case of a angular constraint (N m). Usually this is -mMaxTorqueLimit unless you want a motor that can e.g. push but not pull. Not used when motor is a position motor.
+///< Minimum torque to apply in case of a angular constraint (N m). Usually this is -mMaxTorqueLimit unless you want a motor that can e.g. push but not pull. Not used when motor is a linear motor.
 /// Returns a pointer to a member variable of class `JPH::MotorSettings` named `mMinTorqueLimit`.
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API const float *JPH_MotorSettings_Get_mMinTorqueLimit(const JPH_MotorSettings *_this);
 
-///< Minimum torque to apply in case of a angular constraint (N m). Usually this is -mMaxTorqueLimit unless you want a motor that can e.g. push but not pull. Not used when motor is a position motor.
+///< Minimum torque to apply in case of a angular constraint (N m). Usually this is -mMaxTorqueLimit unless you want a motor that can e.g. push but not pull. Not used when motor is a linear motor.
 /// Modifies a member variable of class `JPH::MotorSettings` named `mMinTorqueLimit`.
 /// Parameter `_this` can not be null. It is a single object.
 /// When this function is called, this object will drop object references it held previously in `mMinTorqueLimit`.
 JOLT_API void JPH_MotorSettings_Set_mMinTorqueLimit(JPH_MotorSettings *_this, float value);
 
-///< Minimum torque to apply in case of a angular constraint (N m). Usually this is -mMaxTorqueLimit unless you want a motor that can e.g. push but not pull. Not used when motor is a position motor.
+///< Minimum torque to apply in case of a angular constraint (N m). Usually this is -mMaxTorqueLimit unless you want a motor that can e.g. push but not pull. Not used when motor is a linear motor.
 /// Returns a mutable pointer to a member variable of class `JPH::MotorSettings` named `mMinTorqueLimit`.
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_MotorSettings_GetMutable_mMinTorqueLimit(JPH_MotorSettings *_this);
 
-///< Maximum torque to apply in case of a angular constraint (N m). Not used when motor is a position motor.
+///< Maximum torque to apply in case of a angular constraint (N m). Not used when motor is a linear motor.
 /// Returns a pointer to a member variable of class `JPH::MotorSettings` named `mMaxTorqueLimit`.
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API const float *JPH_MotorSettings_Get_mMaxTorqueLimit(const JPH_MotorSettings *_this);
 
-///< Maximum torque to apply in case of a angular constraint (N m). Not used when motor is a position motor.
+///< Maximum torque to apply in case of a angular constraint (N m). Not used when motor is a linear motor.
 /// Modifies a member variable of class `JPH::MotorSettings` named `mMaxTorqueLimit`.
 /// Parameter `_this` can not be null. It is a single object.
 /// When this function is called, this object will drop object references it held previously in `mMaxTorqueLimit`.
 JOLT_API void JPH_MotorSettings_Set_mMaxTorqueLimit(JPH_MotorSettings *_this, float value);
 
-///< Maximum torque to apply in case of a angular constraint (N m). Not used when motor is a position motor.
+///< Maximum torque to apply in case of a angular constraint (N m). Not used when motor is a linear motor.
 /// Returns a mutable pointer to a member variable of class `JPH::MotorSettings` named `mMaxTorqueLimit`.
 /// Parameter `_this` can not be null. It is a single object.
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
@@ -148,7 +151,15 @@ JOLT_API JPH_MotorSettings *JPH_MotorSettings_ConstructFromAnother(const JPH_Mot
 
 /// Generated from constructor `JPH::MotorSettings::MotorSettings`.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_MotorSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_MotorSettings *JPH_MotorSettings_Construct_3(JPH_ESpringMode inMode, float inFrequency, float inDamping);
+
+/// Generated from constructor `JPH::MotorSettings::MotorSettings`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_MotorSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_MotorSettings *JPH_MotorSettings_Construct_2(float inFrequency, float inDamping);
+
+/// Generated from constructor `JPH::MotorSettings::MotorSettings`.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_MotorSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_MotorSettings *JPH_MotorSettings_Construct_5(JPH_ESpringMode inMode, float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit);
 
 /// Generated from constructor `JPH::MotorSettings::MotorSettings`.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_MotorSettings_Destroy()` to free it when you're done using it.

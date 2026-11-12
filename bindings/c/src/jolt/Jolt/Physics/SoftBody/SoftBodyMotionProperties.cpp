@@ -290,6 +290,11 @@ void JPH_SoftBodyMotionProperties_SkinVertices(JPH_SoftBodyMotionProperties *_th
     );
 }
 
+JPH_Mat44 *JPH_SoftBodyMotionProperties_GetSkinnedVertexTransform(const JPH_SoftBodyMotionProperties *_this)
+{
+    return (JPH_Mat44 *)new JPH::Mat44(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodyMotionProperties *)(_this)).GetSkinnedVertexTransform());
+}
+
 void JPH_SoftBodyMotionProperties_CustomUpdate(JPH_SoftBodyMotionProperties *_this, float inDeltaTime, JPH_Body *ioSoftBody, JPH_PhysicsSystem *inSystem)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodyMotionProperties *)(_this)).CustomUpdate(
@@ -297,6 +302,11 @@ void JPH_SoftBodyMotionProperties_CustomUpdate(JPH_SoftBodyMotionProperties *_th
         ((ioSoftBody ? void() : MRBINDC_THROW("Parameter `ioSoftBody` can not be null.", void)), *(JPH::Body *)(ioSoftBody)),
         ((inSystem ? void() : MRBINDC_THROW("Parameter `inSystem` can not be null.", void)), *(JPH::PhysicsSystem *)(inSystem))
     );
+}
+
+void JPH_SoftBodyMotionProperties_RequestContactCallback(JPH_SoftBodyMotionProperties *_this)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodyMotionProperties *)(_this)).RequestContactCallback();
 }
 
 JPH_EMotionQuality JPH_SoftBodyMotionProperties_GetMotionQuality(const JPH_SoftBodyMotionProperties *_this)
@@ -573,6 +583,13 @@ unsigned int JPH_SoftBodyMotionProperties_GetNumPositionStepsOverride(const JPH_
     return ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::SoftBodyMotionProperties *)(_this)).GetNumPositionStepsOverride();
 }
 
+void JPH_SoftBodyMotionProperties_ApplyLinearVelocityStep(JPH_SoftBodyMotionProperties *_this, const JPH_Vec3 *inLinearVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodyMotionProperties *)(_this)).ApplyLinearVelocityStep(
+        ((inLinearVelocity ? void() : MRBINDC_THROW("Parameter `inLinearVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLinearVelocity))
+    );
+}
+
 void JPH_SoftBodyMotionProperties_AddLinearVelocityStep(JPH_SoftBodyMotionProperties *_this, const JPH_Vec3 *inLinearVelocityChange)
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodyMotionProperties *)(_this)).AddLinearVelocityStep(
@@ -584,6 +601,13 @@ void JPH_SoftBodyMotionProperties_SubLinearVelocityStep(JPH_SoftBodyMotionProper
 {
     ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodyMotionProperties *)(_this)).SubLinearVelocityStep(
         ((inLinearVelocityChange ? void() : MRBINDC_THROW("Parameter `inLinearVelocityChange` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inLinearVelocityChange))
+    );
+}
+
+void JPH_SoftBodyMotionProperties_ApplyAngularVelocityStep(JPH_SoftBodyMotionProperties *_this, const JPH_Vec3 *inAngularVelocity)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::SoftBodyMotionProperties *)(_this)).ApplyAngularVelocityStep(
+        ((inAngularVelocity ? void() : MRBINDC_THROW("Parameter `inAngularVelocity` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inAngularVelocity))
     );
 }
 

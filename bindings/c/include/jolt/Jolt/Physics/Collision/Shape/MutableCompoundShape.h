@@ -512,7 +512,24 @@ JOLT_API void JPH_MutableCompoundShape_ModifyShape_4(JPH_MutableCompoundShape *_
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inPositionStride` has a default argument: `sizeof(JPH::Vec3)`, pass a null pointer to use it.
 /// Parameter `inRotationStride` has a default argument: `sizeof(JPH::Quat)`, pass a null pointer to use it.
-JOLT_API void JPH_MutableCompoundShape_ModifyShapes(JPH_MutableCompoundShape *_this, unsigned int inStartIndex, unsigned int inNumber, const JPH_Vec3 *inPositions, const JPH_Quat *inRotations, const unsigned int *inPositionStride, const unsigned int *inRotationStride);
+JOLT_API void JPH_MutableCompoundShape_ModifyShapes_6(JPH_MutableCompoundShape *_this, unsigned int inStartIndex, unsigned int inNumber, const JPH_Vec3 *inPositions, const JPH_Quat *inRotations, const unsigned int *inPositionStride, const unsigned int *inRotationStride);
+
+/// @brief Batch set positions / orientations / shapes, this avoids duplicate work due to bounding box calculation.
+/// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+/// @param inStartIndex Index of first shape to update
+/// @param inNumber Number of shapes to update
+/// @param inPositions A list of positions with arbitrary stride
+/// @param inRotations A list of orientations with arbitrary stride
+/// @param inShapes A list of shapes with arbitrary stride
+/// @param inPositionStride The position stride (the number of bytes between the first and second element)
+/// @param inRotationStride The orientation stride (the number of bytes between the first and second element)
+/// @param inShapeStride The shape stride (the number of bytes between the first and second element)
+/// Generated from method `JPH::MutableCompoundShape::ModifyShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inPositionStride` has a default argument: `sizeof(JPH::Vec3)`, pass a null pointer to use it.
+/// Parameter `inRotationStride` has a default argument: `sizeof(JPH::Quat)`, pass a null pointer to use it.
+/// Parameter `inShapeStride` has a default argument: `sizeof(const JPH::Shape*)`, pass a null pointer to use it.
+JOLT_API void JPH_MutableCompoundShape_ModifyShapes_8(JPH_MutableCompoundShape *_this, unsigned int inStartIndex, unsigned int inNumber, const JPH_Vec3 *inPositions, const JPH_Quat *inRotations, const JPH_Shape *const *inShapes, const unsigned int *inPositionStride, const unsigned int *inRotationStride, const unsigned int *inShapeStride);
 
 /// Recalculate the center of mass and shift all objects so they're centered around it
 /// (this needs to be done of dynamic bodies and if the center of mass changes significantly due to adding / removing / repositioning sub shapes or else the simulation will look unnatural)

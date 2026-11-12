@@ -638,6 +638,26 @@ JOLT_API JPH_RShapeCast *JPH_RShapeCast_PostTranslated(const JPH_RShapeCast *_th
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_RShapeCast_GetPointOnRay(const JPH_RShapeCast *_this, float inFraction);
 
+/// When > 0 the query shape is inflated by an extra convex radius, this makes it bigger in every direction by this margin. (unit: meter)
+/// Returns a pointer to a member variable of class `JPH::ShapeCastSettings` named `mExtraConvexRadius`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JPH_ShapeCastSettings_Get_mExtraConvexRadius(const JPH_ShapeCastSettings *_this);
+
+/// When > 0 the query shape is inflated by an extra convex radius, this makes it bigger in every direction by this margin. (unit: meter)
+/// Modifies a member variable of class `JPH::ShapeCastSettings` named `mExtraConvexRadius`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `mExtraConvexRadius`.
+JOLT_API void JPH_ShapeCastSettings_Set_mExtraConvexRadius(JPH_ShapeCastSettings *_this, float value);
+
+/// When > 0 the query shape is inflated by an extra convex radius, this makes it bigger in every direction by this margin. (unit: meter)
+/// Returns a mutable pointer to a member variable of class `JPH::ShapeCastSettings` named `mExtraConvexRadius`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JPH_ShapeCastSettings_GetMutable_mExtraConvexRadius(JPH_ShapeCastSettings *_this);
+
 /// How backfacing triangles should be treated (should we report moving from back to front for triangle based shapes, e.g. for MeshShape/HeightFieldShape?)
 /// Returns a pointer to a member variable of class `JPH::ShapeCastSettings` named `mBackFaceModeTriangles`.
 /// Parameter `_this` can not be null. It is a single object.

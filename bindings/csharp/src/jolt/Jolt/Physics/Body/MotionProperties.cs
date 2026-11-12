@@ -622,7 +622,9 @@ public static partial class JPH
             return new(__JPH_MotionProperties_AssignFromAnother(_UnderlyingPtr, _other._UnderlyingPtr), is_owning: false);
         }
 
-        /// Set world space linear velocity of the center of mass
+        /// Set world space linear velocity of the center of mass.
+        /// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
+        /// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
         /// Generated from method `JPH::MotionProperties::SetLinearVelocity`.
         public unsafe void SetLinearVelocity(JPH.Const_Vec3 inLinearVelocity)
         {
@@ -635,7 +637,9 @@ public static partial class JPH
             __JPH_MotionProperties_SetLinearVelocity(_UnderlyingPtr, inLinearVelocity._UnderlyingPtr);
         }
 
-        /// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity
+        /// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity.
+        /// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
+        /// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
         /// Generated from method `JPH::MotionProperties::SetLinearVelocityClamped`.
         public unsafe void SetLinearVelocityClamped(JPH.Const_Vec3 inLinearVelocity)
         {
@@ -648,7 +652,9 @@ public static partial class JPH
             __JPH_MotionProperties_SetLinearVelocityClamped(_UnderlyingPtr, inLinearVelocity._UnderlyingPtr);
         }
 
-        /// Set world space angular velocity of the center of mass
+        /// Set world space angular velocity of the center of mass.
+        /// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
+        /// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
         /// Generated from method `JPH::MotionProperties::SetAngularVelocity`.
         public unsafe void SetAngularVelocity(JPH.Const_Vec3 inAngularVelocity)
         {
@@ -661,7 +667,9 @@ public static partial class JPH
             __JPH_MotionProperties_SetAngularVelocity(_UnderlyingPtr, inAngularVelocity._UnderlyingPtr);
         }
 
-        /// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity
+        /// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity.
+        /// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
+        /// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
         /// Generated from method `JPH::MotionProperties::SetAngularVelocityClamped`.
         public unsafe void SetAngularVelocityClamped(JPH.Const_Vec3 inAngularVelocity)
         {
@@ -675,6 +683,8 @@ public static partial class JPH
         }
 
         /// Set velocity of body such that it will be rotate/translate by inDeltaPosition/Rotation in inDeltaTime seconds.
+        /// Note that it is illegal to provide non-zero delta position/rotation on a sleeping body without waking it up afterwards.
+        /// If you want the body to wake up when it is sleeping, use BodyInterface::MoveKinematic instead.
         /// Generated from method `JPH::MotionProperties::MoveKinematic`.
         public unsafe void MoveKinematic(JPH.Const_Vec3 inDeltaPosition, JPH.Const_Quat inDeltaRotation, float inDeltaTime)
         {
@@ -885,6 +895,18 @@ public static partial class JPH
 
         ///@name Update linear and angular velocity (used during constraint solving)
         ///@{
+        /// Generated from method `JPH::MotionProperties::ApplyLinearVelocityStep`.
+        public unsafe void ApplyLinearVelocityStep(JPH.Const_Vec3 inLinearVelocity)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MotionProperties_ApplyLinearVelocityStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MotionProperties_ApplyLinearVelocityStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_MotionProperties_ApplyLinearVelocityStep(_Underlying *_this, JPH.Vec3._Underlying *inLinearVelocity);
+            __JPH_MotionProperties_ApplyLinearVelocityStep(_UnderlyingPtr, inLinearVelocity._UnderlyingPtr);
+        }
+
         /// Generated from method `JPH::MotionProperties::AddLinearVelocityStep`.
         public unsafe void AddLinearVelocityStep(JPH.Const_Vec3 inLinearVelocityChange)
         {
@@ -907,6 +929,18 @@ public static partial class JPH
             #endif
             extern static void __JPH_MotionProperties_SubLinearVelocityStep(_Underlying *_this, JPH.Vec3._Underlying *inLinearVelocityChange);
             __JPH_MotionProperties_SubLinearVelocityStep(_UnderlyingPtr, inLinearVelocityChange._UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::MotionProperties::ApplyAngularVelocityStep`.
+        public unsafe void ApplyAngularVelocityStep(JPH.Const_Vec3 inAngularVelocity)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MotionProperties_ApplyAngularVelocityStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MotionProperties_ApplyAngularVelocityStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_MotionProperties_ApplyAngularVelocityStep(_Underlying *_this, JPH.Vec3._Underlying *inAngularVelocity);
+            __JPH_MotionProperties_ApplyAngularVelocityStep(_UnderlyingPtr, inAngularVelocity._UnderlyingPtr);
         }
 
         /// Generated from method `JPH::MotionProperties::AddAngularVelocityStep`.

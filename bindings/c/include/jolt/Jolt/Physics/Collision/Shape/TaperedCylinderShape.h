@@ -276,7 +276,7 @@ JOLT_API JPH_TaperedCylinderShapeSettings *JPH_TaperedCylinderShapeSettings_Cons
 
 /// Create a tapered cylinder centered around the origin with bottom at (0, -inHalfHeightOfTaperedCylinder, 0) with radius inBottomRadius and top at (0, inHalfHeightOfTaperedCylinder, 0) with radius inTopRadius
 /// Generated from constructor `JPH::TaperedCylinderShapeSettings::TaperedCylinderShapeSettings`.
-/// Parameter `inConvexRadius` has a default argument: `cDefaultConvexRadius`, pass a null pointer to use it.
+/// Parameter `inConvexRadius` has a default argument: `JPH::cDefaultConvexRadius`, pass a null pointer to use it.
 /// Parameter `inMaterial` defaults to a null pointer in C++.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TaperedCylinderShapeSettings_Destroy()` to free it when you're done using it.
 JOLT_API JPH_TaperedCylinderShapeSettings *JPH_TaperedCylinderShapeSettings_Construct(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, const float *inConvexRadius, const JPH_PhysicsMaterial *inMaterial);

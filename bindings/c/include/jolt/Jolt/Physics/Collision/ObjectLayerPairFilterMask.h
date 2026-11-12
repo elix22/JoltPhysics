@@ -131,7 +131,7 @@ JOLT_API void Jolt_delete_array_JPH_ObjectLayerPairFilterMask_void_ptr_void_ptr(
 
 /// Construct an ObjectLayer from a group and mask bits
 /// Generated from method `JPH::ObjectLayerPairFilterMask::sGetObjectLayer`.
-/// Parameter `inMask` has a default argument: `cMask`, pass a null pointer to use it.
+/// Parameter `inMask` has a default argument: `JPH::ObjectLayerPairFilterMask::cMask`, pass a null pointer to use it.
 JOLT_API unsigned short JPH_ObjectLayerPairFilterMask_sGetObjectLayer(unsigned int inGroup, const unsigned int *inMask);
 
 /// Get the group bits from an ObjectLayer

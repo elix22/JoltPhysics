@@ -141,6 +141,19 @@ JPH_JobSystem_JobHandle *JPH_JobSystemWithBarrier_CreateJob(JPH_JobSystemWithBar
     ));
 }
 
+void JPH_JobSystemWithBarrier_CreateJobs(JPH_JobSystemWithBarrier *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, JPH_JobSystem_JobHandle *outJobs, unsigned int inNumJobs, const unsigned int *inNumDependencies)
+{
+    using namespace JPH;
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::JobSystemWithBarrier *)(_this)).CreateJobs(
+        inName,
+        ((inColor ? void() : MRBINDC_THROW("Parameter `inColor` can not be null.", void)), JPH::Color(*(JPH::Color *)inColor)),
+        ((inJobFunction ? void() : MRBINDC_THROW("Parameter `inJobFunction` can not be null.", void)), *(const std::function<void(void)> *)(inJobFunction)),
+        ((JPH::JobSystem::JobHandle *)outJobs),
+        inNumJobs,
+        (inNumDependencies ? *inNumDependencies : static_cast<unsigned int>(0))
+    );
+}
+
 const JPH_JobSystemWithBarrier *JPH_JobSystemWithBarrier_OffsetPtr(const JPH_JobSystemWithBarrier *ptr, ptrdiff_t i)
 {
     return (const JPH_JobSystemWithBarrier *)(((const JPH::JobSystemWithBarrier *)ptr) + i);

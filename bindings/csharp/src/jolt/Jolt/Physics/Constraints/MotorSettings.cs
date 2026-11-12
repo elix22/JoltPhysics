@@ -5,10 +5,12 @@ public static partial class JPH
     {
         ///< Motor is off
         Off = 0,
-        ///< Motor will drive to target velocity
+        ///< Motor will drive to target velocity limited only by max force/torque that the motor can apply
         Velocity = 1,
-        ///< Motor will drive to target position
+        ///< Motor will drive to target position using: force = stiffness * (target_position - current_position) - damping * current_velocity
         Position = 2,
+        ///< Motor will drive both to target position and velocity using: force = stiffness * (target_position - current_position) + damping * (target_velocity - current_velocity)
+        PositionAndVelocity = 3,
     }
 
     /// Class that contains the settings for a constraint motor.
@@ -85,7 +87,7 @@ public static partial class JPH
             }
         }
 
-        ///< Minimum torque to apply in case of a angular constraint (N m). Usually this is -mMaxTorqueLimit unless you want a motor that can e.g. push but not pull. Not used when motor is a position motor.
+        ///< Minimum torque to apply in case of a angular constraint (N m). Usually this is -mMaxTorqueLimit unless you want a motor that can e.g. push but not pull. Not used when motor is a linear motor.
         public unsafe float mMinTorqueLimit
         {
             get
@@ -100,7 +102,7 @@ public static partial class JPH
             }
         }
 
-        ///< Maximum torque to apply in case of a angular constraint (N m). Not used when motor is a position motor.
+        ///< Maximum torque to apply in case of a angular constraint (N m). Not used when motor is a linear motor.
         public unsafe float mMaxTorqueLimit
         {
             get
@@ -146,6 +148,18 @@ public static partial class JPH
         public Const_MotorSettings(MotorSettings _other) : this((Const_MotorSettings)_other) {}
 
         /// Generated from constructor `JPH::MotorSettings::MotorSettings`.
+        public unsafe Const_MotorSettings(JPH.ESpringMode inMode, float inFrequency, float inDamping) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MotorSettings_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MotorSettings_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.MotorSettings._Underlying *__JPH_MotorSettings_Construct_3(JPH.ESpringMode inMode, float inFrequency, float inDamping);
+            _UnderlyingPtr = __JPH_MotorSettings_Construct_3(inMode, inFrequency, inDamping);
+        }
+
+        /// Generated from constructor `JPH::MotorSettings::MotorSettings`.
         public unsafe Const_MotorSettings(float inFrequency, float inDamping) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -155,6 +169,18 @@ public static partial class JPH
             #endif
             extern static JPH.MotorSettings._Underlying *__JPH_MotorSettings_Construct_2(float inFrequency, float inDamping);
             _UnderlyingPtr = __JPH_MotorSettings_Construct_2(inFrequency, inDamping);
+        }
+
+        /// Generated from constructor `JPH::MotorSettings::MotorSettings`.
+        public unsafe Const_MotorSettings(JPH.ESpringMode inMode, float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MotorSettings_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MotorSettings_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.MotorSettings._Underlying *__JPH_MotorSettings_Construct_5(JPH.ESpringMode inMode, float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit);
+            _UnderlyingPtr = __JPH_MotorSettings_Construct_5(inMode, inFrequency, inDamping, inForceLimit, inTorqueLimit);
         }
 
         /// Generated from constructor `JPH::MotorSettings::MotorSettings`.
@@ -371,7 +397,7 @@ public static partial class JPH
             }
         }
 
-        ///< Minimum torque to apply in case of a angular constraint (N m). Usually this is -mMaxTorqueLimit unless you want a motor that can e.g. push but not pull. Not used when motor is a position motor.
+        ///< Minimum torque to apply in case of a angular constraint (N m). Usually this is -mMaxTorqueLimit unless you want a motor that can e.g. push but not pull. Not used when motor is a linear motor.
         public new unsafe ref float mMinTorqueLimit
         {
             get
@@ -386,7 +412,7 @@ public static partial class JPH
             }
         }
 
-        ///< Maximum torque to apply in case of a angular constraint (N m). Not used when motor is a position motor.
+        ///< Maximum torque to apply in case of a angular constraint (N m). Not used when motor is a linear motor.
         public new unsafe ref float mMaxTorqueLimit
         {
             get
@@ -432,6 +458,18 @@ public static partial class JPH
         public MotorSettings(MotorSettings _other) : this((Const_MotorSettings)_other) {}
 
         /// Generated from constructor `JPH::MotorSettings::MotorSettings`.
+        public unsafe MotorSettings(JPH.ESpringMode inMode, float inFrequency, float inDamping) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MotorSettings_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MotorSettings_Construct_3", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.MotorSettings._Underlying *__JPH_MotorSettings_Construct_3(JPH.ESpringMode inMode, float inFrequency, float inDamping);
+            _UnderlyingPtr = __JPH_MotorSettings_Construct_3(inMode, inFrequency, inDamping);
+        }
+
+        /// Generated from constructor `JPH::MotorSettings::MotorSettings`.
         public unsafe MotorSettings(float inFrequency, float inDamping) : this(null, is_owning: true)
         {
             #if __IOS__
@@ -441,6 +479,18 @@ public static partial class JPH
             #endif
             extern static JPH.MotorSettings._Underlying *__JPH_MotorSettings_Construct_2(float inFrequency, float inDamping);
             _UnderlyingPtr = __JPH_MotorSettings_Construct_2(inFrequency, inDamping);
+        }
+
+        /// Generated from constructor `JPH::MotorSettings::MotorSettings`.
+        public unsafe MotorSettings(JPH.ESpringMode inMode, float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit) : this(null, is_owning: true)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MotorSettings_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MotorSettings_Construct_5", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.MotorSettings._Underlying *__JPH_MotorSettings_Construct_5(JPH.ESpringMode inMode, float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit);
+            _UnderlyingPtr = __JPH_MotorSettings_Construct_5(inMode, inFrequency, inDamping, inForceLimit, inTorqueLimit);
         }
 
         /// Generated from constructor `JPH::MotorSettings::MotorSettings`.

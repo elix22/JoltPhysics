@@ -109,6 +109,15 @@ JOLT_API int JPH_JobSystemWithBarrier_GetMaxConcurrency(const JPH_JobSystemWithB
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_JobSystem_JobHandle_Destroy()` to free it when you're done using it.
 JOLT_API JPH_JobSystem_JobHandle *JPH_JobSystemWithBarrier_CreateJob(JPH_JobSystemWithBarrier *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, const unsigned int *inNumDependencies);
 
+/// Create a number of similar jobs, the jobs are started immediately if inNumDependencies == 0 otherwise they start when
+/// RemoveDependency causes the dependency counter to reach 0.
+/// Generated from method `JPH::JobSystemWithBarrier::CreateJobs`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+/// Parameter `inJobFunction` can not be null. It is a single object.
+/// Parameter `inNumDependencies` has a default argument: `0`, pass a null pointer to use it.
+JOLT_API void JPH_JobSystemWithBarrier_CreateJobs(JPH_JobSystemWithBarrier *_this, const char *inName, const JPH_Color *inColor, const Jolt_std_function_void *inJobFunction, JPH_JobSystem_JobHandle *outJobs, unsigned int inNumJobs, const unsigned int *inNumDependencies);
+
 /// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
 /// The reference to the parameter `ptr` might be preserved in the return value.
 JOLT_API const JPH_JobSystemWithBarrier *JPH_JobSystemWithBarrier_OffsetPtr(const JPH_JobSystemWithBarrier *ptr, ptrdiff_t i);

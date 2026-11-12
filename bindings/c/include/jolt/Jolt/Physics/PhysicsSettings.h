@@ -304,6 +304,26 @@ JOLT_API void JPH_PhysicsSettings_Set_mContactPointPreserveLambdaMaxDistSq(JPH_P
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_PhysicsSettings_GetMutable_mContactPointPreserveLambdaMaxDistSq(JPH_PhysicsSettings *_this);
 
+/// Max squared distance to consider a vertex to be the same as another vertex, used by the internal edge removal algorithm to determine if two edges are shared. (unit: meter^2)
+/// Returns a pointer to a member variable of class `JPH::PhysicsSettings` named `mInternalEdgeRemovalVertexToleranceSq`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const float *JPH_PhysicsSettings_Get_mInternalEdgeRemovalVertexToleranceSq(const JPH_PhysicsSettings *_this);
+
+/// Max squared distance to consider a vertex to be the same as another vertex, used by the internal edge removal algorithm to determine if two edges are shared. (unit: meter^2)
+/// Modifies a member variable of class `JPH::PhysicsSettings` named `mInternalEdgeRemovalVertexToleranceSq`.
+/// Parameter `_this` can not be null. It is a single object.
+/// When this function is called, this object will drop object references it held previously in `mInternalEdgeRemovalVertexToleranceSq`.
+JOLT_API void JPH_PhysicsSettings_Set_mInternalEdgeRemovalVertexToleranceSq(JPH_PhysicsSettings *_this, float value);
+
+/// Max squared distance to consider a vertex to be the same as another vertex, used by the internal edge removal algorithm to determine if two edges are shared. (unit: meter^2)
+/// Returns a mutable pointer to a member variable of class `JPH::PhysicsSettings` named `mInternalEdgeRemovalVertexToleranceSq`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API float *JPH_PhysicsSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq(JPH_PhysicsSettings *_this);
+
 /// Number of solver velocity iterations to run
 /// Note that this needs to be >= 2 in order for friction to work (friction is applied using the non-penetration impulse from the previous iteration)
 /// Returns a pointer to a member variable of class `JPH::PhysicsSettings` named `mNumVelocitySteps`.
@@ -426,26 +446,6 @@ JOLT_API void JPH_PhysicsSettings_Set_mPointVelocitySleepThreshold(JPH_PhysicsSe
 /// The returned pointer will never be null. It is non-owning, do NOT destroy it.
 /// The reference to this object might be preserved as the return value.
 JOLT_API float *JPH_PhysicsSettings_GetMutable_mPointVelocitySleepThreshold(JPH_PhysicsSettings *_this);
-
-/// By default the simulation is deterministic, it is possible to turn this off by setting this setting to false. This will make the simulation run faster but it will no longer be deterministic.
-/// Returns a pointer to a member variable of class `JPH::PhysicsSettings` named `mDeterministicSimulation`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API const bool *JPH_PhysicsSettings_Get_mDeterministicSimulation(const JPH_PhysicsSettings *_this);
-
-/// By default the simulation is deterministic, it is possible to turn this off by setting this setting to false. This will make the simulation run faster but it will no longer be deterministic.
-/// Modifies a member variable of class `JPH::PhysicsSettings` named `mDeterministicSimulation`.
-/// Parameter `_this` can not be null. It is a single object.
-/// When this function is called, this object will drop object references it held previously in `mDeterministicSimulation`.
-JOLT_API void JPH_PhysicsSettings_Set_mDeterministicSimulation(JPH_PhysicsSettings *_this, bool value);
-
-/// By default the simulation is deterministic, it is possible to turn this off by setting this setting to false. This will make the simulation run faster but it will no longer be deterministic.
-/// Returns a mutable pointer to a member variable of class `JPH::PhysicsSettings` named `mDeterministicSimulation`.
-/// Parameter `_this` can not be null. It is a single object.
-/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
-/// The reference to this object might be preserved as the return value.
-JOLT_API bool *JPH_PhysicsSettings_GetMutable_mDeterministicSimulation(JPH_PhysicsSettings *_this);
 
 /// Whether or not to use warm starting for constraints (initially applying previous frames impulses)
 /// Returns a pointer to a member variable of class `JPH::PhysicsSettings` named `mConstraintWarmStart`.
@@ -581,7 +581,7 @@ JOLT_API JPH_PhysicsSettings *JPH_PhysicsSettings_DefaultConstructArray(size_t n
 /// The reference to the parameter `mNumPositionSteps` might be preserved in the constructed object.
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_PhysicsSettings_Destroy()` to free it when you're done using it.
 /// When this function is called, this object will drop any object references it held previously.
-JOLT_API JPH_PhysicsSettings *JPH_PhysicsSettings_ConstructFrom(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, unsigned int mNumVelocitySteps, unsigned int mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, bool mDeterministicSimulation, bool mConstraintWarmStart, bool mUseBodyPairContactCache, bool mUseManifoldReduction, bool mUseLargeIslandSplitter, bool mAllowSleeping, bool mCheckActiveEdges);
+JOLT_API JPH_PhysicsSettings *JPH_PhysicsSettings_ConstructFrom(int mMaxInFlightBodyPairs, int mStepListenersBatchSize, int mStepListenerBatchesPerJob, float mBaumgarte, float mSpeculativeContactDistance, float mPenetrationSlop, float mLinearCastThreshold, float mLinearCastMaxPenetration, float mManifoldTolerance, float mMaxPenetrationDistance, float mBodyPairCacheMaxDeltaPositionSq, float mBodyPairCacheCosMaxDeltaRotationDiv2, float mContactNormalCosMaxDeltaRotation, float mContactPointPreserveLambdaMaxDistSq, float mInternalEdgeRemovalVertexToleranceSq, unsigned int mNumVelocitySteps, unsigned int mNumPositionSteps, float mMinVelocityForRestitution, float mTimeBeforeSleep, float mPointVelocitySleepThreshold, bool mConstraintWarmStart, bool mUseBodyPairContactCache, bool mUseManifoldReduction, bool mUseLargeIslandSplitter, bool mAllowSleeping, bool mCheckActiveEdges);
 
 /// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
 /// The reference to the parameter `ptr` might be preserved in the return value.

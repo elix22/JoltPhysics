@@ -1782,14 +1782,42 @@ public static partial class JPH
         public unsafe void ModifyShapes(uint inStartIndex, uint inNumber, JPH.Const_Vec3? inPositions, JPH.Const_Quat? inRotations, uint? inPositionStride = null, uint? inRotationStride = null)
         {
             #if __IOS__
-            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShapes_6", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #else
-            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShapes", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShapes_6", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
             #endif
-            extern static void __JPH_MutableCompoundShape_ModifyShapes(_Underlying *_this, uint inStartIndex, uint inNumber, JPH.Const_Vec3._Underlying *inPositions, JPH.Const_Quat._Underlying *inRotations, uint *inPositionStride, uint *inRotationStride);
+            extern static void __JPH_MutableCompoundShape_ModifyShapes_6(_Underlying *_this, uint inStartIndex, uint inNumber, JPH.Const_Vec3._Underlying *inPositions, JPH.Const_Quat._Underlying *inRotations, uint *inPositionStride, uint *inRotationStride);
             uint __deref_inPositionStride = inPositionStride.GetValueOrDefault();
             uint __deref_inRotationStride = inRotationStride.GetValueOrDefault();
-            __JPH_MutableCompoundShape_ModifyShapes(_UnderlyingPtr, inStartIndex, inNumber, inPositions is not null ? inPositions._UnderlyingPtr : null, inRotations is not null ? inRotations._UnderlyingPtr : null, inPositionStride.HasValue ? &__deref_inPositionStride : null, inRotationStride.HasValue ? &__deref_inRotationStride : null);
+            __JPH_MutableCompoundShape_ModifyShapes_6(_UnderlyingPtr, inStartIndex, inNumber, inPositions is not null ? inPositions._UnderlyingPtr : null, inRotations is not null ? inRotations._UnderlyingPtr : null, inPositionStride.HasValue ? &__deref_inPositionStride : null, inRotationStride.HasValue ? &__deref_inRotationStride : null);
+        }
+
+        /// @brief Batch set positions / orientations / shapes, this avoids duplicate work due to bounding box calculation.
+        /// Beware this can create a race condition if you're running collision queries in parallel. See class documentation for more information.
+        /// @param inStartIndex Index of first shape to update
+        /// @param inNumber Number of shapes to update
+        /// @param inPositions A list of positions with arbitrary stride
+        /// @param inRotations A list of orientations with arbitrary stride
+        /// @param inShapes A list of shapes with arbitrary stride
+        /// @param inPositionStride The position stride (the number of bytes between the first and second element)
+        /// @param inRotationStride The orientation stride (the number of bytes between the first and second element)
+        /// @param inShapeStride The shape stride (the number of bytes between the first and second element)
+        /// Generated from method `JPH::MutableCompoundShape::ModifyShapes`.
+        /// Parameter `inPositionStride` defaults to `sizeof(JPH::Vec3)`.
+        /// Parameter `inRotationStride` defaults to `sizeof(JPH::Quat)`.
+        /// Parameter `inShapeStride` defaults to `sizeof(const JPH::Shape*)`.
+        public unsafe void ModifyShapes(uint inStartIndex, uint inNumber, JPH.Const_Vec3? inPositions, JPH.Const_Quat? inRotations, void **inShapes, uint? inPositionStride = null, uint? inRotationStride = null, uint? inShapeStride = null)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShapes_8", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_MutableCompoundShape_ModifyShapes_8", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_MutableCompoundShape_ModifyShapes_8(_Underlying *_this, uint inStartIndex, uint inNumber, JPH.Const_Vec3._Underlying *inPositions, JPH.Const_Quat._Underlying *inRotations, void **inShapes, uint *inPositionStride, uint *inRotationStride, uint *inShapeStride);
+            uint __deref_inPositionStride = inPositionStride.GetValueOrDefault();
+            uint __deref_inRotationStride = inRotationStride.GetValueOrDefault();
+            uint __deref_inShapeStride = inShapeStride.GetValueOrDefault();
+            __JPH_MutableCompoundShape_ModifyShapes_8(_UnderlyingPtr, inStartIndex, inNumber, inPositions is not null ? inPositions._UnderlyingPtr : null, inRotations is not null ? inRotations._UnderlyingPtr : null, inShapes, inPositionStride.HasValue ? &__deref_inPositionStride : null, inRotationStride.HasValue ? &__deref_inRotationStride : null, inShapeStride.HasValue ? &__deref_inShapeStride : null);
         }
 
         /// Recalculate the center of mass and shift all objects so they're centered around it

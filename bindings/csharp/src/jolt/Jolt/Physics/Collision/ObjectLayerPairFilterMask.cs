@@ -265,7 +265,7 @@ public static partial class JPH
 
         /// Construct an ObjectLayer from a group and mask bits
         /// Generated from method `JPH::ObjectLayerPairFilterMask::sGetObjectLayer`.
-        /// Parameter `inMask` defaults to `cMask`.
+        /// Parameter `inMask` defaults to `JPH::ObjectLayerPairFilterMask::cMask`.
         public static unsafe ushort SGetObjectLayer(uint inGroup, uint? inMask = null)
         {
             #if __IOS__

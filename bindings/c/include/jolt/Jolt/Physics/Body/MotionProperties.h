@@ -113,13 +113,17 @@ JOLT_API bool JPH_MotionProperties_GetAllowSleeping(const JPH_MotionProperties *
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_MotionProperties_GetLinearVelocity(const JPH_MotionProperties *_this);
 
-/// Set world space linear velocity of the center of mass
+/// Set world space linear velocity of the center of mass.
+/// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
 /// Generated from method `JPH::MotionProperties::SetLinearVelocity`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inLinearVelocity` can not be null. It is a single object.
 JOLT_API void JPH_MotionProperties_SetLinearVelocity(JPH_MotionProperties *_this, const JPH_Vec3 *inLinearVelocity);
 
-/// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity
+/// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity.
+/// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
 /// Generated from method `JPH::MotionProperties::SetLinearVelocityClamped`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inLinearVelocity` can not be null. It is a single object.
@@ -131,19 +135,25 @@ JOLT_API void JPH_MotionProperties_SetLinearVelocityClamped(JPH_MotionProperties
 /// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
 JOLT_API JPH_Vec3 *JPH_MotionProperties_GetAngularVelocity(const JPH_MotionProperties *_this);
 
-/// Set world space angular velocity of the center of mass
+/// Set world space angular velocity of the center of mass.
+/// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
 /// Generated from method `JPH::MotionProperties::SetAngularVelocity`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inAngularVelocity` can not be null. It is a single object.
 JOLT_API void JPH_MotionProperties_SetAngularVelocity(JPH_MotionProperties *_this, const JPH_Vec3 *inAngularVelocity);
 
-/// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity
+/// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity.
+/// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
 /// Generated from method `JPH::MotionProperties::SetAngularVelocityClamped`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inAngularVelocity` can not be null. It is a single object.
 JOLT_API void JPH_MotionProperties_SetAngularVelocityClamped(JPH_MotionProperties *_this, const JPH_Vec3 *inAngularVelocity);
 
 /// Set velocity of body such that it will be rotate/translate by inDeltaPosition/Rotation in inDeltaTime seconds.
+/// Note that it is illegal to provide non-zero delta position/rotation on a sleeping body without waking it up afterwards.
+/// If you want the body to wake up when it is sleeping, use BodyInterface::MoveKinematic instead.
 /// Generated from method `JPH::MotionProperties::MoveKinematic`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inDeltaPosition` can not be null. It is a single object.
@@ -356,6 +366,11 @@ JOLT_API unsigned int JPH_MotionProperties_GetNumPositionStepsOverride(const JPH
 
 ///@name Update linear and angular velocity (used during constraint solving)
 ///@{
+/// Generated from method `JPH::MotionProperties::ApplyLinearVelocityStep`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inLinearVelocity` can not be null. It is a single object.
+JOLT_API void JPH_MotionProperties_ApplyLinearVelocityStep(JPH_MotionProperties *_this, const JPH_Vec3 *inLinearVelocity);
+
 /// Generated from method `JPH::MotionProperties::AddLinearVelocityStep`.
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inLinearVelocityChange` can not be null. It is a single object.
@@ -365,6 +380,11 @@ JOLT_API void JPH_MotionProperties_AddLinearVelocityStep(JPH_MotionProperties *_
 /// Parameter `_this` can not be null. It is a single object.
 /// Parameter `inLinearVelocityChange` can not be null. It is a single object.
 JOLT_API void JPH_MotionProperties_SubLinearVelocityStep(JPH_MotionProperties *_this, const JPH_Vec3 *inLinearVelocityChange);
+
+/// Generated from method `JPH::MotionProperties::ApplyAngularVelocityStep`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inAngularVelocity` can not be null. It is a single object.
+JOLT_API void JPH_MotionProperties_ApplyAngularVelocityStep(JPH_MotionProperties *_this, const JPH_Vec3 *inAngularVelocity);
 
 /// Generated from method `JPH::MotionProperties::AddAngularVelocityStep`.
 /// Parameter `_this` can not be null. It is a single object.

@@ -1148,6 +1148,21 @@ public static partial class JPH
             }
         }
 
+        /// Max squared distance to consider a vertex to be the same as another vertex, used by the internal edge removal algorithm to determine if two edges are shared. (unit: meter^2)
+        public unsafe float mInternalEdgeRemovalVertexToleranceSq
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CollideShapeSettings_Get_mInternalEdgeRemovalVertexToleranceSq", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CollideShapeSettings_Get_mInternalEdgeRemovalVertexToleranceSq", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JPH_CollideShapeSettings_Get_mInternalEdgeRemovalVertexToleranceSq(_Underlying *_this);
+                return *__JPH_CollideShapeSettings_Get_mInternalEdgeRemovalVertexToleranceSq(_UnderlyingPtr);
+            }
+        }
+
         /// How active edges (edges that a moving object should bump into) are handled
         public unsafe JPH.EActiveEdgeMode mActiveEdgeMode
         {
@@ -1457,6 +1472,21 @@ public static partial class JPH
                 #endif
                 extern static JPH.EBackFaceMode *__JPH_CollideShapeSettings_GetMutable_mBackFaceMode(_Underlying *_this);
                 return ref *__JPH_CollideShapeSettings_GetMutable_mBackFaceMode(_UnderlyingPtr);
+            }
+        }
+
+        /// Max squared distance to consider a vertex to be the same as another vertex, used by the internal edge removal algorithm to determine if two edges are shared. (unit: meter^2)
+        public new unsafe ref float mInternalEdgeRemovalVertexToleranceSq
+        {
+            get
+            {
+                #if __IOS__
+                [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_CollideShapeSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #else
+                [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_CollideShapeSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+                #endif
+                extern static float *__JPH_CollideShapeSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq(_Underlying *_this);
+                return ref *__JPH_CollideShapeSettings_GetMutable_mInternalEdgeRemovalVertexToleranceSq(_UnderlyingPtr);
             }
         }
 

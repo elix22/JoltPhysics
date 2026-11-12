@@ -698,6 +698,21 @@ JPH_Vec3 *JPH_RShapeCast_GetPointOnRay(const JPH_RShapeCast *_this, float inFrac
     ));
 }
 
+const float *JPH_ShapeCastSettings_Get_mExtraConvexRadius(const JPH_ShapeCastSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ShapeCastSettings *)(_this)).mExtraConvexRadius);
+}
+
+void JPH_ShapeCastSettings_Set_mExtraConvexRadius(JPH_ShapeCastSettings *_this, float value)
+{
+    ((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ShapeCastSettings *)(_this)).mExtraConvexRadius = value;
+}
+
+float *JPH_ShapeCastSettings_GetMutable_mExtraConvexRadius(JPH_ShapeCastSettings *_this)
+{
+    return std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(JPH::ShapeCastSettings *)(_this)).mExtraConvexRadius);
+}
+
 const JPH_EBackFaceMode *JPH_ShapeCastSettings_Get_mBackFaceModeTriangles(const JPH_ShapeCastSettings *_this)
 {
     return (const JPH_EBackFaceMode *)std::addressof(((_this ? void() : MRBINDC_THROW("Parameter `_this` can not be null.", void)), *(const JPH::ShapeCastSettings *)(_this)).mBackFaceModeTriangles);

@@ -334,6 +334,19 @@ public static partial class JPH
             __JPH_SoftBodyMotionProperties_DrawPredictedBounds(_UnderlyingPtr, inRenderer is not null ? inRenderer._UnderlyingPtr : null, inCenterOfMassTransform._UnderlyingPtr);
         }
 
+        /// After calling SkinVertices, this gives access to the vertex positions and normals. This matrix takes the local space vertices to world space.
+        /// Generated from method `JPH::SoftBodyMotionProperties::GetSkinnedVertexTransform`.
+        public unsafe JPH.Mat44 GetSkinnedVertexTransform()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_GetSkinnedVertexTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_GetSkinnedVertexTransform", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static JPH.Mat44._Underlying *__JPH_SoftBodyMotionProperties_GetSkinnedVertexTransform(_Underlying *_this);
+            return new(__JPH_SoftBodyMotionProperties_GetSkinnedVertexTransform(_UnderlyingPtr), is_owning: true);
+        }
+
         /// Motion quality, or how well it detects collisions when it has a high velocity
         /// Generated from method `JPH::SoftBodyMotionProperties::GetMotionQuality`.
         public unsafe JPH.EMotionQuality GetMotionQuality()
@@ -937,7 +950,22 @@ public static partial class JPH
             __JPH_SoftBodyMotionProperties_CustomUpdate(_UnderlyingPtr, inDeltaTime, ioSoftBody._UnderlyingPtr, inSystem._UnderlyingPtr);
         }
 
-        /// Set world space linear velocity of the center of mass
+        /// Set a flag to indicate that the ContactListener::OnSoftBodyContactAdded should be called
+        /// Generated from method `JPH::SoftBodyMotionProperties::RequestContactCallback`.
+        public unsafe void RequestContactCallback()
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_RequestContactCallback", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_RequestContactCallback", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SoftBodyMotionProperties_RequestContactCallback(_Underlying *_this);
+            __JPH_SoftBodyMotionProperties_RequestContactCallback(_UnderlyingPtr);
+        }
+
+        /// Set world space linear velocity of the center of mass.
+        /// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
+        /// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
         /// Generated from method `JPH::SoftBodyMotionProperties::SetLinearVelocity`.
         public unsafe void SetLinearVelocity(JPH.Const_Vec3 inLinearVelocity)
         {
@@ -950,7 +978,9 @@ public static partial class JPH
             __JPH_SoftBodyMotionProperties_SetLinearVelocity(_UnderlyingPtr, inLinearVelocity._UnderlyingPtr);
         }
 
-        /// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity
+        /// Set world space linear velocity of the center of mass, will make sure the value is clamped against the maximum linear velocity.
+        /// Note that it is illegal to set a non-zero linear velocity on a sleeping body without waking it up afterwards.
+        /// If you want the body to wake up when it is sleeping, use BodyInterface::SetLinearVelocity instead.
         /// Generated from method `JPH::SoftBodyMotionProperties::SetLinearVelocityClamped`.
         public unsafe void SetLinearVelocityClamped(JPH.Const_Vec3 inLinearVelocity)
         {
@@ -963,7 +993,9 @@ public static partial class JPH
             __JPH_SoftBodyMotionProperties_SetLinearVelocityClamped(_UnderlyingPtr, inLinearVelocity._UnderlyingPtr);
         }
 
-        /// Set world space angular velocity of the center of mass
+        /// Set world space angular velocity of the center of mass.
+        /// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
+        /// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
         /// Generated from method `JPH::SoftBodyMotionProperties::SetAngularVelocity`.
         public unsafe void SetAngularVelocity(JPH.Const_Vec3 inAngularVelocity)
         {
@@ -976,7 +1008,9 @@ public static partial class JPH
             __JPH_SoftBodyMotionProperties_SetAngularVelocity(_UnderlyingPtr, inAngularVelocity._UnderlyingPtr);
         }
 
-        /// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity
+        /// Set world space angular velocity of the center of mass, will make sure the value is clamped against the maximum angular velocity.
+        /// Note that it is illegal to set a non-zero angular velocity on a sleeping body without waking it up afterwards.
+        /// If you want the body to wake up when it is sleeping, use BodyInterface::SetAngularVelocity instead.
         /// Generated from method `JPH::SoftBodyMotionProperties::SetAngularVelocityClamped`.
         public unsafe void SetAngularVelocityClamped(JPH.Const_Vec3 inAngularVelocity)
         {
@@ -990,6 +1024,8 @@ public static partial class JPH
         }
 
         /// Set velocity of body such that it will be rotate/translate by inDeltaPosition/Rotation in inDeltaTime seconds.
+        /// Note that it is illegal to provide non-zero delta position/rotation on a sleeping body without waking it up afterwards.
+        /// If you want the body to wake up when it is sleeping, use BodyInterface::MoveKinematic instead.
         /// Generated from method `JPH::SoftBodyMotionProperties::MoveKinematic`.
         public unsafe void MoveKinematic(JPH.Const_Vec3 inDeltaPosition, JPH.Const_Quat inDeltaRotation, float inDeltaTime)
         {
@@ -1200,6 +1236,18 @@ public static partial class JPH
 
         ///@name Update linear and angular velocity (used during constraint solving)
         ///@{
+        /// Generated from method `JPH::SoftBodyMotionProperties::ApplyLinearVelocityStep`.
+        public unsafe void ApplyLinearVelocityStep(JPH.Const_Vec3 inLinearVelocity)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_ApplyLinearVelocityStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_ApplyLinearVelocityStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SoftBodyMotionProperties_ApplyLinearVelocityStep(_Underlying *_this, JPH.Vec3._Underlying *inLinearVelocity);
+            __JPH_SoftBodyMotionProperties_ApplyLinearVelocityStep(_UnderlyingPtr, inLinearVelocity._UnderlyingPtr);
+        }
+
         /// Generated from method `JPH::SoftBodyMotionProperties::AddLinearVelocityStep`.
         public unsafe void AddLinearVelocityStep(JPH.Const_Vec3 inLinearVelocityChange)
         {
@@ -1222,6 +1270,18 @@ public static partial class JPH
             #endif
             extern static void __JPH_SoftBodyMotionProperties_SubLinearVelocityStep(_Underlying *_this, JPH.Vec3._Underlying *inLinearVelocityChange);
             __JPH_SoftBodyMotionProperties_SubLinearVelocityStep(_UnderlyingPtr, inLinearVelocityChange._UnderlyingPtr);
+        }
+
+        /// Generated from method `JPH::SoftBodyMotionProperties::ApplyAngularVelocityStep`.
+        public unsafe void ApplyAngularVelocityStep(JPH.Const_Vec3 inAngularVelocity)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_ApplyAngularVelocityStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JPH_SoftBodyMotionProperties_ApplyAngularVelocityStep", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static void __JPH_SoftBodyMotionProperties_ApplyAngularVelocityStep(_Underlying *_this, JPH.Vec3._Underlying *inAngularVelocity);
+            __JPH_SoftBodyMotionProperties_ApplyAngularVelocityStep(_UnderlyingPtr, inAngularVelocity._UnderlyingPtr);
         }
 
         /// Generated from method `JPH::SoftBodyMotionProperties::AddAngularVelocityStep`.
