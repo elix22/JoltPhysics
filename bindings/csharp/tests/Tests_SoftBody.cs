@@ -361,20 +361,23 @@ public sealed class Tests_SoftBodySimulation(JoltFixture fx)
 
         try
         {
-            // Record initial Y position of vertex 0
-            float initialY;
-            using (var pos = JPH.Const_JoltHelpers.PhysicsSystemGetSoftBodyVertexPosition(sys, id, 0u))
-                initialY = pos.GetY();
+            // A soft body's vertex positions are local to the body, and Jolt moves the body along with its vertices
+            // as they fall: how far a vertex fell is seen in world space - the body's position plus the vertex's.
+            float WorldY()
+            {
+                using var at = bi.GetPosition(id);
+                using var local = JPH.Const_JoltHelpers.PhysicsSystemGetSoftBodyVertexPosition(sys, id, 0u);
+                return at.GetY() + local.GetY();
+            }
+            float initialY = WorldY();
 
             // Simulate for 30 steps (0.5 s at 60 Hz)
             for (int i = 0; i < 30; i++)
                 sys.Update(1f / 60f, 1, fx.Alloc, fx.Jobs);
 
-            float finalY;
-            using (var pos = JPH.Const_JoltHelpers.PhysicsSystemGetSoftBodyVertexPosition(sys, id, 0u))
-                finalY = pos.GetY();
-            // Gravity is -9.81; vertices should have fallen
-            Assert.True(finalY < initialY);
+            // Gravity is -9.81: in half a second a free vertex falls about 1.2 m (some less, held by its neighbours)
+            float finalY = WorldY();
+            Assert.True(finalY < initialY - 0.5f, $"vertex 0 from {initialY} to {finalY}");
         }
         finally
         {
