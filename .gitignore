@@ -14,3 +14,13 @@
 *.dxil
 *.metallib
 /Assets/*.hair
+
+# C# build output
+bindings/csharp/bin/
+bindings/csharp/obj/
+bindings/csharp/tests/bin/
+bindings/csharp/tests/obj/
+
+# Local build directories
+build-xcode-macos-arm64/
+build-*/

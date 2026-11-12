@@ -1,0 +1,98 @@
+// machine generated, do not edit
+#pragma once
+
+#include <exports.h>
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_BodyFilter JPH_BodyFilter; // Defined in `#include <jolt/Jolt/Physics/Body/BodyFilter.h>`.
+typedef struct JPH_BroadPhaseLayerFilter JPH_BroadPhaseLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/BroadPhase/BroadPhaseLayer.h>`.
+typedef struct JPH_CollideShapeSettings JPH_CollideShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/CollideShape.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
+typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
+typedef struct JPH_ObjectLayerFilter JPH_ObjectLayerFilter; // Defined in `#include <jolt/Jolt/Physics/Collision/ObjectLayer.h>`.
+typedef struct JPH_RRayCast JPH_RRayCast; // Defined in `#include <jolt/Jolt/Physics/Collision/RayCast.h>`.
+typedef struct JPH_RShapeCast JPH_RShapeCast; // Defined in `#include <jolt/Jolt/Physics/Collision/ShapeCast.h>`.
+typedef struct JPH_RayCastResult JPH_RayCastResult; // Defined in `#include <jolt/Jolt/Physics/Collision/CastResult.h>`.
+typedef struct JPH_RayCastSettings JPH_RayCastSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/RayCast.h>`.
+typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
+typedef struct JPH_ShapeCastSettings JPH_ShapeCastSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/ShapeCast.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+
+
+/// Class that provides an interface for doing precise collision detection against the broad and then the narrow phase.
+/// Unlike a BroadPhaseQuery, the NarrowPhaseQuery will test against shapes and will return collision information against triangles, spheres etc.
+/// Generated from class `JPH::NarrowPhaseQuery`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JPH::NonCopyable`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JPH_NarrowPhaseQuery JPH_NarrowPhaseQuery;
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_NarrowPhaseQuery_Destroy()` to free it when you're done using it.
+JOLT_API JPH_NarrowPhaseQuery *JPH_NarrowPhaseQuery_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JPH_NarrowPhaseQuery_DestroyArray()`.
+/// Use `JPH_NarrowPhaseQuery_OffsetMutablePtr()` and `JPH_NarrowPhaseQuery_OffsetPtr()` to access the array elements.
+JOLT_API JPH_NarrowPhaseQuery *JPH_NarrowPhaseQuery_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_NarrowPhaseQuery *JPH_NarrowPhaseQuery_OffsetPtr(const JPH_NarrowPhaseQuery *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_NarrowPhaseQuery *JPH_NarrowPhaseQuery_OffsetMutablePtr(JPH_NarrowPhaseQuery *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JPH::NarrowPhaseQuery` to its base class `JPH::NonCopyable`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_NonCopyable *JPH_NarrowPhaseQuery_UpcastTo_JPH_NonCopyable(const JPH_NarrowPhaseQuery *object);
+
+/// Upcasts an instance of `JPH::NarrowPhaseQuery` to its base class `JPH::NonCopyable`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_NonCopyable *JPH_NarrowPhaseQuery_MutableUpcastTo_JPH_NonCopyable(JPH_NarrowPhaseQuery *object);
+
+/// Downcasts an instance of `JPH::NonCopyable` to a derived class `JPH::NarrowPhaseQuery`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_NarrowPhaseQuery *JPH_NarrowPhaseQuery_StaticDowncastFrom_JPH_NonCopyable(const JPH_NonCopyable *object);
+
+/// Downcasts an instance of `JPH::NonCopyable` to a derived class `JPH::NarrowPhaseQuery`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_NarrowPhaseQuery *JPH_NarrowPhaseQuery_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCopyable *object);
+
+/// Destroys a heap-allocated instance of `JPH_NarrowPhaseQuery`. Does nothing if the pointer is null.
+JOLT_API void JPH_NarrowPhaseQuery_Destroy(const JPH_NarrowPhaseQuery *_this);
+
+/// Destroys a heap-allocated array of `JPH_NarrowPhaseQuery`. Does nothing if the pointer is null.
+JOLT_API void JPH_NarrowPhaseQuery_DestroyArray(const JPH_NarrowPhaseQuery *_this);
+
+/// Cast a ray and find the closest hit. Returns true if it finds a hit. Hits further than ioHit.mFraction will not be considered and in this case ioHit will remain unmodified (and the function will return false).
+/// Convex objects will be treated as solid (meaning if the ray starts inside, you'll get a hit fraction of 0) and back face hits against triangles are returned.
+/// If you want the surface normal of the hit use Body::GetWorldSpaceSurfaceNormal(ioHit.mSubShapeID2, inRay.GetPointOnRay(ioHit.mFraction)) on body with ID ioHit.mBodyID.
+/// Generated from method `JPH::NarrowPhaseQuery::CastRay`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRay` can not be null. It is a single object.
+/// Parameter `ioHit` can not be null. It is a single object.
+/// Parameter `inBroadPhaseLayerFilter` is a single object.
+/// Parameter `inBroadPhaseLayerFilter` has a default argument: `{}`, pass a null pointer to use it.
+/// Parameter `inObjectLayerFilter` is a single object.
+/// Parameter `inObjectLayerFilter` has a default argument: `{}`, pass a null pointer to use it.
+/// Parameter `inBodyFilter` is a single object.
+/// Parameter `inBodyFilter` has a default argument: `{}`, pass a null pointer to use it.
+JOLT_API bool JPH_NarrowPhaseQuery_CastRay_5(const JPH_NarrowPhaseQuery *_this, const JPH_RRayCast *inRay, JPH_RayCastResult *ioHit, const JPH_BroadPhaseLayerFilter *inBroadPhaseLayerFilter, const JPH_ObjectLayerFilter *inObjectLayerFilter, const JPH_BodyFilter *inBodyFilter);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif

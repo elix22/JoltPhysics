@@ -1,0 +1,690 @@
+// machine generated, do not edit
+#pragma once
+
+#include <common.h>
+#include <exports.h>
+
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef struct JPH_AABox JPH_AABox; // Defined in `#include <jolt/Jolt/Geometry/AABox.h>`.
+typedef struct JPH_Color JPH_Color; // Defined in `#include <jolt/Jolt/Core/Color.h>`.
+typedef struct JPH_CompoundShape JPH_CompoundShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
+typedef struct JPH_CompoundShapeSettings JPH_CompoundShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
+typedef struct JPH_CompoundShape_SubShape JPH_CompoundShape_SubShape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/CompoundShape.h>`.
+typedef struct JPH_DebugRenderer JPH_DebugRenderer; // Defined in `#include <jolt/Jolt/Renderer/DebugRenderer.h>`.
+typedef struct JPH_Float3 JPH_Float3; // Defined in `#include <jolt/Jolt/Math/Float3.h>`.
+typedef struct JPH_Mat44 JPH_Mat44; // Defined in `#include <jolt/Jolt/Math/Mat44.h>`.
+typedef struct JPH_NonCopyable JPH_NonCopyable; // Defined in `#include <jolt/Jolt/Core/NonCopyable.h>`.
+typedef struct JPH_PhysicsMaterial JPH_PhysicsMaterial; // Defined in `#include <jolt/Jolt/Physics/Collision/PhysicsMaterial.h>`.
+typedef struct JPH_Plane JPH_Plane; // Defined in `#include <jolt/Jolt/Geometry/Plane.h>`.
+typedef struct JPH_Quat JPH_Quat; // Defined in `#include <jolt/Jolt/Math/Quat.h>`.
+typedef struct JPH_RayCast JPH_RayCast; // Defined in `#include <jolt/Jolt/Physics/Collision/RayCast.h>`.
+typedef struct JPH_RayCastResult JPH_RayCastResult; // Defined in `#include <jolt/Jolt/Physics/Collision/CastResult.h>`.
+typedef struct JPH_RayCastSettings JPH_RayCastSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/RayCast.h>`.
+typedef struct JPH_RefTarget_JPH_Shape JPH_RefTarget_JPH_Shape; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
+typedef struct JPH_RefTarget_JPH_ShapeSettings JPH_RefTarget_JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Core/Reference.h>`.
+typedef struct JPH_SerializableObject JPH_SerializableObject; // Defined in `#include <jolt/Jolt/ObjectStream/SerializableObject.h>`.
+typedef struct JPH_Shape JPH_Shape; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
+typedef struct JPH_ShapeSettings JPH_ShapeSettings; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
+typedef struct JPH_Shape_GetTrianglesContext JPH_Shape_GetTrianglesContext; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
+typedef struct JPH_Shape_Stats JPH_Shape_Stats; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/Shape.h>`.
+typedef struct JPH_SubShapeID JPH_SubShapeID; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_SubShapeIDCreator JPH_SubShapeIDCreator; // Defined in `#include <jolt/Jolt/Physics/Collision/Shape/SubShapeID.h>`.
+typedef struct JPH_TempAllocator JPH_TempAllocator; // Defined in `#include <jolt/Jolt/Core/TempAllocator.h>`.
+typedef struct JPH_TransformedShape JPH_TransformedShape; // Defined in `#include <jolt/Jolt/Physics/Collision/TransformedShape.h>`.
+typedef struct JPH_Vec3 JPH_Vec3; // Defined in `#include <jolt/Jolt/Math/Vec3.h>`.
+typedef struct Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings; // Defined in `#include <JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings.h>`.
+typedef struct Jolt_JPH_Array_JPH_CompoundShape_SubShape Jolt_JPH_Array_JPH_CompoundShape_SubShape; // Defined in `#include <JPH_Array_JPH_CompoundShape_SubShape.h>`.
+
+
+/// Class that constructs a StaticCompoundShape. Note that if you only want a compound of 1 shape, use a RotatedTranslatedShape instead.
+/// Generated from class `JPH::StaticCompoundShapeSettings`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JPH::CompoundShapeSettings`
+///   Indirect: (non-virtual)
+///     `JPH::SerializableObject`
+///     `JPH::RefTarget<JPH::ShapeSettings>`
+///     `JPH::ShapeSettings`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct`, `Jolt_PassBy_Copy`, `Jolt_PassBy_Move` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JPH_StaticCompoundShapeSettings JPH_StaticCompoundShapeSettings;
+
+/// A compound shape, sub shapes can be rotated and translated.
+/// Sub shapes cannot be modified once the shape is constructed.
+/// Shifts all child objects so that they're centered around the center of mass.
+/// Generated from class `JPH::StaticCompoundShape`.
+/// Base classes:
+///   Direct: (non-virtual)
+///     `JPH::CompoundShape`
+///   Indirect: (non-virtual)
+///     `JPH::RefTarget<JPH::Shape>`
+///     `JPH::NonCopyable`
+///     `JPH::Shape`
+/// Supported `Jolt_PassBy` modes: `Jolt_PassBy_DefaultConstruct` (and `Jolt_PassBy_DefaultArgument` and `Jolt_PassBy_NoObject` if supported by the callee).
+typedef struct JPH_StaticCompoundShape JPH_StaticCompoundShape;
+
+/// Returns a pointer to a member variable of class `JPH::StaticCompoundShapeSettings` named `mSubShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings *JPH_StaticCompoundShapeSettings_Get_mSubShapes(const JPH_StaticCompoundShapeSettings *_this);
+
+/// Modifies a member variable of class `JPH::StaticCompoundShapeSettings` named `mSubShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mSubShapes`.
+/// When this function is called, this object will drop object references it held previously in `mSubShapes`.
+JOLT_API void JPH_StaticCompoundShapeSettings_Set_mSubShapes(JPH_StaticCompoundShapeSettings *_this, Jolt_PassBy value_pass_by, Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings *value);
+
+/// Returns a mutable pointer to a member variable of class `JPH::StaticCompoundShapeSettings` named `mSubShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API Jolt_JPH_Array_JPH_CompoundShapeSettings_SubShapeSettings *JPH_StaticCompoundShapeSettings_GetMutable_mSubShapes(JPH_StaticCompoundShapeSettings *_this);
+
+/// User data (to be used freely by the application)
+/// Returns a pointer to a member variable of class `JPH::StaticCompoundShapeSettings` named `mUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API const uint64_t *JPH_StaticCompoundShapeSettings_Get_mUserData(const JPH_StaticCompoundShapeSettings *_this);
+
+/// User data (to be used freely by the application)
+/// Modifies a member variable of class `JPH::StaticCompoundShapeSettings` named `mUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to the parameter `value` might be preserved in this object in element `mUserData`.
+/// When this function is called, this object will drop object references it held previously in `mUserData`.
+JOLT_API void JPH_StaticCompoundShapeSettings_Set_mUserData(JPH_StaticCompoundShapeSettings *_this, uint64_t value);
+
+/// User data (to be used freely by the application)
+/// Returns a mutable pointer to a member variable of class `JPH::StaticCompoundShapeSettings` named `mUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// The reference to this object might be preserved as the return value.
+JOLT_API uint64_t *JPH_StaticCompoundShapeSettings_GetMutable_mUserData(JPH_StaticCompoundShapeSettings *_this);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_StaticCompoundShapeSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JPH_StaticCompoundShapeSettings_DestroyArray()`.
+/// Use `JPH_StaticCompoundShapeSettings_OffsetMutablePtr()` and `JPH_StaticCompoundShapeSettings_OffsetPtr()` to access the array elements.
+JOLT_API JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_OffsetPtr(const JPH_StaticCompoundShapeSettings *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_OffsetMutablePtr(JPH_StaticCompoundShapeSettings *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JPH::StaticCompoundShapeSettings` to its base class `JPH::SerializableObject`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_SerializableObject *JPH_StaticCompoundShapeSettings_UpcastTo_JPH_SerializableObject(const JPH_StaticCompoundShapeSettings *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShapeSettings` to its base class `JPH::SerializableObject`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_SerializableObject *JPH_StaticCompoundShapeSettings_MutableUpcastTo_JPH_SerializableObject(JPH_StaticCompoundShapeSettings *object);
+
+/// Downcasts an instance of `JPH::SerializableObject` to a derived class `JPH::StaticCompoundShapeSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_StaticDowncastFrom_JPH_SerializableObject(const JPH_SerializableObject *object);
+
+/// Downcasts an instance of `JPH::SerializableObject` to a derived class `JPH::StaticCompoundShapeSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_MutableStaticDowncastFrom_JPH_SerializableObject(JPH_SerializableObject *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShapeSettings` to its base class `JPH::RefTarget<JPH::ShapeSettings>`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_RefTarget_JPH_ShapeSettings *JPH_StaticCompoundShapeSettings_UpcastTo_JPH_RefTarget_JPH_ShapeSettings(const JPH_StaticCompoundShapeSettings *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShapeSettings` to its base class `JPH::RefTarget<JPH::ShapeSettings>`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_RefTarget_JPH_ShapeSettings *JPH_StaticCompoundShapeSettings_MutableUpcastTo_JPH_RefTarget_JPH_ShapeSettings(JPH_StaticCompoundShapeSettings *object);
+
+/// Downcasts an instance of `JPH::RefTarget<JPH::ShapeSettings>` to a derived class `JPH::StaticCompoundShapeSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_StaticDowncastFrom_JPH_RefTarget_JPH_ShapeSettings(const JPH_RefTarget_JPH_ShapeSettings *object);
+
+/// Downcasts an instance of `JPH::RefTarget<JPH::ShapeSettings>` to a derived class `JPH::StaticCompoundShapeSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_MutableStaticDowncastFrom_JPH_RefTarget_JPH_ShapeSettings(JPH_RefTarget_JPH_ShapeSettings *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShapeSettings` to its base class `JPH::ShapeSettings`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_ShapeSettings *JPH_StaticCompoundShapeSettings_UpcastTo_JPH_ShapeSettings(const JPH_StaticCompoundShapeSettings *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShapeSettings` to its base class `JPH::ShapeSettings`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_ShapeSettings *JPH_StaticCompoundShapeSettings_MutableUpcastTo_JPH_ShapeSettings(JPH_StaticCompoundShapeSettings *object);
+
+/// Downcasts an instance of `JPH::ShapeSettings` to a derived class `JPH::StaticCompoundShapeSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_StaticDowncastFrom_JPH_ShapeSettings(const JPH_ShapeSettings *object);
+
+/// Downcasts an instance of `JPH::ShapeSettings` to a derived class `JPH::StaticCompoundShapeSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_MutableStaticDowncastFrom_JPH_ShapeSettings(JPH_ShapeSettings *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShapeSettings` to its base class `JPH::CompoundShapeSettings`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_CompoundShapeSettings *JPH_StaticCompoundShapeSettings_UpcastTo_JPH_CompoundShapeSettings(const JPH_StaticCompoundShapeSettings *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShapeSettings` to its base class `JPH::CompoundShapeSettings`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_CompoundShapeSettings *JPH_StaticCompoundShapeSettings_MutableUpcastTo_JPH_CompoundShapeSettings(JPH_StaticCompoundShapeSettings *object);
+
+/// Downcasts an instance of `JPH::CompoundShapeSettings` to a derived class `JPH::StaticCompoundShapeSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_StaticDowncastFrom_JPH_CompoundShapeSettings(const JPH_CompoundShapeSettings *object);
+
+/// Downcasts an instance of `JPH::CompoundShapeSettings` to a derived class `JPH::StaticCompoundShapeSettings`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_MutableStaticDowncastFrom_JPH_CompoundShapeSettings(JPH_CompoundShapeSettings *object);
+
+/// Generated from constructor `JPH::StaticCompoundShapeSettings::StaticCompoundShapeSettings`.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in the constructed object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_StaticCompoundShapeSettings_Destroy()` to free it when you're done using it.
+JOLT_API JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_ConstructFromAnother(Jolt_PassBy _other_pass_by, JPH_StaticCompoundShapeSettings *_other);
+
+/// Destroys a heap-allocated instance of `JPH_StaticCompoundShapeSettings`. Does nothing if the pointer is null.
+JOLT_API void JPH_StaticCompoundShapeSettings_Destroy(const JPH_StaticCompoundShapeSettings *_this);
+
+/// Destroys a heap-allocated array of `JPH_StaticCompoundShapeSettings`. Does nothing if the pointer is null.
+JOLT_API void JPH_StaticCompoundShapeSettings_DestroyArray(const JPH_StaticCompoundShapeSettings *_this);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::operator=`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The reference to things referred to by the parameter `_other` (if any) might be preserved in this object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+/// When this function is called, this object will drop any object references it held previously.
+JOLT_API JPH_StaticCompoundShapeSettings *JPH_StaticCompoundShapeSettings_AssignFromAnother(JPH_StaticCompoundShapeSettings *_this, Jolt_PassBy _other_pass_by, JPH_StaticCompoundShapeSettings *_other);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::operator new`.
+JOLT_API void *Jolt_new_JPH_StaticCompoundShapeSettings_size_t(size_t inCount);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::operator delete`.
+JOLT_API void Jolt_delete_JPH_StaticCompoundShapeSettings_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::operator delete`.
+JOLT_API void Jolt_delete_JPH_StaticCompoundShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_StaticCompoundShapeSettings_size_t(size_t inCount);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_StaticCompoundShapeSettings_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_StaticCompoundShapeSettings_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::operator new`.
+JOLT_API void *Jolt_new_JPH_StaticCompoundShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::operator delete`.
+JOLT_API void Jolt_delete_JPH_StaticCompoundShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_StaticCompoundShapeSettings_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_StaticCompoundShapeSettings_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// When creating a shape, the result is cached so that calling Create() again will return the same shape.
+/// If you make changes to the ShapeSettings you need to call this function to clear the cached result to allow Create() to build a new shape.
+/// Generated from method `JPH::StaticCompoundShapeSettings::ClearCachedResult`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShapeSettings_ClearCachedResult(JPH_StaticCompoundShapeSettings *_this);
+
+/// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+/// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+/// the object and at that point in time it is checked that no references are left to the structure.
+/// Generated from method `JPH::StaticCompoundShapeSettings::SetEmbedded`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShapeSettings_SetEmbedded(const JPH_StaticCompoundShapeSettings *_this);
+
+/// Get current refcount of this object
+/// Generated from method `JPH::StaticCompoundShapeSettings::GetRefCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_StaticCompoundShapeSettings_GetRefCount(const JPH_StaticCompoundShapeSettings *_this);
+
+/// Add or release a reference to this object
+/// Generated from method `JPH::StaticCompoundShapeSettings::AddRef`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShapeSettings_AddRef(const JPH_StaticCompoundShapeSettings *_this);
+
+/// Generated from method `JPH::StaticCompoundShapeSettings::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShapeSettings_Release(const JPH_StaticCompoundShapeSettings *_this);
+
+/// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+/// Generated from method `JPH::StaticCompoundShapeSettings::sInternalGetRefCountOffset`.
+JOLT_API int JPH_StaticCompoundShapeSettings_sInternalGetRefCountOffset(void);
+
+/// This is the minimum amount of triangles that should be requested through GetTrianglesNext.
+/// Returns a pointer to a member variable of class `JPH::StaticCompoundShape` named `cGetTrianglesMinTrianglesRequested`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const int *JPH_StaticCompoundShape_Get_cGetTrianglesMinTrianglesRequested(void);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a pointer to a member variable of class `JPH::StaticCompoundShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const bool *JPH_StaticCompoundShape_Get_sDrawSubmergedVolumes(void);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Modifies a member variable of class `JPH::StaticCompoundShape` named `sDrawSubmergedVolumes`.
+/// When this function is called, this object will drop object references it held previously in `sDrawSubmergedVolumes`.
+JOLT_API void JPH_StaticCompoundShape_Set_sDrawSubmergedVolumes(bool value);
+
+/// Debug helper which draws the intersection between water and the shapes, the center of buoyancy and the submerged volume
+/// Returns a mutable pointer to a member variable of class `JPH::StaticCompoundShape` named `sDrawSubmergedVolumes`.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API bool *JPH_StaticCompoundShape_GetMutable_sDrawSubmergedVolumes(void);
+
+/// Constructs an empty (default-constructed) instance.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_StaticCompoundShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_StaticCompoundShape *JPH_StaticCompoundShape_DefaultConstruct(void);
+
+/// Constructs an array of empty (default-constructed) instances, of the specified size. Will never return null.
+/// The array must be destroyed using `JPH_StaticCompoundShape_DestroyArray()`.
+/// Use `JPH_StaticCompoundShape_OffsetMutablePtr()` and `JPH_StaticCompoundShape_OffsetPtr()` to access the array elements.
+JOLT_API JPH_StaticCompoundShape *JPH_StaticCompoundShape_DefaultConstructArray(size_t num_elems);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API const JPH_StaticCompoundShape *JPH_StaticCompoundShape_OffsetPtr(const JPH_StaticCompoundShape *ptr, ptrdiff_t i);
+
+/// Offsets a pointer to an array element by `i` positions (not bytes). Use only if you're certain that the pointer points to an array element.
+/// The reference to the parameter `ptr` might be preserved in the return value.
+JOLT_API JPH_StaticCompoundShape *JPH_StaticCompoundShape_OffsetMutablePtr(JPH_StaticCompoundShape *ptr, ptrdiff_t i);
+
+/// Upcasts an instance of `JPH::StaticCompoundShape` to its base class `JPH::RefTarget<JPH::Shape>`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_RefTarget_JPH_Shape *JPH_StaticCompoundShape_UpcastTo_JPH_RefTarget_JPH_Shape(const JPH_StaticCompoundShape *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShape` to its base class `JPH::RefTarget<JPH::Shape>`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_RefTarget_JPH_Shape *JPH_StaticCompoundShape_MutableUpcastTo_JPH_RefTarget_JPH_Shape(JPH_StaticCompoundShape *object);
+
+/// Downcasts an instance of `JPH::RefTarget<JPH::Shape>` to a derived class `JPH::StaticCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_StaticCompoundShape *JPH_StaticCompoundShape_StaticDowncastFrom_JPH_RefTarget_JPH_Shape(const JPH_RefTarget_JPH_Shape *object);
+
+/// Downcasts an instance of `JPH::RefTarget<JPH::Shape>` to a derived class `JPH::StaticCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_StaticCompoundShape *JPH_StaticCompoundShape_MutableStaticDowncastFrom_JPH_RefTarget_JPH_Shape(JPH_RefTarget_JPH_Shape *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShape` to its base class `JPH::NonCopyable`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_NonCopyable *JPH_StaticCompoundShape_UpcastTo_JPH_NonCopyable(const JPH_StaticCompoundShape *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShape` to its base class `JPH::NonCopyable`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_NonCopyable *JPH_StaticCompoundShape_MutableUpcastTo_JPH_NonCopyable(JPH_StaticCompoundShape *object);
+
+/// Downcasts an instance of `JPH::NonCopyable` to a derived class `JPH::StaticCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_StaticCompoundShape *JPH_StaticCompoundShape_StaticDowncastFrom_JPH_NonCopyable(const JPH_NonCopyable *object);
+
+/// Downcasts an instance of `JPH::NonCopyable` to a derived class `JPH::StaticCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_StaticCompoundShape *JPH_StaticCompoundShape_MutableStaticDowncastFrom_JPH_NonCopyable(JPH_NonCopyable *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShape` to its base class `JPH::Shape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_Shape *JPH_StaticCompoundShape_UpcastTo_JPH_Shape(const JPH_StaticCompoundShape *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShape` to its base class `JPH::Shape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_Shape *JPH_StaticCompoundShape_MutableUpcastTo_JPH_Shape(JPH_StaticCompoundShape *object);
+
+/// Downcasts an instance of `JPH::Shape` to a derived class `JPH::StaticCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_StaticCompoundShape *JPH_StaticCompoundShape_StaticDowncastFrom_JPH_Shape(const JPH_Shape *object);
+
+/// Downcasts an instance of `JPH::Shape` to a derived class `JPH::StaticCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_StaticCompoundShape *JPH_StaticCompoundShape_MutableStaticDowncastFrom_JPH_Shape(JPH_Shape *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShape` to its base class `JPH::CompoundShape`.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_CompoundShape *JPH_StaticCompoundShape_UpcastTo_JPH_CompoundShape(const JPH_StaticCompoundShape *object);
+
+/// Upcasts an instance of `JPH::StaticCompoundShape` to its base class `JPH::CompoundShape`.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_CompoundShape *JPH_StaticCompoundShape_MutableUpcastTo_JPH_CompoundShape(JPH_StaticCompoundShape *object);
+
+/// Downcasts an instance of `JPH::CompoundShape` to a derived class `JPH::StaticCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// This version is acting on mutable pointers.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API const JPH_StaticCompoundShape *JPH_StaticCompoundShape_StaticDowncastFrom_JPH_CompoundShape(const JPH_CompoundShape *object);
+
+/// Downcasts an instance of `JPH::CompoundShape` to a derived class `JPH::StaticCompoundShape`.
+/// This is a static downcast, it trusts the programmer that the target type is correct. Results in UB and returns an invalid pointer otherwise.
+/// The reference to the parameter `object` might be preserved in the return value.
+JOLT_API JPH_StaticCompoundShape *JPH_StaticCompoundShape_MutableStaticDowncastFrom_JPH_CompoundShape(JPH_CompoundShape *object);
+
+/// Destroys a heap-allocated instance of `JPH_StaticCompoundShape`. Does nothing if the pointer is null.
+JOLT_API void JPH_StaticCompoundShape_Destroy(const JPH_StaticCompoundShape *_this);
+
+/// Destroys a heap-allocated array of `JPH_StaticCompoundShape`. Does nothing if the pointer is null.
+JOLT_API void JPH_StaticCompoundShape_DestroyArray(const JPH_StaticCompoundShape *_this);
+
+/// Generated from method `JPH::StaticCompoundShape::operator new`.
+JOLT_API void *Jolt_new_JPH_StaticCompoundShape_size_t(size_t inCount);
+
+/// Generated from method `JPH::StaticCompoundShape::operator delete`.
+JOLT_API void Jolt_delete_JPH_StaticCompoundShape_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::StaticCompoundShape::operator delete`.
+JOLT_API void Jolt_delete_JPH_StaticCompoundShape_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::StaticCompoundShape::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_StaticCompoundShape_size_t(size_t inCount);
+
+/// Generated from method `JPH::StaticCompoundShape::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_StaticCompoundShape_void_ptr(void *inPointer);
+
+/// Generated from method `JPH::StaticCompoundShape::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_StaticCompoundShape_void_ptr_size_t(void *inPointer, size_t inSize);
+
+/// Generated from method `JPH::StaticCompoundShape::operator new`.
+JOLT_API void *Jolt_new_JPH_StaticCompoundShape_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::StaticCompoundShape::operator delete`.
+JOLT_API void Jolt_delete_JPH_StaticCompoundShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+/// Generated from method `JPH::StaticCompoundShape::operator new[]`.
+JOLT_API void *Jolt_new_array_JPH_StaticCompoundShape_size_t_void_ptr(size_t inCount, void *inPointer);
+
+/// Generated from method `JPH::StaticCompoundShape::operator delete[]`.
+JOLT_API void Jolt_delete_array_JPH_StaticCompoundShape_void_ptr_void_ptr(void *inPointer, void *inPlace);
+
+// See Shape::CastRay
+/// Generated from method `JPH::StaticCompoundShape::CastRay`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inRay` can not be null. It is a single object.
+/// Parameter `inSubShapeIDCreator` can not be null. It is a single object.
+/// Parameter `ioHit` can not be null. It is a single object.
+JOLT_API bool JPH_StaticCompoundShape_CastRay_3(const JPH_StaticCompoundShape *_this, const JPH_RayCast *inRay, const JPH_SubShapeIDCreator *inSubShapeIDCreator, JPH_RayCastResult *ioHit);
+
+// See: CompoundShape::GetIntersectingSubShapes
+/// Generated from method `JPH::StaticCompoundShape::GetIntersectingSubShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inBox` can not be null. It is a single object.
+JOLT_API int JPH_StaticCompoundShape_GetIntersectingSubShapes_JPH_AABox(const JPH_StaticCompoundShape *_this, const JPH_AABox *inBox, unsigned int *outSubShapeIndices, int inMaxSubShapeIndices);
+
+// See Shape::GetStats
+/// Generated from method `JPH::StaticCompoundShape::GetStats`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Shape_Stats_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Shape_Stats *JPH_StaticCompoundShape_GetStats(const JPH_StaticCompoundShape *_this);
+
+// Register shape functions with the registry
+/// Generated from method `JPH::StaticCompoundShape::sRegister`.
+JOLT_API void JPH_StaticCompoundShape_sRegister(void);
+
+// See Shape::GetCenterOfMass
+/// Generated from method `JPH::StaticCompoundShape::GetCenterOfMass`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_StaticCompoundShape_GetCenterOfMass(const JPH_StaticCompoundShape *_this);
+
+// See Shape::MustBeStatic
+/// Generated from method `JPH::StaticCompoundShape::MustBeStatic`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API bool JPH_StaticCompoundShape_MustBeStatic(const JPH_StaticCompoundShape *_this);
+
+// See Shape::GetLocalBounds
+/// Generated from method `JPH::StaticCompoundShape::GetLocalBounds`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_AABox_Destroy()` to free it when you're done using it.
+JOLT_API JPH_AABox *JPH_StaticCompoundShape_GetLocalBounds(const JPH_StaticCompoundShape *_this);
+
+// See Shape::GetSubShapeIDBitsRecursive
+/// Generated from method `JPH::StaticCompoundShape::GetSubShapeIDBitsRecursive`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_StaticCompoundShape_GetSubShapeIDBitsRecursive(const JPH_StaticCompoundShape *_this);
+
+// See Shape::GetInnerRadius
+/// Generated from method `JPH::StaticCompoundShape::GetInnerRadius`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_StaticCompoundShape_GetInnerRadius(const JPH_StaticCompoundShape *_this);
+
+// See Shape::GetMaterial
+/// Generated from method `JPH::StaticCompoundShape::GetMaterial`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+JOLT_API const JPH_PhysicsMaterial *JPH_StaticCompoundShape_GetMaterial(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID);
+
+// See Shape::GetLeafShape
+/// Generated from method `JPH::StaticCompoundShape::GetLeafShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `outRemainder` can not be null. It is a single object.
+JOLT_API const JPH_Shape *JPH_StaticCompoundShape_GetLeafShape(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID, JPH_SubShapeID *outRemainder);
+
+// See Shape::GetSubShapeUserData
+/// Generated from method `JPH::StaticCompoundShape::GetSubShapeUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+JOLT_API uint64_t JPH_StaticCompoundShape_GetSubShapeUserData(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID);
+
+// See Shape::GetSubShapeTransformedShape
+/// Generated from method `JPH::StaticCompoundShape::GetSubShapeTransformedShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `outRemainder` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_TransformedShape_Destroy()` to free it when you're done using it.
+JOLT_API JPH_TransformedShape *JPH_StaticCompoundShape_GetSubShapeTransformedShape(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale, JPH_SubShapeID *outRemainder);
+
+// See Shape::GetSurfaceNormal
+/// Generated from method `JPH::StaticCompoundShape::GetSurfaceNormal`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `inLocalSurfacePosition` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_StaticCompoundShape_GetSurfaceNormal(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID, const JPH_Vec3 *inLocalSurfacePosition);
+
+// See Shape::GetSubmergedVolume
+/// Generated from method `JPH::StaticCompoundShape::GetSubmergedVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inSurface` can not be null. It is a single object.
+/// Parameter `outTotalVolume` can not be null. It is a single object.
+/// Parameter `outSubmergedVolume` can not be null. It is a single object.
+/// Parameter `outCenterOfBuoyancy` can not be null. It is a single object.
+/// Parameter `inBaseOffset` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShape_GetSubmergedVolume(const JPH_StaticCompoundShape *_this, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Plane *inSurface, float *outTotalVolume, float *outSubmergedVolume, JPH_Vec3 *outCenterOfBuoyancy, const JPH_Vec3 *inBaseOffset);
+
+// See Shape::Draw
+/// Generated from method `JPH::StaticCompoundShape::Draw`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShape_Draw(const JPH_StaticCompoundShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inUseMaterialColors, bool inDrawWireframe);
+
+// See Shape::DrawGetSupportFunction
+/// Generated from method `JPH::StaticCompoundShape::DrawGetSupportFunction`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Parameter `inColor` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShape_DrawGetSupportFunction(const JPH_StaticCompoundShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale, const JPH_Color *inColor, bool inDrawSupportDirection);
+
+// See Shape::DrawGetSupportingFace
+/// Generated from method `JPH::StaticCompoundShape::DrawGetSupportingFace`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inCenterOfMassTransform` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShape_DrawGetSupportingFace(const JPH_StaticCompoundShape *_this, JPH_DebugRenderer *inRenderer, const JPH_Mat44 *inCenterOfMassTransform, const JPH_Vec3 *inScale);
+
+// See Shape::GetTrianglesStart
+/// Generated from method `JPH::StaticCompoundShape::GetTrianglesStart`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `inBox` can not be null. It is a single object.
+/// Parameter `inPositionCOM` can not be null. It is a single object.
+/// Parameter `inRotation` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShape_GetTrianglesStart(const JPH_StaticCompoundShape *_this, JPH_Shape_GetTrianglesContext *ioContext, const JPH_AABox *inBox, const JPH_Vec3 *inPositionCOM, const JPH_Quat *inRotation, const JPH_Vec3 *inScale);
+
+// See Shape::GetTrianglesNext
+/// Generated from method `JPH::StaticCompoundShape::GetTrianglesNext`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `ioContext` can not be null. It is a single object.
+/// Parameter `outMaterials` defaults to a null pointer in C++.
+JOLT_API int JPH_StaticCompoundShape_GetTrianglesNext(const JPH_StaticCompoundShape *_this, JPH_Shape_GetTrianglesContext *ioContext, int inMaxTrianglesRequested, JPH_Float3 *outTriangleVertices, const JPH_PhysicsMaterial **outMaterials);
+
+/// Access to the sub shapes of this compound
+/// Generated from method `JPH::StaticCompoundShape::GetSubShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const Jolt_JPH_Array_JPH_CompoundShape_SubShape *JPH_StaticCompoundShape_GetSubShapes(const JPH_StaticCompoundShape *_this);
+
+/// Get the total number of sub shapes
+/// Generated from method `JPH::StaticCompoundShape::GetNumSubShapes`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_StaticCompoundShape_GetNumSubShapes(const JPH_StaticCompoundShape *_this);
+
+/// Access to a particular sub shape
+/// Generated from method `JPH::StaticCompoundShape::GetSubShape`.
+/// Parameter `_this` can not be null. It is a single object.
+/// The returned pointer will never be null. It is non-owning, do NOT destroy it.
+JOLT_API const JPH_CompoundShape_SubShape *JPH_StaticCompoundShape_GetSubShape(const JPH_StaticCompoundShape *_this, unsigned int inIdx);
+
+/// Get the user data associated with a shape in this compound
+/// Generated from method `JPH::StaticCompoundShape::GetCompoundUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_StaticCompoundShape_GetCompoundUserData(const JPH_StaticCompoundShape *_this, unsigned int inIdx);
+
+/// Set the user data associated with a shape in this compound
+/// Generated from method `JPH::StaticCompoundShape::SetCompoundUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShape_SetCompoundUserData(JPH_StaticCompoundShape *_this, unsigned int inIdx, unsigned int inUserData);
+
+/// Check if a sub shape ID is still valid for this shape
+/// @param inSubShapeID Sub shape id that indicates the leaf shape relative to this shape
+/// @return True if the ID is valid, false if not
+/// Generated from method `JPH::StaticCompoundShape::IsSubShapeIDValid`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+JOLT_API bool JPH_StaticCompoundShape_IsSubShapeIDValid(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID);
+
+/// Convert SubShapeID to sub shape index
+/// @param inSubShapeID Sub shape id that indicates the leaf shape relative to this shape
+/// @param outRemainder This is the sub shape ID for the sub shape of the compound after popping off the index
+/// @return The index of the sub shape of this compound
+/// Generated from method `JPH::StaticCompoundShape::GetSubShapeIndexFromID`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inSubShapeID` can not be null. It is a single object.
+/// Parameter `outRemainder` can not be null. It is a single object.
+JOLT_API unsigned int JPH_StaticCompoundShape_GetSubShapeIndexFromID(const JPH_StaticCompoundShape *_this, const JPH_SubShapeID *inSubShapeID, JPH_SubShapeID *outRemainder);
+
+/// @brief Convert a sub shape index to a sub shape ID
+/// @param inIdx Index of the sub shape of this compound
+/// @param inParentSubShapeID Parent SubShapeID (describing the path to the compound shape)
+/// @return A sub shape ID creator that contains the full path to the sub shape with index inIdx
+/// Generated from method `JPH::StaticCompoundShape::GetSubShapeIDFromIndex`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inParentSubShapeID` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_SubShapeIDCreator_Destroy()` to free it when you're done using it.
+JOLT_API JPH_SubShapeIDCreator *JPH_StaticCompoundShape_GetSubShapeIDFromIndex(const JPH_StaticCompoundShape *_this, int inIdx, const JPH_SubShapeIDCreator *inParentSubShapeID);
+
+// See Shape::GetVolume
+/// Generated from method `JPH::StaticCompoundShape::GetVolume`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API float JPH_StaticCompoundShape_GetVolume(const JPH_StaticCompoundShape *_this);
+
+// See Shape::IsValidScale
+/// Generated from method `JPH::StaticCompoundShape::IsValidScale`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+JOLT_API bool JPH_StaticCompoundShape_IsValidScale(const JPH_StaticCompoundShape *_this, const JPH_Vec3 *inScale);
+
+// See Shape::MakeScaleValid
+/// Generated from method `JPH::StaticCompoundShape::MakeScaleValid`.
+/// Parameter `_this` can not be null. It is a single object.
+/// Parameter `inScale` can not be null. It is a single object.
+/// Never returns null. Returns an instance allocated on the heap! Must call `JPH_Vec3_Destroy()` to free it when you're done using it.
+JOLT_API JPH_Vec3 *JPH_StaticCompoundShape_MakeScaleValid(const JPH_StaticCompoundShape *_this, const JPH_Vec3 *inScale);
+
+/// User data (to be used freely by the application)
+/// Generated from method `JPH::StaticCompoundShape::GetUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API uint64_t JPH_StaticCompoundShape_GetUserData(const JPH_StaticCompoundShape *_this);
+
+/// Generated from method `JPH::StaticCompoundShape::SetUserData`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShape_SetUserData(JPH_StaticCompoundShape *_this, uint64_t inUserData);
+
+/// Mark this class as embedded, this means the type can be used in a compound or constructed on the stack.
+/// The Release function will never destruct the object, it is assumed the destructor will be called by whoever allocated
+/// the object and at that point in time it is checked that no references are left to the structure.
+/// Generated from method `JPH::StaticCompoundShape::SetEmbedded`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShape_SetEmbedded(const JPH_StaticCompoundShape *_this);
+
+/// Get current refcount of this object
+/// Generated from method `JPH::StaticCompoundShape::GetRefCount`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API unsigned int JPH_StaticCompoundShape_GetRefCount(const JPH_StaticCompoundShape *_this);
+
+/// Add or release a reference to this object
+/// Generated from method `JPH::StaticCompoundShape::AddRef`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShape_AddRef(const JPH_StaticCompoundShape *_this);
+
+/// Generated from method `JPH::StaticCompoundShape::Release`.
+/// Parameter `_this` can not be null. It is a single object.
+JOLT_API void JPH_StaticCompoundShape_Release(const JPH_StaticCompoundShape *_this);
+
+/// INTERNAL HELPER FUNCTION USED BY SERIALIZATION
+/// Generated from method `JPH::StaticCompoundShape::sInternalGetRefCountOffset`.
+JOLT_API int JPH_StaticCompoundShape_sInternalGetRefCountOffset(void);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
