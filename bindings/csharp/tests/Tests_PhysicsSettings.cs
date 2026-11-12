@@ -95,13 +95,6 @@ public sealed class Tests_PhysicsSettings
     }
 
     [Fact]
-    public void PhysicsSettings_mDeterministicSimulation_DefaultIsTrue()
-    {
-        var ps = new JPH.PhysicsSettings();
-        Assert.True(ps.mDeterministicSimulation);
-    }
-
-    [Fact]
     public void PhysicsSettings_mConstraintWarmStart_DefaultIsTrue()
     {
         var ps = new JPH.PhysicsSettings();
@@ -128,11 +121,4 @@ public sealed class Tests_PhysicsSettings
         Assert.Equal(20u, ps.mNumVelocitySteps);
     }
 
-    [Fact]
-    public void PhysicsSettings_mDeterministicSimulation_RoundTrip()
-    {
-        var ps = new JPH.PhysicsSettings();
-        ps.mDeterministicSimulation = false;
-        Assert.False(ps.mDeterministicSimulation);
-    }
 }

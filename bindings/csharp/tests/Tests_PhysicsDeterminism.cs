@@ -80,22 +80,7 @@ public sealed class Tests_PhysicsDeterminism(JoltFixture fx)
         Assert.Equal(pos1.GetZ(), pos2.GetZ());
     }
 
-    // ── mDeterministicSimulation flag ─────────────────────────────────────────
-
-    [Fact]
-    public void PhysicsSettings_mDeterministicSimulation_DefaultIsTrue()
-    {
-        using var settings = new JPH.PhysicsSettings();
-        Assert.True(settings.mDeterministicSimulation);
-    }
-
-    [Fact]
-    public void PhysicsSettings_mDeterministicSimulation_CanBeDisabled()
-    {
-        using var settings = new JPH.PhysicsSettings();
-        settings.mDeterministicSimulation = false;
-        Assert.False(settings.mDeterministicSimulation);
-    }
+    // (Jolt 5.6 removed PhysicsSettings::mDeterministicSimulation: the simulation is always deterministic.)
 
     // ── Constraint-based determinism ──────────────────────────────────────────
 

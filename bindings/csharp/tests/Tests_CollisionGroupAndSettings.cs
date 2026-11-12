@@ -144,13 +144,6 @@ public sealed class Tests_CollisionGroupAndSettings(JoltFixture fx)
     }
 
     [Fact]
-    public void PhysicsSettings_mDeterministicSimulation_DefaultIsTrue()
-    {
-        using var ps = new JPH.PhysicsSettings();
-        Assert.True(ps.mDeterministicSimulation);
-    }
-
-    [Fact]
     public void PhysicsSettings_mBaumgarte_Default_IsApprox0p2()
     {
         using var ps = new JPH.PhysicsSettings();

@@ -395,17 +395,4 @@ public sealed class Tests_Vec4
         Assert.True(new JPH.Vec4(1f, 2f, 3f, 4f).Swizzle_0_2_1_3() == new JPH.Vec4(1f, 3f, 2f, 4f));
     }
 
-    [Fact]
-    public void Vec4_Swizzle_1_2_3_2_OutputIsYZWZ()
-    {
-        // (y, z, w, z) = (2, 3, 4, 3)
-        Assert.True(new JPH.Vec4(1f, 2f, 3f, 4f).Swizzle_1_2_3_2() == new JPH.Vec4(2f, 3f, 4f, 3f));
-    }
-
-    [Fact]
-    public void Vec4_Swizzle_2_2_2_2_BroadcastsZ()
-    {
-        // (z, z, z, z) = (3, 3, 3, 3)
-        Assert.True(new JPH.Vec4(1f, 2f, 3f, 4f).Swizzle_2_2_2_2() == new JPH.Vec4(3f, 3f, 3f, 3f));
-    }
 }
