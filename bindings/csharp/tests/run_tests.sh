@@ -64,8 +64,10 @@ fi
 # final "Test Run …" / "Test summary:" block, then injects a skipped/failed
 # details section immediately before that block.  Works on macOS, Linux,
 # Windows (Git Bash), and GitHub Actions — requires only POSIX awk and bash.
+# --blame: when the test process crashes or a test hangs (40 s), the log names the test that was running.
 dotnet test "$SCRIPT_DIR/tests.csproj" \
     --logger "console;verbosity=detailed" \
+    --blame-crash --blame-hang-timeout 40s \
     "$@" | awk '
 BEGIN { in_summary = 0; buf = ""; skip_n = 0; fail_n = 0 }
 
