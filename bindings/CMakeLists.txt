@@ -35,6 +35,11 @@ endif()
 # Pull in Jolt's proper build system — this creates the `Jolt` static-lib
 # target with all the right compile flags (SIMD, LTO, -fno-rtti,
 # -fno-exceptions, -ffp-model=precise, etc.)
+# Jolt 5.6 adds GPU compute back-ends, on by default; the bindings' users run the physics on the CPU, and
+# linking them would pull Metal, Vulkan or DirectX 12 into cjolt on every platform. The CPU one stays.
+set(JPH_USE_DX12 OFF CACHE BOOL "" FORCE)
+set(JPH_USE_VK OFF CACHE BOOL "" FORCE)
+set(JPH_USE_MTL OFF CACHE BOOL "" FORCE)
 add_subdirectory("${JOLT_ROOT}/Build" jolt_build)
 
 # ---- Generated binding sources ----

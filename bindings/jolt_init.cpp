@@ -625,8 +625,8 @@ void EstimateResponseContactListener::OnContactAdded(
     const JPH::ContactManifold& inManifold, JPH::ContactSettings& ioSettings)
 {
     JPH::CollisionEstimationResult result;
-    JPH::EstimateCollisionResponse(inBody1, inBody2, inManifold, result,
-        ioSettings.mCombinedFriction, ioSettings.mCombinedRestitution);
+    // Jolt 5.6: the estimate takes the contact's settings whole (friction, restitution and the rest).
+    JPH::EstimateCollisionResponse(inBody1, inBody2, inManifold, result, ioSettings);
     mLinearVelocity1  = result.mLinearVelocity1;
     mAngularVelocity1 = result.mAngularVelocity1;
     mLinearVelocity2  = result.mLinearVelocity2;

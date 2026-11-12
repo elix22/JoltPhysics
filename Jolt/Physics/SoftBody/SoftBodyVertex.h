@@ -5,6 +5,7 @@
 #pragma once
 
 #include <Jolt/Geometry/Plane.h>
+#include <Jolt/Physics/Body/BodyID.h>
 
 JPH_NAMESPACE_BEGIN
 
