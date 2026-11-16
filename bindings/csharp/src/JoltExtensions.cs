@@ -3,6 +3,8 @@ public static unsafe partial class JoltExtensions
 {
     public static float RayAABox(this JPH.Const_Vec3 inOrigin, JPH.Const_RayInvDirection inInvDirection, JPH.Const_Vec3 inBoundsMin, JPH.Const_Vec3 inBoundsMax) => JPH.Const_JoltHelpers.RayAABox(inOrigin, inInvDirection, inBoundsMin, inBoundsMax);
 
+    public static float CastSphere(this JPH.Const_PhysicsSystem inSystem, JPH.Const_Vec3 inStart, JPH.Const_Vec3 inDirection, float inRadius, JPH.BodyID inIgnoreBody, bool inStaticOnly) => JPH.Const_JoltHelpers.CastSphere(inSystem, inStart, inDirection, inRadius, inIgnoreBody, inStaticOnly);
+
     public static void VehicleSettingsAddWheel(this JPH.VehicleConstraintSettings settings, JPH.WheelSettingsWV? wheel) => JPH.Const_JoltHelpers.VehicleSettingsAddWheel(settings, wheel);
 
     public static void VehicleSettingsAddWheelTV(this JPH.VehicleConstraintSettings settings, JPH.WheelSettingsTV? wheel) => JPH.Const_JoltHelpers.VehicleSettingsAddWheelTV(settings, wheel);

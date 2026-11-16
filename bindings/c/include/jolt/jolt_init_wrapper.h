@@ -228,6 +228,17 @@ JOLT_API void JoltHelpers_Shutdown(void);
 /// Parameter `inBoundsMax` can not be null. It is a single object.
 JOLT_API float JoltHelpers_RayAABox(const JPH_Vec3 *inOrigin, const JPH_RayInvDirection *inInvDirection, const JPH_Vec3 *inBoundsMin, const JPH_Vec3 *inBoundsMax);
 
+/// One sphere cast (NarrowPhaseQuery::CastShape with a closest-hit collector; mrbind cannot bind the collector
+/// templates): a sphere of inRadius moved from inStart along inDirection (its length is the distance). Returns the
+/// fraction of the way it moves before it first touches something, 1 when it meets nothing (0 when it starts
+/// touching). Sensors are never met; nor is inIgnoreBody (an invalid BodyID: none); with inStaticOnly only static
+/// bodies are met. Back faces of triangles are ignored. A camera boom's wall test, for example.
+/// Generated from method `JoltHelpers::CastSphere`.
+/// Parameter `inSystem` can not be null. It is a single object.
+/// Parameter `inStart` can not be null. It is a single object.
+/// Parameter `inDirection` can not be null. It is a single object.
+JOLT_API float JoltHelpers_CastSphere(const JPH_PhysicsSystem *inSystem, const JPH_Vec3 *inStart, const JPH_Vec3 *inDirection, float inRadius, JPH_BodyID inIgnoreBody, bool inStaticOnly);
+
 /// Append a WheelSettingsWV to VehicleConstraintSettings::mWheels.
 /// Generated from method `JoltHelpers::VehicleSettingsAddWheel`.
 /// Parameter `settings` can not be null. It is a single object.

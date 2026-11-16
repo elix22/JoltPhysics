@@ -126,6 +126,18 @@ float JoltHelpers_RayAABox(const JPH_Vec3 *inOrigin, const JPH_RayInvDirection *
     );
 }
 
+float JoltHelpers_CastSphere(const JPH_PhysicsSystem *inSystem, const JPH_Vec3 *inStart, const JPH_Vec3 *inDirection, float inRadius, JPH_BodyID inIgnoreBody, bool inStaticOnly)
+{
+    return JoltHelpers::CastSphere(
+        ((inSystem ? void() : MRBINDC_THROW("Parameter `inSystem` can not be null.", void)), *(const JPH::PhysicsSystem *)(inSystem)),
+        ((inStart ? void() : MRBINDC_THROW("Parameter `inStart` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inStart)),
+        ((inDirection ? void() : MRBINDC_THROW("Parameter `inDirection` can not be null.", void)), JPH::Vec3(*(JPH::Vec3 *)inDirection)),
+        inRadius,
+        MRBINDC_BIT_CAST((JPH::BodyID), inIgnoreBody),
+        inStaticOnly
+    );
+}
+
 void JoltHelpers_VehicleSettingsAddWheel(JPH_VehicleConstraintSettings *settings, JPH_WheelSettingsWV *wheel)
 {
     JoltHelpers::VehicleSettingsAddWheel(

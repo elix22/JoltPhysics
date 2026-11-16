@@ -10,6 +10,11 @@
 #include <Jolt/Physics/Character/CharacterBase.h>
 #include <Jolt/Physics/Collision/GroupFilterTable.h>
 #include <Jolt/Physics/Collision/Shape/MeshShape.h>
+#include <Jolt/Physics/Collision/Shape/SphereShape.h>
+#include <Jolt/Physics/Collision/ShapeCast.h>
+#include <Jolt/Physics/Collision/CastResult.h>
+#include <Jolt/Physics/Collision/CollisionCollectorImpl.h>
+#include <Jolt/Physics/Collision/NarrowPhaseQuery.h>
 
 #include <cstdarg>
 #include <cstdio>
@@ -65,6 +70,40 @@ void JoltHelpers::Shutdown()
 float JoltHelpers::RayAABox(JPH::Vec3Arg inOrigin, const JPH::RayInvDirection& inInvDirection, JPH::Vec3Arg inBoundsMin, JPH::Vec3Arg inBoundsMax)
 {
     return JPH::RayAABox(inOrigin, inInvDirection, inBoundsMin, inBoundsMax);
+}
+
+namespace
+{
+    // The bodies a CastSphere meets: never a sensor, never the one ignored; only static ones when asked.
+    class CastSphereFilter final : public JPH::BodyFilter
+    {
+    public:
+        CastSphereFilter(JPH::BodyID inIgnore, bool inStaticOnly) : mIgnore(inIgnore), mStaticOnly(inStaticOnly) { }
+        bool ShouldCollide(const JPH::BodyID &inBodyID) const override { return inBodyID != mIgnore; }
+        bool ShouldCollideLocked(const JPH::Body &inBody) const override
+        {
+            return !inBody.IsSensor() && (!mStaticOnly || inBody.IsStatic());
+        }
+    private:
+        JPH::BodyID mIgnore;
+        bool mStaticOnly;
+    };
+}
+
+float JoltHelpers::CastSphere(const JPH::PhysicsSystem& inSystem, JPH::Vec3Arg inStart, JPH::Vec3Arg inDirection, float inRadius, JPH::BodyID inIgnoreBody, bool inStaticOnly)
+{
+    if (inRadius <= 0.0f || inDirection.IsNearZero())
+        return 1.0f;
+    JPH::SphereShape sphere(inRadius);
+    sphere.SetEmbedded();   // on the stack: never freed by its reference count
+    JPH::RShapeCast cast(&sphere, JPH::Vec3::sOne(), JPH::RMat44::sTranslation(JPH::RVec3(inStart)), inDirection);
+    JPH::ShapeCastSettings settings;
+    settings.mBackFaceModeTriangles = JPH::EBackFaceMode::IgnoreBackFaces;
+    settings.mBackFaceModeConvex = JPH::EBackFaceMode::IgnoreBackFaces;
+    JPH::ClosestHitCollisionCollector<JPH::CastShapeCollector> collector;
+    CastSphereFilter filter(inIgnoreBody, inStaticOnly);
+    inSystem.GetNarrowPhaseQuery().CastShape(cast, settings, JPH::RVec3(inStart), collector, {}, {}, filter);
+    return collector.HadHit() ? JPH::Clamp(collector.mHit.mFraction, 0.0f, 1.0f) : 1.0f;
 }
 
 void JoltHelpers::VehicleSettingsAddWheel(JPH::VehicleConstraintSettings& settings, JPH::WheelSettingsWV* wheel)

@@ -45,6 +45,13 @@ struct JoltHelpers
     /// Note: can return a negative value if the ray starts inside the box.
     static float RayAABox(JPH::Vec3Arg inOrigin, const JPH::RayInvDirection& inInvDirection, JPH::Vec3Arg inBoundsMin, JPH::Vec3Arg inBoundsMax);
 
+    /// One sphere cast (NarrowPhaseQuery::CastShape with a closest-hit collector; mrbind cannot bind the collector
+    /// templates): a sphere of inRadius moved from inStart along inDirection (its length is the distance). Returns the
+    /// fraction of the way it moves before it first touches something, 1 when it meets nothing (0 when it starts
+    /// touching). Sensors are never met; nor is inIgnoreBody (an invalid BodyID: none); with inStaticOnly only static
+    /// bodies are met. Back faces of triangles are ignored. A camera boom's wall test, for example.
+    static float CastSphere(const JPH::PhysicsSystem& inSystem, JPH::Vec3Arg inStart, JPH::Vec3Arg inDirection, float inRadius, JPH::BodyID inIgnoreBody, bool inStaticOnly);
+
     // -----------------------------------------------------------------------
     // Vehicle helpers — expose Array field manipulation to C# (mrbind cannot
     // bind std::vector / JPH::Array directly).

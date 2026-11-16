@@ -97,6 +97,23 @@ public static partial class JPH
             return __JoltHelpers_RayAABox(inOrigin._UnderlyingPtr, inInvDirection._UnderlyingPtr, inBoundsMin._UnderlyingPtr, inBoundsMax._UnderlyingPtr);
         }
 
+        /// One sphere cast (NarrowPhaseQuery::CastShape with a closest-hit collector; mrbind cannot bind the collector
+        /// templates): a sphere of inRadius moved from inStart along inDirection (its length is the distance). Returns the
+        /// fraction of the way it moves before it first touches something, 1 when it meets nothing (0 when it starts
+        /// touching). Sensors are never met; nor is inIgnoreBody (an invalid BodyID: none); with inStaticOnly only static
+        /// bodies are met. Back faces of triangles are ignored. A camera boom's wall test, for example.
+        /// Generated from method `JoltHelpers::CastSphere`.
+        public static unsafe float CastSphere(JPH.Const_PhysicsSystem inSystem, JPH.Const_Vec3 inStart, JPH.Const_Vec3 inDirection, float inRadius, JPH.BodyID inIgnoreBody, bool inStaticOnly)
+        {
+            #if __IOS__
+            [System.Runtime.InteropServices.DllImport("@rpath/cjolt.framework/cjolt", EntryPoint = "JoltHelpers_CastSphere", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #else
+            [System.Runtime.InteropServices.DllImport("cjolt", EntryPoint = "JoltHelpers_CastSphere", CallingConvention = System.Runtime.InteropServices.CallingConvention.Cdecl, ExactSpelling = true)]
+            #endif
+            extern static float __JoltHelpers_CastSphere(JPH.Const_PhysicsSystem._Underlying *inSystem, JPH.Vec3._Underlying *inStart, JPH.Vec3._Underlying *inDirection, float inRadius, JPH.BodyID inIgnoreBody, byte inStaticOnly);
+            return __JoltHelpers_CastSphere(inSystem._UnderlyingPtr, inStart._UnderlyingPtr, inDirection._UnderlyingPtr, inRadius, inIgnoreBody, inStaticOnly ? (byte)1 : (byte)0);
+        }
+
         /// Append a WheelSettingsWV to VehicleConstraintSettings::mWheels.
         /// Generated from method `JoltHelpers::VehicleSettingsAddWheel`.
         public static unsafe void VehicleSettingsAddWheel(JPH.VehicleConstraintSettings settings, JPH.WheelSettingsWV? wheel)
